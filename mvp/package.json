@@ -3,5 +3,5 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": { "start": "node server.mjs", "check": "node --check game.js && node --check renderer.js && node --check audio.js" }
+  "scripts": { "start": "node server.mjs", "check": "node --check game.js && node --check renderer.js && node --check audio.js", "build:pages": "node deploy.mjs --build-only", "deploy": "npm run check && node deploy.mjs" }
 }
