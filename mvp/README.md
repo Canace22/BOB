@@ -14,7 +14,7 @@ npm start
 
 **发布到 GitHub Pages**
 
-在 `mvp` 目录运行 `npm run deploy`：先做语法检查，再把游戏和用到的 4 张原画打包，强推到远程 `gh-pages` 分支，结束后打印访问地址。不会改动 `main`。首次发布若未自动开启 Pages，请到仓库 Settings → Pages，选择 `gh-pages` 分支 `/ (root)`。只想看打包结果、不推送：`npm run build:pages`（输出在仓库根的 `.pages-dist/`）。
+在 `mvp` 目录运行 `npm run deploy`：先对初版和新版（`../mvp-nightmare`，需已 `npm install`）做语法检查，再把两版游戏和用到的 4 张原画打包，强推到远程 `gh-pages` 分支，结束后打印新版访问地址。线上初版在 `/mvp/`，新版在 `/nightmare/`，站点根目录跳转到新版。不会改动 `main`。首次发布若未自动开启 Pages，请到仓库 Settings → Pages，选择 `gh-pages` 分支 `/ (root)`。只想看打包结果、不推送：`npm run build:pages`（输出在仓库根的 `.pages-dist/`）。
 
 **操作**
 

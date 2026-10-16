@@ -1,39 +1,70 @@
 # BOB · 鲸腹遗城
 
-以「鲸落」为题材的 2D 横版探索游戏。仓库包含概念原画和一个可玩的 MVP。
+以「鲸落」为题材的游戏。仓库包含概念原画和两版可玩原型：
+
+| 版本 | 目录 | 玩法 | 在线试玩 |
+| --- | --- | --- | --- |
+| 新版：深处的来客 | `mvp-nightmare/` | 2.5D（Three.js），探索 + 解谜 + 潜行逃离，三个短篇关卡 | https://canace22.github.io/BOB-/nightmare/ |
+| 初版 | `mvp/` | 2D 横版，跳跃探索 + 共鸣开路 + 找回记忆，三关 | https://canace22.github.io/BOB-/mvp/ |
+
+打开 https://canace22.github.io/BOB-/ 会直接进入新版。
 
 ## 快速开始
 
-需要 Node.js，无需安装依赖：
+需要 Node.js。
+
+新版（需要先安装 Three.js，需联网一次）：
+
+```sh
+cd mvp-nightmare
+npm install
+npm start
+```
+
+浏览器打开 http://127.0.0.1:4174/ 。需要支持 WebGL 的桌面浏览器，键盘操作。
+
+初版（无需安装依赖）：
 
 ```sh
 cd mvp
 npm start
 ```
 
-浏览器打开 http://127.0.0.1:4173/ ，点击开始即可。按 `Ctrl+C` 停止服务。
+浏览器打开 http://127.0.0.1:4173/ 。按 `Ctrl+C` 停止服务。
+
+## 发布到 GitHub Pages
+
+```sh
+cd mvp
+npm run deploy
+```
+
+会先检查两版代码语法，再把新版、初版和用到的原画打包，强推到远程 `gh-pages` 分支，不改动 `main`。发布前请先在 `mvp-nightmare/` 执行过 `npm install`。1–2 分钟后线上生效。只想看打包结果、不推送：`npm run build:pages`（输出在 `.pages-dist/`）。
 
 ## 目录
 
 ```
 BOB/
-├── docs/鲸腹遗城原画集/   # 18 张概念原画、原画册、提示词、进度记录
-└── mvp/                   # 可玩原型（原生 Canvas + WebAudio）
-    ├── server.mjs         # 静态服务
-    ├── game.js            # 玩法与物理
-    ├── levels.js          # 关卡数据
-    ├── renderer.js        # 绘制
-    ├── audio.js           # 合成环境音
-    └── tests/             # 通关与失败恢复的浏览器测试脚本
+├── docs/
+│   ├── 鲸腹遗城原画集/     # 18 张概念原画、原画册、提示词
+│   └── progress.md         # 初版 MVP 的实现范围与验收记录
+├── mvp/                    # 初版（原生 Canvas + WebAudio）
+│   └── deploy.mjs          # 一键发布脚本（两版一起发）
+└── mvp-nightmare/          # 新版（Three.js 2.5D）
+    ├── progress.md         # 新版的实现范围与验收记录
+    └── tests/              # 自动游玩测试脚本
 ```
 
 ## 当前进度
 
-MVP 已实现三关（鲸口门庭、肋骨穹顶、心室潮泵），核心玩法是「跳跃探索 → 共鸣打开通路 → 找回鲸的记忆」，包含存档、地图与手记。其余区域、鲸落四阶段演化和 Boss 尚未实现。
+- 初版：三关（鲸口门庭、肋骨穹顶、心室潮泵），含存档、地图与手记。
+- 新版：三关（失声门庭、听骨廊、最后一次心跳），含检查点存档、藏身潜行、顺序解谜与潮水追逐；美术仍是程序几何体，属于玩法与节奏验证。
+- 其余器官区域、鲸落四阶段演化和 Boss 尚未实现。
 
 ## 更多说明
 
-- 操作方式、完整路线、验收清单：[mvp/README.md](mvp/README.md)
-- 实现范围与验收记录：[docs/鲸腹遗城原画集/progress.md](docs/鲸腹遗城原画集/progress.md)
+- 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
+- 初版操作、完整路线：[mvp/README.md](mvp/README.md)
+- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](docs/progress.md)
 
-注意：`mvp` 运行时会读取上级目录的原画，不要单独移动 `mvp` 或改动原画文件名。
+注意：初版 `mvp` 本地运行时会读取上级目录的原画，不要单独移动 `mvp` 或改动原画文件名。新版不依赖原画，可独立运行。

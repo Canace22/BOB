@@ -1,0 +1,12 @@
+{
+  "name": "bob-nightmare-mvp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check game.js && node --check levels.js && node --check renderer.js && node --check audio.js && node --check server.mjs",
+    "test": "node tests/playthrough.mjs"
+  },
+  "dependencies": { "three": "^0.180.0" }
+}

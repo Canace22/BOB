@@ -28,3 +28,7 @@ Original prompt: 根据这个概念设计，做一个 mvp 版本给我看看
 ## 后续可扩展范围
 - 本次 MVP 已完成；尚未实现其余器官关卡、完整群落 Boss、鲸落四阶段全图变化。
 - 当前关卡为横向连续的短切片，未构建大型回环地图；美术采用原画远景与程序绘制前景。
+
+## 发布记录
+
+- 2026-10-16：初版已发布到 GitHub Pages 的 /mvp/，之后与新版一起发布，新版见 [mvp-nightmare/progress.md](../mvp-nightmare/progress.md)。
