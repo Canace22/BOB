@@ -9,7 +9,7 @@
     "dev": "node server.mjs",
     "publish:preview": "node publish-preview.mjs",
     "check": "node --check game.js && node --check engine.js && node --check levels.js && node --check mechanics.js && node --check scenes.js && node --check scene-lab.js && node --check renderer.js && node --check audio.js && node --check server.mjs && node --check preview.mjs && node --check publish-preview.mjs",
-    "test": "node --test tests/mechanics.test.mjs && node tests/playthrough.mjs"
+    "test": "node --test tests/mechanics.test.mjs tests/preview.test.mjs && node tests/playthrough.mjs"
   },
   "engines": { "node": ">=18" }
 }
