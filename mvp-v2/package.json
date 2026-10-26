@@ -1,0 +1,15 @@
+{
+  "name": "whalefall-v2-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "鲸落万物生 · 基于 V2 原画的 2D 生态探索原型",
+  "type": "module",
+  "scripts": {
+    "start": "node preview.mjs",
+    "dev": "node server.mjs",
+    "publish:preview": "node publish-preview.mjs",
+    "check": "node --check game.js && node --check engine.js && node --check levels.js && node --check mechanics.js && node --check scenes.js && node --check scene-lab.js && node --check renderer.js && node --check audio.js && node --check server.mjs && node --check preview.mjs && node --check publish-preview.mjs",
+    "test": "node --test tests/mechanics.test.mjs && node tests/playthrough.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
