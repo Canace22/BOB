@@ -6,6 +6,10 @@
 
 ## 运行
 
+公网试玩：[鲸落万物生](https://canace22.github.io/BOB/mvp-v2/)。GitHub Pages 仅发布当前 V2 版本，无需开发电脑保持开机。Pages 与本地地址各自保存浏览器进度，存档不会自动跨站点迁移。
+
+在仓库根目录执行 `npm --prefix mvp run build:pages` 检查静态产物，执行 `npm --prefix mvp run deploy` 发布到 `gh-pages`。站点首页进入 V2，地图工作台位于 `mvp-v2/scene-lab.html`。线上更新后刷新页面使用新版；下文的自动更新提示属于本地快照服务。
+
 推荐在 Windows 仓库根目录执行，需 Node.js 18 或更新版本；后台运行，不依赖聊天窗口：
 
 ```powershell
@@ -70,7 +74,7 @@ npm test
 
 `GAME_URL` 可指定其他试玩地址，默认 `http://127.0.0.1:4175/`。测试从空白浏览器存储开始，使用实际键盘事件与 `advanceTime()` 确定步进；`render_game_to_text()` 只读取状态，不通过测试接口传送角色或修改能力。
 
-覆盖：6 项原生设施测试（120 Hz 完整攀爬、双向升降承载、摆荡动量、暂停、检查点、旧存档）；浏览器用真实键盘走四区路线、全部记忆与栖息地、刷新续玩及结尾，并检查练习模式不覆盖存档、页面不请求原画关卡背景。截图与状态记录输出至 `output/playthrough/`；`result.json` 记录完整通过结果，失败时查看 `failure.png` 与 `failure-errors.json`。
+覆盖：6 项原生设施测试（120 Hz 完整攀爬、双向升降承载、摆荡动量、暂停、检查点、旧存档）与 3 项本地快照服务测试；浏览器用真实键盘走四区路线、全部记忆与栖息地、刷新续玩及结尾，并检查练习模式不覆盖存档、页面不请求原画关卡背景。截图与状态记录输出至 `output/playthrough/`；`result.json` 记录完整通过结果，失败时查看 `failure.png` 与 `failure-errors.json`。
 
 ## 当前边界
 

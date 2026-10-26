@@ -4,11 +4,11 @@
 
 | 版本 | 目录 | 玩法 | 在线试玩 |
 | --- | --- | --- | --- |
-| V2 原画版：鲸落万物生 | `mvp-v2/` | 2D 生态探索 + 绳网攀爬 / 升降台 / 骨环摆荡 | 局域网 `http://10.11.140.34:4175/`，主机需开机 |
-| 新版：深处的来客 | `mvp-nightmare/` | 2.5D（Three.js），探索 + 解谜 + 潜行逃离，三个短篇关卡 | https://canace22.github.io/BOB-/nightmare/ |
-| 初版 | `mvp/` | 2D 横版，跳跃探索 + 共鸣开路 + 找回记忆，三关 | https://canace22.github.io/BOB-/mvp/ |
+| V2 原画版：鲸落万物生 | `mvp-v2/` | 2D 生态探索 + 绳网攀爬 / 升降台 / 骨环摆荡 | [公网试玩](https://canace22.github.io/BOB/mvp-v2/) |
+| 新版：深处的来客 | `mvp-nightmare/` | 2.5D（Three.js），探索 + 解谜 + 潜行逃离，三个短篇关卡 | 保留源码，不再发布 |
+| 初版 | `mvp/` | 2D 横版，跳跃探索 + 共鸣开路 + 找回记忆，三关 | 保留源码，不再发布 |
 
-打开 https://canace22.github.io/BOB-/ 会直接进入新版。
+打开 https://canace22.github.io/BOB/ 会直接进入 V2 2D 版本。
 
 ## 快速开始
 
@@ -22,7 +22,7 @@ npm run publish:preview
 npm start
 ```
 
-浏览器打开 http://127.0.0.1:4175/ 。后台常驻启动可用 `.\mvp-v2\launch-preview.ps1`（仓库根目录）。4175 为稳定试玩快照；4176 为 `npm run dev` 开发预览，通过测试后 `npm run publish:preview` 更新试玩，已打开游戏由玩家选择更新。`A / D` 移动、`W / S` 攀爬、`Space` 跳跃 / 脱离、`E` 共鸣、`F` 交互 / 抓环、`Shift` 浮膜。标题页可直接练习攀爬且不覆盖主线存档。`npm run check` 和 `npm test` 用于验证。此版本不在现有 GitHub Pages 发布脚本范围内。
+浏览器打开 http://127.0.0.1:4175/ 。后台常驻启动可用 `.\mvp-v2\launch-preview.ps1`（仓库根目录）。4175 为稳定试玩快照；4176 为 `npm run dev` 开发预览，通过测试后 `npm run publish:preview` 更新试玩，已打开游戏由玩家选择更新。`A / D` 移动、`W / S` 攀爬、`Space` 跳跃 / 脱离、`E` 共鸣、`F` 交互 / 抓环、`Shift` 浮膜。标题页可直接练习攀爬且不覆盖主线存档。`npm run check` 和 `npm test` 用于验证。GitHub Pages 为公开试玩入口，本地服务用于开发验证。
 
 新版（需要先安装 Three.js，需联网一次）：
 
@@ -50,7 +50,7 @@ cd mvp
 npm run deploy
 ```
 
-会先检查两版代码语法，再把新版、初版和用到的原画打包，强推到远程 `gh-pages` 分支，不改动 `main`。发布前请先在 `mvp-nightmare/` 执行过 `npm install`。1–2 分钟后线上生效。只想看打包结果、不推送：`npm run build:pages`（输出在 `.pages-dist/`）。
+只检查并打包当前 V2 2D 版本、独立场景素材和封面原画，再提交并推送到 `gh-pages` 分支。无需安装 Three.js；旧版源码保留，但不进入本次站点。Pages 部署完成后线上生效。只想看打包结果、不推送：`npm run build:pages`（输出在 `.pages-dist/`）。
 
 ## 目录
 
@@ -60,7 +60,7 @@ BOB/
 │   ├── 鲸腹遗城原画集/     # 第一版与 V2 原画、原画册、玩法设计及提示词
 │   └── progress.md         # 初版 MVP 的实现范围与验收记录
 ├── mvp/                    # 初版（原生 Canvas + WebAudio）
-│   └── deploy.mjs          # 一键发布脚本（两版一起发）
+│   └── deploy.mjs          # 一键发布脚本（仅 V2）
 ├── mvp-v2/                 # V2 原画版（Canvas 2D + WebAudio），本地端口 4175
 └── mvp-nightmare/          # 新版（Three.js 2.5D）
     ├── progress.md         # 新版的实现范围与验收记录
@@ -69,7 +69,7 @@ BOB/
 
 ## 当前进度
 
-- V2 原画版：四区生态探索、攀网 / 升降 / 摆荡设施与回访；原画仅作设计参考，地图和场景分层组装，可用工作台检查。稳定试玩与开发预览分离，支持局域网分享。
+- V2 原画版：四区生态探索、攀网 / 升降 / 摆荡设施与回访；原画仅作设计参考，地图和场景分层组装，可用工作台检查。GitHub Pages 公网分享，本地稳定试玩与开发预览分离。
 - 初版：三关（鲸口门庭、肋骨穹顶、心室潮泵），含存档、地图与手记。
 - 新版：三关（失声门庭、听骨廊、最后一次心跳），含检查点存档、藏身潜行、顺序解谜与潮水追逐；美术仍是程序几何体，属于玩法与节奏验证。
 - 其余器官区域、鲸落四阶段演化和 Boss 尚未实现。
