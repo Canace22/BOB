@@ -26,8 +26,11 @@ export class Renderer {
   }
 
   async load() {
-    const backdrops = [...new Set(Object.values(SCENES).map(scene => scene.atmosphere.src))];
-    await Promise.all([...ART.map(name => this.loadImage(name)), ...backdrops.map(src => this.loadImage(src, src))]);
+    const resources = [...new Set(Object.values(SCENES).flatMap(scene => [
+      scene.atmosphere.src,
+      ...Object.values(scene.terrain || {}).map(asset => asset.src),
+    ]))];
+    await Promise.all([...ART.map(name => this.loadImage(name)), ...resources.map(src => this.loadImage(src, src))]);
   }
 
   loadImage(name, source) {
@@ -377,6 +380,33 @@ export class Renderer {
     c.restore();
   }
 
+  boneLedge(p, asset) {
+    const img = asset && this.images.get(asset.src);
+    if (!img) return false;
+    const c = this.ctx, crop = asset.crop, scale = asset.scale;
+    const tileWidth = crop.w * scale, height = crop.h * scale;
+    // Fixed uniform scale preserves the painted bone pores. Wide ledges
+    // repeat cropped modules; short ledges take a centered source subsection.
+    // The viewport clip also forbids decorative ledges beyond the collision x/w.
+    const count = Math.max(1, Math.ceil(p.w / tileWidth));
+    const width = p.w / count, sourceWidth = width / scale;
+    c.save(); c.beginPath(); c.rect(p.x, p.y, p.w, height); c.clip();
+    c.globalAlpha = .86;
+    for (let i = 0; i < count; i++) {
+      const sourceX = crop.x + (crop.w - sourceWidth) / 2;
+      c.save();
+      c.translate(p.x + i * width + (i % 2 ? width : 0), p.y);
+      if (i % 2) c.scale(-1, 1);
+      c.drawImage(img, sourceX, crop.y, sourceWidth, crop.h, 0, 0, width, height);
+      c.restore();
+    }
+    c.globalAlpha = 1;
+    // Keep the exact one-way collision crest legible against the image grain.
+    this.line([[p.x, p.y + .5], [p.x + p.w, p.y + .5]], '#e4dbb8', 1.2);
+    c.restore();
+    return true;
+  }
+
   platform(p, state, room) {
     const c = this.ctx, t = this.time;
     if (p.kind === 'safety') {
@@ -395,6 +425,7 @@ export class Renderer {
       return;
     }
     const bone = p.kind === 'bone' || p.kind === 'bridge' || p.requires;
+    if (bone && this.boneLedge(p, SCENES[room.id]?.terrain?.bone)) return;
     const material = SCENES[room.id]?.material;
     const membrane = p.kind === 'membrane' || (!bone && material === 'membrane');
     const flesh = material === 'tissue' && !bone;
