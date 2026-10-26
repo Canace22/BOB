@@ -43,6 +43,11 @@ function build() {
   mkdirSync(path.dirname(coverTarget), { recursive: true });
   cpSync(path.join(repoRoot, coverPath), coverTarget);
   writeFileSync(path.join(outDir, 'index.html'), '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=mvp-v2/"><title>鲸落万物生 · V2</title><a href="mvp-v2/">进入 V2 游戏</a></html>');
+  // Cached home pages used these destinations. Keep only redirects, no old game assets.
+  for (const legacy of ['nightmare', 'mvp']) {
+    mkdirSync(path.join(outDir, legacy));
+    writeFileSync(path.join(outDir, legacy, 'index.html'), '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../mvp-v2/"><title>鲸落万物生 · V2</title><a href="../mvp-v2/">进入当前版本</a></html>');
+  }
   writeFileSync(path.join(outDir, '.nojekyll'), '');
 }
 
