@@ -46,9 +46,9 @@ npm run deploy
 ```
 BOB/
 ├── docs/
-│   ├── 鲸腹遗城原画集/     # 18 张概念原画、原画册、提示词
-│   └── progress.md         # 初版 MVP 的实现范围与验收记录
+│   └── 鲸腹遗城原画集/     # 原画、原画册、提示词与版本设计说明
 ├── mvp/                    # 初版（原生 Canvas + WebAudio）
+│   ├── progress.md         # 初版 MVP 的实现范围与验收记录
 │   └── deploy.mjs          # 一键发布脚本（两版一起发）
 └── mvp-nightmare/          # 新版（Three.js 2.5D）
     ├── progress.md         # 新版的实现范围与验收记录
@@ -65,6 +65,7 @@ BOB/
 
 - 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
 - 初版操作、完整路线：[mvp/README.md](mvp/README.md)
-- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](docs/progress.md)
+- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](mvp/progress.md)
+- 开发协作与项目 Skill：[AGENTS.md](AGENTS.md)
 
 注意：初版 `mvp` 本地运行时会读取上级目录的原画，不要单独移动 `mvp` 或改动原画文件名。新版不依赖原画，可独立运行。
