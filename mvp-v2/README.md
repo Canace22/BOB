@@ -22,6 +22,8 @@
 
 HUD「按键」可重绑定并自动保存。初始生命 4、蓄振上限 4；四片生命碎片增加一格生命（本批主线一片）。攻击范围、生命等来源与临时调试值见 [CAMPAIGN.md](CAMPAIGN.md)。静态角色素材配程序动作反馈，尚非正式动作动画。
 
+右侧「任务追踪」常驻显示当前主线、目标勾选与计数，以及已解锁的可选任务。本章共6项主线：踏入须门、穿过须筛、前往蟹门、击败负壳蟹、承接贴流冲、穿越流膜育窝；完成后自动接续下一项。生命碎片和清流窝为可选任务，不阻挡主线。点击追踪栏标题或右下「任务」暂停打开任务面板，可查看目标地点、完成方法和已完成记录；「操作帮助」查看按键说明。进度由实际到访、首领胜利、能力及收集状态计算，继续旧档和死亡回营后保留，重新开始会重置。靠近营地、奖励或出口会显示交互按键；改键后操作说明同步更新。
+
 新主线使用 `whalefall-v52-save`。旧四区试玩保留在 [legacy.html](legacy.html)，沿用 `whalefall-v2-2d-save`，原玩法和回访路线见 [旧四区说明](LEGACY.md)。地图工作台 `scene-lab.html` 仍描述旧四区；新主线地图在游戏内 M 打开。不同站点/浏览器存档互不迁移。
 
 ## 边做边玩与开发
@@ -54,4 +56,4 @@ node mvp-v2/tests/art-integration.mjs # 旧四区全部清单图加载和缺图�
 
 浏览器测试需 Node.js 20+ 与 Playwright/Chromium；脚本支持已有浏览器/桌面内置依赖，独立浏览器上下文不会读取日常浏览器存档。新主线测试暴露 `render_campaign_to_text()` 只读状态和 `advanceTime(ms)` 确定推进；路线验证通过真实键盘，未改写角色或战斗状态。旧四区使用 `render_game_to_text()`。
 
-当前源码职责：`campaign-levels.js` 数据和世界连接、`campaign-engine.js` 移动/战斗/存档、`campaign-renderer.js` 画面、`campaign-game.js` 输入/UI；旧四区仍使用原来的 `levels.js / engine.js / renderer.js / game.js`。资源清单、导出和 Canvas 基础绘制复用。来源适配边界见 [CAMPAIGN.md](CAMPAIGN.md)，本轮实测证据和局限见 [progress.md](progress.md)。
+当前源码职责：`campaign-levels.js` 数据和世界连接、`campaign-engine.js` 移动/战斗/存档、`campaign-renderer.js` 画面、`campaign-game.js` 输入/UI、`campaign-quests.js` 任务定义与状态投影；旧四区仍使用原来的 `levels.js / engine.js / renderer.js / game.js`。资源清单、导出和 Canvas 基础绘制复用。来源适配边界见 [CAMPAIGN.md](CAMPAIGN.md)，本轮实测证据和局限见 [progress.md](progress.md)。
