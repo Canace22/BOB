@@ -45,6 +45,7 @@ npm run deploy
 
 ```
 BOB/
+├── assets/                # 美术资源入口、台账、制作源与游戏导出资源
 ├── docs/
 │   └── 鲸腹遗城原画集/     # 原画、原画册、提示词与版本设计说明
 ├── mvp/                    # 初版（原生 Canvas + WebAudio）
@@ -62,6 +63,8 @@ BOB/
 - 其余器官区域、鲸落四阶段演化和 Boss 尚未实现。
 
 ## 更多说明
+
+- 美术资源统一管理：[目录约定](assets/README.md) · [资源台账](assets/catalog.md)
 
 - 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
 - 初版操作、完整路线：[mvp/README.md](mvp/README.md)
