@@ -4,6 +4,16 @@
 // Explicit source-pixel attachment/crop coordinates must apply exportScale(X/Y).
 // Full background canvases and separate left/right poses remain intact.
 export const ART_ASSETS = {
+  "r1-hanging-root": {
+    id: "r1-hanging-root", src: "../assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp",
+    sourceFile: "assets/runtime/sprites/r1-hanging-root/base.png",
+    sourceWidth: 1448, sourceHeight: 1086,
+    exportScale: 0.26519337016574585, exportScaleY: 0.26519337016574585,
+    width: 384, height: 288,
+    bbox: [55.95580110497237,19.093922651933703,326.4530386740331,270.76243093922653], pivot: [191.20441988950276,19.093922651933703],
+    world: {"axis":"height","units":2.2,"visibleWidthU":2.3646,"visibleHeightU":2.2},
+    source: {"region":"R1","batchId":"r1-hanging-root","references":[]},
+  },
   "r1-water-base": {
     id: "r1-water-base", src: "../assets/runtime/sprites/whalefall-v2-optimized/r1-water-base.webp",
     sourceFile: "assets/runtime/sprites/r1-water-base/background.png",
@@ -11,7 +21,7 @@ export const ART_ASSETS = {
     exportScale: 1.0, exportScaleY: 1.0,
     width: 1536, height: 864,
     bbox: [0.0,0.0,1536.0,864.0], pivot: [768.0,432.0],
-    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32.0,"visibleHeightU":18.0,"canvasWidthU":32.0,"canvasHeightU":18.0},
+    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32,"visibleHeightU":18,"canvasWidthU":32,"canvasHeightU":18},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/06_R1.png"]},
   },
   "r1-oral-far-layer": {
@@ -21,7 +31,7 @@ export const ART_ASSETS = {
     exportScale: 0.9563135846798324, exportScaleY: 0.9564293304994687,
     width: 1598, height: 900,
     bbox: [0.0,0.0,1598.0,453.34750265674813], pivot: [799.0,450.0],
-    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32.0,"visibleHeightU":9.0772,"canvasWidthU":32.0,"canvasHeightU":18.0203},
+    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32,"visibleHeightU":9.0772,"canvasWidthU":32,"canvasHeightU":18.0203},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/06_R1.png"]},
   },
   "r2-water-base": {
@@ -31,7 +41,7 @@ export const ART_ASSETS = {
     exportScale: 1.0, exportScaleY: 1.0,
     width: 1536, height: 864,
     bbox: [0.0,0.0,1536.0,864.0], pivot: [768.0,432.0],
-    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32.0,"visibleHeightU":18.0,"canvasWidthU":32.0,"canvasHeightU":18.0},
+    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32,"visibleHeightU":18,"canvasWidthU":32,"canvasHeightU":18},
     source: {"region":"R2","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/14_R2.png"]},
   },
   "r2-lung-far-layer": {
@@ -41,7 +51,7 @@ export const ART_ASSETS = {
     exportScale: 0.9563397129186603, exportScaleY: 0.9564293304994687,
     width: 1599, height: 900,
     bbox: [0.0,0.0,1599.0,710.6269925611052], pivot: [799.5,450.0],
-    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32.0,"visibleHeightU":14.2201,"canvasWidthU":32.0,"canvasHeightU":18.0096},
+    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32,"visibleHeightU":14.2201,"canvasWidthU":32,"canvasHeightU":18.0096},
     source: {"region":"R2","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/14_R2.png"]},
   },
   "r3-water-base": {
@@ -51,7 +61,7 @@ export const ART_ASSETS = {
     exportScale: 1.0, exportScaleY: 1.0,
     width: 1536, height: 864,
     bbox: [0.0,0.0,1536.0,864.0], pivot: [768.0,432.0],
-    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32.0,"visibleHeightU":18.0,"canvasWidthU":32.0,"canvasHeightU":18.0},
+    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32,"visibleHeightU":18,"canvasWidthU":32,"canvasHeightU":18},
     source: {"region":"R3","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/21_R3.png"]},
   },
   "r3-gastric-far-layer": {
@@ -61,7 +71,7 @@ export const ART_ASSETS = {
     exportScale: 0.9563397129186603, exportScaleY: 0.9564293304994687,
     width: 1599, height: 900,
     bbox: [0.0,0.0,1599.0,900.0], pivot: [799.5,450.0],
-    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32.0,"visibleHeightU":18.0096,"canvasWidthU":32.0,"canvasHeightU":18.0096},
+    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32,"visibleHeightU":18.0096,"canvasWidthU":32,"canvasHeightU":18.0096},
     source: {"region":"R3","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/21_R3.png"]},
   },
   "r4-water-base": {
@@ -71,7 +81,7 @@ export const ART_ASSETS = {
     exportScale: 1.0, exportScaleY: 1.0,
     width: 1536, height: 864,
     bbox: [0.0,0.0,1536.0,864.0], pivot: [768.0,432.0],
-    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32.0,"visibleHeightU":18.0,"canvasWidthU":32.0,"canvasHeightU":18.0},
+    world: {"axis":"width","units":32,"space":"canvas","visibleWidthU":32,"visibleHeightU":18,"canvasWidthU":32,"canvasHeightU":18},
     source: {"region":"R4","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/30_R4.png"]},
   },
   "r4-vertebrae-far-layer": {
@@ -81,7 +91,7 @@ export const ART_ASSETS = {
     exportScale: 0.9563397129186603, exportScaleY: 0.9564293304994687,
     width: 1599, height: 900,
     bbox: [0.0,0.0,1599.0,643.6769394261424], pivot: [799.5,450.0],
-    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32.0,"visibleHeightU":12.8804,"canvasWidthU":32.0,"canvasHeightU":18.0096},
+    world: {"axis":"width","units":32,"basis":"layer canvas projection width, not physical organ size","space":"canvas","visibleWidthU":32,"visibleHeightU":12.8804,"canvasWidthU":32,"canvasHeightU":18.0096},
     source: {"region":"R4","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/30_R4.png"]},
   },
   "tide-picker": {
@@ -91,7 +101,7 @@ export const ART_ASSETS = {
     exportScale: 0.19844961240310077, exportScaleY: 0.1985233798195242,
     width: 256, height: 242,
     bbox: [42.86511627906977,13.102543068088597,231.3922480620155,228.6989335520919], pivot: [137.12868217054265,228.6989335520919],
-    world: {"axis":"height","units":1.0,"visibleWidthU":0.8748,"visibleHeightU":1.0},
+    world: {"axis":"height","units":1,"visibleWidthU":0.8748,"visibleHeightU":1},
     source: {"region":"全局","batchId":"whalefall-v5-2-static-01","references":["assets/source/whalefall-v5-2-static-01/references/03_H01_拾潮者·三视图与挂点.png","assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"]},
   },
   "tide-picker-left": {
@@ -101,7 +111,7 @@ export const ART_ASSETS = {
     exportScale: 0.19844961240310077, exportScaleY: 0.1985233798195242,
     width: 256, height: 242,
     bbox: [38.10232558139535,11.712879409351928,176.22325581395347,233.66201804757998], pivot: [107.16279069767441,233.66201804757998],
-    world: {"axis":"height","units":1,"basis":"设计明确主角高度1U=0.30m。","visibleWidthU":0.6225,"visibleHeightU":1.0,"canvasWidthU":1.1538,"canvasHeightU":1.0903},
+    world: {"axis":"height","units":1,"basis":"设计明确主角高度1U=0.30m。","visibleWidthU":0.6225,"visibleHeightU":1,"canvasWidthU":1.1538,"canvasHeightU":1.0903},
     source: {"region":"all","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/03_H01_拾潮者·三视图与挂点.png","assets/runtime/sprites/tide-picker/idle-right.png","assets/source/tide-picker-left/references/tide-picker-left_v01-wrong-attachments-ff5911920744.png","assets/source/tide-picker-left/references/tide-picker-left_v02-backward-tool-775c76cfe63a.png","assets/source/tide-picker-left/references/tide-picker-left_v03-long-cape-de4d89edadc6.png"]},
   },
   "shell-camp": {
@@ -181,7 +191,7 @@ export const ART_ASSETS = {
     exportScale: 0.25, exportScaleY: 0.25,
     width: 384, height: 256,
     bbox: [77.5,52.75,304.75,204.0], pivot: [191.125,204.0],
-    world: {"axis":"height","units":1,"basis":"可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证","visibleWidthU":1.5025,"visibleHeightU":1.0,"canvasWidthU":2.5388,"canvasHeightU":1.6926},
+    world: {"axis":"height","units":1,"basis":"可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证","visibleWidthU":1.5025,"visibleHeightU":1,"canvasWidthU":2.5388,"canvasHeightU":1.6926},
     source: {"region":"共享","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/23_R3-02.png","assets/source/whalefall-v5-2-complete/references/18_R2-04.png","assets/source/whalefall-v5-2-complete/references/46_R5-07.png"]},
   },
   "bypass-valve-lever": {
@@ -201,7 +211,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [27.94449583718779,62.45942228335626,995.5818686401481,314.6629986244842], pivot: [512.0,91.79642365887207],
-    world: {"axis":"width","units":10.0,"visibleWidthU":10.0,"visibleHeightU":2.6089},
+    world: {"axis":"width","units":10,"visibleWidthU":10,"visibleHeightU":2.6089},
     source: {"region":"R1","batchId":"whalefall-v5-2-static-01","references":["assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"]},
   },
   "r1-weight-membrane": {
@@ -211,7 +221,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [25.576318223866792,79.96698762035764,999.8445883441259,272.5502063273728], pivot: [512.7104532839963,272.5502063273728],
-    world: {"axis":"width","units":5,"visibleWidthU":5.0,"visibleHeightU":0.9893,"canvasWidthU":5.2552,"canvasHeightU":1.7671},
+    world: {"axis":"width","units":5,"visibleWidthU":5,"visibleHeightU":0.9893,"canvasWidthU":5.2552,"canvasHeightU":1.7671},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/09_R1-03.png"]},
   },
   "r1-weight-membrane-pressed": {
@@ -221,7 +231,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [25.102682701202593,78.07427785419533,990.8455134135061,280.5942228335626], pivot: [507.97409805735435,280.5942228335626],
-    world: {"axis":"width","units":5,"visibleWidthU":5.0,"visibleHeightU":1.0495,"canvasWidthU":5.3016,"canvasHeightU":1.7827},
+    world: {"axis":"width","units":5,"visibleWidthU":5,"visibleHeightU":1.0495,"canvasWidthU":5.3016,"canvasHeightU":1.7827},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/09_R1-03.png"]},
   },
   "r2-membrane-platform": {
@@ -231,7 +241,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [28.41813135985199,90.85006877579093,995.5818686401481,280.12104539202204], pivot: [512.0,280.12104539202204],
-    world: {"axis":"width","units":8,"visibleWidthU":8.0,"visibleHeightU":1.5671,"canvasWidthU":8.4701,"canvasHeightU":2.8482},
+    world: {"axis":"width","units":8,"visibleWidthU":8,"visibleHeightU":1.5671,"canvasWidthU":8.4701,"canvasHeightU":2.8482},
     source: {"region":"R2","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/15_R2-01.png","assets/source/whalefall-v5-2-complete/references/16_R2-02.png"]},
   },
   "r3-bank-platform": {
@@ -241,7 +251,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [39.785383903792784,90.37689133425035,984.6882516188715,296.2090784044017], pivot: [512.2368177613321,296.2090784044017],
-    world: {"axis":"width","units":8,"visibleWidthU":8.0,"visibleHeightU":1.7444,"canvasWidthU":8.6697,"canvasHeightU":2.9153},
+    world: {"axis":"width","units":8,"visibleWidthU":8,"visibleHeightU":1.7444,"canvasWidthU":8.6697,"canvasHeightU":2.9153},
     source: {"region":"R3","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/23_R3-02.png","assets/source/whalefall-v5-2-complete/references/26_R3-05.png"]},
   },
   "r4-bone-platform": {
@@ -251,7 +261,7 @@ export const ART_ASSETS = {
     exportScale: 0.4880838894184938, exportScaleY: 0.4886515353805073,
     width: 1024, height: 366,
     bbox: [30.74928503336511,116.78771695594125,993.2507149666349,307.3618157543391], pivot: [512.0,307.3618157543391],
-    world: {"axis":"width","units":8,"visibleWidthU":8.0,"visibleHeightU":1.5822,"canvasWidthU":8.5112,"canvasHeightU":3.0385},
+    world: {"axis":"width","units":8,"visibleWidthU":8,"visibleHeightU":1.5822,"canvasWidthU":8.5112,"canvasHeightU":3.0385},
     source: {"region":"R4","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/30_R4.png","assets/source/whalefall-v5-2-complete/references/32_R4-02.png"]},
   },
   "r1-baleen-shadow": {
@@ -261,7 +271,7 @@ export const ART_ASSETS = {
     exportScale: 0.534446764091858, exportScaleY: 0.5347137637028014,
     width: 1024, height: 439,
     bbox: [6.413361169102296,48.12423873325213,1015.9832985386221,421.35444579780756], pivot: [511.19832985386216,421.35444579780756],
-    world: {"axis":"width","units":14,"visibleWidthU":14.0,"visibleHeightU":5.1731,"canvasWidthU":14.2001,"canvasHeightU":6.0847},
+    world: {"axis":"width","units":14,"visibleWidthU":14,"visibleHeightU":5.1731,"canvasWidthU":14.2001,"canvasHeightU":6.0847},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/06_R1.png","assets/source/whalefall-v5-2-complete/references/08_R1-02.png"]},
   },
   "r2-foreground-membrane": {
@@ -271,7 +281,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [19.892691951896392,30.283356258596974,1004.1073080481036,319.39477303988997], pivot: [512.0,319.39477303988997],
-    world: {"axis":"width","units":14,"visibleWidthU":14.0,"visibleHeightU":4.1165,"canvasWidthU":14.5659,"canvasHeightU":4.898},
+    world: {"axis":"width","units":14,"visibleWidthU":14,"visibleHeightU":4.1165,"canvasWidthU":14.5659,"canvasHeightU":4.898},
     source: {"region":"R2","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/14_R2.png"]},
   },
   "r3-foreground-fold": {
@@ -281,7 +291,7 @@ export const ART_ASSETS = {
     exportScale: 0.5039370078740157, exportScaleY: 0.5038759689922481,
     width: 1024, height: 390,
     bbox: [11.086614173228346,208.6046511627907,1013.9212598425197,377.4031007751938], pivot: [512.503937007874,377.4031007751938],
-    world: {"axis":"width","units":14,"visibleWidthU":14.0,"visibleHeightU":2.3568,"canvasWidthU":14.2955,"canvasHeightU":5.4452},
+    world: {"axis":"width","units":14,"visibleWidthU":14,"visibleHeightU":2.3568,"canvasWidthU":14.2955,"canvasHeightU":5.4452},
     source: {"region":"R3","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/21_R3.png"]},
   },
   "r4-foreground-bone": {
@@ -291,7 +301,7 @@ export const ART_ASSETS = {
     exportScale: 0.47363552266419984, exportScaleY: 0.4731774415405777,
     width: 1024, height: 344,
     bbox: [26.52358926919519,79.96698762035764,999.3709528214616,313.716643741403], pivot: [512.9472710453284,313.716643741403],
-    world: {"axis":"width","units":14,"visibleWidthU":14.0,"visibleHeightU":3.3671,"canvasWidthU":14.7361,"canvasHeightU":4.9552},
+    world: {"axis":"width","units":14,"visibleWidthU":14,"visibleHeightU":3.3671,"canvasWidthU":14.7361,"canvasHeightU":4.9552},
     source: {"region":"R4","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/30_R4.png"]},
   },
   "habitat-fungus-bed": {
@@ -301,7 +311,7 @@ export const ART_ASSETS = {
     exportScale: 0.21645997745208567, exportScaleY: 0.21645997745208567,
     width: 384, height: 192,
     bbox: [39.17925591882751,48.70349492671927,344.3878241262683,161.9120631341601], pivot: [191.7835400225479,161.9120631341601],
-    world: {"axis":"width","units":2.0,"basis":"制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。","visibleWidthU":2.0,"visibleHeightU":0.7418,"canvasWidthU":2.5163,"canvasHeightU":1.2582},
+    world: {"axis":"width","units":2,"basis":"制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。","visibleWidthU":2,"visibleHeightU":0.7418,"canvasWidthU":2.5163,"canvasHeightU":1.2582},
     source: {"region":"共享","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/22_R3-01.png"]},
   },
   "habitat-shell-nest": {
@@ -311,7 +321,7 @@ export const ART_ASSETS = {
     exportScale: 0.21645997745208567, exportScaleY: 0.21645997745208567,
     width: 384, height: 192,
     bbox: [12.121758737316798,42.859075535512964,371.87824126268316,161.9120631341601], pivot: [192.0,161.9120631341601],
-    world: {"axis":"width","units":2.0,"basis":"制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。","visibleWidthU":2.0,"visibleHeightU":0.6619,"canvasWidthU":2.1348,"canvasHeightU":1.0674},
+    world: {"axis":"width","units":2,"basis":"制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。","visibleWidthU":2,"visibleHeightU":0.6619,"canvasWidthU":2.1348,"canvasHeightU":1.0674},
     source: {"region":"共享","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/11_R1-05.png"]},
   },
   "habitat-larva-trough": {
@@ -391,7 +401,7 @@ export const ART_ASSETS = {
     exportScale: 0.5130260521042084, exportScaleY: 0.5126903553299492,
     width: 1024, height: 404,
     bbox: [35.39879759519038,35.3756345177665,993.2184368737475,374.7766497461929], pivot: [514.3086172344689,374.7766497461929],
-    world: {"axis":"width","units":16,"visibleWidthU":16.0,"visibleHeightU":5.6733,"canvasWidthU":17.1055,"canvasHeightU":6.7531},
+    world: {"axis":"width","units":16,"visibleWidthU":16,"visibleHeightU":5.6733,"canvasWidthU":17.1055,"canvasHeightU":6.7531},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/07_R1-01.png"]},
   },
   "r1-esophagus-fold": {
@@ -401,7 +411,7 @@ export const ART_ASSETS = {
     exportScale: 0.6352357320099256, exportScaleY: 0.6352459016393442,
     width: 1024, height: 620,
     bbox: [19.692307692307693,17.78688524590164,1014.4714640198512,604.1188524590164], pivot: [517.0818858560795,604.1188524590164],
-    world: {"axis":"width","units":18,"visibleWidthU":18.0,"visibleHeightU":10.6092,"canvasWidthU":18.5287,"canvasHeightU":11.2184},
+    world: {"axis":"width","units":18,"visibleWidthU":18,"visibleHeightU":10.6092,"canvasWidthU":18.5287,"canvasHeightU":11.2184},
     source: {"region":"R1","batchId":"whalefall-v5-2-complete","references":["assets/source/whalefall-v5-2-complete/references/11_R1-05.png"]},
   },
   "r1-baleen-curtain": {
@@ -411,7 +421,7 @@ export const ART_ASSETS = {
     exportScale: 0.6124401913875598, exportScaleY: 0.61211477151966,
     width: 1024, height: 576,
     bbox: [12.861244019138756,88.75664187035069,1010.5263157894736,491.528161530287], pivot: [511.6937799043062,88.75664187035069],
-    world: {"axis":"width","units":16.0,"visibleWidthU":16.0,"visibleHeightU":6.4629},
+    world: {"axis":"width","units":16,"visibleWidthU":16,"visibleHeightU":6.4629},
     source: {"region":"R1","batchId":"whalefall-v5-2-static-01","references":["assets/source/whalefall-v5-2-static-01/references/08_R1-02.png","assets/source/whalefall-v5-2-static-01/references/06_R1.png"]},
   },
 };

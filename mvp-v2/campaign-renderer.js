@@ -26,19 +26,28 @@ export class CampaignRenderer extends Renderer {
     }
     c.save(); c.translate(-this.camera, -(s.camera?.y || 0));
     this.scenery(room);
-    this.lowerAnatomy(room);
     for (const p of room.terrain || []) this.organicTerrain(p, room);
     for (const p of room.platforms || []) {
-      this.pillar(p.x+p.w/2,p.y,Math.min(room.height+100,p.y+260),Math.min(p.w*.26,48));
-      if (!this.art.platform(p, artRoom, s)) {
+      // Dedicated painted bitmap, at its original aspect ratio. No generated
+      // geometry or stretched platform crop is used as a structural support.
+      if (['R1-05-middle-a','R1-05-middle-b'].includes(p.id))
+        this.art.sprite('r1-hanging-root',p.x+p.w/2,p.y+12,{alpha:.85});
+      // Use the whole painted silhouette, uniformly scaled to the ledge width;
+      // cutting a repeated horizontal tile leaves conspicuous square ends.
+      if (!this.art.sprite('r1-tongue-ledge',p.x+p.w/2,p.y,{units:p.w/ART_ASSETS['r1-tongue-ledge'].world.units})) {
         c.fillStyle = '#55706c'; c.fillRect(p.x, p.y, p.w, p.h);
         this.line([[p.x,p.y],[p.x+p.w,p.y]], '#d6d4b2', 2);
       }
     }
     for (const h of room.hazards || []) {
       const phase=campaignHazardPhase(h,s.hazardTime).phase;
-      c.fillStyle=({warning:'#e5c78045',active:'#d77f616b',safe:'#91d9d01c',soft:'#91d9d01c'})[phase];c.fillRect(h.x,h.y,h.w,h.h);
-      this.line([[h.x,h.y],[h.x+h.w,h.y]],phase==='active'?'#e89b83':phase==='warning'?'#f9dfa0':'#91d9d0',2);
+      if(h.mechanism==='shrimp-migration') {
+        for(let i=0;i<3;i++)this.art.sprite('baleen-shrimp-swarm',h.x+(i+.5)*h.w/3,h.y+5,{alpha:phase==='active'?1:phase==='warning'?.7:.25});
+      } else {
+        const id=phase==='active'?'r1-weight-membrane-pressed':'r1-weight-membrane',a=ART_ASSETS[id],units=h.w/a.world.units;
+        this.art.sprite(id,h.x+h.w/2,h.y+(a.bbox[3]-a.bbox[1])*this.art.scale(id,units),{units,alpha:phase==='soft'?.7:1});
+      }
+      if(phase==='soft')this.label('软床 · 失足返回',h.x+h.w/2,h.y+48,'#9bbab1');
       if(phase==='warning'||phase==='active')this.label(phase==='warning'?'即将涌动':'危险 · 跃过',h.x+h.w/2,h.y-19,phase==='warning'?'#f9dfa0':'#e9ae98');
     }
     for (const camp of room.camps || []) {
@@ -75,6 +84,7 @@ export class CampaignRenderer extends Renderer {
       this.label('A3',anchor.x,anchor.y-20,'#89b4a6');
     }
     for (const exit of room.exits || []) {
+      if(exit.x < this.camera-35 || exit.x > this.camera+1315)continue;
       const locked = exit.requires?.some(f => !s.flags.has(f) && !s.abilities.has(f));
       this.ellipse(exit.x,exit.y-25,20,38,null,locked?'#ad9281':'#a4d9c6',2);
       this.label(exit.label || exit.to,exit.x,exit.y-73,locked?'#c5a88a':'#badbd1');
@@ -88,9 +98,9 @@ export class CampaignRenderer extends Renderer {
       c.fillStyle='#d7d9ba'; c.fillRect(p.x,p.y,p.w,p.h);
     }
     c.restore();
-    if(room.anatomy!=='esophagus')this.art.foreground(artRoom);
     if (s.attack) this.volume(s.attack,s.attack.kind === 'heavy'?'#edcf8c88':'#a8ece699');
     c.restore();
+    if(room.anatomy!=='esophagus')this.art.foreground(artRoom);
     if (s.respawnFlash > 0) { c.fillStyle=`rgba(186,220,212,${Math.min(.5,s.respawnFlash*.4)})`; c.fillRect(0,0,1280,720); }
   }
 
@@ -100,24 +110,6 @@ export class CampaignRenderer extends Renderer {
       if(image){const c=this.ctx;c.save();c.globalAlpha=.4;c.drawImage(image,this.camera-180,-270,1600,780);c.translate(this.camera+1380,room.height+390);c.rotate(Math.PI);c.globalAlpha=.18;c.drawImage(image,0,0,1600,780);c.restore();}
     }
   }
-  lowerAnatomy(room) {
-    // Recessed tissue and narrow roots give the walkable rim its anatomical
-    // structure. They never create extra collision or cover the route.
-    const c=this.ctx, y=room.height-35;
-    c.save();c.globalAlpha=.38;
-    for(let x=-100;x<room.width;x+=610)this.art.sprite(room.anatomy==='esophagus'?'r1-esophagus-fold':'r1-wound-section',x+350,y+205,{units:35,alpha:.6});
-    c.restore();
-  }
-  pillar(x,top,bottom,radius) {
-    const c=this.ctx,image=this.art.image('r1-tongue-ledge');
-    c.save();c.beginPath();c.moveTo(x-radius*2,top+15);
-    c.bezierCurveTo(x-radius*.3,top+50,x-radius*.6,bottom-30,x-radius*1.5,bottom);
-    c.lineTo(x+radius*1.5,bottom);
-    c.bezierCurveTo(x+radius*.6,bottom-30,x+radius*.3,top+50,x+radius*2,top+15);c.closePath();c.clip();
-    c.fillStyle='#374a46';c.fillRect(x-radius*2,top,radius*4,bottom-top);
-    if(image){c.globalAlpha=.65;c.drawImage(image,image.width*.28,image.height*.25,image.width*.25,image.height*.65,x-radius*2,top,radius*4,bottom-top);}
-    c.restore();
-  }
   organicTerrain(surface,room) {
     const key=`organic-${surface.id}`;
     let cached=this.art.terrainCache.get(key);
@@ -125,7 +117,6 @@ export class CampaignRenderer extends Renderer {
       const first=surface.points[0],last=surface.points.at(-1),top=Math.floor(Math.min(...surface.points.map(p=>p.y)));
       const canvas=document.createElement('canvas');canvas.width=Math.ceil(last.x-first.x)+2;canvas.height=Math.ceil(room.height+110-top);
       const old=this.ctx,c=canvas.getContext('2d');c.translate(-first.x,-top);this.ctx=c;
-      if(last.x-first.x>300)for(let x=first.x+150;x<last.x-70;x+=390)this.pillar(x,terrainHeightAt(surface,x),room.height+100,35);
       const image=this.art.image('r1-tongue-ledge'),a=ART_ASSETS['r1-tongue-ledge'];
       if(image) {
         const scale=this.art.scale('r1-tongue-ledge'),cropY=220*a.exportScaleY,left=a.bbox[0]+80*a.exportScale,sw=a.bbox[2]-left-80*a.exportScale,sh=a.bbox[3]-cropY;
