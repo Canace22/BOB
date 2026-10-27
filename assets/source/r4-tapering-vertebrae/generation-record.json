@@ -1,0 +1,117 @@
+{
+  "id": "r4-tapering-vertebrae",
+  "name": "渐细椎列过渡地标",
+  "coversRequirementIds": [
+    "r4-tailward-vertebrae"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/36_R4-06.png"
+  ],
+  "region": "R4",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 26,
+    "visibleWidthU": 26.0,
+    "visibleHeightU": 8.5631,
+    "canvasWidthU": 26.2859,
+    "canvasHeightU": 9.2467
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R4-06",
+    "R5-01",
+    "R5-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "六节椎骨由大到小相连，外侧视角且无后段肋骨；左端余量较小但轮廓未截断，合成以 alpha bbox 校准。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "与主背景组合表达向头/向尾，位置实例不重复出图",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-tapering-vertebrae.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-45b0e7ab-a0af-4ec9-8deb-21adbdda25ed.png",
+  "width": 2115,
+  "height": 744,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      11,
+      11,
+      2115,
+      744
+    ],
+    "8": [
+      14,
+      14,
+      2106,
+      703
+    ],
+    "32": [
+      15,
+      14,
+      2106,
+      702
+    ],
+    "128": [
+      15,
+      15,
+      2105,
+      702
+    ],
+    "248": [
+      16,
+      16,
+      2104,
+      701
+    ]
+  },
+  "sha256": "ad38918ae35a5ee0a059fc9f5ddfa225f6d473f652826dd9ca2598562fdae1b9",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-tapering-vertebrae.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE complete external vertebral column landmark segment, side-view, from dead whale R4 region. A chain of SIX connected ivory-grey whale vertebrae, large at LEFT progressively smaller to RIGHT, joined by worn fibrous intervertebral discs. Clear rounded centra and short upward neural spines, longer anterior spines left and small posterior spines right; gently descending curve. We see the EXTERIOR lateral side, never inside spinal canal. No ribs at all, no rib cage, no fins or flukes, no stone arches, doors, platforms, plants or rope. Muted matte old ivory with cool gray shadows and discreet marine erosion pores; less bright than gameplay platforms. Long coherent anatomical landmark 26 hero units wide, entirely contained within transparent padding.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/36_R4-06.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r4",
+      "r4-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    14,
+    14,
+    2106,
+    703
+  ],
+  "alphaStats": {
+    "zero": 971137,
+    "semi8to247": 18113,
+    "nearOpaque": 563028,
+    "total": 1573560
+  },
+  "world": {
+    "axis": "width",
+    "units": 26,
+    "visibleWidthU": 26.0,
+    "visibleHeightU": 8.5631,
+    "canvasWidthU": 26.2859,
+    "canvasHeightU": 9.2467
+  },
+  "pivot": [
+    1060.0,
+    703
+  ]
+}

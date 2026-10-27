@@ -1,0 +1,92 @@
+{
+  "id": "r1-mouth-depth",
+  "name": "口腔深水背景",
+  "kind": "background",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "单屏背景；非无缝平铺纹理、非碰撞图。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-mouth-depth/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "pivot": [
+    836.0,
+    941
+  ],
+  "world": {
+    "axis": "width",
+    "units": 29.857,
+    "visibleWidthU": 29.857,
+    "visibleHeightU": 16.8035
+  },
+  "sha256": "c794c2c5ddb2724d62219c809bb518372baecc00812659ab513cbf737ea8a9f2",
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "16": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png",
+      "assets/source/whalefall-v5-2-static-01/references/06_R1.png"
+    ],
+    "prompts": [
+      "assets/source/r1-mouth-depth/r1-mouth-depth_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "r1-mouth-depth_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "单屏背景；非无缝平铺纹理、非碰撞图。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background"
+}

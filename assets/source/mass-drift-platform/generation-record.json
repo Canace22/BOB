@@ -1,0 +1,117 @@
+{
+  "id": "mass-drift-platform",
+  "familyId": "floating-platform",
+  "name": "质量漂盘",
+  "scale": {
+    "axis": "width",
+    "units": 2.4
+  },
+  "coversRequirementIds": [
+    "floating-platform"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/mass-drift-platform.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/mass-drift-platform.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1942,
+    809
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    136,
+    180,
+    1811,
+    669
+  ],
+  "pivot": [
+    973.5,
+    669
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "6838b9b9a527a29dfb007c637e66f5ced9e023e84eb6a9ee04de5fee184ebcb8",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Independent movable disc, excludes fixed bank; two dock positions handled as transform.",
+    "transparentPixels": 952290,
+    "totalPixels": 1571078,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "dock": {
+      "pixel": [
+        972,
+        400
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Independent movable disc, excludes fixed bank; two dock positions handled as transform.",
+  "world": {
+    "axis": "width",
+    "units": 2.4,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.4,
+    "visibleHeightU": 0.7007,
+    "canvasWidthU": 2.7826,
+    "canvasHeightU": 1.1592
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/mass-drift-platform.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png"
+  ],
+  "productionGroup": "props",
+  "width": 1942,
+  "height": 809,
+  "alphaBboxes": {
+    "1": [
+      0,
+      8,
+      1922,
+      809
+    ],
+    "8": [
+      136,
+      180,
+      1811,
+      669
+    ],
+    "32": [
+      136,
+      180,
+      1811,
+      669
+    ],
+    "128": [
+      137,
+      181,
+      1810,
+      668
+    ],
+    "248": [
+      138,
+      182,
+      1809,
+      667
+    ]
+  },
+  "alphaStats": {
+    "zero": 952290,
+    "semi8to247": 9967,
+    "nearOpaque": 597792,
+    "total": 1571078
+  }
+}

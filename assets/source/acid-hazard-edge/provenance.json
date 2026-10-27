@@ -1,0 +1,114 @@
+{
+  "id": "acid-hazard-edge",
+  "name": "酸性沉积危险槽边",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3-06 酸性沉积危险边；腐蚀粒子另层，静态资产不模拟活胃分泌。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/acid-hazard-edge/base.png",
+  "width": 2126,
+  "height": 740,
+  "bbox": [
+    51,
+    141,
+    2075,
+    657
+  ],
+  "pivot": [
+    1063.0,
+    657
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.7648,
+    "canvasWidthU": 3.1512,
+    "canvasHeightU": 1.0968
+  },
+  "sha256": "60b4256b05ec53ce8242a7d9e27df7d35f1a2292115f943d1769a2910c8490bf",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      9,
+      2106,
+      740
+    ],
+    "8": [
+      51,
+      141,
+      2075,
+      657
+    ],
+    "32": [
+      51,
+      141,
+      2074,
+      657
+    ],
+    "128": [
+      52,
+      142,
+      2073,
+      656
+    ],
+    "248": [
+      54,
+      143,
+      2072,
+      655
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/27_R3-06.png"
+    ],
+    "prompts": [
+      "assets/source/acid-hazard-edge/acid-hazard-edge.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3-06 酸性沉积危险边；腐蚀粒子另层，静态资产不模拟活胃分泌。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-hazard-surfaces"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/acid-hazard-edge-60b4256b05ec.png",
+  "familyId": "r3-hazard-surfaces",
+  "variant": "static"
+}

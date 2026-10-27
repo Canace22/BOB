@@ -1,0 +1,85 @@
+{
+  "id": "eel-mucus-projectile",
+  "name": "孔鳗直线黏液弹体",
+  "kind": "effect",
+  "region": "R3",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/supplement/eel-mucus-projectile.png",
+  "world": {
+    "axis": "width",
+    "units": 0.9,
+    "basis": "依据孔鳗攻击规则功能适配的初始尺寸，实际弹速与判定另行接入。",
+    "visibleWidthU": 0.9,
+    "visibleHeightU": 0.1846,
+    "canvasWidthU": 1.0857,
+    "canvasHeightU": 0.4428
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/supplement/eel-mucus-projectile.prompt.txt",
+  "referenceFiles": [
+    "49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blind-eel.png"
+  ],
+  "coversRequirementIds": [
+    "fx-eel-mucus"
+  ],
+  "notes": "文字规则明确直线黏液，原画未单独展示弹体；沿孔鳗材料功能适配，静态朝左，运动轨迹、碰撞与发射时序未接入。",
+  "method": "内置imagegen，按孔鳗造型与文字规则单独绘制。",
+  "qa": {
+    "status": "candidate"
+  },
+  "productionGroup": "supplement",
+  "width": 1964,
+  "height": 801,
+  "bbox": [
+    178,
+    260,
+    1806,
+    594
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "sha256": "040e968bb8137fc05fcec7638e8b3020e59f5a1f49fed2293af5ec88bae172f1",
+  "alphaBboxes": {
+    "1": [
+      130,
+      30,
+      1880,
+      775
+    ],
+    "8": [
+      178,
+      260,
+      1806,
+      594
+    ],
+    "32": [
+      178,
+      262,
+      1806,
+      594
+    ],
+    "128": [
+      179,
+      262,
+      1805,
+      594
+    ],
+    "248": [
+      180,
+      263,
+      1803,
+      592
+    ]
+  },
+  "alphaStats": {
+    "zero": 1281688,
+    "semi8to247": 16412,
+    "nearOpaque": 255844,
+    "total": 1573164
+  },
+  "pivot": [
+    992.0,
+    427.0
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "floating-platform",
+  "familyId": "floating-platform",
+  "name": "压力漂台",
+  "scale": {
+    "axis": "width",
+    "units": 3.0
+  },
+  "coversRequirementIds": [
+    "floating-platform"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/floating-platform.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/floating-platform.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1871,
+    840
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    79,
+    261,
+    1792,
+    695
+  ],
+  "pivot": [
+    935.5,
+    695
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "106a30d7fe7283f63b580f49463b4b469b5a353ed9c7af2f246f0696c020c904",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Low shell raft top is standable; attachment eye left. Platform motion/three positions are code, not extra PNGs.",
+    "transparentPixels": 1081475,
+    "totalPixels": 1571640,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "tetherEye": {
+      "pixel": [
+        204,
+        402
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Low shell raft top is standable; attachment eye left. Platform motion/three positions are code, not extra PNGs.",
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.7601,
+    "canvasWidthU": 3.2767,
+    "canvasHeightU": 1.4711
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/floating-platform.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png"
+  ],
+  "productionGroup": "props",
+  "width": 1871,
+  "height": 840,
+  "alphaBboxes": {
+    "1": [
+      0,
+      31,
+      1849,
+      840
+    ],
+    "8": [
+      79,
+      261,
+      1792,
+      695
+    ],
+    "32": [
+      79,
+      262,
+      1792,
+      695
+    ],
+    "128": [
+      80,
+      263,
+      1791,
+      694
+    ],
+    "248": [
+      81,
+      264,
+      1790,
+      693
+    ]
+  },
+  "alphaStats": {
+    "zero": 1081475,
+    "semi8to247": 17503,
+    "nearOpaque": 452919,
+    "total": 1571640
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": "anchor-tissue-mount",
+  "familyId": "shared-anchor-mount",
+  "name": "固定环组织基座",
+  "scale": {
+    "axis": "width",
+    "units": 0.7
+  },
+  "coversRequirementIds": [
+    "shared-anchor-mount"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/anchor-tissue-mount.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/anchor-tissue-mount.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/anchor-tissue-mount.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s16",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s16",
+      "quote": "R3-05 / R3-06：固定锚环，挂环贴裂缘布设。"
+    }
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "width": 1024,
+  "height": 1536,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    53,
+    82,
+    972,
+    1288
+  ],
+  "alphaBboxes": {
+    "1": [
+      48,
+      21,
+      1010,
+      1512
+    ],
+    "8": [
+      53,
+      82,
+      972,
+      1288
+    ],
+    "32": [
+      53,
+      82,
+      972,
+      1288
+    ],
+    "128": [
+      54,
+      83,
+      971,
+      1287
+    ],
+    "248": [
+      57,
+      85,
+      970,
+      1287
+    ]
+  },
+  "pivot": [
+    512.5,
+    82
+  ],
+  "pivotSuggestion": {
+    "type": "top-center",
+    "pixel": [
+      512.5,
+      82
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "820eaeabb726b8e49e790c8c81c20ec3fbe41ec303f95d6508f8da35a22bd408",
+  "world": {
+    "axis": "width",
+    "units": 0.7,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 0.7,
+    "visibleHeightU": 0.9186,
+    "canvasWidthU": 0.78,
+    "canvasHeightU": 1.17
+  },
+  "purpose": "R3 固定锚环组织承载基座；骨环独立叠放，勿烘焙两次。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1259538,
+    "totalPixels": 1572864,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "attachmentPoints": {
+    "ringTop": {
+      "pixel": [
+        582,
+        1243
+      ],
+      "role": "独立骨环顶部对齐小红绳挂扣中心"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1259538,
+    "semi8to247": 17251,
+    "nearOpaque": 279690,
+    "total": 1572864
+  }
+}

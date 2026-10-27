@@ -1,0 +1,121 @@
+{
+  "id": "r5-cranial-foreground",
+  "name": "颅侧暗骨板前景",
+  "kind": "scenery",
+  "region": "R5头",
+  "tags": [
+    "R5头",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-cranial-foreground/base.png",
+  "width": 2098,
+  "height": 749,
+  "bbox": [
+    44,
+    197,
+    2054,
+    709
+  ],
+  "pivot": [
+    1049.0,
+    709
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 3.5662,
+    "canvasWidthU": 14.6129,
+    "canvasHeightU": 5.2169
+  },
+  "sha256": "7f13d0879bc5fb472634879015ad8f6079460115f00280d68b9b0b741cee1366",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      31,
+      2058,
+      725
+    ],
+    "8": [
+      44,
+      197,
+      2054,
+      709
+    ],
+    "32": [
+      44,
+      197,
+      2054,
+      709
+    ],
+    "128": [
+      45,
+      198,
+      2054,
+      708
+    ],
+    "248": [
+      46,
+      199,
+      2053,
+      707
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/38_R5-head.png"
+    ],
+    "prompts": [
+      "assets/source/r5-cranial-foreground/r5-cranial-foreground.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "头部暗骨板与旧膜构成单一前景件；略亮边缘需在合成中检查，不设碰撞。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r5-cranial-foreground"
+  ],
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-cranial-foreground-7f13d0879bc5.png",
+  "state": "base"
+}

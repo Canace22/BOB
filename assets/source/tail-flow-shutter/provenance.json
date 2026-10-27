@@ -1,0 +1,129 @@
+{
+  "id": "tail-flow-shutter",
+  "name": "尾槽遮流瓣",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/tail-flow-shutter/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    349,
+    257,
+    1252,
+    773
+  ],
+  "pivot": [
+    365,
+    520
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.85,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.4875,
+    "visibleHeightU": 0.85,
+    "canvasWidthU": 2.5302,
+    "canvasHeightU": 1.6868
+  },
+  "sha256": "019c0c853c728e34492fa2f2951e78f0ff857708b0564cd7c69561092e96a74e",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      31,
+      23,
+      1500,
+      982
+    ],
+    "8": [
+      349,
+      257,
+      1252,
+      773
+    ],
+    "32": [
+      349,
+      258,
+      1251,
+      772
+    ],
+    "128": [
+      350,
+      258,
+      1251,
+      772
+    ],
+    "248": [
+      351,
+      260,
+      1250,
+      771
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png",
+      "assets/source/whalefall-v5-2-complete/references/46_R5-07.png"
+    ],
+    "prompts": [
+      "assets/source/tail-flow-shutter/tail-flow-shutter.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "尾槽遮流瓣为功能推导拆件，靠左铰点旋转表达关/开；本图没有幼体、水流或UI。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/tail-flow-shutter-019c0c853c72.png",
+  "attachmentPoints": {
+    "hinge": {
+      "pixel": [
+        365,
+        520
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "settlement-valve"
+}

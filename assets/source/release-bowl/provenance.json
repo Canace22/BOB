@@ -1,0 +1,127 @@
+{
+  "id": "release-bowl",
+  "name": "归海释放碗",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/release-bowl/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    249,
+    278,
+    1524,
+    747
+  ],
+  "pivot": [
+    886.5,
+    747
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.2,
+    "visibleHeightU": 0.8093,
+    "canvasWidthU": 3.061,
+    "canvasHeightU": 1.5305
+  },
+  "sha256": "6152e1926551cf1edf4364def81bd7f7683f2eee3657771dff85ca00934622ff",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      23,
+      1748,
+      887
+    ],
+    "8": [
+      249,
+      278,
+      1524,
+      747
+    ],
+    "32": [
+      250,
+      280,
+      1524,
+      747
+    ],
+    "128": [
+      251,
+      280,
+      1523,
+      746
+    ],
+    "248": [
+      252,
+      282,
+      1521,
+      745
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/47_R5-08.png"
+    ],
+    "prompts": [
+      "assets/source/release-bowl/release-bowl.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "结局释放碗空基底，幼体、水流、发光由可复用层组合。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "release-sluice"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/release-bowl-6152e1926551.png",
+  "attachmentPoints": {
+    "larvaCenter": {
+      "pixel": [
+        887,
+        470
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "release-sluice"
+}

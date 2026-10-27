@@ -1,0 +1,129 @@
+{
+  "id": "falling-deposit-mass",
+  "familyId": "r3-falling-deposit",
+  "name": "松动沉积块",
+  "scale": {
+    "axis": "width",
+    "units": 1.2
+  },
+  "coversRequirementIds": [
+    "r3-falling-deposit"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-mass.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-mass.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-mass.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/29_R3-08.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s16",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s16",
+      "quote": "R3-08 胃顶沉积袋：沉积落屑；高褶与破损衬层。"
+    }
+  ],
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    82,
+    203,
+    1464,
+    901
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1526,
+      1024
+    ],
+    "8": [
+      82,
+      203,
+      1464,
+      901
+    ],
+    "32": [
+      83,
+      204,
+      1464,
+      901
+    ],
+    "128": [
+      83,
+      205,
+      1463,
+      901
+    ],
+    "248": [
+      85,
+      206,
+      1460,
+      899
+    ]
+  },
+  "pivot": [
+    773.0,
+    552.0
+  ],
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      773.0,
+      552.0
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "e58d2dc11fe799ba8f0906f5253e6b98195db55bedb65d5e98951361111d5d2f",
+  "world": {
+    "axis": "width",
+    "units": 1.2,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 1.2,
+    "visibleHeightU": 0.6061,
+    "canvasWidthU": 1.3337,
+    "canvasHeightU": 0.8891
+  },
+  "purpose": "R3-08 可坠落沉积大块，独立刚体静态原型。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 955719,
+    "totalPixels": 1572864,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 955719,
+    "semi8to247": 15543,
+    "nearOpaque": 579818,
+    "total": 1572864
+  }
+}

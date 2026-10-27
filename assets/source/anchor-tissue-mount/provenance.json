@@ -1,0 +1,124 @@
+{
+  "id": "anchor-tissue-mount",
+  "name": "固定环组织基座",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3 固定锚环组织承载基座；骨环独立叠放，勿烘焙两次。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/anchor-tissue-mount/base.png",
+  "width": 1024,
+  "height": 1536,
+  "bbox": [
+    53,
+    82,
+    972,
+    1288
+  ],
+  "pivot": [
+    512.5,
+    82
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.7,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 0.7,
+    "visibleHeightU": 0.9186,
+    "canvasWidthU": 0.78,
+    "canvasHeightU": 1.17
+  },
+  "sha256": "820eaeabb726b8e49e790c8c81c20ec3fbe41ec303f95d6508f8da35a22bd408",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      48,
+      21,
+      1010,
+      1512
+    ],
+    "8": [
+      53,
+      82,
+      972,
+      1288
+    ],
+    "32": [
+      53,
+      82,
+      972,
+      1288
+    ],
+    "128": [
+      54,
+      83,
+      971,
+      1287
+    ],
+    "248": [
+      57,
+      85,
+      970,
+      1287
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/27_R3-06.png"
+    ],
+    "prompts": [
+      "assets/source/anchor-tissue-mount/anchor-tissue-mount.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3 固定锚环组织承载基座；骨环独立叠放，勿烘焙两次。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "shared-anchor-mount"
+  ],
+  "parts": [],
+  "attachmentPoints": {
+    "ringTop": {
+      "pixel": [
+        582,
+        1243
+      ],
+      "role": "独立骨环顶部对齐小红绳挂扣中心"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/anchor-tissue-mount-820eaeabb726.png",
+  "familyId": "shared-anchor-mount",
+  "variant": "static"
+}

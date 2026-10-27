@@ -1,0 +1,117 @@
+{
+  "id": "ui-panel-frame",
+  "name": "骨白界面边框",
+  "kind": "ui",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态图形，动态文字、布局、数值和按键由界面代码负责。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/ui-panel-frame/base.png",
+  "width": 512,
+  "height": 512,
+  "bbox": [
+    3,
+    3,
+    509,
+    509
+  ],
+  "pivot": [
+    256,
+    256
+  ],
+  "world": null,
+  "sha256": "dbdb4247f82c122abe5f07e457f1aaa190b97167ebf3653c3db7ffdd05bf4bad",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      3,
+      3,
+      509,
+      509
+    ],
+    "8": [
+      3,
+      3,
+      509,
+      509
+    ],
+    "32": [
+      3,
+      3,
+      509,
+      509
+    ],
+    "128": [
+      3,
+      3,
+      509,
+      509
+    ],
+    "248": [
+      3,
+      3,
+      509,
+      509
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/ui-panel-frame/ui-panel-frame.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态图形，动态文字、布局、数值和按键由界面代码负责。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "ui",
+  "coversRequirementIds": [
+    "ui-map",
+    "ui-module-camp",
+    "ui-pause-settings",
+    "ui-travel-selection",
+    "ui-dialogue-memory"
+  ],
+  "nineSlice": [
+    36,
+    36,
+    36,
+    36
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/ui-panel-frame-dbdb4247f82c.png"
+}

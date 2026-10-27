@@ -1,0 +1,122 @@
+{
+  "id": "r2-membrane-patch",
+  "name": "旧胸膜修补片",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-membrane-patch/base.png",
+  "width": 1916,
+  "height": 821,
+  "bbox": [
+    68,
+    47,
+    1875,
+    785
+  ],
+  "pivot": [
+    971.5,
+    785
+  ],
+  "world": {
+    "axis": "width",
+    "units": 7,
+    "visibleWidthU": 7.0,
+    "visibleHeightU": 2.8589,
+    "canvasWidthU": 7.4222,
+    "canvasHeightU": 3.1804
+  },
+  "sha256": "ec94edcc5f9ce2d6b63375ce1e71025c111b42dc5f0110257f37bdf49389c5ed",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      7,
+      1886,
+      821
+    ],
+    "8": [
+      68,
+      47,
+      1875,
+      785
+    ],
+    "32": [
+      68,
+      48,
+      1875,
+      784
+    ],
+    "128": [
+      69,
+      48,
+      1874,
+      783
+    ],
+    "248": [
+      70,
+      49,
+      1873,
+      778
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/14_R2.png",
+      "assets/source/whalefall-v5-2-complete/references/15_R2-01.png"
+    ],
+    "prompts": [
+      "assets/source/r2-membrane-patch/r2-membrane-patch.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "覆膜修补片与缝线、附着空壳口为一个连贯地标；无角色，未将独立机关烘焙其中。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-patches-nursery-shells"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-membrane-patch-ec94edcc5f9c.png",
+  "state": "base"
+}

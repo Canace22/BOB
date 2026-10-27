@@ -1,0 +1,107 @@
+{
+  "id": "module-round-chamber",
+  "familyId": "symbiosis-modules",
+  "name": "圆腔模块",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/module-round-chamber.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-round-chamber.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+    "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#growth",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    206,
+    64,
+    1134,
+    1131
+  ],
+  "pivot": [
+    670.0,
+    1131
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "1c4da56768f029f92ea93176e78bb2ec3e3c97dcb54fc4477b9197c154cd1ccd",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Round-chamber adaptation follows P01 circular cavity motif; no explicit name mapping claimed.",
+    "transparentPixels": 915741,
+    "totalPixels": 1573088,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Round-chamber adaptation follows P01 circular cavity motif; no explicit name mapping claimed.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.2609,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3689,
+    "canvasHeightU": 0.3371
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-round-chamber.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "productionGroup": "props",
+  "width": 1312,
+  "height": 1199,
+  "alphaBboxes": {
+    "1": [
+      0,
+      22,
+      1294,
+      1199
+    ],
+    "8": [
+      206,
+      64,
+      1134,
+      1131
+    ],
+    "32": [
+      206,
+      65,
+      1133,
+      1131
+    ],
+    "128": [
+      206,
+      65,
+      1133,
+      1130
+    ],
+    "248": [
+      208,
+      66,
+      1132,
+      1129
+    ]
+  },
+  "alphaStats": {
+    "zero": 915741,
+    "semi8to247": 7117,
+    "nearOpaque": 642721,
+    "total": 1573088
+  }
+}

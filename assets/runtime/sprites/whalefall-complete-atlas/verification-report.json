@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checkedAssets": 174,
+  "expectedAssets": 174,
+  "checkedPages": 7,
+  "checks": [
+    "accepted static coverage; backgrounds/L0/L1 excluded",
+    "native UI canvas/nineSlice and shared family registration preserved",
+    "independent source crop/resample equals every atlas RGBA pixel",
+    "frame allocations bounded and non-overlapping",
+    "all extrusion pixels copied; outer padding transparent; ZIP bytes match"
+  ],
+  "errors": [],
+  "scope": "Static atlas technical verification; no gameplay, animation or user art acceptance."
+}

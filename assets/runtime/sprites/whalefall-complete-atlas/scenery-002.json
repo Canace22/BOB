@@ -1,0 +1,775 @@
+{
+  "frames": {
+    "r2-trachea-wall": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 2304,
+        "h": 882
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 2304,
+        "h": 882
+      },
+      "sourceSize": {
+        "w": 2304,
+        "h": 882
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r2-trachea-wall/base.png",
+        "originalSha256": "52392db8897738829de58da85cda923d7db9086ae09482c449484520021d5b11",
+        "originalSize": {
+          "w": 1994,
+          "h": 789
+        },
+        "sourceRect": {
+          "x": 21,
+          "y": 20,
+          "w": 1957,
+          "h": 749
+        },
+        "originalPivot": [
+          999.5,
+          769
+        ],
+        "world": {
+          "axis": "width",
+          "units": 18,
+          "visibleWidthU": 18.0,
+          "visibleHeightU": 6.8891,
+          "canvasWidthU": 18.3403,
+          "canvasHeightU": 7.257
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.1773122125702606,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 1152.0,
+          "y": 882.0
+        },
+        "coversRequirementIds": [
+          "r2-trachea-transition"
+        ]
+      }
+    },
+    "r2-heart-rupture": {
+      "frame": {
+        "x": 4,
+        "y": 894,
+        "w": 2560,
+        "h": 833
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 2560,
+        "h": 833
+      },
+      "sourceSize": {
+        "w": 2560,
+        "h": 833
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r2-heart-rupture/base.png",
+        "originalSha256": "6fe0c55f8d6fe95b1fa933fa9eb3315f9c684d677507ab7fa9b41d476f5a81b7",
+        "originalSize": {
+          "w": 2162,
+          "h": 727
+        },
+        "sourceRect": {
+          "x": 37,
+          "y": 20,
+          "w": 2098,
+          "h": 683
+        },
+        "originalPivot": [
+          1086.0,
+          703
+        ],
+        "world": {
+          "axis": "width",
+          "units": 20,
+          "visibleWidthU": 20.0,
+          "visibleHeightU": 6.511,
+          "canvasWidthU": 20.6101,
+          "canvasHeightU": 6.9304
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.2202097235462346,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 1280.0,
+          "y": 833.0
+        },
+        "coversRequirementIds": [
+          "r2-pericardium-heart"
+        ]
+      }
+    },
+    "r1-baleen-curtain": {
+      "frame": {
+        "x": 4,
+        "y": 1735,
+        "w": 2048,
+        "h": 827
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 2048,
+        "h": 827
+      },
+      "sourceSize": {
+        "w": 2048,
+        "h": 827
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-baleen-curtain/base.png",
+        "originalSha256": "6c479b76269902945098b4dc4f0ce7e18082dfd219c2ced8a40b427a8db78a6e",
+        "originalSize": {
+          "w": 1672,
+          "h": 941
+        },
+        "sourceRect": {
+          "x": 21,
+          "y": 145,
+          "w": 1629,
+          "h": 658
+        },
+        "originalPivot": [
+          835.5,
+          145
+        ],
+        "world": {
+          "axis": "width",
+          "units": 16.0,
+          "visibleWidthU": 16.0,
+          "visibleHeightU": 6.4629
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.2572130141190914,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 1024.0,
+          "y": 0.0
+        }
+      }
+    },
+    "r3-liver-edge": {
+      "frame": {
+        "x": 4,
+        "y": 2570,
+        "w": 2560,
+        "h": 751
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 2560,
+        "h": 751
+      },
+      "sourceSize": {
+        "w": 2560,
+        "h": 751
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r3-liver-edge/base.png",
+        "originalSha256": "2f2b4987ce00d90c2240e8e09fde9c5f5316b6eabb694e24651e7f570774fbe5",
+        "originalSize": {
+          "w": 2001,
+          "h": 786
+        },
+        "sourceRect": {
+          "x": 51,
+          "y": 114,
+          "w": 1915,
+          "h": 562
+        },
+        "originalPivot": [
+          1008.5,
+          676
+        ],
+        "world": {
+          "axis": "width",
+          "units": 20,
+          "visibleWidthU": 20.0,
+          "visibleHeightU": 5.8695,
+          "canvasWidthU": 20.8982,
+          "canvasHeightU": 8.2089
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.3368146214099217,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 1280.0,
+          "y": 751.0
+        },
+        "coversRequirementIds": [
+          "r3-liver-mesentery"
+        ]
+      }
+    },
+    "r1-wound-section": {
+      "frame": {
+        "x": 4,
+        "y": 3329,
+        "w": 2048,
+        "h": 726
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 2048,
+        "h": 726
+      },
+      "sourceSize": {
+        "w": 2048,
+        "h": 726
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-wound-section/base.png",
+        "originalSha256": "2a6f31ca7b736ff3f19ebe6b1a5ee205dc613addd6e33f9ee219d8ca1315dbd3",
+        "originalSize": {
+          "w": 1996,
+          "h": 788
+        },
+        "sourceRect": {
+          "x": 69,
+          "y": 69,
+          "w": 1867,
+          "h": 662
+        },
+        "originalPivot": [
+          1002.5,
+          731
+        ],
+        "world": {
+          "axis": "width",
+          "units": 16,
+          "visibleWidthU": 16.0,
+          "visibleHeightU": 5.6733,
+          "canvasWidthU": 17.1055,
+          "canvasHeightU": 6.7531
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0969469737546866,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 1024.0,
+          "y": 726.0
+        },
+        "coversRequirementIds": [
+          "r1-wound-section"
+        ]
+      }
+    },
+    "r1-baleen-shadow": {
+      "frame": {
+        "x": 2060,
+        "y": 1735,
+        "w": 1792,
+        "h": 662
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1792,
+        "h": 662
+      },
+      "sourceSize": {
+        "w": 1792,
+        "h": 662
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-baleen-shadow/base.png",
+        "originalSha256": "8913e7d5aeca41877fbeef81eecb1446a488a3637019c9c28b0b60db953f3287",
+        "originalSize": {
+          "w": 1916,
+          "h": 821
+        },
+        "sourceRect": {
+          "x": 12,
+          "y": 90,
+          "w": 1889,
+          "h": 698
+        },
+        "originalPivot": [
+          956.5,
+          788
+        ],
+        "world": {
+          "axis": "width",
+          "units": 14,
+          "visibleWidthU": 14.0,
+          "visibleHeightU": 5.1731,
+          "canvasWidthU": 14.2001,
+          "canvasHeightU": 6.0847
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.9486500794070937,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 896.0,
+          "y": 662.0
+        },
+        "coversRequirementIds": [
+          "r1-baleen-foreground"
+        ]
+      }
+    },
+    "r2-foreground-membrane": {
+      "frame": {
+        "x": 2060,
+        "y": 3329,
+        "w": 1792,
+        "h": 527
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1792,
+        "h": 527
+      },
+      "sourceSize": {
+        "w": 1792,
+        "h": 527
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r2-foreground-membrane/base.png",
+        "originalSha256": "4ca5ad2b4da2c228dc67b6cfd17fa1951ce94aab2cc9a77ffc751d21b7c139c8",
+        "originalSize": {
+          "w": 2162,
+          "h": 727
+        },
+        "sourceRect": {
+          "x": 42,
+          "y": 64,
+          "w": 2078,
+          "h": 611
+        },
+        "originalPivot": [
+          1081.0,
+          675
+        ],
+        "world": {
+          "axis": "width",
+          "units": 14,
+          "visibleWidthU": 14.0,
+          "visibleHeightU": 4.1165,
+          "canvasWidthU": 14.5659,
+          "canvasHeightU": 4.898
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.8623676612127045,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 896.0,
+          "y": 527.0
+        },
+        "coversRequirementIds": [
+          "r2-membrane-foreground"
+        ]
+      }
+    },
+    "r1-tongue-ramp": {
+      "frame": {
+        "x": 2316,
+        "y": 4,
+        "w": 1280,
+        "h": 342
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 342
+      },
+      "sourceSize": {
+        "w": 1280,
+        "h": 342
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-tongue-ramp/base.png",
+        "originalSha256": "1bf80aa9c37ff15dec331810bda0a9529af2f26f9ed20706e4e13283d365efab",
+        "originalSize": {
+          "w": 2162,
+          "h": 727
+        },
+        "sourceRect": {
+          "x": 52,
+          "y": 107,
+          "w": 2068,
+          "h": 553
+        },
+        "originalPivot": [
+          1086.0,
+          660
+        ],
+        "world": {
+          "axis": "width",
+          "units": 10,
+          "visibleWidthU": 10.0,
+          "visibleHeightU": 2.6741,
+          "canvasWidthU": 10.4545,
+          "canvasHeightU": 3.5155
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.6189555125725339,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 640.0,
+          "y": 342.0
+        },
+        "coversRequirementIds": [
+          "r1-tongue-platform-kit"
+        ]
+      }
+    },
+    "r3-shell-nest-after": {
+      "frame": {
+        "x": 2572,
+        "y": 894,
+        "w": 768,
+        "h": 336
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 768,
+        "h": 336
+      },
+      "sourceSize": {
+        "w": 768,
+        "h": 336
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r3-shell-nest-after/base.png",
+        "originalSha256": "765749470501fcd219129eb26e2e57e9f68181c25bd984c33b3aa6b46b8b7077",
+        "originalSize": {
+          "w": 1751,
+          "h": 898
+        },
+        "sourceRect": {
+          "x": 93,
+          "y": 139,
+          "w": 1605,
+          "h": 703
+        },
+        "originalPivot": [
+          895.5,
+          842
+        ],
+        "world": {
+          "axis": "width",
+          "units": 6,
+          "visibleWidthU": 6.0,
+          "visibleHeightU": 2.628,
+          "canvasWidthU": 6.5458,
+          "canvasHeightU": 3.357
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.4785046728971963,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 384.0,
+          "y": 336.0
+        },
+        "coversRequirementIds": [
+          "r3-shell-nests-traces"
+        ]
+      }
+    },
+    "r1-tongue-ledge": {
+      "frame": {
+        "x": 2572,
+        "y": 2570,
+        "w": 1280,
+        "h": 334
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 334
+      },
+      "sourceSize": {
+        "w": 1280,
+        "h": 334
+      },
+      "pivot": {
+        "x": 0.5002447381302007,
+        "y": 0.11632270168855535
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-tongue-ledge/base.png",
+        "originalSha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+        "originalSize": {
+          "w": 2162,
+          "h": 727
+        },
+        "sourceRect": {
+          "x": 59,
+          "y": 132,
+          "w": 2043,
+          "h": 533
+        },
+        "originalPivot": [
+          1081,
+          194
+        ],
+        "world": {
+          "axis": "width",
+          "units": 10.0,
+          "visibleWidthU": 10.0,
+          "visibleHeightU": 2.6089
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.6265296133137542,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 640.3132648066569,
+          "y": 38.851782363977485
+        }
+      }
+    },
+    "r1-weight-membrane": {
+      "frame": {
+        "x": 3348,
+        "y": 894,
+        "w": 640,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 640,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/r1-weight-membrane/base.png",
+        "originalSha256": "6dcde8238744601dc4c0827926b3a6289df44e8b21edde51b33bbb7878eb208f",
+        "originalSize": {
+          "w": 2162,
+          "h": 727
+        },
+        "sourceRect": {
+          "x": 54,
+          "y": 169,
+          "w": 2057,
+          "h": 407
+        },
+        "originalPivot": [
+          1082.5,
+          576
+        ],
+        "world": {
+          "axis": "width",
+          "units": 5,
+          "visibleWidthU": 5.0,
+          "visibleHeightU": 0.9893,
+          "canvasWidthU": 5.2552,
+          "canvasHeightU": 1.7671
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.31113271754982985,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 320.0,
+          "y": 127.0
+        },
+        "coversRequirementIds": [
+          "r1-weighted-tongue"
+        ]
+      }
+    },
+    "habitat-fungus-bed": {
+      "frame": {
+        "x": 3604,
+        "y": 4,
+        "w": 256,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/habitat-fungus-bed/base.png",
+        "originalSha256": "0de628f10312ea3b70b7a7c65e470060455c7ac0a8d7a12cbe0d569d7522be45",
+        "originalSize": {
+          "w": 1774,
+          "h": 887
+        },
+        "sourceRect": {
+          "x": 181,
+          "y": 225,
+          "w": 1410,
+          "h": 523
+        },
+        "originalPivot": [
+          886.0,
+          748
+        ],
+        "world": {
+          "axis": "width",
+          "units": 2.0,
+          "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+          "visibleWidthU": 2.0,
+          "visibleHeightU": 0.7418,
+          "canvasWidthU": 2.5163,
+          "canvasHeightU": 1.2582
+        },
+        "pixelsPerUnit": 128,
+        "scaleFactor": 0.18156028368794327,
+        "resizeKernel": "LANCZOS",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 128.0,
+          "y": 95.0
+        },
+        "parts": [],
+        "attachmentPoints": {
+          "shadePivot": {
+            "pixel": [
+              887,
+              610
+            ],
+            "role": "遮光片独立置于菌圃上方，此为菌床中心"
+          },
+          "lightCenter": {
+            "pixel": [
+              887,
+              475
+            ],
+            "role": "幼菌群局部光效中心，不使用背景光晕"
+          },
+          "status": "手工目检建议点；需recipe同尺度合成复核"
+        },
+        "familyId": "shared-habitat-beds",
+        "variant": "static",
+        "coversRequirementIds": [
+          "shared-habitat-beds"
+        ]
+      }
+    }
+  },
+  "animations": {},
+  "meta": {
+    "app": "BOB multi-page static atlas",
+    "image": "scenery-002.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 4096,
+      "h": 4096
+    },
+    "group": "scenery",
+    "type": "static-atlas",
+    "pixelsPerUnit": 128,
+    "padding": 4,
+    "extrusion": 2,
+    "note": "Independent static assets; no animation frames. World assets contain normalized visible crops; UI retains native canvas. Original pixels and pivot are in bob."
+  }
+}

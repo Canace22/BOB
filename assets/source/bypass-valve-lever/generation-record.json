@@ -1,0 +1,119 @@
+{
+  "id": "bypass-valve-lever",
+  "familyId": "settlement-valve",
+  "name": "旁通阀独立扳片",
+  "scale": {
+    "axis": "height",
+    "units": 0.45
+  },
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/bypass-valve-lever.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bypass-valve-lever.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+    "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    346,
+    259,
+    1355,
+    794
+  ],
+  "pivot": [
+    760,
+    766
+  ],
+  "pivotStatus": "明确机械铰点/连接点；original canvas pixels",
+  "sha256": "8c28eef27b3917ee017284d4501162ba5ed37a0817d0a92122f003d2225a9f94",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Separate push-cap actuator for bypass vent; this is a mechanism part, not another flora species.",
+    "transparentPixels": 1282629,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "stemTip": {
+      "pixel": [
+        760,
+        766
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Separate push-cap actuator for bypass vent; this is a mechanism part, not another flora species.",
+  "world": {
+    "axis": "height",
+    "units": 0.45,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.8487,
+    "visibleHeightU": 0.45,
+    "canvasWidthU": 1.292,
+    "canvasHeightU": 0.8613
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bypass-valve-lever.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png"
+  ],
+  "productionGroup": "props",
+  "width": 1536,
+  "height": 1024,
+  "alphaBboxes": {
+    "1": [
+      0,
+      19,
+      1522,
+      1000
+    ],
+    "8": [
+      346,
+      259,
+      1355,
+      794
+    ],
+    "32": [
+      347,
+      259,
+      1354,
+      793
+    ],
+    "128": [
+      347,
+      260,
+      1353,
+      792
+    ],
+    "248": [
+      350,
+      261,
+      1351,
+      791
+    ]
+  },
+  "alphaStats": {
+    "zero": 1282629,
+    "semi8to247": 8242,
+    "nearOpaque": 273368,
+    "total": 1572864
+  }
+}

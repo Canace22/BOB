@@ -1,0 +1,118 @@
+{
+  "id": "gate-shell-crab",
+  "name": "门庭负壳蟹",
+  "kind": "character",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/gate-shell-crab/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    37,
+    50,
+    1471,
+    969
+  ],
+  "pivot": [
+    754.0,
+    969
+  ],
+  "world": {
+    "axis": "width",
+    "units": 4.8,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 4.8,
+    "visibleHeightU": 3.0762,
+    "canvasWidthU": 5.1414,
+    "canvasHeightU": 3.4276
+  },
+  "sha256": "dcd0a5f4dcd72028907b1c610d0ee66c20adb91b71210be64daf8c90d3ac7311",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      8,
+      1502,
+      1024
+    ],
+    "8": [
+      37,
+      50,
+      1471,
+      969
+    ],
+    "32": [
+      37,
+      51,
+      1470,
+      968
+    ],
+    "128": [
+      38,
+      52,
+      1470,
+      968
+    ],
+    "248": [
+      39,
+      53,
+      1469,
+      967
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/10_R1-04.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/gate-shell-crab/gate-shell-crab.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "多层尖角弃壳、红索、双大钳身份保持；此静态采用原画举钳造型，不代表横扫动画已经完成。",
+      "工具预览隐藏RGB有棕色，需以alpha合成判断；原图未修改。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "gate-shell-crab"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/gate-shell-crab-dcd0a5f4dcd7.png",
+  "familyId": "gate-shell-crab",
+  "variant": "base"
+}

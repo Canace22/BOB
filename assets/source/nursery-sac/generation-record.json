@@ -1,0 +1,116 @@
+{
+  "id": "nursery-sac",
+  "name": "育囊",
+  "familyId": "nursery-sac",
+  "variant": "base",
+  "kind": "friendly_npc",
+  "region": "R2",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/nursery-sac.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/nursery-sac.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/51_N01_余索·贝驮·育囊.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1374,
+  "height": 1145,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    330,
+    61,
+    1158,
+    1112
+  ],
+  "sha256": "4c481e84527213832fb6543fb44fc27bb08430e9a01b3393198a54f956894ea4",
+  "world": {
+    "axis": "height",
+    "units": 2.2,
+    "basis": "按N01与1U主角的画面比例拟定，设计未明确给该NPC量化尺寸，待引擎实机确认。",
+    "visibleWidthU": 1.7332,
+    "visibleHeightU": 2.2,
+    "canvasWidthU": 2.8761,
+    "canvasHeightU": 2.3968
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      744.0,
+      1112
+    ]
+  },
+  "purpose": "独立静态NPC基础形象，不是动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "育囊：友好NPC／扎根育床共生体；免费补充浮膜的移动压力。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R2-s17",
+      "quote": "H2 肺膜育床：调平补压床旁壳托，孔瓣恢复规律开合。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "三只相连囊体及三个开口可辨；粉红扎根支撑保留，无角色脸或道具。",
+      "膜体的透明效果需深浅底合成确认，当前为生成后候选。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "nursery-sac",
+  "coversRequirementIds": [
+    "nursery-sac"
+  ],
+  "productionGroup": "actors",
+  "alphaBboxes": {
+    "1": [
+      47,
+      59,
+      1334,
+      1121
+    ],
+    "8": [
+      330,
+      61,
+      1158,
+      1112
+    ],
+    "32": [
+      331,
+      61,
+      1158,
+      1112
+    ],
+    "128": [
+      331,
+      62,
+      1157,
+      1111
+    ],
+    "248": [
+      332,
+      63,
+      1156,
+      1110
+    ]
+  },
+  "alphaStats": {
+    "zero": 999675,
+    "semi8to247": 13198,
+    "nearOpaque": 545785,
+    "total": 1573230
+  },
+  "pivot": [
+    744.0,
+    1112
+  ]
+}

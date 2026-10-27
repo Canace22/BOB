@@ -1,0 +1,105 @@
+{
+  "id": "release-sluice-open",
+  "familyId": "release-sluice",
+  "name": "归海导流闸·开放",
+  "scale": {
+    "axis": "width",
+    "units": 3.2
+  },
+  "coversRequirementIds": [
+    "release-sluice"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/release-sluice-open.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/release-sluice-open.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/47_R5-08.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R5-08",
+  "dimensions": [
+    1682,
+    935
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    57,
+    178,
+    1627,
+    760
+  ],
+  "pivot": [
+    842.0,
+    760
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "a674e89accf0c081bb54ee8d3336bb936b8bd8a7c9be81c1727220ffdf4323d3",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "释放闸开放静态；透明流槽中央供水流/幼体层穿过。",
+    "transparentPixels": 1104808,
+    "totalPixels": 1572670,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "释放闸开放静态；透明流槽中央供水流/幼体层穿过。",
+  "world": {
+    "axis": "width",
+    "units": 3.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 3.2,
+    "visibleHeightU": 1.1862,
+    "canvasWidthU": 3.4283,
+    "canvasHeightU": 1.9057
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/release-sluice-open.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/47_R5-08.png"
+  ],
+  "productionGroup": "props",
+  "width": 1682,
+  "height": 935,
+  "alphaBboxes": {
+    "1": [
+      49,
+      23,
+      1664,
+      935
+    ],
+    "8": [
+      57,
+      178,
+      1627,
+      760
+    ],
+    "32": [
+      57,
+      179,
+      1627,
+      760
+    ],
+    "128": [
+      57,
+      179,
+      1626,
+      760
+    ],
+    "248": [
+      59,
+      180,
+      1625,
+      759
+    ]
+  },
+  "alphaStats": {
+    "zero": 1104808,
+    "semi8to247": 14443,
+    "nearOpaque": 430493,
+    "total": 1572670
+  }
+}

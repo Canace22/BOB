@@ -1,0 +1,116 @@
+{
+  "id": "r1-nasal-wall",
+  "name": "鼻道实壁与隔板",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-nasal-wall/base.png",
+  "width": 2060,
+  "height": 763,
+  "bbox": [
+    59,
+    72,
+    1998,
+    716
+  ],
+  "pivot": [
+    1028.5,
+    716
+  ],
+  "world": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.3141,
+    "canvasWidthU": 16.9985,
+    "canvasHeightU": 6.296
+  },
+  "sha256": "eefa026219e502c00196eb9cbb09bc65d6c31f7e7b2f6efa612c37efe23e840a",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      7,
+      2024,
+      727
+    ],
+    "8": [
+      59,
+      72,
+      1998,
+      716
+    ],
+    "32": [
+      61,
+      72,
+      1998,
+      716
+    ],
+    "128": [
+      61,
+      73,
+      1997,
+      715
+    ],
+    "248": [
+      63,
+      75,
+      1996,
+      714
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/12_R1-06.png"
+    ],
+    "prompts": [
+      "assets/source/r1-nasal-wall/r1-nasal-wall.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检实壁隔板与两条浅槽，无穿透洞门；仅鼻道地标组件。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-nasal-section"
+  ],
+  "rooms": [
+    "R1-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-nasal-wall-eefa026219e5.png",
+  "state": "base"
+}

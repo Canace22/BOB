@@ -1,0 +1,231 @@
+{
+  "staticTotal": 24,
+  "existingMappings": [
+    {
+      "plannedId": "tide-picker",
+      "familyId": "tide-picker",
+      "name": "拾潮者右向基础姿态",
+      "inventoryEntryId": "tide-picker",
+      "status": "present",
+      "existingAssetIds": [
+        "tide-picker"
+      ]
+    },
+    {
+      "plannedId": "corpse-crab",
+      "familyId": "corpse-crab",
+      "name": "尸蟹基础形象",
+      "inventoryEntryId": "corpse-crab",
+      "status": "present",
+      "existingAssetIds": [
+        "corpse-crab"
+      ]
+    },
+    {
+      "plannedId": "fat-sniffer",
+      "familyId": "fat-sniffer",
+      "name": "嗅脂甲基础形象",
+      "inventoryEntryId": "fat-sniffer",
+      "status": "present",
+      "existingAssetIds": [
+        "fat-sniffer"
+      ]
+    },
+    {
+      "plannedId": "membrane-ray",
+      "familyId": "membrane-ray",
+      "name": "膜缘鳐基础形象",
+      "inventoryEntryId": "membrane-ray",
+      "status": "present",
+      "existingAssetIds": [
+        "membrane-ray"
+      ]
+    },
+    {
+      "plannedId": "sea-larva",
+      "familyId": "sea-larva",
+      "name": "归海幼体基础形象",
+      "inventoryEntryId": "sea-larva",
+      "status": "present",
+      "existingAssetIds": [
+        "sea-larva"
+      ]
+    }
+  ],
+  "newProduction": [
+    {
+      "plannedId": "tide-picker-left",
+      "familyId": "tide-picker",
+      "name": "拾潮者左向基础姿态",
+      "inventoryEntryId": "tide-picker",
+      "status": "missing",
+      "outputId": "tide-picker-left"
+    },
+    {
+      "plannedId": "blind-eel",
+      "familyId": "hole-eel",
+      "name": "盲鳗（孔鳗变体）基础形象",
+      "inventoryEntryId": "blind-eel",
+      "status": "missing",
+      "outputId": "blind-eel"
+    },
+    {
+      "plannedId": "slit-eel",
+      "familyId": "hole-eel",
+      "name": "缝栖鳗（孔鳗变体）基础形象",
+      "inventoryEntryId": "slit-eel",
+      "status": "missing",
+      "outputId": "slit-eel"
+    },
+    {
+      "plannedId": "resonant-clam",
+      "familyId": "resonant-clam",
+      "name": "鸣贝／吐珠鸣贝基础形象",
+      "inventoryEntryId": "resonant-clam",
+      "status": "missing",
+      "outputId": "resonant-clam"
+    },
+    {
+      "plannedId": "bone-clinger",
+      "familyId": "bone-clinger",
+      "name": "附骨甲基础形象",
+      "inventoryEntryId": "bone-clinger",
+      "status": "missing",
+      "outputId": "bone-clinger"
+    },
+    {
+      "plannedId": "baleen-shrimp-swarm",
+      "familyId": "baleen-shrimp-swarm",
+      "name": "剪须虾群基础形象",
+      "inventoryEntryId": "baleen-shrimp-swarm",
+      "status": "missing",
+      "outputId": "baleen-shrimp-swarm"
+    },
+    {
+      "plannedId": "amphipod-swarm",
+      "familyId": "amphipod-swarm",
+      "name": "端足群基础形象",
+      "inventoryEntryId": "amphipod-swarm",
+      "status": "missing",
+      "outputId": "amphipod-swarm"
+    },
+    {
+      "plannedId": "yusuo",
+      "familyId": "yusuo",
+      "name": "余索基础形象",
+      "inventoryEntryId": "yusuo",
+      "status": "missing",
+      "outputId": "yusuo"
+    },
+    {
+      "plannedId": "beituo",
+      "familyId": "protected-shell-crab",
+      "name": "贝驮基础形象",
+      "inventoryEntryId": "beituo",
+      "status": "missing",
+      "outputId": "beituo"
+    },
+    {
+      "plannedId": "nursery-sac",
+      "familyId": "nursery-sac",
+      "name": "育囊基础形象",
+      "inventoryEntryId": "nursery-sac",
+      "status": "missing",
+      "outputId": "nursery-sac"
+    },
+    {
+      "plannedId": "gate-shell-crab",
+      "familyId": "gate-shell-crab",
+      "name": "门庭负壳蟹基础形象",
+      "inventoryEntryId": "gate-shell-crab",
+      "status": "missing",
+      "outputId": "gate-shell-crab"
+    },
+    {
+      "plannedId": "blood-nest-swarm",
+      "familyId": "blood-nest-swarm",
+      "name": "血巢潮群基础形象",
+      "inventoryEntryId": "blood-nest-swarm",
+      "status": "missing",
+      "outputId": "blood-nest-swarm",
+      "requiredComponentOutputs": [
+        {
+          "id": "blood-nest-core",
+          "file": "blood-nest-core.png",
+          "coversRequirementIds": [
+            "blood-nest-swarm"
+          ],
+          "role": "独立可攻击群流凝聚核心",
+          "basis": "文字规则适配；沿用同类群流个体，不是源图存在的独立器官。",
+          "status": "candidate"
+        }
+      ]
+    },
+    {
+      "plannedId": "shell-mother-crab",
+      "familyId": "shell-mother-crab",
+      "name": "搬壳母蟹基础形象",
+      "inventoryEntryId": "shell-mother-crab",
+      "status": "missing",
+      "outputId": "shell-mother-crab"
+    },
+    {
+      "plannedId": "shell-mother-crab-phase-65",
+      "familyId": "shell-mother-crab",
+      "name": "搬壳母蟹65%脱壳后外观",
+      "inventoryEntryId": "shell-mother-crab",
+      "status": "missing",
+      "outputId": "shell-mother-crab-phase-65"
+    },
+    {
+      "plannedId": "shell-mother-crab-phase-30",
+      "familyId": "shell-mother-crab",
+      "name": "搬壳母蟹30%脱壳后外观",
+      "inventoryEntryId": "shell-mother-crab",
+      "status": "missing",
+      "outputId": "shell-mother-crab-phase-30"
+    },
+    {
+      "plannedId": "spine-resonant-clams",
+      "familyId": "spine-resonant-clams",
+      "name": "悬脊鸣贝基础形象",
+      "inventoryEntryId": "spine-resonant-clams",
+      "status": "missing",
+      "outputId": "spine-resonant-clams"
+    },
+    {
+      "plannedId": "silent-membrane",
+      "familyId": "silent-membrane",
+      "name": "缄声覆膜基础形象",
+      "inventoryEntryId": "silent-membrane",
+      "status": "missing",
+      "outputId": "silent-membrane"
+    },
+    {
+      "plannedId": "red-crown-colony",
+      "familyId": "red-crown-colony",
+      "name": "红冠群落恢复前外观",
+      "inventoryEntryId": "red-crown-colony",
+      "status": "missing",
+      "outputId": "red-crown-colony"
+    },
+    {
+      "plannedId": "red-crown-colony-restored",
+      "familyId": "red-crown-colony",
+      "name": "红冠群落恢复后外观",
+      "inventoryEntryId": "red-crown-colony",
+      "status": "missing",
+      "outputId": "red-crown-colony-restored"
+    }
+  ],
+  "newCount": 19,
+  "animations": "later",
+  "additionalRequiredComponents": [
+    {
+      "id": "blood-nest-core",
+      "parentRequirementId": "blood-nest-swarm",
+      "status": "candidate",
+      "file": "blood-nest-core.png"
+    }
+  ]
+}

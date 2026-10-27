@@ -1,0 +1,116 @@
+{
+  "id": "r2-trachea-wall",
+  "name": "气管外侧完整软骨环",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-trachea-wall/base.png",
+  "width": 1994,
+  "height": 789,
+  "bbox": [
+    21,
+    20,
+    1978,
+    769
+  ],
+  "pivot": [
+    999.5,
+    769
+  ],
+  "world": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 6.8891,
+    "canvasWidthU": 18.3403,
+    "canvasHeightU": 7.257
+  },
+  "sha256": "52392db8897738829de58da85cda923d7db9086ae09482c449484520021d5b11",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      17,
+      15,
+      1980,
+      789
+    ],
+    "8": [
+      21,
+      20,
+      1978,
+      769
+    ],
+    "32": [
+      21,
+      22,
+      1978,
+      769
+    ],
+    "128": [
+      22,
+      22,
+      1978,
+      768
+    ],
+    "248": [
+      25,
+      23,
+      1977,
+      767
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/19_R2-05.png"
+    ],
+    "prompts": [
+      "assets/source/r2-trachea-wall/r2-trachea-wall.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检连续实壁管外侧，闭合两端，环带可辨，无开放隧道或椎骨。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-trachea-transition"
+  ],
+  "rooms": [
+    "R2-05"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-trachea-wall-52392db88977.png",
+  "state": "base"
+}

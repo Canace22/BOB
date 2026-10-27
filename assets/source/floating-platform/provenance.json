@@ -1,0 +1,128 @@
+{
+  "id": "floating-platform",
+  "name": "压力漂台",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/floating-platform/base.png",
+  "width": 1871,
+  "height": 840,
+  "bbox": [
+    79,
+    261,
+    1792,
+    695
+  ],
+  "pivot": [
+    935.5,
+    695
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.7601,
+    "canvasWidthU": 3.2767,
+    "canvasHeightU": 1.4711
+  },
+  "sha256": "106a30d7fe7283f63b580f49463b4b469b5a353ed9c7af2f246f0696c020c904",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      31,
+      1849,
+      840
+    ],
+    "8": [
+      79,
+      261,
+      1792,
+      695
+    ],
+    "32": [
+      79,
+      262,
+      1792,
+      695
+    ],
+    "128": [
+      80,
+      263,
+      1791,
+      694
+    ],
+    "248": [
+      81,
+      264,
+      1790,
+      693
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/27_R3-06.png"
+    ],
+    "prompts": [
+      "assets/source/floating-platform/floating-platform.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Low shell raft top is standable; attachment eye left. Platform motion/three positions are code, not extra PNGs.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "floating-platform"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/floating-platform-106a30d7fe72.png",
+  "attachmentPoints": {
+    "tetherEye": {
+      "pixel": [
+        204,
+        402
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "floating-platform"
+}

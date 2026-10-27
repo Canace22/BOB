@@ -1,0 +1,106 @@
+{
+  "id": "r1-nasal-wall",
+  "name": "鼻道实壁与隔板",
+  "coversRequirementIds": [
+    "r1-nasal-section"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/12_R1-06.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.3141,
+    "canvasWidthU": 16.9985,
+    "canvasHeightU": 6.296
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检实壁隔板与两条浅槽，无穿透洞门；仅鼻道地标组件。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-nasal-wall.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-014a488a-8a26-4c44-8e45-bf853968a176.png",
+  "width": 2060,
+  "height": 763,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      7,
+      2024,
+      727
+    ],
+    "8": [
+      59,
+      72,
+      1998,
+      716
+    ],
+    "32": [
+      61,
+      72,
+      1998,
+      716
+    ],
+    "128": [
+      61,
+      73,
+      1997,
+      715
+    ],
+    "248": [
+      63,
+      75,
+      1996,
+      714
+    ]
+  },
+  "sha256": "eefa026219e502c00196eb9cbb09bc65d6c31f7e7b2f6efa612c37efe23e840a",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-nasal-wall.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    59,
+    72,
+    1998,
+    716
+  ],
+  "alphaStats": {
+    "zero": 1016576,
+    "semi8to247": 17575,
+    "nearOpaque": 517214,
+    "total": 1571780
+  },
+  "world": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.3141,
+    "canvasWidthU": 16.9985,
+    "canvasHeightU": 6.296
+  },
+  "pivot": [
+    1028.5,
+    716
+  ]
+}

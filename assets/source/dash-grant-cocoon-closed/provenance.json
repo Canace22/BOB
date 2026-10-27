@@ -1,0 +1,118 @@
+{
+  "id": "dash-grant-cocoon-closed",
+  "name": "贴流冲膜茧·未承接",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/dash-grant-cocoon-closed/base.png",
+  "width": 1278,
+  "height": 1230,
+  "bbox": [
+    380,
+    246,
+    919,
+    1034
+  ],
+  "pivot": [
+    650,
+    1031
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.9,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.6156,
+    "visibleHeightU": 0.9,
+    "canvasWidthU": 1.4596,
+    "canvasHeightU": 1.4048
+  },
+  "sha256": "5dbd097b21a7890f8974f9721a8d4d473a3f5e5150e2e6b3a66fb77313f17df4",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      23,
+      19,
+      1240,
+      1230
+    ],
+    "8": [
+      380,
+      246,
+      919,
+      1034
+    ],
+    "32": [
+      381,
+      246,
+      919,
+      1033
+    ],
+    "128": [
+      382,
+      247,
+      918,
+      1032
+    ],
+    "248": [
+      383,
+      248,
+      917,
+      1031
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/10_R1-04.png"
+    ],
+    "prompts": [
+      "assets/source/dash-grant-cocoon-closed/dash-grant-cocoon-closed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "A1一次授能膜茧闭合；按房间提示词推导，不能扩成5枚能力神器。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "dash-grant-cocoon"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/dash-grant-cocoon-closed-5dbd097b21a7.png",
+  "familyId": "dash-grant-cocoon"
+}

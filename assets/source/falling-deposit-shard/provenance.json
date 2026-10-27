@@ -1,0 +1,114 @@
+{
+  "id": "falling-deposit-shard",
+  "name": "独立沉积落屑",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3-08 可坠落细屑单片；复用实例组成落屑，不另生新生物。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/falling-deposit-shard/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    436,
+    332,
+    1142,
+    692
+  ],
+  "pivot": [
+    789.0,
+    512.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.4,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 0.4,
+    "visibleHeightU": 0.204,
+    "canvasWidthU": 0.8703,
+    "canvasHeightU": 0.5802
+  },
+  "sha256": "0a2c678d54155f5c09e8520717de826d6d2d36807997f81c9294e70b892964e2",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      155,
+      103,
+      1384,
+      928
+    ],
+    "8": [
+      436,
+      332,
+      1142,
+      692
+    ],
+    "32": [
+      436,
+      332,
+      1142,
+      691
+    ],
+    "128": [
+      436,
+      333,
+      1141,
+      691
+    ],
+    "248": [
+      440,
+      336,
+      1140,
+      690
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/29_R3-08.png"
+    ],
+    "prompts": [
+      "assets/source/falling-deposit-shard/falling-deposit-shard.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3-08 可坠落细屑单片；复用实例组成落屑，不另生新生物。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-falling-deposit"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/falling-deposit-shard-0a2c678d5415.png",
+  "familyId": "r3-falling-deposit",
+  "variant": "static"
+}

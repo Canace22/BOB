@@ -1,0 +1,129 @@
+{
+  "id": "falling-deposit-shard",
+  "familyId": "r3-falling-deposit",
+  "name": "独立沉积落屑",
+  "scale": {
+    "axis": "width",
+    "units": 0.4
+  },
+  "coversRequirementIds": [
+    "r3-falling-deposit"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-shard.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-shard.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-shard.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/29_R3-08.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s16",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s16",
+      "quote": "R3-08 胃顶沉积袋：沉积落屑。"
+    }
+  ],
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    436,
+    332,
+    1142,
+    692
+  ],
+  "alphaBboxes": {
+    "1": [
+      155,
+      103,
+      1384,
+      928
+    ],
+    "8": [
+      436,
+      332,
+      1142,
+      692
+    ],
+    "32": [
+      436,
+      332,
+      1142,
+      691
+    ],
+    "128": [
+      436,
+      333,
+      1141,
+      691
+    ],
+    "248": [
+      440,
+      336,
+      1140,
+      690
+    ]
+  },
+  "pivot": [
+    789.0,
+    512.0
+  ],
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      789.0,
+      512.0
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "0a2c678d54155f5c09e8520717de826d6d2d36807997f81c9294e70b892964e2",
+  "world": {
+    "axis": "width",
+    "units": 0.4,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 0.4,
+    "visibleHeightU": 0.204,
+    "canvasWidthU": 0.8703,
+    "canvasHeightU": 0.5802
+  },
+  "purpose": "R3-08 可坠落细屑单片；复用实例组成落屑，不另生新生物。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1435852,
+    "totalPixels": 1572864,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1435852,
+    "semi8to247": 6091,
+    "nearOpaque": 124377,
+    "total": 1572864
+  }
+}

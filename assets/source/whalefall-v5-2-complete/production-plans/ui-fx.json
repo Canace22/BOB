@@ -1,0 +1,401 @@
+{
+  "assets": [
+    {
+      "id": "ui-panel-frame",
+      "name": "骨白界面边框",
+      "coversRequirementIds": [
+        "ui-map",
+        "ui-module-camp",
+        "ui-pause-settings",
+        "ui-travel-selection",
+        "ui-dialogue-memory"
+      ]
+    },
+    {
+      "id": "ui-slot-frame",
+      "name": "模块槽边框",
+      "coversRequirementIds": [
+        "ui-module-camp"
+      ]
+    },
+    {
+      "id": "ui-slot-selected",
+      "name": "模块选中边框",
+      "coversRequirementIds": [
+        "ui-module-camp"
+      ]
+    },
+    {
+      "id": "ui-keycap",
+      "name": "可重绑定按键底框",
+      "coversRequirementIds": [
+        "ui-interaction",
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-slider-track",
+      "name": "设置滑杆轨道",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-slider-thumb",
+      "name": "设置滑杆滑块",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-map-player",
+      "name": "地图当前位置",
+      "coversRequirementIds": [
+        "ui-map",
+        "ui-travel-selection"
+      ]
+    },
+    {
+      "id": "ui-map-camp",
+      "name": "地图壳营地",
+      "coversRequirementIds": [
+        "ui-map",
+        "ui-travel-selection"
+      ]
+    },
+    {
+      "id": "ui-map-travel",
+      "name": "地图调律节点",
+      "coversRequirementIds": [
+        "ui-map",
+        "ui-travel-selection"
+      ]
+    },
+    {
+      "id": "ui-map-door",
+      "name": "地图未达门",
+      "coversRequirementIds": [
+        "ui-map"
+      ]
+    },
+    {
+      "id": "ui-map-memory",
+      "name": "地图记忆标记",
+      "coversRequirementIds": [
+        "ui-map",
+        "ui-dialogue-memory"
+      ]
+    },
+    {
+      "id": "ui-setting-gear",
+      "name": "设置符号",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-setting-volume",
+      "name": "音量符号",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-setting-music",
+      "name": "音乐符号",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-setting-brightness",
+      "name": "亮度符号",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-setting-controller",
+      "name": "手柄符号",
+      "coversRequirementIds": [
+        "ui-pause-settings"
+      ]
+    },
+    {
+      "id": "ui-life-full",
+      "name": "生命格·充盈",
+      "coversRequirementIds": [
+        "ui-life"
+      ]
+    },
+    {
+      "id": "ui-life-empty",
+      "name": "生命格·空",
+      "coversRequirementIds": [
+        "ui-life"
+      ]
+    },
+    {
+      "id": "ui-resonance-full",
+      "name": "蓄振格·充盈",
+      "coversRequirementIds": [
+        "ui-resonance",
+        "ui-module-camp"
+      ]
+    },
+    {
+      "id": "ui-resonance-empty",
+      "name": "蓄振格·空",
+      "coversRequirementIds": [
+        "ui-resonance"
+      ]
+    },
+    {
+      "id": "ui-pressure-full",
+      "name": "浮膜余压·充盈",
+      "coversRequirementIds": [
+        "ui-pressure"
+      ]
+    },
+    {
+      "id": "ui-pressure-empty",
+      "name": "浮膜余压·空",
+      "coversRequirementIds": [
+        "ui-pressure"
+      ]
+    },
+    {
+      "id": "ui-ability-dash",
+      "name": "能力·贴流冲",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-ability-float",
+      "name": "能力·浮膜",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-ability-anchor",
+      "name": "能力·锚定",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-ability-parry",
+      "name": "能力·迎珠",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-ability-fissure",
+      "name": "能力·敛膜潜隙",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-progress-pressure",
+      "name": "进度·潮压稳定P",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-progress-bone",
+      "name": "进度·骨音调律B",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-progress-silence",
+      "name": "进度·安全静默S",
+      "coversRequirementIds": [
+        "ui-progression"
+      ]
+    },
+    {
+      "id": "ui-motion-slot",
+      "name": "运动槽标记",
+      "coversRequirementIds": [
+        "ui-module-camp"
+      ]
+    },
+    {
+      "id": "ui-valve-three-ticks",
+      "name": "导流阀三档刻线",
+      "coversRequirementIds": [
+        "settlement-valve"
+      ]
+    },
+    {
+      "id": "fx-short-swipe",
+      "name": "短击弧线",
+      "coversRequirementIds": [
+        "fx-resonance"
+      ]
+    },
+    {
+      "id": "fx-heavy-ring",
+      "name": "重鸣共振环",
+      "coversRequirementIds": [
+        "fx-resonance"
+      ]
+    },
+    {
+      "id": "fx-dash-trail",
+      "name": "贴流冲拖线",
+      "coversRequirementIds": [
+        "fx-dash-membrane"
+      ]
+    },
+    {
+      "id": "fx-pearl-rings",
+      "name": "鸣贝三圈预告",
+      "coversRequirementIds": [
+        "fx-pearl-telegraph"
+      ]
+    },
+    {
+      "id": "fx-parry-spark",
+      "name": "迎珠回击闪线",
+      "coversRequirementIds": [
+        "fx-pearl-telegraph"
+      ]
+    },
+    {
+      "id": "fx-danger-line",
+      "name": "危险方向标带",
+      "coversRequirementIds": [
+        "fx-danger-telegraph"
+      ]
+    },
+    {
+      "id": "fx-danger-landing",
+      "name": "落点预告椭圆",
+      "coversRequirementIds": [
+        "fx-danger-telegraph"
+      ]
+    },
+    {
+      "id": "fx-echo-open-ring",
+      "name": "旧位空心回声圈",
+      "coversRequirementIds": [
+        "fx-echo-ring"
+      ]
+    },
+    {
+      "id": "fx-silence-ring",
+      "name": "静默合拢圈",
+      "coversRequirementIds": [
+        "fx-echo-ring"
+      ]
+    },
+    {
+      "id": "fx-fissure-outline",
+      "name": "柔膜缝双瓣提示",
+      "coversRequirementIds": [
+        "fx-fissure-warning"
+      ]
+    },
+    {
+      "id": "fx-particle-soft",
+      "name": "水下软光粒子",
+      "coversRequirementIds": [
+        "fx-underwater-atmosphere"
+      ]
+    },
+    {
+      "id": "fx-particle-drift",
+      "name": "定向流粒",
+      "coversRequirementIds": [
+        "fx-underwater-atmosphere"
+      ]
+    },
+    {
+      "id": "fx-cold-beam",
+      "name": "水下冷光遮罩",
+      "coversRequirementIds": [
+        "fx-underwater-atmosphere"
+      ]
+    },
+    {
+      "id": "fx-fungus-glow",
+      "name": "密封菌光遮罩",
+      "coversRequirementIds": [
+        "fx-underwater-atmosphere",
+        "fx-habitat-response"
+      ]
+    },
+    {
+      "id": "fx-water-mist",
+      "name": "水雾遮罩",
+      "coversRequirementIds": [
+        "fx-underwater-atmosphere"
+      ]
+    },
+    {
+      "id": "fx-hit-burst",
+      "name": "受击短闪",
+      "coversRequirementIds": [
+        "fx-hit-recovery"
+      ]
+    },
+    {
+      "id": "fx-recovery-motes",
+      "name": "调息恢复微光",
+      "coversRequirementIds": [
+        "fx-hit-recovery",
+        "fx-habitat-response"
+      ]
+    },
+    {
+      "id": "r1-water-base",
+      "name": "须门独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    },
+    {
+      "id": "r2-water-base",
+      "name": "肺心独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    },
+    {
+      "id": "r3-water-base",
+      "name": "胃肠独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    },
+    {
+      "id": "r4-water-base",
+      "name": "断脊独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    },
+    {
+      "id": "r5-head-water-base",
+      "name": "头耳独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    },
+    {
+      "id": "r5-tail-water-base",
+      "name": "远尾独立水体底层",
+      "coversRequirementIds": [
+        "scene-water-depth"
+      ]
+    }
+  ]
+}

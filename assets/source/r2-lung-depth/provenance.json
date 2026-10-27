@@ -1,0 +1,127 @@
+{
+  "id": "r2-lung-depth",
+  "name": "肺心灰蓝远景",
+  "kind": "background",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-lung-depth/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0096,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "sha256": "0b206ae1155ed5897c1b24261053e557bf7db0bb8061f54654fc3c2b5395cbf9",
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/14_R2.png",
+      "assets/source/whalefall-v5-2-complete/references/16_R2-02.png"
+    ],
+    "prompts": [
+      "assets/source/r2-lung-depth/r2-lung-depth.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "目检为灰蓝胸膜远景，无角色、平台、鲸须、UI；水体与器官景深合并。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "scene-water-depth",
+    "r2-lung-pleura"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "layer": "merged-L0-L1-fallback",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-lung-depth-0b206ae1155e.png",
+  "state": "base"
+}

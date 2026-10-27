@@ -1,0 +1,116 @@
+{
+  "id": "r1-weight-membrane",
+  "name": "承重舌膜稳定态",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-weight-membrane/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    54,
+    169,
+    2111,
+    576
+  ],
+  "pivot": [
+    1082.5,
+    576
+  ],
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.9893,
+    "canvasWidthU": 5.2552,
+    "canvasHeightU": 1.7671
+  },
+  "sha256": "6dcde8238744601dc4c0827926b3a6289df44e8b21edde51b33bbb7878eb208f",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      51,
+      11,
+      2116,
+      727
+    ],
+    "8": [
+      54,
+      169,
+      2111,
+      576
+    ],
+    "32": [
+      54,
+      169,
+      2110,
+      576
+    ],
+    "128": [
+      54,
+      170,
+      2109,
+      575
+    ],
+    "248": [
+      58,
+      171,
+      2108,
+      574
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+    ],
+    "prompts": [
+      "assets/source/r1-weight-membrane/r1-weight-membrane.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检单件稳定承重膜，两端附着，中间轻微下弧；未生成角色或地面。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-weighted-tongue"
+  ],
+  "rooms": [
+    "R1-03"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-weight-membrane-6dcde8238744.png",
+  "state": "base"
+}

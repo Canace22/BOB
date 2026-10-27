@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-27T06:13:17.691734+00:00",
+  "passed": true,
+  "scope": "Project-contained static delivery integrity; no animation, gameplay, 36-room assembly or human art acceptance claim.",
+  "inputs": {
+    "catalog": "assets/catalog.json",
+    "catalogRevision": 6,
+    "catalogSha256": "c27d7c69f1918f0e67daddb22be61577686f0649368571e6a57cd9a86c66121e",
+    "coverage": "assets/source/whalefall-v5-2-complete/coverage.json",
+    "coverageSha256": "de749f59049e5e1c434f3fbf53d7e392ead8a72a9900ecaa6f40819f4b0e1641",
+    "originalBaseline": "assets/source/whalefall-v5-2-static-01/original-manifest.json",
+    "atlasVerifierSha256": "1fe8fcd879342e1e754bea30962ab3bb52daf33ed1ab22bc7ed31fbe7b749445"
+  },
+  "summary": {
+    "assets": 192,
+    "pngHashesAndDimensionsPassed": 192,
+    "requirements": 105,
+    "requirementsCovered": 105,
+    "rooms": 36,
+    "roomRequirementLinks": 311,
+    "original12Unchanged": 12,
+    "backgroundsSeparate": 18,
+    "atlasFrames": 174,
+    "atlasPages": 7,
+    "atlasIndependentVerificationPassed": true,
+    "fileOccurrences": {
+      "originalPng": 192,
+      "reference": 282,
+      "prompt": 146,
+      "thumbnail": 192,
+      "editableSource": 55,
+      "roomReference": 36,
+      "atlasEntry": 3
+    },
+    "uniqueReadableFiles": 655,
+    "svgFilesParsed": 55
+  },
+  "checks": [
+    "All original PNG bytes and dimensions match accepted catalog.",
+    "All catalog source references, prompt chains, editable SVG/source files and thumbnails are readable in this project.",
+    "Each static requirement maps to actual accepted output files; all 36 room requirement and asset links resolve.",
+    "Original 12 PNGs match their preserved first-batch manifest.",
+    "All atlas crops, registration, padding, extrusion and ZIP bytes rechecked without modifying atlas files."
+  ],
+  "originalBaselineChecks": [
+    {
+      "originalId": "hero-idle-right_v01",
+      "assetId": "tide-picker",
+      "unchanged": true
+    },
+    {
+      "originalId": "corpse-crab_idle_v01",
+      "assetId": "corpse-crab",
+      "unchanged": true
+    },
+    {
+      "originalId": "fat-sniffer_idle_v01",
+      "assetId": "fat-sniffer",
+      "unchanged": true
+    },
+    {
+      "originalId": "membrane-ray_idle_v02",
+      "assetId": "membrane-ray",
+      "unchanged": true
+    },
+    {
+      "originalId": "larva_v01",
+      "assetId": "sea-larva",
+      "unchanged": true
+    },
+    {
+      "originalId": "camp-shell_v01",
+      "assetId": "shell-camp",
+      "unchanged": true
+    },
+    {
+      "originalId": "anchor-ring_v01",
+      "assetId": "bone-anchor-ring",
+      "unchanged": true
+    },
+    {
+      "originalId": "life-fragment_v01",
+      "assetId": "life-fragment",
+      "unchanged": true
+    },
+    {
+      "originalId": "empty-shell_v01",
+      "assetId": "empty-shell",
+      "unchanged": true
+    },
+    {
+      "originalId": "r1-tongue-ledge_v01",
+      "assetId": "r1-tongue-ledge",
+      "unchanged": true
+    },
+    {
+      "originalId": "r1-baleen-curtain_v01",
+      "assetId": "r1-baleen-curtain",
+      "unchanged": true
+    },
+    {
+      "originalId": "r1-mouth-depth_v01",
+      "assetId": "r1-mouth-depth",
+      "unchanged": true
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "36 room records have not claimed full playable room assembly; this audit validates mappings only."
+  ]
+}

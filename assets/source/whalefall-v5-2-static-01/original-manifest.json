@@ -1,0 +1,930 @@
+{
+  "title": "鲸落万物生 · 首批2D静态素材",
+  "version": "v01",
+  "designVersion": "V5.2",
+  "sources": [
+    "http://10.11.140.20:8765/simple/",
+    "http://10.11.140.20:8765/full/"
+  ],
+  "scene": {
+    "width": 1672,
+    "height": 941,
+    "pixelsPerUnit": 56,
+    "unitMetres": 0.3,
+    "heroHeightFraction": 0.05951
+  },
+  "unitsNote": "1U=0.30m来自设计；物件U尺寸与56屏幕像素/U是本批集成建议。按一个轴等比缩放，不拉伸。",
+  "coordinates": "bbox=[left,top,right,bottom], right/bottom exclusive; pivot original-image pixels, top-left origin",
+  "assets": [
+    {
+      "id": "hero-idle-right_v01",
+      "name": "拾潮者 · 右向待机",
+      "file": "sprites/hero-idle-right_v01.png",
+      "width": 1290,
+      "height": 1219,
+      "bbox": [
+        216,
+        66,
+        1166,
+        1152
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        691.0,
+        1152
+      ],
+      "pivotNormalized": [
+        0.535659,
+        0.945037
+      ],
+      "world": {
+        "axis": "height",
+        "units": 1.0,
+        "visibleWidthU": 0.8748,
+        "visibleHeightU": 1.0
+      },
+      "region": "全局",
+      "kind": "character",
+      "notes": "单姿态；左腰灯、右向骨鸣器已保留。不能镜像代替左向立绘。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/hero-idle-right_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          61,
+          64,
+          1218,
+          1154
+        ],
+        "8": [
+          216,
+          66,
+          1166,
+          1152
+        ],
+        "16": [
+          216,
+          66,
+          1166,
+          1152
+        ],
+        "32": [
+          216,
+          66,
+          1166,
+          1152
+        ]
+      },
+      "transparentFraction": 0.682164,
+      "sha256": "74b2a51d05aff4be6feef17a359321be966de66d441a49c5f16c3f5041d49e29",
+      "references": [
+        "references/03_H01_拾潮者·三视图与挂点.png",
+        "references/08_R1-02.png"
+      ],
+      "promptChain": [
+        "prompts/hero-idle-right_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "corpse-crab_idle_v01",
+      "name": "尸蟹",
+      "file": "sprites/corpse-crab_idle_v01.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        87,
+        146,
+        1468,
+        916
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        777.5,
+        916
+      ],
+      "pivotNormalized": [
+        0.506185,
+        0.894531
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1.8,
+        "visibleWidthU": 1.8,
+        "visibleHeightU": 1.0036
+      },
+      "region": "R1",
+      "kind": "character",
+      "notes": "静态单姿态；无攻击、行走动画。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/corpse-crab_idle_v01.txt",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          21,
+          1514,
+          1024
+        ],
+        "8": [
+          87,
+          146,
+          1468,
+          916
+        ],
+        "16": [
+          87,
+          146,
+          1468,
+          916
+        ],
+        "32": [
+          88,
+          146,
+          1468,
+          915
+        ]
+      },
+      "transparentFraction": 0.613525,
+      "sha256": "e2fada0447b964940dbbb8c887e4a92b884098731b6af768ed6bf804784f9b1f",
+      "references": [
+        "references/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "promptChain": [
+        "prompts/corpse-crab_idle_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "fat-sniffer_idle_v01",
+      "name": "嗅脂甲",
+      "file": "sprites/fat-sniffer_idle_v01.png",
+      "width": 1671,
+      "height": 941,
+      "bbox": [
+        40,
+        199,
+        1613,
+        826
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        826.5,
+        826
+      ],
+      "pivotNormalized": [
+        0.494614,
+        0.87779
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1.7,
+        "visibleWidthU": 1.7,
+        "visibleHeightU": 0.6776
+      },
+      "region": "R3",
+      "kind": "character",
+      "notes": "静态单姿态；无冲撞、警觉状态。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/fat-sniffer_idle_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          41,
+          1641,
+          941
+        ],
+        "8": [
+          40,
+          199,
+          1613,
+          826
+        ],
+        "16": [
+          40,
+          200,
+          1613,
+          825
+        ],
+        "32": [
+          40,
+          200,
+          1613,
+          825
+        ]
+      },
+      "transparentFraction": 0.646023,
+      "sha256": "f5f5bd13d0e2624afdc0795582d5b9026e50ef00698229c8a8d05fbae6e00c4b",
+      "references": [
+        "references/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "promptChain": [
+        "prompts/fat-sniffer_idle_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "membrane-ray_idle_v02",
+      "name": "膜缘鳐",
+      "file": "sprites/membrane-ray_idle_v02.png",
+      "width": 1871,
+      "height": 840,
+      "bbox": [
+        80,
+        79,
+        1805,
+        776
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        942.5,
+        427.5
+      ],
+      "pivotNormalized": [
+        0.503741,
+        0.508929
+      ],
+      "world": {
+        "axis": "width",
+        "units": 2.4,
+        "visibleWidthU": 2.4,
+        "visibleHeightU": 0.9697
+      },
+      "region": "R2",
+      "kind": "character",
+      "notes": "已修正重复吻部；薄膜目前基本不透明，尚未拆薄膜层。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/membrane-ray_idle_v02.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          78,
+          77,
+          1817,
+          778
+        ],
+        "8": [
+          80,
+          79,
+          1805,
+          776
+        ],
+        "16": [
+          81,
+          80,
+          1805,
+          775
+        ],
+        "32": [
+          81,
+          80,
+          1805,
+          775
+        ]
+      },
+      "transparentFraction": 0.733898,
+      "sha256": "76a8ca44632c25d411506d64e3d2a520ed6810f5d1d8c05ee73130bb94dd4b13",
+      "references": [
+        "references/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "promptChain": [
+        "prompts/membrane-ray_idle_v01.txt",
+        "prompts/membrane-ray_idle_v02.txt"
+      ],
+      "revisionInput": "references/revision-inputs/membrane-ray_idle_v01-rejected.png",
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "larva_v01",
+      "name": "归海幼体",
+      "file": "sprites/larva_v01.png",
+      "width": 1350,
+      "height": 1165,
+      "bbox": [
+        230,
+        192,
+        1199,
+        977
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        714.5,
+        584.5
+      ],
+      "pivotNormalized": [
+        0.529259,
+        0.501717
+      ],
+      "world": {
+        "axis": "width",
+        "units": 0.6,
+        "visibleWidthU": 0.6,
+        "visibleHeightU": 0.4861
+      },
+      "region": "R5尾段",
+      "kind": "character",
+      "notes": "受保护生态；单姿态，游动需另做动画。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/larva_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          33,
+          15,
+          1336,
+          1147
+        ],
+        "8": [
+          230,
+          192,
+          1199,
+          977
+        ],
+        "16": [
+          232,
+          192,
+          1199,
+          977
+        ],
+        "32": [
+          235,
+          192,
+          1198,
+          977
+        ]
+      },
+      "transparentFraction": 0.885106,
+      "sha256": "c9797b690647a8ea3fab1beec7048f947734f2fa025336bae8905165efbdb2a6",
+      "references": [
+        "references/47_R5-08.png"
+      ],
+      "promptChain": [
+        "prompts/larva_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "camp-shell_v01",
+      "name": "壳形安全营地",
+      "file": "sprites/camp-shell_v01.png",
+      "width": 1448,
+      "height": 1086,
+      "bbox": [
+        91,
+        117,
+        1380,
+        991
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        735.5,
+        991
+      ],
+      "pivotNormalized": [
+        0.507942,
+        0.912523
+      ],
+      "world": {
+        "axis": "width",
+        "units": 3.4,
+        "visibleWidthU": 3.4,
+        "visibleHeightU": 2.3054
+      },
+      "region": "共享",
+      "kind": "prop",
+      "notes": "菌灯和壳体合层，单个静态亮灯状态。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/camp-shell_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          19,
+          1400,
+          1086
+        ],
+        "8": [
+          91,
+          117,
+          1380,
+          991
+        ],
+        "16": [
+          91,
+          119,
+          1380,
+          991
+        ],
+        "32": [
+          91,
+          119,
+          1380,
+          991
+        ]
+      },
+      "transparentFraction": 0.489021,
+      "sha256": "436202630c27af6e5e3c92a176525da63ec29c8641fbdb94b5d81d54c580f06e",
+      "references": [
+        "references/52_P01_工具·共生模块·固定奖励.png",
+        "references/07_R1-01.png"
+      ],
+      "promptChain": [
+        "prompts/camp-shell_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "anchor-ring_v01",
+      "name": "固定骨质锚环",
+      "file": "sprites/anchor-ring_v01.png",
+      "width": 1287,
+      "height": 1222,
+      "bbox": [
+        236,
+        88,
+        1064,
+        1173
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        700,
+        453
+      ],
+      "pivotNormalized": [
+        0.543901,
+        0.370704
+      ],
+      "world": {
+        "axis": "width",
+        "units": 0.55,
+        "visibleWidthU": 0.55,
+        "visibleHeightU": 0.7207
+      },
+      "region": "共享",
+      "kind": "prop",
+      "notes": "环孔中心为交互点。约0.5U环宽；红绳含在画布中。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/anchor-ring_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          19,
+          47,
+          1257,
+          1206
+        ],
+        "8": [
+          236,
+          88,
+          1064,
+          1173
+        ],
+        "16": [
+          236,
+          90,
+          1064,
+          1173
+        ],
+        "32": [
+          237,
+          90,
+          1064,
+          1173
+        ]
+      },
+      "transparentFraction": 0.72679,
+      "sha256": "77d6e80073698e4198e465f364e6c0ada0774d7d232edce23ad0e503e10391b8",
+      "references": [
+        "references/52_P01_工具·共生模块·固定奖励.png",
+        "references/07_R1-01.png"
+      ],
+      "promptChain": [
+        "prompts/anchor-ring_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "life-fragment_v01",
+      "name": "三腔生命碎片",
+      "file": "sprites/life-fragment_v01.png",
+      "width": 1295,
+      "height": 1215,
+      "bbox": [
+        202,
+        89,
+        1109,
+        1133
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        655.5,
+        611.0
+      ],
+      "pivotNormalized": [
+        0.506178,
+        0.502881
+      ],
+      "world": {
+        "axis": "height",
+        "units": 0.45,
+        "visibleWidthU": 0.3909,
+        "visibleHeightU": 0.45
+      },
+      "region": "共享",
+      "kind": "prop",
+      "notes": "依V5.2规则保留恰好三腔；不按旧破灯图生成。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/life-fragment_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          87,
+          1277,
+          1191
+        ],
+        "8": [
+          202,
+          89,
+          1109,
+          1133
+        ],
+        "16": [
+          202,
+          89,
+          1109,
+          1133
+        ],
+        "32": [
+          203,
+          90,
+          1109,
+          1133
+        ]
+      },
+      "transparentFraction": 0.648391,
+      "sha256": "c6106b20d14be6c4fd823ccf7fd8bd37504b82478070946b2c24715e6f535c00",
+      "references": [
+        "references/52_P01_工具·共生模块·固定奖励.png",
+        "references/07_R1-01.png"
+      ],
+      "promptChain": [
+        "prompts/life-fragment_v01.txt",
+        "prompts/life-fragment_v02.txt"
+      ],
+      "revisionInput": "references/revision-inputs/life-fragment-four-chamber-rejected.png",
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "empty-shell_v01",
+      "name": "可安置空壳",
+      "file": "sprites/empty-shell_v01.png",
+      "width": 1508,
+      "height": 1043,
+      "bbox": [
+        260,
+        233,
+        1271,
+        844
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        765.5,
+        844
+      ],
+      "pivotNormalized": [
+        0.507626,
+        0.809204
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1.3,
+        "visibleWidthU": 1.3,
+        "visibleHeightU": 0.7857
+      },
+      "region": "共享",
+      "kind": "prop",
+      "notes": "无灯空壳；迁居前后状态与搬运未制作。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/empty-shell_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          20,
+          1476,
+          1039
+        ],
+        "8": [
+          260,
+          233,
+          1271,
+          844
+        ],
+        "16": [
+          260,
+          233,
+          1271,
+          844
+        ],
+        "32": [
+          260,
+          234,
+          1271,
+          844
+        ]
+      },
+      "transparentFraction": 0.706863,
+      "sha256": "6976a63e022e911e04b60f717764a74d06abc8c6286c4b083ee34b6e79d716bb",
+      "references": [
+        "references/52_P01_工具·共生模块·固定奖励.png",
+        "references/07_R1-01.png"
+      ],
+      "promptChain": [
+        "prompts/empty-shell_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "r1-tongue-ledge_v01",
+      "name": "湿舌平台模块",
+      "file": "sprites/r1-tongue-ledge_v01.png",
+      "width": 2162,
+      "height": 727,
+      "bbox": [
+        59,
+        132,
+        2102,
+        665
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        1081,
+        194
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.26685
+      ],
+      "world": {
+        "axis": "width",
+        "units": 10.0,
+        "visibleWidthU": 10.0,
+        "visibleHeightU": 2.6089
+      },
+      "region": "R1",
+      "kind": "scenery",
+      "notes": "独立平台件，可重叠拼装；未宣称无缝平铺。中央亮顶边可站，端部有微起伏。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/r1-tongue-ledge_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          0,
+          2158,
+          727
+        ],
+        "8": [
+          59,
+          132,
+          2102,
+          665
+        ],
+        "16": [
+          59,
+          132,
+          2102,
+          665
+        ],
+        "32": [
+          59,
+          132,
+          2102,
+          665
+        ]
+      },
+      "transparentFraction": 0.659966,
+      "sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+      "references": [
+        "references/08_R1-02.png"
+      ],
+      "promptChain": [
+        "prompts/r1-tongue-ledge_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "r1-baleen-curtain_v01",
+      "name": "上颚鲸须垂帘",
+      "file": "sprites/r1-baleen-curtain_v01.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        21,
+        145,
+        1650,
+        803
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        835.5,
+        145
+      ],
+      "pivotNormalized": [
+        0.499701,
+        0.154091
+      ],
+      "world": {
+        "axis": "width",
+        "units": 16.0,
+        "visibleWidthU": 16.0,
+        "visibleHeightU": 6.4629
+      },
+      "region": "R1",
+      "kind": "scenery",
+      "notes": "装饰中景，非可站台面；不可用于肺心、胃肠或尾部。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/r1-baleen-curtain_v01.txt",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          9,
+          1660,
+          941
+        ],
+        "8": [
+          21,
+          145,
+          1650,
+          803
+        ],
+        "16": [
+          21,
+          145,
+          1650,
+          803
+        ],
+        "32": [
+          21,
+          145,
+          1650,
+          802
+        ]
+      },
+      "transparentFraction": 0.519776,
+      "sha256": "6c479b76269902945098b4dc4f0ce7e18082dfd219c2ced8a40b427a8db78a6e",
+      "references": [
+        "references/08_R1-02.png",
+        "references/06_R1.png"
+      ],
+      "promptChain": [
+        "prompts/r1-baleen-curtain_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    },
+    {
+      "id": "r1-mouth-depth_v01",
+      "name": "口腔深水背景",
+      "file": "backgrounds/r1-mouth-depth_v01.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "bboxMeaning": "alpha>=8 layout bounds; diagnostic only, source alpha unchanged",
+      "pivot": [
+        836.0,
+        941
+      ],
+      "pivotNormalized": [
+        0.5,
+        1.0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 29.857,
+        "visibleWidthU": 29.857,
+        "visibleHeightU": 16.8035
+      },
+      "region": "R1",
+      "kind": "background",
+      "notes": "单屏背景；非无缝平铺纹理、非碰撞图。",
+      "status": "candidate",
+      "userAccepted": false,
+      "generation": "built-in imagegen; reference-guided redraw",
+      "prompt": "prompts/r1-mouth-depth_v01.txt",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "8": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "32": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "transparentFraction": 0.0,
+      "sha256": "c794c2c5ddb2724d62219c809bb518372baecc00812659ab513cbf737ea8a9f2",
+      "references": [
+        "references/08_R1-02.png",
+        "references/06_R1.png"
+      ],
+      "promptChain": [
+        "prompts/r1-mouth-depth_v01.txt"
+      ],
+      "technicalQa": "passed for static preview; candidate pending user acceptance"
+    }
+  ],
+  "validation": {
+    "imageAndBrowserQA": "passed; see docs/验收记录.md",
+    "engineCollisionQA": "not performed",
+    "userArtAcceptance": "pending",
+    "contactAdjustmentPx": {
+      "camp-shell_v01": 4,
+      "hero-idle-right_v01": 3,
+      "corpse-crab_idle_v01": 3,
+      "empty-shell_v01": 5
+    }
+  }
+}

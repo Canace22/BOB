@@ -1,0 +1,122 @@
+{
+  "id": "r1-tongue-ramp",
+  "name": "湿舌恢复坡段",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-tongue-ramp/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    52,
+    107,
+    2120,
+    660
+  ],
+  "pivot": [
+    1086.0,
+    660
+  ],
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.6741,
+    "canvasWidthU": 10.4545,
+    "canvasHeightU": 3.5155
+  },
+  "sha256": "1bf80aa9c37ff15dec331810bda0a9529af2f26f9ed20706e4e13283d365efab",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      31,
+      9,
+      2129,
+      703
+    ],
+    "8": [
+      52,
+      107,
+      2120,
+      660
+    ],
+    "32": [
+      53,
+      108,
+      2120,
+      659
+    ],
+    "128": [
+      54,
+      108,
+      2119,
+      658
+    ],
+    "248": [
+      57,
+      112,
+      2117,
+      654
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/07_R1-01.png",
+      "assets/source/whalefall-v5-2-complete/references/06_R1.png"
+    ],
+    "prompts": [
+      "assets/source/r1-tongue-ramp/r1-tongue-ramp.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检连续左低右高坡面，无缺口或额外台面；碰撞须按实际顶边配置。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-tongue-platform-kit"
+  ],
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-05",
+    "R1-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-tongue-ramp-1bf80aa9c37f.png",
+  "state": "base"
+}

@@ -1,0 +1,116 @@
+{
+  "id": "r4-thin-bone-cracked",
+  "name": "薄骨片裂纹态",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "cracked"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-thin-bone-cracked/base.png",
+  "width": 2172,
+  "height": 724,
+  "bbox": [
+    50,
+    255,
+    2123,
+    507
+  ],
+  "pivot": [
+    1086.5,
+    507
+  ],
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.6078,
+    "canvasWidthU": 5.2388,
+    "canvasHeightU": 1.7463
+  },
+  "sha256": "68ea11d1c8c9fbd0b94b541d6e3933fa4cf8ba3f53dab35140fbb430a2fe3574",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      48,
+      100,
+      2125,
+      636
+    ],
+    "8": [
+      50,
+      255,
+      2123,
+      507
+    ],
+    "32": [
+      50,
+      255,
+      2123,
+      506
+    ],
+    "128": [
+      51,
+      256,
+      2122,
+      506
+    ],
+    "248": [
+      53,
+      257,
+      2121,
+      505
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/37_R4-07.png"
+    ],
+    "prompts": [
+      "assets/source/r4-thin-bone-cracked/r4-thin-bone-cracked.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "与完整态同为 2172×724，中央裂缝清楚，两端轮廓基本稳定；未将裂纹态当连续动画。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-thin-bone"
+  ],
+  "rooms": [
+    "R4-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-thin-bone-cracked-68ea11d1c8c9.png",
+  "state": "cracked"
+}

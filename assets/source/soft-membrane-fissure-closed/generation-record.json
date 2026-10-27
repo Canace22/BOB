@@ -1,0 +1,107 @@
+{
+  "id": "soft-membrane-fissure-closed",
+  "familyId": "soft-membrane-fissure",
+  "name": "双瓣柔膜缝·闭合",
+  "scale": {
+    "axis": "width",
+    "units": 1.5
+  },
+  "coversRequirementIds": [
+    "soft-membrane-fissure"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/soft-membrane-fissure-closed.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/soft-membrane-fissure-closed.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/41_R5-02.png",
+    "http://10.11.140.20:8765/simple/images/42_R5-03.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R5-s16",
+  "dimensions": [
+    1890,
+    832
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    277,
+    179,
+    1614,
+    652
+  ],
+  "pivot": [
+    945.5,
+    652
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "d729ad09e5b0b92228bab11fa9c6ba73a0b29075d2bc4ef3ecae161fc8035517",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "短柔膜缝闭合，以原画中央水平双瓣轮廓为准；宽1.5U，不将整根硬骨柱做可穿膜。",
+    "transparentPixels": 1083710,
+    "totalPixels": 1572480,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "短柔膜缝闭合，以原画中央水平双瓣轮廓为准；宽1.5U，不将整根硬骨柱做可穿膜。",
+  "world": {
+    "axis": "width",
+    "units": 1.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.5,
+    "visibleHeightU": 0.5307,
+    "canvasWidthU": 2.1204,
+    "canvasHeightU": 0.9334
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/soft-membrane-fissure-closed.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/41_R5-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/42_R5-03.png"
+  ],
+  "productionGroup": "props",
+  "width": 1890,
+  "height": 832,
+  "alphaBboxes": {
+    "1": [
+      0,
+      27,
+      1700,
+      768
+    ],
+    "8": [
+      277,
+      179,
+      1614,
+      652
+    ],
+    "32": [
+      277,
+      181,
+      1613,
+      650
+    ],
+    "128": [
+      278,
+      181,
+      1612,
+      649
+    ],
+    "248": [
+      279,
+      183,
+      1611,
+      648
+    ]
+  },
+  "alphaStats": {
+    "zero": 1083710,
+    "semi8to247": 7248,
+    "nearOpaque": 472411,
+    "total": 1572480
+  }
+}

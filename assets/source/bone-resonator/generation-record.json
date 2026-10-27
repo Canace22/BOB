@@ -1,0 +1,105 @@
+{
+  "id": "bone-resonator",
+  "familyId": "bone-resonator",
+  "name": "独立U形骨鸣器",
+  "scale": {
+    "axis": "height",
+    "units": 0.55
+  },
+  "coversRequirementIds": [
+    "bone-resonator"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/bone-resonator.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bone-resonator.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#player",
+  "dimensions": [
+    1145,
+    1374
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    217,
+    131,
+    945,
+    1253
+  ],
+  "pivot": [
+    581.0,
+    1006.1600000000001
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "7834b6920e67e18075840f44ddab0f8802e1e64930aad47bc3f5f47355e625ad",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Exactly two tines, full grip and attachment eye; no ground. Slight redraw differences versus original grip; same visual family.",
+    "transparentPixels": 1266732,
+    "totalPixels": 1573230,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Exactly two tines, full grip and attachment eye; no ground. Slight redraw differences versus original grip; same visual family.",
+  "world": {
+    "axis": "height",
+    "units": 0.55,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.3569,
+    "visibleHeightU": 0.55,
+    "canvasWidthU": 0.5613,
+    "canvasHeightU": 0.6735
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bone-resonator.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "productionGroup": "props",
+  "width": 1145,
+  "height": 1374,
+  "alphaBboxes": {
+    "1": [
+      211,
+      23,
+      1097,
+      1255
+    ],
+    "8": [
+      217,
+      131,
+      945,
+      1253
+    ],
+    "32": [
+      217,
+      132,
+      945,
+      1253
+    ],
+    "128": [
+      218,
+      132,
+      944,
+      1252
+    ],
+    "248": [
+      219,
+      133,
+      943,
+      1251
+    ]
+  },
+  "alphaStats": {
+    "zero": 1266732,
+    "semi8to247": 8591,
+    "nearOpaque": 290715,
+    "total": 1573230
+  }
+}

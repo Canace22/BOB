@@ -1,0 +1,117 @@
+{
+  "id": "resonant-clam",
+  "name": "鸣贝／吐珠鸣贝",
+  "kind": "character",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/resonant-clam/base.png",
+  "width": 1410,
+  "height": 1116,
+  "bbox": [
+    263,
+    91,
+    1233,
+    1032
+  ],
+  "pivot": [
+    1233,
+    561.5
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.55,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 1.5978,
+    "visibleHeightU": 1.55,
+    "canvasWidthU": 2.3225,
+    "canvasHeightU": 1.8383
+  },
+  "sha256": "7065decaadeb1001549504b02b38cf3b461b16948a1e56847ac4b283dc70109c",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      7,
+      1374,
+      1090
+    ],
+    "8": [
+      263,
+      91,
+      1233,
+      1032
+    ],
+    "32": [
+      264,
+      91,
+      1233,
+      1031
+    ],
+    "128": [
+      264,
+      92,
+      1232,
+      1031
+    ],
+    "248": [
+      265,
+      93,
+      1231,
+      1030
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/resonant-clam/resonant-clam.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "单只普通鸣贝，上下两壳及软缘可辨；无钙珠或波纹烘焙。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "resonant-clam"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/resonant-clam-7065decaadeb.png",
+  "familyId": "resonant-clam",
+  "variant": "base"
+}

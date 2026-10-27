@@ -1,0 +1,129 @@
+{
+  "id": "mucus-hazard-surface",
+  "familyId": "r3-hazard-surfaces",
+  "name": "低压黏液槽边",
+  "scale": {
+    "axis": "width",
+    "units": 3.0
+  },
+  "coversRequirementIds": [
+    "r3-hazard-surfaces"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/mucus-hazard-surface.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/mucus-hazard-surface.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/mucus-hazard-surface.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s16",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s16",
+      "quote": "R3-02 漂台阀：低压黏液；先有方向线/表面形变至少0.7秒，再激活。"
+    }
+  ],
+  "dimensions": [
+    2172,
+    724
+  ],
+  "width": 2172,
+  "height": 724,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    56,
+    219,
+    2123,
+    563
+  ],
+  "alphaBboxes": {
+    "1": [
+      53,
+      6,
+      2135,
+      724
+    ],
+    "8": [
+      56,
+      219,
+      2123,
+      563
+    ],
+    "32": [
+      58,
+      220,
+      2123,
+      562
+    ],
+    "128": [
+      58,
+      220,
+      2122,
+      562
+    ],
+    "248": [
+      59,
+      222,
+      2121,
+      561
+    ]
+  },
+  "pivot": [
+    1089.5,
+    563
+  ],
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      1089.5,
+      563
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "d1fe29c22803fbb2ef7d7993d4f8027a13d800fbc54c6aab94c68a7c7c12e25f",
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.4993,
+    "canvasWidthU": 3.1524,
+    "canvasHeightU": 1.0508
+  },
+  "purpose": "R3-02 低压黏液危险表层；预告/激活由程序与后续效果承担。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1112455,
+    "totalPixels": 1572528,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1112455,
+    "semi8to247": 13529,
+    "nearOpaque": 432322,
+    "total": 1572528
+  }
+}

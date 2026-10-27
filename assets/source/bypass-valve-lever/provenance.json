@@ -1,0 +1,129 @@
+{
+  "id": "bypass-valve-lever",
+  "name": "旁通阀独立扳片",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bypass-valve-lever/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    346,
+    259,
+    1355,
+    794
+  ],
+  "pivot": [
+    760,
+    766
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.45,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.8487,
+    "visibleHeightU": 0.45,
+    "canvasWidthU": 1.292,
+    "canvasHeightU": 0.8613
+  },
+  "sha256": "8c28eef27b3917ee017284d4501162ba5ed37a0817d0a92122f003d2225a9f94",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      19,
+      1522,
+      1000
+    ],
+    "8": [
+      346,
+      259,
+      1355,
+      794
+    ],
+    "32": [
+      347,
+      259,
+      1354,
+      793
+    ],
+    "128": [
+      347,
+      260,
+      1353,
+      792
+    ],
+    "248": [
+      350,
+      261,
+      1351,
+      791
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png",
+      "assets/source/whalefall-v5-2-complete/references/46_R5-07.png"
+    ],
+    "prompts": [
+      "assets/source/bypass-valve-lever/bypass-valve-lever.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Separate push-cap actuator for bypass vent; this is a mechanism part, not another flora species.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bypass-valve-lever-8c28eef27b39.png",
+  "attachmentPoints": {
+    "stemTip": {
+      "pixel": [
+        760,
+        766
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "settlement-valve"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "fx-short-swipe",
+  "name": "短击弧线",
+  "kind": "effect",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fx-short-swipe/base.png",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    41,
+    43,
+    219,
+    211
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.8,
+    "visibleWidthU": 1.8,
+    "visibleHeightU": 1.6989,
+    "canvasWidthU": 2.5888,
+    "canvasHeightU": 2.5888
+  },
+  "sha256": "4e9a4f0c32e31bbe2d14363b00bbb7a07c874d8a7f0f731d937ebf1ae9891139",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      41,
+      43,
+      219,
+      211
+    ],
+    "8": [
+      41,
+      43,
+      219,
+      211
+    ],
+    "32": [
+      41,
+      43,
+      219,
+      211
+    ],
+    "128": [
+      41,
+      43,
+      219,
+      211
+    ],
+    "248": [
+      42,
+      44,
+      219,
+      211
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/fx-short-swipe/fx-short-swipe.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "effect",
+  "coversRequirementIds": [
+    "fx-resonance"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-short-swipe-4e9a4f0c32e3.png"
+}

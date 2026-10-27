@@ -1,0 +1,118 @@
+{
+  "id": "arena-soft-curtain-closed",
+  "name": "战斗软帘·闭合",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/arena-soft-curtain-closed/base.png",
+  "width": 1012,
+  "height": 1554,
+  "bbox": [
+    11,
+    27,
+    1002,
+    1507
+  ],
+  "pivot": [
+    506,
+    27
+  ],
+  "world": {
+    "axis": "height",
+    "units": 3.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.0088,
+    "visibleHeightU": 3.0,
+    "canvasWidthU": 2.0514,
+    "canvasHeightU": 3.15
+  },
+  "sha256": "b5577318ca950c5dc5eccb992227083affb00f459332e15bfceb4a634a54c7d7",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1012,
+      1532
+    ],
+    "8": [
+      11,
+      27,
+      1002,
+      1507
+    ],
+    "32": [
+      12,
+      28,
+      1002,
+      1507
+    ],
+    "128": [
+      12,
+      28,
+      1002,
+      1506
+    ],
+    "248": [
+      15,
+      31,
+      1000,
+      1505
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/10_R1-04.png"
+    ],
+    "prompts": [
+      "assets/source/arena-soft-curtain-closed/arena-soft-curtain-closed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "战斗边界闭合软帘；各区颜色通过程序tint复用，碰撞和进入战斗由程序控制。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "arena-soft-curtain"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/arena-soft-curtain-closed-b5577318ca95.png",
+  "familyId": "arena-soft-curtain"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "ui-progress-pressure",
+  "name": "进度·潮压稳定P",
+  "kind": "ui",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态图形，动态文字、布局、数值和按键由界面代码负责。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/ui-progress-pressure/base.png",
+  "width": 128,
+  "height": 128,
+  "bbox": [
+    20,
+    28,
+    108,
+    102
+  ],
+  "pivot": [
+    64,
+    64
+  ],
+  "world": null,
+  "sha256": "20135f79df5be5e9f569b6d2abad2c8399d63477a44c3299dedf0ffe0ed58c88",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      20,
+      28,
+      108,
+      102
+    ],
+    "8": [
+      20,
+      28,
+      108,
+      102
+    ],
+    "32": [
+      21,
+      28,
+      107,
+      102
+    ],
+    "128": [
+      21,
+      29,
+      107,
+      101
+    ],
+    "248": [
+      21,
+      29,
+      107,
+      101
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/ui-progress-pressure/ui-progress-pressure.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态图形，动态文字、布局、数值和按键由界面代码负责。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "ui",
+  "coversRequirementIds": [
+    "ui-progression"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/ui-progress-pressure-20135f79df5b.png"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "red-crown-colony",
+  "name": "红冠群落",
+  "kind": "character",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "before-restoration"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/red-crown-colony/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    451,
+    110,
+    1151,
+    911
+  ],
+  "pivot": [
+    801.0,
+    911
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.1,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 0.9613,
+    "visibleHeightU": 1.1,
+    "canvasWidthU": 2.1094,
+    "canvasHeightU": 1.4062
+  },
+  "sha256": "c96fd84943ecc23fc9956e7c89315beef04fd51389c41095e382bde8e23b2fb4",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      73,
+      67,
+      1398,
+      1024
+    ],
+    "8": [
+      451,
+      110,
+      1151,
+      911
+    ],
+    "32": [
+      451,
+      110,
+      1150,
+      910
+    ],
+    "128": [
+      452,
+      110,
+      1149,
+      910
+    ],
+    "248": [
+      453,
+      111,
+      1148,
+      908
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/34_R4-04.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/red-crown-colony/red-crown-colony.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "依据断脊画面红色管状群落重绘，单簇扎根，未加入攻击或活动器官。",
+      "恢复前稀疏形态为根据叙事状态制作的外观适配，原画没有独立前后图板。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "red-crown-colony"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/red-crown-colony-c96fd84943ec.png",
+  "familyId": "red-crown-colony",
+  "variant": "before-restoration"
+}

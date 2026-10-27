@@ -1,0 +1,120 @@
+{
+  "id": "r5-cranial-foreground",
+  "name": "颅侧暗骨板前景",
+  "coversRequirementIds": [
+    "r5-cranial-foreground"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/38_R5-head.png"
+  ],
+  "region": "R5头",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 3.5662,
+    "canvasWidthU": 14.6129,
+    "canvasHeightU": 5.2169
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "头部暗骨板与旧膜构成单一前景件；略亮边缘需在合成中检查，不设碰撞。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r5-cranial-foreground.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-27d5c45d-b072-4db7-89f0-6e5109db795f.png",
+  "width": 2098,
+  "height": 749,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      31,
+      2058,
+      725
+    ],
+    "8": [
+      44,
+      197,
+      2054,
+      709
+    ],
+    "32": [
+      44,
+      197,
+      2054,
+      709
+    ],
+    "128": [
+      45,
+      198,
+      2054,
+      708
+    ],
+    "248": [
+      46,
+      199,
+      2053,
+      707
+    ]
+  },
+  "sha256": "7f13d0879bc5fb472634879015ad8f6079460115f00280d68b9b0b741cee1366",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r5-cranial-foreground.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE low broad dark overlapping cranial bone plate with attached old membrane curls for BOTTOM FOREGROUND in R5 head, 14 hero units wide. An irregular flat sheet-like skull fragment, deep indigo-gray with shadowed aged ivory hints, thin dull purple membrane folded along bottom and two edges, all connected as one silhouette. No complete skull, jaw, teeth, eye socket face, ear spiral, rope, coral or separate prop. Very low contrast and no continuous bright horizontal rim, no walkable platform cue. Side view, complete softly tapered shape, subtle matte brush texture, quiet foreground framing, transparent around all edges.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/38_R5-head.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r5-head",
+      "r5-head-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    44,
+    197,
+    2054,
+    709
+  ],
+  "alphaStats": {
+    "zero": 1006773,
+    "semi8to247": 16848,
+    "nearOpaque": 531627,
+    "total": 1571402
+  },
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 3.5662,
+    "canvasWidthU": 14.6129,
+    "canvasHeightU": 5.2169
+  },
+  "pivot": [
+    1049.0,
+    709
+  ]
+}

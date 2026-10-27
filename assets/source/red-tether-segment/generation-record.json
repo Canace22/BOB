@@ -1,0 +1,105 @@
+{
+  "id": "red-tether-segment",
+  "familyId": "red-tether",
+  "name": "红索可重复段",
+  "scale": {
+    "axis": "width",
+    "units": 1.0
+  },
+  "coversRequirementIds": [
+    "red-tether"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/red-tether-segment.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/red-tether-segment.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#player",
+  "dimensions": [
+    2172,
+    724
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    81,
+    273,
+    2093,
+    450
+  ],
+  "pivot": [
+    1087.0,
+    361.5
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "6c96c369a3e0eba3155453b960f5285763f2c0772ed3c7175bb54306fac09b09",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Straight rope, complete flat ends, no knot. Not seamless-tile certified; procedural crop/repeat QA pending.",
+    "transparentPixels": 1246639,
+    "totalPixels": 1572528,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Straight rope, complete flat ends, no knot. Not seamless-tile certified; procedural crop/repeat QA pending.",
+  "world": {
+    "axis": "width",
+    "units": 1.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.0,
+    "visibleHeightU": 0.088,
+    "canvasWidthU": 1.0795,
+    "canvasHeightU": 0.3598
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/red-tether-segment.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "productionGroup": "props",
+  "width": 2172,
+  "height": 724,
+  "alphaBboxes": {
+    "1": [
+      78,
+      101,
+      2138,
+      628
+    ],
+    "8": [
+      81,
+      273,
+      2093,
+      450
+    ],
+    "32": [
+      81,
+      273,
+      2092,
+      449
+    ],
+    "128": [
+      82,
+      274,
+      2092,
+      449
+    ],
+    "248": [
+      83,
+      275,
+      2091,
+      448
+    ]
+  },
+  "alphaStats": {
+    "zero": 1246639,
+    "semi8to247": 11242,
+    "nearOpaque": 308051,
+    "total": 1572528
+  }
+}

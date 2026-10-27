@@ -1,0 +1,129 @@
+{
+  "id": "spine-resonant-clams",
+  "name": "悬脊鸣贝",
+  "familyId": "spine-resonant-clams",
+  "variant": "base",
+  "kind": "boss",
+  "region": "R4",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/spine-resonant-clams.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/spine-resonant-clams.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/35_R4-05.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    69,
+    119,
+    1498,
+    912
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      23,
+      1502,
+      1024
+    ],
+    "8": [
+      69,
+      119,
+      1498,
+      912
+    ],
+    "32": [
+      70,
+      119,
+      1497,
+      912
+    ],
+    "128": [
+      71,
+      120,
+      1497,
+      911
+    ],
+    "248": [
+      72,
+      121,
+      1496,
+      910
+    ]
+  },
+  "sha256": "0fb2227e94e5354e72063a45f531771da57e61b4a9ebf10c3ceca498aadc086b",
+  "world": {
+    "axis": "width",
+    "units": 2.8,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 2.8,
+    "visibleHeightU": 1.5538,
+    "canvasWidthU": 3.0097,
+    "canvasHeightU": 2.0064
+  },
+  "pivotSuggestion": {
+    "type": "right-center",
+    "pixel": [
+      1498,
+      515.5
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R4-s15",
+      "quote": "两贝固定左右附着，共享300耐受；一吐珠一露软缘0.85秒；低震预告1秒；半血节拍0.75秒。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R4-s18",
+      "quote": "一贝吐珠时另一贝露软缘；低位合震提前1秒标带。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "交付一个可复用Boss贝实体，宽扁分层贝壳、橙软缘与原画一致；双贝需两个独立实例，不在同一图中烘焙。",
+      "未烘焙珠、声环或场景。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [
+    {
+      "id": "spine-clam-left-instance",
+      "file": "spine-resonant-clams.png",
+      "reuse": true
+    },
+    {
+      "id": "spine-clam-right-instance",
+      "file": "spine-resonant-clams.png",
+      "reuse": true,
+      "transform": "根据骨面附着方向布置，不改变生物设定"
+    }
+  ],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "spine-resonant-clams",
+  "coversRequirementIds": [
+    "spine-resonant-clams"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 809625,
+    "semi8to247": 10883,
+    "nearOpaque": 739984,
+    "total": 1572864
+  },
+  "pivot": [
+    1498,
+    515.5
+  ]
+}

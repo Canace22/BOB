@@ -1,0 +1,128 @@
+{
+  "id": "blood-nest-swarm",
+  "name": "血巢潮群",
+  "familyId": "blood-nest-swarm",
+  "variant": "base",
+  "kind": "boss",
+  "region": "R2",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blood-nest-swarm.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blood-nest-swarm.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1774,
+  "height": 887,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    30,
+    82,
+    1745,
+    841
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      63,
+      1756,
+      887
+    ],
+    "8": [
+      30,
+      82,
+      1745,
+      841
+    ],
+    "32": [
+      31,
+      82,
+      1744,
+      840
+    ],
+    "128": [
+      32,
+      83,
+      1744,
+      838
+    ],
+    "248": [
+      45,
+      113,
+      1741,
+      808
+    ]
+  },
+  "sha256": "3bbc2442509b149a255fc16033a3e7e7e55766e8647438edaeaafb3c56a12876",
+  "world": {
+    "axis": "width",
+    "units": 5.6,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 5.6,
+    "visibleHeightU": 2.4784,
+    "canvasWidthU": 5.7927,
+    "canvasHeightU": 2.8963
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      887.5,
+      461.5
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R2-s18",
+      "quote": "聚流预告1秒锁一条水道；外露1秒时近击；环散1.1秒前摇；半血后0.8秒重复旧冲线已标轨。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R2-s19",
+      "quote": "群体聚散围着废弃血巢，不画成戴主角灯的大怪物。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "忠于原画的红粉小生物回环群体，没有拟人巨怪、灯或捏造心脏。",
+      "当前为群体静态构形；独立个体与凝聚/散群动作是后续动画范围，本图不能当完成的Boss动作。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [
+    {
+      "name": "群体静态构形",
+      "file": "blood-nest-swarm.png",
+      "control": "后续动作需独立个体编排；本件作为静态主形象参考"
+    },
+    {
+      "id": "blood-nest-core",
+      "file": "blood-nest-core.png",
+      "use": "原文外露核心的独立凝聚节点适配，非原图现成器官"
+    }
+  ],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "blood-nest-swarm",
+  "coversRequirementIds": [
+    "blood-nest-swarm"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 753710,
+    "semi8to247": 304642,
+    "nearOpaque": 314089,
+    "total": 1573538
+  },
+  "pivot": [
+    887.5,
+    461.5
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "bone-anchor-ring",
+  "name": "固定骨质锚环",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "环孔中心为交互点。约0.5U环宽；红绳含在画布中。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bone-anchor-ring/base.png",
+  "width": 1287,
+  "height": 1222,
+  "bbox": [
+    236,
+    88,
+    1064,
+    1173
+  ],
+  "pivot": [
+    700,
+    453
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.55,
+    "visibleWidthU": 0.55,
+    "visibleHeightU": 0.7207
+  },
+  "sha256": "77d6e80073698e4198e465f364e6c0ada0774d7d232edce23ad0e503e10391b8",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      19,
+      47,
+      1257,
+      1206
+    ],
+    "8": [
+      236,
+      88,
+      1064,
+      1173
+    ],
+    "16": [
+      236,
+      90,
+      1064,
+      1173
+    ],
+    "32": [
+      237,
+      90,
+      1064,
+      1173
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-static-01/references/07_R1-01.png"
+    ],
+    "prompts": [
+      "assets/source/bone-anchor-ring/anchor-ring_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "anchor-ring_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "环孔中心为交互点。约0.5U环宽；红绳含在画布中。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

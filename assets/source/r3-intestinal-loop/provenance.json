@@ -1,0 +1,119 @@
+{
+  "id": "r3-intestinal-loop",
+  "name": "回折肠袢纵裂边",
+  "kind": "scenery",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r3-intestinal-loop/base.png",
+  "width": 1811,
+  "height": 868,
+  "bbox": [
+    46,
+    39,
+    1767,
+    818
+  ],
+  "pivot": [
+    906.5,
+    818
+  ],
+  "world": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 9.0529,
+    "canvasWidthU": 21.0459,
+    "canvasHeightU": 10.0872
+  },
+  "sha256": "0dc2647777a6596c287a655fbb795d4be851ac55ef03f2f7c03e668057933b73",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1808,
+      868
+    ],
+    "8": [
+      46,
+      39,
+      1767,
+      818
+    ],
+    "32": [
+      47,
+      40,
+      1767,
+      818
+    ],
+    "128": [
+      47,
+      40,
+      1766,
+      817
+    ],
+    "248": [
+      48,
+      42,
+      1765,
+      816
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/26_R3-05.png",
+      "assets/source/whalefall-v5-2-complete/references/28_R3-07.png"
+    ],
+    "prompts": [
+      "assets/source/r3-intestinal-loop/r3-intestinal-loop.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "纵裂肠袢呈侧向回折，内部暖色黏膜与外壁一致；无骨齿与圆形人造门，按装饰器官比例使用。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-intestinal-fold"
+  ],
+  "rooms": [
+    "R3-05",
+    "R3-06",
+    "R3-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-intestinal-loop-0dc2647777a6.png",
+  "state": "base"
+}

@@ -1,0 +1,129 @@
+{
+  "id": "gut-latch-closed",
+  "name": "胃侧红结闩·闭合",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/gut-latch-closed/base.png",
+  "width": 1024,
+  "height": 1536,
+  "bbox": [
+    134,
+    104,
+    905,
+    1423
+  ],
+  "pivot": [
+    519.5,
+    1423
+  ],
+  "world": {
+    "axis": "height",
+    "units": 2.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.4613,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 1.9409,
+    "canvasHeightU": 2.9113
+  },
+  "sha256": "22d005d977c3b13d7bd1134dcdd2f6e770026396899cc5b42dd96bbe5e080e14",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      28,
+      992,
+      1524
+    ],
+    "8": [
+      134,
+      104,
+      905,
+      1423
+    ],
+    "32": [
+      135,
+      104,
+      904,
+      1423
+    ],
+    "128": [
+      135,
+      105,
+      903,
+      1423
+    ],
+    "248": [
+      137,
+      105,
+      902,
+      1421
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/19_R2-05.png",
+      "assets/source/whalefall-v5-2-complete/references/28_R3-07.png",
+      "assets/source/whalefall-v5-2-complete/references/44_R5-05.png"
+    ],
+    "prompts": [
+      "assets/source/gut-latch-closed/gut-latch-closed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "胃侧六横壳片门闭合；红结闩用独立red-tether-knot叠加，背侧省略。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "permanent-latches"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/gut-latch-closed-22d005d977c3.png",
+  "attachmentPoints": {
+    "control": {
+      "pixel": [
+        514,
+        770
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "permanent-latches"
+}

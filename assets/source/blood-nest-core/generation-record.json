@@ -1,0 +1,123 @@
+{
+  "id": "blood-nest-core",
+  "name": "血巢潮群 · 凝聚核心节点（适配）",
+  "familyId": "blood-nest-swarm",
+  "variant": "condensed-core-adaptation",
+  "kind": "boss",
+  "region": "R2",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blood-nest-core.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blood-nest-core.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blood-nest-swarm.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png"
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    218,
+    114,
+    1310,
+    927
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      28,
+      1516,
+      1024
+    ],
+    "8": [
+      218,
+      114,
+      1310,
+      927
+    ],
+    "32": [
+      219,
+      115,
+      1310,
+      927
+    ],
+    "128": [
+      220,
+      116,
+      1309,
+      925
+    ],
+    "248": [
+      301,
+      121,
+      1289,
+      900
+    ]
+  },
+  "sha256": "95fc9f1514685ccf5c144c46a446e2abeb3c129e4d5ca209d5ca224f0d5b945c",
+  "world": {
+    "axis": "width",
+    "units": 1.55,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 1.55,
+    "visibleHeightU": 1.154,
+    "canvasWidthU": 2.1802,
+    "canvasHeightU": 1.4535
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      764.0,
+      520.5
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R2-s18",
+      "quote": "聚流预告1秒锁一条水道；外露1秒时近击；环散1.1秒前摇；半血后0.8秒重复旧冲线已标轨。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R2-s19",
+      "quote": "群体聚散围着废弃血巢，不画成戴主角灯的大怪物。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "独立密集团簇与群体同一种红粉小生物，未新增心脏、脸或物种。",
+      "原文有外露核心，原画中心未画独立核心结构；本件是保守文字规则适配候选，不能宣称原图逐像素提取。",
+      "当前仅静态节点；何时外露及伤害窗口须按原文在游戏实现。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [
+    {
+      "type": "independent-static-component",
+      "parent": "blood-nest-swarm"
+    }
+  ],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "blood-nest-swarm",
+  "coversRequirementIds": [
+    "blood-nest-swarm"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 993876,
+    "semi8to247": 109662,
+    "nearOpaque": 420194,
+    "total": 1572864
+  },
+  "pivot": [
+    764.0,
+    520.5
+  ]
+}

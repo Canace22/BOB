@@ -1,0 +1,120 @@
+{
+  "id": "r2-foreground-membrane",
+  "name": "暗紫膜缘前景",
+  "coversRequirementIds": [
+    "r2-membrane-foreground"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/14_R2.png"
+  ],
+  "region": "R2",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 4.1165,
+    "canvasWidthU": 14.5659,
+    "canvasHeightU": 4.898
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "暗紫褶膜整体连续，无明亮水平承托线；细小孔洞与透明网边需深浅底 QA。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-foreground-membrane.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-4e676435-919d-4d7c-a11d-00376e01dddc.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      3,
+      2144,
+      727
+    ],
+    "8": [
+      42,
+      64,
+      2120,
+      675
+    ],
+    "32": [
+      42,
+      64,
+      2120,
+      675
+    ],
+    "128": [
+      43,
+      65,
+      2119,
+      674
+    ],
+    "248": [
+      46,
+      66,
+      2117,
+      673
+    ]
+  },
+  "sha256": "4ca5ad2b4da2c228dc67b6cfd17fa1951ce94aab2cc9a77ffc751d21b7c139c8",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-foreground-membrane.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: a single broad hanging pleural membrane edge for the FOREGROUND of dead whale lung-heart region, 14 hero units wide. Irregular gently curved folded border, muted dark indigo and dusky purple, sagging web folds connected to one thicker opaque strip. Low contrast, shadowy painted texture. It is a flat framing sprite seen from side, NOT terrain: no continuous horizontal pale rim, no bright walkable edge, no lit growths, no heart, no rib bones. Dark opaque silhouette attached to a few translucent membrane folds; complete strip fully inside canvas. Preserve established matte style.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/14_R2.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r2",
+      "r2-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    42,
+    64,
+    2120,
+    675
+  ],
+  "alphaStats": {
+    "zero": 1018585,
+    "semi8to247": 22675,
+    "nearOpaque": 510076,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 4.1165,
+    "canvasWidthU": 14.5659,
+    "canvasHeightU": 4.898
+  },
+  "pivot": [
+    1081.0,
+    675
+  ]
+}

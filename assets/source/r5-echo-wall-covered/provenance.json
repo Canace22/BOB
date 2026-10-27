@@ -1,0 +1,122 @@
+{
+  "id": "r5-echo-wall-covered",
+  "name": "覆膜下旧声槽",
+  "kind": "scenery",
+  "region": "R5头",
+  "tags": [
+    "R5头",
+    "V5.2",
+    "全量静态",
+    "covered"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-echo-wall-covered/base.png",
+  "width": 1983,
+  "height": 793,
+  "bbox": [
+    41,
+    70,
+    1943,
+    753
+  ],
+  "pivot": [
+    992.0,
+    753
+  ],
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 3.591,
+    "canvasWidthU": 10.4259,
+    "canvasHeightU": 4.1693
+  },
+  "sha256": "ead48b0ca089dfece6286bcf00b93eb1e6f9cab19ce32d7e30b63d4d7c1d2fab",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1967,
+      793
+    ],
+    "8": [
+      41,
+      70,
+      1943,
+      753
+    ],
+    "32": [
+      41,
+      71,
+      1942,
+      753
+    ],
+    "128": [
+      42,
+      72,
+      1942,
+      752
+    ],
+    "248": [
+      46,
+      76,
+      1941,
+      751
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/43_R5-04.png",
+      "assets/source/whalefall-v5-2-complete/references/44_R5-05.png"
+    ],
+    "prompts": [
+      "assets/source/r5-echo-wall-covered/r5-echo-wall-covered.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "骨壁被低饱和蓝灰旧膜覆盖，暗示的波槽尚不可清楚读出；无发光图案，后续显露态需清晰区分。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r5-ear-soft-tissue"
+  ],
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-echo-wall-covered-ead48b0ca089.png",
+  "state": "covered"
+}

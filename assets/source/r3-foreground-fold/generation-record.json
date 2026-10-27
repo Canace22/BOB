@@ -1,0 +1,122 @@
+{
+  "id": "r3-foreground-fold",
+  "name": "暗褶壁前景",
+  "coversRequirementIds": [
+    "r3-mucosa-foreground"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/21_R3.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.3568,
+    "canvasWidthU": 14.2955,
+    "canvasHeightU": 5.4452
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "暗色胃肠前景为单一连续褶带，没有平台亮顶；大量上方透明空间保留原图，摆放应使用 alpha bbox。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-foreground-fold.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-b61cb50f-6909-40f0-bafb-4c896e273219.png",
+  "width": 2032,
+  "height": 774,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      18,
+      68,
+      2018,
+      758
+    ],
+    "8": [
+      22,
+      414,
+      2012,
+      749
+    ],
+    "32": [
+      22,
+      414,
+      2011,
+      748
+    ],
+    "128": [
+      22,
+      414,
+      2010,
+      747
+    ],
+    "248": [
+      23,
+      416,
+      2009,
+      746
+    ]
+  },
+  "sha256": "c159a01afb14d7352d4130b4098accc361d10441727fd18d1bac2ce8f923cd52",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-foreground-fold.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE continuous broad curled fold of dead whale gastric wall for a BOTTOM FOREGROUND border, 14 hero units wide. A low wavy soft tissue band with a few overlapping rounded folds, dark russet brown in deep indigo shadows, subtle sparse ochre texture only. Foreground framing, very low contrast, NO horizontal pale walking rim, no clear platform top, no hanging lamps, no shells, no glowing slime, no roots or coral. It should feel like the shadowy bottom foreground membrane in image1. Whole band complete with tapered organic left and right tips, no cropped straight bottom.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/21_R3.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3",
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    22,
+    414,
+    2012,
+    749
+  ],
+  "alphaStats": {
+    "zero": 1199873,
+    "semi8to247": 13264,
+    "nearOpaque": 345670,
+    "total": 1572768
+  },
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.3568,
+    "canvasWidthU": 14.2955,
+    "canvasHeightU": 5.4452
+  },
+  "pivot": [
+    1017.0,
+    749
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "tide-picker-left",
+  "name": "拾潮者 · 左向待机",
+  "familyId": "tide-picker",
+  "variant": "idle-left",
+  "kind": "player",
+  "region": "all",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left-v04.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/03_H01_拾潮者·三视图与挂点.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/rejected/tide-picker-left_v01-wrong-attachments.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/rejected/tide-picker-left_v02-backward-tool.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/alternates/tide-picker-left_v03-long-cape.png"
+  ],
+  "width": 1290,
+  "height": 1219,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    192,
+    59,
+    888,
+    1177
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      47,
+      1250,
+      1181
+    ],
+    "8": [
+      192,
+      59,
+      888,
+      1177
+    ],
+    "32": [
+      192,
+      59,
+      887,
+      1177
+    ],
+    "128": [
+      193,
+      60,
+      887,
+      1176
+    ],
+    "248": [
+      194,
+      61,
+      886,
+      1175
+    ]
+  },
+  "sha256": "d32973b4d2b2c2755be1ce60ad4077aa467fbcfa6bd6722447df67f8aa3861b8",
+  "world": {
+    "axis": "height",
+    "units": 1,
+    "basis": "设计明确主角高度1U=0.30m。",
+    "visibleWidthU": 0.6225,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 1.1538,
+    "canvasHeightU": 1.0903
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      540.0,
+      1177
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "player",
+      "quote": "移动、跳跃；短击：近身两段攻击；重鸣；调息；交互、灯罩。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "player",
+      "quote": "动作原图：短击、重鸣、受击与重新出发的姿态；图板是动作设计，不是可运行动画。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "player",
+      "quote": "贴流冲；浮膜；锚定；迎珠；敛膜潜隙。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "第三版：头、工具与蹼趾朝左；右侧近臂持工具前伸，左腰灯在远侧后腰被披风遮挡，无镜像原稿冒充。",
+      "原稿与两次定向修正提示词均保留；静态方向身份需主代理并排复核，尚无转向动画。",
+      "第四版只针对披风长度：下摆缩短至上腿，头/手/工具/红索与左向蹼足保持；灯仍位于远侧后腰，其上侧被披风覆盖但下摆缩短后露出更多。v03长披风原图保留。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "tide-picker-left",
+  "coversRequirementIds": [
+    "tide-picker-left"
+  ],
+  "promptFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left.prompt.txt",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left-v02.prompt.txt",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left-v03.prompt.txt",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/tide-picker-left-v04.prompt.txt"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 1155875,
+    "semi8to247": 13726,
+    "nearOpaque": 389906,
+    "total": 1572510
+  },
+  "pivot": [
+    540.0,
+    1177
+  ]
+}

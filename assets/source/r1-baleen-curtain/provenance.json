@@ -1,0 +1,92 @@
+{
+  "id": "r1-baleen-curtain",
+  "name": "上颚鲸须垂帘",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "装饰中景，非可站台面；不可用于肺心、胃肠或尾部。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-baleen-curtain/base.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    21,
+    145,
+    1650,
+    803
+  ],
+  "pivot": [
+    835.5,
+    145
+  ],
+  "world": {
+    "axis": "width",
+    "units": 16.0,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 6.4629
+  },
+  "sha256": "6c479b76269902945098b4dc4f0ce7e18082dfd219c2ced8a40b427a8db78a6e",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1660,
+      941
+    ],
+    "8": [
+      21,
+      145,
+      1650,
+      803
+    ],
+    "16": [
+      21,
+      145,
+      1650,
+      803
+    ],
+    "32": [
+      21,
+      145,
+      1650,
+      802
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png",
+      "assets/source/whalefall-v5-2-static-01/references/06_R1.png"
+    ],
+    "prompts": [
+      "assets/source/r1-baleen-curtain/r1-baleen-curtain_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "r1-baleen-curtain_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "装饰中景，非可站台面；不可用于肺心、胃肠或尾部。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "r3-intestinal-loop",
+  "name": "回折肠袢纵裂边",
+  "coversRequirementIds": [
+    "r3-intestinal-fold"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/26_R3-05.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/28_R3-07.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 9.0529,
+    "canvasWidthU": 21.0459,
+    "canvasHeightU": 10.0872
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R3-05",
+    "R3-06",
+    "R3-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "纵裂肠袢呈侧向回折，内部暖色黏膜与外壁一致；无骨齿与圆形人造门，按装饰器官比例使用。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-intestinal-loop.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-ed3d7b17-91a2-4632-aaaa-4755b659544e.png",
+  "width": 1811,
+  "height": 868,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1808,
+      868
+    ],
+    "8": [
+      46,
+      39,
+      1767,
+      818
+    ],
+    "32": [
+      47,
+      40,
+      1767,
+      818
+    ],
+    "128": [
+      47,
+      40,
+      1766,
+      817
+    ],
+    "248": [
+      48,
+      42,
+      1765,
+      816
+    ]
+  },
+  "sha256": "0dc2647777a6596c287a655fbb795d4be851ac55ef03f2f7c03e668057933b73",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-intestinal-loop.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE curving longitudinally split intestinal loop from a dead whale, R3 organ transition landmark, 20 hero units wide. One thick elongated soft intestine folds back on itself in a broad asymmetric sideways U, both ends in view, with a lengthwise torn seam and warm ochre inner mucosal folds along the upper-facing open side. The U is a lateral return bend of the intestine, not a circular doorway. Earthy russet and ochre with muted olive shadow, thick soft rounded outer wall, narrow connective tissue edges. Tissue surface matches R3; no bone, no ivory teeth, no baleen, no manmade tunnel, no upright loop arch, no liquid. Not a level or frame: one independent organ segment. Shallow side view.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/26_R3-05.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    46,
+    39,
+    1767,
+    818
+  ],
+  "alphaStats": {
+    "zero": 850793,
+    "semi8to247": 15367,
+    "nearOpaque": 687202,
+    "total": 1571948
+  },
+  "world": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 9.0529,
+    "canvasWidthU": 21.0459,
+    "canvasHeightU": 10.0872
+  },
+  "pivot": [
+    906.5,
+    818
+  ]
+}

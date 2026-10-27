@@ -1,0 +1,147 @@
+{
+  "id": "habitat-larva-trough",
+  "familyId": "shared-habitat-beds",
+  "name": "幼体缓流槽基座",
+  "scale": {
+    "axis": "width",
+    "units": 2.5
+  },
+  "coversRequirementIds": [
+    "shared-habitat-beds"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-larva-trough.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-larva-trough.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-larva-trough.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R5-s17",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R5-s17",
+      "quote": "H6 尾下幼体槽：尾根侧台旋开遮流瓣，幼体进入低速凹槽；B 骨音调律。"
+    }
+  ],
+  "dimensions": [
+    1774,
+    887
+  ],
+  "width": 1774,
+  "height": 887,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    55,
+    241,
+    1725,
+    773
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      19,
+      1773,
+      887
+    ],
+    "8": [
+      55,
+      241,
+      1725,
+      773
+    ],
+    "32": [
+      55,
+      241,
+      1725,
+      772
+    ],
+    "128": [
+      56,
+      242,
+      1724,
+      772
+    ],
+    "248": [
+      57,
+      242,
+      1723,
+      770
+    ]
+  },
+  "pivot": [
+    890.0,
+    773
+  ],
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      890.0,
+      773
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "af662f3792fcaf36b636f34955af9d21b8d49c0034607dc9278709f9788d8e55",
+  "world": {
+    "axis": "width",
+    "units": 2.5,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 2.5,
+    "visibleHeightU": 0.7964,
+    "canvasWidthU": 2.6557,
+    "canvasHeightU": 1.3278
+  },
+  "purpose": "H6 缓流槽底座；遮流瓣、幼体和水流均保持独立。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1091394,
+    "totalPixels": 1573538,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "attachmentPoints": {
+    "larvaRestCenter": {
+      "pixel": [
+        887,
+        525
+      ],
+      "role": "幼体中心群落建议落点"
+    },
+    "flowShutterPivot": {
+      "pixel": [
+        1490,
+        475
+      ],
+      "role": "右侧槽口遮流瓣建议挂点"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "recipeNotes": "生态主交互物保持独立；此基座前沿未额外拆层。子物下缘按凹槽挂点放置，如需真实前沿遮挡应在场景用独立遮挡蒙版而非修改原PNG。",
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1091394,
+    "semi8to247": 13466,
+    "nearOpaque": 449513,
+    "total": 1573538
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "slit-eel",
+  "name": "缝栖鳗（孔鳗变体）",
+  "kind": "character",
+  "region": "R5",
+  "tags": [
+    "R5",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/slit-eel/base.png",
+  "width": 1964,
+  "height": 801,
+  "bbox": [
+    55,
+    185,
+    1934,
+    665
+  ],
+  "pivot": [
+    1934,
+    425.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.4,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 3.4,
+    "visibleHeightU": 0.8685,
+    "canvasWidthU": 3.5538,
+    "canvasHeightU": 1.4494
+  },
+  "sha256": "ac346ed935784371b93fdcdf874c95f9434c09673c5b84fb50db60227620df7f",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      53,
+      28,
+      1936,
+      769
+    ],
+    "8": [
+      55,
+      185,
+      1934,
+      665
+    ],
+    "32": [
+      56,
+      185,
+      1934,
+      665
+    ],
+    "128": [
+      56,
+      186,
+      1933,
+      665
+    ],
+    "248": [
+      57,
+      187,
+      1932,
+      663
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+      "assets/source/slit-eel/references/blind-eel-806453b7f7fb.png"
+    ],
+    "prompts": [
+      "assets/source/slit-eel/slit-eel.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "共享孔鳗模板，新增狭窄柔膜附着缘；一个口、一头一身，无额外物种结构。",
+      "孔口周围场景独立；需运行时遮挡衔接。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "slit-eel"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/slit-eel-ac346ed93578.png",
+  "familyId": "hole-eel",
+  "variant": "base"
+}

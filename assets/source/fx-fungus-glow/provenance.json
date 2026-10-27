@@ -1,0 +1,110 @@
+{
+  "id": "fx-fungus-glow",
+  "name": "密封菌光遮罩",
+  "kind": "effect",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fx-fungus-glow/base.png",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    14,
+    14,
+    242,
+    242
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.5,
+    "visibleWidthU": 2.5,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 2.807,
+    "canvasHeightU": 2.807
+  },
+  "sha256": "c22ef6a8354a4d85a88ffb60e4d66ade2e8c4e4e2e19f199230f03819e8a03bf",
+  "alphaRange": [
+    0,
+    201
+  ],
+  "alphaBboxes": {
+    "1": [
+      5,
+      5,
+      251,
+      251
+    ],
+    "8": [
+      14,
+      14,
+      242,
+      242
+    ],
+    "32": [
+      47,
+      47,
+      209,
+      209
+    ],
+    "128": [
+      108,
+      108,
+      148,
+      148
+    ],
+    "248": null
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/fx-fungus-glow/fx-fungus-glow.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "effect",
+  "coversRequirementIds": [
+    "fx-underwater-atmosphere",
+    "fx-habitat-response"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-fungus-glow-c22ef6a8354a.png"
+}

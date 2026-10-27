@@ -1,0 +1,92 @@
+{
+  "id": "tide-picker",
+  "name": "拾潮者 · 右向待机",
+  "kind": "character",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "单姿态；左腰灯、右向骨鸣器已保留。不能镜像代替左向立绘。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/tide-picker/idle-right.png",
+  "width": 1290,
+  "height": 1219,
+  "bbox": [
+    216,
+    66,
+    1166,
+    1152
+  ],
+  "pivot": [
+    691.0,
+    1152
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.0,
+    "visibleWidthU": 0.8748,
+    "visibleHeightU": 1.0
+  },
+  "sha256": "74b2a51d05aff4be6feef17a359321be966de66d441a49c5f16c3f5041d49e29",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      61,
+      64,
+      1218,
+      1154
+    ],
+    "8": [
+      216,
+      66,
+      1166,
+      1152
+    ],
+    "16": [
+      216,
+      66,
+      1166,
+      1152
+    ],
+    "32": [
+      216,
+      66,
+      1166,
+      1152
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/03_H01_拾潮者·三视图与挂点.png",
+      "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"
+    ],
+    "prompts": [
+      "assets/source/tide-picker/hero-idle-right_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "hero-idle-right_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "单姿态；左腰灯、右向骨鸣器已保留。不能镜像代替左向立绘。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

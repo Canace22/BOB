@@ -1,0 +1,94 @@
+{
+  "id": "fx-fungus-glow",
+  "name": "密封菌光遮罩",
+  "kind": "effect",
+  "coversRequirementIds": [
+    "fx-underwater-atmosphere",
+    "fx-habitat-response"
+  ],
+  "size": 256,
+  "scale": {
+    "axis": "width",
+    "units": 2.5
+  },
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/fx-fungus-glow.png",
+  "sourceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/svg/fx-fungus-glow.svg",
+  "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+  "region": "全局",
+  "world": {
+    "axis": "width",
+    "units": 2.5,
+    "visibleWidthU": 2.5,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 2.807,
+    "canvasHeightU": 2.807
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      128,
+      128
+    ]
+  },
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "qa": {
+    "status": "candidate",
+    "pending": [
+      "图标实际尺寸与深浅底检查"
+    ]
+  },
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "productionGroup": "ui-fx",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    14,
+    14,
+    242,
+    242
+  ],
+  "alphaRange": [
+    0,
+    201
+  ],
+  "sha256": "c22ef6a8354a4d85a88ffb60e4d66ade2e8c4e4e2e19f199230f03819e8a03bf",
+  "alphaBboxes": {
+    "1": [
+      5,
+      5,
+      251,
+      251
+    ],
+    "8": [
+      14,
+      14,
+      242,
+      242
+    ],
+    "32": [
+      47,
+      47,
+      209,
+      209
+    ],
+    "128": [
+      108,
+      108,
+      148,
+      148
+    ],
+    "248": null
+  },
+  "alphaStats": {
+    "zero": 17786,
+    "semi8to247": 40664,
+    "nearOpaque": 0,
+    "total": 65536
+  },
+  "pivot": [
+    128,
+    128
+  ]
+}

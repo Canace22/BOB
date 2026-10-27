@@ -1,0 +1,123 @@
+{
+  "id": "r4-bone-platform",
+  "name": "哑象牙稳定骨台",
+  "coversRequirementIds": [
+    "r4-bone-platform-kit"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/30_R4.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/32_R4-02.png"
+  ],
+  "region": "R4",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.5822,
+    "canvasWidthU": 8.5112,
+    "canvasHeightU": 3.0385
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "稳定骨台顶缘清楚连续，完整独立件且没有植物或机关；与薄骨需要按厚度对照。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-bone-platform.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-f991fbc5-c69f-45bb-a524-7abec8cbb192.png",
+  "width": 2098,
+  "height": 749,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      38,
+      2084,
+      651
+    ],
+    "8": [
+      63,
+      239,
+      2035,
+      629
+    ],
+    "32": [
+      64,
+      239,
+      2035,
+      629
+    ],
+    "128": [
+      64,
+      239,
+      2034,
+      629
+    ],
+    "248": [
+      65,
+      241,
+      2033,
+      628
+    ]
+  },
+  "sha256": "b3e88cb8c60d21ce4a76a2686f3255f3a28a8095f580f6543df701d5ba358acf",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-bone-platform.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE stable bone terrain ledge module for dead whale R4 vertebral exterior, 8 hero units wide. Long nearly horizontal slightly uneven contact top with matte aged ivory highlight, thick solid side wall of worn pale ivory bone with small pores, two blunt lower protrusions and rounded chipped edges. Cool blue gray shading, hand-painted texture, dark outline. Wide low profile about 4.5:1. It is an independent load-bearing bone shard ledge, no skull, full vertebra, rib cage, hole-door, plants, rope, bubble or trap. Keep all holes shallow natural pores instead of big arch gaps. Whole object complete in padding.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/32_R4-02.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r4",
+      "r4",
+      "r4-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    63,
+    239,
+    2035,
+    629
+  ],
+  "alphaStats": {
+    "zero": 1139741,
+    "semi8to247": 11442,
+    "nearOpaque": 407319,
+    "total": 1571402
+  },
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.5822,
+    "canvasWidthU": 8.5112,
+    "canvasHeightU": 3.0385
+  },
+  "pivot": [
+    1049.0,
+    629
+  ]
+}

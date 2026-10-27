@@ -1,0 +1,91 @@
+{
+  "id": "fat-sniffer",
+  "name": "嗅脂甲",
+  "kind": "character",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "静态单姿态；无冲撞、警觉状态。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fat-sniffer/idle.png",
+  "width": 1671,
+  "height": 941,
+  "bbox": [
+    40,
+    199,
+    1613,
+    826
+  ],
+  "pivot": [
+    826.5,
+    826
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.7,
+    "visibleWidthU": 1.7,
+    "visibleHeightU": 0.6776
+  },
+  "sha256": "f5f5bd13d0e2624afdc0795582d5b9026e50ef00698229c8a8d05fbae6e00c4b",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      41,
+      1641,
+      941
+    ],
+    "8": [
+      40,
+      199,
+      1613,
+      826
+    ],
+    "16": [
+      40,
+      200,
+      1613,
+      825
+    ],
+    "32": [
+      40,
+      200,
+      1613,
+      825
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+    ],
+    "prompts": [
+      "assets/source/fat-sniffer/fat-sniffer_idle_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "fat-sniffer_idle_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "静态单姿态；无冲撞、警觉状态。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

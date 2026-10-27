@@ -1,0 +1,121 @@
+{
+  "id": "r5-echo-wall-revealed",
+  "name": "显露的骨面声槽",
+  "coversRequirementIds": [
+    "r5-ear-soft-tissue"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/43_R5-04.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png"
+  ],
+  "region": "R5头",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 3.5987,
+    "canvasWidthU": 10.3929,
+    "canvasHeightU": 4.154
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "revealed",
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "显露后转为象牙色骨面并出现清晰波槽，覆膜1983×793与显露1984×793存在1px画布宽差；必须按可见轮廓配准，不能直接当逐帧动画。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r5-echo-wall-revealed.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-8536d886-f9de-4ef1-b4d9-0857cd9c2d10.png",
+  "width": 1984,
+  "height": 793,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      66,
+      1951,
+      761
+    ],
+    "8": [
+      39,
+      68,
+      1948,
+      755
+    ],
+    "32": [
+      40,
+      69,
+      1947,
+      754
+    ],
+    "128": [
+      41,
+      70,
+      1946,
+      753
+    ],
+    "248": [
+      44,
+      71,
+      1944,
+      752
+    ]
+  },
+  "sha256": "1bb6bd6cf6785742459c19ebd85035030e0011448cf3cb2cdf83d3598fafeb09",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r5-echo-wall-revealed.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit this exact 2D bone-wall sprite to its REVEALED static state after removal of old membrane. Preserve exact same canvas dimensions, same outer bone wall silhouette, margins, border, side-view camera, crack near upper right and matte painted texture. Remove ONLY the dull blue-gray membrane covering the broad front face. Reveal warm pale ivory bone underneath and several clearly carved long flowing PARALLEL sound-memory grooves across the wall, at different irregular spacing like old layered wave paths following the bone curvature. These dark shallow curved incisions are tactile engraved grooves, not written symbols or literal sound wave icons. Make a clear material change from blue opaque film to exposed ivory grooved bone. No whale drawings, words, runes, figures, new motifs, glowing lines, aura or loose peeled fragments. No character or scene. All outside remains real transparent.",
+    "referenced_image_paths": [
+      "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-98e5afb4-8998-430c-9589-193eba748532.png"
+    ],
+    "transparent_background": true
+  },
+  "stateReference": "r5-echo-wall-covered",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r5-head",
+      "r5-head-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    39,
+    68,
+    1948,
+    755
+  ],
+  "alphaStats": {
+    "zero": 757385,
+    "semi8to247": 19678,
+    "nearOpaque": 784019,
+    "total": 1573312
+  },
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 3.5987,
+    "canvasWidthU": 10.3929,
+    "canvasHeightU": 4.154
+  },
+  "pivot": [
+    993.5,
+    755
+  ]
+}

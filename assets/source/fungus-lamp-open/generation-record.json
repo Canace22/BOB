@@ -1,0 +1,105 @@
+{
+  "id": "fungus-lamp-open",
+  "familyId": "fungus-lamp",
+  "name": "菌灯·开罩",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "fungus-lamp"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/fungus-lamp-open.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/fungus-lamp-open.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#player",
+  "dimensions": [
+    1290,
+    1219
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    211,
+    94,
+    1194,
+    1120
+  ],
+  "pivot": [
+    702.5,
+    1120
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "c3e09cd374c3af29c87832a90a59b24375c7ab08cd1022a10bd1edaf7ddcca7d",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "One sealed amber lamp, shade visibly open, no ground or broad exterior glow; alpha checked. Treat as complete static open-state object.",
+    "transparentPixels": 974103,
+    "totalPixels": 1572510,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "One sealed amber lamp, shade visibly open, no ground or broad exterior glow; alpha checked. Treat as complete static open-state object.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.2874,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3772,
+    "canvasHeightU": 0.3564
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/fungus-lamp-open.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "productionGroup": "props",
+  "width": 1290,
+  "height": 1219,
+  "alphaBboxes": {
+    "1": [
+      0,
+      35,
+      1220,
+      1219
+    ],
+    "8": [
+      211,
+      94,
+      1194,
+      1120
+    ],
+    "32": [
+      211,
+      94,
+      1194,
+      1118
+    ],
+    "128": [
+      212,
+      94,
+      1193,
+      1118
+    ],
+    "248": [
+      213,
+      95,
+      1192,
+      1117
+    ]
+  },
+  "alphaStats": {
+    "zero": 974103,
+    "semi8to247": 8630,
+    "nearOpaque": 580881,
+    "total": 1572510
+  }
+}

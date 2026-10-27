@@ -1,0 +1,123 @@
+{
+  "id": "r4-vertebrae-far-layer",
+  "name": "椎骨远器官层",
+  "coversRequirementIds": [
+    "r4-vertebrae-sequence"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/30_R4.png"
+  ],
+  "region": "R4",
+  "kind": "background",
+  "scale": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas"
+  },
+  "pivotSuggestion": "canvas-center",
+  "state": "base",
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "椎骨远层沿对角线递减，肋骨仅左前端；中央下部透明，无内部脊髓管隧道或近平台。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+    "完整透明画布与独立 L0 对齐已做静态合成；layer=L1, parallax=.25，不进入精灵图集。"
+  ],
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-vertebrae-far-layer.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-377827b5-bb62-4c01-85d7-60d07aff0b8e.png",
+  "width": 1672,
+  "height": 941,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      811
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      673
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      673
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      672
+    ],
+    "248": [
+      0,
+      0,
+      1671,
+      666
+    ]
+  },
+  "sha256": "0c8779c753d3029ac9f58d7c92fdab1a92710ee1cc8be4b903f335d9dd5958fb",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-vertebrae-far-layer.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit reference background into ONE isolated transparent FAR ORGAN PARALLAX LAYER for a 2D side-scrolling underwater game inside a dead whale. Preserve reference matte painted gouache style and organ identity. Output landscape16:9 canvas, keep original 1672x941 aspect and composition anchors. This layer contains only 1 or 2 broad perimeter anatomical contours as a single layer, with a large completely transparent center and lower center for gameplay. REMOVE ALL blue water, water rays, bubbles, specks, haze, background wash, floor platforms, near framing, creatures and all props. All empty areas must have genuine zero-alpha transparency, no blue rectangle, no checker pattern. Keep far anatomy muted cool low contrast with soft internal shading but a clean external alpha edge. No bright top ledges that read as gameplay terrain, no cropped gameplay modules. Depict only the following far organ forms: One distant chain of whale vertebrae EXTERNAL lateral surfaces receding from upper LEFT toward upper RIGHT, on a broad diagonal along upper third, and at most a few anterior rib remnants only at far left. Absolutely no ribs near the right/tail end and never an inside-spinal-canal tunnel. Dark muted blue-gray old bone, not bright ivory gameplay ledges. Keep central and lower two-thirds mostly transparent. No loose nearby bone, walkway, coral or tissue bottom border. Remove all blue water in between and below.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-vertebrae-depth.png"
+    ],
+    "transparent_background": true
+  },
+  "layer": "L1",
+  "parallax": 0.25,
+  "atlasEligible": false,
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 12.8804,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r4"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    0,
+    0,
+    1672,
+    673
+  ],
+  "alphaStats": {
+    "zero": 1158645,
+    "semi8to247": 31239,
+    "nearOpaque": 354697,
+    "total": 1573352
+  }
+}

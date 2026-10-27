@@ -1,0 +1,127 @@
+{
+  "id": "safe-pearl-emitter",
+  "name": "安全吐珠练习器",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/safe-pearl-emitter/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    458,
+    199,
+    1060,
+    874
+  ],
+  "pivot": [
+    759.0,
+    874
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.8919,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 2.2756,
+    "canvasHeightU": 1.517
+  },
+  "sha256": "0e545e16a79054fe61aa1af96cbb7b2bea36da24c0478054da410a893ffc298b",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      454,
+      196,
+      1062,
+      1003
+    ],
+    "8": [
+      458,
+      199,
+      1060,
+      874
+    ],
+    "32": [
+      458,
+      199,
+      1059,
+      873
+    ],
+    "128": [
+      459,
+      200,
+      1059,
+      873
+    ],
+    "248": [
+      460,
+      201,
+      1058,
+      871
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/32_R4-02.png"
+    ],
+    "prompts": [
+      "assets/source/safe-pearl-emitter/safe-pearl-emitter.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "安全练习器本体按原文功能适配；待机可见吐珠口，发射/预告为程序状态，不冒充新敌人。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "safe-pearl-emitter"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/safe-pearl-emitter-0e545e16a790.png",
+  "attachmentPoints": {
+    "muzzle": {
+      "pixel": [
+        842,
+        522
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "safe-pearl-emitter"
+}

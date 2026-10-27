@@ -1,0 +1,118 @@
+{
+  "id": "migration-whale-projection",
+  "name": "迁徙记忆鲸投影",
+  "kind": "effect",
+  "region": "R5头",
+  "tags": [
+    "R5头",
+    "V5.2",
+    "全量静态",
+    "静态投影"
+  ],
+  "status": "accepted",
+  "notes": "覆盖审查新增；仅一个完整可复用鲸光影轮廓，多实例+独立声环构成记忆群，不新增实体生物。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/migration-whale-projection/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    98,
+    194,
+    1681,
+    778
+  ],
+  "pivot": [
+    889.5,
+    486.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 6,
+    "space": "visible",
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.2135,
+    "canvasWidthU": 6.7239,
+    "canvasHeightU": 3.362
+  },
+  "sha256": "743662e264356963cf825a084041ba64753d6e246d740c7793936daea58801f5",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1771,
+      887
+    ],
+    "8": [
+      98,
+      194,
+      1681,
+      778
+    ],
+    "32": [
+      109,
+      205,
+      1669,
+      766
+    ],
+    "128": [
+      115,
+      217,
+      1661,
+      754
+    ],
+    "248": [
+      116,
+      219,
+      1660,
+      752
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置 imagegen 逐件参考引导生成；原始 PNG 未裁切、降噪或抠图。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/44_R5-05.png"
+    ],
+    "prompts": [
+      "assets/source/migration-whale-projection/migration-whale-projection.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "独立覆盖复核补项；源图/规则对照、深浅底透明边缘与实际PNG组合检查通过；时序与实机另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/migration-projection-edges.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/migration-projection-assembly.png"
+    ],
+    "limitations": [
+      "覆盖审查新增；仅一个完整可复用鲸光影轮廓，多实例+独立声环构成记忆群，不新增实体生物。",
+      "目检单只完整鲸轮廓，无实体皮肤/骨架，深浅底和透明格上为白蓝光影。",
+      "alpha为0–255：61.64%完全透明、38.36%半透明，四角为0；光轮廓与内体真实半透明。",
+      "独立实例按1.7U/2.6U/6U宽与.48/.55/.60 alpha在R5头区域板确定性合成，身份可辨；未证明动画或R5-05房布局。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "effect",
+  "coversRequirementIds": [
+    "fx-migration-projection"
+  ],
+  "rooms": [
+    "R5-05"
+  ],
+  "parallax": 1.0,
+  "layer": "L5",
+  "familyId": "fx-migration-projection",
+  "state": "静态投影"
+}

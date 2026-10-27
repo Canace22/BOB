@@ -1,0 +1,2706 @@
+{
+  "scope": "deterministic Canvas compositing at 128 px/U with panel fit; originals unmodified; not animation/physics/user acceptance",
+  "recipes": {
+    "mechanisms": [
+      {
+        "recipe": "pressure-valve",
+        "state": "low",
+        "relativePPU": 192,
+        "bounds": [
+          -60.4595744680851,
+          -153.6,
+          60.4595744680851,
+          0
+        ],
+        "unionBounds": [
+          -60.4595744680851,
+          -153.6,
+          62.921161880975106,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          719,
+          1010
+        ],
+        "parts": [
+          {
+            "id": "pressure-valve-base",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              719,
+              1010
+            ],
+            "scale": 0.18156028368794325,
+            "rotation": 0
+          },
+          {
+            "id": "ui-valve-three-ticks",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 1.002409638554217,
+            "rotation": 0
+          },
+          {
+            "id": "pressure-valve-handle",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              684,
+              906
+            ],
+            "scale": 0.06494464944649447,
+            "rotation": -0.8726646259971648
+          }
+        ]
+      },
+      {
+        "recipe": "pressure-valve",
+        "state": "mid",
+        "relativePPU": 192,
+        "bounds": [
+          -60.4595744680851,
+          -153.6,
+          60.4595744680851,
+          0
+        ],
+        "unionBounds": [
+          -60.4595744680851,
+          -153.6,
+          62.921161880975106,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          719,
+          1010
+        ],
+        "parts": [
+          {
+            "id": "pressure-valve-base",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              719,
+              1010
+            ],
+            "scale": 0.18156028368794325,
+            "rotation": 0
+          },
+          {
+            "id": "ui-valve-three-ticks",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 1.002409638554217,
+            "rotation": 0
+          },
+          {
+            "id": "pressure-valve-handle",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              684,
+              906
+            ],
+            "scale": 0.06494464944649447,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "pressure-valve",
+        "state": "high",
+        "relativePPU": 192,
+        "bounds": [
+          -60.4595744680851,
+          -153.6,
+          62.921161880975106,
+          0
+        ],
+        "unionBounds": [
+          -60.4595744680851,
+          -153.6,
+          62.921161880975106,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          719,
+          1010
+        ],
+        "parts": [
+          {
+            "id": "pressure-valve-base",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              719,
+              1010
+            ],
+            "scale": 0.18156028368794325,
+            "rotation": 0
+          },
+          {
+            "id": "ui-valve-three-ticks",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 1.002409638554217,
+            "rotation": 0
+          },
+          {
+            "id": "pressure-valve-handle",
+            "position": [
+              2.904964539007092,
+              -82.60992907801418
+            ],
+            "anchor": [
+              684,
+              906
+            ],
+            "scale": 0.06494464944649447,
+            "rotation": 0.8726646259971648
+          }
+        ]
+      },
+      {
+        "recipe": "bypass-valve",
+        "state": "idle",
+        "relativePPU": 192,
+        "bounds": [
+          -96.15867768595041,
+          -174.1226106433923,
+          96.15867768595041,
+          0
+        ],
+        "unionBounds": [
+          -96.15867768595041,
+          -174.1226106433923,
+          96.15867768595041,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          764.5,
+          816
+        ],
+        "parts": [
+          {
+            "id": "bypass-valve-base",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              764.5,
+              816
+            ],
+            "scale": 0.2115702479338843,
+            "rotation": 0
+          },
+          {
+            "id": "bypass-valve-lever",
+            "position": [
+              0.740495867768595,
+              -119.53719008264463
+            ],
+            "anchor": [
+              760,
+              766
+            ],
+            "scale": 0.10766355140186916,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "bypass-valve",
+        "state": "pressed",
+        "relativePPU": 192,
+        "bounds": [
+          -96.15867768595041,
+          -163.75566849463195,
+          96.15867768595041,
+          0
+        ],
+        "unionBounds": [
+          -96.15867768595041,
+          -174.1226106433923,
+          96.15867768595041,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          764.5,
+          816
+        ],
+        "parts": [
+          {
+            "id": "bypass-valve-base",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              764.5,
+              816
+            ],
+            "scale": 0.2115702479338843,
+            "rotation": 0
+          },
+          {
+            "id": "bypass-valve-lever",
+            "position": [
+              0.740495867768595,
+              -109.1702479338843
+            ],
+            "anchor": [
+              760,
+              766
+            ],
+            "scale": 0.10766355140186916,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "mass-seat",
+        "state": "empty",
+        "relativePPU": 192,
+        "bounds": [
+          -115.19999999999999,
+          -102.32664756446991,
+          115.19999999999999,
+          0
+        ],
+        "unionBounds": [
+          -115.19999999999999,
+          -161.30001048636916,
+          115.19999999999999,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          831,
+          798
+        ],
+        "parts": [
+          {
+            "id": "shell-mass-seat",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              831,
+              798
+            ],
+            "scale": 0.1650429799426934,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "mass-seat",
+        "state": "loaded",
+        "relativePPU": 192,
+        "bounds": [
+          -115.19999999999999,
+          -161.30001048636916,
+          115.19999999999999,
+          0
+        ],
+        "unionBounds": [
+          -115.19999999999999,
+          -161.30001048636916,
+          115.19999999999999,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          831,
+          798
+        ],
+        "parts": [
+          {
+            "id": "shell-mass-seat",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              831,
+              798
+            ],
+            "scale": 0.1650429799426934,
+            "rotation": 0
+          },
+          {
+            "id": "empty-shell",
+            "position": [
+              0,
+              -60.73581661891117
+            ],
+            "anchor": [
+              765.5,
+              844
+            ],
+            "scale": 0.1645895153313551,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "bone-travel-node",
+        "state": "visited-unattuned",
+        "relativePPU": 192,
+        "bounds": [
+          -47.66578631452581,
+          -153.6,
+          47.66578631452581,
+          0
+        ],
+        "unionBounds": [
+          -47.66578631452581,
+          -153.6,
+          47.66578631452581,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          685.5,
+          995
+        ],
+        "parts": [
+          {
+            "id": "bone-sound-node",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              685.5,
+              995
+            ],
+            "scale": 0.1843937575030012,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "bone-travel-node",
+        "state": "attuned",
+        "relativePPU": 192,
+        "bounds": [
+          -47.66578631452581,
+          -153.6,
+          47.66578631452581,
+          0
+        ],
+        "unionBounds": [
+          -47.66578631452581,
+          -153.6,
+          47.66578631452581,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          685.5,
+          995
+        ],
+        "parts": [
+          {
+            "id": "bone-sound-node",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              685.5,
+              995
+            ],
+            "scale": 0.1843937575030012,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-bone",
+            "position": [
+              0.460984393757503,
+              -82.23961584633852
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.4493617021276596,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "progress-PBS",
+        "state": "missing",
+        "relativePPU": 110.41666666666667,
+        "bounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "unionBounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          653.5,
+          1110
+        ],
+        "parts": [
+          {
+            "id": "progress-three-slots",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              653.5,
+              1110
+            ],
+            "scale": 0.2994152046783626,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "progress-PBS",
+        "state": "partial",
+        "relativePPU": 110.41666666666667,
+        "bounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "unionBounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          653.5,
+          1110
+        ],
+        "parts": [
+          {
+            "id": "progress-three-slots",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              653.5,
+              1110
+            ],
+            "scale": 0.2994152046783626,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-pressure",
+            "position": [
+              1.6467836257309942,
+              -231.1485380116959
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.5236363636363636,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-bone",
+            "position": [
+              0.44912280701754387,
+              -146.71345029239765
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.4902127659574468,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "progress-PBS",
+        "state": "synchronized",
+        "relativePPU": 110.41666666666667,
+        "bounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "unionBounds": [
+          -92.0701754385965,
+          -307.2,
+          92.0701754385965,
+          0
+        ],
+        "partCount": 4,
+        "basePivot": [
+          653.5,
+          1110
+        ],
+        "parts": [
+          {
+            "id": "progress-three-slots",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              653.5,
+              1110
+            ],
+            "scale": 0.2994152046783626,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-pressure",
+            "position": [
+              1.6467836257309942,
+              -231.1485380116959
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.5236363636363636,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-bone",
+            "position": [
+              0.44912280701754387,
+              -146.71345029239765
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.4902127659574468,
+            "rotation": 0
+          },
+          {
+            "id": "ui-progress-silence",
+            "position": [
+              1.047953216374269,
+              -60.18245614035088
+            ],
+            "anchor": [
+              64,
+              64
+            ],
+            "scale": 0.5619512195121951,
+            "rotation": 0
+          }
+        ]
+      }
+    ],
+    "doors": [
+      {
+        "recipe": "blowhole-latch",
+        "state": "near-locked",
+        "relativePPU": 106,
+        "bounds": [
+          -84.80995162404976,
+          -320,
+          84.80995162404976,
+          0
+        ],
+        "unionBounds": [
+          -86.80613668061366,
+          -320,
+          86.80613668061366,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          511.5,
+          1491
+        ],
+        "parts": [
+          {
+            "id": "blowhole-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              511.5,
+              1491
+            ],
+            "scale": 0.22114720110573602,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "blowhole-latch",
+        "state": "far-operable",
+        "relativePPU": 106,
+        "bounds": [
+          -84.80995162404976,
+          -320,
+          84.80995162404976,
+          0
+        ],
+        "unionBounds": [
+          -86.80613668061366,
+          -320,
+          86.80613668061366,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          511.5,
+          1491
+        ],
+        "parts": [
+          {
+            "id": "blowhole-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              511.5,
+              1491
+            ],
+            "scale": 0.22114720110573602,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              -41.68624740843124,
+              -147.2840359364202
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.058743961352657005,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "blowhole-latch",
+        "state": "open",
+        "relativePPU": 106,
+        "bounds": [
+          -86.80613668061366,
+          -320,
+          86.80613668061366,
+          0
+        ],
+        "unionBounds": [
+          -86.80613668061366,
+          -320,
+          86.80613668061366,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          514,
+          1469
+        ],
+        "parts": [
+          {
+            "id": "blowhole-latch-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              514,
+              1469
+            ],
+            "scale": 0.22315202231520223,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "gut-latch",
+        "state": "near-locked",
+        "relativePPU": 106,
+        "bounds": [
+          -93.5253980288097,
+          -320,
+          93.5253980288097,
+          0
+        ],
+        "unionBounds": [
+          -93.5253980288097,
+          -320,
+          93.5253980288097,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          519.5,
+          1423
+        ],
+        "parts": [
+          {
+            "id": "gut-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              519.5,
+              1423
+            ],
+            "scale": 0.24260803639120546,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "gut-latch",
+        "state": "far-operable",
+        "relativePPU": 106,
+        "bounds": [
+          -93.5253980288097,
+          -320,
+          93.5253980288097,
+          0
+        ],
+        "unionBounds": [
+          -93.5253980288097,
+          -320,
+          93.5253980288097,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          519.5,
+          1423
+        ],
+        "parts": [
+          {
+            "id": "gut-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              519.5,
+              1423
+            ],
+            "scale": 0.24260803639120546,
+            "rotation": 0
+          },
+          {
+            "id": "red-tether-knot",
+            "position": [
+              -1.33434420015163,
+              -158.42304776345716
+            ],
+            "anchor": [
+              780,
+              547
+            ],
+            "scale": 0.0614929785661493,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "gut-latch",
+        "state": "open",
+        "relativePPU": 106,
+        "bounds": [
+          -93.24876673713884,
+          -320,
+          93.24876673713884,
+          0
+        ],
+        "unionBounds": [
+          -93.5253980288097,
+          -320,
+          93.5253980288097,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          520.5,
+          1433
+        ],
+        "parts": [
+          {
+            "id": "gut-latch-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              520.5,
+              1433
+            ],
+            "scale": 0.2255109231853418,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "ear-latch",
+        "state": "near-locked",
+        "relativePPU": 106,
+        "bounds": [
+          -94.50130095403296,
+          -320,
+          94.50130095403296,
+          0
+        ],
+        "unionBounds": [
+          -96.23471882640587,
+          -320,
+          96.23471882640587,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          591.5,
+          1247
+        ],
+        "parts": [
+          {
+            "id": "ear-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              591.5,
+              1247
+            ],
+            "scale": 0.2775368603642671,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              -30.39028620988725,
+              -154.58803122289677
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.0463768115942029,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              29.55767562879445,
+              -154.58803122289677
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.0463768115942029,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "ear-latch",
+        "state": "far-operable",
+        "relativePPU": 106,
+        "bounds": [
+          -94.50130095403296,
+          -320,
+          94.50130095403296,
+          0
+        ],
+        "unionBounds": [
+          -96.23471882640587,
+          -320,
+          96.23471882640587,
+          0
+        ],
+        "partCount": 4,
+        "basePivot": [
+          591.5,
+          1247
+        ],
+        "parts": [
+          {
+            "id": "ear-latch-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              591.5,
+              1247
+            ],
+            "scale": 0.2775368603642671,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              -30.39028620988725,
+              -154.58803122289677
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.0463768115942029,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              29.55767562879445,
+              -154.58803122289677
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.0463768115942029,
+            "rotation": 0
+          },
+          {
+            "id": "red-tether-knot",
+            "position": [
+              0.13876843018213356,
+              -142.09887250650476
+            ],
+            "anchor": [
+              780,
+              547
+            ],
+            "scale": 0.03311160384331116,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "ear-latch",
+        "state": "open",
+        "relativePPU": 106,
+        "bounds": [
+          -96.23471882640587,
+          -320,
+          96.23471882640587,
+          0
+        ],
+        "unionBounds": [
+          -96.23471882640587,
+          -320,
+          96.23471882640587,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          591,
+          1255
+        ],
+        "parts": [
+          {
+            "id": "ear-latch-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              591,
+              1255
+            ],
+            "scale": 0.26079869600651995,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "anchor-pull-gate",
+        "state": "before-P",
+        "relativePPU": 84.67802199729857,
+        "bounds": [
+          -118.14141414141415,
+          -384.00000000000006,
+          118.14141414141415,
+          0
+        ],
+        "unionBounds": [
+          -118.14141414141415,
+          -400.57619675010983,
+          118.14141414141415,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          569.5,
+          1287
+        ],
+        "parts": [
+          {
+            "id": "anchor-pull-gate-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              569.5,
+              1287
+            ],
+            "scale": 0.32323232323232326,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "anchor-pull-gate",
+        "state": "anchor-exposed",
+        "relativePPU": 84.67802199729857,
+        "bounds": [
+          -118.14141414141415,
+          -400.57619675010983,
+          118.14141414141415,
+          0
+        ],
+        "unionBounds": [
+          -118.14141414141415,
+          -400.57619675010983,
+          118.14141414141415,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          569.5,
+          1287
+        ],
+        "parts": [
+          {
+            "id": "anchor-pull-gate-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              569.5,
+              1287
+            ],
+            "scale": 0.32323232323232326,
+            "rotation": 0
+          },
+          {
+            "id": "bone-anchor-ring",
+            "position": [
+              -0.16161616161616163,
+              -372.3636363636364
+            ],
+            "anchor": [
+              700,
+              453
+            ],
+            "scale": 0.07729468599033816,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "anchor-pull-gate",
+        "state": "permanently-open",
+        "relativePPU": 84.67802199729857,
+        "bounds": [
+          -117.91743892165123,
+          -384,
+          117.91743892165123,
+          0
+        ],
+        "unionBounds": [
+          -118.14141414141415,
+          -400.57619675010983,
+          118.14141414141415,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          564.5,
+          1287
+        ],
+        "parts": [
+          {
+            "id": "anchor-pull-gate-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              564.5,
+              1287
+            ],
+            "scale": 0.3235046335299073,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "release-sluice",
+        "state": "closed",
+        "relativePPU": 121.875,
+        "bounds": [
+          -204.8,
+          -151.22087842138765,
+          204.8,
+          0
+        ],
+        "unionBounds": [
+          -204.8,
+          -151.83898089171976,
+          204.8,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          842.5,
+          759
+        ],
+        "parts": [
+          {
+            "id": "release-sluice-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              842.5,
+              759
+            ],
+            "scale": 0.26072565245066837,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "release-sluice",
+        "state": "open",
+        "relativePPU": 121.875,
+        "bounds": [
+          -204.8,
+          -151.83898089171976,
+          204.8,
+          0
+        ],
+        "unionBounds": [
+          -204.8,
+          -151.83898089171976,
+          204.8,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          842,
+          760
+        ],
+        "parts": [
+          {
+            "id": "release-sluice-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              842,
+              760
+            ],
+            "scale": 0.26089171974522296,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "soft-membrane-fissure",
+        "state": "closed",
+        "relativePPU": 192,
+        "bounds": [
+          -96,
+          -67.92520568436798,
+          96,
+          0
+        ],
+        "unionBounds": [
+          -96,
+          -67.92520568436798,
+          96,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          945.5,
+          652
+        ],
+        "parts": [
+          {
+            "id": "soft-membrane-fissure-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              945.5,
+              652
+            ],
+            "scale": 0.14360508601346297,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "soft-membrane-fissure",
+        "state": "open",
+        "relativePPU": 192,
+        "bounds": [
+          -96,
+          -67.81520119225037,
+          96,
+          0
+        ],
+        "unionBounds": [
+          -96,
+          -67.92520568436798,
+          96,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          946,
+          651
+        ],
+        "parts": [
+          {
+            "id": "soft-membrane-fissure-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              946,
+              651
+            ],
+            "scale": 0.14307004470938897,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "arena-soft-curtain",
+        "state": "closed",
+        "relativePPU": 88.33333333333333,
+        "bounds": [
+          -128.43243243243245,
+          0,
+          128.69189189189188,
+          384
+        ],
+        "unionBounds": [
+          -131.62681409813408,
+          0,
+          131.62681409813408,
+          384
+        ],
+        "partCount": 1,
+        "basePivot": [
+          506,
+          27
+        ],
+        "parts": [
+          {
+            "id": "arena-soft-curtain-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              506,
+              27
+            ],
+            "scale": 0.2594594594594595,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "arena-soft-curtain",
+        "state": "open",
+        "relativePPU": 88.33333333333333,
+        "bounds": [
+          -131.62681409813408,
+          0,
+          131.62681409813408,
+          384
+        ],
+        "unionBounds": [
+          -131.62681409813408,
+          0,
+          131.62681409813408,
+          384
+        ],
+        "partCount": 1,
+        "basePivot": [
+          506,
+          27
+        ],
+        "parts": [
+          {
+            "id": "arena-soft-curtain-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              506,
+              27
+            ],
+            "scale": 0.2653766413268832,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "dash-grant-cocoon",
+        "state": "closed",
+        "relativePPU": 192,
+        "bounds": [
+          -39.47208121827411,
+          -114.76142131979697,
+          39.3258883248731,
+          0.4385786802030457
+        ],
+        "unionBounds": [
+          -51.42335025380711,
+          -114.76142131979697,
+          48.024365482233506,
+          0.4385786802030457
+        ],
+        "partCount": 1,
+        "basePivot": [
+          650,
+          1031
+        ],
+        "parts": [
+          {
+            "id": "dash-grant-cocoon-closed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              650,
+              1031
+            ],
+            "scale": 0.14619289340101524,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "dash-grant-cocoon",
+        "state": "open",
+        "relativePPU": 192,
+        "bounds": [
+          -51.42335025380711,
+          -109.86395939086295,
+          48.024365482233506,
+          0.21928934010152284
+        ],
+        "unionBounds": [
+          -51.42335025380711,
+          -114.76142131979697,
+          48.024365482233506,
+          0.4385786802030457
+        ],
+        "partCount": 1,
+        "basePivot": [
+          649,
+          1109
+        ],
+        "parts": [
+          {
+            "id": "dash-grant-cocoon-open",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              649,
+              1109
+            ],
+            "scale": 0.10964467005076142,
+            "rotation": 0
+          }
+        ]
+      }
+    ],
+    "rewards": [
+      {
+        "recipe": "calcium-pearl",
+        "state": "intact-ringed",
+        "relativePPU": 192,
+        "bounds": [
+          -41.6,
+          -41.6,
+          41.6,
+          41.6
+        ],
+        "unionBounds": [
+          -41.6,
+          -41.6,
+          41.6,
+          41.6
+        ],
+        "partCount": 2,
+        "basePivot": [
+          663.5,
+          609
+        ],
+        "parts": [
+          {
+            "id": "ringed-calcium-pearl",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              663.5,
+              609
+            ],
+            "scale": 0.1544235924932976,
+            "rotation": 0
+          },
+          {
+            "id": "fx-pearl-rings",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              128,
+              128
+            ],
+            "scale": 0.4244897959183674,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "release-larvae",
+        "state": "waiting",
+        "relativePPU": 177.27272727272725,
+        "bounds": [
+          -140.8,
+          -103.5846274509804,
+          140.8,
+          0
+        ],
+        "unionBounds": [
+          -140.8,
+          -103.5846274509804,
+          140.8,
+          0
+        ],
+        "partCount": 4,
+        "basePivot": [
+          886.5,
+          747
+        ],
+        "parts": [
+          {
+            "id": "release-bowl",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              886.5,
+              747
+            ],
+            "scale": 0.22086274509803924,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              -52.23403921568628,
+              -66.25882352941177
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.04623323013415893,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              2.9816470588235298,
+              -74.43074509803922
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.04623323013415893,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              58.19733333333334,
+              -66.25882352941177
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.04623323013415893,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "release-larvae",
+        "state": "released-empty",
+        "relativePPU": 177.27272727272725,
+        "bounds": [
+          -140.8,
+          -103.5846274509804,
+          140.8,
+          0
+        ],
+        "unionBounds": [
+          -140.8,
+          -103.5846274509804,
+          140.8,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          886.5,
+          747
+        ],
+        "parts": [
+          {
+            "id": "release-bowl",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              886.5,
+              747
+            ],
+            "scale": 0.22086274509803924,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-life",
+        "state": "available",
+        "relativePPU": 192,
+        "bounds": [
+          -32,
+          -87.97593984962406,
+          32,
+          0
+        ],
+        "unionBounds": [
+          -32,
+          -87.97593984962406,
+          32,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          703,
+          964
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-life",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              703,
+              964
+            ],
+            "scale": 0.06015037593984962,
+            "rotation": 0
+          },
+          {
+            "id": "life-fragment",
+            "position": [
+              0,
+              -30.375939849624057
+            ],
+            "anchor": [
+              655.5,
+              1133
+            ],
+            "scale": 0.05517241379310345,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-life",
+        "state": "collected-empty",
+        "relativePPU": 192,
+        "bounds": [
+          -32,
+          -42.64661654135338,
+          32,
+          0
+        ],
+        "unionBounds": [
+          -32,
+          -87.97593984962406,
+          32,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          703,
+          964
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-life",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              703,
+              964
+            ],
+            "scale": 0.06015037593984962,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-module",
+        "state": "available",
+        "relativePPU": 192,
+        "bounds": [
+          -25.6,
+          -59.93069806560135,
+          25.6,
+          0
+        ],
+        "unionBounds": [
+          -25.6,
+          -59.93069806560135,
+          25.6,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          701.5,
+          977
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-module",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              701.5,
+              977
+            ],
+            "scale": 0.043061396131202696,
+            "rotation": 0
+          },
+          {
+            "id": "module-round-chamber",
+            "position": [
+              -0.021530698065601348,
+              -21.53069806560135
+            ],
+            "anchor": [
+              670,
+              1131
+            ],
+            "scale": 0.03598875351452671,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-module",
+        "state": "collected-empty",
+        "relativePPU": 192,
+        "bounds": [
+          -25.6,
+          -33.84625735912532,
+          25.6,
+          0
+        ],
+        "unionBounds": [
+          -25.6,
+          -59.93069806560135,
+          25.6,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          701.5,
+          977
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-module",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              701.5,
+              977
+            ],
+            "scale": 0.043061396131202696,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-memory",
+        "state": "available",
+        "relativePPU": 192,
+        "bounds": [
+          -32,
+          -67.45081826012058,
+          32,
+          0
+        ],
+        "unionBounds": [
+          -32,
+          -67.45081826012058,
+          32,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          701.5,
+          989
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-memory",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              701.5,
+              989
+            ],
+            "scale": 0.05512489233419466,
+            "rotation": 0
+          },
+          {
+            "id": "migration-memory",
+            "position": [
+              0.02756244616709733,
+              -29.050818260120586
+            ],
+            "anchor": [
+              718.5,
+              1046
+            ],
+            "scale": 0.04233737596471885,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "reward-memory",
+        "state": "collected-empty",
+        "relativePPU": 192,
+        "bounds": [
+          -32,
+          -42.997416020671835,
+          32,
+          0
+        ],
+        "unionBounds": [
+          -32,
+          -67.45081826012058,
+          32,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          701.5,
+          989
+        ],
+        "parts": [
+          {
+            "id": "reward-socket-memory",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              701.5,
+              989
+            ],
+            "scale": 0.05512489233419466,
+            "rotation": 0
+          }
+        ]
+      }
+    ],
+    "habitats": [
+      {
+        "recipe": "H1",
+        "state": "before",
+        "relativePPU": 192,
+        "bounds": [
+          -128,
+          -84.71720818291216,
+          128,
+          0
+        ],
+        "unionBounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          887,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-shell-nest",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              887,
+              748
+            ],
+            "scale": 0.15403128760529483,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H1",
+        "state": "after",
+        "relativePPU": 192,
+        "bounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "unionBounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          887,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-shell-nest",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              887,
+              748
+            ],
+            "scale": 0.15403128760529483,
+            "rotation": 0
+          },
+          {
+            "id": "empty-shell",
+            "position": [
+              0,
+              -39.43200962695548
+            ],
+            "anchor": [
+              765.5,
+              844
+            ],
+            "scale": 0.1645895153313551,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              32.8086642599278,
+              -51.29241877256318
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.03698658410732714,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H2",
+        "state": "before",
+        "relativePPU": 113.57479750452048,
+        "bounds": [
+          -310.2455368991416,
+          -283.5157740278797,
+          107.74116587908286,
+          15.14203338445512
+        ],
+        "unionBounds": [
+          -310.2455368991416,
+          -283.5157740278797,
+          108.8,
+          15.14203338445512
+        ],
+        "partCount": 4,
+        "basePivot": [
+          768.5,
+          826
+        ],
+        "parts": [
+          {
+            "id": "nursery-sac",
+            "position": [
+              -199.32032281731475,
+              -1.915774027879677
+            ],
+            "anchor": [
+              744,
+              1112
+            ],
+            "scale": 0.2679352997145576,
+            "rotation": 0
+          },
+          {
+            "id": "nursery-shell-support",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              768.5,
+              826
+            ],
+            "scale": 0.15964783565663976,
+            "rotation": -0.13962634015954636
+          },
+          {
+            "id": "nursery-valve-leaf",
+            "position": [
+              -22.06354493887758,
+              -32.528080758714495
+            ],
+            "anchor": [
+              523,
+              1336
+            ],
+            "scale": 0.08172386272944933,
+            "rotation": 0.06981317007977317
+          },
+          {
+            "id": "nursery-valve-leaf",
+            "position": [
+              12.717168917906317,
+              -37.41619131569194
+            ],
+            "anchor": [
+              523,
+              1336
+            ],
+            "scale": 0.08172386272944933,
+            "rotation": -0.3490658503988659
+          }
+        ]
+      },
+      {
+        "recipe": "H2",
+        "state": "after",
+        "relativePPU": 113.57479750452048,
+        "bounds": [
+          -310.2455368991416,
+          -283.5157740278797,
+          108.8,
+          0
+        ],
+        "unionBounds": [
+          -310.2455368991416,
+          -283.5157740278797,
+          108.8,
+          15.14203338445512
+        ],
+        "partCount": 4,
+        "basePivot": [
+          768.5,
+          826
+        ],
+        "parts": [
+          {
+            "id": "nursery-sac",
+            "position": [
+              -199.32032281731475,
+              -1.915774027879677
+            ],
+            "anchor": [
+              744,
+              1112
+            ],
+            "scale": 0.2679352997145576,
+            "rotation": 0
+          },
+          {
+            "id": "nursery-shell-support",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              768.5,
+              826
+            ],
+            "scale": 0.15964783565663976,
+            "rotation": 0
+          },
+          {
+            "id": "nursery-valve-leaf",
+            "position": [
+              -17.321790168745412,
+              -35.282171680117386
+            ],
+            "anchor": [
+              523,
+              1336
+            ],
+            "scale": 0.08172386272944933,
+            "rotation": -0.4363323129985824
+          },
+          {
+            "id": "nursery-valve-leaf",
+            "position": [
+              17.800733675715332,
+              -35.282171680117386
+            ],
+            "anchor": [
+              523,
+              1336
+            ],
+            "scale": 0.08172386272944933,
+            "rotation": 0.4363323129985824
+          }
+        ]
+      },
+      {
+        "recipe": "H3",
+        "state": "before",
+        "relativePPU": 149.68611731695424,
+        "bounds": [
+          -128,
+          -105.16566439764006,
+          128,
+          26.27255457055047
+        ],
+        "unionBounds": [
+          -198.1185212207381,
+          -196.17347862511383,
+          128,
+          30.43404255319149
+        ],
+        "partCount": 2,
+        "basePivot": [
+          886,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-fungus-bed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              886,
+              748
+            ],
+            "scale": 0.18156028368794327,
+            "rotation": 0
+          },
+          {
+            "id": "habitat-shade",
+            "position": [
+              -88.23829787234042,
+              -25.05531914893617
+            ],
+            "anchor": [
+              181,
+              782
+            ],
+            "scale": 0.123331039229181,
+            "rotation": 0.2617993877991494
+          }
+        ]
+      },
+      {
+        "recipe": "H3",
+        "state": "after",
+        "relativePPU": 149.68611731695424,
+        "bounds": [
+          -198.1185212207381,
+          -196.17347862511383,
+          128,
+          30.43404255319149
+        ],
+        "unionBounds": [
+          -198.1185212207381,
+          -196.17347862511383,
+          128,
+          30.43404255319149
+        ],
+        "partCount": 3,
+        "basePivot": [
+          886,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-fungus-bed",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              886,
+              748
+            ],
+            "scale": 0.18156028368794327,
+            "rotation": 0
+          },
+          {
+            "id": "fx-fungus-glow",
+            "position": [
+              0.18156028368794327,
+              -49.56595744680851
+            ],
+            "anchor": [
+              128,
+              128
+            ],
+            "scale": 0.7017543859649122,
+            "rotation": 0
+          },
+          {
+            "id": "habitat-shade",
+            "position": [
+              -88.23829787234042,
+              -25.05531914893617
+            ],
+            "anchor": [
+              181,
+              782
+            ],
+            "scale": 0.123331039229181,
+            "rotation": -1.7453292519943295
+          }
+        ]
+      },
+      {
+        "recipe": "H4",
+        "state": "before",
+        "relativePPU": 192,
+        "bounds": [
+          -128,
+          -84.71720818291216,
+          128,
+          0
+        ],
+        "unionBounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          887,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-shell-nest",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              887,
+              748
+            ],
+            "scale": 0.15403128760529483,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H4",
+        "state": "arranged",
+        "relativePPU": 192,
+        "bounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "unionBounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          887,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-shell-nest",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              887,
+              748
+            ],
+            "scale": 0.15403128760529483,
+            "rotation": 0
+          },
+          {
+            "id": "empty-shell",
+            "position": [
+              0,
+              -39.43200962695548
+            ],
+            "anchor": [
+              765.5,
+              844
+            ],
+            "scale": 0.1645895153313551,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H4",
+        "state": "after-boss",
+        "relativePPU": 192,
+        "bounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "unionBounds": [
+          -128,
+          -139.99620349441346,
+          128,
+          0
+        ],
+        "partCount": 3,
+        "basePivot": [
+          887,
+          748
+        ],
+        "parts": [
+          {
+            "id": "habitat-shell-nest",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              887,
+              748
+            ],
+            "scale": 0.15403128760529483,
+            "rotation": 0
+          },
+          {
+            "id": "empty-shell",
+            "position": [
+              0,
+              -39.43200962695548
+            ],
+            "anchor": [
+              765.5,
+              844
+            ],
+            "scale": 0.1645895153313551,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              40.510228640192544,
+              -52.06257521058965
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.03698658410732714,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H5",
+        "state": "before",
+        "relativePPU": 192,
+        "bounds": [
+          -75.53358302122346,
+          -152.4173121876586,
+          71.66641697877652,
+          0
+        ],
+        "unionBounds": [
+          -75.53358302122346,
+          -172.8,
+          73.59331941544885,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          801,
+          911
+        ],
+        "parts": [
+          {
+            "id": "red-crown-colony",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              801,
+              911
+            ],
+            "scale": 0.17578027465667917,
+            "rotation": 0
+          },
+          {
+            "id": "empty-shell",
+            "position": [
+              -1.9335830212234708,
+              -63.45667915106118
+            ],
+            "anchor": [
+              765.5,
+              844
+            ],
+            "scale": 0.14559841740850643,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H5",
+        "state": "after",
+        "relativePPU": 192,
+        "bounds": [
+          -73.59331941544885,
+          -172.8,
+          73.59331941544885,
+          0
+        ],
+        "unionBounds": [
+          -75.53358302122346,
+          -172.8,
+          73.59331941544885,
+          0
+        ],
+        "partCount": 1,
+        "basePivot": [
+          774,
+          984
+        ],
+        "parts": [
+          {
+            "id": "red-crown-colony-restored",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              774,
+              984
+            ],
+            "scale": 0.1803757828810021,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "recipe": "H6",
+        "state": "before",
+        "relativePPU": 138.94341796994433,
+        "bounds": [
+          -160,
+          -110.44753284129416,
+          160,
+          0
+        ],
+        "unionBounds": [
+          -160,
+          -244.12815299633291,
+          168.31579631434806,
+          0
+        ],
+        "partCount": 2,
+        "basePivot": [
+          890,
+          773
+        ],
+        "parts": [
+          {
+            "id": "habitat-larva-trough",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              890,
+              773
+            ],
+            "scale": 0.19161676646706588,
+            "rotation": 0
+          },
+          {
+            "id": "tail-flow-shutter",
+            "position": [
+              114.97005988023953,
+              -57.10179640718563
+            ],
+            "anchor": [
+              365,
+              520
+            ],
+            "scale": 0.21085271317829457,
+            "rotation": 3.141592653589793
+          }
+        ]
+      },
+      {
+        "recipe": "H6",
+        "state": "after",
+        "relativePPU": 138.94341796994433,
+        "bounds": [
+          -160,
+          -244.12815299633291,
+          168.31579631434806,
+          0
+        ],
+        "unionBounds": [
+          -160,
+          -244.12815299633291,
+          168.31579631434806,
+          0
+        ],
+        "partCount": 5,
+        "basePivot": [
+          890,
+          773
+        ],
+        "parts": [
+          {
+            "id": "habitat-larva-trough",
+            "position": [
+              0,
+              0
+            ],
+            "anchor": [
+              890,
+              773
+            ],
+            "scale": 0.19161676646706588,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              -34.49101796407186,
+              -47.52095808383234
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.03962848297213622,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              1.9161676646706587,
+              -52.311377245508986
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.03962848297213622,
+            "rotation": 0
+          },
+          {
+            "id": "sea-larva",
+            "position": [
+              38.32335329341318,
+              -47.52095808383234
+            ],
+            "anchor": [
+              714.5,
+              584.5
+            ],
+            "scale": 0.03962848297213622,
+            "rotation": 0
+          },
+          {
+            "id": "tail-flow-shutter",
+            "position": [
+              114.97005988023953,
+              -57.10179640718563
+            ],
+            "anchor": [
+              365,
+              520
+            ],
+            "scale": 0.21085271317829457,
+            "rotation": -1.5707963267948966
+          }
+        ]
+      }
+    ]
+  },
+  "missingReferences": [],
+  "status": "static-composition-reviewed",
+  "checks": [
+    {
+      "case": "47个原始PNG/prompt存在，哈希与manifest一致",
+      "pass": true
+    },
+    {
+      "case": "全部24组recipe引用已解析，H1-H6完整",
+      "pass": true
+    },
+    {
+      "case": "同行所有状态采用同一缩放与取景，三档手柄围绕同一socket旋转",
+      "pass": true
+    },
+    {
+      "case": "7个开放门/膜/帘通道采样alpha=0",
+      "pass": true,
+      "samples": {
+        "blowhole-latch-open": 0,
+        "gut-latch-open": 0,
+        "ear-latch-open": 0,
+        "anchor-pull-gate-open": 0,
+        "release-sluice-open": 0,
+        "soft-membrane-fissure-open": 0,
+        "arena-soft-curtain-open": 0
+      }
+    },
+    {
+      "case": "四张确定性合成板已目检；H3暗/亮、H4布置/胜后、H5移壳均有不同静态组合",
+      "pass": true,
+      "evidence": [
+        "mechanisms-composition-board.png",
+        "doors-composition-board.png",
+        "rewards-composition-board.png",
+        "habitats-composition-board.png"
+      ]
+    }
+  ],
+  "limitations": [
+    "仅静态组合，未实现动画或引擎碰撞",
+    "用户美术验收尚未进行",
+    "独立门态外框有轻微重绘；状态注册统一尺寸及挂点，不等于逐像素相同",
+    "生态基座前沿没有单独遮挡层；配方把子物下缘放在凹槽，实机若需穿插遮挡需场景mask"
+  ]
+}

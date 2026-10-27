@@ -1,0 +1,129 @@
+{
+  "id": "pressure-valve-base",
+  "name": "三档导流阀基座",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/pressure-valve-base/base.png",
+  "width": 1368,
+  "height": 1150,
+  "bbox": [
+    386,
+    164,
+    1052,
+    1010
+  ],
+  "pivot": [
+    719.0,
+    1010
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.9447,
+    "visibleHeightU": 1.2,
+    "canvasWidthU": 1.9404,
+    "canvasHeightU": 1.6312
+  },
+  "sha256": "455e139fdcc44cd46d83ae091b4d994740cd91c29368dc5aae4dbaa512a7be10",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1354,
+      1150
+    ],
+    "8": [
+      386,
+      164,
+      1052,
+      1010
+    ],
+    "32": [
+      386,
+      164,
+      1051,
+      1010
+    ],
+    "128": [
+      387,
+      165,
+      1051,
+      1009
+    ],
+    "248": [
+      388,
+      166,
+      1050,
+      1009
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png",
+      "assets/source/whalefall-v5-2-complete/references/46_R5-07.png"
+    ],
+    "prompts": [
+      "assets/source/pressure-valve-base/pressure-valve-base.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Round stationary spindle and compatible material. Natural edge holes are not reliable three-position marks; exactly 3 indicator ticks must be code/SVG overlay in assembly.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/pressure-valve-base-455e139fdcc4.png",
+  "attachmentPoints": {
+    "socket": {
+      "pixel": [
+        735,
+        555
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "settlement-valve"
+}

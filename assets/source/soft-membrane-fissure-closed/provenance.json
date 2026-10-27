@@ -1,0 +1,119 @@
+{
+  "id": "soft-membrane-fissure-closed",
+  "name": "双瓣柔膜缝·闭合",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/soft-membrane-fissure-closed/base.png",
+  "width": 1890,
+  "height": 832,
+  "bbox": [
+    277,
+    179,
+    1614,
+    652
+  ],
+  "pivot": [
+    945.5,
+    652
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.5,
+    "visibleHeightU": 0.5307,
+    "canvasWidthU": 2.1204,
+    "canvasHeightU": 0.9334
+  },
+  "sha256": "d729ad09e5b0b92228bab11fa9c6ba73a0b29075d2bc4ef3ecae161fc8035517",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      27,
+      1700,
+      768
+    ],
+    "8": [
+      277,
+      179,
+      1614,
+      652
+    ],
+    "32": [
+      277,
+      181,
+      1613,
+      650
+    ],
+    "128": [
+      278,
+      181,
+      1612,
+      649
+    ],
+    "248": [
+      279,
+      183,
+      1611,
+      648
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/41_R5-02.png",
+      "assets/source/whalefall-v5-2-complete/references/42_R5-03.png"
+    ],
+    "prompts": [
+      "assets/source/soft-membrane-fissure-closed/soft-membrane-fissure-closed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "短柔膜缝闭合，以原画中央水平双瓣轮廓为准；宽1.5U，不将整根硬骨柱做可穿膜。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "soft-membrane-fissure"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/soft-membrane-fissure-closed-d729ad09e5b0.png",
+  "familyId": "soft-membrane-fissure"
+}

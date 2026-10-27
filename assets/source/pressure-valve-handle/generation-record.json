@@ -1,0 +1,119 @@
+{
+  "id": "pressure-valve-handle",
+  "familyId": "settlement-valve",
+  "name": "导流阀独立旋柄",
+  "scale": {
+    "axis": "width",
+    "units": 0.55
+  },
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/pressure-valve-handle.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/pressure-valve-handle.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+    "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1363,
+    1154
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    151,
+    162,
+    1235,
+    1012
+  ],
+  "pivot": [
+    684,
+    906
+  ],
+  "pivotStatus": "明确机械铰点/连接点；original canvas pixels",
+  "sha256": "12803c75408ca0fec855307af3616b763a82b0ec759578457b0c28e91f31512f",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Separate Y-handle. Bottom hub is suggested rotation pivot; not a static three-position baked image.",
+    "transparentPixels": 1289363,
+    "totalPixels": 1572902,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "hub": {
+      "pixel": [
+        684,
+        906
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Separate Y-handle. Bottom hub is suggested rotation pivot; not a static three-position baked image.",
+  "world": {
+    "axis": "width",
+    "units": 0.55,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.55,
+    "visibleHeightU": 0.4313,
+    "canvasWidthU": 0.6916,
+    "canvasHeightU": 0.5855
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/pressure-valve-handle.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png"
+  ],
+  "productionGroup": "props",
+  "width": 1363,
+  "height": 1154,
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1343,
+      1138
+    ],
+    "8": [
+      151,
+      162,
+      1235,
+      1012
+    ],
+    "32": [
+      151,
+      162,
+      1235,
+      1012
+    ],
+    "128": [
+      152,
+      162,
+      1235,
+      1012
+    ],
+    "248": [
+      153,
+      164,
+      1234,
+      1011
+    ]
+  },
+  "alphaStats": {
+    "zero": 1289363,
+    "semi8to247": 7667,
+    "nearOpaque": 264796,
+    "total": 1572902
+  }
+}

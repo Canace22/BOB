@@ -1,0 +1,131 @@
+{
+  "id": "habitat-fungus-bed",
+  "name": "菌圃生态基座",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "H3 菌圃及幼菌基底，暗面亮起由 tint/glow 状态组合表达。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/habitat-fungus-bed/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    181,
+    225,
+    1591,
+    748
+  ],
+  "pivot": [
+    886.0,
+    748
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 2.0,
+    "visibleHeightU": 0.7418,
+    "canvasWidthU": 2.5163,
+    "canvasHeightU": 1.2582
+  },
+  "sha256": "0de628f10312ea3b70b7a7c65e470060455c7ac0a8d7a12cbe0d569d7522be45",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1730,
+      887
+    ],
+    "8": [
+      181,
+      225,
+      1591,
+      748
+    ],
+    "32": [
+      182,
+      225,
+      1591,
+      748
+    ],
+    "128": [
+      183,
+      226,
+      1590,
+      748
+    ],
+    "248": [
+      184,
+      227,
+      1589,
+      747
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/22_R3-01.png"
+    ],
+    "prompts": [
+      "assets/source/habitat-fungus-bed/habitat-fungus-bed.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "H3 菌圃及幼菌基底，暗面亮起由 tint/glow 状态组合表达。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "shared-habitat-beds"
+  ],
+  "parts": [],
+  "attachmentPoints": {
+    "shadePivot": {
+      "pixel": [
+        887,
+        610
+      ],
+      "role": "遮光片独立置于菌圃上方，此为菌床中心"
+    },
+    "lightCenter": {
+      "pixel": [
+        887,
+        475
+      ],
+      "role": "幼菌群局部光效中心，不使用背景光晕"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/habitat-fungus-bed-0de628f10312.png",
+  "familyId": "shared-habitat-beds",
+  "variant": "static"
+}

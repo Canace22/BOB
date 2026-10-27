@@ -1,0 +1,2996 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-27",
+  "scope": "5域36房的环境与地形、机关独立件；不含角色本体或UI。依据完整册当前中文规则，旧英文提示词不覆盖已修订部位。",
+  "sources": [
+    {
+      "url": "http://10.11.140.20:8765/full/",
+      "local": "/tmp/bob-full-current.html",
+      "sha256": "e1e79600f4eadda4e8bade1939fbdf24ef7ff1fc4ebeabb8e7be9d58f41c7aa3"
+    },
+    {
+      "url": "http://10.11.140.20:8765/simple/",
+      "local": "/tmp/bob-simple-current.html",
+      "sha256": "55e14d95e531ee15cc3624074acf6600d6244084516ef33a45f0a3bf70143a89"
+    }
+  ],
+  "countingNotes": [
+    "36是确定房间数；素材家族为本轮制作拆分，不是源文档给定的最终资源总数。",
+    "一个家族可含多个层/状态/材质变体；相同件在多房重用，仅计一次家族。",
+    "目前3件环境导出只覆盖R1部分需求，任何房间都未完成独立层组合验收。",
+    "共享空壳和锚环已存在，但不能因此宣称整套壳巢、质量座或挂点安装组件完成。",
+    "背景不按每房一张机械生成：先按器官材料分层制作，再依36房的尺寸、平台、相邻关系布置并验收。",
+    "机关状态是玩法需要，静态状态图不等于动画；运动可由程序实现，具体动作帧需另列。",
+    "所有families标为待制作或部分覆盖；source图片是概念参考，不能将其直接计为runtime完成资产。"
+  ],
+  "summary": {
+    "regionCount": 5,
+    "roomCount": 36,
+    "regionRoomCounts": {
+      "R1": 7,
+      "R2": 6,
+      "R3": 8,
+      "R4": 7,
+      "R5": 8
+    },
+    "existingEnvironmentExports": [
+      "r1-mouth-depth",
+      "r1-tongue-ledge",
+      "r1-baleen-curtain"
+    ],
+    "environmentFamiliesProposed": 53,
+    "completeRoomAssemblies": 0,
+    "completeRegionAssetSets": 0
+  },
+  "assetFamilies": [
+    {
+      "id": "scene-water-depth",
+      "name": "海水深层与低对比水雾",
+      "kind": "background",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-06",
+        "R1-07",
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06",
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08",
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07",
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06",
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "靛蓝口腔",
+        "灰蓝肺心",
+        "暗橄榄胃肠",
+        "墨青断脊",
+        "头耳深水",
+        "尾端外海"
+      ],
+      "existingAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "status": "partial",
+      "evidence": "背景最远水体 k=0.10；全程水下，没有空气界面。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#R3-s20",
+        "http://10.11.140.20:8765/full/#R4-s20",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "现有 R1 单屏图合并了景深内容，不能算完成可独立视差的六套水体。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-oral-background",
+      "name": "上颚与口腔大轮廓",
+      "kind": "background",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "status": "partial",
+      "evidence": "上颚与深口腔大轮廓，远器官 k=0.25；鲸须仅从上颚垂下。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "productionNote": "已有一张口腔单屏背景；36房背景布局与景深分离尚未验收。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-wound-section",
+      "name": "口角皮肤脂层肌层断面",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R1-01"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "地标：皮肤-脂层-肌层断面和远处上颚须列。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R1-01"
+      ],
+      "productionNote": "与口腔衬层分开，避免所有 R1 房间一个洞壁。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-esophagus-section",
+      "name": "塌陷食管纵裂壁与口咽远景",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R1-05"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L0暗食管纵向深隙；L1远处口咽大轮廓；L2肌褶与红绳；L4剥离肌膜边。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#room-R1-05"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-nasal-section",
+      "name": "喷气孔隔壁与鼻道外侧断面",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R1-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L0头背外海；L1实心颅骨与鼻道壁；L2创伤断面和修索；L4暗骨板边。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#room-R1-06"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-baleen-middle",
+      "name": "上颚鲸须中景垂帘",
+      "kind": "midground",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [
+        "r1-baleen-curtain"
+      ],
+      "status": "partial",
+      "evidence": "中景层：修补红结、弃壳与旧须帘，k=0.50。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "productionNote": "已有静态单件；不用于 R2-R5 或食管鼻道。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-baleen-foreground",
+      "name": "暗鲸须与壳缘前景框片",
+      "kind": "foreground",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "深靛鲸须剪影与少量壳缘，k=1.20；遮到主角和落点时淡出。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-tongue-platform-kit",
+      "name": "湿舌台、稳定宽台与恢复坡",
+      "kind": "terrain",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-07"
+      ],
+      "requiredStates": [
+        "稳定台",
+        "坡段",
+        "舌根宽场"
+      ],
+      "existingAssetIds": [
+        "r1-tongue-ledge"
+      ],
+      "status": "partial",
+      "evidence": "湿舌宽台、明确台面亮边；宽台与可恢复底坡；底部恢复坡不能绕过 Boss。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s4",
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "productionNote": "已有一个静态平台模块；拼接、坡度与各房碰撞轮廓未完成，不能按单件认整套完成。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r1-weighted-tongue",
+      "name": "承重舌膜变形台",
+      "kind": "terrain-mechanism",
+      "roomIds": [
+        "R1-03"
+      ],
+      "requiredStates": [
+        "稳定",
+        "承重预告",
+        "变形/恢复"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "承重舌膜；先有方向线/表面形变至少0.7秒，再激活。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s16",
+        "http://10.11.140.20:8765/full/#room-R1-03"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-lung-pleura",
+      "name": "肺叶外表与脱层胸膜",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R2-01",
+        "R2-02",
+        "R2-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "灰蓝肺叶；巨大肺表面曲率与远处肋影；不是两间肺泡。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#room-R2-02"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-pericardium-heart",
+      "name": "静止心包破口与厚心肌断面",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R2-03",
+        "R2-04"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "厚心肌断面、断裂腱索与血巢生物群；心脏不跳动。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R2-03",
+        "http://10.11.140.20:8765/full/#room-R2-04"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-trachea-transition",
+      "name": "心包至气管外侧过渡材料",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R2-05"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L1气管外侧软骨环与纵隔；L2心包裂缘和修索。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#room-R2-05"
+      ],
+      "productionNote": "气管环外侧有实壁，不能画成心室直插喷气孔的空管。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-soft-platform-kit",
+      "name": "软膜稳定台与底部软床",
+      "kind": "terrain",
+      "roomIds": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "requiredStates": [
+        "稳定落台",
+        "无伤软底床",
+        "分级补压落台"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "软膜稳定台、补压共生体、群流缺口和底部软床，k=1.00。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-patches-nursery-shells",
+      "name": "胸膜补丁、旧育壳与红绳",
+      "kind": "midground",
+      "roomIds": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "不同年代补丁、旧育壳与宽度不同的红绳，k=0.50。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-membrane-foreground",
+      "name": "暗紫红膜缘与稀疏管束",
+      "kind": "foreground",
+      "roomIds": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "暗紫红膜缘和稀疏管束，k=1.20；不遮盖上方落台或横流预告。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-gastric-folds",
+      "name": "暖赭胃壁大褶与沉积袋",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R3-01",
+        "R3-02",
+        "R3-08"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "大面积暖赭胃褶与向肠侧收束的软组织；胃顶向下可见胃枢的同一大壁褶。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s20",
+        "http://10.11.140.20:8765/full/#room-R3-08"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-liver-mesentery",
+      "name": "肝叶外缘与系膜脂槽",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R3-03",
+        "R3-04"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "肝侧走实心肝叶外缘，肠侧走纵裂边与系膜。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R3-03",
+        "http://10.11.140.20:8765/full/#room-R3-04"
+      ],
+      "productionNote": "不在实心肝脏内部挖长廊。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-intestinal-fold",
+      "name": "肠纵裂边、回折肠袢与母蟹侧腔",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R3-05",
+        "R3-06",
+        "R3-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "肠袢向头回折到母蟹占据的侧腔；外景能看到回弯而不是继续无限向尾。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R3-06",
+        "http://10.11.140.20:8765/full/#room-R3-07"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-bank-platform-kit",
+      "name": "胃肠稳定岸台与刹车褶边",
+      "kind": "terrain",
+      "roomIds": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "requiredStates": [
+        "固定宽岸",
+        "褶边台",
+        "教学恢复坡"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "稳定岸台、漂台离散位置、锯齿危险酸槽与明确闸门；胃枢安全地面避免使用酸色。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-shell-nests-traces",
+      "name": "壳巢群、拖痕与沉积旧壳",
+      "kind": "midground",
+      "roomIds": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "requiredStates": [
+        "原迁居杂乱",
+        "迁居完成朝海排列"
+      ],
+      "existingAssetIds": [
+        "empty-shell"
+      ],
+      "status": "partial",
+      "evidence": "壳巢群、搬运拖痕、修补红绳与废弃阀痕；旧壳半埋在新沉积物下。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s19",
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "productionNote": "已有单个可安置空壳，可复用部分形状；巢群、拖痕与生态前后状态缺失。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-mucosa-foreground",
+      "name": "暗褶壁、深褐壳缘与垂索",
+      "kind": "foreground",
+      "roomIds": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "深褐壳缘、暗褶壁和少量垂索，k=1.20；不遮盖冲撞方向及落壳预告。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-vertebrae-sequence",
+      "name": "椎体外表序列与外伤窗",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "巨大椎骨序列与外伤窗，k=0.25；保持脊椎延伸方向。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "productionNote": "胸段可见肋根；腰尾无新肋笼，游玩在椎体外侧。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-tailward-vertebrae",
+      "name": "腰尾渐细椎列与长廊景深",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R4-06",
+        "R5-01",
+        "R5-07"
+      ],
+      "requiredStates": [
+        "向头维护廊",
+        "向尾渐细廊"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "R4-06 L1腰椎外表和渐细椎列，无肋笼延伸；头向 E25 约60–70米，尾向 E31 约15–20米。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s20",
+        "http://10.11.140.20:8765/full/#room-R5-01",
+        "http://10.11.140.20:8765/full/#room-R5-07"
+      ],
+      "productionNote": "两条既有边内的无战斗过渡，不新增房间，也不能共用直接头尾门。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-bone-platform-kit",
+      "name": "哑象牙骨台、稳定阶台与回落台",
+      "kind": "terrain",
+      "roomIds": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "requiredStates": [
+        "固定宽台",
+        "高低路线落台",
+        "分流台"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "哑象牙宽台、稳定回落菌毯与两路汇合门，k=1.00。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-fungal-recovery",
+      "name": "菌毯恢复床",
+      "kind": "terrain",
+      "roomIds": [
+        "R4-03",
+        "R4-04"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "底部菌毯只负责恢复；菌毯回落区。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s4",
+        "http://10.11.140.20:8765/full/#R4-s16"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-thin-bone",
+      "name": "选修薄骨片",
+      "kind": "terrain-mechanism",
+      "roomIds": [
+        "R4-07"
+      ],
+      "requiredStates": [
+        "完整",
+        "裂纹预告",
+        "破落"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "薄骨片脚下先出现0.9秒裂纹，再落向下接台。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R4-07"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-training-traces",
+      "name": "旧练习槽、骨孔与修索痕迹",
+      "kind": "midground",
+      "roomIds": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "修索绳结、骨孔群落和旧练习槽；修索室整齐短绳与断绳相对照。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s19",
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-bone-foreground",
+      "name": "暗骨片与断索前景",
+      "kind": "foreground",
+      "roomIds": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "暗骨片、局部红冠与断索，k=1.20；尖锐轮廓不能误指不存在的接触伤害。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "productionNote": "红冠生物本体由生态角色清单去重管理。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-cranial-background",
+      "name": "大块颅底骨板与紧凑耳骨",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L1大块颅底骨板与紧凑耳骨实体；游玩在耳骨外周，不把耳蜗扩大成洞城。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-02"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-ear-soft-tissue",
+      "name": "耳周软组织、膜袋与住民声槽",
+      "kind": "midground",
+      "roomIds": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "requiredStates": [
+        "覆膜遮挡前",
+        "覆膜褪去声纹显现"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L2耳周软组织和住民声槽；同心声纹、修补线、旧幼体印痕与红结。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s19",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "声纹图案与空心声波特效分别制作，不能把声纹当巨型耳蜗。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-cranial-platform-kit",
+      "name": "颅外骨面稳定台与安全池边",
+      "kind": "terrain",
+      "roomIds": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "requiredStates": [
+        "宽输出台",
+        "两侧避险台",
+        "池边稳定台"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "中央输出台、两侧稳定台、Boss触发边界；硬骨不可穿。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-cranial-foreground",
+      "name": "颅侧暗骨板与软膜边",
+      "kind": "foreground",
+      "roomIds": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "深靛颅侧骨板与尾端暗膜缘，k=1.20；不得遮住短缝入口或回声空心圈。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-tail-tendons",
+      "name": "尾柄肌腱、纤维裂谷与无骨尾叶",
+      "kind": "background-scenery",
+      "roomIds": [
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L1尾柄纵向肌腱与无骨尾叶；L2剥离纤维和幼体水路。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-tail-channel-kit",
+      "name": "尾端稳定槽台与释放水路",
+      "kind": "terrain",
+      "roomIds": [
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "观察宽台",
+        "连续释放槽",
+        "出口碗/槽"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L3稳定槽台/导流闸/幼体；释放槽是纤维组织裂谷与聚落导流口。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-tail-foreground",
+      "name": "尾端暗筋膜框片",
+      "kind": "foreground",
+      "roomIds": [
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "静态"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "L4暗筋膜；尾鳍瓣内不长骨架。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-repair-cords",
+      "name": "红绳、红结与落脚修补件",
+      "kind": "midground",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-06",
+        "R1-07",
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06",
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08",
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07",
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06",
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "完整修补",
+        "断绳",
+        "旧磨痕"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "每条人工通路要有同方向红绳、落脚修补与旧磨痕；自然器官壁与尸后缺口的断面不同。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s19",
+        "http://10.11.140.20:8765/full/#R2-s19",
+        "http://10.11.140.20:8765/full/#R3-s19",
+        "http://10.11.140.20:8765/full/#R4-s19",
+        "http://10.11.140.20:8765/full/#R5-s19"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-shortcut-latch",
+      "name": "永久捷径门闩与门框",
+      "kind": "mechanism",
+      "roomIds": [
+        "R1-02",
+        "R1-06",
+        "R2-05",
+        "R3-01",
+        "R3-07",
+        "R5-05"
+      ],
+      "requiredStates": [
+        "锁定正面",
+        "未开背面",
+        "开启"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "从远侧开永久闩；薄帘返程闩只缩短本房绕行，不另增跨房边。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R1-02",
+        "http://10.11.140.20:8765/full/#room-R2-05",
+        "http://10.11.140.20:8765/full/#room-R3-01",
+        "http://10.11.140.20:8765/full/#room-R5-05"
+      ],
+      "productionNote": "同一机构可按器官材质换框；逻辑门条件另由程序实现。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-ability-gates",
+      "name": "流纹门、红索门与能力门识别件",
+      "kind": "mechanism",
+      "roomIds": [
+        "R1-02",
+        "R3-01",
+        "R4-01",
+        "R4-02",
+        "R5-01"
+      ],
+      "requiredStates": [
+        "未满足",
+        "满足/开启"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "上方流纹门与红索门，地图分别记录A2和A3；P与固定锚环两个独立符号，缺项显示来源。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R1-02",
+        "http://10.11.140.20:8765/full/#room-R4-01"
+      ],
+      "productionNote": "按现有能力条件复用符号；不要发明新能力图标。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-anchor-mount",
+      "name": "固定锚环及其组织/骨面基座",
+      "kind": "mechanism",
+      "roomIds": [
+        "R1-07",
+        "R3-01",
+        "R3-05",
+        "R3-06",
+        "R4-01",
+        "R4-03",
+        "R4-04",
+        "R4-07"
+      ],
+      "requiredStates": [
+        "固定锚环",
+        "组织基座",
+        "骨面基座"
+      ],
+      "existingAssetIds": [
+        "bone-anchor-ring"
+      ],
+      "status": "partial",
+      "evidence": "挂环贴裂缘布设，非管腔内的任意吊点；六环均接上方组织。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R3-06",
+        "http://10.11.140.20:8765/full/#room-R4-01"
+      ],
+      "productionNote": "现有锚环是完整单件；挂点安装基座与实际绳索状态需补齐，原环可重用。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r2-bypass-valve",
+      "name": "血巢旁通阀",
+      "kind": "mechanism",
+      "roomIds": [
+        "R2-04"
+      ],
+      "requiredStates": [
+        "未操作",
+        "已操作/反馈"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "旁通阀可减慢下一轮25%，并非破防钥匙。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R2-04"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-pressure-valve-platform",
+      "name": "三档压力阀与漂台",
+      "kind": "terrain-mechanism",
+      "roomIds": [
+        "R3-02"
+      ],
+      "requiredStates": [
+        "阀低/中/高",
+        "漂台三停靠位置"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "低、中、高三档刻线，E一次只变一档；中档主路足够。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R3-02"
+      ],
+      "productionNote": "阀体与漂台独立，三个位置不必重复画同一平台；不得烘焙为整张背景。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-weight-seat-platform",
+      "name": "两档质量座与迁居漂盘",
+      "kind": "terrain-mechanism",
+      "roomIds": [
+        "R3-06"
+      ],
+      "requiredStates": [
+        "空座",
+        "承壳",
+        "漂盘停靠"
+      ],
+      "existingAssetIds": [
+        "empty-shell"
+      ],
+      "status": "partial",
+      "evidence": "安置单只空壳在两档质量座上，只改变漂盘停靠位置。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R3-06"
+      ],
+      "productionNote": "仅空壳已有；质量座和漂盘缺失。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-hazard-surfaces",
+      "name": "黏液槽、减速脂面与酸槽边",
+      "kind": "terrain-hazard",
+      "roomIds": [
+        "R3-02",
+        "R3-04",
+        "R3-06"
+      ],
+      "requiredStates": [
+        "黏液面",
+        "脂面",
+        "酸槽锯齿边",
+        "腐蚀粒子"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "低压黏液槽；减速脂面；酸槽锯齿边＋腐蚀漂粒，危险边始终亮于背景。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s16"
+      ],
+      "productionNote": "不把安全胃枢台面涂成酸色；微生物沉积，不是活鲸分泌胃酸。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r3-falling-deposit",
+      "name": "胃顶沉积落屑",
+      "kind": "terrain-hazard",
+      "roomIds": [
+        "R3-08"
+      ],
+      "requiredStates": [
+        "沉积完整",
+        "预告",
+        "落屑碎片"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "落屑预警区；先有方向线/表面形变至少0.7秒，再激活。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s16"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-combination-gate",
+      "name": "P降流与锚定拉闸组合门",
+      "kind": "mechanism",
+      "roomIds": [
+        "R3-01",
+        "R4-01"
+      ],
+      "requiredStates": [
+        "强流关闭态",
+        "P已降流",
+        "拉闸开启"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "已有P时阀会降强流；再挂固定环拉闸，松索后走上稳定骨台；开启永久保存。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R4-01"
+      ],
+      "productionNote": "",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r4-safe-pearl-dispenser",
+      "name": "安全迎珠练习器",
+      "kind": "mechanism",
+      "roomIds": [
+        "R4-02"
+      ],
+      "requiredStates": [
+        "待机",
+        "吐珠"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "练习器只吐带环完整珠且不会伤人。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R4-02"
+      ],
+      "productionNote": "珠体由道具/特效清单去重；不能用敌人直接冒充安全练习器。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-soft-slit",
+      "name": "双瓣短柔膜缝",
+      "kind": "terrain-mechanism",
+      "roomIds": [
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-06"
+      ],
+      "requiredStates": [
+        "张开",
+        "闭合预告",
+        "闭合"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "双瓣轮廓＋收缩声纹，闭合前闪轮廓；有人时延迟闭合；软缝≤1.5U。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s16",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "软膜两瓣要能独立控制；闭合动画另按需求生产，静态状态不等于可播放帧序列。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-three-slot-panel",
+      "name": "P/B/S三槽与终局条件门",
+      "kind": "mechanism",
+      "roomIds": [
+        "R5-01",
+        "R5-07"
+      ],
+      "requiredStates": [
+        "三槽各自空/亮",
+        "缺项指示",
+        "门关闭/开启"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "三槽显示P/B已亮与S空缺；集齐后一次E同步，永久打开去释放槽的门。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R5-01",
+        "http://10.11.140.20:8765/full/#room-R5-07"
+      ],
+      "productionNote": "拆为三个独立槽和门，避免为了组合状态生成8张完整门图。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-release-sluice",
+      "name": "幼体归海导流闸",
+      "kind": "mechanism",
+      "roomIds": [
+        "R5-08"
+      ],
+      "requiredStates": [
+        "待释放",
+        "开启"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "打开聚落导流闸释放幼体到海水；E确认释放。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "productionNote": "幼体由角色生态清单管理；结局丰度改变不新增战斗。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-habitat-beds",
+      "name": "六处栖息地基座及修复状态",
+      "kind": "ecology-scenery",
+      "roomIds": [
+        "R1-05",
+        "R2-01",
+        "R3-01",
+        "R3-06",
+        "R4-04",
+        "R5-07"
+      ],
+      "requiredStates": [
+        "未帮助",
+        "完成后恢复"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "六处生态支线：须门清流窝、肺膜育床、胃枢菌圃、肠侧搬壳巢、肋骨红冠园、尾下幼体槽。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s17",
+        "http://10.11.140.20:8765/full/#R2-s17",
+        "http://10.11.140.20:8765/full/#R3-s17",
+        "http://10.11.140.20:8765/full/#R4-s17",
+        "http://10.11.140.20:8765/full/#R5-s17"
+      ],
+      "productionNote": "六处环境状态，生物部分由演员清单去重。并非一个通用窝贴六次即可。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-light-particles",
+      "name": "水下透射冷光、生物光与漂粒",
+      "kind": "fx",
+      "roomIds": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-06",
+        "R1-07",
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06",
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08",
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07",
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06",
+        "R5-07",
+        "R5-08"
+      ],
+      "requiredStates": [
+        "冷光束",
+        "菌光",
+        "沉积漂粒",
+        "定向海流粒子"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "光效层：外伤窗冷光/封闭菌光；水下悬粒与薄雾分配到所在景深，危险预告附近降低密度。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#R3-s20",
+        "http://10.11.140.20:8765/full/#R4-s20",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "特效可由贴图加程序实例化；不能计作每个粒子一张素材。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "shared-current-warning",
+      "name": "海流预告、强流与稳定后的水线",
+      "kind": "fx",
+      "roomIds": [
+        "R1-06",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-06",
+        "R3-01",
+        "R4-01"
+      ],
+      "requiredStates": [
+        "预告",
+        "强流",
+        "减缓/稳定"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "P调流前连续亮粒封线；P后亮粒变缓，固定红环显露；激活前至少0.7秒预告。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R3-s16",
+        "http://10.11.140.20:8765/full/#R1-s16",
+        "http://10.11.140.20:8765/full/#R2-s16"
+      ],
+      "productionNote": "程序控制方向与速度；不需要手绘每条水道完整帧。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    },
+    {
+      "id": "r5-echo-rings",
+      "name": "旧位空心回声与安全静默圈",
+      "kind": "fx",
+      "roomIds": [
+        "R5-04",
+        "R5-05"
+      ],
+      "requiredStates": [
+        "旧位预告",
+        "延迟攻击",
+        "静默渐合"
+      ],
+      "existingAssetIds": [],
+      "status": "missing",
+      "evidence": "旧位空心圆、实体攻击边、静默渐合圈采用不同形状。",
+      "sourceSections": [
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "productionNote": "与颅底实体和装饰声纹分开；Boss动作由演员清单管理。",
+      "splitBasis": "原文明确材料/功能；独立文件拆分为制作建议，不代表原文已给最终张数"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "sizeU": [
+        30,
+        18
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-01.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R1-01.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-01.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/07_R1-01.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "沿浅亮坡接近壳形营地，E记录入鲸。",
+        "跨第一条1U宽缝，停在宽5U的须影台；跳不过落到无伤坡。",
+        "用两次短跳通过中段高台，最后向右下降，看见须筛剪影后出门。"
+      ],
+      "layerEvidence": [
+        "分层：L0靛蓝深水；L1上颚轮廓；L2低对比鲸须；L3舌台亮顶边；L4暗须帘在脚边淡出；L5稀疏漂粒；L6固定HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：返回时全路无战；上方旧红结只提供迁徙方向，不锁成长物。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-wound-section",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-baleen-curtain",
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "sizeU": [
+        38,
+        21
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-02.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R1-02.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-02.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/08_R1-02.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在入口宽台看见尸蟹举钳；走近诱发，退1.5U避开横扫，再短击侧腹。",
+        "进入中段前先看上方流纹门与红索门，地图分别记录A2和A3。",
+        "跨低台到右侧舌台出口；底部返坡接回入口，不使用新能力。"
+      ],
+      "layerEvidence": [
+        "分层：L0靛蓝深水；L1上颚轮廓；L2低对比鲸须；L3舌台亮顶边；L4暗须帘在脚边淡出；L5稀疏漂粒；L6固定HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：A2回来进喷气孔上层；A3回来进入鲸须记忆袋。薄帘返程闩只缩短本房绕行，不另增跨房边。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-ability-gates",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-baleen-curtain",
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "sizeU": [
+        36,
+        18
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-03.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R1-03.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-03.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/09_R1-03.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先站入口观察两蟹交替举钳；靠壳堆把右蟹留在画外。",
+        "诱左蟹空扫，短击两段后停手，退回宽台等待恢复。",
+        "踩承重舌台到奖励台，E取碎片；最后看见门庭营地再下降。"
+      ],
+      "layerEvidence": [
+        "分层：L0靛蓝深水；L1上颚轮廓；L2低对比鲸须；L3舌台亮顶边；L4暗须帘在脚边淡出；L5稀疏漂粒；L6固定HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：已取碎片显示空槽；两蟹仍可练习资源取舍，无重复成长掉落。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "r1-weighted-tongue",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-baleen-curtain",
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "sizeU": [
+        36,
+        18
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-04.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R1-04.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-04.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/10_R1-04.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在x2安全门庭营地记录；跨x6软帘才进入战斗，失败回跑不穿杂兵。",
+        "看举钳0.8秒，跳过横扫；遇抬壳1.1秒就步退，等1秒恢复打侧腹。",
+        "半血后第二扫有独立亮钳预告，落地后等第二次扫结束再反击。",
+        "胜利停伤并保存，E承接A1；右门开放到流膜育窝。"
+      ],
+      "layerEvidence": [
+        "分层：L0靛蓝深水；L1上颚轮廓；L2低对比鲸须；L3舌台亮顶边；L4暗须帘在脚边淡出；L5稀疏漂粒；L6固定HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：战胜后场地安静，旧壳成为地标；不重刷必打Boss。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-baleen-curtain",
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "sizeU": [
+        38,
+        18
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-05",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-05.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R1-05.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-05.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/11_R1-05.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先在平地试方向＋冲刺，看到2.6U短拖尾而非伤害光刃。",
+        "从第一宽台边跳出再A1跨4U沟，落到5U台；空中不允许第二冲。",
+        "第二段先看齐落点，再跳冲；第三段在无敌人的长落台收束。",
+        "路旁清流窝可清理阻流小壳，取得H1生态反馈；右门通胃枢。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗食管纵向深隙；L1远处口咽大轮廓；L2肌褶与红绳；L3修补平台/角色/能力练习；L4剥离肌膜边；L5海水漂粒；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：已完成H1的育窝有幼体停靠；三段可安全练习，不耗蓄振。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-esophagus-section",
+        "r1-tongue-platform-kit",
+        "shared-repair-cords",
+        "shared-habitat-beds",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "sizeU": [
+        24,
+        24
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-06.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R1-06.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-06.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/12_R1-06.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "从须筛上入口进入，第一固定台补满浮膜压力。",
+        "沿三段向上流纹浮升，每段在宽4U台落地补压；没有连续八秒飞行要求。",
+        "上层取静菌模块；肺侧闩只允许先在 R2-05 远端开启，未开时能看见但不能通行。"
+      ],
+      "layerEvidence": [
+        "分层：L0头背外海；L1实心颅骨与鼻道壁；L2创伤断面和修索；L3膜台/门闩/奖励；L4暗骨板边；L5透光漂粒；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：肺侧闩开后可从肺心回到须门；回程沿低台缓降。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-nasal-section",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "sizeU": [
+        28,
+        19
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R1-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R1-07.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R1-07.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R1-07.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/13_R1-07.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "进入后先见上方碎片与断红绳两条线索。",
+        "在第一环挂定，调整朝向后脱环落到中高台；挂环不能攻击。",
+        "第二环移向记忆袋，落稳后E取碎片和声纹；沿右侧阶台回入口。"
+      ],
+      "layerEvidence": [
+        "分层：L0靛蓝深水；L1上颚轮廓；L2低对比鲸须；L3舌台亮顶边；L4暗须帘在脚边淡出；L5稀疏漂粒；L6固定HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：奖励只留空槽与新声纹；低层通路始终可返回。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-baleen-curtain",
+        "r1-mouth-depth",
+        "r1-tongue-ledge"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-01",
+      "name": "育床",
+      "sizeU": [
+        28,
+        23
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-01.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R2-01.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-01.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/15_R2-01.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在扎根育囊前E完成共生交互，授A2后即时保存。",
+        "在低床上展开浮膜，上浮到第一宽台；压力四秒，落补压台免费恢复。",
+        "再次浮升到高出口，关膜缓降到宽台再重开，先学会主动落地。",
+        "可整理H2育床一次；肺口旅行点亲访后记录，B前不可传送。"
+      ],
+      "layerEvidence": [
+        "分层：L0灰蓝水体；L1半透明肺叶；L2旧育床红绳；L3固定台顶边；L4暗薄膜边；L5横流粒子不得盖预告；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：已调律肺口用于回须门上层；育囊只恢复移动压力，不替营地回血。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "shared-habitat-beds",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-02",
+      "name": "双层肺膜",
+      "sizeU": [
+        34,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-02.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R2-02.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-02.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/16_R2-02.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "从固定台看膜鳐收膜0.7秒，方向线锁中层后再升到上台。",
+        "鳐冲过后落回中层短击它贴壁恢复的窗口；不要求空战。",
+        "右侧两股横流错相，先停固定台，等亮粒流过再跨。",
+        "选修门的旧气纹与透光同时可见；A2可进最后呼吸囊。"
+      ],
+      "layerEvidence": [
+        "分层：L0灰蓝水体；L1半透明肺叶；L2旧育床红绳；L3固定台顶边；L4暗薄膜边；L5横流粒子不得盖预告；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：滑膜模块在侧台一次取得；常规回程可走底床避免重复打鳐。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-03",
+      "name": "心室观察台",
+      "sizeU": [
+        30,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-03.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R2-03.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-03.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/17_R2-03.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在入口刻纹处观察上、下两股群流，每股发作前亮一条方向线。",
+        "趁下流结束跨中台，浮膜只用来调整高度，不在危险区原地耗尽。",
+        "取右上固定碎片，落回观察台营地，确认下一房Boss入口。"
+      ],
+      "layerEvidence": [
+        "分层：L0前胸深水；L1心包大破口与不活动的心室断壁，肺叶仅在背侧远景；L2纵隔残膜和聚落磨痕；L3稳定台/群流敌人/门；L4暗心包裂缘；L5漂粒与敌人预告；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：营地到Boss门的安全段不刷新杂兵；碎片亮点取后熄灭。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-pericardium-heart",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-04",
+      "name": "血巢潮群",
+      "sizeU": [
+        36,
+        23
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-04.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R2-04.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-04.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "由心前营地进入，三层固定台先全部入镜，Boss聚流后才启战。",
+        "聚流预告1秒锁一条水道，浮升或落下换道；外露1秒时近击。",
+        "环散1.1秒前摇留上下缺口；旁通阀可减慢下一轮25%，并非破防钥匙。",
+        "半血后0.8秒重复旧冲线已标轨，不能站回刚才位置；胜后取得P并开出口。"
+      ],
+      "layerEvidence": [
+        "分层：L0前胸深水；L1心包大破口与不活动的心室断壁，肺叶仅在背侧远景；L2纵隔残膜和聚落磨痕；L3稳定台/群流敌人/门；L4暗心包裂缘；L5漂粒与敌人预告；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：Boss消失后群落变为不伤人的稀疏粒群，阀保留视觉反馈。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-pericardium-heart",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "r2-bypass-valve",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-05",
+      "name": "回流出口",
+      "sizeU": [
+        32,
+        21
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-05",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-05.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R2-05.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-05.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/19_R2-05.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "用A2沿舒缓回流上升，两段之间落台补压。",
+        "从肺侧E打开永久闩；这次开闩不花资源，之后两侧都能过。",
+        "出门抵 R1-06 ，可取上层奖励后回须门或胃枢。"
+      ],
+      "layerEvidence": [
+        "分层：L0前胸深水；L1气管外侧软骨环与纵隔；L2心包裂缘和修索；L3稳定台/远侧闩；L4暗软膜；L5定向海流粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：已开的闩不因离房、水压重置或死亡复锁。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-trachea-transition",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R2-06",
+      "name": "最后呼吸囊",
+      "sizeU": [
+        25,
+        27
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R2-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R2-06.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R2-06.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R2-06.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/20_R2-06.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "第一段只浮升，落第一个固定补压台。",
+        "第二段等待横流排空再升，不把移动压力与计时门绑定。",
+        "第三段轻关膜躲贴顶流，重新展开落在奖励台；取碎片后沿下方缓降回入口。"
+      ],
+      "layerEvidence": [
+        "分层：L0灰蓝水体；L1半透明肺叶；L2旧育床红绳；L3固定台顶边；L4暗薄膜边；L5横流粒子不得盖预告；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：奖励取完后仍可练习浮膜，失败落到底床不锁门。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "shared-repair-cords",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-01",
+      "name": "胃枢",
+      "sizeU": [
+        48,
+        30
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-01.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-01.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-01.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/22_R3-01.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "左下进入宽岸，沿1U间隙抵中央营地和余索；低位可直接往肠路。",
+        "左侧用5级普通跳台上肺口，不要求A2，进入后再获得浮膜。",
+        "母蟹回返口位于左中独立短台，先只见闩背，胜后从对面永久打开。",
+        "A2回访中央独立高井，各补压台升高3.5U；抵胃顶支线，不与普通肺口阶梯相接。",
+        "已有P＋A3时在右侧先降强流，再沿4个固定环登高门；失败回低位宽岸。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：有B并亲访调律后可旅行；H3菌圃一次布置显示群落，不产货币。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-ability-gates",
+        "shared-anchor-mount",
+        "r4-combination-gate",
+        "shared-habitat-beds",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-02",
+      "name": "漂台阀",
+      "sizeU": [
+        34,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-02.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-02.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-02.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先在固定岸看阀的低、中、高三档刻线，E一次只变一档。",
+        "中档把漂台对齐到固定岸；孔鳗缩头时过槽，吐液前有鼓囊预告。",
+        "高档只开放上侧观察台，主路中档足够；壳坠界两秒回槽。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：阀回初态不影响永久出口；可从两岸固定台手动重置。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "r3-pressure-valve-platform",
+        "r3-hazard-surfaces",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-03",
+      "name": "肝叶灯罩",
+      "sizeU": [
+        38,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-03.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-03.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-03.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/24_R3-03.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "看到嗅脂甲向菌灯转头，在其未锁定前L遮灯，沿固定背坡通过。",
+        "若已收壳冲撞，关灯不取消；退入大空壳后让它撞停。",
+        "趁露足短击或绕开，上侧背坡取得复振模块；回到出口前开灯看地形。"
+      ],
+      "layerEvidence": [
+        "分层：L0腹腔深水；L1实心肝叶外缘大形，不能表现肝内空洞；L2胃壁旧裂缘与遮光修补；L3外表面平台/壳掩体/灯罩机关；L4系膜暗边；L5漂粒；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：模块空槽仍可辨，灯罩不是全地图隐身；出门保留玩家选择。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-liver-mesentery",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-04",
+      "name": "脂槽刹车",
+      "sizeU": [
+        40,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-04.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-04.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-04.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/25_R3-04.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先躲中央固定空壳，让孔鳗吐液打在壳面。",
+        "引尸蟹到左侧短线，步退反击，双敌不会同时发起不可避招。",
+        "再绕壳逼孔鳗露头；取上台碎片，沿刹车褶边到肠入口。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：掩体离房复原；可选择上坡绕开一个敌，碎片不重复生成。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-liver-mesentery",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "r3-hazard-surfaces",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-05",
+      "name": "肠入口",
+      "sizeU": [
+        32,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-05",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-05.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-05.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-05.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/26_R3-05.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "入口宽岸E领取A3并保存，先在无伤软床上试挂第一固定环。",
+        "挂环调向后脱环落中台，落稳再行动；不能一边挂索一边攻击。",
+        "第二槽用下一固定环，范围主路≤4.5U，右岸免费补给。",
+        "肠侧交通节点先记发现，B前不启用；可随时向胃枢返程。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：取A3后允许回头收集P进R4，不把母蟹设成强制门。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-06",
+      "name": "迁居搬盘",
+      "sizeU": [
+        40,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-06.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-06.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-06.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/27_R3-06.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先安置单只空壳在两档质量座上，只改变漂盘停靠位置。",
+        "贝驮在安全岸递壳，不可攻击产能；玩家用固定环绕过酸槽。",
+        "中段落盘后等待盘静止，再换下一个环；失足扣1格回最近稳定岸。",
+        "母蟹未胜时H4只完成准备；战胜后回访贝驮迁居并记录结果。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：迁居永久完成后不再要求送壳；酸槽和锚线仍可用于通行。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "r3-weight-seat-platform",
+        "r3-hazard-surfaces",
+        "shared-habitat-beds",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-07",
+      "name": "搬壳母蟹",
+      "sizeU": [
+        40,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-07.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-07.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-07.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/28_R3-07.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "入口营地可存档、退出或回头，不跨帘也能离开。",
+        "钳推0.9秒前摇后退到侧台，0.8秒恢复时攻击；落壳1.2秒地面标影需换位。",
+        "65%/30%脱空壳后多慢滚壳，选择锚拉松壳0.9秒停顿或直接伤害。",
+        "胜利立即保存，再从本房E开胃侧回折远侧闩，可经胃侧回折廊回胃枢；H4须回 R3-06 迁居搬盘完成安置，胜利本身不自动完成生态节点。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：没有新能力钥匙；未挑战者可保留Boss后继续基本结局。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R3-08",
+      "name": "胃顶沉积袋",
+      "sizeU": [
+        30,
+        25
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R3-08",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R3-08.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R3-08.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R3-08.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/29_R3-08.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "从胃枢上口A2分段升至沉积袋，每台可补压。",
+        "精英嗅脂甲只守顶部宽6U台，先落稳再决定关灯绕背或迎战。",
+        "胜/绕后取碎片，记忆刻纹暗示器官营养转移；沿软床缓降退出。"
+      ],
+      "layerEvidence": [
+        "分层：L0暗橄榄水；L1褶壁体积；L2壳巢剪影；L3暖赭可走顶面；L4近景黏膜不得遮酸边；L5少量漂脂；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：精英不掉随机装备；首奖之后只保留挑战。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "shared-repair-cords",
+        "r3-falling-deposit",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-01",
+      "name": "组合门",
+      "sizeU": [
+        30,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-01.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-01.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-01.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/31_R4-01.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在胃枢侧看到P与固定锚环两个独立符号，缺项显示来源。",
+        "已有P时阀会降强流；再挂固定环拉闸，松索后走上稳定骨台。",
+        "开启结果永久保存，退回时无需重做压力步骤。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：闸已开后成为一眼能识别的安全往返门。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-ability-gates",
+        "shared-anchor-mount",
+        "r4-combination-gate",
+        "shared-light-particles",
+        "shared-current-warning"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-02",
+      "name": "低骨训练",
+      "sizeU": [
+        36,
+        24
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-02.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-02.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-02.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/32_R4-02.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在低骨平台E取得A4，练习器只吐带环完整珠且不会伤人。",
+        "Q在侧向接触时迎珠，约2.4U上升后落宽台；不下劈、不刷新A1。",
+        "上门通迎珠快路，下门通A3锚定稳路，画面同时展示各自地标。",
+        "A3＋A4可选修索小室；没有模块也能通主路。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：两条主路可交叉回访；训练珠始终不造成伤害。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-ability-gates",
+        "r4-safe-pearl-dispenser",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-03",
+      "name": "上锚路线",
+      "sizeU": [
+        36,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-03.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-03.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-03.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/33_R4-03.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "入口看完整珠三圈预告，侧向Q迎击上升，再A1移向第一高台。",
+        "落稳刷新空冲后处理第二段；同一次滞空迎珠不返还冲刺。",
+        "取高台碎片，再下降到Boss门；失足落菌毯走返坡，非直接死亡。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：可由下路回到训练场再重练；碎片可留到后期取得。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-fungal-recovery",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-04",
+      "name": "下菌毯路线",
+      "sizeU": [
+        40,
+        21
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-04.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-04.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-04.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/34_R4-04.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "挂第一固定环过缺口，落下中台后才面对附骨甲。",
+        "它收壳后跃扑，向侧退开，露足时短击；挂索期间无法攻击。",
+        "第二、三环通Boss门，红冠园可绕行清理一次松壳完成H5。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：下菌毯路提供上路失败后的再选择，不处罚选择较稳路线。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-fungal-recovery",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "shared-habitat-beds",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-05",
+      "name": "悬脊鸣贝",
+      "sizeU": [
+        40,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-05",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-05.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-05.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-05.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/35_R4-05.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "在入口门外营地存档，跨帘后镜头覆盖两贝与落脚平台。",
+        "一贝吐珠时另一贝露软缘0.85秒，可近击输出或迎珠回击18伤害。",
+        "低位合震提前1秒标带，宽台始终保留；半血后节奏0.75秒但不从画外发招。",
+        "胜利授B并保存，进入稳定交通椎开启骨音交通。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：两贝留下稳定声槽；可在后期独立回响练习，不改主存档结果。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-06",
+      "name": "稳定交通椎",
+      "sizeU": [
+        34,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-06.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R4-06.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-06.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/36_R4-06.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "E调律脊椎节点，地图只列B＋亲访＋已调律的可用目的地。",
+        "头侧门验B/A4/A2，通耳海记忆；尾侧门只需已有B，可提前观察终局缺项。",
+        "近景分叉骨槽与远景长脊椎同向，不能把头端直接接到尾槽。"
+      ],
+      "layerEvidence": [
+        "分层：L0远海与尾向深隙；L1腰椎外表和渐细椎列，无肋笼延伸；L2肌腱和修补路线；L3交通节点/稳定台；L4暗膜边；L5漂粒；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：取得S后从这里回尾根；可步行也可用已解锁交通。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R4-07",
+      "name": "修索小室",
+      "sizeU": [
+        32,
+        25
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R4-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R4-07.svg",
+        "http://10.11.140.20:8765/full/images/rooms/R4-07.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R4-07.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/37_R4-07.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "第一环定向脱出，落安全台后接完整珠上升。",
+        "薄骨片脚下先出现0.9秒裂纹，再落向下接台；失败不掉出地图。",
+        "顶部取得系索模块，单向降落回底部，出口仍为原入口。"
+      ],
+      "layerEvidence": [
+        "分层：L0墨青深隙；L1巨大脊骨；L2红索与外伤窗；L3哑象牙台；L4暗骨片在角色附近淡出；L5粒子；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：重复挑战不刷成长；模块只微调脱锚方向，不开主线新门。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-thin-bone",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "shared-repair-cords",
+        "shared-anchor-mount",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-01",
+      "name": "三槽记忆",
+      "sizeU": [
+        30,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-01.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-01.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-01.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/40_R5-01.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "穿头端能力门后站观察台，三槽显示P/B已亮与S空缺。",
+        "沿明显亮边走向育床，先看薄膜缝的形状，不要求未授A5。",
+        "可调律颅入口旅行点；信息只说明缺项来自耳海深处。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：S取得后槽位补齐，作为叙事确认；不重复授S。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "shared-ability-gates",
+        "r5-three-slot-panel",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-02",
+      "name": "安全池",
+      "sizeU": [
+        32,
+        21
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-02.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-02.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-02.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/41_R5-02.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "E共生取得A5，在无害池边先对准带双瓣标记的柔膜缝。",
+        "进入短缝后保持方向，出缝再恢复攻击；闭合时有人则延迟，不夹死。",
+        "硬骨壁没有同标记，无法潜入；主路向薄缝训练，侧口去记忆侧囊。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：A5旧门回访保持同一种双瓣形，不临时发明可穿材料。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "r5-soft-slit",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-03",
+      "name": "薄缝训练",
+      "sizeU": [
+        38,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-03.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-03.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-03.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/42_R5-03.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "孔口鼓起预告后等缝栖鳗探出，侧退而非站孔前硬打。",
+        "通过1.2U柔膜短缝换边，落稳后击露头恢复窗。",
+        "抵右侧覆膜前营地，进入Boss前可补给；上侧回环要在胜利后由 R5-05 开闩。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：远侧闩已开可直接往最后静默；未开时不能绕Boss偷S。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "r5-soft-slit",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-04",
+      "name": "缄声覆膜",
+      "sizeU": [
+        40,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-04.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-04.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-04.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/43_R5-04.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "镜头先展示左右安全台与短软缝；前扫0.8秒、垂落1秒均有轮廓预告。",
+        "攻击后留0.8秒输出窗；地上旧位置空心圆1.4秒后产生回声，主动离开。",
+        "半血后每第二招重复旧轨，同屏最多一回声＋一实体，不复制主角。",
+        "耐受归零立刻停伤并存胜利；安全站立两秒让空圆合拢取得S，提前离开仍可返回领取。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：已胜无攻击，未得S可安全补领；不要求重新打Boss。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "r5-soft-slit",
+        "shared-light-particles",
+        "r5-echo-rings"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-05",
+      "name": "最后静默",
+      "sizeU": [
+        28,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-05",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-05.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-05.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-05.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/44_R5-05.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "停在宽台听声部与看对应字幕，可跳过而不损失S。",
+        "从本侧E开通往 R5-03 的永久闩；图上标识捷径已走。",
+        "沿已开路返回颅入口，再经脊椎到尾根；这里不新建头尾直连。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：收集记忆改变声部，未全收也保留完整基础结局。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "shared-shortcut-latch",
+        "shared-light-particles",
+        "r5-echo-rings"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-06",
+      "name": "记忆侧囊",
+      "sizeU": [
+        28,
+        22
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-06.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-06.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-06.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/45_R5-06.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "先看膜片开合，再进入第一条1U缝，角色未出前闭合延迟。",
+        "第二段落稳定台观察孔流，不要求连续盲冲。",
+        "第三段到顶部碎片槽，取后从明显下落缺口回入口；每个失足点都有接台。"
+      ],
+      "layerEvidence": [
+        "分层：L0颅侧深水；L1大块颅底骨板与紧凑耳骨实体；L2耳周软组织和住民声槽；L3平台/短柔膜缝/角色/敌人；L4暗骨板边；L5空心声波特效（不是耳蜗）；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：无随机掉落；碎片收集状态写在空槽，不误导重复寻找。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "shared-repair-cords",
+        "r5-soft-slit",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-07",
+      "name": "尾根观察",
+      "sizeU": [
+        34,
+        21
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-07.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-07.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-07.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/46_R5-07.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "尾根营地记录后E亲访调律节点，观察三项同步槽。",
+        "缺P/B/S时显示对应区域符号，可退出并沿脊椎返回，不消耗任何能力。",
+        "集齐后一次E同步，永久打开去释放槽的门。",
+        "H6幼体槽一次整理影响尾声丰度，不是通关门槛。"
+      ],
+      "layerEvidence": [
+        "分层：L0尾端外海；L1尾柄纵向肌腱与无骨尾叶；L2剥离纤维和幼体水路；L3稳定槽台/导流闸/幼体；L4暗筋膜；L5海水漂粒和幼体微光；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：终局前保留可返程窗口，允许补做六栖息地和记忆。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r5-tail-tendons",
+        "r5-tail-channel-kit",
+        "r5-tail-foreground",
+        "shared-repair-cords",
+        "r5-three-slot-panel",
+        "shared-habitat-beds",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    },
+    {
+      "id": "R5-08",
+      "name": "归海释放槽",
+      "sizeU": [
+        40,
+        20
+      ],
+      "sourceSection": "http://10.11.140.20:8765/full/#room-R5-08",
+      "referenceImages": [
+        "http://10.11.140.20:8765/full/maps/room-locator-R5-08.svg",
+        "http://10.11.140.20:8765/full/images/anatomy/rooms/R5-08.png",
+        "http://10.11.140.20:8765/full/maps/rooms/R5-08.svg"
+      ],
+      "simpleReferenceImage": "http://10.11.140.20:8765/simple/images/47_R5-08.png",
+      "anatomyAndIntent": [],
+      "walkthroughEvidence": [
+        "走过已打开的宽槽，镜头向远海前看而不突然收窄。",
+        "E确认释放，已收记忆只改变声部，栖息地只改变生命丰度。",
+        "保存END；尾声后可回档继续探索，保留Boss/奖励/捷径永久状态。"
+      ],
+      "layerEvidence": [
+        "分层：L0尾端外海；L1尾柄纵向肌腱与无骨尾叶；L2剥离纤维和幼体水路；L3稳定槽台/导流闸/幼体；L4暗筋膜；L5海水漂粒和幼体微光；L6HUD"
+      ],
+      "revisitStateEvidence": [
+        "回访：END后探索回到最终交互前状态，不能重复刷奖励；鲸仍死亡。"
+      ],
+      "requiredFamilyIds": [
+        "scene-water-depth",
+        "r5-tail-tendons",
+        "r5-tail-channel-kit",
+        "r5-tail-foreground",
+        "shared-repair-cords",
+        "r5-release-sluice",
+        "shared-light-particles"
+      ],
+      "existingEnvironmentAssetIds": [
+        "r1-mouth-depth"
+      ],
+      "coverageStatus": "partial",
+      "roomAssemblyVerified": false
+    }
+  ],
+  "productionEstimate": {
+    "staticFamilyGroups": 53,
+    "estimatedIndependentStaticImages": [
+      90,
+      120
+    ],
+    "estimateOnly": true,
+    "includes": "背景材料、前/中景组件、平台、机关明确开闭/恢复状态、静态特效贴图；含与道具/生态清单交叉的组件，合并时须去重",
+    "excludes": "角色、敌人、NPC、Boss本体、UI、连续动作帧、36房最终拼装图",
+    "basis": "当前53家族含109条材料/状态标签，但部分标签可通过移动、染色或组合表达，也有一条标签需多个分离图层；建议以90–120张独立静态件作为审查前规划区间，拆件验收后锁定，不作为源文档承诺的精确资源量。"
+  },
+  "visualReview": {
+    "viewedRegionReferenceFiles": [
+      "06_R1.png",
+      "14_R2.png",
+      "21_R3.png",
+      "30_R4.png",
+      "38_R5-head.png",
+      "39_R5-tail.png"
+    ],
+    "method": "view_image 实际查看六张区域图，并结合36房中文分层、地标、机关和回访状态；未逐像素检查36张房间图",
+    "finding": "区域材质差异、红绳/壳巢、前景框片和独立机关能在区域参考中辨认；局部房间需制作前进一步逐图复核。"
+  }
+}

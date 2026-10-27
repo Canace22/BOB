@@ -1,0 +1,781 @@
+{
+  "phase": "static-only",
+  "status": "owned47-generated-and-static-composition-reviewed",
+  "scaleNote": "尺度为生产建议，非原文测量；1U=主角0.30m；根代理统一复核。",
+  "existingReuse": [
+    "bone-anchor-ring",
+    "shell-camp",
+    "empty-shell",
+    "life-fragment"
+  ],
+  "planned": [
+    {
+      "id": "bone-resonator",
+      "familyId": "bone-resonator",
+      "name": "独立U形骨鸣器",
+      "scale": {
+        "axis": "height",
+        "units": 0.55
+      },
+      "coversRequirementIds": [
+        "bone-resonator"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "fungus-lamp-open",
+      "familyId": "fungus-lamp",
+      "name": "菌灯·开罩",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "fungus-lamp"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "fungus-lamp-closed",
+      "familyId": "fungus-lamp",
+      "name": "菌灯·闭罩",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "fungus-lamp"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "red-tether-knot",
+      "familyId": "red-tether",
+      "name": "修索红结",
+      "scale": {
+        "axis": "width",
+        "units": 0.35
+      },
+      "coversRequirementIds": [
+        "red-tether"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "red-tether-segment",
+      "familyId": "red-tether",
+      "name": "红索可重复段",
+      "scale": {
+        "axis": "width",
+        "units": 1.0
+      },
+      "coversRequirementIds": [
+        "red-tether"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "migration-memory",
+      "familyId": "migration-memory",
+      "name": "迁徙记忆片",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "migration-memory"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "reward-socket-life",
+      "familyId": "reward-socket",
+      "name": "生命碎片空槽",
+      "scale": {
+        "axis": "width",
+        "units": 0.5
+      },
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "reward-socket-module",
+      "familyId": "reward-socket",
+      "name": "模块空槽",
+      "scale": {
+        "axis": "width",
+        "units": 0.4
+      },
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "reward-socket-memory",
+      "familyId": "reward-socket",
+      "name": "记忆空槽",
+      "scale": {
+        "axis": "width",
+        "units": 0.5
+      },
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-steady-foot",
+      "familyId": "symbiosis-modules",
+      "name": "稳足模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-sliding-membrane",
+      "familyId": "symbiosis-modules",
+      "name": "滑膜模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-tether",
+      "familyId": "symbiosis-modules",
+      "name": "系索模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-round-chamber",
+      "familyId": "symbiosis-modules",
+      "name": "圆腔模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-reverberation",
+      "familyId": "symbiosis-modules",
+      "name": "复振模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "module-quiet-fungus",
+      "familyId": "symbiosis-modules",
+      "name": "静菌模块",
+      "scale": {
+        "axis": "height",
+        "units": 0.3
+      },
+      "coversRequirementIds": [
+        "symbiosis-modules"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "pressure-valve-base",
+      "familyId": "settlement-valve",
+      "name": "三档导流阀基座",
+      "scale": {
+        "axis": "height",
+        "units": 1.2
+      },
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "pressure-valve-handle",
+      "familyId": "settlement-valve",
+      "name": "导流阀独立旋柄",
+      "scale": {
+        "axis": "width",
+        "units": 0.55
+      },
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "bypass-valve-base",
+      "familyId": "settlement-valve",
+      "name": "旁通阀基座",
+      "scale": {
+        "axis": "height",
+        "units": 1
+      },
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "bypass-valve-lever",
+      "familyId": "settlement-valve",
+      "name": "旁通阀独立扳片",
+      "scale": {
+        "axis": "height",
+        "units": 0.45
+      },
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "tail-flow-shutter",
+      "familyId": "settlement-valve",
+      "name": "尾槽遮流瓣",
+      "scale": {
+        "axis": "height",
+        "units": 0.85
+      },
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "floating-platform",
+      "familyId": "floating-platform",
+      "name": "压力漂台",
+      "scale": {
+        "axis": "width",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "floating-platform"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "mass-drift-platform",
+      "familyId": "floating-platform",
+      "name": "质量漂盘",
+      "scale": {
+        "axis": "width",
+        "units": 2.4
+      },
+      "coversRequirementIds": [
+        "floating-platform"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "shell-mass-seat",
+      "familyId": "shell-mass-seat",
+      "name": "空壳两档质量座",
+      "scale": {
+        "axis": "width",
+        "units": 1.8
+      },
+      "coversRequirementIds": [
+        "shell-mass-seat"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "habitat-shade",
+      "familyId": "habitat-shade",
+      "name": "菌圃遮光片",
+      "scale": {
+        "axis": "width",
+        "units": 1.4
+      },
+      "coversRequirementIds": [
+        "habitat-shade"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "nursery-shell-support",
+      "familyId": "nursery-shell-support",
+      "name": "育床壳托",
+      "scale": {
+        "axis": "width",
+        "units": 1.7
+      },
+      "coversRequirementIds": [
+        "nursery-shell-support"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "nursery-valve-leaf",
+      "familyId": "nursery-shell-support",
+      "name": "育床孔瓣独立片",
+      "scale": {
+        "axis": "height",
+        "units": 0.8
+      },
+      "coversRequirementIds": [
+        "nursery-shell-support"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "blowhole-latch-closed",
+      "familyId": "permanent-latches",
+      "name": "喷气孔闩·闭合",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "blowhole-latch-open",
+      "familyId": "permanent-latches",
+      "name": "喷气孔闩·开放",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "gut-latch-closed",
+      "familyId": "permanent-latches",
+      "name": "胃侧红结闩·闭合",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "gut-latch-open",
+      "familyId": "permanent-latches",
+      "name": "胃侧红结闩·开放",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "ear-latch-closed",
+      "familyId": "permanent-latches",
+      "name": "耳海双环闩·闭合",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "ear-latch-open",
+      "familyId": "permanent-latches",
+      "name": "耳海双环闩·开放",
+      "scale": {
+        "axis": "height",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "anchor-pull-gate-closed",
+      "familyId": "anchor-pull-gate",
+      "name": "锚定拉闸·闭合",
+      "scale": {
+        "axis": "height",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "anchor-pull-gate"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "anchor-pull-gate-open",
+      "familyId": "anchor-pull-gate",
+      "name": "锚定拉闸·开放",
+      "scale": {
+        "axis": "height",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "anchor-pull-gate"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "bone-sound-node",
+      "familyId": "bone-sound-node",
+      "name": "骨音交通节点基底",
+      "scale": {
+        "axis": "height",
+        "units": 1.2
+      },
+      "coversRequirementIds": [
+        "bone-sound-node"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "progress-three-slots",
+      "familyId": "progress-three-slots",
+      "name": "三槽状态装置基底",
+      "scale": {
+        "axis": "height",
+        "units": 2.4
+      },
+      "coversRequirementIds": [
+        "progress-three-slots"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "release-sluice-closed",
+      "familyId": "release-sluice",
+      "name": "归海导流闸·闭合",
+      "scale": {
+        "axis": "width",
+        "units": 3.2
+      },
+      "coversRequirementIds": [
+        "release-sluice"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "release-sluice-open",
+      "familyId": "release-sluice",
+      "name": "归海导流闸·开放",
+      "scale": {
+        "axis": "width",
+        "units": 3.2
+      },
+      "coversRequirementIds": [
+        "release-sluice"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "release-bowl",
+      "familyId": "release-sluice",
+      "name": "归海释放碗",
+      "scale": {
+        "axis": "width",
+        "units": 2.2
+      },
+      "coversRequirementIds": [
+        "release-sluice"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "soft-membrane-fissure-closed",
+      "familyId": "soft-membrane-fissure",
+      "name": "双瓣柔膜缝·闭合",
+      "scale": {
+        "axis": "width",
+        "units": 1.5
+      },
+      "coversRequirementIds": [
+        "soft-membrane-fissure"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "soft-membrane-fissure-open",
+      "familyId": "soft-membrane-fissure",
+      "name": "双瓣柔膜缝·开放",
+      "scale": {
+        "axis": "width",
+        "units": 1.5
+      },
+      "coversRequirementIds": [
+        "soft-membrane-fissure"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "ringed-calcium-pearl",
+      "familyId": "ringed-calcium-pearl",
+      "name": "完整带环钙珠",
+      "scale": {
+        "axis": "width",
+        "units": 0.45
+      },
+      "coversRequirementIds": [
+        "ringed-calcium-pearl"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "safe-pearl-emitter",
+      "familyId": "safe-pearl-emitter",
+      "name": "安全吐珠练习器",
+      "scale": {
+        "axis": "height",
+        "units": 1.0
+      },
+      "coversRequirementIds": [
+        "safe-pearl-emitter"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "arena-soft-curtain-closed",
+      "familyId": "arena-soft-curtain",
+      "name": "战斗软帘·闭合",
+      "scale": {
+        "axis": "height",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "arena-soft-curtain"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "arena-soft-curtain-open",
+      "familyId": "arena-soft-curtain",
+      "name": "战斗软帘·开放",
+      "scale": {
+        "axis": "height",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "arena-soft-curtain"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "dash-grant-cocoon-closed",
+      "familyId": "dash-grant-cocoon",
+      "name": "贴流冲膜茧·未承接",
+      "scale": {
+        "axis": "height",
+        "units": 0.9
+      },
+      "coversRequirementIds": [
+        "dash-grant-cocoon"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "dash-grant-cocoon-open",
+      "familyId": "dash-grant-cocoon",
+      "name": "贴流冲膜茧·已承接",
+      "scale": {
+        "axis": "height",
+        "units": 0.9
+      },
+      "coversRequirementIds": [
+        "dash-grant-cocoon"
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "mucus-hazard-surface",
+      "familyId": "r3-hazard-surfaces",
+      "name": "低压黏液槽边",
+      "scale": {
+        "axis": "width",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "r3-hazard-surfaces"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/mucus-hazard-surface.png"
+    },
+    {
+      "id": "fat-slow-surface",
+      "familyId": "r3-hazard-surfaces",
+      "name": "减速脂面",
+      "scale": {
+        "axis": "width",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "r3-hazard-surfaces"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/fat-slow-surface.png"
+    },
+    {
+      "id": "acid-hazard-edge",
+      "familyId": "r3-hazard-surfaces",
+      "name": "酸性沉积危险槽边",
+      "scale": {
+        "axis": "width",
+        "units": 3.0
+      },
+      "coversRequirementIds": [
+        "r3-hazard-surfaces"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/acid-hazard-edge.png"
+    },
+    {
+      "id": "falling-deposit-mass",
+      "familyId": "r3-falling-deposit",
+      "name": "松动沉积块",
+      "scale": {
+        "axis": "width",
+        "units": 1.2
+      },
+      "coversRequirementIds": [
+        "r3-falling-deposit"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-mass.png"
+    },
+    {
+      "id": "falling-deposit-shard",
+      "familyId": "r3-falling-deposit",
+      "name": "独立沉积落屑",
+      "scale": {
+        "axis": "width",
+        "units": 0.4
+      },
+      "coversRequirementIds": [
+        "r3-falling-deposit"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/falling-deposit-shard.png"
+    },
+    {
+      "id": "anchor-tissue-mount",
+      "familyId": "shared-anchor-mount",
+      "name": "固定环组织基座",
+      "scale": {
+        "axis": "width",
+        "units": 0.7
+      },
+      "coversRequirementIds": [
+        "shared-anchor-mount"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/anchor-tissue-mount.png"
+    },
+    {
+      "id": "anchor-bone-mount",
+      "familyId": "shared-anchor-mount",
+      "name": "固定环骨基座",
+      "scale": {
+        "axis": "width",
+        "units": 0.7
+      },
+      "coversRequirementIds": [
+        "shared-anchor-mount"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/anchor-bone-mount.png"
+    },
+    {
+      "id": "habitat-shell-nest",
+      "familyId": "shared-habitat-beds",
+      "name": "壳窝生态基座",
+      "scale": {
+        "axis": "width",
+        "units": 2.0
+      },
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-shell-nest.png"
+    },
+    {
+      "id": "habitat-fungus-bed",
+      "familyId": "shared-habitat-beds",
+      "name": "菌圃生态基座",
+      "scale": {
+        "axis": "width",
+        "units": 2.0
+      },
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-fungus-bed.png"
+    },
+    {
+      "id": "habitat-larva-trough",
+      "familyId": "shared-habitat-beds",
+      "name": "幼体缓流槽基座",
+      "scale": {
+        "axis": "width",
+        "units": 2.5
+      },
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "status": "external-candidate",
+      "owner": "terrain-props",
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-larva-trough.png"
+    }
+  ],
+  "additionalNeeds": [
+    "复用灯光及P/B/S符号应程序/SVG绘制，与UI工作统一；不另外批量生成PNG。",
+    "未登记/已登记、三档漂台位置等由程序组合，不强画三张。",
+    "永久闩背面当前与开闭状态需核对是否可用同框/背板组合；若不能应追加独立背面，不默认为已覆盖。",
+    "H1-H6生态基座待环境清单合并避免重复。",
+    "负责环境交叉项：r3-hazard-surfaces 黏液/脂面/酸槽边三种静态材质件；r3-falling-deposit 沉积与独立落屑；shared-habitat-beds 的H1-H6前后组合recipe与必要基座；shared-anchor-mount 固定环的组织/骨基座。"
+  ]
+}

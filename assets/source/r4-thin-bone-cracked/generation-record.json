@@ -1,0 +1,114 @@
+{
+  "id": "r4-thin-bone-cracked",
+  "name": "薄骨片裂纹态",
+  "coversRequirementIds": [
+    "r4-thin-bone"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/37_R4-07.png"
+  ],
+  "region": "R4",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.6078,
+    "canvasWidthU": 5.2388,
+    "canvasHeightU": 1.7463
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "cracked",
+  "rooms": [
+    "R4-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "与完整态同为 2172×724，中央裂缝清楚，两端轮廓基本稳定；未将裂纹态当连续动画。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-thin-bone-cracked.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-a07a79a0-0efd-407d-9dfe-2451d4257e8d.png",
+  "width": 2172,
+  "height": 724,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      48,
+      100,
+      2125,
+      636
+    ],
+    "8": [
+      50,
+      255,
+      2123,
+      507
+    ],
+    "32": [
+      50,
+      255,
+      2123,
+      506
+    ],
+    "128": [
+      51,
+      256,
+      2122,
+      506
+    ],
+    "248": [
+      53,
+      257,
+      2121,
+      505
+    ]
+  },
+  "sha256": "68ea11d1c8c9fbd0b94b541d6e3933fa4cf8ba3f53dab35140fbb430a2fe3574",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-thin-bone-cracked.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit this exact transparent 2D game bone plank to its CRACKED static state. Preserve the exact 2172x724 canvas, original silhouette, width, left and right endpoints, top contact baseline, thickness, pose, painting and texture. Make only one clear deep jagged dark crack cutting through the central third from the top edge down to the lower edge; add two short branching fissures beside it. The slab is still whole, unseparated and horizontal, no displaced pieces. Crack must remain visible when sprite is scaled to 5 hero units wide. No added dust, particles, motion lines, glow or objects. Actual transparent background, full original margin preserved, no resizing or recentering.",
+    "referenced_image_paths": [
+      "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-259c68b3-4ee9-4a21-8fbc-c6fca944f18e.png"
+    ],
+    "transparent_background": true
+  },
+  "stateReference": "r4-thin-bone",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r4-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    50,
+    255,
+    2123,
+    507
+  ],
+  "alphaStats": {
+    "zero": 1273174,
+    "semi8to247": 9575,
+    "nearOpaque": 280954,
+    "total": 1572528
+  },
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.6078,
+    "canvasWidthU": 5.2388,
+    "canvasHeightU": 1.7463
+  },
+  "pivot": [
+    1086.5,
+    507
+  ]
+}

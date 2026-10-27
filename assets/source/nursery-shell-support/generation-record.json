@@ -1,0 +1,129 @@
+{
+  "id": "nursery-shell-support",
+  "familyId": "nursery-shell-support",
+  "name": "育床壳托",
+  "scale": {
+    "axis": "width",
+    "units": 1.7
+  },
+  "coversRequirementIds": [
+    "nursery-shell-support"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/nursery-shell-support.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/nursery-shell-support.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/15_R2-01.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R2-s17",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    87,
+    285,
+    1450,
+    826
+  ],
+  "pivot": [
+    768.5,
+    826
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "360efcc662628fd6f44bebbcea74f74b5e17d6d293248518f1446df02e690f51",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "空育床壳托；调平状态用底部弧面支点旋转，不另画带NPC整床。",
+    "transparentPixels": 1120710,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "rocker": {
+      "pixel": [
+        767,
+        814
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "leftValve": {
+      "pixel": [
+        660,
+        605
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "rightValve": {
+      "pixel": [
+        880,
+        605
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "空育床壳托；调平状态用底部弧面支点旋转，不另画带NPC整床。",
+  "world": {
+    "axis": "width",
+    "units": 1.7,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.7,
+    "visibleHeightU": 0.6748,
+    "canvasWidthU": 1.9158,
+    "canvasHeightU": 1.2772
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/nursery-shell-support.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/15_R2-01.png"
+  ],
+  "productionGroup": "props",
+  "width": 1536,
+  "height": 1024,
+  "alphaBboxes": {
+    "1": [
+      53,
+      22,
+      1458,
+      998
+    ],
+    "8": [
+      87,
+      285,
+      1450,
+      826
+    ],
+    "32": [
+      87,
+      286,
+      1449,
+      825
+    ],
+    "128": [
+      88,
+      286,
+      1448,
+      825
+    ],
+    "248": [
+      89,
+      287,
+      1447,
+      824
+    ]
+  },
+  "alphaStats": {
+    "zero": 1120710,
+    "semi8to247": 7742,
+    "nearOpaque": 436683,
+    "total": 1572864
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "r1-tongue-ramp",
+  "name": "湿舌恢复坡段",
+  "coversRequirementIds": [
+    "r1-tongue-platform-kit"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/07_R1-01.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/06_R1.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.6741,
+    "canvasWidthU": 10.4545,
+    "canvasHeightU": 3.5155
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-05",
+    "R1-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检连续左低右高坡面，无缺口或额外台面；碰撞须按实际顶边配置。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-tongue-ramp.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-3f05c197-f8c0-4bed-8b28-4827491afd03.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      31,
+      9,
+      2129,
+      703
+    ],
+    "8": [
+      52,
+      107,
+      2120,
+      660
+    ],
+    "32": [
+      53,
+      108,
+      2120,
+      659
+    ],
+    "128": [
+      54,
+      108,
+      2119,
+      658
+    ],
+    "248": [
+      57,
+      112,
+      2117,
+      654
+    ]
+  },
+  "sha256": "1bf80aa9c37ff15dec331810bda0a9529af2f26f9ed20706e4e13283d365efab",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-tongue-ramp.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1",
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    52,
+    107,
+    2120,
+    660
+  ],
+  "alphaStats": {
+    "zero": 1108052,
+    "semi8to247": 32023,
+    "nearOpaque": 404128,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.6741,
+    "canvasWidthU": 10.4545,
+    "canvasHeightU": 3.5155
+  },
+  "pivot": [
+    1086.0,
+    660
+  ]
+}

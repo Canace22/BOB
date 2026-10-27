@@ -1,0 +1,92 @@
+{
+  "id": "shell-camp",
+  "name": "壳形安全营地",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "菌灯和壳体合层，单个静态亮灯状态。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/shell-camp/base.png",
+  "width": 1448,
+  "height": 1086,
+  "bbox": [
+    91,
+    117,
+    1380,
+    991
+  ],
+  "pivot": [
+    735.5,
+    991
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.4,
+    "visibleWidthU": 3.4,
+    "visibleHeightU": 2.3054
+  },
+  "sha256": "436202630c27af6e5e3c92a176525da63ec29c8641fbdb94b5d81d54c580f06e",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      19,
+      1400,
+      1086
+    ],
+    "8": [
+      91,
+      117,
+      1380,
+      991
+    ],
+    "16": [
+      91,
+      119,
+      1380,
+      991
+    ],
+    "32": [
+      91,
+      119,
+      1380,
+      991
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-static-01/references/07_R1-01.png"
+    ],
+    "prompts": [
+      "assets/source/shell-camp/camp-shell_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "camp-shell_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "菌灯和壳体合层，单个静态亮灯状态。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

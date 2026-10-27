@@ -1,0 +1,123 @@
+{
+  "id": "r4-training-groove",
+  "name": "旧练习槽与骨孔",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-training-groove/base.png",
+  "width": 1997,
+  "height": 787,
+  "bbox": [
+    45,
+    205,
+    1956,
+    653
+  ],
+  "pivot": [
+    1000.5,
+    653
+  ],
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.8755,
+    "canvasWidthU": 8.36,
+    "canvasHeightU": 3.2946
+  },
+  "sha256": "80d5a075bb986d05504f2f84e5fbd740de6e9d0143464bb941fce2847c818ddb",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      21,
+      0,
+      1965,
+      787
+    ],
+    "8": [
+      45,
+      205,
+      1956,
+      653
+    ],
+    "32": [
+      47,
+      206,
+      1956,
+      653
+    ],
+    "128": [
+      48,
+      206,
+      1955,
+      653
+    ],
+    "248": [
+      49,
+      208,
+      1954,
+      652
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/32_R4-02.png",
+      "assets/source/whalefall-v5-2-complete/references/37_R4-07.png"
+    ],
+    "prompts": [
+      "assets/source/r4-training-groove/r4-training-groove.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "旧磨痕与浅刻槽画在骨面，无文字图标；上表面斜度较大，定位为地标装饰并检查横版视角。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-training-traces"
+  ],
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-training-groove-80d5a075bb98.png",
+  "state": "base"
+}

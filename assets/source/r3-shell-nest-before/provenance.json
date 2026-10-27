@@ -1,0 +1,124 @@
+{
+  "id": "r3-shell-nest-before",
+  "name": "迁居前杂乱壳巢",
+  "kind": "scenery",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "before"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r3-shell-nest-before/base.png",
+  "width": 1751,
+  "height": 898,
+  "bbox": [
+    156,
+    148,
+    1586,
+    786
+  ],
+  "pivot": [
+    871.0,
+    786
+  ],
+  "world": {
+    "axis": "width",
+    "units": 6,
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.6769,
+    "canvasWidthU": 7.3469,
+    "canvasHeightU": 3.7678
+  },
+  "sha256": "7050f3d5ada0574b05622e56a1392a572ebf0f8e8b13f2c5e8e78c41d54f6420",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      39,
+      25,
+      1727,
+      898
+    ],
+    "8": [
+      156,
+      148,
+      1586,
+      786
+    ],
+    "32": [
+      156,
+      149,
+      1586,
+      785
+    ],
+    "128": [
+      157,
+      150,
+      1585,
+      785
+    ],
+    "248": [
+      159,
+      151,
+      1584,
+      783
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/27_R3-06.png",
+      "assets/source/whalefall-v5-2-complete/references/21_R3.png"
+    ],
+    "prompts": [
+      "assets/source/r3-shell-nest-before/r3-shell-nest-before.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "恰好三只空壳附着一个垫底，无住民或幼体；壳口仍偏朝上，迁居后需明确转向海侧形成可读状态差。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-shell-nests-traces"
+  ],
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-shell-nest-before-7050f3d5ada0.png",
+  "state": "before"
+}

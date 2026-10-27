@@ -1,0 +1,128 @@
+{
+  "id": "bone-sound-node",
+  "name": "骨音交通节点基底",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bone-sound-node/base.png",
+  "width": 1374,
+  "height": 1145,
+  "bbox": [
+    427,
+    162,
+    944,
+    995
+  ],
+  "pivot": [
+    685.5,
+    995
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.7448,
+    "visibleHeightU": 1.2,
+    "canvasWidthU": 1.9794,
+    "canvasHeightU": 1.6495
+  },
+  "sha256": "be51a653638e9482ed5554c2360a6525b281f87061ba2cadc12b8f6ab2d67ee3",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      41,
+      37,
+      1289,
+      1145
+    ],
+    "8": [
+      427,
+      162,
+      944,
+      995
+    ],
+    "32": [
+      429,
+      162,
+      943,
+      993
+    ],
+    "128": [
+      429,
+      162,
+      943,
+      992
+    ],
+    "248": [
+      430,
+      164,
+      942,
+      991
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/15_R2-01.png",
+      "assets/source/whalefall-v5-2-complete/references/36_R4-06.png"
+    ],
+    "prompts": [
+      "assets/source/bone-sound-node/bone-sound-node.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "交通节点未调律共用基底；调律符号/光效交程序，6处实例复用，不新增6种节点。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "bone-sound-node"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bone-sound-node-be51a653638e.png",
+  "attachmentPoints": {
+    "symbol": {
+      "pixel": [
+        688,
+        549
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "bone-sound-node"
+}

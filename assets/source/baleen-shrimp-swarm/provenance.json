@@ -1,0 +1,118 @@
+{
+  "id": "baleen-shrimp-swarm",
+  "name": "剪须虾群",
+  "kind": "character",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/baleen-shrimp-swarm/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    57,
+    198,
+    1721,
+    674
+  ],
+  "pivot": [
+    889.0,
+    436.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.46,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 0.46,
+    "visibleHeightU": 0.1316,
+    "canvasWidthU": 0.4904,
+    "canvasHeightU": 0.2452
+  },
+  "sha256": "7325c61bda0e08d3bb19e859ccdc74748540cc1451313197c86827b434c85199",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      23,
+      8,
+      1760,
+      867
+    ],
+    "8": [
+      57,
+      198,
+      1721,
+      674
+    ],
+    "32": [
+      58,
+      200,
+      1721,
+      674
+    ],
+    "128": [
+      58,
+      201,
+      1720,
+      673
+    ],
+    "248": [
+      63,
+      203,
+      1719,
+      672
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/50_E03_敌人图鉴Ⅲ·群流与生态边界.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/baleen-shrimp-swarm/baleen-shrimp-swarm.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "仅一个剪须虾个体，细长身形、橙白节纹保持；群体由实例编排，不烘焙水流。",
+      "细触须和足需在实际游戏缩放下复核可读性。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "baleen-shrimp-swarm"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/baleen-shrimp-swarm-7325c61bda0e.png",
+  "familyId": "baleen-shrimp-swarm",
+  "variant": "base"
+}

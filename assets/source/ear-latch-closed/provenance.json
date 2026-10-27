@@ -1,0 +1,143 @@
+{
+  "id": "ear-latch-closed",
+  "name": "耳海双环闩·闭合",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/ear-latch-closed/base.png",
+  "width": 1182,
+  "height": 1330,
+  "bbox": [
+    251,
+    94,
+    932,
+    1247
+  ],
+  "pivot": [
+    591.5,
+    1247
+  ],
+  "world": {
+    "axis": "height",
+    "units": 2.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.4766,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 2.5629,
+    "canvasHeightU": 2.8838
+  },
+  "sha256": "30bf3de8ca94ff52b5c1a45ad6cd761eafac40fbdb23ad7b09cf0f3e2df4b282",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1142,
+      1308
+    ],
+    "8": [
+      251,
+      94,
+      932,
+      1247
+    ],
+    "32": [
+      251,
+      94,
+      932,
+      1247
+    ],
+    "128": [
+      252,
+      95,
+      931,
+      1247
+    ],
+    "248": [
+      253,
+      96,
+      930,
+      1245
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/19_R2-05.png",
+      "assets/source/whalefall-v5-2-complete/references/28_R3-07.png",
+      "assets/source/whalefall-v5-2-complete/references/44_R5-05.png"
+    ],
+    "prompts": [
+      "assets/source/ear-latch-closed/ear-latch-closed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "耳海双环门闭合；双环/红索为叠加层，近侧只显示锁环不显示可拉红结。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "permanent-latches"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/ear-latch-closed-30bf3de8ca94.png",
+  "attachmentPoints": {
+    "leftLock": {
+      "pixel": [
+        482,
+        690
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "rightLock": {
+      "pixel": [
+        698,
+        690
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "pullKnot": {
+      "pixel": [
+        592,
+        735
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "permanent-latches"
+}

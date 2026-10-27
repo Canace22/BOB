@@ -1,0 +1,118 @@
+{
+  "id": "bone-resonator",
+  "name": "独立U形骨鸣器",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bone-resonator/base.png",
+  "width": 1145,
+  "height": 1374,
+  "bbox": [
+    217,
+    131,
+    945,
+    1253
+  ],
+  "pivot": [
+    581.0,
+    1006.1600000000001
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.55,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.3569,
+    "visibleHeightU": 0.55,
+    "canvasWidthU": 0.5613,
+    "canvasHeightU": 0.6735
+  },
+  "sha256": "7834b6920e67e18075840f44ddab0f8802e1e64930aad47bc3f5f47355e625ad",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      211,
+      23,
+      1097,
+      1255
+    ],
+    "8": [
+      217,
+      131,
+      945,
+      1253
+    ],
+    "32": [
+      217,
+      132,
+      945,
+      1253
+    ],
+    "128": [
+      218,
+      132,
+      944,
+      1252
+    ],
+    "248": [
+      219,
+      133,
+      943,
+      1251
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/52_P01_工具·共生模块·固定奖励.png"
+    ],
+    "prompts": [
+      "assets/source/bone-resonator/bone-resonator.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Exactly two tines, full grip and attachment eye; no ground. Slight redraw differences versus original grip; same visual family.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "bone-resonator"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bone-resonator-7834b6920e67.png",
+  "familyId": "bone-resonator"
+}

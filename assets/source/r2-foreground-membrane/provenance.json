@@ -1,0 +1,121 @@
+{
+  "id": "r2-foreground-membrane",
+  "name": "暗紫膜缘前景",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-foreground-membrane/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    42,
+    64,
+    2120,
+    675
+  ],
+  "pivot": [
+    1081.0,
+    675
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 4.1165,
+    "canvasWidthU": 14.5659,
+    "canvasHeightU": 4.898
+  },
+  "sha256": "4ca5ad2b4da2c228dc67b6cfd17fa1951ce94aab2cc9a77ffc751d21b7c139c8",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      3,
+      2144,
+      727
+    ],
+    "8": [
+      42,
+      64,
+      2120,
+      675
+    ],
+    "32": [
+      42,
+      64,
+      2120,
+      675
+    ],
+    "128": [
+      43,
+      65,
+      2119,
+      674
+    ],
+    "248": [
+      46,
+      66,
+      2117,
+      673
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/14_R2.png"
+    ],
+    "prompts": [
+      "assets/source/r2-foreground-membrane/r2-foreground-membrane.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "暗紫褶膜整体连续，无明亮水平承托线；细小孔洞与透明网边需深浅底 QA。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-membrane-foreground"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-foreground-membrane-4ca5ad2b4da2.png",
+  "state": "base"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "yusuo",
+  "name": "余索",
+  "familyId": "yusuo",
+  "variant": "base",
+  "kind": "friendly_npc",
+  "region": "R3",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/yusuo.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/yusuo.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/51_N01_余索·贝驮·育囊.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1290,
+  "height": 1219,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    312,
+    139,
+    1017,
+    1133
+  ],
+  "sha256": "cb4114b6a7f2bde01497ce863fdbdef129647a047e2ff97d9f40dfffc4bd8ede",
+  "world": {
+    "axis": "height",
+    "units": 1.1,
+    "basis": "按N01与1U主角的画面比例拟定，设计未明确给该NPC量化尺寸，待引擎实机确认。",
+    "visibleWidthU": 0.7802,
+    "visibleHeightU": 1.1,
+    "canvasWidthU": 1.4276,
+    "canvasHeightU": 1.349
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      664.5,
+      1133
+    ]
+  },
+  "purpose": "独立静态NPC基础形象，不是动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "余索：友好NPC／老修索匠；提醒已发现但尚未进入的旧门。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s9",
+      "quote": "胃枢 H3 菌圃及余索已见门提示不提供新钥匙或跑腿链。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "铜橙色长窗头盔、橄榄披风、红索与垂壳保持，单人物，无主角灯或武器。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "yusuo",
+  "coversRequirementIds": [
+    "yusuo"
+  ],
+  "productionGroup": "actors",
+  "alphaBboxes": {
+    "1": [
+      49,
+      49,
+      1222,
+      1195
+    ],
+    "8": [
+      312,
+      139,
+      1017,
+      1133
+    ],
+    "32": [
+      312,
+      139,
+      1017,
+      1133
+    ],
+    "128": [
+      313,
+      140,
+      1017,
+      1132
+    ],
+    "248": [
+      314,
+      141,
+      1016,
+      1131
+    ]
+  },
+  "alphaStats": {
+    "zero": 1054712,
+    "semi8to247": 14808,
+    "nearOpaque": 489462,
+    "total": 1572510
+  },
+  "pivot": [
+    664.5,
+    1133
+  ]
+}

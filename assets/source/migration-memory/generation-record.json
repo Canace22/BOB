@@ -1,0 +1,107 @@
+{
+  "id": "migration-memory",
+  "familyId": "migration-memory",
+  "name": "迁徙记忆片",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "migration-memory"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/migration-memory.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/migration-memory.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+    "http://10.11.140.20:8765/simple/images/13_R1-07.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R1-07",
+  "dimensions": [
+    1398,
+    1125
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    119,
+    139,
+    1318,
+    1046
+  ],
+  "pivot": [
+    718.5,
+    1046
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "3c28e6c88f8d8f7aa4cf4ea1cb068c363028e3f10b860eb41125c67587cb7c1a",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Single carved disc with red tether, no glow. Reference-guided redraw, no exact-pixel claim.",
+    "transparentPixels": 869931,
+    "totalPixels": 1572750,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Single carved disc with red tether, no glow. Reference-guided redraw, no exact-pixel claim.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.3966,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.4624,
+    "canvasHeightU": 0.3721
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/migration-memory.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/13_R1-07.png"
+  ],
+  "productionGroup": "props",
+  "width": 1398,
+  "height": 1125,
+  "alphaBboxes": {
+    "1": [
+      0,
+      23,
+      1397,
+      1125
+    ],
+    "8": [
+      119,
+      139,
+      1318,
+      1046
+    ],
+    "32": [
+      119,
+      140,
+      1318,
+      1046
+    ],
+    "128": [
+      120,
+      140,
+      1318,
+      1045
+    ],
+    "248": [
+      121,
+      141,
+      1317,
+      1044
+    ]
+  },
+  "alphaStats": {
+    "zero": 869931,
+    "semi8to247": 13897,
+    "nearOpaque": 676886,
+    "total": 1572750
+  }
+}

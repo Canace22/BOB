@@ -1,0 +1,116 @@
+{
+  "id": "r1-wound-section",
+  "name": "口角皮脂肌层断面",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-wound-section/base.png",
+  "width": 1996,
+  "height": 788,
+  "bbox": [
+    69,
+    69,
+    1936,
+    731
+  ],
+  "pivot": [
+    1002.5,
+    731
+  ],
+  "world": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.6733,
+    "canvasWidthU": 17.1055,
+    "canvasHeightU": 6.7531
+  },
+  "sha256": "2a6f31ca7b736ff3f19ebe6b1a5ee205dc613addd6e33f9ee219d8ca1315dbd3",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      17,
+      1980,
+      788
+    ],
+    "8": [
+      69,
+      69,
+      1936,
+      731
+    ],
+    "32": [
+      69,
+      71,
+      1936,
+      730
+    ],
+    "128": [
+      70,
+      72,
+      1935,
+      730
+    ],
+    "248": [
+      72,
+      75,
+      1934,
+      729
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/07_R1-01.png"
+    ],
+    "prompts": [
+      "assets/source/r1-wound-section/r1-wound-section.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检单件皮脂肌断面，三层材质可区分；是装饰断面，不能直接当碰撞坡。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-wound-section"
+  ],
+  "rooms": [
+    "R1-01"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-wound-section-2a6f31ca7b73.png",
+  "state": "base"
+}

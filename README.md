@@ -32,6 +32,14 @@ npm start
 
 浏览器打开 http://127.0.0.1:4173/ 。按 `Ctrl+C` 停止服务。
 
+## 美术资源管理页面
+
+```sh
+npm --prefix assets/manager start
+```
+
+打开 http://127.0.0.1:4176/ 查看、筛选和管理已入库素材。标签、备注及验收状态保存到项目台账。现有 192 张静态文件、105 个需求家族的完整清单与状态组合预览，另有 7 页静态图集；两版游戏尚未接入，动作动画尚未制作。详见[资源管理说明](assets/README.md)。
+
 ## 发布到 GitHub Pages
 
 ```sh
@@ -64,7 +72,7 @@ BOB/
 
 ## 更多说明
 
-- 美术资源统一管理：[目录约定](assets/README.md) · [资源台账](assets/catalog.md)
+- 美术资源统一管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)
 
 - 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
 - 初版操作、完整路线：[mvp/README.md](mvp/README.md)

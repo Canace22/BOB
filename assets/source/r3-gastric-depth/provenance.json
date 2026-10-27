@@ -1,0 +1,129 @@
+{
+  "id": "r3-gastric-depth",
+  "name": "胃肠暖赭远景",
+  "kind": "background",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r3-gastric-depth/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0096,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "sha256": "d31fe19293f0184d839eb7dd43a3455960b3aafa39af2c9dfcaf592ec8989283",
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/21_R3.png",
+      "assets/source/whalefall-v5-2-complete/references/22_R3-01.png"
+    ],
+    "prompts": [
+      "assets/source/r3-gastric-depth/r3-gastric-depth.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "目检暖赭胃褶与暗橄榄水体，无酸液水平面、骨架、鲸须或角色。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "scene-water-depth",
+    "r3-gastric-folds"
+  ],
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "layer": "merged-L0-L1-fallback",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-gastric-depth-d31fe19293f0.png",
+  "state": "base"
+}

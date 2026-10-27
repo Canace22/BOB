@@ -1,0 +1,122 @@
+{
+  "id": "r4-foreground-bone",
+  "name": "暗骨片与断索前景",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-foreground-bone/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    56,
+    169,
+    2110,
+    663
+  ],
+  "pivot": [
+    1083.0,
+    663
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 3.3671,
+    "canvasWidthU": 14.7361,
+    "canvasHeightU": 4.9552
+  },
+  "sha256": "67251afdb3875f0ea7d05adeafcaa6ec8fd3b4f45aef4915a6a58fd151eed8b6",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      41,
+      6,
+      2124,
+      727
+    ],
+    "8": [
+      56,
+      169,
+      2110,
+      663
+    ],
+    "32": [
+      56,
+      169,
+      2109,
+      663
+    ],
+    "128": [
+      57,
+      170,
+      2108,
+      662
+    ],
+    "248": [
+      60,
+      172,
+      2105,
+      661
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/30_R4.png"
+    ],
+    "prompts": [
+      "assets/source/r4-foreground-bone/r4-foreground-bone.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "暗色骨片与旧绳连接成前景件，无独立新道具；局部骨顶仍有亮边，放置于遮挡层时检查是否误认平台。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-bone-foreground"
+  ],
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-foreground-bone-67251afdb387.png",
+  "state": "base"
+}

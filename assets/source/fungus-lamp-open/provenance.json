@@ -1,0 +1,118 @@
+{
+  "id": "fungus-lamp-open",
+  "name": "菌灯·开罩",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fungus-lamp-open/base.png",
+  "width": 1290,
+  "height": 1219,
+  "bbox": [
+    211,
+    94,
+    1194,
+    1120
+  ],
+  "pivot": [
+    702.5,
+    1120
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.2874,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3772,
+    "canvasHeightU": 0.3564
+  },
+  "sha256": "c3e09cd374c3af29c87832a90a59b24375c7ab08cd1022a10bd1edaf7ddcca7d",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      35,
+      1220,
+      1219
+    ],
+    "8": [
+      211,
+      94,
+      1194,
+      1120
+    ],
+    "32": [
+      211,
+      94,
+      1194,
+      1118
+    ],
+    "128": [
+      212,
+      94,
+      1193,
+      1118
+    ],
+    "248": [
+      213,
+      95,
+      1192,
+      1117
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/52_P01_工具·共生模块·固定奖励.png"
+    ],
+    "prompts": [
+      "assets/source/fungus-lamp-open/fungus-lamp-open.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "One sealed amber lamp, shade visibly open, no ground or broad exterior glow; alpha checked. Treat as complete static open-state object.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "fungus-lamp"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fungus-lamp-open-c3e09cd374c3.png",
+  "familyId": "fungus-lamp"
+}

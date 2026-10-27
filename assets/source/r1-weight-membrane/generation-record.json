@@ -1,0 +1,107 @@
+{
+  "id": "r1-weight-membrane",
+  "name": "承重舌膜稳定态",
+  "coversRequirementIds": [
+    "r1-weighted-tongue"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/09_R1-03.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.9893,
+    "canvasWidthU": 5.2552,
+    "canvasHeightU": 1.7671
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-03"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检单件稳定承重膜，两端附着，中间轻微下弧；未生成角色或地面。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-weight-membrane.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-05f89f3b-9b49-4743-ac8a-2dea3dfbc46e.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      51,
+      11,
+      2116,
+      727
+    ],
+    "8": [
+      54,
+      169,
+      2111,
+      576
+    ],
+    "32": [
+      54,
+      169,
+      2110,
+      576
+    ],
+    "128": [
+      54,
+      170,
+      2109,
+      575
+    ],
+    "248": [
+      58,
+      171,
+      2108,
+      574
+    ]
+  },
+  "sha256": "6dcde8238744601dc4c0827926b3a6289df44e8b21edde51b33bbb7878eb208f",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-weight-membrane.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1",
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    54,
+    169,
+    2111,
+    576
+  ],
+  "alphaStats": {
+    "zero": 1137393,
+    "semi8to247": 14049,
+    "nearOpaque": 405278,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.9893,
+    "canvasWidthU": 5.2552,
+    "canvasHeightU": 1.7671
+  },
+  "pivot": [
+    1082.5,
+    576
+  ]
+}

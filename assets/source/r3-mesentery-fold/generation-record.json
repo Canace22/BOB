@@ -1,0 +1,116 @@
+{
+  "id": "r3-mesentery-fold",
+  "name": "系膜与脂肪褶面",
+  "coversRequirementIds": [
+    "r3-liver-mesentery"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/25_R3-04.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 4.1566,
+    "canvasWidthU": 16.5196,
+    "canvasHeightU": 5.5549
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R3-03",
+    "R3-04"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "系膜与脂肪褶为连续独立件，未加入胃酸水面或骨齿；垂丝尖端在实际缩放下检查。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-mesentery-fold.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-a3e7d57f-8c97-4c1f-aaef-20fb66298816.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      32,
+      23,
+      2142,
+      709
+    ],
+    "8": [
+      34,
+      112,
+      2128,
+      656
+    ],
+    "32": [
+      34,
+      112,
+      2128,
+      655
+    ],
+    "128": [
+      35,
+      112,
+      2127,
+      654
+    ],
+    "248": [
+      38,
+      114,
+      2125,
+      650
+    ]
+  },
+  "sha256": "c00ab9565d8270333a724b741a532387be57bc733bf3ba61badc91df8ae7597b",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-mesentery-fold.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE complete connected sheet of dead whale mesentery with fatty organic folds, R3 environment landmark 16 hero units wide. A loosely drooping horizontal fan of semitranslucent ochre-beige mesenteric web connecting several soft rounded muted burgundy fat lobules, gently scalloped edge and a few short attached stringlike tissues. It reads as flexible connective organ tissue, not bone, teeth, coral, intestinal tube or baleen. Muted golden ochre, earthy reddish brown, shadow olive. Shallow uneven top, decorative midground not a ready platform. No acidic liquid, no yellow pool. Fully contained one coherent draped piece.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/25_R3-04.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3",
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    34,
+    112,
+    2128,
+    656
+  ],
+  "alphaStats": {
+    "zero": 986951,
+    "semi8to247": 46670,
+    "nearOpaque": 502915,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 4.1566,
+    "canvasWidthU": 16.5196,
+    "canvasHeightU": 5.5549
+  },
+  "pivot": [
+    1081.0,
+    656
+  ]
+}

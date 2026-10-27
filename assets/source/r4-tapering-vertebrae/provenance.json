@@ -1,0 +1,119 @@
+{
+  "id": "r4-tapering-vertebrae",
+  "name": "渐细椎列过渡地标",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "与主背景组合表达向头/向尾，位置实例不重复出图",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-tapering-vertebrae/base.png",
+  "width": 2115,
+  "height": 744,
+  "bbox": [
+    14,
+    14,
+    2106,
+    703
+  ],
+  "pivot": [
+    1060.0,
+    703
+  ],
+  "world": {
+    "axis": "width",
+    "units": 26,
+    "visibleWidthU": 26.0,
+    "visibleHeightU": 8.5631,
+    "canvasWidthU": 26.2859,
+    "canvasHeightU": 9.2467
+  },
+  "sha256": "ad38918ae35a5ee0a059fc9f5ddfa225f6d473f652826dd9ca2598562fdae1b9",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      11,
+      11,
+      2115,
+      744
+    ],
+    "8": [
+      14,
+      14,
+      2106,
+      703
+    ],
+    "32": [
+      15,
+      14,
+      2106,
+      702
+    ],
+    "128": [
+      15,
+      15,
+      2105,
+      702
+    ],
+    "248": [
+      16,
+      16,
+      2104,
+      701
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/36_R4-06.png"
+    ],
+    "prompts": [
+      "assets/source/r4-tapering-vertebrae/r4-tapering-vertebrae.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "与主背景组合表达向头/向尾，位置实例不重复出图",
+      "六节椎骨由大到小相连，外侧视角且无后段肋骨；左端余量较小但轮廓未截断，合成以 alpha bbox 校准。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-tailward-vertebrae"
+  ],
+  "rooms": [
+    "R4-06",
+    "R5-01",
+    "R5-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-tapering-vertebrae-ad38918ae35a.png",
+  "state": "base"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "shell-mother-crab-phase-65",
+  "name": "搬壳母蟹 · 第一次脱壳",
+  "familyId": "shell-mother-crab",
+  "variant": "phase-65",
+  "kind": "boss",
+  "region": "R3",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/shell-mother-crab-phase-65.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/shell-mother-crab-phase-65.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/shell-mother-crab.png"
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    15,
+    224,
+    1522,
+    998
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      21,
+      1525,
+      1024
+    ],
+    "8": [
+      15,
+      224,
+      1522,
+      998
+    ],
+    "32": [
+      15,
+      224,
+      1522,
+      997
+    ],
+    "128": [
+      16,
+      225,
+      1522,
+      997
+    ],
+    "248": [
+      16,
+      225,
+      1521,
+      994
+    ]
+  },
+  "sha256": "1d73b3ddc0cbd2d6515b57d20f57172a9c6f65aea4b84d62e3a54774fb434f50",
+  "world": {
+    "axis": "width",
+    "units": 6.404249667994688,
+    "basis": "以全负重版身体/钳足宽6.4U建立共用sourcePixelsPerUnit；各状态按同一像素尺度，不按掉壳后高度放大。",
+    "visibleWidthU": 6.4042,
+    "visibleHeightU": 3.2892,
+    "canvasWidthU": 6.5275,
+    "canvasHeightU": 4.3517
+  },
+  "pivotSuggestion": {
+    "type": "shared-canvas-footline",
+    "pixel": [
+      768,
+      1000
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s18",
+      "quote": "钳推0.9秒前摇；0.8秒恢复；落壳1.2秒地面标影；65%/30%脱空壳后多慢滚壳；锚拉松壳0.9秒停顿。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "移除上层约三分之一背负空壳，保留下层壳堆；主体、钳、脚姿态和落点保持。",
+      "状态依据65%阈值叙事，具体剩余壳数量为视觉适配，不是动画帧。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "shell-mother-crab-phase-65",
+  "coversRequirementIds": [
+    "shell-mother-crab-phase-65"
+  ],
+  "staticFamilyRegistration": {
+    "family": "shell-mother-crab",
+    "referenceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/shell-mother-crab.png",
+    "referenceCanvas": [
+      1536,
+      1024
+    ],
+    "sourcePixelsPerUnit": 235.3125,
+    "sharedPivotPixel": [
+      768,
+      1000
+    ],
+    "rule": "按同一原画布像素比例与同一脚底基准摆放；不得按各状态包围盒高度重新归一。",
+    "visibleWidthU": 6.404249667994688,
+    "visibleHeightU": 3.289243027888446
+  },
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 824818,
+    "semi8to247": 25321,
+    "nearOpaque": 696040,
+    "total": 1572864
+  },
+  "pivot": [
+    768,
+    1000
+  ]
+}

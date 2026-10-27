@@ -1,0 +1,141 @@
+{
+  "id": "habitat-shell-nest",
+  "familyId": "shared-habitat-beds",
+  "name": "壳窝生态基座",
+  "scale": {
+    "axis": "width",
+    "units": 2.0
+  },
+  "coversRequirementIds": [
+    "shared-habitat-beds"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-shell-nest.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-shell-nest.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-shell-nest.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/11_R1-05.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R1-s17",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R1-s17",
+      "quote": "H1 侧流壳窝：A1 后侧台安放一只空壳，流向变清、壳窝露出。H4 母蟹胜利后回放空壳。"
+    }
+  ],
+  "dimensions": [
+    1774,
+    887
+  ],
+  "width": 1774,
+  "height": 887,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    56,
+    198,
+    1718,
+    748
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      9,
+      1738,
+      887
+    ],
+    "8": [
+      56,
+      198,
+      1718,
+      748
+    ],
+    "32": [
+      56,
+      200,
+      1717,
+      748
+    ],
+    "128": [
+      57,
+      201,
+      1717,
+      747
+    ],
+    "248": [
+      58,
+      206,
+      1715,
+      745
+    ]
+  },
+  "pivot": [
+    887.0,
+    748
+  ],
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      887.0,
+      748
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "3d9d517624fe375e7f84949c6fd5612a43788d32580e4ee57113a103bc2108ea",
+  "world": {
+    "axis": "width",
+    "units": 2.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 2.0,
+    "visibleHeightU": 0.6619,
+    "canvasWidthU": 2.1348,
+    "canvasHeightU": 1.0674
+  },
+  "purpose": "H1/H4 空壳安放生态基座；移动空壳保持独立，可制作前后状态 recipe。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1018976,
+    "totalPixels": 1573538,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "attachmentPoints": {
+    "shellSeat": {
+      "pixel": [
+        887,
+        492
+      ],
+      "role": "空壳底部落点，位于壳窝中央凹槽"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "recipeNotes": "生态主交互物保持独立；此基座前沿未额外拆层。子物下缘按凹槽挂点放置，如需真实前沿遮挡应在场景用独立遮挡蒙版而非修改原PNG。",
+  "adaptationNotes": "原文明确壳窝交互，但未提供独立壳窝正投影；按R1-05粉红组织/浅色边缘作保守基座适配，边缘少量钙化菌芽是固定装饰，不计新生态角色。",
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1018976,
+    "semi8to247": 27631,
+    "nearOpaque": 500196,
+    "total": 1573538
+  }
+}

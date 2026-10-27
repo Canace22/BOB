@@ -1,0 +1,116 @@
+{
+  "id": "beituo",
+  "name": "贝驮",
+  "kind": "character",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立静态NPC基础形象，不是动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/beituo/base.png",
+  "width": 1290,
+  "height": 1219,
+  "bbox": [
+    257,
+    69,
+    1118,
+    1169
+  ],
+  "pivot": [
+    687.5,
+    1169
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.35,
+    "basis": "按N01与1U主角的画面比例拟定，设计未明确给该NPC量化尺寸，待引擎实机确认。",
+    "visibleWidthU": 1.0567,
+    "visibleHeightU": 1.35,
+    "canvasWidthU": 1.5832,
+    "canvasHeightU": 1.496
+  },
+  "sha256": "1c3fce3afe9abb2c856f7d38e12a67fa86bf2d9f515e042c35e37a44aa6e44b9",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      65,
+      1262,
+      1171
+    ],
+    "8": [
+      257,
+      69,
+      1118,
+      1169
+    ],
+    "32": [
+      257,
+      70,
+      1118,
+      1168
+    ],
+    "128": [
+      258,
+      70,
+      1117,
+      1168
+    ],
+    "248": [
+      259,
+      74,
+      1116,
+      1166
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/51_N01_余索·贝驮·育囊.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/beituo/beituo.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "独立静态NPC基础形象，不是动画。",
+      "一只友好搬壳蟹，一枚背负空壳；近侧大钳两道蓝条清晰，红索固定，腿与壳完整。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "beituo"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/beituo-1c3fce3afe9a.png",
+  "familyId": "protected-shell-crab",
+  "variant": "base"
+}

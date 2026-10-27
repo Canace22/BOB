@@ -1,0 +1,89 @@
+{
+  "id": "float-membrane",
+  "name": "浮膜展开挂件",
+  "kind": "effect",
+  "region": "全局",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/float-membrane.png",
+  "coversRequirementIds": [
+    "fx-dash-membrane"
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.6,
+    "visibleWidthU": 1.6,
+    "visibleHeightU": 1.1619,
+    "canvasWidthU": 1.9007,
+    "canvasHeightU": 1.2671
+  },
+  "promptFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/float-membrane.prompt.txt",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/float-membrane-alpha.prompt.txt"
+  ],
+  "referenceFiles": [
+    "05_C02_五能力与失败恢复.png"
+  ],
+  "qa": {
+    "status": "candidate",
+    "findings": [
+      "按能力板02拆为独立后背挂件；定向修正后膜体含实际半透明像素，纹理仍偏厚，需在实际背景确认。"
+    ]
+  },
+  "notes": "静态展开形；后续收拢、变形与角色挂点动作另做。",
+  "method": "内置imagegen；一次alpha定向修正；原始PNG保持不改。",
+  "productionGroup": "ui-fx",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    153,
+    46,
+    1446,
+    985
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "sha256": "be519b0e61d1dbdd20d01b657b9ff782cb1e6a101e7cfcf1515cc5f3a4fd001e",
+  "alphaBboxes": {
+    "1": [
+      0,
+      7,
+      1522,
+      1024
+    ],
+    "8": [
+      153,
+      46,
+      1446,
+      985
+    ],
+    "32": [
+      154,
+      47,
+      1446,
+      984
+    ],
+    "128": [
+      155,
+      48,
+      1444,
+      983
+    ],
+    "248": [
+      159,
+      50,
+      1442,
+      979
+    ]
+  },
+  "alphaStats": {
+    "zero": 921410,
+    "semi8to247": 411213,
+    "nearOpaque": 183448,
+    "total": 1572864
+  },
+  "pivot": [
+    799.5,
+    515.5
+  ]
+}

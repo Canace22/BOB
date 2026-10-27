@@ -1,0 +1,147 @@
+{
+  "id": "habitat-fungus-bed",
+  "familyId": "shared-habitat-beds",
+  "name": "菌圃生态基座",
+  "scale": {
+    "axis": "width",
+    "units": 2.0
+  },
+  "coversRequirementIds": [
+    "shared-habitat-beds"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-fungus-bed.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-fungus-bed.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/habitat-fungus-bed.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/22_R3-01.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s17",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s17",
+      "quote": "H3 胃枢菌圃：旋灯罩暗面，幼菌亮起，主路不变。"
+    }
+  ],
+  "dimensions": [
+    1774,
+    887
+  ],
+  "width": 1774,
+  "height": 887,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    181,
+    225,
+    1591,
+    748
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1730,
+      887
+    ],
+    "8": [
+      181,
+      225,
+      1591,
+      748
+    ],
+    "32": [
+      182,
+      225,
+      1591,
+      748
+    ],
+    "128": [
+      183,
+      226,
+      1590,
+      748
+    ],
+    "248": [
+      184,
+      227,
+      1589,
+      747
+    ]
+  },
+  "pivot": [
+    886.0,
+    748
+  ],
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      886.0,
+      748
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "0de628f10312ea3b70b7a7c65e470060455c7ac0a8d7a12cbe0d569d7522be45",
+  "world": {
+    "axis": "width",
+    "units": 2.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 2.0,
+    "visibleHeightU": 0.7418,
+    "canvasWidthU": 2.5163,
+    "canvasHeightU": 1.2582
+  },
+  "purpose": "H3 菌圃及幼菌基底，暗面亮起由 tint/glow 状态组合表达。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1199941,
+    "totalPixels": 1573538,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "attachmentPoints": {
+    "shadePivot": {
+      "pixel": [
+        887,
+        610
+      ],
+      "role": "遮光片独立置于菌圃上方，此为菌床中心"
+    },
+    "lightCenter": {
+      "pixel": [
+        887,
+        475
+      ],
+      "role": "幼菌群局部光效中心，不使用背景光晕"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "recipeNotes": "生态主交互物保持独立；此基座前沿未额外拆层。子物下缘按凹槽挂点放置，如需真实前沿遮挡应在场景用独立遮挡蒙版而非修改原PNG。",
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1199941,
+    "semi8to247": 17827,
+    "nearOpaque": 330790,
+    "total": 1573538
+  }
+}

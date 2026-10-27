@@ -1,0 +1,117 @@
+{
+  "id": "red-crown-colony",
+  "name": "红冠群落",
+  "familyId": "red-crown-colony",
+  "variant": "before-restoration",
+  "kind": "protected_ecology",
+  "region": "R4",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/red-crown-colony.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/red-crown-colony.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/34_R4-04.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    451,
+    110,
+    1151,
+    911
+  ],
+  "alphaBboxes": {
+    "1": [
+      73,
+      67,
+      1398,
+      1024
+    ],
+    "8": [
+      451,
+      110,
+      1151,
+      911
+    ],
+    "32": [
+      451,
+      110,
+      1150,
+      910
+    ],
+    "128": [
+      452,
+      110,
+      1149,
+      910
+    ],
+    "248": [
+      453,
+      111,
+      1148,
+      908
+    ]
+  },
+  "sha256": "c96fd84943ecc23fc9956e7c89315beef04fd51389c41095e382bde8e23b2fb4",
+  "world": {
+    "axis": "height",
+    "units": 1.1,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 0.9613,
+    "visibleHeightU": 1.1,
+    "canvasWidthU": 2.1094,
+    "canvasHeightU": 1.4062
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      801.0,
+      911
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "红冠群落：受保护扎根生态；无追击技能；以群落变化表现栖息地恢复。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R4-s19",
+      "quote": "受保护红冠扎根骨孔，显示死亡鲸骨如何成为新住处。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "依据断脊画面红色管状群落重绘，单簇扎根，未加入攻击或活动器官。",
+      "恢复前稀疏形态为根据叙事状态制作的外观适配，原画没有独立前后图板。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "red-crown-colony",
+  "coversRequirementIds": [
+    "red-crown-colony"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 1314830,
+    "semi8to247": 13971,
+    "nearOpaque": 229210,
+    "total": 1572864
+  },
+  "pivot": [
+    801.0,
+    911
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "module-round-chamber",
+  "name": "圆腔模块",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/module-round-chamber/base.png",
+  "width": 1312,
+  "height": 1199,
+  "bbox": [
+    206,
+    64,
+    1134,
+    1131
+  ],
+  "pivot": [
+    670.0,
+    1131
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.2609,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3689,
+    "canvasHeightU": 0.3371
+  },
+  "sha256": "1c4da56768f029f92ea93176e78bb2ec3e3c97dcb54fc4477b9197c154cd1ccd",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      22,
+      1294,
+      1199
+    ],
+    "8": [
+      206,
+      64,
+      1134,
+      1131
+    ],
+    "32": [
+      206,
+      65,
+      1133,
+      1131
+    ],
+    "128": [
+      206,
+      65,
+      1133,
+      1130
+    ],
+    "248": [
+      208,
+      66,
+      1132,
+      1129
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [
+      "assets/source/module-round-chamber/module-round-chamber.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Round-chamber adaptation follows P01 circular cavity motif; no explicit name mapping claimed.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/module-round-chamber-1c4da56768f0.png",
+  "familyId": "symbiosis-modules"
+}

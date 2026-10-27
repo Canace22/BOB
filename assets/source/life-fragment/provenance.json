@@ -1,0 +1,94 @@
+{
+  "id": "life-fragment",
+  "name": "三腔生命碎片",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "依V5.2规则保留恰好三腔；不按旧破灯图生成。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/life-fragment/base.png",
+  "width": 1295,
+  "height": 1215,
+  "bbox": [
+    202,
+    89,
+    1109,
+    1133
+  ],
+  "pivot": [
+    655.5,
+    611.0
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.45,
+    "visibleWidthU": 0.3909,
+    "visibleHeightU": 0.45
+  },
+  "sha256": "c6106b20d14be6c4fd823ccf7fd8bd37504b82478070946b2c24715e6f535c00",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      87,
+      1277,
+      1191
+    ],
+    "8": [
+      202,
+      89,
+      1109,
+      1133
+    ],
+    "16": [
+      202,
+      89,
+      1109,
+      1133
+    ],
+    "32": [
+      203,
+      90,
+      1109,
+      1133
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-static-01/references/07_R1-01.png",
+      "assets/source/whalefall-v5-2-static-01/references/revision-inputs/life-fragment-four-chamber-rejected.png"
+    ],
+    "prompts": [
+      "assets/source/life-fragment/life-fragment_v01.txt",
+      "assets/source/life-fragment/life-fragment_v02.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "life-fragment_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "依V5.2规则保留恰好三腔；不按旧破灯图生成。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

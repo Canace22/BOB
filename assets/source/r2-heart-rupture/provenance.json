@@ -1,0 +1,118 @@
+{
+  "id": "r2-heart-rupture",
+  "name": "静止心肌与心包断面",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-heart-rupture/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    37,
+    20,
+    2135,
+    703
+  ],
+  "pivot": [
+    1086.0,
+    703
+  ],
+  "world": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 6.511,
+    "canvasWidthU": 20.6101,
+    "canvasHeightU": 6.9304
+  },
+  "sha256": "6fe0c55f8d6fe95b1fa933fa9eb3315f9c684d677507ab7fa9b41d476f5a81b7",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2148,
+      727
+    ],
+    "8": [
+      37,
+      20,
+      2135,
+      703
+    ],
+    "32": [
+      38,
+      22,
+      2134,
+      702
+    ],
+    "128": [
+      38,
+      23,
+      2134,
+      702
+    ],
+    "248": [
+      40,
+      25,
+      2131,
+      699
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/17_R2-03.png",
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png"
+    ],
+    "prompts": [
+      "assets/source/r2-heart-rupture/r2-heart-rupture.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检暗红厚心肌与剥离心包，无脉动、发光核心或骨架。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-pericardium-heart"
+  ],
+  "rooms": [
+    "R2-03",
+    "R2-04"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-heart-rupture-6fe0c55f8d6f.png",
+  "state": "base"
+}
