@@ -1,19 +1,19 @@
 ---
 name: bob-art-integration
-description: 将鲸腹遗城原画、背景或角色场景外观接入 BOB 的 Canvas 2D 或 Three.js 2.5D 原型，检查资源路径、比例、遮挡与玩法状态；纯概念发散使用既有概念 Skill。
+description: 在 BOB 中制作、入库和管理静态素材，导出并复核图集，或将原画、背景和角色场景外观接入 Canvas 2D、Three.js 2.5D 原型；纯概念发散使用既有概念 Skill。
 ---
 
 # BOB 美术资源接入
 
-先确定目标是初版还是新版，读取[协作规则](../../../AGENTS.md)与该版 `renderer.js`、`levels.js` 的相关部分。图片制作按需复用 `consistent-2d-game-assets`、`imagegen`，模型制作按需复用 `meshy-blender-character`；本文件只记录 BOB 的现有接口与验收边界。
+先确定任务是素材制作入库、资源管理还是游戏接入，读取[协作规则](../../../AGENTS.md)；接入时再确定初版或新版，并读取该版 `renderer.js`、`levels.js` 的相关部分。图片制作按需复用 `consistent-2d-game-assets`、`imagegen`，模型制作按需复用 `meshy-blender-character`；本文件只记录 BOB 的现有接口与验收边界。
 
 ## 输入与产物
 
 制作与替换先核对[美术风格规范](../../../assets/art-style.md)；它描述目标风格，不代表两版已完成统一验收。
 
 - 参考从[原画集入口](../../../docs/鲸腹遗城原画集/README.md)和用户指定素材查起。已有获认可的游戏截图优先用于保持运行画面一致；概念原画、V2 设计和已实现关卡分别核对。
-- 既有原画与设计资料保留在 `docs/鲸腹遗城原画集/` 对应版本目录。新增模型、贴图、动画与音频遵循[资源目录约定](../../../assets/README.md)，制作源及新提示词放 `assets/source/`，游戏导出放 `assets/runtime/`；同步[资源台账](../../../assets/catalog.md)，记录实际输出、来源授权、运行引用及接入状态，不覆盖唯一原件。
-- 证据放在受影响版本的 `output/<任务>/`，结论与复跑入口写入该版 `progress.md`。这些输出被 Git 忽略，不能假设新 checkout 自带截图。
+- 既有原画与设计资料保留在 `docs/鲸腹遗城原画集/` 对应版本目录。新增模型、贴图、动画与音频遵循[资源目录约定](../../../assets/README.md)，制作源及新提示词放 `assets/source/`，游戏导出放 `assets/runtime/`；在 `assets/catalog.json` 记录实际输出、来源授权、运行引用及接入状态，[批次索引](../../../assets/catalog.md)保留概念资料和批次入口，不覆盖唯一原件。
+- 静态库证据放对应 `assets/source/<批次>/review/`，结论写该批次 `acceptance.md`；管理页验证写 `assets/manager/progress.md`。游戏接入证据放受影响版本的 `output/<任务>/`，结论与复跑入口写入该版 `progress.md`。截图等本机证据按实际 Git 状态记录，不能假设新 checkout 自带。
 
 ## 接入步骤
 
@@ -23,9 +23,11 @@ description: 将鲸腹遗城原画、背景或角色场景外观接入 BOB 的 C
 
 静态精灵、静态图集、动画帧序列分开标记。使用 `assets/source/whalefall-static-atlas/pack-atlas.mjs` 重新打包时，核对统一 px/U、frame 矩形、裁片后的 pivot、原始来源和边缘间隔；逐个裁片实际合成验证，不能因 atlas 有多个 frame 就把它作为行走或攻击动画。管理页面自身的保存/刷新、版本冲突与归档恢复使用 `assets/manager/` 的检查与测试，不需要因此改动两版游戏或运行发布。
 
+全量入库、组合复跑、图集更新或管理页修改时，按需读取[静态库操作与验证](references/static-library.md)，其中列出真实脚本、输入输出与恢复方法。已有报告是历史证据；本轮只改文档时，验证格式、链接和事实即可。
+
 ### 完整设计制作
 
-两份 V5.2 页面是同一设计的简版与详版，先读 `assets/source/whalefall-v5-2-complete/coverage.json` 与其 `inventory/`。需求家族、状态文件、图集 frame 和房间实例分别计数；36 房间映射是查漏依据，不代表已拼完可玩关卡。每个家族都要关联实际输出或明确的状态组合规则，不能把一批样例当全量完成。
+两份 V5.2 页面是同一设计的简版与详版，先读 `assets/source/whalefall-v5-2-complete/coverage.json` 与其 `inventory/`。需求家族、状态文件、图集 frame 和房间实例分别计数；房间映射是查漏依据，不代表已拼完可玩关卡。每个家族都要关联实际输出或明确的状态组合规则；完成清单后回查源设计中的形态变化、攻击物、投影与层次，避免跨类别漏项。数量按本次需求盘点确定，不能把一批样例或历史批次总数当全量完成。
 
 完整静态打包用该目录 `tools/pack-atlases.py` 与 `tools/verify-atlases.py`，保留逐件 PNG；UI 保留整张原生画布与九宫格参数，世界精灵按 128 px/U；L0/L1 背景独立保存并保留全画布投影。母蟹等同体状态使用共同的像素比例和根位置，不因脱壳后包围盒变小而放大。页面列表使用缩略图，详情读取原图；缩略图不计新增资源、不覆盖源图。
 
