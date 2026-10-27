@@ -1,0 +1,74 @@
+# Sprite animation sequences
+
+Use this workflow when delivering moving sprites. Static props and pose reference sheets do not need it.
+
+## Define one action
+
+Separate **action states** from **frames within an action**. Idle, walk, and attack can select three different states; alternating these illustrations does not create a walk cycle. Each animated state needs an ordered sequence with its own timing.
+
+For an initial walk cycle, use 4–8 distinct phases; eight is a useful starting point when both legs and weight transfer must read. Choose fewer frames for deliberately limited animation. More frames do not repair inconsistent drawing or incorrect timing.
+
+Write a brief before generation:
+
+- Action, in-place or translating motion, loop or one-shot, phase order, and total duration or per-frame durations.
+- Fixed viewpoint and facing; anatomical left/right limb identity when legs or arms cross.
+- Character master, costume, attached props, weapon hand, and any deliberately animated loose parts.
+- Equal cell layout, output canvas, pixels per unit, shared root/pivot, ground plane, and padding for the entire motion envelope.
+- Target runtime size, movement speed, and entry/exit states to test.
+
+An eight-phase in-place walk can use: left contact → weight down → right leg passing → weight up → right contact → weight down → left leg passing → weight up. The next frame is the first contact again; do not append a duplicate of the first frame as the last cell. A sword attack may instead use preparation → anticipation → swing → contact → follow-through → recovery, then return to idle. Do not loop it as locomotion.
+
+## Generate a coherent sheet
+
+Use the same accepted character and game view as references for the full sequence. Prefer one evenly spaced atlas for a short coherent motion, provided each cell retains enough pixels for its runtime size. Inspect the actual result: a requested grid is not evidence that the generator produced the requested count or order.
+
+```text
+Asset type: transparent game sprite sequence for [one action].
+The reference character is the identity, costume, proportion, and viewpoint master.
+
+Create exactly [count] sequential frames in [columns] equal columns and [rows] equal rows.
+Read left to right, then top to bottom. Phases: [explicit phase list].
+Playback: [loop / one-shot], [duration]. [Last phase leads into first / recovery leads into idle].
+
+Keep the same camera, facing, limb lengths, torso volume, head design, costume,
+lighting, and pixels per unit in all frames. Preserve anatomical limb identity.
+Keep [weapon] attached to [hand] with a stable grip; [other prop invariants].
+Use a shared root position and ground plane; show the action's real weight shift.
+No camera orbit, global scale changes, or redesign between cells.
+Fit the complete feet, hands, cape, and weapon path inside each cell with clear padding.
+Genuinely transparent background; no ground patch, baked contact shadow, labels, or extra poses.
+```
+
+If the output repeats the same pose, changes identity, swaps the weapon hand, or scrambles the phases, fix that defect before adding more frames. For a two-step gait, explicitly check that the opposite leg takes the forward contact in the second half; eight files with the same leg extended are not eight valid phases. Video interpolation is also only a candidate until limb lengths, attachment stability, and intermediate silhouettes have been checked.
+
+## Pack without manufacturing stability
+
+Keep source pixels and alpha intact during deterministic extraction. Record cell bounds and order explicitly; do not infer playback order from arbitrary filenames.
+
+- Use one global scale for the sequence and one output canvas size. Do not resize every visible bounding box to the same height or width: stride, crouch, cape spread, and sword extension legitimately change those bounds.
+- Register a stable root or pelvis axis against the master, with a shared ground reference. Preserve the small vertical motion belonging to weight transfer; do not align every head or every lowest alpha pixel independently.
+- Track each grounded foot's contact interval. A lifted foot, sword tip, or cape hem must not redefine the frame's ground anchor.
+- Keep transparent padding sufficient for the entire sequence. Check that no neighboring cell, stray pixel cluster, limb, or weapon has been included or clipped.
+- Keep contact shadows separate when the game draws them. Mirroring a sequence is acceptable only if its asymmetric design and weapon-hand semantics allow it; it does not count as new temporal phases.
+
+Measurements such as head height, torso width, root offset, and limb length help locate drift. Interpret them against the intended pose rather than enforcing identical bounding boxes. Report measured tolerances and defects from the actual frames; do not hide them by stretching individual frames.
+
+## Judge the motion in playback
+
+Create and actually view a looping animated preview or a browser recording, then verify the sequence in the target game. A static contact sheet helps inspect drawing quality but cannot prove smoothness. For a loop, watch several repetitions including the last-to-first seam. For a one-shot, watch both entry and recovery into its next state.
+
+Use these checks, adapting the inputs to the project:
+
+1. **Phase and timing:** all intended phases appear in order at the planned durations. Adjacent frames are not repeated standing poses. Check the last-to-first displacement and silhouette as well as the middle frames.
+2. **Registration and anatomy:** the root does not jump sideways, body volume does not pump, limb lengths stay plausible, and the weapon does not change hand, grip, or attachment. Distinguish deliberate weight shift from registration error.
+3. **Ground contact and speed:** play at actual walking and running speeds. Grounded feet should not skate conspicuously. For in-place locomotion, match phase progression to travelled distance or another explicit stride model; stop progression when actual displacement stops, including walking into a wall.
+4. **State transitions:** start, stop, reverse or turn, attack, recover, and pause/resume. Walking must not alternate with idle as a substitute for missing frames. A one-shot should complete or cancel according to gameplay state, without an unintended loop.
+5. **Scene integration:** view at actual gameplay scale on representative terrain, facing each supported direction, with normal depth sorting and effects. Inspect transparency and clipping during the largest pose.
+
+Keep technical and visual evidence distinct. Report decoded frame count, computed duplicates or other measured checks, and observed playback separately. Error totals must come from an actual detector or recorded inspection; use “not checked” for an unperformed check instead of writing a hard-coded zero. Passing frame-index assertions or a build does not establish natural motion, and agent visual review does not establish user acceptance.
+
+On failure, correct one identified defect and replay the same scenario. Preserve the source and previous usable sequence for recovery. After three failed retries on the same defect, stop generating, keep the best candidate, and describe the unresolved problem and a deterministic editing or revised-reference option.
+
+## Deliver the sequence
+
+Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.

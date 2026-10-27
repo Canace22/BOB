@@ -43,5 +43,7 @@
 ## 项目 Skill
 
 - [概念发现与发散](skills/game-concept-discovery/SKILL.md)：用于尚未成型的游戏想法和 MDA 概念梳理；机制实现任务直接检查现有代码与设计。
+- [一致性 2D 游戏素材](.agents/skills/consistent-2d-game-assets/SKILL.md)：用于从实机截图或已认可参考生成、拆分、制作动画并验收可复用 2D 素材；BOB 路径和实机接入继续配合美术资源接入 Skill。
+- [Web 游戏开发](.agents/skills/develop-web-game/SKILL.md)：用于两版 HTML/JS 原型的小步实现、状态探针和浏览器验证；具体回归命令与存档边界继续配合桌面回归验收 Skill。
 - [美术资源接入](.agents/skills/bob-art-integration/SKILL.md)：用于原画、背景及新版外观替换，核对两版资源路径、坐标与玩法状态。
 - [桌面回归验收](.agents/skills/bob-desktop-verification/SKILL.md)：用于选择两版原型的浏览器回归、存档检查及发布路径验证。
