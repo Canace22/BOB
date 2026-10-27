@@ -1,0 +1,117 @@
+{
+  "id": "r4-fungal-bed",
+  "name": "菌毯恢复床",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-fungal-bed/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    57,
+    259,
+    2110,
+    659
+  ],
+  "pivot": [
+    1083.5,
+    659
+  ],
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 1.9484,
+    "canvasWidthU": 10.5309,
+    "canvasHeightU": 3.5412
+  },
+  "sha256": "0e3d715f899e661d99d720dcc2f0aba9d595d72f5bbf01ac40cd709336aa8e4a",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      51,
+      44,
+      2130,
+      727
+    ],
+    "8": [
+      57,
+      259,
+      2110,
+      659
+    ],
+    "32": [
+      57,
+      259,
+      2108,
+      659
+    ],
+    "128": [
+      58,
+      260,
+      2107,
+      658
+    ],
+    "248": [
+      61,
+      261,
+      2106,
+      657
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/34_R4-04.png"
+    ],
+    "prompts": [
+      "assets/source/r4-fungal-bed/r4-fungal-bed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "浅紫菌垫连续成床，低矮圆穹可读为软着陆区域；底部纤维形态较骨质，房间合成时应只突出软垫上层。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-fungal-recovery"
+  ],
+  "rooms": [
+    "R4-03",
+    "R4-04"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-fungal-bed-0e3d715f899e.png",
+  "state": "base"
+}

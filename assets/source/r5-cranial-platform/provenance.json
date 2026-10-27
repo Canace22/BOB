@@ -1,0 +1,122 @@
+{
+  "id": "r5-cranial-platform",
+  "name": "颅外稳定骨台",
+  "kind": "scenery",
+  "region": "R5头",
+  "tags": [
+    "R5头",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-cranial-platform/base.png",
+  "width": 2046,
+  "height": 768,
+  "bbox": [
+    42,
+    223,
+    2007,
+    664
+  ],
+  "pivot": [
+    1024.5,
+    664
+  ],
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.7954,
+    "canvasWidthU": 8.3298,
+    "canvasHeightU": 3.1267
+  },
+  "sha256": "11898cb1a984e10117a76bdc2983c7cb223c2820bf739ad38f92713f1de98935",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      40,
+      23,
+      2012,
+      744
+    ],
+    "8": [
+      42,
+      223,
+      2007,
+      664
+    ],
+    "32": [
+      43,
+      223,
+      2007,
+      663
+    ],
+    "128": [
+      43,
+      224,
+      2006,
+      663
+    ],
+    "248": [
+      44,
+      225,
+      2004,
+      659
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/41_R5-02.png",
+      "assets/source/whalefall-v5-2-complete/references/43_R5-04.png"
+    ],
+    "prompts": [
+      "assets/source/r5-cranial-platform/r5-cranial-platform.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "颅骨平台以板状纹理区别椎骨台，顶缘连续；无眼窝或巨型耳蜗，装饰膜垂边需 alpha 边缘 QA。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r5-cranial-platform-kit"
+  ],
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-cranial-platform-11898cb1a984.png",
+  "state": "base"
+}

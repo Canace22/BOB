@@ -43,6 +43,14 @@ npm start
 
 浏览器打开 http://127.0.0.1:4173/ 。按 `Ctrl+C` 停止服务。
 
+## 美术资源管理页面
+
+```sh
+npm --prefix assets/manager start
+```
+
+打开 http://127.0.0.1:4176/ 查看、筛选和管理已入库素材。标签、备注及验收状态保存到项目台账。现有 192 张静态文件、105 个需求家族的完整清单与状态组合预览，另有 7 页静态图集；两版游戏尚未接入，动作动画尚未制作。详见[资源管理说明](assets/README.md)。
+
 ## 发布到 GitHub Pages
 
 ```sh
@@ -56,6 +64,7 @@ npm run deploy
 
 ```
 BOB/
+├── assets/                # 美术资源入口、台账、制作源与游戏导出资源
 ├── docs/
 │   ├── 鲸腹遗城原画集/     # 第一版与 V2 原画、原画册、玩法设计及提示词
 │   └── progress.md         # 初版 MVP 的实现范围与验收记录
@@ -76,9 +85,11 @@ BOB/
 
 ## 更多说明
 
+- 美术资源统一管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)
 - V2 原画版操作与试玩范围：[mvp-v2/README.md](mvp-v2/README.md)
 - 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
 - 初版操作、完整路线：[mvp/README.md](mvp/README.md)
 - 实现记录：[新版](mvp-nightmare/progress.md) · [初版](docs/progress.md)
+- 开发协作与项目 Skill：[AGENTS.md](AGENTS.md)
 
 注意：初版 `mvp` 与 V2 原画版 `mvp-v2` 本地运行时会读取上级目录的原画，不要单独移动目录或改动原画文件名。深处的来客 `mvp-nightmare` 不依赖原画，可独立运行。

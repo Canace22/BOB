@@ -1,0 +1,122 @@
+{
+  "id": "blind-eel",
+  "name": "盲鳗（孔鳗变体）",
+  "familyId": "hole-eel",
+  "variant": "base",
+  "kind": "ordinary_enemy",
+  "region": "R3",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blind-eel.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/blind-eel.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1962,
+  "height": 801,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    50,
+    163,
+    1927,
+    662
+  ],
+  "alphaBboxes": {
+    "1": [
+      39,
+      19,
+      1931,
+      801
+    ],
+    "8": [
+      50,
+      163,
+      1927,
+      662
+    ],
+    "32": [
+      50,
+      164,
+      1927,
+      662
+    ],
+    "128": [
+      51,
+      165,
+      1926,
+      661
+    ],
+    "248": [
+      52,
+      166,
+      1925,
+      660
+    ]
+  },
+  "sha256": "806453b7f7fbfb0ebc12797fc3706f311c14c1d4c61b4002535b3d515ec4a536",
+  "world": {
+    "axis": "width",
+    "units": 3.4,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 3.4,
+    "visibleHeightU": 0.9039,
+    "canvasWidthU": 3.554,
+    "canvasHeightU": 1.4509
+  },
+  "pivotSuggestion": {
+    "type": "right-center",
+    "pixel": [
+      1927,
+      412.5
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "孔鳗共享动作模板（盲鳗／缝栖鳗未各画专图）。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "孔口出现黏液与涟漪后伸头封路。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s15",
+      "quote": "孔鳗：固定孔口，不追出本屏；鼓囊0.75秒后直线黏液，露头恢复0.8秒。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "一个环齿口、一头一身，未重复结构；右端完整，需运行时与孔口遮挡衔接。",
+      "可见轮廓左右约35/50px余量，未触边；长条体形导致横向余量低于提示词8%。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "blind-eel",
+  "coversRequirementIds": [
+    "blind-eel"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 1002163,
+    "semi8to247": 9711,
+    "nearOpaque": 549626,
+    "total": 1571562
+  },
+  "pivot": [
+    1927,
+    412.5
+  ]
+}

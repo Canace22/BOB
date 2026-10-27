@@ -1,0 +1,119 @@
+{
+  "id": "bypass-valve-base",
+  "familyId": "settlement-valve",
+  "name": "旁通阀基座",
+  "scale": {
+    "axis": "height",
+    "units": 1
+  },
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/bypass-valve-base.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bypass-valve-base.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+    "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    310,
+    211,
+    1219,
+    816
+  ],
+  "pivot": [
+    764.5,
+    816
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "c4262824759bea9b7a5a3973dab403a7456c8b4ca4438b1cd1ce2ccb87ba5a49",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Stationary grille dome; top socket for independent plunger. Based on visible R2-04 bypass device.",
+    "transparentPixels": 1204871,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "stemSocket": {
+      "pixel": [
+        768,
+        251
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Stationary grille dome; top socket for independent plunger. Based on visible R2-04 bypass device.",
+  "world": {
+    "axis": "height",
+    "units": 1,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.5025,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 2.5388,
+    "canvasHeightU": 1.6926
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/bypass-valve-base.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png"
+  ],
+  "productionGroup": "props",
+  "width": 1536,
+  "height": 1024,
+  "alphaBboxes": {
+    "1": [
+      0,
+      29,
+      1468,
+      1024
+    ],
+    "8": [
+      310,
+      211,
+      1219,
+      816
+    ],
+    "32": [
+      310,
+      213,
+      1218,
+      816
+    ],
+    "128": [
+      311,
+      213,
+      1218,
+      815
+    ],
+    "248": [
+      312,
+      214,
+      1217,
+      814
+    ]
+  },
+  "alphaStats": {
+    "zero": 1204871,
+    "semi8to247": 5340,
+    "nearOpaque": 357614,
+    "total": 1572864
+  }
+}

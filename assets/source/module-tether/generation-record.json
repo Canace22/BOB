@@ -1,0 +1,107 @@
+{
+  "id": "module-tether",
+  "familyId": "symbiosis-modules",
+  "name": "系索模块",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/module-tether.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-tether.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+    "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#growth",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    316,
+    107,
+    1072,
+    1138
+  ],
+  "pivot": [
+    694.0,
+    1138
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "149a2f99b795629f8af5756be257384c3bb7eaf572f39e3ad13af3ad3b1f3774",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Functional adaptation: compact red sinew coil implies tether direction correction; six-module identity only, not new ability.",
+    "transparentPixels": 1073934,
+    "totalPixels": 1573088,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Functional adaptation: compact red sinew coil implies tether direction correction; six-module identity only, not new ability.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.22,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3818,
+    "canvasHeightU": 0.3489
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-tether.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "productionGroup": "props",
+  "width": 1312,
+  "height": 1199,
+  "alphaBboxes": {
+    "1": [
+      55,
+      86,
+      1234,
+      1143
+    ],
+    "8": [
+      316,
+      107,
+      1072,
+      1138
+    ],
+    "32": [
+      316,
+      107,
+      1072,
+      1138
+    ],
+    "128": [
+      317,
+      107,
+      1071,
+      1137
+    ],
+    "248": [
+      318,
+      108,
+      1070,
+      1136
+    ]
+  },
+  "alphaStats": {
+    "zero": 1073934,
+    "semi8to247": 6173,
+    "nearOpaque": 487721,
+    "total": 1573088
+  }
+}

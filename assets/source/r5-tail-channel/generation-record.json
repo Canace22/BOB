@@ -1,0 +1,118 @@
+{
+  "id": "r5-tail-channel",
+  "name": "尾端纤维稳定槽台",
+  "coversRequirementIds": [
+    "r5-tail-channel-kit"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/47_R5-08.png"
+  ],
+  "region": "R5尾",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 1.5421,
+    "canvasWidthU": 10.3448,
+    "canvasHeightU": 3.4866
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R5-07",
+    "R5-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "尾段平台为纵向肌束加筋膜，未出现椎骨或鲸须；顶缘较平且需在 10U 宽下对齐碰撞。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r5-tail-channel.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-a653a696-f2b7-4d94-87d8-099a03e25fe2.png",
+  "width": 2160,
+  "height": 728,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      31,
+      8,
+      2128,
+      704
+    ],
+    "8": [
+      36,
+      213,
+      2124,
+      535
+    ],
+    "32": [
+      37,
+      214,
+      2123,
+      535
+    ],
+    "128": [
+      37,
+      215,
+      2123,
+      534
+    ],
+    "248": [
+      40,
+      216,
+      2121,
+      533
+    ]
+  },
+  "sha256": "669e53fa8abca9f8caf51ec5780885eb22c90f1dd0218ec0bd1c366e69bb5576",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r5-tail-channel.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE low stable longitudinal fibrous channel FLOOR module for dead whale R5 far-tail region, 10 hero units wide. Long band of muted burgundy tail muscle bundles aligned LEFT-to-RIGHT with pale blue-gray tough fascia forming a nearly level stable upper contact surface, subtle shallow central channel and blunt fibrous edges. Tissue grain and tendon cords run along its length, stretched gently but dead and relaxed. This is muscle/connective tissue terrain, NOT bone: absolutely no ivory pores, vertebrae, ribs, skull, teeth, baleen, stone, door, giant tail fluke, mechanism or shelter. Very subdued ivory-blue fine fascia over red-purple muscle, matte style, continuous readable top edge, whole independent piece about5:1 width-height.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r5-tail",
+      "r5-tail",
+      "r5-tail-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    36,
+    213,
+    2124,
+    535
+  ],
+  "alphaStats": {
+    "zero": 1077794,
+    "semi8to247": 16247,
+    "nearOpaque": 463046,
+    "total": 1572480
+  },
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 1.5421,
+    "canvasWidthU": 10.3448,
+    "canvasHeightU": 3.4866
+  },
+  "pivot": [
+    1080.0,
+    535
+  ]
+}

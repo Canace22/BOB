@@ -1,0 +1,128 @@
+{
+  "id": "r1-oral-far-layer",
+  "name": "口腔上颚远器官层",
+  "kind": "background",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-oral-far-layer/background.png",
+  "width": 1671,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1671,
+    474
+  ],
+  "pivot": [
+    835.5,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 9.0772,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0203
+  },
+  "sha256": "444c28bdec59cd848381296eb2f01eec659954c35b34725c598241b1f6e34b5c",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1671,
+      867
+    ],
+    "8": [
+      0,
+      0,
+      1671,
+      474
+    ],
+    "32": [
+      0,
+      0,
+      1671,
+      473
+    ],
+    "128": [
+      0,
+      0,
+      1671,
+      472
+    ],
+    "248": [
+      0,
+      0,
+      1671,
+      468
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/06_R1.png"
+    ],
+    "prompts": [
+      "assets/source/r1-oral-far-layer/r1-oral-far-layer.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "透明上颚轮廓占据顶部，中心与下半画面透明；少量远鲸须仍只用于口腔。画布周边截切是视差层布局，不能按独立物件裁边。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "r1-oral-background"
+  ],
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-05",
+    "R1-06",
+    "R1-07"
+  ],
+  "parallax": 0.25,
+  "layer": "L1",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-oral-far-layer-444c28bdec59.png",
+  "state": "base"
+}

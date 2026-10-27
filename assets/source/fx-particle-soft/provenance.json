@@ -1,0 +1,109 @@
+{
+  "id": "fx-particle-soft",
+  "name": "水下软光粒子",
+  "kind": "effect",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fx-particle-soft/base.png",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    22,
+    22,
+    234,
+    234
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.12,
+    "visibleWidthU": 0.12,
+    "visibleHeightU": 0.12,
+    "canvasWidthU": 0.1449,
+    "canvasHeightU": 0.1449
+  },
+  "sha256": "16d7a9d8278bc8b89b96578a3bb20208fb494d89d4e296b1a121a3a330bdfc8c",
+  "alphaRange": [
+    0,
+    240
+  ],
+  "alphaBboxes": {
+    "1": [
+      18,
+      18,
+      238,
+      238
+    ],
+    "8": [
+      22,
+      22,
+      234,
+      234
+    ],
+    "32": [
+      36,
+      36,
+      220,
+      220
+    ],
+    "128": [
+      90,
+      90,
+      166,
+      166
+    ],
+    "248": null
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/fx-particle-soft/fx-particle-soft.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "effect",
+  "coversRequirementIds": [
+    "fx-underwater-atmosphere"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-particle-soft-16d7a9d8278b.png"
+}

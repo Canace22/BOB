@@ -1,0 +1,115 @@
+{
+  "id": "release-bowl",
+  "familyId": "release-sluice",
+  "name": "归海释放碗",
+  "scale": {
+    "axis": "width",
+    "units": 2.2
+  },
+  "coversRequirementIds": [
+    "release-sluice"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/release-bowl.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/release-bowl.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/47_R5-08.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R5-08",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    249,
+    278,
+    1524,
+    747
+  ],
+  "pivot": [
+    886.5,
+    747
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "6152e1926551cf1edf4364def81bd7f7683f2eee3657771dff85ca00934622ff",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "结局释放碗空基底，幼体、水流、发光由可复用层组合。",
+    "transparentPixels": 1142135,
+    "totalPixels": 1573538,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "larvaCenter": {
+      "pixel": [
+        887,
+        470
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "结局释放碗空基底，幼体、水流、发光由可复用层组合。",
+  "world": {
+    "axis": "width",
+    "units": 2.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.2,
+    "visibleHeightU": 0.8093,
+    "canvasWidthU": 3.061,
+    "canvasHeightU": 1.5305
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/release-bowl.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/47_R5-08.png"
+  ],
+  "productionGroup": "props",
+  "width": 1774,
+  "height": 887,
+  "alphaBboxes": {
+    "1": [
+      0,
+      23,
+      1748,
+      887
+    ],
+    "8": [
+      249,
+      278,
+      1524,
+      747
+    ],
+    "32": [
+      250,
+      280,
+      1524,
+      747
+    ],
+    "128": [
+      251,
+      280,
+      1523,
+      746
+    ],
+    "248": [
+      252,
+      282,
+      1521,
+      745
+    ]
+  },
+  "alphaStats": {
+    "zero": 1142135,
+    "semi8to247": 10263,
+    "nearOpaque": 409132,
+    "total": 1573538
+  }
+}

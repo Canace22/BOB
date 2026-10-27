@@ -1,0 +1,121 @@
+{
+  "id": "r1-baleen-shadow",
+  "name": "暗须帘前景",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-baleen-shadow/base.png",
+  "width": 1916,
+  "height": 821,
+  "bbox": [
+    12,
+    90,
+    1901,
+    788
+  ],
+  "pivot": [
+    956.5,
+    788
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 5.1731,
+    "canvasWidthU": 14.2001,
+    "canvasHeightU": 6.0847
+  },
+  "sha256": "8913e7d5aeca41877fbeef81eecb1446a488a3637019c9c28b0b60db953f3287",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1903,
+      821
+    ],
+    "8": [
+      12,
+      90,
+      1901,
+      788
+    ],
+    "32": [
+      13,
+      91,
+      1901,
+      787
+    ],
+    "128": [
+      13,
+      91,
+      1901,
+      786
+    ],
+    "248": [
+      15,
+      92,
+      1900,
+      782
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/06_R1.png",
+      "assets/source/whalefall-v5-2-complete/references/08_R1-02.png"
+    ],
+    "prompts": [
+      "assets/source/r1-baleen-shadow/r1-baleen-shadow.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检单簇向下垂须，整体暗蓝；须尖局部偏亮，前景合成需检查遮挡与亮边误读。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-baleen-foreground"
+  ],
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-baleen-shadow-8913e7d5aeca.png",
+  "state": "base"
+}

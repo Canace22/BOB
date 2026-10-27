@@ -1,0 +1,127 @@
+{
+  "id": "r2-lung-far-layer",
+  "name": "肺膜远器官层",
+  "kind": "background",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-lung-far-layer/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1672,
+    743
+  ],
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 14.2201,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "sha256": "b407951435c35fc609aaae19bc2fc94bde311aaa0170720a537a685957d382c0",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      868
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      743
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      742
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      741
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      740
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/14_R2.png"
+    ],
+    "prompts": [
+      "assets/source/r2-lung-far-layer/r2-lung-far-layer.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "肺膜远轮廓分布于右上与左缘，中部和下部保留透明开口；蓝紫膜是器官像素，没有保留水体矩形。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "r2-lung-pleura"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "parallax": 0.25,
+  "layer": "L1",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-lung-far-layer-b407951435c3.png",
+  "state": "base"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "r4-vertebrae-depth",
+  "name": "椎旁骨列远景",
+  "coversRequirementIds": [
+    "scene-water-depth",
+    "r4-vertebrae-sequence"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/30_R4.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/33_R4-03.png"
+  ],
+  "region": "R4",
+  "kind": "background",
+  "scale": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas"
+  },
+  "pivotSuggestion": "center",
+  "state": "base",
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检连续椎体外侧骨列，胸段肋根仅在左端，右端渐细，无角色或可玩平台。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-vertebrae-depth.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-c4ea831d-ba90-42cc-a835-782eca82c1c2.png",
+  "width": 1672,
+  "height": 941,
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "sha256": "40177e25ccf101ee9541d2b6c168f908ae40ff7225dcc4e73d7a2d9abbd09e64",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-vertebrae-depth.txt",
+  "layer": "merged-L0-L1-fallback",
+  "atlasEligible": false,
+  "optionalFallback": true,
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0096,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "merged-background-fallbacks"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "alphaStats": {
+    "zero": 0,
+    "semi8to247": 0,
+    "nearOpaque": 1573352,
+    "total": 1573352
+  },
+  "pivot": [
+    836.0,
+    470.5
+  ]
+}

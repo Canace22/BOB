@@ -1,0 +1,119 @@
+{
+  "id": "pressure-valve-base",
+  "familyId": "settlement-valve",
+  "name": "三档导流阀基座",
+  "scale": {
+    "axis": "height",
+    "units": 1.2
+  },
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/pressure-valve-base.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/pressure-valve-base.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+    "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+    "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-02",
+  "dimensions": [
+    1368,
+    1150
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    386,
+    164,
+    1052,
+    1010
+  ],
+  "pivot": [
+    719.0,
+    1010
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "455e139fdcc44cd46d83ae091b4d994740cd91c29368dc5aae4dbaa512a7be10",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Round stationary spindle and compatible material. Natural edge holes are not reliable three-position marks; exactly 3 indicator ticks must be code/SVG overlay in assembly.",
+    "transparentPixels": 1162384,
+    "totalPixels": 1573200,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "socket": {
+      "pixel": [
+        735,
+        555
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Round stationary spindle and compatible material. Natural edge holes are not reliable three-position marks; exactly 3 indicator ticks must be code/SVG overlay in assembly.",
+  "world": {
+    "axis": "height",
+    "units": 1.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.9447,
+    "visibleHeightU": 1.2,
+    "canvasWidthU": 1.9404,
+    "canvasHeightU": 1.6312
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/pressure-valve-base.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/46_R5-07.png"
+  ],
+  "productionGroup": "props",
+  "width": 1368,
+  "height": 1150,
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1354,
+      1150
+    ],
+    "8": [
+      386,
+      164,
+      1052,
+      1010
+    ],
+    "32": [
+      386,
+      164,
+      1051,
+      1010
+    ],
+    "128": [
+      387,
+      165,
+      1051,
+      1009
+    ],
+    "248": [
+      388,
+      166,
+      1050,
+      1009
+    ]
+  },
+  "alphaStats": {
+    "zero": 1162384,
+    "semi8to247": 8296,
+    "nearOpaque": 390472,
+    "total": 1573200
+  }
+}

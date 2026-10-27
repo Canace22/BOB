@@ -1,0 +1,93 @@
+{
+  "id": "membrane-ray",
+  "name": "膜缘鳐",
+  "kind": "character",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "已修正重复吻部；薄膜目前基本不透明，尚未拆薄膜层。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/membrane-ray/idle.png",
+  "width": 1871,
+  "height": 840,
+  "bbox": [
+    80,
+    79,
+    1805,
+    776
+  ],
+  "pivot": [
+    942.5,
+    427.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.4,
+    "visibleWidthU": 2.4,
+    "visibleHeightU": 0.9697
+  },
+  "sha256": "76a8ca44632c25d411506d64e3d2a520ed6810f5d1d8c05ee73130bb94dd4b13",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      78,
+      77,
+      1817,
+      778
+    ],
+    "8": [
+      80,
+      79,
+      1805,
+      776
+    ],
+    "16": [
+      81,
+      80,
+      1805,
+      775
+    ],
+    "32": [
+      81,
+      80,
+      1805,
+      775
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/48_E01_敌人图鉴Ⅰ·距离与空战.png",
+      "assets/source/whalefall-v5-2-static-01/references/revision-inputs/membrane-ray_idle_v01-rejected.png"
+    ],
+    "prompts": [
+      "assets/source/membrane-ray/membrane-ray_idle_v01.txt",
+      "assets/source/membrane-ray/membrane-ray_idle_v02.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "membrane-ray_idle_v02",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "已修正重复吻部；薄膜目前基本不透明，尚未拆薄膜层。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

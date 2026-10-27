@@ -1,0 +1,123 @@
+{
+  "id": "r3-foreground-fold",
+  "name": "暗褶壁前景",
+  "kind": "scenery",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r3-foreground-fold/base.png",
+  "width": 2032,
+  "height": 774,
+  "bbox": [
+    22,
+    414,
+    2012,
+    749
+  ],
+  "pivot": [
+    1017.0,
+    749
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.3568,
+    "canvasWidthU": 14.2955,
+    "canvasHeightU": 5.4452
+  },
+  "sha256": "c159a01afb14d7352d4130b4098accc361d10441727fd18d1bac2ce8f923cd52",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      18,
+      68,
+      2018,
+      758
+    ],
+    "8": [
+      22,
+      414,
+      2012,
+      749
+    ],
+    "32": [
+      22,
+      414,
+      2011,
+      748
+    ],
+    "128": [
+      22,
+      414,
+      2010,
+      747
+    ],
+    "248": [
+      23,
+      416,
+      2009,
+      746
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/21_R3.png"
+    ],
+    "prompts": [
+      "assets/source/r3-foreground-fold/r3-foreground-fold.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "暗色胃肠前景为单一连续褶带，没有平台亮顶；大量上方透明空间保留原图，摆放应使用 alpha bbox。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-mucosa-foreground"
+  ],
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-foreground-fold-c159a01afb14.png",
+  "state": "base"
+}

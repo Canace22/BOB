@@ -1,0 +1,107 @@
+{
+  "id": "r1-wound-section",
+  "name": "口角皮脂肌层断面",
+  "coversRequirementIds": [
+    "r1-wound-section"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/07_R1-01.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.6733,
+    "canvasWidthU": 17.1055,
+    "canvasHeightU": 6.7531
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-01"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检单件皮脂肌断面，三层材质可区分；是装饰断面，不能直接当碰撞坡。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-wound-section.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-2db811d7-0d18-4d3b-96fe-a2f77d2f29b4.png",
+  "width": 1996,
+  "height": 788,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      17,
+      1980,
+      788
+    ],
+    "8": [
+      69,
+      69,
+      1936,
+      731
+    ],
+    "32": [
+      69,
+      71,
+      1936,
+      730
+    ],
+    "128": [
+      70,
+      72,
+      1935,
+      730
+    ],
+    "248": [
+      72,
+      75,
+      1934,
+      729
+    ]
+  },
+  "sha256": "2a6f31ca7b736ff3f19ebe6b1a5ee205dc613addd6e33f9ee219d8ca1315dbd3",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-wound-section.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1",
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    69,
+    69,
+    1936,
+    731
+  ],
+  "alphaStats": {
+    "zero": 1000489,
+    "semi8to247": 17446,
+    "nearOpaque": 532570,
+    "total": 1572848
+  },
+  "world": {
+    "axis": "width",
+    "units": 16,
+    "visibleWidthU": 16.0,
+    "visibleHeightU": 5.6733,
+    "canvasWidthU": 17.1055,
+    "canvasHeightU": 6.7531
+  },
+  "pivot": [
+    1002.5,
+    731
+  ]
+}

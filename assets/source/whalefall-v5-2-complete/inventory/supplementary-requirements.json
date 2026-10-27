@@ -1,0 +1,45 @@
+[
+  {
+    "id": "fx-eel-mucus",
+    "name": "孔鳗直线黏液发射物",
+    "group": "fx",
+    "states": [
+      "独立黏液弹体",
+      "直线发射与遮挡"
+    ],
+    "outputIds": [
+      "eel-mucus-projectile"
+    ],
+    "outputPlanComplete": true,
+    "rooms": [
+      "R3-02",
+      "R3-04"
+    ],
+    "sources": [
+      "http://10.11.140.20:8765/full/"
+    ],
+    "evidence": "R3敌人表：孔鳗鼓囊0.75秒后直线黏液，露头恢复0.8秒；空壳挡线。",
+    "note": "静态阶段交付独立弹体；飞行、碰撞、预告与发射时序在动作/接入阶段实现。"
+  },
+  {
+    "id": "fx-migration-projection",
+    "name": "迁徙记忆鲸群投影",
+    "group": "fx",
+    "states": [
+      "鲸轮廓投影",
+      "多实例群影"
+    ],
+    "outputIds": [
+      "migration-whale-projection"
+    ],
+    "outputPlanComplete": true,
+    "rooms": [
+      "R5-05"
+    ],
+    "sources": [
+      "http://10.11.140.20:8765/full/"
+    ],
+    "evidence": "R5-05迁徙记忆的鲸群投影与44_R5-05原画。",
+    "note": "单只透明投影用于多实例组成鲸群，属于记忆效果；不作为新增实体生物。"
+  }
+]

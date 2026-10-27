@@ -1,0 +1,91 @@
+{
+  "id": "r1-tongue-ledge",
+  "name": "湿舌平台模块",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "独立平台件，可重叠拼装；未宣称无缝平铺。中央亮顶边可站，端部有微起伏。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-tongue-ledge/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    59,
+    132,
+    2102,
+    665
+  ],
+  "pivot": [
+    1081,
+    194
+  ],
+  "world": {
+    "axis": "width",
+    "units": 10.0,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.6089
+  },
+  "sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2158,
+      727
+    ],
+    "8": [
+      59,
+      132,
+      2102,
+      665
+    ],
+    "16": [
+      59,
+      132,
+      2102,
+      665
+    ],
+    "32": [
+      59,
+      132,
+      2102,
+      665
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"
+    ],
+    "prompts": [
+      "assets/source/r1-tongue-ledge/r1-tongue-ledge_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "r1-tongue-ledge_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "独立平台件，可重叠拼装；未宣称无缝平铺。中央亮顶边可站，端部有微起伏。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

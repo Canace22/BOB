@@ -1,0 +1,113 @@
+{
+  "id": "r2-soft-bed",
+  "name": "肺膜恢复软床",
+  "coversRequirementIds": [
+    "r2-soft-platform-kit"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/15_R2-01.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/20_R2-06.png"
+  ],
+  "region": "R2",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.0181,
+    "canvasWidthU": 10.5284,
+    "canvasHeightU": 3.7846
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "软着陆床由连贯低矮肺膜褶构成，轮廓与硬平台区别清楚；需在房间尺度下检验边缘承托。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-soft-bed.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-f272bf01-c3f6-4bee-8995-22daa2452eeb.png",
+  "width": 2092,
+  "height": 752,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2052,
+      752
+    ],
+    "8": [
+      53,
+      196,
+      2040,
+      597
+    ],
+    "32": [
+      53,
+      198,
+      2039,
+      597
+    ],
+    "128": [
+      54,
+      198,
+      2038,
+      597
+    ],
+    "248": [
+      55,
+      200,
+      2037,
+      595
+    ]
+  },
+  "sha256": "c2076c8258c5b3ec1f7f47d5f6714fe82e650289eea0711dff665b7f6791cc3b",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-soft-bed.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r2",
+      "r2-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    53,
+    196,
+    2040,
+    597
+  ],
+  "alphaStats": {
+    "zero": 1028027,
+    "semi8to247": 15093,
+    "nearOpaque": 513904,
+    "total": 1573184
+  },
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.0181,
+    "canvasWidthU": 10.5284,
+    "canvasHeightU": 3.7846
+  },
+  "pivot": [
+    1046.5,
+    597
+  ]
+}

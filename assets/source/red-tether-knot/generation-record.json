@@ -1,0 +1,116 @@
+{
+  "id": "red-tether-knot",
+  "familyId": "red-tether",
+  "name": "修索红结",
+  "scale": {
+    "axis": "width",
+    "units": 0.35
+  },
+  "coversRequirementIds": [
+    "red-tether"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/red-tether-knot.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/red-tether-knot.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#player",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    105,
+    299,
+    1458,
+    820
+  ],
+  "pivot": [
+    780,
+    547
+  ],
+  "pivotStatus": "明确机械铰点/连接点；original canvas pixels",
+  "sha256": "fe7b0fb5b8cdd0ce08bf114d07cba1bf17e61354547dc58e6504f34d23fb154a",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Actual Canvas light/dark composite has clean edges; apparent red glow in native viewer is RGB under alpha=0, not visible matte. Exterior samples alpha0; no cleanup needed.",
+    "transparentPixels": 1263501,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "edgePreview": "red-knot-edge-qa.png",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "knot": {
+      "pixel": [
+        780,
+        547
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Actual Canvas light/dark composite has clean edges; apparent red glow in native viewer is RGB under alpha=0, not visible matte. Exterior samples alpha0; no cleanup needed.",
+  "world": {
+    "axis": "width",
+    "units": 0.35,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.35,
+    "visibleHeightU": 0.1348,
+    "canvasWidthU": 0.3973,
+    "canvasHeightU": 0.2649
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/red-tether-knot.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png"
+  ],
+  "productionGroup": "props",
+  "width": 1536,
+  "height": 1024,
+  "alphaBboxes": {
+    "1": [
+      103,
+      48,
+      1516,
+      992
+    ],
+    "8": [
+      105,
+      299,
+      1458,
+      820
+    ],
+    "32": [
+      106,
+      299,
+      1458,
+      819
+    ],
+    "128": [
+      106,
+      300,
+      1457,
+      819
+    ],
+    "248": [
+      111,
+      301,
+      1456,
+      816
+    ]
+  },
+  "alphaStats": {
+    "zero": 1263501,
+    "semi8to247": 13531,
+    "nearOpaque": 283979,
+    "total": 1572864
+  }
+}

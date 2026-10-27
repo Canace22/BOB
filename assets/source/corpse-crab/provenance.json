@@ -1,0 +1,91 @@
+{
+  "id": "corpse-crab",
+  "name": "尸蟹",
+  "kind": "character",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "静态单姿态；无攻击、行走动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/corpse-crab/idle.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    87,
+    146,
+    1468,
+    916
+  ],
+  "pivot": [
+    777.5,
+    916
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.8,
+    "visibleWidthU": 1.8,
+    "visibleHeightU": 1.0036
+  },
+  "sha256": "e2fada0447b964940dbbb8c887e4a92b884098731b6af768ed6bf804784f9b1f",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      21,
+      1514,
+      1024
+    ],
+    "8": [
+      87,
+      146,
+      1468,
+      916
+    ],
+    "16": [
+      87,
+      146,
+      1468,
+      916
+    ],
+    "32": [
+      88,
+      146,
+      1468,
+      915
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+    ],
+    "prompts": [
+      "assets/source/corpse-crab/corpse-crab_idle_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "corpse-crab_idle_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "静态单姿态；无攻击、行走动画。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

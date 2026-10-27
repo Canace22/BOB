@@ -1,0 +1,107 @@
+{
+  "id": "module-reverberation",
+  "familyId": "symbiosis-modules",
+  "name": "复振模块",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/module-reverberation.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-reverberation.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+    "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#growth",
+  "dimensions": [
+    1374,
+    1145
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    451,
+    35,
+    945,
+    1082
+  ],
+  "pivot": [
+    698.0,
+    1082
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "9cb538b3387959b422fec03327b7120ae9e93549305db3daa7ec2f579894365a",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Functional adaptation: two repeated cavities express reverberation damage variant; distinguish from round chamber and life capsule.",
+    "transparentPixels": 1228322,
+    "totalPixels": 1573230,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Functional adaptation: two repeated cavities express reverberation damage variant; distinguish from round chamber and life capsule.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.1415,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3937,
+    "canvasHeightU": 0.3281
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-reverberation.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "productionGroup": "props",
+  "width": 1374,
+  "height": 1145,
+  "alphaBboxes": {
+    "1": [
+      0,
+      33,
+      1281,
+      1084
+    ],
+    "8": [
+      451,
+      35,
+      945,
+      1082
+    ],
+    "32": [
+      451,
+      35,
+      945,
+      1081
+    ],
+    "128": [
+      452,
+      36,
+      944,
+      1081
+    ],
+    "248": [
+      452,
+      37,
+      943,
+      1080
+    ]
+  },
+  "alphaStats": {
+    "zero": 1228322,
+    "semi8to247": 6720,
+    "nearOpaque": 332674,
+    "total": 1573230
+  }
+}

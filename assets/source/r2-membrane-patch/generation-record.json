@@ -1,0 +1,113 @@
+{
+  "id": "r2-membrane-patch",
+  "name": "旧胸膜修补片",
+  "coversRequirementIds": [
+    "r2-patches-nursery-shells"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/14_R2.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/15_R2-01.png"
+  ],
+  "region": "R2",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 7,
+    "visibleWidthU": 7.0,
+    "visibleHeightU": 2.8589,
+    "canvasWidthU": 7.4222,
+    "canvasHeightU": 3.1804
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "覆膜修补片与缝线、附着空壳口为一个连贯地标；无角色，未将独立机关烘焙其中。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-membrane-patch.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-0fb04650-bdef-4012-9bf6-fa14beb5b838.png",
+  "width": 1916,
+  "height": 821,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      7,
+      1886,
+      821
+    ],
+    "8": [
+      68,
+      47,
+      1875,
+      785
+    ],
+    "32": [
+      68,
+      48,
+      1875,
+      784
+    ],
+    "128": [
+      69,
+      48,
+      1874,
+      783
+    ],
+    "248": [
+      70,
+      49,
+      1873,
+      778
+    ]
+  },
+  "sha256": "ec94edcc5f9ce2d6b63375ce1e71025c111b42dc5f0110257f37bdf49389c5ed",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-membrane-patch.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r2",
+      "r2-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    68,
+    47,
+    1875,
+    785
+  ],
+  "alphaStats": {
+    "zero": 929205,
+    "semi8to247": 28009,
+    "nearOpaque": 582822,
+    "total": 1573036
+  },
+  "world": {
+    "axis": "width",
+    "units": 7,
+    "visibleWidthU": 7.0,
+    "visibleHeightU": 2.8589,
+    "canvasWidthU": 7.4222,
+    "canvasHeightU": 3.1804
+  },
+  "pivot": [
+    971.5,
+    785
+  ]
+}

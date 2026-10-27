@@ -1,0 +1,116 @@
+{
+  "id": "migration-whale-projection",
+  "name": "迁徙记忆鲸投影",
+  "familyId": "fx-migration-projection",
+  "coversRequirementIds": [
+    "fx-migration-projection"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png"
+  ],
+  "region": "R5头",
+  "kind": "effect",
+  "scale": {
+    "axis": "width",
+    "units": 6,
+    "space": "visible",
+    "basis": "记忆光影投影的建议实例宽度，不表示生物实体尺寸；可复用小实例构成群"
+  },
+  "world": {
+    "axis": "width",
+    "units": 6,
+    "space": "visible",
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.2135,
+    "canvasWidthU": 6.7239,
+    "canvasHeightU": 3.362
+  },
+  "pivotSuggestion": "visible-center",
+  "state": "静态投影",
+  "rooms": [
+    "R5-05"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检单只完整鲸轮廓，无实体皮肤/骨架，深浅底和透明格上为白蓝光影。",
+    "alpha为0–255：61.64%完全透明、38.36%半透明，四角为0；光轮廓与内体真实半透明。",
+    "独立实例按1.7U/2.6U/6U宽与.48/.55/.60 alpha在R5头区域板确定性合成，身份可辨；未证明动画或R5-05房布局。"
+  ],
+  "layer": "L5",
+  "parallax": 1.0,
+  "notes": "覆盖审查新增；仅一个完整可复用鲸光影轮廓，多实例+独立声环构成记忆群，不新增实体生物。",
+  "width": 1774,
+  "height": 887,
+  "pivot": [
+    889.5,
+    486.0
+  ],
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/migration-whale-projection.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-a8297950-e982-45c5-84b7-1d2d3f640d2e.png",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1771,
+      887
+    ],
+    "8": [
+      98,
+      194,
+      1681,
+      778
+    ],
+    "32": [
+      109,
+      205,
+      1669,
+      766
+    ],
+    "128": [
+      115,
+      217,
+      1661,
+      754
+    ],
+    "248": [
+      116,
+      219,
+      1660,
+      752
+    ]
+  },
+  "sha256": "743662e264356963cf825a084041ba64753d6e246d740c7793936daea58801f5",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/migration-whale-projection.txt",
+  "generationRequest": {
+    "prompt": "Create ONE isolated 2D game VFX sprite: a SINGLE complete migration-memory WHALE PROJECTION, extracted in visual identity from the pale luminous whale projection in the supplied R5-05 room reference. This is NOT a living physical animal: only a quiet pale blue-white translucent echo outline, with a mostly transparent interior and a few very faint interior contour strokes. The entire one whale must be visible, facing RIGHT in clear side view, full tail flukes on the left, broad rounded head on right, small low dorsal fin, two readable pectoral flippers. Use the reference's simplified poetic whale silhouette, subtle hand-ink/gouache contour, very faint cool cyan rim; no realistic skin texture, no black filled body, no bones, no ribs, no amber lamp, no clothes, no bubbles or unrelated sparks. Keep the line art readable when reused small. One whale only. No group, no surrounding orbit/sound rings (these will be independent effects), no environment, no water backdrop, no surface, no platform, no character, no text, no UI, no sheet, no split views. Center the complete silhouette in a wide landscape canvas with 10% transparent margin around every extremity. TRUE transparent RGBA background; preserve actual transparency through interior gaps and glow edges. The final is a reusable independent light projection sprite, not a room illustration.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件参考引导生成；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "panels": [
+      "migration-projection-edges",
+      "migration-projection-assembly"
+    ],
+    "assembly": "region-assembly/migration-projection-qa.json"
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    98,
+    194,
+    1681,
+    778
+  ],
+  "alphaStats": {
+    "zero": 969860,
+    "semi8to247": 393710,
+    "nearOpaque": 22182,
+    "total": 1573538
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BOB 完整美术需求</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <header class="topbar"><div class="identity"><span class="project-mark" aria-hidden="true">◒</span><div><h1>完整美术需求</h1><p>BOB 鲸腹遗城 · 五个区域，36 个房间</p></div></div><nav><a href="/">查看已入库素材</a><a href="/assets/source/whalefall-v5-2-complete/coverage.json" download>下载需求清单</a><button id="reload" type="button">刷新进度</button></nav></header>
+  <div class="library-note"><p><strong>先做齐静态，再做动作。</strong>按独立资源家族统计；一个家族可能包含多张状态图，同一文件也可被多个场景复用。图集不增加完成数量。</p></div>
+  <main class="requirements-page">
+    <div id="overview" class="coverage-overview" aria-live="polite"></div>
+    <p id="plan-note" class="message"></p>
+    <form id="plan-filters" class="filters" role="search"><label class="search-label"><span class="sr-only">搜索完整需求</span><input id="plan-search" type="search" placeholder="搜索名称、资源 ID、房间或状态"></label><label>范围<select id="plan-group"><option value="">全部范围</option><option value="actors">角色与生物</option><option value="scenes">场景与背景</option><option value="props">道具与机关</option><option value="ui">界面素材</option><option value="fx">特效素材</option></select></label><label>制作状态<select id="plan-status"><option value="">全部状态</option><option value="missing">尚缺素材</option><option value="partial">已有部分</option><option value="ready">静态文件齐备</option></select></label></form>
+    <p id="plan-count" class="message" role="status"></p><div id="requirements-list" class="requirements-list"></div>
+    <details class="room-coverage"><summary>场景与状态拼装预览</summary><p class="message">由实际 PNG 按登记比例拼装。用于检查静态层次、挂点与形态，不代表完整关卡或动画。</p><div id="assembly-previews" class="assembly-previews"></div></details>
+    <details class="room-coverage"><summary>36 个房间的环境需求映射</summary><p class="message">文件齐备与房间拼装、游戏内接入分别验收。这里的映射用于查漏，不代表房间已经可玩。</p><div id="rooms-list"></div></details>
+  </main><script type="module" src="/requirements.js"></script>
+</body></html>

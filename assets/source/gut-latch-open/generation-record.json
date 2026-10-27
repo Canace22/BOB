@@ -1,0 +1,109 @@
+{
+  "id": "gut-latch-open",
+  "familyId": "permanent-latches",
+  "name": "胃侧红结闩·开放",
+  "scale": {
+    "axis": "height",
+    "units": 2.5
+  },
+  "coversRequirementIds": [
+    "permanent-latches"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/gut-latch-open.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/gut-latch-open.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/19_R2-05.png",
+    "http://10.11.140.20:8765/simple/images/28_R3-07.png",
+    "http://10.11.140.20:8765/simple/images/44_R5-05.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R5-s12",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    107,
+    14,
+    934,
+    1433
+  ],
+  "pivot": [
+    520.5,
+    1433
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "891d18357298cb3af4790ea9b06ef38d163f3d7ba4c8623400c985b7d75015c1",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "胃侧红结门开放静态，横片收至顶沿；未包含动画。",
+    "transparentPixels": 1047509,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "胃侧红结门开放静态，横片收至顶沿；未包含动画。",
+  "world": {
+    "axis": "height",
+    "units": 2.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.457,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 1.8041,
+    "canvasHeightU": 2.7061
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/gut-latch-open.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/19_R2-05.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/28_R3-07.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png"
+  ],
+  "productionGroup": "props",
+  "width": 1024,
+  "height": 1536,
+  "alphaBboxes": {
+    "1": [
+      104,
+      12,
+      990,
+      1536
+    ],
+    "8": [
+      107,
+      14,
+      934,
+      1433
+    ],
+    "32": [
+      107,
+      14,
+      934,
+      1432
+    ],
+    "128": [
+      107,
+      14,
+      933,
+      1432
+    ],
+    "248": [
+      109,
+      16,
+      933,
+      1431
+    ]
+  },
+  "alphaStats": {
+    "zero": 1047509,
+    "semi8to247": 11865,
+    "nearOpaque": 499283,
+    "total": 1572864
+  }
+}

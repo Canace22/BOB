@@ -1,0 +1,92 @@
+{
+  "id": "empty-shell",
+  "name": "可安置空壳",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "无灯空壳；迁居前后状态与搬运未制作。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/empty-shell/base.png",
+  "width": 1508,
+  "height": 1043,
+  "bbox": [
+    260,
+    233,
+    1271,
+    844
+  ],
+  "pivot": [
+    765.5,
+    844
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.3,
+    "visibleWidthU": 1.3,
+    "visibleHeightU": 0.7857
+  },
+  "sha256": "6976a63e022e911e04b60f717764a74d06abc8c6286c4b083ee34b6e79d716bb",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      20,
+      1476,
+      1039
+    ],
+    "8": [
+      260,
+      233,
+      1271,
+      844
+    ],
+    "16": [
+      260,
+      233,
+      1271,
+      844
+    ],
+    "32": [
+      260,
+      234,
+      1271,
+      844
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-static-01/references/07_R1-01.png"
+    ],
+    "prompts": [
+      "assets/source/empty-shell/empty-shell_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "empty-shell_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "无灯空壳；迁居前后状态与搬运未制作。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

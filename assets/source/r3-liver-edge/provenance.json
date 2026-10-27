@@ -1,0 +1,117 @@
+{
+  "id": "r3-liver-edge",
+  "name": "实心肝叶外缘",
+  "kind": "scenery",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r3-liver-edge/base.png",
+  "width": 2001,
+  "height": 786,
+  "bbox": [
+    51,
+    114,
+    1966,
+    676
+  ],
+  "pivot": [
+    1008.5,
+    676
+  ],
+  "world": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 5.8695,
+    "canvasWidthU": 20.8982,
+    "canvasHeightU": 8.2089
+  },
+  "sha256": "2f2b4987ce00d90c2240e8e09fde9c5f5316b6eabb694e24651e7f570774fbe5",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      31,
+      0,
+      1969,
+      786
+    ],
+    "8": [
+      51,
+      114,
+      1966,
+      676
+    ],
+    "32": [
+      51,
+      115,
+      1964,
+      676
+    ],
+    "128": [
+      52,
+      115,
+      1964,
+      676
+    ],
+    "248": [
+      53,
+      116,
+      1963,
+      674
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/24_R3-03.png"
+    ],
+    "prompts": [
+      "assets/source/r3-liver-edge/r3-liver-edge.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "实心肝叶外缘无隧道或空腔，暖褐色块面与肺心域区分；装饰层不自动赋予碰撞。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-liver-mesentery"
+  ],
+  "rooms": [
+    "R3-03",
+    "R3-04"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-liver-edge-2f2b4987ce00.png",
+  "state": "base"
+}

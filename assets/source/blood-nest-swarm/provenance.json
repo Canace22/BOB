@@ -1,0 +1,129 @@
+{
+  "id": "blood-nest-swarm",
+  "name": "血巢潮群",
+  "kind": "character",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/blood-nest-swarm/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    30,
+    82,
+    1745,
+    841
+  ],
+  "pivot": [
+    887.5,
+    461.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 5.6,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 5.6,
+    "visibleHeightU": 2.4784,
+    "canvasWidthU": 5.7927,
+    "canvasHeightU": 2.8963
+  },
+  "sha256": "3bbc2442509b149a255fc16033a3e7e7e55766e8647438edaeaafb3c56a12876",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      63,
+      1756,
+      887
+    ],
+    "8": [
+      30,
+      82,
+      1745,
+      841
+    ],
+    "32": [
+      31,
+      82,
+      1744,
+      840
+    ],
+    "128": [
+      32,
+      83,
+      1744,
+      838
+    ],
+    "248": [
+      45,
+      113,
+      1741,
+      808
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/blood-nest-swarm/blood-nest-swarm.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "忠于原画的红粉小生物回环群体，没有拟人巨怪、灯或捏造心脏。",
+      "当前为群体静态构形；独立个体与凝聚/散群动作是后续动画范围，本图不能当完成的Boss动作。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "blood-nest-swarm"
+  ],
+  "parts": [
+    {
+      "name": "群体静态构形",
+      "file": "blood-nest-swarm.png",
+      "control": "后续动作需独立个体编排；本件作为静态主形象参考"
+    },
+    {
+      "id": "blood-nest-core",
+      "file": "blood-nest-core.png",
+      "use": "原文外露核心的独立凝聚节点适配，非原图现成器官"
+    }
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/blood-nest-swarm-3bbc2442509b.png",
+  "familyId": "blood-nest-swarm",
+  "variant": "base"
+}

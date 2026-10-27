@@ -1,0 +1,127 @@
+{
+  "id": "red-tether-knot",
+  "name": "修索红结",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/red-tether-knot/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    105,
+    299,
+    1458,
+    820
+  ],
+  "pivot": [
+    780,
+    547
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.35,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.35,
+    "visibleHeightU": 0.1348,
+    "canvasWidthU": 0.3973,
+    "canvasHeightU": 0.2649
+  },
+  "sha256": "fe7b0fb5b8cdd0ce08bf114d07cba1bf17e61354547dc58e6504f34d23fb154a",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      103,
+      48,
+      1516,
+      992
+    ],
+    "8": [
+      105,
+      299,
+      1458,
+      820
+    ],
+    "32": [
+      106,
+      299,
+      1458,
+      819
+    ],
+    "128": [
+      106,
+      300,
+      1457,
+      819
+    ],
+    "248": [
+      111,
+      301,
+      1456,
+      816
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/52_P01_工具·共生模块·固定奖励.png"
+    ],
+    "prompts": [
+      "assets/source/red-tether-knot/red-tether-knot.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Actual Canvas light/dark composite has clean edges; apparent red glow in native viewer is RGB under alpha=0, not visible matte. Exterior samples alpha0; no cleanup needed.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "red-tether"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/red-tether-knot-fe7b0fb5b8cd.png",
+  "attachmentPoints": {
+    "knot": {
+      "pixel": [
+        780,
+        547
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "red-tether"
+}

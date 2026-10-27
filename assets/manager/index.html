@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BOB 美术资源库</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="identity"><span class="project-mark" aria-hidden="true">◒</span><div><h1>美术资源库</h1><p>BOB 鲸腹遗城</p></div></div>
+    <nav aria-label="资源操作"><a href="/requirements.html">完整需求与缺项</a><a id="atlas-image" hidden download>下载首批静态图集</a><a id="atlas-json" hidden download>图集坐标</a><a href="/api/catalog/export" download>导出清单</a><button id="refresh" type="button">刷新</button></nav>
+  </header>
+  <div class="library-note"><p><strong>这里展示独立素材与静态图集。</strong>静态检查、用户美术确认和游戏接入分别记录。<a href="/requirements.html">查看完整制作清单</a></p><span id="atlas-state">正在读取图集…</span></div>
+  <main class="workspace">
+    <section class="collection" aria-label="美术素材">
+      <div class="collection-heading"><h2>素材</h2><span id="count">加载中</span></div>
+      <form class="filters" id="filters" role="search">
+        <label class="search-label"><span class="sr-only">搜索名称、ID 或标签</span><input id="search" type="search" placeholder="搜索名称、ID 或标签" autocomplete="off"></label>
+        <label>类别<select id="kind"><option value="">全部类别</option><option value="character">角色与生物</option><option value="prop">交互物</option><option value="scenery">场景件</option><option value="background">背景</option><option value="ui">界面素材</option><option value="effect">特效素材</option></select></label>
+        <label>区域<select id="region"><option value="">全部区域</option></select></label>
+        <label>状态<select id="status-filter"><option value="">在库素材</option><option value="accepted">静态验收通过</option><option value="needs-review">待验收</option><option value="needs-work">待调整</option><option value="archived">已归档</option><option value="all">含归档全部</option></select></label>
+      </form>
+      <div class="gallery-toolbar"><p>点击素材查看详情与管理信息</p><div class="backdrops" role="group" aria-label="预览底色"><button type="button" data-backdrop="dark" aria-pressed="false">深</button><button type="button" data-backdrop="light" aria-pressed="false">浅</button><button type="button" data-backdrop="checker" aria-pressed="true">棋盘</button></div></div>
+      <p id="load-message" class="message" role="status" aria-live="polite">正在读取项目资源…</p>
+      <div id="gallery" class="gallery" data-backdrop="checker"></div>
+      <div id="empty" class="empty" hidden><h3>没有匹配的素材</h3><p>试试其他名称或标签，也可以清除筛选。</p><button id="clear-filters" type="button">清除筛选</button></div>
+      <p class="gallery-footnote">卡片按可见轮廓等比展示，卡片大小不表示游戏中的相对尺寸。归档只改变登记状态，保留原图。</p>
+    </section>
+    <aside id="inspector" class="inspector" aria-labelledby="detail-title">
+      <div id="no-selection" class="no-selection">选择一件素材，检查它的尺寸、用途和来源。</div>
+      <div id="detail" hidden>
+        <div class="detail-heading"><div><p id="detail-kind"></p><h2 id="detail-title"></h2></div><span id="detail-status" class="status-badge"></span></div>
+        <div id="preview-stage" class="preview-stage" data-backdrop="checker"><canvas id="preview" aria-label="选中素材预览"></canvas></div>
+        <div class="preview-tools"><label for="zoom">适应窗口 <output id="zoom-value">100%</output></label><input id="zoom" type="range" min="100" max="300" step="25" value="100"><a id="download" download>下载 PNG</a></div>
+        <dl id="facts" class="facts"></dl>
+        <div class="path-row"><span id="file-path"></span><button id="copy-path" type="button">复制路径</button></div>
+        <details class="source-details"><summary>验收说明与制作来源</summary><p id="qa-summary"></p><ul id="limitations"></ul><div class="source-links"><h3>提示词</h3><div id="prompt-links"></div><h3>参考图</h3><div id="reference-links"></div><h3 id="editable-heading" hidden>可编辑源文件</h3><div id="editable-links" hidden></div></div></details>
+        <form id="edit-form" class="edit-form">
+          <div class="form-title"><h3>管理信息</h3><span id="save-state">已保存</span></div>
+          <label>名称<input id="edit-name" name="name" required maxlength="120"></label>
+          <div class="form-row"><label>验收状态<select id="edit-status" name="status"><option value="accepted">静态验收通过</option><option value="needs-review">待验收</option><option value="needs-work">待调整</option><option value="archived">已归档</option></select></label></div>
+          <label>标签<input id="edit-tags" name="tags" maxlength="500" placeholder="用逗号分隔，例如：主角，须门"></label>
+          <label>备注<textarea id="edit-notes" name="notes" rows="4" maxlength="4000" placeholder="记录用途、修改要求或接入注意事项"></textarea></label>
+          <div id="conflict" class="conflict" hidden><p>资源清单已被其他窗口更新。当前草稿仍保留；重新载入后再修改，避免覆盖他人的改动。</p><button id="copy-draft" type="button">复制当前草稿</button><button id="reload-conflict" type="button">重新载入</button></div>
+          <p id="save-message" class="message" role="status" aria-live="polite"></p>
+          <div class="save-actions"><button id="save" class="primary" type="submit" disabled>保存更改</button><button id="reset" type="button" disabled>撤销修改</button></div>
+          <p class="persistence-note">保存到项目的资源清单，刷新后仍保留。验收通过与游戏接入分别记录。</p>
+        </form>
+      </div>
+    </aside>
+  </main>
+  <dialog id="unsaved-dialog" aria-labelledby="unsaved-title"><h2 id="unsaved-title">还有未保存的更改</h2><p>继续编辑可保留当前草稿；放弃后再切换，原图不会改变。</p><div><button id="keep-editing" class="primary" type="button">继续编辑</button><button id="discard" type="button">放弃更改并继续</button></div></dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

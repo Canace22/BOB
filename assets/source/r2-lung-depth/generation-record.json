@@ -1,0 +1,114 @@
+{
+  "id": "r2-lung-depth",
+  "name": "肺心灰蓝远景",
+  "coversRequirementIds": [
+    "scene-water-depth",
+    "r2-lung-pleura"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/14_R2.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/16_R2-02.png"
+  ],
+  "region": "R2",
+  "kind": "background",
+  "scale": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas"
+  },
+  "pivotSuggestion": "center",
+  "state": "base",
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检为灰蓝胸膜远景，无角色、平台、鲸须、UI；水体与器官景深合并。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-lung-depth.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-515b49b5-bd09-45f6-b199-fabf466fb89c.png",
+  "width": 1672,
+  "height": 941,
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "sha256": "0b206ae1155ed5897c1b24261053e557bf7db0bb8061f54654fc3c2b5395cbf9",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-lung-depth.txt",
+  "layer": "merged-L0-L1-fallback",
+  "atlasEligible": false,
+  "optionalFallback": true,
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0096,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "merged-background-fallbacks"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "alphaStats": {
+    "zero": 0,
+    "semi8to247": 0,
+    "nearOpaque": 1573352,
+    "total": 1573352
+  },
+  "pivot": [
+    836.0,
+    470.5
+  ]
+}

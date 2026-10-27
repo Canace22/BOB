@@ -1,0 +1,114 @@
+{
+  "id": "mucus-hazard-surface",
+  "name": "低压黏液槽边",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3-02 低压黏液危险表层；预告/激活由程序与后续效果承担。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/mucus-hazard-surface/base.png",
+  "width": 2172,
+  "height": 724,
+  "bbox": [
+    56,
+    219,
+    2123,
+    563
+  ],
+  "pivot": [
+    1089.5,
+    563
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.4993,
+    "canvasWidthU": 3.1524,
+    "canvasHeightU": 1.0508
+  },
+  "sha256": "d1fe29c22803fbb2ef7d7993d4f8027a13d800fbc54c6aab94c68a7c7c12e25f",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      53,
+      6,
+      2135,
+      724
+    ],
+    "8": [
+      56,
+      219,
+      2123,
+      563
+    ],
+    "32": [
+      58,
+      220,
+      2123,
+      562
+    ],
+    "128": [
+      58,
+      220,
+      2122,
+      562
+    ],
+    "248": [
+      59,
+      222,
+      2121,
+      561
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png"
+    ],
+    "prompts": [
+      "assets/source/mucus-hazard-surface/mucus-hazard-surface.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3-02 低压黏液危险表层；预告/激活由程序与后续效果承担。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-hazard-surfaces"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/mucus-hazard-surface-d1fe29c22803.png",
+  "familyId": "r3-hazard-surfaces",
+  "variant": "static"
+}

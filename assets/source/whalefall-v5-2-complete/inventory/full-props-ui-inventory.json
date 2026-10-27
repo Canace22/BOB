@@ -1,0 +1,1209 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "道具、机关、奖励、模块、UI和特效；根据本轮最新两个页面及P01/I02原图逐项去重盘点，不等于完整游戏总资源数。",
+  "sources": [
+    "http://10.11.140.20:8765/simple/",
+    "http://10.11.140.20:8765/full/"
+  ],
+  "countingRules": [
+    "按可复用家族计数，变体和状态列入家族。",
+    "8个生命碎片、8处营地、6处交通节点是放置实例，不算8/8/6套独立原画。",
+    "状态可用拆层、变换、程序绘制表达，不将每个状态强行算成一张PNG。",
+    "UI动态文字、路线、滑杆、进度以及简单波纹可程序/SVG绘制；整张界面概念图不能作为可用UI资源交付。",
+    "P/B/S是结果旗标，不是新增可拾取道具。",
+    "与场景及角色清单按id和crossDomain去重后才能报整批总数。"
+  ],
+  "summary": {
+    "physicalFamilies": 25,
+    "physicalFamiliesWithBaseStatic": 4,
+    "physicalFamiliesMissingIndependentBase": 21,
+    "moduleNamedVariants": 6,
+    "uiFamilies": 10,
+    "fxFamilies": 10,
+    "uiOrFxExportsCurrentlyPresent": 0,
+    "warning": "以上是本子范围的家族数量，不是最终PNG/动画帧数量，不能与其他分支直接相加。"
+  },
+  "physicalFamilies": [
+    {
+      "id": "bone-resonator",
+      "name": "U形骨鸣器",
+      "kind": "tool",
+      "requiredStates": [
+        "正面/游戏侧向",
+        "握持与收起接口"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "骨鸣器负责近身攻击和共振。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "已嵌在主角姿态中，未提供独立可挂接件；不把整张主角PNG当工具交付。",
+      "staticDeliverables": [
+        "独立U形骨鸣器侧向主件（挂点明确）"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "fungus-lamp",
+      "name": "密封菌灯与灯罩",
+      "kind": "tool",
+      "requiredStates": [
+        "灯罩开启",
+        "灯罩闭合",
+        "独立光效层"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "L灯罩；关灯可降低未警觉嗅脂甲的感知。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "主角图中灯为开启状态；独立灯和闭罩状态缺失。",
+      "staticDeliverables": [
+        "灯罩开启",
+        "灯罩闭合",
+        "可独立控制的菌光遮罩"
+      ],
+      "laterAnimation": [
+        "灯罩翻动与菌光闪烁"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "red-tether",
+      "name": "红索/红绳",
+      "kind": "tool",
+      "requiredStates": [
+        "松弛",
+        "拉直/受力",
+        "端部红结"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "红绳只连接指定锚环；挂环不能攻击。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "end_caps_plus_procedural_rope",
+      "note": "环上残绳和主角绘入绳均不能替代任意长度的运行绳索。长度/弯曲用程序，不需为每条绳另画图。",
+      "staticDeliverables": [
+        "绳端连接件",
+        "红结",
+        "可重复绳段/绳索纹理"
+      ],
+      "laterAnimation": [
+        "绳索动态曲线与受力（程序）"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "bone-anchor-ring",
+      "name": "固定骨质锚环",
+      "kind": "prop",
+      "requiredStates": [
+        "固定环基底",
+        "连接红索时的挂点"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "只抓预置环；主路间距≤4.5U；脱环再攻击。",
+      "source": "http://10.11.140.20:8765/full/#R3-s11",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": "bone-anchor-ring",
+      "coverage": "base-static-present",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "基础环已做；连接反馈可程序实现，不重复计算每房的环。",
+      "staticDeliverables": [
+        "固定骨环基础图（已有）"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "shell-camp",
+      "name": "壳形营地",
+      "kind": "prop",
+      "requiredStates": [
+        "基础壳体",
+        "未登记/已登记/休息反馈"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "八处营地负责休息；亲自到达后E登记，可免费更换模块。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": "shell-camp",
+      "coverage": "base-static-present",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "仅基础静态图已做。8个放置实例复用；状态反馈尚未制作或接入。",
+      "staticDeliverables": [
+        "营地基础图（已有）",
+        "可独立控制灯光层（若需状态切换）"
+      ],
+      "laterAnimation": [
+        "休息与登记反馈"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "empty-shell",
+      "name": "空壳/大壳掩体",
+      "kind": "prop",
+      "requiredStates": [
+        "空壳基础",
+        "安置/搬运接口"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "以壳掩体隔开蟹和孔鳗；安置单只空壳在两档质量座上。",
+      "source": "http://10.11.140.20:8765/full/#room-R3-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+      ],
+      "existingAssetId": "empty-shell",
+      "coverage": "base-static-present",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "静态空壳已做；不同尺度用途按真实关卡尺寸验证，不把每个摆放实例当新品类。",
+      "staticDeliverables": [
+        "空壳基础图（已有）"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "life-fragment",
+      "name": "三腔生命碎片",
+      "kind": "reward",
+      "requiredStates": [
+        "可拾取"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "全游戏固定生命碎片8枚；初始4格生命，集齐4枚加1格，最多6格。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png"
+      ],
+      "existingAssetId": "life-fragment",
+      "coverage": "base-static-present",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "一套图可复用8个固定实例；已收取空槽见reward-socket，不重复制作8个同形碎片。",
+      "staticDeliverables": [
+        "三腔生命碎片基础图（已有）"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "migration-memory",
+      "name": "迁徙记忆片/声纹片",
+      "kind": "reward",
+      "requiredStates": [
+        "未收取片",
+        "已读声纹反馈"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "记忆袋取碎片和声纹；奖励只留空槽与新声纹。",
+      "source": "http://10.11.140.20:8765/full/#room-R1-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+        "http://10.11.140.20:8765/simple/images/13_R1-07.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "鲸须/呼吸/最后静默是叙事变体；文本与声部不同不自动要求三张全新物件美术。",
+      "staticDeliverables": [
+        "刻纹记忆片",
+        "已读取后声纹层"
+      ],
+      "laterAnimation": [
+        "读取声纹变化"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "reward-socket",
+      "name": "奖励空槽",
+      "kind": "reward",
+      "requiredStates": [
+        "生命碎片空槽",
+        "模块空槽",
+        "记忆槽/新声纹"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "已取碎片显示空槽；模块空槽仍可辨；奖励只留空槽与新声纹。",
+      "source": "http://10.11.140.20:8765/full/#room-R1-03",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/09_R1-03.png",
+        "http://10.11.140.20:8765/simple/images/24_R3-03.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "不同奖励槽轮廓可共享底座并换内轮廓。必须在清单中覆盖拾取后的状态。",
+      "staticDeliverables": [
+        "生命碎片空槽",
+        "模块空槽",
+        "记忆空槽（可共享底座）"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "symbiosis-modules",
+      "name": "六个共生模块",
+      "kind": "reward",
+      "requiredStates": [
+        "稳足",
+        "滑膜",
+        "系索",
+        "圆腔",
+        "复振",
+        "静菌"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "运动槽选稳足/滑膜/系索；共鸣槽选圆腔/复振/静菌。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "这是1个资源家族、6个具名变体，不能只做一个图标算6项。P01中部分造型与6名称缺逐项标注，需进一步锁定对应，不能自行把灯形物当额外奖励。",
+      "staticDeliverables": [
+        "稳足",
+        "滑膜",
+        "系索",
+        "圆腔",
+        "复振",
+        "静菌"
+      ],
+      "laterAnimation": [],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "settlement-valve",
+      "name": "聚落导流阀/遮流瓣",
+      "kind": "mechanism",
+      "requiredStates": [
+        "三档压力阀低/中/高",
+        "血巢旁通阀闲置/触发",
+        "尾下遮流瓣关/开"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "阀低中高三档刻线；旁通阀减慢下一轮25%；尾根侧台旋开遮流瓣。",
+      "source": "http://10.11.140.20:8765/full/#room-R3-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+        "http://10.11.140.20:8765/simple/images/18_R2-04.png",
+        "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "layered_valve_family",
+      "note": "三种玩法变体；可共用底座、手柄，再按参考材质与标记变化。不是金属工业闸阀。",
+      "staticDeliverables": [
+        "三档压力阀基座与可转动手柄/刻线",
+        "旁通阀基底与动作件",
+        "尾下遮流瓣开/闭（可拆层）"
+      ],
+      "laterAnimation": [
+        "阀转动、变档过渡"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "floating-platform",
+      "name": "漂台/漂盘",
+      "kind": "mechanism",
+      "requiredStates": [
+        "压力控制三档停靠",
+        "质量座控制两档停靠"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "中档把漂台对齐固定岸；两档质量座只改变漂盘停靠位置。",
+      "source": "http://10.11.140.20:8765/full/#room-R3-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/23_R3-02.png",
+        "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "位置变化由运行逻辑实现，不需要五张位置不同的PNG；平台本体需从原画分出。与环境清单合并去重。",
+      "staticDeliverables": [
+        "压力漂台本体",
+        "质量漂盘本体（参考外形相容时复用）"
+      ],
+      "laterAnimation": [
+        "位置移动/停靠（程序）"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "shell-mass-seat",
+      "name": "空壳两档质量座",
+      "kind": "mechanism",
+      "requiredStates": [
+        "未放壳",
+        "放壳"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "先安置单只空壳在两档质量座上，只改变漂盘停靠位置。",
+      "source": "http://10.11.140.20:8765/full/#room-R3-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "座与空壳分层，不能把二者烘焙成唯一图。",
+      "staticDeliverables": [
+        "两档质量座基座",
+        "座的加载指示件（空壳复用）"
+      ],
+      "laterAnimation": [
+        "放壳与加载过渡"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "habitat-shade",
+      "name": "菌圃遮光片",
+      "kind": "mechanism",
+      "requiredStates": [
+        "明档",
+        "暗档"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "把侧边遮光片旋至暗档，幼菌点亮，主通路不变。",
+      "source": "http://10.11.140.20:8765/full/#R3-s17",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/22_R3-01.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_shade_layer",
+      "note": "与主角灯罩是不同物件；与生态场景清单合并去重。",
+      "staticDeliverables": [
+        "遮光片独立层",
+        "支点/基座"
+      ],
+      "laterAnimation": [
+        "旋转过渡（程序）"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "nursery-shell-support",
+      "name": "育床壳托/补压床支承",
+      "kind": "mechanism",
+      "requiredStates": [
+        "未调平",
+        "已调平"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "调平补压床旁壳托，孔瓣恢复规律开合。",
+      "source": "http://10.11.140.20:8765/full/#R2-s17",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/15_R2-01.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "育囊本体归NPC清单，床/壳托及孔瓣需拆层；与场景清单合并。",
+      "staticDeliverables": [
+        "壳托基底",
+        "孔瓣开/闭"
+      ],
+      "laterAnimation": [
+        "调平与规律开合"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "permanent-latches",
+      "name": "永久捷径闩",
+      "kind": "mechanism",
+      "requiredStates": [
+        "喷气孔孔瓣关/开及无把手背面",
+        "胃侧红结闩关/开及闩背",
+        "耳海双环闩关/开及锁环侧"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "E旋开孔瓣；E拉红结闩；E松双环闩。三个近侧均不可提前开启。",
+      "source": "http://10.11.140.20:8765/full/#R5-s12",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/19_R2-05.png",
+        "http://10.11.140.20:8765/simple/images/28_R3-07.png",
+        "http://10.11.140.20:8765/simple/images/44_R5-05.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "一个闩族包含3个明确外形变体。只改变状态ID不等于已有三套美术。",
+      "staticDeliverables": [
+        "喷气孔孔瓣关/开及背面",
+        "胃侧红结闩关/开及闩背",
+        "耳海双环闩关/开及背面"
+      ],
+      "laterAnimation": [
+        "解锁/开合运动"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "anchor-pull-gate",
+      "name": "固定红索拉闸/组合门",
+      "kind": "mechanism",
+      "requiredStates": [
+        "闭合",
+        "P降流显露环",
+        "挂环拉起",
+        "永久打开"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "已有P时阀会降强流；再挂固定环拉闸，松索后走上稳定骨台。",
+      "source": "http://10.11.140.20:8765/full/#room-R4-01",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/31_R4-01.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "环复用bone-anchor-ring；流复用特效，门体另做。与场景清单合并。",
+      "staticDeliverables": [
+        "组合门闸闭合/打开",
+        "拉动部件（环复用）"
+      ],
+      "laterAnimation": [
+        "拉闸运动"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "bone-sound-node",
+      "name": "骨音交通节点",
+      "kind": "mechanism",
+      "requiredStates": [
+        "未发现",
+        "亲访未调律",
+        "已调律/可旅行"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "6个交通节点要先亲访、再调律；B之前发现不等于调律。",
+      "source": "http://10.11.140.20:8765/full/#R2-s14",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/15_R2-01.png",
+        "http://10.11.140.20:8765/simple/images/36_R4-06.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "base_sprite_plus_state_overlay",
+      "note": "T1胃枢/T2肺口/T3肠侧/T4脊椎/T5颅入口/T6尾根复用。未发现通常不可显示，不等于必须多画一件物体。",
+      "staticDeliverables": [
+        "骨音节点基底",
+        "未调律/调律完成符号层"
+      ],
+      "laterAnimation": [
+        "调律脉冲"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "progress-three-slots",
+      "name": "P/B/S三槽装置",
+      "kind": "mechanism",
+      "requiredStates": [
+        "三槽基底",
+        "每槽缺失/已满足",
+        "三项同步"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "三槽只预览P/B/S，不增加收集锁；集齐后一次E同步，永久打开去释放槽的门。",
+      "source": "http://10.11.140.20:8765/full/#room-R5-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/40_R5-01.png",
+        "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "base_sprite_plus_three_independent_overlays",
+      "note": "P/B/S是进程状态，不是3个新钥匙/宝石；头端预览与尾端终局装置可共用符号层。",
+      "staticDeliverables": [
+        "三槽装置基底",
+        "P/B/S独立已满足与空缺符号"
+      ],
+      "laterAnimation": [
+        "同步过渡"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "release-sluice",
+      "name": "尾端导流闸/释放碗",
+      "kind": "mechanism",
+      "requiredStates": [
+        "闭合/待同步",
+        "打开宽槽",
+        "已释放反馈"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "打开聚落导流闸释放幼体到海水；右释放碗和幼体保留。",
+      "source": "http://10.11.140.20:8765/full/#room-R5-08",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/47_R5-08.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "释放碗与门闸可作为同一装置的拆层部件；地形沟槽属于场景。幼体复用现有sea-larva。",
+      "staticDeliverables": [
+        "导流闸闭合/打开",
+        "释放碗基底"
+      ],
+      "laterAnimation": [
+        "开闸与释放过渡"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "soft-membrane-fissure",
+      "name": "双瓣短柔膜缝",
+      "kind": "mechanism",
+      "requiredStates": [
+        "闭合",
+        "开放",
+        "有人占用延迟闭合",
+        "闭合前轮廓预告"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "双瓣轮廓+收缩声纹；标记柔膜缝≤1.5U，不穿硬墙。",
+      "source": "http://10.11.140.20:8765/full/#R5-s16",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/41_R5-02.png",
+        "http://10.11.140.20:8765/simple/images/42_R5-03.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "two_separate_leaf_layers",
+      "note": "主路/选修/战斗短缝共用规则，按房间放置；与场景清单合并。",
+      "staticDeliverables": [
+        "双瓣膜片分层或开/闭两状态",
+        "双瓣可穿标记"
+      ],
+      "laterAnimation": [
+        "呼吸式收缩、占用延迟闭合"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "ringed-calcium-pearl",
+      "name": "完整带环钙珠",
+      "kind": "projectile",
+      "requiredStates": [
+        "完整飞行",
+        "可迎击环",
+        "迎击回弹反馈"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "Q侧向接完整带环珠，0.18秒窗口；不是下劈踩敌。",
+      "source": "http://10.11.140.20:8765/full/#R4-s11",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+        "http://10.11.140.20:8765/simple/images/32_R4-02.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "训练珠与敌方珠共享外形，伤害与队伍为数据；不是空心圆球或破碎珠。",
+      "staticDeliverables": [
+        "完整珠体",
+        "外环独立层"
+      ],
+      "laterAnimation": [
+        "飞行/迎击轨迹与反馈"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "safe-pearl-emitter",
+      "name": "安全吐珠练习器",
+      "kind": "mechanism",
+      "requiredStates": [
+        "待机",
+        "吐珠预告",
+        "吐珠/恢复"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "练习器只吐带环完整珠且不会伤人。",
+      "source": "http://10.11.140.20:8765/full/#room-R4-02",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/32_R4-02.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "与敌人鸣贝分开登记，不能把它当第十种普通敌人。",
+      "staticDeliverables": [
+        "练习器待机本体",
+        "开口部件/吐珠口状态"
+      ],
+      "laterAnimation": [
+        "预告/发射/恢复"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "arena-soft-curtain",
+      "name": "战斗软帘",
+      "kind": "mechanism",
+      "requiredStates": [
+        "可通行",
+        "战斗封闭",
+        "战后开放"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "跨软帘才进入战斗；营地位于战斗边界外安全前室。",
+      "source": "http://10.11.140.20:8765/full/#room-R1-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "各Boss房可按区域材质复用帘的结构；与场景门清单合并去重。",
+      "staticDeliverables": [
+        "战斗帘开/闭（区材质变体按场景需求）"
+      ],
+      "laterAnimation": [
+        "封闭/战后开帘"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    },
+    {
+      "id": "dash-grant-cocoon",
+      "name": "贴流冲授予膜茧",
+      "kind": "prop",
+      "requiredStates": [
+        "胜前封闭",
+        "胜后可承接/已取得"
+      ],
+      "stateCounting": "状态是行为覆盖要求，不等于每状态必须另绘PNG；优先用拆层、变换或程序状态表达。",
+      "evidence": "R1-04现有提示词明确闭合小膜茧在胜利后授A1；正文要求胜利保存后E承接A1。",
+      "source": "http://10.11.140.20:8765/full/#room-R1-04",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+      ],
+      "existingAssetId": null,
+      "coverage": "missing",
+      "suggestedDelivery": "separate_sprite_or_layers",
+      "note": "造型依据是房间原画/提示词，不等于A1为可重复拾取掉落。其余A2/A3/A4/A5授能是事件；不能统一另造五枚神器。",
+      "staticDeliverables": [
+        "授能膜茧闭合/已承接状态"
+      ],
+      "laterAnimation": [
+        "授能开启过渡"
+      ],
+      "implementation": "姿态/外观按staticDeliverables制作；坐标、旋转、交互、计时与实例化由程序处理，不另画每个中间位置。"
+    }
+  ],
+  "uiFamilies": [
+    {
+      "id": "ui-map",
+      "name": "地图与路线",
+      "components": [
+        "已走实线",
+        "可见未达虚线",
+        "未知留白",
+        "当前地点",
+        "营地与旅行节点图标",
+        "已发现门的缺项提示"
+      ],
+      "evidence": "地图实线是已走路线，虚线是看见但未进入，未知区域留白。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-module-camp",
+      "name": "营地模块搭配",
+      "components": [
+        "运动槽",
+        "共鸣槽",
+        "六模块图标",
+        "选中/不可用/已装备反馈"
+      ],
+      "evidence": "营地免费更换两槽模块；I02中部为两栏选择。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-pause-settings",
+      "name": "暂停与设置",
+      "components": [
+        "面板",
+        "设置/音量/音乐/亮度/手柄符号",
+        "滑杆",
+        "按键重绑定框"
+      ],
+      "evidence": "I02右侧展示这些设置图形；正文明确按键可重绑。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-life",
+      "name": "生命显示",
+      "components": [
+        "当前/空生命格",
+        "4至6格布局",
+        "碎片进度"
+      ],
+      "evidence": "初始4格生命，集齐4枚碎片加1格，最多6格。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "display_needed_from_explicit_mechanics; exact_art_not_specified",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-resonance",
+      "name": "蓄振显示",
+      "components": [
+        "0至4格",
+        "消耗2格反馈"
+      ],
+      "evidence": "蓄振最多4格；重鸣或调息消耗2格。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "display_needed_from_explicit_mechanics; exact_art_not_specified",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-pressure",
+      "name": "浮膜余压提示",
+      "components": [
+        "4秒余压",
+        "补压恢复",
+        "耗尽提示"
+      ],
+      "evidence": "浮膜压力4秒；补压台恢复。",
+      "source": "http://10.11.140.20:8765/full/#R2-s11",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "display_needed_from_explicit_mechanics; exact_art_not_specified",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-interaction",
+      "name": "交互/按键提示",
+      "components": [
+        "E交互",
+        "L灯罩",
+        "Q短击/迎珠",
+        "R重鸣",
+        "依据设备重绑定后的按键符号"
+      ],
+      "evidence": "能力动作按已解锁提示；键位可重绑。",
+      "source": "http://10.11.140.20:8765/full/#R1-s5",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-progression",
+      "name": "能力与P/B/S来源符号",
+      "components": [
+        "A1至A5能力识别",
+        "P/B/S状态",
+        "缺项对应区域/来源"
+      ],
+      "evidence": "可见未达门显示已发现的缺项线索；尾根缺P/B/S显示对应区域符号。",
+      "source": "http://10.11.140.20:8765/full/#room-R5-07",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-travel-selection",
+      "name": "旅行目的地选择",
+      "components": [
+        "6节点列表",
+        "仅亲访已调律可选",
+        "当前位置"
+      ],
+      "evidence": "地图只列B+亲访+已调律的可用目的地。",
+      "source": "http://10.11.140.20:8765/full/#room-R4-06",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "explicit",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    },
+    {
+      "id": "ui-dialogue-memory",
+      "name": "交谈与记忆文本容器",
+      "components": [
+        "NPC对话",
+        "已见门提示",
+        "记忆正文/确认"
+      ],
+      "evidence": "余索在营地交谈，提醒已发现尚未进入的旧门；记忆改变声部。",
+      "source": "http://10.11.140.20:8765/simple/#characters",
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+      ],
+      "coverage": "missing",
+      "suggestedDelivery": "programmatic_ui_with_optional_svg_skin",
+      "basis": "interaction_needed_from_explicit_text; layout_not_specified",
+      "implementation": {
+        "codeDrawn": [
+          "文本与本地化",
+          "选择/禁用/高亮",
+          "布局与面板伸缩",
+          "动态路线/数值/按键映射"
+        ],
+        "staticArt": "只需复用物件缩略图和必要的图标/边框视觉；不把整个菜单截图当资源。",
+        "phase": "静态阶段先定图标/视觉组件；交互编码及运行验收单独登记。"
+      }
+    }
+  ],
+  "fxFamilies": [
+    {
+      "id": "fx-resonance",
+      "name": "短击/重鸣共振",
+      "requiredStates": [
+        "短击作用范围反馈",
+        "重鸣波纹/命中反馈"
+      ],
+      "evidence": "骨鸣器负责近身攻击和共振；动作板04含短击重鸣。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "action_explicit; effect_frame_design_to_specify",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-dash-membrane",
+      "name": "贴流冲与浮膜能力效果",
+      "requiredStates": [
+        "冲刺膜/拖尾",
+        "浮膜展开/收拢",
+        "余压反馈"
+      ],
+      "evidence": "五能力原图；流膜育窝主角带半透明膜冲过沟。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "reference_visual_and_mechanics; avoid_making_animation_claim",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-anchor-line",
+      "name": "锚定绳线",
+      "requiredStates": [
+        "连接",
+        "拉力",
+        "脱环"
+      ],
+      "evidence": "红绳只连接指定锚环；挂环不能攻击。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_rope_reusing_red-tether_end_caps",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-pearl-telegraph",
+      "name": "鸣贝三圈波纹与迎珠反馈",
+      "requiredStates": [
+        "三圈预告",
+        "完整珠环",
+        "回击反馈"
+      ],
+      "evidence": "三圈波纹0.9秒后吐带环完整珠；Q迎击。",
+      "source": "http://10.11.140.20:8765/full/#R4-s15",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-danger-telegraph",
+      "name": "方向/轨迹/落点危险预告",
+      "requiredStates": [
+        "方向线",
+        "表面形变",
+        "亮钳",
+        "落壳落点",
+        "合震标带",
+        "群流锁线"
+      ],
+      "evidence": "所有变动地形先给预告；每屏优先不超过两类主动伤害源。",
+      "source": "http://10.11.140.20:8765/full/#R1-s16",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_geometry_plus_actor_overlay",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-echo-ring",
+      "name": "空心回声与静默合圈",
+      "requiredStates": [
+        "旧位空心圈",
+        "1.4秒延迟攻击",
+        "胜后静默2秒合拢"
+      ],
+      "evidence": "旧位置空心圆1.4秒后产生回声；安全站立两秒让空圆合拢取得S。",
+      "source": "http://10.11.140.20:8765/full/#room-R5-04",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-fissure-warning",
+      "name": "柔膜缝收缩声纹/轮廓预告",
+      "requiredStates": [
+        "开放提示",
+        "闭合前闪轮廓"
+      ],
+      "evidence": "双瓣轮廓+收缩声纹，闭合前闪轮廓。",
+      "source": "http://10.11.140.20:8765/full/#R5-s16",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-underwater-atmosphere",
+      "name": "水下悬粒/冷光/菌灯光",
+      "requiredStates": [
+        "景深悬粒",
+        "有方向流粒",
+        "薄雾",
+        "封闭琥珀菌光",
+        "冷光透射"
+      ],
+      "evidence": "全程水下；悬粒薄雾分配景深，预告附近降密度；无明火。",
+      "source": "http://10.11.140.20:8765/full/#R2-s20",
+      "coverage": "missing",
+      "suggestedDelivery": "particle_textures_and_light_masks; scene_layers_separate",
+      "basis": "explicit",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-hit-recovery",
+      "name": "受击与恢复反馈",
+      "requiredStates": [
+        "受击",
+        "失败保护",
+        "重新出发"
+      ],
+      "evidence": "04动作原图含受击与重新出发；危险扣1格回稳定台，1秒保护不连扣。",
+      "source": "http://10.11.140.20:8765/simple/#player",
+      "coverage": "missing",
+      "suggestedDelivery": "procedural_effect_with_optional_texture",
+      "basis": "mechanics_explicit; detailed_effect_art_to_specify",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    },
+    {
+      "id": "fx-habitat-response",
+      "name": "栖息地恢复反馈",
+      "requiredStates": [
+        "幼菌亮起",
+        "孔瓣规律开合",
+        "红冠舒展",
+        "幼体进入低速槽"
+      ],
+      "evidence": "六栖息地一次帮助后回访显示变化。",
+      "source": "http://10.11.140.20:8765/simple/#growth",
+      "coverage": "missing",
+      "suggestedDelivery": "reuse_ecology_actor_layers_plus_state_animation",
+      "basis": "states_explicit; no_new_creatures",
+      "staticDeliverables": "按需提供单粒子纹理、遮罩或SVG形状；简单圆环、线带、绳线优先程序绘制，避免无意义生成PNG。",
+      "laterAnimation": "时间变化、发射轨迹、收缩/扩散、循环与动作同步留到动画/游戏接入阶段。"
+    }
+  ],
+  "crossDomain": [
+    {
+      "id": "float-membrane-attachment",
+      "owner": "actor_animation",
+      "requirement": "浮膜展开/收拢是角色能力挂件状态；应拆为独立层或与动作帧共同制作，勿与fx-dash-membrane重复计数。",
+      "source": "http://10.11.140.20:8765/simple/#player"
+    },
+    {
+      "id": "habitat-six-sites",
+      "owner": "scene_and_ecology",
+      "requirement": "H1清流窝/H2肺膜育床/H3胃枢菌圃/H4肠侧搬壳巢/H5红冠园/H6尾下幼体槽均需未完成/完成外观覆盖；床、壳托、空壳、幼菌、红冠和幼体共享各自基础资产，不能把6处当6种新敌人。",
+      "source": "http://10.11.140.20:8765/simple/#growth"
+    },
+    {
+      "id": "terrain-hazards",
+      "owner": "scene",
+      "requirement": "承重舌膜、酸槽、低压黏液槽、减速脂面、菌毯回落区、薄骨片、落屑区的本体由环境清单覆盖；这里只登记它们的预告/粒子，不重复算地形。",
+      "source": "http://10.11.140.20:8765/full/#R3-s16"
+    },
+    {
+      "id": "ability-grants",
+      "owner": "actor_and_mechanism_events",
+      "requirement": "A2在育囊、A3在肠入口、A4在练习器、A5在安全池共生物处通过事件取得；除原画明确的小膜茧外，不另造五个能力水晶。",
+      "source": "http://10.11.140.20:8765/simple/#player"
+    }
+  ],
+  "referenceUncertainties": [
+    {
+      "image": "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+      "detail": "P01的04破口发光壳件、05三囊挂件、06圆腔件在当前简版没有逐个文字编号映射；三件看得到但不能擅自给每件套上六模块中的某个名字。",
+      "resolution": "制作六模块前核对旧版P01文字说明或由设计明确映射；先保留视觉登记，不重复算成三种额外神器。"
+    },
+    {
+      "image": "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png",
+      "detail": "界面图左侧地图是视觉语言参考，房形/路线必须以V5.2的36房39边数据绘制，不能把旧图直接当正确地图。",
+      "resolution": "提取边框/图标风格，实时地图由数据生成。"
+    }
+  ],
+  "existingAssetNotes": "在assets/catalog.json中，本子范围仅bone-anchor-ring、shell-camp、empty-shell、life-fragment共4项静态文件。工具绘在主角图里不算独立工具；没有独立UI/特效文件。",
+  "productionScopeConfirmed": "用户选择：先做齐全部静态素材，再补动画。静态开/闭、空/满等有独立外观意义的状态纳入本阶段；时间连续中间帧与程序交互后置。"
+}

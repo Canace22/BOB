@@ -1,0 +1,127 @@
+{
+  "id": "r5-cranial-far-layer",
+  "name": "颅耳骨远器官层",
+  "kind": "background",
+  "region": "R5头",
+  "tags": [
+    "R5头",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-cranial-far-layer/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    626,
+    0,
+    1672,
+    718
+  ],
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 20.0191,
+    "visibleHeightU": 13.7416,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "sha256": "2f6d6e9c87c08be56bd5fb6215b42b9f5f037bac1021cf68c7cf83200a6d6a08",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      152,
+      0,
+      1672,
+      722
+    ],
+    "8": [
+      626,
+      0,
+      1672,
+      718
+    ],
+    "32": [
+      627,
+      0,
+      1672,
+      718
+    ],
+    "128": [
+      628,
+      0,
+      1672,
+      717
+    ],
+    "248": [
+      642,
+      0,
+      1672,
+      716
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/38_R5-head.png"
+    ],
+    "prompts": [
+      "assets/source/r5-cranial-far-layer/r5-cranial-far-layer.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "右上颅板与下方小块致密耳骨保留，中心和左下透明；无巨型耳蜗或人形头骨。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "r5-cranial-background"
+  ],
+  "rooms": [
+    "R5-01",
+    "R5-02",
+    "R5-03",
+    "R5-04",
+    "R5-05",
+    "R5-06"
+  ],
+  "parallax": 0.25,
+  "layer": "L1",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-cranial-far-layer-2f6d6e9c87c0.png",
+  "state": "base"
+}

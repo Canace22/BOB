@@ -1,0 +1,116 @@
+{
+  "id": "r1-esophagus-fold",
+  "name": "食管纵裂肌壁",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-esophagus-fold/base.png",
+  "width": 1612,
+  "height": 976,
+  "bbox": [
+    31,
+    28,
+    1597,
+    951
+  ],
+  "pivot": [
+    814.0,
+    951
+  ],
+  "world": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 10.6092,
+    "canvasWidthU": 18.5287,
+    "canvasHeightU": 11.2184
+  },
+  "sha256": "fdf3ab2c01e635835d5710a4153903c0decbffc8e5db789aab6c1ae0d5d41f1b",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      26,
+      19,
+      1599,
+      976
+    ],
+    "8": [
+      31,
+      28,
+      1597,
+      951
+    ],
+    "32": [
+      32,
+      28,
+      1597,
+      950
+    ],
+    "128": [
+      32,
+      29,
+      1596,
+      950
+    ],
+    "248": [
+      33,
+      32,
+      1592,
+      949
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/11_R1-05.png"
+    ],
+    "prompts": [
+      "assets/source/r1-esophagus-fold/r1-esophagus-fold.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "目检纵向肌纹与塌陷壁片，未画鲸须、骨洞或食管大厅；薄丝边需深浅底检查。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-esophagus-section"
+  ],
+  "rooms": [
+    "R1-05"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-esophagus-fold-fdf3ab2c01e6.png",
+  "state": "base"
+}

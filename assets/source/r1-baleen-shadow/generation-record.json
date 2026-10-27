@@ -1,0 +1,112 @@
+{
+  "id": "r1-baleen-shadow",
+  "name": "暗须帘前景",
+  "coversRequirementIds": [
+    "r1-baleen-foreground"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/06_R1.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/08_R1-02.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 5.1731,
+    "canvasWidthU": 14.2001,
+    "canvasHeightU": 6.0847
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检单簇向下垂须，整体暗蓝；须尖局部偏亮，前景合成需检查遮挡与亮边误读。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-baleen-shadow.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-f7090dcc-7efe-4553-9fb4-e6fee1df5431.png",
+  "width": 1916,
+  "height": 821,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1903,
+      821
+    ],
+    "8": [
+      12,
+      90,
+      1901,
+      788
+    ],
+    "32": [
+      13,
+      91,
+      1901,
+      787
+    ],
+    "128": [
+      13,
+      91,
+      1901,
+      786
+    ],
+    "248": [
+      15,
+      92,
+      1900,
+      782
+    ]
+  },
+  "sha256": "8913e7d5aeca41877fbeef81eecb1446a488a3637019c9c28b0b60db953f3287",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-baleen-shadow.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1",
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    12,
+    90,
+    1901,
+    788
+  ],
+  "alphaStats": {
+    "zero": 669545,
+    "semi8to247": 50476,
+    "nearOpaque": 795567,
+    "total": 1573036
+  },
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 5.1731,
+    "canvasWidthU": 14.2001,
+    "canvasHeightU": 6.0847
+  },
+  "pivot": [
+    956.5,
+    788
+  ]
+}

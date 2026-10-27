@@ -1,0 +1,124 @@
+{
+  "id": "r5-tail-depth",
+  "name": "远尾肌腱海光远景",
+  "kind": "background",
+  "region": "R5尾",
+  "tags": [
+    "R5尾",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-tail-depth/background.png",
+  "width": 1672,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "pivot": [
+    836.0,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0096,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0096
+  },
+  "sha256": "2ad5d38bae53dc268e112aa068e4289f9f91e90d0018daa0175a07172a32018d",
+  "alphaRange": [
+    255,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "8": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "32": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "128": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "248": [
+      0,
+      0,
+      1672,
+      941
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/39_R5-tail.png",
+      "assets/source/whalefall-v5-2-complete/references/47_R5-08.png"
+    ],
+    "prompts": [
+      "assets/source/r5-tail-depth/r5-tail-depth.txt",
+      "assets/source/r5-tail-depth/r5-tail-depth-depth-fix.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "首次带入近景暗边与亮桥，已一次定向修正；现为纵向肌腱与无骨尾叶外海远景。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "scene-water-depth",
+    "r5-tail-tendons"
+  ],
+  "rooms": [
+    "R5-07",
+    "R5-08"
+  ],
+  "layer": "merged-L0-L1-fallback",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-tail-depth-2ad5d38bae53.png",
+  "state": "base"
+}

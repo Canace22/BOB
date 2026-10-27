@@ -1,0 +1,109 @@
+{
+  "id": "r2-heart-rupture",
+  "name": "静止心肌与心包断面",
+  "coversRequirementIds": [
+    "r2-pericardium-heart"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/17_R2-03.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/18_R2-04.png"
+  ],
+  "region": "R2",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 6.511,
+    "canvasWidthU": 20.6101,
+    "canvasHeightU": 6.9304
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R2-03",
+    "R2-04"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检暗红厚心肌与剥离心包，无脉动、发光核心或骨架。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-heart-rupture.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-d1116a76-6108-4347-baa1-593910242915.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2148,
+      727
+    ],
+    "8": [
+      37,
+      20,
+      2135,
+      703
+    ],
+    "32": [
+      38,
+      22,
+      2134,
+      702
+    ],
+    "128": [
+      38,
+      23,
+      2134,
+      702
+    ],
+    "248": [
+      40,
+      25,
+      2131,
+      699
+    ]
+  },
+  "sha256": "6fe0c55f8d6fe95b1fa933fa9eb3315f9c684d677507ab7fa9b41d476f5a81b7",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-heart-rupture.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r2",
+      "r2-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    37,
+    20,
+    2135,
+    703
+  ],
+  "alphaStats": {
+    "zero": 909897,
+    "semi8to247": 28446,
+    "nearOpaque": 604759,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 20,
+    "visibleWidthU": 20.0,
+    "visibleHeightU": 6.511,
+    "canvasWidthU": 20.6101,
+    "canvasHeightU": 6.9304
+  },
+  "pivot": [
+    1086.0,
+    703
+  ]
+}

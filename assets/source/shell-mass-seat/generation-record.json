@@ -1,0 +1,115 @@
+{
+  "id": "shell-mass-seat",
+  "familyId": "shell-mass-seat",
+  "name": "空壳两档质量座",
+  "scale": {
+    "axis": "width",
+    "units": 1.8
+  },
+  "coversRequirementIds": [
+    "shell-mass-seat"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/shell-mass-seat.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/shell-mass-seat.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R3-06",
+  "dimensions": [
+    1657,
+    949
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    133,
+    178,
+    1529,
+    798
+  ],
+  "pivot": [
+    831.0,
+    798
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "d1740ecd9ef65cba488266b8c74eee7034be4601b60106f34cd93d4a025e88b3",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Empty mass-seat base; existing empty-shell overlays to indicate loaded state. Two-position logic remains programmatic.",
+    "transparentPixels": 1062244,
+    "totalPixels": 1572493,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "shellSeat": {
+      "pixel": [
+        831,
+        430
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Empty mass-seat base; existing empty-shell overlays to indicate loaded state. Two-position logic remains programmatic.",
+  "world": {
+    "axis": "width",
+    "units": 1.8,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.8,
+    "visibleHeightU": 0.7994,
+    "canvasWidthU": 2.1365,
+    "canvasHeightU": 1.2236
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/shell-mass-seat.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png"
+  ],
+  "productionGroup": "props",
+  "width": 1657,
+  "height": 949,
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1557,
+      949
+    ],
+    "8": [
+      133,
+      178,
+      1529,
+      798
+    ],
+    "32": [
+      133,
+      179,
+      1529,
+      798
+    ],
+    "128": [
+      134,
+      179,
+      1528,
+      797
+    ],
+    "248": [
+      134,
+      180,
+      1527,
+      797
+    ]
+  },
+  "alphaStats": {
+    "zero": 1062244,
+    "semi8to247": 7829,
+    "nearOpaque": 495488,
+    "total": 1572493
+  }
+}

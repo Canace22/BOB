@@ -1,0 +1,107 @@
+{
+  "id": "ringed-calcium-pearl",
+  "familyId": "ringed-calcium-pearl",
+  "name": "完整带环钙珠",
+  "scale": {
+    "axis": "width",
+    "units": 0.45
+  },
+  "coversRequirementIds": [
+    "ringed-calcium-pearl"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/ringed-calcium-pearl.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/ringed-calcium-pearl.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "http://10.11.140.20:8765/simple/images/32_R4-02.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R4-s11",
+  "dimensions": [
+    1326,
+    1187
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    477,
+    425,
+    850,
+    793
+  ],
+  "pivot": [
+    663.5,
+    609.0
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "007b0db100993a4912c76653b7bede815edd208378d13996d53ef91305e6e48b",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "完整钙珠实体，外环由root程序图层独立叠加；安全训练与敌方珠共享。",
+    "transparentPixels": 1462611,
+    "totalPixels": 1573962,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "完整钙珠实体，外环由root程序图层独立叠加；安全训练与敌方珠共享。",
+  "world": {
+    "axis": "width",
+    "units": 0.45,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.45,
+    "visibleHeightU": 0.444,
+    "canvasWidthU": 1.5997,
+    "canvasHeightU": 1.432
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/ringed-calcium-pearl.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/32_R4-02.png"
+  ],
+  "productionGroup": "props",
+  "width": 1326,
+  "height": 1187,
+  "alphaBboxes": {
+    "1": [
+      0,
+      31,
+      1211,
+      1131
+    ],
+    "8": [
+      477,
+      425,
+      850,
+      793
+    ],
+    "32": [
+      477,
+      425,
+      849,
+      793
+    ],
+    "128": [
+      477,
+      426,
+      848,
+      793
+    ],
+    "248": [
+      478,
+      427,
+      847,
+      792
+    ]
+  },
+  "alphaStats": {
+    "zero": 1462611,
+    "semi8to247": 2370,
+    "nearOpaque": 105640,
+    "total": 1573962
+  }
+}

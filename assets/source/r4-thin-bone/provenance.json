@@ -1,0 +1,116 @@
+{
+  "id": "r4-thin-bone",
+  "name": "薄骨片完整态",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-thin-bone/base.png",
+  "width": 2172,
+  "height": 724,
+  "bbox": [
+    52,
+    258,
+    2121,
+    505
+  ],
+  "pivot": [
+    1086.5,
+    505
+  ],
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.5969,
+    "canvasWidthU": 5.2489,
+    "canvasHeightU": 1.7496
+  },
+  "sha256": "01208423c15ea08847131de5e580f72c8d0c72aaf08c63676a4a585933b8c243",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      23,
+      2142,
+      667
+    ],
+    "8": [
+      52,
+      258,
+      2121,
+      505
+    ],
+    "32": [
+      52,
+      258,
+      2121,
+      505
+    ],
+    "128": [
+      52,
+      259,
+      2121,
+      504
+    ],
+    "248": [
+      55,
+      260,
+      2120,
+      503
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/37_R4-07.png"
+    ],
+    "prompts": [
+      "assets/source/r4-thin-bone/r4-thin-bone.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "完整薄骨轮廓明显薄于稳定骨台，顶面略带粉色残留；暂未出现裂纹，用作后续两态同尺寸基准。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-thin-bone"
+  ],
+  "rooms": [
+    "R4-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-thin-bone-01208423c15e.png",
+  "state": "base"
+}

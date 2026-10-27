@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-27T04:32:03.747825+00:00",
+  "auditor": "full_scene_inventory",
+  "status": "static-shape-gaps-addressed-pending-final-coverage-build",
+  "scope": "Read-only source-to-coverage audit; priority UI/FX state completeness. No BOB files changed.",
+  "coverageSnapshot": {
+    "path": "/Users/canace/Desktop/projects/BOB/assets/source/whalefall-v5-2-complete/coverage.json",
+    "sha256": "7cd9a7850675cb5b90e9e969249c4c2bf8523adfa41221e7485b1cf5003e6f1b",
+    "updatedAt": "2026-10-27T03:45:33.446Z",
+    "requirementCount": 103
+  },
+  "sources": [
+    {
+      "path": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-sources/simple.txt",
+      "sha256": "10d4e7b137fd75a0a6868874d70f48cc24f2c67dbf34739d491444c76a95a22c"
+    },
+    {
+      "path": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-sources/full.txt",
+      "sha256": "76a557acaf579f30b3e2e9b84371a3d10369dbede12e60199c30b133a3f128cb"
+    }
+  ],
+  "conclusion": "2个审查新增必需静态形状均已出图并目检：R5-05鲸投影、R3孔鳗黏液弹体。未发现第三个必需静态形状遗漏。10项UI和10项FX状态组合规则已明确；root仍需把新增需求及两件图导入最终coverage并复验，完整动画/玩法/用户验收不在本报告内。",
+  "findings": [
+    {
+      "id": "GAP-01",
+      "severity": "required-static",
+      "status": "static-candidate-generated-and-reviewed",
+      "requirementId": "fx-migration-projection",
+      "relatedRequirementIds": [
+        "migration-memory",
+        "ui-dialogue-memory",
+        "r5-ear-soft-tissue"
+      ],
+      "rooms": [
+        "R5-05"
+      ],
+      "title": "迁徙记忆鲸群投影未独立登记",
+      "evidence": [
+        {
+          "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-sources/full.txt",
+          "lines": [
+            1444,
+            1445
+          ],
+          "quote": "记忆鲸群明确为投影；Keep a translucent migration-memory projection of tiny whales and very faint luminous sound arcs."
+        },
+        {
+          "image": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png",
+          "visual": "原画中白蓝半透明鲸群处于骨板前，无实体碰撞。"
+        }
+      ],
+      "reason": "migration-memory 是可拾取记忆片；r5-echo-wall-revealed 是骨面声纹；声环与粒子不能组成鲸形轮廓。",
+      "minimalFix": "新增一只完整透明鲸投影，实例缩放/位置/透明度构成群；声弧可复用既有空心环。",
+      "owner": "full_scene_inventory",
+      "outputIds": [
+        "migration-whale-projection"
+      ],
+      "acceptance": "须保留无实体质感的完整鲸形，透明背景，独立开关，不画活鲸占据真实水道，不将鲸骨误画为另一具鲸尸。",
+      "resolvedBy": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/migration-whale-projection.png",
+      "qaEvidence": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/region-assembly/migration-projection-qa.json"
+    },
+    {
+      "id": "GAP-02",
+      "severity": "required-static",
+      "status": "static-candidate-generated-and-shape-reviewed",
+      "requirementId": "fx-eel-mucus",
+      "relatedRequirementIds": [
+        "blind-eel",
+        "r3-hazard-surfaces",
+        "fx-danger-telegraph"
+      ],
+      "rooms": [
+        "R3-02",
+        "R3-04"
+      ],
+      "title": "孔鳗直线黏液攻击缺独立弹体/短束",
+      "evidence": [
+        {
+          "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-sources/full.txt",
+          "lines": [
+            684,
+            687
+          ],
+          "quote": "鼓囊0.75秒后直线黏液，露头恢复0.8秒；空壳挡线，吐完再接近。"
+        },
+        {
+          "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-sources/simple.txt",
+          "lines": [
+            162,
+            162
+          ],
+          "quote": "孔口出现黏液与涟漪后伸头封路。"
+        }
+      ],
+      "reason": "mucus-hazard-surface 经目检含完整槽体与地形下沿；缩放/旋转不能使其成为空中黏液发射物。fx-danger-line 只表示预告方向。",
+      "minimalFix": "新增一件透明黏液弹体/短束，用位移/拉伸实现直线攻击；口部涟漪复用空心声环并减弱亮度。",
+      "owner": "root",
+      "outputIds": [
+        "eel-mucus-projectile"
+      ],
+      "acceptance": "发射物形状与预告区分；不能带地形槽体；留给后续动画/玩法阶段实现遮挡和计时。",
+      "resolvedBy": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/supplement/eel-mucus-projectile.png",
+      "sha256": "040e968bb8137fc05fcec7638e8b3020e59f5a1f49fed2293af5ec88bae172f1",
+      "review": "独立目检为黏液弹体/拉丝尾迹，无地形槽体；1964×801 RGBA alpha 0–255。由root完成统一边缘/场景与索引导入复验。"
+    }
+  ],
+  "uiFxStateRules": [
+    {
+      "requirementId": "ui-map",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "已走实线",
+        "可见未达虚线",
+        "未知留白",
+        "当前地点",
+        "营地与旅行节点图标",
+        "已发现门的缺项提示"
+      ],
+      "staticComponents": [
+        "ui-panel-frame",
+        "ui-map-player",
+        "ui-map-camp",
+        "ui-map-travel",
+        "ui-map-door",
+        "ui-map-memory"
+      ],
+      "compositionRule": "依据房间图数据画轮廓与连接线；已走实线，可见未达虚线，未知不绘制。节点图标附房名/门缺项文本；当前地点高亮，不能凭图标绘制结果声称路径状态已接入。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-module-camp",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "运动槽",
+        "共鸣槽",
+        "六模块图标",
+        "选中/不可用/已装备反馈"
+      ],
+      "staticComponents": [
+        "ui-panel-frame",
+        "ui-slot-frame",
+        "ui-slot-selected",
+        "ui-motion-slot",
+        "bone-resonator",
+        "module-steady-foot",
+        "module-sliding-membrane",
+        "module-tether",
+        "module-round-chamber",
+        "module-reverberation",
+        "module-quiet-fungus"
+      ],
+      "compositionRule": "两类各3模块；选中叠边框，已装备叠勾号/文字，未获得降饱和+锁定文本；运动标记复用ui-motion-slot，共鸣类别可复用独立骨鸣器缩略图。角色展示复用主角静态，不另做无需求依据的UI专属人物。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-pause-settings",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "面板",
+        "设置/音量/音乐/亮度/手柄符号",
+        "滑杆",
+        "按键重绑定框"
+      ],
+      "staticComponents": [
+        "ui-panel-frame",
+        "ui-keycap",
+        "ui-slider-track",
+        "ui-slider-thumb",
+        "ui-setting-gear",
+        "ui-setting-volume",
+        "ui-setting-music",
+        "ui-setting-brightness",
+        "ui-setting-controller"
+      ],
+      "compositionRule": "面板九宫格或矢量边框；轨道不动，滑块位置按值变化；禁用靠灰度+文字。键帽中文字/手柄形状由输入映射绘制，不预烘焙E/Q字母。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-life",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "当前/空生命格",
+        "4至6格布局",
+        "碎片进度"
+      ],
+      "staticComponents": [
+        "ui-life-full",
+        "ui-life-empty",
+        "life-fragment"
+      ],
+      "compositionRule": "按上限绘4–6格，当前生命格使用full，其余empty；碎片进度复用life-fragment缩略图+文字n/4，满4更新生命上限，不需要4张进度PNG。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-resonance",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "0至4格",
+        "消耗2格反馈"
+      ],
+      "staticComponents": [
+        "ui-resonance-full",
+        "ui-resonance-empty"
+      ],
+      "compositionRule": "总计4格按值替换；消耗2格仅切换对应两格并用短时alpha反馈。显示状态可完整覆盖，消费时序尚属后续实现。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-pressure",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "4秒余压",
+        "补压恢复",
+        "耗尽提示"
+      ],
+      "staticComponents": [
+        "ui-pressure-full",
+        "ui-pressure-empty"
+      ],
+      "compositionRule": "full置于empty上按剩余压力0–1裁切/遮罩；4秒为计时参数而非4张图。补压恢复填充，耗尽用空槽+文字/短闪。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-interaction",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "E交互",
+        "L灯罩",
+        "Q短击/迎珠",
+        "R重鸣",
+        "依据设备重绑定后的按键符号"
+      ],
+      "staticComponents": [
+        "ui-keycap"
+      ],
+      "compositionRule": "以动作绑定表渲染键帽或手柄符号与短文案；E/L/Q/R仅默认绑定。动态文字/矢量符号足够，不要求全部键位PNG。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-progression",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "A1至A5能力识别",
+        "P/B/S状态",
+        "缺项对应区域/来源"
+      ],
+      "staticComponents": [
+        "ui-ability-dash",
+        "ui-ability-float",
+        "ui-ability-anchor",
+        "ui-ability-parry",
+        "ui-ability-fissure",
+        "ui-progress-pressure",
+        "ui-progress-bone",
+        "ui-progress-silence"
+      ],
+      "compositionRule": "A1–A5与P/B/S分别按获得状态着色/透明度；缺项列已知区域/来源文本，不新增钥匙、货币或全收集锁。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-travel-selection",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "6节点列表",
+        "仅亲访已调律可选",
+        "当前位置"
+      ],
+      "staticComponents": [
+        "ui-panel-frame",
+        "ui-map-player",
+        "ui-map-camp",
+        "ui-map-travel"
+      ],
+      "compositionRule": "6节点列表复用节点图标。可选条件为亲访且B后在节点完成调律；当前位置单独标识，禁用态文字说明原因。图形足够但逻辑需实机验证。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "ui-dialogue-memory",
+      "status": "ui-static-covered-with-composition",
+      "coverageStates": [
+        "NPC对话",
+        "已见门提示",
+        "记忆正文/确认"
+      ],
+      "staticComponents": [
+        "ui-panel-frame",
+        "ui-map-memory"
+      ],
+      "compositionRule": "对话、已见门提示、记忆正文、可跳过字幕用同一面板+排版+确认键帽。R5-05鲸群视觉不是文字弹窗替代，另见GAP-01。",
+      "implementationStatus": "recipe; no UI interaction/runtime acceptance"
+    },
+    {
+      "requirementId": "fx-resonance",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "短击作用范围反馈",
+        "重鸣波纹/命中反馈"
+      ],
+      "staticComponents": [
+        "fx-short-swipe",
+        "fx-heavy-ring",
+        "fx-hit-burst"
+      ],
+      "compositionRule": "短击弧线朝向旋转/镜像并按真实命中范围缩放，重鸣环按半径/alpha扩张；命中复用hit-burst，材质齐备，2段动作和计时不在静态验收内。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-dash-membrane",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "冲刺膜/拖尾",
+        "浮膜展开/收拢",
+        "余压反馈"
+      ],
+      "staticComponents": [
+        "fx-dash-trail",
+        "float-membrane",
+        "ui-pressure-full",
+        "ui-pressure-empty"
+      ],
+      "compositionRule": "冲刺拖尾随方向；浮膜独立挂接主角背部，展开态使用完整膜；收起可隐藏，展开/收拢动作留后续动画，不为每个时刻额外计一张静态。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-anchor-line",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "连接",
+        "拉力",
+        "脱环"
+      ],
+      "staticComponents": [
+        "red-tether-knot",
+        "red-tether-segment",
+        "bone-anchor-ring"
+      ],
+      "compositionRule": "红结固定于端点，红索段沿两点直线或受力曲线重复；连接/拉力/脱环为可见性、曲率、端点变换。必须使用ring挂点，不能用bbox中心代替接触点。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-pearl-telegraph",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "三圈预告",
+        "完整珠环",
+        "回击反馈"
+      ],
+      "staticComponents": [
+        "fx-pearl-rings",
+        "ringed-calcium-pearl",
+        "fx-parry-spark"
+      ],
+      "compositionRule": "三圈预告按0.9秒逐次点亮；完整带环珠实例平移，迎击时闪线叠加；环不以碎片替代。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-danger-telegraph",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "方向线",
+        "表面形变",
+        "亮钳",
+        "落壳落点",
+        "合震标带",
+        "群流锁线"
+      ],
+      "staticComponents": [
+        "fx-danger-line",
+        "fx-danger-landing",
+        "fx-short-swipe",
+        "fx-heavy-ring"
+      ],
+      "compositionRule": "方向锁线/合震标带旋转与长度对应伤害区；落壳/落点用椭圆缩放。亮钳、亮足应使用指定部位mask或骨骼子层着色，不能整只无差别发光；表面形变由对应地形形变或轮廓曲线实现，现阶段尚无动画验收。孔鳗独立黏液见GAP-02。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-echo-ring",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "旧位空心圈",
+        "1.4秒延迟攻击",
+        "胜后静默2秒合拢"
+      ],
+      "staticComponents": [
+        "fx-echo-open-ring",
+        "fx-silence-ring",
+        "fx-short-swipe"
+      ],
+      "compositionRule": "旧位保存world坐标绘空心圈，1.4秒后复用攻击弧线执行延迟攻击，不复制主角；胜后2秒静默缩拢环。环可组成预告/完成状态，时序待实现。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-fissure-warning",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "开放提示",
+        "闭合前闪轮廓"
+      ],
+      "staticComponents": [
+        "fx-fissure-outline",
+        "soft-membrane-fissure-closed",
+        "soft-membrane-fissure-open"
+      ],
+      "compositionRule": "双瓣开/关为已制状态，预闭合叠轮廓并闪alpha；占用中维持open并延迟计时，不要求第三张同形图。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-underwater-atmosphere",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "景深悬粒",
+        "有方向流粒",
+        "薄雾",
+        "封闭琥珀菌光",
+        "冷光透射"
+      ],
+      "staticComponents": [
+        "fx-particle-soft",
+        "fx-particle-drift",
+        "fx-cold-beam",
+        "fx-fungus-glow",
+        "fx-water-mist"
+      ],
+      "compositionRule": "粒子实例、尺寸、颜色、alpha和速度随所在景深；方向流粒反映水流变化，酸性沉积只染色/密度调整。菌灯光源随灯罩开关，闭罩隐藏光层；避免新造火焰或鲸体呼吸。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-hit-recovery",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "受击",
+        "失败保护",
+        "重新出发"
+      ],
+      "staticComponents": [
+        "fx-hit-burst",
+        "fx-recovery-motes"
+      ],
+      "compositionRule": "受击短闪复用hit-burst，失败保护使用短时alpha+无敌计时，重新出发/调息复用微光；主角受击姿态属于后续动画，不能称已完成。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    },
+    {
+      "requirementId": "fx-habitat-response",
+      "status": "static-covered-with-composition-except-listed-gaps",
+      "coverageStates": [
+        "幼菌亮起",
+        "孔瓣规律开合",
+        "红冠舒展",
+        "幼体进入低速槽"
+      ],
+      "staticComponents": [
+        "fx-fungus-glow",
+        "fx-recovery-motes",
+        "habitat-shell-nest",
+        "habitat-fungus-bed",
+        "habitat-larva-trough",
+        "red-crown-colony",
+        "red-crown-colony-restored",
+        "sea-larva",
+        "nursery-valve-leaf",
+        "habitat-shade",
+        "r3-shell-nest-before",
+        "r3-shell-nest-after",
+        "tail-flow-shutter"
+      ],
+      "compositionRule": "H1放空壳后显示幼体；H2壳托调平+孔瓣旋转；H3遮光片转暗+幼菌glow；H4使用壳巢before/after明确壳口变化；H5移走压冠壳+红冠restored；H6转遮流瓣+幼体位置进入槽。六支线分别使用对应物件组合，不把3个栖息地底座当成6种状态。",
+      "implementationStatus": "static material only; timing/animation not accepted"
+    }
+  ],
+  "crossGroupStateRules": [
+    {
+      "requirementId": "permanent-latches",
+      "staticConclusion": "组件分层可覆盖前/后侧，无需新增反面PNG",
+      "evidence": "已读props manifest purpose/attachmentPoints，并目检blowhole/gut/ear三个闭合门体：把手和红结没有烘焙进门体。耳门圆片为锁环附着底座。",
+      "rule": "喷气孔可操作侧叠骨环，须门侧省略；胃侧可操作侧叠red-tether-knot，胃枢侧省略；耳门两侧均可有锁环，最后静默可操作侧额外叠拉结。使用attachmentPoints，不镜像假造反面。",
+      "sourceLines": [
+        108,
+        660,
+        1262
+      ],
+      "qaStatus": "props代理确认composition-qa.json五项通过，已目检doors-composition-board.png；7开放通道alpha=0",
+      "recipeFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/components-recipe.json",
+      "qaFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/composition-qa.json"
+    },
+    {
+      "requirementId": "settlement-valve",
+      "staticConclusion": "独立旋柄/扳片/遮流瓣+底座+三档刻线可覆盖",
+      "rule": "pressure handle以人工hub为pivot旋转到3档；bypass lever切2姿态；tail-flow-shutter旋开。档位应有刻线/方向信号，不只靠颜色。"
+    },
+    {
+      "requirementId": "floating-platform",
+      "staticConclusion": "不同停靠位置为同一平台实例平移",
+      "rule": "压力三档与质量两档改变Y坐标，保持比例和碰撞一致，不重复生成五张同图。"
+    },
+    {
+      "requirementId": "shell-mass-seat",
+      "staticConclusion": "空座与放壳通过组合覆盖",
+      "rule": "empty-shell只在已放壳显示，按接触点落座；empty-shell不等同贝驮角色。"
+    },
+    {
+      "requirementId": "bone-sound-node",
+      "staticConclusion": "一个基底+声环/光效+文字可以覆盖3态",
+      "rule": "未发现不显示地图节点，亲访未调律显示暗基底，已调律叠暖/冷声环。不能通过新图规避先亲访再调律的逻辑。"
+    },
+    {
+      "requirementId": "progress-three-slots",
+      "staticConclusion": "3空槽基底+3进度图标/光效即可覆盖8种组合",
+      "rule": "P/B/S逐槽独立开关，全部满足再同步；不额外要求八张组合图。"
+    },
+    {
+      "requirementId": "scene-water-depth",
+      "staticConclusion": "6独立L0与6透明L1已消除此前分层缺口",
+      "rule": "L0 k=.10、L1 k=.25；canvas宽32U，完整画布中心对齐。5新增+1既有整合背景仅可选fallback，不能再据其声称独立L0/L1。六代表拼装只验证组件和比例，不证明36房路线或长过渡已施工。"
+    },
+    {
+      "requirementId": "r4-thin-bone",
+      "staticConclusion": "完整、裂纹、断裂有独立静态状态",
+      "rule": "共享原画布与安装点；断裂碎片为实际形变状态，不能用透明度代替。过渡动作尚未制作。"
+    },
+    {
+      "requirementId": "r3-shell-nests-traces",
+      "staticConclusion": "迁居前后壳口朝向已单列",
+      "rule": "同一位置切换before/after，保持壳巢规模；不要为每个房间新增同类摆放图。"
+    },
+    {
+      "requirementId": "r5-ear-soft-tissue",
+      "staticConclusion": "覆膜遮盖/退去后骨面声纹有两静态状态",
+      "rule": "切换covered/revealed；两源图宽相差1px，世界安装点需对齐，不能直接宣称逐帧动画一致。鲸记忆投影仍须另层。"
+    }
+  ],
+  "structuralCheck": {
+    "missingOutputIdsInReadManifests": [],
+    "note": "仅检查已规划ID，不能发现未列入需求表的形状；因此即使缺失列表为空也不能据此声称全量完成。"
+  },
+  "metadataCorrections": [
+    {
+      "requirementId": "tide-picker",
+      "issue": "note仍称当前只有右向PNG，但outputIds包含已生成tide-picker-left",
+      "recommended": "把历史基线描述改成当前左右基础静态已补齐；动作/动画仍待制作。"
+    },
+    {
+      "requirementId": "scene-water-depth",
+      "issue": "note保留旧的整合背景不足说明",
+      "recommended": "保留历史限制但附独立6L0+6L1现已交付，不能混淆fallback与独立层。"
+    }
+  ],
+  "acceptanceBoundaries": [
+    "这是全量静态需求复核，不是动画/玩法交互验收。",
+    "六区代表拼装和每件尺寸板覆盖不等于36房结构、碰撞、跳跃可达性或长距离过渡已验收。",
+    "演员攻击姿态与时序按用户确认留待动画阶段；独立攻击物体不能因此漏掉。",
+    "面板、图标、样式和状态配方齐备不等于游戏UI已接线。",
+    "最终美术验收仍由root整体验证和用户确认，不在子代理报告中伪称通过。"
+  ],
+  "reviewCases": [
+    {
+      "case": "R5-05投影与可拾取记忆片分开",
+      "expected": "既有芯片不消失为投影；鲸轮廓可独立开关与复制，无实体碰撞。"
+    },
+    {
+      "case": "R3孔鳗吐出攻击物",
+      "expected": "独立黏液从口部直线移动，不携带地形；预告与发射物形状明确区分。"
+    },
+    {
+      "case": "全UI状态",
+      "expected": "地图3路线态、模块3反馈态、4–6生命/0–4蓄振/压力0–1、可重绑键和6旅行节点均可由配方显示。"
+    },
+    {
+      "case": "六生态支线前后",
+      "expected": "放壳/转遮片/调平/壳口朝向/红冠舒展/幼体进入槽分别变化，奖励不重复且主路不被新增挡住。"
+    },
+    {
+      "case": "独立景深与单向闩",
+      "expected": "L0/L1完整画布独立位移；近侧门缺控制件，远侧控制件对齐挂点，前后态不靠假镜像。"
+    }
+  ],
+  "resolvedStaticShapeGapCount": 2,
+  "additionalUnresolvedStaticShapeGaps": [],
+  "recheckedAt": "2026-10-27T06:00:14.085883+00:00",
+  "finalBuildCheck": {
+    "expectedNewRequirementIds": [
+      "fx-migration-projection",
+      "fx-eel-mucus"
+    ],
+    "expectedNewOutputIds": [
+      "migration-whale-projection",
+      "eel-mucus-projectile"
+    ],
+    "status": "pending-root-build",
+    "note": "初始103项快照保持可追溯；root更新后预期为105项，但不能把此预期当已读取结果。"
+  }
+}

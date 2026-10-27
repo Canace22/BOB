@@ -1,0 +1,1820 @@
+{
+  "frames": {
+    "ui-panel-frame": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 512,
+        "h": 512
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 512
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-panel-frame/base.png",
+        "originalSha256": "dbdb4247f82c122abe5f07e457f1aaa190b97167ebf3653c3db7ffdd05bf4bad",
+        "originalSize": {
+          "w": 512,
+          "h": 512
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 512
+        },
+        "originalPivot": [
+          256,
+          256
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 256.0,
+          "y": 256.0
+        },
+        "nineSlice": [
+          36,
+          36,
+          36,
+          36
+        ],
+        "coversRequirementIds": [
+          "ui-map",
+          "ui-module-camp",
+          "ui-pause-settings",
+          "ui-travel-selection",
+          "ui-dialogue-memory"
+        ]
+      }
+    },
+    "ui-slider-track": {
+      "frame": {
+        "x": 524,
+        "y": 4,
+        "w": 256,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-slider-track/base.png",
+        "originalSha256": "250418f6471361bfda31005cc18d372576b8299cc4038745acd26faa64d72a92",
+        "originalSize": {
+          "w": 256,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 128
+        },
+        "originalPivot": [
+          128,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 128.0,
+          "y": 64.0
+        },
+        "nineSlice": [
+          20,
+          0,
+          20,
+          0
+        ],
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-ability-anchor": {
+      "frame": {
+        "x": 788,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-ability-anchor/base.png",
+        "originalSha256": "66741c3a4f161802faf67fc35095337bf0d03074ca318c08a7cff7f70b572bd0",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-ability-dash": {
+      "frame": {
+        "x": 924,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-ability-dash/base.png",
+        "originalSha256": "9a55fe3e170cf542bdc13f32ffd730a61ddf953f8e8a9b825922de27bb1330ec",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-ability-fissure": {
+      "frame": {
+        "x": 1060,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-ability-fissure/base.png",
+        "originalSha256": "4473a62a441fdba1d54161a04d9e1ef7d79890722355f503f732aac92a176083",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-ability-float": {
+      "frame": {
+        "x": 1196,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-ability-float/base.png",
+        "originalSha256": "10a47338415d714c5d6b03512b5769ed7928a31f826f2c2c06531c975516daa9",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-ability-parry": {
+      "frame": {
+        "x": 1332,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-ability-parry/base.png",
+        "originalSha256": "bf479854d210cf2f21d37824ad44b03b75c3f865edd560ea926f16ed396209c9",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-keycap": {
+      "frame": {
+        "x": 1468,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-keycap/base.png",
+        "originalSha256": "a785ed2767e560d85e5b6ba1eeb5c0e026d5d4592cf5743c4bb28dd2d6f3bff3",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "nineSlice": [
+          30,
+          32,
+          30,
+          32
+        ],
+        "coversRequirementIds": [
+          "ui-interaction",
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-life-empty": {
+      "frame": {
+        "x": 1604,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-life-empty/base.png",
+        "originalSha256": "d3cee9f8eb65293887f55c87c9e0bd8963521fdcae3281fcd5cbf88be0f70ed1",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-life"
+        ]
+      }
+    },
+    "ui-life-full": {
+      "frame": {
+        "x": 1740,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-life-full/base.png",
+        "originalSha256": "53bc3a18f524ea05e2c02260a18ae36d185812dc95e8bbe6ebd0958a9b403806",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-life"
+        ]
+      }
+    },
+    "ui-map-camp": {
+      "frame": {
+        "x": 1876,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-map-camp/base.png",
+        "originalSha256": "cf0d2eda7ffde242d1c7ab676209c4e916d56119843cec054469df22b64a827d",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-map",
+          "ui-travel-selection"
+        ]
+      }
+    },
+    "ui-map-door": {
+      "frame": {
+        "x": 2012,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-map-door/base.png",
+        "originalSha256": "23006b6cd79fc1cd09621880ded6c6bbddeb9ba794ffc63b52011a1a59dcdd24",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-map"
+        ]
+      }
+    },
+    "ui-map-memory": {
+      "frame": {
+        "x": 2148,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-map-memory/base.png",
+        "originalSha256": "a3dfeb588051cf6193aa12bba6afdc386b102eafe02c23373c216c199d933358",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-map",
+          "ui-dialogue-memory"
+        ]
+      }
+    },
+    "ui-map-player": {
+      "frame": {
+        "x": 2284,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-map-player/base.png",
+        "originalSha256": "cd740d1107fe1dd5ba6f07fd09628ee6dc6a64b31fd9b5d80d1b101192d75db3",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-map",
+          "ui-travel-selection"
+        ]
+      }
+    },
+    "ui-map-travel": {
+      "frame": {
+        "x": 2420,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-map-travel/base.png",
+        "originalSha256": "fdf21dcc80e74be9dd9f2aafa215f3a716958e83e77b84684b517971bb006b98",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-map",
+          "ui-travel-selection"
+        ]
+      }
+    },
+    "ui-motion-slot": {
+      "frame": {
+        "x": 2556,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-motion-slot/base.png",
+        "originalSha256": "a8783c84b2530b378d5ef5bbfce17c818ca350ce4d86dde639466a0375776621",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-module-camp"
+        ]
+      }
+    },
+    "ui-pressure-empty": {
+      "frame": {
+        "x": 2692,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-pressure-empty/base.png",
+        "originalSha256": "b82277866e1bc4a2d5be6d245b4cf44a8bd7d4f233c419d2cc3735090b4935df",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pressure"
+        ]
+      }
+    },
+    "ui-pressure-full": {
+      "frame": {
+        "x": 2828,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-pressure-full/base.png",
+        "originalSha256": "01c74b66b2cfa5be2bb686da269fbeda7cd202e97295dce6d0d1201ab74012f7",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pressure"
+        ]
+      }
+    },
+    "ui-progress-bone": {
+      "frame": {
+        "x": 2964,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-progress-bone/base.png",
+        "originalSha256": "40a868bb636dcd5d79ccc43d07ea276bd3456ebf098a603b0610b73f2dfb6e35",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-progress-pressure": {
+      "frame": {
+        "x": 3100,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-progress-pressure/base.png",
+        "originalSha256": "20135f79df5be5e9f569b6d2abad2c8399d63477a44c3299dedf0ffe0ed58c88",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-progress-silence": {
+      "frame": {
+        "x": 3236,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-progress-silence/base.png",
+        "originalSha256": "73b1edee895333b2d730557eb2ea259af433513366569b1525339be05d123065",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-progression"
+        ]
+      }
+    },
+    "ui-resonance-empty": {
+      "frame": {
+        "x": 3372,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-resonance-empty/base.png",
+        "originalSha256": "2a3ec87f2a4a840077b1a2551381b0ccd13b27bdd702ac67f24b37e425296240",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-resonance"
+        ]
+      }
+    },
+    "ui-resonance-full": {
+      "frame": {
+        "x": 3508,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-resonance-full/base.png",
+        "originalSha256": "711cf9e040c58c48a7c0f86e72ca6d60894f074847debc0399a70bace08927c9",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-resonance",
+          "ui-module-camp"
+        ]
+      }
+    },
+    "ui-setting-brightness": {
+      "frame": {
+        "x": 3644,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-setting-brightness/base.png",
+        "originalSha256": "c8ce0bd7e90378a45828dad98cb2f3ffca404a65fa2cf28553db86193d378c9b",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-setting-controller": {
+      "frame": {
+        "x": 3780,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-setting-controller/base.png",
+        "originalSha256": "b813221fc111a3618ee764408e1f92d0bfdaafd14df94aac8108d5d3fd3f85eb",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-setting-gear": {
+      "frame": {
+        "x": 3916,
+        "y": 4,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-setting-gear/base.png",
+        "originalSha256": "b8a0463179bbfb94a0b0a2cf0e1dadc964a019b5701487e79d1e64578b2850f4",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-setting-music": {
+      "frame": {
+        "x": 4,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-setting-music/base.png",
+        "originalSha256": "3379c94ca8aba6be2165880e9260a4a5eacccafc1e0a583b566f74070a139da7",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-setting-volume": {
+      "frame": {
+        "x": 140,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-setting-volume/base.png",
+        "originalSha256": "134c353abe55ce6ead731d716727266d048c717cab861fd6f391b65a8f6d0fa3",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-slider-thumb": {
+      "frame": {
+        "x": 276,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-slider-thumb/base.png",
+        "originalSha256": "155cd033210370ff7f2fc6f8e4234022d32628e85ba9f6f167ed64078391814d",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "ui-pause-settings"
+        ]
+      }
+    },
+    "ui-slot-frame": {
+      "frame": {
+        "x": 412,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-slot-frame/base.png",
+        "originalSha256": "822a194485dbda4eb95f61b89081f01b4a3fe4ae10301a7f8538042f48b78125",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "nineSlice": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "coversRequirementIds": [
+          "ui-module-camp"
+        ]
+      }
+    },
+    "ui-slot-selected": {
+      "frame": {
+        "x": 548,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-slot-selected/base.png",
+        "originalSha256": "56e35c038a2c043ed0fe17d7b2fd1d6538cd30fc9d3ad1f765ba6683b7d8e8ff",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "nineSlice": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "coversRequirementIds": [
+          "ui-module-camp"
+        ]
+      }
+    },
+    "ui-valve-three-ticks": {
+      "frame": {
+        "x": 684,
+        "y": 524,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "bob": {
+        "originalFile": "assets/runtime/sprites/ui-valve-three-ticks/base.png",
+        "originalSha256": "199017fd1fea85d5819bda3c75ac7edcecd1d78dbd7dec1360757376c253ff3b",
+        "originalSize": {
+          "w": 128,
+          "h": 128
+        },
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        "originalPivot": [
+          64,
+          64
+        ],
+        "world": null,
+        "pixelsPerUnit": 128,
+        "scaleFactor": 1.0,
+        "resizeKernel": "none",
+        "spriteType": "static",
+        "pivotSpace": "frame-normalized",
+        "framePivot": {
+          "x": 64.0,
+          "y": 64.0
+        },
+        "coversRequirementIds": [
+          "settlement-valve"
+        ]
+      }
+    }
+  },
+  "animations": {},
+  "meta": {
+    "app": "BOB multi-page static atlas",
+    "image": "ui-001.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 4096,
+      "h": 1024
+    },
+    "group": "ui",
+    "type": "static-atlas",
+    "pixelsPerUnit": 128,
+    "padding": 4,
+    "extrusion": 2,
+    "note": "Independent static assets; no animation frames. World assets contain normalized visible crops; UI retains native canvas. Original pixels and pivot are in bob."
+  }
+}

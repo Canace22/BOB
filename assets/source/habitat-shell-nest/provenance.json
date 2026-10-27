@@ -1,0 +1,124 @@
+{
+  "id": "habitat-shell-nest",
+  "name": "壳窝生态基座",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "H1/H4 空壳安放生态基座；移动空壳保持独立，可制作前后状态 recipe。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/habitat-shell-nest/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    56,
+    198,
+    1718,
+    748
+  ],
+  "pivot": [
+    887.0,
+    748
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 2.0,
+    "visibleHeightU": 0.6619,
+    "canvasWidthU": 2.1348,
+    "canvasHeightU": 1.0674
+  },
+  "sha256": "3d9d517624fe375e7f84949c6fd5612a43788d32580e4ee57113a103bc2108ea",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      9,
+      1738,
+      887
+    ],
+    "8": [
+      56,
+      198,
+      1718,
+      748
+    ],
+    "32": [
+      56,
+      200,
+      1717,
+      748
+    ],
+    "128": [
+      57,
+      201,
+      1717,
+      747
+    ],
+    "248": [
+      58,
+      206,
+      1715,
+      745
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/11_R1-05.png"
+    ],
+    "prompts": [
+      "assets/source/habitat-shell-nest/habitat-shell-nest.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "H1/H4 空壳安放生态基座；移动空壳保持独立，可制作前后状态 recipe。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "shared-habitat-beds"
+  ],
+  "parts": [],
+  "attachmentPoints": {
+    "shellSeat": {
+      "pixel": [
+        887,
+        492
+      ],
+      "role": "空壳底部落点，位于壳窝中央凹槽"
+    },
+    "status": "手工目检建议点；需recipe同尺度合成复核"
+  },
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/habitat-shell-nest-3d9d517624fe.png",
+  "familyId": "shared-habitat-beds",
+  "variant": "static"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "fat-slow-surface",
+  "name": "减速脂面",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3-04 减速脂面；减速区域叠于碰撞地形上。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fat-slow-surface/base.png",
+  "width": 2019,
+  "height": 779,
+  "bbox": [
+    56,
+    272,
+    1965,
+    546
+  ],
+  "pivot": [
+    1010.5,
+    546
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.4306,
+    "canvasWidthU": 3.1729,
+    "canvasHeightU": 1.2242
+  },
+  "sha256": "b6015641246ee92cbeb4cf57e405e007d21d4ece39b6f1b72bd1335c58293ca4",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      32,
+      2005,
+      753
+    ],
+    "8": [
+      56,
+      272,
+      1965,
+      546
+    ],
+    "32": [
+      56,
+      272,
+      1964,
+      546
+    ],
+    "128": [
+      57,
+      273,
+      1964,
+      545
+    ],
+    "248": [
+      59,
+      275,
+      1962,
+      544
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/25_R3-04.png"
+    ],
+    "prompts": [
+      "assets/source/fat-slow-surface/fat-slow-surface.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3-04 减速脂面；减速区域叠于碰撞地形上。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-hazard-surfaces"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fat-slow-surface-b6015641246e.png",
+  "familyId": "r3-hazard-surfaces",
+  "variant": "static"
+}

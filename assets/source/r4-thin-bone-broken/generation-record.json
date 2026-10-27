@@ -1,0 +1,114 @@
+{
+  "id": "r4-thin-bone-broken",
+  "name": "薄骨片破落态",
+  "coversRequirementIds": [
+    "r4-thin-bone"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/37_R4-07.png"
+  ],
+  "region": "R4",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.7653,
+    "canvasWidthU": 5.2438,
+    "canvasHeightU": 1.7479
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "broken",
+  "rooms": [
+    "R4-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "断裂态中央明确断开，下方恰有两块同材质碎片；同画布，碎片是该静态破损状态的一部分，碰撞只按残留两端。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r4-thin-bone-broken.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-49020fbd-4754-4313-a866-db87d16f8fe1.png",
+  "width": 2172,
+  "height": 724,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      57,
+      2123,
+      585
+    ],
+    "8": [
+      50,
+      251,
+      2121,
+      568
+    ],
+    "32": [
+      52,
+      253,
+      2120,
+      567
+    ],
+    "128": [
+      52,
+      254,
+      2120,
+      567
+    ],
+    "248": [
+      53,
+      255,
+      2119,
+      566
+    ]
+  },
+  "sha256": "5713cf9910db71d343ce0505292a83ddd955d530da501977db74abdf1dc92e67",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r4-thin-bone-broken.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit this exact transparent 2D game bone plank to its BROKEN static state. Keep exact 2172x724 canvas, the original LEFT and RIGHT endpoints at exactly their original positions, the top contact baseline outside center, original material, colors and brushwork. The center 22 percent of the plank has snapped away leaving a clear TRANSPARENT GAP between the left and right surviving ends with jagged broken tips. Place exactly two matching small broken fragments immediately below this central gap as part of this single broken-platform state, clearly separated from the top contact line, no extra fragments elsewhere. This is ONE state sprite, not a sheet, not animation frames. Preserve space around the full broken object; no dust or motion effects, no rope or new objects. Real transparent background. Make interruption of walkable line unmistakable.",
+    "referenced_image_paths": [
+      "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-259c68b3-4ee9-4a21-8fbc-c6fca944f18e.png"
+    ],
+    "transparent_background": true
+  },
+  "stateReference": "r4-thin-bone",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r4-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    50,
+    251,
+    2121,
+    568
+  ],
+  "alphaStats": {
+    "zero": 1286142,
+    "semi8to247": 12161,
+    "nearOpaque": 262923,
+    "total": 1572528
+  },
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 0.7653,
+    "canvasWidthU": 5.2438,
+    "canvasHeightU": 1.7479
+  },
+  "pivot": [
+    1085.5,
+    568
+  ]
+}

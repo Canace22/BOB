@@ -1,0 +1,120 @@
+{
+  "id": "blowhole-latch-open",
+  "name": "喷气孔闩·开放",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/blowhole-latch-open/base.png",
+  "width": 1024,
+  "height": 1536,
+  "bbox": [
+    125,
+    35,
+    903,
+    1469
+  ],
+  "pivot": [
+    514.0,
+    1469
+  ],
+  "world": {
+    "axis": "height",
+    "units": 2.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.3563,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 1.7852,
+    "canvasHeightU": 2.6778
+  },
+  "sha256": "33a7655597039c6b776b39c24ab34c38f43daaf688d9ff1ff5fedb48d84bcd8b",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      41,
+      33,
+      1004,
+      1514
+    ],
+    "8": [
+      125,
+      35,
+      903,
+      1469
+    ],
+    "32": [
+      125,
+      36,
+      902,
+      1468
+    ],
+    "128": [
+      125,
+      36,
+      902,
+      1468
+    ],
+    "248": [
+      127,
+      38,
+      900,
+      1467
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/19_R2-05.png",
+      "assets/source/whalefall-v5-2-complete/references/28_R3-07.png",
+      "assets/source/whalefall-v5-2-complete/references/44_R5-05.png"
+    ],
+    "prompts": [
+      "assets/source/blowhole-latch-open/blowhole-latch-open.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "喷气孔门开放静态；保持门框供两态注册，通道需alpha透明；动作后置。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "permanent-latches"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/blowhole-latch-open-33a765559703.png",
+  "familyId": "permanent-latches"
+}

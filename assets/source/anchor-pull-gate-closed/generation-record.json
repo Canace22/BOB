@@ -1,0 +1,115 @@
+{
+  "id": "anchor-pull-gate-closed",
+  "familyId": "anchor-pull-gate",
+  "name": "锚定拉闸·闭合",
+  "scale": {
+    "axis": "height",
+    "units": 3.0
+  },
+  "coversRequirementIds": [
+    "anchor-pull-gate"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/anchor-pull-gate-closed.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/anchor-pull-gate-closed.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/31_R4-01.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R4-01",
+  "dimensions": [
+    1138,
+    1382
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    204,
+    99,
+    935,
+    1287
+  ],
+  "pivot": [
+    569.5,
+    1287
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "d782e37c206383602c9257241e41a020e58b3ecb1cd08d39efaf2762e5fa98de",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "组合拉闸门体闭合；环/红索/强流独立复用，不把P状态烘焙为新钥匙。",
+    "transparentPixels": 868173,
+    "totalPixels": 1572716,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "pullRing": {
+      "pixel": [
+        569,
+        135
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "组合拉闸门体闭合；环/红索/强流独立复用，不把P状态烘焙为新钥匙。",
+  "world": {
+    "axis": "height",
+    "units": 3.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.846,
+    "visibleHeightU": 3.0,
+    "canvasWidthU": 2.8737,
+    "canvasHeightU": 3.4899
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/anchor-pull-gate-closed.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/31_R4-01.png"
+  ],
+  "productionGroup": "props",
+  "width": 1138,
+  "height": 1382,
+  "alphaBboxes": {
+    "1": [
+      0,
+      17,
+      1118,
+      1382
+    ],
+    "8": [
+      204,
+      99,
+      935,
+      1287
+    ],
+    "32": [
+      204,
+      101,
+      934,
+      1287
+    ],
+    "128": [
+      205,
+      101,
+      934,
+      1286
+    ],
+    "248": [
+      206,
+      102,
+      933,
+      1285
+    ]
+  },
+  "alphaStats": {
+    "zero": 868173,
+    "semi8to247": 7462,
+    "nearOpaque": 687846,
+    "total": 1572716
+  }
+}

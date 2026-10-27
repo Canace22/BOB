@@ -1,0 +1,106 @@
+{
+  "id": "r1-esophagus-fold",
+  "name": "食管纵裂肌壁",
+  "coversRequirementIds": [
+    "r1-esophagus-section"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/11_R1-05.png"
+  ],
+  "region": "R1",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 10.6092,
+    "canvasWidthU": 18.5287,
+    "canvasHeightU": 11.2184
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R1-05"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检纵向肌纹与塌陷壁片，未画鲸须、骨洞或食管大厅；薄丝边需深浅底检查。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-esophagus-fold.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-16887b21-b955-4e3d-b2e9-a5e98a4442e3.png",
+  "width": 1612,
+  "height": 976,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      26,
+      19,
+      1599,
+      976
+    ],
+    "8": [
+      31,
+      28,
+      1597,
+      951
+    ],
+    "32": [
+      32,
+      28,
+      1597,
+      950
+    ],
+    "128": [
+      32,
+      29,
+      1596,
+      950
+    ],
+    "248": [
+      33,
+      32,
+      1592,
+      949
+    ]
+  },
+  "sha256": "fdf3ab2c01e635835d5710a4153903c0decbffc8e5db789aab6c1ae0d5d41f1b",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-esophagus-fold.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    31,
+    28,
+    1597,
+    951
+  ],
+  "alphaStats": {
+    "zero": 980850,
+    "semi8to247": 36325,
+    "nearOpaque": 531940,
+    "total": 1573312
+  },
+  "world": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 10.6092,
+    "canvasWidthU": 18.5287,
+    "canvasHeightU": 11.2184
+  },
+  "pivot": [
+    814.0,
+    951
+  ]
+}

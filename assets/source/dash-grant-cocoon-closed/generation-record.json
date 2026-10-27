@@ -1,0 +1,105 @@
+{
+  "id": "dash-grant-cocoon-closed",
+  "familyId": "dash-grant-cocoon",
+  "name": "贴流冲膜茧·未承接",
+  "scale": {
+    "axis": "height",
+    "units": 0.9
+  },
+  "coversRequirementIds": [
+    "dash-grant-cocoon"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/dash-grant-cocoon-closed.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/dash-grant-cocoon-closed.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R1-04",
+  "dimensions": [
+    1278,
+    1230
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    380,
+    246,
+    919,
+    1034
+  ],
+  "pivot": [
+    650,
+    1031
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "5dbd097b21a7890f8974f9721a8d4d473a3f5e5150e2e6b3a66fb77313f17df4",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "A1一次授能膜茧闭合；按房间提示词推导，不能扩成5枚能力神器。",
+    "transparentPixels": 1273433,
+    "totalPixels": 1571940,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "A1一次授能膜茧闭合；按房间提示词推导，不能扩成5枚能力神器。",
+  "world": {
+    "axis": "height",
+    "units": 0.9,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.6156,
+    "visibleHeightU": 0.9,
+    "canvasWidthU": 1.4596,
+    "canvasHeightU": 1.4048
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/dash-grant-cocoon-closed.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/10_R1-04.png"
+  ],
+  "productionGroup": "props",
+  "width": 1278,
+  "height": 1230,
+  "alphaBboxes": {
+    "1": [
+      23,
+      19,
+      1240,
+      1230
+    ],
+    "8": [
+      380,
+      246,
+      919,
+      1034
+    ],
+    "32": [
+      381,
+      246,
+      919,
+      1033
+    ],
+    "128": [
+      382,
+      247,
+      918,
+      1032
+    ],
+    "248": [
+      383,
+      248,
+      917,
+      1031
+    ]
+  },
+  "alphaStats": {
+    "zero": 1273433,
+    "semi8to247": 4808,
+    "nearOpaque": 289193,
+    "total": 1571940
+  }
+}

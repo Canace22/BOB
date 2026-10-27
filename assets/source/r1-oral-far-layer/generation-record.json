@@ -1,0 +1,123 @@
+{
+  "id": "r1-oral-far-layer",
+  "name": "口腔上颚远器官层",
+  "coversRequirementIds": [
+    "r1-oral-background"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/06_R1.png"
+  ],
+  "region": "R1",
+  "kind": "background",
+  "scale": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas"
+  },
+  "pivotSuggestion": "canvas-center",
+  "state": "base",
+  "rooms": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-05",
+    "R1-06",
+    "R1-07"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "透明上颚轮廓占据顶部，中心与下半画面透明；少量远鲸须仍只用于口腔。画布周边截切是视差层布局，不能按独立物件裁边。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+    "完整透明画布与独立 L0 对齐已做静态合成；layer=L1, parallax=.25，不进入精灵图集。"
+  ],
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r1-oral-far-layer.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-4f2cac1e-88a1-4e7e-a09a-3842789da701.png",
+  "width": 1671,
+  "height": 941,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1671,
+      867
+    ],
+    "8": [
+      0,
+      0,
+      1671,
+      474
+    ],
+    "32": [
+      0,
+      0,
+      1671,
+      473
+    ],
+    "128": [
+      0,
+      0,
+      1671,
+      472
+    ],
+    "248": [
+      0,
+      0,
+      1671,
+      468
+    ]
+  },
+  "sha256": "444c28bdec59cd848381296eb2f01eec659954c35b34725c598241b1f6e34b5c",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r1-oral-far-layer.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit reference background into ONE isolated transparent FAR ORGAN PARALLAX LAYER for a 2D side-scrolling underwater game inside a dead whale. Preserve reference matte painted gouache style and organ identity. Output landscape16:9 canvas, keep original 1672x941 aspect and composition anchors. This layer contains only 1 or 2 broad perimeter anatomical contours as a single layer, with a large completely transparent center and lower center for gameplay. REMOVE ALL blue water, water rays, bubbles, specks, haze, background wash, floor platforms, near framing, creatures and all props. All empty areas must have genuine zero-alpha transparency, no blue rectangle, no checker pattern. Keep far anatomy muted cool low contrast with soft internal shading but a clean external alpha edge. No bright top ledges that read as gameplay terrain, no cropped gameplay modules. Depict only the following far organ forms: Dead whale upper palate roof and distant oral wall rim mostly along TOP and upper RIGHT, subtle coarse organic ridges in muted indigo-blue. A few short very distant baleen hints only integrated into upper roof, do not make a dense curtain; near baleen is a separate sprite. At least middle60% and bottom50% of canvas entirely empty transparent. No tongue or platforms. Do not retain the water lighting.",
+    "referenced_image_paths": [
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-mouth-depth/background.png"
+    ],
+    "transparent_background": true
+  },
+  "layer": "L1",
+  "parallax": 0.25,
+  "atlasEligible": false,
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 9.0772,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0203
+  },
+  "pivot": [
+    835.5,
+    470.5
+  ],
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r1"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    0,
+    0,
+    1671,
+    474
+  ],
+  "alphaStats": {
+    "zero": 1362403,
+    "semi8to247": 16087,
+    "nearOpaque": 181846,
+    "total": 1572411
+  }
+}

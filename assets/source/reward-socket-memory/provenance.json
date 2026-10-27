@@ -1,0 +1,128 @@
+{
+  "id": "reward-socket-memory",
+  "name": "记忆空槽",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/reward-socket-memory/base.png",
+  "width": 1402,
+  "height": 1122,
+  "bbox": [
+    121,
+    209,
+    1282,
+    989
+  ],
+  "pivot": [
+    701.5,
+    989
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.5,
+    "visibleHeightU": 0.3359,
+    "canvasWidthU": 0.6038,
+    "canvasHeightU": 0.4832
+  },
+  "sha256": "19186dbaa0279470742f56b6f090b7b069f89b106946c7f5bef755f7005ce137",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1380,
+      1098
+    ],
+    "8": [
+      121,
+      209,
+      1282,
+      989
+    ],
+    "32": [
+      121,
+      209,
+      1281,
+      988
+    ],
+    "128": [
+      122,
+      210,
+      1281,
+      988
+    ],
+    "248": [
+      123,
+      211,
+      1279,
+      987
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/09_R1-03.png",
+      "assets/source/whalefall-v5-2-complete/references/24_R3-03.png"
+    ],
+    "prompts": [
+      "assets/source/reward-socket-memory/reward-socket-memory.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Empty memory disc recess with non-glowing carved grooves; preserve story-state distinction.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "reward-socket"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/reward-socket-memory-19186dbaa027.png",
+  "attachmentPoints": {
+    "reward": {
+      "pixel": [
+        702,
+        462
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "reward-socket"
+}

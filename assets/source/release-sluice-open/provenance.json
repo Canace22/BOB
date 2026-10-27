@@ -1,0 +1,118 @@
+{
+  "id": "release-sluice-open",
+  "name": "归海导流闸·开放",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/release-sluice-open/base.png",
+  "width": 1682,
+  "height": 935,
+  "bbox": [
+    57,
+    178,
+    1627,
+    760
+  ],
+  "pivot": [
+    842.0,
+    760
+  ],
+  "world": {
+    "axis": "width",
+    "units": 3.2,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 3.2,
+    "visibleHeightU": 1.1862,
+    "canvasWidthU": 3.4283,
+    "canvasHeightU": 1.9057
+  },
+  "sha256": "a674e89accf0c081bb54ee8d3336bb936b8bd8a7c9be81c1727220ffdf4323d3",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      23,
+      1664,
+      935
+    ],
+    "8": [
+      57,
+      178,
+      1627,
+      760
+    ],
+    "32": [
+      57,
+      179,
+      1627,
+      760
+    ],
+    "128": [
+      57,
+      179,
+      1626,
+      760
+    ],
+    "248": [
+      59,
+      180,
+      1625,
+      759
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/47_R5-08.png"
+    ],
+    "prompts": [
+      "assets/source/release-sluice-open/release-sluice-open.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "释放闸开放静态；透明流槽中央供水流/幼体层穿过。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "release-sluice"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/release-sluice-open-a674e89accf0.png",
+  "familyId": "release-sluice"
+}

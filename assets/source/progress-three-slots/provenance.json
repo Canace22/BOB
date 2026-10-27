@@ -1,0 +1,142 @@
+{
+  "id": "progress-three-slots",
+  "name": "三槽状态装置基底",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/progress-three-slots/base.png",
+  "width": 1305,
+  "height": 1206,
+  "bbox": [
+    346,
+    84,
+    961,
+    1110
+  ],
+  "pivot": [
+    653.5,
+    1110
+  ],
+  "world": {
+    "axis": "height",
+    "units": 2.4,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.4386,
+    "visibleHeightU": 2.4,
+    "canvasWidthU": 3.0526,
+    "canvasHeightU": 2.8211
+  },
+  "sha256": "baeed3e8a7edffc8192164026309154a75f6c06b846f5f230727786e24319c22",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      146,
+      82,
+      1243,
+      1166
+    ],
+    "8": [
+      346,
+      84,
+      961,
+      1110
+    ],
+    "32": [
+      346,
+      86,
+      959,
+      1110
+    ],
+    "128": [
+      347,
+      86,
+      959,
+      1109
+    ],
+    "248": [
+      348,
+      87,
+      958,
+      1109
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/40_R5-01.png",
+      "assets/source/whalefall-v5-2-complete/references/46_R5-07.png"
+    ],
+    "prompts": [
+      "assets/source/progress-three-slots/progress-three-slots.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "三槽物理基底，三个空腔；P/B/S由独立程序符号叠加，非三件新收集物。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "progress-three-slots"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/progress-three-slots-baeed3e8a7ed.png",
+  "attachmentPoints": {
+    "P": {
+      "pixel": [
+        659,
+        338
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "B": {
+      "pixel": [
+        655,
+        620
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    },
+    "S": {
+      "pixel": [
+        657,
+        909
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "progress-three-slots"
+}

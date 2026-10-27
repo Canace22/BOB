@@ -1,0 +1,123 @@
+{
+  "id": "r3-shell-nest-before",
+  "name": "迁居前杂乱壳巢",
+  "coversRequirementIds": [
+    "r3-shell-nests-traces"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/21_R3.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 6,
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.6769,
+    "canvasWidthU": 7.3469,
+    "canvasHeightU": 3.7678
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "before",
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "恰好三只空壳附着一个垫底，无住民或幼体；壳口仍偏朝上，迁居后需明确转向海侧形成可读状态差。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-shell-nest-before.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-51cc1aaf-d957-41e4-b3cb-ea99718ef16a.png",
+  "width": 1751,
+  "height": 898,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      39,
+      25,
+      1727,
+      898
+    ],
+    "8": [
+      156,
+      148,
+      1586,
+      786
+    ],
+    "32": [
+      156,
+      149,
+      1586,
+      785
+    ],
+    "128": [
+      157,
+      150,
+      1585,
+      785
+    ],
+    "248": [
+      159,
+      151,
+      1584,
+      783
+    ]
+  },
+  "sha256": "7050f3d5ada0574b05622e56a1392a572ebf0f8e8b13f2c5e8e78c41d54f6420",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-shell-nest-before.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE compact abandoned shell nest grouping for R3 before relocation, made of exactly THREE empty weathered beige shell cups nestled together on a tiny attached fibrous organic mat. The three shell cups have distinct silhouettes: large oval cup at left, medium rounded cup middle, small broken tapered cup right. In this BEFORE state their open mouths point in three different oblique directions, a disordered nest; no living occupant, legs, claws, eyes, eggs, larvae, glow, food, coins, rope or new objects. Natural fluted shell ridges and tiny worn pits; warm bone-beige, subdued umber interior. One connected grouping as a single 6 hero unit landmark, complete side view. Keep shell openings readable and asymmetrical. Not a crab or a skeletal skull.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3",
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    156,
+    148,
+    1586,
+    786
+  ],
+  "alphaStats": {
+    "zero": 1010358,
+    "semi8to247": 14774,
+    "nearOpaque": 532892,
+    "total": 1572398
+  },
+  "world": {
+    "axis": "width",
+    "units": 6,
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.6769,
+    "canvasWidthU": 7.3469,
+    "canvasHeightU": 3.7678
+  },
+  "pivot": [
+    871.0,
+    786
+  ]
+}

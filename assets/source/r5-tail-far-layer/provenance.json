@@ -1,0 +1,123 @@
+{
+  "id": "r5-tail-far-layer",
+  "name": "尾肌腱远器官层",
+  "kind": "background",
+  "region": "R5尾",
+  "tags": [
+    "R5尾",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-tail-far-layer/background.png",
+  "width": 1671,
+  "height": 941,
+  "bbox": [
+    0,
+    0,
+    1644,
+    431
+  ],
+  "pivot": [
+    835.5,
+    470.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "basis": "layer canvas projection width, not physical organ size",
+    "space": "canvas",
+    "visibleWidthU": 31.4829,
+    "visibleHeightU": 8.2537,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0203
+  },
+  "sha256": "e5305c64fed25d559f0581d77e77a1de37044ff6ee241953fa239c62c8b3ae85",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1657,
+      868
+    ],
+    "8": [
+      0,
+      0,
+      1644,
+      431
+    ],
+    "32": [
+      0,
+      0,
+      1644,
+      431
+    ],
+    "128": [
+      0,
+      0,
+      1644,
+      430
+    ],
+    "248": [
+      0,
+      0,
+      1643,
+      429
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/39_R5-tail.png"
+    ],
+    "prompts": [
+      "assets/source/r5-tail-far-layer/r5-tail-far-layer.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "尾肌束由左上向右延伸，附带无骨尾叶远轮廓；中央下方透明，无鲸须或椎骨。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "background",
+  "coversRequirementIds": [
+    "r5-tail-tendons"
+  ],
+  "rooms": [
+    "R5-07",
+    "R5-08"
+  ],
+  "parallax": 0.25,
+  "layer": "L1",
+  "atlasEligible": false,
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-tail-far-layer-e5305c64fed2.png",
+  "state": "base"
+}

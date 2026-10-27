@@ -1,0 +1,118 @@
+{
+  "id": "dash-grant-cocoon-open",
+  "name": "贴流冲膜茧·已承接",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/dash-grant-cocoon-open/base.png",
+  "width": 1278,
+  "height": 1230,
+  "bbox": [
+    180,
+    107,
+    1087,
+    1111
+  ],
+  "pivot": [
+    649,
+    1109
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.9,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.813,
+    "visibleHeightU": 0.9,
+    "canvasWidthU": 1.1456,
+    "canvasHeightU": 1.1026
+  },
+  "sha256": "9a835935f0c2a67c7aec6fd3f8f188d35f9eaf9504e0ebab4ac51fb1a1aae88c",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      60,
+      105,
+      1228,
+      1230
+    ],
+    "8": [
+      180,
+      107,
+      1087,
+      1111
+    ],
+    "32": [
+      180,
+      108,
+      1086,
+      1111
+    ],
+    "128": [
+      181,
+      108,
+      1086,
+      1111
+    ],
+    "248": [
+      182,
+      109,
+      1085,
+      1110
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/10_R1-04.png"
+    ],
+    "prompts": [
+      "assets/source/dash-grant-cocoon-open/dash-grant-cocoon-open.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "A1已承接空膜茧，静态容器状态；授能特效和动作后置。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "dash-grant-cocoon"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/dash-grant-cocoon-open-9a835935f0c2.png",
+  "familyId": "dash-grant-cocoon"
+}

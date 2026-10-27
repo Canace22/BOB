@@ -1,0 +1,133 @@
+{
+  "id": "shell-mother-crab-phase-30",
+  "name": "搬壳母蟹 · 第二次脱壳",
+  "kind": "character",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "phase-30"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/shell-mother-crab-phase-30/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    15,
+    182,
+    1522,
+    998
+  ],
+  "pivot": [
+    768,
+    1000
+  ],
+  "world": {
+    "axis": "width",
+    "units": 6.404249667994688,
+    "basis": "以全负重版身体/钳足宽6.4U建立共用sourcePixelsPerUnit；各状态按同一像素尺度，不按掉壳后高度放大。",
+    "visibleWidthU": 6.4042,
+    "visibleHeightU": 3.4677,
+    "canvasWidthU": 6.5275,
+    "canvasHeightU": 4.3517
+  },
+  "sha256": "86228c7251db09ce54d72ff7ef62df92f46ffc53ac65cfce93d5dd8a0d3e1640",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      13,
+      21,
+      1524,
+      1024
+    ],
+    "8": [
+      15,
+      182,
+      1522,
+      998
+    ],
+    "32": [
+      15,
+      183,
+      1522,
+      997
+    ],
+    "128": [
+      15,
+      183,
+      1521,
+      997
+    ],
+    "248": [
+      16,
+      184,
+      1520,
+      994
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/shell-mother-crab-phase-30/references/shell-mother-crab-afa11b48a5da.png"
+    ],
+    "prompts": [
+      "assets/source/shell-mother-crab-phase-30/shell-mother-crab-phase-30.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "背部仅余两枚低壳，暗色背甲显露，身体/脸/双钳与完整形态一致。",
+      "作为静态脱壳状态，不包含落壳动作或滚动物理。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "shell-mother-crab-phase-30"
+  ],
+  "parts": [],
+  "staticFamilyRegistration": {
+    "family": "shell-mother-crab",
+    "referenceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/shell-mother-crab.png",
+    "referenceCanvas": [
+      1536,
+      1024
+    ],
+    "sourcePixelsPerUnit": 235.3125,
+    "sharedPivotPixel": [
+      768,
+      1000
+    ],
+    "rule": "按同一原画布像素比例与同一脚底基准摆放；不得按各状态包围盒高度重新归一。",
+    "visibleWidthU": 6.404249667994688,
+    "visibleHeightU": 3.4677290836653385
+  },
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/shell-mother-crab-phase-30-86228c7251db.png",
+  "familyId": "shell-mother-crab",
+  "variant": "phase-30"
+}

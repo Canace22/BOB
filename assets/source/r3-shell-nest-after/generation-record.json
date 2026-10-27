@@ -1,0 +1,126 @@
+{
+  "id": "r3-shell-nest-after",
+  "name": "迁居后朝海壳巢",
+  "coversRequirementIds": [
+    "r3-shell-nests-traces"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/27_R3-06.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/21_R3.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 6,
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.628,
+    "canvasWidthU": 6.5458,
+    "canvasHeightU": 3.357
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "after",
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "第一版方向变化不足已定向修正；三只壳现在横卧且壳口明确统一朝右。保留同画布但外轮廓高度随转向变动，按静态状态地标验收。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-shell-nest-after.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-1baf7225-9841-4445-8824-63337f350e12.png",
+  "width": 1751,
+  "height": 898,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      41,
+      1719,
+      872
+    ],
+    "8": [
+      93,
+      139,
+      1698,
+      842
+    ],
+    "32": [
+      93,
+      139,
+      1698,
+      842
+    ],
+    "128": [
+      94,
+      140,
+      1697,
+      841
+    ],
+    "248": [
+      95,
+      141,
+      1696,
+      840
+    ]
+  },
+  "sha256": "765749470501fcd219129eb26e2e57e9f68181c25bd984c33b3aa6b46b8b7077",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-shell-nest-after.txt",
+  "generationRequest": {
+    "prompt": "Use case: edit. Required visible CHANGE: turn all THREE shells onto their SIDES so their mouths point horizontally to the RIGHT. In the supplied before image they are open bowls looking UP; in the output each is a sideways shelter with its cavity opening on its RIGHT end, clearly visible oval vertical mouth. Make this orientation change large and unmistakable, NOT a subtle redrawing of upward bowls. Keep exactly three recognizably same weathered shell cups: largest left, medium middle, small broken cup right. Retain original warm beige shells, umber hollows, attached fibrous bottom mat, matte ink-contoured handpainted style, side-view camera, 1751x898 canvas, whole width and bottom contact baseline. Natural uneven outer left backs and right-facing shell entrances. No living occupants or new props. No ground, scene, shadows or particles. True transparent background. This is the static AFTER relocation state.",
+    "referenced_image_paths": [
+      "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-51cc1aaf-d957-41e4-b3cb-ea99718ef16a.png"
+    ],
+    "transparent_background": true
+  },
+  "promptFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-shell-nest-after.txt",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-shell-nest-after-orientation-fix.txt"
+  ],
+  "stateReference": "r3-shell-nest-before",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    93,
+    139,
+    1698,
+    842
+  ],
+  "alphaStats": {
+    "zero": 835085,
+    "semi8to247": 13557,
+    "nearOpaque": 710939,
+    "total": 1572398
+  },
+  "world": {
+    "axis": "width",
+    "units": 6,
+    "visibleWidthU": 6.0,
+    "visibleHeightU": 2.628,
+    "canvasWidthU": 6.5458,
+    "canvasHeightU": 3.357
+  },
+  "pivot": [
+    895.5,
+    842
+  ]
+}

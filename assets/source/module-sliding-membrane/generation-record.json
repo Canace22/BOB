@@ -1,0 +1,107 @@
+{
+  "id": "module-sliding-membrane",
+  "familyId": "symbiosis-modules",
+  "name": "滑膜模块",
+  "scale": {
+    "axis": "height",
+    "units": 0.3
+  },
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/module-sliding-membrane.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-sliding-membrane.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/52_P01_工具·共生模块·固定奖励.png",
+    "http://10.11.140.20:8765/simple/images/53_I02_地图·营地·暂停.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/simple/#growth",
+  "dimensions": [
+    1214,
+    1295
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    278,
+    57,
+    987,
+    1235
+  ],
+  "pivot": [
+    632.5,
+    1235
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "1e75537f7600c7fe7780fae72c50c3ff3945ba29a12ee5a04604aca378a6ef4c",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Functional adaptation: swept single membrane for sliding module, no literal reference-name mapping claimed.",
+    "transparentPixels": 1119579,
+    "totalPixels": 1572130,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "Functional adaptation: swept single membrane for sliding module, no literal reference-name mapping claimed.",
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.1806,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.3092,
+    "canvasHeightU": 0.3298
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/module-sliding-membrane.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/52_P01_工具·共生模块·固定奖励.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "productionGroup": "props",
+  "width": 1214,
+  "height": 1295,
+  "alphaBboxes": {
+    "1": [
+      23,
+      17,
+      1200,
+      1271
+    ],
+    "8": [
+      278,
+      57,
+      987,
+      1235
+    ],
+    "32": [
+      280,
+      57,
+      986,
+      1235
+    ],
+    "128": [
+      281,
+      58,
+      986,
+      1234
+    ],
+    "248": [
+      282,
+      59,
+      985,
+      1232
+    ]
+  },
+  "alphaStats": {
+    "zero": 1119579,
+    "semi8to247": 8077,
+    "nearOpaque": 437407,
+    "total": 1572130
+  }
+}

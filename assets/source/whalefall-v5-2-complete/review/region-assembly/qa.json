@@ -1,0 +1,429 @@
+{
+  "scope": "six representative deterministic assemblies with independent L0/L1 plus six complete sprite scale boards and merged background fallback sheet; one supplementary memory projection VFX with edge and instance-composition evidence",
+  "status": "candidate-review",
+  "newAssetsCovered": 46,
+  "newAssetsRequired": 46,
+  "missing": [],
+  "originalPNGsModified": false,
+  "alphaBoundsThreshold": 8,
+  "sourceResampling": "uniform Lanczos; background layers retain full canvas; original PNG untouched",
+  "regionAssemblyPixelsPerU": 60,
+  "scaleBoardPixelsPerU": 40,
+  "heroVisibleHeightU": 1,
+  "contactChecks": [
+    {
+      "panel": "r1",
+      "heroInstanceId": "r1-hero",
+      "platformInstanceId": "r1-r1-tongue-ledge-4",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 383,
+          "footBottomPixelY": 761,
+          "platformFirstOpaqueY": 762,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 397,
+          "footBottomPixelY": 761,
+          "platformFirstOpaqueY": 762,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    },
+    {
+      "panel": "r2",
+      "heroInstanceId": "r2-hero",
+      "platformInstanceId": "r2-r2-membrane-platform-13",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 344,
+          "footBottomPixelY": 722,
+          "platformFirstOpaqueY": 723,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 358,
+          "footBottomPixelY": 722,
+          "platformFirstOpaqueY": 723,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    },
+    {
+      "panel": "r3",
+      "heroInstanceId": "r3-hero",
+      "platformInstanceId": "r3-r3-bank-platform-22",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 357,
+          "footBottomPixelY": 753,
+          "platformFirstOpaqueY": 754,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 371,
+          "footBottomPixelY": 753,
+          "platformFirstOpaqueY": 754,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    },
+    {
+      "panel": "r4",
+      "heroInstanceId": "r4-hero",
+      "platformInstanceId": "r4-r4-bone-platform-30",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 376,
+          "footBottomPixelY": 765,
+          "platformFirstOpaqueY": 766,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 390,
+          "footBottomPixelY": 765,
+          "platformFirstOpaqueY": 766,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    },
+    {
+      "panel": "r5-head",
+      "heroInstanceId": "r5-head-hero",
+      "platformInstanceId": "r5-head-r5-cranial-platform-39",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 363,
+          "footBottomPixelY": 769,
+          "platformFirstOpaqueY": 770,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 377,
+          "footBottomPixelY": 769,
+          "platformFirstOpaqueY": 770,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    },
+    {
+      "panel": "r5-tail",
+      "heroInstanceId": "r5-tail-hero",
+      "platformInstanceId": "r5-tail-r5-tail-channel-46",
+      "alphaThreshold": 128,
+      "feet": [
+        {
+          "foot": "left",
+          "xPx": 381,
+          "footBottomPixelY": 774,
+          "platformFirstOpaqueY": 775,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        },
+        {
+          "foot": "right",
+          "xPx": 395,
+          "footBottomPixelY": 774,
+          "platformFirstOpaqueY": 775,
+          "gapPx": 0,
+          "penetrationPx": 0,
+          "gapU": 0.0
+        }
+      ],
+      "maxAbsoluteErrorPx": 0,
+      "tolerancePx": 2,
+      "pass": true,
+      "method": "sample visible bottom pixels in two foot windows against first local platform pixels after actual raster resize; signed gap is surface top minus foot bottom minus one",
+      "limitation": "visual painted contact only; no collision or reachable-route proof"
+    }
+  ],
+  "parallaxLayers": {
+    "L0": {
+      "coefficient": 0.1,
+      "origin": "root native regional water PNG"
+    },
+    "L1": {
+      "coefficient": 0.25,
+      "origin": "six transparent far-organ PNGs",
+      "space": "canvas"
+    }
+  },
+  "limitations": [
+    "Not 36-room layout coverage or gameplay path validation.",
+    "No collision, jump reachability, animation or interaction acceptance.",
+    "Six old merged backgrounds remain optional fallback only.",
+    "Foreground instances may deliberately extend beyond a representative board; complete silhouettes are on scale boards.",
+    "Runtime size choices are proposed production dimensions, not all quantified by source designs.",
+    "Foot contact samples are measured against painted opaque contours; renderer collision remains separate."
+  ],
+  "coverage": {
+    "r2-lung-depth": [
+      "merged-background-fallbacks"
+    ],
+    "r3-gastric-depth": [
+      "merged-background-fallbacks"
+    ],
+    "r4-vertebrae-depth": [
+      "merged-background-fallbacks"
+    ],
+    "r5-cranial-depth": [
+      "merged-background-fallbacks"
+    ],
+    "r5-tail-depth": [
+      "merged-background-fallbacks"
+    ],
+    "r1-wound-section": [
+      "r1",
+      "r1-scale-board"
+    ],
+    "r1-esophagus-fold": [
+      "r1-scale-board"
+    ],
+    "r1-nasal-wall": [
+      "r1-scale-board"
+    ],
+    "r1-baleen-shadow": [
+      "r1",
+      "r1-scale-board"
+    ],
+    "r1-tongue-ramp": [
+      "r1",
+      "r1-scale-board"
+    ],
+    "r1-weight-membrane": [
+      "r1",
+      "r1-scale-board"
+    ],
+    "r1-weight-membrane-pressed": [
+      "r1-scale-board"
+    ],
+    "r2-heart-rupture": [
+      "r2",
+      "r2-scale-board"
+    ],
+    "r2-trachea-wall": [
+      "r2-scale-board"
+    ],
+    "r2-membrane-platform": [
+      "r2",
+      "r2",
+      "r2-scale-board"
+    ],
+    "r2-soft-bed": [
+      "r2",
+      "r2-scale-board"
+    ],
+    "r2-membrane-patch": [
+      "r2",
+      "r2-scale-board"
+    ],
+    "r2-foreground-membrane": [
+      "r2",
+      "r2-scale-board"
+    ],
+    "r3-liver-edge": [
+      "r3",
+      "r3-scale-board"
+    ],
+    "r3-mesentery-fold": [
+      "r3",
+      "r3-scale-board"
+    ],
+    "r3-intestinal-loop": [
+      "r3-scale-board"
+    ],
+    "r3-bank-platform": [
+      "r3",
+      "r3",
+      "r3-scale-board"
+    ],
+    "r3-shell-nest-before": [
+      "r3",
+      "r3-scale-board"
+    ],
+    "r3-foreground-fold": [
+      "r3",
+      "r3-scale-board"
+    ],
+    "r4-tapering-vertebrae": [
+      "r4",
+      "r4-scale-board"
+    ],
+    "r3-shell-nest-after": [
+      "r3-scale-board"
+    ],
+    "r4-bone-platform": [
+      "r4",
+      "r4",
+      "r4-scale-board"
+    ],
+    "r4-fungal-bed": [
+      "r4",
+      "r4-scale-board"
+    ],
+    "r4-thin-bone": [
+      "r4",
+      "r4-scale-board"
+    ],
+    "r4-training-groove": [
+      "r4-scale-board"
+    ],
+    "r4-foreground-bone": [
+      "r4",
+      "r4-scale-board"
+    ],
+    "r4-thin-bone-cracked": [
+      "r4-scale-board"
+    ],
+    "r4-thin-bone-broken": [
+      "r4-scale-board"
+    ],
+    "r5-echo-wall-covered": [
+      "r5-head-scale-board"
+    ],
+    "r5-echo-wall-revealed": [
+      "r5-head",
+      "r5-head-scale-board"
+    ],
+    "r5-cranial-platform": [
+      "r5-head",
+      "r5-head",
+      "r5-head-scale-board"
+    ],
+    "r5-cranial-foreground": [
+      "r5-head",
+      "r5-head-scale-board"
+    ],
+    "r5-tail-channel": [
+      "r5-tail",
+      "r5-tail",
+      "r5-tail-scale-board"
+    ],
+    "r5-tail-foreground": [
+      "r5-tail",
+      "r5-tail",
+      "r5-tail-scale-board"
+    ],
+    "r1-oral-far-layer": [
+      "r1"
+    ],
+    "r2-lung-far-layer": [
+      "r2"
+    ],
+    "r3-gastric-far-layer": [
+      "r3"
+    ],
+    "r4-vertebrae-far-layer": [
+      "r4"
+    ],
+    "r5-cranial-far-layer": [
+      "r5-head"
+    ],
+    "r5-tail-far-layer": [
+      "r5-tail"
+    ],
+    "migration-whale-projection": [
+      "migration-projection-edges",
+      "migration-projection-assembly"
+    ]
+  },
+  "findings": [],
+  "visualReview": {
+    "reviewedPanels": [
+      "r1",
+      "r2",
+      "r3",
+      "r4",
+      "r5-head",
+      "r5-tail"
+    ],
+    "reviewedScaleBoards": 6,
+    "reviewedFallbackSheet": true,
+    "findings": [
+      "六区主体材质可区分，主角始终固定1U；R1鲸须未跨用到胃肠或尾区。",
+      "六区L0/L1按完整画布分开合成，颜色底层与远器官可各自控制。",
+      "平台顶缘比前景明确；少量前景亮边和高细节仍可能在实机缩小后竞争，需玩家视角审美复核。",
+      "壳巢朝向、薄骨完整/裂/断、覆膜/显露的静态差异在比例板可见；不据此宣称连续动画稳定。",
+      "部分地标在代表组合中只用于层次对照；实际房间结构衔接、平台支承与碰撞尚未实现。"
+    ]
+  },
+  "integrityChecks": {
+    "manifestFiles": 46,
+    "planMatchesManifest": true,
+    "sha256OriginalMatches": 46,
+    "promptsExist": 46,
+    "referenceFilesExist": true,
+    "backgroundRegionRoomMappingValid": true,
+    "independentL1Count": 6,
+    "l1CanvasMetadataValid": true
+  },
+  "supplementaryVfxEvidence": {
+    "assetId": "migration-whale-projection",
+    "qa": "migration-projection-qa.json",
+    "panels": [
+      "migration-projection-edges.png",
+      "migration-projection-assembly.png"
+    ]
+  }
+}

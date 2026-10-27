@@ -1,0 +1,91 @@
+{
+  "id": "sea-larva",
+  "name": "归海幼体",
+  "kind": "character",
+  "region": "R5尾段",
+  "tags": [
+    "R5尾段",
+    "V5.2",
+    "静态"
+  ],
+  "status": "accepted",
+  "notes": "受保护生态；单姿态，游动需另做动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/sea-larva/base.png",
+  "width": 1350,
+  "height": 1165,
+  "bbox": [
+    230,
+    192,
+    1199,
+    977
+  ],
+  "pivot": [
+    714.5,
+    584.5
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.6,
+    "visibleWidthU": 0.6,
+    "visibleHeightU": 0.4861
+  },
+  "sha256": "c9797b690647a8ea3fab1beec7048f947734f2fa025336bae8905165efbdb2a6",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      33,
+      15,
+      1336,
+      1147
+    ],
+    "8": [
+      230,
+      192,
+      1199,
+      977
+    ],
+    "16": [
+      232,
+      192,
+      1199,
+      977
+    ],
+    "32": [
+      235,
+      192,
+      1198,
+      977
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-static-01",
+    "method": "内置 imagegen；按用户指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-static-01/references/47_R5-08.png"
+    ],
+    "prompts": [
+      "assets/source/sea-larva/larva_v01.txt"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "originalId": "larva_v01",
+    "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+  },
+  "qa": {
+    "scope": "静态图像与确定性场景合成；不含引擎碰撞、交互与动画",
+    "passed": true,
+    "limitations": [
+      "受保护生态；单姿态，游动需另做动画。",
+      "未进行用户美术确认；未接入两版游戏加载器。"
+    ],
+    "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static"
+}

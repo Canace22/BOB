@@ -1,0 +1,115 @@
+{
+  "id": "habitat-shade",
+  "familyId": "habitat-shade",
+  "name": "菌圃遮光片",
+  "scale": {
+    "axis": "width",
+    "units": 1.4
+  },
+  "coversRequirementIds": [
+    "habitat-shade"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/habitat-shade.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/habitat-shade.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/22_R3-01.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s17",
+  "dimensions": [
+    1619,
+    971
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    127,
+    124,
+    1580,
+    838
+  ],
+  "pivot": [
+    181,
+    782
+  ],
+  "pivotStatus": "明确机械铰点/连接点；original canvas pixels",
+  "sha256": "5838e6f934b283cd1fdca7976bc2c1a04e4b43188899e8ce6d381c308a7dac1f",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Functional adaptation from explicit H3 shade action; opaque shell panel independent of garden. Rotation pivot is hinge hole, to register.",
+    "transparentPixels": 1092293,
+    "totalPixels": 1572049,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "hinge": {
+      "pixel": [
+        181,
+        782
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Functional adaptation from explicit H3 shade action; opaque shell panel independent of garden. Rotation pivot is hinge hole, to register.",
+  "world": {
+    "axis": "width",
+    "units": 1.4,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.4,
+    "visibleHeightU": 0.688,
+    "canvasWidthU": 1.5599,
+    "canvasHeightU": 0.9356
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/habitat-shade.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/22_R3-01.png"
+  ],
+  "productionGroup": "props",
+  "width": 1619,
+  "height": 971,
+  "alphaBboxes": {
+    "1": [
+      0,
+      13,
+      1585,
+      947
+    ],
+    "8": [
+      127,
+      124,
+      1580,
+      838
+    ],
+    "32": [
+      128,
+      124,
+      1580,
+      837
+    ],
+    "128": [
+      128,
+      125,
+      1580,
+      837
+    ],
+    "248": [
+      129,
+      126,
+      1579,
+      836
+    ]
+  },
+  "alphaStats": {
+    "zero": 1092293,
+    "semi8to247": 9369,
+    "nearOpaque": 461596,
+    "total": 1572049
+  }
+}

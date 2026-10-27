@@ -1,0 +1,114 @@
+{
+  "id": "fx-fissure-outline",
+  "name": "柔膜缝双瓣提示",
+  "kind": "effect",
+  "region": "全局",
+  "tags": [
+    "全局",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/fx-fissure-outline/base.png",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    62,
+    15,
+    194,
+    241
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.8,
+    "visibleWidthU": 1.8,
+    "visibleHeightU": 3.0818,
+    "canvasWidthU": 3.4909,
+    "canvasHeightU": 3.4909
+  },
+  "sha256": "e494a7536ba34c329326aa0df9273458157014dad8b335dbbd0609b0141e6f71",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      62,
+      15,
+      194,
+      241
+    ],
+    "8": [
+      62,
+      15,
+      194,
+      241
+    ],
+    "32": [
+      62,
+      15,
+      194,
+      241
+    ],
+    "128": [
+      63,
+      16,
+      193,
+      240
+    ],
+    "248": [
+      63,
+      16,
+      193,
+      240
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [],
+    "sourceFiles": [
+      "assets/source/fx-fissure-outline/fx-fissure-outline.svg"
+    ],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-01.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-03.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-02.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-05.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-fx-04.png",
+      "assets/source/whalefall-v5-2-complete/review/ui-runtime-size.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-01.png",
+      "assets/source/whalefall-v5-2-complete/review/fx-in-scene-02.png"
+    ],
+    "limitations": [
+      "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "effect",
+  "coversRequirementIds": [
+    "fx-fissure-warning"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-fissure-outline-e494a7536ba3.png"
+}

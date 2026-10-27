@@ -1,0 +1,104 @@
+{
+  "id": "r5-head-water-base",
+  "name": "头耳独立水体底层",
+  "kind": "background",
+  "coversRequirementIds": [
+    "scene-water-depth"
+  ],
+  "size": 1536,
+  "region": "R5头",
+  "height": 864,
+  "viewHeight": 864,
+  "scale": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas"
+  },
+  "parallax": 0.1,
+  "referenceFiles": [
+    "38_R5-head.png"
+  ],
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/r5-head-water-base.png",
+  "sourceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/svg/r5-head-water-base.svg",
+  "method": "按对应区域配色的原生SVG渐变与低频噪声，独立L0水体，无器官景物；Chromium导出PNG。",
+  "world": {
+    "axis": "width",
+    "units": 32,
+    "space": "canvas",
+    "visibleWidthU": 32.0,
+    "visibleHeightU": 18.0,
+    "canvasWidthU": 32.0,
+    "canvasHeightU": 18.0
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      768,
+      432
+    ]
+  },
+  "qa": {
+    "status": "candidate",
+    "pending": [
+      "图标实际尺寸与深浅底检查"
+    ]
+  },
+  "notes": "独立L0水体，配合透明L1器官层，建议视差系数0.10；静态底层，不含光束/流粒动画。",
+  "layer": "L0",
+  "atlasEligible": false,
+  "productionGroup": "ui-fx",
+  "width": 1536,
+  "bbox": [
+    0,
+    0,
+    1536,
+    864
+  ],
+  "alphaRange": [
+    255,
+    255
+  ],
+  "sha256": "e72df0475c97deaae1f750ba008f2fee19b9dbe69060cee107bb40eb5a39829b",
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      1536,
+      864
+    ],
+    "8": [
+      0,
+      0,
+      1536,
+      864
+    ],
+    "32": [
+      0,
+      0,
+      1536,
+      864
+    ],
+    "128": [
+      0,
+      0,
+      1536,
+      864
+    ],
+    "248": [
+      0,
+      0,
+      1536,
+      864
+    ]
+  },
+  "alphaStats": {
+    "zero": 0,
+    "semi8to247": 0,
+    "nearOpaque": 1327104,
+    "total": 1327104
+  },
+  "pivot": [
+    768,
+    432
+  ]
+}

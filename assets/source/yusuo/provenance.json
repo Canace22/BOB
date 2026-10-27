@@ -1,0 +1,116 @@
+{
+  "id": "yusuo",
+  "name": "余索",
+  "kind": "character",
+  "region": "R3",
+  "tags": [
+    "R3",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "独立静态NPC基础形象，不是动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/yusuo/base.png",
+  "width": 1290,
+  "height": 1219,
+  "bbox": [
+    312,
+    139,
+    1017,
+    1133
+  ],
+  "pivot": [
+    664.5,
+    1133
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1.1,
+    "basis": "按N01与1U主角的画面比例拟定，设计未明确给该NPC量化尺寸，待引擎实机确认。",
+    "visibleWidthU": 0.7802,
+    "visibleHeightU": 1.1,
+    "canvasWidthU": 1.4276,
+    "canvasHeightU": 1.349
+  },
+  "sha256": "cb4114b6a7f2bde01497ce863fdbdef129647a047e2ff97d9f40dfffc4bd8ede",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      49,
+      1222,
+      1195
+    ],
+    "8": [
+      312,
+      139,
+      1017,
+      1133
+    ],
+    "32": [
+      312,
+      139,
+      1017,
+      1133
+    ],
+    "128": [
+      313,
+      140,
+      1017,
+      1132
+    ],
+    "248": [
+      314,
+      141,
+      1016,
+      1131
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/51_N01_余索·贝驮·育囊.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/yusuo/yusuo.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "独立静态NPC基础形象，不是动画。",
+      "铜橙色长窗头盔、橄榄披风、红索与垂壳保持，单人物，无主角灯或武器。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "yusuo"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/yusuo-cb4114b6a7f2.png",
+  "familyId": "yusuo",
+  "variant": "base"
+}

@@ -1,0 +1,106 @@
+{
+  "id": "r2-trachea-wall",
+  "name": "气管外侧完整软骨环",
+  "coversRequirementIds": [
+    "r2-trachea-transition"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/19_R2-05.png"
+  ],
+  "region": "R2",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 6.8891,
+    "canvasWidthU": 18.3403,
+    "canvasHeightU": 7.257
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R2-05"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "目检连续实壁管外侧，闭合两端，环带可辨，无开放隧道或椎骨。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r2-trachea-wall.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-b2b7b3a1-912d-4f73-bd76-477747194512.png",
+  "width": 1994,
+  "height": 789,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      17,
+      15,
+      1980,
+      789
+    ],
+    "8": [
+      21,
+      20,
+      1978,
+      769
+    ],
+    "32": [
+      21,
+      22,
+      1978,
+      769
+    ],
+    "128": [
+      22,
+      22,
+      1978,
+      768
+    ],
+    "248": [
+      25,
+      23,
+      1977,
+      767
+    ]
+  },
+  "sha256": "52392db8897738829de58da85cda923d7db9086ae09482c449484520021d5b11",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r2-trachea-wall.txt",
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r2-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    21,
+    20,
+    1978,
+    769
+  ],
+  "alphaStats": {
+    "zero": 870953,
+    "semi8to247": 18277,
+    "nearOpaque": 667068,
+    "total": 1573266
+  },
+  "world": {
+    "axis": "width",
+    "units": 18,
+    "visibleWidthU": 18.0,
+    "visibleHeightU": 6.8891,
+    "canvasWidthU": 18.3403,
+    "canvasHeightU": 7.257
+  },
+  "pivot": [
+    999.5,
+    769
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "bypass-valve-base",
+  "name": "旁通阀基座",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bypass-valve-base/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    310,
+    211,
+    1219,
+    816
+  ],
+  "pivot": [
+    764.5,
+    816
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.5025,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 2.5388,
+    "canvasHeightU": 1.6926
+  },
+  "sha256": "c4262824759bea9b7a5a3973dab403a7456c8b4ca4438b1cd1ce2ccb87ba5a49",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      29,
+      1468,
+      1024
+    ],
+    "8": [
+      310,
+      211,
+      1219,
+      816
+    ],
+    "32": [
+      310,
+      213,
+      1218,
+      816
+    ],
+    "128": [
+      311,
+      213,
+      1218,
+      815
+    ],
+    "248": [
+      312,
+      214,
+      1217,
+      814
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/18_R2-04.png",
+      "assets/source/whalefall-v5-2-complete/references/46_R5-07.png"
+    ],
+    "prompts": [
+      "assets/source/bypass-valve-base/bypass-valve-base.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Stationary grille dome; top socket for independent plunger. Based on visible R2-04 bypass device.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "settlement-valve"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bypass-valve-base-c4262824759b.png",
+  "attachmentPoints": {
+    "stemSocket": {
+      "pixel": [
+        768,
+        251
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "settlement-valve"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "silent-membrane",
+  "name": "缄声覆膜",
+  "kind": "character",
+  "region": "R5",
+  "tags": [
+    "R5",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/silent-membrane/base.png",
+  "width": 1774,
+  "height": 887,
+  "bbox": [
+    15,
+    13,
+    1759,
+    851
+  ],
+  "pivot": [
+    887.0,
+    432.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 11.5,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 11.5,
+    "visibleHeightU": 5.5258,
+    "canvasWidthU": 11.6978,
+    "canvasHeightU": 5.8489
+  },
+  "sha256": "6711f17796b472188b351fee19cdad1fb0e5b8f000420ed3c5c13db09e7c8bf0",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      11,
+      5,
+      1761,
+      855
+    ],
+    "8": [
+      15,
+      13,
+      1759,
+      851
+    ],
+    "32": [
+      15,
+      13,
+      1758,
+      850
+    ],
+    "128": [
+      16,
+      14,
+      1758,
+      850
+    ],
+    "248": [
+      17,
+      15,
+      1757,
+      849
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/43_R5-04.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/silent-membrane/silent-membrane.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "仅原画悬挂软膜主体，保留中央下垂挂点与侧向附着端；没有捏造眼睛或头部。",
+      "边缘细膜较薄，透明程度及大范围遮挡须在实机验证。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "silent-membrane"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/silent-membrane-6711f17796b4.png",
+  "familyId": "silent-membrane",
+  "variant": "base"
+}

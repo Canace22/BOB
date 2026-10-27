@@ -1,0 +1,88 @@
+{
+  "id": "fx-cold-beam",
+  "name": "水下冷光遮罩",
+  "kind": "effect",
+  "coversRequirementIds": [
+    "fx-underwater-atmosphere"
+  ],
+  "size": 256,
+  "scale": {
+    "axis": "width",
+    "units": 8
+  },
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/fx-cold-beam.png",
+  "sourceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/svg/fx-cold-beam.svg",
+  "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+  "region": "全局",
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 8.6457,
+    "canvasWidthU": 9.1839,
+    "canvasHeightU": 9.1839
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      128,
+      128
+    ]
+  },
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "qa": {
+    "status": "candidate",
+    "pending": [
+      "图标实际尺寸与深浅底检查"
+    ]
+  },
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "productionGroup": "ui-fx",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    12,
+    0,
+    235,
+    241
+  ],
+  "alphaRange": [
+    0,
+    127
+  ],
+  "sha256": "57a73bced1ad7afe7565caf9ed55d633ce7ecaf3a1a37504504e1f815f552ed6",
+  "alphaBboxes": {
+    "1": [
+      7,
+      0,
+      241,
+      255
+    ],
+    "8": [
+      12,
+      0,
+      235,
+      241
+    ],
+    "32": [
+      30,
+      0,
+      214,
+      193
+    ],
+    "128": null,
+    "248": null
+  },
+  "alphaStats": {
+    "zero": 31174,
+    "semi8to247": 31012,
+    "nearOpaque": 0,
+    "total": 65536
+  },
+  "pivot": [
+    128,
+    128
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "scope": "single projection alpha and deterministic group instance check",
+  "assetId": "migration-whale-projection",
+  "originalPNGsModified": false,
+  "sourceSizePx": [
+    1774,
+    887
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "zeroAlphaFraction": 0.6163562621303076,
+  "partialAlphaFraction": 0.38357637375138065,
+  "opaqueAlphaFraction": 6.736411831172809e-05,
+  "cornerAlpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "sourceHashVerified": true,
+  "placements": [
+    {
+      "assetId": "migration-whale-projection",
+      "instanceId": "migration-whale-projection-0",
+      "panel": "migration-projection-assembly",
+      "layer": "L5",
+      "parallax": 1.0,
+      "sourceSizePx": [
+        1774,
+        887
+      ],
+      "sourceVisibleBoundsPx": [
+        98,
+        194,
+        1681,
+        778
+      ],
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/migration-whale-projection.png",
+      "scaleSpace": "visible",
+      "sourcePixelsPerU": 931.1764705882354,
+      "displayPixelsPerU": 60,
+      "widthU": 1.7,
+      "uniformScale": 0.06443461781427669,
+      "canonicalPivotSourcePx": [
+        889.5,
+        486.0
+      ],
+      "instancePivotPx": [
+        360,
+        420.0
+      ],
+      "drawTopLeftPx": [
+        303,
+        389
+      ],
+      "drawSizePx": [
+        114,
+        57
+      ],
+      "opacity": 0.48,
+      "originalSha256": "743662e264356963cf825a084041ba64753d6e246d740c7793936daea58801f5",
+      "instanceOffsetPx": [
+        0,
+        0
+      ],
+      "limitation": "projection only; no collision; room route not validated"
+    },
+    {
+      "assetId": "migration-whale-projection",
+      "instanceId": "migration-whale-projection-1",
+      "panel": "migration-projection-assembly",
+      "layer": "L5",
+      "parallax": 1.0,
+      "sourceSizePx": [
+        1774,
+        887
+      ],
+      "sourceVisibleBoundsPx": [
+        98,
+        194,
+        1681,
+        778
+      ],
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/migration-whale-projection.png",
+      "scaleSpace": "visible",
+      "sourcePixelsPerU": 608.8461538461538,
+      "displayPixelsPerU": 60,
+      "widthU": 2.6,
+      "uniformScale": 0.09854706253948199,
+      "canonicalPivotSourcePx": [
+        889.5,
+        486.0
+      ],
+      "instancePivotPx": [
+        510.0,
+        462.0
+      ],
+      "drawTopLeftPx": [
+        422,
+        414
+      ],
+      "drawSizePx": [
+        175,
+        87
+      ],
+      "opacity": 0.55,
+      "originalSha256": "743662e264356963cf825a084041ba64753d6e246d740c7793936daea58801f5",
+      "instanceOffsetPx": [
+        0,
+        0
+      ],
+      "limitation": "projection only; no collision; room route not validated"
+    },
+    {
+      "assetId": "migration-whale-projection",
+      "instanceId": "migration-whale-projection-2",
+      "panel": "migration-projection-assembly",
+      "layer": "L5",
+      "parallax": 1.0,
+      "sourceSizePx": [
+        1774,
+        887
+      ],
+      "sourceVisibleBoundsPx": [
+        98,
+        194,
+        1681,
+        778
+      ],
+      "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/migration-whale-projection.png",
+      "scaleSpace": "visible",
+      "sourcePixelsPerU": 263.8333333333333,
+      "displayPixelsPerU": 60,
+      "widthU": 6,
+      "uniformScale": 0.22741629816803538,
+      "canonicalPivotSourcePx": [
+        889.5,
+        486.0
+      ],
+      "instancePivotPx": [
+        810.0,
+        498.00000000000006
+      ],
+      "drawTopLeftPx": [
+        608,
+        387
+      ],
+      "drawSizePx": [
+        403,
+        202
+      ],
+      "opacity": 0.6,
+      "originalSha256": "743662e264356963cf825a084041ba64753d6e246d740c7793936daea58801f5",
+      "instanceOffsetPx": [
+        0,
+        0
+      ],
+      "limitation": "projection only; no collision; room route not validated"
+    }
+  ],
+  "visualReview": "pass: dark/light/checker edges and 3-instance region composition manually inspected",
+  "limitations": [
+    "Static VFX candidate, no motion or timing accepted",
+    "Projection alpha values are demo instance parameters, not final runtime tuning",
+    "One whale copied into three sizes; not three unique images"
+  ],
+  "findings": [
+    "只在深色与蓝色水体区域摆投影；浅骨面上对比降低，应避免关键记忆轮廓叠在高亮骨面。"
+  ]
+}

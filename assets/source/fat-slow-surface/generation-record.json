@@ -1,0 +1,129 @@
+{
+  "id": "fat-slow-surface",
+  "familyId": "r3-hazard-surfaces",
+  "name": "减速脂面",
+  "scale": {
+    "axis": "width",
+    "units": 3.0
+  },
+  "coversRequirementIds": [
+    "r3-hazard-surfaces"
+  ],
+  "status": "candidate",
+  "owner": "terrain-props",
+  "kind": "terrain-prop",
+  "variant": "static",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/fat-slow-surface.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/fat-slow-surface.prompt.txt",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/terrain-props/fat-slow-surface.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/25_R3-04.png"
+  ],
+  "references": [
+    "http://10.11.140.20:8765/simple/"
+  ],
+  "referenceRole": "源图材质/结构依据；据分层需要重绘为独立部件",
+  "sourceSection": "http://10.11.140.20:8765/full/#R3-s16",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R3-s16",
+      "quote": "R3-04 脂槽刹车：脂面减速；肠系膜及脂肪沉积槽。"
+    }
+  ],
+  "dimensions": [
+    2019,
+    779
+  ],
+  "width": 2019,
+  "height": 779,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    56,
+    272,
+    1965,
+    546
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      32,
+      2005,
+      753
+    ],
+    "8": [
+      56,
+      272,
+      1965,
+      546
+    ],
+    "32": [
+      56,
+      272,
+      1964,
+      546
+    ],
+    "128": [
+      57,
+      273,
+      1964,
+      545
+    ],
+    "248": [
+      59,
+      275,
+      1962,
+      544
+    ]
+  },
+  "pivot": [
+    1010.5,
+    546
+  ],
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      1010.5,
+      546
+    ]
+  },
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "b6015641246ee92cbeb4cf57e405e007d21d4ece39b6f1b72bd1335c58293ca4",
+  "world": {
+    "axis": "width",
+    "units": 3.0,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 3.0,
+    "visibleHeightU": 0.4306,
+    "canvasWidthU": 3.1729,
+    "canvasHeightU": 1.2242
+  },
+  "purpose": "R3-04 减速脂面；减速区域叠于碰撞地形上。",
+  "generation": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单图已目检；形体/透明外轮廓清楚。"
+    ],
+    "transparentPixels": 1181508,
+    "totalPixels": 1572801,
+    "alpha8TouchesCanvas": false,
+    "pending": [
+      "深浅底合成复核",
+      "统一尺度和挂点确定性组合",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "productionGroup": "terrain-props",
+  "alphaStats": {
+    "zero": 1181508,
+    "semi8to247": 14211,
+    "nearOpaque": 356442,
+    "total": 1572801
+  }
+}

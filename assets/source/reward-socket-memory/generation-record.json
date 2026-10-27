@@ -1,0 +1,117 @@
+{
+  "id": "reward-socket-memory",
+  "familyId": "reward-socket",
+  "name": "记忆空槽",
+  "scale": {
+    "axis": "width",
+    "units": 0.5
+  },
+  "coversRequirementIds": [
+    "reward-socket"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/reward-socket-memory.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/reward-socket-memory.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/09_R1-03.png",
+    "http://10.11.140.20:8765/simple/images/24_R3-03.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R1-03",
+  "dimensions": [
+    1402,
+    1122
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    121,
+    209,
+    1282,
+    989
+  ],
+  "pivot": [
+    701.5,
+    989
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "19186dbaa0279470742f56b6f090b7b069f89b106946c7f5bef755f7005ce137",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "Empty memory disc recess with non-glowing carved grooves; preserve story-state distinction.",
+    "transparentPixels": 1024239,
+    "totalPixels": 1573044,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "reward": {
+      "pixel": [
+        702,
+        462
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "Empty memory disc recess with non-glowing carved grooves; preserve story-state distinction.",
+  "world": {
+    "axis": "width",
+    "units": 0.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.5,
+    "visibleHeightU": 0.3359,
+    "canvasWidthU": 0.6038,
+    "canvasHeightU": 0.4832
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/reward-socket-memory.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/09_R1-03.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/24_R3-03.png"
+  ],
+  "productionGroup": "props",
+  "width": 1402,
+  "height": 1122,
+  "alphaBboxes": {
+    "1": [
+      0,
+      25,
+      1380,
+      1098
+    ],
+    "8": [
+      121,
+      209,
+      1282,
+      989
+    ],
+    "32": [
+      121,
+      209,
+      1281,
+      988
+    ],
+    "128": [
+      122,
+      210,
+      1281,
+      988
+    ],
+    "248": [
+      123,
+      211,
+      1279,
+      987
+    ]
+  },
+  "alphaStats": {
+    "zero": 1024239,
+    "semi8to247": 7256,
+    "nearOpaque": 533873,
+    "total": 1573044
+  }
+}

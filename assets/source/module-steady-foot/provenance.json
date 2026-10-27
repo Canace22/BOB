@@ -1,0 +1,119 @@
+{
+  "id": "module-steady-foot",
+  "name": "稳足模块",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/module-steady-foot/base.png",
+  "width": 1448,
+  "height": 1086,
+  "bbox": [
+    130,
+    100,
+    1323,
+    985
+  ],
+  "pivot": [
+    726.5,
+    985
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.3,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.4044,
+    "visibleHeightU": 0.3,
+    "canvasWidthU": 0.4908,
+    "canvasHeightU": 0.3681
+  },
+  "sha256": "bdeb2e9cd8e0edecb759f9350cf550765a558e397424b855845565ceb5b2c808",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      26,
+      1436,
+      1086
+    ],
+    "8": [
+      130,
+      100,
+      1323,
+      985
+    ],
+    "32": [
+      131,
+      102,
+      1322,
+      983
+    ],
+    "128": [
+      131,
+      103,
+      1322,
+      983
+    ],
+    "248": [
+      132,
+      104,
+      1321,
+      982
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/52_P01_工具·共生模块·固定奖励.png",
+      "assets/source/whalefall-v5-2-complete/references/53_I02_地图·营地·暂停.png"
+    ],
+    "prompts": [
+      "assets/source/module-steady-foot/module-steady-foot.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Functional adaptation: steady-foot recoil resistance inferred as low broad stabilizer shape, not claimed literal P01 name mapping.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "symbiosis-modules"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/module-steady-foot-bdeb2e9cd8e0.png",
+  "familyId": "symbiosis-modules"
+}

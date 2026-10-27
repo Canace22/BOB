@@ -1,0 +1,88 @@
+{
+  "id": "fx-water-mist",
+  "name": "水雾遮罩",
+  "kind": "effect",
+  "coversRequirementIds": [
+    "fx-underwater-atmosphere"
+  ],
+  "size": 256,
+  "scale": {
+    "axis": "width",
+    "units": 8
+  },
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/fx-water-mist.png",
+  "sourceFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/ui-fx/svg/fx-water-mist.svg",
+  "method": "可编辑SVG原生绘制，按I02骨白/海蓝符号风格；Chromium导出PNG。",
+  "region": "全局",
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 3.8298,
+    "canvasWidthU": 10.8936,
+    "canvasHeightU": 10.8936
+  },
+  "pivotSuggestion": {
+    "type": "center",
+    "pixel": [
+      128,
+      128
+    ]
+  },
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/53_I02_地图·营地·暂停.png"
+  ],
+  "qa": {
+    "status": "candidate",
+    "pending": [
+      "图标实际尺寸与深浅底检查"
+    ]
+  },
+  "notes": "静态纹理；时间、轨迹和发射规则在后续接入阶段实现。",
+  "productionGroup": "ui-fx",
+  "width": 256,
+  "height": 256,
+  "bbox": [
+    34,
+    83,
+    222,
+    173
+  ],
+  "alphaRange": [
+    0,
+    36
+  ],
+  "sha256": "54eecff42acc635e7af2baaf02097e510fc4835cbad0713441e1ea3a11b54983",
+  "alphaBboxes": {
+    "1": [
+      4,
+      69,
+      252,
+      187
+    ],
+    "8": [
+      34,
+      83,
+      222,
+      173
+    ],
+    "32": [
+      116,
+      122,
+      140,
+      134
+    ],
+    "128": null,
+    "248": null
+  },
+  "alphaStats": {
+    "zero": 42588,
+    "semi8to247": 13128,
+    "nearOpaque": 0,
+    "total": 65536
+  },
+  "pivot": [
+    128,
+    128
+  ]
+}

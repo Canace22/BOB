@@ -1,0 +1,11 @@
+{
+  "name": "bob-art-manager",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check store.mjs && node --check app.js && node --check requirements.js",
+    "test": "node --test tests/server.test.mjs",
+    "test:ui": "node tests/ui.mjs"
+  }
+}

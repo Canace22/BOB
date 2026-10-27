@@ -1,0 +1,1560 @@
+{
+  "schemaVersion": 1,
+  "phase": "full-static",
+  "scope": "35环境需求家族；45新增静态候选文件，其中5个整合背景可选fallback，6个透明L1分层补齐。独立L0由root生产。",
+  "newFileCount": 46,
+  "existingMappings": [
+    {
+      "id": "r1-mouth-depth",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r1-oral-background"
+      ]
+    },
+    {
+      "id": "r1-baleen-curtain",
+      "coversRequirementIds": [
+        "r1-baleen-middle"
+      ]
+    },
+    {
+      "id": "r1-tongue-ledge",
+      "coversRequirementIds": [
+        "r1-tongue-platform-kit"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "r2-lung-depth",
+      "name": "肺心灰蓝远景",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r2-lung-pleura"
+      ],
+      "referenceFiles": [
+        "14_R2.png",
+        "16_R2-02.png"
+      ],
+      "region": "R2",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "pivotSuggestion": "center",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "layer": "merged-L0-L1-fallback",
+      "atlasEligible": false,
+      "optionalFallback": true,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "r3-gastric-depth",
+      "name": "胃肠暖赭远景",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r3-gastric-folds"
+      ],
+      "referenceFiles": [
+        "21_R3.png",
+        "22_R3-01.png"
+      ],
+      "region": "R3",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "pivotSuggestion": "center",
+      "state": "base",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "layer": "merged-L0-L1-fallback",
+      "atlasEligible": false,
+      "optionalFallback": true,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "r4-vertebrae-depth",
+      "name": "椎旁骨列远景",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence"
+      ],
+      "referenceFiles": [
+        "30_R4.png",
+        "33_R4-03.png"
+      ],
+      "region": "R4",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "pivotSuggestion": "center",
+      "state": "base",
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "layer": "merged-L0-L1-fallback",
+      "atlasEligible": false,
+      "optionalFallback": true,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "r5-cranial-depth",
+      "name": "颅侧耳骨远景",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background"
+      ],
+      "referenceFiles": [
+        "38_R5-head.png",
+        "40_R5-01.png"
+      ],
+      "region": "R5头",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "pivotSuggestion": "center",
+      "state": "base",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "layer": "merged-L0-L1-fallback",
+      "atlasEligible": false,
+      "optionalFallback": true,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "r5-tail-depth",
+      "name": "远尾肌腱海光远景",
+      "coversRequirementIds": [
+        "scene-water-depth",
+        "r5-tail-tendons"
+      ],
+      "referenceFiles": [
+        "39_R5-tail.png",
+        "47_R5-08.png"
+      ],
+      "region": "R5尾",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "pivotSuggestion": "center",
+      "state": "base",
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "水体与器官远景合并为一张静态背景，不能单独控制L0/L1视差；此件不替代独立前/中/可玩组件。",
+      "layer": "merged-L0-L1-fallback",
+      "atlasEligible": false,
+      "optionalFallback": true,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "r1-wound-section",
+      "name": "口角皮脂肌层断面",
+      "coversRequirementIds": [
+        "r1-wound-section"
+      ],
+      "referenceFiles": [
+        "07_R1-01.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 16
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-01"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1996,
+      "height": 788
+    },
+    {
+      "id": "r1-esophagus-fold",
+      "name": "食管纵裂肌壁",
+      "coversRequirementIds": [
+        "r1-esophagus-section"
+      ],
+      "referenceFiles": [
+        "11_R1-05.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 18
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-05"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1612,
+      "height": 976
+    },
+    {
+      "id": "r1-nasal-wall",
+      "name": "鼻道实壁与隔板",
+      "coversRequirementIds": [
+        "r1-nasal-section"
+      ],
+      "referenceFiles": [
+        "12_R1-06.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 16
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2060,
+      "height": 763
+    },
+    {
+      "id": "r1-baleen-shadow",
+      "name": "暗须帘前景",
+      "coversRequirementIds": [
+        "r1-baleen-foreground"
+      ],
+      "referenceFiles": [
+        "06_R1.png",
+        "08_R1-02.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1916,
+      "height": 821
+    },
+    {
+      "id": "r1-tongue-ramp",
+      "name": "湿舌恢复坡段",
+      "coversRequirementIds": [
+        "r1-tongue-platform-kit"
+      ],
+      "referenceFiles": [
+        "07_R1-01.png",
+        "06_R1.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r1-weight-membrane",
+      "name": "承重舌膜稳定态",
+      "coversRequirementIds": [
+        "r1-weighted-tongue"
+      ],
+      "referenceFiles": [
+        "09_R1-03.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 5
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R1-03"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r1-weight-membrane-pressed",
+      "name": "承重舌膜下陷态",
+      "coversRequirementIds": [
+        "r1-weighted-tongue"
+      ],
+      "referenceFiles": [
+        "09_R1-03.png"
+      ],
+      "region": "R1",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 5
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "pressed",
+      "rooms": [
+        "R1-03"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "预告通过程序插值形变表达；不计动画帧",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r2-heart-rupture",
+      "name": "静止心肌与心包断面",
+      "coversRequirementIds": [
+        "r2-pericardium-heart"
+      ],
+      "referenceFiles": [
+        "17_R2-03.png",
+        "18_R2-04.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 20
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-03",
+        "R2-04"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r2-trachea-wall",
+      "name": "气管外侧完整软骨环",
+      "coversRequirementIds": [
+        "r2-trachea-transition"
+      ],
+      "referenceFiles": [
+        "19_R2-05.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 18
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-05"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1994,
+      "height": 789
+    },
+    {
+      "id": "r2-membrane-platform",
+      "name": "肺膜稳定平台",
+      "coversRequirementIds": [
+        "r2-soft-platform-kit"
+      ],
+      "referenceFiles": [
+        "15_R2-01.png",
+        "16_R2-02.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 8
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r2-soft-bed",
+      "name": "肺膜恢复软床",
+      "coversRequirementIds": [
+        "r2-soft-platform-kit"
+      ],
+      "referenceFiles": [
+        "15_R2-01.png",
+        "20_R2-06.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2092,
+      "height": 752
+    },
+    {
+      "id": "r2-membrane-patch",
+      "name": "旧胸膜修补片",
+      "coversRequirementIds": [
+        "r2-patches-nursery-shells"
+      ],
+      "referenceFiles": [
+        "14_R2.png",
+        "15_R2-01.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 7
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1916,
+      "height": 821
+    },
+    {
+      "id": "r2-foreground-membrane",
+      "name": "暗紫膜缘前景",
+      "coversRequirementIds": [
+        "r2-membrane-foreground"
+      ],
+      "referenceFiles": [
+        "14_R2.png"
+      ],
+      "region": "R2",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r3-liver-edge",
+      "name": "实心肝叶外缘",
+      "coversRequirementIds": [
+        "r3-liver-mesentery"
+      ],
+      "referenceFiles": [
+        "24_R3-03.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 20
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R3-03",
+        "R3-04"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2001,
+      "height": 786
+    },
+    {
+      "id": "r3-mesentery-fold",
+      "name": "系膜与脂肪褶面",
+      "coversRequirementIds": [
+        "r3-liver-mesentery"
+      ],
+      "referenceFiles": [
+        "25_R3-04.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 16
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R3-03",
+        "R3-04"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r3-intestinal-loop",
+      "name": "回折肠袢纵裂边",
+      "coversRequirementIds": [
+        "r3-intestinal-fold"
+      ],
+      "referenceFiles": [
+        "26_R3-05.png",
+        "28_R3-07.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 20
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R3-05",
+        "R3-06",
+        "R3-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1811,
+      "height": 868
+    },
+    {
+      "id": "r3-bank-platform",
+      "name": "胃肠稳定褶岸",
+      "coversRequirementIds": [
+        "r3-bank-platform-kit"
+      ],
+      "referenceFiles": [
+        "23_R3-02.png",
+        "26_R3-05.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 8
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r3-shell-nest-before",
+      "name": "迁居前杂乱壳巢",
+      "coversRequirementIds": [
+        "r3-shell-nests-traces"
+      ],
+      "referenceFiles": [
+        "27_R3-06.png",
+        "21_R3.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 6
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "before",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1751,
+      "height": 898
+    },
+    {
+      "id": "r3-shell-nest-after",
+      "name": "迁居后朝海壳巢",
+      "coversRequirementIds": [
+        "r3-shell-nests-traces"
+      ],
+      "referenceFiles": [
+        "27_R3-06.png",
+        "21_R3.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 6
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "after",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1751,
+      "height": 898
+    },
+    {
+      "id": "r3-foreground-fold",
+      "name": "暗褶壁前景",
+      "coversRequirementIds": [
+        "r3-mucosa-foreground"
+      ],
+      "referenceFiles": [
+        "21_R3.png"
+      ],
+      "region": "R3",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2032,
+      "height": 774
+    },
+    {
+      "id": "r4-tapering-vertebrae",
+      "name": "渐细椎列过渡地标",
+      "coversRequirementIds": [
+        "r4-tailward-vertebrae"
+      ],
+      "referenceFiles": [
+        "36_R4-06.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 26
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-06",
+        "R5-01",
+        "R5-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "与主背景组合表达向头/向尾，位置实例不重复出图",
+      "width": 2115,
+      "height": 744
+    },
+    {
+      "id": "r4-bone-platform",
+      "name": "哑象牙稳定骨台",
+      "coversRequirementIds": [
+        "r4-bone-platform-kit"
+      ],
+      "referenceFiles": [
+        "30_R4.png",
+        "32_R4-02.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 8
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2098,
+      "height": 749
+    },
+    {
+      "id": "r4-fungal-bed",
+      "name": "菌毯恢复床",
+      "coversRequirementIds": [
+        "r4-fungal-recovery"
+      ],
+      "referenceFiles": [
+        "34_R4-04.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-03",
+        "R4-04"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r4-thin-bone",
+      "name": "薄骨片完整态",
+      "coversRequirementIds": [
+        "r4-thin-bone"
+      ],
+      "referenceFiles": [
+        "37_R4-07.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 5
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "r4-thin-bone-cracked",
+      "name": "薄骨片裂纹态",
+      "coversRequirementIds": [
+        "r4-thin-bone"
+      ],
+      "referenceFiles": [
+        "37_R4-07.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 5
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "cracked",
+      "rooms": [
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "r4-thin-bone-broken",
+      "name": "薄骨片破落态",
+      "coversRequirementIds": [
+        "r4-thin-bone"
+      ],
+      "referenceFiles": [
+        "37_R4-07.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 5
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "broken",
+      "rooms": [
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "r4-training-groove",
+      "name": "旧练习槽与骨孔",
+      "coversRequirementIds": [
+        "r4-training-traces"
+      ],
+      "referenceFiles": [
+        "32_R4-02.png",
+        "37_R4-07.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 8
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1997,
+      "height": 787
+    },
+    {
+      "id": "r4-foreground-bone",
+      "name": "暗骨片与断索前景",
+      "coversRequirementIds": [
+        "r4-bone-foreground"
+      ],
+      "referenceFiles": [
+        "30_R4.png"
+      ],
+      "region": "R4",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r5-echo-wall-covered",
+      "name": "覆膜下旧声槽",
+      "coversRequirementIds": [
+        "r5-ear-soft-tissue"
+      ],
+      "referenceFiles": [
+        "43_R5-04.png",
+        "44_R5-05.png"
+      ],
+      "region": "R5头",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "covered",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1983,
+      "height": 793
+    },
+    {
+      "id": "r5-echo-wall-revealed",
+      "name": "显露的骨面声槽",
+      "coversRequirementIds": [
+        "r5-ear-soft-tissue"
+      ],
+      "referenceFiles": [
+        "43_R5-04.png",
+        "44_R5-05.png"
+      ],
+      "region": "R5头",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "revealed",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 1984,
+      "height": 793
+    },
+    {
+      "id": "r5-cranial-platform",
+      "name": "颅外稳定骨台",
+      "coversRequirementIds": [
+        "r5-cranial-platform-kit"
+      ],
+      "referenceFiles": [
+        "41_R5-02.png",
+        "43_R5-04.png"
+      ],
+      "region": "R5头",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 8
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2046,
+      "height": 768
+    },
+    {
+      "id": "r5-cranial-foreground",
+      "name": "颅侧暗骨板前景",
+      "coversRequirementIds": [
+        "r5-cranial-foreground"
+      ],
+      "referenceFiles": [
+        "38_R5-head.png"
+      ],
+      "region": "R5头",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2098,
+      "height": 749
+    },
+    {
+      "id": "r5-tail-channel",
+      "name": "尾端纤维稳定槽台",
+      "coversRequirementIds": [
+        "r5-tail-channel-kit"
+      ],
+      "referenceFiles": [
+        "46_R5-07.png",
+        "47_R5-08.png"
+      ],
+      "region": "R5尾",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 10
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2160,
+      "height": 728
+    },
+    {
+      "id": "r5-tail-foreground",
+      "name": "尾端暗筋膜前景",
+      "coversRequirementIds": [
+        "r5-tail-foreground"
+      ],
+      "referenceFiles": [
+        "39_R5-tail.png"
+      ],
+      "region": "R5尾",
+      "kind": "scenery",
+      "scale": {
+        "axis": "width",
+        "units": 14
+      },
+      "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+      "state": "base",
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "",
+      "width": 2162,
+      "height": 727
+    },
+    {
+      "id": "r1-oral-far-layer",
+      "name": "口腔上颚远器官层",
+      "coversRequirementIds": [
+        "r1-oral-background"
+      ],
+      "referenceFiles": [
+        "06_R1.png"
+      ],
+      "region": "R1",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-06",
+        "R1-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1671,
+      "height": 941,
+      "pivot": [
+        835.5,
+        470.5
+      ]
+    },
+    {
+      "id": "r2-lung-far-layer",
+      "name": "肺膜远器官层",
+      "coversRequirementIds": [
+        "r2-lung-pleura"
+      ],
+      "referenceFiles": [
+        "14_R2.png"
+      ],
+      "region": "R2",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941,
+      "pivot": [
+        836.0,
+        470.5
+      ]
+    },
+    {
+      "id": "r3-gastric-far-layer",
+      "name": "胃褶远器官层",
+      "coversRequirementIds": [
+        "r3-gastric-folds"
+      ],
+      "referenceFiles": [
+        "21_R3.png"
+      ],
+      "region": "R3",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941,
+      "pivot": [
+        836.0,
+        470.5
+      ]
+    },
+    {
+      "id": "r4-vertebrae-far-layer",
+      "name": "椎骨远器官层",
+      "coversRequirementIds": [
+        "r4-vertebrae-sequence"
+      ],
+      "referenceFiles": [
+        "30_R4.png"
+      ],
+      "region": "R4",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941,
+      "pivot": [
+        836.0,
+        470.5
+      ]
+    },
+    {
+      "id": "r5-cranial-far-layer",
+      "name": "颅耳骨远器官层",
+      "coversRequirementIds": [
+        "r5-cranial-background"
+      ],
+      "referenceFiles": [
+        "38_R5-head.png"
+      ],
+      "region": "R5头",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1672,
+      "height": 941,
+      "pivot": [
+        836.0,
+        470.5
+      ]
+    },
+    {
+      "id": "r5-tail-far-layer",
+      "name": "尾肌腱远器官层",
+      "coversRequirementIds": [
+        "r5-tail-tendons"
+      ],
+      "referenceFiles": [
+        "39_R5-tail.png"
+      ],
+      "region": "R5尾",
+      "kind": "background",
+      "scale": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "pivotSuggestion": "canvas-center",
+      "state": "base",
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "notes": "独立透明L1远器官层；k=0.25；与root独立L0水体(k=0.10)组合。整合背景仅作fallback，不重复计为新增需求家族。",
+      "layer": "L1",
+      "parallax": 0.25,
+      "atlasEligible": false,
+      "world": {
+        "axis": "width",
+        "units": 32,
+        "basis": "layer canvas projection width, not physical organ size",
+        "space": "canvas"
+      },
+      "width": 1671,
+      "height": 941,
+      "pivot": [
+        835.5,
+        470.5
+      ]
+    },
+    {
+      "id": "migration-whale-projection",
+      "name": "迁徙记忆鲸投影",
+      "familyId": "fx-migration-projection",
+      "coversRequirementIds": [
+        "fx-migration-projection"
+      ],
+      "referenceFiles": [
+        "44_R5-05.png"
+      ],
+      "region": "R5头",
+      "kind": "fx",
+      "scale": {
+        "axis": "width",
+        "units": 6,
+        "space": "visible",
+        "basis": "记忆光影投影的建议实例宽度，不表示生物实体尺寸；可复用小实例构成群"
+      },
+      "world": {
+        "axis": "width",
+        "units": 6,
+        "space": "visible"
+      },
+      "pivotSuggestion": "visible-center",
+      "state": "静态投影",
+      "rooms": [
+        "R5-05"
+      ],
+      "status": "candidate",
+      "qaFindings": [],
+      "layer": "L5",
+      "parallax": 1.0,
+      "notes": "覆盖审查新增；仅一个完整可复用鲸光影轮廓，多实例+独立声环构成记忆群，不新增实体生物。",
+      "width": 1774,
+      "height": 887,
+      "pivot": [
+        889.5,
+        486.0
+      ]
+    }
+  ],
+  "completedCandidateCount": 46
+}

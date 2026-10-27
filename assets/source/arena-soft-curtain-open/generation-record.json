@@ -1,0 +1,105 @@
+{
+  "id": "arena-soft-curtain-open",
+  "familyId": "arena-soft-curtain",
+  "name": "战斗软帘·开放",
+  "scale": {
+    "axis": "height",
+    "units": 3.0
+  },
+  "coversRequirementIds": [
+    "arena-soft-curtain"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/arena-soft-curtain-open.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/arena-soft-curtain-open.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R1-04",
+  "dimensions": [
+    1011,
+    1555
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    10,
+    27,
+    1002,
+    1474
+  ],
+  "pivot": [
+    506,
+    27
+  ],
+  "pivotStatus": "top attachment mid-point, original canvas pixels",
+  "sha256": "92cd973b4373018a10694cd93de9c8c19bc1c2eb4ea98a83a4060da6768a7878",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "战前/战后共用开放帘，中央真实alpha；封闭过程动画后置。",
+    "transparentPixels": 1138731,
+    "totalPixels": 1572105,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "战前/战后共用开放帘，中央真实alpha；封闭过程动画后置。",
+  "world": {
+    "axis": "height",
+    "units": 3.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.0567,
+    "visibleHeightU": 3.0,
+    "canvasWidthU": 2.0961,
+    "canvasHeightU": 3.2239
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/arena-soft-curtain-open.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/10_R1-04.png"
+  ],
+  "productionGroup": "props",
+  "width": 1011,
+  "height": 1555,
+  "alphaBboxes": {
+    "1": [
+      0,
+      23,
+      1011,
+      1487
+    ],
+    "8": [
+      10,
+      27,
+      1002,
+      1474
+    ],
+    "32": [
+      10,
+      28,
+      1002,
+      1473
+    ],
+    "128": [
+      11,
+      29,
+      1001,
+      1473
+    ],
+    "248": [
+      12,
+      31,
+      1000,
+      1472
+    ]
+  },
+  "alphaStats": {
+    "zero": 1138731,
+    "semi8to247": 21459,
+    "nearOpaque": 379463,
+    "total": 1572105
+  }
+}

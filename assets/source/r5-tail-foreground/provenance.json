@@ -1,0 +1,117 @@
+{
+  "id": "r5-tail-foreground",
+  "name": "尾端暗筋膜前景",
+  "kind": "scenery",
+  "region": "R5尾",
+  "tags": [
+    "R5尾",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r5-tail-foreground/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    14,
+    265,
+    2148,
+    596
+  ],
+  "pivot": [
+    1081.0,
+    596
+  ],
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.1715,
+    "canvasWidthU": 14.1837,
+    "canvasHeightU": 4.7694
+  },
+  "sha256": "c4c840bc5d6f3bf19d9126f09031d59d7867919bc29beb3b0d13e173964f4089",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      12,
+      21,
+      2150,
+      727
+    ],
+    "8": [
+      14,
+      265,
+      2148,
+      596
+    ],
+    "32": [
+      15,
+      266,
+      2147,
+      595
+    ],
+    "128": [
+      15,
+      266,
+      2147,
+      595
+    ],
+    "248": [
+      16,
+      267,
+      2139,
+      594
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/39_R5-tail.png"
+    ],
+    "prompts": [
+      "assets/source/r5-tail-foreground/r5-tail-foreground.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "尾段前景为深紫纵向肌束，所有纤维方向横贯，未含骨骼；右侧尖端余量小但未截断。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r5-tail-foreground"
+  ],
+  "rooms": [
+    "R5-07",
+    "R5-08"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-tail-foreground-c4c840bc5d6f.png",
+  "state": "base"
+}

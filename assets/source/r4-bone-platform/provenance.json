@@ -1,0 +1,123 @@
+{
+  "id": "r4-bone-platform",
+  "name": "哑象牙稳定骨台",
+  "kind": "scenery",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r4-bone-platform/base.png",
+  "width": 2098,
+  "height": 749,
+  "bbox": [
+    63,
+    239,
+    2035,
+    629
+  ],
+  "pivot": [
+    1049.0,
+    629
+  ],
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.5822,
+    "canvasWidthU": 8.5112,
+    "canvasHeightU": 3.0385
+  },
+  "sha256": "b3e88cb8c60d21ce4a76a2686f3255f3a28a8095f580f6543df701d5ba358acf",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      38,
+      2084,
+      651
+    ],
+    "8": [
+      63,
+      239,
+      2035,
+      629
+    ],
+    "32": [
+      64,
+      239,
+      2035,
+      629
+    ],
+    "128": [
+      64,
+      239,
+      2034,
+      629
+    ],
+    "248": [
+      65,
+      241,
+      2033,
+      628
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/30_R4.png",
+      "assets/source/whalefall-v5-2-complete/references/32_R4-02.png"
+    ],
+    "prompts": [
+      "assets/source/r4-bone-platform/r4-bone-platform.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "稳定骨台顶缘清楚连续，完整独立件且没有植物或机关；与薄骨需要按厚度对照。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r4-bone-platform-kit"
+  ],
+  "rooms": [
+    "R4-01",
+    "R4-02",
+    "R4-03",
+    "R4-04",
+    "R4-05",
+    "R4-06",
+    "R4-07"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-bone-platform-b3e88cb8c60d.png",
+  "state": "base"
+}

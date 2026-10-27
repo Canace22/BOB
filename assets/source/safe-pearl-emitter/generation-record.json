@@ -1,0 +1,115 @@
+{
+  "id": "safe-pearl-emitter",
+  "familyId": "safe-pearl-emitter",
+  "name": "安全吐珠练习器",
+  "scale": {
+    "axis": "height",
+    "units": 1.0
+  },
+  "coversRequirementIds": [
+    "safe-pearl-emitter"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/safe-pearl-emitter.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/safe-pearl-emitter.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/32_R4-02.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#room-R4-02",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    458,
+    199,
+    1060,
+    874
+  ],
+  "pivot": [
+    759.0,
+    874
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "0e545e16a79054fe61aa1af96cbb7b2bea36da24c0478054da410a893ffc298b",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "安全练习器本体按原文功能适配；待机可见吐珠口，发射/预告为程序状态，不冒充新敌人。",
+    "transparentPixels": 1311015,
+    "totalPixels": 1572864,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "attachmentPoints": {
+    "muzzle": {
+      "pixel": [
+        842,
+        522
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "attachmentStatus": "人工按已检视图形定位；确定性合成可复核，非自动bbox中心",
+  "purpose": "安全练习器本体按原文功能适配；待机可见吐珠口，发射/预告为程序状态，不冒充新敌人。",
+  "world": {
+    "axis": "height",
+    "units": 1.0,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.8919,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 2.2756,
+    "canvasHeightU": 1.517
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/safe-pearl-emitter.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/32_R4-02.png"
+  ],
+  "productionGroup": "props",
+  "width": 1536,
+  "height": 1024,
+  "alphaBboxes": {
+    "1": [
+      454,
+      196,
+      1062,
+      1003
+    ],
+    "8": [
+      458,
+      199,
+      1060,
+      874
+    ],
+    "32": [
+      458,
+      199,
+      1059,
+      873
+    ],
+    "128": [
+      459,
+      200,
+      1059,
+      873
+    ],
+    "248": [
+      460,
+      201,
+      1058,
+      871
+    ]
+  },
+  "alphaStats": {
+    "zero": 1311015,
+    "semi8to247": 6321,
+    "nearOpaque": 250306,
+    "total": 1572864
+  }
+}

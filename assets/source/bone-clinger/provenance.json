@@ -1,0 +1,117 @@
+{
+  "id": "bone-clinger",
+  "name": "附骨甲",
+  "kind": "character",
+  "region": "R4",
+  "tags": [
+    "R4",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/bone-clinger/base.png",
+  "width": 1422,
+  "height": 1106,
+  "bbox": [
+    157,
+    164,
+    1299,
+    928
+  ],
+  "pivot": [
+    728.0,
+    928
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.35,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 1.35,
+    "visibleHeightU": 0.9032,
+    "canvasWidthU": 1.681,
+    "canvasHeightU": 1.3074
+  },
+  "sha256": "e760ea811d21e067fb1025778fd65ab342dada3dd1bdc424d1bec056007c3788",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      88,
+      0,
+      1394,
+      1081
+    ],
+    "8": [
+      157,
+      164,
+      1299,
+      928
+    ],
+    "32": [
+      157,
+      166,
+      1299,
+      928
+    ],
+    "128": [
+      158,
+      167,
+      1299,
+      928
+    ],
+    "248": [
+      159,
+      168,
+      1298,
+      927
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/bone-clinger/bone-clinger.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "壳板与暗色附足、铜色端爪保持；为单个站立基础姿态，非跳扑动作。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "bone-clinger"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bone-clinger-e760ea811d21.png",
+  "familyId": "bone-clinger",
+  "variant": "base"
+}

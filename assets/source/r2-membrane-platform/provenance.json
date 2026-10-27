@@ -1,0 +1,122 @@
+{
+  "id": "r2-membrane-platform",
+  "name": "肺膜稳定平台",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-membrane-platform/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    60,
+    192,
+    2102,
+    592
+  ],
+  "pivot": [
+    1081.0,
+    592
+  ],
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.5671,
+    "canvasWidthU": 8.4701,
+    "canvasHeightU": 2.8482
+  },
+  "sha256": "153d9ed57a55d3dc4c997b5f62079a9f726b286bf0af72789bb564562d27ba96",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      58,
+      37,
+      2144,
+      596
+    ],
+    "8": [
+      60,
+      192,
+      2102,
+      592
+    ],
+    "32": [
+      60,
+      193,
+      2102,
+      592
+    ],
+    "128": [
+      61,
+      193,
+      2102,
+      591
+    ],
+    "248": [
+      62,
+      194,
+      2100,
+      590
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/15_R2-01.png",
+      "assets/source/whalefall-v5-2-complete/references/16_R2-02.png"
+    ],
+    "prompts": [
+      "assets/source/r2-membrane-platform/r2-membrane-platform.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "侧视薄膜平台顶缘连续，垂下的薄膜属于同一完整物件；未混入角色或背景。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-soft-platform-kit"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-membrane-platform-153d9ed57a55.png",
+  "state": "base"
+}

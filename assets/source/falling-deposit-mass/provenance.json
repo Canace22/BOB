@@ -1,0 +1,114 @@
+{
+  "id": "falling-deposit-mass",
+  "name": "松动沉积块",
+  "kind": "scenery",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "static"
+  ],
+  "status": "accepted",
+  "notes": "R3-08 可坠落沉积大块，独立刚体静态原型。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/falling-deposit-mass/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    82,
+    203,
+    1464,
+    901
+  ],
+  "pivot": [
+    773.0,
+    552.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 1.2,
+    "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
+    "visibleWidthU": 1.2,
+    "visibleHeightU": 0.6061,
+    "canvasWidthU": 1.3337,
+    "canvasHeightU": 0.8891
+  },
+  "sha256": "e58d2dc11fe799ba8f0906f5253e6b98195db55bedb65d5e98951361111d5d2f",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      9,
+      1526,
+      1024
+    ],
+    "8": [
+      82,
+      203,
+      1464,
+      901
+    ],
+    "32": [
+      83,
+      204,
+      1464,
+      901
+    ],
+    "128": [
+      83,
+      205,
+      1463,
+      901
+    ],
+    "248": [
+      85,
+      206,
+      1460,
+      899
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw; original PNG copied unchanged",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/29_R3-08.png"
+    ],
+    "prompts": [
+      "assets/source/falling-deposit-mass/falling-deposit-mass.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/terrain-props-scale-01.png"
+    ],
+    "limitations": [
+      "R3-08 可坠落沉积大块，独立刚体静态原型。",
+      "单图已目检；形体/透明外轮廓清楚。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r3-falling-deposit"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/falling-deposit-mass-e58d2dc11fe7.png",
+  "familyId": "r3-falling-deposit",
+  "variant": "static"
+}

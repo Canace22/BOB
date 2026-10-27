@@ -1,0 +1,122 @@
+{
+  "id": "r2-soft-bed",
+  "name": "肺膜恢复软床",
+  "kind": "scenery",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r2-soft-bed/base.png",
+  "width": 2092,
+  "height": 752,
+  "bbox": [
+    53,
+    196,
+    2040,
+    597
+  ],
+  "pivot": [
+    1046.5,
+    597
+  ],
+  "world": {
+    "axis": "width",
+    "units": 10,
+    "visibleWidthU": 10.0,
+    "visibleHeightU": 2.0181,
+    "canvasWidthU": 10.5284,
+    "canvasHeightU": 3.7846
+  },
+  "sha256": "c2076c8258c5b3ec1f7f47d5f6714fe82e650289eea0711dff665b7f6791cc3b",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2052,
+      752
+    ],
+    "8": [
+      53,
+      196,
+      2040,
+      597
+    ],
+    "32": [
+      53,
+      198,
+      2039,
+      597
+    ],
+    "128": [
+      54,
+      198,
+      2038,
+      597
+    ],
+    "248": [
+      55,
+      200,
+      2037,
+      595
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/15_R2-01.png",
+      "assets/source/whalefall-v5-2-complete/references/20_R2-06.png"
+    ],
+    "prompts": [
+      "assets/source/r2-soft-bed/r2-soft-bed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "软着陆床由连贯低矮肺膜褶构成，轮廓与硬平台区别清楚；需在房间尺度下检验边缘承托。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r2-soft-platform-kit"
+  ],
+  "rooms": [
+    "R2-01",
+    "R2-02",
+    "R2-03",
+    "R2-04",
+    "R2-05",
+    "R2-06"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-soft-bed-c2076c8258c5.png",
+  "state": "base"
+}

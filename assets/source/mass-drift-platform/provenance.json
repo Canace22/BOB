@@ -1,0 +1,128 @@
+{
+  "id": "mass-drift-platform",
+  "name": "质量漂盘",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/mass-drift-platform/base.png",
+  "width": 1942,
+  "height": 809,
+  "bbox": [
+    136,
+    180,
+    1811,
+    669
+  ],
+  "pivot": [
+    973.5,
+    669
+  ],
+  "world": {
+    "axis": "width",
+    "units": 2.4,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 2.4,
+    "visibleHeightU": 0.7007,
+    "canvasWidthU": 2.7826,
+    "canvasHeightU": 1.1592
+  },
+  "sha256": "6838b9b9a527a29dfb007c637e66f5ced9e023e84eb6a9ee04de5fee184ebcb8",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      8,
+      1922,
+      809
+    ],
+    "8": [
+      136,
+      180,
+      1811,
+      669
+    ],
+    "32": [
+      136,
+      180,
+      1811,
+      669
+    ],
+    "128": [
+      137,
+      181,
+      1810,
+      668
+    ],
+    "248": [
+      138,
+      182,
+      1809,
+      667
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/23_R3-02.png",
+      "assets/source/whalefall-v5-2-complete/references/27_R3-06.png"
+    ],
+    "prompts": [
+      "assets/source/mass-drift-platform/mass-drift-platform.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "Independent movable disc, excludes fixed bank; two dock positions handled as transform.",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "floating-platform"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/mass-drift-platform-6838b9b9a527.png",
+  "attachmentPoints": {
+    "dock": {
+      "pixel": [
+        972,
+        400
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "floating-platform"
+}

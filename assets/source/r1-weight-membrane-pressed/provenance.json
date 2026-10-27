@@ -1,0 +1,117 @@
+{
+  "id": "r1-weight-membrane-pressed",
+  "name": "承重舌膜下陷态",
+  "kind": "scenery",
+  "region": "R1",
+  "tags": [
+    "R1",
+    "V5.2",
+    "全量静态",
+    "pressed"
+  ],
+  "status": "accepted",
+  "notes": "预告通过程序插值形变表达；不计动画帧",
+  "target": "2d",
+  "file": "assets/runtime/sprites/r1-weight-membrane-pressed/base.png",
+  "width": 2162,
+  "height": 727,
+  "bbox": [
+    53,
+    165,
+    2092,
+    593
+  ],
+  "pivot": [
+    1072.5,
+    593
+  ],
+  "world": {
+    "axis": "width",
+    "units": 5,
+    "visibleWidthU": 5.0,
+    "visibleHeightU": 1.0495,
+    "canvasWidthU": 5.3016,
+    "canvasHeightU": 1.7827
+  },
+  "sha256": "8a3714f8f11e6bf2335d9beedc9c6912dd385e29a86c6fca29f006c2831d1d86",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      49,
+      104,
+      2096,
+      598
+    ],
+    "8": [
+      53,
+      165,
+      2092,
+      593
+    ],
+    "32": [
+      54,
+      165,
+      2092,
+      593
+    ],
+    "128": [
+      54,
+      166,
+      2091,
+      592
+    ],
+    "248": [
+      57,
+      167,
+      2090,
+      591
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen；按指定设计参考重绘",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+    ],
+    "prompts": [
+      "assets/source/r1-weight-membrane-pressed/r1-weight-membrane-pressed.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/scenes-04.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-01.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-02.png",
+      "assets/source/whalefall-v5-2-complete/review/scenes-03.png",
+      "assets/source/whalefall-v5-2-complete/review/region-assembly/qa.json"
+    ],
+    "limitations": [
+      "预告通过程序插值形变表达；不计动画帧",
+      "单一受压状态，中部明显下陷；同宽画布但两端存在重绘细节差，需静态切换对齐，不当动画帧。",
+      "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "r1-weighted-tongue"
+  ],
+  "rooms": [
+    "R1-03"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-weight-membrane-pressed-8a3714f8f11e.png",
+  "state": "pressed"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "gate-shell-crab",
+  "name": "门庭负壳蟹",
+  "familyId": "gate-shell-crab",
+  "variant": "base",
+  "kind": "boss",
+  "region": "R1",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/gate-shell-crab.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/gate-shell-crab.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/10_R1-04.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1536,
+  "height": 1024,
+  "alphaRange": [
+    0,
+    254
+  ],
+  "bbox": [
+    37,
+    50,
+    1471,
+    969
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      8,
+      1502,
+      1024
+    ],
+    "8": [
+      37,
+      50,
+      1471,
+      969
+    ],
+    "32": [
+      37,
+      51,
+      1470,
+      968
+    ],
+    "128": [
+      38,
+      52,
+      1470,
+      968
+    ],
+    "248": [
+      39,
+      53,
+      1469,
+      967
+    ]
+  },
+  "sha256": "dcd0a5f4dcd72028907b1c610d0ee66c20adb91b71210be64daf8c90d3ac7311",
+  "world": {
+    "axis": "width",
+    "units": 4.8,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 4.8,
+    "visibleHeightU": 3.0762,
+    "canvasWidthU": 5.1414,
+    "canvasHeightU": 3.4276
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      754.0,
+      969
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R1-s18",
+      "quote": "横扫0.8秒预告/0.75秒恢复，壳砸1.1秒/1秒；半血二扫另预告0.55秒。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R1-s19",
+      "quote": "阻门蟹背着迁徙者遗弃的多层壳，战后露出被遮住的红结。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "多层尖角弃壳、红索、双大钳身份保持；此静态采用原画举钳造型，不代表横扫动画已经完成。",
+      "工具预览隐藏RGB有棕色，需以alpha合成判断；原图未修改。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "gate-shell-crab",
+  "coversRequirementIds": [
+    "gate-shell-crab"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 862380,
+    "semi8to247": 41787,
+    "nearOpaque": 632960,
+    "total": 1572864
+  },
+  "pivot": [
+    754.0,
+    969
+  ]
+}

@@ -1,0 +1,1982 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "两个指定设计中角色、敌人、NPC、Boss、受保护生态及动作状态的完整文字盘点；不包含环境模块、UI和物品总表。",
+  "sourceSnapshots": [
+    {
+      "url": "http://10.11.140.20:8765/simple/",
+      "file": "/tmp/bob-simple-current.html",
+      "sha256": "55e14d95e531ee15cc3624074acf6600d6244084516ef33a45f0a3bf70143a89"
+    },
+    {
+      "url": "http://10.11.140.20:8765/full/",
+      "file": "/tmp/bob-full-current.html",
+      "sha256": "e1e79600f4eadda4e8bade1939fbdf24ef7ff1fc4ebeabb8e7be9d58f41c7aa3"
+    }
+  ],
+  "countPolicy": {
+    "namedActorTypes": 20,
+    "player": 1,
+    "ordinaryEnemyNames": 9,
+    "ordinaryEnemyBaseTemplates": 8,
+    "bosses": 5,
+    "friendlyNPCs": 3,
+    "namedProtectedEcology": 2,
+    "additionalEnvironmentEcologyGroups": 1,
+    "existingSinglePoseNamedActors": 5,
+    "missingNamedActors": 15,
+    "completeAnimationSets": 0,
+    "notCountedAsNewTypes": [
+      "精英嗅脂甲复用普通嗅脂甲模板",
+      "贝驮与E03受保护搬壳蟹为同生态族群",
+      "孔鳗是盲鳗/缝栖鳗共享模板，不是第三种鳗",
+      "膜鳐=膜缘鳐",
+      "吐珠鸣贝=普通鸣贝",
+      "悬脊鸣贝的左右两贝是一个Boss的两实例"
+    ]
+  },
+  "productionBoundary": [
+    "只凭文字盘点不能确定最终PNG文件总数；状态与可独立控制部件可能拆分或共用。",
+    "本清单的 requiredStates 是原文动作/视觉状态，不是连续动画的帧数，也不表示每项必须单独生成一张图。",
+    "普通敌人未普遍规定独立死亡、受击动画；本清单不擅自发明。游戏加载器需要这些额外状态时应显式增补规格。",
+    "原画图板是设计参考，未交付的连续帧不能被图板代替。",
+    "现有原图中出现的重复个体、环境剪影不逐个虚增为新角色。"
+  ],
+  "unresolvedSourceAlignment": [
+    {
+      "id": "shrimp-placement",
+      "issue": "剪须虾群在简版敌人表/E03存在，但详细版 R1 逐房敌人表没有实例。",
+      "action": "保留素材条目；房间落位需在设计或接入阶段对齐。"
+    },
+    {
+      "id": "eel-description",
+      "issue": "简版盲鳗强调伸头封路，详细版R3孔鳗明确鼓囊后发直线黏液。",
+      "action": "制作包含探头及黏液表现的共享模板，战斗实现以详细V5.2数据为准。"
+    }
+  ],
+  "entries": [
+    {
+      "id": "tide-picker",
+      "name": "拾潮者",
+      "category": "player",
+      "templateFamily": "tide-picker",
+      "regions": [
+        "all"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/03_H01_拾潮者·三视图与挂点.png",
+        "http://10.11.140.20:8765/simple/images/04_A02_出手·受击·重试.png",
+        "http://10.11.140.20:8765/simple/images/05_C02_五能力与失败恢复.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "player",
+          "quote": "移动、跳跃；短击：近身两段攻击；重鸣；调息；交互、灯罩。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "player",
+          "quote": "动作原图：短击、重鸣、受击与重新出发的姿态；图板是动作设计，不是可运行动画。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "player",
+          "quote": "贴流冲；浮膜；锚定；迎珠；敛膜潜隙。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "骨鸣器（与手部挂点关联）",
+        "左腰菌灯与灯罩",
+        "青色短披风",
+        "红索（仅连指定锚环）",
+        "浮膜能力表现"
+      ],
+      "notes": [
+        "当前只有右向待机 PNG。",
+        "独立部件拆分是根据动作和独立控制需要提出的制作分层，不声称原图已提供分层源文件。",
+        "左右朝向须保持解剖左腰灯与工具关系，不能直接镜像；具体方向/帧数/播放速率在动画制作规格中确定，源文未给帧数。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "single_pose_only",
+        "animation": "not_started",
+        "existingAssetIds": [
+          "tide-picker"
+        ],
+        "existingFiles": [
+          "assets/runtime/sprites/tide-picker/idle-right.png"
+        ],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "移动",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "跳跃与落地",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "短击第1段",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "短击第2段",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "重鸣",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "调息",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "受击",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "重新出发",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "交互（开闩/交谈/调律）",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "灯罩开/关",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "贴流冲",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "浮膜展开、浮升、缓降与收起",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "固定环锚定、悬挂与脱环",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "迎珠",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "敛膜潜隙",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "tide-picker",
+          "name": "拾潮者右向基础姿态",
+          "type": "base-appearance",
+          "status": "present",
+          "existingAssetIds": [
+            "tide-picker"
+          ]
+        },
+        {
+          "id": "tide-picker-left",
+          "name": "拾潮者左向基础姿态",
+          "type": "directional-variant",
+          "status": "missing",
+          "basis": "保持左腰灯/骨鸣器挂点关系的制作要求；不以简单镜像替代。"
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "corpse-crab",
+      "name": "尸蟹",
+      "category": "ordinary_enemy",
+      "templateFamily": "corpse-crab",
+      "regions": [
+        "R1",
+        "R3"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "尸蟹：抬钳后低扫。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R1-s15",
+          "quote": "两端固定台内2.5U来回；举钳0.65秒后横扫1.6U，恢复0.7秒。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "静态原型已有，E01 的预告/攻击/恢复图板不等于已交付连续动画。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "single_pose_only",
+        "animation": "not_started",
+        "existingAssetIds": [
+          "corpse-crab"
+        ],
+        "existingFiles": [
+          "assets/runtime/sprites/corpse-crab/idle.png"
+        ],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "待机/台内巡逻",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "举钳预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "低位横扫",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "露侧腹恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "corpse-crab",
+          "name": "尸蟹基础形象",
+          "type": "base-appearance",
+          "status": "present",
+          "existingAssetIds": [
+            "corpse-crab"
+          ]
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "fat-sniffer",
+      "name": "嗅脂甲",
+      "category": "ordinary_enemy",
+      "templateFamily": "fat-sniffer",
+      "regions": [
+        "R3"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "受灯光吸引，锁定方向后低冲。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s15",
+          "quote": "未警觉追灯，收壳0.8秒后冲撞3U，恢复0.9秒。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s15",
+          "quote": "精英嗅脂甲：两次冲撞间另给0.6秒亮足预告；每次恢复0.8秒。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "精英不是新的生物造型，不重复计为第10种普通敌人；复用模板但要补齐组合招状态。"
+      ],
+      "variants": [
+        {
+          "name": "精英嗅脂甲",
+          "room": "R3-08",
+          "reuse": "fat-sniffer",
+          "newCreature": false
+        }
+      ],
+      "coverage": {
+        "static": "single_pose_only",
+        "animation": "not_started",
+        "existingAssetIds": [
+          "fat-sniffer"
+        ],
+        "existingFiles": [
+          "assets/runtime/sprites/fat-sniffer/idle.png"
+        ],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "台内巡逻/追灯",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "收壳锁向预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "低位冲撞",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "冲撞后恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "精英第二冲撞前亮足预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "精英第二冲撞及恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "fat-sniffer",
+          "name": "嗅脂甲基础形象",
+          "type": "base-appearance",
+          "status": "present",
+          "existingAssetIds": [
+            "fat-sniffer"
+          ]
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "membrane-ray",
+      "name": "膜缘鳐",
+      "category": "ordinary_enemy",
+      "templateFamily": "membrane-ray",
+      "regions": [
+        "R2"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/48_E01_敌人图鉴Ⅰ·距离与空战.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "收膜后沿固定高度横冲。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R2-s15",
+          "quote": "中层水道往返4U；收膜0.7秒锁当前高度，直冲后贴壁恢复0.8秒。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "详细册简称膜鳐，和膜缘鳐是同一敌人，不另建一只。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "single_pose_only",
+        "animation": "not_started",
+        "existingAssetIds": [
+          "membrane-ray"
+        ],
+        "existingFiles": [
+          "assets/runtime/sprites/membrane-ray/idle.png"
+        ],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "水道往返",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "收膜锁高预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "固定高度横冲",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "贴壁恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "membrane-ray",
+          "name": "膜缘鳐基础形象",
+          "type": "base-appearance",
+          "status": "present",
+          "existingAssetIds": [
+            "membrane-ray"
+          ]
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "blind-eel",
+      "name": "盲鳗（孔鳗变体）",
+      "category": "ordinary_enemy",
+      "templateFamily": "hole-eel",
+      "regions": [
+        "R3"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "孔鳗共享动作模板（盲鳗／缝栖鳗未各画专图）。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "孔口出现黏液与涟漪后伸头封路。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s15",
+          "quote": "孔鳗：固定孔口，不追出本屏；鼓囊0.75秒后直线黏液，露头恢复0.8秒。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "鳗头与可见躯段",
+        "孔口附着边",
+        "直线黏液弹体/攻击表现"
+      ],
+      "notes": [
+        "采用一个孔鳗基础模板、两个地区变体交付；E02 未分别画盲鳗和缝栖鳗专图。",
+        "简版强调伸头封路，详细版明确直线黏液攻击；制作时保留详细版攻击与简版探头轮廓，不将其擅自变为自由游泳敌人。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "藏于孔口",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "鼓囊/涟漪预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "探头与直线黏液攻击",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "露头恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "缩回孔口",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "blind-eel",
+          "name": "盲鳗（孔鳗变体）基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "slit-eel",
+      "name": "缝栖鳗（孔鳗变体）",
+      "category": "ordinary_enemy",
+      "templateFamily": "hole-eel",
+      "regions": [
+        "R5"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+        "http://10.11.140.20:8765/simple/images/42_R5-03.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "从软膜缝伸出，封住一条路线。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R5-s15",
+          "quote": "固定膜孔，两侧轮换；鼓膜0.8秒后探出，露头0.85秒。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "鳗头与可见躯段",
+        "柔膜孔边缘"
+      ],
+      "notes": [
+        "与盲鳗共享 hole-eel 模板；需不同栖息附着及地区表现，不重复生成第三种“孔鳗”。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "藏于柔膜孔",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "鼓膜预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "探出封路（两侧）",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "露头恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "退回膜缝",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "slit-eel",
+          "name": "缝栖鳗（孔鳗变体）基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "resonant-clam",
+      "name": "鸣贝／吐珠鸣贝",
+      "category": "ordinary_enemy",
+      "templateFamily": "resonant-clam",
+      "regions": [
+        "R4"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "张合后吐出一颗钙珠。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R4-s15",
+          "quote": "固定平台附着；三圈波纹0.9秒后吐带环完整珠。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "上下贝壳与软缘",
+        "带环完整钙珠",
+        "三圈预告波纹"
+      ],
+      "notes": [
+        "迎珠使用完整带环钙珠，不是碎石雨。",
+        "普通鸣贝与悬脊鸣贝 Boss 分别登记；共享生物语言不等于同一套尺寸与状态素材。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "附着闭合",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "张壳/三圈波纹预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "吐珠",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "露软缘与合壳恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "resonant-clam",
+          "name": "鸣贝／吐珠鸣贝基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "bone-clinger",
+      "name": "附骨甲",
+      "category": "ordinary_enemy",
+      "templateFamily": "bone-clinger",
+      "regions": [
+        "R4"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/49_E02_敌人图鉴Ⅱ·封路与落点.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "收壳后按固定弧线扑向落点。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R4-s15",
+          "quote": "骨台内2U往返；收壳0.7秒跃扑落点，落地露足0.8秒。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "落点预告属于该动作的配套效果，可由统一 VFX 条目管理，不能凭静态站姿视为完成。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "骨台巡逻",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "收壳预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "固定弧线跃扑",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "落地倒伏/露足恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "bone-clinger",
+          "name": "附骨甲基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "baleen-shrimp-swarm",
+      "name": "剪须虾群",
+      "category": "ordinary_enemy",
+      "templateFamily": "baleen-shrimp-swarm",
+      "regions": [
+        "R1"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/50_E03_敌人图鉴Ⅲ·群流与生态边界.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "聚团后沿标记水道冲过；散开时通过或短击。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "虾个体",
+        "群体编排/路线预告"
+      ],
+      "notes": [
+        "简版明确列为普通敌人，详细版 R1 当前逐房敌人表未安排实例；保留素材需求并标注落位待对齐，不因缺落位删去。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "聚团预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "沿水道冲线",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "散群恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "baleen-shrimp-swarm",
+          "name": "剪须虾群基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "amphipod-swarm",
+      "name": "端足群",
+      "category": "ordinary_enemy",
+      "templateFamily": "amphipod-swarm",
+      "regions": [
+        "R2"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/50_E03_敌人图鉴Ⅲ·群流与生态边界.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "围绕营养节点聚集后冲线。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R2-s15",
+          "quote": "端足群流：固定一条横流走廊；亮方向线0.9秒后整体横穿；一次攻击最多扣1格。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "端足个体",
+        "营养节点",
+        "群体方向线"
+      ],
+      "notes": [
+        "群中个体不是各自叠加判伤的多只敌人；不要用个体数量冒充新资源类型数量。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "围绕节点聚集",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "方向线预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "群体横穿",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "散群恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "amphipod-swarm",
+          "name": "端足群基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "yusuo",
+      "name": "余索",
+      "category": "friendly_npc",
+      "templateFamily": "yusuo",
+      "regions": [
+        "R3",
+        "camp"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/51_N01_余索·贝驮·育囊.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "余索：友好NPC／老修索匠；提醒已发现但尚未进入的旧门。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s9",
+          "quote": "胃枢 H3 菌圃及余索已见门提示不提供新钥匙或跑腿链。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "按 N01 左列识别外形，原文没有其战斗招式或跑腿任务链。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "驻留/待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "交谈与旧门提示",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "yusuo",
+          "name": "余索基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "beituo",
+      "name": "贝驮",
+      "category": "friendly_npc",
+      "templateFamily": "protected-shell-crab",
+      "regions": [
+        "R3"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/51_N01_余索·贝驮·育囊.png",
+        "http://10.11.140.20:8765/simple/images/50_E03_敌人图鉴Ⅲ·群流与生态边界.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "贝驮：友好NPC／受保护搬壳蟹；递壳、搬空壳、迁居，回应玩家安置。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s19",
+          "quote": "搬壳完成后空壳由杂乱变为壳口朝海。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "搬壳蟹身体",
+        "可独立搬运的空壳"
+      ],
+      "notes": [
+        "E03 下排的受保护搬壳蟹与贝驮生态族群复用，不应再登记为敌人。",
+        "已有 empty-shell 只是道具，不能算贝驮角色已完成。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "递壳",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "搬空壳移动",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "迁居/安置回应",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "beituo",
+          "name": "贝驮基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "nursery-sac",
+      "name": "育囊",
+      "category": "friendly_npc",
+      "templateFamily": "nursery-sac",
+      "regions": [
+        "R2"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/51_N01_余索·贝驮·育囊.png",
+        "http://10.11.140.20:8765/simple/images/15_R2-01.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "育囊：友好NPC／扎根育床共生体；免费补充浮膜的移动压力。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R2-s17",
+          "quote": "H2 肺膜育床：调平补压床旁壳托，孔瓣恢复规律开合。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "育囊主体",
+        "可开合孔瓣"
+      ],
+      "notes": [
+        "不替代营地回血；补压来自共生体，不是死亡鲸体恢复呼吸。",
+        "壳托/补压床属环境机关条目，角色条目仅列交互关联。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "扎根待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "交互补压",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "孔瓣恢复规律开合",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "nursery-sac",
+          "name": "育囊基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "gate-shell-crab",
+      "name": "门庭负壳蟹",
+      "category": "boss",
+      "templateFamily": "gate-shell-crab",
+      "regions": [
+        "R1"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R1-s18",
+          "quote": "横扫0.8秒预告/0.75秒恢复，壳砸1.1秒/1秒；半血二扫另预告0.55秒。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R1-s19",
+          "quote": "阻门蟹背着迁徙者遗弃的多层壳，战后露出被遮住的红结。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "蟹主体与钳",
+        "背负多层弃壳",
+        "被遮挡红结"
+      ],
+      "notes": [
+        "不能用尸蟹静态图直接当作此 Boss 已完成；外形及教学招式不同。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "战前/待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "举钳横扫预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "横扫",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "横扫恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "抬壳预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "壳砸",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "壳砸恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "半血独立亮钳二扫预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "追加横扫",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "败后停伤/露出红结",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "gate-shell-crab",
+          "name": "门庭负壳蟹基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "blood-nest-swarm",
+      "name": "血巢潮群",
+      "category": "boss",
+      "templateFamily": "blood-nest-swarm",
+      "regions": [
+        "R2"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/18_R2-04.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R2-s18",
+          "quote": "聚流预告1秒锁一条水道；外露1秒时近击；环散1.1秒前摇；半血后0.8秒重复旧冲线已标轨。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R2-s19",
+          "quote": "群体聚散围着废弃血巢，不画成戴主角灯的大怪物。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "群流个体/群体",
+        "外露核心",
+        "废弃血巢（场景关联）",
+        "冲线路线/环散效果"
+      ],
+      "notes": [
+        "应把群体、核心与场景血巢分清，不能绘成单个巨大拟人怪。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "围绕血巢聚集",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "锁定水道聚流预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "冲线",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "外露核心/输出窗",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "环散预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "环散",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "半血旧轨重复预告与冲线",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "败后停伤",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "blood-nest-swarm",
+          "name": "血巢潮群基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "shell-mother-crab",
+      "name": "搬壳母蟹",
+      "category": "boss",
+      "templateFamily": "shell-mother-crab",
+      "regions": [
+        "R3"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/28_R3-07.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R3-s18",
+          "quote": "钳推0.9秒前摇；0.8秒恢复；落壳1.2秒地面标影；65%/30%脱空壳后多慢滚壳；锚拉松壳0.9秒停顿。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "母蟹主体与钳",
+        "可脱落空壳",
+        "松壳挂点",
+        "落壳/滚壳独立物体",
+        "地面落点标影"
+      ],
+      "notes": [
+        "可选 Boss，不能和友好贝驮合并；空壳道具可复用但需尺寸、运动与形态适配。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "战前/待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "钳推预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "钳推",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "钳推恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "落壳标点预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "落壳",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "65%脱壳形态",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "30%脱壳形态",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "慢滚壳",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "松壳被锚拉停顿",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "败后停伤/巢位重排",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "shell-mother-crab",
+          "name": "搬壳母蟹基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        },
+        {
+          "id": "shell-mother-crab-phase-65",
+          "name": "搬壳母蟹65%脱壳后外观",
+          "type": "persistent-appearance-state",
+          "status": "missing",
+          "basis": "详细版 R3-s18 明确两次脱壳与后续慢滚壳；可以独立状态图或可组合脱壳层交付。"
+        },
+        {
+          "id": "shell-mother-crab-phase-30",
+          "name": "搬壳母蟹30%脱壳后外观",
+          "type": "persistent-appearance-state",
+          "status": "missing",
+          "basis": "详细版 R3-s18 明确两次脱壳与后续慢滚壳；可以独立状态图或可组合脱壳层交付。"
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "spine-resonant-clams",
+      "name": "悬脊鸣贝",
+      "category": "boss",
+      "templateFamily": "spine-resonant-clams",
+      "regions": [
+        "R4"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/35_R4-05.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R4-s15",
+          "quote": "两贝固定左右附着，共享300耐受；一吐珠一露软缘0.85秒；低震预告1秒；半血节拍0.75秒。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R4-s18",
+          "quote": "一贝吐珠时另一贝露软缘；低位合震提前1秒标带。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "左贝壳与软缘",
+        "右贝壳与软缘",
+        "带环钙珠",
+        "低位合震标带与效果"
+      ],
+      "notes": [
+        "两只贝是同一个 Boss 的两实例，不虚增成两个 Boss；普通鸣贝图板不能替代 Boss 构图与尺寸验收。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "双贝附着待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "一侧吐珠预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "吐珠",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "另一侧露软缘",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "两侧交替",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "低位合震预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "低位合震",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "半血加速交替",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "败后声槽稳定/停伤",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "spine-resonant-clams",
+          "name": "悬脊鸣贝基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "silent-membrane",
+      "name": "缄声覆膜",
+      "category": "boss",
+      "templateFamily": "silent-membrane",
+      "regions": [
+        "R5"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/43_R5-04.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R5-s18",
+          "quote": "前扫0.8秒、垂落1秒均有轮廓预告；攻击后0.8秒输出窗；地上旧位置空心圆1.4秒后产生回声；同屏最多一回声＋一实体，不复制主角。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R5-s19",
+          "quote": "覆膜退去后历史纹理显现。"
+        }
+      ],
+      "independentlyControlledParts": [
+        "附着膜主体",
+        "可扫动/垂落部分",
+        "可攻击附着面",
+        "空心圆延迟提示与回声效果"
+      ],
+      "notes": [
+        "回声不复制玩家形象；Boss 位于耳骨外周骨面，不能画成居于巨大耳蜗的怪。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "骨面附着待机",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "前扫轮廓预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "前扫",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "垂落轮廓预告",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "垂落",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "附着面暴露恢复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "旧位置延迟回声",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "半血每第二招旧轨重复",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "败后覆膜褪去/停伤",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "silent-membrane",
+          "name": "缄声覆膜基础形象",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "sea-larva",
+      "name": "归海幼体",
+      "category": "protected_ecology",
+      "templateFamily": "sea-larva",
+      "regions": [
+        "R5"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/47_R5-08.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "无战斗技能；路线打开后顺水离开。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "ending",
+          "quote": "释放幼体；支线越多，尾声的生命与声音越丰富；少收集也有完整基础结局。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "已有单个幼体静态图；群体编排/释放运动/丰度变体未完成，不添加战斗或受击掉落。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "single_pose_only",
+        "animation": "not_started",
+        "existingAssetIds": [
+          "sea-larva"
+        ],
+        "existingFiles": [
+          "assets/runtime/sprites/sea-larva/base.png"
+        ],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "避流窝中停留",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "释放启动",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "顺水归海",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "结局群体丰度变化",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [
+        {
+          "id": "sea-larva",
+          "name": "归海幼体基础形象",
+          "type": "base-appearance",
+          "status": "present",
+          "existingAssetIds": [
+            "sea-larva"
+          ]
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "red-crown-colony",
+      "name": "红冠群落",
+      "category": "protected_ecology",
+      "templateFamily": "red-crown-colony",
+      "regions": [
+        "R4"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/34_R4-04.png",
+        "http://10.11.140.20:8765/simple/images/30_R4.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "红冠群落：受保护扎根生态；无追击技能；以群落变化表现栖息地恢复。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/full/",
+          "section": "R4-s19",
+          "quote": "受保护红冠扎根骨孔，显示死亡鲸骨如何成为新住处。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "没有独立角色设定图；以断脊区域与 R4-04 原画为依据，不编造行动或攻击动作。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [],
+      "staticDeliverables": [
+        {
+          "id": "red-crown-colony",
+          "name": "红冠群落恢复前外观",
+          "type": "base-appearance",
+          "status": "missing",
+          "existingAssetIds": []
+        },
+        {
+          "id": "red-crown-colony-restored",
+          "name": "红冠群落恢复后外观",
+          "type": "persistent-appearance-state",
+          "status": "missing",
+          "basis": "简版 cast：以群落变化表现栖息地恢复。"
+        }
+      ],
+      "staticStageNotes": [
+        "当前阶段先完成上述主形象/必要外观与方向状态；攻击、互动、移动等连续动作留下一阶段。"
+      ]
+    },
+    {
+      "id": "habitat-microorganisms",
+      "name": "栖息地共生菌与其他微生物",
+      "category": "environment_ecology_group",
+      "templateFamily": "habitat-microorganisms",
+      "regions": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "referenceImages": [
+        "http://10.11.140.20:8765/simple/images/06_R1.png",
+        "http://10.11.140.20:8765/simple/images/14_R2.png",
+        "http://10.11.140.20:8765/simple/images/21_R3.png",
+        "http://10.11.140.20:8765/simple/images/30_R4.png",
+        "http://10.11.140.20:8765/simple/images/39_R5-tail.png"
+      ],
+      "sourceEvidence": [
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "cast",
+          "quote": "栖息地共生菌与其他微生物：环境生态／非独立战斗角色；显示营地、补给或生态恢复状态。"
+        },
+        {
+          "page": "http://10.11.140.20:8765/simple/",
+          "section": "growth",
+          "quote": "六处生态支线：须门清流窝、肺膜育床、胃枢菌圃、肠侧搬壳巢、肋骨红冠园、尾下幼体槽。"
+        }
+      ],
+      "independentlyControlledParts": [],
+      "notes": [
+        "此项是环境生态资源组，不算新增第21个命名角色。",
+        "六处生态节点要由场景/机关盘点分别追踪；其中贝驮、红冠、幼体与育囊已单列，不能在总数中重复计算为全新物种。",
+        "未命名“其他微生物”不擅自扩写为多种独立敌人。"
+      ],
+      "variants": [],
+      "coverage": {
+        "static": "missing",
+        "animation": "not_started",
+        "existingAssetIds": [],
+        "existingFiles": [],
+        "scope": "一张独立姿态不代表角色状态或动画齐备"
+      },
+      "futureAnimationStates": [
+        {
+          "name": "生态帮助前",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "生态帮助后",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        },
+        {
+          "name": "营地/补给功能提示",
+          "coverage": "missing_animation_or_state",
+          "frameCount": null,
+          "productionPhase": "after_static_coverage"
+        }
+      ],
+      "staticDeliverables": [],
+      "staticOwner": "environment inventory"
+    }
+  ],
+  "userConfirmedProductionOrder": "先做齐全部静态素材，再按动作补动画。",
+  "staticOutputEstimate": {
+    "basis": "按命名主形象与明确外观状态计逻辑静态交付项；假设每项一张透明PNG。独立分层会改变实际文件数，不把图板帧格当文件数量。",
+    "namedBaseAppearances": 20,
+    "baseAppearancesPresent": 5,
+    "baseAppearancesMissing": 15,
+    "persistentAppearanceVariants": 3,
+    "variants": [
+      "搬壳母蟹65%脱壳后",
+      "搬壳母蟹30%脱壳后",
+      "红冠恢复后"
+    ],
+    "requiredDirectionalVariants": 1,
+    "directionalVariants": [
+      "拾潮者左向基础姿态"
+    ],
+    "totalLogicalStaticDeliverables": 24,
+    "present": 5,
+    "missing": 19,
+    "excludedFromCount": [
+      "攻击、预告、恢复等动作中间姿态",
+      "泛共生菌生态组（交环境清单）",
+      "重复群体个体",
+      "弹体和战斗VFX（交物件/VFX清单）"
+    ],
+    "packingChoice": "母蟹可采用主体＋可脱壳分层实现两次变化；若如此，逻辑状态仍为3个，导出PNG数按分层结果登记。"
+  }
+}

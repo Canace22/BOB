@@ -1,0 +1,116 @@
+{
+  "id": "bone-clinger",
+  "name": "附骨甲",
+  "familyId": "bone-clinger",
+  "variant": "base",
+  "kind": "ordinary_enemy",
+  "region": "R4",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/bone-clinger.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/bone-clinger.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1422,
+  "height": 1106,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    157,
+    164,
+    1299,
+    928
+  ],
+  "alphaBboxes": {
+    "1": [
+      88,
+      0,
+      1394,
+      1081
+    ],
+    "8": [
+      157,
+      164,
+      1299,
+      928
+    ],
+    "32": [
+      157,
+      166,
+      1299,
+      928
+    ],
+    "128": [
+      158,
+      167,
+      1299,
+      928
+    ],
+    "248": [
+      159,
+      168,
+      1298,
+      927
+    ]
+  },
+  "sha256": "e760ea811d21e067fb1025778fd65ab342dada3dd1bdc424d1bec056007c3788",
+  "world": {
+    "axis": "width",
+    "units": 1.35,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 1.35,
+    "visibleHeightU": 0.9032,
+    "canvasWidthU": 1.681,
+    "canvasHeightU": 1.3074
+  },
+  "pivotSuggestion": {
+    "type": "bottom-center",
+    "pixel": [
+      728.0,
+      928
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "收壳后按固定弧线扑向落点。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R4-s15",
+      "quote": "骨台内2U往返；收壳0.7秒跃扑落点，落地露足0.8秒。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "壳板与暗色附足、铜色端爪保持；为单个站立基础姿态，非跳扑动作。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "bone-clinger",
+  "coversRequirementIds": [
+    "bone-clinger"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 996489,
+    "semi8to247": 11646,
+    "nearOpaque": 554463,
+    "total": 1572732
+  },
+  "pivot": [
+    728.0,
+    928
+  ]
+}

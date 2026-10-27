@@ -1,0 +1,117 @@
+{
+  "id": "r5-tail-foreground",
+  "name": "尾端暗筋膜前景",
+  "coversRequirementIds": [
+    "r5-tail-foreground"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/39_R5-tail.png"
+  ],
+  "region": "R5尾",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.1715,
+    "canvasWidthU": 14.1837,
+    "canvasHeightU": 4.7694
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R5-07",
+    "R5-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "尾段前景为深紫纵向肌束，所有纤维方向横贯，未含骨骼；右侧尖端余量小但未截断。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r5-tail-foreground.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-450cd28d-da73-45d5-85b5-a785e3a01d1e.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      12,
+      21,
+      2150,
+      727
+    ],
+    "8": [
+      14,
+      265,
+      2148,
+      596
+    ],
+    "32": [
+      15,
+      266,
+      2147,
+      595
+    ],
+    "128": [
+      15,
+      266,
+      2147,
+      595
+    ],
+    "248": [
+      16,
+      267,
+      2139,
+      594
+    ]
+  },
+  "sha256": "c4c840bc5d6f3bf19d9126f09031d59d7867919bc29beb3b0d13e173964f4089",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r5-tail-foreground.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE dark broad strip of longitudinal dead whale tail fascia and dense muscle for BOTTOM FOREGROUND, 14 hero units wide. Several parallel soft dark burgundy muscle bundles flowing left-to-right, tied organically by thin dark slate-blue fascia, one connected low undulating silhouette with soft tapered tips. Very low contrast, subdued cool brush texture, no bright horizontal top edge or walkable ledge cue. No bones anywhere, no vertebra, ribs, teeth, baleen, white porous skeletal material, no objects, fluke silhouette, rope or ecology. Muscle fibers clearly longitudinal, not hanging fringes or tongue folds. Complete whole border component in transparent padding.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/39_R5-tail.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r5-tail",
+      "r5-tail",
+      "r5-tail-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    14,
+    265,
+    2148,
+    596
+  ],
+  "alphaStats": {
+    "zero": 1135042,
+    "semi8to247": 13465,
+    "nearOpaque": 409910,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 14,
+    "visibleWidthU": 14.0,
+    "visibleHeightU": 2.1715,
+    "canvasWidthU": 14.1837,
+    "canvasHeightU": 4.7694
+  },
+  "pivot": [
+    1081.0,
+    596
+  ]
+}

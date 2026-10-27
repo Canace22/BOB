@@ -1,0 +1,124 @@
+{
+  "id": "r3-bank-platform",
+  "name": "胃肠稳定褶岸",
+  "coversRequirementIds": [
+    "r3-bank-platform-kit"
+  ],
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/26_R3-05.png"
+  ],
+  "region": "R3",
+  "kind": "scenery",
+  "scale": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.7444,
+    "canvasWidthU": 8.6697,
+    "canvasHeightU": 2.9153
+  },
+  "pivotSuggestion": "top-center for hanging pieces; contact top-center for terrain; center for landmarks",
+  "state": "base",
+  "rooms": [
+    "R3-01",
+    "R3-02",
+    "R3-03",
+    "R3-04",
+    "R3-05",
+    "R3-06",
+    "R3-07",
+    "R3-08"
+  ],
+  "status": "candidate",
+  "qaFindings": [
+    "胃肠稳定褶岸拥有连续亮顶缘与较暗软组织底，可复用位置；孔缘和细丝需缩放 QA。",
+    "需root完成统一比例、透明深浅底和确定性房间合成验收；未作为已验收入库。"
+  ],
+  "notes": "",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/r3-bank-platform.png",
+  "sourceGeneratedFile": "/Users/canace/.codex/generated_images/01a17b14-223b-7561-9674-ad41b762616b/exec-c4afadfc-7f98-4fca-88fc-3e9d10a89c2f.png",
+  "width": 2162,
+  "height": 727,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      0,
+      2142,
+      703
+    ],
+    "8": [
+      84,
+      191,
+      2079,
+      626
+    ],
+    "32": [
+      85,
+      191,
+      2078,
+      626
+    ],
+    "128": [
+      85,
+      192,
+      2078,
+      625
+    ],
+    "248": [
+      87,
+      193,
+      2077,
+      622
+    ]
+  },
+  "sha256": "93b7f2f79a7d562c4a0333b960504541853966679fb611953168d0e6875eb2e2",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/scenes/prompts/r3-bank-platform.txt",
+  "generationRequest": {
+    "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals.  Subject: ONE short stable bank platform module from warm ochre folded intestinal tissue of the dead whale R3, 8 hero units wide. Broad gently irregular horizontal top contact edge, almost level and readable, a little raised rim with matte golden ochre highlights. Rounded deep red-brown folded soft tissue underside tapering smoothly downward, some restrained natural small tissue pores and attached short membrane strands. Distinctly organic mucosal bank not rock, bone, teeth or stone. No attached hollow shell, ecology, tether, ring, gate, pool, acid splash, lamp or creature. One whole module about 4:1 width-height, suitable to place at different positions.",
+    "referenced_image_paths": [
+      "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/23_R3-02.png",
+      "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/r1-tongue-ledge/base.png"
+    ],
+    "transparent_background": true
+  },
+  "method": "内置 imagegen 逐件生成或参考引导静态状态修改；原始 PNG 未裁切、降噪或抠图。",
+  "qaEvidence": {
+    "assembly": "region-assembly/qa.json",
+    "placements": "region-assembly/placements.json",
+    "panels": [
+      "r3",
+      "r3",
+      "r3-scale-board"
+    ]
+  },
+  "productionGroup": "scenes",
+  "bbox": [
+    84,
+    191,
+    2079,
+    626
+  ],
+  "alphaStats": {
+    "zero": 1056882,
+    "semi8to247": 19146,
+    "nearOpaque": 459564,
+    "total": 1571774
+  },
+  "world": {
+    "axis": "width",
+    "units": 8,
+    "visibleWidthU": 8.0,
+    "visibleHeightU": 1.7444,
+    "canvasWidthU": 8.6697,
+    "canvasHeightU": 2.9153
+  },
+  "pivot": [
+    1081.5,
+    626
+  ]
+}

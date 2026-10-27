@@ -1,0 +1,109 @@
+{
+  "id": "ear-latch-open",
+  "familyId": "permanent-latches",
+  "name": "耳海双环闩·开放",
+  "scale": {
+    "axis": "height",
+    "units": 2.5
+  },
+  "coversRequirementIds": [
+    "permanent-latches"
+  ],
+  "status": "candidate",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/sprites/ear-latch-open.png",
+  "prompt": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/ear-latch-open.txt",
+  "references": [
+    "http://10.11.140.20:8765/simple/images/19_R2-05.png",
+    "http://10.11.140.20:8765/simple/images/28_R3-07.png",
+    "http://10.11.140.20:8765/simple/images/44_R5-05.png"
+  ],
+  "referenceRole": "P01与现有已入库素材锁定材质/线条；对应房间原画锁定机关功能与造型；功能推导造型明确记录",
+  "sourceSection": "http://10.11.140.20:8765/full/#R5-s12",
+  "dimensions": [
+    1182,
+    1330
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    222,
+    28,
+    960,
+    1255
+  ],
+  "pivot": [
+    591.0,
+    1255
+  ],
+  "pivotStatus": "suggested; root to verify deterministic placement",
+  "sha256": "779c8ee0d843d3005f8de2b6f266251b262711fa2edc28540f8009534169983e",
+  "generation": "built-in imagegen; reference-guided redraw",
+  "qa": {
+    "visualReview": "single-image inspected",
+    "findings": "定向修正1：双瓣边缘收窄提高通道净宽；透明alpha通道静态。",
+    "transparentPixels": 1170652,
+    "totalPixels": 1572060,
+    "scope": "single-image + alpha metadata + deterministic static component composition; final user approval and engine behavior pending",
+    "finalAcceptance": "pending parent deterministic assembly and user art approval",
+    "compositionEvidence": "components-recipe.json; composition-qa.json; four *-composition-board.png"
+  },
+  "purpose": "定向修正1：双瓣边缘收窄提高通道净宽；透明alpha通道静态。",
+  "world": {
+    "axis": "height",
+    "units": 2.5,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 1.5037,
+    "visibleHeightU": 2.5,
+    "canvasWidthU": 2.4083,
+    "canvasHeightU": 2.7099
+  },
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/props/prompts/ear-latch-open.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/19_R2-05.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/28_R3-07.png",
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/44_R5-05.png"
+  ],
+  "productionGroup": "props",
+  "width": 1182,
+  "height": 1330,
+  "alphaBboxes": {
+    "1": [
+      0,
+      26,
+      1129,
+      1304
+    ],
+    "8": [
+      222,
+      28,
+      960,
+      1255
+    ],
+    "32": [
+      222,
+      28,
+      960,
+      1255
+    ],
+    "128": [
+      223,
+      29,
+      959,
+      1255
+    ],
+    "248": [
+      224,
+      30,
+      958,
+      1253
+    ]
+  },
+  "alphaStats": {
+    "zero": 1170652,
+    "semi8to247": 21032,
+    "nearOpaque": 352043,
+    "total": 1572060
+  }
+}

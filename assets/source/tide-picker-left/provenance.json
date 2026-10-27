@@ -1,0 +1,125 @@
+{
+  "id": "tide-picker-left",
+  "name": "拾潮者 · 左向待机",
+  "kind": "character",
+  "region": "all",
+  "tags": [
+    "all",
+    "V5.2",
+    "全量静态",
+    "idle-left"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/tide-picker-left/base.png",
+  "width": 1290,
+  "height": 1219,
+  "bbox": [
+    192,
+    59,
+    888,
+    1177
+  ],
+  "pivot": [
+    540.0,
+    1177
+  ],
+  "world": {
+    "axis": "height",
+    "units": 1,
+    "basis": "设计明确主角高度1U=0.30m。",
+    "visibleWidthU": 0.6225,
+    "visibleHeightU": 1.0,
+    "canvasWidthU": 1.1538,
+    "canvasHeightU": 1.0903
+  },
+  "sha256": "d32973b4d2b2c2755be1ce60ad4077aa467fbcfa6bd6722447df67f8aa3861b8",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      47,
+      1250,
+      1181
+    ],
+    "8": [
+      192,
+      59,
+      888,
+      1177
+    ],
+    "32": [
+      192,
+      59,
+      887,
+      1177
+    ],
+    "128": [
+      193,
+      60,
+      887,
+      1176
+    ],
+    "248": [
+      194,
+      61,
+      886,
+      1175
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/03_H01_拾潮者·三视图与挂点.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png",
+      "assets/source/tide-picker-left/references/tide-picker-left_v01-wrong-attachments-ff5911920744.png",
+      "assets/source/tide-picker-left/references/tide-picker-left_v02-backward-tool-775c76cfe63a.png",
+      "assets/source/tide-picker-left/references/tide-picker-left_v03-long-cape-de4d89edadc6.png"
+    ],
+    "prompts": [
+      "assets/source/tide-picker-left/tide-picker-left.prompt.txt",
+      "assets/source/tide-picker-left/tide-picker-left-v02.prompt.txt",
+      "assets/source/tide-picker-left/tide-picker-left-v03.prompt.txt",
+      "assets/source/tide-picker-left/tide-picker-left-v04.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "第三版：头、工具与蹼趾朝左；右侧近臂持工具前伸，左腰灯在远侧后腰被披风遮挡，无镜像原稿冒充。",
+      "原稿与两次定向修正提示词均保留；静态方向身份需主代理并排复核，尚无转向动画。",
+      "第四版只针对披风长度：下摆缩短至上腿，头/手/工具/红索与左向蹼足保持；灯仍位于远侧后腰，其上侧被披风覆盖但下摆缩短后露出更多。v03长披风原图保留。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "tide-picker-left"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/tide-picker-left-d32973b4d2b2.png",
+  "familyId": "tide-picker",
+  "variant": "idle-left"
+}

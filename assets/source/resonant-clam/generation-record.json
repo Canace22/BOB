@@ -1,0 +1,116 @@
+{
+  "id": "resonant-clam",
+  "name": "鸣贝／吐珠鸣贝",
+  "familyId": "resonant-clam",
+  "variant": "base",
+  "kind": "ordinary_enemy",
+  "region": "R4",
+  "file": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/resonant-clam.png",
+  "promptFile": "/Users/canace/Documents/Codex/2026-10-27/gen/work/full-static-production/actors/resonant-clam.prompt.txt",
+  "referenceFiles": [
+    "/Users/canace/Documents/Codex/2026-10-27/gen/work/design-v5-2-complete/images/49_E02_敌人图鉴Ⅱ·封路与落点.png",
+    "/Users/canace/Desktop/projects/BOB/assets/runtime/sprites/tide-picker/idle-right.png"
+  ],
+  "width": 1410,
+  "height": 1116,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "bbox": [
+    263,
+    91,
+    1233,
+    1032
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      7,
+      1374,
+      1090
+    ],
+    "8": [
+      263,
+      91,
+      1233,
+      1032
+    ],
+    "32": [
+      264,
+      91,
+      1233,
+      1031
+    ],
+    "128": [
+      264,
+      92,
+      1232,
+      1031
+    ],
+    "248": [
+      265,
+      93,
+      1231,
+      1030
+    ]
+  },
+  "sha256": "7065decaadeb1001549504b02b38cf3b461b16948a1e56847ac4b283dc70109c",
+  "world": {
+    "axis": "height",
+    "units": 1.55,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 1.5978,
+    "visibleHeightU": 1.55,
+    "canvasWidthU": 2.3225,
+    "canvasHeightU": 1.8383
+  },
+  "pivotSuggestion": {
+    "type": "right-center",
+    "pixel": [
+      1233,
+      561.5
+    ]
+  },
+  "purpose": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "sourceEvidence": [
+    {
+      "page": "http://10.11.140.20:8765/simple/",
+      "section": "cast",
+      "quote": "张合后吐出一颗钙珠。"
+    },
+    {
+      "page": "http://10.11.140.20:8765/full/",
+      "section": "R4-s15",
+      "quote": "固定平台附着；三圈波纹0.9秒后吐带环完整珠。"
+    }
+  ],
+  "qa": {
+    "status": "candidate",
+    "visualChecked": true,
+    "findings": [
+      "单只普通鸣贝，上下两壳及软缘可辨；无钙珠或波纹烘焙。"
+    ],
+    "pending": [
+      "深浅底与统一尺度确定性合成",
+      "实机与用户视觉验收"
+    ]
+  },
+  "parts": [],
+  "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+  "plannedId": "resonant-clam",
+  "coversRequirementIds": [
+    "resonant-clam"
+  ],
+  "productionGroup": "actors",
+  "alphaStats": {
+    "zero": 922196,
+    "semi8to247": 7209,
+    "nearOpaque": 637728,
+    "total": 1573560
+  },
+  "pivot": [
+    1233,
+    561.5
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "nursery-valve-leaf",
+  "name": "育床孔瓣独立片",
+  "kind": "prop",
+  "region": "共享",
+  "tags": [
+    "共享",
+    "V5.2",
+    "全量静态",
+    "基础"
+  ],
+  "status": "accepted",
+  "notes": "",
+  "target": "2d",
+  "file": "assets/runtime/sprites/nursery-valve-leaf/base.png",
+  "width": 1024,
+  "height": 1536,
+  "bbox": [
+    348,
+    127,
+    808,
+    1380
+  ],
+  "pivot": [
+    523,
+    1336
+  ],
+  "world": {
+    "axis": "height",
+    "units": 0.8,
+    "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
+    "visibleWidthU": 0.2937,
+    "visibleHeightU": 0.8,
+    "canvasWidthU": 0.6538,
+    "canvasHeightU": 0.9807
+  },
+  "sha256": "cd5235130e0ff8b3163ec49e11e9ef42758fb61ea2ca84881ff9d4b93d62ad8e",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      0,
+      33,
+      1010,
+      1520
+    ],
+    "8": [
+      348,
+      127,
+      808,
+      1380
+    ],
+    "32": [
+      348,
+      128,
+      808,
+      1380
+    ],
+    "128": [
+      349,
+      128,
+      807,
+      1379
+    ],
+    "248": [
+      350,
+      129,
+      806,
+      1378
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "built-in imagegen; reference-guided redraw",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/15_R2-01.png"
+    ],
+    "prompts": [
+      "assets/source/nursery-valve-leaf/nursery-valve-leaf.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/props-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-01.png",
+      "assets/source/whalefall-v5-2-complete/review/props-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-04.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-05.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-06.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/props-scale-01.png"
+    ],
+    "limitations": [
+      "独立孔瓣片；开/闭由镜像双瓣围绕底部铰点组合，非呼吸动作帧。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "nursery-shell-support"
+  ],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/nursery-valve-leaf-cd5235130e0f.png",
+  "attachmentPoints": {
+    "hinge": {
+      "pixel": [
+        523,
+        1336
+      ],
+      "coordinateSpace": "original-canvas-pixels"
+    }
+  },
+  "familyId": "nursery-shell-support"
+}

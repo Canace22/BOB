@@ -1,0 +1,118 @@
+{
+  "id": "amphipod-swarm",
+  "name": "端足群",
+  "kind": "character",
+  "region": "R2",
+  "tags": [
+    "R2",
+    "V5.2",
+    "全量静态",
+    "base"
+  ],
+  "status": "accepted",
+  "notes": "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+  "target": "2d",
+  "file": "assets/runtime/sprites/amphipod-swarm/base.png",
+  "width": 1536,
+  "height": 1024,
+  "bbox": [
+    81,
+    106,
+    1446,
+    906
+  ],
+  "pivot": [
+    763.5,
+    506.0
+  ],
+  "world": {
+    "axis": "width",
+    "units": 0.64,
+    "basis": "按参考与1U主角关系拟定的制作尺寸；源文未明确该对象量化尺寸，待实机验证。",
+    "visibleWidthU": 0.64,
+    "visibleHeightU": 0.3751,
+    "canvasWidthU": 0.7202,
+    "canvasHeightU": 0.4801
+  },
+  "sha256": "397f48ddb87a1bb3e65a17815b0be734320a803bc1d415a6825f2165107adde8",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBboxes": {
+    "1": [
+      25,
+      17,
+      1520,
+      1002
+    ],
+    "8": [
+      81,
+      106,
+      1446,
+      906
+    ],
+    "32": [
+      81,
+      106,
+      1446,
+      905
+    ],
+    "128": [
+      82,
+      107,
+      1446,
+      905
+    ],
+    "248": [
+      88,
+      108,
+      1445,
+      904
+    ]
+  },
+  "source": {
+    "batchId": "whalefall-v5-2-complete",
+    "method": "内置imagegen按指定原画重绘，原始输出未修改。",
+    "references": [
+      "assets/source/whalefall-v5-2-complete/references/50_E03_敌人图鉴Ⅲ·群流与生态边界.png",
+      "assets/runtime/sprites/tide-picker/idle-right.png"
+    ],
+    "prompts": [
+      "assets/source/amphipod-swarm/amphipod-swarm.prompt.txt"
+    ],
+    "sourceFiles": [],
+    "designUrls": [
+      "http://10.11.140.20:8765/simple/",
+      "http://10.11.140.20:8765/full/"
+    ],
+    "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+  },
+  "qa": {
+    "scope": "源图与身份对照、深浅底透明边缘、登记尺度及实际PNG静态组合检查；用户美术确认与实机验收另行进行",
+    "passed": true,
+    "report": "assets/source/whalefall-v5-2-complete/acceptance.md",
+    "evidence": [
+      "assets/source/whalefall-v5-2-complete/review/actors-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-01.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-02.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-03.png",
+      "assets/source/whalefall-v5-2-complete/review/actors-scale-01.png"
+    ],
+    "limitations": [
+      "完整静态清单中的基础形象或必要外观状态，不是连续动画。",
+      "一个弯曲端足个体，区别于细长剪须虾；按实例编排群流。",
+      "工具图像预览显示棕色环境RGB，实际采样外围alpha=0，深浅底合成无晕；选择边距更完整的v01原图，v02仅留备选。",
+      "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
+    ]
+  },
+  "integrationStatus": "not-integrated",
+  "spriteType": "static",
+  "coversRequirementIds": [
+    "amphipod-swarm"
+  ],
+  "parts": [],
+  "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/amphipod-swarm-397f48ddb87a.png",
+  "familyId": "amphipod-swarm",
+  "variant": "base"
+}
