@@ -3,5 +3,5 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": { "start": "node server.mjs", "check": "node --check game.js && node --check renderer.js && node --check audio.js", "build:pages": "node deploy.mjs --build-only", "deploy": "npm run check && npm --prefix ../mvp-nightmare run check && node deploy.mjs" }
+  "scripts": { "start": "node server.mjs", "check": "npm --prefix ../mvp-v2 run check && node --check deploy.mjs", "build:pages": "npm run check && node deploy.mjs --build-only", "deploy": "npm run check && node deploy.mjs" }
 }

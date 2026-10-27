@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>地图与场景工作台 · 鲸落万物生</title>
+  <style>
+    :root{color-scheme:dark;--bg:#071a20;--panel:#0d252d;--line:#25444c;--ink:#e4ece7;--muted:#9bb3b6;--teal:#81d6ca;--gold:#edc77e}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1440px;margin:auto;padding:34px 30px 60px}a{color:var(--teal)}header{display:flex;justify-content:space-between;gap:24px;align-items:start}h1{font-size:30px;line-height:1.35;margin:7px 0 13px;font-weight:550}h2{font-size:19px;font-weight:550;margin:0 0 10px}p{margin:6px 0;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--gold)}.links{display:flex;gap:20px;white-space:nowrap;padding-top:17px}.roomnav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 18px}button,input{font:inherit}button{cursor:pointer;background:#102c34;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:9px 14px}button:hover{border-color:var(--teal)}.roomnav button{text-align:left;padding:14px 16px}.roomnav button[aria-pressed="true"]{border-color:var(--teal);background:#1a3d43}.roomnav small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.roomnav strong{font-weight:550}.bar{display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding:14px 18px;border:1px solid var(--line);background:var(--panel)}.bar label{display:flex;align-items:center;gap:7px;font-size:13px}.bar input{accent-color:var(--teal)}.bar .time{margin-left:auto}.bar output{font-variant-numeric:tabular-nums;min-width:35px}#map{display:block;width:100%;background:#081e26;border:1px solid var(--line);border-top:0;min-height:220px}#map text{font-family:system-ui,"Microsoft YaHei",sans-serif;paint-order:stroke;stroke:#081e26;stroke-width:5px;stroke-linejoin:round}#map .object{cursor:pointer}#map .object:hover{filter:brightness(1.5)}.caption{display:flex;justify-content:space-between;gap:18px;margin:10px 0 20px;font-size:12px;color:var(--muted)}.columns{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}.panel{padding:20px;border:1px solid var(--line);background:var(--panel)}#legend{display:flex;gap:10px 18px;flex-wrap:wrap;font-size:13px}.key{display:inline-flex;align-items:center;gap:7px}.key i{width:15px;height:10px;display:inline-block;border:1px solid currentColor}#facts{margin-top:15px;font-size:13px}#facts div{padding:6px 0;border-bottom:1px solid #1d3a42}#facts strong{font-weight:500;color:var(--ink)}#selection{min-height:95px;font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;color:#c7dbd9;overflow:auto;max-height:230px}.layers{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}.layer{border-top:2px solid #4d7c7d;padding:12px 10px;background:#102931}.layer b{font-size:13px;font-weight:550}.layer p{font-size:12px}.layer .n{display:block;font-size:11px;color:var(--gold);margin-bottom:5px}.pipeline{margin-top:26px}.note{font-size:12px}.source{font:12px/1.7 ui-monospace,monospace;overflow-wrap:anywhere;color:var(--muted)}details{margin-top:18px;border:1px solid var(--line);padding:13px 18px}summary{cursor:pointer}#room-json{max-height:380px;overflow:auto;font-size:12px;color:#bad2ce}footer{margin-top:24px;color:var(--muted);font-size:12px}.pill{color:var(--gold)}@media(max-width:850px){main{padding:22px 14px}header{display:block}.roomnav{grid-template-columns:repeat(2,1fr)}.columns{grid-template-columns:1fr}.layers{grid-template-columns:repeat(2,1fr)}.bar .time{margin-left:0}.caption{display:block}#map{min-height:160px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="eyebrow">WHALEFALL / SCENE LAB</div><h1>先拆场景，再搭地图。</h1><p>把概念图中的空间意图，转成可检查的地图、场景层和交互设施。此页读取游戏的同一份关卡数据。</p></div>
+    <nav class="links"><a href="./">返回试玩 ↗</a><a href="./SCENE_PIPELINE.md">制作说明</a><a href="./assets/README.md">素材来源</a></nav>
+  </header>
+  <nav id="rooms" class="roomnav" aria-label="选择区域"></nav>
+  <div class="bar" aria-label="地图图层">
+    <label><input type="checkbox" data-layer="terrain" checked>地形 / 碰撞</label>
+    <label><input type="checkbox" data-layer="traversal" checked>攀爬 / 设施</label>
+    <label><input type="checkbox" data-layer="interactions" checked>交互 / 记忆</label>
+    <label><input type="checkbox" data-layer="route" checked>建议动线 / 检查点</label>
+    <label class="time">设施时间 <input id="time" type="range" min="0" max="12" step="0.02" value="0" aria-label="设施时间"><output id="time-value">0.0s</output></label>
+    <button id="play" type="button" aria-pressed="false">播放设施</button>
+  </div>
+  <svg id="map" viewBox="0 0 2400 740" role="img" aria-label="当前关卡地图"></svg>
+  <div class="caption"><span id="coordinates">坐标单位：游戏像素 · x 向右 / y 向下 · 按实际比例绘制</span><span>虚线为参考范围 / 建议动线；点击图中实体查看数据。</span></div>
+  <div class="columns">
+    <section class="panel"><h2 id="room-title"></h2><div id="legend"></div><div id="facts"></div></section>
+    <section class="panel"><h2>实体数据</h2><p class="note">点击地图中的平台、设施、交互点或检查点。修改 <a href="./levels.js">levels.js</a> 后刷新，游戏与本页同时读取新坐标。</p><pre id="selection">请选择地图实体。</pre></section>
+  </div>
+  <section class="pipeline"><div class="eyebrow">REFERENCE → SPACE → GEOMETRY → SCENE → PLAY</div><h2>场景分层与制作来源</h2>
+    <div class="layers">
+      <article class="layer"><span class="n">01 / 设计依据</span><b>V2 概念图</b><p>提炼器官轮廓、纵向层级、光向与交通意图。原画仅作参考，人物和分镜不进入场景。</p></article>
+      <article class="layer"><span class="n">02 / 最远景</span><b>水体与空间雾</b><p>独立生成的干净水下背景。只承担气氛，没有角色、平台或玩法提示。</p><a class="note" href="./assets/abyss-backdrop-v2.png">查看背景素材 ↗</a></article>
+      <article class="layer"><span class="n">03 / 中景</span><b>器官空间模块</b><p>程序绘制可复用的骨弓、鲸须、组织褶皱与肺泡。各区按器官结构重新组合。</p></article>
+      <article class="layer"><span class="n">04 / 可玩几何</span><b>地图与设施</b><p>平台、安全网、攀爬网、升降台、摆荡环均来自地图坐标。实体外形与碰撞区域独立可查。</p></article>
+      <article class="layer"><span class="n">05 / 动态层</span><b>角色与反馈</b><p>主角、互动生物、粒子和共鸣单独绘制，避免原画人物被误当成第二个玩家。</p></article>
+    </div>
+    <p class="note" style="margin-top:12px">这里的“提取”指空间分析与地图化重建；没有把原画像素抠成已完成的场景素材包。中景是程序重绘，远景是独立生成。</p>
+  </section>
+  <details><summary>当前关卡原始数据 · 与游戏同源</summary><pre id="room-json"></pre></details>
+  <details><summary>当前场景组装数据 · 与渲染层同源</summary><pre id="scene-json" style="overflow:auto;font-size:12px;color:#bad2ce"></pre></details>
+  <footer>设施预览按已供能状态演示；未触发的门、条件地面与危险区同时显示以便审查。建议动线是设计标注，不等于完整通关模拟。</footer>
+</main>
+<script type="module" src="./scene-lab.js"></script>
+</body>
+</html>

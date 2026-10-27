@@ -1,77 +1,108 @@
-// 一键发布到 GitHub Pages：npm run deploy（只构建不推送：npm run build:pages）
-// 站点结构：/ 跳转到新版 /nightmare/，旧版保留在 /mvp/
-import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+// GitHub Pages 仅发布当前 V2；本地初版与 nightmare 源码不参与构建。
+// npm run deploy 发布；npm run build:pages 仅构建，保留产物供检查。
+import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { ART_ASSETS } from '../mvp-v2/art-manifest.js';
 
 const mvpDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(mvpDir, '..');
-const nightmareDir = path.join(repoRoot, 'mvp-nightmare');
-const threeDir = path.join(nightmareDir, 'node_modules', 'three', 'build');
+const v2Dir = path.join(repoRoot, 'mvp-v2');
 const outDir = path.join(repoRoot, '.pages-dist');
-const artDir = path.join(repoRoot, 'docs', '鲸腹遗城原画集');
 const branch = 'gh-pages';
-const artFiles = ['00_鲸落全景.png', '01_鲸口门庭.png', '08_肋骨穹顶.png', '05_心室潮泵.png'];
-
+const coverPath = 'docs/鲸腹遗城原画集/V2/images/A01_鲸落万物生_世界主视觉.png';
 const run = (cmd, args, cwd = repoRoot) => execFileSync(cmd, args, { cwd, stdio: 'inherit' });
-const read = (cmd, args) => execFileSync(cmd, args, { cwd: repoRoot, encoding: 'utf8' }).trim();
+const read = (cmd, args, cwd = repoRoot) => execFileSync(cmd, args, { cwd, encoding: 'utf8' }).trim();
 
-// 新版：Three.js 用本地副本，源码里的绝对路径 /node_modules/... 在项目站点下失效，打包时改成相对路径
-function buildNightmare() {
-  const dest = path.join(outDir, 'nightmare');
-  mkdirSync(path.join(dest, 'vendor'), { recursive: true });
-  for (const f of readdirSync(nightmareDir)) {
-    if (/\.(js|css|html)$/.test(f)) cpSync(path.join(nightmareDir, f), path.join(dest, f));
+function clearBuild() {
+  // Recursively remove only this fixed output directory, never a linked external target.
+  if (path.dirname(outDir) !== repoRoot || path.basename(outDir) !== '.pages-dist') throw new Error('构建输出目录越界，已停止清理。');
+  if (!existsSync(outDir)) return;
+  if (lstatSync(outDir).isSymbolicLink() || path.dirname(realpathSync(outDir)) !== realpathSync(repoRoot)) {
+    throw new Error('.pages-dist 指向其他目录，已停止清理。');
   }
-  for (const f of ['three.module.min.js', 'three.core.min.js']) {
-    cpSync(path.join(threeDir, f), path.join(dest, 'vendor', f));
-  }
-  const file = path.join(dest, 'renderer.js');
-  const src = readFileSync(file, 'utf8');
-  const out = src.replace('/node_modules/three/build/three.module.js', './vendor/three.module.min.js');
-  if (out === src) throw new Error('renderer.js 里没找到 three 的导入路径，请检查 deploy.mjs');
-  writeFileSync(file, out);
+  rmSync(outDir, { recursive: true, force: true });
 }
 
 function build() {
-  rmSync(outDir, { recursive: true, force: true });
-  mkdirSync(path.join(outDir, 'mvp'), { recursive: true });
-  // 游戏文件放 /mvp/，原画放站点根目录，保持代码里 "../xx.png" 的相对路径有效
-  for (const f of readdirSync(mvpDir)) {
-    if (/\.(js|css)$/.test(f)) cpSync(path.join(mvpDir, f), path.join(outDir, 'mvp', f));
+  clearBuild();
+  const dest = path.join(outDir, 'mvp-v2');
+  mkdirSync(dest, { recursive: true });
+  for (const file of readdirSync(v2Dir, { withFileTypes: true })) {
+    if (!file.isFile() || !/\.(js|css|html)$/.test(file.name)) continue;
+    const source = path.join(v2Dir, file.name), target = path.join(dest, file.name);
+    if (file.name.endsWith('.html')) {
+      // Relative imports work under both a project prefix (/BOB/) and a custom domain.
+      const html = readFileSync(source, 'utf8').replace(/\s*<base\b[^>]*>/gi, '');
+      writeFileSync(target, html);
+    } else cpSync(source, target);
   }
-  // <base href="/mvp/"> 是本地服务器用的绝对路径，Pages 项目站点有仓库名前缀，必须去掉
-  const html = readFileSync(path.join(mvpDir, 'index.html'), 'utf8').replace(/\s*<base [^>]*>/, '');
-  writeFileSync(path.join(outDir, 'mvp', 'index.html'), html);
-  for (const f of artFiles) cpSync(path.join(artDir, f), path.join(outDir, f));
-  buildNightmare();
-  writeFileSync(path.join(outDir, 'index.html'), '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=nightmare/"><a href="nightmare/">进入游戏</a>');
+  cpSync(path.join(v2Dir, 'assets'), path.join(dest, 'assets'), { recursive: true });
+  const spriteRoot = realpathSync(path.join(repoRoot, 'assets/runtime/sprites'));
+  for (const src of new Set(Object.values(ART_ASSETS).map(asset => asset.src))) {
+    if (!/^\.\.\/assets\/runtime\/sprites\/[a-z0-9-]+\/[a-z0-9-]+\.(png|webp)$/.test(src)) throw new Error(`Invalid runtime art path: ${src}`);
+    const source = realpathSync(path.resolve(v2Dir, src));
+    if (!source.startsWith(`${spriteRoot}${path.sep}`)) throw new Error(`Runtime art escaped its library: ${src}`);
+    const target = path.join(outDir, src.slice(3));
+    mkdirSync(path.dirname(target), { recursive: true });
+    cpSync(source, target);
+  }
+  for (const file of ['README.md', 'LEGACY.md', 'CAMPAIGN.md', 'SCENE_PIPELINE.md', 'progress.md']) cpSync(path.join(v2Dir, file), path.join(dest, file));
+  const coverTarget = path.join(outDir, coverPath);
+  mkdirSync(path.dirname(coverTarget), { recursive: true });
+  cpSync(path.join(repoRoot, coverPath), coverTarget);
+  writeFileSync(path.join(outDir, 'index.html'), '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=mvp-v2/"><title>鲸落万物生 · V2</title><a href="mvp-v2/">进入 V2 游戏</a></html>');
+  // Cached home pages used these destinations. Keep only redirects, no old game assets.
+  for (const legacy of ['nightmare', 'mvp']) {
+    mkdirSync(path.join(outDir, legacy));
+    writeFileSync(path.join(outDir, legacy, 'index.html'), '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../mvp-v2/"><title>鲸落万物生 · V2</title><a href="../mvp-v2/">进入当前版本</a></html>');
+  }
   writeFileSync(path.join(outDir, '.nojekyll'), '');
 }
 
 function pagesUrl(remote) {
-  const m = remote.match(/github\.com[:/]([^/]+)\/(.+?)(?:\.git)?$/);
-  return m ? `https://${m[1].toLowerCase()}.github.io/${m[2]}/nightmare/` : null;
+  const match = remote.match(/github\.com[:/]([^/]+)\/([^/]+?)(?:\.git)?\/?$/);
+  if (!match) throw new Error('origin 不是可识别的 GitHub 仓库地址，无法确认 Pages 发布地址。');
+  const owner = match[1].toLowerCase(), repo = match[2];
+  const prefix = repo.toLowerCase() === `${owner}.github.io` ? '' : `${repo}/`;
+  return `https://${owner}.github.io/${prefix}mvp-v2/`;
 }
 
 function publish() {
   const remote = read('git', ['remote', 'get-url', 'origin']);
-  // 在临时目录里建一个只含构建产物的仓库，强推到 gh-pages，不影响 main 的历史和工作区
+  const url = pagesUrl(remote);
+  // Read identity from the source repo so repository-local configuration is honored.
+  const name = read('git', ['config', 'user.name']);
+  const email = read('git', ['config', 'user.email']);
+  if (!name || !email) throw new Error('请先配置 Git user.name 和 user.email，再发布。');
+  const existing = read('git', ['ls-remote', '--heads', remote, `refs/heads/${branch}`]);
   run('git', ['init', '-q', '-b', branch], outDir);
+  run('git', ['config', 'user.name', name], outDir);
+  run('git', ['config', 'user.email', email], outDir);
+  if (existing) {
+    run('git', ['fetch', '--depth=1', remote, `refs/heads/${branch}`], outDir);
+    // Keep the freshly built files while using the existing deployment as parent.
+    run('git', ['reset', '--mixed', 'FETCH_HEAD'], outDir);
+  }
   run('git', ['add', '-A'], outDir);
-  run('git', ['commit', '-q', '-m', `发布 ${new Date().toISOString()}`], outDir);
-  run('git', ['push', '-f', remote, `${branch}:${branch}`], outDir);
-  // 首次发布时尝试自动开启 Pages；已开启或没装 gh 时忽略
-  try {
-    execFileSync('gh', ['api', '-X', 'POST', 'repos/{owner}/{repo}/pages', '-f', `source[branch]=${branch}`, '-f', 'source[path]=/'], { cwd: repoRoot, stdio: 'ignore' });
-  } catch {}
-  console.log(`\n已发布。1–2 分钟后访问：${pagesUrl(remote) ?? '（请在仓库 Settings → Pages 查看地址）'}`);
+  if (!existing || read('git', ['diff', '--cached', '--name-only'], outDir)) {
+    run('git', ['commit', '-q', '-m', `发布 V2 ${new Date().toISOString()}`], outDir);
+    // A concurrent deployment causes a normal non-fast-forward failure; never overwrite it.
+    run('git', ['push', remote, `${branch}:${branch}`], outDir);
+  } else console.log('发布产物没有变化，保留当前 gh-pages 提交。');
+  // This repository already has Pages enabled on gh-pages. No gh CLI/config mutation needed.
+  console.log(`\nV2 产物已更新至 gh-pages；GitHub Pages 完成部署后访问：${url}`);
 }
 
-build();
-console.log(`构建完成：${outDir}`);
-if (!process.argv.includes('--build-only')) {
-  publish();
-  rmSync(outDir, { recursive: true, force: true });
+try {
+  build();
+  console.log(`仅 V2 构建完成：${outDir}`);
+  if (!process.argv.includes('--build-only')) {
+    publish();
+    clearBuild();
+  }
+} catch (error) {
+  console.error(`构建或发布失败：${error.message}\n已保留构建产物，未执行强制推送。`);
+  process.exitCode = 1;
 }

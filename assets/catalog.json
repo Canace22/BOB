@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 6,
-  "updatedAt": "2026-10-27T06:03:01.661329+00:00",
+  "revision": 11,
+  "updatedAt": "2026-10-27T08:21:01.591Z",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -37,14 +37,14 @@
         1152
       ],
       "pivot": [
-        691.0,
+        691,
         1152
       ],
       "world": {
         "axis": "height",
-        "units": 1.0,
+        "units": 1,
         "visibleWidthU": 0.8748,
-        "visibleHeightU": 1.0
+        "visibleHeightU": 1
       },
       "sha256": "74b2a51d05aff4be6feef17a359321be966de66d441a49c5f16c3f5041d49e29",
       "alphaRange": [
@@ -99,13 +99,23 @@
         "passed": true,
         "limitations": [
           "单姿态；左腰灯、右向骨鸣器已保留。不能镜像代替左向立绘。",
-          "未进行用户美术确认；未接入两版游戏加载器。"
+          "未进行用户美术确认；V2 接入验收见 integration.evidence，初版和 2.5D 版未接入。"
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/tide-picker-74b2a51d05af.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/tide-picker-74b2a51d05af.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/tide-picker.webp"
+      }
     },
     {
       "id": "corpse-crab",
@@ -191,13 +201,23 @@
         "passed": true,
         "limitations": [
           "静态单姿态；无攻击、行走动画。",
-          "未进行用户美术确认；未接入两版游戏加载器。"
+          "未进行用户美术确认；V2 接入验收见 integration.evidence，初版和 2.5D 版未接入。"
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/corpse-crab-e2fada0447b9.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/corpse-crab-e2fada0447b9.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "源 R1 尸蟹用于 V2 既有胃库投喂对象",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/corpse-crab.webp"
+      }
     },
     {
       "id": "fat-sniffer",
@@ -562,13 +582,23 @@
         "passed": true,
         "limitations": [
           "菌灯和壳体合层，单个静态亮灯状态。",
-          "未进行用户美术确认；未接入两版游戏加载器。"
+          "未进行用户美术确认；V2 接入验收见 integration.evidence，初版和 2.5D 版未接入。"
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/shell-camp-436202630c27.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/shell-camp-436202630c27.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/shell-camp.webp"
+      }
     },
     {
       "id": "bone-anchor-ring",
@@ -655,13 +685,23 @@
         "passed": true,
         "limitations": [
           "环孔中心为交互点。约0.5U环宽；红绳含在画布中。",
-          "未进行用户美术确认；未接入两版游戏加载器。"
+          "未进行用户美术确认；V2 接入验收见 integration.evidence，初版和 2.5D 版未接入。"
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bone-anchor-ring-77d6e8007369.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/bone-anchor-ring-77d6e8007369.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/bone-anchor-ring.webp"
+      }
     },
     {
       "id": "life-fragment",
@@ -687,7 +727,7 @@
       ],
       "pivot": [
         655.5,
-        611.0
+        611
       ],
       "world": {
         "axis": "height",
@@ -754,9 +794,20 @@
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/life-fragment-c6106b20d14b.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/life-fragment-c6106b20d14b.png",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "保留来源比例与锚点，按稳定奖励或敌人ID接入",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/life-fragment.webp"
+      }
     },
     {
       "id": "empty-shell",
@@ -847,9 +898,20 @@
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/empty-shell-6976a63e022e.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/empty-shell-6976a63e022e.png",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "H1安置状态；显示底边对齐实际平台，交互点沿用源坐标",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/empty-shell.webp"
+      }
     },
     {
       "id": "r1-tongue-ledge",
@@ -879,8 +941,8 @@
       ],
       "world": {
         "axis": "width",
-        "units": 10.0,
-        "visibleWidthU": 10.0,
+        "units": 10,
+        "visibleWidthU": 10,
         "visibleHeightU": 2.6089
       },
       "sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
@@ -935,13 +997,23 @@
         "passed": true,
         "limitations": [
           "独立平台件，可重叠拼装；未宣称无缝平铺。中央亮顶边可站，端部有微起伏。",
-          "未进行用户美术确认；未接入两版游戏加载器。"
+          "未进行用户美术确认；V2 接入验收见 integration.evidence，初版和 2.5D 版未接入。"
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-tongue-ledge-09251b78a011.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-tongue-ledge-09251b78a011.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-tongue-ledge.webp"
+      }
     },
     {
       "id": "r1-baleen-curtain",
@@ -971,8 +1043,8 @@
       ],
       "world": {
         "axis": "width",
-        "units": 16.0,
-        "visibleWidthU": 16.0,
+        "units": 16,
+        "visibleWidthU": 16,
         "visibleHeightU": 6.4629
       },
       "sha256": "6c479b76269902945098b4dc4f0ce7e18082dfd219c2ced8a40b427a8db78a6e",
@@ -1032,9 +1104,20 @@
         ],
         "report": "assets/source/whalefall-v5-2-static-01/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-baleen-curtain-6c479b762699.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-baleen-curtain-6c479b762699.png",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "来源器官环境件按房间分层摆放；不作为碰撞地图",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-baleen-curtain.webp"
+      }
     },
     {
       "id": "r1-mouth-depth",
@@ -1059,7 +1142,7 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         941
       ],
       "world": {
@@ -1154,7 +1237,7 @@
       ],
       "pivot": [
         763.5,
-        506.0
+        506
       ],
       "world": {
         "axis": "width",
@@ -1271,8 +1354,8 @@
         674
       ],
       "pivot": [
-        889.0,
-        436.0
+        889,
+        436
       ],
       "world": {
         "axis": "width",
@@ -1355,7 +1438,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "baleen-shrimp-swarm"
@@ -1363,7 +1446,17 @@
       "parts": [],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/baleen-shrimp-swarm-7325c61bda0e.png",
       "familyId": "baleen-shrimp-swarm",
-      "variant": "base"
+      "variant": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/baleen-shrimp-swarm.webp"
+      }
     },
     {
       "id": "beituo",
@@ -1623,7 +1716,7 @@
         927
       ],
       "pivot": [
-        764.0,
+        764,
         520.5
       ],
       "world": {
@@ -1876,7 +1969,7 @@
         928
       ],
       "pivot": [
-        728.0,
+        728,
         928
       ],
       "world": {
@@ -1993,7 +2086,7 @@
         969
       ],
       "pivot": [
-        754.0,
+        754,
         969
       ],
       "world": {
@@ -2077,7 +2170,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "gate-shell-crab"
@@ -2085,7 +2178,18 @@
       "parts": [],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/gate-shell-crab-dcd0a5f4dcd7.png",
       "familyId": "gate-shell-crab",
-      "variant": "base"
+      "variant": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "保留来源比例与锚点，按稳定奖励或敌人ID接入",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/gate-shell-crab.webp"
+      }
     },
     {
       "id": "nursery-sac",
@@ -2111,7 +2215,7 @@
         1112
       ],
       "pivot": [
-        744.0,
+        744,
         1112
       ],
       "world": {
@@ -2228,7 +2332,7 @@
         984
       ],
       "pivot": [
-        774.0,
+        774,
         984
       ],
       "world": {
@@ -2345,7 +2449,7 @@
         911
       ],
       "pivot": [
-        801.0,
+        801,
         911
       ],
       "world": {
@@ -2980,8 +3084,8 @@
         851
       ],
       "pivot": [
-        887.0,
-        432.0
+        887,
+        432
       ],
       "world": {
         "axis": "width",
@@ -3099,7 +3203,7 @@
       ],
       "pivot": [
         1934,
-        425.0
+        425
       ],
       "world": {
         "axis": "width",
@@ -3346,7 +3450,7 @@
         1177
       ],
       "pivot": [
-        540.0,
+        540,
         1177
       ],
       "world": {
@@ -3354,7 +3458,7 @@
         "units": 1,
         "basis": "设计明确主角高度1U=0.30m。",
         "visibleWidthU": 0.6225,
-        "visibleHeightU": 1.0,
+        "visibleHeightU": 1,
         "canvasWidthU": 1.1538,
         "canvasHeightU": 1.0903
       },
@@ -3437,7 +3541,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "tide-picker-left"
@@ -3445,7 +3549,17 @@
       "parts": [],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/tide-picker-left-d32973b4d2b2.png",
       "familyId": "tide-picker",
-      "variant": "idle-left"
+      "variant": "idle-left",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/tide-picker-left.webp"
+      }
     },
     {
       "id": "yusuo",
@@ -3587,16 +3701,16 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "0b206ae1155ed5897c1b24261053e557bf7db0bb8061f54654fc3c2b5395cbf9",
@@ -3713,16 +3827,16 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "d31fe19293f0184d839eb7dd43a3455960b3aafa39af2c9dfcaf592ec8989283",
@@ -3841,16 +3955,16 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "40177e25ccf101ee9541d2b6c168f908ae40ff7225dcc4e73d7a2d9abbd09e64",
@@ -3968,16 +4082,16 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "941c38d5c641dc120f81c3265cdcbda331a16e472e20dfc4d49b96cb7b58f8c2",
@@ -4095,16 +4209,16 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "2ad5d38bae53dc268e112aa068e4289f9f91e90d0018daa0175a07172a32018d",
@@ -4224,7 +4338,7 @@
       "world": {
         "axis": "width",
         "units": 16,
-        "visibleWidthU": 16.0,
+        "visibleWidthU": 16,
         "visibleHeightU": 5.6733,
         "canvasWidthU": 17.1055,
         "canvasHeightU": 6.7531
@@ -4298,7 +4412,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r1-wound-section"
@@ -4307,7 +4421,18 @@
         "R1-01"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-wound-section-2a6f31ca7b73.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "来源器官环境件按房间分层摆放；不作为碰撞地图",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-wound-section.webp"
+      }
     },
     {
       "id": "r1-esophagus-fold",
@@ -4333,13 +4458,13 @@
         951
       ],
       "pivot": [
-        814.0,
+        814,
         951
       ],
       "world": {
         "axis": "width",
         "units": 18,
-        "visibleWidthU": 18.0,
+        "visibleWidthU": 18,
         "visibleHeightU": 10.6092,
         "canvasWidthU": 18.5287,
         "canvasHeightU": 11.2184
@@ -4413,7 +4538,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r1-esophagus-section"
@@ -4422,7 +4547,18 @@
         "R1-05"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-esophagus-fold-fdf3ab2c01e6.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "来源器官环境件按房间分层摆放；不作为碰撞地图",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-esophagus-fold.webp"
+      }
     },
     {
       "id": "r1-nasal-wall",
@@ -4454,7 +4590,7 @@
       "world": {
         "axis": "width",
         "units": 16,
-        "visibleWidthU": 16.0,
+        "visibleWidthU": 16,
         "visibleHeightU": 5.3141,
         "canvasWidthU": 16.9985,
         "canvasHeightU": 6.296
@@ -4569,7 +4705,7 @@
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 5.1731,
         "canvasWidthU": 14.2001,
         "canvasHeightU": 6.0847
@@ -4644,7 +4780,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r1-baleen-foreground"
@@ -4657,7 +4793,17 @@
         "R1-07"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-baleen-shadow-8913e7d5aeca.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-baleen-shadow.webp"
+      }
     },
     {
       "id": "r1-tongue-ramp",
@@ -4683,13 +4829,13 @@
         660
       ],
       "pivot": [
-        1086.0,
+        1086,
         660
       ],
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 2.6741,
         "canvasWidthU": 10.4545,
         "canvasHeightU": 3.5155
@@ -4810,7 +4956,7 @@
       "world": {
         "axis": "width",
         "units": 5,
-        "visibleWidthU": 5.0,
+        "visibleWidthU": 5,
         "visibleHeightU": 0.9893,
         "canvasWidthU": 5.2552,
         "canvasHeightU": 1.7671
@@ -4884,7 +5030,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r1-weighted-tongue"
@@ -4893,7 +5039,17 @@
         "R1-03"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-weight-membrane-6dcde8238744.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-weight-membrane.webp"
+      }
     },
     {
       "id": "r1-weight-membrane-pressed",
@@ -4925,7 +5081,7 @@
       "world": {
         "axis": "width",
         "units": 5,
-        "visibleWidthU": 5.0,
+        "visibleWidthU": 5,
         "visibleHeightU": 1.0495,
         "canvasWidthU": 5.3016,
         "canvasHeightU": 1.7827
@@ -5000,7 +5156,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r1-weighted-tongue"
@@ -5009,7 +5165,17 @@
         "R1-03"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-weight-membrane-pressed-8a3714f8f11e.png",
-      "state": "pressed"
+      "state": "pressed",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-weight-membrane-pressed.webp"
+      }
     },
     {
       "id": "r2-heart-rupture",
@@ -5035,13 +5201,13 @@
         703
       ],
       "pivot": [
-        1086.0,
+        1086,
         703
       ],
       "world": {
         "axis": "width",
         "units": 20,
-        "visibleWidthU": 20.0,
+        "visibleWidthU": 20,
         "visibleHeightU": 6.511,
         "canvasWidthU": 20.6101,
         "canvasHeightU": 6.9304
@@ -5158,7 +5324,7 @@
       "world": {
         "axis": "width",
         "units": 18,
-        "visibleWidthU": 18.0,
+        "visibleWidthU": 18,
         "visibleHeightU": 6.8891,
         "canvasWidthU": 18.3403,
         "canvasHeightU": 7.257
@@ -5267,13 +5433,13 @@
         592
       ],
       "pivot": [
-        1081.0,
+        1081,
         592
       ],
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 1.5671,
         "canvasWidthU": 8.4701,
         "canvasHeightU": 2.8482
@@ -5348,7 +5514,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r2-soft-platform-kit"
@@ -5362,7 +5528,17 @@
         "R2-06"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-membrane-platform-153d9ed57a55.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r2-membrane-platform.webp"
+      }
     },
     {
       "id": "r2-soft-bed",
@@ -5394,7 +5570,7 @@
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 2.0181,
         "canvasWidthU": 10.5284,
         "canvasHeightU": 3.7846
@@ -5515,7 +5691,7 @@
       "world": {
         "axis": "width",
         "units": 7,
-        "visibleWidthU": 7.0,
+        "visibleWidthU": 7,
         "visibleHeightU": 2.8589,
         "canvasWidthU": 7.4222,
         "canvasHeightU": 3.1804
@@ -5630,13 +5806,13 @@
         675
       ],
       "pivot": [
-        1081.0,
+        1081,
         675
       ],
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 4.1165,
         "canvasWidthU": 14.5659,
         "canvasHeightU": 4.898
@@ -5710,7 +5886,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r2-membrane-foreground"
@@ -5724,7 +5900,17 @@
         "R2-06"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-foreground-membrane-4ca5ad2b4da2.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r2-foreground-membrane.webp"
+      }
     },
     {
       "id": "r3-liver-edge",
@@ -5756,7 +5942,7 @@
       "world": {
         "axis": "width",
         "units": 20,
-        "visibleWidthU": 20.0,
+        "visibleWidthU": 20,
         "visibleHeightU": 5.8695,
         "canvasWidthU": 20.8982,
         "canvasHeightU": 8.2089
@@ -5866,13 +6052,13 @@
         656
       ],
       "pivot": [
-        1081.0,
+        1081,
         656
       ],
       "world": {
         "axis": "width",
         "units": 16,
-        "visibleWidthU": 16.0,
+        "visibleWidthU": 16,
         "visibleHeightU": 4.1566,
         "canvasWidthU": 16.5196,
         "canvasHeightU": 5.5549
@@ -5988,7 +6174,7 @@
       "world": {
         "axis": "width",
         "units": 20,
-        "visibleWidthU": 20.0,
+        "visibleWidthU": 20,
         "visibleHeightU": 9.0529,
         "canvasWidthU": 21.0459,
         "canvasHeightU": 10.0872
@@ -6106,7 +6292,7 @@
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 1.7444,
         "canvasWidthU": 8.6697,
         "canvasHeightU": 2.9153
@@ -6181,7 +6367,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r3-bank-platform-kit"
@@ -6197,7 +6383,17 @@
         "R3-08"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-bank-platform-93b7f2f79a7d.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r3-bank-platform.webp"
+      }
     },
     {
       "id": "r3-shell-nest-before",
@@ -6223,13 +6419,13 @@
         786
       ],
       "pivot": [
-        871.0,
+        871,
         786
       ],
       "world": {
         "axis": "width",
         "units": 6,
-        "visibleWidthU": 6.0,
+        "visibleWidthU": 6,
         "visibleHeightU": 2.6769,
         "canvasWidthU": 7.3469,
         "canvasHeightU": 3.7678
@@ -6346,13 +6542,13 @@
         749
       ],
       "pivot": [
-        1017.0,
+        1017,
         749
       ],
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 2.3568,
         "canvasWidthU": 14.2955,
         "canvasHeightU": 5.4452
@@ -6426,7 +6622,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r3-mucosa-foreground"
@@ -6442,7 +6638,17 @@
         "R3-08"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-foreground-fold-c159a01afb14.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r3-foreground-fold.webp"
+      }
     },
     {
       "id": "r4-tapering-vertebrae",
@@ -6468,13 +6674,13 @@
         703
       ],
       "pivot": [
-        1060.0,
+        1060,
         703
       ],
       "world": {
         "axis": "width",
         "units": 26,
-        "visibleWidthU": 26.0,
+        "visibleWidthU": 26,
         "visibleHeightU": 8.5631,
         "canvasWidthU": 26.2859,
         "canvasHeightU": 9.2467
@@ -6592,7 +6798,7 @@
       "world": {
         "axis": "width",
         "units": 6,
-        "visibleWidthU": 6.0,
+        "visibleWidthU": 6,
         "visibleHeightU": 2.628,
         "canvasWidthU": 6.5458,
         "canvasHeightU": 3.357
@@ -6710,13 +6916,13 @@
         629
       ],
       "pivot": [
-        1049.0,
+        1049,
         629
       ],
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 1.5822,
         "canvasWidthU": 8.5112,
         "canvasHeightU": 3.0385
@@ -6791,7 +6997,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r4-bone-platform-kit"
@@ -6806,7 +7012,17 @@
         "R4-07"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-bone-platform-b3e88cb8c60d.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp"
+      }
     },
     {
       "id": "r4-fungal-bed",
@@ -6838,7 +7054,7 @@
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 1.9484,
         "canvasWidthU": 10.5309,
         "canvasHeightU": 3.5412
@@ -6954,7 +7170,7 @@
       "world": {
         "axis": "width",
         "units": 5,
-        "visibleWidthU": 5.0,
+        "visibleWidthU": 5,
         "visibleHeightU": 0.5969,
         "canvasWidthU": 5.2489,
         "canvasHeightU": 1.7496
@@ -7069,7 +7285,7 @@
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 1.8755,
         "canvasWidthU": 8.36,
         "canvasHeightU": 3.2946
@@ -7185,13 +7401,13 @@
         663
       ],
       "pivot": [
-        1083.0,
+        1083,
         663
       ],
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 3.3671,
         "canvasWidthU": 14.7361,
         "canvasHeightU": 4.9552
@@ -7265,7 +7481,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r4-bone-foreground"
@@ -7280,7 +7496,17 @@
         "R4-07"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-foreground-bone-67251afdb387.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r4-foreground-bone.webp"
+      }
     },
     {
       "id": "r4-thin-bone-cracked",
@@ -7312,7 +7538,7 @@
       "world": {
         "axis": "width",
         "units": 5,
-        "visibleWidthU": 5.0,
+        "visibleWidthU": 5,
         "visibleHeightU": 0.6078,
         "canvasWidthU": 5.2388,
         "canvasHeightU": 1.7463
@@ -7427,7 +7653,7 @@
       "world": {
         "axis": "width",
         "units": 5,
-        "visibleWidthU": 5.0,
+        "visibleWidthU": 5,
         "visibleHeightU": 0.7653,
         "canvasWidthU": 5.2438,
         "canvasHeightU": 1.7479
@@ -7536,13 +7762,13 @@
         753
       ],
       "pivot": [
-        992.0,
+        992,
         753
       ],
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 3.591,
         "canvasWidthU": 10.4259,
         "canvasHeightU": 4.1693
@@ -7663,7 +7889,7 @@
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 3.5987,
         "canvasWidthU": 10.3929,
         "canvasHeightU": 4.154
@@ -7784,7 +8010,7 @@
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 1.7954,
         "canvasWidthU": 8.3298,
         "canvasHeightU": 3.1267
@@ -7899,13 +8125,13 @@
         709
       ],
       "pivot": [
-        1049.0,
+        1049,
         709
       ],
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 3.5662,
         "canvasWidthU": 14.6129,
         "canvasHeightU": 5.2169
@@ -8019,13 +8245,13 @@
         535
       ],
       "pivot": [
-        1080.0,
+        1080,
         535
       ],
       "world": {
         "axis": "width",
         "units": 10,
-        "visibleWidthU": 10.0,
+        "visibleWidthU": 10,
         "visibleHeightU": 1.5421,
         "canvasWidthU": 10.3448,
         "canvasHeightU": 3.4866
@@ -8136,13 +8362,13 @@
         596
       ],
       "pivot": [
-        1081.0,
+        1081,
         596
       ],
       "world": {
         "axis": "width",
         "units": 14,
-        "visibleWidthU": 14.0,
+        "visibleWidthU": 14,
         "visibleHeightU": 2.1715,
         "canvasWidthU": 14.1837,
         "canvasHeightU": 4.7694
@@ -8260,9 +8486,9 @@
         "units": 32,
         "basis": "layer canvas projection width, not physical organ size",
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 9.0772,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0203
       },
       "sha256": "444c28bdec59cd848381296eb2f01eec659954c35b34725c598241b1f6e34b5c",
@@ -8335,7 +8561,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "r1-oral-background"
@@ -8353,7 +8579,17 @@
       "layer": "L1",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-oral-far-layer-444c28bdec59.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-oral-far-layer.webp"
+      }
     },
     {
       "id": "r2-lung-far-layer",
@@ -8379,7 +8615,7 @@
         743
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
@@ -8387,9 +8623,9 @@
         "units": 32,
         "basis": "layer canvas projection width, not physical organ size",
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 14.2201,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "b407951435c35fc609aaae19bc2fc94bde311aaa0170720a537a685957d382c0",
@@ -8462,7 +8698,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "r2-lung-pleura"
@@ -8479,7 +8715,17 @@
       "layer": "L1",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-lung-far-layer-b407951435c3.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r2-lung-far-layer.webp"
+      }
     },
     {
       "id": "r3-gastric-far-layer",
@@ -8505,7 +8751,7 @@
         941
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
@@ -8513,9 +8759,9 @@
         "units": 32,
         "basis": "layer canvas projection width, not physical organ size",
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 18.0096,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "895630df496be75fdc5ed270be5078fb4f4487c50e4f7dcf2ca83b446cac24e8",
@@ -8588,7 +8834,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "r3-gastric-folds"
@@ -8607,7 +8853,17 @@
       "layer": "L1",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-gastric-far-layer-895630df496b.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r3-gastric-far-layer.webp"
+      }
     },
     {
       "id": "r4-vertebrae-far-layer",
@@ -8633,7 +8889,7 @@
         673
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
@@ -8641,9 +8897,9 @@
         "units": 32,
         "basis": "layer canvas projection width, not physical organ size",
         "space": "canvas",
-        "visibleWidthU": 32.0,
+        "visibleWidthU": 32,
         "visibleHeightU": 12.8804,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "0c8779c753d3029ac9f58d7c92fdab1a92710ee1cc8be4b903f335d9dd5958fb",
@@ -8716,7 +8972,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "r4-vertebrae-sequence"
@@ -8734,7 +8990,17 @@
       "layer": "L1",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-vertebrae-far-layer-0c8779c753d3.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r4-vertebrae-far-layer.webp"
+      }
     },
     {
       "id": "r5-cranial-far-layer",
@@ -8760,7 +9026,7 @@
         718
       ],
       "pivot": [
-        836.0,
+        836,
         470.5
       ],
       "world": {
@@ -8770,7 +9036,7 @@
         "space": "canvas",
         "visibleWidthU": 20.0191,
         "visibleHeightU": 13.7416,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0096
       },
       "sha256": "2f6d6e9c87c08be56bd5fb6215b42b9f5f037bac1021cf68c7cf83200a6d6a08",
@@ -8896,7 +9162,7 @@
         "space": "canvas",
         "visibleWidthU": 31.4829,
         "visibleHeightU": 8.2537,
-        "canvasWidthU": 32.0,
+        "canvasWidthU": 32,
         "canvasHeightU": 18.0203
       },
       "sha256": "e5305c64fed25d559f0581d77e77a1de37044ff6ee241953fa239c62c8b3ae85",
@@ -9008,7 +9274,7 @@
         1253
       ],
       "pivot": [
-        581.0,
+        581,
         1006.1600000000001
       ],
       "world": {
@@ -9489,14 +9755,14 @@
         450
       ],
       "pivot": [
-        1087.0,
+        1087,
         361.5
       ],
       "world": {
         "axis": "width",
-        "units": 1.0,
+        "units": 1,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
-        "visibleWidthU": 1.0,
+        "visibleWidthU": 1,
         "visibleHeightU": 0.088,
         "canvasWidthU": 1.0795,
         "canvasHeightU": 0.3598
@@ -9694,13 +9960,23 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "migration-memory"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/migration-memory-3c28e6c88f8d.png",
-      "familyId": "migration-memory"
+      "familyId": "migration-memory",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/migration-memory.webp"
+      }
     },
     {
       "id": "reward-socket-life",
@@ -9726,7 +10002,7 @@
         964
       ],
       "pivot": [
-        703.0,
+        703,
         964
       ],
       "world": {
@@ -10348,7 +10624,7 @@
         1138
       ],
       "pivot": [
-        694.0,
+        694,
         1138
       ],
       "world": {
@@ -10467,7 +10743,7 @@
         1131
       ],
       "pivot": [
-        670.0,
+        670,
         1131
       ],
       "world": {
@@ -10586,7 +10862,7 @@
         1082
       ],
       "pivot": [
-        698.0,
+        698,
         1082
       ],
       "world": {
@@ -10705,7 +10981,7 @@
         1031
       ],
       "pivot": [
-        697.0,
+        697,
         1031
       ],
       "world": {
@@ -10824,7 +11100,7 @@
         1010
       ],
       "pivot": [
-        719.0,
+        719,
         1010
       ],
       "world": {
@@ -10912,7 +11188,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "settlement-valve"
@@ -10927,7 +11203,17 @@
           "coordinateSpace": "original-canvas-pixels"
         }
       },
-      "familyId": "settlement-valve"
+      "familyId": "settlement-valve",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/pressure-valve-base.webp"
+      }
     },
     {
       "id": "pressure-valve-handle",
@@ -11041,7 +11327,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "settlement-valve"
@@ -11056,7 +11342,17 @@
           "coordinateSpace": "original-canvas-pixels"
         }
       },
-      "familyId": "settlement-valve"
+      "familyId": "settlement-valve",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/pressure-valve-handle.webp"
+      }
     },
     {
       "id": "bypass-valve-base",
@@ -11090,7 +11386,7 @@
         "units": 1,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 1.5025,
-        "visibleHeightU": 1.0,
+        "visibleHeightU": 1,
         "canvasWidthU": 2.5388,
         "canvasHeightU": 1.6926
       },
@@ -11170,7 +11466,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "settlement-valve"
@@ -11185,7 +11481,17 @@
           "coordinateSpace": "original-canvas-pixels"
         }
       },
-      "familyId": "settlement-valve"
+      "familyId": "settlement-valve",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/bypass-valve-base.webp"
+      }
     },
     {
       "id": "bypass-valve-lever",
@@ -11299,7 +11605,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "settlement-valve"
@@ -11314,7 +11620,17 @@
           "coordinateSpace": "original-canvas-pixels"
         }
       },
-      "familyId": "settlement-valve"
+      "familyId": "settlement-valve",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/bypass-valve-lever.webp"
+      }
     },
     {
       "id": "floating-platform",
@@ -11345,9 +11661,9 @@
       ],
       "world": {
         "axis": "width",
-        "units": 3.0,
+        "units": 3,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
-        "visibleWidthU": 3.0,
+        "visibleWidthU": 3,
         "visibleHeightU": 0.7601,
         "canvasWidthU": 3.2767,
         "canvasHeightU": 1.4711
@@ -11596,7 +11912,7 @@
         798
       ],
       "pivot": [
-        831.0,
+        831,
         798
       ],
       "world": {
@@ -12504,7 +12820,7 @@
         1469
       ],
       "pivot": [
-        514.0,
+        514,
         1469
       ],
       "world": {
@@ -13021,10 +13337,10 @@
       ],
       "world": {
         "axis": "height",
-        "units": 3.0,
+        "units": 3,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 1.846,
-        "visibleHeightU": 3.0,
+        "visibleHeightU": 3,
         "canvasWidthU": 2.8737,
         "canvasHeightU": 3.4899
       },
@@ -13148,10 +13464,10 @@
       ],
       "world": {
         "axis": "height",
-        "units": 3.0,
+        "units": 3,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 1.8425,
-        "visibleHeightU": 3.0,
+        "visibleHeightU": 3,
         "canvasWidthU": 2.8736,
         "canvasHeightU": 3.4954
       },
@@ -13261,7 +13577,7 @@
         1255
       ],
       "pivot": [
-        591.0,
+        591,
         1255
       ],
       "world": {
@@ -13768,7 +14084,7 @@
         760
       ],
       "pivot": [
-        842.0,
+        842,
         760
       ],
       "world": {
@@ -14005,7 +14321,7 @@
         651
       ],
       "pivot": [
-        946.0,
+        946,
         651
       ],
       "world": {
@@ -14125,7 +14441,7 @@
       ],
       "pivot": [
         663.5,
-        609.0
+        609
       ],
       "world": {
         "axis": "width",
@@ -14243,15 +14559,15 @@
         874
       ],
       "pivot": [
-        759.0,
+        759,
         874
       ],
       "world": {
         "axis": "height",
-        "units": 1.0,
+        "units": 1,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 0.8919,
-        "visibleHeightU": 1.0,
+        "visibleHeightU": 1,
         "canvasWidthU": 2.2756,
         "canvasHeightU": 1.517
       },
@@ -14375,10 +14691,10 @@
       ],
       "world": {
         "axis": "height",
-        "units": 3.0,
+        "units": 3,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 2.0088,
-        "visibleHeightU": 3.0,
+        "visibleHeightU": 3,
         "canvasWidthU": 2.0514,
         "canvasHeightU": 3.15
       },
@@ -14493,10 +14809,10 @@
       ],
       "world": {
         "axis": "height",
-        "units": 3.0,
+        "units": 3,
         "basis": "可见alpha>=8轮廓的轴向制作尺寸；主角1U=0.30m，场景统一128px/U；实机待验证",
         "visibleWidthU": 2.0567,
-        "visibleHeightU": 3.0,
+        "visibleHeightU": 3,
         "canvasWidthU": 2.0961,
         "canvasHeightU": 3.2239
       },
@@ -14692,13 +15008,24 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "dash-grant-cocoon"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/dash-grant-cocoon-closed-5dbd097b21a7.png",
-      "familyId": "dash-grant-cocoon"
+      "familyId": "dash-grant-cocoon",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "保留来源比例与锚点，按稳定奖励或敌人ID接入",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/dash-grant-cocoon-closed.webp"
+      }
     },
     {
       "id": "dash-grant-cocoon-open",
@@ -14810,13 +15137,24 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "dash-grant-cocoon"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/dash-grant-cocoon-open-9a835935f0c2.png",
-      "familyId": "dash-grant-cocoon"
+      "familyId": "dash-grant-cocoon",
+      "integration": {
+        "version": "mvp-v2",
+        "campaign": "v5.2-r1",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "须门主线首批静态外观；程序驱动预告、移动和状态切换，非逐帧动作动画",
+        "sourceAdaptation": "保留来源比例与锚点，按稳定奖励或敌人ID接入",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/dash-grant-cocoon-open.webp"
+      }
     },
     {
       "id": "ui-panel-frame",
@@ -18426,8 +18764,8 @@
       "world": {
         "axis": "width",
         "units": 3,
-        "visibleWidthU": 3.0,
-        "visibleHeightU": 3.0,
+        "visibleWidthU": 3,
+        "visibleHeightU": 3,
         "canvasWidthU": 3.9184,
         "canvasHeightU": 3.9184
       },
@@ -18882,7 +19220,7 @@
       "world": {
         "axis": "width",
         "units": 4,
-        "visibleWidthU": 4.0,
+        "visibleWidthU": 4,
         "visibleHeightU": 1.7455,
         "canvasWidthU": 4.6545,
         "canvasHeightU": 4.6545
@@ -18996,7 +19334,7 @@
       "world": {
         "axis": "width",
         "units": 3,
-        "visibleWidthU": 3.0,
+        "visibleWidthU": 3,
         "visibleHeightU": 2.4198,
         "canvasWidthU": 3.6226,
         "canvasHeightU": 3.6226
@@ -19110,7 +19448,7 @@
       "world": {
         "axis": "width",
         "units": 2,
-        "visibleWidthU": 2.0,
+        "visibleWidthU": 2,
         "visibleHeightU": 1.9902,
         "canvasWidthU": 2.4976,
         "canvasHeightU": 2.4976
@@ -19224,8 +19562,8 @@
       "world": {
         "axis": "width",
         "units": 2,
-        "visibleWidthU": 2.0,
-        "visibleHeightU": 2.0,
+        "visibleWidthU": 2,
+        "visibleHeightU": 2,
         "canvasWidthU": 2.7234,
         "canvasHeightU": 2.7234
       },
@@ -19670,7 +20008,7 @@
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 8.6457,
         "canvasWidthU": 9.1839,
         "canvasHeightU": 9.1839
@@ -19884,7 +20222,7 @@
       "world": {
         "axis": "width",
         "units": 8,
-        "visibleWidthU": 8.0,
+        "visibleWidthU": 8,
         "visibleHeightU": 3.8298,
         "canvasWidthU": 10.8936,
         "canvasHeightU": 10.8936
@@ -20213,10 +20551,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "2f64b4e01fd35e05e5ff7587836b5adbbada23ee29d77f957ec3023513041f3b",
       "alphaRange": [
@@ -20290,7 +20628,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth"
@@ -20298,7 +20636,17 @@
       "parallax": 0.1,
       "layer": "L0",
       "atlasEligible": false,
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-water-base-2f64b4e01fd3.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-water-base-2f64b4e01fd3.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-water-base.webp"
+      }
     },
     {
       "id": "r2-water-base",
@@ -20331,10 +20679,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "db2415fffa2acf34d6ff4464531bb16c142d1074d9779b587f06c633b1bfba65",
       "alphaRange": [
@@ -20408,7 +20756,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth"
@@ -20416,7 +20764,17 @@
       "parallax": 0.1,
       "layer": "L0",
       "atlasEligible": false,
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-water-base-db2415fffa2a.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-water-base-db2415fffa2a.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r2-water-base.webp"
+      }
     },
     {
       "id": "r3-water-base",
@@ -20449,10 +20807,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "a2e1d57e8a53b78cbb2e0c257f8028bca99bb40303f4c58986524988628baed4",
       "alphaRange": [
@@ -20526,7 +20884,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth"
@@ -20534,7 +20892,17 @@
       "parallax": 0.1,
       "layer": "L0",
       "atlasEligible": false,
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-water-base-a2e1d57e8a53.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-water-base-a2e1d57e8a53.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r3-water-base.webp"
+      }
     },
     {
       "id": "r4-water-base",
@@ -20567,10 +20935,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "e5183877d58caa6d4908b2510254a6845ceaf2c56831abd9f57e13a3185ae929",
       "alphaRange": [
@@ -20644,7 +21012,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth"
@@ -20652,7 +21020,17 @@
       "parallax": 0.1,
       "layer": "L0",
       "atlasEligible": false,
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-water-base-e5183877d58c.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-water-base-e5183877d58c.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r4-water-base.webp"
+      }
     },
     {
       "id": "r5-head-water-base",
@@ -20685,10 +21063,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "e72df0475c97deaae1f750ba008f2fee19b9dbe69060cee107bb40eb5a39829b",
       "alphaRange": [
@@ -20803,10 +21181,10 @@
         "axis": "width",
         "units": 32,
         "space": "canvas",
-        "visibleWidthU": 32.0,
-        "visibleHeightU": 18.0,
-        "canvasWidthU": 32.0,
-        "canvasHeightU": 18.0
+        "visibleWidthU": 32,
+        "visibleHeightU": 18,
+        "canvasWidthU": 32,
+        "canvasHeightU": 18
       },
       "sha256": "b7fe0ef61d6a20d48befd2f74b359895575b94b98a5fb09396e59ad12d59e85d",
       "alphaRange": [
@@ -20999,12 +21377,22 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "effect",
       "coversRequirementIds": [
         "fx-dash-membrane"
       ],
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/float-membrane-be519b0e61d1.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/float-membrane-be519b0e61d1.png",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/float-membrane.webp"
+      }
     },
     {
       "id": "mucus-hazard-surface",
@@ -21035,9 +21423,9 @@
       ],
       "world": {
         "axis": "width",
-        "units": 3.0,
+        "units": 3,
         "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
-        "visibleWidthU": 3.0,
+        "visibleWidthU": 3,
         "visibleHeightU": 0.4993,
         "canvasWidthU": 3.1524,
         "canvasHeightU": 1.0508
@@ -21149,9 +21537,9 @@
       ],
       "world": {
         "axis": "width",
-        "units": 3.0,
+        "units": 3,
         "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
-        "visibleWidthU": 3.0,
+        "visibleWidthU": 3,
         "visibleHeightU": 0.4306,
         "canvasWidthU": 3.1729,
         "canvasHeightU": 1.2242
@@ -21258,14 +21646,14 @@
         657
       ],
       "pivot": [
-        1063.0,
+        1063,
         657
       ],
       "world": {
         "axis": "width",
-        "units": 3.0,
+        "units": 3,
         "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
-        "visibleWidthU": 3.0,
+        "visibleWidthU": 3,
         "visibleHeightU": 0.7648,
         "canvasWidthU": 3.1512,
         "canvasHeightU": 1.0968
@@ -21372,8 +21760,8 @@
         901
       ],
       "pivot": [
-        773.0,
-        552.0
+        773,
+        552
       ],
       "world": {
         "axis": "width",
@@ -21486,8 +21874,8 @@
         692
       ],
       "pivot": [
-        789.0,
-        512.0
+        789,
+        512
       ],
       "world": {
         "axis": "width",
@@ -21724,7 +22112,7 @@
         1041
       ],
       "pivot": [
-        661.0,
+        661,
         138
       ],
       "world": {
@@ -21848,14 +22236,14 @@
         748
       ],
       "pivot": [
-        887.0,
+        887,
         748
       ],
       "world": {
         "axis": "width",
-        "units": 2.0,
+        "units": 2,
         "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
-        "visibleWidthU": 2.0,
+        "visibleWidthU": 2,
         "visibleHeightU": 0.6619,
         "canvasWidthU": 2.1348,
         "canvasHeightU": 1.0674
@@ -21928,7 +22316,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "shared-habitat-beds"
@@ -21946,7 +22334,17 @@
       },
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/habitat-shell-nest-3d9d517624fe.png",
       "familyId": "shared-habitat-beds",
-      "variant": "static"
+      "variant": "static",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "仅复用生态基座外观；保留 V2 原居民与三态规则",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/habitat-shell-nest.webp"
+      }
     },
     {
       "id": "habitat-fungus-bed",
@@ -21972,14 +22370,14 @@
         748
       ],
       "pivot": [
-        886.0,
+        886,
         748
       ],
       "world": {
         "axis": "width",
-        "units": 2.0,
+        "units": 2,
         "basis": "制作提案；主角1U=0.30m，按可见alpha>=8轮廓给定轴宽度。",
-        "visibleWidthU": 2.0,
+        "visibleWidthU": 2,
         "visibleHeightU": 0.7418,
         "canvasWidthU": 2.5163,
         "canvasHeightU": 1.2582
@@ -22052,7 +22450,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "shared-habitat-beds"
@@ -22077,7 +22475,17 @@
       },
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/habitat-fungus-bed-0de628f10312.png",
       "familyId": "shared-habitat-beds",
-      "variant": "static"
+      "variant": "static",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "仅复用生态基座外观；保留 V2 原居民与三态规则",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/habitat-fungus-bed.webp"
+      }
     },
     {
       "id": "habitat-larva-trough",
@@ -22103,7 +22511,7 @@
         773
       ],
       "pivot": [
-        890.0,
+        890,
         773
       ],
       "world": {
@@ -22183,7 +22591,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "shared-habitat-beds"
@@ -22208,7 +22616,17 @@
       },
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/habitat-larva-trough-af662f3792fc.png",
       "familyId": "shared-habitat-beds",
-      "variant": "static"
+      "variant": "static",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/runtime-art.js",
+        "evidence": "mvp-v2/progress.md",
+        "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
+        "sourceAdaptation": "仅复用生态基座外观；保留 V2 原居民与三态规则",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/habitat-larva-trough.webp"
+      }
     },
     {
       "id": "migration-whale-projection",
@@ -22235,13 +22653,13 @@
       ],
       "pivot": [
         889.5,
-        486.0
+        486
       ],
       "world": {
         "axis": "width",
         "units": 6,
         "space": "visible",
-        "visibleWidthU": 6.0,
+        "visibleWidthU": 6,
         "visibleHeightU": 2.2135,
         "canvasWidthU": 6.7239,
         "canvasHeightU": 3.362
@@ -22323,7 +22741,7 @@
       "rooms": [
         "R5-05"
       ],
-      "parallax": 1.0,
+      "parallax": 1,
       "layer": "L5",
       "familyId": "fx-migration-projection",
       "state": "静态投影",
@@ -22353,8 +22771,8 @@
         594
       ],
       "pivot": [
-        992.0,
-        427.0
+        992,
+        427
       ],
       "world": {
         "axis": "width",
@@ -22438,6 +22856,99 @@
         "fx-eel-mucus"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/eel-mucus-projectile-040e968bb813.png"
+    },
+    {
+      "id": "r1-hanging-root",
+      "name": "R1 悬台骨纤根簇",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "V5.2",
+        "静态",
+        "悬台支撑"
+      ],
+      "status": "accepted",
+      "notes": "内置 imagegen 新绘透明位图；顶部中心挂点，三支骨纤根自然收尖。仅作悬空平台下方装饰，无新增碰撞，不是横向平台贴图拉伸。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/r1-hanging-root/base.png",
+      "width": 1448,
+      "height": 1086,
+      "bbox": [
+        211,
+        72,
+        1231,
+        1021
+      ],
+      "pivot": [
+        721,
+        72
+      ],
+      "world": {
+        "axis": "height",
+        "units": 2.2,
+        "visibleWidthU": 2.3646,
+        "visibleHeightU": 2.2
+      },
+      "sha256": "cf3cc22de9119d4e0a167ab51a9829e5092ca24a741401e40e9078af6db09baa",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          17,
+          1434,
+          1086
+        ],
+        "8": [
+          211,
+          72,
+          1231,
+          1021
+        ],
+        "16": [
+          211,
+          72,
+          1231,
+          1020
+        ]
+      },
+      "source": {
+        "batchId": "r1-hanging-root",
+        "method": "内置 imagegen；按 prompt.txt 新生成透明 PNG；未作程序化绘制或像素重绘",
+        "references": [],
+        "prompts": [
+          "assets/source/r1-hanging-root/prompt.txt",
+          "assets/source/r1-hanging-root/prompt-used.txt"
+        ],
+        "designUrls": [],
+        "originalId": "exec-4a769e25-f12e-4da7-9d6a-4a510bf832fb",
+        "rights": "用户要求为 BOB 补制缺失的正式 2D 素材；内置图像生成产物，未附独立第三方授权文件"
+      },
+      "qa": {
+        "scope": "静态原件/透明度/比例与真实键盘五房路线实机挂接、遮挡验证",
+        "passed": true,
+        "limitations": [
+          "单张静态装饰，无动画或碰撞。",
+          "原 PNG 保留完整透明画布；游戏按挂点等比显示。",
+          "用户美术接受度仍待试玩反馈。"
+        ],
+        "report": "assets/source/r1-hanging-root/README.md"
+      },
+      "integrationStatus": "integrated",
+      "spriteType": "static",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "scope": "R1-05 两座独立悬台下方静态2D悬根；不铺在连续丘面或叠层平台，不增加碰撞",
+        "sourceAdaptation": "等比缩放，顶部 bbox 中心挂接；无新增碰撞",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp",
+        "evidence": "mvp-v2/progress.md"
+      }
     }
   ]
 }
