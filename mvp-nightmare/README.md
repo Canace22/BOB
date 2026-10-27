@@ -10,9 +10,9 @@ npm install
 npm start
 ```
 
-首次安装需要联网下载 Three.js；运行时从本地加载依赖，不使用 CDN。不要直接双击 `index.html`。端口被占用时，可用 `PORT=4175 npm start`，并打开对应端口。
+首次安装需要联网下载 Three.js；运行时从本地加载依赖，不使用 CDN。不要直接双击 `index.html`。PowerShell 中端口被占用时，可用 `$env:PORT=4180; npm start`，并打开对应端口。
 
-在线试玩：https://canace22.github.io/BOB-/nightmare/ 。发布方式见根目录 [README](../README.md#发布到-github-pages)：在 `mvp/` 目录运行 `npm run deploy`。打包时会把 Three.js 复制到 `vendor/`，并把 `renderer.js` 里的导入路径改成相对路径，源码本身不变。
+本版保留源码与本地运行能力，但已从当前 GitHub Pages 发布包移除。公开试玩与发布方式见根目录 [README](../README.md#发布到-github-pages)，当前站点只发布 V2 2D 版本。
 
 ## 怎么玩
 

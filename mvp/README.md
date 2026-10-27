@@ -12,9 +12,9 @@ npm start
 
 同一局域网内的手机或电脑，可以打开 `http://这台电脑的局域网IP:4173/`。请使用 `http`，并保留端口 `4173`；其他设备上的 `127.0.0.1` 指向它自己，不能用于访问这台电脑。
 
-**发布到 GitHub Pages**
+**当前发布状态**
 
-在 `mvp` 目录运行 `npm run deploy`：先对初版和新版（`../mvp-nightmare`，需已 `npm install`）做语法检查，再把两版游戏和用到的 4 张原画打包，强推到远程 `gh-pages` 分支，结束后打印新版访问地址。线上初版在 `/mvp/`，新版在 `/nightmare/`，站点根目录跳转到新版。不会改动 `main`。首次发布若未自动开启 Pages，请到仓库 Settings → Pages，选择 `gh-pages` 分支 `/ (root)`。只想看打包结果、不推送：`npm run build:pages`（输出在仓库根的 `.pages-dist/`）。
+初版保留源码与本地运行能力，但已从当前 GitHub Pages 发布包移除。发布脚本仍位于本目录；`npm run build:pages` 和 `npm run deploy` 现在只检查并打包 `../mvp-v2/`，其中 `deploy` 会强推远程 `gh-pages`，不要把它当作普通本地预览命令。完整说明见根目录 [README](../README.md#发布到-github-pages)。
 
 **操作**
 

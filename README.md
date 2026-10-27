@@ -2,6 +2,8 @@
 
 以「鲸落」为题材的游戏。仓库包含概念原画和三版可玩原型：
 
+当前开发与公开试玩主线是 `mvp-v2/`；`mvp-nightmare/` 和 `mvp/` 保留为可本地运行的历史原型，不进入当前 Pages 发布包。
+
 | 版本 | 目录 | 玩法 | 在线试玩 |
 | --- | --- | --- | --- |
 | V2 原画版：鲸落万物生 | `mvp-v2/` | 2D 生态探索 + 绳网攀爬 / 升降台 / 骨环摆荡 | [公网试玩](https://canace22.github.io/BOB/mvp-v2/) |
@@ -49,7 +51,9 @@ npm start
 npm --prefix assets/manager start
 ```
 
-打开 http://127.0.0.1:4176/ 查看、筛选和管理已入库素材。标签、备注及验收状态保存到项目台账。现有 192 张静态文件、105 个需求家族的完整清单与状态组合预览，另有 7 页静态图集；两版游戏尚未接入，动作动画尚未制作。详见[资源管理说明](assets/README.md)。
+打开 http://127.0.0.1:4176/ 查看、筛选和管理已入库素材。标签、备注及验收状态保存到项目台账；数量、覆盖范围与接入状态以[资源台账](assets/catalog.md)和管理页为准。动作动画仍需单独制作与验收。详见[资源管理说明](assets/README.md)。
+
+资源管理页与 V2 开发预览默认都使用 4176，请勿同时启动；稳定试玩 4175 不受影响。
 
 ## 发布到 GitHub Pages
 
@@ -89,7 +93,7 @@ BOB/
 - V2 原画版操作与试玩范围：[mvp-v2/README.md](mvp-v2/README.md)
 - 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
 - 初版操作、完整路线：[mvp/README.md](mvp/README.md)
-- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](docs/progress.md)
+- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](mvp/progress.md)
 - 开发协作与项目 Skill：[AGENTS.md](AGENTS.md)
 
 注意：初版 `mvp` 与 V2 原画版 `mvp-v2` 本地运行时会读取上级目录的原画，不要单独移动目录或改动原画文件名。深处的来客 `mvp-nightmare` 不依赖原画，可独立运行。
