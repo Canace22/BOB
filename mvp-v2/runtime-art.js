@@ -41,13 +41,13 @@ export class RuntimeArt {
     const image = this.image(id), a = ART_ASSETS[id];
     if (!image) return false;
     // Cut below each irregular skyline so the painted rim meets collision y.
-    const top = {
+    const top = ({
       'r1-tongue-ledge': 220, 'r1-weight-membrane': 320,
       'r1-weight-membrane-pressed': 340, 'r2-membrane-platform': 280,
       'r3-bank-platform': 275, 'r4-bone-platform': 295,
-    }[id];
-    const scale = this.scale(id), sx = a.bbox[0] + 80;
-    const sw = a.bbox[2] - sx - 80, sh = a.bbox[3] - top;
+    }[id]) * (a.exportScaleY || 1);
+    const scale = this.scale(id), margin = 80 * (a.exportScale || 1), sx = a.bbox[0] + margin;
+    const sw = a.bbox[2] - sx - margin, sh = a.bbox[3] - top;
     const tile = sw * scale, height = sh * scale, c = this.renderer.ctx;
     c.save(); c.beginPath(); c.rect(p.x, p.y, p.w, Math.max(p.h, height)); c.clip();
     if (p.kind === 'soft') {
@@ -72,9 +72,10 @@ export class RuntimeArt {
     this.sprite(base, x, y);
     const pressure = base === 'pressure-valve-base';
     const at = pressure ? [735, 555] : [768, done ? 300 : 251];
-    const pivot = ART_ASSETS[base].pivot, scale = this.scale(base);
-    this.sprite(handle, x + (at[0] - pivot[0]) * scale, y + (at[1] - pivot[1]) * scale,
-      { angle: pressure ? (done ? Math.PI / 3 : -Math.PI / 6) : 0, ...(pressure ? { anchor: [684, 906] } : {}) });
+    const a = ART_ASSETS[base], h = ART_ASSETS[handle], pivot = a.pivot, scale = this.scale(base);
+    this.sprite(handle, x + (at[0] * (a.exportScale || 1) - pivot[0]) * scale, y + (at[1] * (a.exportScaleY || 1) - pivot[1]) * scale,
+      { angle: pressure ? (done ? Math.PI / 3 : -Math.PI / 6) : 0,
+        ...(pressure ? { anchor: [684 * (h.exportScale || 1), 906 * (h.exportScaleY || 1)] } : {}) });
     return true;
   }
   object(o, state) {

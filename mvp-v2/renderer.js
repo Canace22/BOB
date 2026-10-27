@@ -35,7 +35,7 @@ export class Renderer {
       ...Object.values(scene.terrain || {}).map(asset => asset.src),
     ]))];
     resources.push(...Object.values(ART_ASSETS).map(asset => asset.src));
-    await Promise.all([...ART.map(name => this.loadImage(name)), ...resources.map(src => this.loadImage(src, src))]);
+    await Promise.all([...ART.map(name => this.loadImage(name, './assets/title-v2.webp')), ...resources.map(src => this.loadImage(src, src))]);
   }
 
   loadImage(name, source) {

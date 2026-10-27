@@ -1,11 +1,11 @@
 // Production scene assembly, separate from gameplay geometry in levels.js.
 // V2 sheets are references, never level backgrounds. These modules describe only
 // depth layers and reusable terrain art. Only levels.js defines collision.
-const atmosphere = { src: './assets/abyss-backdrop-v2.png', parallax: 0.08 };
+const atmosphere = { src: './assets/abyss-backdrop-v2.webp', parallax: 0.08 };
 // Crop beneath the uneven skyline: the crop's first row is the walkable top.
 // The original outer spikes are excluded; internal transparent holes remain.
 const boneLedge = {
-  src: './assets/bone-ledge-v2.png',
+  src: './assets/bone-ledge-v2.webp',
   crop: { x: 260, y: 246, w: 1480, h: 340 },
   scale: 0.23,
 };
