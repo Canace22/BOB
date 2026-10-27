@@ -146,6 +146,7 @@ async function route() {
   await walk(640); await jumpTo(730);
   await walk(880); await jumpTo(960);
   await walk(1360); await enterRoom('R1-02');
+  await screenshot('01b-baleen-entry');
   await walk(410); await fight('R1-02-corpse-crab');
   await screenshot('02-baleen-crab');
   await walk(1005); await jumpTo(1160);

@@ -4,7 +4,7 @@
 
 ## V5.2 静态资源接入
 
-2026-10-27 起，游戏优先使用 [art-manifest.js](art-manifest.js) 的 41 项静态素材；下文早期程序场景仍作加载失败回退和旧四区地图几何说明。新须门主线的来源、曲面和玩法范围见 [CAMPAIGN.md](CAMPAIGN.md)，入口为默认首页，旧四区在 `legacy.html`。来源真值是 [共享台账](../assets/catalog.json)，manifest 保留源文件、导出路径、尺寸、bbox、pivot、world 与来源引用。原 PNG 保留原位，运行时使用 `whalefall-v2-optimized/` 中的 WebP；开发服务器、快照和 Pages 均保持 `../assets/runtime/sprites/` 的相对结构，仅发布清单内的文件。
+2026-10-27 起，游戏优先使用 [art-manifest.js](art-manifest.js) 的 42 项静态素材；下文早期程序场景仍作加载失败回退和旧四区地图几何说明。新须门主线的来源、曲面和玩法范围见 [CAMPAIGN.md](CAMPAIGN.md)，入口为默认首页，旧四区在 `legacy.html`。来源真值是 [共享台账](../assets/catalog.json)，manifest 保留源文件、导出路径、尺寸、bbox、pivot、world 与来源引用。原 PNG 保留原位，运行时使用 `whalefall-v2-optimized/` 中的 WebP；开发服务器、快照和 Pages 均保持 `../assets/runtime/sprites/` 的相对结构，仅发布清单内的文件。
 
 | V2 场景/对象 | 资源来源 | 运行适配 |
 | --- | --- | --- |
@@ -28,9 +28,9 @@
 
 ### 运行导出与性能
 
-[export-runtime-art.py](tools/export-runtime-art.py) 从原台账读取 41 个选中 ID，等比缩放并保留透明画布，导出 WebP quality=82。原 PNG 不改；生成的 manifest 中 bbox/pivot 已在导出坐标系，手工登记的源图裁切/阀轴坐标则乘 `exportScale`、`exportScaleY`。区域背景最大 1600×900，主角最大 256，平台最大 1024；重新生成后须复核角色接地、阀轴与平台顶线。
+[export-runtime-art.py](tools/export-runtime-art.py) 从原台账读取 42 个选中 ID，等比缩放并保留透明画布，导出 WebP quality=82。原 PNG 不改；生成的 manifest 中 bbox/pivot 已在导出坐标系，手工登记的源图裁切/阀轴坐标则乘 `exportScale`、`exportScaleY`。区域背景最大 1600×900，主角最大 256，平台最大 1024；重新生成后须复核角色接地、阀轴与平台顶线。
 
-本轮原图 45.37 MiB 降为 1.85 MiB；封面与回退图另约 436 KiB。地形缓存避免每帧重拼坡面，HUD 只写发生变化的值。截图、加载耗时和绘制提交测量记录到进度，不把单机 headless 的测试值写成用户设备帧率保证。
+本轮原图 46.32 MiB 降为 1.87 MiB；封面与回退图另约 436 KiB。地形缓存避免每帧重拼坡面，HUD 只写发生变化的值。截图、加载耗时和绘制提交测量记录到进度，不把单机 headless 的测试值写成用户设备帧率保证。
 
 验证命令和当前范围见 [README](README.md#验证)，实际结果见 [progress.md](progress.md)。工作台继续显示同一份地图/碰撞，不把独立场景图片当碰撞数据。
 

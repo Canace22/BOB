@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 9,
-  "updatedAt": "2026-10-27T07:42:06.181Z",
+  "revision": 11,
+  "updatedAt": "2026-10-27T08:21:01.591Z",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -22856,6 +22856,99 @@
         "fx-eel-mucus"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/eel-mucus-projectile-040e968bb813.png"
+    },
+    {
+      "id": "r1-hanging-root",
+      "name": "R1 悬台骨纤根簇",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "V5.2",
+        "静态",
+        "悬台支撑"
+      ],
+      "status": "accepted",
+      "notes": "内置 imagegen 新绘透明位图；顶部中心挂点，三支骨纤根自然收尖。仅作悬空平台下方装饰，无新增碰撞，不是横向平台贴图拉伸。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/r1-hanging-root/base.png",
+      "width": 1448,
+      "height": 1086,
+      "bbox": [
+        211,
+        72,
+        1231,
+        1021
+      ],
+      "pivot": [
+        721,
+        72
+      ],
+      "world": {
+        "axis": "height",
+        "units": 2.2,
+        "visibleWidthU": 2.3646,
+        "visibleHeightU": 2.2
+      },
+      "sha256": "cf3cc22de9119d4e0a167ab51a9829e5092ca24a741401e40e9078af6db09baa",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          17,
+          1434,
+          1086
+        ],
+        "8": [
+          211,
+          72,
+          1231,
+          1021
+        ],
+        "16": [
+          211,
+          72,
+          1231,
+          1020
+        ]
+      },
+      "source": {
+        "batchId": "r1-hanging-root",
+        "method": "内置 imagegen；按 prompt.txt 新生成透明 PNG；未作程序化绘制或像素重绘",
+        "references": [],
+        "prompts": [
+          "assets/source/r1-hanging-root/prompt.txt",
+          "assets/source/r1-hanging-root/prompt-used.txt"
+        ],
+        "designUrls": [],
+        "originalId": "exec-4a769e25-f12e-4da7-9d6a-4a510bf832fb",
+        "rights": "用户要求为 BOB 补制缺失的正式 2D 素材；内置图像生成产物，未附独立第三方授权文件"
+      },
+      "qa": {
+        "scope": "静态原件/透明度/比例与真实键盘五房路线实机挂接、遮挡验证",
+        "passed": true,
+        "limitations": [
+          "单张静态装饰，无动画或碰撞。",
+          "原 PNG 保留完整透明画布；游戏按挂点等比显示。",
+          "用户美术接受度仍待试玩反馈。"
+        ],
+        "report": "assets/source/r1-hanging-root/README.md"
+      },
+      "integrationStatus": "integrated",
+      "spriteType": "static",
+      "integration": {
+        "version": "mvp-v2",
+        "date": "2026-10-27",
+        "manifest": "mvp-v2/art-manifest.js",
+        "renderer": "mvp-v2/campaign-renderer.js",
+        "scope": "R1-05 两座独立悬台下方静态2D悬根；不铺在连续丘面或叠层平台，不增加碰撞",
+        "sourceAdaptation": "等比缩放，顶部 bbox 中心挂接；无新增碰撞",
+        "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp",
+        "evidence": "mvp-v2/progress.md"
+      }
     }
   ]
 }
