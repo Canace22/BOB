@@ -1,9 +1,10 @@
 import { ART_ASSETS, REGION_ART } from './art-manifest.js';
+import { terrainHeightAt } from './terrain.js';
 
 // V5.2 source units become V2 pixels; physics remains in levels.js.
 const UNIT = 48;
 export class RuntimeArt {
-  constructor(renderer) { this.renderer = renderer; }
+  constructor(renderer) { this.renderer = renderer; this.terrainCache = new Map(); }
   image(id) { return this.renderer.images.get(ART_ASSETS[id]?.src); }
   scale(id, units = UNIT) {
     const a = ART_ASSETS[id];
@@ -32,6 +33,43 @@ export class RuntimeArt {
     c.fillStyle = '#071d2738'; c.fillRect(0, 0, 1280, 720);
     return true;
   }
+  terrain(surface, room) {
+    let cached = this.terrainCache.get(surface.id);
+    if (!cached) {
+      const first = surface.points[0], last = surface.points.at(-1);
+      const top = Math.floor(Math.min(...surface.points.map(p => p.y)));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.ceil(last.x - first.x); canvas.height = surface.bottom - top;
+      const c = canvas.getContext('2d'); c.translate(-first.x, -top);
+      c.beginPath(); surface.points.forEach((p, i) => i ? c.lineTo(p.x, p.y) : c.moveTo(p.x, p.y));
+      c.lineTo(last.x, surface.bottom); c.lineTo(first.x, surface.bottom); c.closePath(); c.clip();
+      const warm = room.id === 'stomach', gradient = c.createLinearGradient(0, top, 0, surface.bottom);
+      gradient.addColorStop(0, warm ? '#94735b' : '#648282'); gradient.addColorStop(1, '#102b34');
+      c.fillStyle = gradient; c.fillRect(first.x, top, canvas.width, canvas.height);
+      const id = REGION_ART[room.id].platform, image = this.image(id), a = ART_ASSETS[id];
+      if (image) {
+        const scale = this.scale(id), cropY = ({ mouth: 220, stomach: 275, lung: 280 }[room.id] || 295) * (a.exportScaleY || 1);
+        const left = a.bbox[0] + 80 * (a.exportScale || 1), sourceWidth = a.bbox[2] - left - 80 * (a.exportScale || 1);
+        const sourceHeight = a.bbox[3] - cropY;
+        // Bake vertical slices once. Every visible crest follows the exact
+        // collision profile; none is flattened back into a rectangle.
+        for (let x = first.x; x < last.x; x += 4) {
+          const width = Math.min(4, last.x - x), y = terrainHeightAt(surface, x + width / 2);
+          const sx = left + ((x - first.x) / scale % Math.max(1, sourceWidth - width / scale));
+          c.drawImage(image, sx, cropY, width / scale, sourceHeight, x, y, width + .5, sourceHeight * scale);
+          // Use the dense interior material, not a second hanging silhouette.
+          c.save(); c.globalAlpha = .35;
+          c.drawImage(image, sx, cropY + sourceHeight * .12, width / scale, sourceHeight * .20,
+            x, y + sourceHeight * scale * .65, width + .5, Math.max(20, surface.bottom - y));
+          c.restore();
+        }
+      }
+      c.beginPath(); surface.points.forEach((p, i) => i ? c.lineTo(p.x, p.y + .5) : c.moveTo(p.x, p.y + .5));
+      c.strokeStyle = '#d1d0ad'; c.lineWidth = 1.4; c.stroke();
+      cached = { canvas, x: first.x, y: top }; this.terrainCache.set(surface.id, cached);
+    }
+    this.renderer.ctx.drawImage(cached.canvas, cached.x, cached.y);
+  }
   platform(p, room, state) {
     if (p.kind === 'safety') return false;
     let id = REGION_ART[room.id]?.platform;
@@ -40,6 +78,7 @@ export class RuntimeArt {
     if (p.kind === 'soft') id = state.softDown > 0 ? 'r1-weight-membrane-pressed' : 'r1-weight-membrane';
     const image = this.image(id), a = ART_ASSETS[id];
     if (!image) return false;
+    if (p.h < 90 && p.kind !== 'raft' && (room.id === 'lung' || room.id === 'ribs')) this.support(p, image, a, room);
     // Cut below each irregular skyline so the painted rim meets collision y.
     const top = ({
       'r1-tongue-ledge': 220, 'r1-weight-membrane': 320,
@@ -66,6 +105,21 @@ export class RuntimeArt {
     }
     this.renderer.line([[p.x, p.y + .5], [p.x + p.w, p.y + .5]], '#d8d8b3', 1.2);
     c.restore(); return true;
+  }
+  support(p, image, asset, room) {
+    const c = this.renderer.ctx, middle = p.x + p.w * .5;
+    const bottom = Math.min(715, p.y + (room.id === 'lung' ? 240 : 150));
+    // Narrow roots describe the source's suspended banks. Only the bright
+    // crest is walkable; these recessed supports never add collision.
+    c.save(); c.beginPath(); c.moveTo(p.x + 10, p.y + 12);
+    c.bezierCurveTo(middle - 10, p.y + 55, middle - 30, bottom - 35, middle - 45, bottom);
+    c.lineTo(middle + 40, bottom);
+    c.bezierCurveTo(middle + 25, bottom - 30, middle + 12, p.y + 55, p.x + p.w - 10, p.y + 12);
+    c.closePath(); c.clip();
+    c.globalAlpha = .55;
+    c.drawImage(image, asset.bbox[0], asset.bbox[1], asset.bbox[2] - asset.bbox[0], asset.bbox[3] - asset.bbox[1],
+      p.x, p.y, p.w, bottom - p.y);
+    c.restore();
   }
   valve(base, handle, x, y, done) {
     if (!this.image(base) || !this.image(handle)) return false;

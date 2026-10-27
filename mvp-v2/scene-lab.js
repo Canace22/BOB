@@ -12,8 +12,6 @@ const intents = {
 };
 // Suggested design paths; this annotation is not a second simulation or a reachability proof.
 const routes = {
-  mouth: [[150, 556], [490, 556], [1080, 556], [1510, 556], [1910, 556], [2260, 556]],
-  stomach: [[170, 556], [370, 556], [730, 556], [1080, 556], [1460, 606], [1840, 556], [2290, 556]],
   ribs: [[150, 596], [475, 636], [475, 356], [640, 356], [880, 466], [880, 166], [1100, 176], [1260, 220], [1470, 350], [1690, 250], [1810, 326], [1980, 326], [1980, 246], [2220, 246], [2330, 246]],
   lung: [[150, 556], [500, 556], [730, 556], [900, 356], [1130, 356], [1460, 255], [1770, 166], [1940, 166], [2220, 166]],
 };
@@ -55,6 +53,17 @@ function marker(x, y, color, label, kind, data, shape = 'circle') {
   inspect(group, kind, data);
   return group;
 }
+function suggestedRoute(room) {
+  if (routes[room.id]) return routes[room.id];
+  const exit = room.exits.reduce((right, candidate) => candidate.x > right.x ? candidate : right);
+  // Follow the shared low-route folds, including the post-drain bed. The
+  // short vertical transitions remain route annotations, not extra slopes.
+  const points = (room.terrain || []).flatMap(surface => surface.points)
+    .filter(point => point.x > room.spawn.x && point.x < exit.x)
+    .sort((a, b) => a.x - b.x)
+    .map(point => [point.x, point.y - 24]);
+  return [[room.spawn.x, room.spawn.y + 24], ...points, [exit.x, exit.y - 24]];
+}
 function drawMap() {
   map.replaceChildren();
   map.setAttribute('viewBox', `0 0 ${selected.width} 740`);
@@ -71,6 +80,17 @@ function drawMap() {
     text(7, y - 7, String(y), { fill: '#607c83', 'font-size': 18 });
   }
   if (enabled.has('terrain')) {
+    for (const surface of selected.terrain || []) {
+      const first = surface.points[0], last = surface.points.at(-1);
+      const points = [...surface.points, { x: last.x, y: surface.bottom }, { x: first.x, y: surface.bottom }];
+      const node = svg('polygon', {
+        points: points.map(point => `${point.x},${point.y}`).join(' '),
+        fill: palette.solid, 'fill-opacity': surface.requires ? 0.1 : 0.2,
+        stroke: palette.solid, 'stroke-width': 3, 'stroke-dasharray': surface.requires ? '12 8' : 'none',
+      });
+      inspect(node, surface.requires ? '坡面碰撞顶线（满足条件后）' : '坡面碰撞顶线', surface);
+      if (surface.requires) text(first.x + 8, first.y + 30, `条件：${surface.requires}`, { fill: palette.solid, 'font-size': 19 });
+    }
     for (const platform of selected.platforms) {
       const color = platform.kind === 'safety' ? palette.safety : palette.solid;
       const node = rect(platform, { fill: color, 'fill-opacity': platform.kind === 'safety' ? 0.13 : 0.2, stroke: color, 'stroke-width': 3, 'stroke-dasharray': platform.requires ? '12 8' : platform.kind === 'safety' ? '5 6' : 'none' });
@@ -83,7 +103,7 @@ function drawMap() {
     for (const gate of selected.gates || []) inspect(rect(gate, { fill: palette.gate, 'fill-opacity': 0.25, stroke: palette.gate, 'stroke-width': 3 }), '共鸣门（打开前）', gate);
   }
   if (enabled.has('route')) {
-    svg('polyline', { points: routes[selected.id].map(point => point.join(',')).join(' '), fill: 'none', stroke: '#e8ce8e', 'stroke-opacity': 0.55, 'stroke-width': 3, 'stroke-dasharray': '12 10' });
+    svg('polyline', { points: suggestedRoute(selected).map(point => point.join(',')).join(' '), fill: 'none', stroke: '#e8ce8e', 'stroke-opacity': 0.55, 'stroke-width': 3, 'stroke-dasharray': '12 10' });
     const spawn = selected.spawn;
     const player = rect({ ...spawn, w: 30, h: 48 }, { fill: '#e9d69a', 'fill-opacity': 0.5, stroke: '#e9d69a', 'stroke-width': 2 });
     inspect(player, '出生点 / 主角 30 × 48 比例', spawn);
@@ -137,6 +157,7 @@ function updateRoom(room) {
   document.querySelector('#room-json').textContent = JSON.stringify(room, null, 2);
   document.querySelector('#scene-json').textContent = JSON.stringify(SCENES[room.id], null, 2);
   const legend = [['实体平台', palette.solid], ['交互点', palette.object], ['出口', palette.current]];
+  if (room.terrain?.length) legend.push(['坡面碰撞顶线', palette.solid]);
   if (room.gates?.length) legend.push(['共鸣门', palette.gate]);
   if (room.hazards?.length) legend.push(['危险区', palette.hazard]);
   if (room.memories?.length) legend.push(['记忆', palette.memory]);
@@ -153,7 +174,9 @@ function updateRoom(room) {
   const facts = document.querySelector('#facts'); facts.replaceChildren();
   const entries = [
     ['空间提炼', intents[room.id]],
-    ['地图结构', `${room.platforms.length} 个平台 · ${(room.climbs || []).length} 处攀爬 · ${(room.lifts || []).length} 台升降 · ${(room.swings || []).length} 处摆荡 · ${room.exits.length} 个出口`],
+    ['地图结构', `${(room.terrain || []).length} 段坡面 · ${room.platforms.length} 个平台 · ${(room.climbs || []).length} 处攀爬 · ${(room.lifts || []).length} 台升降 · ${(room.swings || []).length} 处摆荡 · ${room.exits.length} 个出口`],
+    ['地形来源', [...new Set((room.terrain || []).map(surface => surface.source))].join('；') || '现有设施关卡平台布局'],
+    ['路线状态', room.terrain?.some(surface => surface.requires) ? '建议路线包含满足条件后的低床；虚线坡面与危险区分别标注，不表示它们同时可走。' : '建议路线用于空间检查，不代表已经验证可达性。'],
     ['原画依据', `docs/鲸腹遗城原画集/V2/images/${SCENES[room.id].reference}.png`],
     ['场景模块', `${SCENES[room.id].anatomy.type} · 材质 ${SCENES[room.id].material} · 中景视差 ${SCENES[room.id].anatomy.parallax}`],
     ['连接关系', room.exits.map(exit => `${room.name} → ${rooms[exit.to].name}${exit.requires ? `（${exit.requires}）` : ''}`).join('；')],

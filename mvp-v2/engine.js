@@ -304,7 +304,10 @@ export class Game {
     const oldY = p.y, oldX = p.x, canFollowTerrain = p.grounded && p.vy >= 0;
     p.x = clamp(p.x + p.vx * dt, 0, r.width - p.w);
     const barriers = r.gates.filter(g => !s.flags.has(g.id));
-    if (s.room === 1 && !s.flags.has('fed')) barriers.push({ x: 755, y: 440, w: 90, h: 140 });
+    if (s.room === 1 && !s.flags.has('fed')) {
+      const floor = r.objects.find(object => object.id === 'fed').y;
+      barriers.push({ x: 755, y: floor - 140, w: 90, h: 140 });
+    }
     for (const b of barriers) {
       if (overlap(p, b)) { p.x = p.vx >= 0 ? b.x - p.w : b.x + b.w; p.vx = 0; }
     }

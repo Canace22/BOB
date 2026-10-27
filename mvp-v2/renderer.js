@@ -83,6 +83,10 @@ export class Renderer {
     if (!room) { c.fillStyle = '#12343d'; c.fillRect(0, 0, 1280, 720); return; }
     this.background(state, room);
     c.save(); c.translate(-this.camera, 0);
+    for (const surface of room.terrain || []) {
+      if (surface.requires && !state.flags.has(surface.requires)) continue;
+      this.art.terrain(surface, room);
+    }
     this.facilityStructures(room, state);
     for (const p of room.platforms || []) {
       if (p.x + p.w < this.camera - 100 || p.x > this.camera + 1380) continue;
@@ -96,7 +100,10 @@ export class Renderer {
       this.platform(p, state, room);
     }
     this.facilities(room, state);
-    if (room.id === 'stomach') this.tissueBlock(state.flags.has('fed'));
+    if (room.id === 'stomach') {
+      c.save(); c.translate(0, room.objects.find(object => object.id === 'fed').y - 580);
+      this.tissueBlock(state.flags.has('fed')); c.restore();
+    }
     if (!state.flags.has('drain')) for (const h of room.hazards || []) this.hazard(h);
     for (const exit of room.exits || []) this.exit(exit);
     for (const gate of room.gates || []) this.gate(gate, state.flags.has(gate.id));
