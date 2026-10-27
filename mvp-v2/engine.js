@@ -1,6 +1,7 @@
 import { rooms } from './levels.js';
 import { getLiftPosition, getSwingPosition } from './mechanics.js';
 import { HABITATS, getHabitatStatus } from './ecology.js';
+import { followTerrain, terrainLanding } from './terrain.js';
 
 export const SAVE_KEY = 'whalefall-v2-2d-save';
 const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
@@ -300,10 +301,13 @@ export class Game {
     if (floating) { p.vy = Math.max(-210, p.vy - 1050 * dt); s.pressure = Math.max(0, s.pressure - dt / 2.8); }
     else p.vy = Math.min(650, p.vy + 900 * dt);
     if ((r.currents || []).some(current => overlap(p, current))) p.vy = Math.max(-240, p.vy - 1500 * dt);
-    const oldY = p.y;
+    const oldY = p.y, oldX = p.x, canFollowTerrain = p.grounded && p.vy >= 0;
     p.x = clamp(p.x + p.vx * dt, 0, r.width - p.w);
     const barriers = r.gates.filter(g => !s.flags.has(g.id));
-    if (s.room === 1 && !s.flags.has('fed')) barriers.push({ x: 755, y: 440, w: 90, h: 140 });
+    if (s.room === 1 && !s.flags.has('fed')) {
+      const floor = r.objects.find(object => object.id === 'fed').y;
+      barriers.push({ x: 755, y: floor - 140, w: 90, h: 140 });
+    }
     for (const b of barriers) {
       if (overlap(p, b)) { p.x = p.vx >= 0 ? b.x - p.w : b.x + b.w; p.vx = 0; }
     }
@@ -323,6 +327,15 @@ export class Game {
         if (platform.kind === 'lift') { p.riding = platform.id; if (previousRide !== platform.id) p.liftDistance = 0; }
         if (platform.kind === 'soft') onSoft = true;
       }
+    }
+    const previous = { x: oldX, y: oldY };
+    const landing = terrainLanding(r.terrain, s.flags, previous, p);
+    const following = canFollowTerrain ? followTerrain(r.terrain,
+      r.platforms.filter(platform => platform.kind !== 'soft' || s.softDown <= 0), s.flags,
+      { x: oldX + p.w / 2, y: oldY }, p.x + p.w / 2, p.h) : null;
+    const terrainTop = following ?? landing;
+    if (terrainTop !== null && (following !== null || !p.grounded || terrainTop <= p.y + p.h + 2)) {
+      p.y = terrainTop - p.h; p.vy = 0; p.grounded = true; p.riding = null; p.launchVx = 0;
     }
     s.softTime = onSoft ? s.softTime + dt : 0;
     if (s.softTime > 0.7) { s.softDown = 2; s.softTime = 0; this.event('toast', '舌面下陷了！浮跃或继续向前；片刻后会恢复。'); }

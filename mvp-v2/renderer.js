@@ -1,6 +1,8 @@
 import { getLiftPosition, getSwingPosition } from './mechanics.js';
 import { HABITATS, getHabitatStatus } from './ecology.js';
 import { SCENES } from './scenes.js';
+import { ART_ASSETS } from './art-manifest.js';
+import { RuntimeArt } from './runtime-art.js';
 
 const ART_ROOT = '../docs/鲸腹遗城原画集/V2/images/';
 const TAU = Math.PI * 2;
@@ -14,6 +16,7 @@ export class Renderer {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.images = new Map();
+    this.art = new RuntimeArt(this);
     this.time = 0;
     this.camera = 0;
     this.texture = document.createElement('canvas');
@@ -31,7 +34,8 @@ export class Renderer {
       scene.atmosphere.src,
       ...Object.values(scene.terrain || {}).map(asset => asset.src),
     ]))];
-    await Promise.all([...ART.map(name => this.loadImage(name)), ...resources.map(src => this.loadImage(src, src))]);
+    resources.push(...Object.values(ART_ASSETS).map(asset => asset.src));
+    await Promise.all([...ART.map(name => this.loadImage(name, './assets/title-v2.webp')), ...resources.map(src => this.loadImage(src, src))]);
   }
 
   loadImage(name, source) {
@@ -79,6 +83,10 @@ export class Renderer {
     if (!room) { c.fillStyle = '#12343d'; c.fillRect(0, 0, 1280, 720); return; }
     this.background(state, room);
     c.save(); c.translate(-this.camera, 0);
+    for (const surface of room.terrain || []) {
+      if (surface.requires && !state.flags.has(surface.requires)) continue;
+      this.art.terrain(surface, room);
+    }
     this.facilityStructures(room, state);
     for (const p of room.platforms || []) {
       if (p.x + p.w < this.camera - 100 || p.x > this.camera + 1380) continue;
@@ -92,7 +100,10 @@ export class Renderer {
       this.platform(p, state, room);
     }
     this.facilities(room, state);
-    if (room.id === 'stomach') this.tissueBlock(state.flags.has('fed'));
+    if (room.id === 'stomach') {
+      c.save(); c.translate(0, room.objects.find(object => object.id === 'fed').y - 580);
+      this.tissueBlock(state.flags.has('fed')); c.restore();
+    }
     if (!state.flags.has('drain')) for (const h of room.hazards || []) this.hazard(h);
     for (const exit of room.exits || []) this.exit(exit);
     for (const gate of room.gates || []) this.gate(gate, state.flags.has(gate.id));
@@ -138,6 +149,7 @@ export class Renderer {
     base.addColorStop(.55, scene.palette.tint);
     base.addColorStop(1, scene.palette.deep);
     c.fillStyle = base; c.fillRect(0, 0, 1280, 720);
+    if (this.art.backgrounds(room)) return;
     // Gameplay uses a clean environmental plate, never the concept sheets:
     // those sheets include a painted hero, terrain and storyboard panels.
     const img = this.images.get(scene.atmosphere.src);
@@ -354,8 +366,10 @@ export class Renderer {
         this.ellipse(swing.x + (p.x - swing.x) * fraction, swing.y + (p.y - swing.y) * fraction, 3.4, 4.5, '#c3c4a0');
       }
       this.glow(p.x, p.y, 55, '243,209,133', held ? .35 : .17);
-      this.ellipse(p.x, p.y, 14, 17, '#173e4544', '#ead49d', 4);
-      this.ellipse(p.x, p.y, 9, 12, null, '#7f9b82', 1);
+      if (!this.art.sprite('bone-anchor-ring', p.x, p.y)) {
+        this.ellipse(p.x, p.y, 14, 17, '#173e4544', '#ead49d', 4);
+        this.ellipse(p.x, p.y, 9, 12, null, '#7f9b82', 1);
+      }
       this.label('03  摆荡骨环  ·  F 抓握 / 空格跃出', swing.x, swing.y + swing.length + 92, state.course?.swing);
     }
     if (room.id === 'ribs') {
@@ -410,6 +424,7 @@ export class Renderer {
 
   platform(p, state, room) {
     const c = this.ctx, t = this.time;
+    if (this.art.platform(p, room, state)) return;
     if (p.kind === 'safety') {
       c.save();
       const mist = c.createLinearGradient(0, p.y, 0, p.y + p.h);
@@ -624,7 +639,9 @@ export class Renderer {
     if (o.type === 'habitat') { this.habitat(o, state, near); return; }
     c.save();
     this.glow(x, y - 15, near ? 90 : 58, done ? '131,219,176' : '245,195,107', near ? .22 : .12);
-    if (o.type === 'course-power') {
+    if (this.art.object(o, state)) {
+      // Common status markers and interaction labels are drawn below.
+    } else if (o.type === 'course-power') {
       this.line([[x - 23, y], [x - 18, y - 24], [x + 18, y - 24], [x + 23, y]], '#94aa91', 5);
       this.ellipse(x, y - 29, 22, 24, '#315d5c', color, 2);
       this.ellipse(x, y - 29, 14, 16, done ? '#79bfa5' : '#7e7e59', '#c6caa2', 1);
@@ -691,6 +708,8 @@ export class Renderer {
     this.glow(x, y - 12, 62 + p * 46, active ? '131,219,176' : '198,184,121', active ? .10 + p * .07 : near ? .12 : .04);
     // These low silhouettes sit above the existing rim; they add no landing edge.
     this.ellipse(x, y - 3, 33 + p * 28, 5 + p * 4, active ? '#507b6866' : '#43574b99', active ? '#93b89588' : '#81907877');
+    const bed = room === 'mouth' ? 'habitat-fungus-bed' : room === 'stomach' ? 'habitat-shell-nest' : 'habitat-larva-trough';
+    this.art.sprite(bed, x, y, { alpha: active ? .65 + p * .35 : .45 });
     if (room === 'mouth') {
       for (let i = 0; i < 13; i++) {
         const seed = hash(i + 842), spread = 25 + p * 35;
@@ -769,6 +788,7 @@ export class Renderer {
   }
 
   habitatShrimp(x, y, size, facing, seed) {
+    if (this.art.sprite('baleen-shrimp-swarm', x, y, { units: 48 * size })) return;
     const c = this.ctx;
     c.save(); c.translate(x, y); c.scale(size * facing, size);
     c.beginPath(); c.moveTo(-9, 2); c.quadraticCurveTo(-3, -9, 6, -4); c.quadraticCurveTo(10, -1, 6, 2);
@@ -839,6 +859,7 @@ export class Renderer {
   memory(m) {
     const c = this.ctx, y = m.y - 8 + Math.sin(this.time * 1.7 + m.x) * 4;
     this.glow(m.x, y, 65, '235,199,119', .25);
+    if (this.art.sprite('migration-memory', m.x, y + 9)) return;
     c.save(); c.translate(m.x, y); c.rotate(.25 + Math.sin(this.time) * .1);
     c.beginPath(); c.moveTo(0, -14); c.quadraticCurveTo(16, -1, 4, 13); c.quadraticCurveTo(-11, 5, 0, -14); c.fillStyle = '#e6c483'; c.fill(); c.strokeStyle = '#f3e1b2'; c.lineWidth = 1; c.stroke();
     this.line([[0, -9], [1, 8]], '#a48046', 1); c.restore();
@@ -875,6 +896,7 @@ export class Renderer {
     const x = p.x + p.w / 2, y = p.y;
     this.glow(x, y + 22, 100, '159,218,194', .09);
     if (p.grounded) this.ellipse(x, y + p.h + 1, 17, 3, '#001c2370');
+    if (this.art.hero(p, state)) return;
     c.save(); c.translate(x, y); c.scale(f, 1);
     if (float) {
       const membrane = c.createRadialGradient(0, -10, 2, 0, -10, 42);
@@ -948,6 +970,7 @@ export class Renderer {
 
   foreground(room) {
     const c = this.ctx, cam = this.camera;
+    this.art.foreground(room);
     for (let i = -1; i < 20; i++) {
       const x = i * 83 - (cam * 1.12 % 83), h = 18 + hash(i + 29) * 34;
       this.coral(x, 735, h, '#0a3039', i);

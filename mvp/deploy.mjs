@@ -4,6 +4,7 @@ import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, re
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { ART_ASSETS } from '../mvp-v2/art-manifest.js';
 
 const mvpDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(mvpDir, '..');
@@ -38,7 +39,16 @@ function build() {
     } else cpSync(source, target);
   }
   cpSync(path.join(v2Dir, 'assets'), path.join(dest, 'assets'), { recursive: true });
-  for (const file of ['README.md', 'SCENE_PIPELINE.md']) cpSync(path.join(v2Dir, file), path.join(dest, file));
+  const spriteRoot = realpathSync(path.join(repoRoot, 'assets/runtime/sprites'));
+  for (const src of new Set(Object.values(ART_ASSETS).map(asset => asset.src))) {
+    if (!/^\.\.\/assets\/runtime\/sprites\/[a-z0-9-]+\/[a-z0-9-]+\.(png|webp)$/.test(src)) throw new Error(`Invalid runtime art path: ${src}`);
+    const source = realpathSync(path.resolve(v2Dir, src));
+    if (!source.startsWith(`${spriteRoot}${path.sep}`)) throw new Error(`Runtime art escaped its library: ${src}`);
+    const target = path.join(outDir, src.slice(3));
+    mkdirSync(path.dirname(target), { recursive: true });
+    cpSync(source, target);
+  }
+  for (const file of ['README.md', 'LEGACY.md', 'CAMPAIGN.md', 'SCENE_PIPELINE.md', 'progress.md']) cpSync(path.join(v2Dir, file), path.join(dest, file));
   const coverTarget = path.join(outDir, coverPath);
   mkdirSync(path.dirname(coverTarget), { recursive: true });
   cpSync(path.join(repoRoot, coverPath), coverTarget);

@@ -128,6 +128,7 @@ async function courseRoute() {
 
 try {
   await page.goto(process.env.GAME_URL || 'http://127.0.0.1:4175/');
+  if (await page.locator('script[src="campaign-game.js"]').count()) await page.goto(new URL('legacy.html', await page.evaluate(() => document.baseURI)).href);
   await page.locator('#start-btn:not([disabled])').waitFor();
   await screenshot('00-title');
   await page.click('#start-btn'); await tick(2);
@@ -263,7 +264,7 @@ try {
   await key('Escape'); await page.click('[data-action="main-menu"]');
   await page.click('#continue-btn'); await tick(2); await hasFlag('finished');
   assert.equal((await state()).memories.length, 4);
-  assert(requestedImages.some(url => url.includes('/assets/abyss-backdrop-v2.png')), 'Missing independent far-scene asset');
+  assert(requestedImages.some(url => url.includes('/assets/abyss-backdrop-v2.webp')), 'Missing independent far-scene asset');
   assert(!requestedImages.some(url => /\/L\d{2}_/.test(url)), 'Gameplay requested a concept/storyboard sheet');
   assert.deepEqual(errors, [], 'Browser errors were emitted');
   await writeFile(new URL('result.json', out), JSON.stringify({ passed: true, errors, state: await state() }, null, 2));

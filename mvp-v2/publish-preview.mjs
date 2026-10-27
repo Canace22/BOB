@@ -1,7 +1,8 @@
-import { copyFile, mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, readdir, realpath, rename, writeFile } from 'node:fs/promises';
 import { randomBytes } from 'node:crypto';
-import { dirname, extname, resolve } from 'node:path';
+import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ART_ASSETS } from './art-manifest.js';
 
 const sourceRoot = dirname(fileURLToPath(import.meta.url));
 const previewRoot = resolve(sourceRoot, '.preview');
@@ -45,7 +46,15 @@ for (const required of ['index.html', 'game.js', 'engine.js', 'levels.js', 'rend
   if (!files.includes(`mvp-v2/${required}`)) throw new Error(`Missing runtime file: ${required}`);
 }
 await copyAssets(resolve(sourceRoot, 'assets'), 'mvp-v2/assets');
-for (const doc of ['README.md', 'SCENE_PIPELINE.md']) await copy(resolve(sourceRoot, doc), `mvp-v2/${doc}`);
+// Snapshot only selected runtime exports; source art and the rest of the library stay local.
+const spriteRoot = await realpath(resolve(sourceRoot, '../assets/runtime/sprites'));
+for (const src of new Set(Object.values(ART_ASSETS).map(asset => asset.src))) {
+  if (!/^\.\.\/assets\/runtime\/sprites\/[a-z0-9-]+\/[a-z0-9-]+\.(png|webp)$/.test(src)) throw new Error(`Invalid runtime art path: ${src}`);
+  const source = await realpath(resolve(sourceRoot, src));
+  if (!source.startsWith(`${spriteRoot}${sep}`)) throw new Error(`Runtime art escaped its library: ${src}`);
+  await copy(source, src.slice(3));
+}
+for (const doc of ['README.md', 'LEGACY.md', 'CAMPAIGN.md', 'SCENE_PIPELINE.md', 'progress.md']) await copy(resolve(sourceRoot, doc), `mvp-v2/${doc}`);
 const title = 'docs/鲸腹遗城原画集/V2/images/A01_鲸落万物生_世界主视觉.png';
 await copy(resolve(sourceRoot, '..', title), title);
 

@@ -1,12 +1,16 @@
-// A compressed, connected slice of V2, not the full fourteen-region world.
+// A compressed, connected slice. V5.2 source silhouettes are adapted to this
+// route; they are not a literal reconstruction of its 36 rooms.
+const terrain = (id, kind, points, source) => ({ id, kind, points: points.map(([x, y]) => ({ x, y })), bottom: 740, source });
 export const rooms = [
   {
     id: 'mouth', name: '鲸口门庭', subtitle: '循着虾群，听见第一道回声', depth: '1,240', width: 2400,
     spawn: { x: 150, y: 532 },
+    terrain: [
+      terrain('mouth-entry-ridge', 'tissue', [[0,580],[240,580],[420,530],[570,530],[650,550],[730,580]], 'R1-02 须筛：宽丘与鞍部'),
+      terrain('mouth-return-bank', 'tissue', [[880,580],[960,550],[1140,550],[1340,540],[1480,580],[1640,580],[1790,540],[2000,540],[2160,580],[2400,580]], 'R1-02 须筛：低路返坡'),
+    ],
     platforms: [
-      { x: 0, y: 580, w: 730, h: 160 },
       { id: 'tongue', x: 730, y: 580, w: 150, h: 160, kind: 'soft' },
-      { x: 880, y: 580, w: 1520, h: 160 },
       { x: 430, y: 300, w: 530, h: 45, kind: 'bone' },
       { x: 1200, y: 450, w: 190, h: 32, kind: 'bone' },
     ],
@@ -16,8 +20,8 @@ export const rooms = [
     ],
     objects: [
       { id: 'camp-mouth', type: 'camp', x: 170, y: 580, label: '贝壳营地' },
-      { id: 'refill-mouth', type: 'refill', x: 1010, y: 580, label: '再充压力囊' },
-      { id: 'habitat-mouth', type: 'habitat', x: 1910, y: 580, label: '修复菌席' },
+      { id: 'refill-mouth', type: 'refill', x: 1010, y: 550, label: '再充压力囊' },
+      { id: 'habitat-mouth', type: 'habitat', x: 1910, y: 540, label: '修复菌席' },
     ],
     memories: [{ id: 'song', x: 1080, y: 535 }, { id: 'return', x: 620, y: 255 }],
     exits: [{ x: 2260, y: 580, to: 1, label: '沿食道 → 胃库', requires: 'long-gate' }], hazards: [],
@@ -25,19 +29,21 @@ export const rooms = [
   {
     id: 'stomach', name: '胃库沼泽', subtitle: '让出一条路，也留下一处栖息地', depth: '1,268', width: 2400,
     spawn: { x: 170, y: 532 },
+    terrain: [
+      terrain('gastric-fold-bank', 'tissue', [[0,580],[440,580],[600,530],[850,530],[1010,580],[1200,580]], 'R3-02 漂台阀：厚褶岸台'),
+      { ...terrain('gastric-drained-bed', 'tissue', [[1200,630],[1330,650],[1460,630],[1580,650],[1680,630]], 'R3-02 漂台阀：下陷危险沟'), requires: 'drain' },
+      terrain('gastric-restoration-bank', 'tissue', [[1680,580],[1880,580],[1970,540],[2090,540],[2160,580],[2400,580]], 'R3-02 漂台阀：对岸高低褶面'),
+    ],
     platforms: [
-      { x: 0, y: 580, w: 1200, h: 160 },
-      { x: 1200, y: 630, w: 480, h: 110, requires: 'drain' },
       { x: 1300, y: 520, w: 130, h: 30, kind: 'raft' },
       { x: 1510, y: 490, w: 130, h: 30, kind: 'raft' },
-      { x: 1680, y: 580, w: 720, h: 160 },
     ], gates: [],
     objects: [
       { id: 'food', type: 'food', x: 370, y: 580, label: '拾取可再生腐屑' },
-      { id: 'fed', type: 'crab', x: 730, y: 580, label: '投喂尸蟹' },
+      { id: 'fed', type: 'crab', x: 730, y: 530, label: '投喂尸蟹' },
       { id: 'drain', type: 'valve', x: 1080, y: 580, label: '转动胃瓣 · 排流' },
       { id: 'camp-stomach', type: 'camp', x: 1840, y: 580, label: '贝壳营地' },
-      { id: 'habitat-stomach', type: 'habitat', x: 2010, y: 580, label: '修复营养坡' },
+      { id: 'habitat-stomach', type: 'habitat', x: 2010, y: 540, label: '修复营养坡' },
     ],
     memories: [{ id: 'drift', x: 1460, y: 591 }],
     exits: [{ x: 80, y: 580, to: 0, label: '返回鲸口' }, { x: 2290, y: 580, to: 3, label: '组织裂隙 → 肋骨游廊', requires: 'drain' }],
@@ -46,8 +52,8 @@ export const rooms = [
   {
     id: 'lung', name: '肺缘浮庭', subtitle: '借一口压差，回到曾经仰望的地方', depth: '1,251', width: 2400,
     spawn: { x: 150, y: 532 },
+    terrain: [terrain('lung-soft-basin', 'membrane', [[0,580],[800,580],[980,635],[1360,645],[1630,600],[1850,580],[2400,580]], 'R2-01 育床：下凹软床与独立分层膜岸')],
     platforms: [
-      { x: 0, y: 580, w: 2400, h: 160 },
       { x: 820, y: 380, w: 500, h: 42, kind: 'membrane' },
       { x: 1600, y: 190, w: 800, h: 45, kind: 'bone' },
     ], gates: [],

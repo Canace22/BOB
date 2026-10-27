@@ -12,6 +12,7 @@ const held = new Set();
 let toastRemaining = 0, previousTime = 0, manual = false, muted = false, ready = false;
 let storageAvailable = true;
 let practice = false;
+let nextHudRefresh = 0;
 let stored = readSave();
 const game = new Game(handleEvent);
 
@@ -75,21 +76,33 @@ function mainMenu() {
   $('continue-btn').classList.toggle('hidden', !stored);
   $('start-btn').focus();
 }
+function hudText(id, text) {
+  const node = $(id);
+  if (node.textContent !== text) node.textContent = text;
+}
+function hudHidden(id, hidden) {
+  const node = $(id);
+  if (node.classList.contains('hidden') !== hidden) node.classList.toggle('hidden', hidden);
+}
+function hudWidth(id, width) {
+  const style = $(id).style;
+  if (style.width !== width) style.width = width;
+}
 function refresh() {
   const s = game.state;
-  $('room-name').textContent = rooms[s.room].name;
-  $('objective').textContent = game.objective();
-  $('memory-count').textContent = `${s.memories.size} / 4`;
+  hudText('room-name', rooms[s.room].name);
+  hudText('objective', game.objective());
+  hudText('memory-count', `${s.memories.size} / 4`);
   const ecology = ecologySummary(s);
-  $('ecology-status').textContent = `栖息地 ${ecology.restored} / ${HABITATS.length}${ecology.recovering ? ` · ${ecology.recovering} 处恢复中` : ''}`;
-  $('ability-status').textContent = s.abilities.has('float') ? '共生浮膜 · SHIFT 浮升' : '骨鸣器 · E 短鸣 / 长鸣';
-  $('course-progress').classList.toggle('hidden', s.room !== 3);
-  $('course-progress').textContent = `${practice ? '设施练习 · ' : ''}${[['course-climb','攀网'],['course-lift','升降台'],['course-swing','骨环']].map(([flag,name]) => `${s.flags.has(flag) ? '●' : '○'} ${name}`).join('  →  ')}`;
-  $('pressure-bar').style.width = `${s.abilities.has('float') ? s.pressure * 100 : 0}%`;
-  $('charge-bar').style.width = `${s.charge * 100}%`;
-  $('context-hint').textContent = s.hint;
-  $('context-hint').classList.toggle('hidden', !s.hint || s.mode !== 'playing');
-  $('touch-controls').classList.toggle('hidden', s.mode !== 'playing');
+  hudText('ecology-status', `栖息地 ${ecology.restored} / ${HABITATS.length}${ecology.recovering ? ` · ${ecology.recovering} 处恢复中` : ''}`);
+  hudText('ability-status', s.abilities.has('float') ? '共生浮膜 · SHIFT 浮升' : '骨鸣器 · E 短鸣 / 长鸣');
+  hudHidden('course-progress', s.room !== 3);
+  hudText('course-progress', `${practice ? '设施练习 · ' : ''}${[['course-climb','攀网'],['course-lift','升降台'],['course-swing','骨环']].map(([flag,name]) => `${s.flags.has(flag) ? '●' : '○'} ${name}`).join('  →  ')}`);
+  hudWidth('pressure-bar', `${Math.round(s.abilities.has('float') ? s.pressure * 100 : 0)}%`);
+  hudWidth('charge-bar', `${Math.round(s.charge * 100)}%`);
+  hudText('context-hint', s.hint);
+  hudHidden('context-hint', !s.hint || s.mode !== 'playing');
+  hudHidden('touch-controls', s.mode !== 'playing');
 }
 function showOverlay(mode, title, html) {
   held.clear(); game.state.charge = 0; game.previous = {}; game.state.mode = mode;
@@ -200,7 +213,12 @@ function update(dt) {
   game.step(dt, input());
   if (toastRemaining > 0) { toastRemaining -= dt; if (toastRemaining <= 0) $('toast').classList.add('hidden'); }
 }
-function paint() { renderer.draw(game.state, rooms[game.state.room]); refresh(); }
+function paint(forceHud = false) {
+  renderer.draw(game.state, rooms[game.state.room]);
+  const now = performance.now();
+  // DOM feedback needs 10 Hz; drawing and input keep their full frame rate.
+  if (forceHud || now >= nextHudRefresh) { refresh(); nextHudRefresh = now + 100; }
+}
 function frame(now) {
   if (!manual) {
     let dt = Math.min(0.05, (now - (previousTime || now)) / 1000);
@@ -218,7 +236,7 @@ window.advanceTime = ms => {
   manual = true;
   let remaining = Math.max(0, Math.min(60000, Number(ms) || 0)) / 1000;
   while (remaining > 0) { const dt = Math.min(remaining, 1 / 120); update(dt); remaining -= dt; }
-  paint(); return window.render_game_to_text();
+  paint(true); return window.render_game_to_text();
 };
 try {
   await renderer.load(); ready = true;
