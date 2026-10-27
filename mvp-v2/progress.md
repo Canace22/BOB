@@ -90,3 +90,5 @@ HUD 自动更新限制为 10Hz，并仅修改变化的文本、显隐与百分�
 4. Pages构建和普通静态服务/BOB/mvp-v2/前缀下，同一UI与完整任务路线通过，证据output/quests-pages-ui/与output/quests-pages-route/。线上结果待发布后另记。
 
 README同步任务入口和进度规则；桌面回归Skill补充任务状态、详情、布局与旧档检查。用户设备的可读性和任务体验仍待实际试玩反馈。
+
+线上核实：源码74469b9、Pages发布33556de；GitHub Pages部署40478603047成功。线上index.html、campaign-game.js、campaign-quests.js、campaign-engine.js、campaign.css与发布源逐字比对一致（HTML按构建规则移除base）。独立浏览器线上任务UI/改键/缺图测试与真实键盘五房全路线均通过，6/6主线及8项完成记录、死亡恢复、跨沟、刷新与回访正常，errors/httpErrors为空。证据output/quests-live-ui/、output/quests-live-route/；已目检线上1280×720追踪栏与完成任务面板。用户可刷新原Pages地址体验；无需重新开始，现有存档自动映射任务进度。
