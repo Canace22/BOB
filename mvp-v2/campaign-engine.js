@@ -87,13 +87,31 @@ export class CampaignGame {
     const p = this.state.player;
     return Math.abs(p.x + p.w / 2 - point.x) <= radius && Math.abs(p.y + p.h - point.y) <= 78;
   }
-  objective() {
+  guidance() {
     const s = this.state;
-    if (s.flags.has('BATCH_R1')) return '须门主线已完成；胃枢将在后续批次开放，可继续回访';
-    if (s.room === 'R1-04') return s.flags.has('BOSS_R1') ? '战后在流膜授予点按 E，取得贴流冲 A1' : '登记门前营地；跳横扫、退壳砸，在恢复时短击侧腹';
-    if (s.room === 'R1-05') return 'Shift 贴流冲跨过三段宽沟；每次落稳后才刷新冲刺';
-    return s.room === 'R1-01' ? '在贝壳营地按 E 登记，沿外伤坡找到须筛入口' : '沿亮边台面前进；Q 短击，R 重鸣，E 交互';
+    const guide = (title, detail) => ({ title, detail });
+    const camp = this.room.camps[0];
+    const registered = camp && s.checkpoint.room === s.room && s.checkpoint.x === camp.x - 15;
+    if (s.flags.has('BATCH_R1')) return guide('本章已完成，可以自由回访', '胃枢尚未开放。M 查看地图；清流窝是可选互动。');
+    if (s.room === 'R1-01') {
+      if (!registered && !s.visited.has('R1-02')) return guide('先在身旁的贝壳营地按 E', '营地会恢复生命并记录复活位置。靠近后按 E 登记。');
+      return guide('向右探索，到尽头按 E 进入须筛', 'A / D 移动；遇到断口，按住 D 再按空格跳过。');
+    }
+    if (s.room === 'R1-04') {
+      if (s.abilities.has('A1')) return guide('向右走，按 E 进入流膜育窝', '已取得贴流冲：空格跳起，再按 Shift 向面朝方向冲刺。');
+      if (s.flags.has('BOSS_R1')) return guide('到右侧发光处按 E，领取贴流冲', '击败负壳蟹后还要亲手领取能力，才能练习跨沟。');
+      if (!registered && !s.arenaActive) return guide('先在门前的贝壳营地按 E', '登记后再向右挑战；失败会回到这里，生命与蓄振恢复。');
+      return guide('击败负壳蟹，打开右侧通路', '横扫时按空格跳起，壳砸时离开预告范围；收招时靠近按 Q。');
+    }
+    if (s.room === 'R1-05') {
+      if (!s.abilities.has('A1')) return guide('先返回左侧门庭，领取贴流冲', '靠近左侧通路按 E 返回；在首领房右侧发光处按 E 领取。');
+      return guide('向右跨过三段沟，到尽头按 E', '按住 D → 空格跳起 → 空中按 Shift → 落台刷新；失足无伤返回。');
+    }
+    if (s.room === 'R1-02') return guide('沿下层向右走，到尽头按 E 进入舌台', '尸蟹举钳时退开，收招时靠近按 Q；空格跳过虾流。高处暂不开放。');
+    if (s.room === 'R1-03') return guide('向右穿过舌台，到尽头按 E', s.collected.has('FRAGMENT_R1_03') ? '生命碎片已拾取。继续向右，靠近通路按 E 进入负壳蟹门庭。' : '避开举钳后按 Q 反击；高台生命碎片可跳上去按 E 拾取。');
+    return guide('查看地图寻找通路', 'M 打开地图；靠近通路后按 E。');
   }
+  objective() { return this.guidance().title; }
   interactionTarget() {
     const s = this.state, p = s.player, room = this.room;
     const candidates = [
@@ -106,14 +124,20 @@ export class CampaignGame {
   }
   context() {
     const s = this.state, target = this.interactionTarget();
+    if (s.arenaActive) return '横扫：空格跳起 · 壳砸：退开 · 收招：Q 反击';
     const camp = target?.type === 'camp' ? target.data : null;
     if (camp) return '[ E ] 登记营地 · 恢复生命与蓄振';
     const object = target?.type === 'object' ? target.data : null;
-    if (object) return permitted(object.requires, s) ? `[ E ] ${object.label || object.id}` : `尚缺：${object.requires.filter(id => !s.flags.has(id) && !s.abilities.has(id)).join(' + ')}`;
+    if (object) {
+      if (!permitted(object.requires, s)) return object.requires.includes('BOSS_R1') ? '先击败负壳蟹，再来领取贴流冲' : '先在负壳蟹门庭领取贴流冲，再来回访';
+      if (object.requireDashPractice && !s.flags.has('DASH_PRACTICED')) return '清流窝可稍后回访 · 先向右冲过一段沟并落稳';
+      return `[ E ] ${object.label || object.id}`;
+    }
     const exit = target?.type === 'exit' ? target.data : null;
-    if (exit) return !permitted(exit.requires, s) ? `通路尚缺：${exit.requires.filter(id => !s.flags.has(id) && !s.abilities.has(id)).join(' + ')}`
+    if (exit) return !permitted(exit.requires, s) ? (exit.requires.includes('BOSS_R1') ? '先击败负壳蟹，才能通过' : '高处支路暂未开放 · 先沿下层向右探索')
       : exit.unavailable ? '[ E ] 须门阶段终点 · 胃枢后续开放' : `[ E ] ${exit.label || exit.to}`;
-    return s.arenaActive ? 'Q 短击 · R 重鸣 · H 调息；观察预告再退步或跳跃' : '';
+    if (s.life < s.maxLife) return s.resonance >= 2 ? '[ H ] 调息回血 · 消耗 2 蓄振，找安全处使用' : '蓄振不足 · Q 命中补充蓄振，营地可完全恢复';
+    return '';
   }
   interact() {
     const s = this.state, room = this.room;

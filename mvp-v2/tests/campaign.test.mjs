@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { campaignQuests } from '../campaign-quests.js';
 import { CampaignGame, CAMPAIGN_SAVE_KEY, validateCampaignSave, campaignHazardPhase } from '../campaign-engine.js';
 import { CAMPAIGN_ROOM_BY_ID, UNIT } from '../campaign-levels.js';
 import { Game, SAVE_KEY } from '../engine.js';
@@ -156,4 +157,51 @@ test('overlapping camp and return-exit interaction ranges select the nearest tar
   assert.match(game.context(), /返回舌台/);
   game.interact(); assert.equal(game.state.room, 'R1-03');
   assert.equal(game.state.checkpoint.room, 'R1-04', 'returning through the door does not replace the registered camp');
+});
+
+test('guidance follows camp registration, boss reward and missing ability without changing save format', () => {
+  const { game } = setup();
+  assert.match(game.objective(), /贝壳营地/);
+  stand(game, game.room.camps[0]); game.interact();
+  assert.match(game.objective(), /向右探索/);
+  const saved = game.serialize(); game.start(saved);
+  assert.match(game.objective(), /向右探索/);
+  game.enter('R1-04'); assert.match(game.objective(), /门前.*营地/);
+  game.state.arenaActive = true;
+  assert.match(game.context(), /横扫/);
+  assert.doesNotMatch(game.context(), /登记营地/);
+  game.state.arenaActive = false; game.state.flags.add('BOSS_R1');
+  assert.match(game.objective(), /领取贴流冲/);
+  game.enter('R1-05'); assert.match(game.objective(), /返回左侧/);
+  game.state.abilities.add('A1');
+  assert.match(game.guidance().detail, /空中按 Shift/);
+  stand(game, game.room.objects[0]); assert.match(game.context(), /先向右冲过/);
+  game.state.flags.add('DASH_PRACTICED'); assert.match(game.context(), /\[ E \]/);
+  game.enter('R1-04'); assert.match(game.objective(), /进入流膜育窝/);
+  game.state.flags.add('BATCH_R1'); assert.match(game.objective(), /已完成/);
+});
+
+test('quest journal separates main and optional objectives, advances on real progress, and restores from old saves', () => {
+  const { game } = setup();
+  const active = () => campaignQuests(game.state).filter(task => task.unlocked && !task.done);
+  assert.deepEqual(active().map(task => task.id), ['reach-baleen']);
+  game.enter('R1-02');
+  assert.equal(active()[0].id, 'reach-tongue');
+  game.enter('R1-03'); assert(active().some(task => task.id === 'tongue-fragment'));
+  game.enter('R1-04');
+  assert.equal(active()[0].id, 'defeat-gate-crab');
+  game.state.flags.add('BOSS_R1'); assert.equal(active()[0].id, 'claim-dash');
+  assert.equal(active()[0].completed, 0, 'boss victory must not complete the ability task');
+  game.state.abilities.add('A1'); game.enter('R1-05');
+  assert.equal(active()[0].id, 'cross-nursery'); assert.equal(active()[0].completed, 1);
+  game.state.flags.add('DASH_PRACTICED'); assert.equal(active()[0].completed, 2);
+  assert.equal(active().find(task => task.id === 'clearwater-nest').completed, 1);
+  game.state.flags.add('BATCH_R1');
+  assert(active().every(task => task.kind === 'side'), 'optional rewards must not block the main completion');
+  const before = campaignQuests(game.state);
+  const save = game.serialize(); assert.equal(save.version, 1); assert(!('quests' in save));
+  game.start(save); assert.deepEqual(campaignQuests(game.state), before);
+  game.state.collected.add('FRAGMENT_R1_03'); game.state.collected.add('H1');
+  assert.equal(active().length, 0);
+  game.start(); assert.deepEqual(active().map(task => task.id), ['reach-baleen']);
 });

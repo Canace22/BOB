@@ -87,6 +87,9 @@ async function jumpTo(x) {
 async function enterRoom(expected) {
   await key('KeyE'); assert.equal((await state()).room, expected);
   await tick(8);
+  const tasks=(await state()).quests;
+  const current=tasks.find(task=>task.kind==='main' && task.unlocked && !task.done);
+  if(current)assert(await page.locator(`#quest-list [data-quest="${current.id}"]`).isVisible());
 }
 async function fight(id) {
   const phases = new Set(), seenMoves = new Set(), held = new Set();
@@ -178,6 +181,8 @@ async function route() {
   const boss = await fight('BOSS_R1');
   assert((await state()).flags.includes('BOSS_R1'));
   assert(!(await state()).abilities.includes('A1'), 'Boss victory must not silently grant the ability');
+  assert(await page.locator('#quest-list [data-quest="claim-dash"]').isVisible());
+  assert.equal(await page.locator('#quest-progress').innerText(),'主线 4 / 6');
   assert(boss.moves.includes('smash'), 'Boss smash was not exercised');
   await walk(32 * UNIT - 15); await key('KeyE');
   assert((await state()).abilities.includes('A1'));
@@ -194,6 +199,8 @@ async function route() {
   assert(afterFailure.player.x < 6 * UNIT, 'Ordinary jump bypassed the dash teaching gap');
   await walk(6 * UNIT - 23); await dashAcross();
   assert((await state()).flags.includes('DASH_PRACTICED'));
+  assert.equal((await state()).quests.find(task=>task.id==='cross-nursery').completed,2);
+  assert.equal((await state()).quests.find(task=>task.id==='clearwater-nest').completed,1);
   await screenshot('06-first-dash-gap');
   // Return with the acquired ability to perform the source's H1 side action.
   await walk(10 * UNIT + 8); await dashAcross(-1);
@@ -204,6 +211,12 @@ async function route() {
   await walk(36.5 * UNIT - 15); await key('KeyE');
   assert.equal((await state()).room, 'R1-05', 'Unavailable R3 should not become a fake playable room');
   assert((await state()).flags.includes('BATCH_R1'));
+  assert.equal(await page.locator('#quest-progress').innerText(),'主线 6 / 6');
+  await key('Escape');await page.click('#quests-btn');
+  assert.match(await page.locator('#journal-active').innerText(),/全部完成/);
+  await page.locator('#journal-history summary').click();
+  assert.equal(await page.locator('#journal-completed .task-card').count(),8);
+  await page.screenshot({path:join(out,'08a-completed-journal.png')});await page.click('#journal-resume');
   await screenshot('08-r1-complete');
   await page.reload({ waitUntil: 'domcontentloaded' });
   await page.locator('#continue-btn').waitFor({ state: 'visible' });
@@ -212,6 +225,7 @@ async function route() {
   assert.equal(resumed.room, 'R1-04');
   for (const flag of ['BOSS_R1', 'H1', 'BATCH_R1']) assert(resumed.flags.includes(flag));
   assert(resumed.abilities.includes('A1') && resumed.collected.includes('FRAGMENT_R1_03'));
+  assert.equal(await page.locator('#quest-progress').innerText(),'主线 6 / 6');
   assert(!resumed.enemies.some(enemy => enemy.id === 'BOSS_R1' && enemy.hp > 0), 'Defeated boss returned after reload');
   await screenshot('09-resumed-boss-camp');
   await walk(0); await enterRoom('R1-03');

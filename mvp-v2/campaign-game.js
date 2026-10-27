@@ -2,6 +2,7 @@ import { CampaignGame, CAMPAIGN_SAVE_KEY, validateCampaignSave } from './campaig
 import { CAMPAIGN_ROOMS } from './campaign-levels.js';
 import { CampaignRenderer } from './campaign-renderer.js';
 import { Soundscape } from './audio.js';
+import { campaignQuests } from './campaign-quests.js';
 
 const $ = id => document.getElementById(id);
 const canvas=$('game'), renderer=new CampaignRenderer(canvas), audio=new Soundscape();
@@ -9,6 +10,7 @@ const defaults={left:'KeyA',right:'KeyD',jump:'Space',attack:'KeyQ',heavy:'KeyR'
 const labels={left:'向左',right:'向右',jump:'跳跃',attack:'短击',heavy:'重鸣',interact:'交互',dash:'贴流冲',rest:'调息',lamp:'提灯'};
 const bindingKey='whalefall-v52-controls';
 let bindings={...defaults}, saved=null, paused=false, manual=false, capture=null, toastUntil=0, ready=false;
+let taskSignature='', previousTasks=null;
 const held=new Set(), touch=new Set();
 try {
   saved=validateCampaignSave(JSON.parse(localStorage.getItem(CAMPAIGN_SAVE_KEY)));
@@ -29,14 +31,28 @@ const game=new CampaignGame((type,payload)=>{
 });
 function keyName(code) { return code.replace(/^Key/,'').replace('Space','空格').replace('ShiftLeft','Shift').replace('ShiftRight','右 Shift').replace('Arrow',''); }
 function hint(text='') {
-  return text.replace(/\b(Q|R|E|L|H|Shift)\b/g, key=>keyName(bindings[({Q:'attack',R:'heavy',E:'interact',L:'lamp',H:'rest',Shift:'dash'})[key]]));
+  return text.replace(/空格|\b(A|D|Q|R|E|L|H|Shift)\b/g, key=>keyName(bindings[({A:'left',D:'right',Q:'attack',R:'heavy',E:'interact',L:'lamp',H:'rest',Shift:'dash','空格':'jump'})[key]]));
 }
 function setText(id,text) { if($(id).textContent!==text) $(id).textContent=text; }
-function guide() { $('controls-guide').replaceChildren(...Object.entries(labels).filter(([k])=>!['rest','lamp'].includes(k)).map(([key,label])=>{ const el=document.createElement('span'), k=document.createElement('kbd');k.textContent=keyName(bindings[key]);el.append(k,` ${label}`);return el; })); }
+function guide() {
+  $('controls-guide').replaceChildren(...Object.entries(labels).filter(([k])=>!['rest','lamp'].includes(k)).map(([key,label])=>{ const el=document.createElement('span'), k=document.createElement('kbd');k.textContent=keyName(bindings[key]);el.append(k,` ${label}`);return el; }));
+  document.querySelector('.title-description').textContent=hint('先在身旁的贝壳营地按 E 登记，再向右探索。A / D 移动 · 空格跳跃 · 靠近通路按 E 进入。');
+}
 function updateHUD() {
   const s=game.state;
   setText('room-id',`${s.room} / 须门遗港`);setText('room-name',game.room.name);
-  setText('objective',hint(game.objective())); setText('context-hint',hint(game.context()));
+  updateTasks();
+  const context=hint(game.context());
+  setText('context-hint',context || hint(game.guidance().detail));
+  const target=game.interactionTarget(), actionable=!s.arenaActive && context.startsWith('[ ');
+  const marker=$('interaction-marker');
+  marker.classList.toggle('hidden',!target || !actionable || !game.context().startsWith('[ E ]'));
+  if(target && actionable) {
+    setText('interaction-marker',`${keyName(bindings.interact)} · ${target.type==='camp'?'登记营地':target.type==='exit'?'进入通路':'互动 / 领取'} ↓`);
+    const margin=marker.offsetWidth/2/$('viewport').clientWidth*100+1;
+    marker.style.left=`${Math.max(margin,Math.min(100-margin,(target.data.x-s.camera.x)/1280*100))}%`;
+    marker.style.top=`${Math.max(32,Math.min(76,(target.data.y-s.camera.y-115)/720*100))}%`;
+  }
   setText('life-status','● '.repeat(s.life)+'○ '.repeat(s.maxLife-s.life));
   setText('resonance-status',`蓄振 ${s.resonance} / 4`);
   setText('ability-status',s.abilities.has('A1')?`贴流冲 A1 · ${s.dash.available?'就绪':'落稳刷新'}`:'贴流冲 · 尚未取得');
@@ -46,6 +62,7 @@ function updateHUD() {
 function clearInput() { held.clear();touch.clear(); }
 function start(continuing=false) {
   if(!ready)return;
+  previousTasks=null;taskSignature='';
   closePanel(); game.start(continuing?saved:null);$('title-screen').classList.add('hidden');$('hud').classList.remove('hidden');
   audio.start();canvas.focus();updateHUD();
 }
@@ -69,6 +86,61 @@ function settings() {
   }
   $('reset-bindings').onclick=()=>{bindings={...defaults};saveBindings();settings();};
 }
+function taskObjectives(task) {
+  const list=document.createElement('ul');list.className='task-objectives';
+  for(const objective of task.objectives) {
+    const item=document.createElement('li');item.classList.toggle('done',objective.done);
+    item.textContent=`${objective.done?'✓':'○'} ${objective.text}　${objective.done?'1/1':'0/1'}`;list.append(item);
+  }
+  return list;
+}
+function taskCard(task, compact=false) {
+  const card=document.createElement('article');card.className=`task-card ${task.kind}${task.done?' completed':''}`;card.dataset.quest=task.id;
+  const title=document.createElement('strong');title.textContent=`${task.kind==='main'?'主线':'可选'} · ${task.title}`;
+  card.append(title,taskObjectives(task));
+  if(!compact) {
+    const detail=document.createElement('p');detail.textContent=hint(task.detail);card.append(detail);
+  }
+  return card;
+}
+function updateTasks() {
+  const tasks=campaignQuests(game.state), signature=JSON.stringify(tasks);
+  if(signature===taskSignature)return;
+  taskSignature=signature;
+  const current=tasks.find(task=>task.kind==='main' && task.unlocked && !task.done);
+  const main=tasks.filter(task=>task.kind==='main');
+  setText('quest-progress',`主线 ${main.filter(task=>task.done).length} / ${main.length}`);
+  const tracker=$('quest-list');tracker.replaceChildren();
+  if(current)tracker.append(taskCard(current,true));
+  else {const done=document.createElement('p');done.className='task-finished';done.textContent='✓ 须门遗港主线已完成';tracker.append(done);}
+  for(const task of tasks.filter(task=>task.kind==='side' && task.unlocked && !task.done)) {
+    const item=document.createElement('p');item.className='tracked-side';item.textContent=`可选 · ${task.title}　${task.completed}/${task.total}`;tracker.append(item);
+  }
+  if(previousTasks) {
+    const completed=tasks.find(task=>task.done && !previousTasks.find(previous=>previous.id===task.id)?.done);
+    if(completed && !paused)toast(`任务完成：${completed.title}${current?` · 当前主线：${current.title}`:''}`);
+  }
+  previousTasks=tasks;
+}
+function journal() {
+  const tasks=campaignQuests(game.state);
+  showPanel('任务 · 须门遗港','<p id="journal-progress"></p><div id="journal-active"></div><details id="journal-history"><summary>已完成任务</summary><div id="journal-completed"></div></details><p class="muted">后续任务随主线推进解锁；可选任务不影响主线完成。</p><div class="panel-actions"><button id="help-btn">操作帮助</button><button id="journal-resume">继续探索</button></div>');
+  setText('journal-progress',$('quest-progress').textContent);
+  for(const task of tasks.filter(task=>task.unlocked))$(task.done?'journal-completed':'journal-active').append(taskCard(task));
+  if(!tasks.some(task=>task.unlocked && !task.done))setText('journal-active','当前任务已全部完成，可以自由回访。');
+  if(!tasks.some(task=>task.done))setText('journal-completed','尚无已完成任务。');
+  $('help-btn').onclick=help;$('journal-resume').onclick=closePanel;
+}
+function help() {
+  const guidance=game.guidance();
+  showPanel('怎么玩 · 先看下一步', '<div class="help-current"><strong id="help-objective"></strong><p id="help-detail"></p></div><ol class="help-steps"><li><strong>走与跳</strong><p id="help-movement"></p></li><li><strong>靠近后交互</strong><p id="help-interaction"></p></li><li><strong>遇敌先躲，再反击</strong><p id="help-combat"></p></li></ol><p id="help-ability"></p><p>生命耗尽后回到登记营地，已取得的能力与奖励保留。M 查看地图，Esc 暂停。</p><div class="panel-actions"><button id="help-resume">明白了，继续探索</button></div>');
+  setText('help-objective',hint(`下一步：${guidance.title}`));setText('help-detail',hint(guidance.detail));
+  setText('help-movement',hint('A / D 或方向键移动；按空格跳跃。向右探索主线，遇到断口要边移动边跳。'));
+  setText('help-interaction',hint('贝壳是营地：靠近按 E 登记、回血。奖励和房间出口也要靠近按 E，不会自动触发。'));
+  setText('help-combat',hint('避开攻击预告，等敌人收招再靠近按 Q 短击。Q 命中补蓄振；R 重鸣和 H 调息回血各消耗 2 蓄振。'));
+  setText('help-ability',hint(game.state.abilities.has('A1')?'贴流冲已解锁：按住方向 → 空格跳起 → 空中按 Shift；每次落稳后刷新。':'贴流冲尚未解锁，暂时不用按 Shift；击败负壳蟹后，在右侧发光处按 E 领取。'));
+  $('help-resume').onclick=closePanel;
+}
 function saveBindings() { try {localStorage.setItem(bindingKey,JSON.stringify(bindings));} catch {} guide(); }
 function pause() {
   showPanel('潮声暂歇','<p>当前进度已保存至最近登记的营地；取得的能力、奖励和 Boss 胜利会保留。</p><div class="panel-actions"><button id="resume-btn">继续探索</button><button id="restart-btn">重新开始</button></div>');
@@ -80,7 +152,7 @@ function pause() {
 }
 $('start-btn').onclick=()=>saved? (showPanel('开始新旅程','<p>将替换当前须门主线存档。</p><div class="panel-actions"><button id="confirm-start">开始新旅程</button></div>'),$('confirm-start').onclick=()=>start(false)):start(false);
 $('continue-btn').onclick=()=>start(true);$('overlay-close').onclick=closePanel;
-$('map-btn').onclick=map;$('settings-btn').onclick=settings;$('pause-btn').onclick=pause;
+$('map-btn').onclick=map;$('settings-btn').onclick=settings;$('pause-btn').onclick=pause;$('quests-btn').onclick=journal;$('quest-open').onclick=journal;
 $('sound-btn').onclick=()=>{audio.start();audio.setMuted(!audio.muted);setText('sound-btn',audio.muted?'声音 关':'声音 开');};
 window.addEventListener('keydown',event=>{
   if(capture) {
@@ -111,7 +183,7 @@ function frame(now) {
   renderer.draw(game.state,game.room);hudTimer+=dt;if(hudTimer>.1){updateHUD();hudTimer=0;}
   requestAnimationFrame(frame);
 }
-window.render_campaign_to_text=()=>JSON.stringify({...game.state,paused,context:hint(game.context()),objective:hint(game.objective())},(_key,value)=>value instanceof Set?[...value]:value);
+window.render_campaign_to_text=()=>JSON.stringify({...game.state,paused,quests:campaignQuests(game.state),context:hint(game.context()),objective:hint(game.objective())},(_key,value)=>value instanceof Set?[...value]:value);
 window.advanceTime=async ms=>{manual=true;for(let remaining=Math.max(0,ms);remaining>0;remaining-=1000/120)step(Math.min(remaining/1000,1/120));renderer.draw(game.state,game.room);updateHUD();};
 guide();requestAnimationFrame(frame);
 await renderer.load();ready=true;
