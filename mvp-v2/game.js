@@ -2,6 +2,8 @@ import { Game, SAVE_KEY, validateSave } from './engine.js';
 import { rooms, memories } from './levels.js';
 import { Renderer } from './renderer.js';
 import { Soundscape } from './audio.js';
+import { HABITATS } from './ecology.js';
+import { ecologySummary, renderEcology, renderFieldMap, renderJournal } from './field-guide.js';
 
 const $ = id => document.getElementById(id);
 const renderer = new Renderer($('game'));
@@ -78,6 +80,8 @@ function refresh() {
   $('room-name').textContent = rooms[s.room].name;
   $('objective').textContent = game.objective();
   $('memory-count').textContent = `${s.memories.size} / 4`;
+  const ecology = ecologySummary(s);
+  $('ecology-status').textContent = `栖息地 ${ecology.restored} / ${HABITATS.length}${ecology.recovering ? ` · ${ecology.recovering} 处恢复中` : ''}`;
   $('ability-status').textContent = s.abilities.has('float') ? '共生浮膜 · SHIFT 浮升' : '骨鸣器 · E 短鸣 / 长鸣';
   $('course-progress').classList.toggle('hidden', s.room !== 3);
   $('course-progress').textContent = `${practice ? '设施练习 · ' : ''}${[['course-climb','攀网'],['course-lift','升降台'],['course-swing','骨环']].map(([flag,name]) => `${s.flags.has(flag) ? '●' : '○'} ${name}`).join('  →  ')}`;
@@ -100,22 +104,21 @@ function closeOverlay() {
   held.clear(); game.previous = {}; game.state.mode = 'playing';
   $('overlay').classList.add('hidden'); refresh();
 }
-const habitatCount = () => [...game.state.flags].filter(f => f.startsWith('habitat-')).length;
+const habitatCount = () => ecologySummary(game.state).restored;
 function pause() {
   showOverlay('paused', '让菌灯陪你歇一会儿', `<p class="eyebrow">THE TIDE CAN WAIT</p><p>${practice ? '设施练习中，主线存档保持原样。' : '旅程已保存。海水静下来，回声仍在。'}</p><div class="cards"><div class="card"><b>移动与攀爬</b><p>A / D 移动，空格跳跃。W / S 或 ↑ / ↓ 攀网；空格脱离。</p></div><div class="card"><b>骨环与机关</b><p>F 交互、抓住骨环或放手，空格借摆速跃出。E 短鸣 / 蓄满长鸣。</p></div><div class="card"><b>共生浮膜</b><p>获得后按住 Shift 浮升。压力囊旁按 F 补压。</p></div></div><div class="overlay-actions"><button class="primary" data-action="resume">继续探索 →</button><button class="secondary" data-action="recover">回到安全点</button><button class="secondary" data-action="${practice ? 'main-menu' : 'restart-confirm'}">${practice ? '返回主菜单' : '重新开始'}</button></div>`);
   persist();
 }
 function showMap() {
   const s = game.state;
-  showOverlay('map', '探索地图 · 沿旧伤前行', `<p class="eyebrow">FIELD MAP · 已探索 ${s.visited.size} / ${rooms.length}</p><p>鲸口 ⇄ 胃库 ⇄ 肋骨游廊 ⇄ 肺缘<br>${s.flags.has('shortcut') ? '已开放：肺缘高台 → 旧伤裂隙 → 鲸口高台' : '回程裂隙：从肺缘高处开启，通往鲸口上层。'}</p><div class="cards">${[0,1,3,2].map((i, order) => { const r = rooms[i]; return `<article class="card map-node ${s.room === i ? 'current' : ''}"><span class="eyebrow">0${order + 1} ${s.room === i ? '· 当前所在' : ''}</span><h3>${s.visited.has(i) ? r.name : '尚未抵达的轮廓'}</h3><p>${s.visited.has(i) ? r.subtitle : '沿水流继续探索'}</p><p>${s.visited.has(i) ? (i === 3 ? `设施 ${['course-climb','course-lift','course-swing'].filter(f => s.flags.has(f)).length} / 3` : `记忆 ${r.memories.filter(m => s.memories.has(m.id)).length} / ${r.memories.length}`) : '…'}</p></article>`; }).join('')}</div><p class="muted">贝壳营地与设施落脚点保存进度；跌落不丢失收集。</p>`);
+  showOverlay('map', '探索地图 · 沿旧伤前行', renderFieldMap(s, game.objective()));
 }
 function showJournal() {
-  const s = game.state;
-  showOverlay('journal', '拾潮手记', `<p class="eyebrow">MEMORIES ${s.memories.size} / 4 · 栖息地 ${habitatCount()} / 3</p><div class="cards">${Object.entries(memories).map(([id, m]) => `<article class="card"><span class="eyebrow">${s.memories.has(id) ? '◇ 已拾回' : '○ 尚未发现'}</span><h3>${s.memories.has(id) ? m.title : '一段未被听见的回声'}</h3><p>${s.memories.has(id) ? m.text : '观察高处、低槽与回程中的旧路。'}</p></article>`).join('')}</div><p class="muted">一鲸落，万物生。这里没有复活的鲸，只有逐渐接续的生命。</p>`);
+  showOverlay('journal', '拾潮手记', renderJournal(game.state));
 }
 function showEnding() {
   const s = game.state;
-  showOverlay('ending', '旧路上，长出了新的生命', `<p class="eyebrow">A SMALL JOURNEY · A LIVING WORLD</p><p>你把第一道回声带回了营地。<br>鲸须之间，虾群仍在迁移；旧伤之上，菌灯亮起。</p><div class="cards"><div class="card"><b>${s.memories.size} / 4</b><p>记忆被重新听见</p></div><div class="card"><b>${habitatCount()} / 3</b><p>栖息地恢复生机</p></div><div class="card"><b>${Math.max(1, Math.round(s.elapsed / 60))} 分钟</b><p>这一次深海旅程</p></div></div><p>这是 V2 的四区域试玩切片。耳骨与尾椎，留待下一次远行。</p><div class="overlay-actions"><button class="primary" data-action="resume">继续回访与修复 →</button><button class="secondary" data-action="journal">阅读拾潮手记</button></div>`);
+  showOverlay('ending', '旧路上，长出了新的生命', `<p class="eyebrow">A SMALL JOURNEY · A LIVING WORLD</p><p>你把第一道回声带回了营地。<br>鲸须之间，虾群仍在迁移；旧伤之上，菌灯亮起。</p><div class="cards"><div class="card"><b>${s.memories.size} / 4</b><p>记忆被重新听见</p></div><div class="card"><b>${habitatCount()} / 3</b><p>栖息地恢复生机</p></div><div class="card"><b>${Math.max(1, Math.round(s.elapsed / 60))} 分钟</b><p>这一次深海旅程</p></div></div><h3>你留下的生命</h3>${renderEcology(s)}<p>${habitatCount() === HABITATS.length ? '三处栖息地都已恢复。旧路上，每一处微光都有了新的居民。' : '旅程已经完成。还未恢复的栖息地可以继续回访，生命会在探索中接续。'}</p><div class="overlay-actions"><button class="primary" data-action="resume">继续回访与修复 →</button><button class="secondary" data-action="journal">阅读拾潮手记</button></div>`);
   persist();
 }
 

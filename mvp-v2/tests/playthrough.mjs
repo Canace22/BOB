@@ -7,6 +7,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { getLiftPosition, getSwingPosition } from '../mechanics.js';
 import { rooms } from '../levels.js';
+import { HABITATS, getHabitatStatus } from '../ecology.js';
 
 if (Number(process.versions.node.split('.')[0]) < 20) {
   const bundledNode = join(homedir(), '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin', process.platform === 'win32' ? 'node.exe' : 'node');
@@ -77,6 +78,7 @@ async function floatTo(x, extraFrames = 0) {
   assert((await state()).player.grounded, `Not grounded after floating to ${x}`);
 }
 const hasFlag = async flag => assert((await state()).flags.includes(flag), `Missing flag: ${flag}`);
+const habitatStatus = async id => { const s = await state(); return getHabitatStatus({ ...s, flags: new Set(s.flags) }, id); };
 async function until(predicate, timeout = 900) {
   for (let i = 0; i < timeout; i += 3) {
     const s = await state();
@@ -131,6 +133,14 @@ try {
   await page.click('#start-btn'); await tick(2);
   assert.equal((await state()).mode, 'playing');
   await screenshot('01-mouth-start');
+  await key('KeyM');
+  assert.equal(await page.locator('.map-station.undiscovered').count(), 3, 'Map reveals unexplored regions');
+  assert(!(await page.locator('#overlay-content').innerText()).includes('胃库沼泽'), 'Map reveals an unexplored room name');
+  await key('Escape');
+  await key('KeyJ');
+  assert.equal(await page.locator('.ecology-card.undiscovered').count(), 2);
+  assert(!(await page.locator('#overlay-content').innerText()).includes('骨礁双壳'), 'Journal reveals unknown residents');
+  await key('Escape');
 
   // A closed gate must collide, and short/long resonance must be distinct.
   await walk(630); assert((await state()).player.x <= 520, 'Short gate is passable while closed');
@@ -139,9 +149,29 @@ try {
   await walk(1630); assert((await state()).player.x <= 1520, 'Long gate is passable while closed');
   await key('KeyE', 3); assert(!(await state()).flags.includes('long-gate'), 'Short call opens long gate');
   await tick(35); await key('KeyE', 60); await hasFlag('long-gate');
-  await walk(1910); await interact(); await hasFlag('habitat-mouth');
+  await walk(1910); await interact();
+  assert.equal((await habitatStatus('habitat-mouth')).phase, 'recovering');
+  assert(!(await state()).flags.includes('habitat-mouth'), 'Repair must grow before it counts as restored');
+  await tick(180);
   await screenshot('02-resonance-and-habitat');
+  await key('KeyJ');
+  assert.equal(await page.locator('[data-habitat="habitat-mouth"][data-phase="recovering"]').count(), 1);
+  const partial = (await state()).habitats['habitat-mouth'];
+  await tick(900);
+  assert.equal((await state()).habitats['habitat-mouth'], partial, 'Recovery advances inside journal');
+  await screenshot('02a-recovery-journal');
+  // Compact screens keep ecology notes readable and the dialog scrollable.
+  await page.setViewportSize({ width: 740, height: 650 });
+  assert.equal(await page.locator('.ecology-cards').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 1);
+  assert(await page.locator('.overlay-panel').evaluate(el => el.scrollHeight > el.clientHeight));
+  await screenshot('02b-compact-journal');
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.reload(); await page.locator('#continue-btn').waitFor({ state: 'visible' });
+  await page.click('#continue-btn'); await tick(2);
+  assert.equal((await habitatStatus('habitat-mouth')).phase, 'recovering');
+  assert(Math.abs((await state()).habitats['habitat-mouth'] - partial) < .1, 'Mid-recovery reload lost progress');
   await walk(2260); await interact(); assert.equal(roomIndex(await state()), 1);
+  await until(s => s.flags.includes('habitat-mouth'));
 
   // The crab blocks the path until food is collected and offered.
   await walk(850); assert((await state()).player.x <= 725, 'Unfed crab does not block the path');
@@ -159,10 +189,12 @@ try {
   await walk(1460); await tick(20); assert((await state()).memories.includes('drift'));
   await walk(1620); await jumpTo(1780);
   await walk(1840); await interact();
-  await walk(2010); await interact(); await hasFlag('habitat-stomach');
-  await screenshot('03-stomach-restored');
+  await walk(2010); await interact();
+  assert.equal((await habitatStatus('habitat-stomach')).phase, 'recovering');
+  await screenshot('03-stomach-recovering');
   await walk(2290); await interact(); assert.equal(roomIndex(await state()), 3);
   await courseRoute();
+  await hasFlag('habitat-stomach');
 
   await walk(500); await interact(); assert((await state()).abilities.includes('float'));
   await walk(730); await interact();
@@ -174,7 +206,8 @@ try {
   assert((await state()).player.y < 150, 'Second floating stage did not reach the upper platform');
   assert((await state()).memories.includes('surface'), 'Floating route missed the high memory');
   await walk(1770); await interact(); assert((await state()).pressure > 0.98);
-  await walk(1940); await interact(); await hasFlag('habitat-lung');
+  await walk(1940); await interact();
+  assert.equal((await habitatStatus('habitat-lung')).phase, 'recovering');
   await walk(2220); await interact(); await hasFlag('shortcut');
   await screenshot('04-lung-shortcut');
   await walk(2300); await interact(); assert.equal(roomIndex(await state()), 0);
@@ -190,6 +223,7 @@ try {
   await screenshot('06-pause'); await key('Escape');
   for (const [button, title] of [['KeyM', '地图'], ['KeyJ', '手记']]) {
     await key(button); assert((await page.locator('#overlay-title').innerText()).includes(title));
+    if (button === 'KeyM') assert.equal(await page.locator('.room-cards').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 2);
     await screenshot(button === 'KeyM' ? '07-map' : '08-journal');
     await key('Escape'); assert.equal((await state()).mode, 'playing');
   }
@@ -204,12 +238,24 @@ try {
   await walk(170); await tick(60); await interact();
   assert.equal((await state()).mode, 'ending'); await hasFlag('finished');
   assert.equal((await state()).memories.length, 4);
-  assert.equal((await state()).flags.filter(flag => flag.startsWith('habitat-')).length, 3);
+  assert.equal((await habitatStatus('habitat-lung')).phase, 'recovering', 'Optional ecology must not block the ending');
+  assert.equal(await page.locator('[data-habitat="habitat-lung"][data-phase="recovering"]').count(), 1);
   await screenshot('09-ending');
+  const endingProgress = (await state()).habitats['habitat-lung'];
+  await tick(900);
+  assert.equal((await state()).habitats['habitat-lung'], endingProgress, 'Recovery advances during ending');
+  await page.click('[data-action="resume"]');
+  await until(s => s.flags.includes('habitat-lung'));
+  assert((await state()).objective.includes('全部完成'));
+  for (const h of HABITATS) assert.equal((await habitatStatus(h.id)).phase, 'restored');
+  await key('KeyJ');
+  assert.equal(await page.locator('.ecology-card.restored').count(), 3);
+  await screenshot('10-all-habitats');
+  await key('Escape');
   // Practice is a user-facing route entry, never a test-only teleport API.
   // It must not replace the user's main journey save.
-  const mainSave = await page.evaluate(() => localStorage.getItem('whalefall-v2-2d-save'));
   await page.reload(); await page.locator('#practice-btn:not([disabled])').waitFor();
+  const mainSave = await page.evaluate(() => localStorage.getItem('whalefall-v2-2d-save'));
   await page.click('#practice-btn'); await tick(2);
   assert.equal((await state()).room, 3); assert.equal((await state()).practice, true);
   await walk(422); await key('KeyW', 125); await hasFlag('course-climb');
@@ -221,7 +267,7 @@ try {
   assert(!requestedImages.some(url => /\/L\d{2}_/.test(url)), 'Gameplay requested a concept/storyboard sheet');
   assert.deepEqual(errors, [], 'Browser errors were emitted');
   await writeFile(new URL('result.json', out), JSON.stringify({ passed: true, errors, state: await state() }, null, 2));
-  console.log('PASS: keyboard-only four-region journey; climbing net, lift passenger, momentum swing, resonance gates, drainage, float, return, all memories/habitats, pause, reload, ending; isolated practice preserves main save; no storyboard background requests or browser errors.');
+  console.log('PASS: keyboard-only four-region journey; climbing, lift, swing, resonance, drainage, float, return, all memories; three-stage ecology, unexplored map/journal, mid-recovery reload, paused recovery, optional ending, post-ending restoration; isolated practice preserves main save; no storyboard background requests or browser errors.');
 } catch (error) {
   try { await screenshot('failure'); } catch { /* Preserve the original failure. */ }
   await writeFile(new URL('failure-errors.json', out), JSON.stringify(errors, null, 2));
