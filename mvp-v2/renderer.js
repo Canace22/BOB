@@ -1,5 +1,8 @@
 import { getLiftPosition, getSwingPosition } from './mechanics.js';
+import { HABITATS, getHabitatStatus } from './ecology.js';
 import { SCENES } from './scenes.js';
+import { ART_ASSETS } from './art-manifest.js';
+import { RuntimeArt } from './runtime-art.js';
 
 const ART_ROOT = '../docs/鲸腹遗城原画集/V2/images/';
 const TAU = Math.PI * 2;
@@ -13,6 +16,7 @@ export class Renderer {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.images = new Map();
+    this.art = new RuntimeArt(this);
     this.time = 0;
     this.camera = 0;
     this.texture = document.createElement('canvas');
@@ -30,6 +34,7 @@ export class Renderer {
       scene.atmosphere.src,
       ...Object.values(scene.terrain || {}).map(asset => asset.src),
     ]))];
+    resources.push(...Object.values(ART_ASSETS).map(asset => asset.src));
     await Promise.all([...ART.map(name => this.loadImage(name)), ...resources.map(src => this.loadImage(src, src))]);
   }
 
@@ -137,6 +142,7 @@ export class Renderer {
     base.addColorStop(.55, scene.palette.tint);
     base.addColorStop(1, scene.palette.deep);
     c.fillStyle = base; c.fillRect(0, 0, 1280, 720);
+    if (this.art.backgrounds(room)) return;
     // Gameplay uses a clean environmental plate, never the concept sheets:
     // those sheets include a painted hero, terrain and storyboard panels.
     const img = this.images.get(scene.atmosphere.src);
@@ -353,8 +359,10 @@ export class Renderer {
         this.ellipse(swing.x + (p.x - swing.x) * fraction, swing.y + (p.y - swing.y) * fraction, 3.4, 4.5, '#c3c4a0');
       }
       this.glow(p.x, p.y, 55, '243,209,133', held ? .35 : .17);
-      this.ellipse(p.x, p.y, 14, 17, '#173e4544', '#ead49d', 4);
-      this.ellipse(p.x, p.y, 9, 12, null, '#7f9b82', 1);
+      if (!this.art.sprite('bone-anchor-ring', p.x, p.y)) {
+        this.ellipse(p.x, p.y, 14, 17, '#173e4544', '#ead49d', 4);
+        this.ellipse(p.x, p.y, 9, 12, null, '#7f9b82', 1);
+      }
       this.label('03  摆荡骨环  ·  F 抓握 / 空格跃出', swing.x, swing.y + swing.length + 92, state.course?.swing);
     }
     if (room.id === 'ribs') {
@@ -409,6 +417,7 @@ export class Renderer {
 
   platform(p, state, room) {
     const c = this.ctx, t = this.time;
+    if (this.art.platform(p, room, state)) return;
     if (p.kind === 'safety') {
       c.save();
       const mist = c.createLinearGradient(0, p.y, 0, p.y + p.h);
@@ -620,9 +629,12 @@ export class Renderer {
     const c = this.ctx, t = this.time, done = state.flags.has(o.id), x = o.x, y = o.y;
     const color = done ? '#9dd8ba' : '#e9c88a';
     const near = Math.abs(state.player.x + state.player.w / 2 - x) < 100 && Math.abs(state.player.y + 40 - y) < 110;
+    if (o.type === 'habitat') { this.habitat(o, state, near); return; }
     c.save();
     this.glow(x, y - 15, near ? 90 : 58, done ? '131,219,176' : '245,195,107', near ? .22 : .12);
-    if (o.type === 'course-power') {
+    if (this.art.object(o, state)) {
+      // Common status markers and interaction labels are drawn below.
+    } else if (o.type === 'course-power') {
       this.line([[x - 23, y], [x - 18, y - 24], [x + 18, y - 24], [x + 23, y]], '#94aa91', 5);
       this.ellipse(x, y - 29, 22, 24, '#315d5c', color, 2);
       this.ellipse(x, y - 29, 14, 16, done ? '#79bfa5' : '#7e7e59', '#c6caa2', 1);
@@ -668,10 +680,6 @@ export class Renderer {
       this.line([[x - 3, y - 31], [x - 5, y - 15]], '#c7e5d3', 2);
       for (let i = 0; i < 4; i++) this.ellipse(x + Math.sin(i * 2) * 6, y - 8 - (t * 9 + i * 12) % 29, 1.5, 1.5, '#d8efd0');
       this.coral(x - 10, y, 19, '#a0bea2', 3);
-    } else if (o.type === 'habitat') {
-      this.ellipse(x, y - 5, 36, 10, '#506d5c', '#97b29a');
-      for (let i = 0; i < 7; i++) this.coral(x - 25 + i * 8, y - 8, done ? 28 + hash(i) * 23 : 12 + hash(i) * 10, done ? '#b4d5a5' : '#96a580', i);
-      if (done) { this.jelly(x - 22, y - 63, 9, .75); this.jelly(x + 27, y - 81, 12, .6); }
     } else if (o.type === 'shortcut') {
       this.line([[x - 17, y], [x - 17, y - 47], [x + 17, y - 47], [x + 17, y]], '#acbba0', 4);
       for (let i = 0; i < 4; i++) this.line([[x - 15, y - 8 - i * 10], [x + 15, y - 8 - i * 10]], done ? '#8ecbb1' : '#708d7c', 2);
@@ -680,6 +688,147 @@ export class Renderer {
       c.save(); c.translate(x, y - 64 + Math.sin(t * 2) * 2); c.rotate(Math.PI / 4); c.fillStyle = '#f0d29b'; c.fillRect(-2.5, -2.5, 5, 5); c.restore();
     }
     if (near && o.label) this.label(o.label, x, y - (o.type === 'shortcut' ? 73 : 88), done);
+    c.restore();
+  }
+
+  habitat(o, state, near) {
+    const c = this.ctx, t = this.time, { x, y } = o;
+    const habitat = HABITATS.find(item => item.id === o.id);
+    const { phase, progress } = getHabitatStatus(state, o.id);
+    const p = clamp(progress, 0, 1), active = phase !== 'dormant', restored = phase === 'restored';
+    const room = typeof habitat?.room === 'string' ? habitat.room : o.id.replace('habitat-', '');
+    c.save();
+    this.glow(x, y - 12, 62 + p * 46, active ? '131,219,176' : '198,184,121', active ? .10 + p * .07 : near ? .12 : .04);
+    // These low silhouettes sit above the existing rim; they add no landing edge.
+    this.ellipse(x, y - 3, 33 + p * 28, 5 + p * 4, active ? '#507b6866' : '#43574b99', active ? '#93b89588' : '#81907877');
+    const bed = room === 'mouth' ? 'habitat-fungus-bed' : room === 'stomach' ? 'habitat-shell-nest' : 'habitat-larva-trough';
+    this.art.sprite(bed, x, y, { alpha: active ? .65 + p * .35 : .45 });
+    if (room === 'mouth') {
+      for (let i = 0; i < 13; i++) {
+        const seed = hash(i + 842), spread = 25 + p * 35;
+        const mx = x + (i / 12 * 2 - 1) * spread;
+        const growth = .25 + p * (.5 + seed * .5);
+        this.ellipse(mx, y - 5 - seed * 7 * p, 4 + growth * 7, 2 + growth * 3, active ? '#a6c99799' : '#7b896666');
+        if (active && seed < p) this.coral(mx, y - 7, 6 + p * 11, '#b4d5a5a0', i);
+      }
+      if (active) for (let i = 0; i < 7; i++) {
+        const arrival = clamp((p - i * .12) / .18, 0, 1);
+        if (!arrival) continue;
+        const travel = t * (.65 + hash(i + 15) * .35) + i * 2.4;
+        const sx = x + Math.sin(travel) * (35 + i * 7);
+        const sy = y - 15 - i % 3 * 8 + Math.cos(travel * 1.7) * 3;
+        c.save(); c.globalAlpha = arrival * .85;
+        this.habitatShrimp(sx, sy, 1 + hash(i + 39) * .25, Math.cos(travel) < 0 ? -1 : 1, i);
+        c.restore();
+      }
+    } else if (room === 'stomach') {
+      for (let i = 0; i < 5; i++) {
+        const bx = x - 32 + i * 16, rise = 6 + hash(i + 26) * 12;
+        this.line([[bx - 5, y - 4], [bx, y - rise * (.4 + p * .6)], [bx + 7, y - 4]], active ? '#b5c5a088' : '#8a937777', 4);
+      }
+      for (let i = 0; i < 7; i++) {
+        const growth = active ? clamp((p - i * .11) / .3, 0, 1) : .15;
+        if (!growth) continue;
+        const sx = x + (i - 3) * 17, sy = y - 5 - (i % 2) * 5;
+        this.habitatShell(sx, sy, 3 + growth * (8 + hash(i + 19) * 4), active ? growth : 0, i);
+      }
+    } else {
+      const width = 26 + p * 19, height = 8 + p * 17;
+      for (let side = -1; side <= 1; side++) {
+        c.beginPath(); c.moveTo(x - width, y - 4);
+        c.bezierCurveTo(x - width * .6, y - height * (1.2 + side * .2), x + width * .6, y - height * (1.2 - side * .2), x + width, y - 4);
+        c.quadraticCurveTo(x, y - 2 - height * .35, x - width, y - 4);
+        c.fillStyle = active ? '#8ebfa72b' : '#70867420'; c.fill();
+        c.strokeStyle = active ? '#b3d8b399' : '#82927b77'; c.lineWidth = 1; c.stroke();
+      }
+      for (let i = 0; i < 5; i++) {
+        const ex = x - 24 + i * 12, size = 2.5 + p * 2;
+        this.ellipse(ex, y - 8 - Math.sin(i / 4 * Math.PI) * height * .5, size, size * 1.4, active ? '#d2e0a699' : '#798b6c77');
+      }
+      if (active) for (let i = 0; i < 5; i++) {
+        const arrival = clamp((p - i * .17) / .25, 0, 1);
+        if (!arrival) continue;
+        const drift = t * (.55 + i * .07) + i * 2.1;
+        const lx = x + Math.sin(drift) * (33 + i * 12);
+        const ly = y - 35 - i * 11 + Math.sin(drift * 1.4 + i) * 8;
+        c.save(); c.globalAlpha = arrival * .78;
+        this.habitatLarva(lx, ly, 7 + hash(i + 31) * 3, i);
+        c.restore();
+      }
+    }
+    if (active) for (let i = 0; i < 4; i++) {
+      const age = (t * .27 + i * .25) % 1;
+      c.globalAlpha = Math.sin(age * Math.PI) * p * .55;
+      this.ellipse(x + Math.sin(i * 3 + age) * (25 + p * 25), y - 12 - age * 40, 1.2, 1.2, '#d1e6b4');
+    }
+    c.globalAlpha = 1;
+    if (phase === 'recovering') {
+      const rx = x + 77, ry = y - 43;
+      this.ellipse(rx, ry, 15, 15, '#10353be6', '#91bca64d', 1);
+      c.beginPath(); c.arc(rx, ry, 13, -Math.PI / 2, -Math.PI / 2 + TAU * p);
+      c.strokeStyle = '#b9dec0'; c.lineWidth = 2; c.stroke();
+      c.font = '9px "Microsoft YaHei", sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillStyle = '#d5e5c5'; c.fillText(`${Math.floor(p * 100)}`, rx, ry + .5);
+    } else if (!active) {
+      c.save(); c.translate(x, y - 55 + Math.sin(t * 2) * 2); c.rotate(Math.PI / 4);
+      c.fillStyle = '#e5c58b'; c.fillRect(-2.5, -2.5, 5, 5); c.restore();
+    }
+    if (near) {
+      const text = restored ? `${habitat?.resident || '居民'}已回归` : active ? `${habitat?.name || '栖息地'}恢复中 · ${Math.floor(p * 100)}%` : o.label;
+      if (text) this.label(text, x, y - (room === 'lung' && active ? 112 : 88), restored);
+    }
+    c.restore();
+  }
+
+  habitatShrimp(x, y, size, facing, seed) {
+    if (this.art.sprite('baleen-shrimp-swarm', x, y, { units: 48 * size })) return;
+    const c = this.ctx;
+    c.save(); c.translate(x, y); c.scale(size * facing, size);
+    c.beginPath(); c.moveTo(-9, 2); c.quadraticCurveTo(-3, -9, 6, -4); c.quadraticCurveTo(10, -1, 6, 2);
+    c.strokeStyle = '#e0c49d'; c.lineWidth = 3; c.stroke();
+    this.line([[-8, 2], [-12, -1], [-12, 4]], '#b69e7c', 1.5);
+    for (let i = 0; i < 3; i++) {
+      const kick = Math.sin(this.time * 7 + seed + i) * 1.7;
+      this.line([[-2 + i * 3, 0], [-4 + i * 3 + kick, 6]], '#cab48a', .8);
+    }
+    this.line([[6, -3], [12, -8], [17, -7]], '#d1c9a0a0', .7);
+    this.line([[6, -3], [13, -5], [18, -3]], '#d1c9a0a0', .7);
+    this.ellipse(6, -4, 1, 1, '#1a4044');
+    c.restore();
+  }
+
+  habitatShell(x, y, r, growth, seed) {
+    const c = this.ctx, breath = .1 + (Math.sin(this.time * 1.4 + seed * 2) + 1) * .12 * growth;
+    c.save(); c.translate(x, y); c.rotate((hash(seed + 51) - .5) * .35);
+    c.beginPath(); c.moveTo(0, 0); c.bezierCurveTo(-r * 1.4, -r * .3, -r, -r * 1.8, 0, -r * 1.55);
+    c.bezierCurveTo(r, -r * 1.8, r * 1.4, -r * .3, 0, 0);
+    c.fillStyle = growth ? '#a6b69a' : '#718477'; c.fill(); c.strokeStyle = '#d4d4ad'; c.lineWidth = .9; c.stroke();
+    for (let i = -2; i <= 2; i++) {
+      c.beginPath(); c.moveTo(0, -.5); c.quadraticCurveTo(i * r * .35, -r * .7, i * r * .32, -r * (1.53 - Math.abs(i) * .1));
+      c.strokeStyle = '#526e6588'; c.lineWidth = .7; c.stroke();
+    }
+    this.line([[-r * .85, -r * .55], [0, -r * breath], [r * .85, -r * .55]], '#263f3e', .8 + growth * 1.5);
+    if (growth > .3) {
+      const reach = Math.sin(this.time * 1.5 + seed) * 2;
+      this.line([[0, -r * breath], [reach, -r * .35], [reach + 3, -r * .5]], '#c8d6a8', .8);
+    }
+    c.restore();
+  }
+
+  habitatLarva(x, y, r, seed) {
+    const c = this.ctx, flutter = 1 + Math.sin(this.time * 3 + seed) * .15;
+    c.save(); c.translate(x, y);
+    for (const side of [-1, 1]) {
+      c.beginPath(); c.moveTo(0, 2);
+      c.bezierCurveTo(side * r * 1.4 * flutter, -r * .2, side * r * 1.1, -r * 1.5, 0, -r * .6);
+      c.quadraticCurveTo(side * r * .25, -r * .1, 0, 2);
+      c.fillStyle = '#a2d9cc3d'; c.fill(); c.strokeStyle = '#c1e3b6bb'; c.lineWidth = .8; c.stroke();
+    }
+    this.ellipse(0, 0, 2.5, 4.5, '#d4ddb0');
+    for (const side of [-1, 1]) {
+      c.beginPath(); c.moveTo(side, 3); c.quadraticCurveTo(side * 5, r * .8, side * 3 + Math.sin(this.time * 2 + seed) * 3, r * 1.5);
+      c.strokeStyle = '#a4d9c99c'; c.lineWidth = .7; c.stroke();
+    }
     c.restore();
   }
 
@@ -703,6 +852,7 @@ export class Renderer {
   memory(m) {
     const c = this.ctx, y = m.y - 8 + Math.sin(this.time * 1.7 + m.x) * 4;
     this.glow(m.x, y, 65, '235,199,119', .25);
+    if (this.art.sprite('migration-memory', m.x, y + 9)) return;
     c.save(); c.translate(m.x, y); c.rotate(.25 + Math.sin(this.time) * .1);
     c.beginPath(); c.moveTo(0, -14); c.quadraticCurveTo(16, -1, 4, 13); c.quadraticCurveTo(-11, 5, 0, -14); c.fillStyle = '#e6c483'; c.fill(); c.strokeStyle = '#f3e1b2'; c.lineWidth = 1; c.stroke();
     this.line([[0, -9], [1, 8]], '#a48046', 1); c.restore();
@@ -739,6 +889,7 @@ export class Renderer {
     const x = p.x + p.w / 2, y = p.y;
     this.glow(x, y + 22, 100, '159,218,194', .09);
     if (p.grounded) this.ellipse(x, y + p.h + 1, 17, 3, '#001c2370');
+    if (this.art.hero(p, state)) return;
     c.save(); c.translate(x, y); c.scale(f, 1);
     if (float) {
       const membrane = c.createRadialGradient(0, -10, 2, 0, -10, 42);
@@ -812,6 +963,7 @@ export class Renderer {
 
   foreground(room) {
     const c = this.ctx, cam = this.camera;
+    this.art.foreground(room);
     for (let i = -1; i < 20; i++) {
       const x = i * 83 - (cam * 1.12 % 83), h = 18 + hash(i + 29) * 34;
       this.coral(x, 735, h, '#0a3039', i);

@@ -1,5 +1,6 @@
 import { rooms } from './levels.js';
 import { getLiftPosition, getSwingPosition } from './mechanics.js';
+import { HABITATS, getHabitatStatus } from './ecology.js';
 
 export const SAVE_KEY = 'whalefall-v2-2d-save';
 const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
@@ -11,6 +12,13 @@ export function validateSave(value) {
   if (![value.flags, value.memories, value.abilities, value.visited].every(Array.isArray)) return null;
   if (value.flags.some(f => !flagNames.has(f)) || value.memories.some(m => !memoryNames.has(m)) || value.abilities.some(a => a !== 'float')) return null;
   if (value.visited.some(r => !Number.isInteger(r) || !rooms[r])) return null;
+  if (value.habitats !== undefined) {
+    if (!value.habitats || typeof value.habitats !== 'object' || Object.getPrototypeOf(value.habitats) !== Object.prototype) return null;
+    if (Object.entries(value.habitats).some(([id, seconds]) => {
+      const habitat = HABITATS.find(h => h.id === id);
+      return !habitat || !Number.isFinite(seconds) || seconds < 0 || seconds > habitat.duration;
+    })) return null;
+  }
   if (value.checkpoint) {
     const r = rooms[value.room], cp = value.checkpoint;
     const safe = [r.spawn, ...(r.checkpoints || []), ...r.objects.filter(o => o.type === 'camp').map(o => ({ x: o.x - 15, y: o.y - 48 })),
@@ -30,7 +38,7 @@ export class Game {
     return { mode: 'title', time: 0, elapsed: 0, room: 0, camera: { x: 0 },
       player: { x: 150, y: 532, w: 30, h: 48, vx: 0, vy: 0, facing: 1, grounded: true, climbing: null, riding: null, swinging: null, swingLock: 0, launchVx: 0 },
       course: { climb: false, lift: false, swing: false, clear: false },
-      flags: new Set(), memories: new Set(), abilities: new Set(), visited: new Set([0]),
+      flags: new Set(), memories: new Set(), abilities: new Set(), visited: new Set([0]), habitats: {},
       pressure: 1, charge: 0, pulses: [], particles: [], hint: '', respawnFlash: 0,
       checkpoint: { room: 0, x: 150, y: 532 }, deaths: 0, softTime: 0, softDown: 0, cooldown: 0,
     };
@@ -41,6 +49,7 @@ export class Game {
     const valid = validateSave(save);
     if (valid) {
       for (const key of ['flags', 'memories', 'abilities', 'visited']) this.state[key] = new Set(valid[key]);
+      this.state.habitats = { ...valid.habitats };
       for (const key of ['climb', 'lift', 'swing', 'clear']) this.state.course[key] = this.state.flags.has(`course-${key}`);
       this.state.elapsed = Number.isFinite(valid.elapsed) ? Math.max(0, valid.elapsed) : 0;
       this.state.deaths = Number.isFinite(valid.deaths) ? Math.max(0, valid.deaths) : 0;
@@ -52,7 +61,7 @@ export class Game {
   }
   serialize() {
     const s = this.state;
-    return { version: 2, room: s.checkpoint.room, checkpoint: { ...s.checkpoint }, flags: [...s.flags], memories: [...s.memories], abilities: [...s.abilities], visited: [...s.visited], elapsed: s.elapsed, deaths: s.deaths };
+    return { version: 2, room: s.checkpoint.room, checkpoint: { ...s.checkpoint }, flags: [...s.flags], memories: [...s.memories], abilities: [...s.abilities], visited: [...s.visited], habitats: { ...s.habitats }, elapsed: s.elapsed, deaths: s.deaths };
   }
   enter(index, spawn) {
     const s = this.state, r = rooms[index];
@@ -76,7 +85,15 @@ export class Game {
       if (!f.has('course-swing')) return '第三段：靠近骨环按 F 抓握，向右荡起时按空格跃出';
       return '抵达右侧高台，按 F 拉下通路拉杆';
     }
-    if (f.has('finished')) return '继续回访，寻找四枚记忆与三处栖息地';
+    if (f.has('finished')) {
+      const current = HABITATS.find(h => h.room === s.room && getHabitatStatus(s, h.id).phase !== 'restored');
+      const next = current || HABITATS.find(h => getHabitatStatus(s, h.id).phase !== 'restored');
+      if (next) return getHabitatStatus(s, next.id).phase === 'recovering'
+        ? `${next.name}正在恢复，可以先探索，再回访${rooms[next.room].name}`
+        : `回访${rooms[next.room].name}，修复${next.name} · M 查看地图`;
+      if (s.memories.size < memoryNames.size) return `栖息地已全部恢复，再寻找 ${memoryNames.size - s.memories.size} 枚记忆 · M 查看地图`;
+      return '四枚记忆与三处栖息地已全部完成，沿旧路看看新生的居民';
+    }
     if (s.memories.has('return') && f.has('shortcut')) return '回到鲸口起点的贝壳营地，完成旅程';
     if (f.has('shortcut')) return '沿裂隙返回鲸口高台，找回仰望过的记忆';
     if (s.abilities.has('float')) return '补充压力，分两段浮升，打开肺缘高处裂隙';
@@ -97,8 +114,14 @@ export class Game {
     for (const g of r.gates) {
       if (!s.flags.has(g.id) && this.near({ x: g.x, y: g.y + g.h }, 190)) return g.kind === 'short' ? '轻按 E 再松开 · 短鸣分开鲸须' : '按住 E 至环纹蓄满，松开 · 长鸣';
     }
-    const object = r.objects.find(o => this.near(o) && (!s.flags.has(o.id) || ['camp', 'refill', 'valve', 'course-reset'].includes(o.type)));
+    const object = r.objects.find(o => this.near(o) && (!s.flags.has(o.id) || ['camp', 'refill', 'valve', 'course-reset', 'habitat'].includes(o.type)));
     if (object) {
+      if (object.type === 'habitat') {
+        const habitat = HABITATS.find(h => h.id === object.id), status = getHabitatStatus(s, object.id);
+        if (status.phase === 'restored') return `${habitat.name}已恢复 · ${habitat.resident}已经安居`;
+        if (status.phase === 'recovering') return `${habitat.name}恢复中 · ${Math.round(status.progress * 100)}% · 可以先去探索，稍后回访`;
+        return s.flags.has(habitat.requires) ? `[ F ] 修复${habitat.name} · 等待${habitat.resident}归来` : habitat.hint;
+      }
       if (object.type === 'refill' && !s.abilities.has('float')) return '这处压力囊能为浮膜充压。记住它的位置。';
       if (object.type === 'camp' && s.room === 0 && s.memories.has('return') && s.flags.has('shortcut') && !s.flags.has('finished')) return '[ F ] 在贝壳营地休息 · 完成旅程';
       if (object.type === 'crab' && !s.flags.has('food')) return '尸蟹正在进食。先在左侧拾取腐屑。';
@@ -135,7 +158,7 @@ export class Game {
       Object.assign(s.player, { swinging: ring.id, climbing: null, riding: null, grounded: false, swingTime: 0, launchVx: 0 });
       this.event('sound', 'interact'); return;
     }
-    const o = r.objects.find(o => this.near(o) && (!s.flags.has(o.id) || ['camp', 'refill', 'valve', 'course-reset'].includes(o.type)));
+    const o = r.objects.find(o => this.near(o) && (!s.flags.has(o.id) || ['camp', 'refill', 'valve', 'course-reset', 'habitat'].includes(o.type)));
     if (o) {
       switch (o.type) {
         case 'course-power': s.flags.add(o.id); this.event('toast', '浮囊开始往复升降。等它靠近，跳上去一起升高。'); break;
@@ -164,7 +187,15 @@ export class Game {
         case 'refill':
           if (!s.abilities.has('float')) { this.event('toast', '压力囊轻轻鼓动。找到共生浮膜后再来。'); return; }
           s.pressure = 1; this.event('toast', '浮膜已充压。分段浮升，在侧台松开 Shift 落脚。'); break;
-        case 'habitat': s.flags.add(o.id); this.event('toast', '营养流重新经过这里。一处栖息地恢复了。'); break;
+        case 'habitat': {
+          const habitat = HABITATS.find(h => h.id === o.id), status = getHabitatStatus(s, o.id);
+          if (status.phase === 'restored') { this.event('toast', habitat.restoredText); return; }
+          if (status.phase === 'recovering') { this.event('toast', `${habitat.name}正在恢复。可以先去探索，稍后回来看看${habitat.resident}。`); return; }
+          if (!s.flags.has(habitat.requires)) { this.event('toast', habitat.hint); return; }
+          s.habitats[o.id] = 0;
+          this.event('toast', `${habitat.name}开始恢复。继续探索，稍后回访这里的新居民。`);
+          break;
+        }
         case 'shortcut':
           s.flags.add('shortcut'); this.event('toast', '旧伤裂隙已开放。再向右，按 F 回到鲸口的高台。'); break;
       }
@@ -238,6 +269,15 @@ export class Game {
     if (s.mode === 'title' || s.mode === 'playing') s.time += dt;
     if (s.mode !== 'playing') { this.previous = { ...input }; return; }
     s.elapsed += dt; s.cooldown = Math.max(0, s.cooldown - dt); s.respawnFlash = Math.max(0, s.respawnFlash - dt);
+    for (const habitat of HABITATS) {
+      if (getHabitatStatus(s, habitat.id).phase !== 'recovering') continue;
+      s.habitats[habitat.id] = Math.min(habitat.duration, s.habitats[habitat.id] + dt);
+      if (s.habitats[habitat.id] >= habitat.duration) {
+        s.flags.add(habitat.id);
+        this.event('save'); this.event('sound', 'success');
+        this.event('toast', `${habitat.name}已恢复，${habitat.resident}已经归来。回访${rooms[habitat.room].name}看看吧。`);
+      }
+    }
     const p = s.player, r = rooms[s.room];
     if (input.interact && !this.previous.interact) this.interact();
     if (r !== rooms[s.room] || s.mode !== 'playing') { this.previous = { ...input }; return; }
