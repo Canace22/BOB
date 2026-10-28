@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 12,
-  "updatedAt": "2026-10-28T10:05:56.199175+00:00",
+  "revision": 13,
+  "updatedAt": "2026-10-28T10:08:43.151484+00:00",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -22960,7 +22960,7 @@
         "母蟹",
         "关键静态姿态"
       ],
-      "status": "candidate",
+      "status": "accepted",
       "target": "2d",
       "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
       "file": "assets/runtime/sprites/crab-boss-prototype/sweep_tell.png",
@@ -23016,22 +23016,22 @@
         "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
       },
       "qa": {
-        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
-        "passed": false,
+        "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md",
+        "passed": true,
         "limitations": [
           "关键姿态缺少帧间过渡，不是正式逐帧动画",
-          "用户未确认美术；实机碰撞和读招由原型验收"
+          "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"
         ],
         "report": "assets/source/crab-boss-prototype/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "integration": {
         "version": "godot-crab-prototype",
         "date": "2026-10-28",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
         "evidence": "game/progress.md",
-        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/sweep_tell.png"
       }
     },
@@ -23045,7 +23045,7 @@
         "母蟹",
         "关键静态姿态"
       ],
-      "status": "candidate",
+      "status": "accepted",
       "target": "2d",
       "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
       "file": "assets/runtime/sprites/crab-boss-prototype/sweep_active.png",
@@ -23102,22 +23102,22 @@
         "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
       },
       "qa": {
-        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
-        "passed": false,
+        "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md",
+        "passed": true,
         "limitations": [
           "关键姿态缺少帧间过渡，不是正式逐帧动画",
-          "用户未确认美术；实机碰撞和读招由原型验收"
+          "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"
         ],
         "report": "assets/source/crab-boss-prototype/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "integration": {
         "version": "godot-crab-prototype",
         "date": "2026-10-28",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
         "evidence": "game/progress.md",
-        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/sweep_active.png"
       }
     },
@@ -23131,7 +23131,7 @@
         "母蟹",
         "关键静态姿态"
       ],
-      "status": "candidate",
+      "status": "accepted",
       "target": "2d",
       "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
       "file": "assets/runtime/sprites/crab-boss-prototype/slam_tell.png",
@@ -23187,22 +23187,22 @@
         "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
       },
       "qa": {
-        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
-        "passed": false,
+        "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md",
+        "passed": true,
         "limitations": [
           "关键姿态缺少帧间过渡，不是正式逐帧动画",
-          "用户未确认美术；实机碰撞和读招由原型验收"
+          "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"
         ],
         "report": "assets/source/crab-boss-prototype/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "integration": {
         "version": "godot-crab-prototype",
         "date": "2026-10-28",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
         "evidence": "game/progress.md",
-        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/slam_tell.png"
       }
     },
@@ -23216,7 +23216,7 @@
         "母蟹",
         "关键静态姿态"
       ],
-      "status": "candidate",
+      "status": "accepted",
       "target": "2d",
       "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
       "file": "assets/runtime/sprites/crab-boss-prototype/slam_active.png",
@@ -23272,22 +23272,22 @@
         "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
       },
       "qa": {
-        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
-        "passed": false,
+        "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md",
+        "passed": true,
         "limitations": [
           "关键姿态缺少帧间过渡，不是正式逐帧动画",
-          "用户未确认美术；实机碰撞和读招由原型验收"
+          "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"
         ],
         "report": "assets/source/crab-boss-prototype/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "integration": {
         "version": "godot-crab-prototype",
         "date": "2026-10-28",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
         "evidence": "game/progress.md",
-        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/slam_active.png"
       }
     },
@@ -23301,7 +23301,7 @@
         "母蟹",
         "关键静态姿态"
       ],
-      "status": "candidate",
+      "status": "accepted",
       "target": "2d",
       "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
       "file": "assets/runtime/sprites/crab-boss-prototype/charge.png",
@@ -23357,22 +23357,22 @@
         "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
       },
       "qa": {
-        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
-        "passed": false,
+        "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md",
+        "passed": true,
         "limitations": [
           "关键姿态缺少帧间过渡，不是正式逐帧动画",
-          "用户未确认美术；实机碰撞和读招由原型验收"
+          "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"
         ],
         "report": "assets/source/crab-boss-prototype/acceptance.md"
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "integration": {
         "version": "godot-crab-prototype",
         "date": "2026-10-28",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
         "evidence": "game/progress.md",
-        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/charge.png"
       }
     }

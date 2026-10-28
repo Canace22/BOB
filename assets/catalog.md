@@ -13,8 +13,6 @@
 
 [验收范围与证据](source/whalefall-v5-2-complete/acceptance.md) · [174 件/7 页图集索引](runtime/sprites/whalefall-complete-atlas/index.json) · [静态组合配方](source/whalefall-v5-2-complete/review/components/README.md)。18 张背景保持独立，图集没有动作动画。当前 V2 Canvas 2D 从本批与首批资源选用 41 张原图，生成约 1.85 MiB 的 WebP 运行文件，约 45.37 MiB 的 PNG 原件保持不变；派生文件不重复计入资源数量。来源映射、导出命令和 `runtimeFile` 约定见[资源管理说明](README.md)，运行清单见 [art-manifest.js](../legacy/web/mvp-v2/art-manifest.js)，工作区、实机与线上状态见 [V2 进度](../legacy/web/mvp-v2/progress.md)。初版与 Three.js 版本没有新增运行引用。
 
-## R1 悬台支撑补件
-
 ## 搬壳母蟹 Boss 原型姿态
 
 `crab-boss-prototype`：2026-10-28，按用户指定 `shell-mother-crab` 的多层巨贝壳身份补制5张关键静态姿态（低扫蓄力/挥出、抬钳/下砸、收钳横冲）；待机复用不计新创作。公共画布1024×768、脚底根 `(400,704)`、运行等比0.6，母蟹常态约452×294世界像素。[制作源与复跑](source/crab-boss-prototype/README.md)、[静态检查与限制](source/crab-boss-prototype/acceptance.md)，实际运行/发布验收见 [game/progress.md](../game/progress.md)。5件为关键姿态，不是正式逐帧动画；原先旧负壳蟹的试稿归档到本批 `superseded/`，没有接入。台账状态以 `catalog.json` 为准。

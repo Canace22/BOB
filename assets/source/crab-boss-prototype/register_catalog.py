@@ -22,7 +22,7 @@ def main():
             prompts.append("assets/source/crab-boss-prototype/prompts/sweep-active-correction.txt")
         entry = {
             "id": asset_id, "name": "搬壳母蟹 · " + NAMES[key], "kind": "character", "region": "R1",
-            "tags": ["Boss原型", "母蟹", "关键静态姿态"], "status": "candidate", "target": "2d",
+            "tags": ["Boss原型", "母蟹", "关键静态姿态"], "status": "accepted", "target": "2d",
             "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
             "file": item["file"], "width": 1024, "height": 768, "bbox": item["alphaBboxes"]["8"],
             "pivot": report["pivot"], "sha256": item["sha256"], "alphaRange": item["alphaRange"],
@@ -34,15 +34,15 @@ def main():
                 "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
             },
             "qa": {
-                "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认", "passed": False,
-                "limitations": ["关键姿态缺少帧间过渡，不是正式逐帧动画", "用户未确认美术；实机碰撞和读招由原型验收"],
+                "scope": "静态透明边缘、统一比例与深浅背景合成；本地原型截图及真实按键路线通过，详见 game/progress.md", "passed": True,
+                "limitations": ["关键姿态缺少帧间过渡，不是正式逐帧动画", "用户未确认美术；局部路线通过不等于完整平衡或跨设备验收"],
                 "report": "assets/source/crab-boss-prototype/acceptance.md"
             },
-            "integrationStatus": "not-integrated",
+            "integrationStatus": "integrated",
             "integration": {
                 "version": "godot-crab-prototype", "date": "2026-10-28", "manifest": "game/art/manifest.json",
                 "renderer": "game/src/enemies/crab_prototype/crab_visual.gd", "evidence": "game/progress.md",
-                "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+                "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
                 "runtimeFile": f"game/art/enemies/crab_prototype/{key}.png"
             }
         }
