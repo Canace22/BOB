@@ -2,7 +2,7 @@
 // Single entry for the Godot project in game/. Usage: node tools/godot.mjs <command> [-- extra args]
 // Commands: check | test | run | editor | sync-art | export-web
 import { spawnSync, spawn } from 'node:child_process';
-import { existsSync, readFileSync, readdirSync, statSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -44,7 +44,12 @@ function godot(args, { headless = true } = {}) {
   return result.status ?? 1;
 }
 
-const importProject = () => godot(['--import']);
+const importProject = () => {
+  const build = join(GAME, 'build');
+  mkdirSync(build, { recursive: true });
+  writeFileSync(join(build, '.gdignore'), '');
+  return godot(['--import']);
+};
 
 function scriptFiles(dir) {
   return readdirSync(dir).flatMap((name) => {

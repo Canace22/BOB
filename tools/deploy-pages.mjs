@@ -34,7 +34,7 @@ function prepare() {
   assertLocalDirectory(dest, staging);
   if (existsSync(dest)) rmSync(dest, { recursive: true });
   mkdirSync(dest);
-  cpSync(exported, dest, { recursive: true });
+  cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) });
   writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false }, null, 2));
   writeFileSync(path.join(staging, '.nojekyll'), '');
   return { remote, source };
