@@ -19,3 +19,21 @@ assets/source/whalefall-v5-2-static-01/references/revision-inputs/
 
 # Local production environment and AI models; intentionally not versioned.
 /work/wan22-production/
+
+# Godot 编辑器缓存、构建输出与本地工具链（Godot 本体、导出模板）。.import 文件需要提交。
+.godot/
+/game/build/
+/.tools/
+/.pages-dist-godot/
+
+# 验收截图、制作账本运行态、日志与进程文件只保留本地。
+godot/*/evidence/
+godot/*/.production/
+*.log
+*.pid
+
+# 第三方工具与依赖：按 docs/workspace-migration.md 说明在本地安装。
+/work/effekseer/
+/work/whalefall-share/cloudflared.exe
+/work/whalefall-share/processes.json
+/work/whalefall-share/known_hosts

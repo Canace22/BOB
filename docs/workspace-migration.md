@@ -4,10 +4,15 @@
 
 ## 入库范围
 
-- `godot/`：三个 Godot 工程及全部素材、缓存、制作记录和验收资料。
-- `work/`：制作脚本、素材和 Effekseer 工具等，排除下述本地专用目录。
+- `godot/`：三个旧 Godot 工程的场景、脚本、素材、制作文档和制作历史。它们作为参考和素材来源保留，新开发在 `game/` 进行，见[架构说明](architecture.md)。
+- `work/`：制作脚本与素材，排除下述本地专用目录。
 - `work/wan22-production/`：按用户最新要求，整个目录仅保留本地，不提交其中的模型、Python 环境、工具、缓存、制作脚本或任何替代归档。
-- `work/effekseer/` 在迁入后移出了官方示例、两份安装压缩包，以及 Godot 插件里 Windows 以外的二进制。Windows 版编辑器和 `bin/windows` 保留。`__pycache__` 与 `*.pyc` 不再入库。
+- 2026-10-28 收窄提交范围，以下内容取消跟踪，只保留在本地；需要旧版本时可从 `8a3a20d` 及更早的提交中找回：
+  - `godot/*/.godot/`：编辑器导入缓存，Godot 打开工程时会自动重建。
+  - `godot/*/evidence/`：验收截图和运行证据，结论已记录在各工程的文档中。
+  - `work/effekseer/`：Effekseer 编辑器和 Godot 插件，属于第三方工具，需要时从官方渠道安装 1.80.7 版本。
+  - 所有 `*.log` 和 `*.pid` 文件，以及 `work/whalefall-share/` 中的 `cloudflared.exe`、`processes.json` 和 `known_hosts`。
+  - `__pycache__` 与 `*.pyc`。
 
 迁移后的 `godot/`、`work/` 共 6,759 个文件直接入库；大型文件通过 Git LFS 保存。`.gitignore` 明确忽略 `/work/wan22-production/`。本轮修订尚未推送的本地过渡提交，确保远端分支历史不包含该目录。
 
