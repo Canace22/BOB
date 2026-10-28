@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scenes/environment/elements/baleen_frames.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/baleen_blender/BALEEN-CENTER.png" id="2"]
+[node name="BALEEN-CENTER" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+hframes = 8
+vframes = 9
+script = ExtResource("1")
+playback_fps = 12.0
+frame_count = 72

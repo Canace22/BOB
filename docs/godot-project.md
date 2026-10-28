@@ -39,3 +39,7 @@ F5主入口的R1-01现在实例化参考图环境，角色由既有控制器接�
 ## 2026-10-28 环境动态更新
 
 新纯环境预览：`scenes/environment/motion_preview.tscn`（F6，C视差、空格暂停）；分组预览：`element_gallery.tscn`。R1-01主关卡已共享新分件，默认平滑跟随既有角色，Tab切回全景。[母版、参数、来源、运行证据](../assets/source/xumen-motion-elements/README.md)。旧`preview-reference-environment.ps1`继续可用，推荐新预览入口。
+
+### 垂须动画母版
+
+R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可编辑母版及定向重建说明见[垂须资产](../assets/source/baleen-blender/README.md)。仍使用唯一工程及既有PreviewEnvironment.cmd，无新玩法。

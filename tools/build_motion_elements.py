@@ -136,3 +136,8 @@ func update_visuals() -> void:
  s=s.replace('or id.begins_with("BUBBLE"): group = 1','or id.begins_with("BUBBLE") or id.begins_with("CAUSTIC"): group = 1')
  write(p,s)
  print('ASSEMBLED',len(layout),'elements including',len(fish),'individual fish')
+
+# Preserve the Blender-rendered curtain integration when regenerating the base scene.
+if "--assemble" in sys.argv and (root/"assets/source/baleen-blender/jobs.json").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_baleen_blender.py")],check=True)

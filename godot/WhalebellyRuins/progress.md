@@ -63,3 +63,9 @@ R1-01与独立预览共用103个环境元素；48鱼/12帧图集、根部固定�
 新增 `scenes/characters/locomotion_preview.tscn`，F6预览IDLE/Walk/Run各8帧。绘图来源、Blender序列工程、帧序/锚点与限制见 `../../assets/source/tide-picker-locomotion-v01/README.md`。本批没有替换主关卡角色，没有改动存档或发布Web游戏。
 
 固定Godot4.7.2导入通过；`--headless --script res://tests/locomotion_assets.gd`通过24纹理、透明角、播放推进、暂停、循环、状态切换检查。真实渲染截图为 `evidence/locomotion-v01/playback-a.png` 与 `playback-b.png`。技术通过不等于美术签收：前后腿身份和支撑节奏仍需精修，资产保持candidate。
+
+## 2026-10-28 四处Blender垂须动画
+
+本轮使用Blender4.2.0独立后台渲染四组原画网格形态键动画，288张透明PNG接入Godot4.7.2；未使用付费生成，未改动实时Blender文档。根部固定、近远景错相，旧实时变形实例删除。17项垂须渲染、17项环境状态、4项循环、6项水面回归通过；24秒固定与32秒镜头轨迹实机录像。完整母版、限制、性能及包验收见assets/source/baleen-blender/README.md和evidence/baleen_blender。27项主关卡流程为之前基线，此轮未重复全流程。
+
+本批补充：独立包启动退出0、实际截图已查看；无编码干扰20秒P50=16.661ms/P95=17.233ms，纹理204.1MiB。Blender几何/帧分析与Godot专项共通过52项检查（4+4+17+17+4+6，详见各报告）。

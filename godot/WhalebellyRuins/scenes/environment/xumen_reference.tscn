@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3]
+[gd_scene load_steps=102 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
@@ -11,17 +11,11 @@
 [ext_resource type="Texture2D" path="res://assets/motion_elements/PORTAL.png" id="9"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/LAMP.tscn" id="10"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-01-ROOT.png" id="11"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-01.tscn" id="12"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-02-ROOT.png" id="13"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-02.tscn" id="14"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-03-ROOT.png" id="15"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-03.tscn" id="16"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-04-ROOT.png" id="17"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-04.tscn" id="18"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-05-ROOT.png" id="19"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-05.tscn" id="20"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-06-ROOT.png" id="21"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-06.tscn" id="22"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-01.png" id="23"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-02.png" id="24"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-03.png" id="25"]
@@ -103,6 +97,11 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-02.tscn" id="101"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-03.tscn" id="102"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-04.tscn" id="103"]
+
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-LEFT.tscn" id="baleen_0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-CENTER.tscn" id="baleen_1"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-RIGHT.tscn" id="baleen_2"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-DISTANT.tscn" id="baleen_3"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
@@ -186,13 +185,6 @@ metadata/motion = "static"
 texture = ExtResource("11")
 centered = false
 
-[node name="BALEEN-01" parent="." instance=ExtResource("12")]
-z_index = 4
-position = Vector2(90, 0)
-metadata/element_id = "BALEEN-01"
-metadata/motion = "foliage"
-external_clock = true
-
 [node name="BALEEN-02-ROOT" parent="." type="Sprite2D"]
 z_index = 4
 position = Vector2(255, 0)
@@ -200,13 +192,6 @@ metadata/element_id = "BALEEN-02-ROOT"
 metadata/motion = "static"
 texture = ExtResource("13")
 centered = false
-
-[node name="BALEEN-02" parent="." instance=ExtResource("14")]
-z_index = 4
-position = Vector2(255, 0)
-metadata/element_id = "BALEEN-02"
-metadata/motion = "foliage"
-external_clock = true
 
 [node name="BALEEN-03-ROOT" parent="." type="Sprite2D"]
 z_index = 4
@@ -216,13 +201,6 @@ metadata/motion = "static"
 texture = ExtResource("15")
 centered = false
 
-[node name="BALEEN-03" parent="." instance=ExtResource("16")]
-z_index = 4
-position = Vector2(422, 0)
-metadata/element_id = "BALEEN-03"
-metadata/motion = "foliage"
-external_clock = true
-
 [node name="BALEEN-04-ROOT" parent="." type="Sprite2D"]
 z_index = 4
 position = Vector2(575, 0)
@@ -230,13 +208,6 @@ metadata/element_id = "BALEEN-04-ROOT"
 metadata/motion = "static"
 texture = ExtResource("17")
 centered = false
-
-[node name="BALEEN-04" parent="." instance=ExtResource("18")]
-z_index = 4
-position = Vector2(575, 0)
-metadata/element_id = "BALEEN-04"
-metadata/motion = "foliage"
-external_clock = true
 
 [node name="BALEEN-05-ROOT" parent="." type="Sprite2D"]
 z_index = 4
@@ -246,13 +217,6 @@ metadata/motion = "static"
 texture = ExtResource("19")
 centered = false
 
-[node name="BALEEN-05" parent="." instance=ExtResource("20")]
-z_index = 4
-position = Vector2(722, 0)
-metadata/element_id = "BALEEN-05"
-metadata/motion = "foliage"
-external_clock = true
-
 [node name="BALEEN-06-ROOT" parent="." type="Sprite2D"]
 z_index = 4
 position = Vector2(880, 0)
@@ -260,13 +224,6 @@ metadata/element_id = "BALEEN-06-ROOT"
 metadata/motion = "static"
 texture = ExtResource("21")
 centered = false
-
-[node name="BALEEN-06" parent="." instance=ExtResource("22")]
-z_index = 4
-position = Vector2(880, 0)
-metadata/element_id = "BALEEN-06"
-metadata/motion = "foliage"
-external_clock = true
 
 [node name="DECOR-01" parent="." type="Sprite2D"]
 z_index = 11
@@ -850,3 +807,31 @@ position = Vector2(0, 0)
 metadata/element_id = "BUBBLE-ZONE-04"
 metadata/motion = "bubbles"
 external_clock = true
+
+[node name="BALEEN-LEFT" parent="." instance=ExtResource("baleen_0")]
+z_index = 4
+position = Vector2(250, -16)
+external_clock = true
+metadata/element_id = "BALEEN-LEFT"
+metadata/motion = "blender_frames"
+
+[node name="BALEEN-CENTER" parent="." instance=ExtResource("baleen_1")]
+z_index = 4
+position = Vector2(630, -16)
+external_clock = true
+metadata/element_id = "BALEEN-CENTER"
+metadata/motion = "blender_frames"
+
+[node name="BALEEN-RIGHT" parent="." instance=ExtResource("baleen_2")]
+z_index = 4
+position = Vector2(880, -16)
+external_clock = true
+metadata/element_id = "BALEEN-RIGHT"
+metadata/motion = "blender_frames"
+
+[node name="BALEEN-DISTANT" parent="." instance=ExtResource("baleen_3")]
+z_index = -31
+position = Vector2(860, 100)
+external_clock = true
+metadata/element_id = "BALEEN-DISTANT"
+metadata/motion = "blender_frames"

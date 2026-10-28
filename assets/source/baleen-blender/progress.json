@@ -1,0 +1,28 @@
+{
+  "scope": "Four marked painted baleen animation elements",
+  "status": "implemented_and_technically_verified",
+  "engine": "Godot4.7.2",
+  "blender": "4.2.0",
+  "elements": 4,
+  "frames_per_element": 72,
+  "fps": 12,
+  "seconds": 6,
+  "checks": {
+    "blender_geometry": 4,
+    "sequence_analysis": 4,
+    "godot_baleen": 17,
+    "environment": 17,
+    "loop": 4,
+    "water_surface": 6,
+    "portable_exit": 0
+  },
+  "evidence": "../../../godot/WhalebellyRuins/evidence/baleen_blender",
+  "technical_pending": [],
+  "visual_limits": [
+    "Fine matte edges remain approximate",
+    "Distant curtain uses inset painted patch, not independently drawn strands",
+    "Agent reviewed sample images and cycle measurements; final user aesthetic approval not yet given"
+  ],
+  "next_action": "If user requests adjustment, edit only the named group, rerender, repack and repeat targeted verification.",
+  "version_control": "See the scoped batch commit in git log"
+}

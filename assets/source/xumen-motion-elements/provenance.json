@@ -51,5 +51,27 @@
       "reference/water-correction/marked-composite.png",
       "reference/water-correction/marked-water.png"
     ]
+  },
+  "baleen_frame_revision": {
+    "source": "../baleen-blender/README.md",
+    "tool": "Blender 4.2.0 CLI, painted textured grid shape keys, RGBA render",
+    "groups": 4,
+    "frames_per_group": 72,
+    "fps": 12,
+    "runtime_ids": [
+      "BALEEN-LEFT",
+      "BALEEN-CENTER",
+      "BALEEN-RIGHT",
+      "BALEEN-DISTANT"
+    ],
+    "retired_runtime": [
+      "BALEEN-01",
+      "BALEEN-02",
+      "BALEEN-03",
+      "BALEEN-04",
+      "BALEEN-05",
+      "BALEEN-06"
+    ],
+    "hand_drawn_per_frame": false
   }
 }

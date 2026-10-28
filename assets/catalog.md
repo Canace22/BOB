@@ -71,3 +71,7 @@
 ### 顶部水面位置修正
 
 当前运行102个元素；新增`WATER-SURFACE.png`（原背景裁切，740×150，场景坐标350,0），位于z=-55。CAUSTIC-01/02退出装配，旧素材保留历史。参见[定向指令](source/xumen-motion-elements/instructions/water-surface-fix.md)。
+
+### Blender垂须帧动画
+
+4组×72张RGBA帧（12FPS/6秒），3组近景乳白垂须与1组远景蓝色垂帘。来源、绘画贴图、可编辑Blender母版、动画帧、运行图集与验证：[资产说明](source/baleen-blender/README.md)。100个运行环境元素，旧六片Shader动件退役，固定根片保留。

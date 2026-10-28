@@ -23,6 +23,7 @@ func run() -> void:
 	for child in scene.get_children():
 		if not str(child.name).begins_with("BALEEN"):continue
 		var mask: Image=child.texture.get_image()
+		if child.hframes>1:mask=mask.get_region(Rect2i(0,0,mask.get_width()/child.hframes,mask.get_height()/child.vframes))
 		for yy in range(mask.get_height()):
 			for xx in range(mask.get_width()):
 				var pos:=Vector2i(child.position)+Vector2i(xx,yy)
@@ -44,7 +45,7 @@ func run() -> void:
 		{"name":"painted_upper_water_changes","pass":top_changed>100,"pixels":top_changed},
 		{"name":"no_changes_outside_water_rect","pass":outside_changed==0,"pixels":outside_changed},
 		{"name":"opaque_baleen_occludes_water","pass":ivory_changed==0,"pixels":ivory_changed,"translucent_edge_pixels_showing_background":translucent_edge_changed},
-		{"name":"behind_midground_and_curtains","pass":water.z_index<scene.get_node("MID-01").z_index and water.z_index<scene.get_node("BALEEN-03").z_index},
+		{"name":"behind_midground_and_curtains","pass":water.z_index<scene.get_node("MID-01").z_index and water.z_index<scene.get_node("BALEEN-LEFT").z_index},
 		{"name":"floating_caustic_instances_removed","pass":not scene.has_node("CAUSTIC-01") and not scene.has_node("CAUSTIC-02")},
 		{"name":"10s_rendered_loop","pass":max_diff<=2,"maximum_channel_error":max_diff}
 	]

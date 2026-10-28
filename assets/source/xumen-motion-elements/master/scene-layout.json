@@ -109,16 +109,6 @@
     "kind": "static"
   },
   {
-    "id": "BALEEN-01",
-    "scene": true,
-    "pos": [
-      90,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
-  },
-  {
     "id": "BALEEN-02-ROOT",
     "scene": false,
     "tex": "BALEEN-02-ROOT",
@@ -128,16 +118,6 @@
     ],
     "z": 4.0,
     "kind": "static"
-  },
-  {
-    "id": "BALEEN-02",
-    "scene": true,
-    "pos": [
-      255,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
   },
   {
     "id": "BALEEN-03-ROOT",
@@ -151,16 +131,6 @@
     "kind": "static"
   },
   {
-    "id": "BALEEN-03",
-    "scene": true,
-    "pos": [
-      422,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
-  },
-  {
     "id": "BALEEN-04-ROOT",
     "scene": false,
     "tex": "BALEEN-04-ROOT",
@@ -170,16 +140,6 @@
     ],
     "z": 4.0,
     "kind": "static"
-  },
-  {
-    "id": "BALEEN-04",
-    "scene": true,
-    "pos": [
-      575,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
   },
   {
     "id": "BALEEN-05-ROOT",
@@ -193,16 +153,6 @@
     "kind": "static"
   },
   {
-    "id": "BALEEN-05",
-    "scene": true,
-    "pos": [
-      722,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
-  },
-  {
     "id": "BALEEN-06-ROOT",
     "scene": false,
     "tex": "BALEEN-06-ROOT",
@@ -212,16 +162,6 @@
     ],
     "z": 4.0,
     "kind": "static"
-  },
-  {
-    "id": "BALEEN-06",
-    "scene": true,
-    "pos": [
-      880,
-      0
-    ],
-    "z": 4.0,
-    "kind": "foliage"
   },
   {
     "id": "DECOR-01",
@@ -1048,5 +988,45 @@
     ],
     "z": -20,
     "kind": "bubbles"
+  },
+  {
+    "id": "BALEEN-LEFT",
+    "scene": true,
+    "pos": [
+      250,
+      -16
+    ],
+    "z": 4,
+    "kind": "blender_frames"
+  },
+  {
+    "id": "BALEEN-CENTER",
+    "scene": true,
+    "pos": [
+      630,
+      -16
+    ],
+    "z": 4,
+    "kind": "blender_frames"
+  },
+  {
+    "id": "BALEEN-RIGHT",
+    "scene": true,
+    "pos": [
+      880,
+      -16
+    ],
+    "z": 4,
+    "kind": "blender_frames"
+  },
+  {
+    "id": "BALEEN-DISTANT",
+    "scene": true,
+    "pos": [
+      860,
+      100
+    ],
+    "z": -31,
+    "kind": "blender_frames"
   }
 ]

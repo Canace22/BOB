@@ -137,27 +137,6 @@
     "sound": "N/A"
   },
   {
-    "id": "BALEEN-01",
-    "position": [
-      90,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-01.png",
-    "scene": "elements/BALEEN-01.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 7.0,
-      "phase": 0.73,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
-  },
-  {
     "id": "BALEEN-02-ROOT",
     "position": [
       255,
@@ -169,27 +148,6 @@
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A"
-  },
-  {
-    "id": "BALEEN-02",
-    "position": [
-      255,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-02.png",
-    "scene": "elements/BALEEN-02.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 8.0,
-      "phase": 1.46,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
   },
   {
     "id": "BALEEN-03-ROOT",
@@ -205,27 +163,6 @@
     "sound": "N/A"
   },
   {
-    "id": "BALEEN-03",
-    "position": [
-      422,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-03.png",
-    "scene": "elements/BALEEN-03.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 6.0,
-      "phase": 2.19,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
-  },
-  {
     "id": "BALEEN-04-ROOT",
     "position": [
       575,
@@ -237,27 +174,6 @@
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A"
-  },
-  {
-    "id": "BALEEN-04",
-    "position": [
-      575,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-04.png",
-    "scene": "elements/BALEEN-04.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 7.0,
-      "phase": 2.92,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
   },
   {
     "id": "BALEEN-05-ROOT",
@@ -273,27 +189,6 @@
     "sound": "N/A"
   },
   {
-    "id": "BALEEN-05",
-    "position": [
-      722,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-05.png",
-    "scene": "elements/BALEEN-05.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 8.0,
-      "phase": 3.65,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
-  },
-  {
     "id": "BALEEN-06-ROOT",
     "position": [
       880,
@@ -305,27 +200,6 @@
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A"
-  },
-  {
-    "id": "BALEEN-06",
-    "position": [
-      880,
-      0
-    ],
-    "layer": 4.0,
-    "asset": "BALEEN-06.png",
-    "scene": "elements/BALEEN-06.tscn",
-    "motion": "foliage",
-    "parameters": {
-      "amplitude_px": 6.0,
-      "period": 6.0,
-      "phase": 4.38,
-      "root_at_bottom": false
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
   },
   {
     "id": "DECOR-01",
@@ -1932,5 +1806,149 @@
     "acceptance": "36总数稳定、不在可见区瞬移、暂停恢复",
     "collision": "N/A",
     "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-LEFT",
+    "position": [
+      250,
+      -16
+    ],
+    "layer": 4,
+    "asset": "res://assets/baleen_blender/BALEEN-LEFT.png",
+    "scene": "elements/BALEEN-LEFT.tscn",
+    "motion": "Blender rendered 72 RGBA frames / 12fps / 6s loop",
+    "source": "baleen-blender/blend/baleen-painted-animation.blend",
+    "parameters": {
+      "amplitude": 7.0,
+      "atlas_columns": 8,
+      "atlas_rows": 9,
+      "fps": 12,
+      "frames": 72,
+      "id": "BALEEN-LEFT",
+      "partition": [
+        250,
+        650
+      ],
+      "period_seconds": 6,
+      "phase": 0.0,
+      "rect": [
+        250,
+        -16,
+        430,
+        360
+      ],
+      "z": 4
+    },
+    "collision": "N/A 环境装饰",
+    "sound": "N/A",
+    "acceptance": "根部固定、逐帧透明、无整片平移、实际引用、循环与场景遮挡"
+  },
+  {
+    "id": "BALEEN-CENTER",
+    "position": [
+      630,
+      -16
+    ],
+    "layer": 4,
+    "asset": "res://assets/baleen_blender/BALEEN-CENTER.png",
+    "scene": "elements/BALEEN-CENTER.tscn",
+    "motion": "Blender rendered 72 RGBA frames / 12fps / 6s loop",
+    "source": "baleen-blender/blend/baleen-painted-animation.blend",
+    "parameters": {
+      "amplitude": 5.0,
+      "atlas_columns": 8,
+      "atlas_rows": 9,
+      "fps": 12,
+      "frames": 72,
+      "id": "BALEEN-CENTER",
+      "partition": [
+        650,
+        900
+      ],
+      "period_seconds": 6,
+      "phase": 1.7,
+      "rect": [
+        630,
+        -16,
+        290,
+        230
+      ],
+      "z": 4
+    },
+    "collision": "N/A 环境装饰",
+    "sound": "N/A",
+    "acceptance": "根部固定、逐帧透明、无整片平移、实际引用、循环与场景遮挡"
+  },
+  {
+    "id": "BALEEN-RIGHT",
+    "position": [
+      880,
+      -16
+    ],
+    "layer": 4,
+    "asset": "res://assets/baleen_blender/BALEEN-RIGHT.png",
+    "scene": "elements/BALEEN-RIGHT.tscn",
+    "motion": "Blender rendered 72 RGBA frames / 12fps / 6s loop",
+    "source": "baleen-blender/blend/baleen-painted-animation.blend",
+    "parameters": {
+      "amplitude": 6.0,
+      "atlas_columns": 8,
+      "atlas_rows": 9,
+      "fps": 12,
+      "frames": 72,
+      "id": "BALEEN-RIGHT",
+      "partition": [
+        900,
+        1230
+      ],
+      "period_seconds": 6,
+      "phase": 3.2,
+      "rect": [
+        880,
+        -16,
+        350,
+        330
+      ],
+      "z": 4
+    },
+    "collision": "N/A 环境装饰",
+    "sound": "N/A",
+    "acceptance": "根部固定、逐帧透明、无整片平移、实际引用、循环与场景遮挡"
+  },
+  {
+    "id": "BALEEN-DISTANT",
+    "position": [
+      860,
+      100
+    ],
+    "layer": -31,
+    "asset": "res://assets/baleen_blender/BALEEN-DISTANT.png",
+    "scene": "elements/BALEEN-DISTANT.tscn",
+    "motion": "Blender rendered 72 RGBA frames / 12fps / 6s loop",
+    "source": "baleen-blender/blend/baleen-painted-animation.blend",
+    "parameters": {
+      "amplitude": 1.8,
+      "atlas_columns": 8,
+      "atlas_rows": 9,
+      "fps": 12,
+      "frames": 72,
+      "id": "BALEEN-DISTANT",
+      "partition": [
+        860,
+        1080
+      ],
+      "period_seconds": 6,
+      "phase": 2.4,
+      "rect": [
+        860,
+        100,
+        220,
+        300
+      ],
+      "z": -31
+    },
+    "collision": "N/A 环境装饰",
+    "sound": "N/A",
+    "acceptance": "根部固定、逐帧透明、无整片平移、实际引用、循环与场景遮挡"
   }
 ]

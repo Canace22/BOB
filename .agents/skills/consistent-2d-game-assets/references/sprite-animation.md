@@ -81,3 +81,10 @@ Save the source atlas, actual prompt and references, extraction script or crop m
 - 动态贴图要留足透明余量；含屋顶/洞壁的裁片必须拆成固定根片和动片，不能只把UV位移整体加大。
 - CanvasItem光纹Shader注意`COLOR`已可能含贴图采样；再次乘采样会把alpha平方，导致动画几乎看不见。用vertex传递调制色，在fragment只采样/混合一次，并通过实际像素变化复查。
 - 录制模式的帧时间包含编码，不等于实时帧率。另跑无录制场景测量。参考实现与证据见`assets/source/xumen-motion-elements/README.md`。
+
+## Blender绘画裁片的烘焙帧
+
+- 用原画纹理驱动带UV网格时，保留固定根部和透明余量；同一相机、帧尺寸和原点输出所有帧。不要逐帧紧裁。
+- 检查残留背景小岛，再批量渲染；位图连通性、尖端蒙版与色域只能辅助提取，必须复查细丝未被误删。
+- 用额外的循环闭合帧验证形态键几何，但导出帧不重复闭合帧；同时验固定点误差、首尾像素变化和实际Godot场景。
+- 母版打包绘画纹理，明确自动生成器会重建母版，避免覆盖人工Texture Paint/曲线修改。渲染后的PNG序列是2D动画，不能宣称为逐帧手绘。参见assets/source/baleen-blender/README.md。
