@@ -24811,12 +24811,12 @@
         413
       ],
       "source": "assets/source/tide-picker-v24-godot/README.md",
-      "integrationStatus": "demo-integrated",
-      "runtimeScene": "godot/WhalebellyRuins/scenes/tide_demo.tscn",
-      "runtimeFile": "godot/WhalebellyRuins/scenes/Player.tscn",
+      "integrationStatus": "integrated",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/main.tscn",
+      "runtimeFile": "godot/WhalebellyRuins/scenes/CampaignPlayer.tscn",
       "userArtApproval": false,
       "reviewer": "agent",
-      "notes": "45项运行回归及540帧RGBA校验；原素材衔接仍待精修。独立试玩，未替换原七房角色。"
+      "notes": "已接入默认七房主场景，复用原数值、怪物、机关及V6存档；回归见docs/tide-3c.md与.production/tide-main-integration。540帧RGBA不变；原素材衔接仍待精修。"
     }
   ]
 }

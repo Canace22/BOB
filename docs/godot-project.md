@@ -47,3 +47,7 @@ R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可�
 ### 2026-10-29 桥下轮廓与气泡
 
 共享环境恢复原图桥下被裁短的枝条，并新增左侧岩缝、桥下、右侧三处循环气泡。独立包已同步；可在主地图或环境F6查看。[修改、原件及验收](../assets/source/xumen-underbridge-repair/README.md)。
+
+## V2.4角色主场景接入
+
+F5默认七房已使用CampaignPlayer及PlayerUI；原场景/房间数据保留，V6存档不迁移。独立PlayerTest先验收再接入，数值以原工程为准。操作、数值来源、测试及美术边界见[角色系统说明](../godot/WhalebellyRuins/docs/tide-3c.md)。

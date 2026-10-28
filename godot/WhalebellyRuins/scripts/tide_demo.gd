@@ -7,6 +7,7 @@ extends Node2D
 @export var bounds:=Rect2(0,0,1200,1100)
 @export var automatic_camera_bounds: bool = true
 @export var show_guide: bool = true
+@export var campaign_profile: bool = false
 var player: TidePlayer
 var camera: Camera2D
 var hud: CanvasLayer
@@ -27,6 +28,7 @@ func _ready() -> void:
 	_floor(Vector2(450,200),Vector2(140,25))
 	if automatic_camera_bounds:bounds=_geometry_bounds()
 	player=load("res://scenes/Player.tscn").instantiate()
+	if campaign_profile:preload("res://scripts/campaign_profile.gd").apply(player)
 	player.position=Vector2(220,850);player.world_bounds=bounds;add_child(player)
 	camera=Camera2D.new();camera.position=player.position+Vector2(0,-180);camera.zoom=Vector2.ONE*base_zoom;add_child(camera)
 	camera.limit_left=int(bounds.position.x);camera.limit_top=int(bounds.position.y);camera.limit_right=int(bounds.end.x);camera.limit_bottom=int(bounds.end.y)

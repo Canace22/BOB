@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/campaign_player.gd" id="2"]
+
+[node name="Player" instance=ExtResource("1")]
+script = ExtResource("2")
+max_speed = 265.0
+acceleration = 1800.0
+friction = 1800.0
+gravity = 1050.0
+terminal_speed = 850.0
+jump_height = 154.71428571428572
+short_jump_height = 100.56428571428572
+double_jump_speed = 399.0
+wall_slide_speed = 212.5
+wall_jump_x = 318.0
+wall_jump_height = 154.71428571428572
+dash_speed = 800.0
+dash_duration = 0.2
+dash_cooldown = 0.7
+slit_speed = 1040.0
+slit_duration = 0.3
+slit_cooldown = 2.0
+coyote_time = 0.12
+jump_buffer_time = 0.12
+collision_size = Vector2(28, 65)
+capsule_collision = true
+max_health = 5
+contact_damage = 1
+melee_damage = 1
+orb_damage = 2
+heavy_damage = 2
+heal_amount = 5
+hurt_invulnerability = 1.2
+hurt_stun = 0.25
+knockback = 160.0
+melee_reach = 125.0
+melee_height = 125.0
+downward_reach = 32.5
+heavy_radius = 70.0
+orb_speed = 583.0
+pogo_height = 154.71428571428572
+visual_scale = 0.3357142857142857
+world_collision_mask = 5

@@ -6,6 +6,10 @@ func build() -> void:
 	var manifest:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/animations/player/manifest.json"))
 	var full:=AnimationLibrary.new()
 	var game:=AnimationLibrary.new()
+	var layers:=AnimationLibrary.new()
+	var leg_clip:=make_animation(range(6,30),2.0,true)
+	leg_clip.track_set_path(0,NodePath(".:lower_frame"))
+	layers.add_animation("run_legs",leg_clip)
 	var events:Dictionary={}
 	var clips:Dictionary=load("res://scripts/tide_player.gd").CLIPS
 	for id in manifest.actions:
@@ -46,10 +50,13 @@ func build() -> void:
 	var visual:=Node2D.new();visual.name="Visual";add(root,visual)
 	var sprite:=Sprite2D.new();sprite.name="Body";sprite.centered=false;sprite.offset=-Vector2(manifest.pivot[0],manifest.pivot[1]);sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	sprite.texture=load("res://assets/animations/player/body/idle/000.png")
-	var mat:=ShaderMaterial.new();mat.shader=load("res://scripts/tide_flash.gdshader");sprite.material=mat
+	var mat:=ShaderMaterial.new();mat.resource_local_to_scene=true;mat.shader=load("res://scripts/tide_flash.gdshader");sprite.material=mat
 	visual.add_child(sprite);sprite.owner=root
+	var legs:=Sprite2D.new();legs.name="Legs";legs.centered=false;legs.offset=sprite.offset;legs.visible=false;legs.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	var leg_material:=ShaderMaterial.new();leg_material.resource_local_to_scene=true;leg_material.shader=mat.shader;leg_material.set_shader_parameter("legs_only",true);legs.material=leg_material
+	visual.add_child(legs);legs.owner=root
 	var effect:=Sprite2D.new();effect.name="Effect";effect.centered=false;effect.offset=sprite.offset;effect.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;visual.add_child(effect);effect.owner=root
-	var animator:=AnimationPlayer.new();animator.name="AnimationPlayer";animator.add_animation_library("full",full);animator.add_animation_library("game",game);add(root,animator)
+	var animator:=AnimationPlayer.new();animator.name="AnimationPlayer";animator.add_animation_library("full",full);animator.add_animation_library("game",game);animator.add_animation_library("layers",layers);add(root,animator)
 	var tree:=AnimationTree.new();tree.name="AnimationTree";add(root,tree)
 	for x in [-10,0,10]:
 		var ray:=RayCast2D.new();ray.name="Foot%d"%x;ray.position=Vector2(x,-4);ray.target_position=Vector2(0,8);ray.collision_mask=1;add(root,ray)

@@ -1,0 +1,257 @@
+{
+	"checks": [
+		{
+			"details": null,
+			"name": "spawn_grounded",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "libraries_15x36_12fps",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "animation_tree_active",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "nearest_and_collision",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "five_ground_wall_rays",
+			"pass": true
+		},
+		{
+			"details": 180.0,
+			"name": "movement_speed",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "run_animation",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "friction_stops",
+			"pass": true
+		},
+		{
+			"details": {
+				"high": 489.028076171875,
+				"short": 312.945251464844
+			},
+			"name": "variable_jump_heights",
+			"pass": true
+		},
+		{
+			"details": -330.0,
+			"name": "double_jump",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "no_third_jump",
+			"pass": true
+		},
+		{
+			"details": {
+				"buffer": 0.0,
+				"vy": -671.978515625
+			},
+			"name": "landing_input_buffer",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "coyote_jump",
+			"pass": true
+		},
+		{
+			"details": 128.333312988281,
+			"name": "dash_distance",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "dash_cooldown",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "dash_invulnerability",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "slit_priority_and_invulnerability",
+			"pass": true
+		},
+		{
+			"details": "(0.0, 60.0)",
+			"name": "wall_slide",
+			"pass": true
+		},
+		{
+			"details": "(180.0, -828.5281)",
+			"name": "wall_jump",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "no_early_damage",
+			"pass": true
+		},
+		{
+			"details": {
+				"soul": 11,
+				"target": 90
+			},
+			"name": "melee_one_hit_and_soul",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "melee_recovery_end",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "no_early_dash_cancel",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "late_dash_cancel",
+			"pass": true
+		},
+		{
+			"details": {
+				"hp": 80,
+				"soul": 66
+			},
+			"name": "orb_cost_damage",
+			"pass": true
+		},
+		{
+			"details": {
+				"hp": 85,
+				"soul": 66
+			},
+			"name": "heavy_cost_damage",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "insufficient_soul",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "heal_complete",
+			"pass": true
+		},
+		{
+			"details": {
+				"hp": 35,
+				"soul": 33
+			},
+			"name": "heal_interrupt_no_refund",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "hurt_and_soul",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "hurt_invulnerability",
+			"pass": true
+		},
+		{
+			"details": {
+				"hp": 90,
+				"jumps": 0,
+				"vy": -639.756042480469
+			},
+			"name": "pogo_refills_mobility",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "interact_signal",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "death_input_lock",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "death_signal_and_ui",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "respawn_resources",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "ui_signal_sync",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "respawn_hides_death_ui",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "camera_bounds",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "physical_key_mapping_dash",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "move_while_attacking",
+			"pass": true
+		},
+		{
+			"details": 20,
+			"name": "independent_lower_body_layer",
+			"pass": true
+		},
+		{
+			"details": 15,
+			"name": "loaded_all_action_textures",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "action_display_matches_state",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "guide_locks_controls",
+			"pass": true
+		},
+		{
+			"details": null,
+			"name": "guide_persists_read",
+			"pass": true
+		}
+	],
+	"failed": 0
+}

@@ -16,6 +16,7 @@ signal animation_tag(tag: String)
 @export var acceleration: float = 2200.0
 @export var friction: float = 1600.0
 @export var gravity: float = 1200.0
+@export var terminal_speed: float = 1500.0
 @export var fall_multiplier: float = 1.35
 @export var air_control: float = 0.7
 @export var jump_height: float = 480.0
@@ -60,11 +61,18 @@ signal animation_tag(tag: String)
 @export var hitstop_duration: float = 3.0 / 60.0
 @export var attack_recovery: float = 0.1
 @export var collision_size := Vector2(24, 32)
+@export var capsule_collision: bool = false
+@export_flags_2d_physics var world_collision_mask: int = 1
+@export_flags_2d_physics var phase_collision_mask: int = 1
+@export var melee_reach: float = 20.0
+@export var melee_height: float = 34.0
+@export var downward_reach: float = 20.0
 @export_category("Presentation")
 @export var visual_scale: float = 0.22
 @export var animation_fps: float = 12.0
 @export var run_cycle_distance: float = 96.0
 @export var preload_actions: bool = true
+@export var lower_body_layer_enabled: bool = true
 @export var world_bounds := Rect2(0, 0, 1000, 1100)
 
 const PRIORITY := {"idle":0,"run":1,"jump_land":2,"strike_02":3,"interact":4,"strike_01":5,"A3_anchor":6,"A4_parry":7,"heavy":8,"recover":9,"A1_dash":10,"A5_slit":11,"hit":12,"defeat":13}
@@ -117,6 +125,11 @@ var display_action: String = "idle":
 			_set_texture(visual_frame)
 var textures: Dictionary = {}
 var effect_textures: Dictionary = {}
+var lower_frame: int = 0:
+	set(value):
+		lower_frame=value
+		if is_node_ready() and has_node("Visual/Legs") and textures.has("run"):
+			$Visual/Legs.texture=textures.run[clampi(value,0,35)]
 @onready var body: Sprite2D = $Visual/Body
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var tree: AnimationTree = $AnimationTree
@@ -128,12 +141,24 @@ func _ready() -> void:
 	soul = max_soul
 	spawn_point = position
 	collision_layer = 2
-	collision_mask = 1
+	collision_mask = world_collision_mask
 	floor_snap_length = 5.0
 	floor_stop_on_slope = true
 	safe_margin = 0.05
-	($CollisionShape2D.shape as RectangleShape2D).size = collision_size
+	if capsule_collision:
+		var capsule:=CapsuleShape2D.new()
+		capsule.radius=collision_size.x*.5
+		capsule.height=collision_size.y
+		$CollisionShape2D.shape=capsule
+	else:
+		var rectangle:=RectangleShape2D.new()
+		rectangle.size=collision_size
+		$CollisionShape2D.shape=rectangle
 	$CollisionShape2D.position.y = -collision_size.y / 2.0
+	for side in [-1,1]:
+		var wall_ray:RayCast2D=$WallLeft if side<0 else $WallRight
+		wall_ray.position.y=-collision_size.y*.5
+		wall_ray.target_position.x=side*(collision_size.x*.5+3)
 	$Visual.scale = Vector2.ONE * visual_scale
 	if preload_actions:
 		for id in CLIPS:_cache_clip(id)
@@ -158,11 +183,19 @@ func _build_animation_tree() -> void:
 	blend.add_node("States",machine)
 	blend.add_node("Speed",AnimationNodeTimeScale.new())
 	blend.connect_node("Speed",0,"States")
-	blend.connect_node("output",0,"Speed")
+	var legs:=AnimationNodeAnimation.new();legs.animation=&"layers/run_legs"
+	blend.add_node("LocomotionLegs",legs)
+	blend.add_node("LegSpeed",AnimationNodeTimeScale.new())
+	blend.connect_node("LegSpeed",0,"LocomotionLegs")
+	var layers:=AnimationNodeAdd2.new();layers.filter_enabled=true;layers.set_filter_path(NodePath(".:lower_frame"),true)
+	blend.add_node("BodyLayers",layers)
+	blend.connect_node("BodyLayers",0,"Speed");blend.connect_node("BodyLayers",1,"LegSpeed")
+	blend.connect_node("output",0,"BodyLayers")
 	tree.tree_root = blend
 	tree.anim_player = NodePath("../AnimationPlayer")
 	tree.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	tree.active = true
+	tree.set("parameters/BodyLayers/add_amount",1.0)
 	playback = tree.get("parameters/States/playback")
 	_choose_animation("idle")
 
@@ -219,7 +252,7 @@ func _physics_process(dt: float) -> void:
 		if jump_buffer > 0 and _can_jump_cancel(): _try_jump()
 	state_time += dt
 	_update_action_events()
-	var axis := Input.get_axis("tp_left","tp_right")
+	var axis := movement_axis()
 	var locked := state in ["recover","interact","hit","defeat"]
 	if absf(axis)>0.1 and state not in ["A1_dash","A5_slit"] and not locked: facing=signf(axis)
 	if state in ["A1_dash","A5_slit"]:
@@ -238,23 +271,27 @@ func _physics_process(dt: float) -> void:
 			if apex_left>0:
 				apex_left-=dt
 				velocity.y=0
-			else: velocity.y=minf(velocity.y+gravity*(fall_multiplier if velocity.y>0 else 1.0)*dt,1500)
+			else: velocity.y=minf(velocity.y+gravity*(fall_multiplier if velocity.y>0 else 1.0)*dt,terminal_speed)
 			if _wall_direction()!=0 and velocity.y>0 and axis==_wall_direction(): velocity.y=minf(velocity.y,wall_slide_speed)
+	collision_mask=movement_collision_mask()
+	_before_move(dt)
 	move_and_slide()
 	if position.y > world_bounds.end.y+100: take_damage(max_health,Vector2.ZERO,true)
 	$Visual.scale.x = visual_scale*facing
 	body.material.set_shader_parameter("flash",1.0 if invulnerable>0 and int(invulnerable*30)%2==0 else 0.0)
-	if state_duration <= 0:
-		var desired := "idle"
-		if absf(velocity.x)>5: desired="run"
-		if not is_on_floor(): desired="A2_float" if _wall_direction()!=0 and velocity.y>0 else "jump_land"
-		state=desired
+	if state_duration <= 0:state=locomotion_animation()
 	_choose_animation(state)
 	var rate := (maxf(.3,absf(velocity.x)*anim.get_animation("game/run").length/run_cycle_distance) if state=="run" else 1.0)*animation_fps/12.0
 	tree.set("parameters/Speed/scale",rate)
+	tree.set("parameters/LegSpeed/scale",maxf(.1,absf(velocity.x)*2.0/run_cycle_distance))
+	var split:bool=lower_body_layer_enabled and is_on_floor() and absf(velocity.x)>20 and state=="strike_01"
+	body.material.set_shader_parameter("split_lower",split)
+	if has_node("Visual/Legs"):
+		$Visual/Legs.visible=split
+		$Visual/Legs.material.set_shader_parameter("flash",body.material.get_shader_parameter("flash"))
 	tree.advance(dt)
 	cooldowns_changed.emit(cooldowns.duplicate())
-	availability_changed.emit(jump_count<2,cooldowns.dash<=0)
+	availability_changed.emit(jump_count<2,cooldowns.dash<=0 and ability_available("A1_dash"))
 
 func _read_input() -> void:
 	if Input.is_action_just_pressed("tp_jump"): jump_buffer=jump_buffer_time
@@ -265,6 +302,19 @@ func _read_input() -> void:
 			if not request_action(mapping[action]):
 				pending_action=mapping[action]
 				pending_left=jump_buffer_time
+
+func movement_axis() -> float:
+	return Input.get_axis("tp_left","tp_right")
+
+func movement_collision_mask() -> int:
+	return phase_collision_mask if state in ["A1_dash","A5_slit"] else world_collision_mask
+
+func _before_move(_dt:float) -> void:
+	pass
+
+func locomotion_animation() -> String:
+	if not is_on_floor():return "A2_float" if _wall_direction()!=0 and velocity.y>0 else "jump_land"
+	return "run" if absf(velocity.x)>5 else "idle"
 
 func _can_jump_cancel() -> bool:
 	return state_duration<=0 or state=="strike_02" or (state in ["strike_01","A3_anchor"] and state_time>=2.0/animation_fps+1.0/animation_fps+attack_recovery*.5)
@@ -298,6 +348,8 @@ func _wall_direction() -> float:
 	if $WallLeft.is_colliding(): return -1.0
 	if $WallRight.is_colliding(): return 1.0
 	return 0.0
+
+func ability_available(_action:String) -> bool:return true
 
 func request_action(action: String) -> bool:
 	if health<=0 or not controls_enabled: return false
@@ -367,8 +419,8 @@ func _update_action_events() -> void:
 		state_duration=0
 
 func _melee(downward: bool) -> void:
-	var area := Rect2(global_position+Vector2(12 if facing>0 else -32,-34),Vector2(20,34))
-	if downward: area=Rect2(global_position+Vector2(-15,0),Vector2(30,20))
+	var area := Rect2(global_position+Vector2(collision_size.x*.5 if facing>0 else -collision_size.x*.5-melee_reach,-melee_height),Vector2(melee_reach,melee_height))
+	if downward: area=Rect2(global_position+Vector2(-collision_size.x*.625,0),Vector2(collision_size.x*1.25,downward_reach))
 	for enemy in get_tree().get_nodes_in_group("tide_targets"):
 		if not hit_targets.has(enemy.get_instance_id()) and area.intersects(enemy.hurt_rect()):
 			_hit(enemy,melee_damage,true)
@@ -380,6 +432,7 @@ func _melee(downward: bool) -> void:
 				apex_used=false
 
 func _hit(enemy: Node,amount: int,gain_soul: bool) -> void:
+	if enemy.has_method("can_receive_hit") and not enemy.can_receive_hit():return
 	if hit_targets.has(enemy.get_instance_id()): return
 	hit_targets[enemy.get_instance_id()]=true
 	enemy.take_hit(amount)

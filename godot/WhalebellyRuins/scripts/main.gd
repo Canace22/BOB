@@ -1,6 +1,17 @@
 extends Node2D
 
-const Player = preload("res://scripts/player.gd")
+@export var player_scene:PackedScene = preload("res://scenes/CampaignPlayer.tscn")
+@export var camera_lookahead:float=120.0 # New default; Inspector adjustable.
+@export var camera_shake_pixels:float=6.0 # New default; Inspector adjustable.
+@export var camera_dash_zoom:float=1.05 # New default; Inspector adjustable.
+const PlayerUI = preload("res://scenes/PlayerUI.tscn")
+const EnemyProxy = preload("res://scripts/campaign_enemy_proxy.gd")
+const CampaignCamera = preload("res://scripts/campaign_camera.gd")
+var player_soul:int=99
+var camera_feedback:float=0
+var player_ui:CanvasLayer
+var interaction_hint:Label
+var integration_external_test:bool=false
 var rooms: Array = []
 var room: Dictionary = {}
 var room_index: int = 0
@@ -63,6 +74,7 @@ var font: Font
 var overlay: Node2D
 
 func _ready() -> void:
+	get_viewport().snap_2d_transforms_to_pixel=true
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().auto_accept_quit = false
 	for sound: String in ["jump","dash","strike","hit","hurt","slam","collect","save","sweep","heavy","heal"]:
@@ -89,6 +101,11 @@ func _ready() -> void:
 	overlay.draw.connect(draw_overlay)
 	font = ThemeDB.fallback_font
 	camera = Camera2D.new()
+	camera.set_script(CampaignCamera)
+	camera.host=self
+	camera.lookahead=camera_lookahead
+	camera.shake_pixels=camera_shake_pixels
+	camera.dash_zoom=camera_dash_zoom
 	add_child(camera)
 	ui = CanvasLayer.new()
 	add_child(ui)
@@ -192,13 +209,13 @@ func _ready() -> void:
 	elif qa_throat: run_throat_qa.call_deferred()
 	elif qa_flow: run_flow_qa.call_deferred()
 	elif qa_reload: run_reload_qa.call_deferred()
-	elif qa: run_qa.call_deferred()
+	elif qa and not integration_external_test: run_qa.call_deferred()
 
 func point(value: Array) -> Vector2:
 	return Vector2(float(value[0]), float(value[1]))
 
 func setup_inputs() -> void:
-	var map: Dictionary = {"left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT], "jump": [KEY_SPACE], "dash": [KEY_SHIFT], "attack": [KEY_Q], "float": [KEY_W], "grapple": [KEY_J], "interact": [KEY_E], "down": [KEY_S,KEY_DOWN]}
+	var map: Dictionary = {"left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT], "jump": [KEY_SPACE], "dash": [KEY_SHIFT], "attack": [KEY_Q], "float": [KEY_W], "grapple": [KEY_G], "interact": [KEY_E], "down": [KEY_S,KEY_DOWN]}
 	for action: String in map:
 		if not InputMap.has_action(action): InputMap.add_action(action)
 		for code: int in map[action]:
@@ -239,8 +256,7 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 	if reference_environment != null: reference_environment.level_host = self
 	var default_spawn: Array = room.spawn if not capture_path.is_empty() else room.get("play_spawn", room.spawn)
 	var spawn: Vector2 = restored_room_position(point(default_spawn if target_spawn.is_empty() else target_spawn))
-	player = CharacterBody2D.new()
-	player.set_script(Player)
+	player = player_scene.instantiate()
 	player.host = self
 	player.name = "Player"
 	player.position = spawn
@@ -265,6 +281,10 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 		var alive: bool = not (boss and defeated.get(key, false))
 		if visual != null: visual.visible = alive
 		enemies.append({"pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+	for enemy:Dictionary in enemies:
+		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
+		scenery.get_node("World").add_child(proxy)
+	bind_player_ui()
 	reference = Sprite2D.new()
 	reference.centered = false
 	var path: String = room.get("reference", "res://assets/reference/r1/" + str(room.id) + ".png")
@@ -298,37 +318,48 @@ func restored_room_position(value: Vector2) -> Vector2:
 func reference_camera_active() -> bool:
 	return room.get("layered_environment",false) and reference_follow and capture_path.is_empty() and layer_solo < 0
 
+func bind_player_ui() -> void:
+	if not is_instance_valid(player_ui):
+		player_ui=PlayerUI.instantiate()
+		player_ui.player=player
+		player_ui.campaign_mode=true
+		player_ui.edge_margin=18
+		player_ui.header_text=""
+		player_ui.guide_path="user://tide_campaign_guide.cfg"
+		player_ui.guide_enabled=not qa and capture_path.is_empty()
+		player_ui.process_mode=Node.PROCESS_MODE_PAUSABLE
+		add_child(player_ui)
+	else:player_ui.bind_player(player)
+	player_ui.visible=capture_path.is_empty()
+	status.hide()
+	interaction_hint=Label.new();interaction_hint.name="InteractionHint"
+	interaction_hint.text="按 E 交互";interaction_hint.position=Vector2(-48,-125)
+	interaction_hint.add_theme_font_size_override("font_size",17)
+	interaction_hint.add_theme_constant_override("outline_size",4)
+	interaction_hint.hide();player.add_child(interaction_hint)
+
 func update_camera() -> void:
-	if (zoomed or reference_camera_active()) and not reference_visible:
-		camera.zoom = Vector2.ONE
-		var size: Vector2 = get_viewport_rect().size
-		var margin: float = 28.0 if room.get("layered_environment",false) else 0.0
-		var vertical_margin: float = 12.0 if room.get("layered_environment",false) else 0.0
-		var target := Vector2(clampf(player.position.x, size.x/2+margin, maxf(size.x/2+margin,float(room.size[0])-size.x/2-margin)),clampf(player.position.y-170.0,size.y/2+vertical_margin,maxf(size.y/2+vertical_margin,float(room.size[1])-size.y/2-vertical_margin)))
-		if room.get("layered_environment",false) and camera_room_id==str(room.id):
-			camera.position=camera.position.lerp(target,1.0-exp(-get_process_delta_time()*6.0))
-		else: camera.position=target
-	else:
-		var fit: float = minf(get_viewport_rect().size.x/float(room.size[0]),get_viewport_rect().size.y/float(room.size[1]))
-		camera.zoom=Vector2.ONE*fit
-		camera.position=point(room.size)*0.5
+	camera.update_follow(get_process_delta_time())
 	camera_room_id=str(room.id)
 
 func _process(dt: float) -> void:
 	if quitting: return
 	if get_tree().paused:
+		status.show()
 		status.text = "暂停 · Esc 继续 · M 静音"
 		return
+	status.hide()
+	if is_instance_valid(interaction_hint):interaction_hint.visible=player.interaction_nearby() and player.health>0 and not reference_visible
 	clock += dt
 	flash = maxf(0.0, flash - dt)
 	message_time = maxf(0.0, message_time - dt)
 	if room.is_empty(): return
 	update_camera()
 	update_parallax()
-	if not reference_visible and layer_solo < 0 and capture_path.is_empty(): update_enemies(dt)
+	if not reference_visible and layer_solo < 0 and capture_path.is_empty() and player.controls_enabled: update_enemies(dt)
 	info.text = "%s  %s     生命 %s" % [str(room.id), str(room.name), "●".repeat(maxi(health, 0))]
 	var mode: String = "原图对照" if reference_visible else (["远景", "中景", "可玩层", "前景"][layer_solo] if layer_solo >= 0 else "原图分层重建")
-	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · Q 攻击 · W 浮游 · J 锚环 · E 交互 / A或D+E 过门 · 舌膜 S+空格下潜\nTab 镜头 · F2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
+	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · Q 攻击 · W 浮游 · G 锚环 · E 交互 / A或D+E 过门 · 舌膜 S+空格下潜\nTab 镜头 · F2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
 	if message_time > 0.0: status.text += "\n" + message
 	if practice: info.text += "  [练习：全部能力，仅会话]"
 	if not capture_path.is_empty():
@@ -463,21 +494,25 @@ func attack(origin: Vector2, facing: float) -> void:
 		if not enemy.alive: continue
 		var delta: Vector2 = Vector2(enemy.pos) - origin
 		if absf(delta.x) < (180 if enemy.boss else 125) and absf(delta.y) < 125 and delta.x * facing > -25:
-			enemy.hp = int(enemy.hp) - 1
-			sfx("hit")
-			record_event("enemy_hit", {"id":enemy.key,"hp":enemy.hp})
-			enemy.hurt = 0.18
-			if int(enemy.hp) <= 0:
-				enemy.alive = false
-				sfx("slam")
-				record_event("enemy_defeated", {"id":enemy.key})
-				if is_instance_valid(enemy.visual): enemy.visual.visible = false
-				if enemy.boss:
-					defeated[enemy.key] = true
-					abilities.dash = true
-					record_event("ability_unlocked", {"id":"dash"})
-					notify("负壳守卫已击败：获得冲刺，通路解除封锁")
-					save_progress(false)
+			damage_enemy(enemy,1)
+
+func damage_enemy(enemy:Dictionary,amount:int) -> void:
+	if not enemy.alive:return
+	enemy.hp = int(enemy.hp) - amount
+	sfx("hit")
+	record_event("enemy_hit", {"id":enemy.key,"hp":enemy.hp})
+	enemy.hurt = 0.18
+	if int(enemy.hp) <= 0:
+		enemy.alive = false
+		sfx("slam")
+		record_event("enemy_defeated", {"id":enemy.key})
+		if is_instance_valid(enemy.visual): enemy.visual.visible = false
+		if enemy.boss:
+			defeated[enemy.key] = true
+			abilities.dash = true
+			record_event("ability_unlocked", {"id":"dash"})
+			notify("负壳守卫已击败：获得冲刺，通路解除封锁")
+			save_progress(false)
 
 func interact() -> void:
 	var reward: Array = room.get("reward", [])
@@ -494,32 +529,36 @@ func interact() -> void:
 	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") and try_camp(): return
 	for door: Dictionary in room.get("doors", []):
 		if player.position.distance_to(point(door.pos)) > 125: continue
-		var destination: int = int(door.to)
-		if destination < 0:
-			if destination == -1 and room_index == 4:
-				completed = true
-				record_event("level_complete", {"room":str(room.id)})
-				sfx("collect")
-				save_progress(false)
-				notify("首关完成 · 已抵达食道出口；后续章节尚未制作，可沿原路继续探索")
-				return
-			notify(door.get("message", "后续区域未包含在首关中；此处保留出口关系"))
-			return
-		var needed: String = door.get("ability", "")
-		if not needed.is_empty() and needed != "boss" and not has_ability(needed):
-			notify("需要能力 " + needed)
-			return
-		if room_index == 3 and destination == 4:
-			for enemy: Dictionary in enemies:
-				if enemy.boss and enemy.alive:
-					notify("先击败负壳守卫")
-					return
-		sfx("save")
-		record_event("door", {"from":room_index,"to":destination})
-		load_room(destination, door.get("spawn", []))
-		notify("已穿过相邻解剖区域通道")
+		enter_door(door)
 		return
 	notify("E 使用灯台 / 拾取；靠近门按 A/D + E 穿行")
+
+func enter_door(door:Dictionary) -> void:
+	var destination: int = int(door.to)
+	if destination < 0:
+		if destination == -1 and room_index == 4:
+			completed = true
+			record_event("level_complete", {"room":str(room.id)})
+			sfx("collect")
+			save_progress(false)
+			notify("首关完成 · 已抵达食道出口；后续章节尚未制作，可沿原路继续探索")
+			return
+		notify(door.get("message", "后续区域未包含在首关中；此处保留出口关系"))
+		return
+	var needed: String = door.get("ability", "")
+	if not needed.is_empty() and needed != "boss" and not has_ability(needed):
+		notify("需要能力 " + needed)
+		return
+	if room_index == 3 and destination == 4:
+		for enemy: Dictionary in enemies:
+			if enemy.boss and enemy.alive:
+				notify("先击败负壳守卫")
+				return
+	sfx("save")
+	record_event("door", {"from":room_index,"to":destination})
+	load_room(destination, door.get("spawn", []))
+	notify("已穿过相邻解剖区域通道")
+	return
 
 func try_camp() -> bool:
 	var default_camps: Dictionary = {0:[93,550],3:[80,610],4:[110,503]}
@@ -538,6 +577,7 @@ func try_camp() -> bool:
 func notify(text: String) -> void:
 	message = text
 	message_time = 4.0
+	if is_instance_valid(player_ui):player_ui.show_notice(text)
 
 func save_progress(show_message: bool = true) -> void:
 	if practice and not qa:
@@ -565,8 +605,9 @@ func load_progress() -> void:
 func respawn() -> void:
 	sfx("slam")
 	record_event("player_death", {"room":room_index})
-	load_room(clampi(int(checkpoint.room), 0, rooms.size() - 1), checkpoint.get("pos", []))
 	health = 5
+	player_soul=99
+	load_room(clampi(int(checkpoint.room), 0, rooms.size() - 1), checkpoint.get("pos", []))
 	player.invulnerable = 1.5
 	notify("已返回检查点")
 
@@ -629,6 +670,9 @@ func update_parallax() -> void:
 
 func release_controls() -> void:
 	for action: String in ["left", "right", "jump", "float", "grapple", "attack", "dash", "interact", "down"]: Input.action_release(action)
+
+	for action in InputMap.get_actions():
+		if str(action).begins_with("tp_"):Input.action_release(action)
 
 func wait_physics(count: int) -> void:
 	for frame: int in range(count): await get_tree().physics_frame

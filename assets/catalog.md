@@ -96,4 +96,4 @@ IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光
 
 ### 拾潮者 V2.4 Godot 3C/技能试玩
 
-540角色帧与540合成帧、180独立特效帧接入同工程专项Demo；45项回归通过，原动作衔接保持candidate。[来源与验收](source/tide-picker-v24-godot/README.md)。
+540角色帧与540合成帧、180独立特效帧已接入默认七房主场景及专项Demo；主场景数值和V6存档兼容，移动短击分层；原动作衔接美术保持candidate。[来源与验收](source/tide-picker-v24-godot/README.md)。

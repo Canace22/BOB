@@ -72,6 +72,7 @@ func run_tests() -> void:
 	check("physical_key_mapping_dash",p.state=="A1_dash")
 	key=InputEventKey.new();key.physical_keycode=KEY_L;key.pressed=false;Input.parse_input_event(key)
 	await reset_at();p.request_action("strike_01");Input.action_press("tp_right");var moving_start:float=p.position.x;await frames(8);Input.action_release("tp_right");check("move_while_attacking",p.position.x>moving_start+8 and p.state=="strike_01")
+	check("independent_lower_body_layer",p.get_node("Visual/Legs").visible and p.get_node("Visual/Legs").texture!=null and p.lower_frame>=6 and p.lower_frame<=29,p.lower_frame)
 	check("loaded_all_action_textures",p.textures.size()==15 and p.effect_textures.size()==5,p.textures.size())
 	check("action_display_matches_state",p.display_action==p.state)
 	demo.hud.guide_path="user://tide_guide_automated_test.cfg";demo.hud._show_guide();check("guide_locks_controls",not p.controls_enabled)
@@ -81,6 +82,9 @@ func run_tests() -> void:
 		await process_frame;await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://evidence/tide-3c/runtime.png")
 	var failures:int=checks.filter(func(c):return not c.pass).size()
-	var f:=FileAccess.open("res://evidence/tide-3c/tests.json",FileAccess.WRITE);f.store_string(JSON.stringify({"checks":checks,"failed":failures},"\t"));f.close()
+	var out:String="res://.production/tide-main-integration/core-tests.json" if DirAccess.dir_exists_absolute("res://.production/tide-main-integration") else "res://evidence/tide-3c/tests.json"
+	var f:=FileAccess.open(out,FileAccess.WRITE)
+	if f==null:push_error("Cannot write test evidence: "+str(FileAccess.get_open_error()));quit(2);return
+	f.store_string(JSON.stringify({"checks":checks,"failed":failures},"\t"));f.close()
 	print("TIDE_TESTS_COMPLETE ",checks.size()," checks; failures=",failures)
 	quit(1 if failures else 0)
