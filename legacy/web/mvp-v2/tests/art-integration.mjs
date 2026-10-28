@@ -27,7 +27,7 @@ async function loadPlaywright() {
 // A plain static server proves that the Pages build works beneath /BOB/;
 // the development server's special mounts cannot hide broken relative paths.
 async function servePages() {
-  const root = await realpath(resolve(dirname(fileURLToPath(import.meta.url)), '../../.pages-dist'));
+  const root = await realpath(resolve(dirname(fileURLToPath(import.meta.url)), '../../../../.pages-dist'));
   const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.webp': 'image/webp', '.json': 'application/json' };
   const server = createServer(async (request, response) => {
     try {

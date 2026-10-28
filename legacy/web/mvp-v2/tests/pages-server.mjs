@@ -4,7 +4,7 @@ import { dirname, extname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url';
 
 // Plain static hosting, with no development asset mounts or URL rewriting.
-export async function startPagesServer({ root = resolve(dirname(fileURLToPath(import.meta.url)), '../../.pages-dist'), prefix = '/BOB/' } = {}) {
+export async function startPagesServer({ root = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../.pages-dist'), prefix = '/BOB/' } = {}) {
   if (!/^\/[a-zA-Z0-9_-]+\/$/.test(prefix)) throw new Error('Expected a single project prefix such as /BOB/.');
   const canonicalRoot = await realpath(root);
   const inside = path => {

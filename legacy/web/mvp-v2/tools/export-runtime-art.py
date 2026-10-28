@@ -14,8 +14,8 @@ from pathlib import Path
 from PIL import Image, features
 
 
-ROOT = Path(__file__).resolve().parents[2]
-GAME = ROOT / "mvp-v2"
+ROOT = Path(__file__).resolve().parents[4]
+GAME = ROOT / "legacy/web/mvp-v2"
 MANIFEST = GAME / "art-manifest.js"
 OUTPUT = ROOT / "assets/runtime/sprites/whalefall-v2-optimized"
 PLATFORMS = {

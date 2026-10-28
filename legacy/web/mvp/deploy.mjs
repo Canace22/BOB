@@ -7,8 +7,8 @@ import path from 'node:path';
 import { ART_ASSETS } from '../mvp-v2/art-manifest.js';
 
 const mvpDir = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(mvpDir, '..');
-const v2Dir = path.join(repoRoot, 'mvp-v2');
+const repoRoot = path.resolve(mvpDir, '../../..');
+const v2Dir = path.join(repoRoot, 'legacy/web/mvp-v2');
 const outDir = path.join(repoRoot, '.pages-dist');
 const branch = 'gh-pages';
 const coverPath = 'docs/鲸腹遗城原画集/V2/images/A01_鲸落万物生_世界主视觉.png';
@@ -42,7 +42,7 @@ function build() {
   const spriteRoot = realpathSync(path.join(repoRoot, 'assets/runtime/sprites'));
   for (const src of new Set(Object.values(ART_ASSETS).map(asset => asset.src))) {
     if (!/^\.\.\/assets\/runtime\/sprites\/[a-z0-9-]+\/[a-z0-9-]+\.(png|webp)$/.test(src)) throw new Error(`Invalid runtime art path: ${src}`);
-    const source = realpathSync(path.resolve(v2Dir, src));
+    const source = realpathSync(path.resolve(repoRoot, src.slice(3)));
     if (!source.startsWith(`${spriteRoot}${path.sep}`)) throw new Error(`Runtime art escaped its library: ${src}`);
     const target = path.join(outDir, src.slice(3));
     mkdirSync(path.dirname(target), { recursive: true });

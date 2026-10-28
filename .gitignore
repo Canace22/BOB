@@ -3,12 +3,11 @@
 __pycache__/
 *.pyc
 node_modules/
-mvp/output/
 .pages-dist/
-mvp-nightmare/output/
-mvp-v2/output/
-mvp-v2/.preview/
-mvp-v2/tools/__pycache__/
+legacy/web/mvp/output/
+legacy/web/mvp-nightmare/output/
+legacy/web/mvp-v2/output/
+legacy/web/mvp-v2/.preview/
 
 # 验收接触表、本地预览和被拒中间稿。拼装预览、缩略图、逐件精灵和图集仍入库。
 assets/source/whalefall-v5-2-complete/review/*.png
@@ -19,6 +18,7 @@ assets/source/whalefall-v5-2-static-01/references/revision-inputs/
 
 # Local production environment and AI models; intentionally not versioned.
 /work/wan22-production/
+/legacy/work/wan22-production/
 
 # Godot 编辑器缓存、构建输出与本地工具链（Godot 本体、导出模板）。.import 文件需要提交。
 .godot/
@@ -27,13 +27,13 @@ assets/source/whalefall-v5-2-static-01/references/revision-inputs/
 /.pages-dist-godot/
 
 # 验收截图、制作账本运行态、日志与进程文件只保留本地。
-godot/*/evidence/
-godot/*/.production/
+legacy/godot/*/evidence/
+legacy/godot/*/.production/
 *.log
 *.pid
 
 # 第三方工具与依赖：按 docs/workspace-migration.md 说明在本地安装。
-/work/effekseer/
-/work/whalefall-share/cloudflared.exe
-/work/whalefall-share/processes.json
-/work/whalefall-share/known_hosts
+/legacy/work/effekseer/
+/legacy/work/whalefall-share/cloudflared.exe
+/legacy/work/whalefall-share/processes.json
+/legacy/work/whalefall-share/known_hosts

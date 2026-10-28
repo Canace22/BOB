@@ -2,7 +2,9 @@ import http from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-const root = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
+const root = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));
+// URL /mvp/* maps to legacy/web/mvp; other top-level files are the concept art in docs/鲸腹遗城原画集.
+const localPath = (name) => name.startsWith('/mvp/') ? '/legacy/web' + name : '/docs/鲸腹遗城原画集' + name;
 const port = Number(process.env.PORT || 4173);
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.svg': 'image/svg+xml', '.json': 'application/json' };
 http.createServer(async (req, res) => {
@@ -10,7 +12,7 @@ http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://localhost');
     let name = decodeURIComponent(url.pathname);
     if (name === '/' || name === '/mvp/' || name === '/mvp') name = '/mvp/index.html';
-    const file = path.resolve(root, '.' + name);
+    const file = path.resolve(root, '.' + localPath(name));
     if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     if (!(await stat(file)).isFile()) { res.writeHead(404).end(); return; }
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
