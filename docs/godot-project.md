@@ -35,3 +35,7 @@ F5主入口的R1-01现在实例化参考图环境，角色由既有控制器接�
 ## 主场景编辑器同步
 
 `scenes/main.tscn`显式实例化R1-01，打开即可看到地图，并共享`xumen_reference.tscn`的源图像与布局。[同步说明与验收](../assets/source/xumen-reference-environment/integration/README.md#主场景编辑器同步)。
+
+## 2026-10-28 环境动态更新
+
+新纯环境预览：`scenes/environment/motion_preview.tscn`（F6，C视差、空格暂停）；分组预览：`element_gallery.tscn`。R1-01主关卡已共享新分件，默认平滑跟随既有角色，Tab切回全景。[母版、参数、来源、运行证据](../assets/source/xumen-motion-elements/README.md)。旧`preview-reference-environment.ps1`继续可用，推荐新预览入口。

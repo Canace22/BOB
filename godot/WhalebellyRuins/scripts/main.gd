@@ -14,6 +14,8 @@ var reference: Sprite2D
 var reference_visible: bool = false
 var layer_solo: int = -1
 var zoomed: bool = false
+var reference_follow: bool = true
+var camera_room_id: String = ""
 var outlines: bool = false
 var health: int = 5
 var flash: float = 0.0
@@ -293,15 +295,24 @@ func restored_room_position(value: Vector2) -> Vector2:
 		value.y = ground_y(value.x,value.y)
 	return value
 
+func reference_camera_active() -> bool:
+	return room.get("layered_environment",false) and reference_follow and capture_path.is_empty() and layer_solo < 0
+
 func update_camera() -> void:
-	if zoomed and not reference_visible:
-		camera.zoom = Vector2.ONE * 1.0
+	if (zoomed or reference_camera_active()) and not reference_visible:
+		camera.zoom = Vector2.ONE
 		var size: Vector2 = get_viewport_rect().size
-		camera.position = Vector2(clampf(player.position.x, size.x / 2, maxf(size.x / 2, float(room.size[0]) - size.x / 2)), clampf(player.position.y - 170.0, size.y / 2, maxf(size.y / 2, float(room.size[1]) - size.y / 2)))
+		var margin: float = 28.0 if room.get("layered_environment",false) else 0.0
+		var vertical_margin: float = 12.0 if room.get("layered_environment",false) else 0.0
+		var target := Vector2(clampf(player.position.x, size.x/2+margin, maxf(size.x/2+margin,float(room.size[0])-size.x/2-margin)),clampf(player.position.y-170.0,size.y/2+vertical_margin,maxf(size.y/2+vertical_margin,float(room.size[1])-size.y/2-vertical_margin)))
+		if room.get("layered_environment",false) and camera_room_id==str(room.id):
+			camera.position=camera.position.lerp(target,1.0-exp(-get_process_delta_time()*6.0))
+		else: camera.position=target
 	else:
-		var fit: float = minf(get_viewport_rect().size.x / float(room.size[0]), get_viewport_rect().size.y / float(room.size[1]))
-		camera.zoom = Vector2.ONE * fit
-		camera.position = point(room.size) * 0.5
+		var fit: float = minf(get_viewport_rect().size.x/float(room.size[0]),get_viewport_rect().size.y/float(room.size[1]))
+		camera.zoom=Vector2.ONE*fit
+		camera.position=point(room.size)*0.5
+	camera_room_id=str(room.id)
 
 func _process(dt: float) -> void:
 	if quitting: return
@@ -340,7 +351,11 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		return
 	if get_tree().paused: return
 	match event.physical_keycode:
-		KEY_TAB: zoomed = not zoomed
+		KEY_TAB:
+			if room.get("layered_environment",false):
+				reference_follow=not reference_follow
+				zoomed=false
+			else: zoomed=not zoomed
 		KEY_F2:
 			reference_visible = not reference_visible
 			reference.visible = reference_visible
@@ -603,7 +618,10 @@ func update_parallax() -> void:
 		shift.y = clampf(shift.y, -4.0, 4.0)
 	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
 	if environment != null:
-		environment.level_camera_offset = Vector2(clampf(shift.x,-5,5),clampf(shift.y,-2,2))
+		var offset := Vector2.ZERO
+		if (zoomed or reference_camera_active()) and not reference_visible and layer_solo<0 and capture_path.is_empty():
+			offset=(camera.position-point(room.size)*0.5)/(1671.0/1280.0)
+		environment.level_camera_offset=Vector2(clampf(offset.x,-128.0,128.0),clampf(offset.y,-18.0,18.0))
 		return
 	scenery.get_node("Far").position = shift
 	scenery.get_node("Middle").position = shift * 0.38

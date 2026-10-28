@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scenes/environment/elements/motion_element.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/FISH-02-08.png" id="2"]
+[node name="FISH-02-08" type="Sprite2D"]
+texture = ExtResource("2")
+centered = true
+script = ExtResource("1")
+animation_kind = "fish"
+source_origin = Vector2(656.0, 188.0)
+period = 2.1
+phase = 5.686814999999999
+swim_extent = Vector2(29, 5)
+swim_period = 28.0
+parallax_amount = 0.18
+hframes = 12
+scale = Vector2(0.333333, 0.333333)

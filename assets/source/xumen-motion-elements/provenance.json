@@ -1,0 +1,36 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "tools": [
+    "Godot native Image/Shader/Sprite2D",
+    "local FFmpeg 7.1",
+    "built-in image_gen"
+  ],
+  "third_party_paid_generation": false,
+  "inputs": [
+    {
+      "path": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-motion-elements\\reference\\environment.mp4",
+      "sha256": "328bbadcb612aebdd31844d8b67d7da5136dedfb3184a453e474d1fa91b5b37e"
+    },
+    {
+      "path": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-motion-elements\\reference\\camera.gif",
+      "sha256": "18063bfdb9f8db21c374f9e16a6d1bc7dd5e6c0054e223f4dc61579322c61f33"
+    },
+    {
+      "path": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\original\\reference.png",
+      "sha256": "adefb0c0df14b3d9ec267433f6353a1e4ce63701c04879916db459922710db9a"
+    }
+  ],
+  "generated": [
+    {
+      "file": "generated/foreground-backing.png",
+      "source": "existing dynamic-backing.png",
+      "instruction": "Keep the same framing/road/ceiling/walls/portal. Remove only the dark blurry bottom foreground ridge. Paint the hidden continuation of blue ruins and lower supports. No fish, bubbles, characters or curtains. Only masked occlusion regions enter the scene.",
+      "tool_output": "exec-625067db-667c-4268-bdd3-dead4155c758.png"
+    },
+    {
+      "file": "generated/caustic-master.png",
+      "instruction": "Transparent 2D hand-painted underwater caustic light decal, pale cyan/ivory sparse irregular rippling lace, soft transparent edges, light from upper right. No floor, scene, objects, fish or bubbles.",
+      "tool_output": "exec-54eccd9e-3daf-4d8a-b3e2-80d122e4382a.png"
+    }
+  ]
+}

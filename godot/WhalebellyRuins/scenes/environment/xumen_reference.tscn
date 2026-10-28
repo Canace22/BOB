@@ -1,421 +1,860 @@
-[gd_scene load_steps=49 format=3]
+[gd_scene load_steps=105 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/MID-01.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/MID-02.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/MID-03.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/ROOF.png" id="5"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/WALL-L.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/WALL-R.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/ROAD.png" id="8"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/PORTAL.png" id="9"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/LAMP.png" id="10"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-01.png" id="11"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-02.png" id="12"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-03.png" id="13"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-04.png" id="14"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-05.png" id="15"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BALEEN-06.png" id="16"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-01.png" id="17"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-02.png" id="18"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-03.png" id="19"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-04.png" id="20"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-05.png" id="21"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-06.png" id="22"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-07.png" id="23"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-08.png" id="24"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-09.png" id="25"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-10.png" id="26"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-11.png" id="27"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/DECOR-12.png" id="28"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/PLANT-01.png" id="29"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/PLANT-02.png" id="30"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/PLANT-03.png" id="31"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/PLANT-04.png" id="32"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/VINE-01.png" id="33"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/VINE-02.png" id="34"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/VINE-03.png" id="35"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/VINE-04.png" id="36"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/FISH-02.png" id="37"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/FISH-03.png" id="38"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BEAM-01.png" id="39"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BEAM-02.png" id="40"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/BEAM-03.png" id="41"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/FRONT-01.png" id="42"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/FRONT-02.png" id="43"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/FRONT-03.png" id="44"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/CHARACTER.png" id="45"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/ENV-DEPTH.png" id="46"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/ENV-UNDERPAINT.png" id="47"]
-[ext_resource type="Texture2D" path="res://assets/reference_environment/bubble.png" id="48"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/MID-02.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/MID-03.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/ROOF.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/WALL-L.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/WALL-R.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/ROAD.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/PORTAL.png" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/LAMP.tscn" id="10"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-01-ROOT.png" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-01.tscn" id="12"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-02-ROOT.png" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-02.tscn" id="14"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-03-ROOT.png" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-03.tscn" id="16"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-04-ROOT.png" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-04.tscn" id="18"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-05-ROOT.png" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-05.tscn" id="20"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-06-ROOT.png" id="21"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-06.tscn" id="22"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-01.png" id="23"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-02.png" id="24"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-03.png" id="25"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-04.png" id="26"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-05.png" id="27"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-06.png" id="28"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-07.png" id="29"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-08.png" id="30"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-09.png" id="31"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-10.png" id="32"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-11.png" id="33"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-12.png" id="34"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-01.tscn" id="35"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-02.tscn" id="36"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-03.tscn" id="37"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-04.tscn" id="38"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/VINE-01.tscn" id="39"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/VINE-02.tscn" id="40"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/VINE-03.tscn" id="41"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/VINE-04.tscn" id="42"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BEAM-01.tscn" id="43"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BEAM-02.tscn" id="44"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BEAM-03.tscn" id="45"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/CHARACTER.png" id="46"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/ENV-DEPTH.png" id="47"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/ENV-UNDERPAINT.png" id="48"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-01.tscn" id="49"]
+[ext_resource type="Texture2D" path="res://assets/motion_elements/FOREGROUND-BACKING.png" id="50"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-01.tscn" id="51"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-02.tscn" id="52"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-03.tscn" id="53"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-04.tscn" id="54"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-05.tscn" id="55"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-06.tscn" id="56"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-07.tscn" id="57"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-08.tscn" id="58"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-09.tscn" id="59"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-10.tscn" id="60"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-11.tscn" id="61"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-12.tscn" id="62"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-13.tscn" id="63"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-14.tscn" id="64"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-15.tscn" id="65"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-16.tscn" id="66"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-17.tscn" id="67"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-18.tscn" id="68"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-19.tscn" id="69"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-20.tscn" id="70"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-21.tscn" id="71"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-22.tscn" id="72"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-23.tscn" id="73"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-24.tscn" id="74"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-25.tscn" id="75"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-26.tscn" id="76"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-27.tscn" id="77"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-01.tscn" id="78"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-02.tscn" id="79"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-03.tscn" id="80"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-04.tscn" id="81"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-05.tscn" id="82"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-06.tscn" id="83"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-07.tscn" id="84"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-08.tscn" id="85"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-09.tscn" id="86"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-10.tscn" id="87"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-11.tscn" id="88"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-12.tscn" id="89"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-13.tscn" id="90"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-14.tscn" id="91"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-15.tscn" id="92"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-16.tscn" id="93"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-17.tscn" id="94"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-18.tscn" id="95"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-19.tscn" id="96"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-20.tscn" id="97"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-21.tscn" id="98"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/CAUSTIC-01.tscn" id="99"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/CAUSTIC-02.tscn" id="100"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-01.tscn" id="101"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-02.tscn" id="102"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-03.tscn" id="103"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-04.tscn" id="104"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
 
-[node name="MID-01" type="Sprite2D" parent="."]
-z_index = -50.0
+[node name="MID-01" parent="." type="Sprite2D"]
+z_index = -50
 position = Vector2(108, 298)
-texture = ExtResource("2")
-centered = false
 metadata/element_id = "MID-01"
 metadata/motion = "static"
-
-[node name="MID-02" type="Sprite2D" parent="."]
-z_index = -50.0
-position = Vector2(360, 239)
-texture = ExtResource("3")
+texture = ExtResource("2")
 centered = false
+
+[node name="MID-02" parent="." type="Sprite2D"]
+z_index = -50
+position = Vector2(360, 239)
 metadata/element_id = "MID-02"
 metadata/motion = "static"
-
-[node name="MID-03" type="Sprite2D" parent="."]
-z_index = -50.0
-position = Vector2(753, 262)
-texture = ExtResource("4")
+texture = ExtResource("3")
 centered = false
+
+[node name="MID-03" parent="." type="Sprite2D"]
+z_index = -50
+position = Vector2(753, 262)
 metadata/element_id = "MID-03"
 metadata/motion = "static"
-
-[node name="ROOF" type="Sprite2D" parent="."]
-z_index = 0.0
-position = Vector2(0, 0)
-texture = ExtResource("5")
+texture = ExtResource("4")
 centered = false
+
+[node name="ROOF" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(0, 0)
 metadata/element_id = "ROOF"
 metadata/motion = "static"
-
-[node name="WALL-L" type="Sprite2D" parent="."]
-z_index = 0.0
-position = Vector2(0, 0)
-texture = ExtResource("6")
+texture = ExtResource("5")
 centered = false
+
+[node name="WALL-L" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(0, 0)
 metadata/element_id = "WALL-L"
 metadata/motion = "static"
-
-[node name="WALL-R" type="Sprite2D" parent="."]
-z_index = 0.0
-position = Vector2(1164, 0)
-texture = ExtResource("7")
+texture = ExtResource("6")
 centered = false
+
+[node name="WALL-R" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(1164, 0)
 metadata/element_id = "WALL-R"
 metadata/motion = "static"
-
-[node name="ROAD" type="Sprite2D" parent="."]
-z_index = 10.0
-position = Vector2(0, 392)
-texture = ExtResource("8")
+texture = ExtResource("7")
 centered = false
+
+[node name="ROAD" parent="." type="Sprite2D"]
+z_index = 10
+position = Vector2(0, 392)
 metadata/element_id = "ROAD"
 metadata/motion = "static"
-
-[node name="PORTAL" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(0, 321)
-texture = ExtResource("9")
+texture = ExtResource("8")
 centered = false
+
+[node name="PORTAL" parent="." type="Sprite2D"]
+z_index = 12
+position = Vector2(0, 321)
 metadata/element_id = "PORTAL"
 metadata/motion = "static"
-
-[node name="LAMP" type="Sprite2D" parent="."]
-z_index = 13.0
-position = Vector2(37, 354)
-texture = ExtResource("10")
+texture = ExtResource("9")
 centered = false
-metadata/element_id = "LAMP"
-metadata/motion = "smooth_luminance"
 
-[node name="BALEEN-01" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(106, 0)
+[node name="LAMP" parent="." instance=ExtResource("10")]
+z_index = 13
+position = Vector2(37, 354)
+metadata/element_id = "LAMP"
+metadata/motion = "light"
+external_clock = true
+
+[node name="BALEEN-01-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(90, 0)
+metadata/element_id = "BALEEN-01-ROOT"
+metadata/motion = "static"
 texture = ExtResource("11")
 centered = false
+
+[node name="BALEEN-01" parent="." instance=ExtResource("12")]
+z_index = 4
+position = Vector2(90, 0)
 metadata/element_id = "BALEEN-01"
-metadata/motion = "root_sway"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="BALEEN-02" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(271, 0)
-texture = ExtResource("12")
-centered = false
-metadata/element_id = "BALEEN-02"
-metadata/motion = "root_sway"
-
-[node name="BALEEN-03" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(438, 0)
+[node name="BALEEN-02-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(255, 0)
+metadata/element_id = "BALEEN-02-ROOT"
+metadata/motion = "static"
 texture = ExtResource("13")
 centered = false
-metadata/element_id = "BALEEN-03"
-metadata/motion = "root_sway"
 
-[node name="BALEEN-04" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(591, 0)
-texture = ExtResource("14")
-centered = false
-metadata/element_id = "BALEEN-04"
-metadata/motion = "root_sway"
+[node name="BALEEN-02" parent="." instance=ExtResource("14")]
+z_index = 4
+position = Vector2(255, 0)
+metadata/element_id = "BALEEN-02"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="BALEEN-05" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(738, 0)
+[node name="BALEEN-03-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(422, 0)
+metadata/element_id = "BALEEN-03-ROOT"
+metadata/motion = "static"
 texture = ExtResource("15")
 centered = false
-metadata/element_id = "BALEEN-05"
-metadata/motion = "root_sway"
 
-[node name="BALEEN-06" type="Sprite2D" parent="."]
-z_index = 4.0
-position = Vector2(896, 0)
-texture = ExtResource("16")
-centered = false
-metadata/element_id = "BALEEN-06"
-metadata/motion = "root_sway"
+[node name="BALEEN-03" parent="." instance=ExtResource("16")]
+z_index = 4
+position = Vector2(422, 0)
+metadata/element_id = "BALEEN-03"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="DECOR-01" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(0, 82)
+[node name="BALEEN-04-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(575, 0)
+metadata/element_id = "BALEEN-04-ROOT"
+metadata/motion = "static"
 texture = ExtResource("17")
 centered = false
-metadata/element_id = "DECOR-01"
-metadata/motion = "static"
 
-[node name="DECOR-02" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(0, 406)
-texture = ExtResource("18")
-centered = false
-metadata/element_id = "DECOR-02"
-metadata/motion = "static"
+[node name="BALEEN-04" parent="." instance=ExtResource("18")]
+z_index = 4
+position = Vector2(575, 0)
+metadata/element_id = "BALEEN-04"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="DECOR-03" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(222, 435)
+[node name="BALEEN-05-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(722, 0)
+metadata/element_id = "BALEEN-05-ROOT"
+metadata/motion = "static"
 texture = ExtResource("19")
 centered = false
-metadata/element_id = "DECOR-03"
-metadata/motion = "static"
 
-[node name="DECOR-04" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(331, 389)
-texture = ExtResource("20")
-centered = false
-metadata/element_id = "DECOR-04"
-metadata/motion = "static"
+[node name="BALEEN-05" parent="." instance=ExtResource("20")]
+z_index = 4
+position = Vector2(722, 0)
+metadata/element_id = "BALEEN-05"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="DECOR-05" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(505, 361)
+[node name="BALEEN-06-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(880, 0)
+metadata/element_id = "BALEEN-06-ROOT"
+metadata/motion = "static"
 texture = ExtResource("21")
 centered = false
-metadata/element_id = "DECOR-05"
-metadata/motion = "static"
 
-[node name="DECOR-06" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(682, 387)
-texture = ExtResource("22")
-centered = false
-metadata/element_id = "DECOR-06"
-metadata/motion = "static"
+[node name="BALEEN-06" parent="." instance=ExtResource("22")]
+z_index = 4
+position = Vector2(880, 0)
+metadata/element_id = "BALEEN-06"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="DECOR-07" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(827, 432)
+[node name="DECOR-01" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(0, 82)
+metadata/element_id = "DECOR-01"
+metadata/motion = "static"
 texture = ExtResource("23")
 centered = false
-metadata/element_id = "DECOR-07"
-metadata/motion = "static"
 
-[node name="DECOR-08" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(1035, 460)
+[node name="DECOR-02" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(0, 406)
+metadata/element_id = "DECOR-02"
+metadata/motion = "static"
 texture = ExtResource("24")
 centered = false
-metadata/element_id = "DECOR-08"
-metadata/motion = "static"
 
-[node name="DECOR-09" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(224, 496)
+[node name="DECOR-03" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(222, 435)
+metadata/element_id = "DECOR-03"
+metadata/motion = "static"
 texture = ExtResource("25")
 centered = false
-metadata/element_id = "DECOR-09"
-metadata/motion = "static"
 
-[node name="DECOR-10" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(572, 471)
+[node name="DECOR-04" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(331, 389)
+metadata/element_id = "DECOR-04"
+metadata/motion = "static"
 texture = ExtResource("26")
 centered = false
-metadata/element_id = "DECOR-10"
-metadata/motion = "static"
 
-[node name="DECOR-11" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(921, 531)
+[node name="DECOR-05" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(505, 361)
+metadata/element_id = "DECOR-05"
+metadata/motion = "static"
 texture = ExtResource("27")
 centered = false
-metadata/element_id = "DECOR-11"
-metadata/motion = "static"
 
-[node name="DECOR-12" type="Sprite2D" parent="."]
-z_index = 11.0
-position = Vector2(645, 610)
+[node name="DECOR-06" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(682, 387)
+metadata/element_id = "DECOR-06"
+metadata/motion = "static"
 texture = ExtResource("28")
 centered = false
-metadata/element_id = "DECOR-12"
-metadata/motion = "static"
 
-[node name="PLANT-01" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(275, 422)
+[node name="DECOR-07" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(827, 432)
+metadata/element_id = "DECOR-07"
+metadata/motion = "static"
 texture = ExtResource("29")
 centered = false
-metadata/element_id = "PLANT-01"
-metadata/motion = "root_sway"
 
-[node name="PLANT-02" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(647, 345)
+[node name="DECOR-08" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(1035, 460)
+metadata/element_id = "DECOR-08"
+metadata/motion = "static"
 texture = ExtResource("30")
 centered = false
-metadata/element_id = "PLANT-02"
-metadata/motion = "root_sway"
 
-[node name="PLANT-03" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(793, 443)
+[node name="DECOR-09" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(224, 496)
+metadata/element_id = "DECOR-09"
+metadata/motion = "static"
 texture = ExtResource("31")
 centered = false
-metadata/element_id = "PLANT-03"
-metadata/motion = "root_sway"
 
-[node name="PLANT-04" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(1141, 423)
+[node name="DECOR-10" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(572, 471)
+metadata/element_id = "DECOR-10"
+metadata/motion = "static"
 texture = ExtResource("32")
 centered = false
-metadata/element_id = "PLANT-04"
-metadata/motion = "root_sway"
 
-[node name="VINE-01" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(317, 536)
+[node name="DECOR-11" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(921, 531)
+metadata/element_id = "DECOR-11"
+metadata/motion = "static"
 texture = ExtResource("33")
 centered = false
-metadata/element_id = "VINE-01"
-metadata/motion = "root_sway"
 
-[node name="VINE-02" type="Sprite2D" parent="."]
-z_index = 12.0
-position = Vector2(463, 530)
+[node name="DECOR-12" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(645, 610)
+metadata/element_id = "DECOR-12"
+metadata/motion = "static"
 texture = ExtResource("34")
 centered = false
+
+[node name="PLANT-01" parent="." instance=ExtResource("35")]
+z_index = 12
+position = Vector2(275, 422)
+metadata/element_id = "PLANT-01"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-02" parent="." instance=ExtResource("36")]
+z_index = 12
+position = Vector2(647, 345)
+metadata/element_id = "PLANT-02"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-03" parent="." instance=ExtResource("37")]
+z_index = 12
+position = Vector2(793, 443)
+metadata/element_id = "PLANT-03"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-04" parent="." instance=ExtResource("38")]
+z_index = 12
+position = Vector2(1141, 423)
+metadata/element_id = "PLANT-04"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-01" parent="." instance=ExtResource("39")]
+z_index = 12
+position = Vector2(317, 536)
+metadata/element_id = "VINE-01"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-02" parent="." instance=ExtResource("40")]
+z_index = 12
+position = Vector2(463, 530)
 metadata/element_id = "VINE-02"
-metadata/motion = "root_sway"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="VINE-03" type="Sprite2D" parent="."]
-z_index = 12.0
+[node name="VINE-03" parent="." instance=ExtResource("41")]
+z_index = 12
 position = Vector2(797, 541)
-texture = ExtResource("35")
-centered = false
 metadata/element_id = "VINE-03"
-metadata/motion = "root_sway"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="VINE-04" type="Sprite2D" parent="."]
-z_index = 12.0
+[node name="VINE-04" parent="." instance=ExtResource("42")]
+z_index = 12
 position = Vector2(1001, 567)
-texture = ExtResource("36")
-centered = false
 metadata/element_id = "VINE-04"
-metadata/motion = "root_sway"
+metadata/motion = "foliage"
+external_clock = true
 
-[node name="FISH-02" type="Sprite2D" parent="."]
-z_index = -30.0
-position = Vector2(567, 154)
-texture = ExtResource("37")
-centered = false
-metadata/element_id = "FISH-02"
-metadata/motion = "drift"
-
-[node name="FISH-03" type="Sprite2D" parent="."]
-z_index = -30.0
-position = Vector2(859, 319)
-texture = ExtResource("38")
-centered = false
-metadata/element_id = "FISH-03"
-metadata/motion = "drift"
-
-[node name="BEAM-01" type="Sprite2D" parent="."]
-z_index = -35.0
+[node name="BEAM-01" parent="." instance=ExtResource("43")]
+z_index = -35
 position = Vector2(622, 0)
-texture = ExtResource("39")
-centered = false
 metadata/element_id = "BEAM-01"
-metadata/motion = "smooth_luminance"
+metadata/motion = "light"
+external_clock = true
 
-[node name="BEAM-02" type="Sprite2D" parent="."]
-z_index = -35.0
+[node name="BEAM-02" parent="." instance=ExtResource("44")]
+z_index = -35
 position = Vector2(788, 0)
-texture = ExtResource("40")
-centered = false
 metadata/element_id = "BEAM-02"
-metadata/motion = "smooth_luminance"
+metadata/motion = "light"
+external_clock = true
 
-[node name="BEAM-03" type="Sprite2D" parent="."]
-z_index = -35.0
+[node name="BEAM-03" parent="." instance=ExtResource("45")]
+z_index = -35
 position = Vector2(905, 43)
-texture = ExtResource("41")
-centered = false
 metadata/element_id = "BEAM-03"
-metadata/motion = "smooth_luminance"
+metadata/motion = "light"
+external_clock = true
 
-[node name="FRONT-01" type="Sprite2D" parent="."]
-z_index = 50.0
-position = Vector2(0, 479)
-texture = ExtResource("42")
-centered = false
-metadata/element_id = "FRONT-01"
-metadata/motion = "static"
-
-[node name="FRONT-02" type="Sprite2D" parent="."]
-z_index = 50.0
-position = Vector2(299, 610)
-texture = ExtResource("43")
-centered = false
-metadata/element_id = "FRONT-02"
-metadata/motion = "static"
-
-[node name="FRONT-03" type="Sprite2D" parent="."]
-z_index = 50.0
-position = Vector2(824, 659)
-texture = ExtResource("44")
-centered = false
-metadata/element_id = "FRONT-03"
-metadata/motion = "static"
-
-[node name="CHARACTER" type="Sprite2D" parent="."]
-z_index = 20.0
+[node name="CHARACTER" parent="." type="Sprite2D"]
+z_index = 20
 position = Vector2(137, 389)
-texture = ExtResource("45")
-centered = false
 metadata/element_id = "CHARACTER"
 metadata/motion = "static"
-
-[node name="ENV-DEPTH" type="Sprite2D" parent="."]
-z_index = -60
-position = Vector2(20, 0)
 texture = ExtResource("46")
 centered = false
+
+[node name="ENV-DEPTH" parent="." type="Sprite2D"]
+z_index = -60
+position = Vector2(20, 0)
 metadata/element_id = "ENV-DEPTH"
 metadata/motion = "static"
-
-[node name="ENV-UNDERPAINT" type="Sprite2D" parent="."]
-z_index = -70
-position = Vector2(0, 0)
 texture = ExtResource("47")
 centered = false
+
+[node name="ENV-UNDERPAINT" parent="." type="Sprite2D"]
+z_index = -70
+position = Vector2(0, 0)
 metadata/element_id = "ENV-UNDERPAINT"
 metadata/motion = "static"
+texture = ExtResource("48")
+centered = false
+
+[node name="FRONT-01" parent="." instance=ExtResource("49")]
+z_index = 50
+position = Vector2(0, 0)
+metadata/element_id = "FRONT-01"
+metadata/motion = "parallax"
+external_clock = true
+
+[node name="FOREGROUND-BACKING" parent="." type="Sprite2D"]
+z_index = -2
+position = Vector2(0, 0)
+metadata/element_id = "FOREGROUND-BACKING"
+metadata/motion = "static"
+texture = ExtResource("50")
+centered = false
+
+[node name="FISH-02-01" parent="." instance=ExtResource("51")]
+z_index = -30
+position = Vector2(646.0, 169.0)
+metadata/element_id = "FISH-02-01"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-02" parent="." instance=ExtResource("52")]
+z_index = -30
+position = Vector2(652.0, 163.0)
+metadata/element_id = "FISH-02-02"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-03" parent="." instance=ExtResource("53")]
+z_index = -30
+position = Vector2(666.0, 161.0)
+metadata/element_id = "FISH-02-03"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-04" parent="." instance=ExtResource("54")]
+z_index = -30
+position = Vector2(660.0, 170.0)
+metadata/element_id = "FISH-02-04"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-05" parent="." instance=ExtResource("55")]
+z_index = -30
+position = Vector2(643.0, 182.0)
+metadata/element_id = "FISH-02-05"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-06" parent="." instance=ExtResource("56")]
+z_index = -30
+position = Vector2(635.0, 189.0)
+metadata/element_id = "FISH-02-06"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-07" parent="." instance=ExtResource("57")]
+z_index = -30
+position = Vector2(627.0, 187.0)
+metadata/element_id = "FISH-02-07"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-08" parent="." instance=ExtResource("58")]
+z_index = -30
+position = Vector2(656.0, 188.0)
+metadata/element_id = "FISH-02-08"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-09" parent="." instance=ExtResource("59")]
+z_index = -30
+position = Vector2(666.0, 188.0)
+metadata/element_id = "FISH-02-09"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-10" parent="." instance=ExtResource("60")]
+z_index = -30
+position = Vector2(666.0, 179.0)
+metadata/element_id = "FISH-02-10"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-11" parent="." instance=ExtResource("61")]
+z_index = -30
+position = Vector2(650.0, 180.0)
+metadata/element_id = "FISH-02-11"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-12" parent="." instance=ExtResource("62")]
+z_index = -30
+position = Vector2(688.0, 184.0)
+metadata/element_id = "FISH-02-12"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-13" parent="." instance=ExtResource("63")]
+z_index = -30
+position = Vector2(693.0, 174.0)
+metadata/element_id = "FISH-02-13"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-14" parent="." instance=ExtResource("64")]
+z_index = -30
+position = Vector2(702.0, 190.0)
+metadata/element_id = "FISH-02-14"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-15" parent="." instance=ExtResource("65")]
+z_index = -30
+position = Vector2(715.0, 177.0)
+metadata/element_id = "FISH-02-15"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-16" parent="." instance=ExtResource("66")]
+z_index = -30
+position = Vector2(728.0, 171.0)
+metadata/element_id = "FISH-02-16"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-17" parent="." instance=ExtResource("67")]
+z_index = -30
+position = Vector2(676.0, 205.0)
+metadata/element_id = "FISH-02-17"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-18" parent="." instance=ExtResource("68")]
+z_index = -30
+position = Vector2(643.0, 206.0)
+metadata/element_id = "FISH-02-18"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-19" parent="." instance=ExtResource("69")]
+z_index = -30
+position = Vector2(626.0, 209.0)
+metadata/element_id = "FISH-02-19"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-20" parent="." instance=ExtResource("70")]
+z_index = -30
+position = Vector2(616.0, 208.0)
+metadata/element_id = "FISH-02-20"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-21" parent="." instance=ExtResource("71")]
+z_index = -30
+position = Vector2(619.0, 199.0)
+metadata/element_id = "FISH-02-21"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-22" parent="." instance=ExtResource("72")]
+z_index = -30
+position = Vector2(607.0, 209.0)
+metadata/element_id = "FISH-02-22"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-23" parent="." instance=ExtResource("73")]
+z_index = -30
+position = Vector2(607.0, 215.0)
+metadata/element_id = "FISH-02-23"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-24" parent="." instance=ExtResource("74")]
+z_index = -30
+position = Vector2(595.0, 221.0)
+metadata/element_id = "FISH-02-24"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-25" parent="." instance=ExtResource("75")]
+z_index = -30
+position = Vector2(587.0, 210.0)
+metadata/element_id = "FISH-02-25"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-26" parent="." instance=ExtResource("76")]
+z_index = -30
+position = Vector2(592.0, 199.0)
+metadata/element_id = "FISH-02-26"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-02-27" parent="." instance=ExtResource("77")]
+z_index = -30
+position = Vector2(577.0, 229.0)
+metadata/element_id = "FISH-02-27"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-01" parent="." instance=ExtResource("78")]
+z_index = -30
+position = Vector2(873.0, 369.0)
+metadata/element_id = "FISH-03-01"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-02" parent="." instance=ExtResource("79")]
+z_index = -30
+position = Vector2(881.0, 383.0)
+metadata/element_id = "FISH-03-02"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-03" parent="." instance=ExtResource("80")]
+z_index = -30
+position = Vector2(904.0, 355.0)
+metadata/element_id = "FISH-03-03"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-04" parent="." instance=ExtResource("81")]
+z_index = -30
+position = Vector2(925.0, 375.0)
+metadata/element_id = "FISH-03-04"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-05" parent="." instance=ExtResource("82")]
+z_index = -30
+position = Vector2(943.0, 367.0)
+metadata/element_id = "FISH-03-05"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-06" parent="." instance=ExtResource("83")]
+z_index = -30
+position = Vector2(959.0, 376.0)
+metadata/element_id = "FISH-03-06"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-07" parent="." instance=ExtResource("84")]
+z_index = -30
+position = Vector2(959.0, 354.0)
+metadata/element_id = "FISH-03-07"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-08" parent="." instance=ExtResource("85")]
+z_index = -30
+position = Vector2(974.0, 364.0)
+metadata/element_id = "FISH-03-08"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-09" parent="." instance=ExtResource("86")]
+z_index = -30
+position = Vector2(990.0, 357.0)
+metadata/element_id = "FISH-03-09"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-10" parent="." instance=ExtResource("87")]
+z_index = -30
+position = Vector2(997.0, 367.0)
+metadata/element_id = "FISH-03-10"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-11" parent="." instance=ExtResource("88")]
+z_index = -30
+position = Vector2(1005.0, 350.0)
+metadata/element_id = "FISH-03-11"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-12" parent="." instance=ExtResource("89")]
+z_index = -30
+position = Vector2(1013.0, 360.0)
+metadata/element_id = "FISH-03-12"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-13" parent="." instance=ExtResource("90")]
+z_index = -30
+position = Vector2(1025.0, 350.0)
+metadata/element_id = "FISH-03-13"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-14" parent="." instance=ExtResource("91")]
+z_index = -30
+position = Vector2(1038.0, 341.0)
+metadata/element_id = "FISH-03-14"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-15" parent="." instance=ExtResource("92")]
+z_index = -30
+position = Vector2(1021.0, 337.0)
+metadata/element_id = "FISH-03-15"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-16" parent="." instance=ExtResource("93")]
+z_index = -30
+position = Vector2(1002.0, 340.0)
+metadata/element_id = "FISH-03-16"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-17" parent="." instance=ExtResource("94")]
+z_index = -30
+position = Vector2(1007.0, 328.0)
+metadata/element_id = "FISH-03-17"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-18" parent="." instance=ExtResource("95")]
+z_index = -30
+position = Vector2(1029.0, 326.0)
+metadata/element_id = "FISH-03-18"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-19" parent="." instance=ExtResource("96")]
+z_index = -30
+position = Vector2(1042.0, 335.0)
+metadata/element_id = "FISH-03-19"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-20" parent="." instance=ExtResource("97")]
+z_index = -30
+position = Vector2(977.0, 343.0)
+metadata/element_id = "FISH-03-20"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="FISH-03-21" parent="." instance=ExtResource("98")]
+z_index = -30
+position = Vector2(992.0, 342.0)
+metadata/element_id = "FISH-03-21"
+metadata/motion = "fish"
+external_clock = true
+
+[node name="CAUSTIC-01" parent="." instance=ExtResource("99")]
+z_index = -33
+position = Vector2(260, 70)
+metadata/element_id = "CAUSTIC-01"
+metadata/motion = "caustic"
+external_clock = true
+
+[node name="CAUSTIC-02" parent="." instance=ExtResource("100")]
+z_index = -3
+position = Vector2(270, 450)
+metadata/element_id = "CAUSTIC-02"
+metadata/motion = "caustic"
+external_clock = true
+
+[node name="BUBBLE-ZONE-01" parent="." instance=ExtResource("101")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-01"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-02" parent="." instance=ExtResource("102")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-02"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-03" parent="." instance=ExtResource("103")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-03"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-04" parent="." instance=ExtResource("104")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-04"
+metadata/motion = "bubbles"
+external_clock = true

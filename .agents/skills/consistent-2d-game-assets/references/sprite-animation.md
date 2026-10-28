@@ -72,3 +72,10 @@ On failure, correct one identified defect and replay the same scenario. Preserve
 ## Deliver the sequence
 
 Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.
+
+## 环境分件补充（Godot实机验证）
+
+- 鱼群使用独立个体时，避免同一个正弦路径让所有鱼同时翻转；可使用有预热分布、边缘透明回收的持续游动。尾摆帧与路径分别定义循环。
+- 动态贴图要留足透明余量；含屋顶/洞壁的裁片必须拆成固定根片和动片，不能只把UV位移整体加大。
+- CanvasItem光纹Shader注意`COLOR`已可能含贴图采样；再次乘采样会把alpha平方，导致动画几乎看不见。用vertex传递调制色，在fragment只采样/混合一次，并通过实际像素变化复查。
+- 录制模式的帧时间包含编码，不等于实时帧率。另跑无录制场景测量。参考实现与证据见`assets/source/xumen-motion-elements/README.md`。

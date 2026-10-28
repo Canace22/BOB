@@ -1,0 +1,1948 @@
+[
+  {
+    "id": "MID-01",
+    "position": [
+      108,
+      298
+    ],
+    "layer": -50.0,
+    "asset": "MID-01.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "MID-02",
+    "position": [
+      360,
+      239
+    ],
+    "layer": -50.0,
+    "asset": "MID-02.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "MID-03",
+    "position": [
+      753,
+      262
+    ],
+    "layer": -50.0,
+    "asset": "MID-03.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "ROOF",
+    "position": [
+      0,
+      0
+    ],
+    "layer": 0.0,
+    "asset": "ROOF.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "WALL-L",
+    "position": [
+      0,
+      0
+    ],
+    "layer": 0.0,
+    "asset": "WALL-L.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "WALL-R",
+    "position": [
+      1164,
+      0
+    ],
+    "layer": 0.0,
+    "asset": "WALL-R.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "ROAD",
+    "position": [
+      0,
+      392
+    ],
+    "layer": 10.0,
+    "asset": "ROAD.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "PORTAL",
+    "position": [
+      0,
+      321
+    ],
+    "layer": 12.0,
+    "asset": "PORTAL.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "LAMP",
+    "position": [
+      37,
+      354
+    ],
+    "layer": 13.0,
+    "asset": "LAMP.png",
+    "scene": "elements/LAMP.tscn",
+    "motion": "light",
+    "parameters": {
+      "period": 8.0,
+      "phase": 4.88,
+      "intensity": 0.26
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-01-ROOT",
+    "position": [
+      90,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-01-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-01",
+    "position": [
+      90,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-01.png",
+    "scene": "elements/BALEEN-01.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 7.0,
+      "phase": 0.73,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-02-ROOT",
+    "position": [
+      255,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-02-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-02",
+    "position": [
+      255,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-02.png",
+    "scene": "elements/BALEEN-02.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 8.0,
+      "phase": 1.46,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-03-ROOT",
+    "position": [
+      422,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-03-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-03",
+    "position": [
+      422,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-03.png",
+    "scene": "elements/BALEEN-03.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 6.0,
+      "phase": 2.19,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-04-ROOT",
+    "position": [
+      575,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-04-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-04",
+    "position": [
+      575,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-04.png",
+    "scene": "elements/BALEEN-04.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 7.0,
+      "phase": 2.92,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-05-ROOT",
+    "position": [
+      722,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-05-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-05",
+    "position": [
+      722,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-05.png",
+    "scene": "elements/BALEEN-05.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 8.0,
+      "phase": 3.65,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BALEEN-06-ROOT",
+    "position": [
+      880,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-06-ROOT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "BALEEN-06",
+    "position": [
+      880,
+      0
+    ],
+    "layer": 4.0,
+    "asset": "BALEEN-06.png",
+    "scene": "elements/BALEEN-06.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 6.0,
+      "period": 6.0,
+      "phase": 4.38,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "DECOR-01",
+    "position": [
+      0,
+      82
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-01.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-02",
+    "position": [
+      0,
+      406
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-02.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-03",
+    "position": [
+      222,
+      435
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-03.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-04",
+    "position": [
+      331,
+      389
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-04.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-05",
+    "position": [
+      505,
+      361
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-05.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-06",
+    "position": [
+      682,
+      387
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-06.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-07",
+    "position": [
+      827,
+      432
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-07.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-08",
+    "position": [
+      1035,
+      460
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-08.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-09",
+    "position": [
+      224,
+      496
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-09.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-10",
+    "position": [
+      572,
+      471
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-10.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-11",
+    "position": [
+      921,
+      531
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-11.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "DECOR-12",
+    "position": [
+      645,
+      610
+    ],
+    "layer": 11.0,
+    "asset": "DECOR-12.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "PLANT-01",
+    "position": [
+      275,
+      422
+    ],
+    "layer": 12.0,
+    "asset": "PLANT-01.png",
+    "scene": "elements/PLANT-01.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 7.0,
+      "phase": 0.73,
+      "root_at_bottom": true
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "PLANT-02",
+    "position": [
+      647,
+      345
+    ],
+    "layer": 12.0,
+    "asset": "PLANT-02.png",
+    "scene": "elements/PLANT-02.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 8.0,
+      "phase": 1.46,
+      "root_at_bottom": true
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "PLANT-03",
+    "position": [
+      793,
+      443
+    ],
+    "layer": 12.0,
+    "asset": "PLANT-03.png",
+    "scene": "elements/PLANT-03.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 6.0,
+      "phase": 2.19,
+      "root_at_bottom": true
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "PLANT-04",
+    "position": [
+      1141,
+      423
+    ],
+    "layer": 12.0,
+    "asset": "PLANT-04.png",
+    "scene": "elements/PLANT-04.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 7.0,
+      "phase": 2.92,
+      "root_at_bottom": true
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "VINE-01",
+    "position": [
+      317,
+      536
+    ],
+    "layer": 12.0,
+    "asset": "VINE-01.png",
+    "scene": "elements/VINE-01.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 7.0,
+      "phase": 0.73,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "VINE-02",
+    "position": [
+      463,
+      530
+    ],
+    "layer": 12.0,
+    "asset": "VINE-02.png",
+    "scene": "elements/VINE-02.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 8.0,
+      "phase": 1.46,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "VINE-03",
+    "position": [
+      797,
+      541
+    ],
+    "layer": 12.0,
+    "asset": "VINE-03.png",
+    "scene": "elements/VINE-03.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 6.0,
+      "phase": 2.19,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "VINE-04",
+    "position": [
+      1001,
+      567
+    ],
+    "layer": 12.0,
+    "asset": "VINE-04.png",
+    "scene": "elements/VINE-04.tscn",
+    "motion": "foliage",
+    "parameters": {
+      "amplitude_px": 2.6,
+      "period": 7.0,
+      "phase": 2.92,
+      "root_at_bottom": false
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BEAM-01",
+    "position": [
+      622,
+      0
+    ],
+    "layer": -35.0,
+    "asset": "BEAM-01.png",
+    "scene": "elements/BEAM-01.tscn",
+    "motion": "light",
+    "parameters": {
+      "period": 12.0,
+      "phase": 25.009999999999998,
+      "intensity": 0.12
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BEAM-02",
+    "position": [
+      788,
+      0
+    ],
+    "layer": -35.0,
+    "asset": "BEAM-02.png",
+    "scene": "elements/BEAM-02.tscn",
+    "motion": "light",
+    "parameters": {
+      "period": 12.0,
+      "phase": 25.62,
+      "intensity": 0.12
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BEAM-03",
+    "position": [
+      905,
+      43
+    ],
+    "layer": -35.0,
+    "asset": "BEAM-03.png",
+    "scene": "elements/BEAM-03.tscn",
+    "motion": "light",
+    "parameters": {
+      "period": 12.0,
+      "phase": 26.23,
+      "intensity": 0.12
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "CHARACTER",
+    "position": [
+      137,
+      389
+    ],
+    "layer": 20.0,
+    "asset": "CHARACTER.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "ENV-DEPTH",
+    "position": [
+      20,
+      0
+    ],
+    "layer": -60,
+    "asset": "ENV-DEPTH.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "ENV-UNDERPAINT",
+    "position": [
+      0,
+      0
+    ],
+    "layer": -70,
+    "asset": "ENV-UNDERPAINT.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "FRONT-01",
+    "position": [
+      0,
+      0
+    ],
+    "layer": 50,
+    "asset": "FRONT-CONTINUOUS.png",
+    "scene": "elements/FRONT-01.tscn",
+    "motion": "parallax",
+    "parameters": {
+      "parallax_amount": -0.14
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FOREGROUND-BACKING",
+    "position": [
+      0,
+      0
+    ],
+    "layer": -2,
+    "asset": "FOREGROUND-BACKING.png",
+    "motion": "static",
+    "acceptance": "实机出现、位置轮廓不变",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A"
+  },
+  {
+    "id": "FISH-02-01",
+    "position": [
+      646.0,
+      169.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-01.png",
+    "scene": "elements/FISH-02-01.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 0.0,
+      "swim_extent": "Vector2(28, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-02",
+    "position": [
+      652.0,
+      163.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-02.png",
+    "scene": "elements/FISH-02-02.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 1.71,
+      "swim_extent": "Vector2(29, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-03",
+    "position": [
+      666.0,
+      161.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-03.png",
+    "scene": "elements/FISH-02-03.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 3.42,
+      "swim_extent": "Vector2(30, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-04",
+    "position": [
+      660.0,
+      170.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-04.png",
+    "scene": "elements/FISH-02-04.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 5.13,
+      "swim_extent": "Vector2(31, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-05",
+    "position": [
+      643.0,
+      182.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-05.png",
+    "scene": "elements/FISH-02-05.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 0.5568150000000003,
+      "swim_extent": "Vector2(32, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-06",
+    "position": [
+      635.0,
+      189.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-06.png",
+    "scene": "elements/FISH-02-06.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 2.266815000000001,
+      "swim_extent": "Vector2(33, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-07",
+    "position": [
+      627.0,
+      187.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-07.png",
+    "scene": "elements/FISH-02-07.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 3.976815,
+      "swim_extent": "Vector2(28, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-08",
+    "position": [
+      656.0,
+      188.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-08.png",
+    "scene": "elements/FISH-02-08.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 5.686814999999999,
+      "swim_extent": "Vector2(29, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-09",
+    "position": [
+      666.0,
+      188.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-09.png",
+    "scene": "elements/FISH-02-09.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 1.1136300000000006,
+      "swim_extent": "Vector2(30, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-10",
+    "position": [
+      666.0,
+      179.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-10.png",
+    "scene": "elements/FISH-02-10.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 2.8236300000000014,
+      "swim_extent": "Vector2(31, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-11",
+    "position": [
+      650.0,
+      180.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-11.png",
+    "scene": "elements/FISH-02-11.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 4.533630000000002,
+      "swim_extent": "Vector2(32, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-12",
+    "position": [
+      688.0,
+      184.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-12.png",
+    "scene": "elements/FISH-02-12.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 6.24363,
+      "swim_extent": "Vector2(33, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-13",
+    "position": [
+      693.0,
+      174.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-13.png",
+    "scene": "elements/FISH-02-13.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 1.6704450000000008,
+      "swim_extent": "Vector2(28, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-14",
+    "position": [
+      702.0,
+      190.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-14.png",
+    "scene": "elements/FISH-02-14.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 3.3804450000000017,
+      "swim_extent": "Vector2(29, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-15",
+    "position": [
+      715.0,
+      177.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-15.png",
+    "scene": "elements/FISH-02-15.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 5.090444999999999,
+      "swim_extent": "Vector2(30, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-16",
+    "position": [
+      728.0,
+      171.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-16.png",
+    "scene": "elements/FISH-02-16.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 0.5172600000000003,
+      "swim_extent": "Vector2(31, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-17",
+    "position": [
+      676.0,
+      205.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-17.png",
+    "scene": "elements/FISH-02-17.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 2.227260000000001,
+      "swim_extent": "Vector2(32, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-18",
+    "position": [
+      643.0,
+      206.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-18.png",
+    "scene": "elements/FISH-02-18.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 3.937260000000002,
+      "swim_extent": "Vector2(33, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-19",
+    "position": [
+      626.0,
+      209.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-19.png",
+    "scene": "elements/FISH-02-19.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 5.647260000000003,
+      "swim_extent": "Vector2(28, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-20",
+    "position": [
+      616.0,
+      208.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-20.png",
+    "scene": "elements/FISH-02-20.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 1.074075000000004,
+      "swim_extent": "Vector2(29, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-21",
+    "position": [
+      619.0,
+      199.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-21.png",
+    "scene": "elements/FISH-02-21.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 2.784075000000005,
+      "swim_extent": "Vector2(30, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-22",
+    "position": [
+      607.0,
+      209.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-22.png",
+    "scene": "elements/FISH-02-22.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 4.494074999999999,
+      "swim_extent": "Vector2(31, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-23",
+    "position": [
+      607.0,
+      215.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-23.png",
+    "scene": "elements/FISH-02-23.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 6.204075,
+      "swim_extent": "Vector2(32, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-24",
+    "position": [
+      595.0,
+      221.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-24.png",
+    "scene": "elements/FISH-02-24.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 1.6308900000000008,
+      "swim_extent": "Vector2(33, 5)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-25",
+    "position": [
+      587.0,
+      210.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-25.png",
+    "scene": "elements/FISH-02-25.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 3.3408900000000017,
+      "swim_extent": "Vector2(28, 2)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-26",
+    "position": [
+      592.0,
+      199.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-26.png",
+    "scene": "elements/FISH-02-26.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 5.0508900000000025,
+      "swim_extent": "Vector2(29, 3)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-02-27",
+    "position": [
+      577.0,
+      229.0
+    ],
+    "layer": -30,
+    "asset": "FISH-02-27.png",
+    "scene": "elements/FISH-02-27.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 0.4777050000000038,
+      "swim_extent": "Vector2(30, 4)",
+      "swim_period": 28.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-01",
+    "position": [
+      873.0,
+      369.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-01.png",
+    "scene": "elements/FISH-03-01.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 2.1877050000000047,
+      "swim_extent": "Vector2(31, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-02",
+    "position": [
+      881.0,
+      383.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-02.png",
+    "scene": "elements/FISH-03-02.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 3.8977049999999984,
+      "swim_extent": "Vector2(32, 2)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-03",
+    "position": [
+      904.0,
+      355.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-03.png",
+    "scene": "elements/FISH-03-03.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 5.607704999999999,
+      "swim_extent": "Vector2(33, 3)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-04",
+    "position": [
+      925.0,
+      375.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-04.png",
+    "scene": "elements/FISH-03-04.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 1.0345200000000006,
+      "swim_extent": "Vector2(28, 4)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-05",
+    "position": [
+      943.0,
+      367.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-05.png",
+    "scene": "elements/FISH-03-05.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 2.7445200000000014,
+      "swim_extent": "Vector2(29, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-06",
+    "position": [
+      959.0,
+      376.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-06.png",
+    "scene": "elements/FISH-03-06.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 4.454520000000002,
+      "swim_extent": "Vector2(30, 2)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-07",
+    "position": [
+      959.0,
+      354.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-07.png",
+    "scene": "elements/FISH-03-07.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 6.164520000000003,
+      "swim_extent": "Vector2(31, 3)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-08",
+    "position": [
+      974.0,
+      364.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-08.png",
+    "scene": "elements/FISH-03-08.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 1.5913350000000044,
+      "swim_extent": "Vector2(32, 4)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-09",
+    "position": [
+      990.0,
+      357.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-09.png",
+    "scene": "elements/FISH-03-09.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 3.3013350000000052,
+      "swim_extent": "Vector2(33, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-10",
+    "position": [
+      997.0,
+      367.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-10.png",
+    "scene": "elements/FISH-03-10.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 5.011335000000006,
+      "swim_extent": "Vector2(28, 2)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-11",
+    "position": [
+      1005.0,
+      350.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-11.png",
+    "scene": "elements/FISH-03-11.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 0.43815000000000026,
+      "swim_extent": "Vector2(29, 3)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-12",
+    "position": [
+      1013.0,
+      360.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-12.png",
+    "scene": "elements/FISH-03-12.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 2.148150000000008,
+      "swim_extent": "Vector2(30, 4)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-13",
+    "position": [
+      1025.0,
+      350.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-13.png",
+    "scene": "elements/FISH-03-13.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 3.858150000000002,
+      "swim_extent": "Vector2(31, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-14",
+    "position": [
+      1038.0,
+      341.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-14.png",
+    "scene": "elements/FISH-03-14.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 5.56815000000001,
+      "swim_extent": "Vector2(32, 2)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-15",
+    "position": [
+      1021.0,
+      337.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-15.png",
+    "scene": "elements/FISH-03-15.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 0.9949650000000041,
+      "swim_extent": "Vector2(33, 3)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-16",
+    "position": [
+      1002.0,
+      340.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-16.png",
+    "scene": "elements/FISH-03-16.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 2.704964999999998,
+      "swim_extent": "Vector2(28, 4)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-17",
+    "position": [
+      1007.0,
+      328.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-17.png",
+    "scene": "elements/FISH-03-17.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 4.414965000000006,
+      "swim_extent": "Vector2(29, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-18",
+    "position": [
+      1029.0,
+      326.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-18.png",
+    "scene": "elements/FISH-03-18.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.5,
+      "phase": 6.1249649999999995,
+      "swim_extent": "Vector2(30, 2)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-19",
+    "position": [
+      1042.0,
+      335.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-19.png",
+    "scene": "elements/FISH-03-19.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.7,
+      "phase": 1.551780000000008,
+      "swim_extent": "Vector2(31, 3)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-20",
+    "position": [
+      977.0,
+      343.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-20.png",
+    "scene": "elements/FISH-03-20.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 1.9,
+      "phase": 3.2617800000000017,
+      "swim_extent": "Vector2(32, 4)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "FISH-03-21",
+    "position": [
+      992.0,
+      342.0
+    ],
+    "layer": -30,
+    "asset": "FISH-03-21.png",
+    "scene": "elements/FISH-03-21.tscn",
+    "motion": "fish",
+    "parameters": {
+      "period": 2.1,
+      "phase": 4.97178000000001,
+      "swim_extent": "Vector2(33, 5)",
+      "swim_period": 32.0,
+      "parallax_amount": 0.18
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "CAUSTIC-01",
+    "position": [
+      260,
+      70
+    ],
+    "layer": -33,
+    "asset": "CAUSTIC-RIBBONS.png",
+    "scene": "elements/CAUSTIC-01.tscn",
+    "motion": "caustic",
+    "parameters": {
+      "period": 12.0,
+      "phase": 0.0,
+      "intensity": 0.32
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "CAUSTIC-02",
+    "position": [
+      270,
+      450
+    ],
+    "layer": -3,
+    "asset": "CAUSTIC-RIBBONS.png",
+    "scene": "elements/CAUSTIC-02.tscn",
+    "motion": "caustic",
+    "parameters": {
+      "period": 12.0,
+      "phase": 2.1,
+      "intensity": 0.16
+    },
+    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
+    "source": "original crop or generated light/backing; see export manifest",
+    "collision": "N/A 环境无碰撞",
+    "sound": "N/A 本轮无声音需求"
+  },
+  {
+    "id": "BUBBLE-ZONE-01",
+    "position": "Rect2(143,170,89,220)",
+    "layer": -20,
+    "instances": 9,
+    "motion": "预热/上升/边界淡出回收",
+    "scene": "elements/BUBBLE-ZONE-01.tscn",
+    "asset": "../reference_environment/bubble.png",
+    "parameters": {
+      "speed": "12–18px/s; near24–30",
+      "population": 9,
+      "seed": 0
+    },
+    "acceptance": "36总数稳定、不在可见区瞬移、暂停恢复",
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-02",
+    "position": "Rect2(414,310,72,98)",
+    "layer": -20,
+    "instances": 9,
+    "motion": "预热/上升/边界淡出回收",
+    "scene": "elements/BUBBLE-ZONE-02.tscn",
+    "asset": "../reference_environment/bubble.png",
+    "parameters": {
+      "speed": "12–18px/s; near24–30",
+      "population": 9,
+      "seed": 1
+    },
+    "acceptance": "36总数稳定、不在可见区瞬移、暂停恢复",
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-03",
+    "position": "Rect2(786,119,154,282)",
+    "layer": -20,
+    "instances": 9,
+    "motion": "预热/上升/边界淡出回收",
+    "scene": "elements/BUBBLE-ZONE-03.tscn",
+    "asset": "../reference_environment/bubble.png",
+    "parameters": {
+      "speed": "12–18px/s; near24–30",
+      "population": 9,
+      "seed": 2
+    },
+    "acceptance": "36总数稳定、不在可见区瞬移、暂停恢复",
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-04",
+    "position": "Rect2(1036,358,95,128)",
+    "layer": -20,
+    "instances": 9,
+    "motion": "预热/上升/边界淡出回收",
+    "scene": "elements/BUBBLE-ZONE-04.tscn",
+    "asset": "../reference_environment/bubble.png",
+    "parameters": {
+      "speed": "12–18px/s; near24–30",
+      "population": 9,
+      "seed": 3
+    },
+    "acceptance": "36总数稳定、不在可见区瞬移、暂停恢复",
+    "collision": "N/A",
+    "sound": "N/A"
+  }
+]
