@@ -93,7 +93,7 @@ node game/tests/web_playthrough.mjs # Node 20+、Playwright，真实按键五房
 node tools/deploy-pages.mjs      # 导出并发布到 gh-pages 的 /godot/
 ```
 
-Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` 视为失败。Web 导出关闭线程与扩展，排除测试和工具源码；需要安装匹配版本的单线程 Web 模板。发布脚本只替换现有 Pages 检出的 `godot/`，正常推送；`build.json` 记录源码提交，线上复核另见 [进度](../game/progress.md)。
+Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` 视为失败。Web 导出关闭线程与扩展，排除测试和工具源码；需要安装匹配版本的单线程 Web 模板。发布脚本更新现有 Pages 检出的 `godot/` 和根 `index.html`（来源 `game/pages/index.html`），默认跳转到 Godot，保留历史版本目录并正常推送；`--entry-only` 只更新根入口，沿用线上游戏包。`build.json` 记录游戏包源码提交，线上复核另见 [进度](../game/progress.md)。
 
 ## 从旧工程迁移的内容
 

@@ -31,7 +31,7 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 
 ## 提交与发布
 
-按根[持续交付流程](../../../AGENTS.md#持续迭代与边做边玩)提交已验证批次。运行 `node tools/deploy-pages.mjs`，只合并 `/godot/`，保留根 V2 和 `gh-pages` 历史，普通推送。`--build-only` 只准备产物，不提交推送；准备后再次运行会拒绝未提交的 staging，先检查后显式处理，不要重置未知修改。
+按根[持续交付流程](../../../AGENTS.md#持续迭代与边做边玩)提交已验证批次。运行 `node tools/deploy-pages.mjs`，合并 `/godot/` 并从 `game/pages/index.html` 更新根入口，默认跳转 Godot；保留 `mvp-v2/` 等历史目录和 `gh-pages` 历史，普通推送。仅修复默认入口时使用 `--entry-only`，不导出或替换已上线游戏包；验证根地址实际跳转、禁用 JavaScript 时的跳转、历史入口和游戏启动，游戏无变化时无需重复整条战斗路线。`--build-only` 只准备产物，不提交推送；准备后再次运行会拒绝未提交的 staging，先检查后显式处理，不要重置未知修改。
 
 检查部署状态与线上 `godot/build.json` 的源码提交，再对线上入口运行同一浏览器路线。把源码提交、发布提交、结果和限制记入 `game/progress.md`。发布失败保留稳定远端，不把本地成功记成已上线。
 
