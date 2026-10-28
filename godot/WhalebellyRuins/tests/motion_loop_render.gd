@@ -9,7 +9,7 @@ func pixels() -> Image:
 func run() -> void:
 	scene=load("res://scenes/environment/xumen_reference.tscn").instantiate()
 	root.add_child(scene);scene.set_process(false)
-	for id: String in ["BALEEN-03","PLANT-02","CAUSTIC-01"]:
+	for id: String in ["BALEEN-03","PLANT-02","WATER-SURFACE"]:
 		var element=scene.get_node(id)
 		scene.elapsed=0;scene.update_visuals()
 		var before: Image=await pixels()

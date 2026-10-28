@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3]
+[gd_scene load_steps=104 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
@@ -98,12 +98,11 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-19.tscn" id="96"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-20.tscn" id="97"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-21.tscn" id="98"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/CAUSTIC-01.tscn" id="99"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/CAUSTIC-02.tscn" id="100"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-01.tscn" id="101"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-02.tscn" id="102"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-03.tscn" id="103"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-04.tscn" id="104"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/WATER-SURFACE.tscn" id="99"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-01.tscn" id="100"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-02.tscn" id="101"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-03.tscn" id="102"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-04.tscn" id="103"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
@@ -817,42 +816,35 @@ metadata/element_id = "FISH-03-21"
 metadata/motion = "fish"
 external_clock = true
 
-[node name="CAUSTIC-01" parent="." instance=ExtResource("99")]
-z_index = -33
-position = Vector2(260, 70)
-metadata/element_id = "CAUSTIC-01"
-metadata/motion = "caustic"
+[node name="WATER-SURFACE" parent="." instance=ExtResource("99")]
+z_index = -55
+position = Vector2(350, 0)
+metadata/element_id = "WATER-SURFACE"
+metadata/motion = "water"
 external_clock = true
 
-[node name="CAUSTIC-02" parent="." instance=ExtResource("100")]
-z_index = -3
-position = Vector2(270, 450)
-metadata/element_id = "CAUSTIC-02"
-metadata/motion = "caustic"
-external_clock = true
-
-[node name="BUBBLE-ZONE-01" parent="." instance=ExtResource("101")]
+[node name="BUBBLE-ZONE-01" parent="." instance=ExtResource("100")]
 z_index = -20
 position = Vector2(0, 0)
 metadata/element_id = "BUBBLE-ZONE-01"
 metadata/motion = "bubbles"
 external_clock = true
 
-[node name="BUBBLE-ZONE-02" parent="." instance=ExtResource("102")]
+[node name="BUBBLE-ZONE-02" parent="." instance=ExtResource("101")]
 z_index = -20
 position = Vector2(0, 0)
 metadata/element_id = "BUBBLE-ZONE-02"
 metadata/motion = "bubbles"
 external_clock = true
 
-[node name="BUBBLE-ZONE-03" parent="." instance=ExtResource("103")]
+[node name="BUBBLE-ZONE-03" parent="." instance=ExtResource("102")]
 z_index = -20
 position = Vector2(0, 0)
 metadata/element_id = "BUBBLE-ZONE-03"
 metadata/motion = "bubbles"
 external_clock = true
 
-[node name="BUBBLE-ZONE-04" parent="." instance=ExtResource("104")]
+[node name="BUBBLE-ZONE-04" parent="." instance=ExtResource("103")]
 z_index = -20
 position = Vector2(0, 0)
 metadata/element_id = "BUBBLE-ZONE-04"

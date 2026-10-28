@@ -27,7 +27,7 @@ func run() -> void:
 	var missing: Array=[]
 	for id: String in manifest:
 		if not scene.has_node(id):missing.append(id)
-	check("all_103_element_ids_instanced",missing.is_empty(),missing)
+	check("all_102_element_ids_instanced",missing.is_empty(),missing)
 	check("no_physics_or_controller_in_environment",scene.find_children("*","CollisionObject2D",true,false).is_empty() and scene.find_children("*","CollisionShape2D",true,false).is_empty())
 	var fish := scene.get_node("FISH-02-01") as Sprite2D
 	check("fish_has_12_real_bitmap_frames",fish.hframes==12 and fish.texture.get_width()==1440)

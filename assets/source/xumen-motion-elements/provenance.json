@@ -32,5 +32,24 @@
       "instruction": "Transparent 2D hand-painted underwater caustic light decal, pale cyan/ivory sparse irregular rippling lace, soft transparent edges, light from upper right. No floor, scene, objects, fish or bubbles.",
       "tool_output": "exec-54eccd9e-3daf-4d8a-b3e2-80d122e4382a.png"
     }
-  ]
+  ],
+  "water_surface_correction": {
+    "tool": "Godot native Image crop and alpha extraction; no new image generation",
+    "source": "../xumen-reference-environment/generated/dynamic-backing.png",
+    "source_rect": [
+      350,
+      0,
+      740,
+      150
+    ],
+    "output": "master/WATER-SURFACE.png",
+    "retired_runtime_instances": [
+      "CAUSTIC-01",
+      "CAUSTIC-02"
+    ],
+    "user_references": [
+      "reference/water-correction/marked-composite.png",
+      "reference/water-correction/marked-water.png"
+    ]
+  }
 }

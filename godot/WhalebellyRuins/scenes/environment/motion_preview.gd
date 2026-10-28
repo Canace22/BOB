@@ -21,6 +21,8 @@ func _ready() -> void:
 		if arg.begins_with("--evidence-dir="):evidence_directory=arg.trim_prefix("--evidence-dir=").trim_suffix("/")+"/"
 	if capture_enabled:DirAccess.make_dir_recursive_absolute(evidence_directory)
 	if demonstration_camera:duration=32.0
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--duration="):duration=clampf(float(arg.trim_prefix("--duration=")),10.0,180.0)
 	environment.set_process(false)
 	environment.level_mode=true # Camera input only. Display character was already retained by _ready.
 	last_tick=Time.get_ticks_usec()

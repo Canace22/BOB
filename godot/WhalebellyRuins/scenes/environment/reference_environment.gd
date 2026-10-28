@@ -80,7 +80,7 @@ func set_level_layer(solo: int) -> void:
 	for child in get_children():
 		var id = str(child.name)
 		var group = 2
-		if id.begins_with("ENV"): group = 0
+		if id.begins_with("ENV") or id.begins_with("WATER"): group = 0
 		elif id.begins_with("MID") or id.begins_with("BEAM") or id.begins_with("FISH") or id.begins_with("BUBBLE") or id.begins_with("CAUSTIC"): group = 1
 		elif id.begins_with("FRONT"): group = 3
 		child.visible = solo < 0 or solo == group

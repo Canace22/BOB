@@ -1,6 +1,6 @@
 extends Node2D
 ## Preview UI only. No player input, collisions or map logic.
-const GROUPS=["垂须与植物","逐鱼摆尾与游动","气泡分层","海底光纹与光束","前景视差"]
+const GROUPS=["垂须与植物","逐鱼摆尾与游动","气泡分层","顶部背景水面与光束","前景视差"]
 var selected: int=0
 var clock: float=0.0
 var playing: bool=true
@@ -18,7 +18,7 @@ func matches(id: String) -> bool:
 		0:return id.begins_with("BALEEN") or id.begins_with("PLANT") or id.begins_with("VINE")
 		1:return id.begins_with("FISH")
 		2:return id.begins_with("BUBBLE")
-		3:return id.begins_with("CAUSTIC") or id.begins_with("BEAM") or id=="LAMP"
+		3:return id.begins_with("WATER") or id.begins_with("BEAM") or id=="LAMP"
 		4:return id.begins_with("FRONT")
 	return false
 func _process(delta: float) -> void:

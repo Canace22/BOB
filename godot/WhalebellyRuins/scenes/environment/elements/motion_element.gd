@@ -1,6 +1,6 @@
 extends Sprite2D
 ## One reusable painted 2D animation element. Open any element .tscn with F6.
-@export_enum("foliage", "fish", "light", "caustic", "parallax", "static") var animation_kind: String = "foliage"
+@export_enum("foliage", "fish", "light", "caustic", "water", "parallax", "static") var animation_kind: String = "foliage"
 @export var amplitude_px: float = 5.0
 @export var period: float = 7.0
 @export var phase: float = 0.0
@@ -16,9 +16,9 @@ var home: Vector2
 
 func _ready() -> void:
 	home=position
-	if animation_kind in ["foliage","caustic"]:
+	if animation_kind in ["foliage","caustic","water"]:
 		var mat := ShaderMaterial.new()
-		mat.shader=load("res://scenes/environment/elements/"+("pinned_foliage.gdshader" if animation_kind=="foliage" else "caustic.gdshader"))
+		mat.shader=load("res://scenes/environment/elements/"+({"foliage":"pinned_foliage.gdshader","caustic":"caustic.gdshader","water":"water_surface.gdshader"}[animation_kind]))
 		material=mat
 		mat.set_shader_parameter("root_at_bottom",root_at_bottom)
 		mat.set_shader_parameter("source_origin",source_origin)
@@ -48,7 +48,7 @@ func update_at(t: float, camera_offset: Vector2 = Vector2.ZERO) -> void:
 		flip_h=false
 		modulate.a=smoothstep(0.0,22.0,minf(distance,220.0-distance))
 		frame=int(floor(t*12.0/period+phase*12.0/TAU))%12
-	elif animation_kind in ["foliage","caustic"]:
+	elif animation_kind in ["foliage","caustic","water"]:
 		material.set_shader_parameter("clock",t)
 		modulate.a=intensity
 	elif animation_kind=="light":

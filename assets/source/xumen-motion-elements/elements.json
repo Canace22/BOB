@@ -1838,44 +1838,32 @@
     "sound": "N/A 本轮无声音需求"
   },
   {
-    "id": "CAUSTIC-01",
+    "id": "WATER-SURFACE",
     "position": [
-      260,
-      70
+      350,
+      0
     ],
-    "layer": -33,
-    "asset": "CAUSTIC-RIBBONS.png",
-    "scene": "elements/CAUSTIC-01.tscn",
-    "motion": "caustic",
+    "layer": -55,
+    "asset": "WATER-SURFACE.png",
+    "scene": "elements/WATER-SURFACE.tscn",
+    "motion": "water_surface_refraction",
     "parameters": {
-      "period": 12.0,
+      "period": 10.0,
       "phase": 0.0,
-      "intensity": 0.32
+      "intensity": 1.0,
+      "amplitude_px": 2.4
     },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
+    "acceptance": "实机变化限定顶部区域；不透明垂须遮挡正确；10秒首尾一致",
+    "source": "../xumen-reference-environment/generated/dynamic-backing.png",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
-  },
-  {
-    "id": "CAUSTIC-02",
-    "position": [
-      270,
-      450
+    "sound": "N/A 本轮无声音需求",
+    "source_rect": [
+      350,
+      0,
+      740,
+      150
     ],
-    "layer": -3,
-    "asset": "CAUSTIC-RIBBONS.png",
-    "scene": "elements/CAUSTIC-02.tscn",
-    "motion": "caustic",
-    "parameters": {
-      "period": 12.0,
-      "phase": 2.1,
-      "intensity": 0.16
-    },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
-    "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
+    "layer_reason": "远景水面位于中景骨架、洞顶、垂须之后"
   },
   {
     "id": "BUBBLE-ZONE-01",
