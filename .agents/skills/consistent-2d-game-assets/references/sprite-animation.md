@@ -77,6 +77,8 @@ Save the source atlas, actual prompt and references, extraction script or crop m
 
 ### Continuous-video candidates
 
+- A cropped source video cannot yield complete body sprites by adding transparent padding. When complete reference art exists, a scoped alternative is to reproject the measured motion onto that art, preserve rigid shell/prop regions and zero grounded-foot motion. Record it as processed video-driven 2D baking, preserve the source motion field, and inspect any warp distortion. Merge identical seam poses with explicit durations instead of appending a duplicate first frame. Validate the actual player's state selector: an existing static-cutout idle override can hide a successfully imported animation. See `assets/source/tide-picker-idle-v03/README.md` and the main-scene regression `tests/idle_animation.gd`.
+
 - Distinguish source frame count, selected chronological frames, derived loop-bridge frames, and final playback FPS. More native frames do not prove a complete alternating gait. Preserve actual prompts/job IDs, including rejected trials.
 - Reused historical video must retain its original job identity and preview FPS; retiming it does not make it a newly generated source. Save lossless source pixels separately from viewing MP4s.
 - Optical-flow loop bridges can hide a large pose discontinuity by morphing the feet or equipment. Inspect the bridge at slow speed, mark derived frames in the manifest, and do not call it seamless solely from pixel-delta scores.

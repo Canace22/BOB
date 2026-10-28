@@ -1,0 +1,110 @@
+{
+  "task": "idle-v03",
+  "scope": "existing Godot player idle only",
+  "status": "complete",
+  "reviewer": "agent",
+  "user_art_approval": false,
+  "engine": "4.7.2-stable (official)",
+  "stages": {
+    "source": "pass",
+    "bake": "pass",
+    "integration": "pass",
+    "runtime_checks": "pass",
+    "documentation": "pass"
+  },
+  "checks": [
+    {
+      "detail": 70,
+      "name": "transparent_full_body_atlas",
+      "pass": true
+    },
+    {
+      "detail": 6.0,
+      "name": "six_second_loop",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "grounded_idle_replaces_cutout",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "idle_advances_without_root_motion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "tree_pause_holds_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "resume_advances",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "loop_wraps",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "idle_to_run",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "run_to_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "left_facing_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "jump_hides_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "landing_restores_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "attack_hides_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "attack_recovers_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "reference_mode_keeps_authored_art",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "reference_exit_restores_idle",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "next_room_loads_idle",
+      "pass": true
+    }
+  ],
+  "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-idle-v03",
+  "runtime": "res://assets/runtime/tide-picker-idle-v03/idle.tres",
+  "evidence": "res://evidence/idle-v03",
+  "limitations": [
+    "2D video-derived warping is visible in close-ups",
+    "left facing follows existing flip convention",
+    "other action art and published binaries unchanged"
+  ]
+}

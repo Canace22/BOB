@@ -82,6 +82,8 @@ BEAM-01/02/03已替换为不含场景纹理的独立柔光贴图和12秒Shader�
 
 ## 拾潮者视频动作 V02
 
+主关卡Idle现已采用 [提灯守望 V03](source/tide-picker-idle-v03/README.md)：70帧/12FPS/6秒透明动画，完整原画承载视频运动，17项Godot实景功能检查通过；用户审美待确认。V02三动作仍保留为独立候选，Walk/Run没有因Idle接入而升级验收状态。
+
 IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光流循环桥接。Run复用历史Wan视频，IDLE含局部呼吸修正。三组均为待精修候选，仅独立Godot评审场景；主关卡未替换。[来源、母版与限制](source/tide-picker-locomotion-v02-video/README.md)。
 
 ### 左上和右下近景拆分

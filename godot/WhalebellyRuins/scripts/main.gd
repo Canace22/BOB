@@ -957,7 +957,7 @@ func run_actor_qa() -> void:
 	await evidence_frame("hero-run")
 	Input.action_release("right")
 	await wait_physics(20)
-	report.tests.append({"name":"idle_restores_reference","pass":player.visual_state=="idle" and player.art.visible and not player.sprite.visible})
+	report.tests.append({"name":"idle_restores_animation","pass":player.visual_state=="idle" and player.idle_sprite.visible and player.idle_sprite.is_playing() and not player.art.visible and not player.sprite.visible})
 	await key_tap(KEY_F5)
 	report.tests.append({"name":"manual_save_current_safe","pass":point(checkpoint.pos).distance_to(player.last_safe)<8})
 	await input_tap("attack")

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 15,
-  "updatedAt": "2026-10-28",
+  "revision": 16,
+  "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24751,6 +24751,42 @@
       "integrationStatus": "preview-only",
       "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_video_preview.tscn",
       "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-idle-v03",
+      "name": "拾潮者 · 提灯守望 Idle",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "Idle",
+        "视频运动烘焙",
+        "Godot"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-idle-v03/idle-atlas.png",
+      "width": 2048,
+      "height": 2880,
+      "frameSize": [
+        256,
+        320
+      ],
+      "frameCount": 70,
+      "fps": 12,
+      "duration": 6,
+      "pivot": [
+        128,
+        300
+      ],
+      "source": "assets/source/tide-picker-idle-v03/README.md",
+      "sha256": "a8c8e975b36a65693afff1bcef3b26958962318e6f47a0c3efc4d8d32ccfbf96",
+      "integrationStatus": "integrated",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/main.tscn",
+      "runtimeFile": "godot/WhalebellyRuins/assets/runtime/tide-picker-idle-v03/idle.tres",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "Agent技术与实景检查通过，用户审美待确认。完整原画按视频运动烘焙；70帧含时长保持，6秒循环；脚部固定、头盔/双叉/灯具刚性约束。仅替换主角Idle，非逐帧手绘，左向沿用控制器翻转。"
     }
   ]
 }

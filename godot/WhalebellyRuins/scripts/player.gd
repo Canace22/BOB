@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+const IDLE_FRAMES: SpriteFrames = preload("res://assets/runtime/tide-picker-idle-v03/idle.tres")
+const IDLE_PIVOT := Vector2(128, 300)
+const IDLE_ART_HEIGHT := 261.0
+
 var host: Node2D
 var facing: float = 1.0
 var attack_timer: float = 0.0
@@ -14,6 +18,7 @@ var clock: float = 0.0
 var last_safe: Vector2 = Vector2.ZERO
 var sprite: Sprite2D
 var art: Node2D
+var idle_sprite: AnimatedSprite2D
 var frames: Dictionary = {}
 var frame_anchors: Dictionary = {}
 var visual_scale: float = 0.4
@@ -60,10 +65,21 @@ func _ready() -> void:
 				frame_anchors[path] = Vector2(-texture.get_width()*0.5,-bounds.end.y)
 				if state == "idle" and i == 0: visual_scale = target_height/maxf(float(bounds.size.y),1.0)
 		if not list.is_empty(): frames[state] = list
+	idle_sprite = AnimatedSprite2D.new()
+	idle_sprite.name = "IdleAnimation"
+	idle_sprite.sprite_frames = IDLE_FRAMES
+	idle_sprite.centered = false
+	idle_sprite.offset = -IDLE_PIVOT
+	idle_sprite.scale = Vector2.ONE * target_height / IDLE_ART_HEIGHT
+	idle_sprite.visible = false
+	add_child(idle_sprite)
 	last_safe = position
 
 func _physics_process(dt: float) -> void:
-	if host.reference_visible or host.layer_solo >= 0: return
+	if host.reference_visible or host.layer_solo >= 0:
+		if idle_sprite != null: idle_sprite.pause()
+		if host.reference_visible: update_art()
+		return
 	clock += dt
 	if drop_timer>0.0:
 		drop_timer=maxf(0.0,drop_timer-dt)
@@ -163,13 +179,24 @@ func update_art() -> void:
 	if attack_timer > 0: state = "attack"
 	if hurt_timer > 0: state = "hit"
 	visual_state = state
-	var exact_idle: bool = state == "idle" or host.reference_visible or not host.capture_path.is_empty()
+	# Reference reconstruction keeps the authored cutout; normal gameplay uses the baked idle.
+	var reference_mode: bool = host.reference_visible or not host.capture_path.is_empty()
+	var animated_idle: bool = state == "idle" and not reference_mode and idle_sprite != null
+	var exact_idle: bool = reference_mode or (state == "idle" and not animated_idle)
+	if idle_sprite != null:
+		idle_sprite.visible = animated_idle
+		idle_sprite.scale.x = absf(idle_sprite.scale.x) * facing
+		idle_sprite.modulate.a = 0.45 if invulnerable > 0.0 and sin(clock * 30.0) > 0.0 else 1.0
+		if animated_idle:
+			if not idle_sprite.is_playing(): idle_sprite.play(&"idle")
+		else:
+			idle_sprite.stop()
 	if art != null:
 		art.scale.x = facing
-		art.visible = exact_idle or not frames.has(state)
+		art.visible = not animated_idle and (exact_idle or not frames.has(state))
 		art.modulate.a = 0.45 if invulnerable > 0.0 and sin(clock * 30.0) > 0.0 else 1.0
 	if sprite == null or frames.is_empty(): return
-	sprite.visible = not exact_idle or art == null
+	sprite.visible = not animated_idle and (not exact_idle or art == null)
 	if not sprite.visible: return
 	if not frames.has(state): state = "idle"
 	var list: Array = frames.get(state, [])
