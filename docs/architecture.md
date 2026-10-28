@@ -95,6 +95,14 @@ node tools/deploy-pages.mjs      # 导出并发布到 gh-pages 的 /godot/
 
 Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` 视为失败。Web 导出关闭线程与扩展，排除测试和工具源码；需要安装匹配版本的单线程 Web 模板。发布脚本更新现有 Pages 检出的 `godot/` 和根 `index.html`（来源 `game/pages/index.html`），默认跳转到 Godot，保留历史版本目录并正常推送；`--entry-only` 只更新根入口，沿用线上游戏包。`build.json` 记录游戏包源码提交，线上复核另见 [进度](../game/progress.md)。
 
+## Web 首屏资源
+
+`tools/godot.mjs export-web` 在 Godot 导出后执行 `tools/prepare-web.mjs`：为引擎和资源包生成带内容哈希的 gzip 文件，并把 `game/web/preload.js` 插入导出页。浏览器原生流式解压后仍以 `application/wasm` 提供给流式编译，加载进度显示实际压缩字节。`downloads.json` 记录原始与下载大小。
+
+`bob-web-downloads-v1` CacheStorage 仅缓存这两个静态启动文件；只清理这个缓存里过期的哈希，不触碰存档或其他版本。缓存不可用时走网络；没有 `DecompressionStream` 时使用保留的原始文件。此机制不依赖 Pages 设置自定义响应头。
+
+场景图保持原始分辨率和坐标，仅在 `.import` 设置有损 WebP 质量 0.8，原位图不改。中文字体使用工程文本生成的静态子集，见 [制作说明](../assets/source/noto-sans-sc/README.md)。`game/tests/web_startup.mjs` 独立测冷启动和同一上下文刷新，不能把本地服务耗时当线上改善。
+
 ## 从旧工程迁移的内容
 
 | 旧位置 | 新位置 |

@@ -37,6 +37,10 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 
 ## 已验证的恢复方式
 
+- 首屏性能：先用 `game/tests/web_startup.mjs` 记录线上冷/暖启动、Resource Timing 传输字节；HEAD 的未压缩长度不代表浏览器实际下载量。测速时避免其他下载/路线回归争用同一网络。
+- 导出后由 `tools/prepare-web.mjs` 生成 gzip 和内容哈希，`game/web/preload.js` 只接管两个启动文件并使用独立资源缓存；原始包保留供无解压 API 的浏览器回退。`STARTUP_FALLBACK=1` / `STARTUP_NO_CACHE=1` 分别验证解压缺失和缓存不可用。
+- 新增中文后按[字体制作说明](../../../assets/source/noto-sans-sc/README.md)重建子集并同步；字体覆盖测试必须通过。场景图压缩改 `.import`，不缩图或改裁片坐标；复核游戏实际截图。
+
 - 导出模板缺失：安装对应固定版本的官方 Web 单线程模板，再重新导出；不降级引擎或改成线程版绕过。
 - 首次导入依赖缺失：先确认清单源文件和 LFS 实体，再同步；UI Theme 在场景中加载，避免把尚未导入的字体设成项目启动主题。
 - 构建目录也会被 Godot 导入：命令入口在 `game/build/` 创建 `.gdignore`，导出预设再次排除 `build/*`；导出清单不能出现验收截图或旧导出资源，Git 忽略规则本身不会阻止打包。

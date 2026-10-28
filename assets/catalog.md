@@ -58,6 +58,8 @@
 
 中文 UI 使用 [Noto Sans SC](source/noto-sans-sc/README.md) 字体，原文件在 `runtime/fonts/`，SIL OFL 1.1 许可证随运行副本保留。字体属于 UI 依赖，不计入静态精灵数量。
 
+Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字生成子集并重命名，完整原字体保留；生成方式与哈希见上述字体说明。场景图只调整 Godot 导入压缩，制作源、像素尺寸和场景坐标保持原值，不计新增美术创作。
+
 ## 模型、动画与音频
 
 当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。

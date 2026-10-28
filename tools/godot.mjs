@@ -89,7 +89,9 @@ const commands = {
   'sync-art': () => importProject() || godot(['-s', 'res://tools/sync_art.gd']) || importProject(),
   'export-web': () => {
     mkdirSync(join(GAME, 'build', 'web'), { recursive: true });
-    return importProject() || godot(['--export-release', 'Web', 'build/web/index.html']);
+    const result = importProject() || godot(['--export-release', 'Web', 'build/web/index.html']);
+    if (result !== 0) return result;
+    return spawnSync(process.execPath, [join(ROOT, 'tools', 'prepare-web.mjs')], { stdio: 'inherit' }).status ?? 1;
   },
 };
 
