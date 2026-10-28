@@ -41,7 +41,7 @@ func run() -> void:
 	check("spawn_grounded",host.player.is_on_floor())
 	check("reference_display_removed",not env.has_node("CHARACTER"))
 	check("controller_owns_reference_art",host.player.art.get_node("PlayerArt/OriginalSilhouette").texture.resource_path.ends_with("CHARACTER.png"))
-	check("bubble_single_source",env.bubbles.size()==36 and not host.scenery.get_node("EnvironmentMotion/AmbientBubbles").visible)
+	check("bubble_single_source",env.bubbles.size()==56 and not host.scenery.get_node("EnvironmentMotion/AmbientBubbles").visible)
 	await screenshot("start")
 	await walk(110)
 	host.health=3

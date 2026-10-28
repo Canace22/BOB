@@ -68,7 +68,7 @@
   {
     "id": "ROAD",
     "scene": false,
-    "tex": "res://assets/foreground_edges/CLEAN-ROAD.png",
+    "tex": "res://assets/underbridge/ROAD-UNDERSIDE-RESTORED.png",
     "pos": [
       0,
       392
@@ -466,7 +466,7 @@
   {
     "id": "FOREGROUND-BACKING",
     "scene": false,
-    "tex": "res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png",
+    "tex": "res://assets/underbridge/FOREGROUND-BACKING-SOFT.png",
     "pos": [
       0,
       0
@@ -1074,5 +1074,35 @@
     "scene": false,
     "tex": "res://assets/foreground_edges/CORNER-BACKING.png",
     "kind": "static"
+  },
+  {
+    "id": "BUBBLE-ZONE-05",
+    "pos": [
+      0,
+      0
+    ],
+    "z": -15,
+    "scene": true,
+    "kind": "bubbles"
+  },
+  {
+    "id": "BUBBLE-ZONE-06",
+    "pos": [
+      0,
+      0
+    ],
+    "z": -15,
+    "scene": true,
+    "kind": "bubbles"
+  },
+  {
+    "id": "BUBBLE-ZONE-07",
+    "pos": [
+      0,
+      0
+    ],
+    "z": -15,
+    "scene": true,
+    "kind": "bubbles"
   }
 ]

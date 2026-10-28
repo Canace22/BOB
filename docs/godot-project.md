@@ -43,3 +43,7 @@ F5主入口的R1-01现在实例化参考图环境，角色由既有控制器接�
 ### 垂须动画母版
 
 R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可编辑母版及定向重建说明见[垂须资产](../assets/source/baleen-blender/README.md)。仍使用唯一工程及既有PreviewEnvironment.cmd，无新玩法。
+
+### 2026-10-29 桥下轮廓与气泡
+
+共享环境恢复原图桥下被裁短的枝条，并新增左侧岩缝、桥下、右侧三处循环气泡。独立包已同步；可在主地图或环境F6查看。[修改、原件及验收](../assets/source/xumen-underbridge-repair/README.md)。

@@ -84,7 +84,7 @@
       392
     ],
     "layer": 10.0,
-    "asset": "res://assets/foreground_edges/CLEAN-ROAD.png",
+    "asset": "res://assets/underbridge/ROAD-UNDERSIDE-RESTORED.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -669,7 +669,7 @@
       0
     ],
     "layer": -2,
-    "asset": "res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png",
+    "asset": "res://assets/underbridge/FOREGROUND-BACKING-SOFT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -2020,6 +2020,78 @@
     "layer": -1,
     "asset": "res://assets/foreground_edges/CORNER-BACKING.png",
     "motion": "static hidden backing patches",
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-05",
+    "position": [
+      330,
+      215,
+      65,
+      230
+    ],
+    "layer": -15,
+    "instances": 7,
+    "motion": "prewarmed rising bubbles, fade and recycle",
+    "asset": "res://assets/reference_environment/bubble.png",
+    "scene": "elements/BUBBLE-ZONE-05.tscn",
+    "parameters": {
+      "size": [
+        5,
+        9
+      ],
+      "speed": 14,
+      "opacity": 0.48
+    },
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-06",
+    "position": [
+      560,
+      485,
+      110,
+      170
+    ],
+    "layer": -15,
+    "instances": 7,
+    "motion": "prewarmed rising bubbles, fade and recycle",
+    "asset": "res://assets/reference_environment/bubble.png",
+    "scene": "elements/BUBBLE-ZONE-06.tscn",
+    "parameters": {
+      "size": [
+        7,
+        11
+      ],
+      "speed": 12,
+      "opacity": 0.5
+    },
+    "collision": "N/A",
+    "sound": "N/A"
+  },
+  {
+    "id": "BUBBLE-ZONE-07",
+    "position": [
+      925,
+      175,
+      70,
+      275
+    ],
+    "layer": -15,
+    "instances": 6,
+    "motion": "prewarmed rising bubbles, fade and recycle",
+    "asset": "res://assets/reference_environment/bubble.png",
+    "scene": "elements/BUBBLE-ZONE-07.tscn",
+    "parameters": {
+      "size": [
+        4,
+        8
+      ],
+      "speed": 15,
+      "opacity": 0.44
+    },
     "collision": "N/A",
     "sound": "N/A"
   }

@@ -43,7 +43,7 @@ func run() -> void:
 		for id in rigid:stationary=stationary and scene.get_node(id).transform==rigid[id]
 		for b in scene.bubbles:bounded=bounded and b.bounds.grow(4).has_point(b.node.position)
 	check("180s_simulation_rigid_anchors",stationary)
-	check("180s_bubbles_bounded_36_instances",bounded and scene.bubbles.size()==36)
+	check("180s_bubbles_bounded_56_instances",bounded and scene.bubbles.size()==56)
 	check("bubble_recycling",scene.recycled>200,scene.recycled)
 	scene.elapsed=5.0;scene.update_visuals()
 	check("individual_fish_move_visible_distance",fish.position.distance_to(fish.home)>20.0,fish.position.distance_to(fish.home))

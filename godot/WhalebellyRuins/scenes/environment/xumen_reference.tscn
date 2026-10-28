@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3]
+[gd_scene load_steps=109 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ROOF.png" id="5"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-L.png" id="6"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-R.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ROAD.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/underbridge/ROAD-UNDERSIDE-RESTORED.png" id="8"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/PORTAL.png" id="9"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/LAMP.tscn" id="10"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png" id="11"]
@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ENV-DEPTH.png" id="47"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png" id="48"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-01.tscn" id="49"]
-[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png" id="50"]
+[ext_resource type="Texture2D" path="res://assets/underbridge/FOREGROUND-BACKING-SOFT.png" id="50"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-01.tscn" id="51"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-02.tscn" id="52"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-03.tscn" id="53"]
@@ -109,6 +109,11 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-BOTTOM-RIGHT.tscn" id="fg_corner_1"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CORNER-BACKING.png" id="fg_corner_back"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/FRONT-BOTTOM-PAD.png" id="fg_corner_bottom"]
+
+
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-05.tscn" id="under_bubble_0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-06.tscn" id="under_bubble_1"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-07.tscn" id="under_bubble_2"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
@@ -877,3 +882,21 @@ texture = ExtResource("fg_corner_back")
 centered = false
 metadata/element_id = "FOREGROUND-CORNER-BACKING"
 metadata/motion = "static"
+
+[node name="BUBBLE-ZONE-05" parent="." instance=ExtResource("under_bubble_0")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-05"
+metadata/motion = "bubbles"
+
+[node name="BUBBLE-ZONE-06" parent="." instance=ExtResource("under_bubble_1")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-06"
+metadata/motion = "bubbles"
+
+[node name="BUBBLE-ZONE-07" parent="." instance=ExtResource("under_bubble_2")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-07"
+metadata/motion = "bubbles"

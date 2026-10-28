@@ -1,0 +1,16 @@
+{
+  "method": "Godot native Image alpha extraction; original RGB preserved; no new generation service",
+  "inputs": [
+    "xumen-reference-environment/original/reference.png",
+    "xumen-foreground-edges/master/CLEAN-ROAD.png",
+    "xumen-foreground-edges/master/CLEAN-FOREGROUND-BACKING.png",
+    "xumen-motion-elements/master/foreground-mask.svg"
+  ],
+  "outputs": [
+    "master/FOREGROUND-BACKING-SOFT.png",
+    "master/ROAD-UNDERSIDE-RESTORED.png"
+  ],
+  "bubble_art": "Existing assets/reference_environment/bubble.png",
+  "implementation": "tools/motion_elements/repair_underbridge.gd + tools/integrate_underbridge.py",
+  "cost": 0
+}

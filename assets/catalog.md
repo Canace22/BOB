@@ -89,3 +89,7 @@ IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光
 ### 左上和右下近景拆分
 
 新增FRONT-TOP-LEFT、FRONT-BOTTOM-RIGHT与有限补绘层；底部FRONT-01补32px余量。10张静态贴图清理对应烘焙前景，三个前景共用-0.14视差；103个活动元素。见[母版与说明](source/xumen-foreground-edges/README.md)。
+
+### 桥下原画轮廓与新增气泡
+
+当前106个环境ID，56个气泡实例；新增三个独立气泡区域，复用绘画气泡素材。ROAD-UNDERSIDE-RESTORED恢复旧道路蒙版遗漏的桥下枝条，FOREGROUND-BACKING-SOFT调整局部补底边缘。共享环境和R1-01同步；见[来源、修复与重建](source/xumen-underbridge-repair/README.md)。

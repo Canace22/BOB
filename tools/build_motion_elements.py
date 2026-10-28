@@ -147,3 +147,6 @@ if "--assemble" in sys.argv and (project/"assets/soft_light/UNDERWATER-SOFT-LIGH
 if "--assemble" in sys.argv and (root/"assets/source/xumen-foreground-edges/manifest.json").exists():
  import subprocess
  subprocess.run([sys.executable,str(root/"tools/integrate_foreground_edges.py")],check=True)
+if "--assemble" in sys.argv and (project/"assets/underbridge/FOREGROUND-BACKING-SOFT.png").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_underbridge.py")],check=True)
