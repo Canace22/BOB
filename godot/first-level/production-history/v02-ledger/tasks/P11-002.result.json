@@ -1,0 +1,28 @@
+{
+  "task_id": "P11-002",
+  "status": "pass",
+  "summary": "最终release2包通关/重载/普通启动通过，ZIP及73项摘要校验通过，接续记录更新。",
+  "artifacts": [
+    "docs/v02/delivery.md",
+    "RESUME-v02.md",
+    "README.md",
+    "evidence/v02/package-verification-release2.json"
+  ],
+  "checks": [
+    {
+      "id": "build",
+      "status": "pass",
+      "notes": "最终exe在build目录无--path独立运行五房通关与重载，hash与受测版本一致，包附许可证、操作说明，完整73项摘要/CRC检查通过。",
+      "evidence": [
+        "evidence/v02/release2-run/prototype.json",
+        "evidence/v02/release2-run/persistence.json",
+        "evidence/v02/release2-run.log",
+        "evidence/v02/package-verification-release2.json",
+        "evidence/v02/build-manifest-release2.json",
+        "evidence/v02/normal-smoke2.json",
+        "evidence/v02/normal-smoke2.log"
+      ],
+      "reviewer": "agent"
+    }
+  ]
+}

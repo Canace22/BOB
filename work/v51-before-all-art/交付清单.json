@@ -1,0 +1,351 @@
+{
+  "version": "V5.1",
+  "rooms": 36,
+  "edges": 39,
+  "doors": 78,
+  "platforms": 198,
+  "newPaintings": 3,
+  "structureSvgs": 42,
+  "checkpoints": 8,
+  "travel": 6,
+  "topologyChecksPassed": 16,
+  "browserInteractionTested": false,
+  "engineTested": false,
+  "files": [
+    {
+      "file": "地图规则与验收.md",
+      "bytes": 11736,
+      "sha256": "5b3726d67496317e3e544b72367aa37d192c7d96c7536c4409f0f2500b1dac33"
+    },
+    {
+      "file": "地图设计册.html",
+      "bytes": 474981,
+      "sha256": "041732326bc72f2d8e852742188144e9ee3e64a1f3b363d4e050c6af5d7a235c"
+    },
+    {
+      "file": "地图设计说明.md",
+      "bytes": 10544,
+      "sha256": "811cff46f4caadab5c211bc6d5a88f8f4da1e833f0d974296677661214976c61"
+    },
+    {
+      "file": "地图原画提示词.md",
+      "bytes": 124730,
+      "sha256": "f386fc802a089882f40f0e783fb368ea887602c90d905aeec2293e8898fd72c0"
+    },
+    {
+      "file": "房间设计手册.md",
+      "bytes": 48293,
+      "sha256": "2fefbe5ee0740c32ce0e5fcedec6f432234b6856a964554355884a0398fb5e3e"
+    },
+    {
+      "file": "阅读说明.txt",
+      "bytes": 578,
+      "sha256": "aa80b4c2e971c3069f7ce952df4c21d9b75e1501d04b835539d87af3439827c2"
+    },
+    {
+      "file": "atlas.js",
+      "bytes": 3507,
+      "sha256": "8a48101aab600899ce53d5faa519767d9ee65d0b391066e4ba3c60984d714722"
+    },
+    {
+      "file": "style.css",
+      "bytes": 7848,
+      "sha256": "022c5a74217c2d76cb26309609c9c9854cb71ba09532e69ee4a90a1751919112"
+    },
+    {
+      "file": "data/布局复核.json",
+      "bytes": 184,
+      "sha256": "f516de28c5c2f20cfb83f44ff8052c7cc1b406d3e06a79942168db05d4f86bda"
+    },
+    {
+      "file": "data/地图拓扑.json",
+      "bytes": 44981,
+      "sha256": "f83a9f73dc85b8ca51a7dd1bedddb1c5468aef5531574567375175b2745cc81b"
+    },
+    {
+      "file": "data/地图校验报告.md",
+      "bytes": 1718,
+      "sha256": "f0d5d9cfcdd6cd87bc5be1687fff0454bf504c0303fabce70aa33633c97e2b7c"
+    },
+    {
+      "file": "data/房间布局.json",
+      "bytes": 266322,
+      "sha256": "490756d7787f11b7f2d40d2c62df369af1ef18fd6927f0d4d514abc194f8a010"
+    },
+    {
+      "file": "data/拓扑验证结果.json",
+      "bytes": 2383,
+      "sha256": "a4e294f59c614b3d8c53c18d90cd1cff0088e6192a8bb6c5bdc99e18504ead66"
+    },
+    {
+      "file": "data/图册交互静态复核.json",
+      "bytes": 330,
+      "sha256": "29da7656f343d860fc17c0763354fe9b50caa6ef65f3ec24dd3d5d3366adfdea"
+    },
+    {
+      "file": "data/图册静态检查.json",
+      "bytes": 268,
+      "sha256": "e9cd47a29b957d569e963ae66fe0f4adea1f7e9643c714f7e4b1904591fab49d"
+    },
+    {
+      "file": "data/用户地图参考清单.txt",
+      "bytes": 24404,
+      "sha256": "1c3727bc524b9dc7e8da05a1203d517a53d34241032ecbb16201451e0cfd74af"
+    },
+    {
+      "file": "data/原画生成记录.json",
+      "bytes": 10090,
+      "sha256": "2c89398572dbf92c0fe5ba90bd14505eef72d3f2714509a47c309f92cb88efbc"
+    },
+    {
+      "file": "data/build-map-v51.cjs",
+      "bytes": 39854,
+      "sha256": "4e2449bcf4c99235f8f7687d26efc1f19a2ef5f052afafce2a1fae566c9931b4"
+    },
+    {
+      "file": "data/build-v51-rooms.cjs",
+      "bytes": 37207,
+      "sha256": "445599f762e00ad15f9605bc3d62f4da575055c7aaf00b6ebea810ac5dab68d9"
+    },
+    {
+      "file": "data/check-layout-v51.cjs",
+      "bytes": 1912,
+      "sha256": "be9081b00e9b3fc05fc06a8c81f591e60bdedeb20c1dfbdb56c42dd59bfa1b9f"
+    },
+    {
+      "file": "data/validate-map-v51.cjs",
+      "bytes": 8383,
+      "sha256": "5502c87afcda639ef830ab0a0d642b639d751f4dc4f312998b523367f08c1836"
+    },
+    {
+      "file": "data/verify-map-atlas-v51.cjs",
+      "bytes": 2232,
+      "sha256": "5687c82925bb690bc2828d4c2f6ef09e583da93a7f852d86dd492785a1ca50ac"
+    },
+    {
+      "file": "images/M01.png",
+      "bytes": 2794204,
+      "sha256": "13efd9ebd5aa12e0d433db45529c879576a4ed32137a953b537b764644081b28"
+    },
+    {
+      "file": "images/M02.png",
+      "bytes": 2724930,
+      "sha256": "b3dd82c261e6d4fcac6885f62cbbb58c45be7d7f4817386b1095a9ca805cbba7"
+    },
+    {
+      "file": "images/M03.png",
+      "bytes": 2831862,
+      "sha256": "833fd33ba28b2309e038fd589a98d5796008b11e1e2dc74d8714a65d2bca9f2d"
+    },
+    {
+      "file": "maps/世界结构.svg",
+      "bytes": 26085,
+      "sha256": "e3e50f3883584407c175e26f5b7ce9501d6334892c0a2aba7edfc564d49d08bb"
+    },
+    {
+      "file": "maps/R1_须门遗港_剖面.svg",
+      "bytes": 54998,
+      "sha256": "283e3670602c7735d4fb8b6da55b92950b7c86bf8885e8f3397d0331a31a063b"
+    },
+    {
+      "file": "maps/R2_肺心潮庭_剖面.svg",
+      "bytes": 47494,
+      "sha256": "874394e549b194aaf9b21beeae00f12c336c30f35b2bd8d6aa5b3c2c582b1825"
+    },
+    {
+      "file": "maps/R3_胃肠沉城_剖面.svg",
+      "bytes": 62913,
+      "sha256": "b4622cb66611273d6b4af2e09bae37eedb775b697feb6c14618614ae33f487e9"
+    },
+    {
+      "file": "maps/R4_鸣肋断脊_剖面.svg",
+      "bytes": 58277,
+      "sha256": "27d7f0224a1a89304182cb9363e5bd623b59e22dbcd7b4382d4089b1308fd52c"
+    },
+    {
+      "file": "maps/R5_耳海归墟_剖面.svg",
+      "bytes": 61081,
+      "sha256": "93fd71669afd3182a14592fa61347ddd43f8319282b405d72e1e52bf1284729e"
+    },
+    {
+      "file": "maps/rooms/R1-01.svg",
+      "bytes": 6416,
+      "sha256": "46d342ef3a74b9be45e2771514c05e582466375daf6cbdc6d0cc1e2c4c12f008"
+    },
+    {
+      "file": "maps/rooms/R1-02.svg",
+      "bytes": 10568,
+      "sha256": "f7aecd897229038ca083c7851cf42b0cca7a513c1ea3281a842a6b0018697d1e"
+    },
+    {
+      "file": "maps/rooms/R1-03.svg",
+      "bytes": 8281,
+      "sha256": "7f78df8bfe42497229c86d2bcaa89348876935d28405b493b4ab5457ae0535fc"
+    },
+    {
+      "file": "maps/rooms/R1-04.svg",
+      "bytes": 8045,
+      "sha256": "945333638dfed0750f5b13074c091b2c027fa8995937d185b7ac8a472b20815f"
+    },
+    {
+      "file": "maps/rooms/R1-05.svg",
+      "bytes": 7470,
+      "sha256": "55b1b007c0b76fea769580007ccff871eb42285cb74f62849249ebe5397822df"
+    },
+    {
+      "file": "maps/rooms/R1-06.svg",
+      "bytes": 6218,
+      "sha256": "3d81ed5ac2584c6fa6638b8482c91420b01ce38c3e33d4d79eaf1c76cecc2f72"
+    },
+    {
+      "file": "maps/rooms/R1-07.svg",
+      "bytes": 6816,
+      "sha256": "7e6b60ad202fd3137eca2279509c5f46cad7f593b6c966a7426379f25d48c1f0"
+    },
+    {
+      "file": "maps/rooms/R2-01.svg",
+      "bytes": 7952,
+      "sha256": "65a3602e8906ed00f67c0304edfc98f1bff95b0d33e26c700f9ffa2ab4fcfd8b"
+    },
+    {
+      "file": "maps/rooms/R2-02.svg",
+      "bytes": 9508,
+      "sha256": "80e4daf260543d57cc4bb7e1af9b7ccfa8de0c55478564305b34ce926eaa0a17"
+    },
+    {
+      "file": "maps/rooms/R2-03.svg",
+      "bytes": 6382,
+      "sha256": "1b4f769e937b2364fa4dc9564f70ac57ebc9f40b938fa69d49ca58191c4349c2"
+    },
+    {
+      "file": "maps/rooms/R2-04.svg",
+      "bytes": 8462,
+      "sha256": "5dd9d3120e766adf8937ea3cba9deb54dd41309b253ae4d3580a98f537211196"
+    },
+    {
+      "file": "maps/rooms/R2-05.svg",
+      "bytes": 7417,
+      "sha256": "349b6bb46df3e502c9f2d6bfc5f1fa19a7526be5a00464aea4a7da4cbfac21b2"
+    },
+    {
+      "file": "maps/rooms/R2-06.svg",
+      "bytes": 6547,
+      "sha256": "a2d055356b6f56f300b681c65b9a3952f9f05e7832dd6cd9773408239b30c702"
+    },
+    {
+      "file": "maps/rooms/R3-01.svg",
+      "bytes": 15606,
+      "sha256": "be71a149accc91998c1d5b20b9c93abdc26df3edcc8b664f48c998e5761fbf80"
+    },
+    {
+      "file": "maps/rooms/R3-02.svg",
+      "bytes": 5509,
+      "sha256": "bce1aea673597363ee359c0b51d31c600359ac3eaa8ff69951130544ed1b245e"
+    },
+    {
+      "file": "maps/rooms/R3-03.svg",
+      "bytes": 6153,
+      "sha256": "e979ac1f46e545cc05ab687c40a1ba1839e1a4cc30df778276c3e549b745d036"
+    },
+    {
+      "file": "maps/rooms/R3-04.svg",
+      "bytes": 6585,
+      "sha256": "69ff4cb7608fec6791d9ce7aba004719e190e2c80166c14488ed62b4c5a4a48f"
+    },
+    {
+      "file": "maps/rooms/R3-05.svg",
+      "bytes": 6747,
+      "sha256": "5c9c7204a60144e8f4879412b368b57bf2d58f0cb3fbc6f9ab462bb60a06e992"
+    },
+    {
+      "file": "maps/rooms/R3-06.svg",
+      "bytes": 9492,
+      "sha256": "e69a9043af23d38ed0185a81fcafa6493621c9775a9e0aeae758dc834ff76db2"
+    },
+    {
+      "file": "maps/rooms/R3-07.svg",
+      "bytes": 6367,
+      "sha256": "3e56c981a9c21cf2857f3a0eb30e3acbe37d6057d0bc20e88aaf5012b91747f8"
+    },
+    {
+      "file": "maps/rooms/R3-08.svg",
+      "bytes": 5329,
+      "sha256": "e148fa7aa8b4b746c68947fadf20114447ea5f07b12eb1de91fbc4437cc5cbd5"
+    },
+    {
+      "file": "maps/rooms/R4-01.svg",
+      "bytes": 5046,
+      "sha256": "72dd0edbdec595dd2d34b7f3d5256a4d6d93d0d36c546abf0558214f97242ca4"
+    },
+    {
+      "file": "maps/rooms/R4-02.svg",
+      "bytes": 10724,
+      "sha256": "cc0b2b86db7c1a897cd8d40ddafa9cd043a5e58d2861ca2d2d4bdc40eb2cedaa"
+    },
+    {
+      "file": "maps/rooms/R4-03.svg",
+      "bytes": 8141,
+      "sha256": "2c7389c4926c9580738a3ca629f3b21e3f56234d1156cf092c3155b46c876d2a"
+    },
+    {
+      "file": "maps/rooms/R4-04.svg",
+      "bytes": 9416,
+      "sha256": "1d6c939d1ef2360b0cf7ffc956cadd3e47b5be6f0148d4809b700ee89e9ba8d1"
+    },
+    {
+      "file": "maps/rooms/R4-05.svg",
+      "bytes": 9917,
+      "sha256": "b9b05497505aae5cc70acd3747f0b92e7cb425a00478b9dbedfd1dc6275c5ccd"
+    },
+    {
+      "file": "maps/rooms/R4-06.svg",
+      "bytes": 7446,
+      "sha256": "b7b5f89d8cf5d7eea68c301caaeae595f154ee1146847e7ed9f6fdc92b281ec1"
+    },
+    {
+      "file": "maps/rooms/R4-07.svg",
+      "bytes": 6418,
+      "sha256": "20ed73c42cf7d56fac6880ce11a0ddd0942134900661cdc9e4d5b5397c52c90f"
+    },
+    {
+      "file": "maps/rooms/R5-01.svg",
+      "bytes": 6930,
+      "sha256": "101e06a392b3b7bbb91eeb510eb01f6a314eb5dc8bbeffd8b72ff958876ba896"
+    },
+    {
+      "file": "maps/rooms/R5-02.svg",
+      "bytes": 9136,
+      "sha256": "9a39a78a75c42434b80e122a117903a293602ef0ecff9fcc7bb5b9bf523776f7"
+    },
+    {
+      "file": "maps/rooms/R5-03.svg",
+      "bytes": 9468,
+      "sha256": "59242b3cf22a1701f00e3bb2818c4bfe033c563c3110532d028c06377bb6adf8"
+    },
+    {
+      "file": "maps/rooms/R5-04.svg",
+      "bytes": 8655,
+      "sha256": "12fbd2edd3d9e207909f4f01da7a5b7f4eb9cba08c479daff1d38c2ddd4aa338"
+    },
+    {
+      "file": "maps/rooms/R5-05.svg",
+      "bytes": 5296,
+      "sha256": "3be392b7cde3eee7fa42f203f81dc257060dded7ef891190f7f56350f6558747"
+    },
+    {
+      "file": "maps/rooms/R5-06.svg",
+      "bytes": 7428,
+      "sha256": "63f8149c656bdebab4bf18de087bc633462dc83aa2b7f2abae615c7c62ced4ba"
+    },
+    {
+      "file": "maps/rooms/R5-07.svg",
+      "bytes": 8144,
+      "sha256": "41c55727aaa795c0e2a9935317544ccb1db7fca49473a8d5f53f51e78df13972"
+    },
+    {
+      "file": "maps/rooms/R5-08.svg",
+      "bytes": 4908,
+      "sha256": "bf375d0b35e315057f8175d1e7eed3e3534b32ce6dd8023009b45907ca28e2a6"
+    }
+  ]
+}

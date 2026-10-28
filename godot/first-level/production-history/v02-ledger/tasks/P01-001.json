@@ -1,0 +1,43 @@
+{
+  "task_id": "P01-001",
+  "stage": "P01",
+  "project_root": "G:\\鲸落万物生\\godot\\first-level",
+  "config_hash": "31530b3106b8cd1233a90cbbf6424011d07d99badb51ec58c2d675720f740010",
+  "input_snapshot": {
+    "evidence/v02/import-gameplay.log": "8f9c395ef7cb4b74559defb29e59657926cefeb4478607c99b03a4ddfc99311f",
+    "evidence/v02/environment-review.md": "7aa34957632a59aad06e00b4ab87a9817c2bc15875d6670c2ef43bbf792c80f6",
+    "assets/source/v02/prompt.json": "b50a4b05cf5f5977c874b7aa0e0364feda8e37fe1df0c7aba6dcd7a5a2a25852",
+    "docs/v02/environment.json": "7059b7133651b5e2b9cf40cdd6341a06720b74d5d667b3c10de3ef0a4c4a96ae",
+    "docs/v02/input-snapshot.json": "7ff9c01bf13c0a16a4814041a30639b4efd80ec9715c9cbc55680a077400eec4"
+  },
+  "contract": {
+    "id": "P01",
+    "name": "规格与资产合同",
+    "depends_on": [
+      "P00"
+    ],
+    "inputs": [
+      "当前需求、已通过基线、V5.2设计原图"
+    ],
+    "input_files": [
+      "docs/v02/input-snapshot.json"
+    ],
+    "outputs": [
+      "docs/v02/specification.md",
+      "docs/v02/art-standard.md",
+      "docs/v02/asset-plan.json",
+      "docs/v02/level-map.svg"
+    ],
+    "checks": [
+      {
+        "id": "spec",
+        "kind": "technical",
+        "text": "spec实际验收并保留证据"
+      }
+    ],
+    "prompt": "复核实际输入，具体化任务指令并执行；保留不可变快照和真实证据，失败修复后复验。",
+    "on_pass": [],
+    "on_fail": "记录复现，局部返修；不通过删除功能凑通过。"
+  },
+  "instruction_path": ".production/tasks/P01-001.md"
+}

@@ -18,6 +18,17 @@
 
 ## 快速开始
 
+### Godot 工程与制作工作区
+
+原同级 `godot/`、`work/` 已完整迁入本仓库。Godot 工程入口为
+`godot/first-level/project.godot`、`godot/first-level-artmatch/project.godot`
+和 `godot/first-level-v02-graybox/project.godot`；制作脚本位于 `work/`。
+`outputs/`、`builds/` 仍在 BOB 的上一级目录。
+
+大型素材及工具二进制使用 Git LFS。克隆后运行 `git lfs install`、`git lfs pull`。
+`work/wan22-production/` 按要求仅保留本地，不提交模型、环境、脚本或归档。
+详见 [迁移与提交范围](docs/workspace-migration.md)。
+
 需要 Node.js。
 
 V2 原画版（Node.js 18+，无需安装依赖）：
@@ -72,6 +83,8 @@ npm run deploy
 
 ```
 BOB/
+├── godot/                 # 三个 Godot 工程，含资源、制作记录与缓存
+├── work/                  # 制作脚本、素材、工具的本地完整目录
 ├── assets/                # 美术资源入口、台账、制作源与游戏导出资源
 ├── docs/
 │   ├── 鲸腹遗城原画集/     # 第一版与 V2 原画、原画册、玩法设计及提示词

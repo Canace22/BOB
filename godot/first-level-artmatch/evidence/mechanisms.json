@@ -1,0 +1,108 @@
+{
+	"passed": 10,
+	"tests": [
+		{
+			"events": 1,
+			"name": "tongue_visual_collision_same_depression",
+			"pass": true,
+			"player_y": 658.605163574219,
+			"sag_px": 42.0,
+			"shader_px": 42.0
+		},
+		{
+			"drop": 0.0,
+			"name": "tongue_recovers_after_unload",
+			"pass": true
+		},
+		{
+			"name": "boss_door_initially_closed",
+			"pass": true
+		},
+		{
+			"name": "boss_door_opens_visually",
+			"pass": true
+		},
+		{
+			"name": "boss_door_reentry_preserves_state",
+			"pass": true
+		},
+		{
+			"name": "room02_four_door_areas_three_rings",
+			"pass": true
+		},
+		{
+			"events": [
+				{
+					"data": {
+						"room": "R1-04",
+						"spawn": [
+							380.0,
+							708.0
+						]
+					},
+					"event": "room_enter",
+					"seq": 9,
+					"time": 6.183
+				},
+				{
+					"data": {
+						"room": "R1-02",
+						"spawn": [
+							1060.0,
+							650.0
+						]
+					},
+					"event": "room_enter",
+					"seq": 10,
+					"time": 6.183
+				},
+				{
+					"data": {
+						"target": [
+							1124.0,
+							586.0
+						]
+					},
+					"event": "anchor",
+					"seq": 11,
+					"time": 6.325
+				},
+				{
+					"data": {
+						"available": true,
+						"id": "collect",
+						"muted": false
+					},
+					"event": "sound",
+					"seq": 12,
+					"time": 6.453
+				},
+				{
+					"data": {
+						"x": 1124.0,
+						"y": 531.0
+					},
+					"event": "ring_attached",
+					"seq": 13,
+					"time": 6.453
+				}
+			],
+			"name": "anchor_has_event_and_pulse",
+			"pass": true,
+			"pulse": 0.547335333333333
+		},
+		{
+			"name": "reward_independently_floats",
+			"pass": true
+		},
+		{
+			"name": "reward_hides_on_pickup",
+			"pass": true
+		},
+		{
+			"name": "reward_reentry_preserves_state",
+			"pass": true
+		}
+	],
+	"total": 10
+}

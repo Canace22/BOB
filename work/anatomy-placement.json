@@ -1,0 +1,1258 @@
+{
+  "version": "V5.2 anatomy revision proposal",
+  "scale": {
+    "fictional": true,
+    "species": "虚构古代巨型须鲸",
+    "whaleLengthM": 120,
+    "heroHeightM": 0.3,
+    "bodyToHero": 400,
+    "roomWidthSumU": 1235,
+    "roomWidthSumM": 370.5,
+    "note": "120m是本原创IP的虚构设计尺寸；现实蓝鲸约30m级。总房宽不可作为体长：局部地图分布于器官表面、侧层和回折路线，轴向投影与房间横轴不同；不声称统一无缝医学剖面。"
+  },
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "longitudinalBandM": [
+        3,
+        10
+      ],
+      "site": "口角外侧／下颌前段",
+      "vertical": "靠海床腹外侧",
+      "formation": "口角旧撕裂，位于鲸体外缘而非正常嘴缝凭空破墙",
+      "landmark": "皮肤-脂层-肌层断面和远处上颚须列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "longitudinalBandM": [
+        8,
+        18
+      ],
+      "site": "口腔侧壁／上颚鲸须下缘",
+      "vertical": "口腔中层",
+      "formation": "真正口腔腔隙；鲸须只从上颚垂下",
+      "landmark": "成排垂须向深处缩小，不画成全身吊须",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "longitudinalBandM": [
+        12,
+        23
+      ],
+      "site": "舌体背面",
+      "vertical": "口腔腹侧",
+      "formation": "舌面与口底之间可见起伏台面",
+      "landmark": "跨数屏的大舌脊，远处须筛仍可辨",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "longitudinalBandM": [
+        20,
+        29
+      ],
+      "site": "舌根后方／口咽入口",
+      "vertical": "头部后腹侧",
+      "formation": "负壳蟹占据咽前宽平台，首领不是长在食管壁里",
+      "landmark": "头顶软腭与后方收窄咽口",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "longitudinalBandM": [
+        27,
+        39
+      ],
+      "site": "咽后段至食管前段",
+      "vertical": "颈胸交界内侧",
+      "formation": "塌陷食管纵裂边缘与共生育窝；不是健康食管张成洞穴",
+      "landmark": "纵向肌纹与向尾侧收束的食管壁",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "longitudinalBandM": [
+        21,
+        29
+      ],
+      "site": "头顶喷气孔内缘／鼻道上段",
+      "vertical": "头部背侧",
+      "formation": "鼻孔遗迹被聚落回流闩改造成维修口；不再呼吸",
+      "landmark": "双喷气孔隔壁、向体表透入的冷海光",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "longitudinalBandM": [
+        12,
+        21
+      ],
+      "site": "上颚须根附着面附近",
+      "vertical": "口腔高侧层",
+      "formation": "须板脱落与衬组织剥离形成的小口袋",
+      "landmark": "须根排列、修索红结；没有牙列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-01",
+      "name": "育床",
+      "longitudinalBandM": [
+        39,
+        47
+      ],
+      "site": "横膈前侧／肺后缘胸膜面",
+      "vertical": "胸腔后背侧",
+      "formation": "肺组织外缘的胸膜剥离空间；育床是后来生物",
+      "landmark": "横膈破口在身后、肺叶表面在身前",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-02",
+      "name": "双层肺膜",
+      "longitudinalBandM": [
+        35,
+        47
+      ],
+      "site": "肺叶表面与剥离胸膜之间",
+      "vertical": "胸腔背外侧",
+      "formation": "两个层面是折叠肺缘与脱层胸膜，不是两间肺泡",
+      "landmark": "巨大肺表面曲率与远处肋影",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-03",
+      "name": "心室观察台",
+      "longitudinalBandM": [
+        32,
+        40
+      ],
+      "site": "心包外缘观察台",
+      "vertical": "胸腔前腹侧",
+      "formation": "从胸膜破口降到纵隔，再沿心包外侧接近",
+      "landmark": "上方肺轮廓、下方已死心肌与心包缺口",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-04",
+      "name": "血巢潮群",
+      "longitudinalBandM": [
+        30,
+        39
+      ],
+      "site": "破裂心包及心室断壁旁",
+      "vertical": "胸腔前腹侧",
+      "formation": "群体生物利用静止心室残壁筑巢；心脏不跳动",
+      "landmark": "厚心肌断面、断裂腱索与血巢生物群",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-05",
+      "name": "回流出口",
+      "longitudinalBandM": [
+        28,
+        39
+      ],
+      "site": "前纵隔／气管旁回流廊",
+      "vertical": "胸腔前背侧至颈后",
+      "formation": "从心包侧裂口离开心区，沿气管外缘上行至鼻道破口",
+      "landmark": "已死气管环与头向上行地标；不是心室直插喷气孔",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R2-06",
+      "name": "最后呼吸囊",
+      "longitudinalBandM": [
+        39,
+        47
+      ],
+      "site": "肺边缘密闭褶袋的破口",
+      "vertical": "胸腔后背侧高层",
+      "formation": "失气的残肺褶与胸膜剥离形成选修空间；名字是旧称",
+      "landmark": "多级膜台与同一肺叶远景，不新增会呼吸的囊",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-01",
+      "name": "胃枢",
+      "longitudinalBandM": [
+        45,
+        58
+      ],
+      "site": "食管末端／前胃及胃周空间",
+      "vertical": "横膈后方的前腹腔",
+      "formation": "胃枢坐落在前胃纵裂边缘，部分路线沿胃壁外侧",
+      "landmark": "头向食管束、前方横膈轮廓、向尾的胃褶",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-02",
+      "name": "漂台阀",
+      "longitudinalBandM": [
+        51,
+        62
+      ],
+      "site": "前胃至后胃区的壁褶边缘",
+      "vertical": "腹腔中层",
+      "formation": "局部破损胃壁与聚落阀导流，不是活胃分泌",
+      "landmark": "厚软褶、固定两岸与机关壳片",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-03",
+      "name": "肝叶灯罩",
+      "longitudinalBandM": [
+        49,
+        60
+      ],
+      "site": "肝叶外缘／胃腹侧间隙",
+      "vertical": "前腹腔腹侧",
+      "formation": "穿出胃壁旧裂缝，走肝叶表面邻近空间；不可画肝内空洞",
+      "landmark": "连续实心肝叶在背景，游玩台在外表面",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-04",
+      "name": "脂槽刹车",
+      "longitudinalBandM": [
+        55,
+        67
+      ],
+      "site": "肠系膜及脂肪沉积槽",
+      "vertical": "腹腔腹外侧",
+      "formation": "沿结缔组织膜与营养沉积移动，不穿完整肝脏",
+      "landmark": "脂层断面、壳掩体及外露膜索",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-05",
+      "name": "肠入口",
+      "longitudinalBandM": [
+        60,
+        71
+      ],
+      "site": "胃出口附近的肠段破口",
+      "vertical": "腹腔中后段",
+      "formation": "先沿胃外缘到肠的纵裂口，再在入口取得锚定",
+      "landmark": "卷曲肠管外形与纵裂边，不把肠画成无端的大门",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-06",
+      "name": "迁居搬盘",
+      "longitudinalBandM": [
+        64,
+        78
+      ],
+      "site": "回折肠袢／系膜层间",
+      "vertical": "腹腔后半腹侧",
+      "formation": "沿同一回折肠袢和系膜上的搬盘路线",
+      "landmark": "前后两层肠袢、膜桥、海水侵入的酸性微环境槽",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-07",
+      "name": "搬壳母蟹",
+      "longitudinalBandM": [
+        58,
+        71
+      ],
+      "site": "向头回折的肠袢与前胃外侧邻接处",
+      "vertical": "腹腔侧层",
+      "formation": "肠袢向头回折，母蟹筑巢靠近胃外壁；两者靠近不等于天然相通",
+      "landmark": "身后肠袢回弯、头侧胃壁大曲率，展示可开旧破口",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R3-08",
+      "name": "胃顶沉积袋",
+      "longitudinalBandM": [
+        47,
+        58
+      ],
+      "site": "前胃穹顶的沉积褶袋",
+      "vertical": "前腹腔高层",
+      "formation": "前胃同器官壁的高褶与破损衬层，不是新器官",
+      "landmark": "向下可见胃枢的同一大壁褶",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-01",
+      "name": "组合门",
+      "longitudinalBandM": [
+        48,
+        58
+      ],
+      "site": "腹腔背壁／横膈背外侧缺口",
+      "vertical": "身体背侧内缘",
+      "formation": "从胃外侧撕裂上到椎旁软组织剥离廊；不是胃通骨髓",
+      "landmark": "腹腔软组织在下，胸腰椎外侧在上",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-02",
+      "name": "低骨训练",
+      "longitudinalBandM": [
+        55,
+        67
+      ],
+      "site": "胸腰交界椎体外侧",
+      "vertical": "椎旁背外侧",
+      "formation": "沿显露椎体与肋根外侧自然相邻地面",
+      "landmark": "巨大椎体凸缘、近大远小椎列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-03",
+      "name": "上锚路线",
+      "longitudinalBandM": [
+        63,
+        78
+      ],
+      "site": "腰椎侧上缘／棘突外侧",
+      "vertical": "椎旁高路线",
+      "formation": "上路借外侧骨缘和预置锚件，始终不进入椎管",
+      "landmark": "向尾缩小的椎列与下方可见的并行低路",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-04",
+      "name": "下菌毯路线",
+      "longitudinalBandM": [
+        63,
+        78
+      ],
+      "site": "椎体下外侧／退化肌膜沟",
+      "vertical": "椎旁低路线",
+      "formation": "与上路隔高度而不隔一整器官，低路由外露肌腱面通行",
+      "landmark": "腰椎底缘、菌毯、无新肋骨的后躯",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-05",
+      "name": "悬脊鸣贝",
+      "longitudinalBandM": [
+        74,
+        86
+      ],
+      "site": "后腰椎外侧断裂平台",
+      "vertical": "椎旁中层",
+      "formation": "上下路线在同一椎旁宽平台汇合，双贝附着骨面",
+      "landmark": "共享大椎体及长尺度外伤窗",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-06",
+      "name": "稳定交通椎",
+      "longitudinalBandM": [
+        83,
+        94
+      ],
+      "site": "腰尾交界外侧分流台",
+      "vertical": "椎旁背侧",
+      "formation": "此处有向头长距离修索回廊和向尾的短廊，都是椎骨外侧",
+      "landmark": "朝头方向完整椎列消失点与朝尾方向渐细椎列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R4-07",
+      "name": "修索小室",
+      "longitudinalBandM": [
+        58,
+        68
+      ],
+      "site": "胸腰椎旁的旧肌腱褶室",
+      "vertical": "椎旁侧袋",
+      "formation": "训练房附近外侧肌腱剥离袋，固定环由聚落安装",
+      "landmark": "断绳透光孔、同一椎体背面；不是骨内部的城",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-01",
+      "name": "三槽记忆",
+      "longitudinalBandM": [
+        24,
+        34
+      ],
+      "site": "后颅底外侧／枕区到耳区的边缘",
+      "vertical": "头部后侧",
+      "formation": "长回廊尽头沿颈椎外缘到枕骨侧面，再进入创伤开口",
+      "landmark": "枕部大曲面与耳骨方位提示；不是内耳管入口",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-02",
+      "name": "安全池",
+      "longitudinalBandM": [
+        23,
+        32
+      ],
+      "site": "耳骨周围软组织剥离腔",
+      "vertical": "头部后下外侧",
+      "formation": "安全池来自颅底损伤后的积水凹部，A5共生物后生",
+      "landmark": "完整耳骨轮廓作为远地标，游玩在其外周",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-03",
+      "name": "薄缝训练",
+      "longitudinalBandM": [
+        22,
+        31
+      ],
+      "site": "耳骨外周结缔膜褶",
+      "vertical": "头部侧腹层",
+      "formation": "穿局部新生共生膜短缝；不是穿透硬颅骨",
+      "landmark": "膜缝长≤1.5U，厚骨在旁但不可穿",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-04",
+      "name": "缄声覆膜",
+      "longitudinalBandM": [
+        22,
+        31
+      ],
+      "site": "耳骨旁暴露的颅底骨面",
+      "vertical": "头部侧腹层",
+      "formation": "覆膜Boss附着在骨面与软组织缺损边；不住在放大的耳蜗里",
+      "landmark": "致密耳骨与宽颅底为巨物地标，战斗台在外面",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-05",
+      "name": "最后静默",
+      "longitudinalBandM": [
+        23,
+        32
+      ],
+      "site": "耳区创伤腔的后侧声槽台",
+      "vertical": "头部后侧",
+      "formation": "Boss后方沿同一外周腔隙回到短缝侧，只是邻接绕行",
+      "landmark": "同一耳骨远景换角度，声纹由聚落刻/生物附着",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-06",
+      "name": "记忆侧囊",
+      "longitudinalBandM": [
+        23,
+        31
+      ],
+      "site": "耳区软膜侧袋",
+      "vertical": "头部侧层",
+      "formation": "主腔旁的剥离膜袋藏收集品，不把耳蜗当第二洞城",
+      "landmark": "带记忆沉积的软膜盲端及对侧微光",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-07",
+      "name": "尾根观察",
+      "longitudinalBandM": [
+        97,
+        108
+      ],
+      "site": "尾柄外侧／尾椎渐细段",
+      "vertical": "后躯靠海床侧",
+      "formation": "由腰尾外廊沿渐细尾椎到幼体避流窝",
+      "landmark": "细尾椎在近端，向尾鳍逐渐转为纤维组织",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    {
+      "id": "R5-08",
+      "name": "归海释放槽",
+      "longitudinalBandM": [
+        108,
+        120
+      ],
+      "site": "尾柄末端至尾鳍裂缘",
+      "vertical": "尾端体表与外海交界",
+      "formation": "释放槽是纤维组织裂谷与聚落导流口，向外海开口",
+      "landmark": "远海、尾鳍轮廓、密实纤维层；尾鳍瓣内不长骨架",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    }
+  ],
+  "edges": [
+    {
+      "from": "R1-01",
+      "to": "R1-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E01",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "创伤腔连续",
+      "anatomyTransition": "沿口角创口边缘入真正口腔侧壁；皮脂断面逐渐换为口腔衬层。"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E02",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "天然邻接",
+      "anatomyTransition": "从鲸须下缘下降到舌背，须筛仍在头顶；这是同一口腔内换层。"
+    },
+    {
+      "from": "R1-03",
+      "to": "R1-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E03",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "天然邻接",
+      "anatomyTransition": "沿舌背向头后方来到舌根口咽前庭，不穿器官壁。"
+    },
+    {
+      "from": "R1-04",
+      "to": "R1-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R1胜利后开放出口",
+      "completionFlags": [
+        "BOSS_R1"
+      ],
+      "id": "E04",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "天然腔道＋分解损伤",
+      "anatomyTransition": "越过被蟹阻挡的咽前台，沿塌陷食管纵裂边进入育窝；管壁在画面连续。"
+    },
+    {
+      "from": "R1-05",
+      "to": "R3-01",
+      "requires": [
+        "A1"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E05",
+      "requiresAll": [
+        "A1"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "天然消化道走向＋纵裂边通行",
+      "anatomyTransition": "从咽后食管沿头向尾下降，穿横膈食管裂孔区域到前胃入口；实际可走空间来自死后管壁纵裂，不把正常窄食管画成大厅。长过渡留食管纹与横膈轮廓。"
+    },
+    {
+      "from": "R2-01",
+      "to": "R2-02",
+      "requires": [
+        "A2"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E06",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "同器官外表面邻接",
+      "anatomyTransition": "育床在肺后缘，沿剥离胸膜上行到肺叶外侧双层台；不是进入肺泡。"
+    },
+    {
+      "from": "R2-02",
+      "to": "R2-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E07",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "胸腔内损伤过渡",
+      "anatomyTransition": "离开肺叶表面，经胸膜开口沿纵隔下降到心包外缘；用背侧肺→腹侧心位置变化解释。"
+    },
+    {
+      "from": "R2-03",
+      "to": "R2-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E08",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "破口进入",
+      "anatomyTransition": "从心包外观察台，经已破裂心包边进入心室断壁旁的群体巢；完整心包不能凭空相通。"
+    },
+    {
+      "from": "R2-04",
+      "to": "R2-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "completionFlags": [
+        "BOSS_R2"
+      ],
+      "requiresCompletion": "BOSS_R2胜利后开放出口",
+      "id": "E09",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "破口离开＋胸腔转向",
+      "anatomyTransition": "从心室断壁旁经同侧心包大破口返回前纵隔，再上到气管旁回廊；血巢不通过血管直达鼻孔。"
+    },
+    {
+      "from": "R3-01",
+      "to": "R2-01",
+      "requires": [
+        "A1"
+      ],
+      "kind": "branch",
+      "evidence": "V4区域连通图＋R3胃枢双出口",
+      "note": "",
+      "bidirectional": true,
+      "id": "E10",
+      "requiresAll": [
+        "A1"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "横膈/胃壁死后破口＋修补通道",
+      "anatomyTransition": "从前胃外侧裂口沿横膈后面上行，经横膈旧撕裂到肺后缘胸膜面；这里不是胃食管天然分叉去肺。"
+    },
+    {
+      "from": "R3-01",
+      "to": "R3-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E11",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "同器官褶层",
+      "anatomyTransition": "从前胃纵裂边沿大胃褶到漂台阀；阀为聚落安装的海水导流物。"
+    },
+    {
+      "from": "R3-02",
+      "to": "R3-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E12",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "胃壁破口＋腹腔表面",
+      "anatomyTransition": "从胃褶旧裂口穿出胃腔到肝叶上/外表面邻近空间；不能在肝内挖空长走廊。"
+    },
+    {
+      "from": "R3-03",
+      "to": "R3-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E13",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "腹膜表面邻接",
+      "anatomyTransition": "沿肝外缘邻近结缔组织到系膜脂质沉积槽；远景保留肝的实心大形。"
+    },
+    {
+      "from": "R3-04",
+      "to": "R3-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E14",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "腹腔邻接＋肠管破口",
+      "anatomyTransition": "沿系膜回到胃出口附近肠段的纵裂口，在入槽前授A3；没有肝通肠的正常隧道。"
+    },
+    {
+      "from": "R3-05",
+      "to": "R3-06",
+      "requires": [
+        "A3"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E15",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "肠袢纵裂／系膜表面",
+      "anatomyTransition": "沿同一回折肠袢及其系膜跨越沉积槽；挂环贴裂缘布设，非管腔内的任意吊点。"
+    },
+    {
+      "from": "R3-06",
+      "to": "R3-07",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E16",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "肠袢连续",
+      "anatomyTransition": "肠袢向头回折到母蟹占据的侧腔；外景能看到回弯而不是继续无限向尾。"
+    },
+    {
+      "from": "R3-07",
+      "to": "R3-01",
+      "requires": [],
+      "kind": "shortcut",
+      "evidence": "V4/V4.2母蟹胜利开食道回环",
+      "note": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R3且从R3-07完成开闩",
+      "id": "E17",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_ESOPHAGUS",
+        "from": "R3-07",
+        "requiresAll": [],
+        "completionFlags": [
+          "BOSS_R3"
+        ],
+        "action": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。",
+        "persistent": true
+      },
+      "anatomyType": "分解破口＋聚落改造捷径",
+      "anatomyTransition": "母蟹房与前胃外壁因回折肠袢在腹腔中邻近；开闩后沿系膜外侧旧维护坡进入胃壁既有破口返胃枢。旧名“食道捷径”应在说明中改称“胃侧回折捷径（旧名食道闩）”，不是肠末端通食管的天然捷径。"
+    },
+    {
+      "from": "R3-01",
+      "to": "R4-01",
+      "requires": [
+        "P",
+        "A3"
+      ],
+      "kind": "gate",
+      "evidence": "V4门槛表定位 R3-01 肋侧强流闸",
+      "note": "",
+      "bidirectional": true,
+      "id": "E18",
+      "requiresAll": [
+        "P",
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "肋侧强流闸",
+        "firstInteractionAt": "R3-01",
+        "permanent": true,
+        "action": "核验P+A3后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomyType": "腹腔背外侧创伤＋修补闸",
+      "anatomyTransition": "胃枢外缘上行，穿腹壁/横膈背外侧撕裂到椎旁外廊；P控制的是海水流，A3拉的是聚落旧闸。不是进入脊髓或骨髓。"
+    },
+    {
+      "from": "R4-01",
+      "to": "R4-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E19",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "椎旁外侧连续",
+      "anatomyTransition": "沿显露椎体外缘向尾来到训练台；远景椎列连续。"
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-03",
+      "requires": [
+        "A4"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E20",
+      "requiresAll": [
+        "A4"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "同椎旁区域分层",
+      "anatomyTransition": "从训练台升上椎体侧上缘；上路通过迎珠/一次空冲连接，不能画入椎管。"
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-04",
+      "requires": [
+        "A3"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E21",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "同椎旁区域分层",
+      "anatomyTransition": "从训练台沿外侧肌膜沟下降到固定环低路线；上路仍可在远景看见。"
+    },
+    {
+      "from": "R4-03",
+      "to": "R4-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E22",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "外侧上路汇合",
+      "anatomyTransition": "沿后腰椎侧上缘下降到双贝所在宽骨台，汇入共同战斗房。"
+    },
+    {
+      "from": "R4-04",
+      "to": "R4-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E23",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "外侧下路汇合",
+      "anatomyTransition": "沿后腰椎下缘上到同一双贝宽台；上/下路线只是高度不同，不跨越隐藏器官。"
+    },
+    {
+      "from": "R4-05",
+      "to": "R4-06",
+      "requires": [
+        "B"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E24",
+      "requiresAll": [
+        "B"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "椎旁纵向连续",
+      "anatomyTransition": "沿后腰椎外廊到腰尾交界分流台，渐少软组织和变细椎列给尾向感。"
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-01",
+      "requires": [
+        "B",
+        "A4",
+        "A2"
+      ],
+      "kind": "gate",
+      "evidence": "V4区域连通图＋正文头耳路线",
+      "note": "",
+      "bidirectional": true,
+      "id": "E25",
+      "requiresAll": [
+        "B",
+        "A4",
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "头耳三槽门",
+        "firstInteractionAt": "R4-06",
+        "permanent": true,
+        "action": "核验B+A4+A2后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomyType": "长距离椎旁维护回廊",
+      "anatomyTransition": "从腰尾交界沿椎柱外侧向头回行约60–70m，经胸椎外缘、颈后外侧至枕骨侧面，再到耳骨周围创伤入口。它不是相邻两房共享一堵墙，也不是骨内天然直管；用连续背景长廊/过渡镜头明确行程。仍为既有E25，不新增战斗房。"
+    },
+    {
+      "from": "R5-01",
+      "to": "R5-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E26",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "后颅底外侧损伤腔邻接",
+      "anatomyTransition": "从枕骨侧入口沿耳骨外周来到安全池；不把耳蜗扩大到整张地图。"
+    },
+    {
+      "from": "R5-02",
+      "to": "R5-03",
+      "requires": [
+        "A5"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E27",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "外周软膜连续",
+      "anatomyTransition": "安全池旁剥离软膜形成短缝练习区，硬颅骨始终封闭。"
+    },
+    {
+      "from": "R5-03",
+      "to": "R5-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E28",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "创伤腔中的邻接平台",
+      "anatomyTransition": "沿膜褶到覆膜附着的暴露颅底骨面，耳骨保持远景相同地标。"
+    },
+    {
+      "from": "R5-04",
+      "to": "R5-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "completionFlags": [
+        "BOSS_R5"
+      ],
+      "requiresCompletion": "BOSS_R5胜利后开放出口",
+      "id": "E29",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "同一耳周腔绕行",
+      "anatomyTransition": "击败覆膜后沿骨面外周进入其后声槽台；S仍在R5-04安全静默取得。"
+    },
+    {
+      "from": "R5-03",
+      "to": "R5-05",
+      "requires": [
+        "A5"
+      ],
+      "kind": "shortcut",
+      "evidence": "V5具体挂接提案；V4只规定双向捷径",
+      "note": "覆膜胜后从最后静默侧潜过短柔膜缝，E松双环闩；薄缝训练侧只能看见锁环。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R5且从R5-05完成开闩",
+      "id": "E30",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_EAR",
+        "from": "R5-05",
+        "requiresAll": [
+          "A5"
+        ],
+        "completionFlags": [
+          "BOSS_R5"
+        ],
+        "action": "覆膜胜后从最后静默侧潜过短柔膜缝，E松双环闩；薄缝训练侧只能看见锁环。",
+        "persistent": true
+      },
+      "anatomyType": "聚落闩＋短柔膜支路",
+      "anatomyTransition": "从战后声槽台穿回折软膜短缝开启双环闩，返薄缝训练；不穿完整颅骨。"
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-07",
+      "requires": [
+        "B"
+      ],
+      "kind": "main",
+      "evidence": "V4脊椎至尾根观察；B是到达脊椎交通椎的已有结果",
+      "note": "",
+      "bidirectional": true,
+      "id": "E31",
+      "requiresAll": [
+        "B"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "尾椎外侧长廊",
+      "anatomyTransition": "分流台向尾，沿逐渐变细的尾椎外缘到尾柄窝；应显示约15–20m渐细过渡，不能把尾根贴到头耳旁。"
+    },
+    {
+      "from": "R5-07",
+      "to": "R5-08",
+      "requires": [
+        "P",
+        "B",
+        "S"
+      ],
+      "kind": "gate",
+      "evidence": "V4尾根同步环",
+      "note": "",
+      "bidirectional": true,
+      "id": "E32",
+      "requiresAll": [
+        "P",
+        "B",
+        "S"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "尾根同步环",
+        "firstInteractionAt": "R5-07",
+        "permanent": true,
+        "action": "核验P+B+S后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomyType": "尾柄裂缘至海水",
+      "anatomyTransition": "从尾柄外侧幼体槽走向尾鳍基部纤维裂谷，打开聚落导流闸释放幼体到海水；尾鳍瓣内无新骨架。"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V5回访房入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E33",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "非天然连通：头侧创伤路线",
+      "anatomyTransition": "口腔须筛上层经上颚衬层剥离与颅侧旧创伤坡抵达鼻道外缘，再从鼻道破口到喷气孔上层；绝不是嘴直接通鼻/肺的正常管道。A2只解决创伤高差。"
+    },
+    {
+      "from": "R2-05",
+      "to": "R1-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "shortcut",
+      "evidence": "V4喷气孔回须门方向；V5明确两端房号",
+      "note": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "id": "E34",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_BLOWHOLE",
+        "from": "R2-05",
+        "requiresAll": [
+          "A2"
+        ],
+        "completionFlags": [
+          "BOSS_R2"
+        ],
+        "action": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。",
+        "persistent": true
+      },
+      "requiresCompletion": "BOSS_R2且从R2-05完成开闩",
+      "anatomyType": "呼吸道走向＋死后破口/修补",
+      "anatomyTransition": "从前胸气管旁回廊沿喉/鼻道遗迹朝头顶上行，局部利用死后纵裂边和聚落修补台；远侧闩打开到喷气孔上层。途中必须看见向头上行、头顶双孔，不能从心脏垂直冒出一根气柱。"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-07",
+      "requires": [
+        "A3"
+      ],
+      "kind": "optional",
+      "evidence": "V4须筛鲸须根骨环",
+      "note": "",
+      "bidirectional": true,
+      "id": "E35",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "须根衬层侧袋",
+      "anatomyTransition": "从须筛攀固定环至上颚须根旁脱层口袋；是口腔内上层回访。"
+    },
+    {
+      "from": "R2-02",
+      "to": "R2-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V5选修入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E36",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "肺缘剥离侧袋",
+      "anatomyTransition": "肺膜主路升入同一肺缘褶袋上方盲端，死亡器官不持续呼吸，补压来自共生体。"
+    },
+    {
+      "from": "R3-01",
+      "to": "R3-08",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V4胃顶回访＋V5明确胃枢挂接",
+      "note": "",
+      "bidirectional": true,
+      "id": "E37",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "胃壁高褶袋",
+      "anatomyTransition": "从前胃枢纽沿同一胃壁高褶上行到沉积袋，侧路在同一器官穹顶；不新接肺。"
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-07",
+      "requires": [
+        "A3",
+        "A4"
+      ],
+      "kind": "optional",
+      "evidence": "V5修索小室入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E38",
+      "requiresAll": [
+        "A3",
+        "A4"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "椎旁外侧膜袋",
+      "anatomyTransition": "从低骨训练循断绳透光孔到旁侧旧肌腱褶室，组合能力解决固定环和高度。"
+    },
+    {
+      "from": "R5-02",
+      "to": "R5-06",
+      "requires": [
+        "A5"
+      ],
+      "kind": "optional",
+      "evidence": "V5记忆侧囊入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E39",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomyType": "耳周软膜盲袋",
+      "anatomyTransition": "从安全池穿标记短柔膜进入耳区侧袋；不把耳蜗腔或半规管画成可走城市。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NOAA Fisheries — Blue Whale",
+      "url": "https://www.fisheries.noaa.gov/species/blue-whale",
+      "supports": "现实蓝鲸最大体长为约110英尺（约33.5m）；不支持120m真实鲸。上颚鲸须过滤食物。"
+    },
+    {
+      "title": "Smithsonian Ocean — Whales and Dolphins",
+      "url": "https://ocean.si.edu/ocean-life/marine-mammals/whales",
+      "supports": "喷气孔呼吸与口部摄食的路径不同，不能把口腔直接当成肺通路。"
+    },
+    {
+      "title": "Morphology and Mechanics of the Fin Whale Esophagus (2024)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11221840/",
+      "supports": "食管连接咽后至横膈附近；源检索摘要支持路线，页面打开被验证码阻挡，不据此给精确食管尺寸。"
+    },
+    {
+      "title": "The Comparative Osteology of the Petrotympanic Complex of Extant Baleen Whales (2011)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3120854/",
+      "supports": "须鲸耳骨结构属于后颅底耳区，内耳位于致密耳骨内；六大房间不可假装是实比例耳蜗。页面全文打开被验证码阻挡，采用可检索正文摘要。"
+    },
+    {
+      "title": "New Bedford Whaling Museum — Anatomy and Physiology",
+      "url": "https://www.whalingmuseum.org/research/research-resources/whale-science/biology/anatomy-and-physiology/",
+      "supports": "肺偏背侧、心脏在胸腔前方；该页其它骨连接概述不作为本设计依据。"
+    },
+    {
+      "title": "NOAA Ocean Today — Killer Whale Anatomy",
+      "url": "https://oceantoday.noaa.gov/killerwhaleanatomy/",
+      "supports": "尾鳍瓣是软组织而不是新骨架；此为鲸类一般构型参考，非本虚构须鲸逐项标本验证。"
+    }
+  ]
+}

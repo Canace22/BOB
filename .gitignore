@@ -1,4 +1,5 @@
 .DS_Store
+/tools/__pycache__/
 node_modules/
 mvp/output/
 .pages-dist/
@@ -13,3 +14,6 @@ assets/source/whalefall-v5-2-complete/review/*.jpg
 assets/source/whalefall-v5-2-complete/review/components/reproduced/
 assets/source/whalefall-v5-2-static-01/previews/
 assets/source/whalefall-v5-2-static-01/references/revision-inputs/
+
+# Local production environment and AI models; intentionally not versioned.
+/work/wan22-production/

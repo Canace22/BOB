@@ -1,0 +1,221 @@
+{
+  "version": "0.5",
+  "updated_at": "2026-10-28T01:07:47.372471+08:00",
+  "workflow": "reference-to-complete-playable-level",
+  "stage": "final_acceptance",
+  "status": "blocked",
+  "overall_accepted": false,
+  "scope": "R1-01 至 R1-07 参考图可见七房；正常首关主路与后续能力回访练习",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "project": "G:\\鲸落万物生\\godot\\first-level-artmatch\\project.godot",
+  "delivery": "G:\\鲸落万物生\\outputs\\须门遗港_v0.5_参考图可玩关卡\\交付与验收.html",
+  "build": "G:\\鲸落万物生\\builds\\须门遗港-v0.5-参考图可玩关卡\\Whalefall.exe",
+  "coverage": {
+    "at": "2026-10-28T01:07:47.372471+08:00",
+    "local_links_checked": 55,
+    "missing": [],
+    "elements": 263,
+    "required_dimensions": {
+      "pass": 1022
+    },
+    "native_exports": 43,
+    "normal_tests": 19,
+    "normal_pass": true,
+    "independent_reload_pass": true,
+    "visual_review": "Seven composites and representative moving camera screenshots reviewed separately; HTML links checked statically, not browser-rendered."
+  },
+  "stages": [
+    {
+      "id": "R0",
+      "name": "输入与引擎固定",
+      "status": "pass"
+    },
+    {
+      "id": "R1",
+      "name": "九宫格/边缘/层级扫描与元素合同",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "name": "原件/遮罩/补绘母版/运行分层",
+      "status": "rework"
+    },
+    {
+      "id": "R3",
+      "name": "固定机位七房画面对照",
+      "status": "pass"
+    },
+    {
+      "id": "R4",
+      "name": "动态/碰撞/交互/声音事件/保存接入",
+      "status": "pass"
+    },
+    {
+      "id": "R5",
+      "name": "逐元素和机制验证",
+      "status": "pass"
+    },
+    {
+      "id": "R6",
+      "name": "正常首访/支路/恢复/独立重载",
+      "status": "pass"
+    },
+    {
+      "id": "R7",
+      "name": "独立包与本机性能",
+      "status": "pass"
+    },
+    {
+      "id": "R8",
+      "name": "整体验收",
+      "status": "blocked"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "WINDOWS_AUDIO_OUTPUT",
+      "reason": "Godot WASAPI ERR_CANT_OPEN，回落Dummy；音频服务运行，设备可见不足以证明输出成功。",
+      "evidence": "evidence/audio-devices.log",
+      "resolution": "确认可用Windows默认播放设备，再运行真实音频设备/混音和独立包声音测试；不得用Dummy关闭此项。"
+    },
+    {
+      "id": "WINDOW_CLOSE_DESKTOP",
+      "reason": "最终便携包真实窗口关闭复验时交互桌面拒绝访问；自动测试正常退出已验，实际窗口关闭未验。",
+      "resolution": "交互桌面可访问后重跑正常窗口关闭验证。"
+    }
+  ],
+  "limitations": [
+    "独立可玩层拆件仍残留平台/锚环周边原图背景；精细分层资产验收未通过，不能仅凭合成画面通过视为完成。",
+    "远景独显有少量原遮挡细节叠层；连续补绘母版另存，不声称恢复不存在的原始隐藏分层。",
+    "原图静态鱼群/光点与新增动态生成器分别登记；并非每个原画像素独立运动。",
+    "A2/A3为后续章节回访能力，本范围以F9明示临时练习验证。",
+    "历史强制quit-after绕开正常关闭清理警告保留；正常关闭证据单列。"
+  ],
+  "next_instruction": "先读取RESUME.md及coverage-readiness.md。独立分层边缘定向返修与设备音频复验分别接续；保留已通过玩法和旧v0.4，不批量重做原图。音频需设备侧信息，不得用Dummy关闭阻塞。",
+  "evidence_root": "G:\\鲸落万物生\\godot\\first-level-artmatch\\evidence",
+  "global_acceptance": [
+    {
+      "id": "GLOBAL-STATIC",
+      "status": "pass",
+      "evidence": [
+        "evidence/R1-01.png",
+        "evidence/R1-02.png",
+        "evidence/R1-03.png",
+        "evidence/R1-04.png",
+        "evidence/R1-05.png",
+        "evidence/R1-06.png",
+        "evidence/R1-07.png"
+      ],
+      "note": "逐房合成画面目视通过；Far独显是源细节叠层+连续underpaint，不当作一张已清理的独立原画。"
+    },
+    {
+      "id": "GLOBAL-DYNAMIC",
+      "status": "pass",
+      "evidence": [
+        "evidence/dynamics.json",
+        "evidence/dynamic-motion-a.png",
+        "evidence/dynamic-motion-b.png",
+        "evidence/mechanisms.json"
+      ],
+      "note": "七房动态时钟与生成器、机关、演员及事件效果运行。"
+    },
+    {
+      "id": "GLOBAL-TRAVERSAL",
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-run.json",
+        "evidence/deep/deep-route.json",
+        "evidence/revisit/revisit.json",
+        "evidence/elements/elements.json"
+      ],
+      "note": "正式01→05，03下层，06/07明示回访及正反向门、失败fixture。"
+    },
+    {
+      "id": "GLOBAL-COMBAT",
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-run.json",
+        "evidence/flow/flow.json",
+        "evidence/flow/actors-camps.json"
+      ],
+      "note": "正常战斗击败Boss获得A1；玩家受伤、死亡恢复及钳时序。"
+    },
+    {
+      "id": "GLOBAL-RESTORE",
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-reload.json",
+        "evidence/revisit/reward-reload.json",
+        "evidence/elements/reward7-reload.json"
+      ],
+      "note": "独立进程恢复Boss、三奖励、能力、完成状态。"
+    },
+    {
+      "id": "GLOBAL-AUDIO",
+      "status": "blocked",
+      "evidence": [
+        "evidence/audio-devices.log",
+        "evidence/audio-mixer.json",
+        "evidence/environment-fade.json"
+      ],
+      "note": "数字混音/事件/包络通过，但当前WASAPI ERR_CANT_OPEN，fallback Dummy且设备仅Default；未修改系统设置；外部音频输出受阻。"
+    },
+    {
+      "id": "GLOBAL-PERFORMANCE",
+      "status": "pass",
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "note": "1280×720 RTX5060，7房300帧采样各p95<20ms，0帧>25ms；Dummy后端，非音频输出或跨硬件保证。"
+    },
+    {
+      "id": "GLOBAL-PORTABLE",
+      "status": "pass",
+      "evidence": [
+        "evidence/package-normal/normal-run.json",
+        "evidence/package-normal/normal-complete.png",
+        "evidence/package-reload/normal-reload.json",
+        "evidence/package-reload/normal-independent-reload.png",
+        "evidence/final-native-export.log"
+      ],
+      "note": "最终引擎+PCK实际正式01→05，19/19、0死亡；正确normal-reload独立恢复Boss/能力/完成/门状态；43PNG重导。Dummy音频；真实窗口关闭另列blocked。"
+    },
+    {
+      "id": "GLOBAL-LAYER-ASSETS",
+      "status": "fail",
+      "evidence": [
+        "assets/runtime/layers/R1-02/World.png",
+        "evidence/layer-0.png",
+        "docs/native-export.json"
+      ],
+      "note": "独立图层非精细透明分件：World02台阶/锚环仍带蓝背景，Far独显有其他层残片。完整合成pass不替代资产交付；须逐对象精修蒙版/补绘。"
+    },
+    {
+      "id": "GLOBAL-WINDOW-CLOSE",
+      "status": "blocked",
+      "evidence": [
+        "evidence/package-startup-clean/result.json",
+        "evidence/package-startup-clean/README.md",
+        "evidence/package-startup-clean/run.log"
+      ],
+      "note": "最终EXE启动，但桌面捕获超时、GetCursorPos拒绝访问导致Alt+F4未执行；只回收本次PID。QA graceful退出不能代替此UI路径；强退历史警告保留。"
+    }
+  ],
+  "rework": [
+    {
+      "id": "LAYER_EDGE_CLEANUP",
+      "status": "open",
+      "evidence": "assets/runtime/layers/R1-02/World.png",
+      "instruction": "针对平台/锚环周边蓝色背景逐物件制作精细透明边缘；避免再次全局色键破坏组织。复验独显、原图合成与最大视差机位，再导出受影响资产与PCK。",
+      "prior_attempts": "全局色键曾破坏暗组织，已回退；广泛替换远景产生接缝，已回退。"
+    }
+  ],
+  "frozen_sha256": {
+    "scripts/main.gd": "9f45e95b775b581f87dfb666027e15a52dbe77a45d4dac6298387b50c702111b",
+    "scripts/player.gd": "bc2ae807ce91f4e53f511f40d482dd0b454d4125a1b6d863d5ca51804bb23fdc",
+    "scripts/environment.gd": "1b05e9fcd09ee7ce46fde26972b4daebc0fb868f01fe78852e8007c58def0de7",
+    "scripts/mechanisms.gd": "44c8b6672182d7a9d2070eabf971300bb956f3433018694cb96797f472c851c8",
+    "scripts/layer.gdshader": "56eb3a9230a1d5f84a23a4228499047f04bbc3fb9230d16076083a886716229d",
+    "assets/rooms.json": "80ba969b0bbff5c9061c994a90a8abdfc60531f038cb752cbdbe8c84b24f5a5e"
+  }
+}

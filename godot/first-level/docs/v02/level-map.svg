@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="840" viewBox="0 0 1180 840">
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#8dc7c7"/></marker>
+ <marker id="gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#e9bf78"/></marker>
+ <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#dce9e7;font-size:16px}.title{font-size:28px;font-weight:700}.sub{fill:#9fb6bb;font-size:14px}.room{fill:#203b45;stroke:#648e98;stroke-width:2}.name{font-size:20px;font-weight:700}.tag{fill:#e9bf78;font-size:14px}.small{font-size:13px;fill:#adc3c5}.platform{fill:#697f83;stroke:#b3ccca;stroke-width:2}.route{fill:none;stroke:#8dc7c7;stroke-width:3;marker-end:url(#arrow)}.branch{fill:none;stroke:#e9bf78;stroke-width:3;stroke-dasharray:7 5;marker-end:url(#gold)}</style>
+</defs>
+<rect width="1180" height="840" fill="#0e222c"/>
+<text x="34" y="43" class="title">须门遗港 v0.2 · 五房主线与舌台支路</text>
+<text x="34" y="70" class="sub">设计示意 / waiting verification · 保留原主线；本房壳闩短桥不是跨器官捷径</text>
+
+<g transform="translate(34,100)"><rect width="190" height="142" rx="12" class="room"/><text x="14" y="28" class="tag">R1-01 · 30×18U</text><text x="14" y="58" class="name">外伤坡</text><text x="14" y="86">口角外侧 / 下颌前段</text><text x="14" y="109" class="small">鼻端约3–10m</text><text x="14" y="130" class="tag">营地 · 安全走跳</text></g>
+<g transform="translate(264,100)"><rect width="190" height="142" rx="12" class="room"/><text x="14" y="28" class="tag">R1-02 · 38×21U</text><text x="14" y="58" class="name">须筛</text><text x="14" y="86">侧壁 / 上颚须下缘</text><text x="14" y="109" class="small">鼻端约8–18m</text><text x="14" y="130" class="tag">单蟹 · 分层动态样板</text></g>
+<g transform="translate(494,100)"><rect width="190" height="142" rx="12" class="room"/><text x="14" y="28" class="tag">R1-03 · 36×18U</text><text x="14" y="58" class="name">舌台</text><text x="14" y="86">舌体背面 / 口腔腹侧</text><text x="14" y="109" class="small">鼻端约12–23m</text><text x="14" y="130" class="tag">双蟹 · 碎片 / 壳闩</text></g>
+<g transform="translate(724,100)"><rect width="190" height="142" rx="12" class="room"/><text x="14" y="28" class="tag">R1-04 · 36×18U</text><text x="14" y="58" class="name">负壳蟹</text><text x="14" y="86">舌根后方 / 口咽入口</text><text x="14" y="109" class="small">鼻端约20–29m</text><text x="14" y="130" class="tag">营地 · Boss · A1授能</text></g>
+<g transform="translate(954,100)"><rect width="190" height="142" rx="12" class="room"/><text x="14" y="28" class="tag">R1-05 · 38×18U</text><text x="14" y="58" class="name">流膜育窝</text><text x="14" y="86">咽后 / 食管前段</text><text x="14" y="109" class="small">鼻端约27–32m</text><text x="14" y="130" class="tag">三次跳冲 · H1 · 出口</text></g>
+<path d="M224 171 H264 M454 171 H494 M684 171 H724 M914 171 H954" class="route" marker-start="url(#arrow)"/>
+<text x="34" y="276" class="small">起点 → 口角旧裂口 → 真正口腔腔隙 → 舌体背面 → 咽前宽台 → 纵裂食管边缘 → 本轮出口</text>
+<text x="34" y="301" class="small">每扇邻房门可返回；R1-04前进门需Boss胜利并承接A1。右端只预告胃域，不表示胃域已制作。</text>
+<text x="34" y="326" class="small">轴向位置区间可重叠：局部房间沿上下/横向褶层转向；米数不是碰撞包围盒尺寸。</text>
+<path d="M34 348 H1144" stroke="#38535c"/>
+
+<text x="34" y="384" class="name">R1-03 舌台 · 局部几何与支路（1U=64px；图中等比24px/U）</text>
+<text x="34" y="410" class="sub">主路原本可通过；U0是可选支台。E先取碎片，再次E开启壳闩；同次按键不触发两个事件。</text>
+
+<g>
+ <rect x="120" y="566" width="168" height="25" class="platform"/><text x="162" y="615" class="small">P0 · y14</text>
+ <rect x="312" y="542" width="144" height="25" class="platform"/><text x="348" y="591" class="small">P1 · y13</text>
+ <rect x="480" y="566" width="144" height="25" class="platform"/><text x="516" y="615" class="small">P2 · y14</text>
+ <rect x="648" y="537.2" width="144" height="25" class="platform"/><text x="660" y="588" class="small">P3 · y12.8</text>
+ <rect x="816" y="566" width="168" height="25" class="platform"/><text x="859" y="615" class="small">P4 · y14</text>
+ <rect x="672" y="501.2" width="72" height="14" fill="#aa895b" stroke="#e9bf78" stroke-width="2"/>
+ <circle cx="708" cy="483" r="7" fill="#f0cd85"/>
+ <text x="599" y="456" class="tag">U0 x23..26 / y11.3</text>
+ <path d="M710 459 L708 474" stroke="#e9bf78"/>
+ <rect x="792" y="537.2" width="24" height="12" fill="#4d9b91" stroke="#9be0cc" stroke-width="2"/>
+ <path d="M804 532 L834 484 H1010" stroke="#9be0cc" fill="none"/>
+ <text x="836" y="475" class="tag">短桥 x28..29 / y12.8</text>
+ <text x="836" y="503" class="small">顶面与P3齐平；向P4下降1.2U</text>
+ <path d="M650 536 Q665 458 704 500" class="branch"/>
+ <path d="M731 498 Q757 492 770 535 L807 535 Q824 540 839 562" class="branch"/>
+ <path d="M875 564 Q837 494 786 534" class="route"/>
+ <text x="90" y="652" class="small">左门 x≈1</text><text x="903" y="652" class="small">右门 x≈35</text>
+ <path d="M120 635 H984" stroke="#38535c"/>
+ <text x="120" y="676" class="small">x0</text><text x="476" y="676" class="small">x15</text><text x="640" y="676" class="small">x22</text><text x="961" y="676" class="small">x36U</text>
+</g>
+<text x="34" y="721" class="tag">黄色虚线：上跳支路 / 取物 / 开闩后返回主路　　青色箭头：从P4跳回桥与P3</text>
+<text x="34" y="749" class="small">R1_03_SHELL_LATCH：永久开闩ID。旧存档缺字段默认关闭；死亡、换房、实际重启均应保留已开启状态。</text>
+<text x="34" y="777" class="small">待验证：真实输入支路往返、桥展开碰撞时序、重复E、失败恢复、退出重载。示意图不能代替实机通过证据。</text>
+<text x="34" y="811" class="small">正式美术与动态以art-standard.md / asset-plan.json为合同；本图是结构规格，不是游戏截图或已完成原画。</text>
+</svg>

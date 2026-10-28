@@ -1,0 +1,107 @@
+{
+	"engine": "4.7.2-stable (official)",
+	"frame_cap": 60,
+	"gpu": "NVIDIA GeForce RTX 5060",
+	"limitations": [
+		"Current workstation load; no isolated GPU timer.",
+		"Individual measurements are not a final performance acceptance."
+	],
+	"method": "Monotonic wall-clock frame intervals;120warmup+300sample per room",
+	"rooms": [
+		{
+			"effective_fps": 59.9514992371171,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 21.054,
+			"mean_ms": 16.68015,
+			"median_ms": 16.666,
+			"p95_ms": 16.721,
+			"p99_ms": 16.83,
+			"room": "R1-01",
+			"sample_frames": 300,
+			"texture_vram_bytes": 57850641.0
+		},
+		{
+			"effective_fps": 60.0026401161651,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 18.668,
+			"mean_ms": 16.6659333333333,
+			"median_ms": 16.662,
+			"p95_ms": 16.814,
+			"p99_ms": 17.403,
+			"room": "R1-02",
+			"sample_frames": 300,
+			"texture_vram_bytes": 66270263.0
+		},
+		{
+			"effective_fps": 60.0024601008641,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 17.057,
+			"mean_ms": 16.6659833333333,
+			"median_ms": 16.663,
+			"p95_ms": 16.761,
+			"p99_ms": 16.92,
+			"room": "R1-03",
+			"sample_frames": 300,
+			"texture_vram_bytes": 83046039.0
+		},
+		{
+			"effective_fps": 60.0028201325462,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 17.627,
+			"mean_ms": 16.6658833333333,
+			"median_ms": 16.662,
+			"p95_ms": 16.836,
+			"p99_ms": 17.253,
+			"room": "R1-04",
+			"sample_frames": 300,
+			"texture_vram_bytes": 83035389.0
+		},
+		{
+			"effective_fps": 60.0029881488098,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 20.957,
+			"mean_ms": 16.6658366666667,
+			"median_ms": 16.666,
+			"p95_ms": 16.806,
+			"p99_ms": 17.18,
+			"room": "R1-05",
+			"sample_frames": 300,
+			"texture_vram_bytes": 57893229.0
+		},
+		{
+			"effective_fps": 59.9961002534835,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 20.77,
+			"mean_ms": 16.66775,
+			"median_ms": 16.662,
+			"p95_ms": 16.817,
+			"p99_ms": 17.048,
+			"room": "R1-06",
+			"sample_frames": 300,
+			"texture_vram_bytes": 66232445.0
+		},
+		{
+			"effective_fps": 60.001716049079,
+			"frames_over25ms": 0,
+			"frames_over50ms": 0,
+			"max_ms": 16.885,
+			"mean_ms": 16.66619,
+			"median_ms": 16.665,
+			"p95_ms": 16.765,
+			"p99_ms": 16.84,
+			"room": "R1-07",
+			"sample_frames": 300,
+			"texture_vram_bytes": 66279305.0
+		}
+	],
+	"viewport": [
+		1280,
+		720
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"checks": [
+		{
+			"name": "populations",
+			"pass": true
+		},
+		{
+			"name": "audio_running",
+			"note": "Playback state; no subjective listening claim",
+			"pass": true
+		},
+		{
+			"name": "pause_halts_time_and_audio",
+			"pass": true
+		},
+		{
+			"name": "resume_advances_time",
+			"pass": true
+		},
+		{
+			"name": "event_pulse",
+			"pass": true
+		},
+		{
+			"name": "reference_capture_hides_effects",
+			"pass": true
+		}
+	],
+	"initial": {
+		"ambience_paused": false,
+		"ambience_playing": true,
+		"bubble_count": 18,
+		"dust_count": 28,
+		"event_count": 0,
+		"fish_count": 7,
+		"lamp_count": 1,
+		"mist_count": 3,
+		"muted": false,
+		"nodes": [
+			"AmbientBubbles",
+			"DriftingDust",
+			"DistantFish",
+			"CampLight",
+			"DriftingMist",
+			"EventPulses",
+			"WaterAmbience"
+		],
+		"phase": 2.58933733333333,
+		"seed": 101,
+		"visible": true
+	},
+	"method": "Graphical Godot actual runtime environment instance",
+	"process_sample": {
+		"frames": 120,
+		"max_ms": 352.025,
+		"mean_ms": 137.601891666667,
+		"note": "whole running scene process monitor; not GPU frametime benchmark"
+	}
+}

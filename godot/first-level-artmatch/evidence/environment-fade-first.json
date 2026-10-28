@@ -1,0 +1,29 @@
+{
+	"audio_driver": "Dummy",
+	"checks": [
+		{
+			"db": -80.0,
+			"name": "quiet_initial_level",
+			"pass": true
+		},
+		{
+			"db": -29.0,
+			"name": "fade_in_to_target",
+			"pass": true
+		},
+		{
+			"name": "tail_survives_old_room_unload",
+			"pass": true
+		},
+		{
+			"db": -32.4000015258789,
+			"name": "fade_out_progresses",
+			"pass": false
+		},
+		{
+			"name": "tail_freed_after_fade",
+			"pass": true
+		}
+	],
+	"note": "Actual runtime envelope and resource lifecycle. Explicit Dummy backend run does not test hardware output."
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "P07-001",
+  "status": "pass",
+  "summary": "当前独立PCK运行21项集成夹具通过，另起进程恢复永久状态通过。",
+  "artifacts": [
+    "docs/production/integration.md"
+  ],
+  "checks": [
+    {
+      "id": "runtime",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "编辑器外运行五房闭环；当前包21项UI/动作互斥/出入口/奖励/备份恢复通过，日志无SCRIPT ERROR。",
+      "evidence": [
+        "evidence/standalone-run/prototype.json",
+        "evidence/standalone-run/complete.png",
+        "evidence/p07-run/integration-v1.json",
+        "evidence/p07-run/checks.log"
+      ]
+    },
+    {
+      "id": "save",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "通关进程结束后另起可执行进程，读出Boss/A1/H1/complete=true及checkpoint3；玩家档未选中。",
+      "evidence": [
+        "evidence/p07-run/persistence.json",
+        "evidence/p07-run/reload.log"
+      ]
+    }
+  ]
+}

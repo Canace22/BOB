@@ -1,0 +1,27 @@
+{
+  "task_id": "D-001",
+  "status": "pass",
+  "summary": "独立包五房Input完整通关、回访路径、机关、原图层显隐、重载与启动通过；项目支路/死亡/门闩重载通过。最终仅地图布局与art夹具变更，重新导出后复测art和启动。55张实际截图交付；80个本地链接与ZIP CRC通过。",
+  "artifacts": [
+    "docs/v04/delivery.md",
+    "docs/v04/qa-summary.json",
+    "RESUME-v04.md"
+  ],
+  "checks": [
+    {
+      "id": "accept",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "独立包五房Input完整通关、回访路径、机关、原图层显隐、重载与启动通过；项目支路/死亡/门闩重载通过。最终仅地图布局与art夹具变更，重新导出后复测art和启动。55张实际截图交付；80个本地链接与ZIP CRC通过。",
+      "evidence": [
+        "evidence/v04/package-play/prototype.json",
+        "evidence/v04/package-reload/persistence.json",
+        "evidence/v04/branch/branch.json",
+        "evidence/v04/death/combat.json",
+        "evidence/v04/latch/latch-reload.json",
+        "docs/v04/package-qa.json",
+        "docs/v04/delivery-check.json"
+      ]
+    }
+  ]
+}

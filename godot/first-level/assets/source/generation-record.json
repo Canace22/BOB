@@ -1,0 +1,14 @@
+{
+  "generator": "image_gen",
+  "cost": "unknown",
+  "date": "2026-10-27",
+  "hero_revision_prompt": "Use case: identity-preserve. Edit this owned game sprite sheet for one specific correction: preserve ALL EIGHT poses, all helmet sizes, original character, positions, grid, colors and real transparent alpha. ONLY change the TOP ROW THIRD figure (third from left) into the OPPOSITE run stride from TOP ROW SECOND: its near visible leg with large webbed foot now clearly reaches BACKWARD LEFT; its farther leg reaches FORWARD RIGHT and is partly behind near thigh. Opposite arm swing appropriate, but keep the same fork in front hand, lamp on anatomical left hip, helmet fixed facing right. This is run cycle contact B, not a duplicate contact A. Do not change any of the other seven sprites. Keep transparent background and no added blur or glow.",
+  "source_paths": [
+    "exec-00d785c5-1612-4604-bc6d-5fd858f65339.png",
+    "exec-b736206c-9f6f-4cd1-9f58-aed091c8863d.png",
+    "exec-f4379c77-356b-4b2b-863a-30c25e0a6eff.png",
+    "exec-5ee8156e-5759-44f4-adb8-d05c9329289f.png",
+    "exec-6d02c6de-f262-4ca3-8508-80cc205198a5.png"
+  ],
+  "notes": "Source files copied from current conversation image_gen outputs. Runtime slicing and alpha cleanup in tools/prepare_assets.py. Run contact B improvement limited; not claimed as finished gait."
+}

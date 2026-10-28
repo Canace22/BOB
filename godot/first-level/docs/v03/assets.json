@@ -1,0 +1,110 @@
+{
+  "new": [
+    {
+      "id": "terrain",
+      "source": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-57044b07-b49c-479b-b15f-f7063d044447.png",
+      "runtime": "assets/runtime/v03/terrain.png",
+      "size": [
+        2019,
+        779
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 810376,
+      "sha256": "62773e3398304219d323a1389ce1e6ad31de868f807e9b911beab41cc84567df",
+      "tool": "builtin image_gen",
+      "image_processing": "copy only; scene uses texture regions/scale; originals preserved"
+    },
+    {
+      "id": "canopy",
+      "source": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-861026aa-ad9d-4ca8-8bc4-798fb398e161.png",
+      "runtime": "assets/runtime/v03/canopy.png",
+      "size": [
+        2138,
+        736
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 756711,
+      "sha256": "242b8124cc975b3c32a3d6e1128d07395036f240dcefefadda6d18be7d69b144",
+      "tool": "builtin image_gen",
+      "image_processing": "copy only; scene uses texture regions/scale; originals preserved"
+    },
+    {
+      "id": "jaw",
+      "source": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-b95a4f98-c209-4aa9-a5a2-ff2ae66c44a2.png",
+      "runtime": "assets/runtime/v03/jaw.png",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 793138,
+      "sha256": "dfe53b92a57dfbe4c99f512e924a73ef97db9ceb634f3511a7ca8b1c9b58ce64",
+      "tool": "builtin image_gen",
+      "image_processing": "copy only; scene uses texture regions/scale; originals preserved"
+    },
+    {
+      "id": "ocean",
+      "source": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-78b2c1e8-c224-47b2-b4d6-b194cda02da4.png",
+      "runtime": "assets/runtime/v03/ocean.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "fully_transparent_pixels": null,
+      "sha256": "1bac766ca3fc95faa1bff0a02836198603f24d90ed2d0cfcce68f079ab14112a",
+      "tool": "builtin image_gen",
+      "image_processing": "copy only; scene uses texture regions/scale; originals preserved"
+    },
+    {
+      "id": "skull",
+      "source": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-56128fd0-37e6-4adb-84f2-bf6ce10c6264.png",
+      "runtime": "assets/runtime/v03/skull.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "fully_transparent_pixels": null,
+      "sha256": "8f3a1547ba4399d3307c85f8186b993f5709da563a9fd3ff8f7749b331d31cd4",
+      "tool": "builtin image_gen",
+      "image_processing": "copy only; scene uses texture regions/scale; originals preserved"
+    }
+  ],
+  "reused": [
+    "background",
+    "throat",
+    "checkpoint",
+    "hero/*",
+    "crab",
+    "boss",
+    "v02/plant",
+    "v02/lamp",
+    "v02/gate",
+    "v02/cargo",
+    "v02/water"
+  ],
+  "anchors": {
+    "terrain": "top edge using region y=145",
+    "canopy": "upper-left",
+    "jaw": "upper-left",
+    "lamps": "top-center",
+    "plants": "bottom-center"
+  },
+  "new_assets_cost": "unknown",
+  "third_party_paid": false
+}

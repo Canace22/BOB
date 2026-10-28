@@ -1,0 +1,1160 @@
+{
+	"deaths": 0,
+	"effect_counts": {
+		"dash": 3,
+		"death": 3,
+		"hit": 22,
+		"jump": 39,
+		"land": 46,
+		"ripple": 23
+	},
+	"events": [
+		{
+			"detail": {},
+			"event": "new_journey",
+			"frame": 0,
+			"room": 0
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-01"
+			},
+			"event": "room_enter",
+			"frame": 1,
+			"room": 0
+		},
+		{
+			"detail": {
+				"room": 0
+			},
+			"event": "checkpoint",
+			"frame": 9,
+			"room": 0
+		},
+		{
+			"detail": {
+				"x": 482.132873535156
+			},
+			"event": "jump",
+			"frame": 87,
+			"room": 0
+		},
+		{
+			"detail": {
+				"x": 864.430236816406
+			},
+			"event": "jump",
+			"frame": 199,
+			"room": 0
+		},
+		{
+			"detail": {
+				"x": 1185.28649902344
+			},
+			"event": "jump",
+			"frame": 293,
+			"room": 0
+		},
+		{
+			"detail": {
+				"x": 1506.14270019531
+			},
+			"event": "jump",
+			"frame": 387,
+			"room": 0
+		},
+		{
+			"detail": {
+				"edge": "E01",
+				"from": "R1-01",
+				"to": "R1-02"
+			},
+			"event": "door_transition",
+			"frame": 466,
+			"room": 0
+		},
+		{
+			"detail": {
+				"entry": "door:E01",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 466,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 417.493530273438
+			},
+			"event": "jump",
+			"frame": 549,
+			"room": 1
+		},
+		{
+			"detail": {
+				"boss": false,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 585,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 560.856689453125
+			},
+			"event": "jump",
+			"frame": 613,
+			"room": 1
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 671,
+			"room": 1
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": 20
+			},
+			"event": "enemy_hit",
+			"frame": 678,
+			"room": 1
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 695,
+			"room": 1
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": 6
+			},
+			"event": "enemy_hit",
+			"frame": 705,
+			"room": 1
+		},
+		{
+			"detail": {
+				"boss": false,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 713,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 655.918090820313
+			},
+			"event": "jump",
+			"frame": 741,
+			"room": 1
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 819,
+			"room": 1
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": -4
+			},
+			"event": "enemy_hit",
+			"frame": 826,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 865.322448730469
+			},
+			"event": "jump",
+			"frame": 869,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 1251.03198242188
+			},
+			"event": "jump",
+			"frame": 982,
+			"room": 1
+		},
+		{
+			"detail": {
+				"x": 1698.18139648438
+			},
+			"event": "jump",
+			"frame": 1113,
+			"room": 1
+		},
+		{
+			"detail": {
+				"edge": "E02",
+				"from": "R1-02",
+				"to": "R1-03"
+			},
+			"event": "door_transition",
+			"frame": 1286,
+			"room": 1
+		},
+		{
+			"detail": {
+				"entry": "door:E02",
+				"id": "R1-03"
+			},
+			"event": "room_enter",
+			"frame": 1286,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 417.493103027344
+			},
+			"event": "jump",
+			"frame": 1369,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 1405,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 560.856201171875
+			},
+			"event": "jump",
+			"frame": 1433,
+			"room": 2
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 1491,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": 20
+			},
+			"event": "enemy_hit",
+			"frame": 1498,
+			"room": 2
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 1515,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": 6
+			},
+			"event": "enemy_hit",
+			"frame": 1525,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 1533,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 655.917602539063
+			},
+			"event": "jump",
+			"frame": 1561,
+			"room": 2
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 1639,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"heavy": false,
+				"hp": -4
+			},
+			"event": "enemy_hit",
+			"frame": 1646,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 865.321960449219
+			},
+			"event": "jump",
+			"frame": 1689,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 1312.47143554688
+			},
+			"event": "jump",
+			"frame": 1820,
+			"room": 2
+		},
+		{
+			"detail": {
+				"boss": false,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 1837,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 1431.94116210938
+			},
+			"event": "jump",
+			"frame": 1865,
+			"room": 2
+		},
+		{
+			"detail": {
+				"x": 1633.32763671875
+			},
+			"event": "jump",
+			"frame": 1926,
+			"room": 2
+		},
+		{
+			"detail": {
+				"edge": "E03",
+				"from": "R1-03",
+				"to": "R1-04"
+			},
+			"event": "door_transition",
+			"frame": 2080,
+			"room": 2
+		},
+		{
+			"detail": {
+				"entry": "door:E03",
+				"id": "R1-04"
+			},
+			"event": "room_enter",
+			"frame": 2080,
+			"room": 3
+		},
+		{
+			"detail": {
+				"room": 3
+			},
+			"event": "checkpoint",
+			"frame": 2116,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 352.639282226563
+			},
+			"event": "jump",
+			"frame": 2144,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 2382,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.39831542969
+			},
+			"event": "jump",
+			"frame": 2410,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2443,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 170
+			},
+			"event": "enemy_hit",
+			"frame": 2451,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 2467,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 156
+			},
+			"event": "enemy_hit",
+			"frame": 2477,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.39831542969
+			},
+			"event": "jump",
+			"frame": 2487,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2500,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 2514,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.39831542969
+			},
+			"event": "jump",
+			"frame": 2543,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2575,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 146
+			},
+			"event": "enemy_hit",
+			"frame": 2584,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.39831542969
+			},
+			"event": "jump",
+			"frame": 2599,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 2599,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 132
+			},
+			"event": "enemy_hit",
+			"frame": 2609,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2632,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 122
+			},
+			"event": "enemy_hit",
+			"frame": 2640,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "slam"
+			},
+			"event": "enemy_tell",
+			"frame": 2646,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2796,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 112
+			},
+			"event": "enemy_hit",
+			"frame": 2803,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 2811,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 2839,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2872,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 102
+			},
+			"event": "enemy_hit",
+			"frame": 2880,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 2896,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 88
+			},
+			"event": "enemy_hit",
+			"frame": 2906,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 2907,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 2929,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 2943,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 2963,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "second"
+			},
+			"event": "enemy_tell",
+			"frame": 3002,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 3019,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3048,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 3072,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 3075,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 74
+			},
+			"event": "enemy_hit",
+			"frame": 3082,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3105,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 64
+			},
+			"event": "enemy_hit",
+			"frame": 3116,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 3119,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 3131,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "second"
+			},
+			"event": "enemy_tell",
+			"frame": 3178,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 3187,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3224,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 54
+			},
+			"event": "enemy_hit",
+			"frame": 3231,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1209.91052246094
+			},
+			"event": "jump",
+			"frame": 3243,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 3248,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3281,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 44
+			},
+			"event": "enemy_hit",
+			"frame": 3288,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "slam"
+			},
+			"event": "enemy_tell",
+			"frame": 3295,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3445,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 34
+			},
+			"event": "enemy_hit",
+			"frame": 3452,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 3460,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.42395019531
+			},
+			"event": "jump",
+			"frame": 3488,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "second"
+			},
+			"event": "enemy_tell",
+			"frame": 3519,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.42395019531
+			},
+			"event": "jump",
+			"frame": 3544,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3565,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 3589,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 20
+			},
+			"event": "enemy_hit",
+			"frame": 3599,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.42395019531
+			},
+			"event": "jump",
+			"frame": 3600,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3622,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "slam"
+			},
+			"event": "enemy_tell",
+			"frame": 3636,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3786,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": 10
+			},
+			"event": "enemy_hit",
+			"frame": 3793,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "sweep"
+			},
+			"event": "enemy_tell",
+			"frame": 3801,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.93664550781
+			},
+			"event": "jump",
+			"frame": 3829,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"kind": "second"
+			},
+			"event": "enemy_tell",
+			"frame": 3860,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.93664550781
+			},
+			"event": "jump",
+			"frame": 3885,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short1"
+			},
+			"event": "attack",
+			"frame": 3906,
+			"room": 3
+		},
+		{
+			"detail": {
+				"kind": "short2"
+			},
+			"event": "attack",
+			"frame": 3930,
+			"room": 3
+		},
+		{
+			"detail": {
+				"boss": true,
+				"heavy": false,
+				"hp": -4
+			},
+			"event": "enemy_hit",
+			"frame": 3940,
+			"room": 3
+		},
+		{
+			"detail": {},
+			"event": "boss_defeated",
+			"frame": 3940,
+			"room": 3
+		},
+		{
+			"detail": {
+				"x": 1210.93664550781
+			},
+			"event": "jump",
+			"frame": 3941,
+			"room": 3
+		},
+		{
+			"detail": {},
+			"event": "dash_unlock",
+			"frame": 4178,
+			"room": 3
+		},
+		{
+			"detail": {
+				"edge": "E04",
+				"from": "R1-04",
+				"to": "R1-05"
+			},
+			"event": "door_transition",
+			"frame": 4228,
+			"room": 3
+		},
+		{
+			"detail": {
+				"entry": "door:E04",
+				"id": "R1-05"
+			},
+			"event": "room_enter",
+			"frame": 4228,
+			"room": 4
+		},
+		{
+			"detail": {
+				"edge": "E04",
+				"from": "R1-05",
+				"to": "R1-04"
+			},
+			"event": "door_transition",
+			"frame": 4234,
+			"room": 4
+		},
+		{
+			"detail": {
+				"entry": "door:E04",
+				"id": "R1-04"
+			},
+			"event": "room_enter",
+			"frame": 4234,
+			"room": 3
+		},
+		{
+			"detail": {
+				"edge": "E04",
+				"from": "R1-04",
+				"to": "R1-05"
+			},
+			"event": "door_transition",
+			"frame": 4241,
+			"room": 3
+		},
+		{
+			"detail": {
+				"entry": "door:E04",
+				"id": "R1-05"
+			},
+			"event": "room_enter",
+			"frame": 4241,
+			"room": 4
+		},
+		{
+			"detail": {},
+			"event": "habitat",
+			"frame": 4251,
+			"room": 4
+		},
+		{
+			"detail": {
+				"x": 352.639282226563
+			},
+			"event": "jump",
+			"frame": 4305,
+			"room": 4
+		},
+		{
+			"detail": {
+				"grounded": false,
+				"x": 420.909118652344
+			},
+			"event": "dash",
+			"frame": 4325,
+			"room": 4
+		},
+		{
+			"detail": {
+				"x": 928.487121582031
+			},
+			"event": "jump",
+			"frame": 4436,
+			"room": 4
+		},
+		{
+			"detail": {
+				"grounded": false,
+				"x": 996.756958007813
+			},
+			"event": "dash",
+			"frame": 4456,
+			"room": 4
+		},
+		{
+			"detail": {
+				"x": 1507.74841308594
+			},
+			"event": "jump",
+			"frame": 4568,
+			"room": 4
+		},
+		{
+			"detail": {
+				"grounded": false,
+				"x": 1579.43151855469
+			},
+			"event": "dash",
+			"frame": 4589,
+			"room": 4
+		},
+		{
+			"detail": {
+				"destination": "R3-01",
+				"edge": "E05"
+			},
+			"event": "level_complete",
+			"frame": 4759,
+			"room": 4
+		}
+	],
+	"passed": true,
+	"reason": "five-room input-driven completion",
+	"save": {
+		"boss": true,
+		"checkpoint": 3,
+		"complete": true,
+		"dash": true,
+		"fragment": false,
+		"habitat": true,
+		"latch": false,
+		"version": 1
+	},
+	"seconds": 79.2999999999968
+}

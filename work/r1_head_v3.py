@@ -1,0 +1,23 @@
+from pathlib import Path
+import base64,html,json,hashlib
+from PIL import Image
+p=Path('G:/鲸落万物生/outputs/须门遗港_R1_全景与分层拆解');E=html.escape
+img=p/'images/head-structure-v3-final.png';im=Image.open(img)
+s='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1270"><rect width="1800" height="1270" fill="#081e29"/><style>text{font-family:Microsoft YaHei,sans-serif}</style><text x="40" y="40" fill="#f2d8ac" font-size="27">鲸头侧剖 · 解剖底图与七房投影</text><text x="40" y="74" fill="#adced3" font-size="18">近侧颊壁剖去，外部口裂保持较窄；数字为地图落位，不是器官里天然存在的洞室。</text>'
+s+=f'<image x="40" y="100" width="1720" height="860" href="data:image/png;base64,{base64.b64encode(img.read_bytes()).decode()}"/>'
+points=[('01',.155,.425,'口角旧伤 / 外伤坡'),('02',.36,.445,'上颚须下缘 / 须筛'),('03',.50,.555,'舌背褶面 / 舌台'),('04',.71,.495,'舌根口咽 / 负壳蟹'),('05',.895,.52,'咽后裂边 / 流膜育窝'),('06',.825,.345,'鼻道外侧旧伤 / A2回访'),('07',.475,.355,'上颚须根脱层 / A3回访')]
+for n,x,y,label in points:
+ px=40+x*1720;py=100+y*860
+ s+=f'<circle cx="{px}" cy="{py}" r="24" fill="#0a2735" stroke="#ffcc83" stroke-width="2"/><text x="{px}" y="{py+8}" text-anchor="middle" fill="#fff2d1" font-size="22">{n}</text>'
+for i,(n,x,y,label) in enumerate(points):
+ xx=40+(i%3)*580;yy=1010+(i//3)*48
+ s+=f'<text x="{xx}" y="{yy}" fill="#efcd9d" font-size="21">{n}　{E(label)}</text>'
+s+='<text x="40" y="1180" fill="#bdd0d3" font-size="18">骨与软组织维持隔断：06经颅侧旧伤绕行，不能从嘴直通鼻道；脑区不放关卡。</text><text x="40" y="1215" fill="#bdd0d3" font-size="18">头左、躯干右；肋骨仅示于躯干。连续厚舌是器官形态，实际可走边界仍以七房坐标图为准。</text><text x="40" y="1250" fill="#8eaeb5" font-size="17">原创虚构巨鲸概念，非医学精确剖面；本图不代表Godot工程已更新。</text></svg>'
+(p/'maps/head-structure-v3-labeled.svg').write_text(s,encoding='utf8')
+f=p/'首关全景与拆解册.html';page=f.read_text('utf8');start=page.index('<section id="panorama">');end=page.index('<section id="route">',start)
+page=page[:start]+'''<section id="panorama"><h2>01 / 再重绘：以侧影与骨架为依据的鲸头剖面</h2><p class="note">本轮采用你新附的三张结构参考，重置构图：宽钝头部、较窄口裂、小鼻孔；通过剖去近侧颊壁显示口内，而不是把嘴张成巨大洞穴。脑区保留完整组织，不承载关卡。</p><figure><a href="images/head-structure-v3-final.png" target="_blank"><img src="images/head-structure-v3-final.png" alt="鲸头侧剖重绘v3：宽钝吻端、上颚须列、厚舌、下颌、口咽和躯干过渡"></a><figcaption>V3 解剖底图 · 本轮优先确认头形与组织结构，暂时减去大部分壳灯和地形装饰。数字地图落位见下图；不是此前洞穴图换上鲸形边框。</figcaption></figure><details open><summary>七房在鲸头内部的落位</summary><a href="maps/head-structure-v3-labeled.svg" target="_blank"><img src="maps/head-structure-v3-labeled.svg" alt="鲸头内部七房中文位置标注"></a></details><div class="grid"><article class="card"><h3>头部轮廓</h3><p>宽钝吻端、平缓背线与长下颌保持侧视比例；皮肤、脂层和骨缘可分。外部窄口裂与内部剖切窗是不同边界，减少鳄鱼式大张口观感。</p></article><article class="card"><h3>口腔是连续结构</h3><p>上颚须列垂入真实口腔；连续厚舌由下颌承托，向后接舌根及口咽，再收束为咽后管道。肋骨只出现在右后躯干过渡，不作为口腔大厅装饰。</p></article><article class="card"><h3>关卡服从器官</h3><p>01–05沿口角、须下、舌背、舌根和食管裂边；06在鼻道外侧旧伤，07在须根脱层。脑区不可进入，06只走侧伤绕行，不能天然穿通口鼻。</p></article></div><p class="muted">这张图是结构底图，不要求把全部平台、敌人和奖励挤进一个剖面。七房的跳距、能力门、敌人数量和可行路线仍见下方坐标图。角色只是尺度提示，不声称严格等比或医学级解剖。</p><details><summary>本轮三张结构参考</summary><div class="grid"><a href="references/head-v3-silhouette.png"><img src="references/head-v3-silhouette.png" alt="用户提供头部轮廓参考"></a><a href="references/head-v3-skeleton.png"><img src="references/head-v3-skeleton.png" alt="用户提供骨架位置参考"></a><a href="references/head-v3-organs.png"><img src="references/head-v3-organs.png" alt="用户提供器官关系示意"></a></div><p>这些图用于结构关系参考，不照搬文字或水印。须鲸上颚须列与双喷气孔关系另核对 <a href="https://oceantoday.noaa.gov/whaleanatomy/" target="_blank">NOAA Whale Anatomy</a>；不把示意图宣称为医学精确依据。</p></details><details><summary>被本轮替代的上一版鲸头</summary><p>上一版细长吻、大眼窝和大圆鼻孔仍偏怪兽式，本轮不沿用其构图。</p><a href="images/head-cutaway-v2.png"><img src="images/head-cutaway-v2.png" alt="上一版鲸头，保留对照" loading="lazy"></a></details></section>'''+page[end:]
+page=page.replace('href="docs/鲸头重绘复核.md">本次鲸头重绘复核','href="docs/鲸头v3复核.md">本次鲸头结构重绘复核')
+f.write_text(page,encoding='utf8')
+record={'version':'head-structure-v3','reason':'用户再次反馈，追加侧影/骨架/器官参考','tool':'image_gen.imagegen','references':['references/head-v3-silhouette.png','references/head-v3-skeleton.png','references/head-v3-organs.png'],'jobs':[{'source':'exec-be8c5b28-3303-42d6-984b-43e35852978b.png','local':'images/head-structure-v3.png','prompt':'data/head-v3-prompt.txt','status':'reworked: brain lamps and hero scale'},{'source':'exec-0b6fe38b-3196-4f2c-9e54-3a2366b4a389.png','local':'images/head-structure-v3-final.png','prompt':'data/head-v3-fix-prompt.txt','status':'selected anatomical base'}],'source_dir':'C:/Users/Kingsoft/.codex/generated_images/01a15e43-0218-75b2-af77-efe609e99875','final_size':list(im.size),'final_sha256':hashlib.sha256(img.read_bytes()).hexdigest(),'builtin_cost':'unknown','third_party_paid':False}
+(p/'data/head-v3-generation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf8')
+print('V3 head structure and labeled diagram installed')

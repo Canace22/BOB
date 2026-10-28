@@ -1,0 +1,95 @@
+{
+	"deaths": 1,
+	"events": [
+		{
+			"detail": {},
+			"event": "new_journey",
+			"frame": 0,
+			"room": 0
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-01"
+			},
+			"event": "room_enter",
+			"frame": 1,
+			"room": 0
+		},
+		{
+			"detail": {
+				"hp": 3
+			},
+			"event": "hurt",
+			"frame": 20,
+			"room": 0
+		},
+		{
+			"detail": {
+				"passed": true
+			},
+			"event": "test_invulnerability",
+			"frame": 20,
+			"room": 0
+		},
+		{
+			"detail": {
+				"x": 168.636596679688
+			},
+			"event": "fall_recover",
+			"frame": 92,
+			"room": 0
+		},
+		{
+			"detail": {
+				"passed": true
+			},
+			"event": "test_fall",
+			"frame": 110,
+			"room": 0
+		},
+		{
+			"detail": {
+				"hp": 0
+			},
+			"event": "hurt",
+			"frame": 110,
+			"room": 0
+		},
+		{
+			"detail": {},
+			"event": "death",
+			"frame": 110,
+			"room": 0
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-01"
+			},
+			"event": "room_enter",
+			"frame": 110,
+			"room": 0
+		},
+		{
+			"detail": {
+				"passed": true
+			},
+			"event": "test_respawn",
+			"frame": 134,
+			"room": 0
+		}
+	],
+	"passed": true,
+	"reason": "failure recovery fixture",
+	"save": {
+		"boss": false,
+		"checkpoint": 0,
+		"complete": false,
+		"dash": false,
+		"fragment": false,
+		"habitat": false,
+		"version": 1
+	},
+	"seconds": 2.21666666666666
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "B-001",
+  "status": "pass",
+  "summary": "5项独立素材接入；真实图形截图核对七房布局/中前景视差/透明边缘；旧三角支撑和矩形覆盖已返修。素材来源/准确提示词/源母版运行均保留；长段模块重复仍列美术精修项，未声称逐像素复制。",
+  "artifacts": [
+    "docs/v04/assets.json",
+    "docs/v04/art-review.md",
+    "docs/v04/generation-prompts.json",
+    "assets/runtime/v04/baleen.png",
+    "assets/runtime/v04/foundation.png",
+    "assets/runtime/v04/frame.png",
+    "assets/runtime/v04/ledge.png",
+    "assets/runtime/v04/oral-depth.png"
+  ],
+  "checks": [
+    {
+      "id": "accept",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "5项独立素材接入；真实图形截图核对七房布局/中前景视差/透明边缘；旧三角支撑和矩形覆盖已返修。素材来源/准确提示词/源母版运行均保留；长段模块重复仍列美术精修项，未声称逐像素复制。",
+      "evidence": [
+        "evidence/v04/package-art/R1-02-composite.png",
+        "evidence/v04/package-art/R1-06-composite.png",
+        "evidence/v04/package-art/R1-07-composite.png",
+        "docs/v04/art-review.md",
+        "docs/v04/assets.json"
+      ]
+    }
+  ]
+}

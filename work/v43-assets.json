@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "C01",
+    "name": "拾潮者的六种基础操作",
+    "group": "操作图解",
+    "format": "six",
+    "scene": "Six sequentially numbered panels, each with the same small hero on a simple shell ledge. 01 move and jump to a neighboring low ledge with a dotted arc; 02 a short lateral U-fork strike into a small crab flank, two faint attack poses; 03 two-handed short-range resonance cone cracks a calcified crab shell; 04 low horizontal dash under an incoming pearl, tiny dashed oval shows safe timing; 05 stationary crouch, both hands holding ONLY ONE sealed hip lamp, no duplicate lamp; 06 hero pressing a red rope latch beside an etched sound groove, U-fork lowered. Different poses, readable feet and contact, no sword. Small panels are functional drawings, not hero portraits.",
+    "steps": [
+      {
+        "title": "移动与蹬跃",
+        "input": "AD＋空格 / 摇杆＋南键",
+        "action": "先走到平台边缘，再蹬向已看见的落脚面",
+        "result": "主线间隙≤3.2U，高差≤1.8U；不是自由游泳"
+      },
+      {
+        "title": "短击与续击",
+        "input": "Q / 西键，恢复后半段再按",
+        "action": "第一击探距离；安全时接第二击",
+        "result": "10/14 基础伤害；连续乱按不取消硬直"
+      },
+      {
+        "title": "重鸣破壳",
+        "input": "R / 北键",
+        "action": "预留0.30秒起手；贴近但不撞进发力区",
+        "result": "耗2格蓄振；完整壳受24伤害，并留3秒裂口"
+      },
+      {
+        "title": "贴流冲",
+        "input": "Shift / 右扳机，取得A1后",
+        "action": "看见攻击已锁线才移动换位",
+        "result": "一段2.6U；中间0.10秒回避接触/弹体，不能穿墙和酸"
+      },
+      {
+        "title": "调息恢复",
+        "input": "按住C / 下十字键",
+        "action": "站稳护住同一盏菌灯；不能边跑边恢复",
+        "result": "1.1秒恢复1生命，起手扣2蓄振；受击取消不退款"
+      },
+      {
+        "title": "交互与长鸣",
+        "input": "E / 东键；音槽处长按0.45秒",
+        "action": "近对象轻按交互，带纹音槽才接受长鸣",
+        "result": "交互与攻击分键；关键物落界可召回"
+      }
+    ],
+    "rule": "新增的是操作可视化，沿用 V4.2 的攻击时序。无 A1 的第一 Boss 必须能用退步和蹬跃应对。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six sequentially numbered panels, each with the same small hero on a simple shell ledge. 01 move and jump to a neighboring low ledge with a dotted arc; 02 a short lateral U-fork strike into a small crab flank, two faint attack poses; 03 two-handed short-range resonance cone cracks a calcified crab shell; 04 low horizontal dash under an incoming pearl, tiny dashed oval shows safe timing; 05 stationary crouch, both hands holding ONLY ONE sealed hip lamp, no duplicate lamp; 06 hero pressing a red rope latch beside an etched sound groove, U-fork lowered. Different poses, readable feet and contact, no sword. Small panels are functional drawings, not hero portraits."
+  },
+  {
+    "id": "C02",
+    "name": "五能力与失败恢复",
+    "group": "操作图解",
+    "format": "six",
+    "scene": "Six 2D gameplay close-up panels. 01 horizontal current dash through a thin current curtain between two ledges. 02 translucent buoyant shoulder mantle lifts hero from low membrane shelf toward a fixed refill pod. 03 coral rope connects hip harness to ONE fixed bone ring, hero hanging then releasing toward a platform. 04 U-fork meets an intact ring-marked pearl and hero rebounds upward toward a ledge, NO downward sword strike. 05 hero compresses cloak and membrane through a short soft-wall slit with visible exit, solid bone stays opaque. 06 hero falls onto broad fungal recovery shelf, return stairs visible, single grounded pose with earlier faint fall trail. Clear contrast, safe amber route and red hazard only as small graphic accents.",
+    "steps": [
+      {
+        "title": "A1 贴流冲",
+        "input": "Shift / RT",
+        "action": "越薄流帘或在攻击间换位",
+        "result": "一离地仅一次；冷却0.8秒，落稳定台刷新"
+      },
+      {
+        "title": "A2 浮膜",
+        "input": "按F / LB上升，松开缓降",
+        "action": "看落台与补压囊后出发",
+        "result": "4秒浮升预算；空压仍缓降，不突然坠死"
+      },
+      {
+        "title": "A3 定潮锚",
+        "input": "G / RB 挂环，再按脱环",
+        "action": "先见红绳固定环；挂住后调整脱离时机",
+        "result": "最远6U，主线环距≤4.5U；挂环不能攻击"
+      },
+      {
+        "title": "A4 回响弹跃",
+        "input": "完整同心珠接近时按Q / 西键",
+        "action": "0.18秒迎击成功向上借力",
+        "result": "弹高2.4U；不重置空中冲刺，碎珠不可反"
+      },
+      {
+        "title": "A5 敛膜潜隙",
+        "input": "下＋F / 下＋LB",
+        "action": "从柔膜双边线入口进入，先能见出口",
+        "result": "最长1.5U；硬骨墙不可穿，缝内延迟闭合"
+      },
+      {
+        "title": "失败恢复",
+        "input": "失足后回稳定台，再观察",
+        "action": "菌毯接住初练失误；危险区回最近台",
+        "result": "酸/挤压/落界扣1格；能力和已开捷径保留"
+      }
+    ],
+    "rule": "能力是明确空间门，不增加通用二段跳和无限爬墙；进阶技巧不能成为新手主路的隐形要求。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six 2D gameplay close-up panels. 01 horizontal current dash through a thin current curtain between two ledges. 02 translucent buoyant shoulder mantle lifts hero from low membrane shelf toward a fixed refill pod. 03 coral rope connects hip harness to ONE fixed bone ring, hero hanging then releasing toward a platform. 04 U-fork meets an intact ring-marked pearl and hero rebounds upward toward a ledge, NO downward sword strike. 05 hero compresses cloak and membrane through a short soft-wall slit with visible exit, solid bone stays opaque. 06 hero falls onto broad fungal recovery shelf, return stairs visible, single grounded pose with earlier faint fall trail. Clear contrast, safe amber route and red hazard only as small graphic accents."
+  },
+  {
+    "id": "R1L",
+    "name": "须门遗港·场景剖面与三层路线",
+    "group": "须门遗港",
+    "format": "layout",
+    "scene": "ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette inky navy, slate blue, small amber lamps. Environment the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. Left shell observation camp, lower broad tongue combat lane, middle staggered tongue steps, upper root cavity and anchor ring only for revisits. A closed thin current curtain at left returns to camp from the far side; right exit to stomach. A shallow lower recovery slope connects back to entry. Two small marine crabs, one on the main lane and one beyond a step, never stacked. Six clear points: start, first crab, upper reward, return slope, far-side latch, exit. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography.",
+    "steps": [
+      {
+        "title": "起点营地",
+        "input": "观察",
+        "action": "壳屋与红绳形成固定地标",
+        "result": "低位起步就能看见前进方向"
+      },
+      {
+        "title": "主战斗层",
+        "input": "AD＋Q",
+        "action": "宽舌台提供退步、引招、补击距离",
+        "result": "场宽≥8U；敌人不在边缘持续夹击"
+      },
+      {
+        "title": "高层回访",
+        "input": "A3取得后G",
+        "action": "先见记忆匣，之后锚到须根",
+        "result": "不把首访必需奖励放高层"
+      },
+      {
+        "title": "回落层",
+        "input": "普通跳失误",
+        "action": "舌坡托底，并接回观察台",
+        "result": "首个教学坑不扣血"
+      },
+      {
+        "title": "捷径层",
+        "input": "E拉远端闩",
+        "action": "从背面拉绳打开薄流帘",
+        "result": "永久开通，死亡不复锁"
+      },
+      {
+        "title": "远景叙事",
+        "input": "停留观察",
+        "action": "上颚须刷与破旧修索指向胃内",
+        "result": "装饰没有亮于落脚面的无用光点"
+      }
+    ],
+    "rule": "关联房段：R1-02→R1-03→R1-04→R1-05。剖面是空间方案；原画不等同精确碰撞，可靠距离以操作合同为准。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette inky navy, slate blue, small amber lamps. Environment the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. Left shell observation camp, lower broad tongue combat lane, middle staggered tongue steps, upper root cavity and anchor ring only for revisits. A closed thin current curtain at left returns to camp from the far side; right exit to stomach. A shallow lower recovery slope connects back to entry. Two small marine crabs, one on the main lane and one beyond a step, never stacked. Six clear points: start, first crab, upper reward, return slope, far-side latch, exit. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography."
+  },
+  {
+    "id": "R1W",
+    "name": "须门遗港·从入场到开路",
+    "group": "须门遗港",
+    "format": "six",
+    "scene": "Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette inky navy, slate blue, small amber lamps. the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. 01 hero observes crab raising one asymmetrical claw from outside reach. 02 hero retreats half a body length as the claw sweeps empty ground. 03 hero steps in and hits exposed flank with U-fork. 04 hero chooses an ordinary jump to a higher tongue shelf, second crab remains below. 05 hero pulls red-rope latch from far side, thin curtain parts. 06 hero stands at opened shortcut looking back to recognizable starting shell, sealed amber sample at feet. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects.",
+    "steps": [
+      {
+        "title": "看预告",
+        "input": "站在1.6U外",
+        "action": "确认抬钳轮廓与蟹朝向",
+        "result": "起手0.65秒不立即出伤害"
+      },
+      {
+        "title": "退半步",
+        "input": "反向AD",
+        "action": "离开扫击范围",
+        "result": "已发力的蟹不追踪转身"
+      },
+      {
+        "title": "抢恢复",
+        "input": "朝敌移动＋Q，酌情再Q",
+        "action": "利用0.9秒恢复打两击",
+        "result": "贪第三击可能遇到下一轮"
+      },
+      {
+        "title": "换高路",
+        "input": "空格＋方向",
+        "action": "普通跳跃越过下一只蟹",
+        "result": "首访不用A1，也不要求清全房"
+      },
+      {
+        "title": "开返程",
+        "input": "E",
+        "action": "扳开远侧绳闩",
+        "result": "地图添加回营地的连线"
+      },
+      {
+        "title": "领收获",
+        "input": "E后回望",
+        "action": "取得固定样本，确认旧地标",
+        "result": "收获和开闩即刻保存"
+      }
+    ],
+    "rule": "这六帧显示操作顺序与结果；每一步的输入、风险与失败恢复在图下注解对应。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette inky navy, slate blue, small amber lamps. the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. 01 hero observes crab raising one asymmetrical claw from outside reach. 02 hero retreats half a body length as the claw sweeps empty ground. 03 hero steps in and hits exposed flank with U-fork. 04 hero chooses an ordinary jump to a higher tongue shelf, second crab remains below. 05 hero pulls red-rope latch from far side, thin curtain parts. 06 hero stands at opened shortcut looking back to recognizable starting shell, sealed amber sample at feet. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects."
+  },
+  {
+    "id": "R1B",
+    "name": "须门遗港·首领读招与反击",
+    "group": "须门遗港",
+    "format": "six",
+    "scene": "Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: same squat original gate crab carrying tangled EMPTY shell shelter and a giant asymmetrical claw, no humanoid armor. Palette inky navy, slate blue, small amber lamps; setting the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. 01 claw raised, hero stands outside sweep. 02 sweep passes below hero ordinary jump, NO dash. 03 claw lowered and flank exposed, hero attacks using U-fork. 04 crab lifts old shell and circular landing warning stays at hero previous location. 05 hero runs sideways before shell slam, no invincibility effect. 06 crab retreats into side hollow, red net slackens, small current-membrane reward floats over cleared exit. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss.",
+    "steps": [
+      {
+        "title": "抬钳预告",
+        "input": "不抢攻",
+        "action": "抬钳0.8秒，扫线集中低位",
+        "result": "不需要未取得的冲刺"
+      },
+      {
+        "title": "低扫躲避",
+        "input": "空格或后退",
+        "action": "蹬过扫面，保持在场地内",
+        "result": "脚下还有宽舌台"
+      },
+      {
+        "title": "暴露反击",
+        "input": "Q→Q",
+        "action": "蟹落钳恢复0.75秒",
+        "result": "侧腹系数1.25，硬壳0.4"
+      },
+      {
+        "title": "壳砸锁点",
+        "input": "观察落点圈",
+        "action": "抬壳1.1秒后落点锁住",
+        "result": "不要跟着旧落点继续站"
+      },
+      {
+        "title": "跑开再打",
+        "input": "AD→Q",
+        "action": "普通走跑避砸，1秒恢复进攻",
+        "result": "半血后双扫也有二次预告"
+      },
+      {
+        "title": "战后开路",
+        "input": "触碰A1育膜",
+        "action": "180耐受归零，蟹退让而非死亡",
+        "result": "获得A1，先存档再练短冲"
+      }
+    ],
+    "rule": "逐帧表现招式，数值为待测试初值。所有首领可通过直接攻击战胜；环境提供战术优势。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: same squat original gate crab carrying tangled EMPTY shell shelter and a giant asymmetrical claw, no humanoid armor. Palette inky navy, slate blue, small amber lamps; setting the mouth of a dead baleen whale; baleen ONLY from upper jaw, broad smooth tongue terraces and empty shell shelters; NO gothic arches or human masonry. 01 claw raised, hero stands outside sweep. 02 sweep passes below hero ordinary jump, NO dash. 03 claw lowered and flank exposed, hero attacks using U-fork. 04 crab lifts old shell and circular landing warning stays at hero previous location. 05 hero runs sideways before shell slam, no invincibility effect. 06 crab retreats into side hollow, red net slackens, small current-membrane reward floats over cleared exit. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss."
+  },
+  {
+    "id": "R2L",
+    "name": "肺心潮庭·场景剖面与三层路线",
+    "group": "肺心潮庭",
+    "format": "layout",
+    "scene": "ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette pale pearl blue, muted burgundy, silvery fog. Environment collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. A vertical three-level membrane chamber with four broad solid attachment shelves. Bottom refill pod and safe takeoff, middle ray-crossing lane, upper reward alcove, side bypass valve, bottom recovery shelf, exit at upper right. Membrane ray is flattened triangular organic animal with two tiny lateral eyes, NOT a diving helmet. Show soft foreground sheets, crisp midground shelf rims and pale distant folds. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography.",
+    "steps": [
+      {
+        "title": "下层补压",
+        "input": "E接触育床",
+        "action": "起跳前补满浮膜",
+        "result": "失败可在本层免费重试"
+      },
+      {
+        "title": "中层冲线",
+        "input": "观察鳐收膜",
+        "action": "冲线贯通一层而非封全屏",
+        "result": "一轮只能有一种主危险"
+      },
+      {
+        "title": "上层侧台",
+        "input": "F浮升后松开",
+        "action": "选修高台放滑膜模块",
+        "result": "主路旁有宽落台"
+      },
+      {
+        "title": "旁通位",
+        "input": "E可选操作",
+        "action": "只削弱下一轮横流",
+        "result": "不操作仍可凭动作通行"
+      },
+      {
+        "title": "安全底层",
+        "input": "松开F",
+        "action": "失压缓降到软膜床",
+        "result": "没有无限高空坠落重跑"
+      },
+      {
+        "title": "层次剥离",
+        "input": "观察远近",
+        "action": "前景薄膜框景，中景接触边最清楚",
+        "result": "远景心壁压低饱和度"
+      }
+    ],
+    "rule": "关联房段：R2-01→R2-02→R2-03→R2-04。剖面是空间方案；原画不等同精确碰撞，可靠距离以操作合同为准。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette pale pearl blue, muted burgundy, silvery fog. Environment collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. A vertical three-level membrane chamber with four broad solid attachment shelves. Bottom refill pod and safe takeoff, middle ray-crossing lane, upper reward alcove, side bypass valve, bottom recovery shelf, exit at upper right. Membrane ray is flattened triangular organic animal with two tiny lateral eyes, NOT a diving helmet. Show soft foreground sheets, crisp midground shelf rims and pale distant folds. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography."
+  },
+  {
+    "id": "R2W",
+    "name": "肺心潮庭·从入场到开路",
+    "group": "肺心潮庭",
+    "format": "six",
+    "scene": "Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette pale pearl blue, muted burgundy, silvery fog. collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. 01 mantle acquired beside bottom refill pod. 02 hero waits as ray folds fins with visible locked horizontal line. 03 hero rises with translucent shoulder mantle before releasing it. 04 hero descends below ray rush and lands on middle stable shelf. 05 hero strikes ray during wall-rest using fork, optional valve nearby remains untouched. 06 hero climbs to upper exit refill shelf and discovers module alcove. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects.",
+    "steps": [
+      {
+        "title": "取得浮膜",
+        "input": "接触育床",
+        "action": "先在无敌区展开收拢",
+        "result": "确认按住上浮、松开缓降"
+      },
+      {
+        "title": "等锁线",
+        "input": "不急着飞",
+        "action": "鳐收膜0.85秒",
+        "result": "发力后不会弯曲追踪"
+      },
+      {
+        "title": "浮升错位",
+        "input": "按F后松开",
+        "action": "先抬高再主动下降",
+        "result": "保持压力够到下一补压台"
+      },
+      {
+        "title": "落到侧台",
+        "input": "方向微调",
+        "action": "让冲刺掠过上方",
+        "result": "落脚面宽≥2U"
+      },
+      {
+        "title": "反击鳐",
+        "input": "Q或R",
+        "action": "贴壁恢复0.85秒",
+        "result": "重鸣会收膜，应先落台"
+      },
+      {
+        "title": "到新层",
+        "input": "F→松开→E",
+        "action": "上出口看见模块侧台",
+        "result": "侧台可漏取，进度不会锁死"
+      }
+    ],
+    "rule": "这六帧显示操作顺序与结果；每一步的输入、风险与失败恢复在图下注解对应。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette pale pearl blue, muted burgundy, silvery fog. collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. 01 mantle acquired beside bottom refill pod. 02 hero waits as ray folds fins with visible locked horizontal line. 03 hero rises with translucent shoulder mantle before releasing it. 04 hero descends below ray rush and lands on middle stable shelf. 05 hero strikes ray during wall-rest using fork, optional valve nearby remains untouched. 06 hero climbs to upper exit refill shelf and discovers module alcove. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects."
+  },
+  {
+    "id": "R2B",
+    "name": "肺心潮庭·首领读招与反击",
+    "group": "肺心潮庭",
+    "format": "six",
+    "scene": "Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: a coherent amphipod colony gathering around a small visible nutrient knot; marine shrimp shapes, no face or giant humanoid. Palette pale pearl blue, muted burgundy, silvery fog; setting collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. 01 colony gathers on left with broad empty upper lane. 02 hero floats above horizontal group rush. 03 dispersed swarm exposes its compact knot near middle platform, hero short-strikes. 04 swarm spreads in ring with a clearly visible lower side gap, hero takes gap. 05 previous path shown as faint empty rings before delayed second rush, hero moves to a different shelf. 06 colony disperses safely into side tissue pockets, pressure valve unblocked with no required lever use. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss.",
+    "steps": [
+      {
+        "title": "聚流观察",
+        "input": "站稳",
+        "action": "群体聚团1秒",
+        "result": "目标冲线先可见"
+      },
+      {
+        "title": "错层躲避",
+        "input": "F升后缓降",
+        "action": "用另一高度避横冲",
+        "result": "始终留低台或高台"
+      },
+      {
+        "title": "核心输出",
+        "input": "Q→Q",
+        "action": "核心外露1秒",
+        "result": "240总耐受，可直接打群体低伤"
+      },
+      {
+        "title": "环散穿隙",
+        "input": "AD＋空格",
+        "action": "走1.1秒预告留下的缺口",
+        "result": "不需要记忆复杂音谱"
+      },
+      {
+        "title": "延迟二冲",
+        "input": "换平台",
+        "action": "半血后0.8秒重复旧路",
+        "result": "不要回到刚经过的线"
+      },
+      {
+        "title": "完成与回环",
+        "input": "E确认主阀",
+        "action": "潮群迁到侧腔，取得P",
+        "result": "阀只给战术优势，非必做三锁"
+      }
+    ],
+    "rule": "逐帧表现招式，数值为待测试初值。所有首领可通过直接攻击战胜；环境提供战术优势。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: a coherent amphipod colony gathering around a small visible nutrient knot; marine shrimp shapes, no face or giant humanoid. Palette pale pearl blue, muted burgundy, silvery fog; setting collapsed whale lung and heart membranes, huge smooth translucent pleural sheets, soft branching connective tissue; absolutely NO porous bone columns, NO baleen. 01 colony gathers on left with broad empty upper lane. 02 hero floats above horizontal group rush. 03 dispersed swarm exposes its compact knot near middle platform, hero short-strikes. 04 swarm spreads in ring with a clearly visible lower side gap, hero takes gap. 05 previous path shown as faint empty rings before delayed second rush, hero moves to a different shelf. 06 colony disperses safely into side tissue pockets, pressure valve unblocked with no required lever use. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss."
+  },
+  {
+    "id": "R3L",
+    "name": "胃肠沉城·场景剖面与三层路线",
+    "group": "胃肠沉城",
+    "format": "layout",
+    "scene": "ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette dark olive, warm ochre, muted violet; limited yellow acid edges. Environment whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. Three horizontal layers: main fixed mucosal shelves across shallow acid trench, mid-shell cover separating armored scavenger and wall eel, high optional ledge requiring flotation. A red tether fixed anchor route bridges a later intestine gap; a far-side latch loops to stomach hub. Main path remains viable without flotation. Acid boundary has mottled zigzag shape, not open water surface. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography.",
+    "steps": [
+      {
+        "title": "胃枢连接",
+        "input": "选肝肠出口",
+        "action": "能先来此，也能先去肺心",
+        "result": "全主线不依赖A2"
+      },
+      {
+        "title": "主路固定台",
+        "input": "走跳",
+        "action": "固定褶壁台横跨酸层",
+        "result": "两台间距≤3.2U"
+      },
+      {
+        "title": "中层掩体",
+        "input": "绕空壳",
+        "action": "甲壳与孔鳗被壳切成两段",
+        "result": "不是同屏三面火力"
+      },
+      {
+        "title": "高层选修",
+        "input": "A2回访",
+        "action": "浮膜到胃顶袋",
+        "result": "碎片不锁基础结局"
+      },
+      {
+        "title": "肠段锚路",
+        "input": "取得A3再G",
+        "action": "固定红环越后段酸槽",
+        "result": "先授能力再考能力"
+      },
+      {
+        "title": "返程地标",
+        "input": "E开侧闩",
+        "action": "固定条贝与胃枢旧绳再次出现",
+        "result": "已开门永久保留"
+      }
+    ],
+    "rule": "关联房段：R3-02→R3-04→R3-05→R3-07。剖面是空间方案；原画不等同精确碰撞，可靠距离以操作合同为准。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette dark olive, warm ochre, muted violet; limited yellow acid edges. Environment whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. Three horizontal layers: main fixed mucosal shelves across shallow acid trench, mid-shell cover separating armored scavenger and wall eel, high optional ledge requiring flotation. A red tether fixed anchor route bridges a later intestine gap; a far-side latch loops to stomach hub. Main path remains viable without flotation. Acid boundary has mottled zigzag shape, not open water surface. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography."
+  },
+  {
+    "id": "R3W",
+    "name": "胃肠沉城·从入场到开路",
+    "group": "胃肠沉城",
+    "format": "six",
+    "scene": "Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette dark olive, warm ochre, muted violet; limited yellow acid edges. whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. 01 hero sees armored scavenger left of overturned empty shell and ripples at far-right eel opening. 02 lamp shutter closes while hero takes cover behind shell, scene stays visible. 03 eel attacks right lane but is stopped by shell cover. 04 hero ordinary-jumps onto shell edge and attacks armored flank with short resonance. 05 hero hooks fixed ring with coral tether, crosses small acid gap. 06 hero pulls back latch, old striped shell landmark of hub visible. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects.",
+    "steps": [
+      {
+        "title": "先分敌",
+        "input": "停在壳左侧",
+        "action": "读取孔口涟漪与甲壳朝向",
+        "result": "只让一种攻击先发力"
+      },
+      {
+        "title": "控制注意",
+        "input": "L关灯＋退到壳后",
+        "action": "降低未警觉甲壳感知",
+        "result": "已启动冲撞不会取消"
+      },
+      {
+        "title": "让孔鳗空招",
+        "input": "等0.8秒预告",
+        "action": "鳗伸出打到掩体外缘",
+        "result": "恢复留头0.75秒可反击"
+      },
+      {
+        "title": "绕背破壳",
+        "input": "跳→Q或R",
+        "action": "短击侧面免费，重鸣耗2格",
+        "result": "两条进攻路线都有效"
+      },
+      {
+        "title": "学锚越槽",
+        "input": "G挂环再G脱",
+        "action": "朝可见稳定台释放",
+        "result": "落酸回岸扣1格，物件复位"
+      },
+      {
+        "title": "开回环",
+        "input": "E",
+        "action": "从远侧打开回胃枢闩",
+        "result": "下次不必重打组合遭遇"
+      }
+    ],
+    "rule": "这六帧显示操作顺序与结果；每一步的输入、风险与失败恢复在图下注解对应。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette dark olive, warm ochre, muted violet; limited yellow acid edges. whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. 01 hero sees armored scavenger left of overturned empty shell and ripples at far-right eel opening. 02 lamp shutter closes while hero takes cover behind shell, scene stays visible. 03 eel attacks right lane but is stopped by shell cover. 04 hero ordinary-jumps onto shell edge and attacks armored flank with short resonance. 05 hero hooks fixed ring with coral tether, crosses small acid gap. 06 hero pulls back latch, old striped shell landmark of hub visible. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects."
+  },
+  {
+    "id": "R3B",
+    "name": "胃肠沉城·首领读招与反击",
+    "group": "胃肠沉城",
+    "format": "six",
+    "scene": "Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: broad marine mother crab carrying exactly three oversized EMPTY old clam shell layers, low body, no human clothes. Palette dark olive, warm ochre, muted violet; limited yellow acid edges; setting whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. 01 mother crab telegraphs a low sweeping push. 02 hero ordinary-jumps over claw onto a FIXED safe ledge. 03 hero attacks rear shell seam with U-fork. 04 a top empty shell layer loosens and falls to a clearly marked old location. 05 optional hero tether pulls a loose shell aside into a cover position while an alternate direct attack pose is shown in small inset. 06 mother crab retreats to wide side nest, empty shells remain useful cover and far latch opens. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss.",
+    "steps": [
+      {
+        "title": "看钳推",
+        "input": "退至跳跃起点",
+        "action": "0.9秒预告明确低扫",
+        "result": "不在钳前调息"
+      },
+      {
+        "title": "跃过低扫",
+        "input": "空格",
+        "action": "普通跳即可避开",
+        "result": "无A2也能战胜"
+      },
+      {
+        "title": "攻击壳缝",
+        "input": "Q→Q / R",
+        "action": "耐受260，硬壳也吃低伤",
+        "result": "不是三次卸壳才掉血"
+      },
+      {
+        "title": "壳层脱落",
+        "input": "离开标记位置",
+        "action": "65%与30%各脱一层",
+        "result": "落壳1.2秒预告，留固定台"
+      },
+      {
+        "title": "可选牵壳",
+        "input": "A3挂松壳",
+        "action": "每阶段一次额外0.9秒停顿",
+        "result": "不做此动作仍可输出通关"
+      },
+      {
+        "title": "退巢与捷径",
+        "input": "停手看迁居",
+        "action": "母蟹退入宽巢，小蟹续用空壳",
+        "result": "不杀关键搬运生物"
+      }
+    ],
+    "rule": "逐帧表现招式，数值为待测试初值。所有首领可通过直接攻击战胜；环境提供战术优势。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: broad marine mother crab carrying exactly three oversized EMPTY old clam shell layers, low body, no human clothes. Palette dark olive, warm ochre, muted violet; limited yellow acid edges; setting whale stomach and intestine folds, broad smooth organic mucosal shelves, empty clam shells used as shelters and cover; NO rib forest, NO bone colonnade, NO human town. 01 mother crab telegraphs a low sweeping push. 02 hero ordinary-jumps over claw onto a FIXED safe ledge. 03 hero attacks rear shell seam with U-fork. 04 a top empty shell layer loosens and falls to a clearly marked old location. 05 optional hero tether pulls a loose shell aside into a cover position while an alternate direct attack pose is shown in small inset. 06 mother crab retreats to wide side nest, empty shells remain useful cover and far latch opens. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss."
+  },
+  {
+    "id": "R4L",
+    "name": "鸣肋断脊·场景剖面与三层路线",
+    "group": "鸣肋断脊",
+    "format": "layout",
+    "scene": "ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette matte ivory, deep cyan shadow, sparse dark red crowns. Environment whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. Split-route vertical vertebra room. Lower route wide stable bone shelves linked by fixed red rings. Upper route two pearl rebound stations, middle reset ledge and final small optional reward shelf. Fungal recovery floor at bottom with return ramp. Shared exit on right and fragile plank-shaped bone slab on upper branch, permanent underlying platform preserved. Two attached bivalves serve as pearl sources. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography.",
+    "steps": [
+      {
+        "title": "入口合门",
+        "input": "P＋A3",
+        "action": "排流后挂环越缺口",
+        "result": "满足两支进度才入区"
+      },
+      {
+        "title": "下层稳路",
+        "input": "G挂环 / 普通跳",
+        "action": "宽台串固定环",
+        "result": "稳路也能直达Boss"
+      },
+      {
+        "title": "上层快路",
+        "input": "Q接珠＋Shift",
+        "action": "反弹接短冲到中途台",
+        "result": "仅选修要求连续组合"
+      },
+      {
+        "title": "中途刷新台",
+        "input": "先落双脚",
+        "action": "稳定附着后才重置空中冲刺",
+        "result": "珠反弹不刷新冲刺"
+      },
+      {
+        "title": "菌毯托底",
+        "input": "失误缓落",
+        "action": "低位有返坡",
+        "result": "不重跑整区入口"
+      },
+      {
+        "title": "远端汇合",
+        "input": "E开闩",
+        "action": "上下路汇到同一营地",
+        "result": "奖励支路不锁Boss"
+      }
+    ],
+    "rule": "关联房段：R4-01→R4-02→R4-03/04→R4-05。剖面是空间方案；原画不等同精确碰撞，可靠距离以操作合同为准。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette matte ivory, deep cyan shadow, sparse dark red crowns. Environment whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. Split-route vertical vertebra room. Lower route wide stable bone shelves linked by fixed red rings. Upper route two pearl rebound stations, middle reset ledge and final small optional reward shelf. Fungal recovery floor at bottom with return ramp. Shared exit on right and fragile plank-shaped bone slab on upper branch, permanent underlying platform preserved. Two attached bivalves serve as pearl sources. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography."
+  },
+  {
+    "id": "R4W",
+    "name": "鸣肋断脊·从入场到开路",
+    "group": "鸣肋断脊",
+    "format": "six",
+    "scene": "Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette matte ivory, deep cyan shadow, sparse dark red crowns. whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. 01 hero learns reflection on low safe station. 02 fork catches a single ring-marked pearl, upward arc. 03 hero dashes horizontally from rebound apex onto middle solid shelf. 04 hero visibly lands both feet, dash indicator small empty ring fills. 05 hero hooks fixed ring then releases toward second pearl. 06 hero arrives at optional reward and opens shortcut while lower steady route remains visible. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects.",
+    "steps": [
+      {
+        "title": "低位练习",
+        "input": "Q迎击",
+        "action": "先无害练习珠再实战珠",
+        "result": "碎珠锯齿形不能反"
+      },
+      {
+        "title": "借珠上弹",
+        "input": "看环纹相交时Q",
+        "action": "迎击窗0.18秒，上弹2.4U",
+        "result": "没接到落菌毯"
+      },
+      {
+        "title": "顶点横移",
+        "input": "Shift",
+        "action": "只用本次离地的一次冲刺",
+        "result": "冲完不再给第二次"
+      },
+      {
+        "title": "落台确认",
+        "input": "松方向",
+        "action": "接触稳定台再规划",
+        "result": "角色影与足底波确认附着"
+      },
+      {
+        "title": "续段出发",
+        "input": "G→脱环→Q",
+        "action": "挂环时不攻击，脱环后接珠",
+        "result": "可选系索仅修正方向"
+      },
+      {
+        "title": "领奖开门",
+        "input": "E",
+        "action": "从高路开回中台侧闩",
+        "result": "下路玩家仍可通过主线"
+      }
+    ],
+    "rule": "这六帧显示操作顺序与结果；每一步的输入、风险与失败恢复在图下注解对应。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette matte ivory, deep cyan shadow, sparse dark red crowns. whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. 01 hero learns reflection on low safe station. 02 fork catches a single ring-marked pearl, upward arc. 03 hero dashes horizontally from rebound apex onto middle solid shelf. 04 hero visibly lands both feet, dash indicator small empty ring fills. 05 hero hooks fixed ring then releases toward second pearl. 06 hero arrives at optional reward and opens shortcut while lower steady route remains visible. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects."
+  },
+  {
+    "id": "R4B",
+    "name": "鸣肋断脊·首领读招与反击",
+    "group": "鸣肋断脊",
+    "format": "six",
+    "scene": "Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: two original large bivalve colonies attached at different heights on two stable vertebra platforms, shared stage, no faces. Palette matte ivory, deep cyan shadow, sparse dark red crowns; setting whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. 01 upper clam opens and emits one intact pearl while lower clam closes. 02 hero jumps and reflects pearl with U-fork toward the upper clam. 03 hero lands on wide central shelf and short-strikes lower clam soft rim as it opens. 04 BOTH clams flex, a low horizontal ground shock is indicated before firing, hero jumps to safe higher shelf. 05 clams alternate faster but only ONE active pearl, hero repositions between fixed ledges. 06 both clams relax open and continue filtering harmless particles, red vertebra support knot settles, transport bone groove glows. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss.",
+    "steps": [
+      {
+        "title": "交替张壳",
+        "input": "观察上下节奏",
+        "action": "一贝吐珠，另一贝留软缘",
+        "result": "同屏不同时发两珠"
+      },
+      {
+        "title": "回珠伤害",
+        "input": "Q迎击",
+        "action": "完整珠打Boss18伤害",
+        "result": "回珠不回蓄振"
+      },
+      {
+        "title": "近身第二方案",
+        "input": "落台后Q / R",
+        "action": "软缘可短击，闭壳可重鸣",
+        "result": "不强制接珠才能伤害"
+      },
+      {
+        "title": "合震躲避",
+        "input": "看1秒预告后跳",
+        "action": "低位震带，去高台",
+        "result": "不是全屏伤害"
+      },
+      {
+        "title": "半血换拍",
+        "input": "落台再换边",
+        "action": "交替预告最短0.75秒",
+        "result": "固定地面不会全部坍塌"
+      },
+      {
+        "title": "稳骨交通",
+        "input": "长按E调律",
+        "action": "共享300耐受归零得B",
+        "result": "双贝仍滤水，交通需亲访激活"
+      }
+    ],
+    "rule": "逐帧表现招式，数值为待测试初值。所有首领可通过直接攻击战胜；环境提供战术优势。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: two original large bivalve colonies attached at different heights on two stable vertebra platforms, shared stage, no faces. Palette matte ivory, deep cyan shadow, sparse dark red crowns; setting whale ribs and broken vertebrae, broad SMOOTH bone surfaces with very few large weathered cavities, not dense swiss-cheese holes; sparse rooted red worm crowns. 01 upper clam opens and emits one intact pearl while lower clam closes. 02 hero jumps and reflects pearl with U-fork toward the upper clam. 03 hero lands on wide central shelf and short-strikes lower clam soft rim as it opens. 04 BOTH clams flex, a low horizontal ground shock is indicated before firing, hero jumps to safe higher shelf. 05 clams alternate faster but only ONE active pearl, hero repositions between fixed ledges. 06 both clams relax open and continue filtering harmless particles, red vertebra support knot settles, transport bone groove glows. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss."
+  },
+  {
+    "id": "R5L",
+    "name": "耳海归墟·场景剖面与三层路线",
+    "group": "耳海归墟",
+    "format": "layout",
+    "scene": "ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles. Environment dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. Asymmetric ear-bone chamber with broad central fighting shelf, two permanently stable side ledges, short soft slit on each side, one optional upper memory pouch. Thin translucent membrane curls in background. The exit returns to vertebral route; tail is NOT adjacent to ear. Lower inset shows skull-left, vertebra-middle, horizontal tail-right as a schematic miniature whale silhouette. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography.",
+    "steps": [
+      {
+        "title": "耳骨中央层",
+        "input": "先看附着面",
+        "action": "宽台供输出和退步",
+        "result": "主场约12U宽，至少两永久安全台"
+      },
+      {
+        "title": "左右换边层",
+        "input": "A5潜隙",
+        "action": "缝两端都能看见",
+        "result": "不临时闭合夹死角色"
+      },
+      {
+        "title": "高位记忆层",
+        "input": "支路探索",
+        "action": "侧囊放碎片与歌纹",
+        "result": "不收集也能打终局"
+      },
+      {
+        "title": "回声危险层",
+        "input": "看空心环",
+        "action": "旧位置记录延迟波",
+        "result": "只记录攻击位置，不复制主角"
+      },
+      {
+        "title": "头尾地理",
+        "input": "地图查看",
+        "action": "颅耳回脊椎，再到尾根",
+        "result": "图中尾根只以地图小窗显示"
+      },
+      {
+        "title": "出口叙事",
+        "input": "战后停留",
+        "action": "旧骨纹渐亮，覆膜仍附薄层",
+        "result": "不是鲸复活，也不变人类宫殿"
+      }
+    ],
+    "rule": "关联房段：R5-02→R5-03→R5-04→R5-07/08。剖面是空间方案；原画不等同精确碰撞，可靠距离以操作合同为准。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. ONE large orthographic playable side-view level cutaway taking the upper 75 percent, with three small LOWER strip insets isolating foreground silhouettes, playable collision surfaces and distant background, respectively. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles. Environment dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. Asymmetric ear-bone chamber with broad central fighting shelf, two permanently stable side ledges, short soft slit on each side, one optional upper memory pouch. Thin translucent membrane curls in background. The exit returns to vertebral route; tail is NOT adjacent to ear. Lower inset shows skull-left, vertebra-middle, horizontal tail-right as a schematic miniature whale silhouette. Number six relevant locations 01 through 06 with tiny neutral circles, no long text. Main map depicts roughly 2.5 screens, hero tiny for scale. Dashed amber main route and thin cyan optional path must not obscure art. The lower insets show SAME geography."
+  },
+  {
+    "id": "R5W",
+    "name": "耳海归墟·从入场到开路",
+    "group": "耳海归墟",
+    "format": "six",
+    "scene": "Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles. dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. 01 hero studies a soft slit with visible far exit. 02 hero folds mantle and passes the slit, round helmet remains same single lens. 03 wall eel occupies one passage but other slit remains free, hero switches side. 04 hero leaves a short concentric echo at old sound groove and moves away. 05 delayed membrane attack strikes empty old echo position while hero reaches central shelf. 06 after victory hero returns through vertebra route toward distant tail shelter, use small journey montage NOT connecting ear directly to tail. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects.",
+    "steps": [
+      {
+        "title": "看出口再潜隙",
+        "input": "靠近双线软膜",
+        "action": "A5在安全池先获得",
+        "result": "硬墙不能穿"
+      },
+      {
+        "title": "折膜入缝",
+        "input": "下＋F",
+        "action": "角色收拢，镜头先保出口可见",
+        "result": "缝内延迟闭合"
+      },
+      {
+        "title": "避单路封锁",
+        "input": "换另一软缝",
+        "action": "缝栖鳗一次只占一路",
+        "result": "不是必须击杀才能离房"
+      },
+      {
+        "title": "可选留声",
+        "input": "音槽E长按",
+        "action": "旧位置出现回声标记",
+        "result": "离开后再引导覆膜"
+      },
+      {
+        "title": "换位输出",
+        "input": "Shift或普通跳后Q",
+        "action": "延迟攻击扑旧位置",
+        "result": "机关不是必做损血步骤"
+      },
+      {
+        "title": "返回归海",
+        "input": "地图选已激活节点",
+        "action": "取得S后经脊椎去尾根",
+        "result": "P＋B＋S满足才释放幼体"
+      }
+    ],
+    "rule": "这六帧显示操作顺序与结果；每一步的输入、风险与失败恢复在图下注解对应。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered successive gameplay storyboard panels 01-06. SAME continuous local level across all frames, camera shifts only as hero progresses. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles. dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. 01 hero studies a soft slit with visible far exit. 02 hero folds mantle and passes the slit, round helmet remains same single lens. 03 wall eel occupies one passage but other slit remains free, hero switches side. 04 hero leaves a short concentric echo at old sound groove and moves away. 05 delayed membrane attack strikes empty old echo position while hero reaches central shelf. 06 after victory hero returns through vertebra route toward distant tail shelter, use small journey montage NOT connecting ear directly to tail. Hero is small, full body, every frame shows what it is doing and what platform supports it. A few thin arrows can indicate movement, no huge effects."
+  },
+  {
+    "id": "R5B",
+    "name": "耳海归墟·首领读招与反击",
+    "group": "耳海归墟",
+    "format": "six",
+    "scene": "Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: faceless flowing symbiotic membrane colony wrapping a smooth auditory bone, asymmetrical nonhumanoid translucent ribbon, no skeleton face and no crown. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles; setting dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. 01 membrane curls to telegraph lateral sweep, hero waits at stable left shelf. 02 hero dashes to central shelf after sweep locks direction. 03 hero attacks exposed attachment with U-fork, short compact resonance. 04 hollow echo rings remain at hero OLD location, 1.4 second delay implied by three small empty tick marks. 05 hero passes soft side slit while delayed repeat hits OLD empty platform, both platforms still intact. 06 membrane relaxes after defeat, hero lowers fork and stands still, amber auditory groove glows with soft rings, no whale resurrection. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss.",
+    "steps": [
+      {
+        "title": "前扫读招",
+        "input": "看卷膜方向",
+        "action": "前扫0.8秒、垂落1秒预告",
+        "result": "最少留0.8秒近身窗口"
+      },
+      {
+        "title": "锁线后换位",
+        "input": "AD / A1",
+        "action": "离开已锁定的横扫范围",
+        "result": "无敌窗不替代空间判断"
+      },
+      {
+        "title": "攻击附着",
+        "input": "Q或R",
+        "action": "任一附着面都能耗耐受",
+        "result": "总340，不必依次松三结"
+      },
+      {
+        "title": "记住旧环",
+        "input": "停止贪刀",
+        "action": "半血后每第二招留旧位环",
+        "result": "1.4秒后重复原处"
+      },
+      {
+        "title": "潜隙避回波",
+        "input": "下＋F或走跳",
+        "action": "去另一侧宽台",
+        "result": "最多一回声叠一实体攻击"
+      },
+      {
+        "title": "停鸣收束",
+        "input": "耐受归零后静止2秒",
+        "action": "先存胜利，再做告别交互",
+        "result": "取得S；尾根另经脊椎到达"
+      }
+    ],
+    "rule": "逐帧表现招式，数值为待测试初值。所有首领可通过直接攻击战胜；环境提供战术优势。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six numbered boss fight storyboard panels 01-06, SAME original boss and SAME arena geometry throughout. Boss: faceless flowing symbiotic membrane colony wrapping a smooth auditory bone, asymmetrical nonhumanoid translucent ribbon, no skeleton face and no crown. Palette deep indigo, soft lavender gray, pale amber; almost silent sparse particles; setting dense smooth whale auditory bulla and coiled ear folds, a single asymmetrical ear bone with no face-like eye sockets, soft translucent membrane side passages; NO rib forest. 01 membrane curls to telegraph lateral sweep, hero waits at stable left shelf. 02 hero dashes to central shelf after sweep locks direction. 03 hero attacks exposed attachment with U-fork, short compact resonance. 04 hollow echo rings remain at hero OLD location, 1.4 second delay implied by three small empty tick marks. 05 hero passes soft side slit while delayed repeat hits OLD empty platform, both platforms still intact. 06 membrane relaxes after defeat, hero lowers fork and stands still, amber auditory groove glows with soft rings, no whale resurrection. Clearly DIFFERENT anticipation, active hit, recovery and outcome poses. Hero height around 12 percent of each panel. Coral outlines only at damaging attack zone, amber weak point only when exposed. NO generic knight enemy, no human armor, no masks, no copied existing game boss."
+  },
+  {
+    "id": "E01",
+    "name": "敌人图鉴Ⅰ·距离与空战",
+    "group": "敌人与地形",
+    "format": "nine",
+    "scene": "A 3 rows by 3 columns illustrated enemy attack sheet, numbered 01-09, no text. EACH ROW one ORIGINAL marine enemy, each COLUMN anticipation / attack / recovery with small consistent Tidekeeper demonstrating safe position. Row1 squat corpse crab: asymmetrical claw rises, low claw sweep, lowered claw exposes flank. Row2 armored fat-scent scavenger: antennae point toward lit lamp, fixed straight low charge, cracked plate exposes side. Row3 flattened membrane ray with tiny lateral eyes: fins fold to aim, horizontal rush as hero descends beneath, rests against soft wall exposed. No helmets on enemies, no human faces. Simplified strong silhouettes, muted slate/olive/burgundy palette, clean side view. Keep row creature identical across states.",
+    "steps": [
+      {
+        "title": "尸蟹预告",
+        "input": "站在外侧",
+        "action": "抬钳0.65秒",
+        "result": "距离是第一种防御"
+      },
+      {
+        "title": "尸蟹发力",
+        "input": "退步或跳",
+        "action": "低扫0.20秒",
+        "result": "发力后不突然转身"
+      },
+      {
+        "title": "尸蟹破绽",
+        "input": "Q→Q",
+        "action": "恢复0.90秒；耐受30",
+        "result": "正面壳低伤、侧腹正常伤"
+      },
+      {
+        "title": "嗅脂甲预告",
+        "input": "L与走位",
+        "action": "灯照引注意，触须锁向0.8秒",
+        "result": "关灯不取消已开招"
+      },
+      {
+        "title": "嗅脂甲发力",
+        "input": "跳至侧面",
+        "action": "固定方向低冲0.35秒",
+        "result": "不要沿它的冲线后退"
+      },
+      {
+        "title": "嗅脂甲破绽",
+        "input": "R或绕背Q",
+        "action": "恢复0.85秒；耐受45",
+        "result": "R耗2蓄振但可破壳"
+      },
+      {
+        "title": "膜缘鳐预告",
+        "input": "F抬升后松",
+        "action": "收膜0.85秒",
+        "result": "看锁线后再选高度"
+      },
+      {
+        "title": "膜缘鳐发力",
+        "input": "缓降至侧台",
+        "action": "横冲0.35秒",
+        "result": "不空中无限追踪"
+      },
+      {
+        "title": "膜缘鳐破绽",
+        "input": "落台Q",
+        "action": "贴壁0.85秒；耐受35",
+        "result": "重鸣前落台更稳"
+      }
+    ],
+    "rule": "三行分别展示生物形象与预告—发力—恢复。正常体表在待机/恢复期不扣接触生命。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 9 panels in a 3-column by 3-row grid. Readable creature poses. A 3 rows by 3 columns illustrated enemy attack sheet, numbered 01-09, no text. EACH ROW one ORIGINAL marine enemy, each COLUMN anticipation / attack / recovery with small consistent Tidekeeper demonstrating safe position. Row1 squat corpse crab: asymmetrical claw rises, low claw sweep, lowered claw exposes flank. Row2 armored fat-scent scavenger: antennae point toward lit lamp, fixed straight low charge, cracked plate exposes side. Row3 flattened membrane ray with tiny lateral eyes: fins fold to aim, horizontal rush as hero descends beneath, rests against soft wall exposed. No helmets on enemies, no human faces. Simplified strong silhouettes, muted slate/olive/burgundy palette, clean side view. Keep row creature identical across states."
+  },
+  {
+    "id": "E02",
+    "name": "敌人图鉴Ⅱ·封路与落点",
+    "group": "敌人与地形",
+    "format": "nine",
+    "scene": "3 rows by 3 columns illustrated enemy skills sheet 01-09, each row ONE original creature across anticipation/attack/recovery. Row1 blind elongated eel in mucosal wall hole: ripple first, head extends horizontally while hero above, head remains out briefly vulnerable. Row2 attached bivalve: shell opens with three small rings, launches ONE complete pearl as hero raises U-fork, soft rim remains exposed. Row3 squat attached-bone crustacean, rounded not insect: shell contracts on bone wall, leaps along FIXED parabolic dotted arc to an indicated floor spot while hero steps aside, lands upside down exposing suction feet. Same environments per row. Smooth bone only in lower row, membrane wall in first. No text except numbers, no swords, no spikes on everything.",
+    "steps": [
+      {
+        "title": "孔鳗预告",
+        "input": "观察孔口",
+        "action": "黏液与涟漪0.8秒",
+        "result": "身体在墙内不能隔墙打"
+      },
+      {
+        "title": "孔鳗发力",
+        "input": "走上台",
+        "action": "伸出0.30秒",
+        "result": "只封一条通道"
+      },
+      {
+        "title": "孔鳗破绽",
+        "input": "Q",
+        "action": "留头0.75秒；耐受30",
+        "result": "不必追进洞内"
+      },
+      {
+        "title": "鸣贝预告",
+        "input": "看环纹",
+        "action": "张合0.9秒",
+        "result": "完整珠与碎珠有不同轮廓"
+      },
+      {
+        "title": "鸣贝发力",
+        "input": "Q迎击或绕开",
+        "action": "每次只吐一珠",
+        "result": "A4前仍可近身绕珠"
+      },
+      {
+        "title": "鸣贝破绽",
+        "input": "近身短击",
+        "action": "软缘0.85秒；耐受30",
+        "result": "新珠出现前旧珠清场"
+      },
+      {
+        "title": "附骨甲预告",
+        "input": "看落点",
+        "action": "收壳0.75秒",
+        "result": "先能看见起点和落点"
+      },
+      {
+        "title": "附骨甲发力",
+        "input": "AD离落点",
+        "action": "固定抛物线",
+        "result": "半空不改线追玩家"
+      },
+      {
+        "title": "附骨甲破绽",
+        "input": "Q或R",
+        "action": "倒伏0.8秒；耐受40",
+        "result": "精英只加组合招，不变隐形判定"
+      }
+    ],
+    "rule": "固定孔、弹体和跃扑三模板组合时，同屏最多两类主动伤害源。远处装饰不能被误认成可反弹珠。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 9 panels in a 3-column by 3-row grid. Readable creature poses. 3 rows by 3 columns illustrated enemy skills sheet 01-09, each row ONE original creature across anticipation/attack/recovery. Row1 blind elongated eel in mucosal wall hole: ripple first, head extends horizontally while hero above, head remains out briefly vulnerable. Row2 attached bivalve: shell opens with three small rings, launches ONE complete pearl as hero raises U-fork, soft rim remains exposed. Row3 squat attached-bone crustacean, rounded not insect: shell contracts on bone wall, leaps along FIXED parabolic dotted arc to an indicated floor spot while hero steps aside, lands upside down exposing suction feet. Same environments per row. Smooth bone only in lower row, membrane wall in first. No text except numbers, no swords, no spikes on everything."
+  },
+  {
+    "id": "E03",
+    "name": "敌人图鉴Ⅲ·群流与生态边界",
+    "group": "敌人与地形",
+    "format": "nine",
+    "scene": "3 rows by 3 columns original underwater ecological encounter storyboard 01-09. Row1 small shrimp swarm: gathers into one compact ribbon, moves along one visible current lane while hero hides behind tongue ledge, disperses leaving safe passage. Row2 amphipod group: forms small rotating nutrient knot among lung membranes, sends a single group charge across one layer, knot exposed as hero U-fork strikes. Row3 PROTECTED friendly shell carrier crab with tiny offspring: calmly carries empty shell with red repair rope; hero lowers weapon and offers food tray; crab moves shell aside to open passage and offspring gather. Third row is interaction not fighting; do not show hurt, skulls, health bar or attack effects on friendly crab. Distinguish animals by silhouette, marine crustaceans not humanoid insects.",
+    "steps": [
+      {
+        "title": "剪须群聚团",
+        "input": "停在稳台",
+        "action": "聚团1秒",
+        "result": "群体代理，不模拟百只敌人"
+      },
+      {
+        "title": "剪须群冲线",
+        "input": "站台后或跳过",
+        "action": "只沿一条标记水道",
+        "result": "场景激流已算一种危险"
+      },
+      {
+        "title": "剪须群散开",
+        "input": "Q或直接过路",
+        "action": "散聚1秒；耐受40",
+        "result": "不要求清场才能走"
+      },
+      {
+        "title": "端足群聚核",
+        "input": "看营养节点",
+        "action": "身体向节点卷拢",
+        "result": "不是单只飞虫造型"
+      },
+      {
+        "title": "端足群攻击",
+        "input": "换高度",
+        "action": "群体冲线不跟踪拐弯",
+        "result": "给玩家看完整安全层"
+      },
+      {
+        "title": "端足群恢复",
+        "input": "Q打节点",
+        "action": "散群留输出窗",
+        "result": "普通变体耐受40，Boss另算"
+      },
+      {
+        "title": "受保护搬壳蟹",
+        "input": "收起攻击",
+        "action": "识别红绳旧巢与幼体",
+        "result": "无耐受条，不提供蓄振"
+      },
+      {
+        "title": "交互迁居",
+        "input": "E放饵盘",
+        "action": "用盘指向旁侧宽巢",
+        "result": "饵盘本房唯一，可召回"
+      },
+      {
+        "title": "生态开路",
+        "input": "跟随但不攻击",
+        "action": "生物搬开空壳露通道",
+        "result": "完成永久记录，幼体不受伤"
+      }
+    ],
+    "rule": "九种普通变体使用六行为模板；友好搬壳蟹不计战斗敌人数量。生态互动保留，但不取代主战斗。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 9 panels in a 3-column by 3-row grid. Readable creature poses. 3 rows by 3 columns original underwater ecological encounter storyboard 01-09. Row1 small shrimp swarm: gathers into one compact ribbon, moves along one visible current lane while hero hides behind tongue ledge, disperses leaving safe passage. Row2 amphipod group: forms small rotating nutrient knot among lung membranes, sends a single group charge across one layer, knot exposed as hero U-fork strikes. Row3 PROTECTED friendly shell carrier crab with tiny offspring: calmly carries empty shell with red repair rope; hero lowers weapon and offers food tray; crab moves shell aside to open passage and offspring gather. Third row is interaction not fighting; do not show hurt, skulls, health bar or attack effects on friendly crab. Distinguish animals by silhouette, marine crustaceans not humanoid insects."
+  },
+  {
+    "id": "T01",
+    "name": "地形状态·变化与复位",
+    "group": "敌人与地形",
+    "format": "six",
+    "scene": "Six environmental mechanics panels 01-06, each panel split small BEFORE and AFTER areas with a narrow arrow, two views of SAME local geometry. 01 tongue membrane platform flexes then settles, lower safety slope stays. 02 lung bypass valve shifts bright current particles from main lane to side pocket, permanent platforms unchanged. 03 empty shell moved into mucosal slot makes cover beside bounded acid trench. 04 thin upper bone slab cracks and drops to a lower catch ledge, essential bottom route stays. 05 ear soft slit opens around hero and delays closing until hero exits, hard bone beside it never opens. 06 red-rope shortcut latch opened once remains visibly unlatched, checkpoint shell at other end, small abstract restart circular arrow. Underwater flat hand ink, clear material distinction, no large fantasy architecture. Hero small or absent except interactions.",
+    "steps": [
+      {
+        "title": "柔台受力",
+        "input": "踩上 / 离开",
+        "action": "薄台下沉0.3U后稳定",
+        "result": "不当作突然消失平台；底部有坡"
+      },
+      {
+        "title": "肺心旁通",
+        "input": "E阀",
+        "action": "下一轮弱流25%，12秒冷却",
+        "result": "流纹先变，再改变推力；非开路必需"
+      },
+      {
+        "title": "空壳掩体",
+        "input": "E拖放",
+        "action": "空壳卡槽隔开敌冲线",
+        "result": "关键壳落界2秒回槽，不能无限复制"
+      },
+      {
+        "title": "上层薄骨片",
+        "input": "只在支路踩踏",
+        "action": "裂纹0.9秒预告，落到下接台",
+        "result": "离房重置；主路永久台始终保留"
+      },
+      {
+        "title": "柔膜窄缝",
+        "input": "下＋F",
+        "action": "通过后收回；人在缝里则延迟闭合",
+        "result": "不压死、不把出口变成硬墙"
+      },
+      {
+        "title": "捷径状态",
+        "input": "E从远侧开闩",
+        "action": "开闩存档，复活仍打开",
+        "result": "局部敌人和压力可复位，捷径不复锁"
+      }
+    ],
+    "rule": "地形变化限定为六种离散状态，不做连续组织破坏模拟。仅上层选修薄骨片是本轮新增局部状态。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six environmental mechanics panels 01-06, each panel split small BEFORE and AFTER areas with a narrow arrow, two views of SAME local geometry. 01 tongue membrane platform flexes then settles, lower safety slope stays. 02 lung bypass valve shifts bright current particles from main lane to side pocket, permanent platforms unchanged. 03 empty shell moved into mucosal slot makes cover beside bounded acid trench. 04 thin upper bone slab cracks and drops to a lower catch ledge, essential bottom route stays. 05 ear soft slit opens around hero and delays closing until hero exits, hard bone beside it never opens. 06 red-rope shortcut latch opened once remains visibly unlatched, checkpoint shell at other end, small abstract restart circular arrow. Underwater flat hand ink, clear material distinction, no large fantasy architecture. Hero small or absent except interactions."
+  },
+  {
+    "id": "U01",
+    "name": "探索收获·成长与重试",
+    "group": "操作图解",
+    "format": "six",
+    "scene": "Six original UX gameplay storyboard panels 01-06. 01 hero stands beside clue of interrupted red rope and light from hidden soft wall gap, tiny amber ring navigation marker only. 02 opens hidden pouch, finds microbial module in sealed amber capsule, no white humanoid reward. 03 at empty shell camp adjusts ONE hip lamp shown enlarged in inset with EXACTLY TWO chambers: leaf motility and round resonance. 04 original HUD mockup small along bottom edge: FOUR olive leaf life marks and FOUR rectangular energy segments, nearby hero heals with one lamp. 05 damaged hero safely reappears at same shell checkpoint, red shortcut remains open in distance. 06 boss practice entrance is abstract concentric bone groove showing no copy of character, simple three horizontal record bars as placeholder, player chooses route with a finger. No bench, no stag transport, no mask health, no charm grid, no existing game UI, no readable invented language; only panel digits.",
+    "steps": [
+      {
+        "title": "发现秘密",
+        "input": "观察＋地图标记",
+        "action": "断绳与透光至少两线索",
+        "result": "不用敲遍所有墙"
+      },
+      {
+        "title": "固定收获",
+        "input": "E",
+        "action": "样本/碎片/记忆各有形状",
+        "result": "重复拾取不刷成长"
+      },
+      {
+        "title": "营地搭配",
+        "input": "E进灯腔界面",
+        "action": "运动槽三选一，共鸣槽三选一",
+        "result": "六模块九组合，免费换"
+      },
+      {
+        "title": "读生命资源",
+        "input": "看叶片与矩形",
+        "action": "初始4生命、4蓄振；成长最多6生命",
+        "result": "形状和数字辅助共同区分"
+      },
+      {
+        "title": "死亡与重试",
+        "input": "选择重试",
+        "action": "生命资源回满，Boss重置",
+        "result": "能力/模块/捷径不丢，无跑尸"
+      },
+      {
+        "title": "回响练习",
+        "input": "通关后骨音节点",
+        "action": "复用五Boss原场地",
+        "result": "只记本地时间/受伤，不产成长"
+      }
+    ],
+    "rule": "界面视觉是原创灯腔与器官地图语言。图中文字仅编号；正式文案和操作在图册中精确排版。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 6 panels in a 3-column by 2-row grid, all the same size. Thin plain gutters. Each panel 01-06 has sufficient space for visible characters, floor and safe path. Six original UX gameplay storyboard panels 01-06. 01 hero stands beside clue of interrupted red rope and light from hidden soft wall gap, tiny amber ring navigation marker only. 02 opens hidden pouch, finds microbial module in sealed amber capsule, no white humanoid reward. 03 at empty shell camp adjusts ONE hip lamp shown enlarged in inset with EXACTLY TWO chambers: leaf motility and round resonance. 04 original HUD mockup small along bottom edge: FOUR olive leaf life marks and FOUR rectangular energy segments, nearby hero heals with one lamp. 05 damaged hero safely reappears at same shell checkpoint, red shortcut remains open in distance. 06 boss practice entrance is abstract concentric bone groove showing no copy of character, simple three horizontal record bars as placeholder, player chooses route with a finger. No bench, no stag transport, no mask health, no charm grid, no existing game UI, no readable invented language; only panel digits."
+  },
+  {
+    "id": "W01",
+    "name": "一具鲸体·五域互联与回访",
+    "group": "总览与层级",
+    "format": "world",
+    "scene": "A wide original hand-painted anatomical SIDE CUTAWAY map of ONE dead baleen whale lying on sea floor, HEAD LEFT, horizontal soft flukes RIGHT, clear mouth-upper-baleen, lung/heart behind head, stomach/intestine below central body, ribs/spine above, ear in skull. Five colored organically distinct territories, all inside same animal. Tiny empty shell settlements, red repair strings, six small neutral amber ring nodes. Draw clear route loop from mouth to central stomach hub, two alternative branches lung and intestinal, reconverging at ribs, then LEFT to ear; final route returns along spine all the way RIGHT to tail, no ear-tail direct tunnel. Keep external ocean dark, sparse drifting life, original miniature hero at mouth. Only region numeric labels 01-05, no English or Chinese title. Bottom strip has three small frames of the SAME old mouth room: locked high ring seen early; later hero anchors up; far-side latch opens loop. No humanoid city, no whale resurrection, no vertical fish tail.",
+    "steps": [
+      {
+        "title": "入鲸主线",
+        "input": "R1→胃枢",
+        "action": "先近战教学，Boss后A1",
+        "result": "第一回环让玩家理解记住旧门"
+      },
+      {
+        "title": "两支任选",
+        "input": "肺心 / 肝肠",
+        "action": "肺心给A2/P，肠段给A3",
+        "result": "肠主路不依赖A2"
+      },
+      {
+        "title": "双条件汇合",
+        "input": "P＋A3",
+        "action": "强流闸与锚缺口进入断脊",
+        "result": "不是单线假分叉"
+      },
+      {
+        "title": "骨脊至头耳",
+        "input": "A4＋B",
+        "action": "稳定交通后前往耳骨",
+        "result": "A5利用已有浮膜潜隙"
+      },
+      {
+        "title": "头耳返回尾根",
+        "input": "S后经脊椎",
+        "action": "尾根检查P＋B＋S",
+        "result": "头尾不相邻，鲸不复活"
+      },
+      {
+        "title": "旧房三次价值",
+        "input": "先见→得能力→回访",
+        "action": "高门、锚路、远端捷径",
+        "result": "同一房用新能力获得新路径"
+      }
+    ],
+    "rule": "世界原画表示器官空间意象，精确门槛仍以连通数据为准。五域沿用 V4，不新增整张大陆。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. A wide original hand-painted anatomical SIDE CUTAWAY map of ONE dead baleen whale lying on sea floor, HEAD LEFT, horizontal soft flukes RIGHT, clear mouth-upper-baleen, lung/heart behind head, stomach/intestine below central body, ribs/spine above, ear in skull. Five colored organically distinct territories, all inside same animal. Tiny empty shell settlements, red repair strings, six small neutral amber ring nodes. Draw clear route loop from mouth to central stomach hub, two alternative branches lung and intestinal, reconverging at ribs, then LEFT to ear; final route returns along spine all the way RIGHT to tail, no ear-tail direct tunnel. Keep external ocean dark, sparse drifting life, original miniature hero at mouth. Only region numeric labels 01-05, no English or Chinese title. Bottom strip has three small frames of the SAME old mouth room: locked high ring seen early; later hero anchors up; far-side latch opens loop. No humanoid city, no whale resurrection, no vertical fish tail."
+  },
+  {
+    "id": "L01",
+    "name": "四层画面·从气氛到可玩面",
+    "group": "总览与层级",
+    "format": "layers",
+    "scene": "An original four-strip exploded 2D level art breakdown, stacked horizontally, same lung chamber camera in each strip. Strip 01 only very dark foreground soft tissue silhouettes at sides, center mostly empty. Strip 02 clean playable membrane shelves with continuous pale top rims, original hero, one membrane ray enemy, red-rope lever and small amber refill pod, everything clearly on same plane. Strip 03 low-contrast burgundy distant lung/heart folds with no bright interactive-looking dots. Strip 04 complete composite of all layers, playable silhouettes unambiguously dominant, tiny dashed ray attack lane overlay and gold landing outline. Sparse airy watercolor haze, smooth shapes, black ink contour, only labels 01-04. No bone arches, no columns, no decorative skulls, no existing game UI. This is art direction breakdown, not an isometric diorama.",
+    "steps": [
+      {
+        "title": "前景层",
+        "input": "不参与碰撞",
+        "action": "暗软组织框住边缘，中央不挡敌人",
+        "result": "遮挡接触面时降低前景不透明度"
+      },
+      {
+        "title": "可玩层",
+        "input": "角色 / 敌 / 平台 / 机关",
+        "action": "顶部连续亮边，敌人起手轮廓清楚",
+        "result": "精确碰撞只对应此层"
+      },
+      {
+        "title": "远景层",
+        "input": "纯氛围",
+        "action": "低饱和肺心褶壁、稀疏微尘",
+        "result": "不能比奖励和攻击提示更亮"
+      },
+      {
+        "title": "合成层",
+        "input": "先辨危险再辨奖励",
+        "action": "发力线与落脚台始终可见",
+        "result": "震屏/闪光/视差可关，不改判定"
+      }
+    ],
+    "rule": "画风借鉴的是层次与轮廓读性。本轮减少孔洞、写实斑驳与满屏骨柱，让生物区有各自轮廓。",
+    "prompt": "Use case: stylized-concept. Original 2D side-scrolling action adventure GAMEPLAY DESIGN PLATE, Whale Fall: Echoes of the Tide V4.3. Reference image is ONLY our owned Tidekeeper identity. Preserve exactly one circular DARK LENS in a round ivory diving helmet, short petrol-teal cape, charcoal limbs, broad webbed feet, ONE sealed amber lamp at LEFT hip, coral-red tether and U-shaped TWO-prong resonance tool (never a blade). Three-head-tall proportions; do not turn hero into white mask knight. Art direction: confident clean near-black ink contours, two or three broad flat painted values, very sparse texture, strongly readable silhouette, dark foreground framing, clear playable middle plane, low-contrast atmospheric backgrounds. Poetic underwater ruins of a DEAD whale, tiny shell shelters and red repair knots, no human architecture. A strong action-adventure visual explanation, NOT just a pretty landscape. Landscape canvas about 16:9, high resolution. Panels must be distinct and strictly regular, correct left-to-right top-to-bottom numbering. Only requested numbered labels; no wordy text, no title, no copied HUD. Every action pose retains hero identity. Effects small enough to see enemy and weapon; bone fork always visibly has two prongs. Avoid Horned white knight, paired black eye mask, insect kingdom, nail weapon, stag station, gothic city, crowns, human warriors, recognizable Hollow Knight characters/enemies/bosses/maps/UI/logos. No naked flame, no whale revival, no gore. Treat the style as general hand-inked atmospheric action art, never trace a specific existing game composition. Layout: EXACTLY 4 horizontal strips. An original four-strip exploded 2D level art breakdown, stacked horizontally, same lung chamber camera in each strip. Strip 01 only very dark foreground soft tissue silhouettes at sides, center mostly empty. Strip 02 clean playable membrane shelves with continuous pale top rims, original hero, one membrane ray enemy, red-rope lever and small amber refill pod, everything clearly on same plane. Strip 03 low-contrast burgundy distant lung/heart folds with no bright interactive-looking dots. Strip 04 complete composite of all layers, playable silhouettes unambiguously dominant, tiny dashed ray attack lane overlay and gold landing outline. Sparse airy watercolor haze, smooth shapes, black ink contour, only labels 01-04. No bone arches, no columns, no decorative skulls, no existing game UI. This is art direction breakdown, not an isometric diorama."
+  }
+]

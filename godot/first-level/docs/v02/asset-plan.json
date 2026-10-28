@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "project": "G:/鲸落万物生/godot/first-level",
+  "revision": "v0.2-planning",
+  "date": "2026-10-27",
+  "purpose": "需求资产清单；不是已生成资源清单或验收证明",
+  "unit_px": 64,
+  "viewport": [
+    1280,
+    720
+  ],
+  "source_design": "V5.2 original IP + existing v0.1 assets",
+  "requirements": [
+    "far/mid/play/front independent",
+    "source/master/runtime separated",
+    "alpha, dimensions, pivot and hash tracked",
+    "real engine observation before pass"
+  ],
+  "assets": [
+    {
+      "id": "BG_FAR",
+      "category": "远景",
+      "slug": "giant_mouth_far",
+      "planned_count": 2,
+      "count_is_estimate": true,
+      "spec": "far panorama; low contrast",
+      "anchor": "world layer",
+      "fx": [
+        "FX01"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_giant_mouth_far_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "BG_MID",
+      "category": "中景",
+      "slug": "baleen_and_tissue_mid",
+      "planned_count": 2,
+      "count_is_estimate": true,
+      "spec": "separate oral and pharynx sets",
+      "anchor": "world layer",
+      "fx": [
+        "FX01"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_baleen_and_tissue_mid_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "BG_FRONT",
+      "category": "前景",
+      "slug": "dark_edge_front",
+      "planned_count": 2,
+      "count_is_estimate": true,
+      "spec": "local occluders, alpha",
+      "anchor": "local edge",
+      "fx": [
+        "FX01"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_dark_edge_front_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "TERRAIN",
+      "category": "地形",
+      "slug": "tongue_terrain",
+      "planned_count": 4,
+      "count_is_estimate": true,
+      "spec": "middle/end/corner/broken edge, alpha",
+      "anchor": "top baseline",
+      "fx": [],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_tongue_terrain_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "PLANT",
+      "category": "植物",
+      "slug": "marine_growth",
+      "planned_count": 2,
+      "count_is_estimate": true,
+      "spec": "near/play-edge variants, alpha",
+      "anchor": "root bottom center",
+      "fx": [],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_marine_growth_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "LAMP",
+      "category": "独立灯",
+      "slug": "symbiotic_lamp",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "housing + emissive mask, alpha",
+      "anchor": "mount",
+      "fx": [
+        "FX06"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_symbiotic_lamp_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "DOOR",
+      "category": "壳门",
+      "slug": "shell_door",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "frame + leaf separate, alpha",
+      "anchor": "threshold center",
+      "fx": [
+        "FX11"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_shell_door_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "WATER",
+      "category": "水带",
+      "slug": "flow_band",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "tileable material + ripple",
+      "anchor": "surface baseline",
+      "fx": [
+        "FX07"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_flow_band_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "BALEEN",
+      "category": "垂须",
+      "slug": "hanging_baleen",
+      "planned_count": 2,
+      "count_is_estimate": true,
+      "spec": "oral only, alpha",
+      "anchor": "top attachment",
+      "fx": [
+        "FX05"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_hanging_baleen_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "PROP_SHELL",
+      "category": "可动物件",
+      "slug": "loose_shell",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "independent alpha module",
+      "anchor": "bottom center",
+      "fx": [],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_loose_shell_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "LATCH",
+      "category": "壳闩",
+      "slug": "shell_latch",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "mechanism ID R1_03_SHELL_LATCH",
+      "anchor": "pivot",
+      "fx": [
+        "FX11"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_shell_latch_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "BRIDGE",
+      "category": "桥段",
+      "slug": "shell_bridge",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "x28..29U y12.8U",
+      "anchor": "hinge",
+      "fx": [
+        "FX11"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_shell_bridge_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "HERO",
+      "category": "主角",
+      "slug": "tide_collector",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "reuse source identity; target-scale review",
+      "anchor": "feet, weapon action point",
+      "fx": [
+        "FX08",
+        "FX09",
+        "FX10"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "existing assets may be reused after review; new v02 pass not inherited",
+      "proposed_name": "wf_r1_shared_tide_collector_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "ENEMY",
+      "category": "敌人",
+      "slug": "scavenger_crab",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "reuse approved base; independent tell/action",
+      "anchor": "feet, attack origin",
+      "fx": [
+        "FX09",
+        "FX10"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "existing assets may be reused after review; new v02 pass not inherited",
+      "proposed_name": "wf_r1_shared_scavenger_crab_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "BOSS",
+      "category": "Boss",
+      "slug": "shellbearer",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "reuse identity; sweep/slam/second readable",
+      "anchor": "feet, attack origin",
+      "fx": [
+        "FX09",
+        "FX10"
+      ],
+      "status": "planned_waiting_verification",
+      "source_policy": "existing assets may be reused after review; new v02 pass not inherited",
+      "proposed_name": "wf_r1_shared_shellbearer_v02",
+      "actual_runtime_path": null
+    },
+    {
+      "id": "UI",
+      "category": "界面",
+      "slug": "room_route_and_hint",
+      "planned_count": 1,
+      "count_is_estimate": true,
+      "spec": "live labels/state, not baked art",
+      "anchor": "screen space",
+      "fx": [],
+      "status": "planned_waiting_verification",
+      "source_policy": "derive from V5.2 art direction; separate runtime delivery required",
+      "proposed_name": "wf_r1_shared_room_route_and_hint_v02",
+      "actual_runtime_path": null
+    }
+  ],
+  "effects": [
+    {
+      "id": "FX01",
+      "name": "背景视差",
+      "event": "camera",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX02",
+      "name": "漂移雾",
+      "event": "environment",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX03",
+      "name": "浮动生物",
+      "event": "environment",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX04",
+      "name": "尘埃/海雪",
+      "event": "environment",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX05",
+      "name": "须门垂髫摆动",
+      "event": "environment",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX06",
+      "name": "灯光变化",
+      "event": "lamp_state",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX07",
+      "name": "水波纹",
+      "event": "contact_event",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX08",
+      "name": "骨鸣器共振弧（刀光需求的原创表现）",
+      "event": "attack_active",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX09",
+      "name": "命中反馈",
+      "event": "confirmed_hit",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX10",
+      "name": "死亡效果",
+      "event": "death_once",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    },
+    {
+      "id": "FX11",
+      "name": "机关动画",
+      "event": "latch_state_change",
+      "status": "planned_waiting_verification",
+      "runtime_evidence": null,
+      "pause_and_room_cleanup_required": true
+    }
+  ],
+  "mechanism": {
+    "id": "R1_03_SHELL_LATCH",
+    "room": "R1-03",
+    "u0": {
+      "x": 23,
+      "y": 11.3,
+      "w": 3
+    },
+    "interaction": {
+      "x": 24.5,
+      "y": 11.3,
+      "sequence": [
+        "first E: fragment",
+        "second E: latch"
+      ]
+    },
+    "bridge": {
+      "x": 28,
+      "y": 12.8,
+      "w": 1
+    },
+    "storage_mapping": "game.data.latch (planned integration)",
+    "status": "planned_waiting_verification"
+  },
+  "tool_policy": {
+    "current_turn_paid_generation_budget": null,
+    "external_paid_generation": "model, quantity and budget must be agreed before submission",
+    "retry": "retain failures; no unlimited resubmission"
+  },
+  "actual_manifest_required_fields": [
+    "asset_id",
+    "source_path",
+    "master_path",
+    "runtime_path",
+    "tool_model_task_id",
+    "reference_and_prompt",
+    "dimensions",
+    "alpha",
+    "anchor",
+    "sha256",
+    "scene_references",
+    "verification_evidence"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+	"checks": [
+		{
+			"id": "pause_freezes_world",
+			"notes": "Esc pauses level time and player motion while the test node continues.",
+			"passed": false
+		},
+		{
+			"id": "pause_to_map_consistent",
+			"notes": "After Esc -> Tab, menu visibility and pause mirrors agree with SceneTree.paused.",
+			"passed": true
+		},
+		{
+			"id": "map_toggle_consistent",
+			"notes": "After Esc -> Tab -> Tab, no stale paused boolean remains on an active world.",
+			"passed": true
+		},
+		{
+			"id": "completion_overlay_visible",
+			"notes": "finish() opens the actual completion page.",
+			"passed": true
+		},
+		{
+			"id": "completion_esc_explores",
+			"notes": "Esc closes completion and resumes exploration, rather than opening the pause page.",
+			"passed": false
+		},
+		{
+			"id": "dash_rejects_heavy_heal",
+			"notes": "During a genuine ground dash, R/F must neither start actions nor spend energy.",
+			"passed": true
+		},
+		{
+			"id": "one_air_dash_per_flight",
+			"notes": "Second Shift is rejected while airborne even after cooldown expires; first dash was initiated through Input.",
+			"passed": true
+		},
+		{
+			"id": "right_entry_R1-01",
+			"notes": "Right entry must stand on the rightmost main P platform, including rooms with fewer than five platforms.",
+			"passed": true
+		},
+		{
+			"id": "right_entry_R1-02",
+			"notes": "Right entry must stand on the rightmost main P platform, including rooms with fewer than five platforms.",
+			"passed": true
+		},
+		{
+			"id": "right_entry_R1-03",
+			"notes": "Right entry must stand on the rightmost main P platform, including rooms with fewer than five platforms.",
+			"passed": true
+		},
+		{
+			"id": "right_entry_R1-04",
+			"notes": "Right entry must stand on the rightmost main P platform, including rooms with fewer than five platforms.",
+			"passed": true
+		},
+		{
+			"id": "right_entry_R1-05",
+			"notes": "Right entry must stand on the rightmost main P platform, including rooms with fewer than five platforms.",
+			"passed": true
+		},
+		{
+			"id": "camp_interaction_separate",
+			"notes": "E near camp rests and does not accidentally change rooms.",
+			"passed": true
+		},
+		{
+			"id": "boss_room_left_exit",
+			"notes": "E at Boss-room left door returns to R1-03 after victory; camp must not intercept it.",
+			"passed": true
+		},
+		{
+			"id": "combat_cannot_rest",
+			"notes": "After combat begins, the camp cannot restore health or energy, including if a boundary relocates the player.",
+			"passed": true
+		},
+		{
+			"id": "fragment_is_unique",
+			"notes": "Original U0 reward platform grants exactly one fragment event, including after re-entry.",
+			"passed": true
+		},
+		{
+			"id": "dash_grant_is_unique",
+			"notes": "A1 can be received once after Boss victory; repeated E does not grant it again.",
+			"passed": true
+		},
+		{
+			"id": "habitat_is_unique",
+			"notes": "H1 is committed once and stays completed on revisit.",
+			"passed": true
+		},
+		{
+			"id": "truncated_primary_uses_backup",
+			"notes": "Malformed primary QA save falls back to the valid .bak, preserving progression.",
+			"passed": false
+		},
+		{
+			"id": "invalid_checkpoint_uses_backup",
+			"notes": "Valid JSON with impossible checkpoint is rejected before indexing room data.",
+			"passed": false
+		},
+		{
+			"id": "invalid_type_uses_backup",
+			"notes": "A string in a progression boolean is rejected rather than merged into runtime state.",
+			"passed": false
+		}
+	],
+	"notes": [
+		"Room placement, HP setup, and damaged saves are explicit fixtures; no assertion here substitutes for input-driven end-to-end completion.",
+		"Both QA save files were restored to their pre-fixture bytes; the normal save-v1.json slot was never selected."
+	],
+	"passed": false
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "project_id": "whalefall-r1-20261027",
+  "project_root": "G:/鲸落万物生/godot/first-level",
+  "scope": {
+    "deliverable": "须门遗港首通段 R1-01至R1-05 可玩Godot关卡",
+    "included": [
+      "五房首通",
+      "走跳短击重鸣调息",
+      "尸蟹和负壳蟹Boss",
+      "战后A1冲刺",
+      "三段冲刺练习与结关",
+      "营地/奖励/存档/重试/暂停",
+      "分层手绘美术和动画/音效",
+      "Windows可运行交付及实测证据"
+    ],
+    "excluded": [
+      "其它四大区域",
+      "R1-06/07后续能力支线",
+      "A2-A5实现",
+      "在线发布",
+      "付费第三方服务",
+      "复用旧本地Demo实现"
+    ],
+    "current_turn_limit": "完成第一关必需项，未来区域入口仅预告"
+  },
+  "engine": {
+    "name": "Godot",
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "executable": "C:/Users/Kingsoft/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEngine_Microsoft.Winget.Source_8wekyb3d8bbwe/Godot_v4.7.2-stable_win64_console.exe",
+    "renderer": "gl_compatibility"
+  },
+  "target": {
+    "platforms": [
+      "Windows x86_64"
+    ],
+    "resolution": [
+      1280,
+      720
+    ],
+    "input_devices": [
+      "keyboard"
+    ],
+    "performance_budget": "1280x720参考机运行采样目标p95<33.3ms；非通用性能承诺"
+  },
+  "art": {
+    "direction": "V5.2鲸落手绘、水下、单镜拾潮者、青披风、琥珀灯、巨型口腔",
+    "reference_paths": [
+      "G:/鲸落万物生/outputs/鲸落万物生_V5.2_完整游戏设计/data/房间布局.json",
+      "G:/鲸落万物生/outputs/鲸落万物生_V5.2_完整游戏设计/data/地图拓扑.json",
+      "G:/鲸落万物生/outputs/鲸落万物生_V5_完整游戏设计/完整游戏视觉设计.md",
+      "G:/鲸落万物生/outputs/拾潮者_Wan22动作技能/验收与修绘记录.md"
+    ],
+    "style_version": "V5.2",
+    "review_policy": "agent_against_references",
+    "asset_types": [
+      "背景",
+      "模块地形",
+      "主角动作",
+      "敌人",
+      "UI",
+      "事件音效"
+    ]
+  },
+  "gameplay": {
+    "core_loop": "观察→走跳/迎战→营地→首Boss→冲刺→过沟→结关",
+    "abilities": [
+      "basic",
+      "A1"
+    ],
+    "save_policy": "独立user目录，版本化JSON；永久Boss/A1/碎片/生态与营地，临时敌人复位"
+  },
+  "tools": [
+    "Godot CLI",
+    "filesystem",
+    "image_gen builtin",
+    "Computer Use sky",
+    "Python Pillow"
+  ],
+  "authorization": {
+    "source": "2026-10-27用户显式调用game-production-pipeline并要求制作首关Godot",
+    "paid_services": [],
+    "upload_destinations": [],
+    "publish_requested": false,
+    "parallel_agents_requested": false
+  },
+  "retry_policy": {
+    "local_attempts_per_failure": 3,
+    "paid_attempts": 0,
+    "on_limit": "记录原因后改用已授权替代方案"
+  },
+  "review": {
+    "human_required_checks": [],
+    "known_limitations": [
+      "AI审查不等于用户审美确认",
+      "键盘首版，手柄后续"
+    ]
+  }
+}

@@ -1,0 +1,575 @@
+{
+	"checks": [
+		{
+			"detail": {},
+			"id": "A2_gate_locked_before_unlock",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "A3_gate_locked_before_unlock",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "sandbox_no_save",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					4.92000007629395,
+					13.4999866485596
+				],
+				"pressure": 1.35
+			},
+			"id": "A2_platform_13.5",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					4.92000007629395,
+					9.99962997436523
+				],
+				"pressure": 1.35
+			},
+			"id": "A2_platform_10.0",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					4.92000007629395,
+					6.4999942779541
+				],
+				"pressure": 1.35
+			},
+			"id": "A2_platform_6.5",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "E33_to_06",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					8.40383529663086,
+					16.9999847412109
+				]
+			},
+			"id": "06_ascending_17.0",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					13.4038181304932,
+					13.9996309280396
+				]
+			},
+			"id": "06_ascending_14.0",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					18.4038925170898,
+					10.9999361038208
+				]
+			},
+			"id": "06_ascending_11.0",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "06_module_collected",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "E34_remote_latch_stays_locked",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "E33_returns_to_upper_02",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "02_A3_anchor_0",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "02_A3_anchor_1",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "02_A3_anchor_2",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "02_A3_landing",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "E35_to_07",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_out_ring_0",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_out_ring_1",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_middle_landing",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_out_ring_2",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_out_ring_3",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_right_landing",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_both_rewards",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_no_right_exit",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_back_ring_3",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_back_ring_2",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_return_middle",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_back_ring_1",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_back_ring_0",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "07_return_left",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "E35_returns_to_upper_02",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "sandbox_restores_progress",
+			"passed": true
+		},
+		{
+			"detail": {},
+			"id": "normal_save_untouched",
+			"passed": true
+		}
+	],
+	"events": [
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-04"
+			},
+			"event": "room_enter",
+			"frame": 1,
+			"room": 3
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 15,
+			"room": 1
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 34,
+			"room": 1
+		},
+		{
+			"detail": {
+				"edge": "E33",
+				"from": "R1-02",
+				"to": "R1-06"
+			},
+			"event": "door_transition",
+			"frame": 457,
+			"room": 1
+		},
+		{
+			"detail": {
+				"entry": "door:E33",
+				"id": "R1-06"
+			},
+			"event": "room_enter",
+			"frame": 457,
+			"room": 5
+		},
+		{
+			"detail": {
+				"id": "R1-06_REWARD_0"
+			},
+			"event": "revisit_reward",
+			"frame": 987,
+			"room": 5
+		},
+		{
+			"detail": {
+				"edge": "E34",
+				"reason": "远侧壳闩关闭 · 只能从 R2-05 开启，此侧没有把手"
+			},
+			"event": "gate_denied",
+			"frame": 1090,
+			"room": 5
+		},
+		{
+			"detail": {
+				"hp": 3
+			},
+			"event": "hurt",
+			"frame": 1428,
+			"room": 5
+		},
+		{
+			"detail": {
+				"type": "周期横流"
+			},
+			"event": "route_hazard",
+			"frame": 1428,
+			"room": 5
+		},
+		{
+			"detail": {
+				"edge": "E33",
+				"from": "R1-06",
+				"to": "R1-02"
+			},
+			"event": "door_transition",
+			"frame": 1748,
+			"room": 5
+		},
+		{
+			"detail": {
+				"entry": "door:E33",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 1748,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 0
+			},
+			"event": "anchor_grab",
+			"frame": 1773,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 0,
+				"x": 26.0,
+				"y": 13.8125
+			},
+			"event": "anchor_arrive",
+			"frame": 1791,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 1
+			},
+			"event": "anchor_grab",
+			"frame": 1813,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 1,
+				"x": 28.9683876037598,
+				"y": 10.8441133499146
+			},
+			"event": "anchor_arrive",
+			"frame": 1844,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 2
+			},
+			"event": "anchor_grab",
+			"frame": 1853,
+			"room": 1
+		},
+		{
+			"detail": {
+				"index": 2,
+				"x": 31.9889125823975,
+				"y": 7.82337284088135
+			},
+			"event": "anchor_arrive",
+			"frame": 1884,
+			"room": 1
+		},
+		{
+			"detail": {
+				"edge": "E35",
+				"from": "R1-02",
+				"to": "R1-07"
+			},
+			"event": "door_transition",
+			"frame": 1971,
+			"room": 1
+		},
+		{
+			"detail": {
+				"entry": "door:E35",
+				"id": "R1-07"
+			},
+			"event": "room_enter",
+			"frame": 1971,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 0
+			},
+			"event": "anchor_grab",
+			"frame": 2048,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 0,
+				"x": 7.45206165313721,
+				"y": 12.857873916626
+			},
+			"event": "anchor_arrive",
+			"frame": 2071,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 1
+			},
+			"event": "anchor_grab",
+			"frame": 2087,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 1,
+				"x": 10.4791717529297,
+				"y": 12.8125
+			},
+			"event": "anchor_arrive",
+			"frame": 2109,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 2
+			},
+			"event": "anchor_grab",
+			"frame": 2277,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 2,
+				"x": 17.4538440704346,
+				"y": 12.8562507629395
+			},
+			"event": "anchor_arrive",
+			"frame": 2300,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 3
+			},
+			"event": "anchor_grab",
+			"frame": 2316,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 3,
+				"x": 20.4791526794434,
+				"y": 12.8125
+			},
+			"event": "anchor_arrive",
+			"frame": 2338,
+			"room": 6
+		},
+		{
+			"detail": {
+				"id": "R1-07_REWARD_0"
+			},
+			"event": "revisit_reward",
+			"frame": 2491,
+			"room": 6
+		},
+		{
+			"detail": {
+				"id": "R1-07_REWARD_1"
+			},
+			"event": "revisit_reward",
+			"frame": 2551,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 3
+			},
+			"event": "anchor_grab",
+			"frame": 2698,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 3,
+				"x": 20.5086669921875,
+				"y": 12.8294200897217
+			},
+			"event": "anchor_arrive",
+			"frame": 2716,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 2
+			},
+			"event": "anchor_grab",
+			"frame": 2736,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 2,
+				"x": 17.5208473205566,
+				"y": 12.8125
+			},
+			"event": "anchor_arrive",
+			"frame": 2758,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 1
+			},
+			"event": "anchor_grab",
+			"frame": 2947,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 1,
+				"x": 10.5004625320435,
+				"y": 12.8134365081787
+			},
+			"event": "anchor_arrive",
+			"frame": 2965,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 0
+			},
+			"event": "anchor_grab",
+			"frame": 2985,
+			"room": 6
+		},
+		{
+			"detail": {
+				"index": 0,
+				"x": 7.52082824707031,
+				"y": 12.8125
+			},
+			"event": "anchor_arrive",
+			"frame": 3007,
+			"room": 6
+		},
+		{
+			"detail": {
+				"edge": "E35",
+				"from": "R1-07",
+				"to": "R1-02"
+			},
+			"event": "door_transition",
+			"frame": 3206,
+			"room": 6
+		},
+		{
+			"detail": {
+				"entry": "door:E35",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 3206,
+			"room": 1
+		},
+		{
+			"detail": {
+				"entry": "left",
+				"id": "R1-02"
+			},
+			"event": "room_enter",
+			"frame": 3223,
+			"room": 1
+		}
+	],
+	"fixture": "Temporary late abilities, starts R1-02; A2 roundtrip input-driven. A3 fixture starts x25 y16 on main shelf, then all anchors/doors/07 double crossing use Input. No claim later-chapter ability acquisition implemented.",
+	"passed": true
+}

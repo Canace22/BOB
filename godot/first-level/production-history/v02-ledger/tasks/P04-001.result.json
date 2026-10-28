@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "notes": "实际截图中角色/敌人/落脚面可读，独立透明部件无矩形背景；巨型低对比中景替换拥挤拱门。",
+      "evidence": [
+        "evidence/v02/sample-v2/sample-combat.png",
+        "evidence/v02/sample-v2.mp4",
+        "evidence/v02/asset-contact.png"
+      ],
+      "status": "pass",
+      "reviewer": "agent",
+      "id": "visual"
+    },
+    {
+      "notes": "10项样板运行检查通过，包含真实输入通行、暂停、灯罩、命中死亡与恢复。",
+      "evidence": [
+        "evidence/v02/sample-final/sample.json",
+        "evidence/v02/sample-final.log"
+      ],
+      "status": "pass",
+      "reviewer": "agent",
+      "id": "events"
+    }
+  ],
+  "task_id": "P04-001",
+  "artifacts": [
+    "docs/v02/sample-review.md",
+    "docs/v02/asset-delivery.json"
+  ],
+  "status": "pass",
+  "summary": "须筛分层部件与运行事件通过；重复中景已返修，10项样板检查通过。"
+}

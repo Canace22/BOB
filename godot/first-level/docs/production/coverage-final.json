@@ -1,0 +1,74 @@
+[
+  {
+    "requirement_id": "R01",
+    "behavior": "五房首通与路线",
+    "artifact": "scripts/level.gd",
+    "check_id": "e2e",
+    "evidence": "evidence/standalone-run/prototype.json",
+    "status": "pass_technical",
+    "notes": ""
+  },
+  {
+    "requirement_id": "R02",
+    "behavior": "移动/跳跃/镜头/暂停",
+    "artifact": "scripts/player.gd",
+    "check_id": "playable",
+    "evidence": "evidence/p07-run/integration-v1.json",
+    "status": "pass_technical",
+    "notes": ""
+  },
+  {
+    "requirement_id": "R03",
+    "behavior": "战斗/Boss/失败恢复",
+    "artifact": "scripts/enemy.gd",
+    "check_id": "combat",
+    "evidence": "evidence/fixed-run/combat.json",
+    "status": "pass_technical",
+    "notes": ""
+  },
+  {
+    "requirement_id": "R04",
+    "behavior": "A1授予与三段过沟",
+    "artifact": "scripts/level.gd",
+    "check_id": "e2e",
+    "evidence": "evidence/standalone-run/prototype.json",
+    "status": "pass_technical",
+    "notes": ""
+  },
+  {
+    "requirement_id": "R05",
+    "behavior": "永久状态/唯一物/备份",
+    "artifact": "scripts/game.gd",
+    "check_id": "save",
+    "evidence": "evidence/p07-run/persistence.json",
+    "status": "pass_technical",
+    "notes": ""
+  },
+  {
+    "requirement_id": "R06",
+    "behavior": "分层原画/角色关键姿势",
+    "artifact": "assets/runtime",
+    "check_id": "visual",
+    "evidence": "docs/production/art-review.md",
+    "status": "pass_technical",
+    "notes": "关键姿势可玩版本；最终步态和左右遮挡待后续美术迭代"
+  },
+  {
+    "requirement_id": "R07",
+    "behavior": "预告/命中/环境动态/音效",
+    "artifact": "scripts/main.gd::sfx",
+    "check_id": "motion",
+    "evidence": "evidence/fixed-run/audio-timing.json",
+    "status": "pass_technical",
+    "notes": "主观试听not_run；实际引擎混音和事件时间窗通过"
+  },
+  {
+    "requirement_id": "R08",
+    "behavior": "独立运行/接续",
+    "artifact": "docs/production/delivery.md",
+    "check_id": "build",
+    "evidence": "evidence/build-manifest.json",
+    "status": "pass_technical",
+    "notes": ""
+  }
+]

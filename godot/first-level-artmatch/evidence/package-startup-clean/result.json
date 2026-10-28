@@ -1,0 +1,35 @@
+{
+  "package": "G:/鲸落万物生/builds/须门遗港-v0.5-参考图可玩关卡/Whalefall.exe",
+  "sha256": "ab1824f85bfd8e0e4128182c000c4003a3e042245b2967848d089b2a04b22424",
+  "pid": 41160,
+  "started": "2026-10-27T16:59:00.470Z",
+  "window": {
+    "app": "process:G:\\鲸落万物生\\builds\\须门遗港-v0.5-参考图可玩关卡\\Whalefall.exe",
+    "id": 10426964,
+    "title": "鲸落万物生 · 须门遗港 · 原图场景还原 v0.5 (DEBUG)"
+  },
+  "audio_driver": "Dummy",
+  "result": "BLOCKED_AT_NORMAL_CLOSE",
+  "actual_launch": true,
+  "normal_close_verified": false,
+  "close_method_attempted": "@oai/sky Alt+F4",
+  "capture_error": "FrameArrived/window capture timed out",
+  "input_error": "GetCursorPos failed: 拒绝访问。 (0x80070005)",
+  "exit": {
+    "code": null,
+    "signal": "forced cleanup",
+    "exact_exit_code_unavailable": true
+  },
+  "limitations": [
+    "Normal-close input failed. Task-created process later force-reclaimed; never counted as normal-close pass.",
+    "Dummy driver does not verify audible output.",
+    "--quit-after bypasses the WM_CLOSE_REQUEST cleanup and is not the normal-close acceptance path."
+  ],
+  "cleanup": {
+    "method": "Node ChildProcess.kill on this session-owned PID 41160 only",
+    "time": "2026-10-27T17:01:09.812Z",
+    "reason": "Reclaim task-created process after desktop access failure",
+    "normal_close_validation": false,
+    "process_absence_checked": true
+  }
+}
