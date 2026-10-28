@@ -46,6 +46,7 @@ var qa_normal: bool = false
 var qa_normal_reload: bool = false
 var qa_deep: bool = false
 var qa_elements: bool = false
+var qa_reference_level: bool = false
 var quitting: bool = false
 var qa_revisit: bool = false
 var qa_reward_reload: bool = false
@@ -113,6 +114,10 @@ func _ready() -> void:
 		if arg == "--zoom": zoomed = true
 		if arg.begins_with("--evidence="): qa_output = arg.trim_prefix("--evidence=").path_join("flow.json")
 		if arg == "--qa": qa = true
+		if arg == "--qa-reference-level":
+			qa = true
+			qa_reference_level = true
+			qa_full_abilities = false
 		if arg in ["--qa-load", "--qa-reload"]:
 			qa = true
 			qa_reload = true
@@ -161,11 +166,16 @@ func _ready() -> void:
 	else: room_index = capture_room
 	load_room(room_index)
 	if not checkpoint.pos.is_empty() and int(checkpoint.room) == room_index and capture_path.is_empty():
-		player.position = point(checkpoint.pos)
+		player.position = restored_room_position(point(checkpoint.pos))
 	if not capture_path.is_empty():
 		ui.visible = false
 		player.set_physics_process(false)
-	if qa_elements:
+	if qa_reference_level:
+		var fixture: Node = load("res://tests/qa_reference_level.gd").new()
+		fixture.host = self
+		add_child(fixture)
+		fixture.run.call_deferred()
+	elif qa_elements:
 		var fixture: Node = load("res://tests/qa_elements.gd").new()
 		fixture.host = self
 		add_child(fixture)
@@ -214,14 +224,16 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 	scenery = packed.instantiate()
 	add_child(scenery)
 	scenery.process_mode = Node.PROCESS_MODE_PAUSABLE
+	var reference_environment: Node2D = scenery.get_node_or_null("ReferenceEnvironment")
+	if reference_environment != null: reference_environment.level_host = self
 	var default_spawn: Array = room.spawn if not capture_path.is_empty() else room.get("play_spawn", room.spawn)
-	var spawn: Vector2 = point(default_spawn if target_spawn.is_empty() else target_spawn)
+	var spawn: Vector2 = restored_room_position(point(default_spawn if target_spawn.is_empty() else target_spawn))
 	player = CharacterBody2D.new()
 	player.set_script(Player)
 	player.host = self
 	player.name = "Player"
 	player.position = spawn
-	player.z_index = 3
+	player.z_index = 20 if reference_environment != null else 3
 	var cutout: Node2D = scenery.get_node_or_null("World/PlayerArt")
 	if cutout != null:
 		var pivot: Node2D = Node2D.new()
@@ -229,6 +241,7 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 		player.add_child(pivot)
 		cutout.reparent(pivot, false)
 		cutout.position -= point(room.spawn)
+		if reference_environment != null: cutout.z_index = 0
 		player.art = pivot
 	scenery.get_node("World").add_child(player)
 	enemies.clear()
@@ -245,6 +258,7 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 	reference.centered = false
 	var path: String = room.get("reference", "res://assets/reference/r1/" + str(room.id) + ".png")
 	if ResourceLoader.exists(path): reference.texture = load(path)
+	if reference_environment != null: reference.scale = reference_environment.scale
 	reference.z_index = 100
 	reference.visible = reference_visible
 	add_child(reference)
@@ -261,6 +275,14 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 	scenery.add_child(mechanisms)
 	update_layers()
 	update_camera()
+
+func restored_room_position(value: Vector2) -> Vector2:
+	# R1-01's new road retains the old world width. Existing checkpoints and
+	# incoming door coordinates project to the new ground without save rewrites.
+	if room.get("layered_environment", false):
+		value.x = clampf(value.x,18.0,float(room.size[0])-18.0)
+		value.y = ground_y(value.x,value.y)
+	return value
 
 func update_camera() -> void:
 	if zoomed and not reference_visible:
@@ -347,6 +369,8 @@ func update_layers() -> void:
 	for i: int in range(names.size()):
 		var node: Node2D = scenery.get_node_or_null(names[i])
 		if node != null: node.visible = layer_solo < 0 or i == layer_solo
+	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
+	if environment != null: environment.set_level_layer(layer_solo)
 
 func ground_y(x: float, near_y: float) -> float:
 	var best: float = near_y
@@ -568,6 +592,10 @@ func update_parallax() -> void:
 		shift = (camera.position - center) * 0.009
 		shift.x = clampf(shift.x, -6.0, 6.0)
 		shift.y = clampf(shift.y, -4.0, 4.0)
+	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
+	if environment != null:
+		environment.level_camera_offset = Vector2(clampf(shift.x,-5,5),clampf(shift.y,-2,2))
+		return
 	scenery.get_node("Far").position = shift
 	scenery.get_node("Middle").position = shift * 0.38
 	scenery.get_node("Foreground").position = -shift * 0.6

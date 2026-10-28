@@ -87,9 +87,10 @@ func _process(dt: float) -> void:
 	if frozen: return
 	phase += dt
 	for layer: String in ["Far","Middle","World","Foreground"]:
-		var sprite: Sprite2D = host.scenery.get_node(layer+"/"+layer+"OriginalPixels")
-		sprite.material.set_shader_parameter("clock", phase)
-		sprite.material.set_shader_parameter("motion", 1.0)
+		var sprite: Sprite2D = host.scenery.get_node_or_null(layer+"/"+layer+"OriginalPixels")
+		if sprite != null:
+			sprite.material.set_shader_parameter("clock", phase)
+			sprite.material.set_shader_parameter("motion", 1.0)
 	if reward != null:
 		reward.position.y = sin(phase*1.9)*2.5
 		reward.modulate = Color(1.0+sin(phase*2.1)*0.07,1.0+sin(phase*2.1)*0.07,1.0)

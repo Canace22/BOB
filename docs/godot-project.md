@@ -27,3 +27,7 @@
 ## 本轮参考图 · 环境展示场景
 
 在同一工程打开 `scenes/environment/xumen_reference.tscn`，**F6**运行。也可执行工程根目录 `preview-reference-environment.ps1`（可加`-Pan`）。这是仅环境和静态展示角色的1280×720场景，不接入七房关卡控制器；F5入口保持原游戏。[素材、母版、范围和限制](../assets/source/xumen-reference-environment/README.md)。
+
+## R1-01新环境已接入主地图
+
+F5主入口的R1-01现在实例化参考图环境，角色由既有控制器接管，路面碰撞/门/旧档坐标已绑定。独立环境F6仍可用。当前便携包位于 `G:/鲸落万物生/builds/WhalebellyRuins/`；[接入与验收说明](../assets/source/xumen-reference-environment/integration/README.md)。

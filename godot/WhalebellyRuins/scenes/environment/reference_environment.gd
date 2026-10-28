@@ -2,6 +2,9 @@ extends Node2D
 ## A reference-only environmental study. No player, gameplay or persistent state.
 @export var animate_environment: bool = true
 @export var camera_drift: bool = false
+@export var level_mode: bool = false
+var level_host: Node2D
+var level_camera_offset: Vector2 = Vector2.ZERO
 @export_range(0.0, 1.0) var motion_strength: float = 1.0
 var elapsed: float = 0.0
 var frames: int = 0
@@ -17,8 +20,8 @@ const REGIONS = [Rect2(143,170,89,220), Rect2(414,310,72,98), Rect2(786,119,154,
 
 func _ready() -> void:
 	var args = OS.get_cmdline_user_args()
-	qa = "--qa" in args
-	still = "--static" in args
+	qa = not level_mode and "--qa" in args
+	still = not level_mode and "--static" in args
 	if still: animate_environment = false
 	if "--pan" in args: camera_drift = true
 	for child in get_children():
@@ -32,6 +35,11 @@ func _ready() -> void:
 				mat.set_shader_parameter("curtain",str(child.name).begins_with("BALEEN"))
 				mat.set_shader_parameter("source_origin",child.position)
 				child.material = mat
+	if level_mode:
+		var display = get_node("CHARACTER")
+		bases.erase(display.name)
+		remove_child(display)
+		display.queue_free()
 	# Overscan is hidden-only paint. Original road/character/architecture are not stretched.
 	var under = get_node("ENV-UNDERPAINT") as Sprite2D
 	under.scale = Vector2(1.04,1.067)
@@ -55,7 +63,7 @@ func _ready() -> void:
 
 func update_visuals() -> void:
 	var t = elapsed if animate_environment else 0.0
-	var pan = Vector2(sin(t*TAU/24.0)*5.0,sin(t*TAU/17.0)*2.0) if camera_drift else Vector2.ZERO
+	var pan = level_camera_offset if level_mode else (Vector2(sin(t*TAU/24.0)*5.0,sin(t*TAU/17.0)*2.0) if camera_drift else Vector2.ZERO)
 	for child in get_children():
 		if not child is Sprite2D: continue
 		var id = str(child.name)
@@ -89,15 +97,19 @@ func update_visuals() -> void:
 		bubble.node.modulate.a = smoothstep(0.0,12.0,edge)*(0.35+float(bubble.index%3)*0.13)
 
 func _process(delta: float) -> void:
+	if level_mode and is_instance_valid(level_host):
+		visible = not level_host.reference_visible
+		if not visible or level_host.layer_solo >= 0 or not level_host.capture_path.is_empty(): return
 	var tick = Time.get_ticks_usec()
 	elapsed += delta
 	frames += 1
-	if frames > 15: timings.append(float(tick-last_tick)/1000.0)
+	if qa and frames > 15: timings.append(float(tick-last_tick)/1000.0)
 	last_tick = tick
 	update_visuals()
 	if frames == 12 and still:
 		await capture("static.png")
 		get_tree().quit()
+
 	if qa and frames in [30,300,600,900,1200,1500]:
 		await capture("motion-%04d.png" % frames)
 	if qa and elapsed >= 32.0:
@@ -105,6 +117,15 @@ func _process(delta: float) -> void:
 		await capture("final.png")
 		write_report()
 		get_tree().quit()
+
+func set_level_layer(solo: int) -> void:
+	for child in get_children():
+		var id = str(child.name)
+		var group = 2
+		if id.begins_with("ENV"): group = 0
+		elif id.begins_with("MID") or id.begins_with("BEAM") or id.begins_with("FISH") or id.begins_with("BUBBLE"): group = 1
+		elif id.begins_with("FRONT"): group = 3
+		child.visible = solo < 0 or solo == group
 
 func capture(filename: String) -> void:
 	await RenderingServer.frame_post_draw

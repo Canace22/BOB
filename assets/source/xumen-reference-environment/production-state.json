@@ -102,5 +102,19 @@
   "next_instruction": "用户给出具体视觉反馈时，仅修改本环境场景的对应元素；不扩展到玩法或其他地图。",
   "delivery": "G:\\鲸落万物生\\outputs\\须门遗港_参考图环境场景\\交付与对照.html",
   "evidence": "G:\\鲸落万物生\\BOB\\godot\\WhalebellyRuins\\evidence\\reference_environment",
-  "video_decode": "ffmpeg -v error -i 环境动态演示.mp4 -f null - : exit 0"
+  "video_decode": "ffmpeg -v error -i 环境动态演示.mp4 -f null - : exit 0",
+  "level_integration": {
+    "status": "verified",
+    "room": "R1-01",
+    "scene": "res://scenes/r1/R1-01.tscn",
+    "evidence": "godot/WhalebellyRuins/evidence/reference_level",
+    "route_checks": 27,
+    "reload_checks": 2,
+    "project_and_portable": "both pass",
+    "seven_room_smoke": "7/7 grounded; not a full seven-room traversal",
+    "legacy_saves": "X preserved, Y aligned on load; real user save untouched by QA",
+    "build": "G:/鲸落万物生/builds/WhalebellyRuins/WhalebellyRuins.exe",
+    "build_kind": "official portable + exported PCK; release templates missing",
+    "known_limits": "asset limits unchanged; audio event logic retained, physical listening not repeated"
+  }
 }

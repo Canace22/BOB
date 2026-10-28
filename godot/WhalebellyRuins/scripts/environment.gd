@@ -107,6 +107,14 @@ func _process(dt: float) -> void:
 	fog_node.visible = solo < 0 or solo == 1
 	light_node.visible = solo < 0 or solo == 2
 	event_node.visible = solo < 0 or solo == 2
+	# R1-01 owns painted fish, bubbles, shafts and foliage in its new scene.
+	# Keep the established ambience and gameplay-event audio, without duplicates.
+	if host.room.get("layered_environment",false):
+		bubbles_node.hide()
+		dust_node.hide()
+		fish_node.hide()
+		fog_node.hide()
+		light_node.hide()
 	if is_instance_valid(ambience):
 		if ambience.playing: ambience.stream_paused = frozen or not enabled
 		elif not frozen and enabled: ambience.play()
