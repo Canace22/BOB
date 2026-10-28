@@ -8,6 +8,9 @@
 - 发布工具每次同步根入口；`--entry-only` 用于只修正跳转，保留已上线游戏包及其 `build.json`。本批使用此模式，不包含工作区其他正在进行的游戏优化。
 - 已执行：独立 Chrome 验证 JavaScript 跳转及查询参数/锚点保留；关闭 JavaScript 后 meta refresh 跳转；发布脚本语法与差异检查。线上部署、默认入口启动和历史路径将在推送后补记。
 - 更新 README、架构和 Godot 开发 Skill 的入口发布说明；无玩法、创作或美术接入变化，不重复全关战斗验收。
+- 17:00（Asia/Shanghai）线上复核完成：源码 `588c008`，Pages 发布 `35c853284b6deb00f9d4326c3db2befd61ecb302`；[部署任务](https://github.com/Canace22/BOB/actions/runs/40660613222)为 `completed / success`。发布差异仅根 `index.html`，游戏包源码仍为 `3969521`。
+- 线上独立 Chrome 四项通过：根地址跳转 `/BOB/godot/`；开局 R1-01 的 D 移动、Tab 地图与 Esc 恢复；关闭 JavaScript 后跳转到 Godot 入口（不代表禁用 JavaScript 能运行游戏）；历史 `mvp-v2/` HTTP 200。资源 HTTP 与页面 JS 错误为空，已查看开局截图。报告和截图在 `game/build/qa/pages-entry/`（仅本地）。
+- README、架构、Skill 和进度的本地链接检查通过；本批未改游戏代码/场景/关卡，未重复 headless 与完整战斗路线，未触碰用户浏览器和真实存档。
 
 ## 2026-10-28 · 工程骨架
 
