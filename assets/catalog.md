@@ -1,5 +1,9 @@
 # 美术资源台账
 
+## 拾潮者基础动作首版（2026-10-28）
+
+`tide-picker-locomotion-v01`：[制作源、Blender母版与验收](source/tide-picker-locomotion-v01/README.md)，[可播放预览](source/tide-picker-locomotion-v01/preview.html)。IDLE / Walk / Run各8帧，透明PNG、图集、统一锚点和Godot评审场景已产出。状态为candidate：腿部交替仍需精修，未替换主关卡。三个动作独立登记到catalog.json，不混入历史静态图集。
+
 登记已有概念资源和新资源批次；制作规划留在设计文档。独立资源的名称、标签、备注与当前验收状态以 [catalog.json](catalog.json) 为准，可通过[管理页面](README.md#查看与管理)维护，不在本页重复登记可变状态。
 
 | 资源 ID | 文件位置 | 用途 / 目标 | 来源与授权 | 状态 |

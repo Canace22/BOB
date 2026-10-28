@@ -71,6 +71,8 @@ On failure, correct one identified defect and replay the same scenario. Preserve
 
 ## Deliver the sequence
 
+For generated sheets, verify the actual pixel dimensions and row baselines before extraction: requested dimensions may differ from the output, and the second row may have an editorial vertical offset. Preserve one source scale and record explicit crop rectangles and pelvis translations. If repeated corrections keep the same leg leading both half-cycles or enlarge thighs across attached props, retain the best candidate and switch to a layered joint-based workflow; technical playback success does not resolve anatomical continuity. See `assets/source/tide-picker-locomotion-v01/README.md` for a scoped candidate and rejected correction record. A Blender project that sequences textured cards is a 2D timing master, not a skeletal animation rig.
+
 Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.
 
 ## 环境分件补充（Godot实机验证）

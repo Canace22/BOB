@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 13,
+  "revision": 14,
   "updatedAt": "2026-10-28",
   "project": "BOB",
   "atlas": {
@@ -24547,6 +24547,105 @@
         "godot/WhalebellyRuins/scenes/environment/xumen_reference.tscn",
         "godot/WhalebellyRuins/scenes/r1/R1-01.tscn"
       ]
+    },
+    {
+      "id": "tide-picker-locomotion-v01-idle",
+      "name": "拾潮者 · IDLE 八帧候选",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "序列帧",
+        "Blender",
+        "候选"
+      ],
+      "status": "candidate",
+      "notes": "8帧循环；前后腿身份及注册稳定性待精修。仅接入独立评审场景。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v01/idle-atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 8,
+      "fps": 6,
+      "pivot": [
+        256,
+        460
+      ],
+      "sha256": "ad6fd8f4764eb986a97ed42f4865960a089513e4c600ac30f6eb713f65b6f68a",
+      "source": "assets/source/tide-picker-locomotion-v01/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_preview.tscn",
+      "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-locomotion-v01-walk",
+      "name": "拾潮者 · WALK 八帧候选",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "序列帧",
+        "Blender",
+        "候选"
+      ],
+      "status": "candidate",
+      "notes": "8帧循环；前后腿身份及注册稳定性待精修。仅接入独立评审场景。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v01/walk-atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 8,
+      "fps": 10,
+      "pivot": [
+        256,
+        460
+      ],
+      "sha256": "daffc54c360236b9647f2b13fec145fc64f22108070fb65c11b0a533ed31e365",
+      "source": "assets/source/tide-picker-locomotion-v01/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_preview.tscn",
+      "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-locomotion-v01-run",
+      "name": "拾潮者 · RUN 八帧候选",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "序列帧",
+        "Blender",
+        "候选"
+      ],
+      "status": "candidate",
+      "notes": "8帧循环；前后腿身份及注册稳定性待精修。仅接入独立评审场景。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v01/run-atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 8,
+      "fps": 14,
+      "pivot": [
+        256,
+        460
+      ],
+      "sha256": "1d0bc903da9d79fd27f2d0505f062db9d19466bdbd1ce186f100f1e2c21c0621",
+      "source": "assets/source/tide-picker-locomotion-v01/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_preview.tscn",
+      "userArtApproval": false
     }
   ]
 }

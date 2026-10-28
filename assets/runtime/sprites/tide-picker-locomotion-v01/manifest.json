@@ -1,0 +1,402 @@
+{
+  "id": "tide-picker-locomotion-v01",
+  "status": "candidate",
+  "frameSize": [
+    512,
+    512
+  ],
+  "pivot": [
+    256,
+    460
+  ],
+  "pixelsPerUnit": 1,
+  "globalScale": 1,
+  "facing": "right",
+  "runtimeScale": 0.25753424657534246,
+  "loop": true,
+  "provenance": "Built-in imagegen redraw of user reference; Blender 4.2 sequence timing master",
+  "registration": "Hand-estimated pelvis X per cell; shared ground per row. Translations only, no per-frame resizing or bottom-bound snapping.",
+  "animations": {
+    "idle": {
+      "fps": 6,
+      "duration": 1.3333333333333333,
+      "frames": [
+        {
+          "file": "idle_00.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            46,
+            32
+          ],
+          "phase": 0
+        },
+        {
+          "file": "idle_01.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            444,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            56,
+            32
+          ],
+          "phase": 1
+        },
+        {
+          "file": "idle_02.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            887,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            61,
+            32
+          ],
+          "phase": 2
+        },
+        {
+          "file": "idle_03.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            1331,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            60,
+            32
+          ],
+          "phase": 3
+        },
+        {
+          "file": "idle_04.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            0,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            51,
+            54
+          ],
+          "phase": 4
+        },
+        {
+          "file": "idle_05.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            444,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            56,
+            54
+          ],
+          "phase": 5
+        },
+        {
+          "file": "idle_06.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            887,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            61,
+            54
+          ],
+          "phase": 6
+        },
+        {
+          "file": "idle_07.png",
+          "duration": 0.16666666666666666,
+          "crop": [
+            1331,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            61,
+            54
+          ],
+          "phase": 7
+        }
+      ],
+      "source": "idle-source.png"
+    },
+    "walk": {
+      "fps": 10,
+      "duration": 0.8,
+      "frames": [
+        {
+          "file": "walk_00.png",
+          "duration": 0.1,
+          "crop": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            16,
+            40
+          ],
+          "phase": 0
+        },
+        {
+          "file": "walk_01.png",
+          "duration": 0.1,
+          "crop": [
+            444,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            19,
+            40
+          ],
+          "phase": 1
+        },
+        {
+          "file": "walk_02.png",
+          "duration": 0.1,
+          "crop": [
+            887,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            26,
+            40
+          ],
+          "phase": 2
+        },
+        {
+          "file": "walk_03.png",
+          "duration": 0.1,
+          "crop": [
+            1331,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            41,
+            40
+          ],
+          "phase": 3
+        },
+        {
+          "file": "walk_04.png",
+          "duration": 0.1,
+          "crop": [
+            0,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            11,
+            65
+          ],
+          "phase": 4
+        },
+        {
+          "file": "walk_05.png",
+          "duration": 0.1,
+          "crop": [
+            444,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            13,
+            65
+          ],
+          "phase": 5
+        },
+        {
+          "file": "walk_06.png",
+          "duration": 0.1,
+          "crop": [
+            887,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            26,
+            65
+          ],
+          "phase": 6
+        },
+        {
+          "file": "walk_07.png",
+          "duration": 0.1,
+          "crop": [
+            1331,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            41,
+            65
+          ],
+          "phase": 7
+        }
+      ],
+      "source": "walk-revision.png"
+    },
+    "run": {
+      "fps": 14,
+      "duration": 0.5714285714285714,
+      "frames": [
+        {
+          "file": "run_00.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            23,
+            30
+          ],
+          "phase": 0
+        },
+        {
+          "file": "run_01.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            444,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            12,
+            30
+          ],
+          "phase": 1
+        },
+        {
+          "file": "run_02.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            887,
+            0,
+            444,
+            444
+          ],
+          "translation": [
+            18,
+            30
+          ],
+          "phase": 2
+        },
+        {
+          "file": "run_03.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            1331,
+            0,
+            443,
+            444
+          ],
+          "translation": [
+            16,
+            30
+          ],
+          "phase": 3
+        },
+        {
+          "file": "run_04.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            0,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            21,
+            70
+          ],
+          "phase": 4
+        },
+        {
+          "file": "run_05.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            444,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            3,
+            70
+          ],
+          "phase": 5
+        },
+        {
+          "file": "run_06.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            887,
+            444,
+            444,
+            443
+          ],
+          "translation": [
+            11,
+            70
+          ],
+          "phase": 6
+        },
+        {
+          "file": "run_07.png",
+          "duration": 0.07142857142857142,
+          "crop": [
+            1331,
+            444,
+            443,
+            443
+          ],
+          "translation": [
+            11,
+            70
+          ],
+          "phase": 7
+        }
+      ],
+      "source": "run-revision.png"
+    }
+  }
+}

@@ -58,3 +58,8 @@ R1-01与独立预览共用103个环境元素；48鱼/12帧图集、根部固定�
 ## 顶部背景水面修正
 
 按用户圈选：水面改为顶部远景独立纹理折射，删除中部/底部浮动焦散实例。102个运行元素；6项水面实机范围/遮挡/循环检查、17项环境检查和4项渲染循环检查通过。原交付页视频已切换本轮20秒水面/32秒视差录像；主关卡共享环境。证据：evidence/motion_elements/water-surface/。
+## 2026-10-28 拾潮者动作评审场景
+
+新增 `scenes/characters/locomotion_preview.tscn`，F6预览IDLE/Walk/Run各8帧。绘图来源、Blender序列工程、帧序/锚点与限制见 `../../assets/source/tide-picker-locomotion-v01/README.md`。本批没有替换主关卡角色，没有改动存档或发布Web游戏。
+
+固定Godot4.7.2导入通过；`--headless --script res://tests/locomotion_assets.gd`通过24纹理、透明角、播放推进、暂停、循环、状态切换检查。真实渲染截图为 `evidence/locomotion-v01/playback-a.png` 与 `playback-b.png`。技术通过不等于美术签收：前后腿身份和支撑节奏仍需精修，资产保持candidate。
