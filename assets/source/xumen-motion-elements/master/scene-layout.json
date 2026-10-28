@@ -379,31 +379,46 @@
     "id": "BEAM-01",
     "scene": true,
     "pos": [
-      622,
-      0
+      550,
+      -105
     ],
-    "z": -35.0,
-    "kind": "light"
+    "z": -54,
+    "kind": "soft_light",
+    "scale": [
+      0.55,
+      0.64
+    ],
+    "rotation": 0.28
   },
   {
     "id": "BEAM-02",
     "scene": true,
     "pos": [
-      788,
-      0
+      740,
+      -80
     ],
-    "z": -35.0,
-    "kind": "light"
+    "z": -54,
+    "kind": "soft_light",
+    "scale": [
+      0.38,
+      0.58
+    ],
+    "rotation": 0.24
   },
   {
     "id": "BEAM-03",
     "scene": true,
     "pos": [
-      905,
-      43
+      875,
+      -60
     ],
-    "z": -35.0,
-    "kind": "light"
+    "z": -54,
+    "kind": "soft_light",
+    "scale": [
+      0.32,
+      0.52
+    ],
+    "rotation": 0.21
   },
   {
     "id": "CHARACTER",
@@ -419,7 +434,7 @@
   {
     "id": "ENV-DEPTH",
     "scene": false,
-    "tex": "ENV-DEPTH",
+    "tex": "res://assets/soft_light/ENV-DEPTH-RESTORED.png",
     "pos": [
       20,
       0

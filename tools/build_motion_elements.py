@@ -141,3 +141,6 @@ func update_visuals() -> void:
 if "--assemble" in sys.argv and (root/"assets/source/baleen-blender/jobs.json").exists():
  import subprocess
  subprocess.run([sys.executable,str(root/"tools/integrate_baleen_blender.py")],check=True)
+if "--assemble" in sys.argv and (project/"assets/soft_light/UNDERWATER-SOFT-LIGHT.png").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_soft_light.py")],check=True)

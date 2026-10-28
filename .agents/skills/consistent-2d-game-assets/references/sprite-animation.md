@@ -96,3 +96,5 @@ Save the source atlas, actual prompt and references, extraction script or crop m
 - 检查残留背景小岛，再批量渲染；位图连通性、尖端蒙版与色域只能辅助提取，必须复查细丝未被误删。
 - 用额外的循环闭合帧验证形态键几何，但导出帧不重复闭合帧；同时验固定点误差、首尾像素变化和实际Godot场景。
 - 母版打包绘画纹理，明确自动生成器会重建母版，避免覆盖人工Texture Paint/曲线修改。渲染后的PNG序列是2D动画，不能宣称为逐帧手绘。参见assets/source/baleen-blender/README.md。
+
+- 背景裁片不能直接作为加法光束：原画中的几何会随图层位移错位。移除裁片时还应检查背景是否有配套扣除蒙版；恢复原背景连续性，再叠加不含场景物体的独立透明光效，比较镜头两端与关闭光效后的画面。

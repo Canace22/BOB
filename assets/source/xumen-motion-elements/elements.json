@@ -528,60 +528,75 @@
   {
     "id": "BEAM-01",
     "position": [
-      622,
-      0
+      550,
+      -105
     ],
-    "layer": -35.0,
-    "asset": "BEAM-01.png",
-    "scene": "elements/BEAM-01.tscn",
-    "motion": "light",
+    "layer": -54,
+    "asset": "res://assets/soft_light/UNDERWATER-SOFT-LIGHT.png",
+    "scene": "elements/soft_underwater_light.tscn",
+    "motion": "independent painted soft light",
     "parameters": {
-      "period": 12.0,
-      "phase": 25.009999999999998,
-      "intensity": 0.12
+      "scale": [
+        0.55,
+        0.64
+      ],
+      "rotation": 0.28,
+      "intensity": 0.12,
+      "phase": 0.0,
+      "period": 12
     },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
+    "acceptance": "transparent perimeter; no scene sampling; no geometry motion; cycle and camera tests",
+    "source": "../xumen-soft-light/README.md",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A 本轮无声音需求"
   },
   {
     "id": "BEAM-02",
     "position": [
-      788,
-      0
+      740,
+      -80
     ],
-    "layer": -35.0,
-    "asset": "BEAM-02.png",
-    "scene": "elements/BEAM-02.tscn",
-    "motion": "light",
+    "layer": -54,
+    "asset": "res://assets/soft_light/UNDERWATER-SOFT-LIGHT.png",
+    "scene": "elements/soft_underwater_light.tscn",
+    "motion": "independent painted soft light",
     "parameters": {
-      "period": 12.0,
-      "phase": 25.62,
-      "intensity": 0.12
+      "scale": [
+        0.38,
+        0.58
+      ],
+      "rotation": 0.24,
+      "intensity": 0.08,
+      "phase": 2.1,
+      "period": 12
     },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
+    "acceptance": "transparent perimeter; no scene sampling; no geometry motion; cycle and camera tests",
+    "source": "../xumen-soft-light/README.md",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A 本轮无声音需求"
   },
   {
     "id": "BEAM-03",
     "position": [
-      905,
-      43
+      875,
+      -60
     ],
-    "layer": -35.0,
-    "asset": "BEAM-03.png",
-    "scene": "elements/BEAM-03.tscn",
-    "motion": "light",
+    "layer": -54,
+    "asset": "res://assets/soft_light/UNDERWATER-SOFT-LIGHT.png",
+    "scene": "elements/soft_underwater_light.tscn",
+    "motion": "independent painted soft light",
     "parameters": {
-      "period": 12.0,
-      "phase": 26.23,
-      "intensity": 0.12
+      "scale": [
+        0.32,
+        0.52
+      ],
+      "rotation": 0.21,
+      "intensity": 0.055,
+      "phase": 4.2,
+      "period": 12
     },
-    "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
-    "source": "original crop or generated light/backing; see export manifest",
+    "acceptance": "transparent perimeter; no scene sampling; no geometry motion; cycle and camera tests",
+    "source": "../xumen-soft-light/README.md",
     "collision": "N/A 环境无碰撞",
     "sound": "N/A 本轮无声音需求"
   },
@@ -605,7 +620,7 @@
       0
     ],
     "layer": -60,
-    "asset": "ENV-DEPTH.png",
+    "asset": "res://assets/soft_light/ENV-DEPTH-RESTORED.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",

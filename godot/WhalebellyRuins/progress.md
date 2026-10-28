@@ -70,6 +70,10 @@ R1-01与独立预览共用103个环境元素；48鱼/12帧图集、根部固定�
 
 本批补充：独立包启动退出0、实际截图已查看；无编码干扰20秒P50=16.661ms/P95=17.233ms，纹理204.1MiB。Blender几何/帧分析与Godot专项共通过52项检查（4+4+17+17+4+6，详见各报告）。
 
+## 2026-10-28 光束多边形接缝修复
+
+定位到BEAM-01/02/03裁切背景与ENV-DEPTH相同缺口，远景视差导致骨架错位露角。将被切像素合回背景，使用一次内置imagegen生成的独立透明柔光替换旧裁片，12秒微弱流动，z=-54。实际截图对照尖角已消失；16项光效检查、17项环境、6项水面及原主关卡27项输入行走/复活/房间回归通过。证据：evidence/soft_light；完整源与限制：assets/source/xumen-soft-light/README.md。
+
 ## 2026-10-28 拾潮者连续视频动作 V02
 
 新增`scenes/characters/locomotion_video_preview.tscn`，214帧（IDLE88/Walk78/Run48，含20张光流桥接）。固定Godot4.7.2通过214帧区域、透明角、推进、暂停、循环、切换专项；真实渲染见`evidence/locomotion-v02-video/`。Blender打包2D时序母版、原始243帧及无损归档、帧源清单和交付说明见`../../assets/source/tide-picker-locomotion-v02-video/README.md`。Run复用历史视频；IDLE局部呼吸修正。步态腿身份、脚形及道具漂移仍待修，保持candidate，未替换主关卡，未发布Pages。
