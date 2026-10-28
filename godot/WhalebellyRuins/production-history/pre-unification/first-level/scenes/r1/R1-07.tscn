@@ -1,0 +1,393 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v04/foundation.png" id="v04_foundation"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v04/ledge.png" id="v04_ledge"]
+[ext_resource type="Texture2D" path="res://assets/runtime/v04/frame.png" id="v04_frame"]
+
+[ext_resource type="Script" path="res://scripts/scenery_motion.gd" id="1"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v04/oral-depth.png" id="2"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v04/baleen.png" id="3"]
+
+[ext_resource type="Shader" path="res://assets/runtime/v03/baleen.gdshader" id="4"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v03/terrain.png" id="5"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v02/plant.png" id="6"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v02/lamp.png" id="7"]
+
+[ext_resource type="Texture2D" path="res://assets/runtime/v02/cargo.png" id="8"]
+
+[sub_resource type="ShaderMaterial" id="BaleenMaterialUpperPalateAndBaleen"]
+shader = ExtResource("4")
+
+
+[sub_resource type="RectangleShape2D" id="Shape_0"]
+size = Vector2(384.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_1"]
+size = Vector2(320.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_2"]
+size = Vector2(448.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="RightWall"]
+size = Vector2(32, 1800)
+
+[node name="R1_07" type="Node2D"]
+
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -30
+
+
+[node name="Middle" type="Node2D" parent="."]
+z_index = -15
+script = ExtResource("1")
+parallax = Vector2(0.5, 0.5)
+reference_center = Vector2(896, 608)
+
+
+[node name="World" type="Node2D" parent="."]
+z_index = -1
+
+
+[node name="Foreground" type="Node2D" parent="."]
+z_index = 6
+script = ExtResource("1")
+parallax = Vector2(1.2, 1.2)
+reference_center = Vector2(896, 608)
+fade_near_player = true
+
+
+[node name="FarDrift" type="Node2D" parent="Far"]
+position = Vector2(-1400, -900)
+script = ExtResource("1")
+parallax = Vector2(0.10, 0.12)
+
+
+[node name="DeepWater" type="Sprite2D" parent="Far/FarDrift"]
+position = Vector2(0.000, 0.000)
+scale = Vector2(1.675, 1.913)
+texture = ExtResource("2")
+centered = false
+modulate = Color(0.7, 0.79, 0.85, 1)
+
+
+[node name="UpperPalateAndBaleen" type="Sprite2D" parent="Middle"]
+position = Vector2(-350.000, 140.000)
+scale = Vector2(1.166, 0.747)
+texture = ExtResource("3")
+centered = false
+modulate = Color(0.82, 0.87, 0.9, 1)
+material = SubResource("BaleenMaterialUpperPalateAndBaleen")
+script = ExtResource("1")
+
+
+[node name="ClosedRootWall" type="Sprite2D" parent="Middle"]
+position = Vector2(1702, -120)
+scale = Vector2(0.38, 1.7)
+texture = ExtResource("v04_foundation")
+centered = false
+modulate = Color(0.40,0.47,0.55,1)
+
+[node name="Shelf_P0" type="StaticBody2D" parent="World"]
+position = Vector2(0.000, 960.000)
+collision_layer = 1
+collision_mask = 0
+
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P0"]
+position = Vector2(192.000, 32.000)
+shape = SubResource("Shape_0")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P0"]
+position = Vector2(-4, -8)
+scale = Vector2(0.197980, 0.451220)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.84, 0.82, 0.9, 1)
+
+
+[node name="ReadableTop_0" type="Line2D" parent="World"]
+points = PackedVector2Array(9, 962, 375, 962)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+
+[node name="Colonies_0" type="Sprite2D" parent="World"]
+position = Vector2(268.800, 914.000)
+scale = Vector2(0.218, 0.134)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 2.688
+
+
+[node name="Lamp_0" type="Sprite2D" parent="World"]
+position = Vector2(230.400, 845.000)
+scale = Vector2(0.221, 0.158)
+texture = ExtResource("7")
+centered = false
+script = ExtResource("1")
+sway = 0.012
+phase = 2.304
+
+
+[node name="LampRope_0" type="Line2D" parent="World"]
+points = PackedVector2Array(250.4, 845, 260.4, 800)
+width = 2
+default_color = Color(0.55, 0.20, 0.13, 1)
+antialiased = true
+
+
+[node name="NearColony_0" type="Sprite2D" parent="Foreground"]
+position = Vector2(-60.000, 1050.000)
+scale = Vector2(0.604, 0.401)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.16, 0.26, 0.3, 0.8)
+script = ExtResource("1")
+sway = 0.012
+phase = -0.600
+
+
+[node name="Shelf_P1" type="StaticBody2D" parent="World"]
+position = Vector2(704.000, 960.000)
+collision_layer = 1
+collision_mask = 0
+
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P1"]
+position = Vector2(160.000, 32.000)
+shape = SubResource("Shape_1")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P1"]
+position = Vector2(-4, -8)
+scale = Vector2(0.165657, 0.451220)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.84, 0.82, 0.9, 1)
+
+
+[node name="ReadableTop_1" type="Line2D" parent="World"]
+points = PackedVector2Array(713, 962, 1015, 962)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+
+[node name="Colonies_1" type="Sprite2D" parent="World"]
+position = Vector2(928.000, 914.000)
+scale = Vector2(0.218, 0.134)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 9.280
+
+
+[node name="Shelf_P2" type="StaticBody2D" parent="World"]
+position = Vector2(1344.000, 960.000)
+collision_layer = 1
+collision_mask = 0
+
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P2"]
+position = Vector2(224.000, 32.000)
+shape = SubResource("Shape_2")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P2"]
+position = Vector2(-4, -8)
+scale = Vector2(0.230303, 0.451220)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.84, 0.82, 0.9, 1)
+
+
+[node name="ReadableTop_2" type="Line2D" parent="World"]
+points = PackedVector2Array(1353, 962, 1783, 962)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+
+[node name="Colonies_2" type="Sprite2D" parent="World"]
+position = Vector2(1657.600, 914.000)
+scale = Vector2(0.218, 0.134)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 16.576
+
+
+[node name="Lamp_2" type="Sprite2D" parent="World"]
+position = Vector2(1612.800, 845.000)
+scale = Vector2(0.221, 0.158)
+texture = ExtResource("7")
+centered = false
+script = ExtResource("1")
+sway = 0.012
+phase = 16.128
+
+
+[node name="LampRope_2" type="Line2D" parent="World"]
+points = PackedVector2Array(1632.8, 845, 1642.8, 800)
+width = 2
+default_color = Color(0.55, 0.20, 0.13, 1)
+antialiased = true
+
+
+[node name="NearColony_2" type="Sprite2D" parent="Foreground"]
+position = Vector2(1284.000, 1050.000)
+scale = Vector2(0.604, 0.401)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.16, 0.26, 0.3, 0.8)
+script = ExtResource("1")
+sway = 0.012
+phase = 12.840
+
+
+[node name="RedCord_0" type="Line2D" parent="World"]
+points = PackedVector2Array(450.0, 300, 480.0, 768)
+width = 5
+default_color = Color(0.69, 0.24, 0.14, 1)
+antialiased = true
+
+
+[node name="AnchorRing_0" type="Line2D" parent="World"]
+points = PackedVector2Array(496.0, 768.0, 495.693, 771.121, 494.782, 774.123, 493.304, 776.889, 491.314, 779.314, 488.889, 781.304, 486.123, 782.782, 483.121, 783.693, 480.0, 784.0, 476.879, 783.693, 473.877, 782.782, 471.111, 781.304, 468.686, 779.314, 466.696, 776.889, 465.218, 774.123, 464.307, 771.121, 464.0, 768.0, 464.307, 764.879, 465.218, 761.877, 466.696, 759.111, 468.686, 756.686, 471.111, 754.696, 473.877, 753.218, 476.879, 752.307, 480.0, 752.0, 483.121, 752.307, 486.123, 753.218, 488.889, 754.696, 491.314, 756.686, 493.304, 759.111, 494.782, 761.877, 495.693, 764.879, 496.0, 768.0)
+width = 4
+default_color = Color(0.91, 0.73, 0.48, 1)
+antialiased = true
+
+
+[node name="RedCord_1" type="Line2D" parent="World"]
+points = PackedVector2Array(642.0, 300, 672.0, 768)
+width = 5
+default_color = Color(0.69, 0.24, 0.14, 1)
+antialiased = true
+
+
+[node name="AnchorRing_1" type="Line2D" parent="World"]
+points = PackedVector2Array(688.0, 768.0, 687.693, 771.121, 686.782, 774.123, 685.304, 776.889, 683.314, 779.314, 680.889, 781.304, 678.123, 782.782, 675.121, 783.693, 672.0, 784.0, 668.879, 783.693, 665.877, 782.782, 663.111, 781.304, 660.686, 779.314, 658.696, 776.889, 657.218, 774.123, 656.307, 771.121, 656.0, 768.0, 656.307, 764.879, 657.218, 761.877, 658.696, 759.111, 660.686, 756.686, 663.111, 754.696, 665.877, 753.218, 668.879, 752.307, 672.0, 752.0, 675.121, 752.307, 678.123, 753.218, 680.889, 754.696, 683.314, 756.686, 685.304, 759.111, 686.782, 761.877, 687.693, 764.879, 688.0, 768.0)
+width = 4
+default_color = Color(0.91, 0.73, 0.48, 1)
+antialiased = true
+
+
+[node name="RedCord_2" type="Line2D" parent="World"]
+points = PackedVector2Array(1090.0, 300, 1120.0, 768)
+width = 5
+default_color = Color(0.69, 0.24, 0.14, 1)
+antialiased = true
+
+
+[node name="AnchorRing_2" type="Line2D" parent="World"]
+points = PackedVector2Array(1136.0, 768.0, 1135.693, 771.121, 1134.782, 774.123, 1133.304, 776.889, 1131.314, 779.314, 1128.889, 781.304, 1126.123, 782.782, 1123.121, 783.693, 1120.0, 784.0, 1116.879, 783.693, 1113.877, 782.782, 1111.111, 781.304, 1108.686, 779.314, 1106.696, 776.889, 1105.218, 774.123, 1104.307, 771.121, 1104.0, 768.0, 1104.307, 764.879, 1105.218, 761.877, 1106.696, 759.111, 1108.686, 756.686, 1111.111, 754.696, 1113.877, 753.218, 1116.879, 752.307, 1120.0, 752.0, 1123.121, 752.307, 1126.123, 753.218, 1128.889, 754.696, 1131.314, 756.686, 1133.304, 759.111, 1134.782, 761.877, 1135.693, 764.879, 1136.0, 768.0)
+width = 4
+default_color = Color(0.91, 0.73, 0.48, 1)
+antialiased = true
+
+
+[node name="RedCord_3" type="Line2D" parent="World"]
+points = PackedVector2Array(1282.0, 300, 1312.0, 768)
+width = 5
+default_color = Color(0.69, 0.24, 0.14, 1)
+antialiased = true
+
+
+[node name="AnchorRing_3" type="Line2D" parent="World"]
+points = PackedVector2Array(1328.0, 768.0, 1327.693, 771.121, 1326.782, 774.123, 1325.304, 776.889, 1323.314, 779.314, 1320.889, 781.304, 1318.123, 782.782, 1315.121, 783.693, 1312.0, 784.0, 1308.879, 783.693, 1305.877, 782.782, 1303.111, 781.304, 1300.686, 779.314, 1298.696, 776.889, 1297.218, 774.123, 1296.307, 771.121, 1296.0, 768.0, 1296.307, 764.879, 1297.218, 761.877, 1298.696, 759.111, 1300.686, 756.686, 1303.111, 754.696, 1305.877, 753.218, 1308.879, 752.307, 1312.0, 752.0, 1315.121, 752.307, 1318.123, 753.218, 1320.889, 754.696, 1323.314, 756.686, 1325.304, 759.111, 1326.782, 761.877, 1327.693, 764.879, 1328.0, 768.0)
+width = 4
+default_color = Color(0.91, 0.73, 0.48, 1)
+antialiased = true
+
+
+[node name="ClosedRightWall" type="StaticBody2D" parent="World"]
+position = Vector2(1808.000, 608.000)
+collision_layer = 1
+
+
+[node name="Collision" type="CollisionShape2D" parent="World/ClosedRightWall"]
+shape = SubResource("RightWall")
+
+
+[node name="Reward_0" type="Sprite2D" parent="World"]
+position = Vector2(1543.000, 883.800)
+scale = Vector2(0.184, 0.139)
+texture = ExtResource("8")
+centered = false
+
+
+[node name="Reward_1" type="Sprite2D" parent="World"]
+position = Vector2(1703.000, 883.800)
+scale = Vector2(0.184, 0.139)
+texture = ExtResource("8")
+centered = false
+
+
+[node name="NearShellRidge" type="Sprite2D" parent="Foreground"]
+position = Vector2(-300, 656)
+scale = Vector2(1.101289, 0.75)
+texture = ExtResource("v04_frame")
+centered = false
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P0"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.26953125, 0.7300380228136882)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P1"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.22786458333333334, 0.7300380228136882)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P2"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.3111979166666667, 0.7300380228136882)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="NearBottomFill" type="Polygon2D" parent="Foreground"]
+polygon = PackedVector2Array(-300,1198,2092,1198,2092,3016,-300,3016)
+color = Color(0.018,0.044,0.061,1)

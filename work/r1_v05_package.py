@@ -1,6 +1,6 @@
 from pathlib import Path
 import subprocess,shutil,json,hashlib,sys
-ROOT=Path('G:/鲸落万物生');P=ROOT/'godot/first-level-artmatch'
+ROOT=Path('G:/鲸落万物生');P=ROOT/'BOB/godot/WhalebellyRuins'
 B=ROOT/'builds/须门遗港-v0.5-参考图可玩关卡';B.mkdir(parents=True,exist_ok=True)
 EXE='C:/Users/Kingsoft/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEngine_Microsoft.Winget.Source_8wekyb3d8bbwe/Godot_v4.7.2-stable_win64_console.exe'
 OLD=ROOT/'builds/须门遗港-v0.4-七房路线与分层'
@@ -44,7 +44,7 @@ Tab切换近景/全房；F2源图对照；F3碰撞/门/锚点；F4四层独显�
 图片中的悬空英雄位置只用于构图对照；正常出生在稳定岸上。
 未扩建R2/R3后续章节。原图之外的隐藏补绘、动效、音效和软膜下潜是有记录的设计补足。
 
-旧v0.4工程/构建均保留。新工程：G:/鲸落万物生/BOB/godot/first-level-artmatch/project.godot
+旧v0.4工程/构建均保留。新工程：G:/鲸落万物生/BOB/godot/WhalebellyRuins/project.godot
 原件：assets/reference/r1；遮罩/Shader/场景是可编辑母版；assets/clean是补绘母版；assets/runtime/layers是Godot原生导出的分层/角色复用图。
 主图纹理由互补遮罩进入四层，独立角色/敌人/门/拾取物、曲面碰撞、状态与事件在引擎运行，不是把整图当可玩关卡。
 远景独显可见少量源图遮挡细节叠层；干净远景母版在assets/clean/*-far.png。源图未包含的隐藏面为合理补绘，不声称恢复了不存在的原始分层工程。

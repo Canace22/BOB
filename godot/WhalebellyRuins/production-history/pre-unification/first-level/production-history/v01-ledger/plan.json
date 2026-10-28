@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "name": "whalefall-first-level",
+  "scope_note": "按首关裁剪P00-P11：P01合并设计合同；P04涵盖静态与动画；P07涵盖玩法存档；P10涵盖效果音频与回归。不是全游戏。不读取旧Demo实现。阶段代码保存不可变快照，后续迭代以新快照验收。",
+  "stages": [
+    {
+      "id": "P00",
+      "name": "范围与需求",
+      "depends_on": [],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/brief.md"
+      ],
+      "checks": [
+        {
+          "id": "scope",
+          "kind": "technical",
+          "text": "范围和需求覆盖完整"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行范围与需求。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P01"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P01",
+      "name": "环境与关卡合同",
+      "depends_on": [
+        "P00"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/environment.md",
+        "docs/production/design.md"
+      ],
+      "checks": [
+        {
+          "id": "engine",
+          "kind": "technical",
+          "text": "固定引擎实测可用"
+        },
+        {
+          "id": "rules",
+          "kind": "technical",
+          "text": "路线、状态、保存和输入合同齐全"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行环境与关卡合同。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P03"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P03",
+      "name": "灰盒核心循环",
+      "depends_on": [
+        "P01"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/prototype.md"
+      ],
+      "checks": [
+        {
+          "id": "playable",
+          "kind": "runtime",
+          "text": "实际移动/跳跃/碰撞和五房可达"
+        },
+        {
+          "id": "combat",
+          "kind": "runtime",
+          "text": "敌人/首Boss/能力门和重试验证"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行灰盒核心循环。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P04"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P04",
+      "name": "独立美术与动画",
+      "depends_on": [
+        "P03"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/assets.json",
+        "docs/production/art-review.md"
+      ],
+      "checks": [
+        {
+          "id": "assets",
+          "kind": "technical",
+          "text": "原件、母版、运行引用可追溯"
+        },
+        {
+          "id": "visual",
+          "kind": "visual",
+          "text": "样板与动作实际尺寸目检"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行独立美术与动画。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P07"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P07",
+      "name": "集成与持久状态",
+      "depends_on": [
+        "P04"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/integration.md"
+      ],
+      "checks": [
+        {
+          "id": "runtime",
+          "kind": "runtime",
+          "text": "真实窗口层级、操作和完整循环"
+        },
+        {
+          "id": "save",
+          "kind": "runtime",
+          "text": "实际退出重启验证永久状态"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行集成与持久状态。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P10"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P10",
+      "name": "效果声音与综合验收",
+      "depends_on": [
+        "P07"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/qa.md"
+      ],
+      "checks": [
+        {
+          "id": "e2e",
+          "kind": "runtime",
+          "text": "从起点经Boss至结关及失败恢复"
+        },
+        {
+          "id": "motion",
+          "kind": "visual",
+          "text": "实际动态预览、攻击读性和声画同步"
+        },
+        {
+          "id": "performance",
+          "kind": "runtime",
+          "text": "实际参考机帧时采样"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行效果声音与综合验收。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [
+        "P11"
+      ],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    },
+    {
+      "id": "P11",
+      "name": "独立构建与接续",
+      "depends_on": [
+        "P10"
+      ],
+      "inputs": [
+        "当前需求、input-snapshot.json、依赖阶段通过证据"
+      ],
+      "input_files": [
+        "docs/production/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/production/delivery.md"
+      ],
+      "checks": [
+        {
+          "id": "build",
+          "kind": "runtime",
+          "text": "编辑器外独立运行可通关"
+        },
+        {
+          "id": "handoff",
+          "kind": "technical",
+          "text": "操作、源文件、证据、恢复指令完整"
+        }
+      ],
+      "prompt": "在当前Godot首关工程执行独立构建与接续。读取合同与实际输入，保存具体指令后立即执行。保留不可变代码/资源快照与真实运行证据。失败修复后复测，不把文件存在当完成。",
+      "on_pass": [],
+      "on_fail": "保存复现与日志，返修最小影响项；三次失败后记录阻塞并改用已授权路径。"
+    }
+  ]
+}

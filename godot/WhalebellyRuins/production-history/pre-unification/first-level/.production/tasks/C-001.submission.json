@@ -1,0 +1,42 @@
+{
+  "task_id": "C-001",
+  "status": "pass",
+  "summary": "49项场景检查、35项回访检查、6项机关检查通过；门ID/返回脚位/A2补压/A3挂环双向/07右壁/外部远端锁均观察；明确A3夹具起点与后续区域未包含。",
+  "artifacts": [
+    "docs/v04/scene-manifest.json",
+    "docs/v04/route-review.md",
+    "docs/v04/element-mapping.json",
+    "scenes/r1/R1-01.tscn",
+    "scenes/r1/R1-02.tscn",
+    "scenes/r1/R1-03.tscn",
+    "scenes/r1/R1-04.tscn",
+    "scenes/r1/R1-05.tscn",
+    "scenes/r1/R1-06.tscn",
+    "scenes/r1/R1-07.tscn",
+    "scripts/main.gd",
+    "scripts/level.gd",
+    "scripts/player.gd",
+    "scripts/game.gd",
+    "scripts/room_routes.gd",
+    "scripts/route_blueprint.gd",
+    "scripts/scene_inspector.gd",
+    "scripts/world_graph.gd",
+    "scripts/scenery_motion.gd",
+    "scripts/atmosphere.gd"
+  ],
+  "checks": [
+    {
+      "id": "accept",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "49项场景检查、35项回访检查、6项机关检查通过；门ID/返回脚位/A2补压/A3挂环双向/07右壁/外部远端锁均观察；明确A3夹具起点与后续区域未包含。",
+      "evidence": [
+        "evidence/v04/package-art/art.json",
+        "evidence/v04/package-routes/routes.json",
+        "evidence/v04/package-mechanisms/mechanisms.json",
+        "evidence/v04/package-routes/A2-three-platforms.png",
+        "evidence/v04/package-routes/07-right-wall-rewards.png"
+      ]
+    }
+  ]
+}

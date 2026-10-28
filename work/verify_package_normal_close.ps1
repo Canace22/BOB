@@ -1,6 +1,6 @@
 param(
     [string]$PackageDirectory = 'G:/鲸落万物生/builds/须门遗港-v0.5-参考图可玩关卡',
-    [string]$EvidenceRoot = 'G:/鲸落万物生/BOB/godot/first-level-artmatch/evidence',
+    [string]$EvidenceRoot = 'G:/鲸落万物生/BOB/godot/WhalebellyRuins/evidence',
     [string]$AudioDriver = 'Dummy',
     [int]$TimeoutSeconds = 180
 )

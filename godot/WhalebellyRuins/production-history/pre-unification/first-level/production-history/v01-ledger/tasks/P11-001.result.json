@@ -1,0 +1,39 @@
+{
+  "task_id": "P11-001",
+  "status": "pass",
+  "summary": "Windows便携运行包已独立完整通关并重启读档，ZIP完整性、许可证、说明和恢复记录齐全。",
+  "artifacts": [
+    "docs/production/delivery.md",
+    "docs/production/coverage-final.json",
+    "RESUME.md",
+    "README.md",
+    "evidence/build-manifest.json"
+  ],
+  "checks": [
+    {
+      "id": "build",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "工作目录切到builds，启动同版本Whalefall.exe自动加载同名PCK；完成五房Boss到结关，无运行错误。另进程恢复永久进度；91,658,532字节ZIP的CRC通过，包内hash记录。",
+      "evidence": [
+        "evidence/standalone-run/engine.log",
+        "evidence/standalone-run/prototype.json",
+        "evidence/standalone-run/complete.png",
+        "evidence/p07-run/persistence.json",
+        "evidence/build-manifest.json"
+      ]
+    },
+    {
+      "id": "handoff",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "README含全键位/路线/保存，最终覆盖表补全实际证据；原件/源码/运行包/日志均有位置，RESUME按状态和hash接续。主观试听与有限动画如实列为表现限制。",
+      "evidence": [
+        "README.md",
+        "RESUME.md",
+        "docs/production/coverage-final.json",
+        "docs/production/delivery.md"
+      ]
+    }
+  ]
+}

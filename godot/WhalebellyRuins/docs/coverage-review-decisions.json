@@ -1,0 +1,554 @@
+{
+  "frozen": true,
+  "approve_current_mechanics": true,
+  "instances_pass": true,
+  "instance_status": "verified_runtime_inventory_and_render_region_review",
+  "instance_evidence": [
+    "evidence/elements/elements.json",
+    "evidence/dynamics.json"
+  ],
+  "rooms_reviewed": [
+    "R1-01",
+    "R1-02",
+    "R1-03",
+    "R1-04",
+    "R1-05",
+    "R1-06",
+    "R1-07"
+  ],
+  "per_element": {
+    "R1-04-GATE-02": {
+      "motion": {
+        "status": "pass",
+        "evidence": [
+          "evidence/mechanisms.json",
+          "evidence/gate-open.png",
+          "evidence/normal/normal-reload.json"
+        ],
+        "note": "门独立18px升起/消隐，Boss永久状态回访仍打开。"
+      }
+    }
+  },
+  "groups": [
+    {
+      "rooms": [
+        "R1-01"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-01.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-01.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-02"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-02.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-02.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-03"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-03.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-03.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-04"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-04.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-04.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-05"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-05.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-05.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-06"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-06.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-06.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "rooms": [
+        "R1-07"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-07.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        },
+        "spatial": {
+          "status": "pass",
+          "evidence": [
+            "evidence/R1-07.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "AI逐房九宫格/边缘反查；共享渲染簇用明确源框匹配，实体与生成规则另用运行库存。"
+        }
+      }
+    },
+    {
+      "tags": [
+        "BUBBLES",
+        "FISH",
+        "FOG",
+        "DUST",
+        "CAMP-LIGHT",
+        "EVENT-PULSE"
+      ],
+      "dimensions": {
+        "appearance": {
+          "status": "pass",
+          "evidence": [
+            "evidence/environment-running.png",
+            "evidence/dynamic-motion-a.png",
+            "evidence/dynamic-motion-b.png",
+            "evidence/dynamics.json"
+          ],
+          "note": "独立程序对象，实际图形运行低密度，不遮挡地面；事件pulse另有event测试。"
+        }
+      }
+    },
+    {
+      "dimensions": {
+        "motion": {
+          "status": "pass",
+          "evidence": [
+            "evidence/dynamics.json",
+            "evidence/dynamic-camera-left.png",
+            "evidence/dynamic-camera-right.png",
+            "evidence/dynamic-motion-a.png",
+            "evidence/dynamic-motion-b.png"
+          ],
+          "note": "七房时钟/生成器推进；代表房01近景和两时刻目视；具体演员/机关用下列专项覆盖。"
+        }
+      }
+    },
+    {
+      "tags": [
+        "PLAYER",
+        "ENEMY",
+        "CLAW"
+      ],
+      "dimensions": {
+        "motion": {
+          "status": "pass",
+          "evidence": [
+            "evidence/flow/actors-camps.json",
+            "evidence/flow/hero-run.png",
+            "evidence/flow/hero-attack.png",
+            "evidence/flow/hero-hurt.png",
+            "evidence/flow/boss-claw-active.png",
+            "evidence/normal/normal-run.json"
+          ],
+          "note": "源图待机姿态与运行/跳跃/冲刺/攻击/受击帧切换；Boss钳三阶段同步。"
+        }
+      }
+    },
+    {
+      "tags": [
+        "MEMBRANE",
+        "REWARD",
+        "RING"
+      ],
+      "dimensions": {
+        "motion": {
+          "status": "pass",
+          "evidence": [
+            "evidence/mechanisms.json",
+            "evidence/membrane-loaded.png",
+            "evidence/reward-collected.png",
+            "evidence/elements/elements.json"
+          ],
+          "note": "膜42px视觉与碰撞同步及恢复；奖励漂浮/隐藏；锚环实际接环脉冲，07四环双向输入。"
+        }
+      }
+    },
+    {
+      "dimensions": {
+        "physics": {
+          "status": "pass",
+          "evidence": [
+            "evidence/normal/normal-run.json",
+            "evidence/flow/flow.json",
+            "evidence/deep/deep-route.json",
+            "evidence/revisit/revisit.json",
+            "evidence/elements/elements.json",
+            "evidence/mechanisms.json"
+          ],
+          "note": "真实输入路线、敌人伤害/死亡、03下层、06新增地面、05/07独立落体fixture。fixture方法边界见报告。"
+        },
+        "interaction": {
+          "status": "pass",
+          "evidence": [
+            "evidence/normal/normal-run.json",
+            "evidence/flow/flow.json",
+            "evidence/flow/actors-camps.json",
+            "evidence/deep/deep-route.json",
+            "evidence/revisit/revisit.json",
+            "evidence/elements/elements.json",
+            "evidence/mechanisms.json"
+          ],
+          "note": "正反向门、能力条件、营地、战斗、拾取、远侧闩、膜与环实际输入/状态验证。"
+        }
+      }
+    },
+    {
+      "dimensions": {
+        "audio": {
+          "status": "pass",
+          "evidence": [
+            "evidence/audio-mixer.json",
+            "evidence/audio-pcm-analysis.json",
+            "evidence/environment-fade.json",
+            "evidence/flow/controls.json",
+            "evidence/elements/elements.json"
+          ],
+          "note": "只签技术数字混音/事件调用/静音/音量包络；当前外部WASAPI设备输出blocked，见GLOBAL-AUDIO，绝不称已实际扬声器试听。"
+        }
+      }
+    },
+    {
+      "dimensions": {
+        "lifecycle": {
+          "status": "pass",
+          "evidence": [
+            "evidence/normal/normal-reload.json",
+            "evidence/revisit/reward-reload.json",
+            "evidence/elements/reward7-reload.json",
+            "evidence/flow/controls.json",
+            "evidence/dynamics.json",
+            "evidence/mechanisms.json",
+            "evidence/elements/elements.json"
+          ],
+          "note": "静态簇随房间按稳定定义重建，动态暂停恢复；Boss/三处唯一奖励/能力/完成与检查点独立进程恢复。"
+        }
+      }
+    },
+    {
+      "tags": [
+        "AUDIO"
+      ],
+      "dimensions": {
+        "lifecycle": {
+          "status": "pass",
+          "evidence": [
+            "evidence/environment-fade.json",
+            "evidence/elements-lifecycle-before.log",
+            "evidence/elements-lifecycle-after.log",
+            "evidence/startup-exit-clean.log"
+          ],
+          "note": "已定位WAV/PlaybackWAV；清理Tween/音频/场景并等待实际mix周期后，29项压力测试及普通启动退出均无泄漏；保留before历史。"
+        }
+      }
+    }
+  ],
+  "systems": {
+    "SYS-INPUT": {
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-run.json",
+        "evidence/flow/flow.json",
+        "evidence/elements/elements.json"
+      ],
+      "note": "实际Input.action调用，不只直接改Transform；fixture起点明确。"
+    },
+    "SYS-CAMERA": {
+      "status": "pass",
+      "evidence": [
+        "evidence/dynamics.json",
+        "evidence/dynamic-camera-left.png",
+        "evidence/dynamic-camera-right.png",
+        "evidence/capture-results.json"
+      ],
+      "note": "七房固定构图与代表房01近景两机位；层级偏移与冻结实际测得，非任意画外摄像机。"
+    },
+    "SYS-PAUSE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/flow/controls.json",
+        "evidence/dynamics.json"
+      ],
+      "note": "输入/场景/粒子/声音暂停与恢复。"
+    },
+    "SYS-SAVE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-reload.json",
+        "evidence/revisit/reward-reload.json",
+        "evidence/elements/reward7-reload.json"
+      ],
+      "note": "正式A1/完成/BossID/开门/奖励稳定ID及安全站点独立进程恢复。"
+    },
+    "SYS-UI": {
+      "status": "pass",
+      "evidence": [
+        "evidence/dynamic-camera-left.png",
+        "evidence/revisit/revisit-06-far-latch.png",
+        "evidence/flow/controls.json"
+      ],
+      "note": "生命、操作提示、能力门、练习状态、封闩和完成反馈可见；1280×720目视。"
+    },
+    "SYS-PERFORMANCE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/benchmark.json",
+        "evidence/elements-lifecycle-after.log",
+        "evidence/startup-exit-clean.log"
+      ],
+      "note": "当前硬件七房帧率通过；压力切房和普通退出资源清理返修通过。"
+    },
+    "SYS-BUILD": {
+      "status": "pass",
+      "evidence": [
+        "evidence/package-normal/normal-run.json",
+        "evidence/package-normal/normal-complete.png",
+        "evidence/package-reload/normal-reload.json",
+        "evidence/package-reload/normal-independent-reload.png",
+        "evidence/final-native-export.log"
+      ],
+      "note": "最终引擎+PCK实际正式01→05，19/19、0死亡；正确normal-reload独立恢复Boss/能力/完成/门状态；43PNG重导。Dummy音频；真实窗口关闭另列blocked。"
+    },
+    "SYS-TRACE": {
+      "status": "pass",
+      "evidence": [
+        "docs/source-manifest.json",
+        "docs/asset-provenance.json",
+        "docs/native-export.json",
+        "evidence/elements/elements.json"
+      ],
+      "note": "原件、SVG/JSON可编辑定义、scene/runtime与生成器对应；静态簇明确共享renderer。"
+    },
+    "SYS-ASSET-DELIVERY": {
+      "status": "fail",
+      "evidence": [
+        "assets/runtime/layers/R1-02/World.png",
+        "evidence/layer-0.png",
+        "docs/native-export.json"
+      ],
+      "note": "独立图层非精细透明分件：World02台阶/锚环仍带蓝背景，Far独显有其他层残片。完整合成pass不替代资产交付；须逐对象精修蒙版/补绘。",
+      "acceptance": "独立图层透明底无非本层背景，重新合成保持原图轮廓。"
+    }
+  },
+  "globals": {
+    "GLOBAL-STATIC": {
+      "status": "pass",
+      "evidence": [
+        "evidence/R1-01.png",
+        "evidence/R1-02.png",
+        "evidence/R1-03.png",
+        "evidence/R1-04.png",
+        "evidence/R1-05.png",
+        "evidence/R1-06.png",
+        "evidence/R1-07.png"
+      ],
+      "note": "逐房合成画面目视通过；Far独显是源细节叠层+连续underpaint，不当作一张已清理的独立原画。"
+    },
+    "GLOBAL-DYNAMIC": {
+      "status": "pass",
+      "evidence": [
+        "evidence/dynamics.json",
+        "evidence/dynamic-motion-a.png",
+        "evidence/dynamic-motion-b.png",
+        "evidence/mechanisms.json"
+      ],
+      "note": "七房动态时钟与生成器、机关、演员及事件效果运行。"
+    },
+    "GLOBAL-TRAVERSAL": {
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-run.json",
+        "evidence/deep/deep-route.json",
+        "evidence/revisit/revisit.json",
+        "evidence/elements/elements.json"
+      ],
+      "note": "正式01→05，03下层，06/07明示回访及正反向门、失败fixture。"
+    },
+    "GLOBAL-COMBAT": {
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-run.json",
+        "evidence/flow/flow.json",
+        "evidence/flow/actors-camps.json"
+      ],
+      "note": "正常战斗击败Boss获得A1；玩家受伤、死亡恢复及钳时序。"
+    },
+    "GLOBAL-RESTORE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/normal/normal-reload.json",
+        "evidence/revisit/reward-reload.json",
+        "evidence/elements/reward7-reload.json"
+      ],
+      "note": "独立进程恢复Boss、三奖励、能力、完成状态。"
+    },
+    "GLOBAL-AUDIO": {
+      "status": "blocked",
+      "evidence": [
+        "evidence/audio-devices.log",
+        "evidence/audio-mixer.json",
+        "evidence/environment-fade.json"
+      ],
+      "note": "数字混音/事件/包络通过，但当前WASAPI ERR_CANT_OPEN，fallback Dummy且设备仅Default；未修改系统设置；外部音频输出受阻。"
+    },
+    "GLOBAL-PERFORMANCE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "note": "1280×720 RTX5060，7房300帧采样各p95<20ms，0帧>25ms；Dummy后端，非音频输出或跨硬件保证。"
+    },
+    "GLOBAL-PORTABLE": {
+      "status": "pass",
+      "evidence": [
+        "evidence/package-normal/normal-run.json",
+        "evidence/package-normal/normal-complete.png",
+        "evidence/package-reload/normal-reload.json",
+        "evidence/package-reload/normal-independent-reload.png",
+        "evidence/final-native-export.log"
+      ],
+      "note": "最终引擎+PCK实际正式01→05，19/19、0死亡；正确normal-reload独立恢复Boss/能力/完成/门状态；43PNG重导。Dummy音频；真实窗口关闭另列blocked。"
+    },
+    "GLOBAL-LAYER-ASSETS": {
+      "status": "fail",
+      "evidence": [
+        "assets/runtime/layers/R1-02/World.png",
+        "evidence/layer-0.png",
+        "docs/native-export.json"
+      ],
+      "note": "独立图层非精细透明分件：World02台阶/锚环仍带蓝背景，Far独显有其他层残片。完整合成pass不替代资产交付；须逐对象精修蒙版/补绘。"
+    },
+    "GLOBAL-WINDOW-CLOSE": {
+      "status": "blocked",
+      "evidence": [
+        "evidence/package-startup-clean/result.json",
+        "evidence/package-startup-clean/README.md",
+        "evidence/package-startup-clean/run.log"
+      ],
+      "note": "最终EXE启动，但桌面捕获超时、GetCursorPos拒绝访问导致Alt+F4未执行；只回收本次PID。QA graceful退出不能代替此UI路径；强退历史警告保留。"
+    }
+  },
+  "contract_revisions": [
+    "DEC-006：骨化管壳、固定海绵、菌簇不作统一根摆；柔软须幕单列CANOPY，shader幅度1.4源像素。",
+    "DEC-007：源图光束为静态照明；动态固定灯由CAMP-LIGHT承担。05育窝无独立发光灯，保持静态壳巢与营地交互。",
+    "DEC-008：保留原图舌台轮廓，膜最大下沉由初稿90px改42px；中央承重后S+Space下潜，下层中央Space弹返。这是明确新增玩法，非从静图恢复。",
+    "DEC-009：事件声采用非空间混音，保持全景及近景均清晰；接环单声表示建立连接，自动脱环不叠声，避免密集换环重复音。",
+    "DEC-010：原图烘焙鱼群/气泡为静态簇，登记FISH-SCHOOL/BUBBLE-FIELD；补充7鱼/18泡为designed生成器，05/06没有补充游鱼。",
+    "DEC-011：06左壁侧台及底坡、07螺旋圆盘、04独立钳、01右功能出口补录ID，未增加画外关卡。"
+  ],
+  "notes": [
+    "静态观察簇可共享Sprite2D/ShaderMaterial，不虚构独立节点；实体与生成规则按实际运行库存验证。",
+    "正常首访A1由04Boss获得；A2/A3来自画外后续章节，本轮06/07回访用明示F9临时练习，不算正式首访成长。",
+    "05软床用间隙内且触发线上方的落体fixture；中缝23px小于28px胶囊，不声称自然步行会掉入。",
+    "音频数字混音、事件及淡入淡出可客观验证；外部设备输出仍blocked，不宣称全部必需验收通过。人耳审美未签收。",
+    "性能限定RTX5060/1280×720/60fps样本，不推断低配；便携构建为固定版本引擎+PCK。",
+    "隐藏背面是合理补绘；源图可见水体保留原绘，补绘承担Underpaint，不声称恢复原作者完整分层。",
+    "Far独显仍含少量源细节叠层残片，正常合成与代表近景未发现对应破洞；可独立编辑的连续远景为assets/clean/*-far.png。",
+    "独立素材交付待返修：World02平台/环带蓝背景，不只是Far残片；1022运行维度通过不替代GLOBAL-LAYER-ASSETS失败。",
+    "最终EXE窗口关闭受系统桌面访问阻挡；独立通关、正确档重载及QA退出已验，真实窗口关闭未验。"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "name": "R1-scene-restoration",
+  "scope_note": "七房场景，首通五房玩法复用，未来能力房提供实景巡览",
+  "stages": [
+    {
+      "id": "S0",
+      "name": "环境与场景规格",
+      "depends_on": [],
+      "inputs": [
+        "最新首关图册及既有工程"
+      ],
+      "input_files": [
+        "docs/v03/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/v03/specification.md",
+        "docs/v03/input-snapshot.json"
+      ],
+      "checks": [
+        {
+          "id": "accept",
+          "kind": "technical",
+          "text": "真实工具执行并保留观察证据"
+        }
+      ],
+      "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+      "on_pass": [],
+      "on_fail": "保存错误与重试证据"
+    },
+    {
+      "id": "S1",
+      "name": "素材与分层样板",
+      "depends_on": [
+        "S0"
+      ],
+      "inputs": [
+        "最新首关图册及既有工程"
+      ],
+      "input_files": [
+        "docs/v03/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/v03/assets.json",
+        "docs/v03/sample-review.md"
+      ],
+      "checks": [
+        {
+          "id": "accept",
+          "kind": "visual",
+          "text": "真实工具执行并保留观察证据"
+        }
+      ],
+      "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+      "on_pass": [],
+      "on_fail": "保存错误与重试证据"
+    },
+    {
+      "id": "S2",
+      "name": "七房还原",
+      "depends_on": [
+        "S1"
+      ],
+      "inputs": [
+        "最新首关图册及既有工程"
+      ],
+      "input_files": [
+        "docs/v03/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/v03/scene-manifest.json",
+        "docs/v03/scene-review.md"
+      ],
+      "checks": [
+        {
+          "id": "accept",
+          "kind": "visual",
+          "text": "真实工具执行并保留观察证据"
+        }
+      ],
+      "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+      "on_pass": [],
+      "on_fail": "保存错误与重试证据"
+    },
+    {
+      "id": "S3",
+      "name": "运行回归与交付",
+      "depends_on": [
+        "S2"
+      ],
+      "inputs": [
+        "最新首关图册及既有工程"
+      ],
+      "input_files": [
+        "docs/v03/input-snapshot.json"
+      ],
+      "outputs": [
+        "docs/v03/delivery.md",
+        "RESUME-v03.md"
+      ],
+      "checks": [
+        {
+          "id": "accept",
+          "kind": "runtime",
+          "text": "真实工具执行并保留观察证据"
+        }
+      ],
+      "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+      "on_pass": [],
+      "on_fail": "保存错误与重试证据"
+    }
+  ]
+}

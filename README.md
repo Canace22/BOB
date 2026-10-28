@@ -20,9 +20,9 @@
 
 ### Godot 工程与制作工作区
 
-原同级 `godot/`、`work/` 已完整迁入本仓库。Godot 工程入口为
-`godot/first-level/project.godot`、`godot/first-level-artmatch/project.godot`
-和 `godot/first-level-v02-graybox/project.godot`；制作脚本位于 `work/`。
+Godot 唯一开发工程为 [`godot/WhalebellyRuins/project.godot`](godot/WhalebellyRuins/project.godot)（鲸腹遗城 / Whalebelly Ruins）。
+首关七房、最新动作/音频和旧工程资源已合并；不再创建独立版本工程。制作脚本位于 `work/`。
+运行及归档见 [统一工程说明](docs/godot-project.md)。
 `outputs/`、`builds/` 仍在 BOB 的上一级目录。
 
 大型素材及工具二进制使用 Git LFS。克隆后运行 `git lfs install`、`git lfs pull`。
@@ -83,7 +83,7 @@ npm run deploy
 
 ```
 BOB/
-├── godot/                 # 三个 Godot 工程，含资源、制作记录与缓存
+├── godot/                 # 唯一 Godot 工程 WhalebellyRuins，缓存不入库
 ├── work/                  # 制作脚本、素材、工具的本地完整目录
 ├── assets/                # 美术资源入口、台账、制作源与游戏导出资源
 ├── docs/

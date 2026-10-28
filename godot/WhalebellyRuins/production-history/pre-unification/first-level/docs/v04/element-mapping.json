@@ -1,0 +1,200 @@
+[
+  {
+    "id": "BG01",
+    "name": "深水色底",
+    "node_or_code": "Far/FarDrift/DeepWater",
+    "implementation": "深水底色，远景视差0.10/0.12"
+  },
+  {
+    "id": "BG02",
+    "name": "上颚与颌骨大轮廓",
+    "node_or_code": "Middle/OpenUpperJaw + LowerJawSkin；口腔Far纹理",
+    "implementation": "01保持分离上下颌；口腔巨型面远近分层"
+  },
+  {
+    "id": "BG03",
+    "name": "口咽与食管肌膜",
+    "node_or_code": "R1-05 Far/FarDrift/DeepWater",
+    "implementation": "食管肌膜素材复用，05移除错误须列与矩形覆盖"
+  },
+  {
+    "id": "BG04",
+    "name": "颅侧创伤与厚骨板",
+    "node_or_code": "R1-06 Far/FarDrift/DeepWater",
+    "implementation": "颅骨板与旧创伤背景，鼻口隔壁保留"
+  },
+  {
+    "id": "MD01",
+    "name": "鲸须根与中层须帘",
+    "node_or_code": "Middle/UpperPalateAndBaleen",
+    "implementation": "新独立须幕；Shader缓动；02/03/04/07"
+  },
+  {
+    "id": "MD02",
+    "name": "旧红绳维护线",
+    "node_or_code": "World/Tether_*；World/RedCord_*；DoorsAnchorsAndMechanisms",
+    "implementation": "装饰线与可挂环区分，交互环固定世界坐标"
+  },
+  {
+    "id": "MD03",
+    "name": "弃壳与迁徙磨痕",
+    "node_or_code": "原有背景/货壳/Boss背壳",
+    "implementation": "复用，非全部独立可破坏物"
+  },
+  {
+    "id": "TR01",
+    "name": "舌台主段",
+    "node_or_code": "World/Shelf_*/TongueLedge",
+    "implementation": "新ledges；所有接触顶边仍按U坐标"
+  },
+  {
+    "id": "TR02",
+    "name": "地形端帽与内外角",
+    "node_or_code": "World/Shelf_*/TongueLedge + RootedOrgan/Foundation",
+    "implementation": "圆润端部与支撑重制；通用内外角成套素材仍待进一步精修"
+  },
+  {
+    "id": "TR03",
+    "name": "稳定落台与失败软床",
+    "node_or_code": "player.fall_recover + 05局部软床",
+    "implementation": "实际失败恢复；并非底层连续自由行走返坡"
+  },
+  {
+    "id": "TR04",
+    "name": "承重舌膜",
+    "node_or_code": "R1-03 World/Shelf_P2 + room_routes",
+    "implementation": "踩踏0.7秒后缓沉20px，接触面同步，卸载恢复"
+  },
+  {
+    "id": "DO01",
+    "name": "壳质门框",
+    "node_or_code": "World/DoorsAnchorsAndMechanisms/E*",
+    "implementation": "14个门端，按目标与稳定ID切换并返回"
+  },
+  {
+    "id": "DO02",
+    "name": "软帘门扇与Boss封场",
+    "node_or_code": "level.boss_started + boss arena limits",
+    "implementation": "沿用战斗封场/胜后解除；独立门扇绘画动画未升级"
+  },
+  {
+    "id": "DO03",
+    "name": "A2流纹门与鼻侧远端闩",
+    "node_or_code": "E33/E34 + FLOAT0/1/2",
+    "implementation": "真实A2浮升/补压/门条件，远端闩保持锁定"
+  },
+  {
+    "id": "DO04",
+    "name": "A3固定锚环",
+    "node_or_code": "02三锚；07四锚 + player.choose_anchor",
+    "implementation": "J抓取/换环，Space脱环，挂环禁攻击"
+  },
+  {
+    "id": "PR01",
+    "name": "壳营地",
+    "node_or_code": "level.draw_camp / checkpoint interaction",
+    "implementation": "01/04营地，恢复并存档"
+  },
+  {
+    "id": "PR02",
+    "name": "生命碎片与空槽",
+    "node_or_code": "level.draw_collect / room_routes rewards",
+    "implementation": "03与07一次性碎片；复用简化视觉"
+  },
+  {
+    "id": "PR03",
+    "name": "A1承接点",
+    "node_or_code": "04 A1授能点",
+    "implementation": "Boss胜后E领取永久A1，旧逻辑回归"
+  },
+  {
+    "id": "PR04",
+    "name": "清流窝H1",
+    "node_or_code": "05 H1清流窝",
+    "implementation": "保留永久生态状态和幼体反馈，搬壳逐帧未升级"
+  },
+  {
+    "id": "PR05",
+    "name": "静菌模块/迁徙记忆",
+    "node_or_code": "06/07 World/Reward_*",
+    "implementation": "静菌/记忆拾取已接入；正式新物件美术仍复用"
+  },
+  {
+    "id": "PR06",
+    "name": "舌台壳闩短桥（v0.2增补）",
+    "node_or_code": "level.open_bridge",
+    "implementation": "v0.2局部壳闩短桥保留，已往返/重载验证"
+  },
+  {
+    "id": "CH01",
+    "name": "拾潮者",
+    "node_or_code": "World/Actors/Player",
+    "implementation": "沿用原主角与动作，新增浮升/挂环控制"
+  },
+  {
+    "id": "EN01",
+    "name": "尸蟹",
+    "node_or_code": "World/Actors/enemies",
+    "implementation": "02×1、03×2，原攻击时序复用"
+  },
+  {
+    "id": "EN02",
+    "name": "负壳蟹",
+    "node_or_code": "R1-04 World/Actors/enemies",
+    "implementation": "Boss实际首访通关"
+  },
+  {
+    "id": "HZ01",
+    "name": "剪须虾迁行",
+    "node_or_code": "room_routes.gd",
+    "implementation": "0.8秒方向预告后迁行，伤害保护/最近稳定台恢复"
+  },
+  {
+    "id": "HZ02",
+    "name": "周期横流与补压台",
+    "node_or_code": "R1-06 room_routes + A2 pressure",
+    "implementation": "横流预告/周期危险；落台补压"
+  },
+  {
+    "id": "FG01",
+    "name": "近景植物与壳缘",
+    "node_or_code": "Foreground/NearShellRidge + NearColony_*",
+    "implementation": "新独立边缘素材，1.2视差，玩家遮挡淡出"
+  },
+  {
+    "id": "FG02",
+    "name": "近须框景",
+    "node_or_code": "Middle须束 + 已有边缘层",
+    "implementation": "维持口腔限定；05/06无须"
+  },
+  {
+    "id": "FX01",
+    "name": "封闭菌灯",
+    "node_or_code": "atmosphere灯节点 + player.lamp_light",
+    "implementation": "复用灯光与摆动"
+  },
+  {
+    "id": "FX02",
+    "name": "水中薄雾与悬粒",
+    "node_or_code": "atmosphere mode0/1",
+    "implementation": "雾与定额漂粒，暂停同步"
+  },
+  {
+    "id": "FX03",
+    "name": "漂浮生物",
+    "node_or_code": "atmosphere mode0；H1反馈",
+    "implementation": "低密度漂浮；06不放鱼群"
+  },
+  {
+    "id": "FX04",
+    "name": "局部水纹",
+    "node_or_code": "atmosphere / event_fx",
+    "implementation": "局部流纹与落地扰动，非游泳水体"
+  },
+  {
+    "id": "FX05",
+    "name": "攻击/命中/死亡",
+    "node_or_code": "World/EventEffects",
+    "implementation": "真实命中/死亡/落地触发，原动作反馈复用"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "task_id": "P04-001",
+  "stage": "P04",
+  "project_root": "G:\\鲸落万物生\\godot\\first-level",
+  "config_hash": "31530b3106b8cd1233a90cbbf6424011d07d99badb51ec58c2d675720f740010",
+  "input_snapshot": {
+    "docs/v02/graybox-review.md": "b36c095e9cce4190719d80dd3250882fbedd970e8accbccde57107a178daed61",
+    "evidence/v02/graybox-branch.json": "d18a051495b0c72ff4a7caf6856fd4802377bb2f4be1041c034c7714f57e5e4c",
+    "evidence/v02/core/integration-v1.json": "7c037900fca10b5a603b8699ca7ee3391e2bcd1b2d207d99e4cb38748da7c681",
+    "evidence/standalone-run/prototype.json": "3674db7275334587f7c111611b4cf5f28e514531ab88cd900c4e963987d7477d",
+    "docs/v02/input-snapshot.json": "7ff9c01bf13c0a16a4814041a30639b4efd80ec9715c9cbc55680a077400eec4"
+  },
+  "contract": {
+    "id": "P04",
+    "name": "须筛完整样板",
+    "depends_on": [
+      "P03"
+    ],
+    "inputs": [
+      "当前需求、已通过基线、V5.2设计原图"
+    ],
+    "input_files": [
+      "docs/v02/input-snapshot.json"
+    ],
+    "outputs": [
+      "docs/v02/sample-review.md",
+      "docs/v02/asset-delivery.json"
+    ],
+    "checks": [
+      {
+        "id": "visual",
+        "kind": "visual",
+        "text": "visual实际验收并保留证据"
+      },
+      {
+        "id": "events",
+        "kind": "runtime",
+        "text": "events实际验收并保留证据"
+      }
+    ],
+    "prompt": "复核实际输入，具体化任务指令并执行；保留不可变快照和真实证据，失败修复后复验。",
+    "on_pass": [],
+    "on_fail": "记录复现，局部返修；不通过删除功能凑通过。"
+  },
+  "instruction_path": ".production/tasks/P04-001.md"
+}

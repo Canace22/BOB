@@ -2,6 +2,14 @@
 
 ## 项目与职责
 
+### Godot 唯一开发工程
+
+- Godot 只在 `godot/WhalebellyRuins/`（鲸腹遗城 / Whalebelly Ruins）开发，入口 `project.godot`，固定 Godot 4.7.2。`first-level`、`first-level-artmatch` 已合并，`first-level-v02-graybox` 已退役；不得再创建按版本分裂的工程目录。
+- 最新七房运行逻辑、分层资源和声音来自合并前 artmatch；旧版独有资源保留，旧脚本/冲突版本在被 `.gdignore` 隔离的 `production-history/pre-unification/`。它们仅供查阅，不能继续作为运行入口。
+- 活跃路径、运行方法和合并记录统一见 [Godot 工程说明](docs/godot-project.md)。历史生成器在 `work/archive/godot-pre-unification/`，不得用于覆盖统一工程。
+- Godot 改动使用固定引擎导入、启动及相应 Godot 测试验收；以下 npm/Pages 流程适用于 Web 版本，不为纯 Godot 目录整理发布无关的 Web 页面。
+- 保留现有 `WhalefallArtmatchV05` 用户数据目录，以保持该版本存档兼容；不自动混入旧 first-level 的不同格式存档。`.godot/` 是本地可再生缓存，不提交。
+
 程序开发、美术制作和剧情创作都在本仓库完成，按职责组织，不为分工立即拆仓或重构。
 
 - `mvp-v2/` 是当前发布的 Canvas 2D 原画版，`mvp-nightmare/` 是 Three.js 2.5D 原型，`mvp/` 是保留的初版。开始任务先确定影响哪一版；发布脚本位于 `mvp/deploy.mjs`，当前只打包 V2。

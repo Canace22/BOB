@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
 
 root=Path('G:/鲸落万物生')
-p=root/'godot/first-level-artmatch'
+p=root/'BOB/godot/WhalebellyRuins'
 out=root/'outputs/须门遗港_v0.5_参考图可玩关卡'
 class Links(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]

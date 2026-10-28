@@ -1,0 +1,35 @@
+{
+  "task_id": "S0-001",
+  "stage": "S0",
+  "project_root": "G:\\鲸落万物生\\godot\\first-level",
+  "config_hash": "0fbdf46189a9046060cf98dd34e5c2607ca098ae8f6444e449b88196a5c26c10",
+  "input_snapshot": {
+    "docs/v03/input-snapshot.json": "2169de831fea5fa1749c4bb5c4c436aa289c3ea1833dab84c98bc961fd24f6b3"
+  },
+  "contract": {
+    "id": "S0",
+    "name": "环境与场景规格",
+    "depends_on": [],
+    "inputs": [
+      "最新首关图册及既有工程"
+    ],
+    "input_files": [
+      "docs/v03/input-snapshot.json"
+    ],
+    "outputs": [
+      "docs/v03/specification.md",
+      "docs/v03/input-snapshot.json"
+    ],
+    "checks": [
+      {
+        "id": "accept",
+        "kind": "technical",
+        "text": "真实工具执行并保留观察证据"
+      }
+    ],
+    "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+    "on_pass": [],
+    "on_fail": "保存错误与重试证据"
+  },
+  "instruction_path": ".production/tasks/S0-001.md"
+}

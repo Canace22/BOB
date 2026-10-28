@@ -2,7 +2,7 @@
 from pathlib import Path
 import numpy as np
 import wave,json,hashlib,shutil
-P=Path('G:/鲸落万物生/BOB/godot/first-level-artmatch')
+P=Path('G:/鲸落万物生/BOB/godot/WhalebellyRuins')
 OUT=P/'assets/runtime/audio'; OLD=P/'assets/source/audio-v05-original'
 OLD.mkdir(parents=True,exist_ok=True)
 for f in OUT.glob('*.wav'):

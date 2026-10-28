@@ -1,6 +1,6 @@
 from pathlib import Path
 import subprocess,json,time
-P=Path('G:/鲸落万物生/BOB/godot/first-level-artmatch')
+P=Path('G:/鲸落万物生/BOB/godot/WhalebellyRuins')
 EXE='C:/Users/Kingsoft/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEngine_Microsoft.Winget.Source_8wekyb3d8bbwe/Godot_v4.7.2-stable_win64_console.exe'
 rows=[]
 jobs=[(f'R1-{i:02}',i,[])for i in range(1,8)]+[(f'layer-{i}',1,[f'--solo={i}'])for i in range(4)]+[('terrain-02',2,['--outlines']),('near-04',4,['--zoom'])]
