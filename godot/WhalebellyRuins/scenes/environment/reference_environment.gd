@@ -6,6 +6,8 @@ extends Node2D
 var level_host: Node2D
 var level_camera_offset: Vector2 = Vector2.ZERO
 @export_range(0.0, 1.0) var motion_strength: float = 1.0
+@export_range(0.0, 3.0) var foliage_amplitude_px: float = 1.8
+@export_range(0.0, 12.0) var fish_amplitude_px: float = 8.0
 var elapsed: float = 0.0
 var frames: int = 0
 var bases: Dictionary = {}
@@ -15,11 +17,12 @@ var last_tick: int = 0
 var qa: bool = false
 var still: bool = false
 var recycled: int = 0
-const EVIDENCE = "res://evidence/reference_environment/"
+const EVIDENCE = "res://evidence/reference_environment/motion_refinement/"
 const REGIONS = [Rect2(143,170,89,220), Rect2(414,310,72,98), Rect2(786,119,154,282), Rect2(1036,358,95,128)]
 
 func _ready() -> void:
 	var args = OS.get_cmdline_user_args()
+	DirAccess.make_dir_recursive_absolute(EVIDENCE)
 	qa = not level_mode and "--qa" in args
 	still = not level_mode and "--static" in args
 	if still: animate_environment = false
@@ -54,15 +57,20 @@ func _ready() -> void:
 		for i in range(9):
 			var sprite = Sprite2D.new()
 			sprite.texture = texture
-			var size_px = 2.0 + fmod(float(i*17+region_id*3),5.0)
+			var near_bubble = region_id == 3 and i < 3
+			var size_px = (9.0 + i * 3.0) if near_bubble else (2.5 + fmod(float(i*17+region_id*3),5.0))
 			sprite.scale = Vector2.ONE * size_px / 12.0
-			sprite.modulate.a = 0.35 + float(i%3)*0.13
+			var opacity = 0.62 if near_bubble else 0.35 + float(i%3)*0.13
+			sprite.modulate.a = opacity
+			if near_bubble: sprite.z_index = 45 # In front of the road, behind the dark framing.
 			holder.add_child(sprite)
-			bubbles.append({"node":sprite,"region":region_id,"index":i,"speed":7.0+float(i%7),"last_cycle":0})
+			var region = Rect2(1060, 405, 74, 255) if near_bubble else REGIONS[region_id]
+			bubbles.append({"node":sprite,"region":region_id,"bounds":region,"index":i,"speed":(21.0+i*3.0) if near_bubble else 7.0+float(i%7),"opacity":opacity,"near":near_bubble,"last_cycle":0})
 	update_visuals()
 
 func update_visuals() -> void:
-	var t = elapsed if animate_environment else 0.0
+	# The clock only advances while enabled. Toggling animation holds its pose.
+	var t = elapsed
 	var pan = level_camera_offset if level_mode else (Vector2(sin(t*TAU/24.0)*5.0,sin(t*TAU/17.0)*2.0) if camera_drift else Vector2.ZERO)
 	for child in get_children():
 		if not child is Sprite2D: continue
@@ -74,16 +82,19 @@ func update_visuals() -> void:
 		if id == "FRONT-02": parallax = -0.10
 		child.position = bases[child.name] - pan * parallax
 		if id.begins_with("FISH"):
-			child.position += Vector2(sin(t*TAU/26.0)*3.0,sin(t*TAU/19.0)*0.5)*motion_strength
+			var phase = 0.65 if id == "FISH-02" else 2.2
+			var period = 28.0 if id == "FISH-02" else 34.0
+			child.position += Vector2((sin(t*TAU/period+phase)-sin(phase))*0.5*fish_amplitude_px,(sin(t*TAU/(period*0.5)+phase)-sin(phase))*0.6)
 		if child.material is ShaderMaterial:
 			child.material.set_shader_parameter("clock",t)
-			child.material.set_shader_parameter("strength",motion_strength if animate_environment else 0.0)
+			child.material.set_shader_parameter("strength",foliage_amplitude_px)
 		if id == "LAMP" or id.begins_with("BEAM"):
 			var amp = 0.02 if id == "LAMP" else 0.012
-			var value = 1.0+sin(t*TAU/7.5)*amp*motion_strength
+			var phase = float(child.get_index())*1.37
+			var value = 1.0+(sin(t*TAU/8.0+phase)-sin(phase))*0.5*amp
 			child.modulate = Color(value,value,value,1.0)
 	for bubble in bubbles:
-		var region: Rect2 = REGIONS[bubble.region]
+		var region: Rect2 = bubble.bounds
 		var traveled: float = t*bubble.speed+float(bubble.index)/9.0*region.size.y
 		var cycle = int(traveled/region.size.y)
 		if cycle > bubble.last_cycle:
@@ -91,17 +102,17 @@ func update_visuals() -> void:
 			bubble.last_cycle = cycle
 		var y = region.end.y-fmod(traveled,region.size.y)
 		var x = region.position.x+region.size.x*(0.18+fmod(float(bubble.index)*0.367,0.64))
-		x += sin(t*.5+float(bubble.index))*1.3
+		x += sin(t*.5+float(bubble.index))*(3.0 if bubble.near else 1.3)
 		bubble.node.position = Vector2(x,y)
 		var edge = min(y-region.position.y,region.end.y-y)
-		bubble.node.modulate.a = smoothstep(0.0,12.0,edge)*(0.35+float(bubble.index%3)*0.13)
+		bubble.node.modulate.a = smoothstep(0.0,24.0 if bubble.near else 12.0,edge)*bubble.opacity
 
 func _process(delta: float) -> void:
 	if level_mode and is_instance_valid(level_host):
 		visible = not level_host.reference_visible
 		if not visible or level_host.layer_solo >= 0 or not level_host.capture_path.is_empty(): return
 	var tick = Time.get_ticks_usec()
-	elapsed += delta
+	if animate_environment: elapsed += delta * motion_strength
 	frames += 1
 	if qa and frames > 15: timings.append(float(tick-last_tick)/1000.0)
 	last_tick = tick
@@ -112,7 +123,7 @@ func _process(delta: float) -> void:
 
 	if qa and frames in [30,300,600,900,1200,1500]:
 		await capture("motion-%04d.png" % frames)
-	if qa and elapsed >= 32.0:
+	if qa and elapsed >= 72.0:
 		qa = false
 		await capture("final.png")
 		write_report()
