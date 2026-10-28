@@ -6,7 +6,7 @@ Use this workflow when delivering moving sprites. Static props and pose referenc
 
 Separate **action states** from **frames within an action**. Idle, walk, and attack can select three different states; alternating these illustrations does not create a walk cycle. Each animated state needs an ordered sequence with its own timing.
 
-For an initial walk cycle, use 4–8 distinct phases; eight is a useful starting point when both legs and weight transfer must read. Choose fewer frames for deliberately limited animation. More frames do not repair inconsistent drawing or incorrect timing.
+Honor the user's requested frame count and layout, such as sixteen sequential frames in a 4×4 sheet. Key motion phases and final playback frames are different counts: do not silently replace sixteen frames with an eight-phase example. Choose sampling and timing around the intended action; more frames do not repair inconsistent drawing or incorrect timing.
 
 Write a brief before generation:
 
@@ -72,3 +72,16 @@ On failure, correct one identified defect and replay the same scenario. Preserve
 ## Deliver the sequence
 
 Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.
+
+## Direct 16-frame generation experiment
+
+The [2026-10-28 BOB trial](../../../../assets/source/tide-picker/run16-trial-v01/README.md) tests the user's image-sheet-to-animation method without a video intermediate. It preserves four generated samples, full prompts, a diagnostic pose guide, deterministic crops and synchronized playback. None is an accepted animation.
+
+- Keep direct generation separate from video interpolation; do not insert a video step when the user is testing direct sequence generation.
+- Inspect every adjacent pair and the circular seam. A local 15→16→1→2 playback mode makes seam defects easier to isolate.
+- In this trial, editing the failed sheet with stronger prose retained incorrect gait poses. A fresh sheet and a visual skeleton guide also failed to guarantee anatomical phase order. These are single-sample findings, not a measured success rate.
+- Separate layout/registration, pose/anatomy, and playback timing defects. Pixel alignment can address layout; it cannot repair a missing opposite-leg contact.
+- Record actual dimensions and verify decoded crops even when an export command exits successfully. Requested dimensions and an equal-grid prompt are not evidence of the delivered layout.
+- Alpha-mask differences are diagnostic signals, not animation scores; apparent seam improvement must still pass pose and playback review.
+
+The next proposed experiment is to approve key poses before generating the full sixteen-frame sequence and to repair the seam as a joint multi-frame unit. This proposal remains unverified; do not present it as a proven production recipe.

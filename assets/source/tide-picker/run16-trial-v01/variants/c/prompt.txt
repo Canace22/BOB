@@ -1,0 +1,16 @@
+Create ONE 4x4 sprite sheet containing exactly 16 sequential frames of a seamless RUN animation for the reference character, facing RIGHT, running IN PLACE. Transparent background. This is an ANIMATION cycle, not an illustration pose collection.
+
+Character fidelity: same ivory single-lens head, teal cloak, amphibian webbed feet, amber lamp at left hip, red cord, two-pronged bone fork held in right hand. Same painted 2D style, fixed right-facing three-quarter side view. Hold the fork steadily; left arm remains clearly separate. Full body each cell. All cells equal, large safe transparent margins; absolutely no labels, borders, arrows, cast shadows or background. Fixed skull size and body scale.
+
+The essential requirement is that the TWO LEGS EXCHANGE FRONT/BACK POSITIONS progressively. Do not keep one leg pointing forward in every frame. The foot nearer the viewer must travel from FRONT to UNDER THE HIP to BEHIND, then lift and swing back to FRONT across 16 frames. The farther foot follows the same path half a cycle later. Foreshortening must not hide this alternating action. Separate legs in silhouette when possible.
+
+Read in row-major order. Plan the animation around four clear key poses:
+FRAME 1: near leg far forward and straight, its foot contacting ground; far leg stretched backward.
+FRAME 5: near leg passes underneath hip, knees briefly close, near foot pushing backward; far knee swings forward.
+FRAME 9: near leg extended far BACKWARD, far leg extended FORWARD contacting ground. This is visibly different from frame 1, legs exchanged; do not mirror the character or swap equipment.
+FRAME 13: near knee lifts and swings forward underneath body, far foot pushes backward underneath hip.
+Frames 2,3,4 must be progressive in-betweens between key 1 and 5.
+Frames 6,7,8 must be progressive in-betweens between key 5 and 9.
+Frames 10,11,12 must be progressive in-betweens between key 9 and 13.
+Frames 14,15,16 must be progressive in-betweens between key 13 and the NEXT frame1. At frame16 the near foot is almost back to its extended forward position. The NEXT first frame continues naturally. Do not duplicate frame1 in frame16.
+Include a small natural body rise/fall and brief flight in each step, not deep crouching. Keep pelvis at same horizontal location within every cell; ground height constant. Cloak and lamp move minimally and cyclically. No standing idle at the end. No repeated key pose over multiple cells. Exact 16 phases, constant camera, no visual redesign. Large square output 2048x2048 preferred.

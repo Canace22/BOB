@@ -1,0 +1,295 @@
+{
+  "version": "A",
+  "status": "experiment-not-approved",
+  "method": "direct-16-frame-generation-no-video",
+  "source": "sheet.png",
+  "canvas": [
+    314,
+    314
+  ],
+  "direction": "right",
+  "loop": true,
+  "alignment": "raw grid crop; transparent padding only; no rescaling or anatomical registration",
+  "timing": "16 fps preview assumption; not verified against gameplay speed",
+  "frames": [
+    {
+      "file": "frames/01.png",
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 52586
+    },
+    {
+      "file": "frames/02.png",
+      "rect": [
+        314,
+        0,
+        313,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 52585
+    },
+    {
+      "file": "frames/03.png",
+      "rect": [
+        627,
+        0,
+        314,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 50853
+    },
+    {
+      "file": "frames/04.png",
+      "rect": [
+        941,
+        0,
+        313,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 52018
+    },
+    {
+      "file": "frames/05.png",
+      "rect": [
+        0,
+        314,
+        314,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 55562
+    },
+    {
+      "file": "frames/06.png",
+      "rect": [
+        314,
+        314,
+        313,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 55208
+    },
+    {
+      "file": "frames/07.png",
+      "rect": [
+        627,
+        314,
+        314,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 52005
+    },
+    {
+      "file": "frames/08.png",
+      "rect": [
+        941,
+        314,
+        313,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 53737
+    },
+    {
+      "file": "frames/09.png",
+      "rect": [
+        0,
+        627,
+        314,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 51743
+    },
+    {
+      "file": "frames/10.png",
+      "rect": [
+        314,
+        627,
+        313,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 54041
+    },
+    {
+      "file": "frames/11.png",
+      "rect": [
+        627,
+        627,
+        314,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 54017
+    },
+    {
+      "file": "frames/12.png",
+      "rect": [
+        941,
+        627,
+        313,
+        314
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 52243
+    },
+    {
+      "file": "frames/13.png",
+      "rect": [
+        0,
+        941,
+        314,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 16,
+      "transparentPixels": 53317
+    },
+    {
+      "file": "frames/14.png",
+      "rect": [
+        314,
+        941,
+        313,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 6,
+      "transparentPixels": 57644
+    },
+    {
+      "file": "frames/15.png",
+      "rect": [
+        627,
+        941,
+        314,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 56141
+    },
+    {
+      "file": "frames/16.png",
+      "rect": [
+        941,
+        941,
+        313,
+        313
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "durationMs": 62.5,
+      "borderPixels": 0,
+      "transparentPixels": 51868
+    }
+  ],
+  "diagnostics": {
+    "definition": "alpha>32 symmetric difference divided by union, at raw grid coordinates; NOT a motion quality score",
+    "adjacentSilhouetteDifference": [
+      0.2661,
+      0.2653,
+      0.2323,
+      0.4382,
+      0.2865,
+      0.3417,
+      0.3267,
+      0.3352,
+      0.2897,
+      0.2672,
+      0.2558,
+      0.3268,
+      0.3203,
+      0.1929,
+      0.2603,
+      0.5065
+    ],
+    "seamDifference": 0.5065,
+    "meanAdjacentDifference": 0.2937
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>拾潮者 · 16 帧跑动试验</title>
+<style>
+body{margin:32px auto;padding:0 24px;max-width:1000px;background:#111c24;color:#e6e4d9;font:16px/1.6 system-ui}
+h1{font-size:26px}p{color:#b7c6ca}button,input{font:inherit}button{padding:6px 14px;cursor:pointer}
+.views{display:flex;gap:32px;align-items:end;flex-wrap:wrap}.view{background:#243943;border:1px solid #537078}
+#large{width:376px;height:376px}#small{width:112px;height:112px}label{display:inline-block;margin:14px}
+#timeline{width:min(90%,550px)}#sheet{max-width:100%;background:#243943}
+</style>
+<h1>拾潮者 · 向右跑动 / 16 帧候选</h1>
+<p>按 4×4 顺序直接拆帧，无视频中间步骤。当前为原始生成结果，尚未修帧或接入游戏。重点观察腿部交替、握持变化与首尾跳变。</p>
+<div class="views"><div><canvas class="view" id="large" width="314" height="314"></canvas><div>放大检查</div></div><div><canvas class="view" id="small" width="314" height="314"></canvas><div>缩小预览（非实机尺寸）</div></div></div>
+<p id="status">加载中…</p>
+<button id="toggle">暂停</button> <button id="prev">上一帧</button> <button id="next">下一帧</button>
+<label>帧率 <input id="fps" type="number" min="1" max="32" value="16" style="width:60px"> fps</label>
+<div><input id="timeline" aria-label="帧序号" type="range" min="0" max="15" value="0"></div>
+<details><summary>查看原始 4×4 序列图</summary><img id="sheet" src="sheet.png" alt="16 帧跑动原始生成图"></details>
+<script>
+const frames=[],canvases=[document.querySelector('#large'),document.querySelector('#small')];
+const status=document.querySelector('#status'),timeline=document.querySelector('#timeline'),toggle=document.querySelector('#toggle'),fpsInput=document.querySelector('#fps');
+let frame=0,playing=true,last=0,elapsed=0;
+function fps(){return Math.max(1,Math.min(32,Number(fpsInput.value)||16))}
+function draw(){for(const canvas of canvases){const ctx=canvas.getContext('2d');ctx.clearRect(0,0,314,314);ctx.drawImage(frames[frame],0,0)}timeline.value=frame;status.textContent='第 '+(frame+1)+' / 16 帧 · '+fps()+' fps · 周期 '+(16/fps()).toFixed(2)+' 秒'}
+function pause(){playing=false;toggle.textContent='播放';elapsed=0}
+function step(delta){pause();frame=(frame+delta+16)%16;draw()}
+toggle.onclick=()=>{playing=!playing;toggle.textContent=playing?'暂停':'播放';elapsed=0};
+document.querySelector('#prev').onclick=()=>step(-1);document.querySelector('#next').onclick=()=>step(1);
+timeline.oninput=()=>{pause();frame=Number(timeline.value);draw()};fpsInput.onchange=()=>{elapsed=0;draw()};
+Promise.all(Array.from({length:16},(_,i)=>new Promise((resolve,reject)=>{const img=new Image();frames[i]=img;img.onload=resolve;img.onerror=reject;img.src='frames/'+String(i+1).padStart(2,'0')+'.png'}))).then(()=>{draw();requestAnimationFrame(tick)}).catch(()=>status.textContent='图片加载失败');
+function tick(time){if(playing){elapsed+=last?Math.min(time-last,250):0;const count=Math.floor(elapsed/(1000/fps()));if(count){frame=(frame+count)%16;elapsed-=count*(1000/fps());draw()}}last=time;requestAnimationFrame(tick)}
+window.animationTrial={getState:()=>({frame,playing,fps:fps(),loaded:frames.filter(i=>i.complete&&i.naturalWidth).length}),seek:index=>{pause();frame=((index%16)+16)%16;draw()}};
+</script>
+</html>
