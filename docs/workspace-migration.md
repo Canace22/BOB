@@ -7,6 +7,7 @@
 - `godot/`：三个 Godot 工程及全部素材、缓存、制作记录和验收资料。
 - `work/`：制作脚本、素材和 Effekseer 工具等，排除下述本地专用目录。
 - `work/wan22-production/`：按用户最新要求，整个目录仅保留本地，不提交其中的模型、Python 环境、工具、缓存、制作脚本或任何替代归档。
+- `work/effekseer/` 在迁入后移出了官方示例、两份安装压缩包，以及 Godot 插件里 Windows 以外的二进制。Windows 版编辑器和 `bin/windows` 保留。`__pycache__` 与 `*.pyc` 不再入库。
 
 迁移后的 `godot/`、`work/` 共 6,759 个文件直接入库；大型文件通过 Git LFS 保存。`.gitignore` 明确忽略 `/work/wan22-production/`。本轮修订尚未推送的本地过渡提交，确保远端分支历史不包含该目录。
 
