@@ -61,7 +61,7 @@ parallax = Vector2(0.10, 0.12)
 
 [node name="DeepWater" type="Sprite2D" parent="Far/FarDrift"]
 position = Vector2(0.000, 0.000)
-scale = Vector2(1.675, 1.913)
+scale = Vector2(1.675, 1.675)
 texture = ExtResource("2")
 centered = false
 modulate = Color(0.85, 0.89, 0.9, 1)
@@ -79,22 +79,16 @@ one_way_collision_margin = 6.0
 
 [node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P0"]
 position = Vector2(-4, -8)
-scale = Vector2(0.197980, 0.451220)
+scale = Vector2(0.19798, 0.19798)
 texture = ExtResource("v04_ledge")
 centered = false
 region_enabled = true
 region_rect = Rect2(24, 280, 1980, 410)
 modulate = Color(0.7, 0.78, 0.86, 1)
 
-[node name="ReadableTop_0" type="Line2D" parent="World"]
-points = PackedVector2Array(9, 1282, 375, 1282)
-width = 2
-default_color = Color(0.97, 0.73, 0.55, 0.40)
-antialiased = true
-
 [node name="Colonies_0" type="Sprite2D" parent="World"]
 position = Vector2(268.800, 1234.000)
-scale = Vector2(0.218, 0.134)
+scale = Vector2(0.218, 0.218)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.72, 0.76, 0.69, 0.9)
@@ -104,22 +98,16 @@ phase = 2.688
 
 [node name="Lamp_0" type="Sprite2D" parent="World"]
 position = Vector2(230.400, 1165.000)
-scale = Vector2(0.221, 0.158)
+scale = Vector2(0.221, 0.221)
 texture = ExtResource("6")
 centered = false
 script = ExtResource("1")
 sway = 0.012
 phase = 2.304
 
-[node name="LampRope_0" type="Line2D" parent="World"]
-points = PackedVector2Array(250.4, 1165, 260.4, 1120)
-width = 2
-default_color = Color(0.55, 0.20, 0.13, 1)
-antialiased = true
-
 [node name="NearColony_0" type="Sprite2D" parent="Foreground"]
 position = Vector2(-60.000, 1370.000)
-scale = Vector2(0.604, 0.401)
+scale = Vector2(0.604, 0.604)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.16, 0.26, 0.3, 0.8)
@@ -140,22 +128,16 @@ one_way_collision_margin = 6.0
 
 [node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P1"]
 position = Vector2(-4, -8)
-scale = Vector2(0.133333, 0.451220)
+scale = Vector2(0.133333, 0.133333)
 texture = ExtResource("v04_ledge")
 centered = false
 region_enabled = true
 region_rect = Rect2(24, 280, 1980, 410)
 modulate = Color(0.7, 0.78, 0.86, 1)
 
-[node name="ReadableTop_1" type="Line2D" parent="World"]
-points = PackedVector2Array(457, 1090, 695, 1090)
-width = 2
-default_color = Color(0.97, 0.73, 0.55, 0.40)
-antialiased = true
-
 [node name="Colonies_1" type="Sprite2D" parent="World"]
 position = Vector2(627.200, 1042.000)
-scale = Vector2(0.218, 0.134)
+scale = Vector2(0.218, 0.218)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.72, 0.76, 0.69, 0.9)
@@ -176,22 +158,16 @@ one_way_collision_margin = 6.0
 
 [node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P2"]
 position = Vector2(-4, -8)
-scale = Vector2(0.133333, 0.451220)
+scale = Vector2(0.133333, 0.133333)
 texture = ExtResource("v04_ledge")
 centered = false
 region_enabled = true
 region_rect = Rect2(24, 280, 1980, 410)
 modulate = Color(0.7, 0.78, 0.86, 1)
 
-[node name="ReadableTop_2" type="Line2D" parent="World"]
-points = PackedVector2Array(777, 898, 1015, 898)
-width = 2
-default_color = Color(0.97, 0.73, 0.55, 0.40)
-antialiased = true
-
 [node name="Colonies_2" type="Sprite2D" parent="World"]
 position = Vector2(947.200, 850.000)
-scale = Vector2(0.218, 0.134)
+scale = Vector2(0.218, 0.218)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.72, 0.76, 0.69, 0.9)
@@ -201,18 +177,12 @@ phase = 9.472
 
 [node name="Lamp_2" type="Sprite2D" parent="World"]
 position = Vector2(921.600, 781.000)
-scale = Vector2(0.221, 0.158)
+scale = Vector2(0.221, 0.221)
 texture = ExtResource("6")
 centered = false
 script = ExtResource("1")
 sway = 0.012
 phase = 9.216
-
-[node name="LampRope_2" type="Line2D" parent="World"]
-points = PackedVector2Array(941.6, 781, 951.6, 736)
-width = 2
-default_color = Color(0.55, 0.20, 0.13, 1)
-antialiased = true
 
 [node name="Shelf_P3" type="StaticBody2D" parent="World"]
 position = Vector2(1088.000, 704.000)
@@ -227,22 +197,16 @@ one_way_collision_margin = 6.0
 
 [node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P3"]
 position = Vector2(-4, -8)
-scale = Vector2(0.230303, 0.451220)
+scale = Vector2(0.230303, 0.230303)
 texture = ExtResource("v04_ledge")
 centered = false
 region_enabled = true
 region_rect = Rect2(24, 280, 1980, 410)
 modulate = Color(0.7, 0.78, 0.86, 1)
 
-[node name="ReadableTop_3" type="Line2D" parent="World"]
-points = PackedVector2Array(1097, 706, 1527, 706)
-width = 2
-default_color = Color(0.97, 0.73, 0.55, 0.40)
-antialiased = true
-
 [node name="Colonies_3" type="Sprite2D" parent="World"]
 position = Vector2(1401.600, 658.000)
-scale = Vector2(0.218, 0.134)
+scale = Vector2(0.218, 0.218)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.72, 0.76, 0.69, 0.9)
@@ -252,7 +216,7 @@ phase = 14.016
 
 [node name="NearColony_3" type="Sprite2D" parent="Foreground"]
 position = Vector2(1028.000, 794.000)
-scale = Vector2(0.604, 0.401)
+scale = Vector2(0.604, 0.604)
 texture = ExtResource("5")
 centered = false
 modulate = Color(0.16, 0.26, 0.3, 0.8)
@@ -260,70 +224,16 @@ script = ExtResource("1")
 sway = 0.012
 phase = 10.280
 
-[node name="Flow_P0_0" type="Line2D" parent="World"]
-points = PackedVector2Array(358.4, 1260, 393.4, 1080)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P0_25" type="Line2D" parent="World"]
-points = PackedVector2Array(383.4, 1260, 418.4, 1080)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P0_50" type="Line2D" parent="World"]
-points = PackedVector2Array(408.4, 1260, 443.4, 1080)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P1_0" type="Line2D" parent="World"]
-points = PackedVector2Array(678.4, 1068, 713.4, 888)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P1_25" type="Line2D" parent="World"]
-points = PackedVector2Array(703.4, 1068, 738.4, 888)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P1_50" type="Line2D" parent="World"]
-points = PackedVector2Array(728.4, 1068, 763.4, 888)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P2_0" type="Line2D" parent="World"]
-points = PackedVector2Array(998.4, 876, 1033.4, 696)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P2_25" type="Line2D" parent="World"]
-points = PackedVector2Array(1023.4, 876, 1058.4, 696)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
-[node name="Flow_P2_50" type="Line2D" parent="World"]
-points = PackedVector2Array(1048.4, 876, 1083.4, 696)
-width = 3
-default_color = Color(0.35, 0.78, 0.81, 0.24)
-antialiased = true
-
 [node name="NearShellRidge" type="Sprite2D" parent="Foreground"]
 position = Vector2(-300, 976)
-scale = Vector2(0.983425, 0.75)
+scale = Vector2(0.983425, 0.983425)
 texture = ExtResource("v04_frame")
 centered = false
 
 [node name="Foundation" type="Sprite2D" parent="World/Shelf_P0"]
 z_index = -1
 position = Vector2(-15, 35)
-scale = Vector2(0.26953125, 0.7300380228136882)
+scale = Vector2(0.26953125, 0.26953125)
 texture = ExtResource("v04_foundation")
 centered = false
 region_enabled = true
@@ -333,7 +243,7 @@ modulate = Color(0.52,0.60,0.69,1)
 [node name="Foundation" type="Sprite2D" parent="World/Shelf_P1"]
 z_index = -1
 position = Vector2(-15, 35)
-scale = Vector2(0.18619791666666666, 0.973384030418251)
+scale = Vector2(0.18619791666666666, 0.18619791666666666)
 texture = ExtResource("v04_foundation")
 centered = false
 region_enabled = true
@@ -343,7 +253,7 @@ modulate = Color(0.52,0.60,0.69,1)
 [node name="Foundation" type="Sprite2D" parent="World/Shelf_P2"]
 z_index = -1
 position = Vector2(-15, 35)
-scale = Vector2(0.18619791666666666, 1.2167300380228137)
+scale = Vector2(0.18619791666666666, 0.18619791666666666)
 texture = ExtResource("v04_foundation")
 centered = false
 region_enabled = true
@@ -353,13 +263,9 @@ modulate = Color(0.52,0.60,0.69,1)
 [node name="Foundation" type="Sprite2D" parent="World/Shelf_P3"]
 z_index = -1
 position = Vector2(-15, 35)
-scale = Vector2(0.3111979166666667, 1.4600760456273765)
+scale = Vector2(0.3111979166666667, 0.3111979166666667)
 texture = ExtResource("v04_foundation")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 235, 1536, 789)
 modulate = Color(0.52,0.60,0.69,1)
-
-[node name="NearBottomFill" type="Polygon2D" parent="Foreground"]
-polygon = PackedVector2Array(-300,1518,1836,1518,1836,3336,-300,3336)
-color = Color(0.018,0.044,0.061,1)

@@ -25,6 +25,6 @@ func _collect(dir: String) -> PackedStringArray:
 		if not SKIP_DIRS.has(path):
 			found.append_array(_collect(path))
 	for file in DirAccess.get_files_at(dir):
-		if file.ends_with(".gd") or file.ends_with(".tscn"):
+		if file.get_extension() in ["gd", "tscn", "tres", "gdshader"]:
 			found.append(dir.path_join(file))
 	return found

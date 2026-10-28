@@ -13,22 +13,22 @@ todos:
     status: completed
   - id: player-combat
     content: 迁移 first-level 玩家手感与攻击，拆状态脚本 + Hitbox/Hurtbox/Health
-    status: in_progress
+    status: completed
   - id: rooms
     content: 迁移 R1 七房为 content/rooms 场景，门、营地、断桥机关、跨房切换
-    status: pending
+    status: completed
   - id: enemies
     content: 尸蟹与负壳蟹 Boss，胜后授予冲刺
-    status: pending
+    status: completed
   - id: save-ui
     content: 版本化存档与备份、HUD、地图、暂停
-    status: pending
+    status: completed
   - id: web-deploy
     content: Web 单线程导出 + tools/deploy-pages.mjs 发布到 /BOB/godot/ 并核实线上
-    status: pending
+    status: in_progress
   - id: docs-skills
     content: 更新 AGENTS.md、README，新增 godot-game-dev Skill，旧 Web Skill 标为历史原型专用
-    status: pending
+    status: completed
 isProject: false
 ---
 

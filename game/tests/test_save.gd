@@ -51,3 +51,20 @@ func test_stats_clamp() -> void:
 	check(not GameState.spend_energy(3), "cannot overspend")
 	check(GameState.damage(10), "lethal damage reports death")
 	eq(GameState.hp, 0, "hp floors at zero")
+
+
+func test_unknown_room_and_corrupt_primary_do_not_poison_backup() -> void:
+	var data := SaveService.default_data()
+	data["checkpoint_room"] = "unknown-room"
+	eq(SaveService.validate(data), {}, "unknown checkpoint rejected")
+	data["checkpoint_room"] = "R1-04"
+	check(SaveService.write(data, TEST_SAVE), "valid first save")
+	check(SaveService.write(data, TEST_SAVE), "valid backup created")
+	var file := FileAccess.open(TEST_SAVE, FileAccess.WRITE)
+	file.store_string("corrupt")
+	file.close()
+	check(SaveService.write(SaveService.default_data(), TEST_SAVE), "new primary written")
+	file = FileAccess.open(TEST_SAVE, FileAccess.WRITE)
+	file.store_string("corrupt again")
+	file.close()
+	eq(SaveService.read(TEST_SAVE)["checkpoint_room"], "R1-04", "last healthy backup retained")

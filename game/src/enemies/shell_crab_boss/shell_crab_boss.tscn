@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_base.gd" id="r0"]
+[ext_resource type="Script" path="res://src/combat/health.gd" id="r1"]
+[ext_resource type="Script" path="res://src/combat/hurtbox.gd" id="r2"]
+[ext_resource type="Script" path="res://src/combat/hitbox.gd" id="r3"]
+[ext_resource type="Texture2D" path="res://art/enemies/shell_crab_boss.png" id="r4"]
+[ext_resource type="Texture2D" path="res://art/fx/danger_line.png" id="r5"]
+
+[sub_resource type="RectangleShape2D" id="body"]
+size = Vector2(120, 125)
+
+[sub_resource type="RectangleShape2D" id="attack"]
+resource_local_to_scene = true
+size = Vector2(130, 88)
+
+[node name="shell_crab_boss" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("r0")
+collision_layer = 4
+collision_mask = 1
+boss = true
+speed = 78
+radius = 60
+approach_distance = 145
+attack_reach = 175
+victory_flag = "boss.r1_shell_crab"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("body")
+position = Vector2(0, -62.5)
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("r1")
+maximum = 180
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+script = ExtResource("r2")
+health = NodePath("../Health")
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("body")
+position = Vector2(0, -62.5)
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("r3")
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("attack")
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("r4")
+position = Vector2(0, -77.5)
+scale = Vector2(0.328125, 0.328125)
+
+[node name="Warning" type="Sprite2D" parent="."]
+texture = ExtResource("r5")
+position = Vector2(0, -8)
+scale = Vector2(0.68359375, 0.68359375)

@@ -1,0 +1,129 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-04_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r5"]
+[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r6"]
+[ext_resource type="Texture2D" path="res://art/props/shell_camp.png" id="r7"]
+[ext_resource type="PackedScene" path="res://src/enemies/shell_crab_boss/shell_crab_boss.tscn" id="r8"]
+[ext_resource type="Script" path="res://src/world/pickup.gd" id="r9"]
+[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_open.png" id="r10"]
+[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_closed.png" id="r11"]
+[ext_resource type="Script" path="res://src/world/arena.gd" id="r12"]
+[ext_resource type="Texture2D" path="res://art/props/arena_curtain_closed.png" id="r13"]
+
+[node name="R1-04" type="Node2D"]
+script = ExtResource("r0")
+room_id = "R1-04"
+display_name = "负壳蟹"
+dimensions = Vector2(2304, 1152)
+fall_damage = 0
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E03" type="Marker2D" parent="Entries"]
+position = Vector2(137.6, 893)
+
+[node name="Door_E03" type="Node2D" parent="Gameplay"]
+position = Vector2(64, 896)
+script = ExtResource("r2")
+edge_id = "E03"
+target_room = "R1-03"
+target_entry = "E03"
+prompt = "E E03 → R1-03"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E03"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E03"]
+text = "E E03 → R1-03"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E04" type="Marker2D" parent="Entries"]
+position = Vector2(2166.4, 893)
+
+[node name="Door_E04" type="Node2D" parent="Gameplay"]
+position = Vector2(2240, 896)
+script = ExtResource("r4")
+edge_id = "E04"
+target_room = "R1-05"
+target_entry = "E04"
+prompt = "E E04 → R1-05 · 能力门"
+required_abilities = PackedStringArray("ability.dash")
+required_flags = PackedStringArray("boss.r1_shell_crab")
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E04"]
+texture = ExtResource("r5")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E04"]
+text = "E E04 → R1-05"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="Camp" type="Node2D" parent="Gameplay"]
+position = Vector2(128, 896)
+script = ExtResource("r6")
+room_id = "R1-04"
+prompt = "E 营地 · 休息并保存"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Camp"]
+texture = ExtResource("r7")
+position = Vector2(0, -34)
+scale = Vector2(0.3385416666666667, 0.3385416666666667)
+
+[node name="Prompt" type="Label" parent="Gameplay/Camp"]
+text = "E 营地 · 休息并保存"
+position = Vector2(-90, -112)
+theme_override_font_sizes/font_size = 16
+
+[node name="Enemy0" parent="Gameplay" instance=ExtResource("r8")]
+position = Vector2(1408, 895)
+
+[node name="Reward0" type="Node2D" parent="Gameplay"]
+position = Vector2(2048, 896)
+script = ExtResource("r9")
+flag_id = "pickup.r1_dash"
+prompt = "E 承接贴流冲 · Shift"
+ability_id = "ability.dash"
+required_flags = PackedStringArray("boss.r1_shell_crab")
+collected_texture = ExtResource("r10")
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Reward0"]
+texture = ExtResource("r11")
+position = Vector2(0, -42)
+scale = Vector2(0.3515625, 0.3515625)
+
+[node name="Prompt" type="Label" parent="Gameplay/Reward0"]
+text = "E 承接贴流冲"
+position = Vector2(-100, -120)
+theme_override_font_sizes/font_size = 16
+
+[node name="Arena" type="Node2D" parent="Gameplay"]
+script = ExtResource("r12")
+
+[node name="Curtain" type="Sprite2D" parent="Gameplay/Arena"]
+texture = ExtResource("r13")
+position = Vector2(448, 800)
+scale = Vector2(0.6, 0.6)

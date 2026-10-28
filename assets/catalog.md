@@ -52,6 +52,12 @@
 
 历史路径检查发现：初版源码请求 `../<图片名>`，但本地文件在原画集目录，当时本地服务没有对应映射。本轮未修改或重新验收初版，不应依赖当前 V2 发布构建补齐其图片。
 
+## Godot 正式工程运行副本
+
+`game/art/manifest.json` 是正式工程的同步清单，记录旧 Godot 位图/音频与全局静态库的来源关系；`node tools/godot.mjs sync-art` 生成运行副本。接入结果见 [game/progress.md](../game/progress.md)。复用不计新增创作，静态姿态加程序反馈不计正式动作动画。
+
+中文 UI 使用 [Noto Sans SC](source/noto-sans-sc/README.md) 字体，原文件在 `runtime/fonts/`，SIL OFL 1.1 许可证随运行副本保留。字体属于 UI 依赖，不计入静态精灵数量。
+
 ## 模型、动画与音频
 
 当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。

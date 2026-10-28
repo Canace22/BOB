@@ -13,6 +13,8 @@ static func default_data() -> Dictionary:
 
 
 static func write(data: Dictionary, path: String = DEFAULT_PATH) -> bool:
+	if validate(data).is_empty():
+		return false
 	var tmp := path + ".tmp"
 	var file := FileAccess.open(tmp, FileAccess.WRITE)
 	if file == null:
@@ -20,9 +22,10 @@ static func write(data: Dictionary, path: String = DEFAULT_PATH) -> bool:
 		return false
 	file.store_string(JSON.stringify(data, "\t"))
 	file.close()
-	if FileAccess.file_exists(path):
-		DirAccess.copy_absolute(path, path + ".bak")
-		DirAccess.remove_absolute(path)
+	# A corrupt primary must never replace the last valid backup.
+	if not _parse(path).is_empty():
+		if DirAccess.copy_absolute(path, path + ".bak") != OK:
+			return false
 	return DirAccess.rename_absolute(tmp, path) == OK
 
 
@@ -46,10 +49,10 @@ static func migrate(data: Dictionary) -> Dictionary:
 
 
 static func validate(data: Dictionary) -> Dictionary:
-	if int(data.get("version", 0)) != VERSION:
+	if data.get("version", 0) != VERSION:
 		return {}
 	var room: Variant = data.get("checkpoint_room")
-	if not room is String or (room as String).is_empty():
+	if not room is String or not WorldGraph.ROOMS.has(room):
 		return {}
 	var result := {"version": VERSION, "checkpoint_room": room}
 	for key: String in ["abilities", "flags"]:

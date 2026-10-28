@@ -3,6 +3,8 @@ name: bob-art-integration
 description: 在 BOB 中制作、入库和管理静态素材，导出并复核图集，或将原画、背景和角色场景外观接入 Canvas 2D、Three.js 2.5D 原型；纯概念发散使用既有概念 Skill。
 ---
 
+> Godot 正式工程请使用 [godot-game-dev](../godot-game-dev/SKILL.md)。以下 Web 专项流程仅供 `legacy/web/` 历史原型参考与回归，不能用于继续开发旧版本；共享素材制作仍可参考美术规则。
+
 # BOB 美术资源接入
 
 先确定任务是素材制作入库、资源管理还是游戏接入，读取[协作规则](../../../AGENTS.md)；明确 `mvp-v2/`（当前发布的 Canvas 2D）、`mvp-nightmare/`（Three.js 2.5D）或 `mvp/`（初版），再读取该版 `renderer.js`、`levels.js` 的相关部分，不凭“新版”名称判断技术版本。图片制作按需复用 `imagegen`；本文件只记录 BOB 的现有接口与验收边界。
@@ -35,12 +37,12 @@ description: 在 BOB 中制作、入库和管理静态素材，导出并复核�
 
 ### 游戏加载与运行
 
-V5.2 主线入口使用 `campaign-levels.js / campaign-renderer.js`，旧四区 `levels.js / renderer.js` 保留在 `legacy.html`。两套复用运行清单与 WebP，但来源房间与机关语义分别验收。详见 [CAMPAIGN.md](../../../mvp-v2/CAMPAIGN.md)：源文字已给的坐标/连接与不可获取的 SVG 布局必须区分；未知地形标记 `adapted-from-source`，不能把美术房间参考图当已经复现的完整关卡。静态首领预告与攻击范围由引擎状态绘制，画面预告与真实伤害体积要一致；体宽包括肢端时，碰撞体可以略收窄，但需要实际截图对齐验证。R1 食管育窝不能继续绘成鲸须区背景。
+V5.2 主线入口使用 `campaign-levels.js / campaign-renderer.js`，旧四区 `levels.js / renderer.js` 保留在 `legacy.html`。两套复用运行清单与 WebP，但来源房间与机关语义分别验收。详见 [CAMPAIGN.md](../../../legacy/web/mvp-v2/CAMPAIGN.md)：源文字已给的坐标/连接与不可获取的 SVG 布局必须区分；未知地形标记 `adapted-from-source`，不能把美术房间参考图当已经复现的完整关卡。静态首领预告与攻击范围由引擎状态绘制，画面预告与真实伤害体积要一致；体宽包括肢端时，碰撞体可以略收窄，但需要实际截图对齐验证。R1 食管育窝不能继续绘成鲸须区背景。
 
 源图的连续丘脊不能只改成矩形台阶或把坡面当背景。采用加密折线时，绘制、碰撞、小地图共用采样点；保留出生/敌人/出口锚点。运行贴图保持不规则下缘，避免把材质竖向拉伸到屏底；支撑必须有独立2D素材，不用横向平台裁片拉成长柱。新增侧台后复核跨台训练等依赖平台身份的条件，防止同一岸上的小侧台被当成跨过教学沟。屏幕前景必须在恢复世界相机变换之后绘制，否则纵向镜头会把底部装饰带到半空；多层平台和凹谷必须分别截图检查，不能仅凭通关通过判定美术合格。
 
 1. 核对运行入口和设计范围。各版分别维护自己的关卡、存档和绘制，不因题材相同合并运行逻辑；外观替换保持原机关 ID、收集状态和出口条件。
-2. V2 的 [art-manifest.js](../../../mvp-v2/art-manifest.js)选择当前玩法需要的来源 ID，由 [export-runtime-art.py](../../../mvp-v2/tools/export-runtime-art.py)从台账原图生成缩放 WebP 和运行元数据；导出命令与目录见[资源管理说明](../../../assets/README.md)。不要直接把制作分辨率的原图当游戏贴图发布；原件、台账 `file` 和原始来源保持不变，接入记录的 `runtimeFile` 指向派生文件。来源 R1 / R3 / R2 / R4 对应鲸口 / 胃库 / 肺缘 / 肋骨，其中肋骨借用骨架材质，不代表复现 R4 完整设计。新增引用先核对实际语义，不能为了用齐资源扩写未要求的关卡或机制。
+2. V2 的 [art-manifest.js](../../../legacy/web/mvp-v2/art-manifest.js)选择当前玩法需要的来源 ID，由 [export-runtime-art.py](../../../legacy/web/mvp-v2/tools/export-runtime-art.py)从台账原图生成缩放 WebP 和运行元数据；导出命令与目录见[资源管理说明](../../../assets/README.md)。不要直接把制作分辨率的原图当游戏贴图发布；原件、台账 `file` 和原始来源保持不变，接入记录的 `runtimeFile` 指向派生文件。来源 R1 / R3 / R2 / R4 对应鲸口 / 胃库 / 肺缘 / 肋骨，其中肋骨借用骨架材质，不代表复现 R4 完整设计。新增引用先核对实际语义，不能为了用齐资源扩写未要求的关卡或机制。
 3. V2 世界精灵按源尺度换算，默认 1 U = 48 逻辑像素；角色落脚点为碰撞盒底边中心，左右姿态分别取图。导出的 bbox / pivot 已转换到导出像素；代码中额外写出的源像素裁切、边距和挂点，横向乘 `exportScale`，纵向乘 `exportScaleY`，不能重复缩放已有 bbox / pivot。背景保留完整画布与透明留白，分层视差。矩形平台裁切贴齐碰撞高度；坡面由 `levels.js` 的 `terrain.points`、`terrain.js` 碰撞采样、`runtime-art.js` 缓存绘制和 `scene-lab.js` 多边形共同消费，不能只改贴图起伏。静态角色可伴随程序反馈，但不得登记成逐帧动画；缺图回退须主动阻断请求检验。
 4. V2 开发服务只映射共享 `/assets/runtime/sprites/`；本地快照与 `mvp/deploy.mjs` 按运行清单复制选中的 WebP，保留 `../assets/runtime/sprites/...` 相对路径。检查 `/BOB/mvp-v2/` 与快照版本路径，不复制制作源或整个素材库。当前 Pages 仅发布 V2 与所需导出资源，旧入口仅重定向，不包含初版原画或 Three.js vendor。
 5. 初版 `mvp/renderer.js` 引用四张概念原画，`game.js` 另有地图缩略图。原件位于原画集，源码路径与本地服务需实际核对；当前 V2 构建不为初版补齐资源。初版画布为 1280×720，调整裁切时检查重复主角、机关遮挡和平台对齐，另验证程序背景回退。

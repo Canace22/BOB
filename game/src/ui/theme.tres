@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3]
+[ext_resource type="FontFile" path="res://art/fonts/NotoSansSC.ttf" id="font"]
+[sub_resource type="FontVariation" id="medium"]
+base_font = ExtResource("font")
+variation_embolden = 0.6
+[resource]
+default_font = SubResource("medium")
+default_font_size = 18

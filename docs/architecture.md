@@ -46,7 +46,7 @@ flowchart LR
 | `src/combat/` | `Hitbox`、`Hurtbox`、`Health`、`HitData`，玩家和敌人共用 |
 | `src/enemies/` | `EnemyBase` 状态机，具体敌人只覆盖招式选择和数值 |
 | `src/world/` | `Room`、`Interactable` 及门、营地、拾取、拉杆、危险区、Boss 场地、布景视差 |
-| `src/ui/` | HUD、地图、暂停菜单 |
+| `src/ui/` | HUD、地图/暂停面板与中文 Theme（地图共用暂停场景） |
 | `content/rooms/<区域>/<房间ID>.tscn` | 每个房间一个场景：布景、碰撞、入口点、玩法节点 |
 | `content/data/` | 只读数据：能力表、世界地图（GDScript 常量，可直接加载和测试） |
 | `art/` | 运行素材，由 `art/manifest.json` 从 `assets/` 或 `legacy/godot/` 同步缩放，不手工改 |
@@ -62,6 +62,7 @@ flowchart LR
 - **物理层**：1 world，2 player，3 enemy，4 player_hurtbox，5 enemy_hurtbox，6 interactable，7 hazard。
 - **代码规模**：一个功能一个目录；单个脚本尽量不超过 250 行（`check` 会提示）；全部使用带类型的 GDScript 和 `class_name`。
 - **测试与游戏分离**：游戏代码里没有 QA 分支；测试在 `tests/` 里直接实例化场景并驱动。
+- **浏览器可观察性**：`src/core/web_status.gd` 提供只读 `render_game_to_text()`；不接受状态写入、传送或伤害命令。浏览器驱动在 `tests/web_playthrough.mjs`，通过真实键盘操作。
 - **正式美术**：遵循 [AGENTS.md 的 2D 素材规则](../AGENTS.md#正式美术必须使用2d素材)。缺图时先补素材，再在 `art/manifest.json` 登记同步。
 
 ## 存档
@@ -72,7 +73,9 @@ flowchart LR
 { "version": 1, "checkpoint_room": "R1-01", "abilities": ["ability.dash"], "flags": ["boss.r1_shell_crab"] }
 ```
 
-先写 `.tmp`，再把旧档备份为 `.bak`，最后改名替换。读档时校验失败就读 `.bak`，两份都失败则开新档。改格式时提升 `version` 并在 `SaveService.migrate()` 中迁移。
+先校验并写 `.tmp`，再把有效旧档备份为 `.bak`，最后改名替换。损坏的主档不能覆盖有效备份；读档时校验失败就读 `.bak`，两份都失败则开新档。校验包括已注册房间 ID 和字符串能力/标记数组。改格式时提升 `version` 并在 `SaveService.migrate()` 中迁移。
+
+测试仅使用 `test-save.json`，手动预览使用 `manual-preview.json` 且关闭自动写入。Web 测试采用独立浏览器上下文；与 V2 的 LocalStorage 键分别存储。
 
 ## 命令
 
@@ -85,8 +88,12 @@ node tools/godot.mjs run         # 打开游戏窗口
 node tools/godot.mjs editor      # 打开编辑器
 node tools/godot.mjs sync-art    # 按 art/manifest.json 同步并缩放运行素材
 node tools/godot.mjs export-web  # 导出到 game/build/web
+node game/tests/serve_web.mjs    # 带 /BOB/godot/ 前缀的独立验收服务
+node game/tests/web_playthrough.mjs # Node 20+、Playwright，真实按键五房 + 地图/暂停 + 续档
 node tools/deploy-pages.mjs      # 导出并发布到 gh-pages 的 /godot/
 ```
+
+Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` 视为失败。Web 导出关闭线程与扩展，排除测试和工具源码；需要安装匹配版本的单线程 Web 模板。发布脚本只替换现有 Pages 检出的 `godot/`，正常推送；`build.json` 记录源码提交，线上复核另见 [进度](../game/progress.md)。
 
 ## 从旧工程迁移的内容
 

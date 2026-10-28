@@ -22,6 +22,12 @@ BOB/
 
 架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](legacy/README.md)。
 
+## 当前内容
+
+Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → 负壳蟹 → 流膜育窝。包含短击连段、重鸣、调息、Boss、交互领取贴流冲、三段跨沟、营地与版本化存档、地图和暂停。舌台可收集碎片并打开持久壳闩短桥。
+
+七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。角色沿用旧版静态姿态加程序反馈；复用素材接入不代表制作了新的逐帧动画。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
+
 ## 快速开始
 
 需要 Node.js 18+、Godot 4.7.2 和 Git LFS。
@@ -36,6 +42,18 @@ node tools/godot.mjs check    # 导入资源并检查全部脚本和场景
 node tools/godot.mjs test     # headless 自动测试
 ```
 
+测试只写独立测试文件。桌面画面检查可运行 `node tools/godot.mjs run -- res://tests/manual_preview.tscn`，不会改写真实存档。新工程不读取旧 Godot / V2 存档；Web 版自动保存到当前浏览器站点存储。
+
+Web 验收需要 Node.js 20+、Playwright 与可用 Chrome/Chromium：
+
+```sh
+node tools/godot.mjs export-web
+node game/tests/serve_web.mjs       # 独立终端保持运行，端口 4187
+node game/tests/web_playthrough.mjs # 另一终端执行，五房真实按键路线
+```
+
+`PLAYWRIGHT_MODULE` 可指定现有模块路径，`CHROME_PATH` 可指定浏览器。线上复核设置 `GAME_URL=https://canace22.github.io/BOB/godot/`。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
+
 ## 操作（桌面键盘）
 
 `A / D` 移动，`Space` 跳跃，`Q` 或 `J` 短击（后半段再按接第二击），`R` 或 `K` 重鸣（消耗 2 蓄振），`F` 原地调息（消耗 2 蓄振恢复 1 生命），`Shift` 或 `L` 贴流冲（击败负壳蟹后获得），`E` 或 `↑` 交互，`Tab` 或 `M` 地图，`Esc` 暂停。
@@ -47,6 +65,8 @@ node tools/deploy-pages.mjs
 ```
 
 导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，保留 V2 等已有内容。流程见 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
+
+导出需要安装 Godot 4.7.2 官方模板中的 `web_nothreads_release.zip`。发布脚本在 `.pages-dist-godot/` 保留独立的 Pages 检出；`godot/build.json` 记录源码版本，推送后还需核实 Pages 部署和线上路线。
 
 ## 美术资源
 

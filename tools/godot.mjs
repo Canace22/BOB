@@ -2,7 +2,7 @@
 // Single entry for the Godot project in game/. Usage: node tools/godot.mjs <command> [-- extra args]
 // Commands: check | test | run | editor | sync-art | export-web
 import { spawnSync, spawn } from 'node:child_process';
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync, mkdirSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -10,8 +10,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const GAME = join(ROOT, 'game');
 const VERSION = readFileSync(join(GAME, '.godot-version'), 'utf8').trim();
 const MAX_SCRIPT_LINES = 250;
+let executable;
 
 function findGodot() {
+  if (executable) return executable;
   const candidates = [
     process.env.GODOT,
     join(ROOT, '.tools', 'godot', `Godot_v${VERSION}-stable_win64_console.exe`),
@@ -23,7 +25,13 @@ function findGodot() {
     console.error(`Godot ${VERSION} not found. Set GODOT=<path to console exe> or place it in .tools/godot/.`);
     process.exit(2);
   }
-  return found;
+  const version = spawnSync(found, ['--version'], { encoding: 'utf8' });
+  if (version.status !== 0 || !version.stdout?.trim().startsWith(`${VERSION}.stable.`)) {
+    console.error(`Expected Godot ${VERSION} stable, got: ${version.stdout?.trim() ?? version.error?.message}`);
+    process.exit(2);
+  }
+  executable = found;
+  return executable;
 }
 
 // Godot exits 0 even when a -s script fails to parse, so script errors in the output count as failure.
@@ -64,7 +72,7 @@ const commands = {
     checkScriptSizes();
     return status;
   },
-  test: () => importProject() || godot(['res://tests/run_tests.tscn', '--', ...extra]),
+  test: () => importProject() || godot(['--fixed-fps', '60', 'res://tests/run_tests.tscn', '--', ...extra]),
   run() {
     const result = spawnSync(findGodot(), ['--path', GAME, ...extra], { stdio: 'inherit' });
     return result.status ?? 1;
@@ -74,7 +82,10 @@ const commands = {
     return 0;
   },
   'sync-art': () => importProject() || godot(['-s', 'res://tools/sync_art.gd']) || importProject(),
-  'export-web': () => importProject() || godot(['--export-release', 'Web', 'build/web/index.html']),
+  'export-web': () => {
+    mkdirSync(join(GAME, 'build', 'web'), { recursive: true });
+    return importProject() || godot(['--export-release', 'Web', 'build/web/index.html']);
+  },
 };
 
 const command = commands[process.argv[2]];
