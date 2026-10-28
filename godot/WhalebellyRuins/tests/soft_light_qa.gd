@@ -19,7 +19,7 @@ func run() -> void:
 	for id in ["BEAM-01","BEAM-02","BEAM-03"]:
 		var light=scene.get_node(id);lights.append(light)
 		check(id+"_uses_independent_light",light.texture.resource_path=="res://assets/soft_light/UNDERWATER-SOFT-LIGHT.png" and light.z_index==-54)
-	check("background_restored",scene.get_node("ENV-DEPTH").texture.resource_path.ends_with("ENV-DEPTH-RESTORED.png"))
+	check("background_restored",scene.get_node("ENV-DEPTH").texture.resource_path in ["res://assets/soft_light/ENV-DEPTH-RESTORED.png","res://assets/foreground_edges/CLEAN-ENV-DEPTH.png"])
 	var img=lights[0].texture.get_image()
 	var edge=0.0
 	for x in img.get_width():edge=maxf(edge,maxf(img.get_pixel(x,0).a,img.get_pixel(x,img.get_height()-1).a))

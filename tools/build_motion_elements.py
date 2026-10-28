@@ -144,3 +144,6 @@ if "--assemble" in sys.argv and (root/"assets/source/baleen-blender/jobs.json").
 if "--assemble" in sys.argv and (project/"assets/soft_light/UNDERWATER-SOFT-LIGHT.png").exists():
  import subprocess
  subprocess.run([sys.executable,str(root/"tools/integrate_soft_light.py")],check=True)
+if "--assemble" in sys.argv and (root/"assets/source/xumen-foreground-edges/manifest.json").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_foreground_edges.py")],check=True)

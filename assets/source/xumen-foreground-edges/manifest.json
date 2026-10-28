@@ -1,0 +1,96 @@
+{
+	"backing_layer": -1,
+	"cleaned_static_layers": [
+		{
+			"node": "ROOF",
+			"path": "res://assets/foreground_edges/CLEAN-ROOF.png",
+			"removed_pixels": 21294,
+			"source": "res://assets/motion_elements/ROOF.png"
+		},
+		{
+			"node": "WALL-L",
+			"path": "res://assets/foreground_edges/CLEAN-WALL-L.png",
+			"removed_pixels": 17275,
+			"source": "res://assets/motion_elements/WALL-L.png"
+		},
+		{
+			"node": "WALL-R",
+			"path": "res://assets/foreground_edges/CLEAN-WALL-R.png",
+			"removed_pixels": 13600,
+			"source": "res://assets/motion_elements/WALL-R.png"
+		},
+		{
+			"node": "ROAD",
+			"path": "res://assets/foreground_edges/CLEAN-ROAD.png",
+			"removed_pixels": 13744,
+			"source": "res://assets/motion_elements/ROAD.png"
+		},
+		{
+			"node": "BALEEN-01-ROOT",
+			"path": "res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png",
+			"removed_pixels": 6074,
+			"source": "res://assets/motion_elements/BALEEN-01-ROOT.png"
+		},
+		{
+			"node": "DECOR-01",
+			"path": "res://assets/foreground_edges/CLEAN-DECOR-01.png",
+			"removed_pixels": 8116,
+			"source": "res://assets/motion_elements/DECOR-01.png"
+		},
+		{
+			"node": "DECOR-11",
+			"path": "res://assets/foreground_edges/CLEAN-DECOR-11.png",
+			"removed_pixels": 2354,
+			"source": "res://assets/motion_elements/DECOR-11.png"
+		},
+		{
+			"node": "ENV-DEPTH",
+			"path": "res://assets/foreground_edges/CLEAN-ENV-DEPTH.png",
+			"removed_pixels": 1598,
+			"source": "res://assets/soft_light/ENV-DEPTH-RESTORED.png"
+		},
+		{
+			"node": "ENV-UNDERPAINT",
+			"path": "res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
+			"removed_pixels": 41102,
+			"source": "res://assets/motion_elements/ENV-UNDERPAINT.png"
+		},
+		{
+			"node": "FOREGROUND-BACKING",
+			"path": "res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png",
+			"removed_pixels": 6852,
+			"source": "res://assets/motion_elements/FOREGROUND-BACKING.png"
+		}
+	],
+	"foreground": [
+		{
+			"edge_padding": 32,
+			"id": "FRONT-TOP-LEFT",
+			"layer": 51,
+			"parallax_amount": -0.14,
+			"position": [
+				-32,
+				-32
+			],
+			"size": [
+				336,
+				336
+			]
+		},
+		{
+			"edge_padding": 32,
+			"id": "FRONT-BOTTOM-RIGHT",
+			"layer": 51,
+			"parallax_amount": -0.14,
+			"position": [
+				1060,
+				394
+			],
+			"size": [
+				252,
+				358
+			]
+		}
+	],
+	"scope": "two corner mattes; bottom foreground unchanged"
+}

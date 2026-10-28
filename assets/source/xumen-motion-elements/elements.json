@@ -45,7 +45,7 @@
       0
     ],
     "layer": 0.0,
-    "asset": "ROOF.png",
+    "asset": "res://assets/foreground_edges/CLEAN-ROOF.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -58,7 +58,7 @@
       0
     ],
     "layer": 0.0,
-    "asset": "WALL-L.png",
+    "asset": "res://assets/foreground_edges/CLEAN-WALL-L.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -71,7 +71,7 @@
       0
     ],
     "layer": 0.0,
-    "asset": "WALL-R.png",
+    "asset": "res://assets/foreground_edges/CLEAN-WALL-R.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -84,7 +84,7 @@
       392
     ],
     "layer": 10.0,
-    "asset": "ROAD.png",
+    "asset": "res://assets/foreground_edges/CLEAN-ROAD.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -130,7 +130,7 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-01-ROOT.png",
+    "asset": "res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -208,7 +208,7 @@
       82
     ],
     "layer": 11.0,
-    "asset": "DECOR-01.png",
+    "asset": "res://assets/foreground_edges/CLEAN-DECOR-01.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -338,7 +338,7 @@
       531
     ],
     "layer": 11.0,
-    "asset": "DECOR-11.png",
+    "asset": "res://assets/foreground_edges/CLEAN-DECOR-11.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -620,7 +620,7 @@
       0
     ],
     "layer": -60,
-    "asset": "res://assets/soft_light/ENV-DEPTH-RESTORED.png",
+    "asset": "res://assets/foreground_edges/CLEAN-ENV-DEPTH.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -633,7 +633,7 @@
       0
     ],
     "layer": -70,
-    "asset": "ENV-UNDERPAINT.png",
+    "asset": "res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -646,7 +646,7 @@
       0
     ],
     "layer": 50,
-    "asset": "FRONT-CONTINUOUS.png",
+    "asset": "res://assets/foreground_edges/FRONT-BOTTOM-PAD.png",
     "scene": "elements/FRONT-01.tscn",
     "motion": "parallax",
     "parameters": {
@@ -655,7 +655,12 @@
     "acceptance": "实际引用、轮廓/透明边缘、时序/遮挡与暂停重载",
     "source": "original crop or generated light/backing; see export manifest",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A 本轮无声音需求"
+    "sound": "N/A 本轮无声音需求",
+    "texture_offset": [
+      -32,
+      -32
+    ],
+    "edge_padding": 32
   },
   {
     "id": "FOREGROUND-BACKING",
@@ -664,7 +669,7 @@
       0
     ],
     "layer": -2,
-    "asset": "FOREGROUND-BACKING.png",
+    "asset": "res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
@@ -1965,5 +1970,57 @@
     "collision": "N/A 环境装饰",
     "sound": "N/A",
     "acceptance": "根部固定、逐帧透明、无整片平移、实际引用、循环与场景遮挡"
+  },
+  {
+    "edge_padding": 32,
+    "id": "FRONT-TOP-LEFT",
+    "layer": 51,
+    "parallax_amount": -0.14,
+    "position": [
+      -32,
+      -32
+    ],
+    "size": [
+      336,
+      336
+    ],
+    "asset": "res://assets/foreground_edges/FRONT-TOP-LEFT.png",
+    "motion": "rigid foreground parallax",
+    "scene": "elements/FRONT-TOP-LEFT.tscn",
+    "collision": "N/A decorative foreground",
+    "sound": "N/A",
+    "acceptance": "mask visibility, matching parallax, backing coverage, no residual baked silhouette"
+  },
+  {
+    "edge_padding": 32,
+    "id": "FRONT-BOTTOM-RIGHT",
+    "layer": 51,
+    "parallax_amount": -0.14,
+    "position": [
+      1060,
+      394
+    ],
+    "size": [
+      252,
+      358
+    ],
+    "asset": "res://assets/foreground_edges/FRONT-BOTTOM-RIGHT.png",
+    "motion": "rigid foreground parallax",
+    "scene": "elements/FRONT-BOTTOM-RIGHT.tscn",
+    "collision": "N/A decorative foreground",
+    "sound": "N/A",
+    "acceptance": "mask visibility, matching parallax, backing coverage, no residual baked silhouette"
+  },
+  {
+    "id": "FOREGROUND-CORNER-BACKING",
+    "position": [
+      0,
+      0
+    ],
+    "layer": -1,
+    "asset": "res://assets/foreground_edges/CORNER-BACKING.png",
+    "motion": "static hidden backing patches",
+    "collision": "N/A",
+    "sound": "N/A"
   }
 ]

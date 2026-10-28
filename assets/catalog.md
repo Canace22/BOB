@@ -83,3 +83,7 @@ BEAM-01/02/03已替换为不含场景纹理的独立柔光贴图和12秒Shader�
 ## 拾潮者视频动作 V02
 
 IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光流循环桥接。Run复用历史Wan视频，IDLE含局部呼吸修正。三组均为待精修候选，仅独立Godot评审场景；主关卡未替换。[来源、母版与限制](source/tide-picker-locomotion-v02-video/README.md)。
+
+### 左上和右下近景拆分
+
+新增FRONT-TOP-LEFT、FRONT-BOTTOM-RIGHT与有限补绘层；底部FRONT-01补32px余量。10张静态贴图清理对应烘焙前景，三个前景共用-0.14视差；103个活动元素。见[母版与说明](source/xumen-foreground-edges/README.md)。

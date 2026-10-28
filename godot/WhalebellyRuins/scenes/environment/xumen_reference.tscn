@@ -1,22 +1,22 @@
-[gd_scene load_steps=102 format=3]
+[gd_scene load_steps=106 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-02.png" id="3"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-03.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/ROOF.png" id="5"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/WALL-L.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/WALL-R.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/ROAD.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ROOF.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-L.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-R.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ROAD.png" id="8"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/PORTAL.png" id="9"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/LAMP.tscn" id="10"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-01-ROOT.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png" id="11"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-02-ROOT.png" id="13"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-03-ROOT.png" id="15"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-04-ROOT.png" id="17"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-05-ROOT.png" id="19"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-06-ROOT.png" id="21"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-01.png" id="23"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-DECOR-01.png" id="23"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-02.png" id="24"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-03.png" id="25"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-04.png" id="26"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-08.png" id="30"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-09.png" id="31"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-10.png" id="32"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-11.png" id="33"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-DECOR-11.png" id="33"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-12.png" id="34"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-01.tscn" id="35"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/PLANT-02.tscn" id="36"]
@@ -40,10 +40,10 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/soft_underwater_light.tscn" id="44"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/soft_underwater_light.tscn" id="45"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/CHARACTER.png" id="46"]
-[ext_resource type="Texture2D" path="res://assets/soft_light/ENV-DEPTH-RESTORED.png" id="47"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/ENV-UNDERPAINT.png" id="48"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ENV-DEPTH.png" id="47"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png" id="48"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-01.tscn" id="49"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/FOREGROUND-BACKING.png" id="50"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png" id="50"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-01.tscn" id="51"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-02.tscn" id="52"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-03.tscn" id="53"]
@@ -102,6 +102,13 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-CENTER.tscn" id="baleen_1"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-RIGHT.tscn" id="baleen_2"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BALEEN-DISTANT.tscn" id="baleen_3"]
+
+
+
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-TOP-LEFT.tscn" id="fg_corner_0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-BOTTOM-RIGHT.tscn" id="fg_corner_1"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/CORNER-BACKING.png" id="fg_corner_back"]
+[ext_resource type="Texture2D" path="res://assets/foreground_edges/FRONT-BOTTOM-PAD.png" id="fg_corner_bottom"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
@@ -440,6 +447,8 @@ position = Vector2(0, 0)
 metadata/element_id = "FRONT-01"
 metadata/motion = "parallax"
 external_clock = true
+texture = ExtResource("fg_corner_bottom")
+offset = Vector2(-32, -32)
 
 [node name="FOREGROUND-BACKING" parent="." type="Sprite2D"]
 z_index = -2
@@ -847,3 +856,24 @@ position = Vector2(860, 100)
 external_clock = true
 metadata/element_id = "BALEEN-DISTANT"
 metadata/motion = "blender_frames"
+
+[node name="FRONT-TOP-LEFT" parent="." instance=ExtResource("fg_corner_0")]
+z_index = 51
+position = Vector2(-32, -32)
+external_clock = true
+metadata/element_id = "FRONT-TOP-LEFT"
+metadata/motion = "parallax"
+
+[node name="FRONT-BOTTOM-RIGHT" parent="." instance=ExtResource("fg_corner_1")]
+z_index = 51
+position = Vector2(1060, 394)
+external_clock = true
+metadata/element_id = "FRONT-BOTTOM-RIGHT"
+metadata/motion = "parallax"
+
+[node name="FOREGROUND-CORNER-BACKING" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("fg_corner_back")
+centered = false
+metadata/element_id = "FOREGROUND-CORNER-BACKING"
+metadata/motion = "static"

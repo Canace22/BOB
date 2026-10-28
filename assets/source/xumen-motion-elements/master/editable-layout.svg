@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
 <title>Editable bitmap layout master — live motion is authored in matching Godot element scenes</title>
-<g id="ENV-UNDERPAINT"><title>ENV-UNDERPAINT · static · z=-70</title><image x="0" y="0" width="1280" height="720" opacity="1" xlink:href="ENV-UNDERPAINT.png"/></g>
-<g id="ENV-DEPTH"><title>ENV-DEPTH · static · z=-60</title><image x="20" y="0" width="1232" height="715" opacity="1" xlink:href="../../xumen-soft-light/master/ENV-DEPTH-RESTORED.png"/></g>
+<g id="ENV-UNDERPAINT"><title>ENV-UNDERPAINT · static · z=-70</title><image x="0" y="0" width="1280" height="720" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-ENV-UNDERPAINT.png"/></g>
+<g id="ENV-DEPTH"><title>ENV-DEPTH · static · z=-60</title><image x="20" y="0" width="1232" height="715" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-ENV-DEPTH.png"/></g>
 <g id="WATER-SURFACE"><title>Upper background water · z=-55 · runtime scene defines occlusion</title><image x="350" y="0" width="740" height="150" xlink:href="WATER-SURFACE.png"/></g>
 <g id="BEAM-01" transform="translate(550 -105) rotate(16.04281826366305) scale(0.55 0.64)"><title>Independent painted soft light; z=-54; runtime shader defines additive animation</title><image width="512" height="768" opacity="0.12" xlink:href="../../xumen-soft-light/master/UNDERWATER-SOFT-LIGHT.png"/></g>
 <g id="BEAM-02" transform="translate(740 -80) rotate(13.750987083139757) scale(0.38 0.58)"><title>Independent painted soft light; z=-54; runtime shader defines additive animation</title><image width="512" height="768" opacity="0.08" xlink:href="../../xumen-soft-light/master/UNDERWATER-SOFT-LIGHT.png"/></g>
@@ -59,18 +59,19 @@
 <g id="FISH-03-19"><title>FISH-03-19 · fish · z=-30</title><image x="1022.0" y="325.0" width="40.0" height="20.0" opacity="1" xlink:href="FISH-03-19-source.png"/></g>
 <g id="FISH-03-20"><title>FISH-03-20 · fish · z=-30</title><image x="957.0" y="333.0" width="40.0" height="20.0" opacity="1" xlink:href="FISH-03-20-source.png"/></g>
 <g id="FISH-03-21"><title>FISH-03-21 · fish · z=-30</title><image x="972.0" y="332.0" width="40.0" height="20.0" opacity="1" xlink:href="FISH-03-21-source.png"/></g>
-<g id="FOREGROUND-BACKING"><title>FOREGROUND-BACKING · static · z=-2</title><image x="0" y="0" width="1280" height="720" opacity="1" xlink:href="FOREGROUND-BACKING.png"/></g>
-<g id="ROOF"><title>ROOF · static · z=0.0</title><image x="0" y="0" width="1280" height="158" opacity="1" xlink:href="ROOF.png"/></g>
-<g id="WALL-L"><title>WALL-L · static · z=0.0</title><image x="0" y="0" width="132" height="500" opacity="1" xlink:href="WALL-L.png"/></g>
-<g id="WALL-R"><title>WALL-R · static · z=0.0</title><image x="1164" y="0" width="116" height="720" opacity="1" xlink:href="WALL-R.png"/></g>
-<g id="BALEEN-01-ROOT"><title>BALEEN-01-ROOT · static · z=4.0</title><image x="90" y="0" width="205" height="344" opacity="1" xlink:href="BALEEN-01-ROOT.png"/></g>
+<g id="FOREGROUND-BACKING"><title>FOREGROUND-BACKING · static · z=-2</title><image x="0" y="0" width="1280" height="720" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-FOREGROUND-BACKING.png"/></g>
+<g id="FOREGROUND-CORNER-BACKING"><title>Local hidden backing z=-1</title><image width="1280" height="720" xlink:href="../../xumen-foreground-edges/master/CORNER-BACKING.png"/></g>
+<g id="ROOF"><title>ROOF · static · z=0.0</title><image x="0" y="0" width="1280" height="158" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-ROOF.png"/></g>
+<g id="WALL-L"><title>WALL-L · static · z=0.0</title><image x="0" y="0" width="132" height="500" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-WALL-L.png"/></g>
+<g id="WALL-R"><title>WALL-R · static · z=0.0</title><image x="1164" y="0" width="116" height="720" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-WALL-R.png"/></g>
+<g id="BALEEN-01-ROOT"><title>BALEEN-01-ROOT · static · z=4.0</title><image x="90" y="0" width="205" height="344" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-BALEEN-01-ROOT.png"/></g>
 <g id="BALEEN-02-ROOT"><title>BALEEN-02-ROOT · static · z=4.0</title><image x="255" y="0" width="207" height="324" opacity="1" xlink:href="BALEEN-02-ROOT.png"/></g>
 <g id="BALEEN-03-ROOT"><title>BALEEN-03-ROOT · static · z=4.0</title><image x="422" y="0" width="193" height="260" opacity="1" xlink:href="BALEEN-03-ROOT.png"/></g>
 <g id="BALEEN-04-ROOT"><title>BALEEN-04-ROOT · static · z=4.0</title><image x="575" y="0" width="187" height="194" opacity="1" xlink:href="BALEEN-04-ROOT.png"/></g>
 <g id="BALEEN-05-ROOT"><title>BALEEN-05-ROOT · static · z=4.0</title><image x="722" y="0" width="198" height="177" opacity="1" xlink:href="BALEEN-05-ROOT.png"/></g>
 <g id="BALEEN-06-ROOT"><title>BALEEN-06-ROOT · static · z=4.0</title><image x="880" y="0" width="360" height="344" opacity="1" xlink:href="BALEEN-06-ROOT.png"/></g>
-<g id="ROAD"><title>ROAD · static · z=10.0</title><image x="0" y="392" width="1280" height="328" opacity="1" xlink:href="ROAD.png"/></g>
-<g id="DECOR-01"><title>DECOR-01 · static · z=11.0</title><image x="0" y="82" width="146" height="260" opacity="1" xlink:href="DECOR-01.png"/></g>
+<g id="ROAD"><title>ROAD · static · z=10.0</title><image x="0" y="392" width="1280" height="328" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-ROAD.png"/></g>
+<g id="DECOR-01"><title>DECOR-01 · static · z=11.0</title><image x="0" y="82" width="146" height="260" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-DECOR-01.png"/></g>
 <g id="DECOR-02"><title>DECOR-02 · static · z=11.0</title><image x="0" y="406" width="150" height="85" opacity="1" xlink:href="DECOR-02.png"/></g>
 <g id="DECOR-03"><title>DECOR-03 · static · z=11.0</title><image x="222" y="435" width="117" height="49" opacity="1" xlink:href="DECOR-03.png"/></g>
 <g id="DECOR-04"><title>DECOR-04 · static · z=11.0</title><image x="331" y="389" width="185" height="69" opacity="1" xlink:href="DECOR-04.png"/></g>
@@ -80,7 +81,7 @@
 <g id="DECOR-08"><title>DECOR-08 · static · z=11.0</title><image x="1035" y="460" width="181" height="76" opacity="1" xlink:href="DECOR-08.png"/></g>
 <g id="DECOR-09"><title>DECOR-09 · static · z=11.0</title><image x="224" y="496" width="264" height="116" opacity="1" xlink:href="DECOR-09.png"/></g>
 <g id="DECOR-10"><title>DECOR-10 · static · z=11.0</title><image x="572" y="471" width="268" height="127" opacity="1" xlink:href="DECOR-10.png"/></g>
-<g id="DECOR-11"><title>DECOR-11 · static · z=11.0</title><image x="921" y="531" width="295" height="166" opacity="1" xlink:href="DECOR-11.png"/></g>
+<g id="DECOR-11"><title>DECOR-11 · static · z=11.0</title><image x="921" y="531" width="295" height="166" opacity="1" xlink:href="../../xumen-foreground-edges/master/CLEAN-DECOR-11.png"/></g>
 <g id="DECOR-12"><title>DECOR-12 · static · z=11.0</title><image x="645" y="610" width="288" height="58" opacity="1" xlink:href="DECOR-12.png"/></g>
 <g id="PORTAL"><title>PORTAL · static · z=12.0</title><image x="0" y="321" width="130" height="163" opacity="1" xlink:href="PORTAL.png"/></g>
 <g id="BALEEN-LEFT"><title>Blender frame 000; z=4</title><image x="250" y="-16" width="430" height="360" xlink:href="../../baleen-blender/frames/BALEEN-LEFT/000.png"/></g>
@@ -96,6 +97,8 @@
 <g id="VINE-04"><title>VINE-04 · foliage · z=12.0</title><image x="1001" y="567" width="60" height="90" opacity="1" xlink:href="VINE-04.png"/></g>
 <g id="LAMP"><title>LAMP · light · z=13.0</title><image x="37" y="354" width="72" height="96" opacity="1" xlink:href="LAMP.png"/></g>
 <g id="CHARACTER"><title>CHARACTER · static · z=20.0</title><image x="137" y="389" width="86" height="80" opacity="1" xlink:href="CHARACTER.png"/></g>
-<g id="FRONT-01"><title>FRONT-01 · parallax · z=50</title><image x="0" y="0" width="1280" height="720" opacity="1" xlink:href="FRONT-CONTINUOUS.png"/></g>
+<g id="FRONT-01"><title>Padded bottom foreground, z=50</title><image x="-32" y="-32" width="1344" height="784" xlink:href="../../xumen-foreground-edges/master/FRONT-BOTTOM-PAD.png"/></g>
 
+<g id="FRONT-TOP-LEFT"><title>Independent foreground z=51</title><image x="-32" y="-32" width="336" height="336" xlink:href="../../xumen-foreground-edges/master/FRONT-TOP-LEFT.png"/></g>
+<g id="FRONT-BOTTOM-RIGHT"><title>Independent foreground z=51</title><image x="1060" y="394" width="252" height="358" xlink:href="../../xumen-foreground-edges/master/FRONT-BOTTOM-RIGHT.png"/></g>
 </svg>

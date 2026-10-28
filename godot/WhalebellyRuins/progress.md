@@ -77,3 +77,7 @@ R1-01与独立预览共用103个环境元素；48鱼/12帧图集、根部固定�
 ## 2026-10-28 拾潮者连续视频动作 V02
 
 新增`scenes/characters/locomotion_video_preview.tscn`，214帧（IDLE88/Walk78/Run48，含20张光流桥接）。固定Godot4.7.2通过214帧区域、透明角、推进、暂停、循环、切换专项；真实渲染见`evidence/locomotion-v02-video/`。Blender打包2D时序母版、原始243帧及无损归档、帧源清单和交付说明见`../../assets/source/tide-picker-locomotion-v02-video/README.md`。Run复用历史视频；IDLE局部呼吸修正。步态腿身份、脚形及道具漂移仍待修，保持candidate，未替换主关卡，未发布Pages。
+
+## 前景边角独立拆分
+
+左上336×336、右下252×358两片原画RGBA独立接入，底部扩展32px边缘余量；清理10个静态层中的对应像素并局部补绘。主关卡与独立环境共用103个元素。前景定向24项、17项环境和27项主关卡输入流程通过；实际截图、隔离图和录像见evidence/foreground_edges。原图细节、旧底部轮廓沿用，补绘区域存在纹理差异。

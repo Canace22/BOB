@@ -35,7 +35,7 @@
   {
     "id": "ROOF",
     "scene": false,
-    "tex": "ROOF",
+    "tex": "res://assets/foreground_edges/CLEAN-ROOF.png",
     "pos": [
       0,
       0
@@ -46,7 +46,7 @@
   {
     "id": "WALL-L",
     "scene": false,
-    "tex": "WALL-L",
+    "tex": "res://assets/foreground_edges/CLEAN-WALL-L.png",
     "pos": [
       0,
       0
@@ -57,7 +57,7 @@
   {
     "id": "WALL-R",
     "scene": false,
-    "tex": "WALL-R",
+    "tex": "res://assets/foreground_edges/CLEAN-WALL-R.png",
     "pos": [
       1164,
       0
@@ -68,7 +68,7 @@
   {
     "id": "ROAD",
     "scene": false,
-    "tex": "ROAD",
+    "tex": "res://assets/foreground_edges/CLEAN-ROAD.png",
     "pos": [
       0,
       392
@@ -100,7 +100,7 @@
   {
     "id": "BALEEN-01-ROOT",
     "scene": false,
-    "tex": "BALEEN-01-ROOT",
+    "tex": "res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png",
     "pos": [
       90,
       0
@@ -166,7 +166,7 @@
   {
     "id": "DECOR-01",
     "scene": false,
-    "tex": "DECOR-01",
+    "tex": "res://assets/foreground_edges/CLEAN-DECOR-01.png",
     "pos": [
       0,
       82
@@ -276,7 +276,7 @@
   {
     "id": "DECOR-11",
     "scene": false,
-    "tex": "DECOR-11",
+    "tex": "res://assets/foreground_edges/CLEAN-DECOR-11.png",
     "pos": [
       921,
       531
@@ -434,7 +434,7 @@
   {
     "id": "ENV-DEPTH",
     "scene": false,
-    "tex": "res://assets/soft_light/ENV-DEPTH-RESTORED.png",
+    "tex": "res://assets/foreground_edges/CLEAN-ENV-DEPTH.png",
     "pos": [
       20,
       0
@@ -445,7 +445,7 @@
   {
     "id": "ENV-UNDERPAINT",
     "scene": false,
-    "tex": "ENV-UNDERPAINT",
+    "tex": "res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
     "pos": [
       0,
       0
@@ -466,7 +466,7 @@
   {
     "id": "FOREGROUND-BACKING",
     "scene": false,
-    "tex": "FOREGROUND-BACKING",
+    "tex": "res://assets/foreground_edges/CLEAN-FOREGROUND-BACKING.png",
     "pos": [
       0,
       0
@@ -1043,5 +1043,36 @@
     ],
     "z": -31,
     "kind": "blender_frames"
+  },
+  {
+    "id": "FRONT-TOP-LEFT",
+    "pos": [
+      -32,
+      -32
+    ],
+    "z": 51,
+    "scene": true,
+    "kind": "parallax"
+  },
+  {
+    "id": "FRONT-BOTTOM-RIGHT",
+    "pos": [
+      1060,
+      394
+    ],
+    "z": 51,
+    "scene": true,
+    "kind": "parallax"
+  },
+  {
+    "id": "FOREGROUND-CORNER-BACKING",
+    "pos": [
+      0,
+      0
+    ],
+    "z": -1,
+    "scene": false,
+    "tex": "res://assets/foreground_edges/CORNER-BACKING.png",
+    "kind": "static"
   }
 ]
