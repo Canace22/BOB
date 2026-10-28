@@ -93,3 +93,7 @@ IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光
 ### 桥下原画轮廓与新增气泡
 
 当前106个环境ID，56个气泡实例；新增三个独立气泡区域，复用绘画气泡素材。ROAD-UNDERSIDE-RESTORED恢复旧道路蒙版遗漏的桥下枝条，FOREGROUND-BACKING-SOFT调整局部补底边缘。共享环境和R1-01同步；见[来源、修复与重建](source/xumen-underbridge-repair/README.md)。
+
+### 拾潮者 V2.4 Godot 3C/技能试玩
+
+540角色帧与540合成帧、180独立特效帧接入同工程专项Demo；45项回归通过，原动作衔接保持candidate。[来源与验收](source/tide-picker-v24-godot/README.md)。

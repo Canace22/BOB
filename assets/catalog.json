@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 16,
+  "revision": 17,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24787,6 +24787,36 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "Agent技术与实景检查通过，用户审美待确认。完整原画按视频运动烘焙；70帧含时长保持，6秒循环；脚部固定、头盔/双叉/灯具刚性约束。仅替换主角Idle，非逐帧手绘，左向沿用控制器翻转。"
+    },
+    {
+      "id": "tide-picker-v24-godot-3c",
+      "name": "拾潮者 V2.4 · 15动作与3C技能试玩",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "Godot",
+        "15动作",
+        "技能试玩"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "godot/WhalebellyRuins/assets/animations/player/idle/000.png",
+      "width": 711,
+      "height": 489,
+      "frameCount": 540,
+      "fps": 12,
+      "pivot": [
+        305,
+        413
+      ],
+      "source": "assets/source/tide-picker-v24-godot/README.md",
+      "integrationStatus": "demo-integrated",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/tide_demo.tscn",
+      "runtimeFile": "godot/WhalebellyRuins/scenes/Player.tscn",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "45项运行回归及540帧RGBA校验；原素材衔接仍待精修。独立试玩，未替换原七房角色。"
     }
   ]
 }
