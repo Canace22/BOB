@@ -44,3 +44,13 @@
 - 静态姿态、程序位移和特效贴图不登记为正式逐帧动画；没有新增或全面重审原画风格。
 - 实际位图加载通过；未实现缺图程序回退，缺资源应由导入/检查失败暴露。测试未模拟 Web PCK 损坏或浏览器配额用尽。
 - 音频资源/触发无加载错误，未做人工听感验收或性能基准；默认覆盖桌面键盘，未验收新增触屏适配。
+
+### 最终发布与线上验收
+
+- 2026-10-28 16:42（Asia/Shanghai）完成线上验证。玩法源码 `8301ef6`，导出隔离修复源码 `396952165eacd11a5b5074ee4ada42b528fc66fc`；最终 Pages 发布 `1fdb0f3416b0e5880e33586e12b67fa1f7f77b41`，正常推送，无强推。
+- [Pages 部署任务](https://github.com/Canace22/BOB/actions/runs/40657671857)状态 `completed / success`；线上 [`godot/build.json`](https://canace22.github.io/BOB/godot/build.json) 的 `source` 与 `3969521` 一致，`threads=false`。
+- 线上 [Godot 入口](https://canace22.github.io/BOB/godot/) 使用独立 Chrome 上下文、1280×720，真实键盘走通 R1-01 → R1-05、Boss 战、E 领取冲刺、三段沟和首关完成；完成时生命 4/4。地图暂停/继续通过，刷新后回 R1-04 营地，通关标记和冲刺保留。
+- 同源独立上下文中，`whalefall-v52-save` / `whalefall-v2-2d-save` 的旧键哨兵在 Godot 通关及刷新后保留；这是键隔离验证，不是旧档格式迁移。浏览器报告的资源、JS 与引擎错误均为空。最终证据：`game/build/qa/online-final/report.json` 与同目录截图，仅本地保留。
+- 已实际查看线上开局、五房、完成和续档截图；HUD 与场景交互中文显示正常，角色/敌人、位图平台与碰撞的主线路线可达。`git diff 33556de 1fdb0f3 -- . ':(exclude)godot'` 为空，V2 入口 HTTP 200，确认旧 Pages 内容未改动。
+- 首次线上全路通过后，刷新等待 `networkidle` 触发工具默认 30 秒超时；改为等待只读游戏状态就绪并明确 120 秒上限后重跑，最终全路、刷新和旧键检查通过。最终报告为 `passed=true`，不能引用早先失败报告代替本轮结果。
+- 收尾批次只更新计划、验收脚本、Skill 和进度；不改变游戏运行包，无需额外发布。上述“范围与限制”仍然适用。

@@ -25,7 +25,7 @@ todos:
     status: completed
   - id: web-deploy
     content: Web 单线程导出 + tools/deploy-pages.mjs 发布到 /BOB/godot/ 并核实线上
-    status: in_progress
+    status: completed
   - id: docs-skills
     content: 更新 AGENTS.md、README，新增 godot-game-dev Skill，旧 Web Skill 标为历史原型专用
     status: completed
@@ -120,3 +120,9 @@ flowchart LR
 - 在 headless 下运行 `node tools/godot.mjs test`：覆盖存档读写、损坏文件回退到 `.bak`、能力门槛，以及 Hitbox 命中只扣一次血。
 - 实机按键走完 R1-01 到 R1-05：打败 Boss，取得冲刺，越过冲刺沟，退出重进后从营地继续。
 - 在 Web 导出的 `/BOB/godot/` 页面能加载素材和音频，且 V2 旧地址仍可玩。
+
+## 实施记录（2026-10-28）
+
+本计划的工程骨架、五房首关可玩迁移、七房场景/门配置、战斗与存档 UI、Web 发布和文档 Skill 已完成；详情和证据见 [game/progress.md](../../game/progress.md)。旧版本已按仓库迁移收入 `legacy/`，以当前架构文档为路径准据。
+
+固定 Godot 4.7.2；`check` 通过、16 项测试通过，本地与线上五房真实键盘路线及刷新续档通过。线上源码 `3969521`，发布提交 `1fdb0f3`，Pages 部署成功。R1-06 / R1-07 保留后续浮升/挂环门槛，本计划不授予这些后续能力，不将场景迁移计作其可达路线验收完成。

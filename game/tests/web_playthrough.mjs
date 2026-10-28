@@ -13,6 +13,7 @@ const executablePath = existsSync(chromium.executablePath()) ? chromium.executab
 const browser = await chromium.launch({ executablePath, headless: process.env.HEADED !== '1', args: ['--enable-unsafe-swiftshader', '--autoplay-policy=no-user-gesture-required'] });
 const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
 const page = await context.newPage();
+page.setDefaultTimeout(120000);
 const errors = [], seen = [], held = new Set();
 const url = process.env.GAME_URL ?? 'http://127.0.0.1:4187/BOB/godot/';
 page.on('pageerror', error => errors.push(error.message));
@@ -27,8 +28,12 @@ async function key(key, pressed) {
 }
 async function release() { for (const item of [...held]) await key(item, false); }
 try {
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 120000 });
-  await page.waitForFunction(() => typeof window.render_game_to_text === 'function', { timeout: 120000 });
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
+  await page.waitForFunction(() => typeof window.render_game_to_text === 'function', null, { timeout: 120000 });
+  // Same origin, isolated context: Godot must not clear either historical V2 save key.
+  await page.evaluate(() => {
+    for (const key of ['whalefall-v52-save', 'whalefall-v2-2d-save']) localStorage.setItem(key, 'isolated-legacy-save-sentinel');
+  });
   await page.locator('canvas').click();
   await page.waitForTimeout(500);
   await capture('start');
@@ -86,12 +91,13 @@ try {
   assert(completeState.abilities.includes('ability.dash'));
   assert(completeState.flags.includes('boss.r1_shell_crab'));
   await page.waitForTimeout(1200);
-  await page.reload({ waitUntil: 'networkidle' });
-  await page.waitForFunction(() => typeof window.render_game_to_text === 'function');
+  await page.reload({ waitUntil: 'domcontentloaded', timeout: 120000 });
+  await page.waitForFunction(() => typeof window.render_game_to_text === 'function', null, { timeout: 120000 });
   await page.waitForTimeout(500);
   const loaded = await state();
   assert.equal(loaded.room, 'R1-04', 'reload returns to checkpoint');
   assert(loaded.flags.includes('complete.r1') && loaded.abilities.includes('ability.dash'), 'progress survives reload');
+  assert(await page.evaluate(() => ['whalefall-v52-save', 'whalefall-v2-2d-save'].every(key => localStorage.getItem(key) === 'isolated-legacy-save-sentinel')), 'historical V2 save keys remain untouched on the same origin');
   await capture('reload');
   assert.deepEqual(errors, [], 'no failed resources, script errors or browser errors');
   writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: true, url, seen, completeState, loaded, errors }, null, 2));
