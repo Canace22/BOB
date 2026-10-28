@@ -6,6 +6,8 @@
   if (!files || typeof DecompressionStream === 'undefined') return;
   const fetchOriginal = window.fetch.bind(window);
   const base = new URL('.', document.baseURI);
+  const cacheName = base.pathname.includes('/godot-boss/') || new URLSearchParams(location.search).get('prototype') === 'crab'
+    ? 'bob-boss-downloads-v1' : 'bob-web-downloads-v1';
   const paths = new Map(Object.entries(files).map(([name, info]) => [new URL(name, base).href, info]));
   const loaded = new Map();
   const total = Object.values(files).reduce((sum, file) => sum + file.packedBytes, 0);
@@ -22,7 +24,7 @@
     const packed = new URL(info.file, base).href;
     let cache;
     let response;
-    try { cache = await window.caches?.open('bob-web-downloads-v1'); response = await cache?.match(packed); } catch { /* Cache is optional. */ }
+    try { cache = await window.caches?.open(cacheName); response = await cache?.match(packed); } catch { /* Cache is optional. */ }
     if (!response) {
       response = await fetchOriginal(packed, init);
       if (!response.ok) return fetchOriginal(input, init);
@@ -36,7 +38,7 @@
     return new Response(decoded, { headers: { 'Content-Type': info.type, 'Content-Length': String(info.rawBytes) } });
   };
   // This cache is exclusively ours. Keep the current engine and game package only.
-  window.caches?.open('bob-web-downloads-v1').then(async cache => {
+  window.caches?.open(cacheName).then(async cache => {
     const keep = new Set(Object.values(files).map(file => new URL(file.file, base).href));
     for (const request of await cache.keys()) if (!keep.has(request.url)) await cache.delete(request);
   }).catch(() => {});

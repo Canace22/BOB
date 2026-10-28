@@ -97,8 +97,6 @@ func reset_at(at: Vector2) -> void:
 	invulnerable = tuning.invulnerability
 	hurtbox.immune = true
 	health.restore(GameState.hp)
-	actions.change("idle")
-	actions.air_dash = false
-	locomotion.buffered_jump = 0
-	locomotion.grounded_time = 0
+	actions.reset()
+	locomotion.reset()
 	hitbox.deactivate()

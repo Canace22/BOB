@@ -23,11 +23,23 @@ BOB/
 
 架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](legacy/README.md)。
 
+当前设计取舍见[游戏方向](docs/游戏方向.md)：持叉主角的战斗与收集探索、共鸣开路、鱼群指挥及生态图鉴；其中规划内容不代表已实现。
+
 ## 当前内容
 
 Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → 负壳蟹 → 流膜育窝。包含短击连段、重鸣、调息、Boss、交互领取贴流冲、三段跨沟、营地与版本化存档、地图和暂停。舌台可收集碎片并打开持久壳闩短桥。
 
 七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。角色沿用旧版静态姿态加程序反馈；复用素材接入不代表制作了新的逐帧动画。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
+
+## 母蟹 Boss 独立原型
+
+分支 `codex/crab-boss-prototype`。独立试玩入口为 [母蟹训练场](https://canace22.github.io/BOB/godot-boss/)，上线状态以 [进度记录](game/progress.md) 为准；默认主线入口不随原型发布更新。
+
+小主角对抗约五倍身高的搬壳母蟹，包含普攻二段、短跳/长跳、低钳扫/下砸/重步冲撞、半血二扫与立即重试。Enter 开始/重试，Esc 暂停；基准模式无冲刺，可在准备/结果界面切换冲刺对照。主角不能穿过巨蟹实体，低扫跳起躲避，下砸和冲撞提前撤步。训练场不读写主线存档；当前是关键静态姿态原型，不是正式逐帧动画交付。
+
+本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
+
+发布原型用 `node tools/deploy-pages.mjs --prototype`，只更新 `gh-pages` 的 `/godot-boss/`，不替换 `/godot/`、根入口或 V2。原型启动下载使用独立缓存 `bob-boss-downloads-v1`，不清理主线缓存。
 
 ## 快速开始
 

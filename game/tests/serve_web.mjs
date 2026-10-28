@@ -12,4 +12,4 @@ createServer((request, response) => {
   response.setHeader('Content-Type', types[path.extname(file)] ?? 'application/octet-stream');
   response.setHeader('Cache-Control', 'no-store');
   response.end(readFileSync(file));
-}).listen(Number(process.env.PORT ?? 4187), '127.0.0.1', () => console.log('Godot test server: http://127.0.0.1:4187/BOB/godot/'));
+}).listen(Number(process.env.PORT ?? 4187), '127.0.0.1', () => console.log(`Godot test server: http://127.0.0.1:${process.env.PORT ?? 4187}/BOB/godot/`));

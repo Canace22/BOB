@@ -13,3 +13,8 @@ extends Resource
 @export var dash_cooldown: float = 0.8
 @export var heal_duration: float = 1.1
 @export var invulnerability: float = 1.0
+
+@export_group("Prototype controls")
+@export var prototype_controls: bool = false
+@export_range(0.05, 0.25) var action_buffer: float = 0.15
+@export_range(0.1, 1.0) var jump_cut_ratio: float = 0.45

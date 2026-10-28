@@ -1,0 +1,64 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://src/enemies/crab_prototype/crab_prototype.gd" id="boss"]
+[ext_resource type="Script" path="res://src/combat/health.gd" id="health"]
+[ext_resource type="Script" path="res://src/combat/hurtbox.gd" id="hurt"]
+[ext_resource type="Script" path="res://src/combat/hitbox.gd" id="hit"]
+[ext_resource type="Script" path="res://src/enemies/crab_prototype/crab_visual.gd" id="visual"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/idle.png" id="idle"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/sweep_tell.png" id="sweep_tell"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/sweep_active.png" id="sweep_active"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/slam_tell.png" id="slam_tell"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/slam_active.png" id="slam_active"]
+[ext_resource type="Texture2D" path="res://art/enemies/crab_prototype/charge.png" id="charge"]
+
+[sub_resource type="RectangleShape2D" id="body"]
+size = Vector2(300, 240)
+
+[sub_resource type="RectangleShape2D" id="attack"]
+resource_local_to_scene = true
+size = Vector2(230, 45)
+
+[sub_resource type="RectangleShape2D" id="hurtshape"]
+size = Vector2(300, 240)
+
+[node name="CrabPrototype" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("boss")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("body")
+position = Vector2(0, -120)
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("health")
+maximum = 300
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+script = ExtResource("hurt")
+health = NodePath("../Health")
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("hurtshape")
+position = Vector2(0, -120)
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("hit")
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("attack")
+
+[node name="Visual" type="Sprite2D" parent="."]
+script = ExtResource("visual")
+texture = ExtResource("idle")
+centered = false
+offset = Vector2(-400, -704)
+scale = Vector2(0.6, 0.6)
+poses = {"idle": ExtResource("idle"), "sweep_tell": ExtResource("sweep_tell"), "sweep_active": ExtResource("sweep_active"), "slam_tell": ExtResource("slam_tell"), "slam_active": ExtResource("slam_active"), "charge_tell": ExtResource("charge"), "charge_active": ExtResource("charge"), "recover": ExtResource("idle"), "phase": ExtResource("slam_tell"), "dead": ExtResource("idle")}

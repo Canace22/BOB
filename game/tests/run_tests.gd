@@ -14,7 +14,12 @@ func _run() -> void:
 	var passed := 0
 	var failed := 0
 	for path in _test_files():
-		var suite: TestSuite = (load(path) as GDScript).new()
+		var script := load(path) as GDScript
+		if script == null or not script.can_instantiate():
+			printerr("FAIL cannot load test suite: ", path)
+			failed += 1
+			continue
+		var suite: TestSuite = script.new()
 		suite.tree = get_tree()
 		for method in _test_methods(suite):
 			if not filter.is_empty() and not (path + method).contains(filter):

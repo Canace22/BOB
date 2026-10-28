@@ -42,6 +42,7 @@ flowchart LR
 | --- | --- |
 | `src/core/` | `EventBus`（全局信号）、`GameState`（生命、蓄振、能力、标记、营地）、`SaveService`（存档读写与校验）。前两者是 autoload |
 | `src/main/` | 主场景：加载存档、切换房间、放置玩家、死亡重生、暂停 |
+| `src/prototype/` | 独立母蟹训练场、生命周期、HUD 与只读状态；进入前隔离 GameState，退出恢复，不读写主线存档 |
 | `src/player/` | 玩家场景、手感参数 `PlayerTuning`、攻击、动画 |
 | `src/combat/` | `Hitbox`、`Hurtbox`、`Health`、`HitData`，玩家和敌人共用 |
 | `src/enemies/` | `EnemyBase` 状态机，具体敌人只覆盖招式选择和数值 |
@@ -63,6 +64,7 @@ flowchart LR
 - **代码规模**：一个功能一个目录；单个脚本尽量不超过 250 行（`check` 会提示）；全部使用带类型的 GDScript 和 `class_name`。
 - **测试与游戏分离**：游戏代码里没有 QA 分支；测试在 `tests/` 里直接实例化场景并驱动。
 - **浏览器可观察性**：`src/core/web_status.gd` 提供只读 `render_game_to_text()`；不接受状态写入、传送或伤害命令。浏览器驱动在 `tests/web_playthrough.mjs`，通过真实键盘操作。
+- **原型隔离**：`src/main/boot.tscn` 默认加载主线；`?prototype=crab`、独立 `/godot-boss/` 或原生 `--crab-prototype` 进入训练场。训练场复制 `PlayerTuning` 并开启 `prototype_controls`，主线维持原手感。母蟹使用独立 `CrabPrototype/CrabMoves`，不改主线 `EnemyBase` 或奖励。
 - **正式美术**：遵循 [AGENTS.md 的 2D 素材规则](../AGENTS.md#正式美术必须使用2d素材)。缺图时先补素材，再在 `art/manifest.json` 登记同步。
 
 ## 存档
@@ -100,6 +102,8 @@ Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` �
 `tools/godot.mjs export-web` 在 Godot 导出后执行 `tools/prepare-web.mjs`：为引擎和资源包生成带内容哈希的 gzip 文件，并把 `game/web/preload.js` 插入导出页。浏览器原生流式解压后仍以 `application/wasm` 提供给流式编译，加载进度显示实际压缩字节。`downloads.json` 记录原始与下载大小。
 
 `bob-web-downloads-v1` CacheStorage 仅缓存这两个静态启动文件；只清理这个缓存里过期的哈希，不触碰存档或其他版本。缓存不可用时走网络；没有 `DecompressionStream` 时使用保留的原始文件。此机制不依赖 Pages 设置自定义响应头。
+
+母蟹原型通过 `node tools/deploy-pages.mjs --prototype` 仅发布到 `/godot-boss/`，主线及根入口不变；使用独立 `bob-boss-downloads-v1` 缓存。发布后同样核对其 `build.json`、部署任务和真实键盘路线。不要把主线自动通关报告当作训练场已通过。
 
 场景图保持原始分辨率和坐标，仅在 `.import` 设置有损 WebP 质量 0.8，原位图不改。中文字体使用工程文本生成的静态子集，见 [制作说明](../assets/source/noto-sans-sc/README.md)。`game/tests/web_startup.mjs` 独立测冷启动和同一上下文刷新，不能把本地服务耗时当线上改善。
 

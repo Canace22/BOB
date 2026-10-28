@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 11,
-  "updatedAt": "2026-10-27T08:21:01.591Z",
+  "revision": 12,
+  "updatedAt": "2026-10-28T10:05:56.199175+00:00",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -22948,6 +22948,432 @@
         "sourceAdaptation": "等比缩放，顶部 bbox 中心挂接；无新增碰撞",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp",
         "evidence": "mvp-v2/progress.md"
+      }
+    },
+    {
+      "id": "mother-crab-prototype-sweep-tell",
+      "name": "搬壳母蟹 · 低扫蓄力",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "Boss原型",
+        "母蟹",
+        "关键静态姿态"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
+      "file": "assets/runtime/sprites/crab-boss-prototype/sweep_tell.png",
+      "width": 1024,
+      "height": 768,
+      "bbox": [
+        35,
+        209,
+        777,
+        708
+      ],
+      "pivot": [
+        400,
+        704
+      ],
+      "sha256": "0fd25ce61d2bdf427294be5f68895c94b7ff7f85b2aeed401f566d7bd52ac8ba",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          20,
+          204,
+          780,
+          711
+        ],
+        "8": [
+          35,
+          209,
+          777,
+          708
+        ],
+        "32": [
+          35,
+          209,
+          777,
+          708
+        ]
+      },
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-boss-prototype",
+        "method": "内置 imagegen 参考重绘；等比缩放与透明根对齐派生",
+        "references": [
+          "assets/source/crab-boss-prototype/references/shell-mother-crab.png"
+        ],
+        "prompts": [
+          "assets/source/crab-boss-prototype/prompts/sweep_tell.txt"
+        ],
+        "originalId": "sweep_tell",
+        "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
+      },
+      "qa": {
+        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
+        "passed": false,
+        "limitations": [
+          "关键姿态缺少帧间过渡，不是正式逐帧动画",
+          "用户未确认美术；实机碰撞和读招由原型验收"
+        ],
+        "report": "assets/source/crab-boss-prototype/acceptance.md"
+      },
+      "integrationStatus": "not-integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-10-28",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md",
+        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "runtimeFile": "game/art/enemies/crab_prototype/sweep_tell.png"
+      }
+    },
+    {
+      "id": "mother-crab-prototype-sweep-active",
+      "name": "搬壳母蟹 · 低扫挥出",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "Boss原型",
+        "母蟹",
+        "关键静态姿态"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
+      "file": "assets/runtime/sprites/crab-boss-prototype/sweep_active.png",
+      "width": 1024,
+      "height": 768,
+      "bbox": [
+        79,
+        210,
+        841,
+        706
+      ],
+      "pivot": [
+        400,
+        704
+      ],
+      "sha256": "4cf8bf31badb18f04df84c56cb5bf8f18edba0980f100c22ec14abc697afef3d",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          75,
+          208,
+          843,
+          708
+        ],
+        "8": [
+          79,
+          210,
+          841,
+          706
+        ],
+        "32": [
+          79,
+          210,
+          841,
+          706
+        ]
+      },
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-boss-prototype",
+        "method": "内置 imagegen 参考重绘；等比缩放与透明根对齐派生",
+        "references": [
+          "assets/source/crab-boss-prototype/references/shell-mother-crab.png"
+        ],
+        "prompts": [
+          "assets/source/crab-boss-prototype/prompts/sweep_active.txt",
+          "assets/source/crab-boss-prototype/prompts/sweep-active-correction.txt"
+        ],
+        "originalId": "sweep_active",
+        "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
+      },
+      "qa": {
+        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
+        "passed": false,
+        "limitations": [
+          "关键姿态缺少帧间过渡，不是正式逐帧动画",
+          "用户未确认美术；实机碰撞和读招由原型验收"
+        ],
+        "report": "assets/source/crab-boss-prototype/acceptance.md"
+      },
+      "integrationStatus": "not-integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-10-28",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md",
+        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "runtimeFile": "game/art/enemies/crab_prototype/sweep_active.png"
+      }
+    },
+    {
+      "id": "mother-crab-prototype-slam-tell",
+      "name": "搬壳母蟹 · 双钳抬高",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "Boss原型",
+        "母蟹",
+        "关键静态姿态"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
+      "file": "assets/runtime/sprites/crab-boss-prototype/slam_tell.png",
+      "width": 1024,
+      "height": 768,
+      "bbox": [
+        80,
+        209,
+        752,
+        708
+      ],
+      "pivot": [
+        400,
+        704
+      ],
+      "sha256": "ac8af7aeb4d31079eef17fdc047bb1a1000f372c30f5e698f5194c2f7a453969",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          28,
+          206,
+          754,
+          710
+        ],
+        "8": [
+          80,
+          209,
+          752,
+          708
+        ],
+        "32": [
+          81,
+          209,
+          752,
+          707
+        ]
+      },
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-boss-prototype",
+        "method": "内置 imagegen 参考重绘；等比缩放与透明根对齐派生",
+        "references": [
+          "assets/source/crab-boss-prototype/references/shell-mother-crab.png"
+        ],
+        "prompts": [
+          "assets/source/crab-boss-prototype/prompts/slam_tell.txt"
+        ],
+        "originalId": "slam_tell",
+        "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
+      },
+      "qa": {
+        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
+        "passed": false,
+        "limitations": [
+          "关键姿态缺少帧间过渡，不是正式逐帧动画",
+          "用户未确认美术；实机碰撞和读招由原型验收"
+        ],
+        "report": "assets/source/crab-boss-prototype/acceptance.md"
+      },
+      "integrationStatus": "not-integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-10-28",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md",
+        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "runtimeFile": "game/art/enemies/crab_prototype/slam_tell.png"
+      }
+    },
+    {
+      "id": "mother-crab-prototype-slam-active",
+      "name": "搬壳母蟹 · 双钳下砸",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "Boss原型",
+        "母蟹",
+        "关键静态姿态"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
+      "file": "assets/runtime/sprites/crab-boss-prototype/slam_active.png",
+      "width": 1024,
+      "height": 768,
+      "bbox": [
+        17,
+        212,
+        758,
+        703
+      ],
+      "pivot": [
+        400,
+        704
+      ],
+      "sha256": "27cac0798f6f8bdb2e0a018c0ee51b4b7f00d40bba84926c4956dd21d539cf65",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          15,
+          210,
+          760,
+          706
+        ],
+        "8": [
+          17,
+          212,
+          758,
+          703
+        ],
+        "32": [
+          17,
+          212,
+          758,
+          703
+        ]
+      },
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-boss-prototype",
+        "method": "内置 imagegen 参考重绘；等比缩放与透明根对齐派生",
+        "references": [
+          "assets/source/crab-boss-prototype/references/shell-mother-crab.png"
+        ],
+        "prompts": [
+          "assets/source/crab-boss-prototype/prompts/slam_active.txt"
+        ],
+        "originalId": "slam_active",
+        "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
+      },
+      "qa": {
+        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
+        "passed": false,
+        "limitations": [
+          "关键姿态缺少帧间过渡，不是正式逐帧动画",
+          "用户未确认美术；实机碰撞和读招由原型验收"
+        ],
+        "report": "assets/source/crab-boss-prototype/acceptance.md"
+      },
+      "integrationStatus": "not-integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-10-28",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md",
+        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "runtimeFile": "game/art/enemies/crab_prototype/slam_active.png"
+      }
+    },
+    {
+      "id": "mother-crab-prototype-charge",
+      "name": "搬壳母蟹 · 收钳横冲",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "Boss原型",
+        "母蟹",
+        "关键静态姿态"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "notes": "用户选定巨大搬壳母蟹身份；关键静态姿态，非逐帧动画；实机验收见 game/progress.md。",
+      "file": "assets/runtime/sprites/crab-boss-prototype/charge.png",
+      "width": 1024,
+      "height": 768,
+      "bbox": [
+        27,
+        211,
+        782,
+        707
+      ],
+      "pivot": [
+        400,
+        704
+      ],
+      "sha256": "7edf118f4bed20c0eb3ed3a5193c7ca201ea90de06f9dbc8dead3bb9fed393cf",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          25,
+          209,
+          788,
+          709
+        ],
+        "8": [
+          27,
+          211,
+          782,
+          707
+        ],
+        "32": [
+          27,
+          211,
+          781,
+          707
+        ]
+      },
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-boss-prototype",
+        "method": "内置 imagegen 参考重绘；等比缩放与透明根对齐派生",
+        "references": [
+          "assets/source/crab-boss-prototype/references/shell-mother-crab.png"
+        ],
+        "prompts": [
+          "assets/source/crab-boss-prototype/prompts/charge.txt"
+        ],
+        "originalId": "charge",
+        "rights": "用户指定项目既有素材用于 BOB；无新增独立第三方授权声明"
+      },
+      "qa": {
+        "scope": "静态透明边缘、统一比例和深浅背景合成；游戏实机待本轮记录确认",
+        "passed": false,
+        "limitations": [
+          "关键姿态缺少帧间过渡，不是正式逐帧动画",
+          "用户未确认美术；实机碰撞和读招由原型验收"
+        ],
+        "report": "assets/source/crab-boss-prototype/acceptance.md"
+      },
+      "integrationStatus": "not-integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-10-28",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md",
+        "scope": "已配置原型读取；实际导入与实机验收以本轮发布记录为准",
+        "runtimeFile": "game/art/enemies/crab_prototype/charge.png"
       }
     }
   ]

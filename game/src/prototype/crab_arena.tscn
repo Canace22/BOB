@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/prototype/crab_arena.gd" id="main"]
+[ext_resource type="PackedScene" path="res://content/rooms/prototype/crab_scenery.tscn" id="scenery"]
+[ext_resource type="PackedScene" path="res://src/player/player.tscn" id="player"]
+[ext_resource type="PackedScene" path="res://src/enemies/crab_prototype/crab_prototype.tscn" id="boss"]
+[ext_resource type="Script" path="res://src/prototype/arena_ui.gd" id="ui"]
+[ext_resource type="Script" path="res://src/prototype/arena_status.gd" id="status"]
+[ext_resource type="Script" path="res://src/main/audio_service.gd" id="audio"]
+[ext_resource type="Texture2D" path="res://art/props/arena_curtain_closed.png" id="curtain"]
+
+[node name="CrabArena" type="Node2D"]
+process_mode = 3
+script = ExtResource("main")
+
+[node name="World" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="Scenery" parent="World" instance=ExtResource("scenery")]
+
+[node name="LeftBoundary" type="Sprite2D" parent="World"]
+texture = ExtResource("curtain")
+position = Vector2(725, 800)
+scale = Vector2(0.6, 0.6)
+
+[node name="RightBoundary" type="Sprite2D" parent="World"]
+texture = ExtResource("curtain")
+position = Vector2(1895, 800)
+scale = Vector2(0.6, 0.6)
+
+[node name="Player" parent="World" instance=ExtResource("player")]
+position = Vector2(920, 893)
+z_index = 3
+
+[node name="Boss" parent="World" instance=ExtResource("boss")]
+position = Vector2(1520, 893)
+z_index = 2
+
+[node name="Camera" type="Camera2D" parent="World"]
+position = Vector2(1310, 650)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("ui")
+
+[node name="Status" type="Node" parent="."]
+script = ExtResource("status")
+
+[node name="Audio" type="Node" parent="World"]
+script = ExtResource("audio")
+
+[node name="Voice0" type="AudioStreamPlayer" parent="World/Audio"]
+volume_db = -12.0
+[node name="Voice1" type="AudioStreamPlayer" parent="World/Audio"]
+volume_db = -12.0
+[node name="Voice2" type="AudioStreamPlayer" parent="World/Audio"]
+volume_db = -12.0
+[node name="Voice3" type="AudioStreamPlayer" parent="World/Audio"]
+volume_db = -12.0
