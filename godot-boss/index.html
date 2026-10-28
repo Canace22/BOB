@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>鲸落万物生</title>
+		<style>
+html, body, #canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	touch-action: none;
+}
+
+#canvas {
+	display: block;
+}
+
+#canvas:focus {
+	outline: none;
+}
+
+#status, #status-splash, #status-progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+#status, #status-splash {
+	top: 0;
+	bottom: 0;
+}
+
+#status {
+	background-color: #242424;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
+
+#status-splash {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+}
+
+#status-splash.show-image--false {
+	display: none;
+}
+
+#status-splash.fullsize--true {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+#status-splash.use-filter--false {
+	image-rendering: pixelated;
+}
+
+#status-progress, #status-notice {
+	display: none;
+}
+
+#status-progress {
+	bottom: 10%;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#status-notice {
+	background-color: #5b3943;
+	border-radius: 0.5rem;
+	border: 1px solid #9b3943;
+	color: #e0e0e0;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	line-height: 1.3;
+	margin: 0 2rem;
+	overflow: hidden;
+	padding: 1rem;
+	text-align: center;
+	z-index: 1;
+}
+		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+	</head>
+	<body>
+		<canvas id="canvas">
+			Your browser does not support the canvas tag.
+		</canvas>
+
+		<noscript>
+			Your browser does not support JavaScript.
+		</noscript>
+
+		<div id="status">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
+			<progress id="status-progress"></progress>
+<div id="status-detail" role="status" style="position:absolute;bottom:calc(10% + 24px);width:100%;text-align:center;color:#ddd;font:16px sans-serif">正在准备游戏…</div>
+			<div id="status-notice"></div>
+		</div>
+
+		<script>window.BOB_WEB_FILES = {"index.wasm":{"file":"wasm.9ed85643181ce4cb.gz","packedBytes":10153810,"rawBytes":39514754,"type":"application/wasm"},"index.pck":{"file":"pck.4e3b05c995353124.gz","packedBytes":7922784,"rawBytes":8066272,"type":"application/octet-stream"}};
+/* Compressed, content-addressed downloads for hosts without Content-Encoding support.
+ * The manifest is inserted by tools/prepare-web.mjs. Only Godot's two boot files match.
+ */
+(() => {
+  const files = window.BOB_WEB_FILES;
+  if (!files || typeof DecompressionStream === 'undefined') return;
+  const fetchOriginal = window.fetch.bind(window);
+  const base = new URL('.', document.baseURI);
+  const cacheName = base.pathname.includes('/godot-boss/') || new URLSearchParams(location.search).get('prototype') === 'crab'
+    ? 'bob-boss-downloads-v1' : 'bob-web-downloads-v1';
+  const paths = new Map(Object.entries(files).map(([name, info]) => [new URL(name, base).href, info]));
+  const loaded = new Map();
+  const total = Object.values(files).reduce((sum, file) => sum + file.packedBytes, 0);
+  const report = (key, bytes) => {
+    loaded.set(key, bytes);
+    const current = [...loaded.values()].reduce((a, b) => a + b, 0);
+    const label = document.getElementById('status-detail');
+    if (label) label.textContent = current >= total ? '下载完成，正在启动游戏…' : `正在下载游戏 · ${Math.floor(current / total * 100)}% · ${(current / 1048576).toFixed(1)} / ${(total / 1048576).toFixed(1)} MB`;
+  };
+  window.fetch = async (input, init) => {
+    const requested = new URL(input instanceof Request ? input.url : String(input), base);
+    const info = paths.get(requested.href);
+    if (!info || (init?.method && init.method !== 'GET')) return fetchOriginal(input, init);
+    const packed = new URL(info.file, base).href;
+    let cache;
+    let response;
+    try { cache = await window.caches?.open(cacheName); response = await cache?.match(packed); } catch { /* Cache is optional. */ }
+    if (!response) {
+      response = await fetchOriginal(packed, init);
+      if (!response.ok) return fetchOriginal(input, init);
+      if (cache) cache.put(packed, response.clone()).catch(() => {});
+    }
+    let count = 0;
+    const stream = response.body.pipeThrough(new TransformStream({
+      transform(chunk, controller) { count += chunk.byteLength; report(packed, count); controller.enqueue(chunk); },
+    }));
+    const decoded = response.headers.get('content-encoding')?.includes('gzip') ? stream : stream.pipeThrough(new DecompressionStream('gzip'));
+    return new Response(decoded, { headers: { 'Content-Type': info.type, 'Content-Length': String(info.rawBytes) } });
+  };
+  // This cache is exclusively ours. Keep the current engine and game package only.
+  window.caches?.open(cacheName).then(async cache => {
+    const keep = new Set(Object.values(files).map(file => new URL(file.file, base).href));
+    for (const request of await cache.keys()) if (!keep.has(request.url)) await cache.delete(request);
+  }).catch(() => {});
+})();
+</script>
+<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":8066272,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_THREADS_ENABLED = false;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const statusOverlay = document.getElementById('status');
+	const statusProgress = document.getElementById('status-progress');
+	const statusNotice = document.getElementById('status-notice');
+
+	let initializing = true;
+	let statusMode = '';
+
+	function setStatusMode(mode) {
+		if (statusMode === mode || !initializing) {
+			return;
+		}
+		if (mode === 'hidden') {
+			statusOverlay.remove();
+			initializing = false;
+			return;
+		}
+		statusOverlay.style.visibility = 'visible';
+		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
+		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+		statusMode = mode;
+	}
+
+	function setStatusNotice(text) {
+		while (statusNotice.lastChild) {
+			statusNotice.removeChild(statusNotice.lastChild);
+		}
+		const lines = text.split('\n');
+		lines.forEach((line) => {
+			statusNotice.appendChild(document.createTextNode(line));
+			statusNotice.appendChild(document.createElement('br'));
+		});
+	}
+
+	function displayFailureNotice(err) {
+		console.error(err);
+		if (err instanceof Error) {
+			setStatusNotice(err.message);
+		} else if (typeof err === 'string') {
+			setStatusNotice(err);
+		} else {
+			setStatusNotice('An unknown error occurred.');
+		}
+		setStatusMode('notice');
+		initializing = false;
+	}
+
+	const missing = Engine.getMissingFeatures({
+		threads: GODOT_THREADS_ENABLED,
+	});
+
+	if (missing.length !== 0) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+			let serviceWorkerRegistrationPromise;
+			try {
+				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
+			} catch (err) {
+				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
+			}
+			// There's a chance that installing the service worker would fix the issue
+			Promise.race([
+				serviceWorkerRegistrationPromise.then((registration) => {
+					if (registration != null) {
+						return Promise.reject(new Error('Service worker already exists.'));
+					}
+					return registration;
+				}).then(() => engine.installServiceWorker()),
+				// For some reason, `getRegistration()` can stall
+				new Promise((resolve) => {
+					setTimeout(() => resolve(), 2000);
+				}),
+			]).then(() => {
+				// Reload if there was no error.
+				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
+			});
+		} else {
+			// Display the message as usual
+			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			displayFailureNotice(missingMsg + missing.join('\n'));
+		}
+	} else {
+		setStatusMode('progress');
+		engine.startGame({
+			'onProgress': function (current, total) {
+				if (current > 0 && total > 0) {
+					statusProgress.value = current;
+					statusProgress.max = total;
+				} else {
+					statusProgress.removeAttribute('value');
+					statusProgress.removeAttribute('max');
+				}
+			},
+		}).then(() => {
+			setStatusMode('hidden');
+		}, displayFailureNotice);
+	}
+}());
+		</script>
+	</body>
+</html>
+
