@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 14,
+  "revision": 15,
   "updatedAt": "2026-10-28",
   "project": "BOB",
   "atlas": {
@@ -24645,6 +24645,111 @@
       "source": "assets/source/tide-picker-locomotion-v01/README.md",
       "integrationStatus": "preview-only",
       "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_preview.tscn",
+      "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-locomotion-v02-video-idle",
+      "name": "拾潮者 · IDLE 视频动作评审稿",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "视频选帧",
+        "Blender",
+        "待精修"
+      ],
+      "status": "candidate",
+      "notes": "连续视频选帧与短光流桥接；脚形、披风、道具一致性待修。IDLE另有局部呼吸修正；Run复用历史视频。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v02-video/idle-atlas.png",
+      "width": 4096,
+      "height": 5632,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 88,
+      "nativeSelectedFrames": 80,
+      "derivedBridgeFrames": 8,
+      "fps": 24,
+      "pivot": [
+        256,
+        458
+      ],
+      "sha256": "2711f7b00b36578d5391b5a228ffdd54679c66c090f560aa4e7081a4d06214db",
+      "source": "assets/source/tide-picker-locomotion-v02-video/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_video_preview.tscn",
+      "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-locomotion-v02-video-walk",
+      "name": "拾潮者 · WALK 视频动作评审稿",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "视频选帧",
+        "Blender",
+        "待精修"
+      ],
+      "status": "candidate",
+      "notes": "连续视频选帧与短光流桥接；脚形、披风、道具一致性待修。IDLE另有局部呼吸修正；Run复用历史视频。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v02-video/walk-atlas.png",
+      "width": 4096,
+      "height": 5120,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 78,
+      "nativeSelectedFrames": 72,
+      "derivedBridgeFrames": 6,
+      "fps": 48,
+      "pivot": [
+        256,
+        458
+      ],
+      "sha256": "c931e3e072a8721cfbefc73f8449ff91f5d14a14545a3698bf9149408a5b1288",
+      "source": "assets/source/tide-picker-locomotion-v02-video/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_video_preview.tscn",
+      "userArtApproval": false
+    },
+    {
+      "id": "tide-picker-locomotion-v02-video-run",
+      "name": "拾潮者 · RUN 视频动作评审稿",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "视频选帧",
+        "Blender",
+        "待精修"
+      ],
+      "status": "candidate",
+      "notes": "连续视频选帧与短光流桥接；脚形、披风、道具一致性待修。IDLE另有局部呼吸修正；Run复用历史视频。",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-locomotion-v02-video/run-atlas.png",
+      "width": 4096,
+      "height": 3072,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 48,
+      "nativeSelectedFrames": 42,
+      "derivedBridgeFrames": 6,
+      "fps": 48,
+      "pivot": [
+        256,
+        458
+      ],
+      "sha256": "892b2c8bc8a8a1c8fe9ba2026f5e0cf1ca7a301958fb83ec54c90484ab7eb4af",
+      "source": "assets/source/tide-picker-locomotion-v02-video/README.md",
+      "integrationStatus": "preview-only",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/characters/locomotion_video_preview.tscn",
       "userArtApproval": false
     }
   ]

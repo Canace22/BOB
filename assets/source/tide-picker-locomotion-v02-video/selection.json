@@ -1,0 +1,26 @@
+{
+  "idle": {
+    "source": "idle_r1",
+    "start": 0,
+    "end_exclusive": 80,
+    "bridge_frames": 8,
+    "fps": 24,
+    "note": "Stable native video with controlled localized breathing correction"
+  },
+  "walk": {
+    "source": "walk_r1",
+    "start": 8,
+    "end_exclusive": 80,
+    "bridge_frames": 6,
+    "fps": 48,
+    "note": "Selected r1: continuous stride; r2 rejected because legs stay extended"
+  },
+  "run": {
+    "source": "run_reused",
+    "start": 14,
+    "end_exclusive": 56,
+    "bridge_frames": 6,
+    "fps": 48,
+    "note": "Reuses historical run_v2; original preview was 16fps; retimed here"
+  }
+}

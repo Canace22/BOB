@@ -1,0 +1,1368 @@
+{
+  "asset_id": "tide-picker-locomotion-v02-video",
+  "status": "review_candidate",
+  "canvas": [
+    512,
+    512
+  ],
+  "pivot": [
+    256,
+    458
+  ],
+  "main_game_replaced": false,
+  "animations": {
+    "idle": {
+      "source": "idle_r1",
+      "start": 0,
+      "end_exclusive": 80,
+      "bridge_frames": 8,
+      "fps": 24,
+      "note": "Stable native video with controlled localized breathing correction",
+      "frame_count": 88,
+      "native_frames": 80,
+      "loop": true,
+      "duration_seconds": 3.6666666666666665,
+      "atlas": "idle-atlas.png",
+      "columns": 8,
+      "frames": [
+        {
+          "file": "idle/0000.png",
+          "kind": "native_video",
+          "source_index": 0,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0001.png",
+          "kind": "native_video",
+          "source_index": 1,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0002.png",
+          "kind": "native_video",
+          "source_index": 2,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0003.png",
+          "kind": "native_video",
+          "source_index": 3,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0004.png",
+          "kind": "native_video",
+          "source_index": 4,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0005.png",
+          "kind": "native_video",
+          "source_index": 5,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0006.png",
+          "kind": "native_video",
+          "source_index": 6,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0007.png",
+          "kind": "native_video",
+          "source_index": 7,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0008.png",
+          "kind": "native_video",
+          "source_index": 8,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0009.png",
+          "kind": "native_video",
+          "source_index": 9,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0010.png",
+          "kind": "native_video",
+          "source_index": 10,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0011.png",
+          "kind": "native_video",
+          "source_index": 11,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0012.png",
+          "kind": "native_video",
+          "source_index": 12,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0013.png",
+          "kind": "native_video",
+          "source_index": 13,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0014.png",
+          "kind": "native_video",
+          "source_index": 14,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0015.png",
+          "kind": "native_video",
+          "source_index": 15,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0016.png",
+          "kind": "native_video",
+          "source_index": 16,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0017.png",
+          "kind": "native_video",
+          "source_index": 17,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0018.png",
+          "kind": "native_video",
+          "source_index": 18,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0019.png",
+          "kind": "native_video",
+          "source_index": 19,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0020.png",
+          "kind": "native_video",
+          "source_index": 20,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0021.png",
+          "kind": "native_video",
+          "source_index": 21,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0022.png",
+          "kind": "native_video",
+          "source_index": 22,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0023.png",
+          "kind": "native_video",
+          "source_index": 23,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0024.png",
+          "kind": "native_video",
+          "source_index": 24,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0025.png",
+          "kind": "native_video",
+          "source_index": 25,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0026.png",
+          "kind": "native_video",
+          "source_index": 26,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0027.png",
+          "kind": "native_video",
+          "source_index": 27,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0028.png",
+          "kind": "native_video",
+          "source_index": 28,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0029.png",
+          "kind": "native_video",
+          "source_index": 29,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0030.png",
+          "kind": "native_video",
+          "source_index": 30,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0031.png",
+          "kind": "native_video",
+          "source_index": 31,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0032.png",
+          "kind": "native_video",
+          "source_index": 32,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0033.png",
+          "kind": "native_video",
+          "source_index": 33,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0034.png",
+          "kind": "native_video",
+          "source_index": 34,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0035.png",
+          "kind": "native_video",
+          "source_index": 35,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0036.png",
+          "kind": "native_video",
+          "source_index": 36,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0037.png",
+          "kind": "native_video",
+          "source_index": 37,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0038.png",
+          "kind": "native_video",
+          "source_index": 38,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0039.png",
+          "kind": "native_video",
+          "source_index": 39,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0040.png",
+          "kind": "native_video",
+          "source_index": 40,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0041.png",
+          "kind": "native_video",
+          "source_index": 41,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0042.png",
+          "kind": "native_video",
+          "source_index": 42,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0043.png",
+          "kind": "native_video",
+          "source_index": 43,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0044.png",
+          "kind": "native_video",
+          "source_index": 44,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0045.png",
+          "kind": "native_video",
+          "source_index": 45,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0046.png",
+          "kind": "native_video",
+          "source_index": 46,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0047.png",
+          "kind": "native_video",
+          "source_index": 47,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0048.png",
+          "kind": "native_video",
+          "source_index": 48,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0049.png",
+          "kind": "native_video",
+          "source_index": 49,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0050.png",
+          "kind": "native_video",
+          "source_index": 50,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0051.png",
+          "kind": "native_video",
+          "source_index": 51,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0052.png",
+          "kind": "native_video",
+          "source_index": 52,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0053.png",
+          "kind": "native_video",
+          "source_index": 53,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0054.png",
+          "kind": "native_video",
+          "source_index": 54,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0055.png",
+          "kind": "native_video",
+          "source_index": 55,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0056.png",
+          "kind": "native_video",
+          "source_index": 56,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0057.png",
+          "kind": "native_video",
+          "source_index": 57,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0058.png",
+          "kind": "native_video",
+          "source_index": 58,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0059.png",
+          "kind": "native_video",
+          "source_index": 59,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0060.png",
+          "kind": "native_video",
+          "source_index": 60,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0061.png",
+          "kind": "native_video",
+          "source_index": 61,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0062.png",
+          "kind": "native_video",
+          "source_index": 62,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0063.png",
+          "kind": "native_video",
+          "source_index": 63,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0064.png",
+          "kind": "native_video",
+          "source_index": 64,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0065.png",
+          "kind": "native_video",
+          "source_index": 65,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0066.png",
+          "kind": "native_video",
+          "source_index": 66,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0067.png",
+          "kind": "native_video",
+          "source_index": 67,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0068.png",
+          "kind": "native_video",
+          "source_index": 68,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0069.png",
+          "kind": "native_video",
+          "source_index": 69,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0070.png",
+          "kind": "native_video",
+          "source_index": 70,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0071.png",
+          "kind": "native_video",
+          "source_index": 71,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0072.png",
+          "kind": "native_video",
+          "source_index": 72,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0073.png",
+          "kind": "native_video",
+          "source_index": 73,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0074.png",
+          "kind": "native_video",
+          "source_index": 74,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0075.png",
+          "kind": "native_video",
+          "source_index": 75,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0076.png",
+          "kind": "native_video",
+          "source_index": 76,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0077.png",
+          "kind": "native_video",
+          "source_index": 77,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0078.png",
+          "kind": "native_video",
+          "source_index": 78,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0079.png",
+          "kind": "native_video",
+          "source_index": 79,
+          "postprocess": "localized breathing warp; 7px rigid helmet lift, fixed feet"
+        },
+        {
+          "file": "idle/0080.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0081.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0082.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0083.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0084.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0085.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0086.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "idle/0087.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        }
+      ],
+      "unique_pixel_hashes": 88,
+      "sequence_transform": {
+        "scale": 1,
+        "source_ground": 630,
+        "target_ground": 630,
+        "canvas_before_export": 704
+      }
+    },
+    "walk": {
+      "source": "walk_r1",
+      "start": 8,
+      "end_exclusive": 80,
+      "bridge_frames": 6,
+      "fps": 48,
+      "note": "Selected r1: continuous stride; r2 rejected because legs stay extended",
+      "frame_count": 78,
+      "native_frames": 72,
+      "loop": true,
+      "duration_seconds": 1.625,
+      "atlas": "walk-atlas.png",
+      "columns": 8,
+      "frames": [
+        {
+          "file": "walk/0000.png",
+          "kind": "native_video",
+          "source_index": 8,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0001.png",
+          "kind": "native_video",
+          "source_index": 9,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0002.png",
+          "kind": "native_video",
+          "source_index": 10,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0003.png",
+          "kind": "native_video",
+          "source_index": 11,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0004.png",
+          "kind": "native_video",
+          "source_index": 12,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0005.png",
+          "kind": "native_video",
+          "source_index": 13,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0006.png",
+          "kind": "native_video",
+          "source_index": 14,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0007.png",
+          "kind": "native_video",
+          "source_index": 15,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0008.png",
+          "kind": "native_video",
+          "source_index": 16,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0009.png",
+          "kind": "native_video",
+          "source_index": 17,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0010.png",
+          "kind": "native_video",
+          "source_index": 18,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0011.png",
+          "kind": "native_video",
+          "source_index": 19,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0012.png",
+          "kind": "native_video",
+          "source_index": 20,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0013.png",
+          "kind": "native_video",
+          "source_index": 21,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0014.png",
+          "kind": "native_video",
+          "source_index": 22,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0015.png",
+          "kind": "native_video",
+          "source_index": 23,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0016.png",
+          "kind": "native_video",
+          "source_index": 24,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0017.png",
+          "kind": "native_video",
+          "source_index": 25,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0018.png",
+          "kind": "native_video",
+          "source_index": 26,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0019.png",
+          "kind": "native_video",
+          "source_index": 27,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0020.png",
+          "kind": "native_video",
+          "source_index": 28,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0021.png",
+          "kind": "native_video",
+          "source_index": 29,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0022.png",
+          "kind": "native_video",
+          "source_index": 30,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0023.png",
+          "kind": "native_video",
+          "source_index": 31,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0024.png",
+          "kind": "native_video",
+          "source_index": 32,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0025.png",
+          "kind": "native_video",
+          "source_index": 33,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0026.png",
+          "kind": "native_video",
+          "source_index": 34,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0027.png",
+          "kind": "native_video",
+          "source_index": 35,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0028.png",
+          "kind": "native_video",
+          "source_index": 36,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0029.png",
+          "kind": "native_video",
+          "source_index": 37,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0030.png",
+          "kind": "native_video",
+          "source_index": 38,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0031.png",
+          "kind": "native_video",
+          "source_index": 39,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0032.png",
+          "kind": "native_video",
+          "source_index": 40,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0033.png",
+          "kind": "native_video",
+          "source_index": 41,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0034.png",
+          "kind": "native_video",
+          "source_index": 42,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0035.png",
+          "kind": "native_video",
+          "source_index": 43,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0036.png",
+          "kind": "native_video",
+          "source_index": 44,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0037.png",
+          "kind": "native_video",
+          "source_index": 45,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0038.png",
+          "kind": "native_video",
+          "source_index": 46,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0039.png",
+          "kind": "native_video",
+          "source_index": 47,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0040.png",
+          "kind": "native_video",
+          "source_index": 48,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0041.png",
+          "kind": "native_video",
+          "source_index": 49,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0042.png",
+          "kind": "native_video",
+          "source_index": 50,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0043.png",
+          "kind": "native_video",
+          "source_index": 51,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0044.png",
+          "kind": "native_video",
+          "source_index": 52,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0045.png",
+          "kind": "native_video",
+          "source_index": 53,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0046.png",
+          "kind": "native_video",
+          "source_index": 54,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0047.png",
+          "kind": "native_video",
+          "source_index": 55,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0048.png",
+          "kind": "native_video",
+          "source_index": 56,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0049.png",
+          "kind": "native_video",
+          "source_index": 57,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0050.png",
+          "kind": "native_video",
+          "source_index": 58,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0051.png",
+          "kind": "native_video",
+          "source_index": 59,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0052.png",
+          "kind": "native_video",
+          "source_index": 60,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0053.png",
+          "kind": "native_video",
+          "source_index": 61,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0054.png",
+          "kind": "native_video",
+          "source_index": 62,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0055.png",
+          "kind": "native_video",
+          "source_index": 63,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0056.png",
+          "kind": "native_video",
+          "source_index": 64,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0057.png",
+          "kind": "native_video",
+          "source_index": 65,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0058.png",
+          "kind": "native_video",
+          "source_index": 66,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0059.png",
+          "kind": "native_video",
+          "source_index": 67,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0060.png",
+          "kind": "native_video",
+          "source_index": 68,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0061.png",
+          "kind": "native_video",
+          "source_index": 69,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0062.png",
+          "kind": "native_video",
+          "source_index": 70,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0063.png",
+          "kind": "native_video",
+          "source_index": 71,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0064.png",
+          "kind": "native_video",
+          "source_index": 72,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0065.png",
+          "kind": "native_video",
+          "source_index": 73,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0066.png",
+          "kind": "native_video",
+          "source_index": 74,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0067.png",
+          "kind": "native_video",
+          "source_index": 75,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0068.png",
+          "kind": "native_video",
+          "source_index": 76,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0069.png",
+          "kind": "native_video",
+          "source_index": 77,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0070.png",
+          "kind": "native_video",
+          "source_index": 78,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0071.png",
+          "kind": "native_video",
+          "source_index": 79,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0072.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0073.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0074.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0075.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0076.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "walk/0077.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        }
+      ],
+      "unique_pixel_hashes": 78,
+      "sequence_transform": {
+        "scale": 1,
+        "source_ground": 630,
+        "target_ground": 630,
+        "canvas_before_export": 704
+      }
+    },
+    "run": {
+      "source": "run_reused",
+      "start": 14,
+      "end_exclusive": 56,
+      "bridge_frames": 6,
+      "fps": 48,
+      "note": "Reuses historical run_v2; original preview was 16fps; retimed here",
+      "frame_count": 48,
+      "native_frames": 42,
+      "loop": true,
+      "duration_seconds": 1.0,
+      "atlas": "run-atlas.png",
+      "columns": 8,
+      "frames": [
+        {
+          "file": "run/0000.png",
+          "kind": "native_video",
+          "source_index": 14,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0001.png",
+          "kind": "native_video",
+          "source_index": 15,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0002.png",
+          "kind": "native_video",
+          "source_index": 16,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0003.png",
+          "kind": "native_video",
+          "source_index": 17,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0004.png",
+          "kind": "native_video",
+          "source_index": 18,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0005.png",
+          "kind": "native_video",
+          "source_index": 19,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0006.png",
+          "kind": "native_video",
+          "source_index": 20,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0007.png",
+          "kind": "native_video",
+          "source_index": 21,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0008.png",
+          "kind": "native_video",
+          "source_index": 22,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0009.png",
+          "kind": "native_video",
+          "source_index": 23,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0010.png",
+          "kind": "native_video",
+          "source_index": 24,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0011.png",
+          "kind": "native_video",
+          "source_index": 25,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0012.png",
+          "kind": "native_video",
+          "source_index": 26,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0013.png",
+          "kind": "native_video",
+          "source_index": 27,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0014.png",
+          "kind": "native_video",
+          "source_index": 28,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0015.png",
+          "kind": "native_video",
+          "source_index": 29,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0016.png",
+          "kind": "native_video",
+          "source_index": 30,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0017.png",
+          "kind": "native_video",
+          "source_index": 31,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0018.png",
+          "kind": "native_video",
+          "source_index": 32,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0019.png",
+          "kind": "native_video",
+          "source_index": 33,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0020.png",
+          "kind": "native_video",
+          "source_index": 34,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0021.png",
+          "kind": "native_video",
+          "source_index": 35,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0022.png",
+          "kind": "native_video",
+          "source_index": 36,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0023.png",
+          "kind": "native_video",
+          "source_index": 37,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0024.png",
+          "kind": "native_video",
+          "source_index": 38,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0025.png",
+          "kind": "native_video",
+          "source_index": 39,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0026.png",
+          "kind": "native_video",
+          "source_index": 40,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0027.png",
+          "kind": "native_video",
+          "source_index": 41,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0028.png",
+          "kind": "native_video",
+          "source_index": 42,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0029.png",
+          "kind": "native_video",
+          "source_index": 43,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0030.png",
+          "kind": "native_video",
+          "source_index": 44,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0031.png",
+          "kind": "native_video",
+          "source_index": 45,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0032.png",
+          "kind": "native_video",
+          "source_index": 46,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0033.png",
+          "kind": "native_video",
+          "source_index": 47,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0034.png",
+          "kind": "native_video",
+          "source_index": 48,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0035.png",
+          "kind": "native_video",
+          "source_index": 49,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0036.png",
+          "kind": "native_video",
+          "source_index": 50,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0037.png",
+          "kind": "native_video",
+          "source_index": 51,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0038.png",
+          "kind": "native_video",
+          "source_index": 52,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0039.png",
+          "kind": "native_video",
+          "source_index": 53,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0040.png",
+          "kind": "native_video",
+          "source_index": 54,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0041.png",
+          "kind": "native_video",
+          "source_index": 55,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0042.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0043.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0044.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0045.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0046.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        },
+        {
+          "file": "run/0047.png",
+          "kind": "optical_flow_loop_bridge",
+          "source_index": null,
+          "postprocess": "matte + fixed sequence transform"
+        }
+      ],
+      "unique_pixel_hashes": 48,
+      "sequence_transform": {
+        "scale": 1.3,
+        "source_ground": 550,
+        "target_ground": 630,
+        "canvas_before_export": 704
+      }
+    }
+  }
+}

@@ -75,6 +75,14 @@ For generated sheets, verify the actual pixel dimensions and row baselines befor
 
 Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.
 
+### Continuous-video candidates
+
+- Distinguish source frame count, selected chronological frames, derived loop-bridge frames, and final playback FPS. More native frames do not prove a complete alternating gait. Preserve actual prompts/job IDs, including rejected trials.
+- Reused historical video must retain its original job identity and preview FPS; retiming it does not make it a newly generated source. Save lossless source pixels separately from viewing MP4s.
+- Optical-flow loop bridges can hide a large pose discontinuity by morphing the feet or equipment. Inspect the bridge at slow speed, mark derived frames in the manifest, and do not call it seamless solely from pixel-delta scores.
+- If an expressive breathing prompt creates gestures or changes a rigid helmet, retain the stable source and record any localized corrective deformation explicitly. Fixed feet and rigid-head motion require separate weights; this is processed video, not additional AI-generated action frames.
+- Neutral background shadows often survive automatic matting. Inspect on light and dark backgrounds and preserve foot interiors when removing the shadow. A packed Blender image-card timeline is a timing master, not a rig. Example: `assets/source/tide-picker-locomotion-v02-video/README.md`.
+
 ## 环境分件补充（Godot实机验证）
 
 - 鱼群使用独立个体时，避免同一个正弦路径让所有鱼同时翻转；可使用有预热分布、边缘透明回收的持续游动。尾摆帧与路径分别定义循环。
