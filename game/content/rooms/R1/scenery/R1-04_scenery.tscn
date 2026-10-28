@@ -1,0 +1,289 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/foundation.png" id="v04_foundation"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/ledge.png" id="v04_ledge"]
+[ext_resource type="Texture2D" path="res://art/scenery/v04/frame.png" id="v04_frame"]
+
+[ext_resource type="Script" path="res://src/world/scenery/scenery_motion.gd" id="1"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/oral-depth.png" id="2"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/baleen.png" id="3"]
+
+[ext_resource type="Shader" path="res://src/world/scenery/baleen.gdshader" id="4"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v03/terrain.png" id="5"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/plant.png" id="6"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/lamp.png" id="7"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/cargo.png" id="8"]
+
+[sub_resource type="ShaderMaterial" id="BaleenMaterialUpperPalateAndBaleen"]
+shader = ExtResource("4")
+
+[sub_resource type="RectangleShape2D" id="Shape_0"]
+size = Vector2(384.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_1"]
+size = Vector2(1920.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_2"]
+size = Vector2(256.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_3"]
+size = Vector2(256.000, 64.000)
+
+[node name="Scenery" type="Node2D"]
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -30
+
+[node name="Middle" type="Node2D" parent="."]
+z_index = -15
+script = ExtResource("1")
+parallax = Vector2(0.5, 0.5)
+reference_center = Vector2(1152, 576)
+
+[node name="World" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Foreground" type="Node2D" parent="."]
+z_index = 6
+script = ExtResource("1")
+parallax = Vector2(1.2, 1.2)
+reference_center = Vector2(1152, 576)
+fade_near_player = true
+
+[node name="FarDrift" type="Node2D" parent="Far"]
+position = Vector2(-1400, -900)
+script = ExtResource("1")
+parallax = Vector2(0.10, 0.12)
+
+[node name="DeepWater" type="Sprite2D" parent="Far/FarDrift"]
+position = Vector2(0.000, 0.000)
+scale = Vector2(1.675, 1.913)
+texture = ExtResource("2")
+centered = false
+modulate = Color(0.7, 0.79, 0.85, 1)
+
+[node name="UpperPalateAndBaleen" type="Sprite2D" parent="Middle"]
+position = Vector2(-350.000, -30.000)
+scale = Vector2(1.405, 0.951)
+texture = ExtResource("3")
+centered = false
+modulate = Color(0.82, 0.87, 0.9, 1)
+material = SubResource("BaleenMaterialUpperPalateAndBaleen")
+script = ExtResource("1")
+
+[node name="ContinuousTongueBase" type="Sprite2D" parent="Middle"]
+position = Vector2(-70.000, 1060.000)
+scale = Vector2(1.211, 0.642)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.33, 0.38, 0.48, 1)
+
+[node name="Shelf_P0" type="StaticBody2D" parent="World"]
+position = Vector2(0.000, 896.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P0"]
+position = Vector2(192.000, 32.000)
+shape = SubResource("Shape_0")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="RootedOrgan" type="Sprite2D" parent="World/Shelf_P0"]
+position = Vector2(-20, 35)
+scale = Vector2(0.2760416666666667, 0.7046894803548795)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.58, 0.64, 0.74, 1)
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P0"]
+position = Vector2(-4, -8)
+scale = Vector2(0.197980, 0.451220)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.96, 0.94, 0.96, 1)
+
+[node name="ReadableTop_0" type="Line2D" parent="World"]
+points = PackedVector2Array(9, 898, 375, 898)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+[node name="Colonies_0" type="Sprite2D" parent="World"]
+position = Vector2(268.800, 850.000)
+scale = Vector2(0.218, 0.134)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 2.688
+
+[node name="Lamp_0" type="Sprite2D" parent="World"]
+position = Vector2(230.400, 781.000)
+scale = Vector2(0.221, 0.158)
+texture = ExtResource("7")
+centered = false
+script = ExtResource("1")
+sway = 0.012
+phase = 2.304
+
+[node name="LampRope_0" type="Line2D" parent="World"]
+points = PackedVector2Array(250.4, 781, 260.4, 736)
+width = 2
+default_color = Color(0.55, 0.20, 0.13, 1)
+antialiased = true
+
+[node name="NearColony_0" type="Sprite2D" parent="Foreground"]
+position = Vector2(-60.000, 986.000)
+scale = Vector2(0.604, 0.401)
+texture = ExtResource("6")
+centered = false
+modulate = Color(0.16, 0.26, 0.3, 0.8)
+script = ExtResource("1")
+sway = 0.012
+phase = -0.600
+
+[node name="Shelf_P1" type="StaticBody2D" parent="World"]
+position = Vector2(384.000, 896.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P1"]
+position = Vector2(960.000, 32.000)
+shape = SubResource("Shape_1")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="RootedOrgan" type="Sprite2D" parent="World/Shelf_P1"]
+position = Vector2(-20, 35)
+scale = Vector2(1.2760416666666667, 0.7046894803548795)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.58, 0.64, 0.74, 1)
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P1"]
+position = Vector2(-4, -8)
+scale = Vector2(0.973737, 0.451220)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.96, 0.94, 0.96, 1)
+
+[node name="ReadableTop_1" type="Line2D" parent="World"]
+points = PackedVector2Array(393, 898, 2295, 898)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+[node name="Shelf_U0" type="StaticBody2D" parent="World"]
+position = Vector2(640.000, 800.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_U0"]
+position = Vector2(128.000, 32.000)
+shape = SubResource("Shape_2")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_U0"]
+position = Vector2(-4, -8)
+scale = Vector2(0.133333, 0.256098)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.96, 0.94, 0.96, 1)
+
+[node name="ReadableTop_2" type="Line2D" parent="World"]
+points = PackedVector2Array(649, 802.0, 887, 802.0)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+[node name="Tether_2_0.22" type="Line2D" parent="World"]
+points = PackedVector2Array(696.32, 470.0, 696.32, 792.0)
+width = 4
+default_color = Color(0.58, 0.17, 0.12, 1)
+antialiased = true
+
+[node name="Tether_2_0.78" type="Line2D" parent="World"]
+points = PackedVector2Array(839.68, 470.0, 839.68, 792.0)
+width = 4
+default_color = Color(0.58, 0.17, 0.12, 1)
+antialiased = true
+
+[node name="ShellHinge_2" type="Sprite2D" parent="World"]
+position = Vector2(678.400, 760.000)
+scale = Vector2(0.176, 0.134)
+texture = ExtResource("8")
+centered = false
+
+[node name="Shelf_U1" type="StaticBody2D" parent="World"]
+position = Vector2(1600.000, 800.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_U1"]
+position = Vector2(128.000, 32.000)
+shape = SubResource("Shape_3")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_U1"]
+position = Vector2(-4, -8)
+scale = Vector2(0.133333, 0.256098)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.96, 0.94, 0.96, 1)
+
+[node name="ReadableTop_3" type="Line2D" parent="World"]
+points = PackedVector2Array(1609, 802.0, 1847, 802.0)
+width = 2
+default_color = Color(0.97, 0.73, 0.55, 0.40)
+antialiased = true
+
+[node name="Tether_3_0.22" type="Line2D" parent="World"]
+points = PackedVector2Array(1656.32, 470.0, 1656.32, 792.0)
+width = 4
+default_color = Color(0.58, 0.17, 0.12, 1)
+antialiased = true
+
+[node name="Tether_3_0.78" type="Line2D" parent="World"]
+points = PackedVector2Array(1799.68, 470.0, 1799.68, 792.0)
+width = 4
+default_color = Color(0.58, 0.17, 0.12, 1)
+antialiased = true
+
+[node name="ShellHinge_3" type="Sprite2D" parent="World"]
+position = Vector2(1638.400, 760.000)
+scale = Vector2(0.176, 0.134)
+texture = ExtResource("8")
+centered = false
+
+[node name="NearShellRidge" type="Sprite2D" parent="Foreground"]
+position = Vector2(-300, 592)
+scale = Vector2(1.337017, 0.75)
+texture = ExtResource("v04_frame")
+centered = false
+
+[node name="NearBottomFill" type="Polygon2D" parent="Foreground"]
+polygon = PackedVector2Array(-300,1134,2604,1134,2604,2952,-300,2952)
+color = Color(0.018,0.044,0.061,1)
