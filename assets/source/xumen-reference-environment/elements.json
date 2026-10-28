@@ -1,0 +1,1803 @@
+{
+  "id": "xumen-reference-environment",
+  "reference_sha256": "adefb0c0df14b3d9ec267433f6353a1e4ce63701c04879916db459922710db9a",
+  "canvas": [
+    1280,
+    720
+  ],
+  "scope": "仅本轮图片可见环境与展示角色；无战斗/敌人/任务/存档/角色控制/玩法碰撞",
+  "camera": {
+    "fixed": [
+      640,
+      360
+    ],
+    "demo_travel_px": [
+      5,
+      2
+    ],
+    "edge_padding_px": 24
+  },
+  "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+  "elements": [
+    {
+      "id": "ENV-DEPTH",
+      "name": "深蓝远洞与水雾",
+      "category": "background",
+      "reference_box": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "layer": -60,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/ENV-DEPTH.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/ENV-DEPTH",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        20,
+        0,
+        1232,
+        715
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "ENV-UNDERPAINT",
+      "name": "遮挡补绘与镜头边缘余量",
+      "category": "background",
+      "reference_box": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "layer": -70,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/ENV-UNDERPAINT.png",
+      "motion": "static",
+      "motion_description": "仅补全被遮挡区域与小幅视差余量，不设计新地图",
+      "origin": "inferred_hidden_fill",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/ENV-UNDERPAINT",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "MID-01",
+      "name": "左侧斜骨与远柱",
+      "category": "middle",
+      "reference_box": [
+        125,
+        140,
+        365,
+        340
+      ],
+      "layer": -50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/MID-01.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/MID-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        108,
+        298,
+        461,
+        209
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "MID-02",
+      "name": "中央暗柱和交叉骨拱",
+      "category": "middle",
+      "reference_box": [
+        360,
+        130,
+        460,
+        370
+      ],
+      "layer": -50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/MID-02.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/MID-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        360,
+        239,
+        137,
+        187
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "MID-03",
+      "name": "右侧远柱与斜骨",
+      "category": "middle",
+      "reference_box": [
+        775,
+        145,
+        440,
+        420
+      ],
+      "layer": -50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/MID-03.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/MID-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        753,
+        262,
+        455,
+        238
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "ROOF",
+      "name": "上缘暗色洞顶",
+      "category": "ceiling",
+      "reference_box": [
+        0,
+        0,
+        1280,
+        126
+      ],
+      "layer": 0,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/ROOF.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/ROOF",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        0,
+        1280,
+        158
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "WALL-L",
+      "name": "左侧多孔洞壁",
+      "category": "wall",
+      "reference_box": [
+        0,
+        28,
+        156,
+        456
+      ],
+      "layer": 0,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/WALL-L.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/WALL-L",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        0,
+        132,
+        500
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "WALL-R",
+      "name": "右侧多孔洞壁",
+      "category": "wall",
+      "reference_box": [
+        1170,
+        0,
+        110,
+        720
+      ],
+      "layer": 0,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/WALL-R.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/WALL-R",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        1164,
+        0,
+        116,
+        720
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "ROAD",
+      "name": "完整起伏拱形道路和支撑",
+      "category": "terrain",
+      "reference_box": [
+        0,
+        386,
+        1280,
+        334
+      ],
+      "layer": 10,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/ROAD.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/ROAD",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        392,
+        1280,
+        328
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "PORTAL",
+      "name": "左侧骨壳洞口与红色附着物",
+      "category": "portal",
+      "reference_box": [
+        1,
+        324,
+        127,
+        151
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/PORTAL.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/PORTAL",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        321,
+        130,
+        163
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "LAMP",
+      "name": "洞口暖光与壳内亮区",
+      "category": "light",
+      "reference_box": [
+        39,
+        358,
+        68,
+        96
+      ],
+      "layer": 13,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/LAMP.png",
+      "motion": "smooth_luminance",
+      "motion_description": "原光照位置不变；亮度仅±2%，周期7秒，不叠加第二份完整光晕",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/LAMP",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        37,
+        354,
+        72,
+        96
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-01",
+      "name": "乳白垂须分簇1",
+      "category": "baleen",
+      "reference_box": [
+        110,
+        37,
+        207,
+        274
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-01.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        106,
+        0,
+        173,
+        344
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-02",
+      "name": "乳白垂须分簇2",
+      "category": "baleen",
+      "reference_box": [
+        264,
+        0,
+        226,
+        273
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-02.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        271,
+        0,
+        175,
+        324
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-03",
+      "name": "乳白垂须分簇3",
+      "category": "baleen",
+      "reference_box": [
+        443,
+        0,
+        187,
+        220
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-03.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        438,
+        0,
+        161,
+        260
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-04",
+      "name": "乳白垂须分簇4",
+      "category": "baleen",
+      "reference_box": [
+        579,
+        0,
+        153,
+        155
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-04.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-04",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        591,
+        0,
+        155,
+        194
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-05",
+      "name": "乳白垂须分簇5",
+      "category": "baleen",
+      "reference_box": [
+        735,
+        0,
+        153,
+        129
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-05.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-05",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        738,
+        0,
+        166,
+        177
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BALEEN-06",
+      "name": "乳白垂须分簇6",
+      "category": "baleen",
+      "reference_box": [
+        902,
+        0,
+        305,
+        326
+      ],
+      "layer": 4,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BALEEN-06.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末端水平振幅0.65–1.1像素，周期6–10秒，各簇错相",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BALEEN-06",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        896,
+        0,
+        328,
+        344
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-01",
+      "name": "左壁藤壶/菌簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        0,
+        86,
+        142,
+        252
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-01.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        82,
+        146,
+        260
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-02",
+      "name": "洞口脚边白色管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        0,
+        410,
+        146,
+        77
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-02.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        406,
+        150,
+        85
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-03",
+      "name": "左岸低矮管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        226,
+        439,
+        109,
+        41
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-03.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        222,
+        435,
+        117,
+        49
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-04",
+      "name": "坡左象牙管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        335,
+        393,
+        177,
+        61
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-04.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-04",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        331,
+        389,
+        185,
+        69
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-05",
+      "name": "拱顶孔状骨与海绵",
+      "category": "sessile_cluster",
+      "reference_box": [
+        509,
+        365,
+        150,
+        65
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-05.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-05",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        505,
+        361,
+        158,
+        73
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-06",
+      "name": "拱右多孔附生物",
+      "category": "sessile_cluster",
+      "reference_box": [
+        686,
+        391,
+        151,
+        78
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-06.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-06",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        682,
+        387,
+        159,
+        86
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-07",
+      "name": "右坡白色管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        831,
+        436,
+        147,
+        69
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-07.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-07",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        827,
+        432,
+        155,
+        77
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-08",
+      "name": "右岸密集管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        1039,
+        464,
+        173,
+        68
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-08.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-08",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        1035,
+        460,
+        181,
+        76
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-09",
+      "name": "道路下缘左附生簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        228,
+        500,
+        256,
+        108
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-09.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-09",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        224,
+        496,
+        264,
+        116
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-10",
+      "name": "道路下缘中央附生簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        576,
+        475,
+        260,
+        119
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-10.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-10",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        572,
+        471,
+        268,
+        127
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-11",
+      "name": "道路下缘右附生簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        925,
+        535,
+        287,
+        158
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-11.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-11",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        921,
+        531,
+        295,
+        166
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "DECOR-12",
+      "name": "底部远岸管簇",
+      "category": "sessile_cluster",
+      "reference_box": [
+        649,
+        614,
+        280,
+        50
+      ],
+      "layer": 11,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/DECOR-12.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/DECOR-12",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        645,
+        610,
+        288,
+        58
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "PLANT-01",
+      "name": "柔软海草1",
+      "category": "plant",
+      "reference_box": [
+        270,
+        410,
+        44,
+        53
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/PLANT-01.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末梢0.45–0.8像素，周期7–11秒；硬壳/管状装饰仍静态",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/PLANT-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        275,
+        422,
+        43,
+        45
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "PLANT-02",
+      "name": "柔软海草2",
+      "category": "plant",
+      "reference_box": [
+        651,
+        340,
+        45,
+        63
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/PLANT-02.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末梢0.45–0.8像素，周期7–11秒；硬壳/管状装饰仍静态",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/PLANT-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        647,
+        345,
+        50,
+        60
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "PLANT-03",
+      "name": "柔软海草3",
+      "category": "plant",
+      "reference_box": [
+        795,
+        447,
+        35,
+        44
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/PLANT-03.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末梢0.45–0.8像素，周期7–11秒；硬壳/管状装饰仍静态",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/PLANT-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        793,
+        443,
+        41,
+        52
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "PLANT-04",
+      "name": "柔软海草4",
+      "category": "plant",
+      "reference_box": [
+        1145,
+        427,
+        40,
+        79
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/PLANT-04.png",
+      "motion": "root_sway",
+      "motion_description": "根部固定，末梢0.45–0.8像素，周期7–11秒；硬壳/管状装饰仍静态",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/PLANT-04",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        1141,
+        423,
+        43,
+        86
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "VINE-01",
+      "name": "悬垂藻丝1",
+      "category": "plant",
+      "reference_box": [
+        321,
+        526,
+        36,
+        92
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/VINE-01.png",
+      "motion": "root_sway",
+      "motion_description": "顶端固定，下端微摆0.55像素；不带动道路变形",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/VINE-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        317,
+        536,
+        39,
+        68
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "VINE-02",
+      "name": "悬垂藻丝2",
+      "category": "plant",
+      "reference_box": [
+        447,
+        534,
+        46,
+        82
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/VINE-02.png",
+      "motion": "root_sway",
+      "motion_description": "顶端固定，下端微摆0.55像素；不带动道路变形",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/VINE-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        463,
+        530,
+        34,
+        33
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "VINE-03",
+      "name": "悬垂藻丝3",
+      "category": "plant",
+      "reference_box": [
+        778,
+        545,
+        45,
+        89
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/VINE-03.png",
+      "motion": "root_sway",
+      "motion_description": "顶端固定，下端微摆0.55像素；不带动道路变形",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/VINE-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        797,
+        541,
+        30,
+        97
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "VINE-04",
+      "name": "悬垂藻丝4",
+      "category": "plant",
+      "reference_box": [
+        1005,
+        570,
+        53,
+        83
+      ],
+      "layer": 12,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/VINE-04.png",
+      "motion": "root_sway",
+      "motion_description": "顶端固定，下端微摆0.55像素；不带动道路变形",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/VINE-04",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        1001,
+        567,
+        60,
+        90
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "FISH-02",
+      "name": "远处鱼群2",
+      "category": "fish_school",
+      "reference_box": [
+        553,
+        150,
+        221,
+        81
+      ],
+      "layer": -30,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/FISH-02.png",
+      "motion": "drift",
+      "motion_description": "独立透明鱼群，保持源图尺度；横移±3像素、上下±0.5像素，周期20–32秒",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/FISH-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        567,
+        154,
+        173,
+        82
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "FISH-03",
+      "name": "远处鱼群3",
+      "category": "fish_school",
+      "reference_box": [
+        866,
+        325,
+        196,
+        74
+      ],
+      "layer": -30,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/FISH-03.png",
+      "motion": "drift",
+      "motion_description": "独立透明鱼群，保持源图尺度；横移±3像素、上下±0.5像素，周期20–32秒",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/FISH-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        859,
+        319,
+        191,
+        71
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BUBBLE-ZONE-01",
+      "name": "气泡柱区域1",
+      "category": "bubble_emitter",
+      "reference_box": [
+        143,
+        170,
+        89,
+        220
+      ],
+      "layer": -20,
+      "instances": 9,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/bubble.png",
+      "motion": "rise_recycle",
+      "motion_description": "基于源图小泡纹理；分区循环上升7–13px/s、尺寸2–7px；清除旧烘焙泡，无出屏永久积累",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BUBBLE-ZONE-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环"
+    },
+    {
+      "id": "BUBBLE-ZONE-02",
+      "name": "气泡柱区域2",
+      "category": "bubble_emitter",
+      "reference_box": [
+        414,
+        310,
+        72,
+        98
+      ],
+      "layer": -20,
+      "instances": 9,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/bubble.png",
+      "motion": "rise_recycle",
+      "motion_description": "基于源图小泡纹理；分区循环上升7–13px/s、尺寸2–7px；清除旧烘焙泡，无出屏永久积累",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BUBBLE-ZONE-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环"
+    },
+    {
+      "id": "BUBBLE-ZONE-03",
+      "name": "气泡柱区域3",
+      "category": "bubble_emitter",
+      "reference_box": [
+        786,
+        119,
+        154,
+        282
+      ],
+      "layer": -20,
+      "instances": 9,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/bubble.png",
+      "motion": "rise_recycle",
+      "motion_description": "基于源图小泡纹理；分区循环上升7–13px/s、尺寸2–7px；清除旧烘焙泡，无出屏永久积累",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BUBBLE-ZONE-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环"
+    },
+    {
+      "id": "BUBBLE-ZONE-04",
+      "name": "气泡柱区域4",
+      "category": "bubble_emitter",
+      "reference_box": [
+        1036,
+        358,
+        95,
+        128
+      ],
+      "layer": -20,
+      "instances": 9,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/bubble.png",
+      "motion": "rise_recycle",
+      "motion_description": "基于源图小泡纹理；分区循环上升7–13px/s、尺寸2–7px；清除旧烘焙泡，无出屏永久积累",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BUBBLE-ZONE-04",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环"
+    },
+    {
+      "id": "BEAM-01",
+      "name": "水下光束1",
+      "category": "light_beam",
+      "reference_box": [
+        626,
+        0,
+        150,
+        295
+      ],
+      "layer": -35,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BEAM-01.png",
+      "motion": "smooth_luminance",
+      "motion_description": "方向固定；不做第二套叠加照明，分离原像素后±1.2%平滑变化",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BEAM-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        622,
+        0,
+        158,
+        299
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BEAM-02",
+      "name": "水下光束2",
+      "category": "light_beam",
+      "reference_box": [
+        792,
+        0,
+        172,
+        315
+      ],
+      "layer": -35,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BEAM-02.png",
+      "motion": "smooth_luminance",
+      "motion_description": "方向固定；不做第二套叠加照明，分离原像素后±1.2%平滑变化",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BEAM-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        788,
+        0,
+        180,
+        319
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "BEAM-03",
+      "name": "水下光束3",
+      "category": "light_beam",
+      "reference_box": [
+        909,
+        47,
+        144,
+        263
+      ],
+      "layer": -35,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/BEAM-03.png",
+      "motion": "smooth_luminance",
+      "motion_description": "方向固定；不做第二套叠加照明，分离原像素后±1.2%平滑变化",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/BEAM-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        905,
+        43,
+        152,
+        271
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "FRONT-01",
+      "name": "模糊暗前景1",
+      "category": "foreground",
+      "reference_box": [
+        0,
+        482,
+        443,
+        238
+      ],
+      "layer": 50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/FRONT-01.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/FRONT-01",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        0,
+        479,
+        464,
+        241
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "FRONT-02",
+      "name": "模糊暗前景2",
+      "category": "foreground",
+      "reference_box": [
+        321,
+        586,
+        555,
+        134
+      ],
+      "layer": 50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/FRONT-02.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/FRONT-02",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        299,
+        610,
+        610,
+        110
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "FRONT-03",
+      "name": "模糊暗前景3",
+      "category": "foreground",
+      "reference_box": [
+        832,
+        620,
+        448,
+        100
+      ],
+      "layer": 50,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/FRONT-03.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/FRONT-03",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        824,
+        659,
+        456,
+        61
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    },
+    {
+      "id": "CHARACTER",
+      "name": "参考姿势展示角色（含骨鸣器/红绳/腰灯）",
+      "category": "display_character",
+      "reference_box": [
+        142,
+        393,
+        78,
+        76
+      ],
+      "layer": 20,
+      "instances": 1,
+      "source": "original/reference.png",
+      "asset": "../../runtime/xumen-reference-environment/CHARACTER.png",
+      "motion": "static",
+      "motion_description": "保留原图静态材质与高光",
+      "origin": "observed",
+      "collision": "not_applicable:本轮仅环境展示",
+      "interaction": "not_applicable:无玩法或角色控制",
+      "audio": "not_applicable:本轮未要求声音",
+      "acceptance": "实际场景可见；固定镜头对齐本框轮廓，根部/位置/层级与原图一致；独显无非本层大片背景",
+      "runtime_node": "ReferenceEnvironment/CHARACTER",
+      "validation": {
+        "loaded": true,
+        "evidence": "godot/WhalebellyRuins/evidence/reference_environment/asset-audit.json",
+        "visual_review": "AI-reviewed at 1280x720; see review/acceptance.md for extraction limitations"
+      },
+      "static_restore": "not_applicable:无持久状态；每次加载重置确定性环境循环",
+      "actual_source_rect": [
+        137,
+        389,
+        86,
+        80
+      ],
+      "anchor": "裁片左上角，source_rect.xy 对齐原图坐标"
+    }
+  ],
+  "status": "implemented_runtime_verified_visual_review_with_limitations",
+  "scan": "九宫格+四边+遮挡层；纹理中的不可动硬壳、海绵与附着管簇静态分组，不按每个像素虚构独立节点。",
+  "source_policy": "仅本轮reference.png；不读取历史房间图片作为美术输入。隐藏补绘标推断，非画外地图。",
+  "scan_corrections": [
+    "初扫FISH-01实际为左侧骨壁纹理，取消错误鱼群识别；它仍保留在静态环境中。",
+    "VINE-04选区修正为右下x1005,y570附近。",
+    "可编辑垂须素材包含固定的屋顶/洞壁附着像素；shader空间权重使它们不摆动，末梢微动。"
+  ]
+}

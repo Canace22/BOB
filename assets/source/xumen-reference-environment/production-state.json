@@ -1,0 +1,106 @@
+{
+  "scope": "仅本轮图片的独立2D环境展示",
+  "reference": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\original\\reference.png",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "scene": "res://scenes/environment/xumen_reference.tscn",
+  "phase": "delivered_with_documented_visual_limits",
+  "steps": [
+    {
+      "id": 1,
+      "result": "50份元素/簇/生成器合同完成"
+    },
+    {
+      "id": 2,
+      "result": "47运行PNG；原件/3张补绘/SVG/JSON母版保存；固着组织保留说明见README"
+    },
+    {
+      "id": 3,
+      "result": "静态实机与原图对照完成，主构图保留，补绘细节差异已登记"
+    },
+    {
+      "id": 4,
+      "result": "轻微环境动态运行，32秒循环验证，24秒录像"
+    },
+    {
+      "id": 5,
+      "result": "47素材非空且节点接入，0碰撞节点，引用/视频解码检查通过"
+    }
+  ],
+  "performance": {
+    "bubble_instances": 36,
+    "bubble_recycles": 70,
+    "camera_drift": true,
+    "draw_calls": 82.0,
+    "engine": "4.7.2-stable (official)",
+    "frame_ms_p50": 16.666,
+    "frame_ms_p95": 16.761,
+    "frames": 1863,
+    "missing_textures": [],
+    "renderer": "NVIDIA GeForce RTX 5060",
+    "scope": "No gameplay, physics, audio or persistence",
+    "seconds": 32.0010589999994,
+    "texture_memory_bytes": 27771351.0,
+    "visible_elements": [
+      "MID-01",
+      "MID-02",
+      "MID-03",
+      "ROOF",
+      "WALL-L",
+      "WALL-R",
+      "ROAD",
+      "PORTAL",
+      "LAMP",
+      "BALEEN-01",
+      "BALEEN-02",
+      "BALEEN-03",
+      "BALEEN-04",
+      "BALEEN-05",
+      "BALEEN-06",
+      "DECOR-01",
+      "DECOR-02",
+      "DECOR-03",
+      "DECOR-04",
+      "DECOR-05",
+      "DECOR-06",
+      "DECOR-07",
+      "DECOR-08",
+      "DECOR-09",
+      "DECOR-10",
+      "DECOR-11",
+      "DECOR-12",
+      "PLANT-01",
+      "PLANT-02",
+      "PLANT-03",
+      "PLANT-04",
+      "VINE-01",
+      "VINE-02",
+      "VINE-03",
+      "VINE-04",
+      "FISH-02",
+      "FISH-03",
+      "BEAM-01",
+      "BEAM-02",
+      "BEAM-03",
+      "FRONT-01",
+      "FRONT-02",
+      "FRONT-03",
+      "CHARACTER",
+      "ENV-DEPTH",
+      "ENV-UNDERPAINT",
+      "BUBBLE-ZONE-01",
+      "BUBBLE-ZONE-02",
+      "BUBBLE-ZONE-03",
+      "BUBBLE-ZONE-04"
+    ]
+  },
+  "known_limits": [
+    "顶部隐藏水体补绘与原图局部色调不完全相同",
+    "垂须裁片含固定的附着组织，非通用精修单件",
+    "镜头只验收约定微量视差",
+    "未覆盖其他GPU/低配机；美术最终用户审阅尚未发生"
+  ],
+  "next_instruction": "用户给出具体视觉反馈时，仅修改本环境场景的对应元素；不扩展到玩法或其他地图。",
+  "delivery": "G:\\鲸落万物生\\outputs\\须门遗港_参考图环境场景\\交付与对照.html",
+  "evidence": "G:\\鲸落万物生\\BOB\\godot\\WhalebellyRuins\\evidence\\reference_environment",
+  "video_decode": "ffmpeg -v error -i 环境动态演示.mp4 -f null - : exit 0"
+}

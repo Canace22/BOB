@@ -55,3 +55,7 @@
 ## 模型、动画与音频
 
 当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。
+
+## 本轮参考图环境场景
+
+`xumen-reference-environment`：47个运行位图、50个元素/装饰簇/生成器合同；接入唯一Godot工程的独立环境场景。仅参考本轮图；含静态展示角色、轻微垂须/植物、鱼群、气泡、光变及视差。[来源与运行说明](source/xumen-reference-environment/README.md)、[逐元素清单](source/xumen-reference-environment/elements.json)、[验收边界](source/xumen-reference-environment/review/acceptance.md)。没有新增玩法碰撞或控制系统。

@@ -1,0 +1,29 @@
+{
+  "reference": "original/reference.png",
+  "reference_sha256": "adefb0c0df14b3d9ec267433f6353a1e4ce63701c04879916db459922710db9a",
+  "inputs": "仅用户本轮图片；无历史房间参考",
+  "tools": [
+    "image_gen.imagegen builtin (3 completed edits)",
+    "Godot 4.7.2 Image/SubViewport/shaders for extraction",
+    "Python standard library for metadata/SVG/scene authoring"
+  ],
+  "generation": [
+    {
+      "file": "generated/clean-occlusions.png",
+      "instruction_summary": "保留原构图，移除角色/鱼/泡和柔性植物，为拆层补绘。",
+      "use": "下半部蓝色背景补片；生成结果没有完全移除植物，另经局部修复。"
+    },
+    {
+      "file": "generated/depth-underpaint.png",
+      "instruction_summary": "移除前方结构，补全被遮挡蓝色远洞。",
+      "use": "隐藏底图和边缘余量，不用作整场景替代。"
+    },
+    {
+      "file": "generated/dynamic-backing.png",
+      "instruction_summary": "移除乳白垂须、植物、鱼泡与角色，保留固定结构并补绘蓝色洞深。",
+      "use": "上半部垂须背后，280–360px混合过渡。"
+    }
+  ],
+  "processing": "原图完整保存。SVG选区+原生Godot导出透明PNG；分离动态图层；局部纹理采样补细小柔性枝叶后方；3px遮挡余量；根部与刚体不变形。",
+  "rights": "用户本轮提供参考并授权本项目编辑使用；不推断第三方版权归属或再分发授权。"
+}

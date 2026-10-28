@@ -23,3 +23,7 @@
 `outputs/` 和 `builds/` 仍在 BOB 上一级。当前交付册的项目链接已更新。网页原型目录沿用各自说明，本次未合并或发布 Web 版本。
 
 本次验证与未完成事项见 [工程进度](../godot/WhalebellyRuins/progress.md)。历史验收日志保留原始路径与日期，不冒充迁移后的新验证。
+
+## 本轮参考图 · 环境展示场景
+
+在同一工程打开 `scenes/environment/xumen_reference.tscn`，**F6**运行。也可执行工程根目录 `preview-reference-environment.ps1`（可加`-Pan`）。这是仅环境和静态展示角色的1280×720场景，不接入七房关卡控制器；F5入口保持原游戏。[素材、母版、范围和限制](../assets/source/xumen-reference-environment/README.md)。

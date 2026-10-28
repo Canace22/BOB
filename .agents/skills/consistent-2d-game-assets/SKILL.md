@@ -80,3 +80,7 @@ For each accepted asset, provide or record:
 - Known limitations or required manual cleanup
 
 Do not claim “production-ready” until the asset passes deterministic scene placement and transparent-edge checks.
+
+## Godot reference-layer lessons
+
+For deterministic SubViewport extraction, export straight alpha (`blend_disabled`) to avoid dark seams from double premultiplication. Provide a few pixels of hidden-paint overlap below cutout edges and validate at the intended camera offsets. A stationary reconstruction can hide baked duplicates: inspect isolated layers and moving frames separately. Keyed hanging foliage may include rigid attachment pixels; explicitly zero motion on those pixels and do not label such a crop as a universally reusable clean object. See the scoped example in `assets/source/xumen-reference-environment/README.md`.
