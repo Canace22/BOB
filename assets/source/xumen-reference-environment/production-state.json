@@ -115,6 +115,16 @@
     "legacy_saves": "X preserved, Y aligned on load; real user save untouched by QA",
     "build": "G:/鲸落万物生/builds/WhalebellyRuins/WhalebellyRuins.exe",
     "build_kind": "official portable + exported PCK; release templates missing",
-    "known_limits": "asset limits unchanged; audio event logic retained, physical listening not repeated"
+    "known_limits": "asset limits unchanged; audio event logic retained, physical listening not repeated",
+    "main_scene_sync": {
+      "status": "verified",
+      "chain": [
+        "scenes/main.tscn",
+        "scenes/r1/R1-01.tscn",
+        "scenes/environment/xumen_reference.tscn"
+      ],
+      "evidence": "evidence/main_scene_sync/",
+      "source_mismatches": 0
+    }
   }
 }

@@ -205,6 +205,9 @@ func setup_inputs() -> void:
 			InputMap.action_add_event(action, event)
 
 func load_room(index: int, target_spawn: Array = []) -> void:
+	# The authored starting room is visible in main.tscn and shares the same
+	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
+	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
 	var next_room: Dictionary = rooms[index]
 	var packed: PackedScene = load("res://scenes/r1/"+str(next_room.id)+".tscn")
 	if packed == null:
@@ -221,8 +224,14 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 		reference.queue_free()
 	room_index = index
 	room = rooms[index]
-	scenery = packed.instantiate()
-	add_child(scenery)
+	if authored_room != null and index == 0:
+		scenery = authored_room
+	else:
+		if authored_room != null:
+			remove_child(authored_room)
+			authored_room.queue_free()
+		scenery = packed.instantiate()
+		add_child(scenery)
 	scenery.process_mode = Node.PROCESS_MODE_PAUSABLE
 	var reference_environment: Node2D = scenery.get_node_or_null("ReferenceEnvironment")
 	if reference_environment != null: reference_environment.level_host = self

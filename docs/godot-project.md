@@ -31,3 +31,7 @@
 ## R1-01新环境已接入主地图
 
 F5主入口的R1-01现在实例化参考图环境，角色由既有控制器接管，路面碰撞/门/旧档坐标已绑定。独立环境F6仍可用。当前便携包位于 `G:/鲸落万物生/builds/WhalebellyRuins/`；[接入与验收说明](../assets/source/xumen-reference-environment/integration/README.md)。
+
+## 主场景编辑器同步
+
+`scenes/main.tscn`显式实例化R1-01，打开即可看到地图，并共享`xumen_reference.tscn`的源图像与布局。[同步说明与验收](../assets/source/xumen-reference-environment/integration/README.md#主场景编辑器同步)。

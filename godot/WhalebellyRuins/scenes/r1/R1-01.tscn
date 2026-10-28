@@ -12,6 +12,10 @@ scale = Vector2(1.30546875, 1.30546875)
 
 level_mode = true
 
+[node name="CHARACTER" parent="ReferenceEnvironment" index="43"]
+
+visible = false
+
 [node name="Far" type="Node2D" parent="."]
 
 [node name="Middle" type="Node2D" parent="."]
@@ -39,3 +43,5 @@ scale = Vector2(1.30546875, 1.30546875)
 texture = ExtResource("2")
 
 centered = false
+
+[editable path="ReferenceEnvironment"]
