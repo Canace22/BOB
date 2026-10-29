@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 22,
+  "revision": 23,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24993,6 +24993,111 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "已完整解码145帧，并检查12个时间点：宽构图中人物、披风与骨叉在抽查帧内完整。两次前送攻击与灰青波纹可见，但第二击仍偏重复前送，未清楚形成设计中的反向回拨；压波被生成得更接近弹道，灯体角度与系绳仍有漂移。保持效果参考candidate，不能直接当作精确0.333秒普攻或正式分层资产。"
+    },
+    {
+      "id": "ambient-silverfin-school-v01",
+      "name": "银鳍梭鱼 · 流带巡游",
+      "kind": "creature",
+      "region": "R1 / 环境通用",
+      "tags": [
+        "鱼群",
+        "2D",
+        "循环动画",
+        "v01"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/silverfin/swim_00.png",
+      "width": 320,
+      "height": 224,
+      "pivot": [
+        160,
+        112
+      ],
+      "sha256": "0cd689866e285bc6cbf98106ce03ebadf12e4f9ef22f6af0f7277e25ffb30888",
+      "source": "assets/source/fish-schools-v01/README.md",
+      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
+      "integrationStatus": "preview-scene-only",
+      "userArtApproval": false,
+      "animation": {
+        "frames": 32,
+        "fps": 24,
+        "loop": true,
+        "atlas": "assets/runtime/sprites/fish-schools-v01/silverfin/swim_atlas.png",
+        "columns": 8,
+        "rows": 4,
+        "schoolCount": 28
+      }
+    },
+    {
+      "id": "ambient-tealback-school-v01",
+      "name": "青背圆鳍鱼 · 浮岛聚群",
+      "kind": "creature",
+      "region": "R1 / 环境通用",
+      "tags": [
+        "鱼群",
+        "2D",
+        "循环动画",
+        "v01"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/tealback/swim_00.png",
+      "width": 320,
+      "height": 224,
+      "pivot": [
+        160,
+        112
+      ],
+      "sha256": "03e3ef5e7d0264dbe9c07c9393a611558c3c26a708e50967f7de41a215ed2e2e",
+      "source": "assets/source/fish-schools-v01/README.md",
+      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
+      "integrationStatus": "preview-scene-only",
+      "userArtApproval": false,
+      "animation": {
+        "frames": 32,
+        "fps": 24,
+        "loop": true,
+        "atlas": "assets/runtime/sprites/fish-schools-v01/tealback/swim_atlas.png",
+        "columns": 8,
+        "rows": 4,
+        "schoolCount": 14
+      }
+    },
+    {
+      "id": "ambient-lantern-school-v01",
+      "name": "微光鳍鱼 · 星弧回游",
+      "kind": "creature",
+      "region": "R1 / 环境通用",
+      "tags": [
+        "鱼群",
+        "2D",
+        "循环动画",
+        "v01"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/lantern/swim_00.png",
+      "width": 320,
+      "height": 224,
+      "pivot": [
+        160,
+        112
+      ],
+      "sha256": "90f356a78117564d31fe55b0571fd63b06bc2f64d4a79173e551fa4c463c747f",
+      "source": "assets/source/fish-schools-v01/README.md",
+      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
+      "integrationStatus": "preview-scene-only",
+      "userArtApproval": false,
+      "animation": {
+        "frames": 32,
+        "fps": 24,
+        "loop": true,
+        "atlas": "assets/runtime/sprites/fish-schools-v01/lantern/swim_atlas.png",
+        "columns": 8,
+        "rows": 4,
+        "schoolCount": 20
+      }
     }
   ]
 }

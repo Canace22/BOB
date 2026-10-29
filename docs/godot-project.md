@@ -55,3 +55,7 @@ R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可�
 ## V2.4角色主场景接入
 
 F5默认七房已使用CampaignPlayer及PlayerUI；原场景/房间数据保留，V6存档不迁移。独立PlayerTest先验收再接入，数值以原工程为准。操作、数值来源、测试及美术边界见[角色系统说明](../godot/WhalebellyRuins/docs/tide-3c.md)。
+
+### 海底鱼群美术样板
+
+打开 `scenes/environment/fish_school_gallery.tscn` 按F6：3种单鱼拼成28/14/20只三组，独立身体与尾鳍摆动，16秒循环。空格暂停，R重置，1/2/3切换可见组。源、图集、可复用元素及验收见[鱼群母版](../assets/source/fish-schools-v01/README.md)。主关卡入口保持原配置。

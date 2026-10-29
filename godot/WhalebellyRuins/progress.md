@@ -138,3 +138,7 @@ Godot4.7.2导入、16项实际GPU Run检查通过；历史Walk测试显式选用
 核对《空洞骑士》公开Wiki中的骨钉反弹、SOUL循环、法术/移动/蓄力技，并读取本项目世界设定、CampaignPlayer与tide_player。完成短击A/B、上挑、下点，以及迎珠、重鸣、贴流冲、坠潮、菌息、照见三组六技能设计，详见docs/tide-combat-design-v01.md。动作按本项目12FPS提出短片段时间与事件，参考片长与实际战斗时长明确分开。
 
 区分当前已实现与提案：A4_parry实际上是弹道，A3_anchor复用于下劈，当前治疗最多5格；方案建议每次1格，尚未改动。列出普攻判定125px与94px角色画面匹配、W/G/E输入避让、共鸣消耗和必要探索不耗能、下点与主动坠潮差异。文档相对链接与git diff --check通过；无运行文件变化，未重复执行引擎测试或生成视频。已有Skill覆盖本次流程，未新增重复Skill。
+
+## 2026-10-29 海底鱼群独立样板
+
+新增 `scenes/environment/fish_school_gallery.tscn`，F6查看三组62条鱼；空格暂停，R重置，1/2/3显隐。单鱼原画、群体组合、32相位游动帧已完成，实际Godot4.7.2 GPU检查通过。此批只新增样板和可复用元素场景，未替换主关卡。素材与边界见 `../../assets/source/fish-schools-v01/README.md`；证据 `evidence/fish_schools/`。浏览器交付为项目外 `outputs/海底鱼群动画_v01/预览.html`。
