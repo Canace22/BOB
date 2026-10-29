@@ -1,0 +1,204 @@
+{
+  "intent": "image_to_video",
+  "l1": {
+    "intent": "image_to_video",
+    "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次蓄力斜下重劈。0到0.6秒稳定戒备；0.6到1.8秒两腿屈膝、重心后压，右手将骨叉高举至右后肩上方，左手扶住握柄下方形成双手握持，胸腰拉开形成明显弓形预备；1.8到2.2秒后腿有力蹬伸、前脚踏稳，骨叉从右上方斜劈至右前方低处，躯干压下，腰胯主导而非只有手腕运动。骨叉是短柄U形骨器，保持原长度形状，不变成长柄斧或剑。2.2到2.6秒低姿终点缓冲，叉尖停在地面上方，不插入地面；2.6到3.6秒起身收叉，左手松开回侧边，3.6到6秒回到稳定戒备。不得反复劈砍。",
+    "model": "doubao-seedance-2-0-260128",
+    "wait": false,
+    "aspectRatio": "3:4",
+    "resolution": "720P",
+    "duration": 6,
+    "sourceNodeId": "skills_img_0bebad861f",
+    "generationType": "reference",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "session": {
+    "sessionId": "sess_217f7e1c6bfd",
+    "state": "released",
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "marker": "skills_sess_217f7e1c6bfd",
+    "baseUpdatedAt": "2026-10-29T11:58:34+08:00",
+    "trustedUrlCount": 1,
+    "history": [
+      "locked",
+      "transforming",
+      "validating",
+      "applying",
+      "task_running",
+      "applying_result",
+      "released"
+    ],
+    "error": null
+  },
+  "dryRun": false,
+  "bind": {
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "boundAt": 1793246314,
+    "skillsSessionId": "sess_217f7e1c6bfd",
+    "pendingTasks": [
+      {
+        "taskId": "vj_78b1115c-3ba8-4521-b620-b6a83b8908a9",
+        "nodeId": "skills_v_7ac7d19b0a",
+        "kind": "video",
+        "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次有力横扫。0到0.6秒低重心戒备，双脚前后分开；0.6到1.5秒屈膝蓄力、上身向后扭转，右手把骨叉收至身体后侧，左臂向前平衡；1.5到2.0秒右向小踏步，后脚蹬地、髋肩依次转向，持叉臂从后向前横扫，骨叉划过身前腰胸高度，手臂伸展但肘不锁死。2.0到2.3秒保持有力终点轮廓，重心压在前腿，后腿蹬伸，武器指向右前方。2.3到3.4秒顺势收回并退回初始锚点，3.4到6秒回到稳定戒备。不要连续挥舞，不做旋身背对镜头。"
+      },
+      {
+        "taskId": "vj_402a1b1a-3989-44c4-a91d-54524fb7f25c",
+        "nodeId": "skills_v_7c4ac1a529",
+        "kind": "video",
+        "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次蓄力斜下重劈。0到0.6秒稳定戒备；0.6到1.8秒两腿屈膝、重心后压，右手将骨叉高举至右后肩上方，左手扶住握柄下方形成双手握持，胸腰拉开形成明显弓形预备；1.8到2.2秒后腿有力蹬伸、前脚踏稳，骨叉从右上方斜劈至右前方低处，躯干压下，腰胯主导而非只有手腕运动。骨叉是短柄U形骨器，保持原长度形状，不变成长柄斧或剑。2.2到2.6秒低姿终点缓冲，叉尖停在地面上方，不插入地面；2.6到3.6秒起身收叉，左手松开回侧边，3.6到6秒回到稳定戒备。不得反复劈砍。"
+      }
+    ],
+    "name": "独眼提灯者-Idle",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "sessionDir": "C:\\Users\\Kingsoft\\.codex\\skills\\chaos_canvas_skill\\.session",
+  "pendingDrained": [],
+  "ops": [
+    {
+      "op": "add_node",
+      "node": {
+        "id": "skills_v_7c4ac1a529",
+        "type": "video",
+        "position": {
+          "x": 1707.457133058985,
+          "y": 1502.8394827043232
+        },
+        "data": {
+          "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次蓄力斜下重劈。0到0.6秒稳定戒备；0.6到1.8秒两腿屈膝、重心后压，右手将骨叉高举至右后肩上方，左手扶住握柄下方形成双手握持，胸腰拉开形成明显弓形预备；1.8到2.2秒后腿有力蹬伸、前脚踏稳，骨叉从右上方斜劈至右前方低处，躯干压下，腰胯主导而非只有手腕运动。骨叉是短柄U形骨器，保持原长度形状，不变成长柄斧或剑。2.2到2.6秒低姿终点缓冲，叉尖停在地面上方，不插入地面；2.6到3.6秒起身收叉，左手松开回侧边，3.6到6秒回到稳定戒备。不得反复劈砍。",
+          "model": "doubao-seedance-2",
+          "generationType": "reference",
+          "generationMode": "image",
+          "status": "idle",
+          "taskIds": [],
+          "skills_marker": "skills_sess_217f7e1c6bfd",
+          "creationSource": "chaos-skills",
+          "contractModel": "doubao-seedance-2-0-260128",
+          "aspectRatio": "3:4",
+          "ratio": "3:4",
+          "duration": "6",
+          "resolution": "720P",
+          "title": "以参考图为唯一角色外观依据，制作6秒2D横版游戏…",
+          "label": "以参考图为唯一角色外观依据，制作6秒2D横版游戏…",
+          "hasUpstream": true,
+          "inheritedFrom": "skills_img_0bebad861f",
+          "inheritedData": {
+            "type": "image",
+            "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          }
+        }
+      }
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_7c4ac1a529",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image-input",
+          "text": "",
+          "content": ""
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "add_edge",
+      "id": "e-skills_img_0bebad861f-skills_v_7c4ac1a529",
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_7c4ac1a529",
+      "sourceHandle": "output",
+      "targetHandle": "input"
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_7c4ac1a529",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image",
+          "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "submit_video",
+      "nodeId": "skills_v_7c4ac1a529",
+      "model": "doubao-seedance-2-0-260128",
+      "body": {
+        "model": "doubao-seedance-2-0-260128",
+        "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次蓄力斜下重劈。0到0.6秒稳定戒备；0.6到1.8秒两腿屈膝、重心后压，右手将骨叉高举至右后肩上方，左手扶住握柄下方形成双手握持，胸腰拉开形成明显弓形预备；1.8到2.2秒后腿有力蹬伸、前脚踏稳，骨叉从右上方斜劈至右前方低处，躯干压下，腰胯主导而非只有手腕运动。骨叉是短柄U形骨器，保持原长度形状，不变成长柄斧或剑。2.2到2.6秒低姿终点缓冲，叉尖停在地面上方，不插入地面；2.6到3.6秒起身收叉，左手松开回侧边，3.6到6秒回到稳定戒备。不得反复劈砍。",
+        "aspect_ratio": "3:4",
+        "duration": 6,
+        "resolution": "720P",
+        "metadata": {
+          "reference_images": [
+            "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          ]
+        }
+      },
+      "appId": 200001704,
+      "appName": "游戏技术研发"
+    }
+  ],
+  "seedanceComplianceHint": "Seedance 2.x 参考素材在 --apply 时会上传火山虚拟人像库。普通生图和 TTS 配音通常过不了合规；请先换成人像/角色素材或已有 asset://，否则改纯文生。合规失败后不要用同一批 URL 再 --apply。",
+  "plannedNodeIds": [
+    "skills_v_7c4ac1a529"
+  ],
+  "reusedNodeIds": [
+    "skills_v_7c4ac1a529",
+    "skills_v_7c4ac1a529"
+  ],
+  "textNodeId": "skills_v_7c4ac1a529",
+  "edgesAdded": [
+    {
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_7c4ac1a529"
+    }
+  ],
+  "resolvedAppId": 200001704,
+  "resolvedAppName": "游戏技术研发",
+  "seedanceCompliance": [
+    {
+      "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png",
+      "assetRef": "asset://asset-20261029115835-xs6qc",
+      "status": "Active",
+      "statusMessage": "",
+      "localPersistWarning": "",
+      "assetId": "asset-20261029115835-xs6qc",
+      "canvasAssetId": "asset-20261029115835-xs6qc",
+      "primaryAssetId": "asset-20261029115835-xs6qc",
+      "primaryProject": "GAI",
+      "projectName": "GAI",
+      "name": "5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40_2026-10-29-03-58-34"
+    }
+  ],
+  "lockHeld": true,
+  "lockHint": "skills_lock kept; pendingTasks in bind.json — next poll --writeback --apply or next --apply will auto-drain completed tasks and unlock when empty",
+  "tasks": [
+    {
+      "nodeId": "skills_v_7c4ac1a529",
+      "taskId": "vj_402a1b1a-3989-44c4-a91d-54524fb7f25c",
+      "submit": {
+        "task_id": "vj_402a1b1a-3989-44c4-a91d-54524fb7f25c",
+        "status": "pending",
+        "created_at": 1793246317978
+      },
+      "kind": "video",
+      "prompt": "以参考图为唯一角色外观依据，制作6秒2D横版游戏角色攻击动作参考视频。保持圆形象牙单镜片头壳、青绿破边披风、髋侧琥珀灯、红绳和右手U形双叉骨鸣器，原画手绘描边与厚涂质感。朝右三分之四侧面，固定正交相机、纯米灰背景，全身远一点构图；站立角色高度仅占画面45%，全部动作含武器最大伸展限制在画面中央75%，四边至少12%留白。镜头不跟随不缩放。骨叉一直握在同一只右手中，刚性完整，不伸长、不松脱、不换成剑。手脚数目与体型稳定。先身体蓄力，再腰胯带动手臂出击，披风、灯和红绳稍后跟随，动作幅度明确，剪影优美。无敌人、无文字、无特效光弧、无残影、无粒子、不依赖运动模糊遮掩姿态，无声音。只演示一次蓄力斜下重劈。0到0.6秒稳定戒备；0.6到1.8秒两腿屈膝、重心后压，右手将骨叉高举至右后肩上方，左手扶住握柄下方形成双手握持，胸腰拉开形成明显弓形预备；1.8到2.2秒后腿有力蹬伸、前脚踏稳，骨叉从右上方斜劈至右前方低处，躯干压下，腰胯主导而非只有手腕运动。骨叉是短柄U形骨器，保持原长度形状，不变成长柄斧或剑。2.2到2.6秒低姿终点缓冲，叉尖停在地面上方，不插入地面；2.6到3.6秒起身收叉，左手松开回侧边，3.6到6秒回到稳定戒备。不得反复劈砍。"
+    }
+  ],
+  "workflow": {
+    "id": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "updated_at": "2026-10-29T11:58:38+08:00"
+  },
+  "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+  "canvasName": "独眼提灯者-Idle",
+  "canvasUrl": "https://tech.seasungame.com/gaiclient/renderer/#/drawing",
+  "canvasLinkHint": "请打开画布列表页，在列表中找到「独眼提灯者-Idle」并点击进入查看结果。"
+}

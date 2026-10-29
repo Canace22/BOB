@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 20,
+  "revision": 21,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24889,6 +24889,84 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "主关卡地面移动使用Run v2源片制作的84帧/7秒/12FPS。完整源片重定时，无静止补尾。16项实机检查通过；源裁切、持叉漂移、形变、接缝与滑步保留，视觉candidate。"
+    },
+    {
+      "id": "tide-picker-attack-01-sweep-video-v01",
+      "name": "拾潮者 · 踏步横扫 视频参考",
+      "kind": "video-reference",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "攻击",
+        "动作参考",
+        "视频"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-picker-attacks-v01/attack-01-sweep-poster.jpg",
+      "videoFile": "assets/source/tide-picker-attacks-v01/attack-01-sweep.mp4",
+      "width": 834,
+      "height": 1112,
+      "frameCount": 145,
+      "fps": 24,
+      "duration": 6.041666666666667,
+      "source": "assets/source/tide-picker-attacks-v01/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "可见踏步与前向挥扫、回稳；实际预备比提示更长，持叉经过头上，最大幅度时骨叉/披风出画，胸肩与持物细节有变化。作为动作方向参考，完整游戏素材验收未通过。"
+    },
+    {
+      "id": "tide-picker-attack-02-heavy-video-v01",
+      "name": "拾潮者 · 蓄力重劈 视频参考",
+      "kind": "video-reference",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "攻击",
+        "动作参考",
+        "视频"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-picker-attacks-v01/attack-02-heavy-poster.jpg",
+      "videoFile": "assets/source/tide-picker-attacks-v01/attack-02-heavy.mp4",
+      "width": 834,
+      "height": 1112,
+      "frameCount": 145,
+      "fps": 24,
+      "duration": 6.041666666666667,
+      "source": "assets/source/tide-picker-attacks-v01/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "可见举叉蓄力、向下重击与收势；预备含单脚腾空，骨叉在顶部及左右边缘裁切，挥击约3.2秒出现白色光痕，未完全遵循无特效约束。作为重击参考，需后续构图及武器稳定性返修。"
+    },
+    {
+      "id": "tide-picker-attack-03-dive-video-v01",
+      "name": "拾潮者 · 腾空下刺 视频参考",
+      "kind": "video-reference",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "攻击",
+        "动作参考",
+        "视频"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-picker-attacks-v01/attack-03-dive-poster.jpg",
+      "videoFile": "assets/source/tide-picker-attacks-v01/attack-03-dive.mp4",
+      "width": 834,
+      "height": 1112,
+      "frameCount": 145,
+      "fps": 24,
+      "duration": 6.041666666666667,
+      "source": "assets/source/tide-picker-attacks-v01/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "可见下蹲、小跳、骨叉转向下、落地缓冲与回稳；跳跃峰值头顶贴边/轻微裁切，红绳与持叉细节漂移，动作比设计时间延后。三组中下刺过程较完整，仍为参考稿。"
     }
   ]
 }
