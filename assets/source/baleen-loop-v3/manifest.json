@@ -1,0 +1,31 @@
+{
+  "asset_id": "BALEEN-LOOP-V3",
+  "frame_size": [
+    384,
+    384
+  ],
+  "frame_count": 48,
+  "fps": 12,
+  "seconds": 4,
+  "loop": true,
+  "anchor": [
+    192,
+    127
+  ],
+  "atlas": "baleen-sway-atlas.png",
+  "columns": 8,
+  "rows": 6,
+  "source_video": "videos/wan22-refined-repair-source.mp4",
+  "source_frames": 73,
+  "source_fps": 24.0,
+  "source_seconds": 3.0416666666666665,
+  "rounding": "ceil(actual source frames / fps) * 12 = 48; one designed cycle retimed to four seconds",
+  "keyposes": 8,
+  "method": "Existing painted base deformed into eight registered designs and 73 guidance frames. Actual Wan low-denoise refinement. Two-harmonic material-coordinate residual fit at 22 percent blend. Painted alpha and periodic deformation retained. Not direct video extraction or hand-drawn inbetweens.",
+  "loop_sampling": "phase=2*pi*frame/48; no repeated endpoint",
+  "limits": [
+    "One independent cluster asset, not four scene placements",
+    "Not integrated in Godot this turn",
+    "Naturalness is a visual judgment; numerical tests do not replace user review"
+  ]
+}

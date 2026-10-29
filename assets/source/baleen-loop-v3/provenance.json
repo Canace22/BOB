@@ -1,0 +1,20 @@
+{
+  "art_source": "assets/source/baleen-keyart-v2/keyposes/paint-00.png",
+  "art_sha256": "1be93a052ed433e14a1c8a52a0f32abdf7f4180054f9189a4743f145f057bc5f",
+  "motion_reference": "assets/source/baleen-chaos/seedance2-source.mp4",
+  "reference_sha256": "76e40677c2c241a7fdc8b79622d194c5c4097150d4c60c582ec7647b04f0fe2b",
+  "reference_role": "motion intention observed in six video time samples; not flow-extracted in this revision",
+  "derived_keyposes": 8,
+  "keypose_method": "registered 2D deformation of existing painting; no new hand-painted art claim",
+  "guide_method": "root pinned; continuously periodic downstream phase delay and increasing tip amplitude",
+  "comfy_prompt_id": "9532be3c-4e0c-4fcb-ac02-f6edfac3bfe5",
+  "model": "wan2.2_ti2v_5B_fp16.safetensors",
+  "load_dtype": "fp8_e4m3fn",
+  "seed": 291029812,
+  "steps": 20,
+  "cfg": 2.0,
+  "denoise": 0.1,
+  "postprocess": "model residual inverse-mapped to material coordinates; two temporal harmonics; 22 percent color mix; authored alpha retained",
+  "cloud_generation_this_revision": false,
+  "user_visual_acceptance": false
+}

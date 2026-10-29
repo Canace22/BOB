@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>须门遗港 · 垂须末端跟随循环 V3</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#091923;color:#e0e5e2;font:16px/1.7 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:30px 24px 70px}h1{font-size:30px;line-height:1.4}h2{font-size:21px;margin-top:38px}p{max-width:900px;color:#bacbd0}a{color:#94d3d4}video{width:100%;display:block;border-radius:12px;background:#0c1d28}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}.board{display:block;width:100%;border-radius:10px}.viewer{max-width:620px;margin:auto}canvas{width:100%;display:block;background:#0c1d28;border:1px solid #34515b;border-radius:8px}.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}button,select{font:inherit;background:#193540;color:#e0e5e2;border:1px solid #45646b;border-radius:6px;padding:5px 12px;cursor:pointer}input{flex:1;min-width:140px}output{font-variant-numeric:tabular-nums}.notice{border-left:3px solid #d3b47d;padding:12px 20px;background:#122b35}.links{display:flex;gap:20px;flex-wrap:wrap}@media(max-width:700px){.pair{grid-template-columns:1fr}h1{font-size:25px}}
+</style>
+<main>
+<h1>须门遗港 · 垂须末端跟随循环 V3</h1>
+<p>根部固定，中段先弯，下段跟随，细尖延迟回摆。左右小簇错开节奏，保持象牙色细丝与蓝灰阴影。</p>
+<p>8 个关键姿态 · 48 张透明帧 · 12 FPS · 每轮 4 秒</p>
+<div class="pair"><section><h2>深色底 · 循环播放</h2><video controls loop autoplay muted playsinline preload="auto" src="videos/baleen-loop-dark-12fps.mp4" poster="dark/0000.png"></video></section><section><h2>浅色底 · 检查细丝边缘</h2><video controls loop autoplay muted playsinline preload="auto" src="videos/baleen-loop-light-12fps.mp4" poster="light/0000.png"></video></section></div>
+<h2>透明帧逐帧查看</h2>
+<div class="viewer"><canvas width="384" height="384" id="view" aria-label="透明垂须循环帧"></canvas><div class="controls"><button id="toggle">播放</button><button id="step">下一帧</button><select id="bg" aria-label="预览背景"><option value="dark">深色底</option><option value="light">浅色底</option><option value="checker">透明棋盘</option></select></div><div class="controls"><input id="seek" type="range" min="0" max="47" value="0" aria-label="动画帧"><output id="count">加载中</output></div></div>
+<h2>八个对齐的关键姿态</h2>
+<img class="board" src="review/eight-keyposes.jpg" alt="每半秒一个关键姿态，顶部斜向根部保持固定，尾部逐段滞后回摆">
+<p>以已有垂须绘画为底稿设计派生姿态，再通过 ComfyUI / Wan2.2 5B 细化。循环轨迹保留固定根部和透明轮廓；可在 Krita 中继续逐帧修绘。</p>
+<div class="links"><a href="krita/baleen-sway-12fps.kra">Krita 动画母版</a><a href="krita/baleen-keyposes.kra">Krita 八姿态原画</a><a href="baleen-sway-atlas.png">透明帧图集</a><a href="videos/three-cycles.mp4">三轮连续演示</a><a href="README.md">制作与检查记录</a></div>
+<h2>检查记录</h2>
+<p>根部像素不变；48 帧无相邻重复；透明边缘留有余量；首尾衔接变化量处于普通帧间范围。Krita 实际导出的 48 帧与 PNG 序列逐像素相同。</p>
+<p class="notice">本次交付为一簇独立动画。关键姿态和透明边缘已复核，连续播放的自然度待观看确认；尚未替换主关卡。</p>
+<p><a href="../baleen-chaos/preview.html">原视频参考</a> · <a href="../baleen-keyart-v2/preview.html">上一版</a> · <a href="review/loop-validation.json">循环测量</a> · <a href="review/krita-validation.json">Krita 回导检查</a></p>
+</main>
+<script>
+const canvas=document.getElementById('view'),ctx=canvas.getContext('2d'),seek=document.getElementById('seek'),count=document.getElementById('count'),toggle=document.getElementById('toggle'),bg=document.getElementById('bg');
+let images=[],frame=0,playing=false,started=0,startFrame=0;
+function draw(){if(images.length!==48)return;if(bg.value==='checker'){for(let y=0;y<384;y+=24)for(let x=0;x<384;x+=24){ctx.fillStyle=((x+y)/24%2)?'#57636b':'#78858a';ctx.fillRect(x,y,24,24)}}else{ctx.fillStyle=bg.value==='light'?'#dce1dd':'#0c1d28';ctx.fillRect(0,0,384,384)}ctx.drawImage(images[frame],0,0);seek.value=frame;count.textContent=`${String(frame+1).padStart(2,'0')} / 48`;}
+function stop(){playing=false;toggle.textContent='播放'}
+toggle.onclick=()=>{if(playing)stop();else{playing=true;started=performance.now();startFrame=frame;toggle.textContent='暂停'}};
+document.getElementById('step').onclick=()=>{stop();frame=(frame+1)%48;draw()};seek.oninput=()=>{stop();frame=+seek.value;draw()};bg.onchange=draw;
+Promise.all(Array.from({length:48},(_,i)=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error(`帧 ${i} 加载失败`));im.src=`frames/${String(i).padStart(4,'0')}.png`}))).then(list=>{images=list;draw()}).catch(e=>count.textContent=e.message);
+function tick(now){if(playing&&images.length===48){const next=(startFrame+Math.floor((now-started)*12/1000))%48;if(next!==frame){frame=next;draw()}}requestAnimationFrame(tick)}requestAnimationFrame(tick);
+</script></html>

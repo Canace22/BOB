@@ -1,0 +1,948 @@
+{
+  "prompt": [
+    11,
+    "9532be3c-4e0c-4fcb-ac02-f6edfac3bfe5",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "wan2.2_ti2v_5B_fp16.safetensors",
+          "weight_dtype": "fp8_e4m3fn"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "type": "wan",
+          "device": "cpu"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "wan2.2_vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "ModelSamplingSD3",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "shift": 8.0
+        }
+      },
+      "5": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Single hand-painted ivory whale baleen fringe underwater. Preserve provided animation exactly. Dark diagonal root perfectly fixed. Flexible slender fibers: middle bends first, lower section follows, delicate tips lag and sweep wider, smooth S-shaped waves downstream. Gentle buoyant underwater drag, not rubber sheet, no rigid rotation. Keep original silhouette, fiber lengths, colors and uniform flat green background. Fixed camera. Only subtle painted shading refinement."
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "moving camera, moving root, violent waving, rigid swinging, changing colors, green strands, background texture, rock, fish, bubbles, text, glowing background, growing fibers, distorted anatomy, melting, flicker, double image"
+        }
+      },
+      "7": {
+        "class_type": "LoadVideo",
+        "inputs": {
+          "file": "baleen_loop_v3_guide.mp4"
+        }
+      },
+      "8": {
+        "class_type": "GetVideoComponents",
+        "inputs": {
+          "video": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "8",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "6",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ],
+          "seed": 291029812,
+          "steps": 20,
+          "cfg": 2.0,
+          "sampler_name": "uni_pc",
+          "scheduler": "simple",
+          "denoise": 0.1
+        }
+      },
+      "11": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "10",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "baleen_loop_v3/delayed_tip"
+        }
+      }
+    },
+    {
+      "client_id": "baleen-loop-v3",
+      "create_time": 1793259108518
+    },
+    [
+      "12"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "baleen_loop_v3_guide.mp4",
+          "subfolder": "",
+          "type": "input",
+          "metadata": {
+            "kind": "video",
+            "width": 384,
+            "height": 384,
+            "duration": 3.0416666666666665,
+            "fps": 24.0,
+            "frame_count": 73
+          }
+        }
+      ],
+      "animated": [
+        true
+      ]
+    },
+    "12": {
+      "images": [
+        {
+          "filename": "delayed_tip_00001_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00002_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00003_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00004_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00005_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00006_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00007_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00008_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00009_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00010_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00011_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00012_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00013_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00014_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00015_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00016_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00017_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00018_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00019_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00020_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00021_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00022_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00023_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00024_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00025_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00026_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00027_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00028_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00029_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00030_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00031_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00032_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00033_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00034_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00035_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00036_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00037_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00038_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00039_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00040_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00041_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00042_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00043_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00044_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00045_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00046_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00047_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00048_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00049_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00050_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00051_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00052_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00053_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00054_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00055_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00056_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00057_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00058_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00059_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00060_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00061_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00062_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00063_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00064_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00065_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00066_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00067_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00068_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00069_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00070_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00071_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00072_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        },
+        {
+          "filename": "delayed_tip_00073_.png",
+          "subfolder": "baleen_loop_v3",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 384,
+            "height": 384
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "9532be3c-4e0c-4fcb-ac02-f6edfac3bfe5",
+          "timestamp": 1793259108519
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "prompt_id": "9532be3c-4e0c-4fcb-ac02-f6edfac3bfe5",
+          "timestamp": 1793259108523
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "9532be3c-4e0c-4fcb-ac02-f6edfac3bfe5",
+          "timestamp": 1793259260522
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    },
+    "12": {
+      "node_id": "12",
+      "display_node": "12",
+      "parent_node": null,
+      "real_node_id": "12"
+    }
+  }
+}
