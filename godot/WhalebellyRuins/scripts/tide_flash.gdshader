@@ -3,6 +3,12 @@ uniform float flash : hint_range(0.0, 1.0) = 0.0;
 uniform bool split_lower = false;
 uniform bool legs_only = false;
 uniform vec2 root_pixel = vec2(305.0,413.0);
+// Fragment COLOR already includes the texture. Preserve only vertex/CanvasItem
+// modulation here, so manually sampled RGB and alpha are applied exactly once.
+varying vec4 item_modulate;
+void vertex(){
+ item_modulate=COLOR;
+}
 void fragment(){
  vec4 c=texture(TEXTURE,UV);
  vec2 p=UV/TEXTURE_PIXEL_SIZE;
@@ -10,5 +16,5 @@ void fragment(){
  float side=1.0-smoothstep(78.0,84.0,abs(p.x-root_pixel.x));
  float region=lower*side;
  if(legs_only){c.a*=region;}else if(split_lower){c.a*=1.0-region;}
- COLOR=vec4(mix(c.rgb,vec3(1.0),flash*0.8),c.a)*COLOR;
+ COLOR=vec4(mix(c.rgb,vec3(1.0),flash*0.8),c.a)*item_modulate;
 }

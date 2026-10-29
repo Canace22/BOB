@@ -109,3 +109,7 @@ Godot --headless --audio-driver Dummy --path . --script tests/campaign_route_tes
 测试环境WASAPI输出设备初始化失败，最终自动回归显式使用Dummy音频驱动；声音资源和事件保留，未声称通过扬声器听感验收。GPU证据来自实际Godot视口，键位测试使用引擎物理输入事件；未声称完成原生窗口长时间人工试玩。源动画跳切/武器漂移仍保持candidate，需另做动画美术精修；技术接入通过不代表与《空洞骑士》手感逐帧完全一致。
 
 `tools/build_campaign_player.gd` 仅在重建基准场景时运行，会重设该生成场景参数；日常调参直接编辑CampaignPlayer，不要无故重跑生成器。
+
+### 角色色彩修正
+
+已修复共用角色Shader的重复乘色/重复Alpha问题，恢复源图的灰青披风、暖灯和轮廓过渡。仅修改渲染计算，不改PNG或动画。实机前后对照见[颜色对照](../.production/character-color/对照.html)，专项复跑 `tests/character_color_test.gd`（需要真实渲染，不用headless）。

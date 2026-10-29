@@ -67,3 +67,5 @@ V5.2 主线入口使用 `campaign-levels.js / campaign-renderer.js`，旧四区 
 失败时保留报告，恢复本次资源及对应映射，不回滚无关代码或清空浏览器全部存档。技术检查、实际视觉检查与用户美术接受分别记录。
 
 主场景迁移需先记录启动入口、活跃控制器数值、碰撞层、存档接口和受保护场景哈希，再用相同数值运行独立PlayerTest。CampaignPlayer继承基础场景，以适配层调用旧敌人/交互/机关；跨房间HUD必须断开旧角色信号并重绑。参数保存在派生场景，避免_ready覆盖Inspector。仅中心点落在真实表面内侧安全余量时更新last_safe，ground_y无命中时返回传入高度，不能单独作安全落点判断。普通短跳截断不能吞掉旧机关强弹跳。自动门需要出生保护，并排除与营地重叠的返回门。连续走图测试应使用实际攻击/跳跃/技能策略，既验收单房接口，也验收Boss解锁后到出口的路径；QA存档复跑必须串行。
+
+Godot CanvasItem颜色验收：fragment中的COLOR已含默认纹理采样。手动texture(TEXTURE,UV)后不可再乘整个fragment COLOR，否则RGB与Alpha被平方，角色发黑、边缘变薄。需保留modulate/self_modulate时，从vertex阶段传varying颜色，最后只乘一次；用带半透明的已知色块与无材质Sprite实际GPU结果对照，同时测闪白和分层。
