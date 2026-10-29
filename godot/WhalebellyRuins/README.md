@@ -8,6 +8,8 @@
 
 操作：A/D移动，K/空格跳跃、二段/蹬墙；J/Q短击，S+J下劈；L/Shift冲刺，U迎珠、I重鸣、P调息、O潜隙、E交互、W浮游、G锚环、H帮助。沿用原能力解锁，F9临时练习；游戏内F5存档、F6读取。
 
+R1-01 顶部三组垂须现使用新版末端跟随循环：48帧、12FPS、4秒，分别错开相位，并清理旧静态细丝残留。F5运行主场景；环境预览和现有便携包已同步。[实际录像与接入验收](../../assets/source/baleen-loop-v3/integration/README.md)。
+
 历史独立预览保留6秒「提灯守望」Idle（70帧、12FPS、透明图集）。独立观察打开 `scenes/characters/idle_preview.tscn` 后F6：空格暂停、右箭头逐帧、A/D转向、1/2正常或慢放。[制作来源与验收](../../assets/source/tide-picker-idle-v03/README.md)。
 
 主关卡地面移动现使用最新视频Run：**84帧、12FPS、7秒**，停止恢复原Idle。源片6.04秒整体重定时到7秒；仍有源片裁切、持叉漂移和滑步限制。打开`scenes/characters/run_preview.tscn`可F6独立预览。[Run制作与验收](../../assets/source/tide-picker-run-v03/README.md)。此前Walk资源和`walk_preview.tscn`保留。

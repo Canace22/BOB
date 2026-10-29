@@ -50,7 +50,7 @@ R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可�
 
 ### 当前垂须动画
 
-四组垂须已切换为ComfyUI/Wan2.2视频运动派生的原画帧，每组36张、12FPS、3秒；Krita母版与旧Blender资源分别保留。R1-01及独立环境共用，入口不变。[制作、帧数规则和验收](../assets/source/baleen-wan22/README.md)。
+顶部左、中、右三组已切换为V3末端跟随循环，每组48帧、12FPS、4秒，共享一张图集并错开相位；旧静态细丝已从洞顶/根部层清理。远处资源实际含蓝色岩柱，保留原36帧动画。R1-01、环境预览和现有便携包同步。[当前实机录像、布局和验收](../assets/source/baleen-loop-v3/integration/README.md)。旧[Wan运动派生资产](../assets/source/baleen-wan22/README.md)、Blender与Krita源文件保留。
 
 ## V2.4角色主场景接入
 

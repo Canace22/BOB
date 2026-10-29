@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-02.png" id="3"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-03.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ROOF.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-ROOF.png" id="5"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-L.png" id="6"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-WALL-R.png" id="7"]
 [ext_resource type="Texture2D" path="res://assets/underbridge/ROAD-UNDERSIDE-RESTORED.png" id="8"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/PORTAL.png" id="9"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/LAMP.tscn" id="10"]
-[ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png" id="11"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-02-ROOT.png" id="13"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-03-ROOT.png" id="15"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-04-ROOT.png" id="17"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-05-ROOT.png" id="19"]
-[ext_resource type="Texture2D" path="res://assets/motion_elements/BALEEN-06-ROOT.png" id="21"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png" id="17"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png" id="19"]
+[ext_resource type="Texture2D" path="res://assets/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png" id="21"]
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-DECOR-01.png" id="23"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-02.png" id="24"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/DECOR-03.png" id="25"]
@@ -503,25 +503,31 @@ metadata/motion = "bubbles"
 external_clock = true
 
 [node name="BALEEN-LEFT" parent="." instance=ExtResource("baleen_0")]
-z_index = 4
-position = Vector2(250, -16)
+z_index = -1
+position = Vector2(215.532073, -152.280209)
+rotation = 0.001435838
+scale = Vector2(1.292458464, 1.292458464)
 external_clock = true
 metadata/element_id = "BALEEN-LEFT"
-metadata/motion = "wan22_video_derived_frames"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
 
 [node name="BALEEN-CENTER" parent="." instance=ExtResource("baleen_1")]
-z_index = 4
-position = Vector2(630, -16)
+z_index = -1
+position = Vector2(644.488712, -168.195311)
+rotation = 0.295942412
+scale = Vector2(0.831028119, 0.831028119)
 external_clock = true
 metadata/element_id = "BALEEN-CENTER"
-metadata/motion = "wan22_video_derived_frames"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
 
 [node name="BALEEN-RIGHT" parent="." instance=ExtResource("baleen_2")]
-z_index = 4
-position = Vector2(880, -16)
+z_index = -1
+position = Vector2(870.898930, -111.933765)
+rotation = 0.169027947
+scale = Vector2(1.078562123, 1.078562123)
 external_clock = true
 metadata/element_id = "BALEEN-RIGHT"
-metadata/motion = "wan22_video_derived_frames"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
 
 [node name="BALEEN-DISTANT" parent="." instance=ExtResource("baleen_3")]
 z_index = -31

@@ -8,6 +8,7 @@
 <h1>须门遗港 · 垂须末端跟随循环 V3</h1>
 <p>根部固定，中段先弯，下段跟随，细尖延迟回摆。左右小簇错开节奏，保持象牙色细丝与蓝灰阴影。</p>
 <p>8 个关键姿态 · 48 张透明帧 · 12 FPS · 每轮 4 秒</p>
+<section><h2>已接入主关卡 · 实际运行录像</h2><video controls muted playsinline preload="metadata" src="integration/main-gameplay.mp4" poster="integration/main-gameplay.png"></video><p>顶部左、中、右三组已替换，分别错开相位。远景蓝色岩柱保留；主关卡和环境预览共享同一场景。<a href="integration/README.md">接入与验收记录</a></p></section>
 <div class="pair"><section><h2>深色底 · 循环播放</h2><video controls loop autoplay muted playsinline preload="auto" src="videos/baleen-loop-dark-12fps.mp4" poster="dark/0000.png"></video></section><section><h2>浅色底 · 检查细丝边缘</h2><video controls loop autoplay muted playsinline preload="auto" src="videos/baleen-loop-light-12fps.mp4" poster="light/0000.png"></video></section></div>
 <h2>透明帧逐帧查看</h2>
 <div class="viewer"><canvas width="384" height="384" id="view" aria-label="透明垂须循环帧"></canvas><div class="controls"><button id="toggle">播放</button><button id="step">下一帧</button><select id="bg" aria-label="预览背景"><option value="dark">深色底</option><option value="light">浅色底</option><option value="checker">透明棋盘</option></select></div><div class="controls"><input id="seek" type="range" min="0" max="47" value="0" aria-label="动画帧"><output id="count">加载中</output></div></div>
@@ -17,7 +18,7 @@
 <div class="links"><a href="krita/baleen-sway-12fps.kra">Krita 动画母版</a><a href="krita/baleen-keyposes.kra">Krita 八姿态原画</a><a href="baleen-sway-atlas.png">透明帧图集</a><a href="videos/three-cycles.mp4">三轮连续演示</a><a href="README.md">制作与检查记录</a></div>
 <h2>检查记录</h2>
 <p>根部像素不变；48 帧无相邻重复；透明边缘留有余量；首尾衔接变化量处于普通帧间范围。Krita 实际导出的 48 帧与 PNG 序列逐像素相同。</p>
-<p class="notice">本次交付为一簇独立动画。关键姿态和透明边缘已复核，连续播放的自然度待观看确认；尚未替换主关卡。</p>
+<p class="notice">一份垂须循环素材复用于主关卡顶部三处，按各自附着面等比缩放、旋转及镜像。技术检查和静态实机画面已复核，最终自然度以实际试玩观感为准。</p>
 <p><a href="../baleen-chaos/preview.html">原视频参考</a> · <a href="../baleen-keyart-v2/preview.html">上一版</a> · <a href="review/loop-validation.json">循环测量</a> · <a href="review/krita-validation.json">Krita 回导检查</a></p>
 </main>
 <script>

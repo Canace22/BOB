@@ -41,7 +41,8 @@
       0
     ],
     "z": 0.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-ROOF.png"
   },
   {
     "id": "WALL-L",
@@ -106,7 +107,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png"
   },
   {
     "id": "BALEEN-02-ROOT",
@@ -117,7 +119,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png"
   },
   {
     "id": "BALEEN-03-ROOT",
@@ -128,7 +131,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png"
   },
   {
     "id": "BALEEN-04-ROOT",
@@ -139,7 +143,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png"
   },
   {
     "id": "BALEEN-05-ROOT",
@@ -150,7 +155,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png"
   },
   {
     "id": "BALEEN-06-ROOT",
@@ -161,7 +167,8 @@
       0
     ],
     "z": 4.0,
-    "kind": "static"
+    "kind": "static",
+    "texture": "res://assets/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png"
   },
   {
     "id": "DECOR-01",
@@ -1008,31 +1015,43 @@
     "id": "BALEEN-LEFT",
     "scene": true,
     "pos": [
-      250,
-      -16
+      215.53207283061687,
+      -152.28020911761274
     ],
-    "z": 4,
-    "kind": "wan22_video_derived_frames"
+    "z": -1,
+    "kind": "wan22_keyart_delayed_tip_loop_12fps",
+    "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
+    "scale": 1.2924584642348076,
+    "rotation": 0.0014358375429788794,
+    "flip_h": false
   },
   {
     "id": "BALEEN-CENTER",
     "scene": true,
     "pos": [
-      630,
-      -16
+      644.4887116785612,
+      -168.19531076022523
     ],
-    "z": 4,
-    "kind": "wan22_video_derived_frames"
+    "z": -1,
+    "kind": "wan22_keyart_delayed_tip_loop_12fps",
+    "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
+    "scale": 0.831028119143167,
+    "rotation": 0.29594241215347444,
+    "flip_h": false
   },
   {
     "id": "BALEEN-RIGHT",
     "scene": true,
     "pos": [
-      880,
-      -16
+      870.898930021951,
+      -111.93376528350706
     ],
-    "z": 4,
-    "kind": "wan22_video_derived_frames"
+    "z": -1,
+    "kind": "wan22_keyart_delayed_tip_loop_12fps",
+    "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
+    "scale": 1.0785621231464495,
+    "rotation": 0.16902794739862387,
+    "flip_h": true
   },
   {
     "id": "BALEEN-DISTANT",

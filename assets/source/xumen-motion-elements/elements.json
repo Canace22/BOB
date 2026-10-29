@@ -45,11 +45,12 @@
       0
     ],
     "layer": 0.0,
-    "asset": "res://assets/foreground_edges/CLEAN-ROOF.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-ROOF.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "WALL-L",
@@ -130,11 +131,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "res://assets/foreground_edges/CLEAN-BALEEN-01-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "BALEEN-02-ROOT",
@@ -143,11 +145,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-02-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "BALEEN-03-ROOT",
@@ -156,11 +159,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-03-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "BALEEN-04-ROOT",
@@ -169,11 +173,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-04-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "BALEEN-05-ROOT",
@@ -182,11 +187,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-05-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "BALEEN-06-ROOT",
@@ -195,11 +201,12 @@
       0
     ],
     "layer": 4.0,
-    "asset": "BALEEN-06-ROOT.png",
+    "asset": "res://assets/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png",
     "motion": "static",
     "acceptance": "实机出现、位置轮廓不变",
     "collision": "N/A 环境无碰撞",
-    "sound": "N/A"
+    "sound": "N/A",
+    "source": "baleen-loop-v3/integration/master; original baked fringe removed"
   },
   {
     "id": "DECOR-01",
@@ -774,25 +781,50 @@
   {
     "id": "BALEEN-LEFT",
     "position": [
-      250,
-      -16
+      215.53207283061687,
+      -152.28020911761274
     ],
-    "layer": 4,
-    "asset": "res://assets/baleen_wan22/BALEEN-LEFT.png",
+    "layer": -1,
+    "asset": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
     "scene": "elements/BALEEN-LEFT.tscn",
-    "motion": "Wan2.2 video-derived 36 RGBA frames / 12 FPS / 3 seconds",
-    "source": "baleen-wan22/krita/BALEEN-LEFT.kra",
+    "motion": "48 RGBA frames / 12 FPS / 4s periodic delayed-tip loop",
+    "source": "baleen-loop-v3/krita/baleen-sway-12fps.kra",
     "parameters": {
-      "frames": 36,
-      "fps": 12,
-      "duration": 3.0,
-      "rect": [
-        250,
-        -16,
-        430,
-        360
+      "id": "BALEEN-LEFT",
+      "source_points": [
+        [
+          54,
+          175
+        ],
+        [
+          344,
+          74
+        ]
       ],
-      "z": 4
+      "target_points": [
+        [
+          285,
+          74
+        ],
+        [
+          660,
+          -56
+        ]
+      ],
+      "phase": 0,
+      "flip": false,
+      "position": [
+        215.53207283061687,
+        -152.28020911761274
+      ],
+      "uniform_scale": 1.2924584642348076,
+      "rotation_radians": 0.0014358375429788794,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png"
     },
     "collision": "N/A 环境装饰",
     "sound": "N/A",
@@ -801,25 +833,50 @@
   {
     "id": "BALEEN-CENTER",
     "position": [
-      630,
-      -16
+      644.4887116785612,
+      -168.19531076022523
     ],
-    "layer": 4,
-    "asset": "res://assets/baleen_wan22/BALEEN-CENTER.png",
+    "layer": -1,
+    "asset": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
     "scene": "elements/BALEEN-CENTER.tscn",
-    "motion": "Wan2.2 video-derived 36 RGBA frames / 12 FPS / 3 seconds",
-    "source": "baleen-wan22/krita/BALEEN-CENTER.kra",
+    "motion": "48 RGBA frames / 12 FPS / 4s periodic delayed-tip loop",
+    "source": "baleen-loop-v3/krita/baleen-sway-12fps.kra",
     "parameters": {
-      "frames": 36,
-      "fps": 12,
-      "duration": 3.0,
-      "rect": [
-        630,
-        -16,
-        290,
-        230
+      "id": "BALEEN-CENTER",
+      "source_points": [
+        [
+          54,
+          175
+        ],
+        [
+          344,
+          74
+        ]
       ],
-      "z": 4
+      "target_points": [
+        [
+          645,
+          -16
+        ],
+        [
+          900,
+          -26
+        ]
+      ],
+      "phase": 13,
+      "flip": false,
+      "position": [
+        644.4887116785612,
+        -168.19531076022523
+      ],
+      "uniform_scale": 0.831028119143167,
+      "rotation_radians": 0.29594241215347444,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png"
     },
     "collision": "N/A 环境装饰",
     "sound": "N/A",
@@ -828,25 +885,50 @@
   {
     "id": "BALEEN-RIGHT",
     "position": [
-      880,
-      -16
+      870.898930021951,
+      -111.93376528350706
     ],
-    "layer": 4,
-    "asset": "res://assets/baleen_wan22/BALEEN-RIGHT.png",
+    "layer": -1,
+    "asset": "res://assets/baleen_loop_v3/baleen-sway-atlas.png",
     "scene": "elements/BALEEN-RIGHT.tscn",
-    "motion": "Wan2.2 video-derived 36 RGBA frames / 12 FPS / 3 seconds",
-    "source": "baleen-wan22/krita/BALEEN-RIGHT.kra",
+    "motion": "48 RGBA frames / 12 FPS / 4s periodic delayed-tip loop",
+    "source": "baleen-loop-v3/krita/baleen-sway-12fps.kra",
     "parameters": {
-      "frames": 36,
-      "fps": 12,
-      "duration": 3.0,
-      "rect": [
-        880,
-        -16,
-        350,
-        330
+      "id": "BALEEN-RIGHT",
+      "source_points": [
+        [
+          40,
+          74
+        ],
+        [
+          330,
+          175
+        ]
       ],
-      "z": 4
+      "target_points": [
+        [
+          900,
+          -26
+        ],
+        [
+          1190,
+          134
+        ]
+      ],
+      "phase": 29,
+      "flip": true,
+      "position": [
+        870.898930021951,
+        -111.93376528350706
+      ],
+      "uniform_scale": 1.0785621231464495,
+      "rotation_radians": 0.16902794739862387,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://assets/baleen_loop_v3/baleen-sway-atlas.png"
     },
     "collision": "N/A 环境装饰",
     "sound": "N/A",

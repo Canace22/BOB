@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 26,
+  "revision": 27,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -25182,6 +25182,48 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "小跳到骨台上方，转叉向下并在约1.5秒接触，出现小涟漪；约2.5秒再次腾空，约3.4秒落至台旁。；脚先落上台面并撑叉停顿，接触到再次腾空约间隔1秒，缺少即时反弹的清楚因果。；跳跃峰值头顶过于贴近画面上边缘，未达到提示词要求的安全构图。；转叉靠近头壳，下点阶段叉柄比例和握持细节有漂移。；尚非即时点潮反弹的正式游戏动作，需精修时序与接触姿态。"
+    },
+    {
+      "id": "ambient-baleen-loop-v3",
+      "name": "须门遗港·末端跟随垂须循环V3",
+      "kind": "prop",
+      "region": "R1-01",
+      "tags": [
+        "环境",
+        "垂须",
+        "2D",
+        "循环动画",
+        "V3"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/baleen-loop-v3/preview.png",
+      "width": 384,
+      "height": 384,
+      "pivot": [
+        192,
+        127
+      ],
+      "sha256": "811a0887a92e6926db707731768950612f32bf5be404981e0903a83ed975097c",
+      "source": "assets/source/baleen-loop-v3/README.md",
+      "notes": "用户已授权并完成主关卡三处替换；源绘画等比旋转/镜像复用，0/13/29帧错相。旧静态细丝清理，蓝色岩柱保留。自然度无独立用户评分。",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "animation": {
+        "frames": 48,
+        "fps": 12,
+        "loop": true,
+        "seconds": 4,
+        "columns": 8,
+        "rows": 6,
+        "atlas": "assets/runtime/baleen-loop-v3/baleen-sway-atlas.png"
+      },
+      "integrationEvidence": "assets/source/baleen-loop-v3/integration/result.json",
+      "runtimeReferences": [
+        "godot/WhalebellyRuins/scenes/environment/elements/BALEEN-LEFT.tscn",
+        "godot/WhalebellyRuins/scenes/environment/elements/BALEEN-CENTER.tscn",
+        "godot/WhalebellyRuins/scenes/environment/elements/BALEEN-RIGHT.tscn"
+      ]
     }
   ]
 }

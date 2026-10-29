@@ -153,3 +153,6 @@ if "--assemble" in sys.argv and (project/"assets/underbridge/FOREGROUND-BACKING-
 if "--assemble" in sys.argv and (project/"assets/baleen_wan22/BALEEN-CENTER.png").exists():
  import subprocess
  subprocess.run([sys.executable,str(root/"tools/integrate_baleen_wan22.py")],check=True)
+if "--assemble" in sys.argv and (project/"assets/baleen_loop_v3/baleen-sway-atlas.png").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_baleen_loop_v3.py")],check=True)
