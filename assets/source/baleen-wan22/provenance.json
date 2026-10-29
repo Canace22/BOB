@@ -1,0 +1,28 @@
+{
+  "tools": {
+    "ComfyUI": "0.42.0",
+    "Wan": "2.2 TI2V 5B fp16 weight file; fp8_e4m3fn runtime",
+    "Krita": "5.3.4.1",
+    "OpenCV": "5.0.0",
+    "Godot": "4.7.2"
+  },
+  "job_ids": {
+    "BALEEN-CENTER": {
+      "prompt_id": "f701fb72-8f91-4ae3-8559-361169362e5e",
+      "status": "rejected_visual",
+      "source_frames": 49,
+      "source_fps": 24
+    },
+    "CONTEXT-MOTION": {
+      "prompt_id": "5f32dc4e-297f-41a5-85d4-2696f48cf668",
+      "status": "accepted_motion_only",
+      "source_frames": 49,
+      "source_fps": 24
+    }
+  },
+  "source_texture": "assets/source/baleen-blender/paint/*.png",
+  "raw_video": "videos/CONTEXT-MOTION-source.mp4",
+  "method": "local video generation -> video optical flow -> pinned original RGBA baking -> native Krita animation -> Godot atlas",
+  "remote_services_used": false,
+  "cost": 0
+}

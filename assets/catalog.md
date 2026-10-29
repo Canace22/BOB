@@ -94,6 +94,10 @@ IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光
 
 当前106个环境ID，56个气泡实例；新增三个独立气泡区域，复用绘画气泡素材。ROAD-UNDERSIDE-RESTORED恢复旧道路蒙版遗漏的桥下枝条，FOREGROUND-BACKING-SOFT调整局部补底边缘。共享环境和R1-01同步；见[来源、修复与重建](source/xumen-underbridge-repair/README.md)。
 
+### 当前垂须：Wan2.2视频运动与Krita母版
+
+四组各36帧、12FPS、3秒，合计144张RGBA；采用本地ComfyUI/Wan2.2 TI2V 5B视频的运动场驱动原画，固定根部。Krita四份原生动画母版、原始视频、失败样片、逐帧来源和运行验收见[垂须资产](source/baleen-wan22/README.md)。替换原四个BALEEN图集，总环境ID仍为106，旧Blender源保留。
+
 ### 拾潮者 V2.4 Godot 3C/技能试玩
 
 540角色帧与540合成帧、180独立特效帧已接入默认七房主场景及专项Demo；主场景数值和V6存档兼容，移动短击分层；原动作衔接美术保持candidate。[来源与验收](source/tide-picker-v24-godot/README.md)。

@@ -1,5 +1,5 @@
 extends Sprite2D
-## Actual RGBA frames rendered from the editable Blender paint-grid animation.
+## Authored RGBA frame atlases. Per-element scene owns FPS and frame count.
 @export var external_clock: bool=false
 @export var playback_fps: float=12.0
 @export var frame_count: int=72

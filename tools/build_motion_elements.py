@@ -150,3 +150,6 @@ if "--assemble" in sys.argv and (root/"assets/source/xumen-foreground-edges/mani
 if "--assemble" in sys.argv and (project/"assets/underbridge/FOREGROUND-BACKING-SOFT.png").exists():
  import subprocess
  subprocess.run([sys.executable,str(root/"tools/integrate_underbridge.py")],check=True)
+if "--assemble" in sys.argv and (project/"assets/baleen_wan22/BALEEN-CENTER.png").exists():
+ import subprocess
+ subprocess.run([sys.executable,str(root/"tools/integrate_baleen_wan22.py")],check=True)
