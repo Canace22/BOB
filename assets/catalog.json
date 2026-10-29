@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 24,
+  "revision": 26,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -25101,6 +25101,87 @@
         "schoolCount": 20
       },
       "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
+    },
+    {
+      "id": "tide-combat-orb-mini-video-v01",
+      "name": "拾潮者·迎珠·叉鸣弹 Mini效果参考",
+      "kind": "video-reference",
+      "region": "角色通用",
+      "tags": [
+        "角色",
+        "技能",
+        "Mini",
+        "视频参考"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-combat-videos-v01/mini-orb/poster.jpg",
+      "videoFile": "assets/source/tide-combat-videos-v01/mini-orb/orb-mini.mp4",
+      "width": 864,
+      "height": 496,
+      "frameCount": 97,
+      "fps": 24.0,
+      "duration": 4.041666666666667,
+      "sha256": "a6e9ae3d3067d5b90bf8a6a70244ba62c8ace28e4678bbaca9872a9707e5d90f",
+      "source": "assets/source/tide-combat-videos-v01/mini-orb/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "胸前拨叉，约1到1.6秒暖光沿红绳与骨叉汇聚；约1.8到2.2秒前送、形成带琥珀核心的透明泡；约2.8到3.8秒回收。；水压珠通过细琥珀光流与叉口连接一段时间，偏长条能量泡，未清楚成为独立飞行水压珠。；释放比提示词晚，特效偏大。；手部、骨叉和绳结细节有轻微变形。；参考片尚非精确技能时序或透明分层素材。"
+    },
+    {
+      "id": "tide-combat-upper-mini-video-v01",
+      "name": "拾潮者·挑潮 Mini效果参考",
+      "kind": "video-reference",
+      "region": "角色通用",
+      "tags": [
+        "角色",
+        "技能",
+        "Mini",
+        "视频参考"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-combat-videos-v01/mini-upper/poster.jpg",
+      "videoFile": "assets/source/tide-combat-videos-v01/mini-upper/upper-mini.mp4",
+      "width": 864,
+      "height": 496,
+      "frameCount": 97,
+      "fps": 24.0,
+      "duration": 4.041666666666667,
+      "sha256": "7d16c71c8e3b61591af51c38c1384744a48d9b6291bb7c93d27a26a2992d8782",
+      "source": "assets/source/tide-combat-videos-v01/mini-upper/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "先下沉，约1.2到1.5秒将骨叉举过头顶；约1.8秒出现小灰青弧纹，约2.9到3.4秒回收。；骨叉大部分峰值姿态横举头顶，叉口未明确朝正上方，上攻方向感不足。；头顶持叉停顿较长，节奏慢于短促上挑设计。；快速举叉阶段有重影，回收时骨叉与头壳轮廓重叠，手部握持细节有漂移。；仅为效果参考，尚未取得用户审美确认，未制作透明帧或接入游戏。"
+    },
+    {
+      "id": "tide-combat-pogo-mini-video-v01",
+      "name": "拾潮者·点潮反弹 Mini效果参考",
+      "kind": "video-reference",
+      "region": "角色通用",
+      "tags": [
+        "角色",
+        "技能",
+        "Mini",
+        "视频参考"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-combat-videos-v01/mini-pogo/poster.jpg",
+      "videoFile": "assets/source/tide-combat-videos-v01/mini-pogo/pogo-mini.mp4",
+      "width": 864,
+      "height": 496,
+      "frameCount": 97,
+      "fps": 24.0,
+      "duration": 4.041666666666667,
+      "sha256": "cd082ed4eafae984b93eb5520128baa28809558fb8b1b3042dbff04c3b52e94b",
+      "source": "assets/source/tide-combat-videos-v01/mini-pogo/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "小跳到骨台上方，转叉向下并在约1.5秒接触，出现小涟漪；约2.5秒再次腾空，约3.4秒落至台旁。；脚先落上台面并撑叉停顿，接触到再次腾空约间隔1秒，缺少即时反弹的清楚因果。；跳跃峰值头顶过于贴近画面上边缘，未达到提示词要求的安全构图。；转叉靠近头壳，下点阶段叉柄比例和握持细节有漂移。；尚非即时点潮反弹的正式游戏动作，需精修时序与接触姿态。"
     }
   ]
 }
