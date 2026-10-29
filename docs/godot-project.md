@@ -59,3 +59,8 @@ F5默认七房已使用CampaignPlayer及PlayerUI；原场景/房间数据保留�
 ### 海底鱼群美术样板
 
 打开 `scenes/environment/fish_school_gallery.tscn` 按F6：3种单鱼拼成28/14/20只三组，独立身体与尾鳍摆动，16秒循环。空格暂停，R重置，1/2/3切换可见组。源、图集、可复用元素及验收见[鱼群母版](../assets/source/fish-schools-v01/README.md)。主关卡入口保持原配置。
+
+
+## 2026-10-29 主关卡鱼群替换
+
+三组新鱼群已替换R1-01共享环境中旧48实例，现为28/14/20共62条鱼。主关卡、环境预览和独立样板同步；15项主关卡、17项环境、15项独立包检查通过。当前试玩包已更新。接入说明与证据：`assets/source/fish-schools-v01/integration/`（相对BOB根目录）。

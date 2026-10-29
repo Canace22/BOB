@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 23,
+  "revision": 24,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -25016,9 +25016,9 @@
       ],
       "sha256": "0cd689866e285bc6cbf98106ce03ebadf12e4f9ef22f6af0f7277e25ffb30888",
       "source": "assets/source/fish-schools-v01/README.md",
-      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
-      "integrationStatus": "preview-scene-only",
-      "userArtApproval": false,
+      "notes": "用户确认采用。已接入R1-01主关卡共享环境；三组62条鱼；15项主关卡+17项环境+15项独立包检查通过。",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": true,
       "animation": {
         "frames": 32,
         "fps": 24,
@@ -25027,7 +25027,8 @@
         "columns": 8,
         "rows": 4,
         "schoolCount": 28
-      }
+      },
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
     },
     {
       "id": "ambient-tealback-school-v01",
@@ -25051,9 +25052,9 @@
       ],
       "sha256": "03e3ef5e7d0264dbe9c07c9393a611558c3c26a708e50967f7de41a215ed2e2e",
       "source": "assets/source/fish-schools-v01/README.md",
-      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
-      "integrationStatus": "preview-scene-only",
-      "userArtApproval": false,
+      "notes": "用户确认采用。已接入R1-01主关卡共享环境；三组62条鱼；15项主关卡+17项环境+15项独立包检查通过。",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": true,
       "animation": {
         "frames": 32,
         "fps": 24,
@@ -25062,7 +25063,8 @@
         "columns": 8,
         "rows": 4,
         "schoolCount": 14
-      }
+      },
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
     },
     {
       "id": "ambient-lantern-school-v01",
@@ -25086,9 +25088,9 @@
       ],
       "sha256": "90f356a78117564d31fe55b0571fd63b06bc2f64d4a79173e551fa4c463c747f",
       "source": "assets/source/fish-schools-v01/README.md",
-      "notes": "AI技术与视觉复核通过；用户审美未确认。原画变形烘焙32相位，群体16秒循环；仅接入独立Godot样板，主关卡未修改。",
-      "integrationStatus": "preview-scene-only",
-      "userArtApproval": false,
+      "notes": "用户确认采用。已接入R1-01主关卡共享环境；三组62条鱼；15项主关卡+17项环境+15项独立包检查通过。",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": true,
       "animation": {
         "frames": 32,
         "fps": 24,
@@ -25097,7 +25099,8 @@
         "columns": 8,
         "rows": 4,
         "schoolCount": 20
-      }
+      },
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
     }
   ]
 }

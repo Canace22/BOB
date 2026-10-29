@@ -71,4 +71,8 @@ func update_at(time: float, pan: Vector2 = Vector2.ZERO) -> void:
 		sprite.rotation = atan2(vy, absf(vx) + 1.0) * 0.30
 		sprite.scale = Vector2((-1.0 if vx < 0.0 else 1.0) * (0.12 + 0.88 * absf(yaw)), 1.0) * fish_size / 272.0
 		sprite.frame = int(floor(fposmod(time * float(m.cycles) / 16.0 + float(m.phase), 1.0) * 32.0))
-		sprite.modulate = Color(0.83, 0.93, 1.0, float(m.depth) * (0.68 if reference_layout else 1.0))
+		var edge_fade: float = 1.0
+		if species == 0 and reference_layout:
+			var loop_time: float = fposmod(time, 16.0)
+			edge_fade = smoothstep(0.0, 1.5, minf(loop_time, 16.0 - loop_time))
+		sprite.modulate = Color(0.83, 0.93, 1.0, float(m.depth) * (0.68 if reference_layout else 1.0) * edge_fade)

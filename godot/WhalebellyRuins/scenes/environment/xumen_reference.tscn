@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3]
+[gd_scene load_steps=64 format=3]
 
 [ext_resource type="Script" path="res://scenes/environment/reference_environment.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/motion_elements/MID-01.png" id="2"]
@@ -44,54 +44,6 @@
 [ext_resource type="Texture2D" path="res://assets/foreground_edges/CLEAN-ENV-UNDERPAINT.png" id="48"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/FRONT-01.tscn" id="49"]
 [ext_resource type="Texture2D" path="res://assets/underbridge/FOREGROUND-BACKING-SOFT.png" id="50"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-01.tscn" id="51"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-02.tscn" id="52"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-03.tscn" id="53"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-04.tscn" id="54"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-05.tscn" id="55"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-06.tscn" id="56"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-07.tscn" id="57"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-08.tscn" id="58"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-09.tscn" id="59"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-10.tscn" id="60"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-11.tscn" id="61"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-12.tscn" id="62"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-13.tscn" id="63"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-14.tscn" id="64"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-15.tscn" id="65"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-16.tscn" id="66"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-17.tscn" id="67"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-18.tscn" id="68"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-19.tscn" id="69"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-20.tscn" id="70"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-21.tscn" id="71"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-22.tscn" id="72"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-23.tscn" id="73"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-24.tscn" id="74"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-25.tscn" id="75"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-26.tscn" id="76"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-02-27.tscn" id="77"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-01.tscn" id="78"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-02.tscn" id="79"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-03.tscn" id="80"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-04.tscn" id="81"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-05.tscn" id="82"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-06.tscn" id="83"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-07.tscn" id="84"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-08.tscn" id="85"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-09.tscn" id="86"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-10.tscn" id="87"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-11.tscn" id="88"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-12.tscn" id="89"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-13.tscn" id="90"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-14.tscn" id="91"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-15.tscn" id="92"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-16.tscn" id="93"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-17.tscn" id="94"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-18.tscn" id="95"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-19.tscn" id="96"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-20.tscn" id="97"]
-[ext_resource type="PackedScene" path="res://scenes/environment/elements/FISH-03-21.tscn" id="98"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/WATER-SURFACE.tscn" id="99"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-01.tscn" id="100"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-02.tscn" id="101"]
@@ -114,6 +66,10 @@
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-05.tscn" id="under_bubble_0"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-06.tscn" id="under_bubble_1"]
 [ext_resource type="PackedScene" path="res://scenes/environment/elements/BUBBLE-ZONE-07.tscn" id="under_bubble_2"]
+
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/silverfin_school_v01.tscn" id="school0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/tealback_school_v01.tscn" id="school1"]
+[ext_resource type="PackedScene" path="res://scenes/environment/elements/lantern_school_v01.tscn" id="school2"]
 
 [node name="ReferenceEnvironment" type="Node2D"]
 script = ExtResource("1")
@@ -463,341 +419,53 @@ metadata/motion = "static"
 texture = ExtResource("50")
 centered = false
 
-[node name="FISH-02-01" parent="." instance=ExtResource("51")]
-z_index = -30
-position = Vector2(646.0, 169.0)
-metadata/element_id = "FISH-02-01"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-02" parent="." instance=ExtResource("52")]
-z_index = -30
-position = Vector2(652.0, 163.0)
-metadata/element_id = "FISH-02-02"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-03" parent="." instance=ExtResource("53")]
-z_index = -30
-position = Vector2(666.0, 161.0)
-metadata/element_id = "FISH-02-03"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-04" parent="." instance=ExtResource("54")]
-z_index = -30
-position = Vector2(660.0, 170.0)
-metadata/element_id = "FISH-02-04"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-05" parent="." instance=ExtResource("55")]
-z_index = -30
-position = Vector2(643.0, 182.0)
-metadata/element_id = "FISH-02-05"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-06" parent="." instance=ExtResource("56")]
-z_index = -30
-position = Vector2(635.0, 189.0)
-metadata/element_id = "FISH-02-06"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-07" parent="." instance=ExtResource("57")]
-z_index = -30
-position = Vector2(627.0, 187.0)
-metadata/element_id = "FISH-02-07"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-08" parent="." instance=ExtResource("58")]
-z_index = -30
-position = Vector2(656.0, 188.0)
-metadata/element_id = "FISH-02-08"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-09" parent="." instance=ExtResource("59")]
-z_index = -30
-position = Vector2(666.0, 188.0)
-metadata/element_id = "FISH-02-09"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-10" parent="." instance=ExtResource("60")]
-z_index = -30
-position = Vector2(666.0, 179.0)
-metadata/element_id = "FISH-02-10"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-11" parent="." instance=ExtResource("61")]
-z_index = -30
-position = Vector2(650.0, 180.0)
-metadata/element_id = "FISH-02-11"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-12" parent="." instance=ExtResource("62")]
-z_index = -30
-position = Vector2(688.0, 184.0)
-metadata/element_id = "FISH-02-12"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-13" parent="." instance=ExtResource("63")]
-z_index = -30
-position = Vector2(693.0, 174.0)
-metadata/element_id = "FISH-02-13"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-14" parent="." instance=ExtResource("64")]
-z_index = -30
-position = Vector2(702.0, 190.0)
-metadata/element_id = "FISH-02-14"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-15" parent="." instance=ExtResource("65")]
-z_index = -30
-position = Vector2(715.0, 177.0)
-metadata/element_id = "FISH-02-15"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-16" parent="." instance=ExtResource("66")]
-z_index = -30
-position = Vector2(728.0, 171.0)
-metadata/element_id = "FISH-02-16"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-17" parent="." instance=ExtResource("67")]
-z_index = -30
-position = Vector2(676.0, 205.0)
-metadata/element_id = "FISH-02-17"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-18" parent="." instance=ExtResource("68")]
-z_index = -30
-position = Vector2(643.0, 206.0)
-metadata/element_id = "FISH-02-18"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-19" parent="." instance=ExtResource("69")]
-z_index = -30
-position = Vector2(626.0, 209.0)
-metadata/element_id = "FISH-02-19"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-20" parent="." instance=ExtResource("70")]
-z_index = -30
-position = Vector2(616.0, 208.0)
-metadata/element_id = "FISH-02-20"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-21" parent="." instance=ExtResource("71")]
-z_index = -30
-position = Vector2(619.0, 199.0)
-metadata/element_id = "FISH-02-21"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-22" parent="." instance=ExtResource("72")]
-z_index = -30
-position = Vector2(607.0, 209.0)
-metadata/element_id = "FISH-02-22"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-23" parent="." instance=ExtResource("73")]
-z_index = -30
-position = Vector2(607.0, 215.0)
-metadata/element_id = "FISH-02-23"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-24" parent="." instance=ExtResource("74")]
-z_index = -30
-position = Vector2(595.0, 221.0)
-metadata/element_id = "FISH-02-24"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-25" parent="." instance=ExtResource("75")]
-z_index = -30
-position = Vector2(587.0, 210.0)
-metadata/element_id = "FISH-02-25"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-26" parent="." instance=ExtResource("76")]
-z_index = -30
-position = Vector2(592.0, 199.0)
-metadata/element_id = "FISH-02-26"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-02-27" parent="." instance=ExtResource("77")]
-z_index = -30
-position = Vector2(577.0, 229.0)
-metadata/element_id = "FISH-02-27"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-01" parent="." instance=ExtResource("78")]
-z_index = -30
-position = Vector2(873.0, 369.0)
-metadata/element_id = "FISH-03-01"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-02" parent="." instance=ExtResource("79")]
-z_index = -30
-position = Vector2(881.0, 383.0)
-metadata/element_id = "FISH-03-02"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-03" parent="." instance=ExtResource("80")]
-z_index = -30
-position = Vector2(904.0, 355.0)
-metadata/element_id = "FISH-03-03"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-04" parent="." instance=ExtResource("81")]
-z_index = -30
-position = Vector2(925.0, 375.0)
-metadata/element_id = "FISH-03-04"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-05" parent="." instance=ExtResource("82")]
-z_index = -30
-position = Vector2(943.0, 367.0)
-metadata/element_id = "FISH-03-05"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-06" parent="." instance=ExtResource("83")]
-z_index = -30
-position = Vector2(959.0, 376.0)
-metadata/element_id = "FISH-03-06"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-07" parent="." instance=ExtResource("84")]
-z_index = -30
-position = Vector2(959.0, 354.0)
-metadata/element_id = "FISH-03-07"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-08" parent="." instance=ExtResource("85")]
-z_index = -30
-position = Vector2(974.0, 364.0)
-metadata/element_id = "FISH-03-08"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-09" parent="." instance=ExtResource("86")]
-z_index = -30
-position = Vector2(990.0, 357.0)
-metadata/element_id = "FISH-03-09"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-10" parent="." instance=ExtResource("87")]
-z_index = -30
-position = Vector2(997.0, 367.0)
-metadata/element_id = "FISH-03-10"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-11" parent="." instance=ExtResource("88")]
-z_index = -30
-position = Vector2(1005.0, 350.0)
-metadata/element_id = "FISH-03-11"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-12" parent="." instance=ExtResource("89")]
-z_index = -30
-position = Vector2(1013.0, 360.0)
-metadata/element_id = "FISH-03-12"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-13" parent="." instance=ExtResource("90")]
-z_index = -30
-position = Vector2(1025.0, 350.0)
-metadata/element_id = "FISH-03-13"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-14" parent="." instance=ExtResource("91")]
-z_index = -30
-position = Vector2(1038.0, 341.0)
-metadata/element_id = "FISH-03-14"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-15" parent="." instance=ExtResource("92")]
-z_index = -30
-position = Vector2(1021.0, 337.0)
-metadata/element_id = "FISH-03-15"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-16" parent="." instance=ExtResource("93")]
-z_index = -30
-position = Vector2(1002.0, 340.0)
-metadata/element_id = "FISH-03-16"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-17" parent="." instance=ExtResource("94")]
-z_index = -30
-position = Vector2(1007.0, 328.0)
-metadata/element_id = "FISH-03-17"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-18" parent="." instance=ExtResource("95")]
-z_index = -30
-position = Vector2(1029.0, 326.0)
-metadata/element_id = "FISH-03-18"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-19" parent="." instance=ExtResource("96")]
-z_index = -30
-position = Vector2(1042.0, 335.0)
-metadata/element_id = "FISH-03-19"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-20" parent="." instance=ExtResource("97")]
-z_index = -30
-position = Vector2(977.0, 343.0)
-metadata/element_id = "FISH-03-20"
-metadata/motion = "fish"
-external_clock = true
 
-[node name="FISH-03-21" parent="." instance=ExtResource("98")]
-z_index = -30
-position = Vector2(992.0, 342.0)
-metadata/element_id = "FISH-03-21"
-metadata/motion = "fish"
-external_clock = true
 
 [node name="WATER-SURFACE" parent="." instance=ExtResource("99")]
 z_index = -55
@@ -900,3 +568,21 @@ z_index = -15
 external_clock = true
 metadata/element_id = "BUBBLE-ZONE-07"
 metadata/motion = "bubbles"
+
+[node name="FISH-SCHOOL-01" parent="." instance=ExtResource("school0")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-01"
+metadata/motion = "32 phase body swim + 16 second school cycle"
+
+[node name="FISH-SCHOOL-02" parent="." instance=ExtResource("school1")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-02"
+metadata/motion = "32 phase body swim + 16 second school cycle"
+
+[node name="FISH-SCHOOL-03" parent="." instance=ExtResource("school2")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-03"
+metadata/motion = "32 phase body swim + 16 second school cycle"

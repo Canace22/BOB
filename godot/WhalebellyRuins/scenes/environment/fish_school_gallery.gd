@@ -8,17 +8,8 @@ var qa: bool = false
 func _ready() -> void:
 	qa = "--fish-qa" in OS.get_cmdline_user_args()
 	environment.set_process(false)
-	for child in environment.get_children():
-		if str(child.name).begins_with("FISH"):
-			child.hide()
 	for k in 3:
-		var ids: Array[String] = ["silverfin", "tealback", "lantern"]
-		var scene: PackedScene = load("res://scenes/environment/elements/%s_school_v01.tscn" % ids[k])
-		var group: Node2D = scene.instantiate()
-		group.autoplay = false
-		group.z_index = -25
-		group.name = "NewFishSchool%d" % k
-		environment.add_child(group)
+		var group: Node2D = environment.get_node("FISH-SCHOOL-%02d" % (k + 1))
 		groups.append(group)
 	if qa:
 		DirAccess.make_dir_recursive_absolute("res://evidence/fish_schools")

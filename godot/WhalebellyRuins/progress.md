@@ -142,3 +142,8 @@ Godot4.7.2导入、16项实际GPU Run检查通过；历史Walk测试显式选用
 ## 2026-10-29 海底鱼群独立样板
 
 新增 `scenes/environment/fish_school_gallery.tscn`，F6查看三组62条鱼；空格暂停，R重置，1/2/3显隐。单鱼原画、群体组合、32相位游动帧已完成，实际Godot4.7.2 GPU检查通过。此批只新增样板和可复用元素场景，未替换主关卡。素材与边界见 `../../assets/source/fish-schools-v01/README.md`；证据 `evidence/fish_schools/`。浏览器交付为项目外 `outputs/海底鱼群动画_v01/预览.html`。
+
+
+## 2026-10-29 主关卡鱼群替换
+
+三组新鱼群已替换R1-01共享环境中旧48实例，现为28/14/20共62条鱼。主关卡、环境预览和独立样板同步；15项主关卡、17项环境、15项独立包检查通过。当前试玩包已更新。接入说明与证据：`assets/source/fish-schools-v01/integration/`（相对BOB根目录）。

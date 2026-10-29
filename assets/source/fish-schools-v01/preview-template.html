@@ -11,8 +11,8 @@
 <p class="hint">原画模式用于配色与大小对照；完整前后遮挡见 Godot 鱼群样板。圆身鱼转向时先收窄侧影，再展开另一侧。静止和暂停保留当前姿态。</p>
 <h2>04　放回原画场景 <small>Godot 实际渲染 · 道路与前景遮挡</small></h2>
 <div class="stage"><video style="display:block;width:100%" controls loop muted playsinline preload="metadata" poster="evidence/godot-scene.png" src="previews/Godot原画场景.mp4"></video></div>
-<p class="hint">银鳍鱼从中上层穿行，圆鳍鱼在桥下聚游，微光鱼沿右侧水域回旋。此处是独立美术样板，尚未替换主关卡鱼群。</p>
-<div class="footer"><a href="previews/三组鱼群总览.mp4">播放总览视频 ↗</a><a href="设计与使用说明.md">设计与使用说明 ↗</a><a href="runtime/manifest.json">素材与队形清单 ↗</a><span>鲸落万物生 · 环境生物动画 v01</span></div></main>
+<p class="hint">银鳍鱼从中上层穿行，圆鳍鱼在桥下聚游，微光鱼沿右侧水域回旋。三组已接入主关卡；下图为带角色与HUD的实际主关卡截图。</p>
+<h2>05　主关卡已接入 <small>三组62条鱼 · 角色与镜头验证通过</small></h2><div class="stage"><img style="display:block;width:100%" src="evidence/main-level.png" alt="主关卡新鱼群实际截图"></div><div class="footer"><a href="previews/三组鱼群总览.mp4">播放总览视频 ↗</a><a href="设计与使用说明.md">设计与使用说明 ↗</a><a href="runtime/manifest.json">素材与队形清单 ↗</a><span>鲸落万物生 · 环境生物动画 v01</span></div></main>
 <script src="source/fish-motion.js"></script><script>
 let t=4,playing=true,last=0,ready=false,reference=null;const stage=document.querySelector('#stage'),ctx=stage.getContext('2d'),M=FishMotion;
 async function start(){await M.init('.'); reference=new Image();reference.src='source/reference.png';await reference.decode();

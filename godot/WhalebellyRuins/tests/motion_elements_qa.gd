@@ -14,6 +14,8 @@ func state() -> Array:
 	var result: Array=[]
 	for n in scene.get_children():
 		if n is Sprite2D: result.append([n.position,n.frame,n.modulate,n.scale,n.flip_h])
+		if str(n.name).begins_with("FISH-SCHOOL"):
+			for fish in n.sprites: result.append([fish.position,fish.frame,fish.modulate,fish.scale,fish.rotation])
 	for b in scene.bubbles: result.append([b.node.position,b.node.modulate])
 	return result
 func run() -> void:
@@ -29,10 +31,11 @@ func run() -> void:
 		if not scene.has_node(id):missing.append(id)
 	check("all_%s_element_ids_instanced"%manifest.size(),missing.is_empty(),missing)
 	check("no_physics_or_controller_in_environment",scene.find_children("*","CollisionObject2D",true,false).is_empty() and scene.find_children("*","CollisionShape2D",true,false).is_empty())
-	var fish := scene.get_node("FISH-02-01") as Sprite2D
-	check("fish_has_12_real_bitmap_frames",fish.hframes==12 and fish.texture.get_width()==1440)
+	var fish: Sprite2D = scene.get_node("FISH-SCHOOL-01").sprites[0]
+	var fish_origin: Vector2 = fish.position
+	check("fish_has_32_real_bitmap_frames",fish.hframes==8 and fish.vframes==4 and fish.texture.get_width()==2560)
 	var im := fish.texture.get_image()
-	check("tail_frames_differ",im.get_region(Rect2i(0,0,120,60)).get_data()!=im.get_region(Rect2i(360,0,120,60)).get_data())
+	check("tail_frames_differ",im.get_region(Rect2i(0,0,320,224)).get_data()!=im.get_region(Rect2i(960,0,320,224)).get_data())
 	var rigid: Dictionary={}
 	for id: String in ["ROAD","ROOF","WALL-L","WALL-R","PORTAL","CHARACTER","BALEEN-03-ROOT"]:rigid[id]=scene.get_node(id).transform
 	var stationary := true
@@ -46,7 +49,7 @@ func run() -> void:
 	check("180s_bubbles_bounded_56_instances",bounded and scene.bubbles.size()==56)
 	check("bubble_recycling",scene.recycled>200,scene.recycled)
 	scene.elapsed=5.0;scene.update_visuals()
-	check("individual_fish_move_visible_distance",fish.position.distance_to(fish.home)>20.0,fish.position.distance_to(fish.home))
+	check("individual_fish_move_visible_distance",fish.position.distance_to(fish_origin)>20.0,fish.position.distance_to(fish_origin))
 	var held=state()
 	scene.animate_environment=false;scene._process(0.5)
 	check("pause_holds_all_elements",state()==held)
