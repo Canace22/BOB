@@ -124,3 +124,11 @@ Godot4.7.2导入与OpenGL实际主场景16项检查全部通过（evidence/walk-
 定位到tide_flash.gdshader将手动texture采样乘以fragment COLOR；后者已包含纹理，因此RGB与Alpha被重复相乘。改用vertex阶段传入的CanvasItem调制色，只应用一次纹理，保留flash及上下身遮罩。未重绘、修改角色尺寸或原始PNG。修复覆盖共用材质的待机/技能、独立腿部及当前工作区WalkAnimation。
 
 真实GPU色块回归：同一半透明纹理+节点modulate，旧输出Alpha0.1843，标准与修正输出均为0.3725；修正与无材质基线RGBA最大差0。6项专项通过，无脚本/Shader错误；R1-01/R1-02同姿势前后图、移动与攻击实机图见 `.production/character-color/对照.html`。现有独立走路动作工作区修改未纳入本次提交。仅Godot渲染修复，不发布Pages。
+
+## 2026-10-29 最新Run v2视频接入
+
+主关卡CampaignPlayer地面run改用tide-picker-run-v03；来源是用户最新大幅动作Run v2。145源帧/24FPS=6.041667秒向上取整7秒，完整源区间均匀重定时为84张透明帧/12FPS；原视频、提示词、逐帧来源索引与构建脚本入库。固定地面/尺度，保留腾空，不使用旧Walk硬编码修叉。
+
+Godot4.7.2导入、16项实际GPU Run检查通过；历史Walk测试显式选用保留资源，再过16项。移动/停止/左右/跳跃/攻击/暂停/顶墙/换房覆盖，QA模式隔离真实存档。两轮GPU录像14.17秒、主关卡左右及明暗底截图与相邻运动/接缝抽帧已检查，证据evidence/run-v03与源目录review。未改物理参数与存档格式，无新生成费用，不发布Pages。
+
+原视频裁切、持叉漂移、肢体变形、接缝与固定12FPS下滑步未完全解决；保留视觉candidate与用户审美未签收状态。来源说明、README、资源台账和透明提取Skill经验已更新。

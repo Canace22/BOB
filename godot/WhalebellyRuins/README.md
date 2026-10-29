@@ -10,7 +10,7 @@
 
 历史独立预览保留6秒「提灯守望」Idle（70帧、12FPS、透明图集）。独立观察打开 `scenes/characters/idle_preview.tscn` 后F6：空格暂停、右箭头逐帧、A/D转向、1/2正常或慢放。[制作来源与验收](../../assets/source/tide-picker-idle-v03/README.md)。
 
-主关卡地面移动已接入视频Walk：**84帧、12FPS、7秒**；停止回到当前Idle。`scenes/characters/walk_preview.tscn`可独立F6预览，操作同上。[Walk来源、重定时与限制](../../assets/source/tide-picker-walk-v03/README.md)。源视频稳定段重定时以闭合循环，固定帧率下仍有滑步，属于已接入的视觉评审稿。
+主关卡地面移动现使用最新视频Run：**84帧、12FPS、7秒**，停止恢复原Idle。源片6.04秒整体重定时到7秒；仍有源片裁切、持叉漂移和滑步限制。打开`scenes/characters/run_preview.tscn`可F6独立预览。[Run制作与验收](../../assets/source/tide-picker-run-v03/README.md)。此前Walk资源和`walk_preview.tscn`保留。
 
 ## 角色3C与技能试玩（2026-10-29）
 

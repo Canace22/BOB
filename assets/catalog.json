@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 19,
+  "revision": 20,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24847,12 +24847,48 @@
       ],
       "source": "assets/source/tide-picker-walk-v03/README.md",
       "sha256": "2cc6f460a8543a0c11137f705afe54fe083d2e35b6985978296035b9b9db4205",
-      "integrationStatus": "integrated",
+      "integrationStatus": "superseded",
       "runtimeScene": "godot/WhalebellyRuins/scenes/main.tscn",
       "runtimeFile": "godot/WhalebellyRuins/assets/runtime/tide-picker-walk-v03/walk.tres",
       "userArtApproval": false,
       "reviewer": "agent",
-      "notes": "当前主关卡地面移动使用84帧/7秒/12FPS；源视频相位匹配区间重定时，骨叉用完整参考恢复。16项主关卡检查通过；仍有源片变形、接缝与固定帧率下滑步，保持视觉candidate。"
+      "notes": "Walk资源、独立预览与显式选用回归保留；主关卡默认地面移动已由tide-picker-run-v03替代。源片重定时、持物恢复与原视觉限制见来源说明。"
+    },
+    {
+      "id": "tide-picker-run-v03",
+      "name": "拾潮者 · 视频Run 12FPS",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "Run",
+        "视频动作",
+        "Godot"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-run-v03/run-atlas.png",
+      "width": 2048,
+      "height": 3696,
+      "frameSize": [
+        256,
+        336
+      ],
+      "frameCount": 84,
+      "fps": 12,
+      "duration": 7,
+      "pivot": [
+        128,
+        300
+      ],
+      "source": "assets/source/tide-picker-run-v03/README.md",
+      "sha256": "9fe40d6455bbb7516b0d2a1e7a467af7d5f9ca02df0c0b99d9e329e40b8013c1",
+      "integrationStatus": "integrated",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/main.tscn",
+      "runtimeFile": "godot/WhalebellyRuins/assets/runtime/tide-picker-run-v03/run.tres",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "主关卡地面移动使用Run v2源片制作的84帧/7秒/12FPS。完整源片重定时，无静止补尾。16项实机检查通过；源裁切、持叉漂移、形变、接缝与滑步保留，视觉candidate。"
     }
   ]
 }

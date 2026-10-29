@@ -1,7 +1,7 @@
 extends SceneTree
 var host: Node2D
 var checks: Array = []
-const OUT := "res://evidence/walk-v03"
+const OUT := "res://evidence/run-v03/retained-walk"
 func _initialize() -> void: run.call_deferred()
 func tick(n:int) -> void:
 	for i in range(n): await physics_frame
@@ -20,7 +20,8 @@ func run() -> void:
 	root.add_child(host);current_scene=host
 	await tick(45)
 	var p:CharacterBody2D=host.player
-	var walk:Node=p.walk_visual
+	use_retained_walk(p)
+	var walk:Node=p.run_visual
 	var frames:SpriteFrames=walk.sprite.sprite_frames
 	check("84_frames_at_12_fps",frames.get_frame_count(&"walk")==84 and frames.get_animation_speed(&"walk")==12)
 	var duration:=0.0;var bounds_ok:=true
@@ -73,8 +74,18 @@ func run() -> void:
 	check("loop_wraps",walk.sprite.frame==0)
 	await tick(3)
 	host.load_room(1);await tick(35)
-	check("room_change_keeps_walk",is_instance_valid(host.player.walk_visual.sprite) and host.player.walk_visual.sprite.sprite_frames==frames)
+	use_retained_walk(host.player)
+	check("room_change_keeps_walk",is_instance_valid(host.player.run_visual.sprite) and host.player.run_visual.sprite.sprite_frames==frames)
 	var failures:=checks.filter(func(c):return not c.pass).size()
 	var file:=FileAccess.open(OUT.path_join("checks.json"),FileAccess.WRITE)
 	file.store_string(JSON.stringify({"checks":checks,"failures":failures},"\t"));file.close()
 	host.graceful_quit(1 if failures else 0)
+
+# The production default is Run; this regression explicitly selects retained Walk.
+func use_retained_walk(p: CharacterBody2D) -> void:
+	var height:float=p.run_visual.sprite.scale.y*p.visual_scale*266.0
+	p.run_visual.sprite.free()
+	p.run_visual.free()
+	p.run_visual=load("res://scripts/campaign_walk_visual.gd").new()
+	p.add_child(p.run_visual)
+	p.run_visual.setup(p,height)

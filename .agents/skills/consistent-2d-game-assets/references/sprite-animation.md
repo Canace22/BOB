@@ -109,3 +109,5 @@ Save the source atlas, actual prompt and references, extraction script or crop m
 ### 用户指定固定FPS与整秒时长
 
 先读取实际解码帧数/FPS，用ceil(duration)×目标FPS确定帧槽，不以平台标称秒数代替；6秒生成片可能有145帧/24FPS，实际需上取整7秒。尾部补间若有重影应舍弃；改选相位匹配连续区间并重定时时，明确区分完整源时长、选段时长和播放时长，逐帧记录来源，不声称原速直接抽帧。固定FPS优先时不得暗中使用速度倍率；顶墙、暂停和命中停顿仍须冻结动画时钟，保留移动速度则明确记录可能滑步。当前主场景可能已切换控制器，应从main_scene追踪实际实例，不能只改历史player.gd。例：tide-picker-walk-v03及tests/walk_animation.gd。
+
+- 复用视频去底脚本前检查新动作的道具运动范围。Walk的硬编码骨叉修复蒙版不可直接套到大幅摆叉Run；中性背景阈值也可能误删象牙高光。用亮度保护和明暗底实际渲染复查，无法补回的画外像素要明确记录。源片时长向上取整时，记录是补尾还是整体重定时，固定播放FPS与源片动作速度分别陈述。见`assets/source/tide-picker-run-v03/README.md`。

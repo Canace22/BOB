@@ -17,7 +17,7 @@ var membrane_boost:bool=false
 var qa_mode:bool=false
 var qa_axis:float=0
 var transition_locked:bool=false
-var walk_visual: Node
+var run_visual: Node
 
 func _ready() -> void:
 	spawn_lock_left=spawn_input_lock
@@ -34,10 +34,10 @@ func _ready() -> void:
 	var source_height:float=textures.idle[0].get_image().get_used_rect().size.y
 	visual_scale=target_height/maxf(source_height,1)
 	$Visual.scale=Vector2.ONE*visual_scale
-	walk_visual=preload("res://scripts/campaign_walk_visual.gd").new()
-	walk_visual.name="WalkVisualController"
-	add_child(walk_visual)
-	walk_visual.setup(self,target_height)
+	run_visual=preload("res://scripts/campaign_run_visual.gd").new()
+	run_visual.name="RunVisualController"
+	add_child(run_visual)
+	run_visual.setup(self,target_height)
 	for ray:RayCast2D in [$Foot0,$"Foot-10",$Foot10]:ray.target_position.y=30
 	health=clampi(host.health,0,max_health)
 	soul=host.player_soul
@@ -77,7 +77,7 @@ func _physics_process(dt:float) -> void:
 	interacted_target=host if interaction_nearby() else null
 	var before_move_x:float=position.x
 	super._physics_process(dt)
-	walk_visual.update(dt,position.x-before_move_x)
+	run_visual.update(dt,position.x-before_move_x)
 	_check_door_entry()
 	position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
 	if is_on_floor() and position.y<float(host.room.size[1])-65 and stable_floor_point():last_safe=position
