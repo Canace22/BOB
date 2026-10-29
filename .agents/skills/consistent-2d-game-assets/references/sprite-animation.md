@@ -113,3 +113,9 @@ Save the source atlas, actual prompt and references, extraction script or crop m
 先读取实际解码帧数/FPS，用ceil(duration)×目标FPS确定帧槽，不以平台标称秒数代替；6秒生成片可能有145帧/24FPS，实际需上取整7秒。尾部补间若有重影应舍弃；改选相位匹配连续区间并重定时时，明确区分完整源时长、选段时长和播放时长，逐帧记录来源，不声称原速直接抽帧。固定FPS优先时不得暗中使用速度倍率；顶墙、暂停和命中停顿仍须冻结动画时钟，保留移动速度则明确记录可能滑步。当前主场景可能已切换控制器，应从main_scene追踪实际实例，不能只改历史player.gd。例：tide-picker-walk-v03及tests/walk_animation.gd。
 
 - 复用视频去底脚本前检查新动作的道具运动范围。Walk的硬编码骨叉修复蒙版不可直接套到大幅摆叉Run；中性背景阈值也可能误删象牙高光。用亮度保护和明暗底实际渲染复查，无法补回的画外像素要明确记录。源片时长向上取整时，记录是补尾还是整体重定时，固定播放FPS与源片动作速度分别陈述。见`assets/source/tide-picker-run-v03/README.md`。
+
+### 关键原画引导环境动画与Krita回导
+
+- 单簇细丝可先绘制多个关键姿态，再保存独立的运动指导片，交给Wan做低强度视频细化。指导补间、模型输出和固定根部/透明修正分别登记；不能将光流补间称为逐帧手绘，也不能把新关键原画说成Wan生成。
+- 高强度视频细化可能让细丝偏色、融合。先检代表帧，保留失败结果，降低细化强度做定向返修。绿色去底后必须检查浅底；模型轮廓外的灰雾残影可用已绘制指导alpha限定，但须声明透明轮廓由原画引导保留。
+- Krita插件队列消费用可覆盖的replace或唯一归档名，旧consumed文件会让rename失败并堵住导入。插件不可用时可用原生CLI把逐帧分层ORA转成KRA像素块，再组织时间轴；必须实际通过Krita导出全部动画帧并逐像素对照。ZIP旧文件名可能未设UTF-8标志，不能直接拿XML中文画布名当ZIP目录；内部统一ASCII路径，并移除重复animation节点。见`assets/source/baleen-keyart-v2`和`tools/baleen_kra_native.py`。
