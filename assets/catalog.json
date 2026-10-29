@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 21,
+  "revision": 22,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24967,6 +24967,32 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "可见下蹲、小跳、骨叉转向下、落地缓冲与回稳；跳跃峰值头顶贴边/轻微裁切，红绳与持叉细节漂移，动作比设计时间延后。三组中下刺过程较完整，仍为参考稿。"
+    },
+    {
+      "id": "tide-combat-basic-video-v01",
+      "name": "拾潮者 · 扣潮与回拨效果样片",
+      "kind": "video-reference",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "普攻",
+        "共鸣",
+        "视频参考"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/source/tide-combat-videos-v01/01-basic-poster.jpg",
+      "videoFile": "assets/source/tide-combat-videos-v01/01-basic.mp4",
+      "width": 1280,
+      "height": 720,
+      "frameCount": 145,
+      "fps": 24,
+      "duration": 6.041666666666667,
+      "source": "assets/source/tide-combat-videos-v01/README.md",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "已完整解码145帧，并检查12个时间点：宽构图中人物、披风与骨叉在抽查帧内完整。两次前送攻击与灰青波纹可见，但第二击仍偏重复前送，未清楚形成设计中的反向回拨；压波被生成得更接近弹道，灯体角度与系绳仍有漂移。保持效果参考candidate，不能直接当作精确0.333秒普攻或正式分层资产。"
     }
   ]
 }
