@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 17,
+  "revision": 19,
   "updatedAt": "2026-10-29",
   "project": "BOB",
   "atlas": {
@@ -24817,6 +24817,42 @@
       "userArtApproval": false,
       "reviewer": "agent",
       "notes": "已接入默认七房主场景，复用原数值、怪物、机关及V6存档；回归见docs/tide-3c.md与.production/tide-main-integration。540帧RGBA不变；原素材衔接仍待精修。"
+    },
+    {
+      "id": "tide-picker-walk-v03",
+      "name": "拾潮者 · 视频Walk 12FPS",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "Walk",
+        "视频动作",
+        "Godot"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-walk-v03/walk-atlas.png",
+      "width": 2048,
+      "height": 3520,
+      "frameSize": [
+        256,
+        320
+      ],
+      "frameCount": 84,
+      "fps": 12,
+      "duration": 7,
+      "pivot": [
+        128,
+        300
+      ],
+      "source": "assets/source/tide-picker-walk-v03/README.md",
+      "sha256": "2cc6f460a8543a0c11137f705afe54fe083d2e35b6985978296035b9b9db4205",
+      "integrationStatus": "integrated",
+      "runtimeScene": "godot/WhalebellyRuins/scenes/main.tscn",
+      "runtimeFile": "godot/WhalebellyRuins/assets/runtime/tide-picker-walk-v03/walk.tres",
+      "userArtApproval": false,
+      "reviewer": "agent",
+      "notes": "当前主关卡地面移动使用84帧/7秒/12FPS；源视频相位匹配区间重定时，骨叉用完整参考恢复。16项主关卡检查通过；仍有源片变形、接缝与固定帧率下滑步，保持视觉candidate。"
     }
   ]
 }
