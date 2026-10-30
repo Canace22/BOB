@@ -12,7 +12,8 @@ mkdirSync(output, { recursive: true });
 const fallback = process.env.CHROME_PATH ?? 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const executablePath = existsSync(chromium.executablePath()) ? chromium.executablePath() : fallback;
 const browser = await chromium.launch({ executablePath, headless: process.env.HEADED !== '1', args: ['--enable-unsafe-swiftshader', '--autoplay-policy=no-user-gesture-required'] });
-const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+const context = await browser.newContext({ viewport: { width: 1280, height: 720 },
+  ...(process.env.RECORD_VIDEO === '1' ? {recordVideo: {dir: output, size: {width: 1280, height: 720}}} : {}) });
 const page = await context.newPage();
 page.setDefaultTimeout(120000);
 const url = process.env.GAME_URL ?? 'http://127.0.0.1:4188/BOB/godot/?prototype=crab';
@@ -67,6 +68,10 @@ async function fightWithoutDash() {
       console.log(`SAW ${b.kind} hp=${s.hp} boss=${b.hp}`);
     }
     if (b.phase === 2 && !shots.has('phase-2')) { shots.add('phase-2'); await capture('phase-2'); }
+    if (b.state === 'active' && !shots.has(`active-${b.kind}`)) {
+      shots.add(`active-${b.kind}`); await capture(`active-${b.kind}`);
+      assert(b.frame >= (b.kind === 'charge' ? 7 : b.kind === 'slam' ? 5 : 4), 'damage uses contact poses');
+    }
     const dx = b.x - p.x, distance = Math.abs(dx), toward = Math.sign(dx);
     let movement = 0, tap;
     const attackState = b.state === 'tell' || b.state === 'active';
@@ -125,6 +130,7 @@ try {
   const frozen = await state();
   assert.equal(frozen.time, paused.time, 'pause freezes combat clock');
   assert.equal(frozen.boss.timer, paused.boss.timer, 'pause freezes attack timer');
+  assert.equal(frozen.boss.frame, paused.boss.frame, 'pause freezes animation frame');
   assert.equal(frozen.player.x, paused.player.x, 'pause freezes player position');
   await capture('paused');
   await page.keyboard.press('Escape');
@@ -136,6 +142,8 @@ try {
   for (const move of ['sweep', 'slam', 'charge', 'phase-2']) assert(shots.has(move), `combat observes ${move}`);
   assert.equal(completeState.boss.hp, 0);
   await capture('victory');
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.opacity === 0);
+  await capture('retreated');
   checks.push('no_dash_victory_three_moves_phase_two');
 
   await begin();
@@ -150,6 +158,7 @@ try {
   assert.equal(retryState.hp, 4, 'retry restores player health');
   assert.equal(retryState.boss.hp, retryState.boss.maximum, 'retry restores boss health');
   assert.equal(retryState.boss.phase, 1, 'retry clears second phase');
+  assert.equal(retryState.boss.opacity, 1, 'retry restores visible body');
   assert.equal(retryState.player.dead, false);
   await capture('retry');
   checks.push('standstill_death_and_keyboard_retry');
@@ -186,5 +195,6 @@ try {
   throw error;
 } finally {
   await release().catch(() => {});
+  await context.close();
   await browser.close();
 }

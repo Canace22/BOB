@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 13,
-  "updatedAt": "2026-10-28T10:08:43.151484+00:00",
+  "revision": 14,
+  "updatedAt": "2026-10-30T09:33:00.656Z",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -23375,6 +23375,529 @@
         "scope": "已接入独立Godot原型；本地素材加载、截图与真实按键路线通过，线上状态以本轮发布记录为准",
         "runtimeFile": "game/art/enemies/crab_prototype/charge.png"
       }
+    },
+    {
+      "id": "crab-video-v3-01_idle",
+      "name": "视频母蟹 V3 · 01_idle",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/01_idle.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "01_idle"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-02_claw_slam",
+      "name": "视频母蟹 V3 · 02_claw_slam",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/02_claw_slam.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "02_claw_slam"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-04_sweep",
+      "name": "视频母蟹 V3 · 04_sweep",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/04_sweep.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "04_sweep"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-06_shell_shake",
+      "name": "视频母蟹 V3 · 06_shell_shake",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/06_shell_shake.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "06_shell_shake"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-07_body_slam",
+      "name": "视频母蟹 V3 · 07_body_slam",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/07_body_slam.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "07_body_slam"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-08_retreat",
+      "name": "视频母蟹 V3 · 08_retreat",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/08_retreat.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "08_retreat"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-09_sink_fade",
+      "name": "视频母蟹 V3 · 09_sink_fade",
+      "kind": "enemy",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/09_sink_fade.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "09_sink_fade"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "pivot": [
+        512,
+        448
+      ],
+      "frameCount": 12
+    },
+    {
+      "id": "crab-video-v3-impact_dust",
+      "name": "视频母蟹 V3 · impact_dust",
+      "kind": "effect",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/impact_dust.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "impact_dust"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_effects.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 1024,
+      "height": 256,
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 4
+    },
+    {
+      "id": "crab-video-v3-shell_turn",
+      "name": "视频母蟹 V3 · shell_turn",
+      "kind": "effect",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/shell_turn.png",
+      "spriteType": "animated",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/generation_prompts.json"
+        ],
+        "originalId": "shell_turn"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_effects.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 1024,
+      "height": 256,
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 4
+    },
+    {
+      "id": "crab-video-v3-environment",
+      "name": "视频母蟹 V3 · environment",
+      "kind": "background",
+      "region": "独立母蟹训练场",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/crab-video-v3/environment.png",
+      "spriteType": "static",
+      "familyId": "shell-mother-crab",
+      "source": {
+        "batchId": "crab-video-v3",
+        "method": "视频参考关键姿态补绘；内置 imagegen；等比运行导出",
+        "references": [
+          "assets/source/crab-video-v3/references/video-scene.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v3/environment-prompt.txt"
+        ],
+        "originalId": "environment"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/content/rooms/prototype/crab_scenery.tscn",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
+        "limitations": [
+          "重绘关键帧不是原视频逐帧还原",
+          "动作间视角和体积仍有漂移",
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+        ],
+        "technicalReview": {
+          "passed": true,
+          "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
+          "evidence": "game/build/qa/crab-video-final-local/report.json"
+        },
+        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+      },
+      "width": 1480,
+      "height": 592
     }
   ]
 }

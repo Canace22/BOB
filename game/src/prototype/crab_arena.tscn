@@ -19,11 +19,13 @@ process_mode = 1
 [node name="Scenery" parent="World" instance=ExtResource("scenery")]
 
 [node name="LeftBoundary" type="Sprite2D" parent="World"]
+visible = false
 texture = ExtResource("curtain")
 position = Vector2(725, 800)
 scale = Vector2(0.6, 0.6)
 
 [node name="RightBoundary" type="Sprite2D" parent="World"]
+visible = false
 texture = ExtResource("curtain")
 position = Vector2(1895, 800)
 scale = Vector2(0.6, 0.6)
@@ -37,7 +39,7 @@ position = Vector2(1520, 893)
 z_index = 2
 
 [node name="Camera" type="Camera2D" parent="World"]
-position = Vector2(1310, 650)
+position = Vector2(1310, 760)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("ui")

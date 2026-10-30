@@ -1,6 +1,6 @@
 ---
 name: consistent-2d-game-assets
-description: Generate, extract, validate, and deliver consistent 2D game assets from gameplay screenshots or approved art references. Use for characters, props, environments, sprites, complete static coverage, atlas exports, and project asset libraries that must preserve an established game style.
+description: Generate, extract, validate, and deliver consistent 2D game assets from gameplay screenshots, videos or approved art references. Use for characters, environments, sprite animation, video-frame repair, atlas exports and asset libraries that must preserve an established game style.
 ---
 
 # Consistent 2D Game Assets
@@ -31,6 +31,7 @@ Read [the collaboration rules](../../../AGENTS.md) and [the global art style](..
 7. For sprite animation, read [references/sprite-animation.md](references/sprite-animation.md) before generating or packing frames. Idle, walk, and attack are different action states; they do not constitute three frames of a walk cycle.
 8. When deriving assets from design documents or several kinds of reference, read [references/design-to-assets.md](references/design-to-assets.md) to resolve source roles, preserve gameplay cues, and set a measurable runtime scale.
 9. When delivering a searchable asset library or editable resource manager, read [references/asset-library.md](references/asset-library.md) for provenance, review states, derived exports, and persistence checks.
+10. For video extraction, missing-part repair or reproducing a video's gameplay appearance, read [references/video-to-sprites.md](references/video-to-sprites.md). Preserve source-frame mappings and distinguish sampled frames, redrawn poses and runtime interpolation.
 
 ## Minimum asset brief
 

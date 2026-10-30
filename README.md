@@ -35,7 +35,9 @@ Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → �
 
 分支 `codex/crab-boss-prototype`。独立试玩入口为 [母蟹训练场](https://canace22.github.io/BOB/godot-boss/)，上线状态以 [进度记录](game/progress.md) 为准；默认主线入口不随原型发布更新。
 
-小主角对抗约五倍身高的搬壳母蟹，包含普攻二段、短跳/长跳、低钳扫/下砸/重步冲撞、半血二扫与立即重试。Enter 开始/重试，Esc 暂停；基准模式无冲刺，可在准备/结果界面切换冲刺对照。主角不能穿过巨蟹实体，低扫跳起躲避，下砸和冲撞提前撤步。训练场不读写主线存档；当前是关键静态姿态原型，不是正式逐帧动画交付。
+小主角对抗巨大搬壳母蟹，包含普攻二段、短跳/长跳、低钳扫/下砸/重步冲撞、半血二扫与立即重试。Enter 开始/重试，Esc 暂停；基准模式无冲刺，可在准备/结果界面切换冲刺对照。主角不能穿过巨蟹实体，低扫跳起躲避，下砸和冲撞提前撤步。训练场不读写主线存档。
+
+训练场现接入视频参考的骨壳洞窟、七组补绘动作、独立落地尘雾和抖壳碎片；蓄力、命中、收招与伤害窗口同步，战斗中自动收起设置按钮。素材仍有动作间体积/视角变化，尚未达到原视频的一致性；人物和三招机制沿用原型。来源、映射与限制见[制作记录](assets/source/crab-video-v3/README.md)。
 
 本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
 

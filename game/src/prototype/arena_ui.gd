@@ -84,6 +84,10 @@ func _process(_delta: float) -> void:
 	boss_bar.max_value = arena.boss.health.maximum
 	boss_bar.value = arena.boss.health.current
 	start_button.disabled = arena.stage in ["entering", "fighting"]
+	start_button.visible = not start_button.disabled
+	dash_button.visible = not start_button.disabled
+	shake_button.visible = not start_button.disabled
+	pause_button.position.y = 22 if start_button.disabled else 118
 	start_button.text = "开始 · Enter" if arena.stage == "ready" else "再试一次 · Enter"
 	dash_button.disabled = start_button.disabled
 	dash_button.text = "冲刺：开启 · Shift" if arena.dash_enabled else "冲刺：关闭"

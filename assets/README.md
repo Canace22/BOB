@@ -4,6 +4,8 @@
 
 制作前先对照[美术风格规范](art-style.md)，确认基准图、角色特征和画面层次。
 
+视频转动作并实装的批次见 [母蟹 V3 制作记录](source/crab-video-v3/README.md)：保留源帧映射、补绘提示词、动作与特效图集、可复跑导出和实际接入限制；通用流程在[视频转精灵参考](../.agents/skills/consistent-2d-game-assets/references/video-to-sprites.md)。
+
 ## 文件放哪里
 
 | 目录 | 内容 |
