@@ -10,6 +10,12 @@
 - 本地 `check` 零错误，`test` 37 项通过，新增位移/时间分离、堵墙不踏步、重试重置、侧向冲撞选择测试。Web 真实键盘完整三招、二阶段、无冲刺获胜、暂停、退场、死亡重试和冲刺对照通过，资源/引擎/浏览器错误为空；已查看侧向冲撞和低扫接触帧。证据 `game/build/qa/crab-v4-local/`（报告/截图/录屏）。
 - Skill 补充“先修视角再补过渡”、壳体模板辅助锚点、宽边距重生与分数边界。主体仍是重绘关键帧，局部纹理、体积和收招尚未达到原视频一致性。线上发布另记。
 
+### V4 已上线
+
+- 2026-10-30 18:33（Asia/Shanghai），源码 `bb91ad7b35b4035ce702c8c99e5b064a12a6ae2c`，Pages `010ca8bc114d7519d844a6c5bdc9dd2c1d5e9ba1`；[部署任务](https://github.com/Canace22/BOB/actions/runs/41041116328) completed/success，实际 `godot-boss/build.json` 一致。发布仅改 `godot-boss/`，主线仍为 `167d44a`。
+- 线上完整真按键路线通过：35.40 秒、生命 3/4；三招/二阶段、暂停、退场淡出、死亡重试、刷新及冲刺对照正常，资源/引擎/浏览器错误为空。证据 `game/build/qa/crab-v4-online/`。
+- 补充远距离不移动玩家的线上步态路线：六次观察覆盖帧 0、3、6、10、1、4，Boss x 从 1518.5 前进到 1355，脚底 y 保持 895.93；暂停后位置和帧同时冻结。已查看中间步态截图，证据 `game/build/qa/crab-v4-walk/`。脚本沉淀为 `game/tests/web_crab_walk.mjs`，同样支持 PLAYWRIGHT_MODULE/GAME_URL/TEST_LABEL/CHROME_PATH。测量工具补上十二主体数量断言并复跑，产物不变；此收尾不改变运行包。
+
 ## 2026-10-30 · 视频母蟹补绘动作与场景实装
 
 - 用户要求先沉淀 Skill，再实装 BOB 对照视频效果。扩展 `consistent-2d-game-assets` 的视频入口和 `references/video-to-sprites.md`，记录原帧映射、重绘边界、不规则网格分割、透明边缘、统一根、独立特效及实机时间轴。`quick_validate.py` 通过（Windows 使用 UTF-8）。

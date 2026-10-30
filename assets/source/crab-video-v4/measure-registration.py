@@ -5,6 +5,7 @@ for name in ['sweep','charge','walk','phase']:
     im = cv2.imread(str(root/'raw'/f'{name}.png'), cv2.IMREAD_UNCHANGED)
     n, labels, stats, _ = cv2.connectedComponentsWithStats((im[:,:,3] >= 32).astype(np.uint8), 8)
     bodies = [list(map(int,s[:4])) for s in stats[1:] if s[4] > 5000]
+    assert len(bodies)==12, (name, 'expected 12 complete bodies', len(bodies))
     bodies.sort(key=lambda b: b[1]+b[3]/2)
     ordered=[]
     for r in range(3): ordered.extend(sorted(bodies[r*4:r*4+4],key=lambda b:b[0]))
