@@ -39,6 +39,8 @@ Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → �
 
 训练场现接入视频参考的骨壳洞窟、七组补绘动作、独立落地尘雾和抖壳碎片；蓄力、命中、收招与伤害窗口同步，战斗中自动收起设置按钮。素材仍有动作间体积/视角变化，尚未达到原视频的一致性；人物和三招机制沿用原型。来源、映射与限制见[制作记录](assets/source/crab-video-v3/README.md)。
 
+V4 将横扫、冲撞、走路和抖壳统一为待机的侧向镜头，补绘 48 帧；走路随实际位移推进，停住不空踏。来源、打包和剩余漂移见 [V4 记录](assets/source/crab-video-v4/README.md)。
+
 本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
 
 发布原型用 `node tools/deploy-pages.mjs --prototype`，只更新 `gh-pages` 的 `/godot-boss/`，不替换 `/godot/`、根入口或 V2。原型启动下载使用独立缓存 `bob-boss-downloads-v1`，不清理主线缓存。

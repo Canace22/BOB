@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 14,
-  "updatedAt": "2026-10-30T09:33:00.656Z",
+  "revision": 15,
+  "updatedAt": "2026-10-30T10:27:12.472Z",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -23505,12 +23505,13 @@
         ],
         "originalId": "04_sweep"
       },
-      "integrationStatus": "integrated",
+      "integrationStatus": "superseded",
       "integration": {
         "version": "godot-crab-prototype",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
-        "evidence": "game/progress.md"
+        "evidence": "game/progress.md",
+        "scope": "Replaced by same-camera V4; retained source/runtime for rollback"
       },
       "qa": {
         "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
@@ -23559,12 +23560,13 @@
         ],
         "originalId": "06_shell_shake"
       },
-      "integrationStatus": "integrated",
+      "integrationStatus": "superseded",
       "integration": {
         "version": "godot-crab-prototype",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
-        "evidence": "game/progress.md"
+        "evidence": "game/progress.md",
+        "scope": "Replaced by same-camera V4; retained source/runtime for rollback"
       },
       "qa": {
         "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
@@ -23613,12 +23615,13 @@
         ],
         "originalId": "07_body_slam"
       },
-      "integrationStatus": "integrated",
+      "integrationStatus": "superseded",
       "integration": {
         "version": "godot-crab-prototype",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
-        "evidence": "game/progress.md"
+        "evidence": "game/progress.md",
+        "scope": "Replaced by same-camera V4; retained source/runtime for rollback"
       },
       "qa": {
         "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
@@ -23667,12 +23670,13 @@
         ],
         "originalId": "08_retreat"
       },
-      "integrationStatus": "integrated",
+      "integrationStatus": "superseded",
       "integration": {
         "version": "godot-crab-prototype",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
-        "evidence": "game/progress.md"
+        "evidence": "game/progress.md",
+        "scope": "Replaced by same-camera V4; retained source/runtime for rollback"
       },
       "qa": {
         "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
@@ -23898,6 +23902,210 @@
       },
       "width": 1480,
       "height": 592
+    },
+    {
+      "id": "crab-video-v4-sweep",
+      "name": "母蟹 V4 同视角 · sweep",
+      "kind": "enemy",
+      "target": "2d",
+      "status": "candidate",
+      "familyId": "shell-mother-crab",
+      "file": "assets/runtime/sprites/crab-video-v4/sweep.png",
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "frameCount": 12,
+      "pivot": [
+        512,
+        448
+      ],
+      "spriteType": "animated",
+      "source": {
+        "batchId": "crab-video-v4",
+        "method": "内置 imagegen 同一待机主参考重绘；壳模板定位；每动作等比打包",
+        "references": [
+          "assets/source/crab-video-v4/references/idle-master.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v4/prompts.json"
+        ],
+        "originalId": "sweep"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "technicalReview": {
+          "passed": true,
+          "checks": "48 frame bounds/bytes; check; 37 tests; real keyboard route",
+          "evidence": "game/build/qa/crab-v4-local/report.json"
+        },
+        "userVisualApproval": "awaiting integrated V4 feedback",
+        "limitations": [
+          "重绘关键帧，局部纹理和腿部体积仍有漂移",
+          "真人视觉读招与听感未由自动路线证明"
+        ]
+      }
+    },
+    {
+      "id": "crab-video-v4-charge",
+      "name": "母蟹 V4 同视角 · charge",
+      "kind": "enemy",
+      "target": "2d",
+      "status": "candidate",
+      "familyId": "shell-mother-crab",
+      "file": "assets/runtime/sprites/crab-video-v4/charge.png",
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "frameCount": 12,
+      "pivot": [
+        512,
+        448
+      ],
+      "spriteType": "animated",
+      "source": {
+        "batchId": "crab-video-v4",
+        "method": "内置 imagegen 同一待机主参考重绘；壳模板定位；每动作等比打包",
+        "references": [
+          "assets/source/crab-video-v4/references/idle-master.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v4/prompts.json"
+        ],
+        "originalId": "charge"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "technicalReview": {
+          "passed": true,
+          "checks": "48 frame bounds/bytes; check; 37 tests; real keyboard route",
+          "evidence": "game/build/qa/crab-v4-local/report.json"
+        },
+        "userVisualApproval": "awaiting integrated V4 feedback",
+        "limitations": [
+          "重绘关键帧，局部纹理和腿部体积仍有漂移",
+          "真人视觉读招与听感未由自动路线证明"
+        ]
+      }
+    },
+    {
+      "id": "crab-video-v4-walk",
+      "name": "母蟹 V4 同视角 · walk",
+      "kind": "enemy",
+      "target": "2d",
+      "status": "candidate",
+      "familyId": "shell-mother-crab",
+      "file": "assets/runtime/sprites/crab-video-v4/walk.png",
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "frameCount": 12,
+      "pivot": [
+        512,
+        448
+      ],
+      "spriteType": "animated",
+      "source": {
+        "batchId": "crab-video-v4",
+        "method": "内置 imagegen 同一待机主参考重绘；壳模板定位；每动作等比打包",
+        "references": [
+          "assets/source/crab-video-v4/references/idle-master.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v4/prompts.json"
+        ],
+        "originalId": "walk"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "technicalReview": {
+          "passed": true,
+          "checks": "48 frame bounds/bytes; check; 37 tests; real keyboard route",
+          "evidence": "game/build/qa/crab-v4-local/report.json"
+        },
+        "userVisualApproval": "awaiting integrated V4 feedback",
+        "limitations": [
+          "重绘关键帧，局部纹理和腿部体积仍有漂移",
+          "真人视觉读招与听感未由自动路线证明"
+        ]
+      }
+    },
+    {
+      "id": "crab-video-v4-phase",
+      "name": "母蟹 V4 同视角 · phase",
+      "kind": "enemy",
+      "target": "2d",
+      "status": "candidate",
+      "familyId": "shell-mother-crab",
+      "file": "assets/runtime/sprites/crab-video-v4/phase.png",
+      "width": 3584,
+      "height": 1536,
+      "frameSize": [
+        896,
+        512
+      ],
+      "frameCount": 12,
+      "pivot": [
+        512,
+        448
+      ],
+      "spriteType": "animated",
+      "source": {
+        "batchId": "crab-video-v4",
+        "method": "内置 imagegen 同一待机主参考重绘；壳模板定位；每动作等比打包",
+        "references": [
+          "assets/source/crab-video-v4/references/idle-master.png"
+        ],
+        "prompts": [
+          "assets/source/crab-video-v4/prompts.json"
+        ],
+        "originalId": "phase"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "technicalReview": {
+          "passed": true,
+          "checks": "48 frame bounds/bytes; check; 37 tests; real keyboard route",
+          "evidence": "game/build/qa/crab-v4-local/report.json"
+        },
+        "userVisualApproval": "awaiting integrated V4 feedback",
+        "limitations": [
+          "重绘关键帧，局部纹理和腿部体积仍有漂移",
+          "真人视觉读招与听感未由自动路线证明"
+        ]
+      }
     }
   ]
 }

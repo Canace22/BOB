@@ -15,6 +15,8 @@
 
 ## 搬壳母蟹 Boss 原型姿态
 
+`crab-video-v4`：[同视角补绘与位移步态](source/crab-video-v4/README.md)，四组/48 帧，替换 V3 的横扫、抬身冲撞、后退复用踏步、正面抖壳。单一待机主参考、壳体锚点测量、提示词及可复跑导出已保留；实机与发布验收见进度。
+
 当前训练场改用 `crab-video-v3`：[视频补绘制作与实装](source/crab-video-v3/README.md)，七组动作/84 播放单元、两组独立特效和一张环境板。底图、实际提示词、原帧映射和可重跑导出已保存；旧静态姿态保留归档。实际验收见 [game/progress.md](../game/progress.md)。
 
 `crab-boss-prototype`：2026-10-28，按用户指定 `shell-mother-crab` 的多层巨贝壳身份补制5张关键静态姿态（低扫蓄力/挥出、抬钳/下砸、收钳横冲）；待机复用不计新创作。公共画布1024×768、脚底根 `(400,704)`、运行等比0.6，母蟹常态约452×294世界像素。[制作源与复跑](source/crab-boss-prototype/README.md)、[静态检查与限制](source/crab-boss-prototype/acceptance.md)，实际运行/发布验收见 [game/progress.md](../game/progress.md)。5件为关键姿态，不是正式逐帧动画；原先旧负壳蟹的试稿归档到本批 `superseded/`，没有接入。台账状态以 `catalog.json` 为准。

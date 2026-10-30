@@ -59,6 +59,9 @@ async function fightWithoutDash() {
   while (Date.now() - began < 180000) {
     const s = await state(), p = s.player, b = s.boss;
     observe(s);
+    if (b.animation === '10_walk' && b.frame >= 2 && !shots.has('walking')) {
+      shots.add('walking'); await capture('walking');
+    }
     if (s.hp !== lastHp) { damage.push({ time: s.time, from: lastHp, to: s.hp, boss: b.kind, state: b.state }); lastHp = s.hp; }
     if (s.stage === 'won') return s;
     assert.notEqual(s.stage, 'lost', 'no-dash combat route must survive');

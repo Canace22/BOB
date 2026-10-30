@@ -56,3 +56,26 @@ func test_death_finishes_once_retry_clears_fade_and_detached_effects() -> void:
 	eq(boss.visual.modulate.a, 1.0, "retry clears death opacity")
 	eq(boss.visual.action_id, "01_idle", "retry restores idle")
 	check(not fx.dust.visible, "retry clears old impact")
+
+
+func test_walk_uses_travel_not_wall_clock_and_retry_resets_stride() -> void:
+	var boss := make_boss()
+	boss.change("observe")
+	boss.velocity.x = 90
+	boss.position.x += 24
+	boss.visual._physics_process(0.1)
+	eq(boss.visual.action_id, "10_walk", "displacement selects actual walking artwork")
+	eq(boss.visual.frame_index, 2, "24 world pixels advance two stride phases")
+	var distance := boss.visual.walk_distance
+	boss.visual._physics_process(0.7)
+	eq(boss.visual.walk_distance, distance, "held velocity at wall cannot advance gait")
+	eq(boss.visual.action_id, "01_idle", "stationary body settles instead of stepping in place")
+	boss.position.x += 12
+	boss.visual._physics_process(0.01)
+	eq(boss.visual.frame_index, 3, "phase follows travelled distance independent of frame delta")
+	boss.reset_at(Vector2(700, 500))
+	boss.visual._physics_process(0.1)
+	eq(boss.visual.walk_distance, 0.0, "retry teleport is not a walking stride")
+	boss.start_tell("charge")
+	boss.visual.present(boss)
+	eq(boss.visual.action_id, "11_charge", "charge uses authored side-view bracing sequence")

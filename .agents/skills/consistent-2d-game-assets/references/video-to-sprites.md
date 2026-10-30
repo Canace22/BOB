@@ -22,6 +22,8 @@ Use a shared scale and body root. Record a ground contact point separate from th
 
 For exact lossless packing, raw RGBA row copies avoid alpha-premultiplication rounding introduced by some compositors. Verify that cropping each packed cell reproduces the exported frame, that alpha exists, and that the visible silhouette has padding. These checks do not establish good motion.
 
+When different actions snap from side view to front view, repair the camera mismatch before adding transition frames. Use one approved neutral pose as the camera/identity master, and include the earlier action only as motion intent. For rigid shell or armor, template matching a stable detail can suggest horizontal root offsets; retain the match scores and visually inspect low-confidence results. Use one scale per action, not per-frame size normalization. If neighboring sprites overlap their rectangular crop bounds or a limb reaches the canvas edge, regenerate wider padding before export rather than hiding the defect with a tight crop.
+
 ## Reproduce the scene in engine
 
 Compare hero height, boss height/width, ground screen height, camera framing, warm/cool balance and effect scale with the video. A clean environment plate must remove baked actors/projectiles and retain a readable collision surface. Save its actual prompt and reference; it is a new asset, not an exact reconstructed scene.
