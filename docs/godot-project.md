@@ -2,6 +2,8 @@
 
 唯一开发入口：[project.godot](../godot/WhalebellyRuins/project.godot)。固定引擎 **Godot 4.7.2.stable.official.ed1daf0bf**，Windows / Compatibility。
 
+场景分层、独立环境动态、制作工具及验收方式统一见[场景与环境动态制作说明](scene-and-environment-production.md)。
+
 用该引擎导入工程，按 F5 运行 `scenes/main.tscn`。房间为 `scenes/r1/R1-01.tscn` 至 `R1-07.tscn`，逻辑在 `scripts/`，关卡数据在 `assets/rooms.json`。目录重命名不改变 `res://` 内部路径。
 
 ## 合并规则
