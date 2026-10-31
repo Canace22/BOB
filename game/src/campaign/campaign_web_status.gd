@@ -13,6 +13,10 @@ func _ready() -> void:
 	JavaScriptBridge.eval("window.render_game_to_text = () => { window.whalebelly_snapshot(); return window.whalebelly_state_json; };")
 
 func snapshot() -> Dictionary:
+	var environment := host.scenery.get_node_or_null("ChapterEnvironment") as ChapterRoomEnvironment
+	var environment_state: Dictionary = {}
+	if environment != null:
+		environment_state = {"room":environment.room_id,"time":environment.elapsed,"counts":environment.content_counts()}
 	var enemies: Array[Dictionary] = []
 	for enemy: Dictionary in host.enemies:
 		enemies.append({"x": enemy.pos.x, "y": enemy.pos.y, "boss": enemy.boss, "hp": enemy.hp, "alive": enemy.alive})
@@ -25,6 +29,7 @@ func snapshot() -> Dictionary:
 			"floor": host.player.is_on_floor(), "state": host.player.state,
 			"facing": host.player.facing, "controls_enabled": host.player.controls_enabled},
 		"enemies": enemies,
+		"environment": environment_state,
 	}
 
 func _snapshot(_arguments: Array) -> void:

@@ -74,14 +74,16 @@ script = ExtResource("2")
 amplitude = 7
 period = 10
 phase = 0.87
+root_profile = PackedFloat32Array(0.390745501285347,0.328084832904884,0.243144815766924,0.182117609254499,0.128213367609255,0.0782495179948586,0.0510523778920308,0.0238552377892031,0,0,0,0,0)
 
 [node name="R1-04-BALEEN-2" type="MeshInstance2D" parent="Middle"]
-position = Vector2(808,0)
+position = Vector2(823,0)
 texture = ExtResource("13")
 script = ExtResource("2")
 amplitude = 7
 period = 12
 phase = 1.74
+root_profile = PackedFloat32Array(0,0,0,0,0,0,0.00989445910290238,0.033311345646438,0.0567282321899736,0.0824950527704486,0.161527044854881,0.279165096117603,0.395778364116095)
 
 [node name="R1-04-VINE-1" type="MeshInstance2D" parent="World"]
 position = Vector2(543,646)
@@ -90,6 +92,7 @@ script = ExtResource("2")
 amplitude = 3
 period = 10
 phase = 1.9
+root_profile = PackedFloat32Array(0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667,0.0266666666666667)
 
 [node name="R1-04-VINE-2" type="MeshInstance2D" parent="World"]
 position = Vector2(1207,677)
@@ -98,6 +101,7 @@ script = ExtResource("2")
 amplitude = 3
 period = 11
 phase = 2.8
+root_profile = PackedFloat32Array(0,0,0,0,0,0,0,0,0,0,0,0,0)
 
 [node name="R1-04-FISH-1" type="Node2D" parent="Far"]
 script = ExtResource("3")

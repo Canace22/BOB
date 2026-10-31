@@ -4,6 +4,7 @@ extends MeshInstance2D
 @export var amplitude: float = 5.0
 @export var period: float = 8.0
 @export var phase: float = 0.0
+@export var root_profile := PackedFloat32Array()
 var elapsed: float = 0.0
 
 func _ready() -> void:
@@ -35,6 +36,9 @@ func _ready() -> void:
 	surface.set_shader_parameter("amplitude",amplitude)
 	surface.set_shader_parameter("period",period)
 	surface.set_shader_parameter("phase",phase)
+	if root_profile.size()!=13:
+		root_profile.resize(13)
+		surface.set_shader_parameter("root_heights",root_profile)
 	material = surface
 	update_at(0)
 

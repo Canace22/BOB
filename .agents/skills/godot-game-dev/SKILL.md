@@ -58,4 +58,6 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 
 ## 场景与环境表现分支
 
+R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实际房间实例化`ChapterEnvironment`；原件/母版/根线在`assets/source/r1-chapter-scenes/`。先读`pipeline-state.json`并运行`node tools/audit-r1-chapter-scenes.mjs`，哈希没变的合格资产不重生成。具体命令、当前房间与证据看`game/progress.md`。新验收使用`chapter_environment_qa.gd`、`chapter_branches.gd`与`web_chapter_scenes.mjs`；旧主循环内巡航使用旧点跳策略，仅留历史溯源，不能代替适配当前控制器的回访验收。不要调整玩法/碰撞来迎合过时驱动；自动过门要以门事件判定，死亡回档不能记为连接成功。
+
 涉及场景制作、参考图还原与环境动件时，默认配合[场景与环境动态制作](../scene-environment-motion/SKILL.md)主动识别和制作。本Skill继续负责正式工程路径、玩法、测试和发布；不重复建立生产流程。

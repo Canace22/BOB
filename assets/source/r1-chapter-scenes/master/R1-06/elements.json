@@ -30,7 +30,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface"
     },
     {
       "id": "R1-06-CEILING-WALLS",
@@ -50,7 +52,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/Surface"
     },
     {
       "id": "R1-06-ROAD-PLATFORMS",
@@ -70,7 +74,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/Surface"
     },
     {
       "id": "R1-06-NEAR-FRAME",
@@ -90,7 +96,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Foreground/Surface"
     },
     {
       "id": "R1-06-VINE-1",
@@ -118,7 +126,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-06/R1-06-VINE-1-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
-      "index": 0
+      "index": 0,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-06-VINE-1"
     },
     {
       "id": "R1-06-VINE-2",
@@ -146,7 +156,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-06/R1-06-VINE-2-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
-      "index": 1
+      "index": 1,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-06-VINE-2"
     },
     {
       "id": "R1-06-VINE-3",
@@ -174,7 +186,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-06/R1-06-VINE-3-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
-      "index": 2
+      "index": 2,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-06-VINE-3"
     },
     {
       "id": "R1-06-BUBBLES-1",
@@ -195,7 +209,10 @@
       "population": 7,
       "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
       "alternative": "native particles using the same authored sprite",
-      "reason": "small slow waterborne bubbles; no new gameplay"
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-06-BUBBLES-1",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
     },
     {
       "id": "R1-06-BUBBLES-2",
@@ -216,7 +233,10 @@
       "population": 7,
       "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
       "alternative": "native particles using the same authored sprite",
-      "reason": "small slow waterborne bubbles; no new gameplay"
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-06-BUBBLES-2",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
     },
     {
       "id": "R1-06-LAMP-1",
@@ -241,7 +261,9 @@
       "reason": "preserve baked material highlights and warm focus without extra lamp copies",
       "mask_file": "R1-06/R1-06-LAMP-1-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-06/R1-06-LAMP-1.png",
-      "index": 3
+      "index": 3,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-06-LAMP-1"
     },
     {
       "id": "R1-06-WATER-LIGHT",
@@ -266,7 +288,9 @@
       "reason": "water is behind the platforms; no air shoreline or full-screen distortion",
       "mask_file": "R1-06/R1-06-WATER-LIGHT-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-06/R1-06-WATER-LIGHT.png",
-      "index": 4
+      "index": 4,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface.material/water_mask"
     },
     {
       "id": "R1-06-EXISTING-PlayerArt",
@@ -285,7 +309,9 @@
       "interaction": "original gameplay retained",
       "sound": "original event sounds retained",
       "restore": "original V6 campaign state",
-      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
     },
     {
       "id": "R1-06-EXISTING-RewardArt",
@@ -304,7 +330,9 @@
       "interaction": "original gameplay retained",
       "sound": "original event sounds retained",
       "restore": "original V6 campaign state",
-      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
     }
   ],
   "doors": [

@@ -33,9 +33,10 @@ for(const room of spec.rooms){
   if(['flex','lamp','water'].includes(kind)){
    const entry=map.elements.find(e=>e.id===element.id);if(!entry)throw Error('Not exported '+element.id);
    let props=`position = Vector2(${entry.origin.join(',')})\ntexture = ${resourceId('Texture2D','res://art/'+element.runtime_file)}`;
-   if(kind==='flex')props+=`\nscript = ${flex}\namplitude = ${element.amplitude}\nperiod = ${element.period}\nphase = ${element.phase}`;
+   if(kind==='flex'&&element.status==='motion')props+=`\nscript = ${flex}\namplitude = ${element.amplitude}\nperiod = ${element.period}\nphase = ${element.phase}\nroot_profile = PackedFloat32Array(${(entry.root_profile??Array(13).fill(0)).join(',')})`;
+   else if(kind==='flex')props+='\ncentered = false';
    else props+=`\ncentered = false\nmetadata/pulse_period = ${element.period}.0\nmetadata/pulse_amplitude = ${element.amplitude}`;
-   node(element.id,kind==='flex'?'MeshInstance2D':'Sprite2D',element.layer,props);
+   node(element.id,kind==='flex'&&element.status==='motion'?'MeshInstance2D':'Sprite2D',element.layer,props);
   }else if(kind==='fish')node(element.id,'Node2D',element.layer,`script = ${school}\nbounds = Rect2(${rect.join(',')})\npopulation = ${element.population}\nspecies = ${element.species}\nphase = ${element.phase}`);
   else if(kind==='bubbles')node(element.id,'Node2D',element.layer,`script = ${bubble}\nbounds = Rect2(${rect.join(',')})\npopulation = ${element.population}\nseed_id = ${Number(room.id.slice(-2))*23+rect[0]}\nexternal_clock = true\nbase_speed = 14.0\nbubble_opacity = 0.26\nsize_range = Vector2(2.4,6.2)`);
  }
@@ -50,6 +51,7 @@ for(const room of spec.rooms){
  }
  for(const name of ['Far','Middle','Foreground'])original=original.replace(new RegExp(`(\\[node name="${name}" type="Node2D" parent="\\."\\]\\r?\\n)`),'$1\nvisible = false\n');
  original=original.replace(/(\[node name="WorldOriginalPixels" type="Sprite2D" parent="World"\]\r?\n)/,'$1\nvisible = false\n');
+ original=original.replace(/(\nvisible = false)(\s*\nvisible = false)+/g,'$1');
  fs.writeFileSync(target,original);
  const manifestPath='game/art/manifest.json', manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
  const prefix=`r1-chapter-scenes/${room.id}/`;

@@ -4,6 +4,7 @@ var viewport: SubViewport
 var canvas: Node2D
 var spec: Dictionary
 var repo: String
+var room_data: Array
 
 func _initialize() -> void:
 	run.call_deferred()
@@ -33,9 +34,19 @@ func padded(image: Image) -> Image:
 			result.set_pixel(x,y,image.get_pixel(clampi(x-pad,0,size.x-1),clampi(y-pad,0,size.y-1)))
 	return result
 
+func attachment_y(element: Dictionary, x: float) -> float:
+	var curve: Array = element.get("attachment_curve",[])
+	if curve.is_empty(): return float(element.rect[1])
+	for i in range(curve.size()-1):
+		if x <= float(curve[i+1][0]):
+			var weight := clampf((x-float(curve[i][0]))/maxf(1,float(curve[i+1][0])-float(curve[i][0])),0,1)
+			return lerpf(float(curve[i][1]),float(curve[i+1][1]),weight)
+	return float(curve[-1][1])
+
 func run() -> void:
 	repo = ProjectSettings.globalize_path("res://..").simplify_path()
 	spec = JSON.parse_string(FileAccess.get_file_as_string(repo.path_join("assets/source/r1-chapter-scenes/chapter.json")))
+	room_data = JSON.parse_string(FileAccess.get_file_as_string("res://art/whalebelly/rooms.json"))
 	viewport = SubViewport.new()
 	viewport.transparent_bg = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
@@ -84,6 +95,11 @@ func export_room(room: Dictionary) -> void:
 		far.resize(dimensions.x, dimensions.y)
 	save_image(padded(far), repo.path_join(room.runtime + "/underpaint.png"))
 	var exports: Array[Dictionary] = []
+	var actor_mask := Image.new()
+	actor_mask.load_svg_from_string(FileAccess.get_file_as_string("res://art/whalebelly/masks/"+room.id+"-actors.svg"))
+	var rings: Array = []
+	for data: Dictionary in room_data:
+		if data.id==room.id: rings=data.get("rings",[])
 	for element: Dictionary in room.elements:
 		if element.kind not in ["flex", "lamp", "water"]:
 			continue
@@ -103,6 +119,12 @@ func export_room(room: Dictionary) -> void:
 				var selected := true
 				if element.kind == "flex":
 					selected = color.r > color.b * 0.92 and color.r > 0.12
+					if str(element.id).contains("BALEEN") and element.status == "motion":
+						selected = selected and color.g > color.r*.84 and (layers.Middle as Image).get_pixel(x,y).a > .8 and y >= attachment_y(element,x)
+						var actor_pixel := actor_mask.get_pixel(x,y)
+						if actor_pixel.r+actor_pixel.g+actor_pixel.b>.05: selected=false
+						for ring: Array in rings:
+							if pow((float(x)-float(ring[0]))/80.0,2)+pow((float(y)-float(ring[1]))/110.0,2)<1.0: selected=false
 					if element.get("selector", "") == "plant":
 						selected = color.g > color.r * 0.83 and color.g > color.b * 1.25 and color.r < 0.68
 				if element.kind == "water":
@@ -131,7 +153,10 @@ func export_room(room: Dictionary) -> void:
 			cropped = padded(part)
 			bounds = Rect2i(Vector2i(-16,-16),cropped.get_size())
 		save_image(cropped, repo.path_join(room.runtime + "/" + element.id + ".png"))
-		exports.append({"id":element.id,"origin":[bounds.position.x,bounds.position.y],"size":[bounds.size.x,bounds.size.y],"pixels":owned})
+		var roots: Array[float] = []
+		for column in 13:
+			roots.append(clampf((attachment_y(element,bounds.position.x+float(column)*bounds.size.x/12.0)-bounds.position.y)/maxf(1,bounds.size.y),0,.92))
+		exports.append({"id":element.id,"origin":[bounds.position.x,bounds.position.y],"size":[bounds.size.x,bounds.size.y],"pixels":owned,"root_profile":roots})
 	for layer: String in layers:
 		save_image(padded(layers[layer]), repo.path_join(room.runtime + "/" + layer + ".png"))
 	FileAccess.open(repo.path_join(room.master + "/export-map.json"), FileAccess.WRITE).store_string(JSON.stringify({"room":room.id,"elements":exports,"tool":"Godot native SVG masks + source-pixel extraction","source_dimensions":room.size},"\t"))

@@ -30,7 +30,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface"
     },
     {
       "id": "R1-07-CEILING-WALLS",
@@ -50,7 +52,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/Surface"
     },
     {
       "id": "R1-07-ROAD-PLATFORMS",
@@ -70,7 +74,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/Surface"
     },
     {
       "id": "R1-07-NEAR-FRAME",
@@ -90,7 +96,9 @@
       "restore": "deterministic clock reset on room reload",
       "primary_method": "masked source pixels exported to PNG",
       "alternative": "manual repaint only if a hidden surface fails",
-      "reason": "preserve contours/materials; no terrain deformation"
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Foreground/Surface"
     },
     {
       "id": "R1-07-BALEEN-1",
@@ -118,7 +126,31 @@
       "reason": "retain original pale strands and editable attachment; low amplitude water flow",
       "mask_file": "R1-07/R1-07-BALEEN-1-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
-      "index": 0
+      "index": 0,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BALEEN-1",
+      "attachment_curve": [
+        [
+          200,
+          190
+        ],
+        [
+          300,
+          135
+        ],
+        [
+          420,
+          70
+        ],
+        [
+          520,
+          15
+        ],
+        [
+          610,
+          0
+        ]
+      ]
     },
     {
       "id": "R1-07-BALEEN-2",
@@ -146,7 +178,27 @@
       "reason": "retain original pale strands and editable attachment; low amplitude water flow",
       "mask_file": "R1-07/R1-07-BALEEN-2-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
-      "index": 1
+      "index": 1,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BALEEN-2",
+      "attachment_curve": [
+        [
+          560,
+          20
+        ],
+        [
+          700,
+          0
+        ],
+        [
+          900,
+          0
+        ],
+        [
+          1020,
+          0
+        ]
+      ]
     },
     {
       "id": "R1-07-BALEEN-3",
@@ -155,7 +207,7 @@
       "rect": [
         1110,
         40,
-        370,
+        330,
         390
       ],
       "status": "motion",
@@ -174,35 +226,61 @@
       "reason": "retain original pale strands and editable attachment; low amplitude water flow",
       "mask_file": "R1-07/R1-07-BALEEN-3-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
-      "index": 2
+      "index": 2,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BALEEN-3",
+      "attachment_curve": [
+        [
+          1110,
+          0
+        ],
+        [
+          1200,
+          0
+        ],
+        [
+          1300,
+          50
+        ],
+        [
+          1380,
+          120
+        ],
+        [
+          1440,
+          190
+        ]
+      ]
     },
     {
       "id": "R1-07-BALEEN-4",
       "kind": "flex",
-      "layer": "Middle",
+      "layer": "World",
       "rect": [
         700,
         630,
         380,
         280
       ],
-      "status": "motion",
+      "status": "static",
       "evidence_basis": "observed artwork; timing proposed and tested in engine",
       "collision": "none: decoration; authored world collision retained",
       "interaction": "none: existing gameplay owned by campaign",
       "sound": "none: preserve existing ambience",
       "restore": "deterministic clock reset on room reload",
       "root": "top",
-      "amplitude": 7,
+      "amplitude": 0,
       "period": 16,
       "phase": 3.48,
       "selector": "warm",
-      "primary_method": "tessellated bitmap mesh; pinned root and downstream phase delay",
-      "alternative": "painted frames/Krita",
-      "reason": "retain original pale strands and editable attachment; low amplitude water flow",
+      "primary_method": "independent static original-pixel support sprite",
+      "alternative": "only separate genuine soft filaments after a new sample",
+      "reason": "fixed platform-support cluster; no deformation of its bone support",
       "mask_file": "R1-07/R1-07-BALEEN-4-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-BALEEN-4.png",
-      "index": 3
+      "index": 3,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BALEEN-4"
     },
     {
       "id": "R1-07-VINE-1",
@@ -230,7 +308,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-07/R1-07-VINE-1-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
-      "index": 4
+      "index": 4,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-07-VINE-1"
     },
     {
       "id": "R1-07-VINE-2",
@@ -258,7 +338,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-07/R1-07-VINE-2-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
-      "index": 5
+      "index": 5,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-07-VINE-2"
     },
     {
       "id": "R1-07-VINE-3",
@@ -286,7 +368,9 @@
       "reason": "attached hanging organic growth; rigid platform pixels excluded",
       "mask_file": "R1-07/R1-07-VINE-3-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
-      "index": 6
+      "index": 6,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-07-VINE-3"
     },
     {
       "id": "R1-07-FISH-1",
@@ -310,7 +394,10 @@
       "phase": 1.7,
       "primary_method": "existing 32-frame bitmap swim + independent bounded school path",
       "alternative": "new painted swim cycle if silhouette mismatches",
-      "reason": "fish visible in source; avoid moving a static fish silhouette"
+      "reason": "fish visible in source; avoid moving a static fish silhouette",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/R1-07-FISH-1",
+      "runtime_asset": "res://art/environment/fish_schools/tealback/swim_atlas.png"
     },
     {
       "id": "R1-07-FISH-2",
@@ -334,7 +421,10 @@
       "phase": 3.4,
       "primary_method": "existing 32-frame bitmap swim + independent bounded school path",
       "alternative": "new painted swim cycle if silhouette mismatches",
-      "reason": "fish visible in source; avoid moving a static fish silhouette"
+      "reason": "fish visible in source; avoid moving a static fish silhouette",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/R1-07-FISH-2",
+      "runtime_asset": "res://art/environment/fish_schools/silverfin/swim_atlas.png"
     },
     {
       "id": "R1-07-BUBBLES-1",
@@ -355,7 +445,10 @@
       "population": 7,
       "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
       "alternative": "native particles using the same authored sprite",
-      "reason": "small slow waterborne bubbles; no new gameplay"
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BUBBLES-1",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
     },
     {
       "id": "R1-07-BUBBLES-2",
@@ -376,7 +469,10 @@
       "population": 7,
       "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
       "alternative": "native particles using the same authored sprite",
-      "reason": "small slow waterborne bubbles; no new gameplay"
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BUBBLES-2",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
     },
     {
       "id": "R1-07-BUBBLES-3",
@@ -397,7 +493,10 @@
       "population": 7,
       "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
       "alternative": "native particles using the same authored sprite",
-      "reason": "small slow waterborne bubbles; no new gameplay"
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-07-BUBBLES-3",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
     },
     {
       "id": "R1-07-LAMP-1",
@@ -422,7 +521,9 @@
       "reason": "preserve baked material highlights and warm focus without extra lamp copies",
       "mask_file": "R1-07/R1-07-LAMP-1-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-LAMP-1.png",
-      "index": 7
+      "index": 7,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-07-LAMP-1"
     },
     {
       "id": "R1-07-WATER-LIGHT",
@@ -447,7 +548,9 @@
       "reason": "water is behind the platforms; no air shoreline or full-screen distortion",
       "mask_file": "R1-07/R1-07-WATER-LIGHT-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-07/R1-07-WATER-LIGHT.png",
-      "index": 8
+      "index": 8,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface.material/water_mask"
     },
     {
       "id": "R1-07-EXISTING-PlayerArt",
@@ -466,7 +569,9 @@
       "interaction": "original gameplay retained",
       "sound": "original event sounds retained",
       "restore": "original V6 campaign state",
-      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
     },
     {
       "id": "R1-07-EXISTING-RewardArt",
@@ -485,7 +590,9 @@
       "interaction": "original gameplay retained",
       "sound": "original event sounds retained",
       "restore": "original V6 campaign state",
-      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
     }
   ],
   "doors": [

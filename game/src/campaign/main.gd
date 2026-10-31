@@ -680,6 +680,7 @@ func update_parallax() -> void:
 	if chapter_environment != null:
 		chapter_environment.set_camera_offset(shift)
 		chapter_environment.visible = not reference_visible
+		chapter_environment.set_process(not reference_visible and capture_path.is_empty())
 		return
 	if environment != null:
 		var offset := Vector2.ZERO

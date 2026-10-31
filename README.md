@@ -29,6 +29,8 @@ BOB/
 
 默认入口已恢复原 WhalebellyRuins：七房地形、道路与支路、逐帧拾潮者、短击/下劈/迎珠/重鸣/调息、能力门、Boss、营地、V6存档和镜头。R1-01 使用分层环境、62条鱼、垂须、气泡、水面与前景；15组动作库及84帧跑步保留。
 
+R1-02至R1-07已继续接入独立四层环境与动件，保留原房间、碰撞和能力门。[六房制作源与方法](assets/source/r1-chapter-scenes/README.md) · [主工程操作](game/README.md)。本地实机验收页与录像在 `game/build/qa/r1-chapter-scenes/`；线上仍保留原稳定版。
+
 主线已验证前五房至首关出口；支路机制专项通过不代表七房全部连续路线已验证。恢复细节与制作源清单见[恢复说明](docs/whalebelly-recovery.md)，实际测试与限制见 [game/progress.md](game/progress.md)。线上目前仍是恢复前的稳定模块版。
 
 ## 快速开始

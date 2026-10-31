@@ -1,0 +1,701 @@
+{
+  "version": 1,
+  "scope": "R1-02 through R1-07 environment creation and integration only",
+  "status": "complete_local",
+  "engine": "Godot4.7.2",
+  "entry": "game/project.godot -> content/whalebelly/main.tscn",
+  "rooms": [
+    {
+      "room": "R1-02",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 14,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/elements.json",
+          "sha256": "77ef00fc53fd6cce6be0a40e8efa8d7d063d32474c5c9a03523129d264c0bbbc"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/export-map.json",
+          "sha256": "7ec4e7643e7855318f605f8792212e3af008803df1d90f849b40a8e85223793c"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-02.tscn",
+          "sha256": "b35169d4648ea6d3493b2a2029905e736249970c09ba613f88143747f00faa34"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-02.tscn",
+          "sha256": "d4f3327e78eaa3e2ced7159833781364846b75396b82e46deb3b3ae93446a099"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/Far.png",
+          "sha256": "71eff8baf9a5e04b66808c67c935ccbe87ba0f035adeba4b71b56eba21b693b3"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/Foreground.png",
+          "sha256": "676a19d4f3a05f99d4655b4b9a12327a4ce2320a97df20d11a85fb3492fd9b7d"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/Middle.png",
+          "sha256": "edca42700ef3161e7e4772721ab3bc93124c05b22aec5c54ff5f862321cd7549"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png",
+          "sha256": "b3956bd221a1ea93f92e98589a2f0e94a3d32f21a87ebe9042175f0aeff4beb9"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/R1-02-VINE-1.png",
+          "sha256": "02429f5d81380fd4e78a15b141ed0b572ba2fade18816171d820f9fb881336d0"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/R1-02-VINE-2.png",
+          "sha256": "53f7d5b12cbf14400bcfbf1ca5c035de8ebbc9db76608f85889ea8b8d699c5cd"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/R1-02-WATER-LIGHT.png",
+          "sha256": "717a57a94e387781accf858645160f1f34d1c31b187975ac97e0700d2cb9ad7c"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/underpaint.png",
+          "sha256": "68cdebd06d002330737fa5df1658482f7bc7acf6097b2ea1b5dc7b070027fcee"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-02/World.png",
+          "sha256": "6853ad0bc4becea50bb5075cee9508efd9adfb99ed76f4e2d19af82e3095ccf4"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-02-clean.png",
+          "sha256": "bb1c764d0b27d91677a6e6d821bb980a90355f60e9ef25c7cd447e8dff78dd32"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-02-far-clean.png",
+          "sha256": "f1e322144b63437e4f8a80ead1f5158b36fd43de52b6b2d94d6795d1279894b6"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/R1-02-BALEEN-1-mask.svg",
+          "sha256": "59b88f1408b97f91d0a026b1bc6291a8d7b6cddf605069ccb1f6cc33be3b942a"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/R1-02-VINE-1-mask.svg",
+          "sha256": "d0794500042cae07a0d708984cc20fb2c2388c5c6cd551d4700cbf459ce11b3d"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/R1-02-VINE-2-mask.svg",
+          "sha256": "32fe03f727486638072e591ab32c4ba64e004866611698eb7d0d4704a69ee592"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-02/R1-02-WATER-LIGHT-mask.svg",
+          "sha256": "44a76036b416747b8e067cda0dd9f2fe5c2f641c31d89abef37bcf314d161a5c"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-02-classes.svg",
+          "sha256": "82080eadb0a74358cd8c7ab74fbac5a99bb7baec53cfaf3fc4d1b57264d7cc67"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-02-actors.svg",
+          "sha256": "8e5b9e8f0a86bae44ae6d5b1aaf61e5652758f8055a9514f59ece8f9ab71702d"
+        }
+      ]
+    },
+    {
+      "room": "R1-03",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 20,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/elements.json",
+          "sha256": "960af41d5338047f59317767fb71df8105b1ca16c9f6d1a2b1e7da7e4ae6e5a5"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/export-map.json",
+          "sha256": "7567a44aa2f9f9af0ce70f670656c0e20a9b65021b8f835bae1f4a367c9ccc55"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-03.tscn",
+          "sha256": "fa59ce659daa4e8fad4e1d1a796251cce66304aa9f53bd8fe2a96a9e2d9b359a"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-03.tscn",
+          "sha256": "a60d14e5097d3bd7fff8fccefc4f6a1ec7a78e07ba04f7d25b823e4041e3bb16"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/Far.png",
+          "sha256": "2b6b0f995a9c1984207a07716eb3dcdac0271ca92b0f8da6cfb74715f87c6f14"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/Foreground.png",
+          "sha256": "0b0221ffed2a12cdbd2003538c964610cf27de017aa2a053c521e33f00244ef1"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/Middle.png",
+          "sha256": "49eba43e94e9618129ea5649131731088e9faa84b9fa67cec74486ebc5018de9"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+          "sha256": "85a74568dc6bc0929f4fed0db1e20fe4cbd11955ea57b1efac52201c90d46e4b"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+          "sha256": "c3e2e3cd6ddf8e3e363e6714f8ee435b7fec557cc7c7816e8159f9f9bcd8f816"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-LAMP-1.png",
+          "sha256": "52d43477f6f180fc2a4880c4278e3e3ccdd09a1fa56d7d00ba186bf8347c98be"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-LAMP-2.png",
+          "sha256": "aa047e043ff7218b5ef76e922f64e2b7d1083666fcd8a77045f30b32bef46b6f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-VINE-1.png",
+          "sha256": "9bdde3033ea3d9cfe352c20c1c09a406d40c1fb0ae2740e1926ab188b1684bfb"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-VINE-2.png",
+          "sha256": "ca66489b778d2db9000e744bea7816d721a86c8c08debac071f3dcbaf485f85f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/R1-03-WATER-LIGHT.png",
+          "sha256": "56abf598d24ad06e659081f4239f8060bbca2fd8c0bbd013358f8525893d5b94"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/underpaint.png",
+          "sha256": "307a1a1e9b54ddfc5c0a13b513f12ac0515873cfb2ae8e5dd8937df5832a7e12"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-03/World.png",
+          "sha256": "3abd2af431fdb4d46e5f1491e6b69b59a8c455502120787cd7badaf5821562c4"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-03-clean.png",
+          "sha256": "014019822246fe3518156eba8c1b95e5daafd0d57bef255c0f870268ffb7ca6c"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-03-far-clean.png",
+          "sha256": "4cfb386e321b1c56e3d1e3be805ce8ca6c4d207c32b0a8d67a29bcda6ba94ee8"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-BALEEN-1-mask.svg",
+          "sha256": "8e16480b799800a66d3731c4f23d9ee29731bafd991e693040155f028e3c54ac"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-BALEEN-2-mask.svg",
+          "sha256": "fe6cf8412cd4104b29c3bc4f6c116ef135b6fd58e45cd15f3817529819fcaad3"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-VINE-1-mask.svg",
+          "sha256": "82c4adc81c4acd24a4a457c88e0b2efcafa1ef7c0fbba47d5823828d7eb96376"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-VINE-2-mask.svg",
+          "sha256": "a970daa047c35e87c549d85c9b65cf351d04425dfa667b098693be4e9c53fded"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-LAMP-1-mask.svg",
+          "sha256": "1dafd67de20ec3d858808cfc2a6253c92d7f7c9ff3671770e4bff9d0840ad874"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-LAMP-2-mask.svg",
+          "sha256": "c89549a0b176df508be8b0aa164f51a0de5f6ccb95396d8631e86ac7a170da54"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-03/R1-03-WATER-LIGHT-mask.svg",
+          "sha256": "44a76036b416747b8e067cda0dd9f2fe5c2f641c31d89abef37bcf314d161a5c"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-03-classes.svg",
+          "sha256": "7124c7151db70cc32b5e01ef8486f09b1dd75b7a24b7ae12fc64a0a6b99269de"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-03-actors.svg",
+          "sha256": "0bce536eecef8399c3780bf0fa2e99c58b873694884b5b6f92982a858d381a98"
+        }
+      ]
+    },
+    {
+      "room": "R1-04",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 17,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/elements.json",
+          "sha256": "d1cfb4ed55b428b1cead3bca26d157712a3ecb5e83c1763a520367d32a027a9e"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/export-map.json",
+          "sha256": "1ae9c4a675857bd15e9733f881e5e8a71e73c1e18eed13079fce46ca150af813"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-04.tscn",
+          "sha256": "f44922d43a383a4d3abcc6cd97a32e836313cd84ccaa16cc2960170db5a20f10"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-04.tscn",
+          "sha256": "a282167118cd526847cdaf9319800a40320e268f47c8604ea8d9d4cc9e6360a0"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/Far.png",
+          "sha256": "4a3016cd10784513713eaf9c9f0b9bb932c99a5e5e9d0520fe457c08d85631a4"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/Foreground.png",
+          "sha256": "bfd60f77ebb11d0714d95484f832b58c586405eb40b42b6edffb340014d8c6b0"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/Middle.png",
+          "sha256": "254d6bb7a249992d1ac8502dcd5a61b546a366a586d30ba6ea38422d776ebe26"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-BALEEN-1.png",
+          "sha256": "5cda4e4444ab8f76195c91037bc52121d0cd6321446e6699271efa851f938d9c"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-BALEEN-2.png",
+          "sha256": "6aa941d5a31b29e13d363a394d379ce7bc555b533db05cffcef29d305762fa23"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-LAMP-1.png",
+          "sha256": "ea54f4d0a2c259fe7fa6ab5e7ddfde5ffc0f7e79e064eb73b1c1a62a8c273faa"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-VINE-1.png",
+          "sha256": "d88d880a57fdd06be7c6cc6f4cc7e7bd5bf5552d761180da83fc5c4dc7d0ba88"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-VINE-2.png",
+          "sha256": "cdba33d9d5b3a495122d6311cac34e89c789a927aa19ad476b7c398657b2d48c"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/R1-04-WATER-LIGHT.png",
+          "sha256": "da9a651f3e355cc966f0042f4f449b5ee3f0b038cc4a47a8edee5666e45c0731"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/underpaint.png",
+          "sha256": "e9f434429f88cd0503d40dbbd0f7d82b1d7e06481616c3c93dd6ff8e3dd84288"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-04/World.png",
+          "sha256": "a7dce4487edfa96815205082dcbf861c73ff6d70ad473cfad9f7cbc251637a9f"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-04-clean.png",
+          "sha256": "5fb559ab419d535908036161a21712fefcb2b7c285c271c8d6785b8b095e2224"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-04-far-clean.png",
+          "sha256": "4de1c5d42a2596c8b5f45586e0d2f29bf77fbeff0bee3684c23b1812f086f4ff"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-BALEEN-1-mask.svg",
+          "sha256": "cacde68e1049814560b619b98dc299dadd3bd9f5a3175216b9bd74955f206df6"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-BALEEN-2-mask.svg",
+          "sha256": "2b123f2038be0a6570ebe2528384a2e9fa2aeef0d399224dec13eb0bba374222"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-VINE-1-mask.svg",
+          "sha256": "380828c628068b5996f060a2a13f7ea01686e3da0e9452e73a01b7f4d14e5084"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-VINE-2-mask.svg",
+          "sha256": "b299e161476771b73c03d9554fe22e45b5fd145a3ecd9f5680cabbfbaf197cc7"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-LAMP-1-mask.svg",
+          "sha256": "e0066b910f434ef7f9c5acb75ead48dcc8c04720a988e224cf62595eee0815c2"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-04/R1-04-WATER-LIGHT-mask.svg",
+          "sha256": "d7810c455d8d44298a7ba4956939a7fb6b010bda9b7ea3e1524d8d3c2efb7c77"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-04-classes.svg",
+          "sha256": "885d14cdb0e2af681ba87d12250ebd06c4b2ff4ff796447a7228c0be119e29c1"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-04-actors.svg",
+          "sha256": "b4092aabefecf5fa78e87b193179ace9b3381fe8e7c1ce8cc1b8ca311fcb9690"
+        }
+      ]
+    },
+    {
+      "room": "R1-05",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 11,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-05/elements.json",
+          "sha256": "0eff8faaa093ac2e9db9ccff865b464049a77a0d8c429e9a1a0576d525ff87af"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-05/export-map.json",
+          "sha256": "613009761bcf5729ce95780a324b44041050087e1c0adef0e1a533f3cf929820"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-05.tscn",
+          "sha256": "b6edbb6af5948733052b0b302c26d5d4815b23034a7b985aa3f66443b3ff5cc3"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-05.tscn",
+          "sha256": "17ba7f4a0f1a4ea03b6ff8515f6c6edd773b29afc58ba1dbd427a46daa377fb5"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/Far.png",
+          "sha256": "ddeef94235e36ac7411b6f95e73cf8c6d7e27eb16ca136d058730b1d28949a41"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/Foreground.png",
+          "sha256": "e1ae9c031bfb2b4edabf7a342d97a67af35010cacbc9760db9c662326c8a2e35"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/Middle.png",
+          "sha256": "2c162815359bc422094682adb566d401e4261c2cecd5e8c8f5899b0598444ee0"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/R1-05-VINE-1.png",
+          "sha256": "08a27f393ea43efd15fc0fe13aa598dfa9b7abd5d1010fa701dceb3bd4dea10d"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/R1-05-VINE-2.png",
+          "sha256": "64e1201b996f9293d4fd97ed09ae9e218bf305f85ff84129f2d4a64812c5f643"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/R1-05-WATER-LIGHT.png",
+          "sha256": "34499eb7eb44335544f23ce59efed87ce6e5f78c4d75b351d3f7ecfa3f7c57c3"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/underpaint.png",
+          "sha256": "1eadc1157659d64c6b66f6b9403c153ac881cfd6c52d526d296246d9677abd27"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-05/World.png",
+          "sha256": "7df9bcecfafde6e20ccd016bb2b7cf30113d07962092a914a3f3f8b90dfa2da3"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-05-clean.png",
+          "sha256": "c123a81ce45a04249ba2987bc1e0fdb6fafa2aa87993600ace2b86dc10b781ec"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-05-far-clean.png",
+          "sha256": "273831b556c0b5ce3a610ad4f7113a62af4e629ff2ca033654b480ada45b5e02"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-05/R1-05-VINE-1-mask.svg",
+          "sha256": "c03fa97ea1dcc38d82e876a92909c83bd10545467e66acc3579d5798bd9c0ab8"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-05/R1-05-VINE-2-mask.svg",
+          "sha256": "c915a7a6fdd1ea5f604af4c653c7ffee6f07d894afc12b88bb07c7f1ec8894d5"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-05/R1-05-WATER-LIGHT-mask.svg",
+          "sha256": "a6fc418200ccd91e4c408d84117ca763d6e867ad6d570f3f5f3f8dc7fac06477"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-05-classes.svg",
+          "sha256": "36d5ff82f2a1c9d008afe259cb95b6b7301b33924b202bc95edaaf5aadf99fd1"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-05-actors.svg",
+          "sha256": "de5020803d145b9c6c35e193563902c2c6b8bc706ffeea70054b879cddd58c80"
+        }
+      ]
+    },
+    {
+      "room": "R1-06",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 13,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/elements.json",
+          "sha256": "607cafccd31378b5220ffb88110da5ad9e583f70bcee051ee3b87695401d6b83"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/export-map.json",
+          "sha256": "6327923053e8f135e1cd2153ecbb44ced001f8dbc4680ebd0f25811f2bb67f7d"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-06.tscn",
+          "sha256": "ef24a29d5bce3053e213dcc295d9ebc3a3c5488d65205e31e1d972e7c6d765f7"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-06.tscn",
+          "sha256": "0e43850dc2e67f7166907ac74c4e89ae4ff553ce6525ac651dafb4f53ec6b7c7"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/Far.png",
+          "sha256": "34977883827192ea8962136e4413ed1f257418b461e1210fd2b7c8c826bfd811"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/Foreground.png",
+          "sha256": "1295329d719af403fab45511516646899c3f7608c2204fc12766cffaadcadb1b"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/Middle.png",
+          "sha256": "5a8e221cdbe79341ae7ed67d40610374a385345fcf6d48d80f61d627ea5d0e99"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/R1-06-LAMP-1.png",
+          "sha256": "8775fa493edd8baf0331a854e385c18a852f90016043dfb0465bde017c19846e"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
+          "sha256": "2b5a7e9b47600a3ded6ab9123a4939c6e359d52565212c43b6686ea3500aca7f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
+          "sha256": "74d53ebb82cf88d1ec69f8fdcc325e87d94730303e8c376e7655fa9adf891baf"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
+          "sha256": "8f3bcaa7fd935ef154301319c24007a1bbf6c11e920bc8bf3a2be49928717c4f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/R1-06-WATER-LIGHT.png",
+          "sha256": "9f645b9fb885cff87b06544396d9aee72da0898f47a0804863138692b9ee7ae8"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/underpaint.png",
+          "sha256": "55b1fc3fd64c4c9ade7155c2f6f075d051a0b810993b50ca305d646a533a4267"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-06/World.png",
+          "sha256": "5db54b057d1d274d78d87d0ff171b3aa2e170714f00434bbe7470bd2fe7be73b"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-06-clean.png",
+          "sha256": "e2094729dbc976ece3b5ff2b2406d4f1a7580135dfa5220551513549cda77e0a"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-06-far-clean.png",
+          "sha256": "b6cdf83f9bb9b97976fa3141c124453e3191844393d029546653b921eb604464"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/R1-06-VINE-1-mask.svg",
+          "sha256": "d19b966129c61ef0507e530e2688b0edf5c1cffac67152d4564b5e63c40e9a2f"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/R1-06-VINE-2-mask.svg",
+          "sha256": "a7d356f115e81855eb2c4afb3951b352aed149e4968f7ed08be7a49e850be276"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/R1-06-VINE-3-mask.svg",
+          "sha256": "e26fc13a4616fe3a4e71d44060a20c2858e6924562351b4953356bd8d0a3177b"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/R1-06-LAMP-1-mask.svg",
+          "sha256": "345756860a82326250f3797a8be6e97658ddd4dda4533402aa97b8e8be816883"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-06/R1-06-WATER-LIGHT-mask.svg",
+          "sha256": "9154bd91fae164b444ce098e81f3b7034cdb9f5ea6ed11f23620fddf1437ded1"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-06-classes.svg",
+          "sha256": "e0140f4e6b44212825c96dd4e10d30ecb9cb51c41138c73534d62e2cbde1fd0d"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-06-actors.svg",
+          "sha256": "20bd11b752ba97804871fce2caf4b8f43824b2cd9f4600bb118de7fa0d310582"
+        }
+      ]
+    },
+    {
+      "room": "R1-07",
+      "status": "passed_ai_review_and_engine_checks",
+      "static_review": "actual Godot screenshots reviewed",
+      "motion_review": "native rendered phases and continuous reel inspected; no new user aesthetic approval",
+      "elements": 20,
+      "accepted_files": [
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/elements.json",
+          "sha256": "20b4f4c8e3b7d1dbfc25487a9b58e0a217a4ef5741e0440fa93df14ee72619a0"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/export-map.json",
+          "sha256": "a752550568cea04052f38497089c96b6325343a63a85deb4283de99a82110337"
+        },
+        {
+          "path": "game/content/whalebelly/environment/chapter/R1-07.tscn",
+          "sha256": "822e1644657bdbd27ed63b2a648c88ff92fb143da7577dd97a2b139e4bf97e38"
+        },
+        {
+          "path": "game/content/whalebelly/r1/R1-07.tscn",
+          "sha256": "c65ac4541bf25aa5dbb7e1843867ee083eb625f130fdd631c7181944e6e7bf7d"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/Far.png",
+          "sha256": "d927da46c034945cee72b648b8edd8ac78bd16ea761e122ec6150aa4fb835eb3"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/Foreground.png",
+          "sha256": "59967447fde9384557128c75e5b25c65bbf552abd1d439ca285376a8c6a1194f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/Middle.png",
+          "sha256": "da62f2d9d537315682ed82bc508c8d466dc9fb6fbc69f051c1596ba81d6e7be4"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
+          "sha256": "0ae0d97c2815787cccbbe696b4fb8fabd76bdf67609c87e0f2f4d368dcb4ddcb"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
+          "sha256": "7baf18ceaa618046439dc77fc469691e9e854a6eadabd2f3ba6ec5954434604b"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
+          "sha256": "b1d8c5bb6ee41bc7546dae628877a47284cee935ab2b65784a4564e6d304f08a"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-BALEEN-4.png",
+          "sha256": "9b6ffc5921df4b635b47af1bb47c22b66b3c224bc339a68a3df771fad09d6437"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-LAMP-1.png",
+          "sha256": "7c4355850d3755f5e2e6dab0f3b5ede41c3f1e1853ac8ace6eed03c2335f4a47"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
+          "sha256": "c7df7b3a395bfe57e003728c45a6ebe5f681eda1a9395f23d0da6ec4c3697e48"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
+          "sha256": "c41c8b2081c538c4c06607deb5b98b274b949767352f643898ed296fe281bdc5"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
+          "sha256": "174690034169ca983b4360dba061816302b1331ff1f8740f8e2763e366b3e498"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/R1-07-WATER-LIGHT.png",
+          "sha256": "9bc9f9a663bdc18ce98f46d46331ae576ec319c41f22ea0192198b9142f4186f"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/underpaint.png",
+          "sha256": "f85170ebb2a34ec161adbafd745a673f9351675a0a1419c1b684de5846ed0024"
+        },
+        {
+          "path": "assets/runtime/sprites/r1-chapter-scenes/R1-07/World.png",
+          "sha256": "ab33cb2b897b32919710a89de1a30ebc146f623d4e63f926e078ae4b6cd62858"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-07-clean.png",
+          "sha256": "8b94243acfcd5a5fbdd462b77b57587107e522d5ab9da7d214105713a7015f97"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/generated/R1-07-far-clean.png",
+          "sha256": "a599d232edadf5c2d066202638e4a35e2e1f04e93b70646bb3458850e6a37cd3"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-BALEEN-1-mask.svg",
+          "sha256": "edb47b993a3f60bbce1a83f34ba3c1726b92ddab734b21581f9a92d141e4cb7a"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-BALEEN-2-mask.svg",
+          "sha256": "9b870127db39cb19b7345bfc13988e09e4ed392b438f26cc345a1d14ab669b60"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-BALEEN-3-mask.svg",
+          "sha256": "5e44e26ea0ba3910b4629554d5deff7ffb7b91c892e611aaf95d9da348d45628"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-BALEEN-4-mask.svg",
+          "sha256": "42a8642295783ab96545c36aa97cc9dac75a43ae0d68d56baae644dc26c7f852"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-VINE-1-mask.svg",
+          "sha256": "4b848c0a5ec6370e141fa01ec6b3d822becd5fe6d7c720a2bd56da1923cfda9f"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-VINE-2-mask.svg",
+          "sha256": "baa2c639e6217cadcba3937bd09769554853a7e337b6858c0da0103ce19e0322"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-VINE-3-mask.svg",
+          "sha256": "6e7f9cc37e6df8b1a4401b003e80c2d2dddb1f6c8956f87f86c9e0a392ee0be1"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-LAMP-1-mask.svg",
+          "sha256": "64bc8ab94c631c264be3206d32af0607fee540cf934b5ed57aae6dead5425b97"
+        },
+        {
+          "path": "assets/source/r1-chapter-scenes/master/R1-07/R1-07-WATER-LIGHT-mask.svg",
+          "sha256": "319fcd8ede8aae8aeaf9d8b6bdb01e55e0e38b3413627bfb593365025d0f3c8d"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-07-classes.svg",
+          "sha256": "2f11a171a1dc7306b024d48e739789cf4360d20a9bf26f5a67e5254f0e39971c"
+        },
+        {
+          "path": "game/art/whalebelly/masks/R1-07-actors.svg",
+          "sha256": "23e7f44c60200827ed9d2dcd381edde63b1440330c32cdf0edb2255a08ef0401"
+        }
+      ]
+    }
+  ],
+  "evidence": "game/build/qa/r1-chapter-scenes/",
+  "checks": {
+    "gpu": 109,
+    "branch_routes": 37,
+    "web_keyboard": 31,
+    "project_tests": 23,
+    "main_route": 17,
+    "reload": 2,
+    "main_integration": 58
+  },
+  "publishing": "stable Pages unchanged; existing monolithic package exceeds current publishing limit",
+  "next_action": "No new region automatically opened. Resume by checking hashes and user scope; only revalidate modified inputs. Web packing is a separate recorded issue.",
+  "shared_inputs": [
+    {
+      "path": "game/src/world/scenery/chapter/fish_group.gd",
+      "sha256": "3ccf5ef3d667478928217a701cc78588ece19131a8d2d3b33568daad7646e1df"
+    },
+    {
+      "path": "game/src/world/scenery/chapter/membrane.gdshader",
+      "sha256": "22e359aff7160824acaab858f12ff039ac2747ab00ec505036645ae5fb7970d7"
+    },
+    {
+      "path": "game/src/world/scenery/chapter/pinned_bitmap.gd",
+      "sha256": "d6b2c1102933fd37a0a9a4bb1563b94ed912ecb07f914451dda026a3366bfcf5"
+    },
+    {
+      "path": "game/src/world/scenery/chapter/pinned_bitmap.gdshader",
+      "sha256": "ccf80448ba022029b20e7c2d3d037821321d99dd8fa4407034d270797a98d57c"
+    },
+    {
+      "path": "game/src/world/scenery/chapter/room_environment.gd",
+      "sha256": "70ad6550e6c8d030095a7fbd503e2c7f77a3ba716cf898df2bc033dca0a0dfa9"
+    },
+    {
+      "path": "game/src/world/scenery/chapter/water_light.gdshader",
+      "sha256": "a88126b134a2cf998ffae9d4084165ed9fb2e94a5681cd1b727199fb4c28e83d"
+    },
+    {
+      "path": "game/src/campaign/main.gd",
+      "sha256": "b58a40266047f6e3b37d0e833112580783b16d2912530ae5c97673382338157a"
+    },
+    {
+      "path": "game/src/campaign/environment.gd",
+      "sha256": "998bb38f6dbf98e9c39f38155edeec05c6ec1ff33f80f15757df43ca6fae5cbb"
+    },
+    {
+      "path": "game/src/campaign/mechanisms.gd",
+      "sha256": "f58924338aba3fc2a6a8f34bb4a44653b500f679c7095afbd1b06faa5c38aba0"
+    },
+    {
+      "path": "game/art/whalebelly/rooms.json",
+      "sha256": "55eeac64fbeee2c5b098b9a8a99a2b082949bafb53f81aefc4da6c59abfe8a4c"
+    }
+  ]
+}

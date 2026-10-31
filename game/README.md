@@ -17,6 +17,12 @@
 
 原模块版和原七房共用一个工程，不需要切换另一个 `project.godot`。独立环境是 `content/whalebelly/environment/xumen_reference.tscn`，在编辑器按 F6 预览；F5 始终进入主关卡。
 
+## R1后续六房环境
+
+R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使用。数字 **2–7** 为已有房间预览；**Tab** 切换已有全景/跟随镜头，**F4** 查看四层，**F2** 对照原图。预览不是能力解锁；正式入口仍按Boss、浮游和锚环限制推进。R1-06/07是后续能力回访房，**F9** 仅开启已有临时练习能力。
+
+原件、SVG选区/根线、OpenRaster母版与方法清单：[制作说明](../assets/source/r1-chapter-scenes/README.md)。本地实机验收页在 `build/qa/r1-chapter-scenes/场景验收与对照.html`，含24FPS环境展示与六房截图；日志/录像只保留本地。当前阶段见 [进度](progress.md)。
+
 ## 存档与启动
 
 恢复关卡使用 `user://whalebelly/artmatch_save.json`，模块版仍使用 `user://save.json`。桌面首次正式启动时，只有恢复关卡尚无存档，才从原 `WhalefallArtmatchV05` 目录复制有效V6存档；不覆盖已有新档，不删除原档。浏览器不会读取本机 AppData。
