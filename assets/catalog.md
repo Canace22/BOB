@@ -1,5 +1,9 @@
 # 美术资源台账
 
+## R1后续六房环境分件（2026-10-31）
+
+制作与原件/母版入口：[r1-chapter-scenes](source/r1-chapter-scenes/README.md)。逐件ID、来源、层级与方法在`chapter.json`及各房`elements.json`；运行PNG由`game/art/manifest.json`登记同步。当前接入与验收以`game/progress.md`为准，不将已准备的后续房间规格当作完成场景。
+
 ## WhalebellyRuins恢复接入（2026-10-31）
 
 原运行素材逐字节恢复至 `game/art/whalebelly/`，由 `game/art/manifest.json` 登记来源与同步路径。未直接引用的历史原图、母版、旧音效和配置在 `game/production_sources/whalebelly/source-index.json` 登记；全局编辑源仍保留原位。本轮只恢复与接入，没有重新生成美术；[范围与实机验证](../docs/whalebelly-recovery.md)。

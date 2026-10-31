@@ -340,6 +340,63 @@
       "mask_file": "R1-04/R1-04-WATER-LIGHT-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-04/R1-04-WATER-LIGHT.png",
       "index": 5
+    },
+    {
+      "id": "R1-04-EXISTING-PlayerArt",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        334,
+        626,
+        91,
+        84
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+    },
+    {
+      "id": "R1-04-EXISTING-EnemyArt0",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        733,
+        416,
+        381,
+        297
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
+    },
+    {
+      "id": "R1-04-EXISTING-DoorArt",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        1465,
+        552,
+        91,
+        154
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
     }
   ],
   "doors": [

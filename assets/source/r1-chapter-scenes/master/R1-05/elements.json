@@ -235,6 +235,25 @@
       "mask_file": "R1-05/R1-05-WATER-LIGHT-mask.svg",
       "runtime_file": "r1-chapter-scenes/R1-05/R1-05-WATER-LIGHT.png",
       "index": 2
+    },
+    {
+      "id": "R1-05-EXISTING-PlayerArt",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        390,
+        474,
+        232,
+        96
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership"
     }
   ],
   "doors": [

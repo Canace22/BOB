@@ -19,7 +19,11 @@
 shader = ExtResource("6")
 shader_parameter/water_mask = ExtResource("7")
 
-[node name="ChapterEnvironment" type="Node2D"]
+[node name="ChapterEnvironment" type="Control"]
+clip_contents = true
+mouse_filter = 2
+offset_right = 1672
+offset_bottom = 941
 script = ExtResource("1")
 room_id = "R1-02"
 

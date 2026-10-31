@@ -11,7 +11,7 @@ for(const room of spec.rooms){
  const flex=resourceId('Script','res://src/world/scenery/chapter/pinned_bitmap.gd');
  const school=resourceId('Script','res://src/world/scenery/chapter/fish_group.gd');
  const bubble=resourceId('Script','res://src/world/scenery/local_environment/elements/bubble_emitter.gd');
- node('ChapterEnvironment','Node2D',null,`script = ${env}\nroom_id = "${room.id}"`);
+ node('ChapterEnvironment','Control',null,`clip_contents = true\nmouse_filter = 2\noffset_right = ${room.size[0]}\noffset_bottom = ${room.size[1]}\nscript = ${env}\nroom_id = "${room.id}"`);
  for(const [layer,z] of [['Far',-30],['Middle',-15],['World',0],['Foreground',10]]){
   node(layer,'Node2D','.',`z_index = ${z}`);
   if(layer==='Far')node('Underpaint','Sprite2D',layer,`texture = ${resourceId('Texture2D',`res://art/r1-chapter-scenes/${room.id}/underpaint.png`)}\ncentered = false\nposition = Vector2(-16,-16)`);

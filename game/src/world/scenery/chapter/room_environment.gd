@@ -1,5 +1,5 @@
 class_name ChapterRoomEnvironment
-extends Node2D
+extends Control
 ## One pausable room clock; children do not advance themselves.
 @export var room_id: String = "R1-02"
 @export var animate_environment: bool = true

@@ -111,6 +111,16 @@ func run() -> void:
 		Input.action_release("tp_jump")
 		check(id+"_jump",not host.player.is_on_floor())
 		await tick(80)
+		if id == "R1-03":
+			# Fixture only: connected traversal is verified by the separate route test.
+			host.player.position = Vector2(840,620)
+			host.player.velocity = Vector2.ZERO
+			await tick(110)
+			var mechanisms: Node = host.scenery.get_node("VisualMechanisms")
+			var surface: Sprite2D = environment.get_node("World/Surface")
+			var visual_drop: float = surface.material.get_shader_parameter("membrane_drop")
+			check(id+"_membrane_visual_matches_collision",visual_drop>15 and is_equal_approx(visual_drop,mechanisms.membrane_drop),visual_drop)
+			await shot(id+"-loaded-membrane")
 		host.zoomed = true
 		host.set_process(false)
 		var original_camera: Vector2 = host.camera.position
@@ -124,6 +134,12 @@ func run() -> void:
 		host.camera.zoom = original_zoom
 		host.set_process(true)
 		host.zoomed = false
+		var samples: Array[float] = []
+		for sample in 60:
+			await process_frame
+			samples.append(Performance.get_monitor(Performance.TIME_PROCESS)*1000.0)
+		samples.sort()
+		check(id+"_performance_sampled",true,{"process_p95_ms":samples[56],"fps":Engine.get_frames_per_second(),"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),"static_memory_mb":Performance.get_monitor(Performance.MEMORY_STATIC)/1048576.0,"recording":false})
 		host.load_room(0)
 		await tick(5)
 		host.load_room(index)

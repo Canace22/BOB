@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 const source='assets/source/r1-chapter-scenes', runtime='assets/runtime/sprites/r1-chapter-scenes';
+if(fs.existsSync(`${source}/chapter.json`)&&!process.argv.includes('--rebuild-spec'))throw Error('Specifications already exist; edit the masters in place. Explicit --rebuild-spec is required to regenerate.');
 const rooms=JSON.parse(fs.readFileSync('game/art/whalebelly/rooms.json','utf8'));
 const boxes={
  'R1-02':{baleen:[[565,8,790,408]],vines:[[215,192,72,136],[1400,308,60,125]],fish:[[430,240,220,100],[1010,550,350,110]],bubbles:[[290,360,100,295],[730,310,105,295]],lamps:[]},

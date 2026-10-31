@@ -1,5 +1,7 @@
 [gd_scene load_steps=20 format=3]
 
+[ext_resource type="PackedScene" path="res://content/whalebelly/environment/chapter/R1-04.tscn" id="chapter"]
+
 [ext_resource type="Texture2D" path="res://art/whalebelly/reference/r1/R1-04.png" id="1"]
 
 [ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-04-classes.svg" id="2"]
@@ -214,6 +216,12 @@ shader_parameter/silhouette = ExtResource("12")
 
 [node name="Far" type="Node2D" parent="."]
 
+visible = false
+
+visible = false
+
+visible = false
+
 z_index = -30
 
 [node name="OcclusionUnderpaint" type="Sprite2D" parent="Far"]
@@ -232,6 +240,12 @@ centered = false
 
 [node name="Middle" type="Node2D" parent="."]
 
+visible = false
+
+visible = false
+
+visible = false
+
 z_index = -15
 
 [node name="MiddleOriginalPixels" type="Sprite2D" parent="Middle"]
@@ -248,6 +262,12 @@ z_index = 0
 
 [node name="WorldOriginalPixels" type="Sprite2D" parent="World"]
 
+visible = false
+
+visible = false
+
+visible = false
+
 material = SubResource("Layer2")
 
 texture = ExtResource("1")
@@ -255,6 +275,12 @@ texture = ExtResource("1")
 centered = false
 
 [node name="Foreground" type="Node2D" parent="."]
+
+visible = false
+
+visible = false
+
+visible = false
 
 z_index = 10
 
@@ -341,3 +367,5 @@ texture = ExtResource("1")
 centered = false
 
 material = SubResource("Claw")
+
+[node name="ChapterEnvironment" parent="." instance=ExtResource("chapter")]
