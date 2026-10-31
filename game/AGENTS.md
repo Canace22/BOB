@@ -25,3 +25,8 @@ node tools/godot.mjs test
 ```
 
 改动玩法时补充或更新 `tests/test_*.gd`，并按按键实际走一遍受影响的路线。阶段状态与验收证据写入 `game/progress.md`。
+
+
+## 场景和环境动态
+
+涉及场景布景、参考图还原、环境动态或独立鱼群/柔性物/气泡时，默认应用[场景与环境动态制作](../.agents/skills/scene-environment-motion/SKILL.md)。主动扫描并选择合适动画方式，先样板再接入，批末回写成功配方；不新增本次未要求的玩法或碰撞。
