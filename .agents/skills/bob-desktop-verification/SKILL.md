@@ -3,6 +3,8 @@ name: bob-desktop-verification
 description: 对 BOB 鲸腹遗城 V2、初版和 Three.js 原型执行桌面浏览器回归，选择真实输入通关、死亡恢复、存档隔离与 Pages 路径检查；纯文档修改只检查文档和链接。
 ---
 
+> Godot 正式工程请使用 [godot-game-dev](../godot-game-dev/SKILL.md)。以下 Web 专项流程仅供 `legacy/web/` 历史原型参考与回归，不能用于继续开发旧版本；共享素材制作仍可参考美术规则。
+
 # BOB 桌面回归验收
 
 从本轮 diff 和[协作规则](../../../AGENTS.md)确定受影响版本，再读取对应 README 与测试脚本。通用浏览器操作和开发循环复用 `develop-web-game`；本文件提供当前项目的命令与限制。
@@ -19,8 +21,8 @@ description: 对 BOB 鲸腹遗城 V2、初版和 Three.js 原型执行桌面浏�
 | 初版 `mvp/` | `npm start`，默认 4173 | `npm run check` | `node tests/playthrough.mjs`、`node tests/recovery.mjs` |
 | Three.js 版 `mvp-nightmare/` | 首次 `npm install`，再 `npm start`，默认 4174 | `npm run check` | `npm test` |
 
-- V2 测试使用 `GAME_URL`，默认 4175；开发预览应指向实际开发端口。资源管理页也默认占用 4176，同时使用时通过 `PORT` 为开发服务另选端口。Playwright 与浏览器回退机制见 [V2 说明](../../../mvp-v2/README.md#验证)。`npm test` 包括机制、生态、地形、快照 HTTP 测试与真实按键全路线；新资源另外检查请求、比例、状态与失败回退。
-- Three.js 版测试支持 `BASE_URL`、`TEST_OUTPUT`、`HEADED`。依赖安装见[版本说明](../../../mvp-nightmare/README.md#检查与验收)；也可通过 `PLAYWRIGHT_MODULE` 指向已有可导入入口。
+- V2 测试使用 `GAME_URL`，默认 4175；开发预览应指向实际开发端口。资源管理页也默认占用 4176，同时使用时通过 `PORT` 为开发服务另选端口。Playwright 与浏览器回退机制见 [V2 说明](../../../legacy/web/mvp-v2/README.md#验证)。`npm test` 包括机制、生态、地形、快照 HTTP 测试与真实按键全路线；新资源另外检查请求、比例、状态与失败回退。
+- Three.js 版测试支持 `BASE_URL`、`TEST_OUTPUT`、`HEADED`。依赖安装见[版本说明](../../../legacy/web/mvp-nightmare/README.md#检查与验收)；也可通过 `PLAYWRIGHT_MODULE` 指向已有可导入入口。
 - 初版两个测试目前硬编码 4173 和作者机器的 Playwright 绝对路径，不支持上述环境变量。运行前检查依赖是否存在；换环境时按本次需要做最小的路径适配并记录，不能宣称设置 `PLAYWRIGHT_MODULE` 即可运行旧脚本。
 - 当前 `mvp/package.json` 的 `check` 检查 V2 与发布脚本；修改初版文件时显式运行对应 `node --check`，不可据此声称初版语法已覆盖。语法通过不代表关卡数据或玩法正确。
 - 输出位于对应版本的 `output/playthrough/`、初版另有 `output/recovery/`。Three.js 版支持改输出目录，初版有相对工作目录的截图路径，应在 `mvp/` 内运行。重跑会覆盖同名证据，有保留需要时先归档。
@@ -44,8 +46,8 @@ description: 对 BOB 鲸腹遗城 V2、初版和 Three.js 原型执行桌面浏�
 2. **真实输入与路线**：移动、跳跃、碰撞、机关和出口；V2 检查坡面上下行、凹床、平台接缝、攀网、升降、摆荡和浮膜，并核对工作台多边形与实际接地高度；Three.js 版另看纵深、搬箱、蹲下、潜行与追逐，初版看共鸣距离与重复触发。
 3. **状态与恢复**：死亡、重试、暂停/继续、刷新、重新开始、相关存档兼容与各版键隔离。地形改动必须覆盖区域返回入口和改动前的检查点存档，不能仅靠新开局正向通关证明兼容。坏档、失败重试等不在现有脚本覆盖内的行为，按需求另测。
 4. **画面、性能与声音**：实际打开截图检查遮挡、界面溢出和交互提示，窗口至少覆盖本次目标尺寸。原图分辨率过高会增加解码和重复缩放开销；检查实际运行导出的尺寸和体积，并在相同视窗与渲染后端测帧耗时，缓存不变的地形绘制、避免重复写入未变化的 HUD。资源缩小或 DOM 写入减少不等于已证明实机流畅。音频采样只能证明输出和电平，听感需实际试听；截图和历史记录不代表用户已认可。
-5. **发布路径**：涉及发布链路或资源时，在 `mvp/` 执行 `npm run build:pages`，检查 `.pages-dist/` 的根入口、`mvp-v2/`、运行清单选中的 `assets/runtime/sprites/` 和封面；`nightmare/`、`mvp/` 仅为旧入口重定向。当前发布不含 Three.js vendor，仅在实际修改 Three.js 或其独立发布方式时检查相关导入。用静态服务带 `/BOB/` 前缀打开游戏并检查资源，不能用开发服务替代。远端部署后再验证线上页面、模块与图片已更新。
+5. **发布路径**：涉及发布链路或资源时，在 `legacy/web/mvp/` 执行 `npm run build:pages`，检查 `.pages-dist/` 的根入口、`mvp-v2/`、运行清单选中的 `assets/runtime/sprites/` 和封面；`nightmare/`、`mvp/` 仅为旧入口重定向。当前发布不含 Three.js vendor，仅在实际修改 Three.js 或其独立发布方式时检查相关导入。用静态服务带 `/BOB/` 前缀打开游戏并检查资源，不能用开发服务替代。远端部署后再验证线上页面、模块与图片已更新。
 
-发布构建会重建 `.pages-dist/`，保留所需旧产物后再执行；构建不推送。用户明确要求更新 Pages 后，在会话授权范围内完成验证、`npm run deploy` 与线上复核，不重复询问同一授权；没有发布要求时不执行部署。线上文件或版本尚未核实，记录为待验证，不把本地通过写成已上线。
+发布构建会重建 `.pages-dist/`，保留所需旧产物后再执行；构建不推送。用户明确要求更新 Pages 后，在会话授权范围内完成验证、`npm run deploy` 与线上复核，不重复询问同一授权；发布授权依根 AGENTS.md 和用户当前范围判断。线上文件或版本尚未核实，记录为待验证，不把本地通过写成已上线。
 
 脚本失败先保留证据，修复对应问题再复跑受影响检查。结论写入对应版本 `progress.md`，注明命令、环境、覆盖范围和证据位置；静态检查、浏览器运行、视觉检查及用户反馈分别报告。

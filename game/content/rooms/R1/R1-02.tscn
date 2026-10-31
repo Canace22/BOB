@@ -1,0 +1,142 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-02_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r5"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r6"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r7"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r8"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r9"]
+[ext_resource type="PackedScene" path="res://src/enemies/corpse_crab/corpse_crab.tscn" id="r10"]
+[ext_resource type="Script" path="res://src/world/hazard.gd" id="r11"]
+[ext_resource type="Texture2D" path="res://art/fx/danger_line.png" id="r12"]
+
+[node name="R1-02" type="Node2D"]
+script = ExtResource("r0")
+room_id = "R1-02"
+display_name = "须筛"
+dimensions = Vector2(2432, 1344)
+fall_damage = 1
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 1085)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 1085)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E01" type="Marker2D" parent="Entries"]
+position = Vector2(137.6, 1085)
+
+[node name="Door_E01" type="Node2D" parent="Gameplay"]
+position = Vector2(64, 1088)
+script = ExtResource("r2")
+edge_id = "E01"
+target_room = "R1-01"
+target_entry = "E01"
+prompt = "E E01 → R1-01"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E01"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E01"]
+text = "E E01 → R1-01"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E02" type="Marker2D" parent="Entries"]
+position = Vector2(2294.4, 1085)
+
+[node name="Door_E02" type="Node2D" parent="Gameplay"]
+position = Vector2(2368, 1088)
+script = ExtResource("r4")
+edge_id = "E02"
+target_room = "R1-03"
+target_entry = "E02"
+prompt = "E E02 → R1-03"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E02"]
+texture = ExtResource("r5")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E02"]
+text = "E E02 → R1-03"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E33" type="Marker2D" parent="Entries"]
+position = Vector2(320, 413)
+
+[node name="Door_E33" type="Node2D" parent="Gameplay"]
+position = Vector2(320, 416)
+script = ExtResource("r6")
+edge_id = "E33"
+target_room = "R1-06"
+target_entry = "E33"
+prompt = "E E33 → R1-06 · 能力门"
+required_abilities = PackedStringArray("ability.float")
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E33"]
+texture = ExtResource("r7")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E33"]
+text = "E E33 → R1-06"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E35" type="Marker2D" parent="Entries"]
+position = Vector2(2112, 637)
+
+[node name="Door_E35" type="Node2D" parent="Gameplay"]
+position = Vector2(2112, 640)
+script = ExtResource("r8")
+edge_id = "E35"
+target_room = "R1-07"
+target_entry = "E35"
+prompt = "E E35 → R1-07 · 能力门"
+required_abilities = PackedStringArray("ability.anchor")
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E35"]
+texture = ExtResource("r9")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E35"]
+text = "E E35 → R1-07"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="Enemy0" parent="Gameplay" instance=ExtResource("r10")]
+position = Vector2(704, 1023)
+
+[node name="Hazard0" type="Node2D" parent="Gameplay"]
+position = Vector2(1472, 1024)
+script = ExtResource("r11")
+width = 128
+rescue_only = false
+
+[node name="Warning" type="Sprite2D" parent="Gameplay/Hazard0"]
+texture = ExtResource("r12")
+position = Vector2(64, -12)
+scale = Vector2(0.5, 0.5)

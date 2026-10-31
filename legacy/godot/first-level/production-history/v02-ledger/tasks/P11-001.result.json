@@ -1,0 +1,26 @@
+{
+  "task_id": "P11-001",
+  "status": "pass",
+  "summary": "精确4.7.2独立包已通关和重载，ZIP及源码73项摘要/CRC通过，操作与接续记录交付。",
+  "artifacts": [
+    "docs/v02/delivery.md",
+    "RESUME-v02.md",
+    "README.md",
+    "evidence/v02/package-verification.json"
+  ],
+  "checks": [
+    {
+      "id": "build",
+      "status": "pass",
+      "notes": "最终exe在build目录无--path独立运行五房通关与重载，hash与受测版本一致，包附许可证、操作说明，完整73项摘要/CRC检查通过。",
+      "evidence": [
+        "evidence/v02/release-run/prototype.json",
+        "evidence/v02/release-run/persistence.json",
+        "evidence/v02/release-run.log",
+        "evidence/v02/package-verification.json",
+        "evidence/v02/build-manifest.json"
+      ],
+      "reviewer": "agent"
+    }
+  ]
+}

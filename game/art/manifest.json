@@ -1,0 +1,268 @@
+{
+  "_doc": "Runtime art for game/. src is relative to the repo root; dest is under res://art/. Do not edit files in art/ by hand: change the source in assets/ and run `node tools/godot.mjs sync-art`. Scenery keeps original size because room scenes use pixel region_rects.",
+  "entries": [
+    {
+      "src": "legacy/godot/first-level/assets/runtime/hero/",
+      "dest": "player/"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/crab.png",
+      "dest": "enemies/corpse_crab.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/boss.png",
+      "dest": "enemies/shell_crab_boss.png",
+      "max": 640
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v02/cargo.png",
+      "dest": "scenery/v02/cargo.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v02/gate.png",
+      "dest": "scenery/v02/gate.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v02/lamp.png",
+      "dest": "scenery/v02/lamp.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v02/plant.png",
+      "dest": "scenery/v02/plant.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v03/canopy.png",
+      "dest": "scenery/v03/canopy.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v03/jaw.png",
+      "dest": "scenery/v03/jaw.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v03/ocean.png",
+      "dest": "scenery/v03/ocean.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v03/skull.png",
+      "dest": "scenery/v03/skull.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v03/terrain.png",
+      "dest": "scenery/v03/terrain.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v04/baleen.png",
+      "dest": "scenery/v04/baleen.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v04/foundation.png",
+      "dest": "scenery/v04/foundation.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v04/frame.png",
+      "dest": "scenery/v04/frame.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v04/ledge.png",
+      "dest": "scenery/v04/ledge.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/v04/oral-depth.png",
+      "dest": "scenery/v04/oral-depth.png"
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/throat.png",
+      "dest": "scenery/throat.png"
+    },
+    {
+      "src": "assets/runtime/sprites/shell-camp/base.png",
+      "dest": "props/shell_camp.png",
+      "max": 384
+    },
+    {
+      "src": "assets/runtime/sprites/life-fragment/base.png",
+      "dest": "props/life_fragment.png",
+      "max": 192
+    },
+    {
+      "src": "assets/runtime/sprites/dash-grant-cocoon-closed/base.png",
+      "dest": "props/dash_cocoon_closed.png",
+      "max": 256
+    },
+    {
+      "src": "assets/runtime/sprites/dash-grant-cocoon-open/base.png",
+      "dest": "props/dash_cocoon_open.png",
+      "max": 256
+    },
+    {
+      "src": "assets/runtime/sprites/arena-soft-curtain-closed/base.png",
+      "dest": "props/arena_curtain_closed.png",
+      "max": 384
+    },
+    {
+      "src": "assets/runtime/sprites/arena-soft-curtain-open/base.png",
+      "dest": "props/arena_curtain_open.png",
+      "max": 384
+    },
+    {
+      "src": "assets/runtime/sprites/gut-latch-closed/base.png",
+      "dest": "props/shell_latch_closed.png",
+      "max": 192
+    },
+    {
+      "src": "assets/runtime/sprites/gut-latch-open/base.png",
+      "dest": "props/shell_latch_open.png",
+      "max": 192
+    },
+    {
+      "src": "assets/runtime/sprites/r1-tongue-ledge/base.png",
+      "dest": "props/tongue_ledge.png",
+      "max": 512
+    },
+    {
+      "src": "assets/runtime/sprites/habitat-shell-nest/base.png",
+      "dest": "props/habitat_shell_nest.png",
+      "max": 384
+    },
+    {
+      "src": "assets/runtime/sprites/r2-soft-bed/base.png",
+      "dest": "props/soft_bed.png",
+      "max": 512
+    },
+    {
+      "src": "assets/runtime/sprites/baleen-shrimp-swarm/base.png",
+      "dest": "props/baleen_shrimp_swarm.png",
+      "max": 384
+    },
+    {
+      "src": "assets/runtime/sprites/migration-memory/base.png",
+      "dest": "props/migration_memory.png",
+      "max": 192
+    },
+    {
+      "src": "assets/runtime/sprites/module-quiet-fungus/base.png",
+      "dest": "props/module_quiet_fungus.png",
+      "max": 192
+    },
+    {
+      "src": "assets/runtime/sprites/fx-hit-burst/base.png",
+      "dest": "fx/hit_burst.png"
+    },
+    {
+      "src": "assets/runtime/sprites/fx-short-swipe/base.png",
+      "dest": "fx/short_swipe.png"
+    },
+    {
+      "src": "assets/runtime/sprites/fx-heavy-ring/base.png",
+      "dest": "fx/heavy_ring.png"
+    },
+    {
+      "src": "assets/runtime/sprites/fx-dash-trail/base.png",
+      "dest": "fx/dash_trail.png"
+    },
+    {
+      "src": "assets/runtime/sprites/fx-danger-line/base.png",
+      "dest": "fx/danger_line.png"
+    },
+    {
+      "src": "assets/runtime/sprites/ui-life-full/base.png",
+      "dest": "ui/life_full.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-life-empty/base.png",
+      "dest": "ui/life_empty.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-resonance-full/base.png",
+      "dest": "ui/resonance_full.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-resonance-empty/base.png",
+      "dest": "ui/resonance_empty.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-ability-dash/base.png",
+      "dest": "ui/ability_dash.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-panel-frame/base.png",
+      "dest": "ui/panel_frame.png"
+    },
+    {
+      "src": "assets/runtime/sprites/ui-map-player/base.png",
+      "dest": "ui/map_player.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-map-camp/base.png",
+      "dest": "ui/map_camp.png",
+      "max": 64
+    },
+    {
+      "src": "assets/runtime/sprites/ui-map-door/base.png",
+      "dest": "ui/map_door.png",
+      "max": 64
+    },
+    {
+      "src": "legacy/godot/first-level/assets/runtime/audio/",
+      "dest": "audio/"
+    },
+    {
+      "src": "assets/runtime/fonts/WhalefallUI.ttf",
+      "dest": "fonts/WhalefallUI.ttf"
+    },
+    {
+      "src": "assets/source/noto-sans-sc/OFL.txt",
+      "dest": "fonts/OFL.txt"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/motion_elements/",
+      "dest": "environment/motion_elements/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/baleen_loop_v3/",
+      "dest": "environment/baleen_loop_v3/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/foreground_edges/",
+      "dest": "environment/foreground_edges/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/underbridge/",
+      "dest": "environment/underbridge/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/fish_schools/lantern/",
+      "dest": "environment/fish_schools/lantern/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/fish_schools/silverfin/",
+      "dest": "environment/fish_schools/silverfin/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/fish_schools/tealback/",
+      "dest": "environment/fish_schools/tealback/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/reference_environment/",
+      "dest": "environment/reference_environment/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/baleen_wan22/",
+      "dest": "environment/baleen_wan22/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/soft_light/",
+      "dest": "environment/soft_light/"
+    },
+    {
+      "src": "legacy/godot/WhalebellyRuins/assets/fish_schools/manifest.json",
+      "dest": "environment/fish_schools/manifest.json"
+    }
+  ]
+}

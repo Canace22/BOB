@@ -1,8 +1,10 @@
 ---
 name: "develop-web-game"
-description: "在 BOB 的 Canvas 2D 或 Three.js 2.5D Web 原型中小步开发功能，并通过状态探针、可控时间推进、真实输入和截图完成浏览器验证。"
+description: "仅用于 BOB legacy/web/ 历史 Canvas 2D 与 Three.js 原型的参考和回归；Godot 正式工程使用 godot-game-dev。"
 ---
 
+
+> Godot 正式工程请使用 [godot-game-dev](../godot-game-dev/SKILL.md)。以下 Web 专项流程仅供 `legacy/web/` 历史原型参考与回归，不能用于继续开发旧版本；共享素材制作仍可参考美术规则。
 
 # BOB Web 游戏开发
 

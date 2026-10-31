@@ -1,0 +1,146 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-03_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r5"]
+[ext_resource type="PackedScene" path="res://src/enemies/corpse_crab/corpse_crab.tscn" id="r6"]
+[ext_resource type="PackedScene" path="res://src/enemies/corpse_crab/corpse_crab.tscn" id="r7"]
+[ext_resource type="Script" path="res://src/world/pickup.gd" id="r8"]
+[ext_resource type="Texture2D" path="res://art/props/life_fragment.png" id="r9"]
+[ext_resource type="Texture2D" path="res://art/props/tongue_ledge.png" id="r10"]
+[ext_resource type="Script" path="res://src/world/lever.gd" id="r11"]
+[ext_resource type="Texture2D" path="res://art/props/shell_latch_open.png" id="r12"]
+[ext_resource type="Texture2D" path="res://art/props/shell_latch_closed.png" id="r13"]
+[ext_resource type="Script" path="res://src/world/membrane.gd" id="r14"]
+
+[sub_resource type="RectangleShape2D" id="bridge_shape"]
+size = Vector2(64, 16)
+
+[node name="R1-03" type="Node2D"]
+script = ExtResource("r0")
+room_id = "R1-03"
+display_name = "舌台"
+dimensions = Vector2(2304, 1152)
+fall_damage = 1
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E02" type="Marker2D" parent="Entries"]
+position = Vector2(137.6, 893)
+
+[node name="Door_E02" type="Node2D" parent="Gameplay"]
+position = Vector2(64, 896)
+script = ExtResource("r2")
+edge_id = "E02"
+target_room = "R1-02"
+target_entry = "E02"
+prompt = "E E02 → R1-02"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E02"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E02"]
+text = "E E02 → R1-02"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E03" type="Marker2D" parent="Entries"]
+position = Vector2(2166.4, 893)
+
+[node name="Door_E03" type="Node2D" parent="Gameplay"]
+position = Vector2(2240, 896)
+script = ExtResource("r4")
+edge_id = "E03"
+target_room = "R1-04"
+target_entry = "E03"
+prompt = "E E03 → R1-04"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E03"]
+texture = ExtResource("r5")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E03"]
+text = "E E03 → R1-04"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="Enemy0" parent="Gameplay" instance=ExtResource("r6")]
+position = Vector2(704, 831)
+
+[node name="Enemy1" parent="Gameplay" instance=ExtResource("r7")]
+position = Vector2(1536, 818.2)
+
+[node name="Reward0" type="Node2D" parent="Gameplay"]
+position = Vector2(1568, 723.2)
+script = ExtResource("r8")
+flag_id = "R1-03.reward.0"
+prompt = "E 固定生命碎片（8枚之一）"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Reward0"]
+texture = ExtResource("r9")
+position = Vector2(0, -42)
+scale = Vector2(0.46875, 0.46875)
+
+[node name="Prompt" type="Label" parent="Gameplay/Reward0"]
+text = "E 固定生命碎片（8枚之一）"
+position = Vector2(-100, -120)
+theme_override_font_sizes/font_size = 16
+
+[node name="Bridge" type="StaticBody2D" parent="Gameplay"]
+position = Vector2(1792, 819.2)
+collision_layer = 1
+collision_mask = 0
+visible = false
+
+[node name="Shape" type="CollisionShape2D" parent="Gameplay/Bridge"]
+position = Vector2(32, 8)
+shape = SubResource("bridge_shape")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Bridge"]
+texture = ExtResource("r10")
+position = Vector2(32, 16)
+scale = Vector2(0.125, 0.125)
+
+[node name="Lever" type="Node2D" parent="Gameplay" node_paths=PackedStringArray("bridge")]
+position = Vector2(1632, 723.2)
+script = ExtResource("r11")
+bridge = NodePath("../Bridge")
+prompt = "E 打开壳闩"
+open_texture = ExtResource("r12")
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Lever"]
+texture = ExtResource("r13")
+position = Vector2(0, -30)
+scale = Vector2(0.46875, 0.46875)
+
+[node name="Prompt" type="Label" parent="Gameplay/Lever"]
+text = "E 打开壳闩"
+position = Vector2(-40, -85)
+theme_override_font_sizes/font_size = 16
+
+[node name="Membrane" type="Node" parent="Gameplay" node_paths=PackedStringArray("shelf")]
+script = ExtResource("r14")
+shelf = NodePath("../../Scenery/World/Shelf_P2")

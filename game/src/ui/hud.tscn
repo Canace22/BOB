@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/ui/hud.gd" id="script"]
+[ext_resource type="Theme" path="res://src/ui/theme.tres" id="theme"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("script")
+
+[node name="Top" type="VBoxContainer" parent="."]
+theme = ExtResource("theme")
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 1256.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Stats" type="Label" parent="Top"]
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+
+[node name="Room" type="Label" parent="Top"]
+theme_override_font_sizes/font_size = 19
+
+[node name="Goal" type="Label" parent="Top"]
+theme_override_font_sizes/font_size = 19
+
+[node name="Message" type="Label" parent="."]
+theme = ExtResource("theme")
+offset_left = 24.0
+offset_top = 600.0
+offset_right = 1256.0
+theme_override_font_sizes/font_size = 22
+
+[node name="Boss" type="Label" parent="."]
+theme = ExtResource("theme")
+offset_left = 500.0
+offset_top = 120.0
+theme_override_font_sizes/font_size = 22
+
+[node name="Controls" type="Label" parent="."]
+theme = ExtResource("theme")
+offset_left = 24.0
+offset_top = 674.0
+theme_override_font_sizes/font_size = 17
+text = "A/D 移动 · Space 跳跃 · Q/J 短击 · R/K 重鸣 · F 调息 · Shift/L 贴流冲 · E 交互 · Tab 地图 · Esc 暂停"

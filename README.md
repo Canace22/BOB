@@ -1,118 +1,82 @@
-# BOB · 鲸腹遗城
+# BOB · 鲸腹遗城 / 鲸落万物生
 
-以「鲸落」为题材的游戏。仓库包含概念原画和三版可玩原型：
+以「鲸落」为题材的 2D 战斗 + 收集探索游戏（类空洞骑士），使用 Godot 4.7.2 开发。
 
-当前开发与公开试玩主线是 `mvp-v2/`；`mvp-nightmare/` 和 `mvp/` 保留为可本地运行的历史原型，不进入当前 Pages 发布包。
-
-本项目按小批持续交付，让用户边玩边做：先修试玩反馈，再按来源主线扩展；每批检查、提交、发布并核实线上。所有参与项目的 AI 遵循 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
-
-正式游戏美术使用制作入库的 2D 位图素材，缺项先补绘再接入；Canvas 用于承载图片和运行逻辑，不能用程序几何或拉伸横图代替缺失素材。所有 AI 遵循 [2D 素材规则](AGENTS.md#正式美术必须使用2d素材)；现有缺图回退只是临时故障替代，不代表美术验收完成。
-
-| 版本 | 目录 | 玩法 | 在线试玩 |
-| --- | --- | --- | --- |
-| V2 原画版：鲸落万物生 | `mvp-v2/` | V5.2 须门五房主线、战斗与冲刺；旧四区另保留入口 | [公网试玩](https://canace22.github.io/BOB/mvp-v2/) |
-| 新版：深处的来客 | `mvp-nightmare/` | 2.5D（Three.js），探索 + 解谜 + 潜行逃离，三个短篇关卡 | 保留源码，不再发布 |
-| 初版 | `mvp/` | 2D 横版，跳跃探索 + 共鸣开路 + 找回记忆，三关 | 保留源码，不再发布 |
-
-打开 https://canace22.github.io/BOB/ 会直接进入 V2 2D 版本。
-
-## 快速开始
-
-### Godot 工程与制作工作区
-
-Godot 唯一开发工程为 [`godot/WhalebellyRuins/project.godot`](godot/WhalebellyRuins/project.godot)（鲸腹遗城 / Whalebelly Ruins）。
-首关七房、最新动作/音频和旧工程资源已合并；不再创建独立版本工程。制作脚本位于 `work/`。
-运行及归档见 [统一工程说明](docs/godot-project.md)。
-`outputs/`、`builds/` 仍在 BOB 的上一级目录。
-
-大型素材及工具二进制使用 Git LFS。克隆后运行 `git lfs install`、`git lfs pull`。
-`work/wan22-production/` 按要求仅保留本地，不提交模型、环境、脚本或归档。
-详见 [迁移与提交范围](docs/workspace-migration.md)。
-
-需要 Node.js。
-
-V2 原画版（Node.js 18+，无需安装依赖）：
-
-```sh
-cd mvp-v2
-npm run publish:preview
-npm start
-```
-
-浏览器打开 http://127.0.0.1:4175/ 。4175 为稳定快照，4176 为 `npm run dev` 开发预览。当前须门主线：`A / D` 移动、`Space` 跳跃、`Q` 短击、`R` 重鸣、`E` 交互、`Shift` 取得 A1 后冲刺；按键可修改。五间主线房已接入，其余区域按主线逐批开放。[旧四区试玩](https://canace22.github.io/BOB/mvp-v2/legacy.html)保留原操作与存档。运行、测试与发布见 [V2 说明](mvp-v2/README.md)。GitHub Pages 为用户试玩入口，本地服务用于开发验证。
-
-新版（需要先安装 Three.js，需联网一次）：
-
-```sh
-cd mvp-nightmare
-npm install
-npm start
-```
-
-浏览器打开 http://127.0.0.1:4174/ 。需要支持 WebGL 的桌面浏览器，键盘操作。
-
-初版（无需安装依赖）：
-
-```sh
-cd mvp
-npm start
-```
-
-浏览器打开 http://127.0.0.1:4173/ 。按 `Ctrl+C` 停止服务。
-
-## 美术资源管理页面
-
-```sh
-npm --prefix assets/manager start
-```
-
-打开 http://127.0.0.1:4176/ 查看、筛选和管理已入库素材。标签、备注及验收状态保存到项目台账；数量、覆盖范围与接入状态以[资源台账](assets/catalog.md)和管理页为准。动作动画仍需单独制作与验收。详见[资源管理说明](assets/README.md)。
-
-资源管理页与 V2 开发预览默认都使用 4176，请勿同时启动；稳定试玩 4175 不受影响。
-
-## 发布到 GitHub Pages
-
-```sh
-cd mvp
-npm run deploy
-```
-
-只检查并打包当前 V2 2D 版本、运行清单选中的共享 WebP、封面与回退外观的 WebP 导出，再提交并正常推送到 `gh-pages` 分支，保留发布历史。无需安装 Three.js；旧版源码保留，但不进入本次站点。源码提交与 Pages 发布按[持续迭代规则](AGENTS.md#持续迭代与边做边玩)完成。Pages 部署完成且线上核实后，玩家可刷新进入新版；新主线与旧四区各自保留独立存档。制作期间可继续玩当前公网版本；工作区改动或推送成功不等于已上线。只想看打包结果、不推送：`npm run build:pages`（输出在 `.pages-dist/`）。素材导出命令见[资源管理说明](assets/README.md)。
+| 入口 | 说明 |
+| --- | --- |
+| [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
+| [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
+| [V2 原画版在线试玩](https://canace22.github.io/BOB/mvp-v2/) | 冻结的 Canvas 2D 原型，保留可玩 |
 
 ## 目录
 
 ```
 BOB/
-├── godot/                 # 唯一 Godot 工程 WhalebellyRuins，缓存不入库
-├── work/                  # 制作脚本、素材、工具的本地完整目录
-├── assets/                # 美术资源入口、台账、制作源与游戏导出资源
-├── docs/
-│   ├── 鲸腹遗城原画集/     # 第一版与 V2 原画、原画册、玩法设计及提示词
-│   └── progress.md         # 初版 MVP 的实现范围与验收记录
-├── mvp/                    # 初版（原生 Canvas + WebAudio）
-│   └── deploy.mjs          # 一键发布脚本（仅 V2）
-├── mvp-v2/                 # V2 原画版（Canvas 2D + WebAudio），本地端口 4175
-└── mvp-nightmare/          # 新版（Three.js 2.5D）
-    ├── progress.md         # 新版的实现范围与验收记录
-    └── tests/              # 自动游玩测试脚本
+├── game/        # 唯一开发目录：Godot 正式工程（代码、房间场景、运行素材、测试）
+├── assets/      # 全局素材库、制作源与资源台账
+├── docs/        # 架构说明、世界观与原画设计
+├── tools/       # godot.mjs 命令入口、Pages 发布脚本
+├── legacy/      # 冻结只读：旧 Godot 工程、Web 原型、旧制作脚本
+├── .agents/     # 项目 Skill
+└── AGENTS.md    # 协作规则（AI 与人共用）
 ```
 
-## 当前进度
+架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](legacy/README.md)。
 
-- V2 当前公开主线：V5.2 须门五房，包含圆润坡面与凹部、短击 / 重鸣、尸蟹与负壳蟹首领、胜后取得 A1、三段冲刺沟、H1 清流窝回访，以及营地、死亡恢复、改键与独立存档。当前批次与来源边界见 [战役说明](mvp-v2/CAMPAIGN.md)，已执行测试和线上结果见 [V2 进度](mvp-v2/progress.md)。
-- V2 旧四区：保留鲸口、胃库、肺缘、肋骨的生态探索、攀网 / 升降 / 摆荡和回访，入口为 `legacy.html`，原存档独立保留。旧场景工作台仍用于四区；新主线地图在游戏中按 M 查看。
-- V2 运行素材：当前选用 42 张共享 WebP，约 1.87 MiB；封面与回退图另约 436 KiB。原始素材保留，静态原画搭配程序动作反馈，尚非正式动作动画。
-- 初版：三关（鲸口门庭、肋骨穹顶、心室潮泵），含存档、地图与手记。
-- 新版：三关（失声门庭、听骨廊、最后一次心跳），含检查点存档、藏身潜行、顺序解谜与潮水追逐；美术仍是程序几何体，属于玩法与节奏验证。
-- V5.2 全设计的 36 房尚未全部实现；后续区域、A2–A5、其余首领与终局按主线逐批开放，地图元数据不代表可玩区域。
+2026-10-31 本地新增素材与环境动态已合并到此结构；正式入口为 `game/project.godot`。鱼群、垂须和分层环境可打开 `game/content/environment/local_environment_preview.tscn` 按 F6 预览。[合并范围与验收](docs/godot-local-integration.md)。
 
-## 更多说明
+## 当前内容
 
-- 美术资源统一管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)
-- V2 原画版操作与试玩范围：[mvp-v2/README.md](mvp-v2/README.md)
-- 新版操作、完整路线、验收清单：[mvp-nightmare/README.md](mvp-nightmare/README.md)
-- 初版操作、完整路线：[mvp/README.md](mvp/README.md)
-- 实现记录：[新版](mvp-nightmare/progress.md) · [初版](mvp/progress.md)
-- 开发协作与项目 Skill：[AGENTS.md](AGENTS.md)
+Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → 负壳蟹 → 流膜育窝。包含短击连段、重鸣、调息、Boss、交互领取贴流冲、三段跨沟、营地与版本化存档、地图和暂停。舌台可收集碎片并打开持久壳闩短桥。
 
-注意：初版 `mvp` 与 V2 原画版 `mvp-v2` 本地运行时会读取上级目录的原画，不要单独移动目录或改动原画文件名。深处的来客 `mvp-nightmare` 不依赖原画，可独立运行。
+七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。角色沿用旧版静态姿态加程序反馈；复用素材接入不代表制作了新的逐帧动画。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
+
+## 快速开始
+
+需要 Node.js 18+、Godot 4.7.2 和 Git LFS。
+
+```sh
+git lfs install && git lfs pull
+export GODOT=/path/to/Godot_v4.7.2-stable_win64_console.exe   # 或放到 .tools/godot/
+
+node tools/godot.mjs run      # 运行游戏
+node tools/godot.mjs editor   # 打开编辑器
+node tools/godot.mjs check    # 导入资源并检查全部脚本和场景
+node tools/godot.mjs test     # headless 自动测试
+```
+
+测试只写独立测试文件。桌面画面检查可运行 `node tools/godot.mjs run -- res://tests/manual_preview.tscn`，不会改写真实存档。新工程不读取旧 Godot / V2 存档；Web 版自动保存到当前浏览器站点存储。
+
+Web 验收需要 Node.js 20+、Playwright 与可用 Chrome/Chromium：
+
+```sh
+node tools/godot.mjs export-web
+node game/tests/serve_web.mjs       # 独立终端保持运行，端口 4187
+node game/tests/web_playthrough.mjs # 另一终端执行，五房真实按键路线
+```
+
+`PLAYWRIGHT_MODULE` 可指定现有模块路径，`CHROME_PATH` 可指定浏览器。线上复核设置 `GAME_URL=https://canace22.github.io/BOB/godot/`。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
+
+## 操作（桌面键盘）
+
+`A / D` 移动，`Space` 跳跃，`Q` 或 `J` 短击（后半段再按接第二击），`R` 或 `K` 重鸣（消耗 2 蓄振），`F` 原地调息（消耗 2 蓄振恢复 1 生命），`Shift` 或 `L` 贴流冲（击败负壳蟹后获得），`E` 或 `↑` 交互，`Tab` 或 `M` 地图，`Esc` 暂停。
+
+## 发布
+
+```sh
+node tools/deploy-pages.mjs
+```
+
+导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，同时将根入口跳转到 `godot/`，保留 `mvp-v2/` 等历史版本目录。只修正默认入口时使用 `node tools/deploy-pages.mjs --entry-only`，不重新导出或替换游戏包。流程见 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
+
+导出需要安装 Godot 4.7.2 官方模板中的 `web_nothreads_release.zip`。发布脚本在 `.pages-dist-godot/` 保留独立的 Pages 检出；`godot/build.json` 记录源码版本，推送后还需核实 Pages 部署和线上路线。
+
+Web 导出后自动生成压缩下载文件与加载说明，浏览器缓存按内容哈希区分版本；支持的浏览器会复用已下载引擎和资源包。加载页会显示实际压缩下载量与启动阶段。原始文件保留，供缺少解压 API 的浏览器使用。首屏测速运行 `node game/tests/web_startup.mjs`，环境变量与上面的浏览器验收一致。
+
+中文 UI 使用[字体子集](assets/source/noto-sans-sc/README.md)。新增中文后重建字体并运行素材同步；完整原字体保留在素材库，验收测试会检查缺字。
+
+## 美术资源
+
+正式画面只用入库的 2D 位图素材，规则见 [AGENTS.md](AGENTS.md#正式美术必须使用2d素材)。素材管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)。管理页面：`npm --prefix assets/manager start`，打开 http://127.0.0.1:4176/ 。
+
+大型素材使用 Git LFS。编辑器缓存、验收截图、第三方工具和日志不入库，见[迁移与提交范围](docs/workspace-migration.md)。

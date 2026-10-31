@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="1"]
+[node name="BUBBLE-ZONE-05" type="Node2D"]
+script = ExtResource("1")
+bounds = Rect2(330, 215, 65, 230)
+population = 7
+seed_id = 4
+size_range = Vector2(5, 9)
+base_speed = 14.0
+bubble_opacity = 0.48

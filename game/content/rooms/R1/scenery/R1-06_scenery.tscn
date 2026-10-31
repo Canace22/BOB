@@ -1,0 +1,271 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/foundation.png" id="v04_foundation"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v04/ledge.png" id="v04_ledge"]
+[ext_resource type="Texture2D" path="res://art/scenery/v04/frame.png" id="v04_frame"]
+
+[ext_resource type="Script" path="res://src/world/scenery/scenery_motion.gd" id="1"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v03/skull.png" id="2"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v03/terrain.png" id="3"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/throat.png" id="4"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/plant.png" id="5"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/lamp.png" id="6"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="7"]
+
+[ext_resource type="Texture2D" path="res://art/scenery/v02/cargo.png" id="8"]
+
+[sub_resource type="RectangleShape2D" id="Shape_0"]
+size = Vector2(384.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_1"]
+size = Vector2(256.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_2"]
+size = Vector2(256.000, 64.000)
+
+[sub_resource type="RectangleShape2D" id="Shape_3"]
+size = Vector2(448.000, 64.000)
+
+[node name="Scenery" type="Node2D"]
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -30
+
+[node name="Middle" type="Node2D" parent="."]
+z_index = -15
+script = ExtResource("1")
+parallax = Vector2(0.5, 0.5)
+reference_center = Vector2(768, 768)
+
+[node name="World" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Foreground" type="Node2D" parent="."]
+z_index = 6
+script = ExtResource("1")
+parallax = Vector2(1.2, 1.2)
+reference_center = Vector2(768, 768)
+fade_near_player = true
+
+[node name="FarDrift" type="Node2D" parent="Far"]
+position = Vector2(-1400, -900)
+script = ExtResource("1")
+parallax = Vector2(0.10, 0.12)
+
+[node name="DeepWater" type="Sprite2D" parent="Far/FarDrift"]
+position = Vector2(0.000, 0.000)
+scale = Vector2(1.675, 1.675)
+texture = ExtResource("2")
+centered = false
+modulate = Color(0.85, 0.89, 0.9, 1)
+
+[node name="Shelf_P0" type="StaticBody2D" parent="World"]
+position = Vector2(0.000, 1280.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P0"]
+position = Vector2(192.000, 32.000)
+shape = SubResource("Shape_0")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P0"]
+position = Vector2(-4, -8)
+scale = Vector2(0.19798, 0.19798)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.7, 0.78, 0.86, 1)
+
+[node name="Colonies_0" type="Sprite2D" parent="World"]
+position = Vector2(268.800, 1234.000)
+scale = Vector2(0.218, 0.218)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 2.688
+
+[node name="Lamp_0" type="Sprite2D" parent="World"]
+position = Vector2(230.400, 1165.000)
+scale = Vector2(0.221, 0.221)
+texture = ExtResource("6")
+centered = false
+script = ExtResource("1")
+sway = 0.012
+phase = 2.304
+
+[node name="NearColony_0" type="Sprite2D" parent="Foreground"]
+position = Vector2(-60.000, 1370.000)
+scale = Vector2(0.604, 0.604)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.16, 0.26, 0.3, 0.8)
+script = ExtResource("1")
+sway = 0.012
+phase = -0.600
+
+[node name="Shelf_P1" type="StaticBody2D" parent="World"]
+position = Vector2(448.000, 1088.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P1"]
+position = Vector2(128.000, 32.000)
+shape = SubResource("Shape_1")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P1"]
+position = Vector2(-4, -8)
+scale = Vector2(0.133333, 0.133333)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.7, 0.78, 0.86, 1)
+
+[node name="Colonies_1" type="Sprite2D" parent="World"]
+position = Vector2(627.200, 1042.000)
+scale = Vector2(0.218, 0.218)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 6.272
+
+[node name="Shelf_P2" type="StaticBody2D" parent="World"]
+position = Vector2(768.000, 896.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P2"]
+position = Vector2(128.000, 32.000)
+shape = SubResource("Shape_2")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P2"]
+position = Vector2(-4, -8)
+scale = Vector2(0.133333, 0.133333)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.7, 0.78, 0.86, 1)
+
+[node name="Colonies_2" type="Sprite2D" parent="World"]
+position = Vector2(947.200, 850.000)
+scale = Vector2(0.218, 0.218)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 9.472
+
+[node name="Lamp_2" type="Sprite2D" parent="World"]
+position = Vector2(921.600, 781.000)
+scale = Vector2(0.221, 0.221)
+texture = ExtResource("6")
+centered = false
+script = ExtResource("1")
+sway = 0.012
+phase = 9.216
+
+[node name="Shelf_P3" type="StaticBody2D" parent="World"]
+position = Vector2(1088.000, 704.000)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="World/Shelf_P3"]
+position = Vector2(224.000, 32.000)
+shape = SubResource("Shape_3")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TongueLedge" type="Sprite2D" parent="World/Shelf_P3"]
+position = Vector2(-4, -8)
+scale = Vector2(0.230303, 0.230303)
+texture = ExtResource("v04_ledge")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 280, 1980, 410)
+modulate = Color(0.7, 0.78, 0.86, 1)
+
+[node name="Colonies_3" type="Sprite2D" parent="World"]
+position = Vector2(1401.600, 658.000)
+scale = Vector2(0.218, 0.218)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.72, 0.76, 0.69, 0.9)
+script = ExtResource("1")
+sway = 0.012
+phase = 14.016
+
+[node name="NearColony_3" type="Sprite2D" parent="Foreground"]
+position = Vector2(1028.000, 794.000)
+scale = Vector2(0.604, 0.604)
+texture = ExtResource("5")
+centered = false
+modulate = Color(0.16, 0.26, 0.3, 0.8)
+script = ExtResource("1")
+sway = 0.012
+phase = 10.280
+
+[node name="NearShellRidge" type="Sprite2D" parent="Foreground"]
+position = Vector2(-300, 976)
+scale = Vector2(0.983425, 0.983425)
+texture = ExtResource("v04_frame")
+centered = false
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P0"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P1"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.18619791666666666, 0.18619791666666666)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P2"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.18619791666666666, 0.18619791666666666)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)
+
+[node name="Foundation" type="Sprite2D" parent="World/Shelf_P3"]
+z_index = -1
+position = Vector2(-15, 35)
+scale = Vector2(0.3111979166666667, 0.3111979166666667)
+texture = ExtResource("v04_foundation")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 235, 1536, 789)
+modulate = Color(0.52,0.60,0.69,1)

@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "R1-01",
+    "name": "外伤坡",
+    "scene": "scenes/r1/R1-01.tscn",
+    "original": "assets/reference/r1/R1-01.png",
+    "coordinates": "assets/reference/r1/R1-01.svg",
+    "sizeU": [
+      30,
+      18
+    ],
+    "anatomy": {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "part": "口角外侧／下颌前段",
+      "position": "鼻端2.5–8.3%（约3–10m）；靠海床腹外侧",
+      "rangePercent": [
+        2.5,
+        8.3
+      ],
+      "rangeM": [
+        3,
+        10
+      ],
+      "side": "靠海床腹外侧",
+      "routeReason": "口角旧撕裂，位于鲸体外缘而非正常嘴缝凭空破墙",
+      "landmark": "皮肤-脂层-肌层断面和远处上颚须列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 14,
+        "w": 8,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 9,
+        "y": 13,
+        "w": 5,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 15,
+        "y": 12,
+        "w": 4,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P3",
+        "x": 20,
+        "y": 13,
+        "w": 4,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P4",
+        "x": 25,
+        "y": 14,
+        "w": 5,
+        "kind": "主路稳定台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E01",
+        "to": "R1-02",
+        "x": 29,
+        "y": 14,
+        "side": "right",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P4",
+        "description": "本册绘制规范修正：按首访说明与主路线，从右侧进入须筛；源JSON左门矛盾已保留在source_doors"
+      }
+    ],
+    "anchors": [],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_01",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "OpenUpperJaw",
+      "LowerJawSkin",
+      "Shelf_P0",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "Shelf_P3",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Colonies_3",
+      "Shelf_P4",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_4",
+      "Colonies_4",
+      "Lamp_4",
+      "LampRope_4",
+      "NearColony_4",
+      "NearShellRidge",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-02",
+    "name": "须筛",
+    "scene": "scenes/r1/R1-02.tscn",
+    "original": "assets/reference/r1/R1-02.png",
+    "coordinates": "assets/reference/r1/R1-02.svg",
+    "sizeU": [
+      38,
+      21
+    ],
+    "anatomy": {
+      "id": "R1-02",
+      "name": "须筛",
+      "part": "口腔侧壁／上颚鲸须下缘",
+      "position": "鼻端6.7–15%（约8–18m）；口腔中层",
+      "rangePercent": [
+        6.7,
+        15
+      ],
+      "rangeM": [
+        8,
+        18
+      ],
+      "side": "口腔中层",
+      "routeReason": "真正口腔腔隙；鲸须只从上颚垂下",
+      "landmark": "成排垂须向深处缩小，不画成全身吊须",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 17,
+        "w": 7,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 8,
+        "y": 16,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 15,
+        "y": 15,
+        "w": 5,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P3",
+        "x": 21,
+        "y": 16,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P4",
+        "x": 28,
+        "y": 17,
+        "w": 10,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "FLOAT0",
+        "x": 3,
+        "y": 13.5,
+        "w": 4,
+        "kind": "A2浮升补压台"
+      },
+      {
+        "id": "FLOAT1",
+        "x": 3,
+        "y": 10,
+        "w": 4,
+        "kind": "A2浮升补压台"
+      },
+      {
+        "id": "FLOAT2",
+        "x": 3,
+        "y": 6.5,
+        "w": 4,
+        "kind": "A2浮升补压台"
+      },
+      {
+        "id": "ANCHOR_GATE",
+        "x": 29,
+        "y": 10,
+        "w": 6,
+        "kind": "A3固定环隐藏岸"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E01",
+        "to": "R1-01",
+        "x": 1,
+        "y": 17,
+        "side": "left",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E02",
+        "to": "R1-03",
+        "x": 37,
+        "y": 17,
+        "side": "right",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P4",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E33",
+        "to": "R1-06",
+        "x": 5,
+        "y": 6.5,
+        "side": "top",
+        "kind": "optional",
+        "condition": {
+          "requires": [
+            "A2"
+          ],
+          "requiresAll": [
+            "A2"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "FLOAT2",
+        "description": "A2三段3.5U浮升；穿过上颚衬层旧脱层与颅侧创伤转接鼻道破口，不能画成口腔天然直通喷气孔"
+      },
+      {
+        "id": "E35",
+        "to": "R1-07",
+        "x": 33,
+        "y": 10,
+        "side": "upper",
+        "kind": "optional",
+        "condition": {
+          "requires": [
+            "A3"
+          ],
+          "requiresAll": [
+            "A3"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "ANCHOR_GATE",
+        "description": "红绳断端与透光提示高岸；挂固定环攀移后拉环开须帘，不能只按E。"
+      }
+    ],
+    "anchors": [
+      {
+        "x": 26,
+        "y": 13,
+        "reach": 4.5,
+        "label": "须根环1"
+      },
+      {
+        "x": 29,
+        "y": 10,
+        "reach": 4.5,
+        "label": "须根环2"
+      },
+      {
+        "x": 32,
+        "y": 7,
+        "reach": 4.5,
+        "label": "门帘拉环"
+      }
+    ],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_02",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "UpperPalateAndBaleen",
+      "Shelf_P0",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "Shelf_P3",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Colonies_3",
+      "Shelf_P4",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_4",
+      "Colonies_4",
+      "Lamp_4",
+      "LampRope_4",
+      "Shelf_FLOAT0",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_5",
+      "Tether_5_0.22",
+      "Tether_5_0.78",
+      "ShellHinge_5",
+      "Shelf_FLOAT1",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_6",
+      "Tether_6_0.22",
+      "Tether_6_0.78",
+      "ShellHinge_6",
+      "Shelf_FLOAT2",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_7",
+      "Tether_7_0.22",
+      "Tether_7_0.78",
+      "ShellHinge_7",
+      "Shelf_ANCHOR_GATE",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_8",
+      "Tether_8_0.22",
+      "Tether_8_0.78",
+      "ShellHinge_8",
+      "Gate_A2",
+      "GateLabel_A2",
+      "Gate_A3",
+      "GateLabel_A3",
+      "NearShellRidge",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-03",
+    "name": "舌台",
+    "scene": "scenes/r1/R1-03.tscn",
+    "original": "assets/reference/r1/R1-03.png",
+    "coordinates": "assets/reference/r1/R1-03.svg",
+    "sizeU": [
+      36,
+      18
+    ],
+    "anatomy": {
+      "id": "R1-03",
+      "name": "舌台",
+      "part": "舌体背面",
+      "position": "鼻端10–19.2%（约12–23m）；口腔腹侧",
+      "rangePercent": [
+        10,
+        19.2
+      ],
+      "rangeM": [
+        12,
+        23
+      ],
+      "side": "口腔腹侧",
+      "routeReason": "舌面与口底之间可见起伏台面",
+      "landmark": "跨数屏的大舌脊，远处须筛仍可辨",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 14,
+        "w": 7,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 8,
+        "y": 13,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 15,
+        "y": 14,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P3",
+        "x": 22,
+        "y": 12.8,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P4",
+        "x": 29,
+        "y": 14,
+        "w": 7,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "U0",
+        "x": 23,
+        "y": 11.3,
+        "w": 3,
+        "kind": "奖励落台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E02",
+        "to": "R1-02",
+        "x": 1,
+        "y": 14,
+        "side": "left",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E03",
+        "to": "R1-04",
+        "x": 35,
+        "y": 14,
+        "side": "right",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P4",
+        "description": "横向出入口"
+      }
+    ],
+    "anchors": [],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_03",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "UpperPalateAndBaleen",
+      "ContinuousTongueBase",
+      "Shelf_P0",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "Shelf_P3",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Colonies_3",
+      "Shelf_P4",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_4",
+      "Colonies_4",
+      "Lamp_4",
+      "LampRope_4",
+      "Shelf_U0",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_5",
+      "Tether_5_0.22",
+      "Tether_5_0.78",
+      "ShellHinge_5",
+      "NearShellRidge",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-04",
+    "name": "负壳蟹",
+    "scene": "scenes/r1/R1-04.tscn",
+    "original": "assets/reference/r1/R1-04.png",
+    "coordinates": "assets/reference/r1/R1-04.svg",
+    "sizeU": [
+      36,
+      18
+    ],
+    "anatomy": {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "part": "舌根后方／口咽入口",
+      "position": "鼻端16.7–24.2%（约20–29m）；头部后腹侧",
+      "rangePercent": [
+        16.7,
+        24.2
+      ],
+      "rangeM": [
+        20,
+        29
+      ],
+      "side": "头部后腹侧",
+      "routeReason": "负壳蟹占据咽前宽平台，首领不是长在食管壁里",
+      "landmark": "头顶软腭与后方收窄咽口",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 14,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 6,
+        "y": 14,
+        "w": 30,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "U0",
+        "x": 10,
+        "y": 12.5,
+        "w": 4,
+        "kind": "战斗避险/动作训练台"
+      },
+      {
+        "id": "U1",
+        "x": 25,
+        "y": 12.5,
+        "w": 4,
+        "kind": "战斗避险/动作训练台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E03",
+        "to": "R1-03",
+        "x": 1,
+        "y": 14,
+        "side": "left",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E04",
+        "to": "R1-05",
+        "x": 35,
+        "y": 14,
+        "side": "right",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [
+            "BOSS_R1"
+          ],
+          "requiresCompletion": "BOSS_R1胜利后开放出口",
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P1",
+        "description": "横向出入口"
+      }
+    ],
+    "anchors": [],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_04",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "UpperPalateAndBaleen",
+      "ContinuousTongueBase",
+      "Shelf_P0",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Shelf_U0",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Tether_2_0.22",
+      "Tether_2_0.78",
+      "ShellHinge_2",
+      "Shelf_U1",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Tether_3_0.22",
+      "Tether_3_0.78",
+      "ShellHinge_3",
+      "NearShellRidge",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-05",
+    "name": "流膜育窝",
+    "scene": "scenes/r1/R1-05.tscn",
+    "original": "assets/reference/r1/R1-05.png",
+    "coordinates": "assets/reference/r1/R1-05.svg",
+    "sizeU": [
+      38,
+      18
+    ],
+    "anatomy": {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "part": "咽后段至食管前段",
+      "position": "鼻端22.5–26.7%（约27–32m）；颈胸交界内侧",
+      "rangePercent": [
+        22.5,
+        26.7
+      ],
+      "rangeM": [
+        27,
+        32
+      ],
+      "side": "颈胸交界内侧",
+      "routeReason": "塌陷食管纵裂边缘与共生育窝；不是健康食管张成洞穴",
+      "landmark": "纵向肌纹与向尾侧收束的食管壁",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 14,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 10,
+        "y": 14,
+        "w": 5,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 19,
+        "y": 13.5,
+        "w": 5,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P3",
+        "x": 28,
+        "y": 14,
+        "w": 10,
+        "kind": "主路稳定台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E04",
+        "to": "R1-04",
+        "x": 1,
+        "y": 14,
+        "side": "left",
+        "kind": "main",
+        "condition": {
+          "requires": [],
+          "requiresAll": [],
+          "completionFlags": [
+            "BOSS_R1"
+          ],
+          "requiresCompletion": "BOSS_R1胜利后开放出口",
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E05",
+        "to": "R3-01",
+        "x": 37,
+        "y": 14,
+        "side": "right",
+        "kind": "main",
+        "condition": {
+          "requires": [
+            "A1"
+          ],
+          "requiresAll": [
+            "A1"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P3",
+        "description": "横向出入口"
+      }
+    ],
+    "anchors": [],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_05",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "Shelf_P0",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "Shelf_P3",
+      "Collision",
+      "RootedOrgan",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Colonies_3",
+      "NearColony_3",
+      "NearShellRidge",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-06",
+    "name": "喷气孔上层",
+    "scene": "scenes/r1/R1-06.tscn",
+    "original": "assets/reference/r1/R1-06.png",
+    "coordinates": "assets/reference/r1/R1-06.svg",
+    "sizeU": [
+      24,
+      24
+    ],
+    "anatomy": {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "part": "喷气孔旁颅侧旧伤／鼻道外侧；脑区不进入",
+      "position": "鼻端17.5–24.2%（约21–29m）；头部背侧",
+      "rangePercent": [
+        17.5,
+        24.2
+      ],
+      "rangeM": [
+        21,
+        29
+      ],
+      "side": "头部背侧",
+      "routeReason": "鼻孔遗迹被聚落回流闩改造成维修口；不再呼吸",
+      "landmark": "双喷气孔隔壁、向体表透入的冷海光",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 20,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 7,
+        "y": 17,
+        "w": 4,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 12,
+        "y": 14,
+        "w": 4,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P3",
+        "x": 17,
+        "y": 11,
+        "w": 7,
+        "kind": "主路稳定台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E33",
+        "to": "R1-02",
+        "x": 1,
+        "y": 20,
+        "side": "left",
+        "kind": "optional",
+        "condition": {
+          "requires": [
+            "A2"
+          ],
+          "requiresAll": [
+            "A2"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      },
+      {
+        "id": "E34",
+        "to": "R2-05",
+        "x": 23,
+        "y": 11,
+        "side": "right",
+        "kind": "shortcut",
+        "condition": {
+          "requires": [
+            "A2"
+          ],
+          "requiresAll": [
+            "A2"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": "BOSS_R2且从R2-05完成开闩",
+          "unlock": {
+            "flag": "SC_BLOWHOLE",
+            "from": "R2-05",
+            "requiresAll": [
+              "A2"
+            ],
+            "completionFlags": [
+              "BOSS_R2"
+            ],
+            "action": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。",
+            "persistent": true
+          },
+          "note": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。首次打开后永久双向；局部水压/死亡不复锁。"
+        },
+        "platform": "P3",
+        "description": "横向出入口"
+      }
+    ],
+    "anchors": [],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_06",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "Shelf_P0",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "Shelf_P3",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_3",
+      "Colonies_3",
+      "NearColony_3",
+      "LungSideLockedGate",
+      "Flow_P0_0",
+      "Flow_P0_25",
+      "Flow_P0_50",
+      "Flow_P1_0",
+      "Flow_P1_25",
+      "Flow_P1_50",
+      "Flow_P2_0",
+      "Flow_P2_25",
+      "Flow_P2_50",
+      "Reward_0",
+      "NearShellRidge",
+      "Foundation",
+      "Foundation",
+      "Foundation",
+      "Foundation",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  },
+  {
+    "id": "R1-07",
+    "name": "鲸须记忆袋",
+    "scene": "scenes/r1/R1-07.tscn",
+    "original": "assets/reference/r1/R1-07.png",
+    "coordinates": "assets/reference/r1/R1-07.svg",
+    "sizeU": [
+      28,
+      19
+    ],
+    "anatomy": {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "part": "上颚须根附着面附近",
+      "position": "鼻端10–17.5%（约12–21m）；口腔高侧层",
+      "rangePercent": [
+        10,
+        17.5
+      ],
+      "rangeM": [
+        12,
+        21
+      ],
+      "side": "口腔高侧层",
+      "routeReason": "须板脱落与衬组织剥离形成的小口袋",
+      "landmark": "须根排列、修索红结；没有牙列",
+      "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+    },
+    "platforms": [
+      {
+        "id": "P0",
+        "x": 0,
+        "y": 15,
+        "w": 6,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P1",
+        "x": 11,
+        "y": 15,
+        "w": 5,
+        "kind": "主路稳定台"
+      },
+      {
+        "id": "P2",
+        "x": 21,
+        "y": 15,
+        "w": 7,
+        "kind": "主路稳定台"
+      }
+    ],
+    "doors": [
+      {
+        "id": "E35",
+        "to": "R1-02",
+        "x": 1,
+        "y": 15,
+        "side": "left",
+        "kind": "optional",
+        "condition": {
+          "requires": [
+            "A3"
+          ],
+          "requiresAll": [
+            "A3"
+          ],
+          "completionFlags": [],
+          "requiresCompletion": null,
+          "unlock": null,
+          "note": ""
+        },
+        "platform": "P0",
+        "description": "横向出入口"
+      }
+    ],
+    "anchors": [
+      {
+        "x": 7.5,
+        "y": 12,
+        "label": "固定锚环1",
+        "reach": 4.5
+      },
+      {
+        "x": 10.5,
+        "y": 12,
+        "label": "固定锚环2",
+        "reach": 4.5
+      },
+      {
+        "x": 17.5,
+        "y": 12,
+        "label": "固定锚环3",
+        "reach": 4.5
+      },
+      {
+        "x": 20.5,
+        "y": 12,
+        "label": "固定锚环4",
+        "reach": 4.5
+      }
+    ],
+    "layers": {
+      "Far": {
+        "parallax": [
+          0.1,
+          0.12
+        ],
+        "z": -30,
+        "source": "Far/FarDrift/DeepWater"
+      },
+      "Middle": {
+        "parallax": [
+          0.5,
+          0.5
+        ],
+        "z": -15,
+        "source": "room-specific canopy, scar or membrane"
+      },
+      "World": {
+        "parallax": [
+          1,
+          1
+        ],
+        "z": -1,
+        "source": [
+          "Shelf_*",
+          "Actors/Player",
+          "Actors/enemies",
+          "DoorsAnchorsAndMechanisms",
+          "EventEffects"
+        ]
+      },
+      "Foreground": {
+        "parallax": [
+          1.2,
+          1.2
+        ],
+        "z": 6,
+        "source": [
+          "NearShellRidge",
+          "NearBottomFill",
+          "NearColony_*"
+        ],
+        "fade": "player overlap reduces opacity; disabled for inspection"
+      }
+    },
+    "editable_scene_nodes": [
+      "R1_07",
+      "Far",
+      "Middle",
+      "World",
+      "Foreground",
+      "FarDrift",
+      "DeepWater",
+      "UpperPalateAndBaleen",
+      "ClosedRootWall",
+      "Shelf_P0",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_0",
+      "Colonies_0",
+      "Lamp_0",
+      "LampRope_0",
+      "NearColony_0",
+      "Shelf_P1",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_1",
+      "Colonies_1",
+      "Shelf_P2",
+      "Collision",
+      "TongueLedge",
+      "ReadableTop_2",
+      "Colonies_2",
+      "Lamp_2",
+      "LampRope_2",
+      "NearColony_2",
+      "RedCord_0",
+      "AnchorRing_0",
+      "RedCord_1",
+      "AnchorRing_1",
+      "RedCord_2",
+      "AnchorRing_2",
+      "RedCord_3",
+      "AnchorRing_3",
+      "ClosedRightWall",
+      "Collision",
+      "Reward_0",
+      "Reward_1",
+      "NearShellRidge",
+      "Foundation",
+      "Foundation",
+      "Foundation",
+      "NearBottomFill"
+    ],
+    "runtime_mechanisms": "scripts/room_routes.gd uses same rooms.json; coordinates never inferred from image pixels"
+  }
+]

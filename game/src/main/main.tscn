@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/main/main.gd" id="main"]
+[ext_resource type="PackedScene" path="res://src/player/player.tscn" id="player"]
+[ext_resource type="Script" path="res://src/main/camera_rig.gd" id="camera"]
+[ext_resource type="Script" path="res://src/main/audio_service.gd" id="audio"]
+[ext_resource type="PackedScene" path="res://src/ui/hud.tscn" id="hud"]
+[ext_resource type="PackedScene" path="res://src/ui/pause.tscn" id="pause"]
+[ext_resource type="Script" path="res://src/core/web_status.gd" id="web"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("main")
+
+[node name="RoomHost" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("player")]
+z_index = 2
+
+[node name="CameraRig" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+script = ExtResource("camera")
+player = NodePath("../Player")
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("audio")
+
+[node name="Voice0" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -12.0
+[node name="Voice1" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -12.0
+[node name="Voice2" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -12.0
+[node name="Voice3" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -12.0
+
+[node name="HUD" parent="." instance=ExtResource("hud")]
+
+[node name="Pause" parent="." instance=ExtResource("pause")]
+
+[node name="WebStatus" type="Node" parent="." node_paths=PackedStringArray("player")]
+process_mode = 3
+script = ExtResource("web")
+player = NodePath("../Player")

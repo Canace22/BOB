@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="player"]
+[ext_resource type="Resource" path="res://src/player/player_tuning.tres" id="tuning"]
+[ext_resource type="Script" path="res://src/combat/health.gd" id="health"]
+[ext_resource type="Script" path="res://src/combat/hurtbox.gd" id="hurt"]
+[ext_resource type="Script" path="res://src/combat/hitbox.gd" id="hit"]
+[ext_resource type="Script" path="res://src/player/states/actions.gd" id="actions"]
+[ext_resource type="Script" path="res://src/player/states/locomotion.gd" id="move"]
+[ext_resource type="Script" path="res://src/player/player_visual.gd" id="visual"]
+
+[sub_resource type="CapsuleShape2D" id="body"]
+radius = 17.0
+height = 61.0
+
+[sub_resource type="RectangleShape2D" id="attack"]
+resource_local_to_scene = true
+size = Vector2(98.2, 96)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("player")
+tuning = ExtResource("tuning")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30.5)
+shape = SubResource("body")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("health")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("hurt")
+health = NodePath("../Health")
+
+[node name="Shape" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -30.5)
+shape = SubResource("body")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("hit")
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(34, -32)
+shape = SubResource("attack")
+
+[node name="Actions" type="Node" parent="."]
+script = ExtResource("actions")
+
+[node name="Locomotion" type="Node" parent="."]
+script = ExtResource("move")
+
+[node name="Visual" type="Sprite2D" parent="."]
+position = Vector2(0, -35.28)
+scale = Vector2(0.28, 0.28)
+script = ExtResource("visual")
+
+[node name="Effect" type="Sprite2D" parent="Visual"]
+visible = false

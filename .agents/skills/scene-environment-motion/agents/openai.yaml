@@ -1,0 +1,6 @@
+interface:
+  display_name: "场景与环境动态制作"
+  short_description: "主动识别场景动件，选择制作方法，分层还原并沉淀可复用成功经验"
+  default_prompt: "使用 $scene-environment-motion，读取当前场景和参考，主动识别动态元素、选择合适方法，逐件制作验收并沉淀成功经验。"
+policy:
+  allow_implicit_invocation: true

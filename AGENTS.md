@@ -2,27 +2,35 @@
 
 ## 项目与职责
 
-### Godot 唯一开发工程
+程序开发、美术制作和剧情创作都在本仓库完成。游戏是 Godot 4.7.2 制作的 2D 战斗 + 收集探索（类空洞骑士）。
 
-- Godot 只在 `godot/WhalebellyRuins/`（鲸腹遗城 / Whalebelly Ruins）开发，入口 `project.godot`，固定 Godot 4.7.2。`first-level`、`first-level-artmatch` 已合并，`first-level-v02-graybox` 已退役；不得再创建按版本分裂的工程目录。
-- 最新七房运行逻辑、分层资源和声音来自合并前 artmatch；旧版独有资源保留，旧脚本/冲突版本在被 `.gdignore` 隔离的 `production-history/pre-unification/`。它们仅供查阅，不能继续作为运行入口。
-- 活跃路径、运行方法和合并记录统一见 [Godot 工程说明](docs/godot-project.md)。历史生成器在 `work/archive/godot-pre-unification/`，不得用于覆盖统一工程。
-- Godot 改动使用固定引擎导入、启动及相应 Godot 测试验收；以下 npm/Pages 流程适用于 Web 版本，不为纯 Godot 目录整理发布无关的 Web 页面。
-- 保留现有 `WhalefallArtmatchV05` 用户数据目录，以保持该版本存档兼容；不自动混入旧 first-level 的不同格式存档。`.godot/` 是本地可再生缓存，不提交。
+**在哪里开发：**
 
-程序开发、美术制作和剧情创作都在本仓库完成，按职责组织，不为分工立即拆仓或重构。
+| 目录 | 用途 |
+| --- | --- |
+| `game/` | **唯一的开发目录**：正式 Godot 工程。模块与约定见 [docs/architecture.md](docs/architecture.md) 和 [game/AGENTS.md](game/AGENTS.md) |
+| `assets/` | 全局素材库、制作源与[资源台账](assets/catalog.md)；`game/art/` 按清单从这里同步 |
+| `docs/` | 架构说明、世界观、关卡与原画设计（`docs/鲸腹遗城原画集/`） |
+| `tools/` | 命令入口 `godot.mjs`、Pages 发布脚本 |
+| `legacy/` | **冻结、只读**：旧 Godot 工程、Web 原型、旧制作脚本。只用于查参考和素材，不在这里开发，见 [legacy/README.md](legacy/README.md) |
 
-- `mvp-v2/` 是当前发布的 Canvas 2D 原画版，`mvp-nightmare/` 是 Three.js 2.5D 原型，`mvp/` 是保留的初版。开始任务先确定影响哪一版；发布脚本位于 `mvp/deploy.mjs`，当前只打包 V2。
-- 程序负责输入、移动、碰撞、镜头、交互、机关执行、存档、音频播放和运行性能。V2 当前主线的 `campaign-engine.js`、`campaign-levels.js`、`campaign-renderer.js`、`campaign-game.js` 分别负责运行与存档、关卡与世界连接、绘制、输入与界面；复用 `audio.js` 等基础能力。旧四区入口为 `legacy.html`，仍使用 `engine.js`、`levels.js`、`renderer.js`、`game.js`；历史原型按各目录说明维护。
-- 创作负责世界观、人物、对白、刻痕、回声、关卡编排，以及原画、模型、动画和音效。概念图、提示词与设计资料沿用 `docs/鲸腹遗城原画集/`；V2 设计不代表所有区域已经实现。
-- 两版及后续资源共同遵循[全局美术风格规范](assets/art-style.md)，原画版本仅标识参考来源，不限定规范的适用范围。
-- 美术资源统一从 [assets/README.md](assets/README.md) 管理，新增制作源和游戏导出文件按其目录约定存放，并维护 [资源台账](assets/catalog.md)；已有概念原画保留原位。
-- 接入负责资源路径、比例与朝向、画面与碰撞对齐、交互位置、状态引用及实机验收。V2 使用分层静态原画与程序动作反馈，不能视为正式逐帧动画；Three.js 历史原型仍使用程序几何美术，没有现成的正式模型或骨骼加载流程，需要时按需求补齐。
+- 程序负责输入、移动、碰撞、镜头、交互、机关、存档、音频和运行性能，按 `game/src/` 下的模块目录组织。房间是 `game/content/rooms/<区域>/<房间ID>.tscn` 场景，门、拾取物、敌人等用节点和导出属性配置。
+- 创作负责世界观、人物、对白、刻痕、回声、关卡编排，以及原画、动画和音效。设计资料在 `docs/鲸腹遗城原画集/`；设计中的区域不代表已经实现。
+- 所有资源遵循[全局美术风格规范](assets/art-style.md)，统一从 [assets/README.md](assets/README.md) 管理并维护[资源台账](assets/catalog.md)；已有概念原画保留原位。
+- 接入负责资源路径、比例与朝向、画面与碰撞对齐、交互位置、状态引用及实机验收。当前角色是静态帧加程序动作反馈，不能视为正式逐帧动画。
 - 程序任务只实现当前需求所需能力，样例复用现有内容或明确标为占位；用户要求创作时再扩写正式内容。程序化占位不能作为正式美术交付。
 - 运行逻辑优先依据稳定 ID、条件和状态，不依赖显示名、刻痕文案或资源外观。修改数据结构时同步维护调用处、存档兼容和相关测试。
 - 默认按桌面键盘操作验收。初版已有触屏能力，相关改动保留它；新增移动端适配按用户需求安排。
 
 ## 正式美术必须使用2D素材
+
+### 场景与环境动态的默认制作流程
+
+- 后续涉及场景制作、参考图还原、环境动态或单个环境动件（鱼群、柔性垂挂物、气泡等）时，默认应用[场景与环境动态制作 Skill](.agents/skills/scene-environment-motion/SKILL.md)，无需用户逐次点名。它负责表现制作；完整关卡任务继续保留已有玩法流程，单张无场景关系的插画或纯咨询按原范围处理。
+- AI主动扫描场景、登记静动判断与理由、按运动结构选择制作方法，再执行分层清理、静态还原、单件样板、接入和实机验收；不要求用户逐个指出应当运动的元素，也不强迫所有装饰运动或扩展画外内容。
+- 每批主动提炼有用且已成功的制作方法，回写对应配方和项目证据。单件认可、技术验证、场景接入和用户整体验收分别记录；新对象迁移先做样板，不照搬特定模型、FPS或摆幅数值。
+
+
 
 此规则适用于所有参与本项目的 AI；用户以后明确修改要求时，以用户最新要求为准。历史原型的程序几何外观仅保留作历史验证，不构成正式美术交付标准。
 
@@ -65,15 +73,22 @@
 ## 验证与交付
 
 - 简要说明原理、步骤和 3–5 条相关测试 case，区分已执行与待执行。
-- 代码或关卡数据改动，在受影响版本目录运行 `npm run check`，并执行相关交互验证。初版检查脚本未覆盖 `levels.js`、`server.mjs`、`deploy.mjs`，修改这些文件时另运行 `node --check <文件>`。
+- 代码、场景或关卡数据改动，在仓库根目录运行 `node tools/godot.mjs check` 和 `node tools/godot.mjs test`，并按键实际走一遍受影响路线。阶段状态与验收证据记录到 `game/progress.md`。
 - 资源接入检查实际加载、比例、遮挡、碰撞与可达性、相关动作和存档；按实际加载器能力验证失败处理，未实现的回退要明确说明。
-- 发布链路改动检查受影响版本及部署脚本语法，在 `mvp/` 执行 `npm run build:pages`，并验证带仓库名前缀的静态路径。`npm run deploy` 在已有 `gh-pages` 提交之后创建发布提交并正常推送，不强推；按上方[持续交付流程](#持续迭代与边做边玩)执行和核实线上结果。
+- 发布用 `node tools/deploy-pages.mjs`：导出 Web 版并合并进已有 `gh-pages` 分支的 `/godot/` 目录，保留 V2 等其他内容，正常推送，不强推；按上方[持续交付流程](#持续迭代与边做边玩)执行并核实线上结果。`legacy/` 下的旧版本只在必要时按 [legacy/README.md](legacy/README.md) 处理。
 - 纯文档修改检查事实、相对链接及 `git diff --check`，无需运行游戏回归。专项命令、依赖限制和证据边界见下方桌面验收 Skill。
 
 ## 项目 Skill
 
+- [Godot 正式工程开发](.agents/skills/godot-game-dev/SKILL.md)：用于 `game/` 玩法、房间与战斗实现，独立存档测试、真实浏览器键盘路线和 Godot Web 发布。
 - [概念发现与发散](skills/game-concept-discovery/SKILL.md)：用于尚未成型的游戏想法和 MDA 概念梳理；机制实现任务直接检查现有代码与设计。
 - [一致性 2D 游戏素材](.agents/skills/consistent-2d-game-assets/SKILL.md)：用于从实机截图或已认可参考生成、拆分、制作动画并验收可复用 2D 素材；BOB 路径和实机接入继续配合美术资源接入 Skill。
-- [Web 游戏开发](.agents/skills/develop-web-game/SKILL.md)：用于两版 HTML/JS 原型的小步实现、状态探针和浏览器验证；具体回归命令与存档边界继续配合桌面回归验收 Skill。
+- [Web 原型历史验证](.agents/skills/develop-web-game/SKILL.md)：仅用于 `legacy/web/` 历史原型的参考和回归；正式玩法开发使用 Godot Skill。
 - [美术资源接入](.agents/skills/bob-art-integration/SKILL.md)：用于原画、背景及新版外观替换，核对两版资源路径、坐标与玩法状态。
 - [桌面回归验收](.agents/skills/bob-desktop-verification/SKILL.md)：用于选择两版原型的浏览器回归、存档检查及发布路径验证。
+
+## 场景与环境动态默认流程
+
+- 后续制作/还原/优化场景、环境动态或独立动件（鱼群、垂须、气泡等），默认使用[场景与环境动态制作Skill](.agents/skills/scene-environment-motion/SKILL.md)，无需用户逐次点名。AI主动扫描场景并登记static/motion/inspect及理由；按运动机制选型，先样板后批量，不强迫所有装饰运动，不自动新增画外地图或玩法。
+- 分层清理、静态还原、单件动态、实际接入与验收后，每批主动把有证据的成功方式及失败修复回写配方。鱼群的自身动作+路径、柔性物的固定端+延迟传播、气泡的预热+有界回收可迁移其它物体，新对象仍需样板；不照搬模型、FPS或参数。
+- 完整通用主源保存在个人Skill目录，项目入口仅路由。结合当前正式Godot开发Skill执行；旧工程仅参考。用户单件认可、技术通过、场景接入和整体审美分别记录。纯流程/Skill整理不启动素材生产。

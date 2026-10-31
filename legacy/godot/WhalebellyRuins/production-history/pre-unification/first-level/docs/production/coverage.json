@@ -1,0 +1,10 @@
+[
+ {"requirement_id":"R01","behavior":"五房首通与地图","artifact":"scripts/level.gd","check_id":"e2e","evidence":"evidence/e2e.json"},
+ {"requirement_id":"R02","behavior":"移动跳跃与镜头","artifact":"scripts/player.gd","check_id":"playable","evidence":"evidence/prototype.json"},
+ {"requirement_id":"R03","behavior":"短击重鸣、敌人、Boss与失败恢复","artifact":"scripts/enemy.gd","check_id":"combat","evidence":"evidence/combat.json"},
+ {"requirement_id":"R04","behavior":"A1授能与三段过沟","artifact":"scripts/level.gd","check_id":"e2e","evidence":"evidence/e2e.json"},
+ {"requirement_id":"R05","behavior":"保存退出重启与唯一奖励","artifact":"scripts/game.gd","check_id":"save","evidence":"evidence/persistence.json"},
+ {"requirement_id":"R06","behavior":"分层原画、角色动作与物件","artifact":"assets/runtime","check_id":"visual","evidence":"evidence/art-review.md"},
+ {"requirement_id":"R07","behavior":"预告、命中与环境动态/音效","artifact":"scripts/audio.gd","check_id":"motion","evidence":"evidence/motion-review.md"},
+ {"requirement_id":"R08","behavior":"可执行交付/恢复制作","artifact":"docs/production/delivery.md","check_id":"build","evidence":"evidence/build-run.json"}
+]

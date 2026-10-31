@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-01_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/world/door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/props/shell_camp.png" id="r5"]
+
+[node name="R1-01" type="Node2D"]
+script = ExtResource("r0")
+room_id = "R1-01"
+display_name = "外伤坡"
+dimensions = Vector2(1920, 1152)
+fall_damage = 0
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E01" type="Marker2D" parent="Entries"]
+position = Vector2(1782.4, 893)
+
+[node name="Door_E01" type="Node2D" parent="Gameplay"]
+position = Vector2(1856, 896)
+script = ExtResource("r2")
+edge_id = "E01"
+target_room = "R1-02"
+target_entry = "E01"
+prompt = "E E01 → R1-02"
+required_abilities = PackedStringArray()
+required_flags = PackedStringArray()
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E01"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E01"]
+text = "E E01 → R1-02"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="Camp" type="Node2D" parent="Gameplay"]
+position = Vector2(128, 896)
+script = ExtResource("r4")
+room_id = "R1-01"
+prompt = "E 营地 · 休息并保存"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Camp"]
+texture = ExtResource("r5")
+position = Vector2(0, -34)
+scale = Vector2(0.3385416666666667, 0.3385416666666667)
+
+[node name="Prompt" type="Label" parent="Gameplay/Camp"]
+text = "E 营地 · 休息并保存"
+position = Vector2(-90, -112)
+theme_override_font_sizes/font_size = 16

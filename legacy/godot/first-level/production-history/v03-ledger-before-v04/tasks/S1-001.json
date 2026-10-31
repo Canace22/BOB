@@ -1,0 +1,39 @@
+{
+  "task_id": "S1-001",
+  "stage": "S1",
+  "project_root": "G:\\鲸落万物生\\godot\\first-level",
+  "config_hash": "0fbdf46189a9046060cf98dd34e5c2607ca098ae8f6444e449b88196a5c26c10",
+  "input_snapshot": {
+    "docs/v03/environment.txt": "eced7ba772a3181fa1dbb48fe0ccb05a4b3500a6bba54e776eefe62c19dbff5c",
+    "docs/v03/specification.md": "19bae9fa19680090b32ba125dfe4fa173efb410862cfa65e45adaddf6462aa1e",
+    "docs/v03/input-snapshot.json": "2169de831fea5fa1749c4bb5c4c436aa289c3ea1833dab84c98bc961fd24f6b3"
+  },
+  "contract": {
+    "id": "S1",
+    "name": "素材与分层样板",
+    "depends_on": [
+      "S0"
+    ],
+    "inputs": [
+      "最新首关图册及既有工程"
+    ],
+    "input_files": [
+      "docs/v03/input-snapshot.json"
+    ],
+    "outputs": [
+      "docs/v03/assets.json",
+      "docs/v03/sample-review.md"
+    ],
+    "checks": [
+      {
+        "id": "accept",
+        "kind": "visual",
+        "text": "真实工具执行并保留观察证据"
+      }
+    ],
+    "prompt": "按specification实际制作，核对截图与日志，失败定向返修。",
+    "on_pass": [],
+    "on_fail": "保存错误与重试证据"
+  },
+  "instruction_path": ".production/tasks/S1-001.md"
+}

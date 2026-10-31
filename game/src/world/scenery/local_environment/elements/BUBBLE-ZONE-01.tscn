@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="1"]
+[node name="BUBBLE-ZONE-01" type="Node2D"]
+script = ExtResource("1")
+bounds = Rect2(143,170,89,220)
+seed_id = 0
+near_layer = false

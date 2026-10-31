@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/xumen_reference.tscn" id="1"]
+
+[node name="EnvironmentPreview" type="Node2D"]
+
+[node name="Environment" parent="." instance=ExtResource("1")]
+show_reference_character = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)

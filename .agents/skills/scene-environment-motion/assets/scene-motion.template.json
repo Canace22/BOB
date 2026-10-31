@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "project": null,
+  "scope": {"mode": null, "deliverables": [], "excluded": [], "user_constraints": []},
+  "engine": {"name": null, "version": null, "entry_scene": null},
+  "references": [],
+  "tools": [],
+  "elements": [
+    {
+      "id": null,
+      "region": null,
+      "source_rect": null,
+      "spatial_layer": null,
+      "draw_depth": null,
+      "appearance_source": null,
+      "static_motion_decision": "inspect",
+      "decision_reason": null,
+      "observation_basis": {"kind": "unrecorded", "evidence": [], "timestamps": []},
+      "motion_structure": {"fixed_parts": [], "flexible_parts": [], "local_action": null, "path": null, "material": null, "camera_response": null, "lifecycle": null},
+      "method": {"recipe": null, "preferred": null, "alternative": null, "tradeoff": null, "tools": [], "pilot_check": null},
+      "timing": {"fps": null, "period_seconds": null, "phase": null, "loop": null, "retiming_method": null},
+      "asset_contract": {"canvas": null, "scale": null, "anchor": null, "padding": null, "original": null, "editable_master": null, "runtime_files": []},
+      "ownership": {"existing_baked_layers": [], "cleaned_layers": [], "hidden_paint": null},
+      "instances": {"expected_count": null, "generation_rule": null, "runtime_nodes": []},
+      "applicability": {"collision": "undetermined", "interaction": "undetermined", "sound": "undetermined", "restore": "undetermined", "reasons": {}},
+      "status": "not_started",
+      "checks": [],
+      "visual_review": {"agent": "not_run", "continuous_playback": "not_run", "user": "not_requested"},
+      "unknowns": [],
+      "next_action": null
+    }
+  ],
+  "progress": {"stage": "scan", "input_digests": {}, "external_job_ids": [], "failures": [], "next_action": null},
+  "lessons": [
+    {"recipe": null, "status": "candidate", "problem": null, "constraints": [], "method": null, "reason_it_worked": null, "editable_source": null, "evidence": [], "failures_and_repairs": [], "transfer_targets": [], "transfer_limits": [], "user_feedback_scope": null, "promoted_to_skill": false}
+  ]
+}

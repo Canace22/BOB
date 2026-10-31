@@ -1,0 +1,594 @@
+[gd_scene load_steps=64 format=3]
+
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/reference_environment.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/MID-01.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/MID-02.png" id="3"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/MID-03.png" id="4"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-ROOF.png" id="5"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-WALL-L.png" id="6"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-WALL-R.png" id="7"]
+[ext_resource type="Texture2D" path="res://art/environment/underbridge/ROAD-UNDERSIDE-RESTORED.png" id="8"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/PORTAL.png" id="9"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/LAMP.tscn" id="10"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png" id="11"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png" id="13"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png" id="15"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png" id="17"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png" id="19"]
+[ext_resource type="Texture2D" path="res://art/environment/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png" id="21"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-DECOR-01.png" id="23"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-02.png" id="24"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-03.png" id="25"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-04.png" id="26"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-05.png" id="27"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-06.png" id="28"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-07.png" id="29"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-08.png" id="30"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-09.png" id="31"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-10.png" id="32"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-DECOR-11.png" id="33"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/DECOR-12.png" id="34"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/PLANT-01.tscn" id="35"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/PLANT-02.tscn" id="36"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/PLANT-03.tscn" id="37"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/PLANT-04.tscn" id="38"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/VINE-01.tscn" id="39"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/VINE-02.tscn" id="40"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/VINE-03.tscn" id="41"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/VINE-04.tscn" id="42"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/soft_underwater_light.tscn" id="43"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/soft_underwater_light.tscn" id="44"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/soft_underwater_light.tscn" id="45"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/CHARACTER.png" id="46"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-ENV-DEPTH.png" id="47"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CLEAN-ENV-UNDERPAINT.png" id="48"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/FRONT-01.tscn" id="49"]
+[ext_resource type="Texture2D" path="res://art/environment/underbridge/FOREGROUND-BACKING-SOFT.png" id="50"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/WATER-SURFACE.tscn" id="99"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-01.tscn" id="100"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-02.tscn" id="101"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-03.tscn" id="102"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-04.tscn" id="103"]
+
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BALEEN-LEFT.tscn" id="baleen_0"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BALEEN-CENTER.tscn" id="baleen_1"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BALEEN-RIGHT.tscn" id="baleen_2"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BALEEN-DISTANT.tscn" id="baleen_3"]
+
+
+
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/FRONT-TOP-LEFT.tscn" id="fg_corner_0"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/FRONT-BOTTOM-RIGHT.tscn" id="fg_corner_1"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/CORNER-BACKING.png" id="fg_corner_back"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/FRONT-BOTTOM-PAD.png" id="fg_corner_bottom"]
+
+
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-05.tscn" id="under_bubble_0"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-06.tscn" id="under_bubble_1"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/BUBBLE-ZONE-07.tscn" id="under_bubble_2"]
+
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/silverfin_school_v01.tscn" id="school0"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/tealback_school_v01.tscn" id="school1"]
+[ext_resource type="PackedScene" path="res://src/world/scenery/local_environment/elements/lantern_school_v01.tscn" id="school2"]
+
+[node name="ReferenceEnvironment" type="Node2D"]
+script = ExtResource("1")
+
+[node name="MID-01" parent="." type="Sprite2D"]
+z_index = -50
+position = Vector2(108, 298)
+metadata/element_id = "MID-01"
+metadata/motion = "static"
+texture = ExtResource("2")
+centered = false
+
+[node name="MID-02" parent="." type="Sprite2D"]
+z_index = -50
+position = Vector2(360, 239)
+metadata/element_id = "MID-02"
+metadata/motion = "static"
+texture = ExtResource("3")
+centered = false
+
+[node name="MID-03" parent="." type="Sprite2D"]
+z_index = -50
+position = Vector2(753, 262)
+metadata/element_id = "MID-03"
+metadata/motion = "static"
+texture = ExtResource("4")
+centered = false
+
+[node name="ROOF" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(0, 0)
+metadata/element_id = "ROOF"
+metadata/motion = "static"
+texture = ExtResource("5")
+centered = false
+
+[node name="WALL-L" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(0, 0)
+metadata/element_id = "WALL-L"
+metadata/motion = "static"
+texture = ExtResource("6")
+centered = false
+
+[node name="WALL-R" parent="." type="Sprite2D"]
+z_index = 0
+position = Vector2(1164, 0)
+metadata/element_id = "WALL-R"
+metadata/motion = "static"
+texture = ExtResource("7")
+centered = false
+
+[node name="ROAD" parent="." type="Sprite2D"]
+z_index = 10
+position = Vector2(0, 392)
+metadata/element_id = "ROAD"
+metadata/motion = "static"
+texture = ExtResource("8")
+centered = false
+
+[node name="PORTAL" parent="." type="Sprite2D"]
+z_index = 12
+position = Vector2(0, 321)
+metadata/element_id = "PORTAL"
+metadata/motion = "static"
+texture = ExtResource("9")
+centered = false
+
+[node name="LAMP" parent="." instance=ExtResource("10")]
+z_index = 13
+position = Vector2(37, 354)
+metadata/element_id = "LAMP"
+metadata/motion = "light"
+external_clock = true
+
+[node name="BALEEN-01-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(90, 0)
+metadata/element_id = "BALEEN-01-ROOT"
+metadata/motion = "static"
+texture = ExtResource("11")
+centered = false
+
+[node name="BALEEN-02-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(255, 0)
+metadata/element_id = "BALEEN-02-ROOT"
+metadata/motion = "static"
+texture = ExtResource("13")
+centered = false
+
+[node name="BALEEN-03-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(422, 0)
+metadata/element_id = "BALEEN-03-ROOT"
+metadata/motion = "static"
+texture = ExtResource("15")
+centered = false
+
+[node name="BALEEN-04-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(575, 0)
+metadata/element_id = "BALEEN-04-ROOT"
+metadata/motion = "static"
+texture = ExtResource("17")
+centered = false
+
+[node name="BALEEN-05-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(722, 0)
+metadata/element_id = "BALEEN-05-ROOT"
+metadata/motion = "static"
+texture = ExtResource("19")
+centered = false
+
+[node name="BALEEN-06-ROOT" parent="." type="Sprite2D"]
+z_index = 4
+position = Vector2(880, 0)
+metadata/element_id = "BALEEN-06-ROOT"
+metadata/motion = "static"
+texture = ExtResource("21")
+centered = false
+
+[node name="DECOR-01" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(0, 82)
+metadata/element_id = "DECOR-01"
+metadata/motion = "static"
+texture = ExtResource("23")
+centered = false
+
+[node name="DECOR-02" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(0, 406)
+metadata/element_id = "DECOR-02"
+metadata/motion = "static"
+texture = ExtResource("24")
+centered = false
+
+[node name="DECOR-03" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(222, 435)
+metadata/element_id = "DECOR-03"
+metadata/motion = "static"
+texture = ExtResource("25")
+centered = false
+
+[node name="DECOR-04" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(331, 389)
+metadata/element_id = "DECOR-04"
+metadata/motion = "static"
+texture = ExtResource("26")
+centered = false
+
+[node name="DECOR-05" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(505, 361)
+metadata/element_id = "DECOR-05"
+metadata/motion = "static"
+texture = ExtResource("27")
+centered = false
+
+[node name="DECOR-06" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(682, 387)
+metadata/element_id = "DECOR-06"
+metadata/motion = "static"
+texture = ExtResource("28")
+centered = false
+
+[node name="DECOR-07" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(827, 432)
+metadata/element_id = "DECOR-07"
+metadata/motion = "static"
+texture = ExtResource("29")
+centered = false
+
+[node name="DECOR-08" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(1035, 460)
+metadata/element_id = "DECOR-08"
+metadata/motion = "static"
+texture = ExtResource("30")
+centered = false
+
+[node name="DECOR-09" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(224, 496)
+metadata/element_id = "DECOR-09"
+metadata/motion = "static"
+texture = ExtResource("31")
+centered = false
+
+[node name="DECOR-10" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(572, 471)
+metadata/element_id = "DECOR-10"
+metadata/motion = "static"
+texture = ExtResource("32")
+centered = false
+
+[node name="DECOR-11" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(921, 531)
+metadata/element_id = "DECOR-11"
+metadata/motion = "static"
+texture = ExtResource("33")
+centered = false
+
+[node name="DECOR-12" parent="." type="Sprite2D"]
+z_index = 11
+position = Vector2(645, 610)
+metadata/element_id = "DECOR-12"
+metadata/motion = "static"
+texture = ExtResource("34")
+centered = false
+
+[node name="PLANT-01" parent="." instance=ExtResource("35")]
+z_index = 12
+position = Vector2(275, 422)
+metadata/element_id = "PLANT-01"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-02" parent="." instance=ExtResource("36")]
+z_index = 12
+position = Vector2(647, 345)
+metadata/element_id = "PLANT-02"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-03" parent="." instance=ExtResource("37")]
+z_index = 12
+position = Vector2(793, 443)
+metadata/element_id = "PLANT-03"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="PLANT-04" parent="." instance=ExtResource("38")]
+z_index = 12
+position = Vector2(1141, 423)
+metadata/element_id = "PLANT-04"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-01" parent="." instance=ExtResource("39")]
+z_index = 12
+position = Vector2(317, 536)
+metadata/element_id = "VINE-01"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-02" parent="." instance=ExtResource("40")]
+z_index = 12
+position = Vector2(463, 530)
+metadata/element_id = "VINE-02"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-03" parent="." instance=ExtResource("41")]
+z_index = 12
+position = Vector2(797, 541)
+metadata/element_id = "VINE-03"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="VINE-04" parent="." instance=ExtResource("42")]
+z_index = 12
+position = Vector2(1001, 567)
+metadata/element_id = "VINE-04"
+metadata/motion = "foliage"
+external_clock = true
+
+[node name="BEAM-01" parent="." instance=ExtResource("43")]
+z_index = -54
+position = Vector2(550, -105)
+scale = Vector2(0.55, 0.64)
+rotation = 0.28
+intensity = 0.12
+phase = 0.0
+external_clock = true
+metadata/element_id = "BEAM-01"
+metadata/motion = "soft_light"
+
+[node name="BEAM-02" parent="." instance=ExtResource("44")]
+z_index = -54
+position = Vector2(740, -80)
+scale = Vector2(0.38, 0.58)
+rotation = 0.24
+intensity = 0.08
+phase = 2.1
+external_clock = true
+metadata/element_id = "BEAM-02"
+metadata/motion = "soft_light"
+
+[node name="BEAM-03" parent="." instance=ExtResource("45")]
+z_index = -54
+position = Vector2(875, -60)
+scale = Vector2(0.32, 0.52)
+rotation = 0.21
+intensity = 0.055
+phase = 4.2
+external_clock = true
+metadata/element_id = "BEAM-03"
+metadata/motion = "soft_light"
+
+[node name="CHARACTER" parent="." type="Sprite2D"]
+z_index = 20
+position = Vector2(137, 389)
+metadata/element_id = "CHARACTER"
+metadata/motion = "static"
+texture = ExtResource("46")
+centered = false
+
+[node name="ENV-DEPTH" parent="." type="Sprite2D"]
+z_index = -60
+position = Vector2(20, 0)
+metadata/element_id = "ENV-DEPTH"
+metadata/motion = "static"
+texture = ExtResource("47")
+centered = false
+
+[node name="ENV-UNDERPAINT" parent="." type="Sprite2D"]
+z_index = -70
+position = Vector2(0, 0)
+metadata/element_id = "ENV-UNDERPAINT"
+metadata/motion = "static"
+texture = ExtResource("48")
+centered = false
+
+[node name="FRONT-01" parent="." instance=ExtResource("49")]
+z_index = 50
+position = Vector2(0, 0)
+metadata/element_id = "FRONT-01"
+metadata/motion = "parallax"
+external_clock = true
+texture = ExtResource("fg_corner_bottom")
+offset = Vector2(-32, -32)
+
+[node name="FOREGROUND-BACKING" parent="." type="Sprite2D"]
+z_index = -2
+position = Vector2(0, 0)
+metadata/element_id = "FOREGROUND-BACKING"
+metadata/motion = "static"
+texture = ExtResource("50")
+centered = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="WATER-SURFACE" parent="." instance=ExtResource("99")]
+z_index = -55
+position = Vector2(350, 0)
+metadata/element_id = "WATER-SURFACE"
+metadata/motion = "water"
+external_clock = true
+
+[node name="BUBBLE-ZONE-01" parent="." instance=ExtResource("100")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-01"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-02" parent="." instance=ExtResource("101")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-02"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-03" parent="." instance=ExtResource("102")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-03"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BUBBLE-ZONE-04" parent="." instance=ExtResource("103")]
+z_index = -20
+position = Vector2(0, 0)
+metadata/element_id = "BUBBLE-ZONE-04"
+metadata/motion = "bubbles"
+external_clock = true
+
+[node name="BALEEN-LEFT" parent="." instance=ExtResource("baleen_0")]
+z_index = -1
+position = Vector2(215.532073, -152.280209)
+rotation = 0.001435838
+scale = Vector2(1.292458464, 1.292458464)
+external_clock = true
+metadata/element_id = "BALEEN-LEFT"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
+
+[node name="BALEEN-CENTER" parent="." instance=ExtResource("baleen_1")]
+z_index = -1
+position = Vector2(644.488712, -168.195311)
+rotation = 0.295942412
+scale = Vector2(0.831028119, 0.831028119)
+external_clock = true
+metadata/element_id = "BALEEN-CENTER"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
+
+[node name="BALEEN-RIGHT" parent="." instance=ExtResource("baleen_2")]
+z_index = -1
+position = Vector2(870.898930, -111.933765)
+rotation = 0.169027947
+scale = Vector2(1.078562123, 1.078562123)
+external_clock = true
+metadata/element_id = "BALEEN-RIGHT"
+metadata/motion = "wan22_keyart_delayed_tip_loop_12fps"
+
+[node name="BALEEN-DISTANT" parent="." instance=ExtResource("baleen_3")]
+z_index = -31
+position = Vector2(860, 100)
+external_clock = true
+metadata/element_id = "BALEEN-DISTANT"
+metadata/motion = "wan22_video_derived_frames"
+
+[node name="FRONT-TOP-LEFT" parent="." instance=ExtResource("fg_corner_0")]
+z_index = 51
+position = Vector2(-32, -32)
+external_clock = true
+metadata/element_id = "FRONT-TOP-LEFT"
+metadata/motion = "parallax"
+
+[node name="FRONT-BOTTOM-RIGHT" parent="." instance=ExtResource("fg_corner_1")]
+z_index = 51
+position = Vector2(1060, 394)
+external_clock = true
+metadata/element_id = "FRONT-BOTTOM-RIGHT"
+metadata/motion = "parallax"
+
+[node name="FOREGROUND-CORNER-BACKING" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("fg_corner_back")
+centered = false
+metadata/element_id = "FOREGROUND-CORNER-BACKING"
+metadata/motion = "static"
+
+[node name="BUBBLE-ZONE-05" parent="." instance=ExtResource("under_bubble_0")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-05"
+metadata/motion = "bubbles"
+
+[node name="BUBBLE-ZONE-06" parent="." instance=ExtResource("under_bubble_1")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-06"
+metadata/motion = "bubbles"
+
+[node name="BUBBLE-ZONE-07" parent="." instance=ExtResource("under_bubble_2")]
+z_index = -15
+external_clock = true
+metadata/element_id = "BUBBLE-ZONE-07"
+metadata/motion = "bubbles"
+
+[node name="FISH-SCHOOL-01" parent="." instance=ExtResource("school0")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-01"
+metadata/motion = "32 phase body swim + 16 second school cycle"
+
+[node name="FISH-SCHOOL-02" parent="." instance=ExtResource("school1")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-02"
+metadata/motion = "32 phase body swim + 16 second school cycle"
+
+[node name="FISH-SCHOOL-03" parent="." instance=ExtResource("school2")]
+z_index = -25
+autoplay = false
+metadata/element_id = "FISH-SCHOOL-03"
+metadata/motion = "32 phase body swim + 16 second school cycle"

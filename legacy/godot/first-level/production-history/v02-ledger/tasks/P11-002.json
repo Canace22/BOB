@@ -1,0 +1,56 @@
+{
+  "task_id": "P11-002",
+  "stage": "P11",
+  "project_root": "G:\\鲸落万物生\\godot\\first-level",
+  "config_hash": "31530b3106b8cd1233a90cbbf6424011d07d99badb51ec58c2d675720f740010",
+  "input_snapshot": {
+    "docs/v02/qa.md": "9969d156892926897a834d7fd39ed8f491941f94c0170a683858aac5f085b0b7",
+    "evidence/v02/release2-run/persistence.json": "5216cbd88e4b3154a4bcadfeba3e51782c8424d6e82139ed3630b8b9038ba6c2",
+    "evidence/v02/release2-run/complete.png": "969458ba41508a3a235fd464c37ff054fe110d629d28e5a0f592df86ef12ba20",
+    "evidence/v02/regression/combat.json": "5261c89c2a9cec93b2411bbe8e1398d3d9808db9a5e397fba7e2a5652e903988",
+    "evidence/v02/release2-run.log": "ef6cae12c1bab27cbd2d2c5231791e41e99903a5d69f55fbe34f18e1a4020f0a",
+    "production-history/v02-release2-code.zip": "060481b6ff560df1c0c46f854fcfc90bf1ad8fbb0b547d99bbb5c386f1bb98b5",
+    "evidence/v02/water-v2/water.json": "475a3b27cfff7ab67f0ec7af4404cf2fba26f7b254cbff52149559aad128bd19",
+    "evidence/v02/branch-final/branch.json": "7dbd84033f60e5268127cdf1c0dec8e67a123c4076ca5679590a84ee6d54a223",
+    "evidence/v02/normal-smoke2.log": "593dd6dc5cd2f43d085be0f6ba58e6b0e08cabb23ca8887360e50a78d6a74d54",
+    "evidence/v02/branch-final/latch-reload.json": "41d67e6b179c46ecebe686484eb2045970368b4dd3f01ba1af18743f02d43f92",
+    "evidence/v02/water-v2/landing-ripple.png": "035a46d24dde7c97bdc8ef451a401653fb2551f53b13b86cce62e405c6dcea14",
+    "evidence/v02/normal-smoke2.json": "29ca05300f4599ff505971259563b2954888ae878ea4b7a2df9b7e7bbb970b9f",
+    "evidence/v02/sample-v2.mp4": "9dc79400f4ff5d0043e800544a9c085a4bc9b99ad7e6dbddbe78ac87027c4845",
+    "evidence/v02/build-manifest-release2.json": "d14d2c00f08c1b60265e7efa2978a32142b2b396037ab3688c7d09eda99800df",
+    "evidence/v02/release2-run/performance.json": "3d5509b7c9ec5027a304d87fa8e2c715106086f8d918e59bd0b6a04dd7bf9acc",
+    "evidence/v02/release2-run/prototype.json": "8284bcb7b95d80c2da72615d6818d600611bc8e13fd6480b5a8f559668a81375",
+    "evidence/v02/sample-final/sample.json": "cf873325652a282fa4d22cb9692f4c63098bcaccc0f8e7ba9549cf564803c7c8",
+    "evidence/v02/fall-final/fall.json": "0a0b9a6e171992501eeff3f313ca4a8d358f2b85c4a849bda023c80a641701d5",
+    "evidence/v02/regression/integration-v1.json": "7c037900fca10b5a603b8699ca7ee3391e2bcd1b2d207d99e4cb38748da7c681",
+    "docs/v02/input-snapshot.json": "7ff9c01bf13c0a16a4814041a30639b4efd80ec9715c9cbc55680a077400eec4"
+  },
+  "contract": {
+    "id": "P11",
+    "name": "运行包与接续",
+    "depends_on": [
+      "P10"
+    ],
+    "inputs": [
+      "当前需求、已通过基线、V5.2设计原图"
+    ],
+    "input_files": [
+      "docs/v02/input-snapshot.json"
+    ],
+    "outputs": [
+      "docs/v02/delivery.md",
+      "RESUME-v02.md"
+    ],
+    "checks": [
+      {
+        "id": "build",
+        "kind": "runtime",
+        "text": "build实际验收并保留证据"
+      }
+    ],
+    "prompt": "复核实际输入，具体化任务指令并执行；保留不可变快照和真实证据，失败修复后复验。",
+    "on_pass": [],
+    "on_fail": "记录复现，局部返修；不通过删除功能凑通过。"
+  },
+  "instruction_path": ".production/tasks/P11-002.md"
+}

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/motion_element.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/environment/motion_elements/VINE-02.png" id="2"]
+[node name="VINE-02" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+script = ExtResource("1")
+animation_kind = "foliage"
+source_origin = Vector2(463, 530)
+amplitude_px = 2.6
+period = 8.0
+phase = 1.46
+root_at_bottom = false

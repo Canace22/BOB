@@ -1,6 +1,8 @@
 # 鲸腹遗城 · Whalebelly Ruins
 
-唯一开发入口：[project.godot](../godot/WhalebellyRuins/project.godot)。固定引擎 **Godot 4.7.2.stable.official.ed1daf0bf**，Windows / Compatibility。
+> 2026-10-31 合并说明：正式开发入口为 [game/project.godot](../game/project.godot)。下文描述合并前的历史工程；环境动态已迁入 [新工程预览](../game/content/environment/local_environment_preview.tscn)，运行方式见 [迁移验收](godot-local-integration.md)。
+
+合并前开发入口：[project.godot](../legacy/godot/WhalebellyRuins/project.godot)。固定引擎 **Godot 4.7.2.stable.official.ed1daf0bf**，Windows / Compatibility。
 
 场景分层、独立环境动态、制作工具及验收方式统一见[场景与环境动态制作说明](scene-and-environment-production.md)。
 
@@ -24,7 +26,7 @@
 
 `outputs/` 和 `builds/` 仍在 BOB 上一级。当前交付册的项目链接已更新。网页原型目录沿用各自说明，本次未合并或发布 Web 版本。
 
-本次验证与未完成事项见 [工程进度](../godot/WhalebellyRuins/progress.md)。历史验收日志保留原始路径与日期，不冒充迁移后的新验证。
+本次验证与未完成事项见 [工程进度](../legacy/godot/WhalebellyRuins/progress.md)。历史验收日志保留原始路径与日期，不冒充迁移后的新验证。
 
 ## 本轮参考图 · 环境展示场景
 
@@ -56,7 +58,7 @@ R1-01和环境预览共用4组Blender烘焙帧动画，12FPS、6秒循环。可�
 
 ## V2.4角色主场景接入
 
-F5默认七房已使用CampaignPlayer及PlayerUI；原场景/房间数据保留，V6存档不迁移。独立PlayerTest先验收再接入，数值以原工程为准。操作、数值来源、测试及美术边界见[角色系统说明](../godot/WhalebellyRuins/docs/tide-3c.md)。
+F5默认七房已使用CampaignPlayer及PlayerUI；原场景/房间数据保留，V6存档不迁移。独立PlayerTest先验收再接入，数值以原工程为准。操作、数值来源、测试及美术边界见[角色系统说明](../legacy/godot/WhalebellyRuins/docs/tide-3c.md)。
 
 ### 海底鱼群美术样板
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/motion_element.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/environment/foreground_edges/FRONT-BOTTOM-RIGHT.png" id="2"]
+[node name="FRONT-BOTTOM-RIGHT" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+script = ExtResource("1")
+animation_kind = "parallax"
+parallax_amount = -0.14

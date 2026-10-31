@@ -1,0 +1,20 @@
+{
+  "task_id": "P00-001",
+  "status": "pass",
+  "summary": "范围与需求覆盖已核对，五房首关闭环和旧资产限制明确。",
+  "artifacts": [
+    "docs/production/brief.md",
+    "docs/production/coverage.json"
+  ],
+  "checks": [
+    {
+      "id": "scope",
+      "status": "pass",
+      "reviewer": "agent",
+      "notes": "逐项核对当前用户范围、V5.2五房首通和角色规则，未继承旧Demo。",
+      "evidence": [
+        "evidence/scope-review.md"
+      ]
+    }
+  ]
+}
