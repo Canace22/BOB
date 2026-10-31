@@ -5,6 +5,8 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 
 # BOB Godot 开发
 
+当前默认入口已恢复为 `content/whalebelly/main.tscn`，详见[恢复说明](../../../docs/whalebelly-recovery.md)。原模块版仍在 `src/main/main.tscn`；接续时先核对 `project.godot` 的实际入口，按对应测试与存档路径验收，不把独立环境预览当作玩法已迁入。
+
 先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[当前进度](../../../game/progress.md)。正式源码与场景只在 `game/`；从 `legacy/` 定向查数值或素材，不能在那里开发。
 
 ## 改动与产物
@@ -36,6 +38,11 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 检查部署状态与线上 `godot/build.json` 的源码提交，再对线上入口运行同一浏览器路线。把源码提交、发布提交、结果和限制记入 `game/progress.md`。发布失败保留稳定远端，不把本地成功记成已上线。
 
 ## 已验证的恢复方式
+
+- 旧工程迁入新结构时，先盘点实际运行入口、角色/战斗、房间与碰撞、机关、动画/Shader、声音、HUD、存档及试玩场。冻结归档或独立环境预览不能代替可玩内容恢复。先在 `game/` 中保留完整兼容模块并跑原功能/连续路线，再渐进拆分；不得用较早的模块化版本覆盖较新的已开发功能。
+- Whalebelly 恢复入口为 `content/whalebelly/main.tscn`，运行模块在 `src/campaign/`；原模块化入口仍为 `src/main/main.tscn`。资源与制作源清单见 `docs/whalebelly-game-recovery.md`，V6 进度由 `CampaignSaveBridge` 隔离并只在目标不存在时导入。当前工作前再次核对 `project.godot`，不要沿用旧入口假设。
+- 运行路径迁移同时检查动态拼接的资源名、原有参数和中文字体。Web 无系统中文字体时，Label 必须显式使用嵌入字体或继承已配置的 Theme；本机可读不证明 Web 可读。增量 Web 导出应刷新压缩文件哈希对应的 HTML 加载器。
+- 用户要求校验产物与视频不入库时，测试源码和简短结论可保留，生成的截图、JSON、日志、录像及历史导出结果仅存本地；源素材路径/哈希清单用于溯源，不混入测试结果。
 
 - 首屏性能：先用 `game/tests/web_startup.mjs` 记录线上冷/暖启动、Resource Timing 传输字节；HEAD 的未压缩长度不代表浏览器实际下载量。测速时避免其他下载/路线回归争用同一网络。
 - 导出后由 `tools/prepare-web.mjs` 生成 gzip 和内容哈希，`game/web/preload.js` 只接管两个启动文件并使用独立资源缓存；原始包保留供无解压 API 的浏览器回退。`STARTUP_FALLBACK=1` / `STARTUP_NO_CACHE=1` 分别验证解压缺失和缓存不可用。

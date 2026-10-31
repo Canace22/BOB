@@ -1,0 +1,30 @@
+{
+  "version": "v05-native-environment-1",
+  "source": "七房参考图可见的水体、悬浮微粒、鱼群及固定灯光；不可从静图推断的周期、声音为本次可逆设计参数",
+  "runtime_script": "res://scripts/environment.gd",
+  "integration": "new(), host=main, scenery.add_child(node); name=EnvironmentMotion. Do not also call event_effect for host.events or effects will duplicate.",
+  "reference_policy": "固定参考截图禁用补充动态；烘焙气泡、光束和小鱼仍是原图表现，不宣称已将每个烘焙像素独立化。新增粒子低密度，避免重复加亮。",
+  "elements": [
+    {"id":"ENV-BUBBLES","node":"EnvironmentMotion/AmbientBubbles","count":18,"origin":"designed from observed bubbles","motion":"11–24 source px/s upward, deterministic seeded phase, x sway 7 px","physics":"not_applicable: visual particles","interaction":"not_applicable: water ambience","audio":"not_applicable: subsumed into room water ambience","lifecycle":"room-seeded reset; wraps within visible cavity; pause/reference freezes; unload removes parent"},
+    {"id":"ENV-DUST","node":"EnvironmentMotion/DriftingDust","count":28,"motion":"1.5–4.5 px/s lateral, vertical drift 9 px","physics":"not_applicable: decoration","interaction":"not_applicable: decoration","audio":"not_applicable: microscopic visual particles are inaudible","lifecycle":"room-seeded wrap; pause/reference freezes"},
+    {"id":"ENV-FISH","node":"EnvironmentMotion/DistantFish","rule":"Rooms01/02/03/04/07:7;rooms05/06:0 because their source images contain no fish","motion":"5–9 px/s lateral, 7 px vertical swim; silhouette 0.55–1.1 scale","physics":"not_applicable: distant scenery","interaction":"not_applicable: distant scenery","audio":"not_applicable: distant scenery","lifecycle":"room-seeded wrap; far layer only; no reward or persistence"},
+    {"id":"ENV-FOG","node":"EnvironmentMotion/DriftingMist","count":3,"motion":"gradient texture soft mist, max alpha0.027; x38/y6 px drift","physics":"not_applicable: transparency effect","interaction":"not_applicable: atmosphere","audio":"not_applicable: room ambience covers","lifecycle":"deterministic phases reset each room; middle depth"},
+    {"id":"ENV-LAMP","node":"EnvironmentMotion/CampLight","rule":"Only source-fixed lamp centers: room01 one,03 two,04 one,06 one,07 one;02/05 none","motion":"smooth warm pulse, two sine frequencies, no random flicker","physics":"not_applicable: light envelope","interaction":"lighting shares camp art, interaction remains host checkpoint system","audio":"not_applicable: no separate crackle invented","lifecycle":"reset per room; no saved light phase"},
+    {"id":"ENV-EVENT","node":"EnvironmentMotion/EventPulses","rule":"max16 pulses,9 sparks per active pulse; trigger enemy_hit/enemy_defeated/player_death/reward/checkpoint/ability_unlocked from host event IDs","motion":"0.45s hit or0.8–0.85s reward/death; lifespan then deleted","physics":"not_applicable: damage belongs to authoritative gameplay system","interaction":"event-driven, not proximity-triggered","audio":"host.sfx already plays source event sound; no duplicated sound","lifecycle":"temporary only; no persistence; clears on room load"},
+    {"id":"ENV-AMBIENCE","node":"EnvironmentMotion/WaterAmbience","count":1,"audio":{"format":"Godot-generated PCM16 mono22050Hz","duration":4,"loop":true,"gain_db":-29,"fade_in":"0.35s -80dB to -29dB","fade_out":"release_ambience reparent to persistent host;0.25s to -80dB thenstop/stream-null/free","carriers_hz":[54,81,137],"origin":"designed low water drone; original generated waveform without external source","mute":"Master bus M toggle inherited from host"},"physics":"not_applicable: audio","interaction":"not_applicable: noninteractive","lifecycle":"loop per room, stream_paused with pause/reference; release before room change; immediate stop at application graceful quit"}
+  ],
+  "design_exclusions": [
+    "No literal water surface or splash plane added: reference represents submerged cavities, not a visible horizontal waterline.",
+    "No second full-screen light shaft: source shaft direction and colors retained.",
+    "Canopy/rope geometry and membrane deformation remain parent scene responsibilities; this script does not fake them with particles."
+  ],
+  "validation": {
+    "parser":"pass: Godot4.7.2 --check-only",
+    "actual_runtime":"pass: tests/environment_check.gd six functional checks in real graphical renderer",
+    "evidence":["evidence/environment-check.json","evidence/environment-running.png","evidence/environment-check.log","evidence/environment-ambience.wav","evidence/audio-mixer.json","evidence/audio-pcm-analysis.json","evidence/master-audio-capture.wav","evidence/benchmark.json","evidence/fish-population.json","evidence/fish-population-dummy.log"],
+    "visual":"agent viewed actual screenshot: subtle density, warm lamp, no obscured foot edge; no human aesthetic signoff",
+    "audio":"Actual Master mixer capture 4/4 objective checks pass: ambience and8 event sounds nonzero, no clipping, varying waveform. PCM/FFT analysis confirms ambient54/81Hz and event spectral energy. Fade lifecycle5/5pass in evidence/environment-fade.json. Most recent independent WASAPI initialization stillERR_CANT_OPEN; fade test explicitlyDummy and not a hardware-output test. Physical speaker routing and subjective listening not_run.",
+    "performance":"Final frozen scene integration retested using actual Time.get_ticks_usec frame deltas. Seven rooms each120warmup+300sample at1280x720, RTX5060,60fps cap, explicitDummy audio: median16.631–16.686ms; p9516.700–17.516ms; maximum21.037ms; no2100sample frame>25ms or>50ms. All seven meet agreed p95<20ms andzero>50ms target. Pass applies only to this workstation, camera workload and resolution; not a cross-hardware guarantee. Historical preliminary data archived asbenchmark-pre-final.json.",
+    "known_issue":"Initial harness quit before deferred freeing caused two ObjectDB warnings. Repaired with explicit sound stop/stream release and host.graceful_quit. Event processing uses monotonic seq, so a1500entry ring buffer cannot suppress effects. Latest05/06 fish-rule count regression7/7 used explicit Dummy audio after WASAPI device initialization failed; this regression does not supersede or claim fresh audio output validation."
+  }
+}

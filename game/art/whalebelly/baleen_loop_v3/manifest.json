@@ -1,0 +1,127 @@
+{
+  "asset": "BALEEN-LOOP-V3",
+  "atlas": "baleen-sway-atlas.png",
+  "frames": 48,
+  "fps": 12,
+  "columns": 8,
+  "rows": 6,
+  "cell": [
+    384,
+    384
+  ],
+  "source": "assets/source/baleen-loop-v3",
+  "instances": [
+    {
+      "id": "BALEEN-LEFT",
+      "source_points": [
+        [
+          54,
+          175
+        ],
+        [
+          344,
+          74
+        ]
+      ],
+      "target_points": [
+        [
+          285,
+          74
+        ],
+        [
+          660,
+          -56
+        ]
+      ],
+      "phase": 0,
+      "flip": false,
+      "position": [
+        215.53207283061687,
+        -152.28020911761274
+      ],
+      "uniform_scale": 1.2924584642348076,
+      "rotation_radians": 0.0014358375429788794,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png"
+    },
+    {
+      "id": "BALEEN-CENTER",
+      "source_points": [
+        [
+          54,
+          175
+        ],
+        [
+          344,
+          74
+        ]
+      ],
+      "target_points": [
+        [
+          645,
+          -16
+        ],
+        [
+          900,
+          -26
+        ]
+      ],
+      "phase": 13,
+      "flip": false,
+      "position": [
+        644.4887116785612,
+        -168.19531076022523
+      ],
+      "uniform_scale": 0.831028119143167,
+      "rotation_radians": 0.29594241215347444,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png"
+    },
+    {
+      "id": "BALEEN-RIGHT",
+      "source_points": [
+        [
+          40,
+          74
+        ],
+        [
+          330,
+          175
+        ]
+      ],
+      "target_points": [
+        [
+          900,
+          -26
+        ],
+        [
+          1190,
+          134
+        ]
+      ],
+      "phase": 29,
+      "flip": true,
+      "position": [
+        870.898930021951,
+        -111.93376528350706
+      ],
+      "uniform_scale": 1.0785621231464495,
+      "rotation_radians": 0.16902794739862387,
+      "z": -1,
+      "source_asset": "BALEEN-LOOP-V3",
+      "frame_count": 48,
+      "fps": 12,
+      "period": 4.0,
+      "texture": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png"
+    }
+  ],
+  "distant": "Original blue pillar atlas retained; not an ivory fringe"
+}

@@ -1,0 +1,172 @@
+{
+  "pipeline": "Built-in imagegen edits + native Godot masks / compositing / export",
+  "third_party_paid_calls": 0,
+  "builtin_calls": 15,
+  "originals": "assets/reference/r1 (unchanged hashes in source-manifest.json)",
+  "editable": "assets/masks SVG + scripts/*.gdshader + scenes/r1/*.tscn + assets/clean exact generated masters",
+  "jobs": [
+    {
+      "id": "clean1",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-01.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-6c730499-82c8-4821-b7f7-55d42708b301.png",
+      "project_asset": "assets/clean/R1-01.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far1",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-01.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-d17803ae-1cdc-4d8f-af84-0ef97f5b90e7.png",
+      "project_asset": "assets/clean/R1-01-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean2",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-02.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-44bb41a1-75c3-4a80-a01a-eea87edc170b.png",
+      "project_asset": "assets/clean/R1-02.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far2",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-02.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-49c7c3e7-d6bb-41f2-bf2c-3ee128ed50cf.png",
+      "project_asset": "assets/clean/R1-02-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean3",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-03.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-a195ee16-7795-45b7-9f59-e35b885d1b81.png",
+      "project_asset": "assets/clean/R1-03.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far3",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-03.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-72bbdf14-f54e-4756-bee7-a4f6a57990b8.png",
+      "project_asset": "assets/clean/R1-03-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean4",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-04.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-23db293b-8445-4f07-bca9-e343b01b7151.png",
+      "project_asset": "assets/clean/R1-04.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far4",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-04.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-9a4b7627-232d-4fdc-bc97-9a2b25013fd3.png",
+      "project_asset": "assets/clean/R1-04-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean5",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-05.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-56f7b50a-69d7-4e1f-b279-106d9f81119d.png",
+      "project_asset": "assets/clean/R1-05.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far5",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-05.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-81c25899-aa6e-44ca-8c05-c66c5a0a6def.png",
+      "project_asset": "assets/clean/R1-05-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean6",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-06.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-631b87b1-7def-493e-a1a0-2eabbf9e643f.png",
+      "project_asset": "assets/clean/R1-06.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far6",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-06.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-5611df3d-a7b0-4ccd-9f8a-17bd923fbf42.png",
+      "project_asset": "assets/clean/R1-06-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "clean7",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-07.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-4f641948-4eda-4e85-9faf-9bceb4563f9f.png",
+      "project_asset": "assets/clean/R1-07.png",
+      "purpose": "局部移除角色/敌人，补绘其背后背景；05–07同时清除右岸可收集珠簇",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "far7",
+      "tool": "image_gen__imagegen",
+      "mode": "edit",
+      "source": "assets/reference/r1/R1-07.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-d5f2dab5-4e3f-4e91-aa6a-f1a1e8f55baf.png",
+      "project_asset": "assets/clean/R1-07-far.png",
+      "purpose": "保留远处可见结构，移除近景/地形/角色，补绘遮挡后的连续远景",
+      "scope": "Only locally masked regions are sampled in the final scene; original raster retained.",
+      "status": "generated_and_integrated"
+    },
+    {
+      "id": "door4",
+      "tool": "image_gen__imagegen",
+      "source": "assets/clean/R1-04-closed.png",
+      "original_output": "C:\\Users\\Kingsoft\\.codex\\generated_images\\01a15e43-0218-75b2-af77-efe609e99875\\exec-7caa86dd-0de4-4b26-87f9-f06ae77698d3.png",
+      "project_asset": "assets/clean/R1-04.png",
+      "purpose": "移除右壳门的封闭门叶，补绘打开后的通道；门叶作为独立DoorArt原图切片保留",
+      "status": "generated_and_integrated"
+    }
+  ]
+}

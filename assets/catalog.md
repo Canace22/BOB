@@ -1,5 +1,9 @@
 # 美术资源台账
 
+## WhalebellyRuins恢复接入（2026-10-31）
+
+原运行素材逐字节恢复至 `game/art/whalebelly/`，由 `game/art/manifest.json` 登记来源与同步路径。未直接引用的历史原图、母版、旧音效和配置在 `game/production_sources/whalebelly/source-index.json` 登记；全局编辑源仍保留原位。本轮只恢复与接入，没有重新生成美术；[范围与实机验证](../docs/whalebelly-recovery.md)。
+
 ## 拾潮者基础动作首版（2026-10-28）
 
 `tide-picker-locomotion-v01`：[制作源、Blender母版与验收](source/tide-picker-locomotion-v01/README.md)，[可播放预览](source/tide-picker-locomotion-v01/preview.html)。IDLE / Walk / Run各8帧，透明PNG、图集、统一锚点和Godot评审场景已产出。状态为candidate：腿部交替仍需精修，未替换主关卡。三个动作独立登记到catalog.json，不混入历史静态图集。

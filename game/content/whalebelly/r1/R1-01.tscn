@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://content/whalebelly/environment/xumen_reference.tscn" id="1"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/reference_environment/CHARACTER.png" id="2"]
+
+[node name="R1-01" type="Node2D"]
+
+[node name="ReferenceEnvironment" parent="." instance=ExtResource("1")]
+
+scale = Vector2(1.30546875, 1.30546875)
+
+level_mode = true
+
+[node name="CHARACTER" parent="ReferenceEnvironment" index="43"]
+
+visible = false
+
+[node name="Far" type="Node2D" parent="."]
+
+[node name="Middle" type="Node2D" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Terrain" type="Node2D" parent="World"]
+
+[node name="Surface0" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface0"]
+
+polygon = PackedVector2Array(0.0, 610.959, 78.328, 610.959, 156.656, 613.57, 234.984, 613.57, 313.312, 610.959, 365.531, 596.599, 417.75, 583.545, 469.969, 575.712, 522.188, 573.101, 587.461, 571.795, 652.734, 557.435, 704.953, 539.159, 757.172, 531.326, 809.391, 526.104, 861.609, 524.798, 913.828, 533.937, 966.047, 556.13, 1018.266, 592.683, 1057.43, 609.654, 1109.648, 618.792, 1174.922, 624.014, 1240.195, 635.763, 1305.469, 654.04, 1357.688, 663.178, 1436.016, 665.789, 1501.289, 661.873, 1553.508, 650.123, 1605.727, 635.763, 1671.0, 631.847, 1671.0, 671.847, 1605.727, 675.763, 1553.508, 690.123, 1501.289, 701.873, 1436.016, 705.789, 1357.688, 703.178, 1305.469, 694.04, 1240.195, 675.763, 1174.922, 664.014, 1109.648, 658.792, 1057.43, 649.654, 1018.266, 632.683, 966.047, 596.13, 913.828, 573.937, 861.609, 564.798, 809.391, 566.104, 757.172, 571.326, 704.953, 579.159, 652.734, 597.435, 587.461, 611.795, 522.188, 613.101, 469.969, 615.712, 417.75, 623.545, 365.531, 636.599, 313.312, 650.959, 234.984, 653.57, 156.656, 653.57, 78.328, 650.959, 0.0, 650.959)
+
+[node name="PlayerArt" type="Node2D" parent="World"]
+
+[node name="OriginalSilhouette" type="Sprite2D" parent="World/PlayerArt"]
+
+position = Vector2(178.84921875, 514.3546875)
+
+scale = Vector2(1.30546875, 1.30546875)
+
+texture = ExtResource("2")
+
+centered = false
+
+[editable path="ReferenceEnvironment"]

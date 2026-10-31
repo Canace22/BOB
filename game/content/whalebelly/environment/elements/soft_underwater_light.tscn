@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="2"]
+[node name="SoftUnderwaterLight" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+script = ExtResource("1")

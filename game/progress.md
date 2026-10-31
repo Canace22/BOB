@@ -105,3 +105,16 @@
 正式入口统一为 game/project.godot。本地新增素材与制作源保留，旧统一工程冻结于 legacy/godot/WhalebellyRuins，环境动态迁入 game/src/world/scenery/local_environment；独立环境预览在 content/environment/local_environment_preview.tscn。远端现有玩法、存档与 Web 优化保持当前结构。范围、运行命令、备份与验证边界见 docs/godot-local-integration.md。
 
 本轮 sync-art 成功，check 0 错误，19 项测试通过；新增环境实机画面已查看，运行无资源或脚本错误。未发布 Pages，未重新执行浏览器整条路线。
+## 2026-10-31 完整找回 WhalebellyRuins
+
+此前只迁移环境预览不足以保留原已开发玩法，现已修正：原七房、CampaignPlayer/V2.4技能、1260动作帧、Run/Walk、HUD、碰撞/机关/Boss、V6进度和环境动态均放入 game/，F5默认进入 content/whalebelly/main.tscn。原模块化五房入口保留，两个版本的进度隔离。完整路径、兼容边界与操作见 docs/whalebelly-game-recovery.md。
+
+本轮原功能134项断言、新工程23项测试通过，检查0错误；1655个恢复的二进制素材逐字节一致。GPU复核原主接口58项并查看实际画面。浏览器真实键盘11项通过：移动、跳跃、短击、迎珠消耗、暂停/恢复、物理营地保存及独立刷新读档，浏览器/引擎错误为空。原生桌面截图接口超时，未将原生键盘注入计为通过。校验结果和截图只保留本地。
+
+匹配版本Web模板已安装，Web导出成功；恢复全量资源后启动压缩下载约301.45 MiB，当前单文件超过既有Pages发布方式的大小上限，未替换线上稳定版本。未为压缩包大小删减角色动作或已开发关卡，也未擅自降低素材质量。需要另行完成Web资源拆包/按需加载后再发布。
+
+### 恢复补充验收
+
+最终检查0错误、23项工程测试通过；新增坏旧档拒绝、有效V6复制、已有目标存档不覆盖测试。原生GPU跑步16、主场景垂须14、鱼群15项全部通过。未直接参与运行的95份历史原图/母版/配置/文档也已复制至 `production_sources/whalebelly/`，`.gdignore` 与导出排除生效；精确中文文件名从迁移前tar恢复，逐项SHA256留档。运行资源映射1914项，全部在game中。
+
+Web截图发现原HUD以外的三个Label在浏览器缺中文，已显式绑定入库字体，重新导出并复核；最终导出启动约301.39MiB。验收日志目录 `build/qa/whalebelly-recovery/`；旧22项/早期截图是阶段结果，以最终日志和[恢复说明](../docs/whalebelly-recovery.md)为准。同步README、架构入口、素材台账和Godot开发Skill，后续先核对真实默认入口，避免只迁预览遗漏玩法。

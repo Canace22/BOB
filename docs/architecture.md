@@ -1,5 +1,7 @@
 # 鲸落 Godot 架构
 
+2026-10-31 恢复原 WhalebellyRuins 的完整可玩内容：`game/content/whalebelly/main.tscn` 为默认入口，原主循环与角色/战斗适配暂保存在 `game/src/campaign/`，使用 `game/art/whalebelly/` 和隔离的 V6 进度目录。下述模块化版本保留为 `game/src/main/main.tscn`，两者均在同一项目内。恢复阶段优先保持已有行为，不用模块化五房替代已开发的七房与完整角色；[映射、验证和后续维护规则](whalebelly-game-recovery.md)。
+
 2D 战斗 + 收集探索（类空洞骑士）的正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility 渲染、Web 单线程导出。本文是模块边界与约定的唯一主说明；工程内 AI 规则见 [game/AGENTS.md](../game/AGENTS.md)。
 
 ## 仓库分工

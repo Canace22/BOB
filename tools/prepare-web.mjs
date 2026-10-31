@@ -21,6 +21,12 @@ const loader = readFileSync(path.join(root, 'game/web/preload.js'), 'utf8');
 const target = path.join(web, 'index.html');
 let html = readFileSync(target, 'utf8');
 const marker = '<script src="index.js"></script>';
+// Godot can retain its HTML shell on incremental exports. Replace the previous
+// generated loader so the page cannot keep hashes of files removed above.
+if (html.includes('BOB_WEB_FILES')) {
+  html = html.replace(/<script>window\.BOB_WEB_FILES = [\s\S]*?<\/script>\s*(?=<script src="index\.js"><\/script>)/, '');
+  html = html.replace(/\n<div id="status-detail"[^>]*>[\s\S]*?<\/div>/, '');
+}
 if (!html.includes(marker) || html.includes('BOB_WEB_FILES')) throw new Error('Unexpected Godot Web HTML; inspect before patching.');
 html = html.replace(marker, `<script>window.BOB_WEB_FILES = ${JSON.stringify(manifest)};\n${loader}</script>\n${marker}`);
 html = html.replace('<progress id="status-progress"></progress>', '<progress id="status-progress"></progress>\n<div id="status-detail" role="status" style="position:absolute;bottom:calc(10% + 24px);width:100%;text-align:center;color:#ddd;font:16px sans-serif">正在准备游戏…</div>');

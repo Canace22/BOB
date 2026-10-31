@@ -19,7 +19,7 @@ func _initialize() -> void:
 			printerr("MISSING ", entry["src"])
 			errors += 1
 		for pair: PackedStringArray in pairs:
-			if _copy(pair[0], pair[1], int(entry.get("max", 0))):
+			if _copy(pair[0], pair[1], int(entry.get("max", 0)), bool(entry.get("rewrite_whalebelly_paths", false)), manifest.get("whalebelly_resource_paths", {})):
 				copied += 1
 			else:
 				errors += 1
@@ -39,9 +39,18 @@ func _expand(src: String, dest: String) -> Array[PackedStringArray]:
 	return pairs
 
 
-func _copy(src: String, dest: String, max_size: int) -> bool:
+func _copy(src: String, dest: String, max_size: int, rewrite_paths: bool = false, mappings: Dictionary = {}) -> bool:
 	var target := ProjectSettings.globalize_path(dest)
 	DirAccess.make_dir_recursive_absolute(target.get_base_dir())
+	if rewrite_paths:
+		var text := FileAccess.get_file_as_string(src)
+		for old_path: String in mappings:
+			text = text.replace(old_path, mappings[old_path])
+		var output := FileAccess.open(target, FileAccess.WRITE)
+		if output == null:
+			return false
+		output.store_string(text)
+		return true
 	if max_size <= 0 or src.get_extension() != "png":
 		return DirAccess.copy_absolute(src, target) == OK
 	var image := Image.load_from_file(src)

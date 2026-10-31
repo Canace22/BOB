@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/motion_element.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/BALEEN-05.png" id="2"]
+[node name="BALEEN-05" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+script = ExtResource("1")
+animation_kind = "foliage"
+source_origin = Vector2(722, 0)
+amplitude_px = 6.0
+period = 8.0
+phase = 3.65
+root_at_bottom = false

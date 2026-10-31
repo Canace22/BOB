@@ -1,0 +1,301 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/reference/r1/R1-06.png" id="1"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-classes.svg" id="2"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-actors.svg" id="3"]
+
+[ext_resource type="Shader" path="res://src/campaign/layer.gdshader" id="4"]
+
+[ext_resource type="Shader" path="res://src/campaign/extract.gdshader" id="5"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-PlayerArt.svg" id="6"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-RewardArt.svg" id="7"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/clean/R1-06-far.png" id="10"]
+
+[ext_resource type="Texture2D" path="res://art/whalebelly/clean/R1-06.png" id="11"]
+
+[sub_resource type="ShaderMaterial" id="Layer0"]
+
+shader = ExtResource("4")
+
+shader_parameter/classes = ExtResource("2")
+
+shader_parameter/actor_holes = ExtResource("3")
+
+shader_parameter/layer_id = 0
+
+shader_parameter/source_size = Vector2(1476, 1065)
+
+shader_parameter/patch0 = Vector2(-100, -100)
+
+shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
+
+shader_parameter/patch1 = Vector2(-85, -30)
+
+shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
+
+shader_parameter/patch2 = Vector2(0, 0)
+
+shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/patch3 = Vector2(0, 0)
+
+shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/far_plate = ExtResource("10")
+
+shader_parameter/fallback_reward = -1
+
+[sub_resource type="ShaderMaterial" id="Layer1"]
+
+shader = ExtResource("4")
+
+shader_parameter/classes = ExtResource("2")
+
+shader_parameter/actor_holes = ExtResource("3")
+
+shader_parameter/layer_id = 1
+
+shader_parameter/source_size = Vector2(1476, 1065)
+
+shader_parameter/patch0 = Vector2(-100, -100)
+
+shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
+
+shader_parameter/patch1 = Vector2(-85, -30)
+
+shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
+
+shader_parameter/patch2 = Vector2(0, 0)
+
+shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/patch3 = Vector2(0, 0)
+
+shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/far_plate = ExtResource("10")
+
+shader_parameter/fallback_reward = -1
+
+[sub_resource type="ShaderMaterial" id="Layer2"]
+
+shader = ExtResource("4")
+
+shader_parameter/classes = ExtResource("2")
+
+shader_parameter/actor_holes = ExtResource("3")
+
+shader_parameter/layer_id = 2
+
+shader_parameter/source_size = Vector2(1476, 1065)
+
+shader_parameter/patch0 = Vector2(-100, -100)
+
+shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
+
+shader_parameter/patch1 = Vector2(-85, -30)
+
+shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
+
+shader_parameter/patch2 = Vector2(0, 0)
+
+shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/patch3 = Vector2(0, 0)
+
+shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/far_plate = ExtResource("10")
+
+shader_parameter/fallback_reward = -1
+
+[sub_resource type="ShaderMaterial" id="Layer3"]
+
+shader = ExtResource("4")
+
+shader_parameter/classes = ExtResource("2")
+
+shader_parameter/actor_holes = ExtResource("3")
+
+shader_parameter/layer_id = 3
+
+shader_parameter/source_size = Vector2(1476, 1065)
+
+shader_parameter/patch0 = Vector2(-100, -100)
+
+shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
+
+shader_parameter/patch1 = Vector2(-85, -30)
+
+shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
+
+shader_parameter/patch2 = Vector2(0, 0)
+
+shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/patch3 = Vector2(0, 0)
+
+shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/far_plate = ExtResource("10")
+
+shader_parameter/fallback_reward = -1
+
+[sub_resource type="ShaderMaterial" id="Actor0"]
+
+shader = ExtResource("5")
+
+shader_parameter/silhouette = ExtResource("6")
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/source_size = Vector2(1476,1065)
+
+shader_parameter/bounds = Vector4(315.0,543.0,477.0,649.0)
+
+shader_parameter/recover_edges = true
+
+[sub_resource type="ShaderMaterial" id="Actor1"]
+
+shader = ExtResource("5")
+
+shader_parameter/silhouette = ExtResource("7")
+
+shader_parameter/clean_plate = ExtResource("11")
+
+shader_parameter/source_size = Vector2(1476,1065)
+
+shader_parameter/bounds = Vector4(1136.0,271.0,1215.0,336.0)
+
+shader_parameter/recover_edges = false
+
+[node name="R1-06" type="Node2D"]
+
+[node name="Far" type="Node2D" parent="."]
+
+z_index = -30
+
+[node name="OcclusionUnderpaint" type="Sprite2D" parent="Far"]
+
+texture = ExtResource("10")
+
+centered = false
+
+[node name="FarOriginalPixels" type="Sprite2D" parent="Far"]
+
+material = SubResource("Layer0")
+
+texture = ExtResource("1")
+
+centered = false
+
+[node name="Middle" type="Node2D" parent="."]
+
+z_index = -15
+
+[node name="MiddleOriginalPixels" type="Sprite2D" parent="Middle"]
+
+material = SubResource("Layer1")
+
+texture = ExtResource("1")
+
+centered = false
+
+[node name="World" type="Node2D" parent="."]
+
+z_index = 0
+
+[node name="WorldOriginalPixels" type="Sprite2D" parent="World"]
+
+material = SubResource("Layer2")
+
+texture = ExtResource("1")
+
+centered = false
+
+[node name="Foreground" type="Node2D" parent="."]
+
+z_index = 10
+
+[node name="ForegroundOriginalPixels" type="Sprite2D" parent="Foreground"]
+
+material = SubResource("Layer3")
+
+texture = ExtResource("1")
+
+centered = false
+
+[node name="Terrain" type="Node2D" parent="World"]
+
+[node name="Surface0" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface0"]
+
+polygon = PackedVector2Array(0.0, 791.0, 100.0, 796.0, 210.0, 792.0, 330.0, 788.0, 475.0, 798.0, 475.0, 833.0, 330.0, 823.0, 210.0, 827.0, 100.0, 831.0, 0.0, 826.0)
+
+[node name="Surface1" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+
+polygon = PackedVector2Array(410.0, 650.0, 490.0, 643.0, 590.0, 643.0, 679.0, 650.0, 679.0, 685.0, 590.0, 678.0, 490.0, 678.0, 410.0, 685.0)
+
+[node name="Surface2" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface2"]
+
+polygon = PackedVector2Array(613.0, 490.0, 700.0, 482.0, 840.0, 482.0, 955.0, 485.0, 1040.0, 489.0, 1040.0, 524.0, 955.0, 520.0, 840.0, 517.0, 700.0, 517.0, 613.0, 525.0)
+
+[node name="Surface3" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface3"]
+
+polygon = PackedVector2Array(912.0, 343.0, 1050.0, 335.0, 1210.0, 332.0, 1350.0, 335.0, 1476.0, 340.0, 1476.0, 375.0, 1350.0, 370.0, 1210.0, 367.0, 1050.0, 370.0, 912.0, 378.0)
+
+[node name="Surface4" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface4"]
+
+polygon = PackedVector2Array(0.0, 590.0, 80.0, 581.0, 150.0, 575.0, 205.0, 584.0, 205.0, 619.0, 150.0, 610.0, 80.0, 616.0, 0.0, 625.0)
+
+[node name="Surface5" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface5"]
+
+polygon = PackedVector2Array(180.0, 868.0, 280.0, 896.0, 400.0, 916.0, 510.0, 945.0, 620.0, 970.0, 720.0, 986.0, 850.0, 967.0, 960.0, 941.0, 1050.0, 920.0, 1150.0, 870.0, 1250.0, 820.0, 1350.0, 765.0, 1476.0, 730.0, 1476.0, 765.0, 1350.0, 800.0, 1250.0, 855.0, 1150.0, 905.0, 1050.0, 955.0, 960.0, 976.0, 850.0, 1002.0, 720.0, 1021.0, 620.0, 1005.0, 510.0, 980.0, 400.0, 951.0, 280.0, 931.0, 180.0, 903.0)
+
+[node name="PlayerArt" type="Node2D" parent="World"]
+
+z_index = 4
+
+[node name="OriginalSilhouette" type="Sprite2D" parent="World/PlayerArt"]
+
+material = SubResource("Actor0")
+
+texture = ExtResource("1")
+
+centered = false
+
+[node name="RewardArt" type="Node2D" parent="World"]
+
+z_index = 4
+
+[node name="OriginalSilhouette" type="Sprite2D" parent="World/RewardArt"]
+
+material = SubResource("Actor1")
+
+texture = ExtResource("1")
+
+centered = false

@@ -23,13 +23,13 @@ BOB/
 
 架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](legacy/README.md)。
 
-2026-10-31 本地新增素材与环境动态已合并到此结构；正式入口为 `game/project.godot`。鱼群、垂须和分层环境可打开 `game/content/environment/local_environment_preview.tscn` 按 F6 预览。[合并范围与验收](docs/godot-local-integration.md)。
+2026-10-31 已完整恢复原 WhalebellyRuins 可玩内容。打开 `game/project.godot` 按 F5，默认运行原七房、CampaignPlayer、完整 3C/技能、Run 动画、HUD 及主地图环境动态；不再仅有独立环境预览。[恢复范围、操作与验收](docs/whalebelly-game-recovery.md)。原模块化五房场景仍保留在 `game/src/main/main.tscn`。
 
 ## 当前内容
 
-Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → 负壳蟹 → 流膜育窝。包含短击连段、重鸣、调息、Boss、交互领取贴流冲、三段跨沟、营地与版本化存档、地图和暂停。舌台可收集碎片并打开持久壳闩短桥。
+默认入口已恢复原 WhalebellyRuins：七房地形、道路与支路、逐帧拾潮者、短击/下劈/迎珠/重鸣/调息、能力门、Boss、营地、V6存档和镜头。R1-01 使用分层环境、62条鱼、垂须、气泡、水面与前景；15组动作库及84帧跑步保留。
 
-七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。角色沿用旧版静态姿态加程序反馈；复用素材接入不代表制作了新的逐帧动画。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
+主线已验证前五房至首关出口；支路机制专项通过不代表七房全部连续路线已验证。恢复细节与制作源清单见[恢复说明](docs/whalebelly-recovery.md)，实际测试与限制见 [game/progress.md](game/progress.md)。线上目前仍是恢复前的稳定模块版。
 
 ## 快速开始
 
@@ -45,21 +45,21 @@ node tools/godot.mjs check    # 导入资源并检查全部脚本和场景
 node tools/godot.mjs test     # headless 自动测试
 ```
 
-测试只写独立测试文件。桌面画面检查可运行 `node tools/godot.mjs run -- res://tests/manual_preview.tscn`，不会改写真实存档。新工程不读取旧 Godot / V2 存档；Web 版自动保存到当前浏览器站点存储。
+测试只写独立测试文件。恢复版隔离试玩可运行 `node tools/godot.mjs run -- res://tests/whalebelly/manual_play.tscn`。桌面正式运行仅在目标无档时复制原Godot有效V6存档，保留原件；不读取V2存档。Web版保存到当前浏览器站点存储。
 
 Web 验收需要 Node.js 20+、Playwright 与可用 Chrome/Chromium：
 
 ```sh
 node tools/godot.mjs export-web
 node game/tests/serve_web.mjs       # 独立终端保持运行，端口 4187
-node game/tests/web_playthrough.mjs # 另一终端执行，五房真实按键路线
+node game/tests/web_whalebelly.mjs # 恢复版真实按键/营地/刷新冒烟验收
 ```
 
-`PLAYWRIGHT_MODULE` 可指定现有模块路径，`CHROME_PATH` 可指定浏览器。线上复核设置 `GAME_URL=https://canace22.github.io/BOB/godot/`。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
+`PLAYWRIGHT_MODULE` 可指定现有模块路径，`GAME_URL` 指定验收服务地址。恢复版测试与原模块版 `web_playthrough.mjs` 不同，不能混用。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
 
 ## 操作（桌面键盘）
 
-`A / D` 移动，`Space` 跳跃，`Q` 或 `J` 短击（后半段再按接第二击），`R` 或 `K` 重鸣（消耗 2 蓄振），`F` 原地调息（消耗 2 蓄振恢复 1 生命），`Shift` 或 `L` 贴流冲（击败负壳蟹后获得），`E` 或 `↑` 交互，`Tab` 或 `M` 地图，`Esc` 暂停。
+`A/D` 移动，`K/空格` 跳跃，`J/Q` 短击，空中 `S+J` 下劈，`L/Shift` 冲刺，`U` 迎珠，`I` 重鸣，`P` 调息，`O` 潜隙，`E` 交互，`W` 浮游，`G` 牵引，`Esc` 暂停，`M` 静音，`H` 帮助。冲刺/浮游/牵引沿用能力解锁；首次操作说明按任意键关闭。
 
 ## 发布
 
