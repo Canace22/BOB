@@ -82,6 +82,9 @@ func _physics_process(dt: float) -> void:
 		contour.polygon = changed
 		var world: Sprite2D = host.scenery.get_node("World/WorldOriginalPixels")
 		world.material.set_shader_parameter("membrane_drop", membrane_drop)
+		var chapter_surface: Sprite2D = host.scenery.get_node_or_null("ChapterEnvironment/World/Surface")
+		if chapter_surface != null:
+			chapter_surface.material.set_shader_parameter("membrane_drop",membrane_drop)
 
 func _process(dt: float) -> void:
 	if host == null: return

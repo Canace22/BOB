@@ -439,6 +439,11 @@ func update_layers() -> void:
 		if node != null: node.visible = layer_solo < 0 or i == layer_solo
 	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
 	if environment != null: environment.set_level_layer(layer_solo)
+	var chapter_environment: ChapterRoomEnvironment = scenery.get_node_or_null("ChapterEnvironment")
+	if chapter_environment != null:
+		for layer: String in ["Far","Middle","Foreground"]: scenery.get_node(layer).hide()
+		scenery.get_node("World/WorldOriginalPixels").hide()
+		chapter_environment.set_view_layer(layer_solo)
 
 func ground_y(x: float, near_y: float) -> float:
 	var best: float = near_y
@@ -671,6 +676,11 @@ func update_parallax() -> void:
 		shift.x = clampf(shift.x, -6.0, 6.0)
 		shift.y = clampf(shift.y, -4.0, 4.0)
 	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
+	var chapter_environment: ChapterRoomEnvironment = scenery.get_node_or_null("ChapterEnvironment")
+	if chapter_environment != null:
+		chapter_environment.set_camera_offset(shift)
+		chapter_environment.visible = not reference_visible
+		return
 	if environment != null:
 		var offset := Vector2.ZERO
 		if (zoomed or reference_camera_active()) and not reference_visible and layer_solo<0 and capture_path.is_empty():

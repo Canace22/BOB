@@ -111,7 +111,7 @@ func _process(dt: float) -> void:
 	event_node.visible = solo < 0 or solo == 2
 	# R1-01 owns painted fish, bubbles, shafts and foliage in its new scene.
 	# Keep the established ambience and gameplay-event audio, without duplicates.
-	if host.room.get("layered_environment",false):
+	if host.room.get("layered_environment",false) or host.scenery.has_node("ChapterEnvironment"):
 		bubbles_node.hide()
 		dust_node.hide()
 		fish_node.hide()

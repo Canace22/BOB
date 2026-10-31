@@ -179,6 +179,9 @@ game/production_sources/whalebelly/**/*.png filter=lfs diff=lfs merge=lfs -text
 game/production_sources/whalebelly/**/*.wav filter=lfs diff=lfs merge=lfs -text
 # Keep historical source bytes intact, including original trailing blank lines.
 game/production_sources/whalebelly/** -whitespace
+assets/source/r1-chapter-scenes/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/source/r1-chapter-scenes/**/*.ora filter=lfs diff=lfs merge=lfs -text
+assets/runtime/sprites/r1-chapter-scenes/**/*.png filter=lfs diff=lfs merge=lfs -text
 
 # Historical editable sources recovered inside the active project, excluded from export.
 game/production_sources/whalebelly/**/*.png filter=lfs diff=lfs merge=lfs -text
