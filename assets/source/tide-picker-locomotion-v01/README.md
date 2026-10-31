@@ -5,7 +5,7 @@
 ## 查看与使用
 
 - 双击 [preview.html](preview.html)：可直接本地播放，支持暂停、逐帧、0.25×慢放、深浅背景和94px显示尺寸；不需要服务端。
-- [循环动图](review/loops.webp)、[全部帧](review/contact-sheet.png)、[浅底检查](review/light-contact-sheet.png)。
+- [循环动图](review/loops.webp)、全部帧（本地文件：`review/contact-sheet.png`）、浅底检查（本地文件：`review/light-contact-sheet.png`）。
 - [Blender工程](tide-picker-locomotion.blend)：Blender 4.2，选择 IDLE / WALK / RUN 场景，各自 1–8 帧；图片全部内嵌。此工程为 **2D 图卡序列与时序母版**，没有3D网格角色、骨骼绑定或分层绘画笔触。
 - [PNG和图集](../../runtime/sprites/tide-picker-locomotion-v01/)及[manifest.json](../../runtime/sprites/tide-picker-locomotion-v01/manifest.json)。
 - Godot同一项目内打开 [locomotion_preview.tscn](../../../godot/WhalebellyRuins/scenes/characters/locomotion_preview.tscn)，F6。空格暂停、右键头逐帧、1正常速度、2慢放。主关卡与存档保持原版。
@@ -38,7 +38,7 @@ node assets/source/tide-picker-locomotion-v01/export_preview.cjs
 
 技术检查为agent执行，用户美术签收尚未发生。
 
-1. **通过**：24张不同PNG，全部512×512，真实alpha，alpha≥32轮廓距画布边缘大于5px；原始/8/32阈值包围盒见[technical.json](review/technical.json)。
+1. **通过**：24张不同PNG，全部512×512，真实alpha，alpha≥32轮廓距画布边缘大于5px；原始/8/32阈值包围盒见technical.json（本地文件：`review/technical.json`）。
 2. **通过**：深、浅背景合成检查；没有把查看器显示的透明RGB误判为红边。主体未裁断，球壳、青披风、双叉、红绳和灯具可辨。
 3. **通过**：Blender保存含3场景/24内嵌贴图，真实渲染见`review/blender-*-01.png`。
 4. **通过**：Godot4.7.2导入及测试，真实加载24帧，播放推进、暂停保持、7→0循环、Walk→Run切换均成功；[测试日志](review/godot-test.log)，[实机截图](../../../godot/WhalebellyRuins/evidence/locomotion-v01/playback-a.png)。

@@ -2,7 +2,7 @@
 
 Godot唯一工程 `godot/WhalebellyRuins`，固定4.7.2.stable.official.ed1daf0bf，Compatibility。F5主入口 `scenes/main.tscn` 的 R1-01 与 F6 环境预览共用 `scenes/environment/xumen_reference.tscn`，现均已使用顶部三组新版垂须。
 
-[实际主关卡录像](main-gameplay.mp4) · [主关卡截图](main-gameplay.png) · [固定视角替换前](before-fixed.png) · [固定视角替换后](after-fixed.png) · [测量与构建结果](result.json)
+实际主关卡录像（本地文件：`main-gameplay.mp4`） · 主关卡截图（本地文件：`main-gameplay.png`） · 固定视角替换前（本地文件：`before-fixed.png`） · 固定视角替换后（本地文件：`after-fixed.png`） · 测量与构建结果（本地文件：`result.json`）
 
 ## 替换内容
 

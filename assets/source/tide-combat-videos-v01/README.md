@@ -6,17 +6,17 @@
 
 |ID|动作|分组|实际状态|
 |---|---|---|---|
-|01-basic|扣潮与回拨|基础攻击|[标准模型6秒720P](01-basic.mp4) · candidate|
-|02-upper|挑潮|方向攻击|[Mini 4秒480P](mini-upper/upper-mini.mp4) · candidate|
-|03-pogo|点潮反弹|方向攻击|[Mini 4秒480P](mini-pogo/pogo-mini.mp4) · candidate|
-|04-orb|迎珠·叉鸣弹|骨鸣技能|[Mini 4秒480P](mini-orb/orb-mini.mp4) · candidate|
+|01-basic|扣潮与回拨|基础攻击|标准模型6秒720P（本地文件：`01-basic.mp4`） · candidate|
+|02-upper|挑潮|方向攻击|Mini 4秒480P（本地文件：`mini-upper/upper-mini.mp4`） · candidate|
+|03-pogo|点潮反弹|方向攻击|Mini 4秒480P（本地文件：`mini-pogo/pogo-mini.mp4`） · candidate|
+|04-orb|迎珠·叉鸣弹|骨鸣技能|Mini 4秒480P（本地文件：`mini-orb/orb-mini.mp4`） · candidate|
 |05-ring|重鸣·涨潮环|骨鸣技能|未提交|
 |06-dash|贴流冲·掠潮|潮压技能|未提交|
 |07-dive|坠潮·沉钟|潮压技能|未提交|
 |08-heal|菌息·合灯调息|菌灯技能|未提交|
 |09-scan|照见·骨音探潮|菌灯技能|未提交|
 
-普攻：1280×720、24FPS、145帧、6.041667秒。完整解码并抽查12个时间点，角色与武器在抽查帧内完整。第二击偏重复前送，回拨不清楚，短压波偏弹道，灯与绳有漂移。保持candidate；原片`01-basic-source.mp4`，静音版`01-basic.mp4`，详见[验收](technical-review.json)。
+普攻：1280×720、24FPS、145帧、6.041667秒。完整解码并抽查12个时间点，角色与武器在抽查帧内完整。第二击偏重复前送，回拨不清楚，短压波偏弹道，灯与绳有漂移。保持candidate；原片`01-basic-source.mp4`，静音版`01-basic.mp4`，详见验收（本地文件：`technical-review.json`）。
 
 Mini模型为`doubao-seedance-2-0-mini-260615`。各段已完整解码，实际规格与账户观察如下：
 

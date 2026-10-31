@@ -32,3 +32,7 @@ node tools/godot.mjs run -- res://content/environment/local_environment_preview.
 原始提交由备份分支 `backup/before-godot-sync-20261031` 保留；未提交文件另有外部备份及命名 stash。远端已发布历史保持不变。首次推送因旧提交中的 234.7 MB 验收录像被拒；随后仅将本地尚未推送的 36 个提交中的 AVI/ZIP 转为 Git LFS，原始历史另由 backup/before-lfs-publish-20261031 保留，因此本地提交号发生变化。
 
 本地新增的旧工程生成与交付脚本归档在 legacy/work/local-production/tools/，只作历史参考，不能用于覆盖 game/。
+
+## 视频与校验产物的提交范围
+
+按用户本轮要求，视频、验收截图、校验 JSON、运行日志和旧验证打包文件只在本地保存，不随本次提交。已从全部尚未推送的历史提交中排除，远端既有提交保持不变。当前树中识别出的 388 个候选文件已备份并恢复到原本地路径；其中 8 张 integration/master/ 制作母版仍按源素材入库，其余 380 个产物仅本地保存；.gitignore 阻止再次添加。测试源码、简短验收结论、可编辑制作源及游戏运行所需的位图、动画图集和数据仍入库。涉及本地录像的文档链接已改为本地文件说明。

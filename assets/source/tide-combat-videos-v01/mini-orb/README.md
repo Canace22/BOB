@@ -6,7 +6,7 @@
 
 ## 实际交付
 
-- 原片 [source.mp4](source.mp4)，静音播放版 [orb-mini.mp4](orb-mini.mp4)，封面 [poster.jpg](poster.jpg)。静音版直接复制视频流、去除音轨，未变速或插帧。
+- 原片 source.mp4（本地文件：`source.mp4`），静音播放版 orb-mini.mp4（本地文件：`orb-mini.mp4`），封面 [poster.jpg](poster.jpg)。静音版直接复制视频流、去除音轨，未变速或插帧。
 - 实际864×496、24FPS、97帧、4.041667秒；与请求16:9略有差异，保留原比例未裁切。
 - 任务 `vj_4df48a76-d8d2-47b0-ab84-22a1edd04bae`；画布节点 `skills_v_304ed05c0a`。
 - 账户余额317→224，观察到减少93点。与此前6秒720P标准模型的600点条件不同，不能据此作同条件模型价格比较；共享账户未来费用以实际为准。

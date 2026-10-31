@@ -6,7 +6,7 @@
 
 - 主游戏：打开唯一工程，F5运行，停止移动后自动播放。
 - 独立观察：`scenes/characters/idle_preview.tscn`，F6运行。空格暂停、右箭头逐帧、A/D转向、1正常速度、2慢放；同屏深浅背景与真实关卡尺寸。
-- [Godot渲染的两个完整循环](review/idle-preview.mp4)、[深色动画](review/dark-loop.webp)、[浅色动画](review/light-loop.webp)、[关键帧](review/contact.png)。
+- Godot渲染的两个完整循环（本地文件：`review/idle-preview.mp4`）、[深色动画](review/dark-loop.webp)、[浅色动画](review/light-loop.webp)、关键帧（本地文件：`review/contact.png`）。
 - [运行图集与元数据](../../runtime/sprites/tide-picker-idle-v03/manifest.json)、[SpriteFrames](../../runtime/sprites/tide-picker-idle-v03/idle.tres)。引擎加载对应 `res://assets/runtime/tide-picker-idle-v03/` 副本。
 
 ## 制作来源与规格

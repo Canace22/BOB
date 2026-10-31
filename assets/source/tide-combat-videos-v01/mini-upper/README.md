@@ -4,7 +4,7 @@
 
 ## 文件与规格
 
-- [播放版](upper-mini.mp4)、[原片](source.mp4)、[封面](poster.jpg)。播放版复制视频流去音轨，未重定时或插帧。
+- 播放版（本地文件：`upper-mini.mp4`）、原片（本地文件：`source.mp4`）、[封面](poster.jpg)。播放版复制视频流去音轨，未重定时或插帧。
 - 实际864×496、97帧、24FPS、4.041667秒；请求16:9，实际54:31，保留原尺寸未裁切。
 - [提示词](prompt.txt)、[参数](brief.json)、[提交](submit.json)、[生成结果](result.json)、[验收](review.json)。原6秒设计保留在上级`02-upper.txt`。
 - 任务`vj_dad04d8c-dd78-4f8c-9826-ec1b9d0060db`，节点`skills_v_63e3bd53d7`。余额224→131，观察到减少93点；账户可能共享，未来价格以实际为准。

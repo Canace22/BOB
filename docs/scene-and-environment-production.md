@@ -12,9 +12,9 @@
 
 不是所有元素都需要相同制作工具：复杂柔性轮廓使用逐帧动画，轻微材质流动使用Shader，游动与回收使用路径逻辑。洞壁、道路等刚性结构保持稳定。正式画面由已制作的2D位图构成，脚本负责播放、摆放、视差和状态。
 
-![当前主关卡实际截图](../assets/source/baleen-loop-v3/integration/main-gameplay.png)
+当前主关卡实际截图（本地文件：`../assets/source/baleen-loop-v3/integration/main-gameplay.png`）
 
-[实际游戏录像](../assets/source/baleen-loop-v3/integration/main-gameplay.mp4) · [垂须原画与循环预览](../assets/source/baleen-loop-v3/preview.html)
+实际游戏录像（本地文件：`../assets/source/baleen-loop-v3/integration/main-gameplay.mp4`） · [垂须原画与循环预览](../assets/source/baleen-loop-v3/preview.html)
 
 | 阶段 | 具体工作 | 必须留下的结果 | 进入下一步的条件 |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@
 
 ### A. 垂须：复杂柔性轮廓做成帧动画
 
-![八个对齐关键姿态](../assets/source/baleen-loop-v3/review/eight-keyposes.jpg)
+八个对齐关键姿态（本地文件：`../assets/source/baleen-loop-v3/review/eight-keyposes.jpg`）
 
 当前用的是 **绘画原件 + 周期运动指导 + Wan材质细化 + Krita可编辑帧**，工具职责如下：
 
@@ -188,7 +188,7 @@ Godot --path godot/WhalebellyRuins --audio-driver Dummy --script res://tests/bal
 
 ### 已有证据与当前边界
 
-上一批V3接入报告记录：23项垂须定向、14项主场景、17项环境回归、14项独立包检查通过；另有10秒不录制环境采样P50 16.673ms、P95 16.834ms。证据和适用范围在[原报告](../assets/source/baleen-loop-v3/integration/result.json)，**不是2026-10-31重新实测**。
+上一批V3接入报告记录：23项垂须定向、14项主场景、17项环境回归、14项独立包检查通过；另有10秒不录制环境采样P50 16.673ms、P95 16.834ms。证据和适用范围在原报告（本地文件：`../assets/source/baleen-loop-v3/integration/result.json`），**不是2026-10-31重新实测**。
 
 已出现并修复的问题包括：静态ROOT残留细丝、前景分件裂缝、道路下缘被蒙版裁短、含岩石的光束产生棱角、透明Shader重复乘Alpha，以及把岩柱误认为纯垂须。每次都定位实际 owning layer 和资源，再局部修复，不用气泡/模糊掩盖缺口。
 

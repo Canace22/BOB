@@ -7,7 +7,7 @@
 ## 查看与文件
 
 - [交互预览](preview-loop.html)：同屏播放、暂停、逐帧、慢放、深浅背景、放大与约94像素高的观察尺寸。
-- [三动作录像](review/combined-preview.mp4)、[循环动画](review/combined-preview.webp)。
+- 三动作录像（本地文件：`review/combined-preview.mp4`）、[循环动画](review/combined-preview.webp)。
 - [Blender母版](tide-picker-video-v02.blend)：IDLE/WALK/RUN 三个场景，贴图已打包；逐帧显隐关键帧和源帧编号可检查。这是 **2D图像卡片时序工程**，没有3D角色骨骼，也没有逐帧分层绘画源。
 - [运行帧与图集](../../runtime/sprites/tide-picker-locomotion-v02-video/manifest.json)：214张512×512透明PNG，三张8列图集，固定锚点(256,458)。
 - Godot唯一工程：`godot/WhalebellyRuins/scenes/characters/locomotion_video_preview.tscn`。空格暂停，右箭头逐帧，1正常、2慢放。仅资产预览，不写游戏存档。

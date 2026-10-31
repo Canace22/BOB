@@ -6,7 +6,7 @@
 - [便携压缩包](G:/鲸落万物生/builds/须门遗港-v0.2.zip)（约88.4MiB，解压后运行，不要拆开exe/pck）
 - [操作说明](G:/鲸落万物生/builds/须门遗港-v0.2/操作说明.txt)
 - [完整实测报告](qa.md)
-- [样板房实机录像](../../evidence/v02/sample-v2.mp4)
+- 样板房实机录像（本地文件：`../../evidence/v02/sample-v2.mp4`）
 - [最终通关截图](../../evidence/v02/release2-run/complete.png)
 - [接续入口](../../RESUME-v02.md)
 
