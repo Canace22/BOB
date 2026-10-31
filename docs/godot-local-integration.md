@@ -30,3 +30,5 @@ node tools/godot.mjs run -- res://content/environment/local_environment_preview.
 - 未在本轮重新执行整条浏览器按键通关，也未发布 Pages；线上继续使用远端已发布版本。录制只验证短时画面，不替代长时性能验收或用户审美确认。
 
 原始提交由备份分支 `backup/before-godot-sync-20261031` 保留；未提交文件另有外部备份及命名 stash。迁移过程不改写已有提交历史。
+
+本地新增的旧工程生成与交付脚本归档在 legacy/work/local-production/tools/，只作历史参考，不能用于覆盖 game/。
