@@ -38,7 +38,7 @@ func _ready() -> void:
 	message.size = Vector2(660, 100)
 	message.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var controls := _label(root, Vector2(32, 648), 18)
-	controls.text = "A / D 移动   Space 跳跃（长按跳高）   J 连击   K 重击   U 远程   F 治疗   Esc 暂停\n近战攒盾、积累破防；重击 / 治疗消耗 2 蓄振。训练场不写入主线存档。"
+	controls.text = "A / D 移动   Space 跳跃（长按跳高）   J 连击   K 重击   U 蓄力   F 治疗   Esc 暂停\nU 松开发射 · J 打中可接 J / K · K 和 F 消耗 2 蓄振"
 	start_button = _button(root, Vector2(970, 22), "开始 · Enter", arena.start)
 	dash_button = _button(root, Vector2(970, 70), "冲刺：关闭", arena.toggle_dash)
 	pause_button = _button(root, Vector2(970, 118), "暂停 · Esc", arena.toggle_pause)
@@ -126,7 +126,7 @@ func _process(_delta: float) -> void:
 	for item: CanvasItem in [title, stats, skills_status, boss_title, boss_bar, stagger_label, stagger_bar, message]:
 		item.visible = not won
 	match arena.stage:
-		"ready": message.text = "开场护盾 · U 远程可独立打 · 近战攒护盾\n%d 格生命 · F 治疗 · 按 Enter 开始" % arena.player.health.maximum
+		"ready": message.text = "重钳举高发亮时，K 可打断下砸 · 收招时近战攒盾\n%d 格生命 · F 治疗 · 按 Enter 开始" % arena.player.health.maximum
 		"entering": message.text = "一阶段 · 试探\n稳住脚步，看清钳子再出手"
 		"won": result_time.text = "%.1f 秒 · 按 Enter 再战" % arena.battle_time
 		"lost": message.text = "别泄气，下一次等它收钳再反击\n按 Enter 立即重试"
@@ -149,7 +149,9 @@ func _phase_name(phase: int) -> String:
 
 func _skill_hint() -> String:
 	var shield := "护盾就绪" if arena.player.hurtbox.guard > 0 else "护盾积累 %d / 4" % arena.skills.shield_charge
-	var ranged := "远程就绪 · 按住 U" if arena.skills.cooldown <= 0 else "远程 %.1f 秒" % arena.skills.cooldown
+	if arena.player.actions.mode == "aim":
+		return shield + ("    蓄满 · 松开 U" if arena.player.actions.elapsed >= TrainingSkills.CHARGE_TIME else "    正在蓄力")
+	var ranged := "U 点射 / 按住蓄力" if arena.skills.cooldown <= 0 else "远程 %.1f 秒" % arena.skills.cooldown
 	return shield + "    " + ranged
 
 
@@ -160,12 +162,17 @@ func _combat_hint() -> String:
 			var encouragement := "稳住，你已撼动它的重壳" if boss.phase == 1 else "最后一搏，留意连招的最后一击"
 			return encouragement + "\n" + _phase_name(mini(boss.phase + 1, 3)) + " · 现在可调整位置或治疗"
 		"stagger": return "破防！母蟹暂时不能攻击\n靠近连击，抓住输出机会"
-		"recover": return "连招结束 · 现在反击！"
+		"recover":
+			return "它仍在护壳 · 下次跳开或后退" if boss.hurtbox.braced() else "钳子打空了 · 现在反击！"
 		"tell", "active":
+			if boss.hurtbox.counter_window():
+				return "重钳高举 · K 重击可打断！"
 			var move := "低钳扫 · 长按跳跃躲开"
 			if boss.kind == "slam":
 				move = "重钳下砸 · 提前后退"
 			elif boss.kind == "charge":
 				move = "重步冲撞 · 后退拉开距离"
-			return "第 %d / %d 击 · %s" % [boss.sequence_index + 1, maxi(1, boss.sequence.size()), move]
+			if boss.hurtbox.glances >= 2 and boss.kind == "second":
+				return "护壳反扫 · 长按跳跃躲开"
+			return "护壳 · 第 %d / %d 击 · %s" % [boss.sequence_index + 1, maxi(1, boss.sequence.size()), move]
 	return "看钳子读招，躲开整套连招后反击"

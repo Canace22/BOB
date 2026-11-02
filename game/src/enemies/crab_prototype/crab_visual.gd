@@ -76,6 +76,12 @@ func present(actor: CrabPrototype) -> void:
 	# Source faces left, so negative facing keeps positive scale.
 	scale = Vector2(-actor.facing, 1.0)
 	modulate = Color(1.35, 1.15, 0.95) if actor.flash > 0 else Color.WHITE
+	if actor.hurtbox != null and actor.hurtbox.counter_window():
+		modulate = Color(1.38, 1.22, 0.85)
+	elif actor.flash > 0 and actor.hurtbox.braced():
+		modulate = Color(0.74, 0.91, 1.18)
+	elif actor.state == "recover" and actor.flash <= 0:
+		modulate = Color(0.83, 0.93, 1.0) if actor.hurtbox.braced() else Color(1.12, 1.07, 0.93)
 	if actor.state == "dead":
 		modulate.a = clampf(1.0 - death_clock / 1.5, 0, 1)
 

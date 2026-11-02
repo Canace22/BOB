@@ -146,7 +146,7 @@ async function fightWithoutDash() {
       } else if (p.mode !== 'heal') {
         if (distance > 195) movement = toward;
         else if (p.mode === 'idle' && p.facing !== toward) movement = toward;
-        else if (distance <= 205 && p.facing === toward) {
+        else if (distance <= 205 && p.facing === toward && (b.phase === 1 || comboPhases.has(b.phase))) {
           if (p.mode === 'idle') tap = longRecovery && b.timer < 0.65 && s.energy >= 2 ? 'k' : 'j';
           else if (p.mode === 'attack' && p.kind === 'short1' && p.elapsed >= 0.14) tap = 'j';
         }
@@ -165,8 +165,33 @@ async function fightWithoutDash() {
   throw new Error('No-dash boss route exceeded three minutes');
 }
 
+async function checkSlamCounter() {
+  await begin();
+  await key('d', true);
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.counter_window && s.boss.timer < 0.87 && s.boss.x - s.player.x < 260;
+  }, null, {timeout: 35000, polling: 'raf'});
+  await key('d', false);
+  await page.keyboard.press('k', {delay: 25});
+  await capture('counter-tell');
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.state === 'stagger', null, {timeout: 1800});
+  const s = await state();
+  assert.equal(s.energy, 2);
+  assert.equal(s.boss.active, false);
+  await capture('counter-landed');
+  checks.push('timed_heavy_interrupts_slam_before_contact');
+  await page.reload({waitUntil: 'domcontentloaded'});
+  await ready();
+}
+
 async function checkProjectilePause() {
   await key('u', true);
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.charge === 1);
+  await page.waitForTimeout(320);
+  assert.equal((await state()).skills.shots, 0, 'holding a full charge never auto-fires');
+  await capture('full-charge');
+  await key('u', false);
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.projectiles.length > 0);
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused === true);
@@ -178,11 +203,14 @@ async function checkProjectilePause() {
   await capture('projectile-paused');
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused === false);
-  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.hits >= 2);
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.charged_hits === 1);
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.cooldown === 0);
+  await page.keyboard.press('u', {delay: 35});
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.hits === 2);
   const fired = await state();
-  assert.equal(fired.energy, 4, 'holding U fires repeatedly without spending energy');
-  assert(fired.boss.hp <= fired.boss.maximum - 24, 'two ranged hits damage the boss');
-  checks.push('projectile_pause_and_hold_to_fire_without_energy');
+  assert.equal(fired.energy, 4);
+  assert.equal(fired.skills.charged_hits, 1, 'a short tap fires a separate quick shot');
+  checks.push('hold_release_and_tap_with_projectile_pause');
 }
 
 async function fightRangedOnly() {
@@ -199,7 +227,7 @@ async function fightRangedOnly() {
     assert.notEqual(s.stage, 'lost', 'ranged-only combat route must survive');
     if (s.stage === 'won') {
       assert.deepEqual([...phases].sort(), [1, 2, 3], 'ranged-only route sees all three phases');
-      assert(s.skills.hits >= 25, 'ranged damage alone defeats the full-health boss');
+      assert(s.skills.charged_hits > 2 && s.skills.hits > s.skills.charged_hits, 'both shot types land');
       return s;
     }
     // Stay on the left with room to jump. The corner-safe attack selection
@@ -209,9 +237,10 @@ async function fightRangedOnly() {
       jumpUntil = Date.now() + 450;
     }
     await key('Space', Date.now() < jumpUntil);
-    // Release U ahead of the jump so its short casting pose cannot consume
-    // the jump buffer; firing resumes in the air or during the punish window.
-    await key('u', !lowTell || !p.floor || b.timer < 0.15);
+    if (p.mode === 'idle' && s.skills.cooldown <= 0) await key('u', true);
+    if (p.mode === 'aim' && s.skills.charge === 1 && !b.braced) await key('u', false);
+    // A real hit can interrupt a charge. A fresh press is required to re-arm.
+    if (p.mode === 'hurt') await key('u', false);
     await page.waitForTimeout(20);
   }
   throw new Error('Ranged-only boss route exceeded three minutes');
@@ -222,6 +251,7 @@ try {
   const initial = await ready();
   assert.equal(initial.dash_enabled, false);
   await capture('ready');
+  await checkSlamCounter();
   await begin();
   // Step clear of the left boundary so the charge has its required escape
   // space. At the spawn point that attack is correctly filtered out.
@@ -287,8 +317,24 @@ try {
 
   await begin();
   await release();
-  // No state injection: deliberately stand still and allow the boss to win.
-  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).stage === 'lost', null, { timeout: 90000 });
+  // Commit to melee and mash without reading tells or dodging.
+  await key('d', true);
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.x - s.player.x < 195;
+  });
+  let sawReply = false;
+  const until = Date.now() + 90000;
+  while (Date.now() < until) {
+    const s = await state();
+    if (s.stage !== 'fighting') break;
+    if (s.boss.phase === 1 && s.boss.kind === 'second') sawReply = true;
+    await page.keyboard.press('j', {delay: 25});
+    await page.waitForTimeout(70);
+  }
+  await key('d', false);
+  assert(sawReply, 'mashing into the braced shell provokes a phase-one return sweep');
+  assert.equal((await state()).stage, 'lost', 'stationary blind melee loses');
   deathState = await state();
   assert.equal(deathState.hp, 0);
   await capture('defeat');
@@ -310,7 +356,7 @@ try {
     checks.push('authored_combo_effects_phase_victory_and_reset');
   }
   await capture('retry');
-  checks.push('standstill_death_and_keyboard_retry');
+  checks.push('blind_melee_draws_reply_loses_and_retries');
 
   // A reload is an ordinary user action returning to the training menu;
   // it also verifies the independent prototype does not resume campaign data.

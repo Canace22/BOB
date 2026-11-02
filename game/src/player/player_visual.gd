@@ -79,6 +79,8 @@ func _select_clip(grounded: bool, traveled: float) -> String:
 		return "hurt"
 	if not player.is_physics_processing():
 		return "idle"
+	if action.mode == "aim" and grounded and not _traveling(traveled):
+		return "attack"
 	if action.mode == "attack":
 		if grounded and action.elapsed >= action.attack_active_end() and _traveling(traveled):
 			return "run"
@@ -122,6 +124,8 @@ func _clip_time(animation: Dictionary) -> float:
 		return float(animation.duration)
 	if clip_name == "run":
 		return fposmod(run_distance / float(animation.stride), 1.0) * float(animation.duration)
+	if action.mode == "aim" and clip_name == "attack":
+		return minf(action.elapsed, float(animation.active_window.x) - 0.001)
 	if clip_name in PlayerAnimationData.ATTACKS:
 		return PlayerAnimationData.attack_time(animation, action.elapsed, action.attack_active_start(), action.attack_active_end(), action.attack_duration())
 	if clip_name in ["hurt", "dash", "heal"]:

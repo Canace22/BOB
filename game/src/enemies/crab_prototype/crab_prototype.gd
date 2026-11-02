@@ -8,7 +8,7 @@ signal defeated
 @export var retreat_bounds := Vector2(20, 1260)
 @export var speed := 90.0
 @onready var health: Health = $Health
-@onready var hurtbox: Hurtbox = $Hurtbox
+@onready var hurtbox: CrabShell = $Hurtbox
 @onready var hitbox: Hitbox = $Hitbox
 @onready var visual: CrabPrototypeVisual = $Visual
 
@@ -36,9 +36,8 @@ var stagger_cooldown := 0.0
 var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
-	health.damaged.connect(_on_damage)
 	health.died.connect(_on_death)
-	rng.seed = 7
+	hitbox.landed.connect(hurtbox.mark_contact)
 
 func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	stop()
@@ -56,6 +55,7 @@ func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	short_hits = 0
 	combo_planned = false
 	sequence.clear()
+	hurtbox.begin_round()
 	sequence_index = 0
 	round_index = 0
 	stagger = 0
@@ -148,7 +148,7 @@ func observe(distance: float) -> void:
 		start_tell(selected)
 	elif distance > 70:
 		selection_reason = "approach"
-		velocity.x = facing * speed
+		velocity.x = facing * speed * (1.65 if distance > CrabMoves.CHARGE_MIN_GAP else 1.0)
 	else:
 		selection_reason = "cooldown_or_repeat"
 
@@ -168,6 +168,7 @@ func _retreat_space() -> float:
 	return retreat_bounds.y - target.position.x if facing > 0 else target.position.x - retreat_bounds.x
 
 func start_tell(attack: String) -> void:
+	hurtbox.begin_round()
 	streak = streak + 1 if attack == previous else 1
 	previous = attack
 	round_index += 1
@@ -210,16 +211,14 @@ func change(next: String) -> void:
 	state = next
 	timer = 0
 
-func _on_damage(hit: HitData) -> void:
-	flash = 0.12
-	EventBus.sfx.emit("hit")
+func register_exposed_hit(hit: HitData, counter: bool) -> void:
 	if not hit.heavy and not hit.ranged:
 		short_hits += 1
 		if short_hits % 6 == 0:
 			GameState.add_energy(1)
 	if hit.ranged or health.current <= 0 or not running or state in ["phase", "stagger"] or stagger_cooldown > 0:
 		return
-	stagger += 42.0 if hit.heavy else 14.0
+	stagger += CrabMoves.STAGGER_LIMIT if counter else (42.0 if hit.heavy else 14.0)
 	if stagger >= CrabMoves.STAGGER_LIMIT:
 		stagger = 0
 		stagger_cooldown = CrabMoves.STAGGER_COOLDOWN
@@ -245,5 +244,6 @@ func snapshot() -> Dictionary:
 		"cooldowns": cooldowns.duplicate(), "active": hitbox.active, "combo": combo_planned,
 		"next_phase": mini(3, phase + 1), "combo_index": sequence_index + 1, "combo_total": sequence.size(),
 		"stagger": stagger, "stagger_max": CrabMoves.STAGGER_LIMIT, "stagger_cooldown": stagger_cooldown,
+		"braced": hurtbox.braced(), "counter_window": hurtbox.counter_window(),
 		"effects": ($Effects as CrabPrototypeEffects).snapshot(),
 		"animation": visual.action_id, "frame": visual.frame_index, "opacity": visual.modulate.a}

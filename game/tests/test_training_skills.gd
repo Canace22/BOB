@@ -180,3 +180,22 @@ func test_training_heal_can_restore_the_sixth_health() -> void:
 	eq(GameState.hp, 6, "training can heal back to six")
 	eq(arena.player.health.current, 6, "healing keeps both health stores synchronized")
 	eq(GameState.energy, 2, "training heal retains its normal cost")
+
+func test_confirmed_light_links_heavy_before_whiff_recovery() -> void:
+	var player := make_skills().player
+	var target := add(Hurtbox.new()) as Hurtbox
+	target.health = add(Health.new()) as Health
+	player.actions.begin_attack(player, "short1")
+	player.actions.step(player, 0.13)
+	player.actions.buffer_input(&"heavy")
+	player.actions.step(player, 0.08)
+	eq(player.actions.attack_kind, "short1", "a whiff cannot skip recovery")
+	eq(GameState.energy, 4, "whiff does not spend finisher energy")
+	player.actions.begin_attack(player, "short1")
+	player.actions.step(player, 0.13)
+	check(player.hitbox.try_hit(target), "light hits a real hurtbox")
+	player.actions.buffer_input(&"heavy")
+	player.actions.step(player, 0.08)
+	player.actions.step(player, 0.01)
+	eq(player.actions.attack_kind, "heavy", "confirmed light cancels recovery into heavy")
+	eq(GameState.energy, 2, "linked heavy spends energy once")

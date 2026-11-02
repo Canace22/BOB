@@ -106,6 +106,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_ENTER:
 		if stage in ["ready", "won", "lost"]:
 			start()
+	if stage == "fighting" and not get_tree().paused and event.is_action_pressed("ranged"):
+		skills.buffer_cast()
 	if freeze_left > 0 and not get_tree().paused and not event.is_echo():
 		if event.is_action_pressed("jump"):
 			player.locomotion.buffer_jump(player.tuning)
