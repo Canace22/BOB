@@ -52,7 +52,19 @@ legacy/godot/*/.production/
 **/evidence/
 **/qa/
 **/screenshots/
-/assets/source/**/review/
+/assets/source/**/review/**
+!/assets/source/**/review/
+!/assets/source/**/review/**/
+!/assets/source/**/review/**/*.md
+!/assets/source/**/review/**/*-recipe.json
+!/assets/source/**/review/asset-reviews.json
+!/assets/source/**/review/candidate-metadata.json
+!/assets/source/**/review/coverage-audit.json
+!/assets/source/**/review/components/composition-qa.json
+!/assets/source/**/review/components/reproduction-comparison.json
+!/assets/source/**/review/region-assembly/placements.json
+!/assets/source/**/review/region-assembly/qa.json
+!/assets/source/**/review/region-assembly/migration-projection-qa.json
 /assets/source/**/integration/*.png
 /assets/source/**/integration/*.png.import
 /assets/source/**/integration/*.jpg
@@ -75,3 +87,20 @@ game/production_sources/whalebelly/docs/native-export.json
 game/production_sources/whalebelly/docs/coverage-review-decisions.json
 game/production_sources/whalebelly/docs/build-manifest.json
 game/production_sources/whalebelly/docs/baleen-loop-v3-build.json
+
+# Resource storage policy: docs/resource-storage.md. Archives are reproducible outputs.
+/assets/runtime/**/*.zip
+/legacy/work/r1-before-*.zip
+
+# Published library previews are required by coverage.json / previews.json.
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r1.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r2.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r3.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r4.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r5-head.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/r5-tail.png
+!/assets/source/whalefall-v5-2-complete/review/region-assembly/migration-projection-assembly.png
+!/assets/source/whalefall-v5-2-complete/review/components/mechanisms-composition-board.png
+!/assets/source/whalefall-v5-2-complete/review/components/doors-composition-board.png
+!/assets/source/whalefall-v5-2-complete/review/components/rewards-composition-board.png
+!/assets/source/whalefall-v5-2-complete/review/components/habitats-composition-board.png

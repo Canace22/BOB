@@ -6,6 +6,8 @@
 
 场景分层、环境元素动态与Godot接入的实际制作方法见[场景与环境动态制作说明](../docs/scene-and-environment-production.md)，覆盖当前垂须、鱼群、气泡、水面、光束、植物与前景视差。
 
+Git 入库与本地中间产物的边界见[资源存储与清理](../docs/resource-storage.md)。正式素材、可编辑源文件和管理页使用的预览保留；构建快照、重复 ZIP 和临时验收文件只留本地。
+
 ## 文件放哪里
 
 | 目录 | 内容 |
@@ -47,7 +49,7 @@ npm --prefix assets/manager start
 
 单张透明 PNG 就是一个静态精灵。图集将多个精灵装入一张纹理，配合矩形坐标读取；只有按某个动作制作的连续帧才构成动画。
 
-完整导出为 [7 页静态图集包](runtime/sprites/whalefall-complete-atlas/whalefall-complete-atlas.zip)与[索引 JSON](runtime/sprites/whalefall-complete-atlas/index.json)：174 件精灵按角色、道具、场景、界面、特效分组，18 张背景单独保存。每页不超过 4096×4096，间隔 4px、边缘外扩 2px，`animations` 为空。
+完整导出为 7 页静态图集（PNG/JSON 随仓库保存，ZIP 按需本地生成）与[索引 JSON](runtime/sprites/whalefall-complete-atlas/index.json)：174 件精灵按角色、道具、场景、界面、特效分组，18 张背景单独保存。每页不超过 4096×4096，间隔 4px、边缘外扩 2px，`animations` 为空。
 
 世界精灵按 128px/U 等比缩放，裁出可见区域并保留原始 pivot/sourceRect；UI 保留整张原生画布和九宫格参数。同体状态共用比例与根位置。L0 水体和 L1 器官层按完整画布放置、独立视差；不可裁掉透明区域后重新拉伸。逐件 PNG 原样保留，图集只作为派生导出。
 
@@ -58,7 +60,7 @@ python3 assets/source/whalefall-v5-2-complete/tools/pack-atlases.py
 python3 assets/source/whalefall-v5-2-complete/tools/verify-atlases.py
 ```
 
-[首批单页图集](runtime/sprites/whalefall-static-atlas/atlas.json)保留为历史交付，只包含当时的 11 件精灵。页面修改台账不会自动重新导出图集；包内是导出时的快照。当前页面可管理标签、备注和验收状态，不上传或替换原图。
+[首批单页图集](runtime/sprites/whalefall-static-atlas/atlas.json)保留为历史交付，只包含当时的 11 件精灵。页面修改台账不会自动重新导出图集；ZIP 不进入 Git；需要下载包或运行完整图集验收时先执行上述打包命令。包内是导出时的快照。当前页面可管理标签、备注和验收状态，不上传或替换原图。
 
 机关的旋转轴、门闩正反侧、奖励拾取前后与六处生态状态见[组合配方与复跑入口](source/whalefall-v5-2-complete/review/components/README.md)。部分形状依据文字规则适配，具体说明保留在各文件来源记录里。
 
@@ -71,4 +73,4 @@ python3 assets/source/whalefall-v5-2-complete/tools/verify-atlases.py
 
 **放进目录不等于游戏已经能加载。** V2 开发服务器映射 `/assets/runtime/sprites/`；稳定快照与 Pages 构建只复制 `art-manifest.js` 选中的 WebP 运行文件，并保留相对目录。新增运行资源应同时更新导出、清单、绘制适配和台账，验证实际请求与 `/BOB/` 前缀；制作源、管理页及未选中的资源不会随游戏发布。当前 Pages 只发布 V2，初版与 Three.js 版本保留源码。
 
-管理服务验证：`npm --prefix assets/manager run check` 和 `npm --prefix assets/manager test`。本轮入库与图集证据见[完整静态验收记录](source/whalefall-v5-2-complete/acceptance.md)，页面与保存验证见[管理页进度](manager/progress.md)。验收接触表、本地预览图和被拒中间稿不进入 Git；拼装预览仍随 `review/region-assembly/` 与 `review/components/` 保存。
+管理服务验证：`npm --prefix assets/manager run check` 和 `npm --prefix assets/manager test`。本轮入库与图集证据见[完整静态验收记录](source/whalefall-v5-2-complete/acceptance.md)，页面与保存验证见[管理页进度](manager/progress.md)。验收接触表、本地预览图和被拒中间稿不进入 Git；仅 `previews.json` / `coverage.json` 选用的拼装预览随仓库保存；其余临时预览和自动验收报告只留本地。
