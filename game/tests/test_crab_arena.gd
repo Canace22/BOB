@@ -13,6 +13,8 @@ func test_training_never_writes_campaign_and_restores_state() -> void:
 	var original := GameState.to_save_data()
 	GameState.autosave = true
 	var arena := arena_scene()
+	eq(GameState.hp, 6, "training starts with six health")
+	eq(arena.player.health.maximum, 6, "training health capacity stays local to this player")
 	check(not GameState.autosave, "training disables all progress writes before children enter")
 	check(not arena.dash_enabled and not GameState.has_ability("ability.dash"), "baseline ignores campaign dash")
 	arena.toggle_dash()
@@ -26,6 +28,7 @@ func test_training_never_writes_campaign_and_restores_state() -> void:
 	arena.queue_free()
 	await tree.process_frame
 	eq(GameState.to_save_data(), original, "exit restores prior campaign state")
+	eq(GameState.hp, 4, "exit restores campaign four-health state")
 	check(GameState.autosave, "prior autosave setting restored")
 	GameState.autosave = false
 
@@ -54,4 +57,5 @@ func test_pause_hitstop_and_retry_clear_every_runtime_state() -> void:
 	eq(arena.player.actions.cooldown, 0.0, "retry clears dash cooldown")
 	eq(arena.freeze_left, 0.0, "retry clears hitstop")
 	check(not arena.player.hitbox.active and not arena.boss.hitbox.active, "retry clears damage")
-	eq(GameState.hp, 4, "retry restores health")
+	eq(GameState.hp, 6, "retry restores training health")
+	eq(arena.player.hurtbox.guard, 1, "retry restores the opening guard")

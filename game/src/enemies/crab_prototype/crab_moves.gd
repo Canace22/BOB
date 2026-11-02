@@ -8,9 +8,13 @@ const PLAYER_RADIUS := 17.0
 const CHARGE_SPEED := 280.0
 const CHARGE_DISTANCE := 168.0
 const RETREAT_SPACE := 180.0
+const PHASE_TIME := 1.2
+const STAGGER_TIME := 1.6
+const STAGGER_LIMIT := 100.0
+const STAGGER_COOLDOWN := 6.0
 const MOVES := {
-	"sweep": {"tell": 0.85, "active": 0.18, "recover": 0.85, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
-	"second": {"tell": 0.65, "active": 0.18, "recover": 0.85, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"sweep": {"tell": 0.85, "active": 0.18, "recover": 1.05, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"second": {"tell": 0.65, "active": 0.18, "recover": 1.05, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
 	"slam": {"tell": 1.25, "active": 0.18, "recover": 1.5, "reach": 280.0, "height": 280.0, "cooldown": 4.0},
 	"charge": {"tell": 1.35, "active": 0.6, "recover": 1.5, "reach": 174.0, "height": 240.0, "cooldown": 5.0},
 }
@@ -56,3 +60,25 @@ static func select(distance: float, free_space: float, cooldowns: Dictionary,
 	if slam:
 		return "slam"
 	return "sweep" if sweep else ""
+
+
+static func phase_for_health(current: int, maximum: int) -> int:
+	if current * 100 <= maximum * 35:
+		return 3
+	return 2 if current * 100 <= maximum * 65 else 1
+
+
+static func sequence(attack: String, phase: int, round_index: int,
+		can_retreat: bool, slam_ready: bool) -> Array[String]:
+	if phase == 1:
+		return [attack]
+	if attack == "sweep":
+		if can_retreat and slam_ready and round_index % 2 == 0:
+			return ["sweep", "slam"]
+		return ["sweep", "second"]
+	if phase == 3 and can_retreat:
+		if attack == "charge":
+			return ["charge", "sweep"]
+		if attack == "slam":
+			return ["slam", "sweep", "second"]
+	return [attack]

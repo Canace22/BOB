@@ -53,29 +53,56 @@ func test_direction_lock_and_charge_tracking_cutoff() -> void:
 	check(not boss.hitbox.active, "charge recovery has no damage")
 
 
-func test_half_health_waits_for_round_and_second_sweep_is_bounded() -> void:
+func test_three_phases_wait_for_whole_round_and_keep_safe_transitions() -> void:
 	var boss := make_boss()
 	boss.start_tell("sweep")
-	boss.health.apply_hit(HitData.create(boss.health.maximum / 2 + 5, Vector2.ZERO))
+	boss.health.apply_hit(HitData.create(106, Vector2.ZERO))
 	boss.step_ai(0.86)
 	boss.step_ai(0.19)
-	eq(boss.state, "recover", "crossing half health adds no surprise second sweep")
-	boss.step_ai(0.86)
-	eq(boss.state, "phase", "phase transition waits for recovery")
-	check(not boss.hitbox.active, "phase change cannot damage")
-	boss.step_ai(0.81)
-	eq(boss.phase, 2, "half health transitions once")
+	eq(boss.state, "recover", "crossing 65 percent adds no surprise attack")
+	boss.step_ai(1.06)
+	eq(boss.state, "phase", "phase transition waits for full recovery")
+	boss.step_ai(1.0)
+	check(not boss.hitbox.active and boss.phase == 1, "transition stays harmless for 1.2 seconds")
+	boss.step_ai(0.21)
+	eq(boss.phase, 2, "65 percent begins second phase")
+	boss.round_index = 0
 	boss.start_tell("sweep")
+	boss.health.apply_hit(HitData.create(90, Vector2.ZERO))
 	boss.step_ai(0.86)
 	boss.step_ai(0.19)
 	eq(boss.kind, "second", "phase two advertises second sweep")
 	eq(boss.state, "tell", "second sweep has independent tell")
-	check(not boss.hitbox.active, "combo gap disables attack")
+	check(not boss.hitbox.active and boss.phase == 2, "35 percent cannot cut into ongoing combo")
 	boss.step_ai(0.66)
 	boss.step_ai(0.19)
 	eq(boss.state, "recover", "second sweep cannot recurse")
-	boss.step_ai(0.86)
-	eq(boss.state, "observe", "phase transition does not repeat")
+	boss.step_ai(1.06)
+	eq(boss.state, "phase", "third phase waits for combo recovery")
+	boss.step_ai(1.21)
+	eq(boss.phase, 3, "35 percent begins final phase")
+	boss.step_ai(0.01)
+	check(boss.state != "phase", "final phase cannot transition again")
+
+
+func test_phase_combinations_respect_cooldowns_and_corner_counterplay() -> void:
+	eq(CrabMoves.sequence("slam", 1, 1, true, true), ["slam"], "first phase teaches single attacks")
+	eq(CrabMoves.sequence("sweep", 2, 1, true, true), ["sweep", "second"], "second phase adds two low claws")
+	eq(CrabMoves.sequence("sweep", 2, 2, true, true), ["sweep", "slam"], "alternate sweep punishes blind repeat jumping")
+	eq(CrabMoves.sequence("sweep", 2, 2, true, false), ["sweep", "second"], "slam followup obeys cooldown")
+	eq(CrabMoves.sequence("charge", 3, 1, true, true), ["charge", "sweep"], "final phase links advance and low claw")
+	eq(CrabMoves.sequence("slam", 3, 1, true, true), ["slam", "sweep", "second"], "final slam has a bounded three-hit sequence")
+	var boss := make_boss()
+	boss.phase = 3
+	boss.facing = 1
+	boss.round_index = 1
+	boss.start_tell("sweep")
+	eq(boss.sequence, ["sweep", "slam"], "open space plans slam finisher")
+	boss.target.position.x = boss.retreat_bounds.y - 30
+	boss.start_active()
+	boss.finish_active()
+	eq(boss.kind, "second", "newly cornered player retains jump counterplay")
+	check(not boss.hitbox.active, "adapted finisher always has a tell")
 
 
 func test_death_and_retry_clear_attack_without_story_side_effects() -> void:

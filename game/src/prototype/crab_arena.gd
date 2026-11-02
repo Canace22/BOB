@@ -7,6 +7,7 @@ const ARENA := Vector2(760, 1860)
 @onready var boss: CrabPrototype = $World/Boss
 @onready var camera: Camera2D = $World/Camera
 @onready var world: Node2D = $World
+var skills: TrainingSkills
 var stage: String = "ready"
 var dash_enabled: bool = false
 var shake_enabled: bool = true
@@ -29,6 +30,10 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	player.tuning = player.tuning.duplicate() as PlayerTuning
 	player.tuning.prototype_controls = true
+	player.health.maximum = 6
+	skills = TrainingSkills.new()
+	skills.target = boss
+	player.add_child(skills)
 	player.collision_mask = 5
 	player.bounds = Rect2(0, 0, 2304, 1200)
 	player.arena_bounds = ARENA
@@ -62,9 +67,12 @@ func prepare() -> void:
 	GameState.apply(SaveService.default_data())
 	GameState.current_room = "prototype.crab"
 	GameState.arena_active = true
+	GameState.hp = player.health.maximum
 	if dash_enabled:
 		GameState.grant_ability("ability.dash")
 	player.reset_at(Vector2(920, 893))
+	player.invulnerable = 0
+	skills.reset()
 	boss.reset_at(Vector2(1520, 893), 7)
 	player.set_physics_process(false)
 	camera.offset = Vector2.ZERO
@@ -118,6 +126,7 @@ func _process(delta: float) -> void:
 		camera.zoom = Vector2.ONE * (1.0 + 0.06 * maxf(start_delay, 0) / 0.45)
 		if start_delay <= 0:
 			stage = "fighting"
+			player.invulnerable = player.tuning.invulnerability + 0.2
 			player.set_physics_process(true)
 			boss.begin()
 	elif stage == "fighting":
@@ -129,10 +138,10 @@ func _process(delta: float) -> void:
 func _hit_feedback(_at: Vector2, heavy: bool) -> void:
 	if stage != "fighting":
 		return
-	freeze_left = 0.06 if heavy else 0.035
+	freeze_left = 0.09 if boss.state == "stagger" else (0.06 if heavy else 0.035)
 	world.process_mode = Node.PROCESS_MODE_DISABLED
-	if heavy:
-		shake_left = 0.1
+	if heavy or boss.state == "stagger":
+		shake_left = 0.16 if boss.state == "stagger" else 0.1
 
 
 func _impact_feedback(id: String) -> void:
@@ -155,6 +164,7 @@ func _finish(result: String) -> void:
 	if result != "won":
 		boss.stop()
 	player.hitbox.deactivate()
+	skills.clear_projectiles()
 	player.set_physics_process(false)
 	camera.offset = Vector2.ZERO
 	shake_left = 0

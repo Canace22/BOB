@@ -49,6 +49,7 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 线上大包首载/刷新可能超过浏览器工具默认 30 秒：等待 `render_game_to_text` 就绪，传入明确的超时选项；不能把 `networkidle` 超时直接判成存档损坏。
 - 入口仍靠近返回门：自动路线应先走到奖励范围再按交互，避免把连续 E 当成奖励领取失败。
 - 独立战斗原型：`src/prototype/crab_arena.tscn` 在子节点初始化前隔离 GameState，禁止自动保存，退出恢复原运行状态。`PlayerTuning.prototype_controls` 必须显式开启，不改变主线默认手感。原型 Web 用 `?prototype=crab` 或 `/godot-boss/`，以 `tests/web_crab_prototype.mjs` 的独立上下文真实按键验收，低扫需要按住跳跃而非短点 Space。
+- 训练场技能通过 `TrainingSkills` 单独接入；生命上限、治疗、护盾与重试一起验证，不能只改 HUD 的血格。远程 `HitData.ranged` 不计近战回能、护盾或破防。临时弹体释放后再发第二次是必要回归：Godot 的类型化 lambda 在接收已释放对象时会先转换失败，检查有效性之前不要把失效对象传进类型参数；测试必须真正等待销毁，不能只调用 `queue_free()` 就声称覆盖。
 - 边做边玩采用已验证小批：原型发布用 `node tools/deploy-pages.mjs --prototype`，仅更新 `/godot-boss/`，不替换用户当前主线。核对部署差异、线上 `godot-boss/build.json` 和受影响路线，及时给用户可试玩链接；静态关键姿态与正式动画的限制必须明确记录。
 - 测试脚本解析失败：runner 应报告不能实例化的 suite 并退出失败，不能在引擎窗口永久等待；先跑 `check` 再跑 `test`，不要仅看导入进程完成。并行代理写文件可以，Godot import/test/export 由一处串行安排，避免共享导入缓存竞争。
 - 玩家序列帧接入：公共画布/pivot、两向独立文件、逐帧时长和步幅以 `assets/runtime/sprites/tide-picker-animation-v2/animations.json` 为准；来源和导出见[制作说明](../../../assets/source/player-animation-v2/README.md)。攻击有效段必须落在帧边界；跑步按实际位移推进，不能只看全局时钟。素材缺项会显式回退旧图，验收须用只读 `player.animation.using_directional` 和实际文件路径确认新素材正在加载。

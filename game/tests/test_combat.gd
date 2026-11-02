@@ -50,3 +50,29 @@ func test_player_action_costs_and_dash_gate() -> void:
 	eq(player.actions.attack_kind, "heavy", "heavy starts")
 	eq(GameState.energy, 2, "heavy costs two energy")
 	Input.action_release("heavy")
+
+
+func test_guard_consumes_one_swing_without_damage() -> void:
+	var body := add(Health.new()) as Health
+	var target := add(Hurtbox.new()) as Hurtbox
+	target.health = body
+	target.guard = 1
+	var blocked: Array[HitData] = []
+	target.blocked.connect(func(hit: HitData) -> void: blocked.append(hit))
+	var box := add(Hitbox.new()) as Hitbox
+	box.activate(HitData.create(1, Vector2.ZERO))
+	check(box.try_hit(target), "guard consumes the incoming swing")
+	eq(target.guard, 0, "one guard charge is used")
+	eq(body.current, 4, "guard prevents health loss")
+	eq(blocked.size(), 1, "guard emits one block response")
+	check(not box.try_hit(target), "same overlapping swing cannot hit after guard is spent")
+	box.activate(HitData.create(1, Vector2.ZERO))
+	check(box.try_hit(target), "next swing damages an unguarded target")
+	eq(body.current, 3, "unguarded target retains normal damage")
+	target.guard = 1
+	target.immune = true
+	check(not target.receive(HitData.create(1, Vector2.ZERO)), "immunity does not consume guard")
+	eq(target.guard, 1, "guard survives invulnerability")
+	target.immune = false
+	check(not target.receive(HitData.create(0, Vector2.ZERO)), "zero damage does not consume guard")
+	eq(target.guard, 1, "guard survives invalid damage")

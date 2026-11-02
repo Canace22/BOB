@@ -17,12 +17,14 @@ func _ready() -> void:
 func snapshot() -> Dictionary:
 	var p := arena.player
 	return {"room": "prototype.crab", "stage": arena.stage, "paused": get_tree().paused,
-		"hp": GameState.hp, "energy": GameState.energy, "time": arena.battle_time,
+		"hp": GameState.hp, "max_hp": arena.player.health.maximum,
+		"energy": GameState.energy, "time": arena.battle_time,
+		"skills": arena.skills.snapshot(),
 		"dash_enabled": arena.dash_enabled, "freeze": arena.freeze_left,
 		"save_enabled": GameState.autosave, "flags": GameState.flags,
 		"player": {"x": p.position.x, "y": p.position.y, "floor": p.is_on_floor(),
 			"mode": p.actions.mode, "kind": p.actions.attack_kind, "elapsed": p.actions.elapsed,
-			"facing": p.facing, "dead": p.dead,
+			"facing": p.facing, "dead": p.dead, "invulnerable": p.invulnerable,
 			"animation": (p.get_node("Visual") as PlayerVisual).animation_snapshot()},
 		"boss": arena.boss.snapshot()}
 

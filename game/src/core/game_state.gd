@@ -107,8 +107,8 @@ func damage(amount: int) -> bool:
 	return hp == 0
 
 
-func heal(amount: int) -> void:
-	hp = mini(MAX_HP, hp + amount)
+func heal(amount: int, maximum: int = MAX_HP) -> void:
+	hp = mini(maximum, hp + amount)
 	EventBus.stats_changed.emit()
 
 

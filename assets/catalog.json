@@ -18841,12 +18841,21 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "effect",
       "coversRequirementIds": [
         "fx-resonance"
       ],
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-heavy-ring-ba39eefa95a5.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-heavy-ring-ba39eefa95a5.png",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-11-02",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/prototype/resonance_projectile.tscn",
+        "evidence": "game/progress.md",
+        "scope": "母蟹训练场远程共鸣弹，复用静态共振环，非新增逐帧动画",
+        "runtimeFile": "game/art/fx/heavy_ring.png"
+      }
     },
     {
       "id": "fx-dash-trail",
@@ -19525,12 +19534,21 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "effect",
       "coversRequirementIds": [
         "fx-echo-ring"
       ],
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-echo-open-ring-55ce6b6ff5f1.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-echo-open-ring-55ce6b6ff5f1.png",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "date": "2026-11-02",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/prototype/training_skills.gd",
+        "evidence": "game/progress.md",
+        "scope": "母蟹训练场护盾位图，静态等比显示",
+        "runtimeFile": "game/art/fx/echo_guard.png"
+      }
     },
     {
       "id": "fx-silence-ring",

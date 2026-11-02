@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 			dust_age = 0
 			var reach := 160.0 if boss.kind == "charge" else 275.0
 			dust.global_position = boss.global_position + Vector2(boss.facing * reach, 0)
-		elif boss.state == "phase":
+		elif boss.state in ["phase", "stagger"]:
 			shell_age = 0
 			for i in shells.size():
 				shells[i].global_position = boss.global_position + Vector2((i - 1) * 70, -260)
