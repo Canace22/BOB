@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-04_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r5"]
+[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r6"]
+[ext_resource type="Texture2D" path="res://art/props/shell_camp.png" id="r7"]
+[ext_resource type="PackedScene" path="res://src/chapters/chapter_guard.tscn" id="r8"]
+[ext_resource type="Script" path="res://src/world/pickup.gd" id="r9"]
+[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_open.png" id="r10"]
+[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_closed.png" id="r11"]
+[ext_resource type="Script" path="res://src/chapters/chapter_arena.gd" id="r12"]
+[ext_resource type="Texture2D" path="res://art/props/arena_curtain_closed.png" id="r13"]
+[ext_resource type="Script" path="res://src/chapters/chapter_marker.gd" id="story"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/lamp.png" id="lamp"]
+[ext_resource type="Texture2D" path="res://art/props/migration_memory.png" id="memory"]
+
+
+
+
+[node name="N02-B" type="Node2D"]
+script = ExtResource("r0")
+room_id = "N02-B"
+display_name = "第二章 · 封锁口"
+dimensions = Vector2(2304, 1152)
+fall_damage = 0
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E03" type="Marker2D" parent="Entries"]
+position = Vector2(137.6, 893)
+
+[node name="Door_E03" type="Node2D" parent="Gameplay"]
+position = Vector2(64, 896)
+script = ExtResource("r2")
+edge_id = "E03"
+target_room = "N02-A"
+target_entry = "E03"
+prompt = "E 返回折井"
+required_abilities = PackedStringArray()
+prerequisites = Array[String]([])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E03"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E03"]
+text = "E 返回折井"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="E04" type="Marker2D" parent="Entries"]
+position = Vector2(2166.4, 893)
+
+[node name="Camp" type="Node2D" parent="Gameplay"]
+position = Vector2(128, 896)
+script = ExtResource("r6")
+room_id = "N02-B"
+prompt = "E 营地 · 休息并保存"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Camp"]
+texture = ExtResource("r7")
+position = Vector2(0, -34)
+scale = Vector2(0.3385416666666667, 0.3385416666666667)
+
+[node name="Prompt" type="Label" parent="Gameplay/Camp"]
+text = "E 营地 · 休息并保存"
+position = Vector2(-90, -112)
+theme_override_font_sizes/font_size = 16
+
+[node name="Enemy0" parent="Gameplay" instance=ExtResource("r8")]
+position = Vector2(1408, 895)
+
+[node name="Arena" type="Node2D" parent="Gameplay"]
+script = ExtResource("r12")
+victory_flag = "chapter.guard"
+trigger_x = 530.0
+limits = Vector2(460.8, 2259.2)
+
+[node name="Curtain" type="Sprite2D" parent="Gameplay/Arena"]
+texture = ExtResource("r13")
+position = Vector2(448, 800)
+scale = Vector2(0.6, 0.6)
+
+[node name="Challenge" type="Node2D" parent="Gameplay"]
+position = Vector2(550, 896)
+script = ExtResource("story")
+title = "负壳守卫"
+pages = Array[String](["“下层封闭。来客，返回须庭。”\n重壳落在通路中央，钳尖挡住了最后一点空隙。", "让守卫停止封路：低扫时起跳，重壳下压时撤开，再趁收招靠近反击。\n半血后会接第二次低扫。F 消耗蓄振调息，失败后从左侧营地重试。"])
+flag_id = "chapter.challenge"
+prompt = "E 听取共鸣"
+automatic = true
+prerequisites = Array[String]([])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Challenge"]
+texture = ExtResource("lamp")
+position = Vector2(0, -35)
+scale = Vector2(0.22, 0.22)
+
+[node name="Prompt" type="Label" parent="Gameplay/Challenge"]
+position = Vector2(-90, -115)
+theme_override_font_sizes/font_size = 18
+
+[node name="Rescue" type="Node2D" parent="Gameplay"]
+position = Vector2(2050, 896)
+script = ExtResource("story")
+title = "第二章 · 守住路的人"
+pages = Array[String](["扣带断开，负壳守卫放下钳子。下层忽然传来求救：承路旧膜裂了，住巢正向深处滑落。", "老守护者越过众人，将长柄横进支架，顶住弯曲的梁。直到居民全部爬上稳台，他才回头看向你。\n“要找歌声，就沿胃室的供养路走。但先看清楚，路上住着谁。”", "两章试玩完成。\n负壳守卫仍活着，老守护者允许你继续前行。下一章尚未开放，可以返回探索两处回声，或按 Esc 重新开始。"])
+flag_id = "chapter.complete"
+prompt = "E 查看住巢的呼救"
+automatic = false
+prerequisites = Array[String](["chapter.guard"])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Rescue"]
+texture = ExtResource("lamp")
+position = Vector2(0, -35)
+scale = Vector2(0.22, 0.22)
+
+[node name="Prompt" type="Label" parent="Gameplay/Rescue"]
+position = Vector2(-90, -115)
+theme_override_font_sizes/font_size = 18

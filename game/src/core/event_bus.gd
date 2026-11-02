@@ -11,3 +11,5 @@ signal toast(text: String)
 signal sfx(name: String)
 signal hit_landed(at: Vector2, heavy: bool)
 signal arena_changed(active: bool)
+
+signal chapter_story_requested(title: String, pages: PackedStringArray, flag_id: String)

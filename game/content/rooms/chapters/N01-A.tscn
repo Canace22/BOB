@@ -1,0 +1,112 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
+[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-01_scenery.tscn" id="r1"]
+[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r2"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r4"]
+[ext_resource type="Texture2D" path="res://art/props/shell_camp.png" id="r5"]
+[ext_resource type="Script" path="res://src/chapters/chapter_marker.gd" id="story"]
+[ext_resource type="Texture2D" path="res://art/scenery/v02/lamp.png" id="lamp"]
+[ext_resource type="Texture2D" path="res://art/props/migration_memory.png" id="memory"]
+
+
+
+
+[node name="N01-A" type="Node2D"]
+script = ExtResource("r0")
+room_id = "N01-A"
+display_name = "第一章 · 须庭入口"
+dimensions = Vector2(1920, 1152)
+fall_damage = 0
+
+[node name="Scenery" parent="." instance=ExtResource("r1")]
+
+[node name="Entries" type="Node2D" parent="."]
+
+
+[node name="default" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="camp" type="Marker2D" parent="Entries"]
+position = Vector2(192, 893)
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 2
+
+[node name="E01" type="Marker2D" parent="Entries"]
+position = Vector2(1782.4, 893)
+
+[node name="Door_E01" type="Node2D" parent="Gameplay"]
+position = Vector2(1856, 896)
+script = ExtResource("r2")
+edge_id = "E01"
+target_room = "N01-B"
+target_entry = "E01"
+prompt = "E 进入须庭内侧"
+required_abilities = PackedStringArray()
+prerequisites = Array[String]([])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E01"]
+texture = ExtResource("r3")
+position = Vector2(0, -70)
+scale = Vector2(0.2631578947368421, 0.2631578947368421)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E01"]
+text = "E 进入须庭内侧"
+position = Vector2(-90, -160)
+theme_override_font_sizes/font_size = 16
+
+[node name="Camp" type="Node2D" parent="Gameplay"]
+position = Vector2(128, 896)
+script = ExtResource("r4")
+room_id = "N01-A"
+prompt = "E 营地 · 休息并保存"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Camp"]
+texture = ExtResource("r5")
+position = Vector2(0, -34)
+scale = Vector2(0.3385416666666667, 0.3385416666666667)
+
+[node name="Prompt" type="Label" parent="Gameplay/Camp"]
+text = "E 营地 · 休息并保存"
+position = Vector2(-90, -112)
+theme_override_font_sizes/font_size = 16
+
+[node name="Arrival" type="Node2D" parent="Gameplay"]
+position = Vector2(200, 896)
+script = ExtResource("story")
+title = "第一章 · 灯在鲸须间"
+pages = Array[String](["你循着断续鲸歌挤入须庭。菌灯亮在住巢之间，这具古老遗骸里仍有许多生命。", "补巢者：沿着灯向右走。内侧有食腐甲，听见它们抬钳时，别急着往前冲。\nA/D 移动，按住 Space 越过断口；J 近战，E 交互。"])
+flag_id = "chapter.arrival"
+prompt = "E 听取共鸣"
+automatic = true
+prerequisites = Array[String]([])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Arrival"]
+texture = ExtResource("lamp")
+position = Vector2(0, -35)
+scale = Vector2(0.22, 0.22)
+
+[node name="Prompt" type="Label" parent="Gameplay/Arrival"]
+position = Vector2(-90, -115)
+theme_override_font_sizes/font_size = 18
+
+[node name="Echo" type="Node2D" parent="Gameplay"]
+position = Vector2(1080, 768)
+script = ExtResource("story")
+title = "须庭回声"
+pages = Array[String](["骨鸣器贴上旧骨。远处传来低闷的歌，像水流绕了一圈，又回到原处。"])
+flag_id = "chapter.echo.1"
+prompt = "E 倾听旧骨"
+automatic = false
+prerequisites = Array[String]([])
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Echo"]
+texture = ExtResource("memory")
+position = Vector2(0, -35)
+scale = Vector2(0.22, 0.22)
+
+[node name="Prompt" type="Label" parent="Gameplay/Echo"]
+position = Vector2(-90, -115)
+theme_override_font_sizes/font_size = 18

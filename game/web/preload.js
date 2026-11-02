@@ -6,7 +6,8 @@
   if (!files || typeof DecompressionStream === 'undefined') return;
   const fetchOriginal = window.fetch.bind(window);
   const base = new URL('.', document.baseURI);
-  const cacheName = base.pathname.includes('/godot-boss/') || new URLSearchParams(location.search).get('prototype') === 'crab'
+  const chapterEntry = base.pathname.includes('/godot-chapters/') || new URLSearchParams(location.search).get('chapters') === '1';
+  const cacheName = chapterEntry ? 'bob-chapters-downloads-v1' : base.pathname.includes('/godot-boss/') || new URLSearchParams(location.search).get('prototype') === 'crab'
     ? 'bob-boss-downloads-v1' : 'bob-web-downloads-v1';
   const paths = new Map(Object.entries(files).map(([name, info]) => [new URL(name, base).href, info]));
   const loaded = new Map();

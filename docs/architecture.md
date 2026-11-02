@@ -42,6 +42,7 @@ flowchart LR
 | --- | --- |
 | `src/core/` | `EventBus`（全局信号）、`GameState`（生命、蓄振、能力、标记、营地）、`SaveService`（存档读写与校验）。前两者是 autoload |
 | `src/main/` | 主场景：加载存档、切换房间、放置玩家、死亡重生、暂停 |
+| `src/chapters/` | 第一、二章独立试玩：生命周期、叙事交互、HUD、地图与非致死战后状态 |
 | `src/prototype/` | 独立母蟹训练场、远程弹体/近战护盾、生命周期、HUD 与只读状态；进入前隔离 GameState，退出恢复，不读写主线存档 |
 | `src/player/` | 玩家场景、手感参数 `PlayerTuning`、攻击、动画 |
 | `src/combat/` | `Hitbox`、`Hurtbox`、`Health`、`HitData`，玩家和敌人共用 |
@@ -116,3 +117,11 @@ Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` �
 | `legacy/godot/first-level/scenes/r1/*.tscn` 布景与碰撞 | `game/content/rooms/R1/*.tscn` 的 `Scenery` |
 | `legacy/godot/first-level/assets/rooms.json` 中的门、敌人、危险区和奖励 | 各房间场景的 `Entries` 与 `Gameplay` 节点 |
 | `legacy/godot/first-level/assets/runtime/` 中的英雄帧、敌人、布景和音效 | `game/art/`（通过清单同步） |
+
+## 章节试玩
+
+`?chapters=1`、`/godot-chapters/` 或原生 `--chapters` 加载 `ChapterRun`。四个房间为 `content/rooms/chapters/N01-A` 至 `N02-B`，通过 WorldGraph 注册。Room、Player、战斗组件和既有场景位图复用；章节特有交互与 UI 位于 `src/chapters/`。
+
+进入前保存完整 GameState 上下文，改用 `user://chapters-v1.json`；退出恢复旧路径、进度与运行状态。首次无有效章节存档时从 N01-A 开始，重新开始只清本章节进度。SaveService 格式仍为 v1，新增稳定房间 ID，不迁移旧主线档。叙事走 EventBus，阅读时暂停世界，关闭最后一页才记录完成标记。
+
+发布使用 `node tools/deploy-pages.mjs --chapters`，只合并 `godot-chapters/`，不更新根入口。压缩包缓存独立为 `bob-chapters-downloads-v1`。真实键盘验证使用 `game/tests/web_chapters.mjs`；本地服务可设置 PORT=4193，GAME_URL 指定带 chapters=1 的地址。

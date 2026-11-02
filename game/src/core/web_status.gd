@@ -23,6 +23,7 @@ func _snapshot(_arguments: Array) -> void:
 	var from := player.global_position + Vector2(42, -8)
 	var ray := PhysicsRayQueryParameters2D.create(from, from + Vector2(0, 30), 1)
 	var state := {
+		"dialogue": get_parent().has_node("Dialogue") and get_parent().get_node("Dialogue").visible,
 		"room": GameState.current_room, "checkpoint": GameState.checkpoint_room,
 		"hp": GameState.hp, "energy": GameState.energy,
 		"abilities": GameState.abilities, "flags": GameState.flags,

@@ -10,8 +10,11 @@ const staging = path.join(root, '.pages-dist-godot');
 const exported = path.join(root, 'game/build/web');
 const entryOnly = process.argv.includes('--entry-only');
 const prototype = process.argv.includes('--prototype');
+const chapters = process.argv.includes('--chapters');
+if (chapters && (prototype || entryOnly)) throw new Error('--chapters requires its own publication scope');
+const isolated = prototype || chapters;
 if (entryOnly && prototype) throw new Error('--prototype cannot be combined with --entry-only');
-const directory = prototype ? 'godot-boss' : 'godot';
+const directory = chapters ? 'godot-chapters' : prototype ? 'godot-boss' : 'godot';
 const run = (command, args, cwd = root) => execFileSync(command, args, { cwd, stdio: 'inherit' });
 const read = (args, cwd = root) => execFileSync('git', args, { cwd, encoding: 'utf8' }).trim();
 
@@ -41,9 +44,9 @@ function prepare() {
     if (existsSync(dest)) rmSync(dest, { recursive: true });
     mkdirSync(dest);
     cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) });
-    writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false, entry: prototype ? 'crab-prototype' : 'campaign' }, null, 2));
+    writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false, entry: chapters ? 'chapters-v1' : prototype ? 'crab-prototype' : 'campaign' }, null, 2));
   }
-  if (!prototype) {
+  if (!isolated) {
     cpSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
     writeFileSync(path.join(staging, '.nojekyll'), '');
   }
@@ -53,15 +56,15 @@ function prepare() {
 try {
   const { remote, source } = prepare();
   if (process.argv.includes('--build-only')) {
-    console.log(`Prepared ${prototype ? 'Boss prototype' : entryOnly ? 'default entry' : 'Godot and default entry'} in ${staging} from ${source}; not committed or pushed.`);
+    console.log(`Prepared ${chapters ? 'chapter slice' : prototype ? 'Boss prototype' : entryOnly ? 'default entry' : 'Godot and default entry'} in ${staging} from ${source}; not committed or pushed.`);
   } else {
     for (const key of ['user.name', 'user.email']) run('git', ['config', key, read(['config', key])], staging);
-    run('git', ['add', '--', ...(prototype ? [directory] : [...(entryOnly ? [] : ['godot']), 'index.html', '.nojekyll'])], staging);
+    run('git', ['add', '--', ...(isolated ? [directory] : [...(entryOnly ? [] : ['godot']), 'index.html', '.nojekyll'])], staging);
     const changed = read(['diff', '--cached', '--name-only'], staging).split('\n').filter(Boolean);
-    if (changed.some(file => prototype ? !file.startsWith('godot-boss/') : !['.nojekyll', 'index.html'].includes(file) && (entryOnly || !file.startsWith('godot/')))) throw new Error('Unexpected staged files outside the publication scope.');
-    if (changed.length) run('git', ['commit', '-m', `发布 Godot ${prototype ? 'Boss 独立原型' : entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
+    if (changed.some(file => isolated ? !file.startsWith(directory + '/') : !['.nojekyll', 'index.html'].includes(file) && (entryOnly || !file.startsWith('godot/')))) throw new Error('Unexpected staged files outside the publication scope.');
+    if (changed.length) run('git', ['commit', '-m', `发布 Godot ${chapters ? '第一、二章试玩' : prototype ? 'Boss 独立原型' : entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
     run('git', ['push', remote, 'HEAD:gh-pages'], staging);
-    console.log(`Pages publication commit: ${read(['rev-parse', 'HEAD'], staging)}. Verify deployment and https://canace22.github.io/BOB/${prototype ? 'godot-boss/' : ''}.`);
+    console.log(`Pages publication commit: ${read(['rev-parse', 'HEAD'], staging)}. Verify deployment and https://canace22.github.io/BOB/${isolated ? directory + '/' : ''}.`);
   }
 } catch (error) {
   console.error(`Pages build/publication failed: ${error.message}. Stable remote kept; local output retained.`);
