@@ -239,4 +239,5 @@ func snapshot() -> Dictionary:
 		"cooldowns": cooldowns.duplicate(), "active": hitbox.active, "combo": combo_planned,
 		"next_phase": mini(3, phase + 1), "combo_index": sequence_index + 1, "combo_total": sequence.size(),
 		"stagger": stagger, "stagger_max": CrabMoves.STAGGER_LIMIT, "stagger_cooldown": stagger_cooldown,
+		"effects": ($Effects as CrabPrototypeEffects).snapshot(),
 		"animation": visual.action_id, "frame": visual.frame_index, "opacity": visual.modulate.a}

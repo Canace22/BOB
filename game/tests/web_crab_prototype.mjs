@@ -18,7 +18,8 @@ const page = await context.newPage();
 page.setDefaultTimeout(120000);
 const url = process.env.GAME_URL ?? 'http://127.0.0.1:4191/BOB/godot/?prototype=crab';
 const errors = [], held = new Set(), shots = new Set(), trace = [], checks = [], damage = [];
-const comboPhases = new Set(), shieldEvents = [];
+const comboPhases = new Set(), shieldEvents = [], effectClips = new Set(), effectEvidence = [];
+const verifyEffects = process.env.VERIFY_EFFECTS === '1';
 let completeState, rangedState, deathState, retryState, dashState;
 page.on('pageerror', error => errors.push(error.message));
 page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
@@ -61,12 +62,33 @@ function observe(s) {
   if (['phase', 'stagger'].includes(s.boss.state)) assert.equal(s.boss.active, false, 'transition and stagger have no damage');
 }
 
+async function observeEffects(s) {
+  if (!verifyEffects) return;
+  const p = s.player.animation.effects, b = s.boss.effects;
+  for (const fx of [p.trail, p.impact, b.contact, ...b.wakes, b.resonance]) {
+    if (!fx.visible) continue;
+    assert(fx.file.startsWith('res://art/fx/combo-v1/'), 'new artwork is really loaded');
+    assert(fx.alpha <= 0.851, 'effects keep their opacity budget');
+    if (!effectClips.has(fx.id)) {
+      effectClips.add(fx.id); effectEvidence.push({id: fx.id, state: s});
+      await capture(`fx-${fx.id}`);
+    }
+  }
+  if (s.boss.state === 'phase' && !shots.has(`transition-${s.boss.next_phase}`)) {
+    shots.add(`transition-${s.boss.next_phase}`); await capture(`transition-${s.boss.next_phase}`);
+  }
+  if (s.boss.state === 'tell') {
+    assert(!b.contact.visible && b.wakes.length === 0, 'previous attack dust never covers a new tell');
+  }
+}
+
 async function fightWithoutDash() {
   const began = Date.now();
   let lastTap = 0, jumpUntil = 0, lastHp = 6, regenerated = false, reblocked = false, guardHp;
   while (Date.now() - began < 180000) {
     const s = await state(), p = s.player, b = s.boss;
     observe(s);
+    await observeEffects(s);
     if (b.animation === '10_walk' && b.frame >= 2 && !shots.has('walking')) {
       shots.add('walking'); await capture('walking');
     }
@@ -169,6 +191,7 @@ async function fightRangedOnly() {
   while (Date.now() - began < 180000) {
     const s = await state(), p = s.player, b = s.boss;
     observe(s);
+    await observeEffects(s);
     phases.add(b.phase);
     assert.equal(s.energy, 4, 'ranged-only route never spends or needs energy');
     assert.equal(s.skills.shield_charge, 0, 'ranged hits do not charge the melee passive');
@@ -216,6 +239,7 @@ try {
   assert.equal(frozen.boss.timer, paused.boss.timer, 'pause freezes attack timer');
   assert.equal(frozen.boss.frame, paused.boss.frame, 'pause freezes animation frame');
   assert.equal(frozen.player.x, paused.player.x, 'pause freezes player position');
+  if (verifyEffects) assert.deepEqual(frozen.boss.effects, paused.boss.effects, 'pause freezes all boss effect clocks');
   await capture('paused');
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused === false);
@@ -223,7 +247,12 @@ try {
   // Deliberately take the first attack, then verify the melee route can earn
   // another guard. This is real collision, with no health/state injection.
   await release();
-  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.blocks === 1, null, { timeout: 30000 });
+  const blockDeadline = Date.now() + 30000;
+  while ((await state()).skills.blocks < 1 && Date.now() < blockDeadline) {
+    await observeEffects(await state());
+    await page.waitForTimeout(15);
+  }
+  assert.equal((await state()).skills.blocks, 1, 'opening attack reaches the guard');
   const firstBlock = await state();
   assert.equal(firstBlock.hp, 6, 'opening guard absorbs the first hit');
   assert.equal(firstBlock.skills.shield, 0);
@@ -234,6 +263,12 @@ try {
   for (const move of ['sweep', 'slam', 'charge', 'phase-2', 'phase-3', 'stagger']) assert(shots.has(move), `combat observes ${move}`);
   assert(comboPhases.has(2) && comboPhases.has(3), 'later phases visibly use multi-hit sequences');
   assert.equal(completeState.boss.hp, 0);
+  if (verifyEffects) {
+    await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.effects.resonance.visible);
+    await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.effects.resonance.frame === 1);
+    await observeEffects(await state());
+    for (const id of ['short1', 'short2', 'heavy', 'hit', 'sweep', 'slam', 'charge', 'resonance']) assert(effectClips.has(id), `real keys show ${id}`);
+  }
   await capture('victory');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.opacity === 0);
   await capture('retreated');
@@ -269,6 +304,11 @@ try {
   assert.equal(retryState.skills.shield_charge, 0, 'retry clears guard progress');
   for (const key of ['shots', 'hits', 'blocks', 'cooldown']) assert.equal(retryState.skills[key], 0, `retry resets ${key}`);
   assert.deepEqual(retryState.skills.projectiles, [], 'retry removes projectiles');
+  if (verifyEffects) {
+    assert.equal(retryState.player.animation.effects.hits, 0);
+    assert(retryState.boss.effects.resonance.alpha < 0.4 || !retryState.boss.effects.resonance.visible, "retry clears the victory cue before the new opening");
+    checks.push('authored_combo_effects_phase_victory_and_reset');
+  }
   await capture('retry');
   checks.push('standstill_death_and_keyboard_retry');
 
@@ -293,13 +333,13 @@ try {
   assert.deepEqual(afterDash.flags, []);
   checks.push('reload_ready_and_dash_comparison');
   assert.deepEqual(errors, [], 'no resource, browser or engine errors');
-  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: true, url, checks, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, deathState, retryState, dashState, errors }, null, 2));
+  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: true, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, deathState, retryState, dashState, errors }, null, 2));
   console.log(`PASS training route; ${output}`);
 } catch (error) {
   await release().catch(() => {});
   await capture('failure').catch(() => {});
   const current = await state().catch(() => null);
-  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: false, url, checks, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, current, errors, trace, error: error.stack }, null, 2));
+  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: false, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, current, errors, trace, error: error.stack }, null, 2));
   console.error(current, errors);
   throw error;
 } finally {

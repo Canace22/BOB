@@ -1,0 +1,114 @@
+{
+  "platformCommit": "e5dc689",
+  "api": "http://127.0.0.1:8765",
+  "operation": "POST /api/compression/frame for each of 4 frames",
+  "settings": {
+    "scale": 1,
+    "algorithm": "lanczos",
+    "resizeMode": "soft",
+    "alphaThreshold": 0,
+    "sharpen": 0,
+    "colors": 256
+  },
+  "nativeSourceCanvas": [
+    320,
+    320
+  ],
+  "outputCanvas": [
+    320,
+    320
+  ],
+  "frameCount": 4,
+  "fps": 20,
+  "durationMs": 200,
+  "inputBytes": 363459,
+  "outputBytes": 359769,
+  "savingsPercent": 1.0152451858393974,
+  "exportMethod": "Unmodified Framecraft exportCompressionZip function, download captured in Node.",
+  "projectMethod": "Unmodified Framecraft saveProject/loadProject functions calling its actual HTTP API.",
+  "projectId": "d21bba2c827b49cdbc387db8cba67770",
+  "projectPath": "projects/d21bba2c827b49cdbc387db8cba67770.framecraft",
+  "reopened": {
+    "fps": 20,
+    "loopMode": "once",
+    "frameCount": 4,
+    "compressionCount": 4,
+    "resultBytesVerified": true
+  },
+  "notPerformed": [
+    "UI playback observation",
+    "Compressed atlas export (browser Canvas required)",
+    "AI smoothing or generation",
+    "Godot integration"
+  ],
+  "records": [
+    {
+      "name": "frame-001.png",
+      "inputBytes": 81761,
+      "outputBytes": 80409,
+      "inputSha256": "1d6c443ff916d8d17e770e1989a8380e3dd481ec0edbf79c45db11c55cd71eb6",
+      "outputSha256": "4285f4efe4fe6be8ab5bd7b3bd91cbd13c2446c5726022db35eb69118df8adb2",
+      "width": 320,
+      "height": 320,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "320",
+        "x-compression-original-bytes": "81761",
+        "x-compression-output-bytes": "80409",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "320"
+      }
+    },
+    {
+      "name": "frame-002.png",
+      "inputBytes": 117121,
+      "outputBytes": 115854,
+      "inputSha256": "76c8b37d47825ebf025c6fc9da915532bcd796c4c58c1fffeb74a65b3b5e1a50",
+      "outputSha256": "8de989f07879f37a4dfcd9e734bd7ebc43022215c6ca85cf0855b9c45c75b841",
+      "width": 320,
+      "height": 320,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "320",
+        "x-compression-original-bytes": "117121",
+        "x-compression-output-bytes": "115854",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "320"
+      }
+    },
+    {
+      "name": "frame-003.png",
+      "inputBytes": 120053,
+      "outputBytes": 120223,
+      "inputSha256": "96c5633a1c010022c2aaa5d86fc2a88c9faa401f92c45e770def4e3a75d389d2",
+      "outputSha256": "56c21f2fe80da4d529042ba35ca0faa29a9bb40b5713fe38820d932fbeceedb5",
+      "width": 320,
+      "height": 320,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "320",
+        "x-compression-original-bytes": "120053",
+        "x-compression-output-bytes": "120223",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "320"
+      }
+    },
+    {
+      "name": "frame-004.png",
+      "inputBytes": 44524,
+      "outputBytes": 43283,
+      "inputSha256": "4edfb93ece315d1d9b74a571a932755fe2ce8b6fbe8523382813383f481b1d5f",
+      "outputSha256": "5f9c024282bc7025397039cff3845c0ea1d37d69457614f8b5ea5c8946068c2f",
+      "width": 320,
+      "height": 320,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "320",
+        "x-compression-original-bytes": "44524",
+        "x-compression-output-bytes": "43283",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "320"
+      }
+    }
+  ]
+}

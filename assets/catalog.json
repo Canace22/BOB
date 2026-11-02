@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 17,
-  "updatedAt": "2026-11-02T05:01:37.534642+00:00",
+  "revision": 18,
+  "updatedAt": "2026-11-02T06:31:21.057190+00:00",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24229,6 +24229,414 @@
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/player/player_visual.gd",
         "evidence": "game/progress.md"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-short1",
+      "name": "轻击下扫",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/short1.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-short2",
+      "name": "连击回挑",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/short2.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-heavy",
+      "name": "重击共鸣弧",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/heavy.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-hit",
+      "name": "近战命中碎屑",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/hit.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-sweep",
+      "name": "母蟹低扫痕迹",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/sweep.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-slam",
+      "name": "母蟹下砸骨屑",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/slam.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-charge",
+      "name": "母蟹冲撞尾尘",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/charge.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
+      }
+    },
+    {
+      "id": "combo-vfx-v1-resonance",
+      "name": "转阶段与胜利共鸣",
+      "kind": "fx",
+      "region": "母蟹训练场",
+      "tags": [
+        "连招",
+        "序列帧"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/fx/combo-v1/resonance.png",
+      "width": 1280,
+      "height": 320,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "combo-vfx-v1",
+        "method": "内置 image_gen；固定裁框；Framecraft 原尺寸导出",
+        "references": [
+          "assets/source/combo-vfx-v1/README.md",
+          "assets/source/combo-vfx-v1/prompts.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          320
+        ],
+        "frameCount": 4,
+        "loop": false,
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "evidence": "game/progress.md"
+      },
+      "qa": {
+        "userVisualApproval": "待用户试玩反馈",
+        "technicalReview": {
+          "evidence": "assets/source/combo-vfx-v1/export-checks.json"
+        }
+      },
+      "license": {
+        "scope": "用户授权本次生成用于 BOB；无第三方游戏素材"
       }
     }
   ]

@@ -158,6 +158,8 @@ func _present_legacy() -> void:
 func _present_effect() -> void:
 	var action := player.actions
 	effect.visible = player.is_physics_processing() and (player.hitbox.active or action.mode == "dash")
+	if player.tuning.prototype_controls and action.mode != "dash":
+		effect.visible = false
 	if not effect.visible:
 		return
 	var kind := "dash_trail" if action.mode == "dash" else ("heavy_ring" if action.attack_kind == "heavy" else "short_swipe")
@@ -175,4 +177,5 @@ func animation_snapshot() -> Dictionary:
 		"opacity": modulate.a,
 		"using_directional": using_directional, "pivot": [anchor.x, anchor.y],
 		"frame_count": animation.get("files", []).size(), "stride_pixels": animation.get("stride", 0),
+		"effects": (player.get_node("CombatEffects") as PlayerEffects).snapshot(),
 		"phase": phase_elapsed, "run_distance": run_distance}

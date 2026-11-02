@@ -1,0 +1,42 @@
+{
+  "name": "slam",
+  "candidate": true,
+  "fps": 10,
+  "loop": false,
+  "durationMs": 400,
+  "exportFile": "exports/slam.zip",
+  "sourceFramesDirectory": "/Users/canace/Desktop/projects/BOB/assets/source/combo-vfx-v1/slam/input/frames",
+  "canvas": [
+    320,
+    320
+  ],
+  "sourceCanvas": [
+    320,
+    320
+  ],
+  "scale": 1,
+  "pivot": [
+    160,
+    160
+  ],
+  "sourcePivot": [
+    160,
+    160
+  ],
+  "direction": "effect-only-right",
+  "frameFiles": [
+    "processed/frame-001.png",
+    "processed/frame-002.png",
+    "processed/frame-003.png",
+    "processed/frame-004.png"
+  ],
+  "frameDurationMs": 100,
+  "overrides": [
+    "Platform manifest loop:true is overridden by the source action loop flag.",
+    "Platform bottom-center pivot is replaced with the known source root scaled by 1."
+  ],
+  "limitations": [
+    "Four authored poses; game duration is metadata, not platform loop flag.",
+    "Runtime visual review and user acceptance are separate."
+  ]
+}
