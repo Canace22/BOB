@@ -28,6 +28,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	CombatEffect.warm()
 	player.tuning = player.tuning.duplicate() as PlayerTuning
 	player.tuning.prototype_controls = true
 	player.health.maximum = 6

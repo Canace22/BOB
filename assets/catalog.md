@@ -87,3 +87,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 模型、动画与音频
 
 当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。
+
+## 连招与战斗反馈 V1
+
+[制作、Framecraft 工程与播放约定](source/combo-vfx-v1/README.md)：玩家下扫、回挑、重击和命中；母蟹扫痕、砸地和冲撞；阶段与胜利共鸣。共 8 组 32 个变化帧。实机验证和发布见 [游戏进度](../game/progress.md)。

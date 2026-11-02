@@ -54,3 +54,5 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 测试脚本解析失败：runner 应报告不能实例化的 suite 并退出失败，不能在引擎窗口永久等待；先跑 `check` 再跑 `test`，不要仅看导入进程完成。并行代理写文件可以，Godot import/test/export 由一处串行安排，避免共享导入缓存竞争。
 - 玩家序列帧接入：公共画布/pivot、两向独立文件、逐帧时长和步幅以 `assets/runtime/sprites/tide-picker-animation-v2/animations.json` 为准；来源和导出见[制作说明](../../../assets/source/player-animation-v2/README.md)。攻击有效段必须落在帧边界；跑步按实际位移推进，不能只看全局时钟。素材缺项会显式回退旧图，验收须用只读 `player.animation.using_directional` 和实际文件路径确认新素材正在加载。
 - 动作专项按键路线：`tests/web_player_animation.mjs` 分完整/基础移动两种范围，保存两向姿势、暂停、撞墙与录屏；有限状态测试不能替代整圈换腿、脚滑和实际画面复核。Mac 引擎默认位置已由命令入口支持，仍严格检查项目固定版本。
+
+- 连招特效从实际有效窗或 `landed` 触发，爆点按 Hurtbox 碰撞形状夹取，固定在世界位置。下一招前摇清掉上一招尾尘；阶段/胜利单次播放，重试清理。`VERIFY_EFFECTS=1` 扩展现有训练场按键路线，检查八组实际纹理、暂停、转阶段与胜利。透明度断言为浮点留容差。制作源见[连招特效说明](../../../assets/source/combo-vfx-v1/README.md)。

@@ -5,6 +5,8 @@ var title: Label
 var stats: Label
 var skills_status: Label
 var message: Label
+var victory_panel: Control
+var result_time: Label
 var boss_title: Label
 var stagger_label: Label
 var boss_bar: ProgressBar
@@ -41,6 +43,16 @@ func _ready() -> void:
 	dash_button = _button(root, Vector2(970, 70), "冲刺：关闭", arena.toggle_dash)
 	pause_button = _button(root, Vector2(970, 118), "暂停 · Esc", arena.toggle_pause)
 	shake_button = _button(root, Vector2(970, 166), "震动：开启", _toggle_shake)
+	victory_panel = Control.new()
+	victory_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	root.add_child(victory_panel)
+	_label(victory_panel, Vector2(38, 17), 17).text = "搬壳母蟹 · 战斗胜利"
+	var praise := _label(victory_panel, Vector2(36, 40), 34)
+	praise.text = "潮声为你回响"
+	praise.modulate = Color(1.0, 0.86, 0.59)
+	_label(victory_panel, Vector2(38, 95), 18).text = "做得好，你找到了破绽！"
+	result_time = _label(victory_panel, Vector2(570, 60), 20)
+	victory_panel.hide()
 
 
 func _label(root: Control, at: Vector2, font_size: int) -> Label:
@@ -109,17 +121,21 @@ func _process(_delta: float) -> void:
 	pause_button.disabled = not start_button.disabled
 	pause_button.text = "继续 · Esc" if get_tree().paused else "暂停 · Esc"
 	shake_button.text = "震动：开启" if arena.shake_enabled else "震动：关闭"
+	var won := arena.stage == "won"
+	victory_panel.visible = won
+	for item: CanvasItem in [title, stats, skills_status, boss_title, boss_bar, stagger_label, stagger_bar, message]:
+		item.visible = not won
 	match arena.stage:
 		"ready": message.text = "开场护盾 · U 远程可独立打 · 近战攒护盾\n%d 格生命 · F 治疗 · 按 Enter 开始" % arena.player.health.maximum
-		"entering": message.text = "准备"
-		"won": message.text = "搬壳母蟹退让了\n%.1f 秒 · 按 Enter 再战" % arena.battle_time
-		"lost": message.text = "这次失手了\n按 Enter 立即重试"
+		"entering": message.text = "一阶段 · 试探\n稳住脚步，看清钳子再出手"
+		"won": result_time.text = "%.1f 秒 · 按 Enter 再战" % arena.battle_time
+		"lost": message.text = "别泄气，下一次等它收钳再反击\n按 Enter 立即重试"
 		_: message.text = "已暂停" if get_tree().paused else _combat_hint()
 
 
 func _update_boss_hud() -> void:
 	var boss := arena.boss
-	boss_title.text = "搬壳母蟹 · " + _phase_name(boss.phase)
+	boss_title.text = "搬壳母蟹 · " + _phase_name(boss.phase + 1 if boss.state == "phase" else boss.phase)
 	stagger_bar.max_value = CrabMoves.STAGGER_LIMIT
 	stagger_bar.value = CrabMoves.STAGGER_LIMIT if boss.state == "stagger" else boss.stagger
 	stagger_label.text = "破防机会！" if boss.state == "stagger" else "破防积累 %d / %d" % [boss.stagger, CrabMoves.STAGGER_LIMIT]
@@ -140,7 +156,9 @@ func _skill_hint() -> String:
 func _combat_hint() -> String:
 	var boss := arena.boss
 	match boss.state:
-		"phase": return _phase_name(mini(boss.phase + 1, 3)) + "\n母蟹蓄势 · 趁现在调整位置或治疗"
+		"phase":
+			var encouragement := "稳住，你已撼动它的重壳" if boss.phase == 1 else "最后一搏，留意连招的最后一击"
+			return encouragement + "\n" + _phase_name(mini(boss.phase + 1, 3)) + " · 现在可调整位置或治疗"
 		"stagger": return "破防！母蟹暂时不能攻击\n靠近连击，抓住输出机会"
 		"recover": return "连招结束 · 现在反击！"
 		"tell", "active":

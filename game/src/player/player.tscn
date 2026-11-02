@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="player"]
 [ext_resource type="Resource" path="res://src/player/player_tuning.tres" id="tuning"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://src/player/states/actions.gd" id="actions"]
 [ext_resource type="Script" path="res://src/player/states/locomotion.gd" id="move"]
 [ext_resource type="Script" path="res://src/player/player_visual.gd" id="visual"]
+
+[ext_resource type="Script" path="res://src/player/player_effects.gd" id="effects"]
 
 [sub_resource type="CapsuleShape2D" id="body"]
 radius = 17.0
@@ -64,3 +66,6 @@ script = ExtResource("visual")
 
 [node name="Effect" type="Sprite2D" parent="Visual"]
 visible = false
+
+[node name="CombatEffects" type="Node2D" parent="."]
+script = ExtResource("effects")
