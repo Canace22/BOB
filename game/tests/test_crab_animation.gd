@@ -107,3 +107,15 @@ func test_stagger_during_recovery_uses_authored_pose_and_cannot_chain_lock() -> 
 	boss.reset_at(Vector2(600, 500))
 	eq(boss.stagger_cooldown, 0.0, "retry clears stagger cooldown")
 	eq(boss.stagger, 0.0, "retry clears stagger pressure")
+
+
+func test_sweep_holds_open_claws_through_the_entire_punish_window() -> void:
+	var boss := make_boss()
+	boss.start_tell("sweep")
+	boss.start_active()
+	boss.finish_active()
+	for time: float in [0.2, 0.7, 1.29]:
+		boss.timer = time
+		boss.visual.present(boss)
+		eq(boss.visual.frame_index, 10, "open claw stays stable without returning to guard early")
+		check(not boss.hurtbox.braced() and not boss.hitbox.active, "visible recovery is safe and fully vulnerable")

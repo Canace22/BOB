@@ -54,11 +54,13 @@ func test_contact_burst_requires_landed_hit_and_stays_at_target_surface() -> voi
 	check(not fx.impact.visible, "whiff has no contact burst")
 	check(player.hitbox.try_hit(boss.hurtbox), "real target accepts swing")
 	eq(fx.hits, 1, "one landed swing emits one burst")
-	eq(fx.impact.global_position, Vector2(80, -38), "contact is clamped to the hurt shape, not its ground origin")
-	var at := fx.impact.global_position
+	var received := (boss.get_node("Effects") as CrabPrototypeEffects).received
+	check(not fx.impact.visible and received.visible, "resolved boss feedback replaces the generic burst")
+	eq(received.global_position, Vector2(80, -38), "contact is clamped to the hurt shape, not its ground origin")
+	var at := received.global_position
 	player.position.x -= 100
 	boss.position.x += 100
-	eq(fx.impact.global_position, at, "contact stays in world space")
+	eq(received.global_position, at, "contact stays in world space")
 	check(not player.hitbox.try_hit(boss.hurtbox), "same swing cannot repeat its burst")
 
 

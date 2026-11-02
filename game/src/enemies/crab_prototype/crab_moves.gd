@@ -16,8 +16,8 @@ const STAGGER_TIME := 1.6
 const STAGGER_LIMIT := 100.0
 const STAGGER_COOLDOWN := 6.0
 const MOVES := {
-	"sweep": {"tell": 0.85, "active": 0.18, "recover": 1.05, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
-	"second": {"tell": 0.65, "active": 0.18, "recover": 1.05, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"sweep": {"tell": 0.85, "active": 0.18, "recover": 1.3, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"second": {"tell": 0.65, "active": 0.18, "recover": 1.3, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
 	"slam": {"tell": 1.25, "active": 0.18, "recover": 1.5, "reach": 280.0, "height": 280.0, "cooldown": 4.0},
 	"charge": {"tell": 1.35, "active": 0.6, "recover": 1.5, "reach": 174.0, "height": 240.0, "cooldown": 5.0},
 }

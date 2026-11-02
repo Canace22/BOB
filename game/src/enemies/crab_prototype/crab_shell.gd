@@ -2,8 +2,11 @@ class_name CrabShell
 extends Hurtbox
 ## The shell braces throughout an attack. The raised claw is briefly vulnerable.
 
-var glances := 0
-var connected := false
+signal resolved(result: String, hit: HitData)
+
+var last_result := ""
+var last_damage := 0
+var feedback_left := 0.0
 @onready var crab: CrabPrototype = get_parent() as CrabPrototype
 
 
@@ -14,24 +17,35 @@ func _ready() -> void:
 func _on_damage(hit: HitData) -> void:
 	crab.flash = 0.12
 	var counter := counters(hit)
+	last_damage = hit.damage
+	feedback_left = 0.6
 	if braced() and not counter:
+		last_result = "shell"
 		EventBus.sfx.emit("strike")
-		return
-	EventBus.sfx.emit("heavy" if counter else "hit")
-	crab.register_exposed_hit(hit, counter)
+	else:
+		var was_staggered := crab.state == "stagger"
+		crab.register_exposed_hit(hit, counter)
+		last_result = "break" if crab.state == "stagger" and not was_staggered else "exposed"
+		EventBus.sfx.emit("heavy" if last_result == "break" else "hit")
+	resolved.emit(last_result, hit)
+
+
+func _physics_process(delta: float) -> void:
+	feedback_left = maxf(0, feedback_left - delta)
 
 
 func braced() -> bool:
-	return crab.state in ["observe", "phase", "tell", "active"] or (crab.state == "recover" and connected)
+	return crab.state in ["observe", "phase", "tell", "active"]
 
 
-func begin_round() -> void:
-	glances = 0
-	connected = false
+func allows_combo_link() -> bool:
+	return last_result != "shell"
 
 
-func mark_contact(_target: Hurtbox, _hit: HitData) -> void:
-	connected = true
+func reset_feedback() -> void:
+	last_result = ""
+	last_damage = 0
+	feedback_left = 0
 
 
 func counter_window() -> bool:
@@ -48,10 +62,4 @@ func receive(hit: HitData) -> bool:
 	var glance := hit.duplicate() as HitData
 	glance.origin = hit.origin
 	glance.damage = maxi(1, floori(hit.damage * (0.5 if hit.heavy else 0.25)))
-	var landed := super.receive(glance)
-	if landed and crab.state in ["tell", "active"] and not hit.ranged and crab.sequence.size() == 1:
-		glances += 1
-		if glances == 2:
-			crab.sequence.append("second")
-			crab.combo_planned = true
-	return landed
+	return super.receive(glance)

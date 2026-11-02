@@ -8,6 +8,10 @@ var immune: bool = false
 var guard: int = 0
 
 
+func allows_combo_link() -> bool:
+	return true
+
+
 func receive(hit: HitData) -> bool:
 	if immune or health == null or health.current <= 0 or hit.damage <= 0:
 		return false

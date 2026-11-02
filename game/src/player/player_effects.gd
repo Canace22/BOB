@@ -49,10 +49,12 @@ func _physics_process(delta: float) -> void:
 func _landed(target: Hurtbox, hit: HitData) -> void:
 	if not player.tuning.prototype_controls or hit.ranged:
 		return
+	hits += 1
+	if target is CrabShell:
+		return # The shell presents its resolved damage, including ranged impacts.
 	var weapon := player.global_position + Vector2(player.facing * 65, -38)
 	impact.play("hit", CombatEffect.contact_point(target, weapon), 76 if hit.heavy else 48,
 		0.26 if hit.heavy else 0.18, 0.85, player.facing)
-	hits += 1
 
 
 func snapshot() -> Dictionary:

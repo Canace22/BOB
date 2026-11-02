@@ -20,6 +20,7 @@ func snapshot() -> Dictionary:
 		"hp": GameState.hp, "max_hp": arena.player.health.maximum,
 		"energy": GameState.energy, "time": arena.battle_time,
 		"skills": arena.skills.snapshot(),
+		"help_visible": (arena.get_node("UI") as CrabArenaUI).help_panel.visible,
 		"environment": _environment_snapshot(),
 		"dash_enabled": arena.dash_enabled, "freeze": arena.freeze_left,
 		"save_enabled": GameState.autosave, "flags": GameState.flags,

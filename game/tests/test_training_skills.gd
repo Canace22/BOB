@@ -54,7 +54,7 @@ func test_ranged_moves_and_hits_without_melee_or_energy_cost() -> void:
 	check(not projectile.try_hit(target), "shot cannot hit the same target twice")
 
 
-func test_opening_guard_consumes_swing_and_protects_followups() -> void:
+func test_opening_guard_consumes_one_swing_but_not_an_entire_combo() -> void:
 	var skills := make_skills()
 	var player := skills.player
 	var box := add(Hitbox.new()) as Hitbox
@@ -66,9 +66,9 @@ func test_opening_guard_consumes_swing_and_protects_followups() -> void:
 	eq(player.health.current, 4, "shield prevents local health loss")
 	check(not box.try_hit(player.hurtbox), "same swing cannot hit after breaking the shield")
 	box.activate(HitData.create(1, player.position))
-	player._physics_process(1.1)
-	check(not box.try_hit(player.hurtbox), "shield protection rejects a followup for more than one second")
-	player._physics_process(0.11)
+	player._physics_process(0.30)
+	check(not box.try_hit(player.hurtbox), "short guard protection covers the same impact")
+	player._physics_process(0.06)
 	check(box.try_hit(player.hurtbox), "later unguarded strike deals normal damage")
 	eq(GameState.hp, 3, "later strike costs exactly one health")
 
@@ -82,23 +82,23 @@ func test_melee_rebuilds_guard_and_ranged_does_not() -> void:
 	ranged.ranged = true
 	skills._melee_hit(target, ranged)
 	eq(skills.shield_charge, 0, "ranged classification cannot charge the passive")
-	for i in 3:
+	for i in 5:
 		player.hitbox.activate(HitData.create(10, Vector2.ZERO))
 		check(player.hitbox.try_hit(target), "distinct landed melee swing contributes")
-	eq(skills.shield_charge, 3, "three light hits accumulate three charges")
+	eq(skills.shield_charge, 5, "five light hits remain partial charge")
 	eq(player.hurtbox.guard, 0, "partial charge is not a shield")
 	player.hitbox.activate(HitData.create(10, Vector2.ZERO))
 	player.hitbox.try_hit(target)
-	eq(player.hurtbox.guard, 1, "four landed light hits restore a shield")
+	eq(player.hurtbox.guard, 1, "six landed light hits restore a shield")
 	eq(skills.shield_charge, 0, "restoring shield consumes accumulated charge")
 	player.hitbox.activate(HitData.create(24, Vector2.ZERO, true))
 	player.hitbox.try_hit(target)
 	eq(skills.shield_charge, 0, "active shield cannot stockpile a second shield")
 	player.hurtbox.guard = 0
-	for i in 2:
+	for i in 3:
 		player.hitbox.activate(HitData.create(24, Vector2.ZERO, true))
 		player.hitbox.try_hit(target)
-	eq(player.hurtbox.guard, 1, "two landed heavy hits restore a shield")
+	eq(player.hurtbox.guard, 1, "three landed heavy hits restore a shield")
 
 
 func test_range_reset_and_mainline_opt_in() -> void:

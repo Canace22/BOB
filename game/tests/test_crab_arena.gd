@@ -60,7 +60,7 @@ func test_pause_hitstop_and_retry_clear_every_runtime_state() -> void:
 	eq(GameState.hp, 6, "retry restores training health")
 	eq(arena.player.hurtbox.guard, 1, "retry restores the opening guard")
 
-func test_braced_shell_reduces_hits_and_adds_only_one_jumpable_reply() -> void:
+func test_braced_shell_reports_chips_without_changing_the_advertised_sequence() -> void:
 	var boss := arena_scene().boss
 	boss.begin()
 	var light := HitData.create(10, Vector2.ZERO)
@@ -69,18 +69,16 @@ func test_braced_shell_reduces_hits_and_adds_only_one_jumpable_reply() -> void:
 	boss.start_tell("sweep")
 	boss.hurtbox.receive(shot)
 	eq(boss.health.current, 288, "charged shot chips a braced shell without provoking a melee reply")
-	eq(boss.hurtbox.glances, 0, "shots cannot queue a riposte")
+	eq(boss.hurtbox.last_result, "shell", "projectile reports shell contact")
 	for count in 3:
 		boss.hurtbox.receive(light)
 	eq(boss.health.current, 282, "each braced light hit chips two")
 	eq(light.damage, 10, "bracing does not alter damage for another target")
-	eq(boss.sequence, ["sweep", "second"], "repeated pressure provokes one low follow-up")
+	eq(boss.sequence, ["sweep"], "repeated chips cannot append an unadvertised attack")
 	eq(boss.stagger, 0.0, "glancing blows build no stagger")
 	boss.start_active()
 	boss.finish_active()
-	eq(boss.state, "tell", "the reactive follow-up gives a full warning")
-	boss.start_active()
-	boss.finish_active()
+	eq(boss.state, "recover", "the announced single sweep ends in recovery")
 	boss.hurtbox.receive(light)
 	eq(boss.health.current, 272, "recovery takes full damage")
 	eq(boss.stagger, 14.0, "recovery hit earns pressure")
@@ -107,7 +105,7 @@ func test_only_timed_melee_heavy_stops_slam() -> void:
 	eq(boss.state, "tell", "stagger immunity prohibits repeated interrupts")
 
 
-func test_only_a_missed_round_exposes_shell_in_recovery() -> void:
+func test_recovery_is_exposed_after_guard_contact_and_after_a_miss() -> void:
 	var boss := arena_scene().boss
 	boss.begin()
 	var light := HitData.create(10, Vector2.ZERO)
@@ -118,10 +116,73 @@ func test_only_a_missed_round_exposes_shell_in_recovery() -> void:
 	check(boss.hitbox.try_hit(boss.target.hurtbox), "round actually lands on the player's guard")
 	boss.finish_active()
 	boss.hurtbox.receive(light)
-	eq(boss.health.current, 298, "a blocked swing keeps the shell braced through recovery")
-	eq(boss.stagger, 0.0, "trading the shield cannot earn free stagger")
+	eq(boss.health.current, 290, "a blocked swing still offers full recovery damage")
+	eq(boss.stagger, 14.0, "the recovery hit has consistent rewards")
 	boss.start_tell("sweep")
 	boss.start_active()
 	boss.finish_active()
 	boss.hurtbox.receive(light)
-	eq(boss.health.current, 288, "evading the next attack exposes full recovery damage")
+	eq(boss.health.current, 280, "evading the next attack exposes the same full damage")
+
+
+func test_resolved_feedback_distinguishes_shell_hit_and_break_and_clears_on_retry() -> void:
+	var arena := arena_scene()
+	var boss := arena.boss
+	var fx := boss.get_node("Effects") as CrabPrototypeEffects
+	boss.begin()
+	boss.start_tell("sweep")
+	boss.hurtbox.receive(HitData.create(10, boss.position + Vector2(-190, 0)))
+	eq(boss.hurtbox.last_damage, 2, "feedback reports reduced damage rather than weapon damage")
+	eq(fx.received.effect_id, "short2", "shell uses a small deflection arc")
+	arena.stage = "fighting"
+	arena._hit_feedback(boss.hurtbox.global_position, false)
+	eq(arena.freeze_left, 0.018, "shell has only a short tap of hitstop")
+	boss.start_active()
+	boss.finish_active()
+	boss.hurtbox.receive(HitData.create(10, boss.position))
+	eq(boss.hurtbox.last_result, "exposed", "recovery reports effective hit")
+	eq(boss.hurtbox.last_damage, 10, "effective contact reports full damage")
+	eq(fx.received.effect_id, "hit", "effective hit uses authored fragments")
+	boss.stagger = 98
+	boss.hurtbox.receive(HitData.create(10, boss.position))
+	eq(boss.hurtbox.last_result, "break", "threshold-crossing hit has distinct feedback")
+	eq(fx.received.effect_id, "heavy", "break uses a larger authored burst")
+	arena._hit_feedback(boss.hurtbox.global_position, false)
+	eq(arena.freeze_left, 0.09, "break has the strongest hitstop")
+	arena.prepare()
+	eq(boss.hurtbox.last_result, "", "retry clears the last impact")
+	check(not fx.received.visible and not fx.hit_label.visible, "retry clears detached impact and label")
+
+
+func test_help_auto_folds_and_remains_available_with_pause_or_toggle() -> void:
+	var arena := arena_scene()
+	var ui := arena.get_node("UI") as CrabArenaUI
+	arena.stage = "fighting"
+	arena.battle_time = 7
+	ui._process(0)
+	check(not ui.help_panel.visible, "controls leave the combat area after learning interval")
+	ui.toggle_help()
+	ui._process(0)
+	check(ui.help_panel.visible, "manual expansion overrides automatic folding")
+	ui.toggle_help()
+	arena.toggle_pause()
+	ui._process(0)
+	check(ui.help_panel.visible, "pause always makes controls available")
+	arena.toggle_pause()
+	ui._process(0)
+	check(not ui.help_panel.visible, "resume restores compact choice")
+
+
+func test_deflected_attack_cannot_earn_fast_combo_even_if_shell_opens_later() -> void:
+	var arena := arena_scene()
+	var boss := arena.boss
+	var box := arena.player.hitbox
+	boss.start_tell("sweep")
+	box.activate(HitData.create(10, Vector2.ZERO))
+	check(box.try_hit(boss.hurtbox), "deflection still deals chip damage")
+	check(not box.has_landed(), "deflection cannot grant an effective-hit combo")
+	boss.start_active()
+	boss.finish_active()
+	check(not box.has_landed(), "later recovery cannot retroactively confirm the chip")
+	box.activate(HitData.create(10, Vector2.ZERO))
+	check(box.try_hit(boss.hurtbox) and box.has_landed(), "new recovery contact grants normal fast combo")

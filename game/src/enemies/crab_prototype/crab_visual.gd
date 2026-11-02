@@ -63,7 +63,7 @@ func present(actor: CrabPrototype) -> void:
 		frame_index = mini(11, int(actor.timer / CrabMoves.PHASE_TIME * 12))
 	elif actor.state == "stagger":
 		action_id = "02_claw_slam"
-		frame_index = 8 + mini(3, int(actor.timer / CrabMoves.STAGGER_TIME * 4))
+		frame_index = 8
 	elif actor.state == "dead":
 		action_id = "09_sink_fade"
 		frame_index = mini(11, int(death_clock * 8))
@@ -78,15 +78,20 @@ func present(actor: CrabPrototype) -> void:
 	modulate = Color(1.35, 1.15, 0.95) if actor.flash > 0 else Color.WHITE
 	if actor.hurtbox != null and actor.hurtbox.counter_window():
 		modulate = Color(1.38, 1.22, 0.85)
-	elif actor.flash > 0 and actor.hurtbox.braced():
-		modulate = Color(0.74, 0.91, 1.18)
+	elif actor.flash > 0 and actor.hurtbox.last_result == "shell":
+		modulate = Color(0.65, 0.85, 1.3)
 	elif actor.state == "recover" and actor.flash <= 0:
-		modulate = Color(0.83, 0.93, 1.0) if actor.hurtbox.braced() else Color(1.12, 1.07, 0.93)
+		modulate = Color(1.18, 1.12, 0.96)
+	elif actor.hurtbox != null and actor.hurtbox.braced() and actor.flash <= 0:
+		modulate = Color(0.76, 0.86, 0.94)
 	if actor.state == "dead":
 		modulate.a = clampf(1.0 - death_clock / 1.5, 0, 1)
 
 
 func attack_frame(actor: CrabPrototype) -> int:
+	if actor.state == "recover" and actor.kind in ["sweep", "second"]:
+		# Retract for 0.18s, then hold the authored open-claw pose until recovery ends.
+		return 8 + mini(2, int(actor.timer / 0.09))
 	var contact := 7 if actor.kind == "charge" else (4 if actor.kind in ["sweep", "second"] else 5)
 	var elapsed := clampf(actor.timer / CrabMoves.value(actor.kind, actor.state), 0, 0.999)
 	match actor.state:

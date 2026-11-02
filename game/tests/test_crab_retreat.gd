@@ -28,7 +28,7 @@ func test_first_retreat_has_two_full_tells_and_is_spent_once() -> void:
 	boss.step_ai(0.06)
 	check(boss.hitbox.active, "the low claw can land")
 	boss.step_ai(0.19)
-	boss.step_ai(1.06)
+	boss.step_ai(CrabMoves.value("sweep", "recover") + 0.01)
 	boss.step_ai(5.1)
 	eq(boss.sequence, ["charge"], "later phase-two charges are single attacks")
 

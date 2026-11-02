@@ -37,7 +37,6 @@ var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
 	health.died.connect(_on_death)
-	hitbox.landed.connect(hurtbox.mark_contact)
 
 func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	stop()
@@ -55,7 +54,7 @@ func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	short_hits = 0
 	combo_planned = false
 	sequence.clear()
-	hurtbox.begin_round()
+	hurtbox.reset_feedback()
 	sequence_index = 0
 	round_index = 0
 	stagger = 0
@@ -168,7 +167,6 @@ func _retreat_space() -> float:
 	return retreat_bounds.y - target.position.x if facing > 0 else target.position.x - retreat_bounds.x
 
 func start_tell(attack: String) -> void:
-	hurtbox.begin_round()
 	streak = streak + 1 if attack == previous else 1
 	previous = attack
 	round_index += 1
@@ -245,5 +243,6 @@ func snapshot() -> Dictionary:
 		"next_phase": mini(3, phase + 1), "combo_index": sequence_index + 1, "combo_total": sequence.size(),
 		"stagger": stagger, "stagger_max": CrabMoves.STAGGER_LIMIT, "stagger_cooldown": stagger_cooldown,
 		"braced": hurtbox.braced(), "counter_window": hurtbox.counter_window(),
+		"feedback": hurtbox.last_result, "damage": hurtbox.last_damage, "feedback_left": hurtbox.feedback_left,
 		"effects": ($Effects as CrabPrototypeEffects).snapshot(),
 		"animation": visual.action_id, "frame": visual.frame_index, "opacity": visual.modulate.a}

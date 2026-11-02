@@ -5,7 +5,8 @@ extends Node
 const PROJECTILE := preload("res://src/prototype/resonance_projectile.tscn")
 const CHARGE_TIME := 0.52
 const COOLDOWN := 0.55
-const SHIELD_HITS := 4
+const SHIELD_HITS := 6
+const GUARD_PROTECTION := 0.35
 var cooldown := 0.0
 var shield_charge := 0
 var shield_flash := 0.0
@@ -136,6 +137,8 @@ func _ranged_hit(body: Hurtbox, hit: HitData, projectile: ResonanceProjectile) -
 	ranged_hits += 1
 	if projectile.charged:
 		charged_hits += 1
+	if body is CrabShell:
+		return
 	var at := CombatEffect.contact_point(body, projectile.global_position)
 	impact.play("hit", at, 96 if hit.heavy else 48, 0.24, 0.82, projectile.direction)
 
@@ -153,7 +156,7 @@ func _melee_hit(body: Hurtbox, hit: HitData) -> void:
 func _block(_hit: HitData) -> void:
 	blocks += 1
 	shield_flash = 0.3
-	player.invulnerable = maxf(player.invulnerable, player.tuning.invulnerability + 0.2)
+	player.invulnerable = maxf(player.invulnerable, GUARD_PROTECTION)
 	player.hurtbox.immune = true
 	EventBus.sfx.emit("hit")
 

@@ -20,7 +20,8 @@ const url = process.env.GAME_URL ?? 'http://127.0.0.1:4191/BOB/godot/?prototype=
 const errors = [], held = new Set(), shots = new Set(), trace = [], checks = [], damage = [];
 const comboPhases = new Set(), shieldEvents = [], effectClips = new Set(), effectEvidence = [];
 const verifyEffects = process.env.VERIFY_EFFECTS === '1';
-let completeState, rangedState, deathState, retryState, dashState;
+const pressureOnly = process.env.PRESSURE_ONLY === '1';
+let completeState, rangedState, pressureState, deathState, retryState, dashState;
 page.on('pageerror', error => errors.push(error.message));
 page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
 page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
@@ -65,7 +66,7 @@ function observe(s) {
 async function observeEffects(s) {
   if (!verifyEffects) return;
   const p = s.player.animation.effects, b = s.boss.effects;
-  for (const fx of [p.trail, p.impact, b.contact, ...b.wakes, b.resonance]) {
+  for (const fx of [p.trail, p.impact, b.contact, ...b.wakes, b.resonance, b.received]) {
     if (!fx.visible) continue;
     assert(fx.file.startsWith('res://art/fx/combo-v1/'), 'new artwork is really loaded');
     assert(fx.alpha <= 0.851, 'effects keep their opacity budget');
@@ -185,6 +186,67 @@ async function checkSlamCounter() {
   await ready();
 }
 
+async function checkReadableSweep() {
+  await begin();
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.state === 'tell' && s.boss.kind === 'sweep' && s.boss.timer < 0.12;
+  }, null, {timeout: 30000, polling: 'raf'});
+  await key('d', true);
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.x - s.player.x <= 205;
+  }, null, {timeout: 2000, polling: 'raf'});
+  await key('d', false);
+  await page.keyboard.press('j', {delay: 18});
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.feedback === 'shell');
+  const chip = await state();
+  assert.equal(chip.boss.damage, 2);
+  assert.equal(chip.boss.combo_total, 1);
+  await capture('shell-deflection');
+  // Check the dodge on a fresh round: taking a screenshot after a greedy
+  // anticipation hit must not consume the player's jump timing budget.
+  await page.reload({waitUntil: 'domcontentloaded'});
+  await ready();
+  await begin();
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.state === 'tell' && s.boss.kind === 'sweep' && s.boss.timer >= 0.44;
+  }, null, {timeout: 30000, polling: 'raf'});
+  await key('Space', true);
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.state === 'active');
+  await capture('sweep-jump-contact');
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.state === 'recover');
+  await key('Space', false);
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).player.floor);
+  const landed = await state();
+  assert.equal(landed.boss.braced, false);
+  assert.equal(landed.hp, chip.hp, 'correct jump loses no health');
+  assert.equal(landed.skills.blocks, chip.skills.blocks, 'correct jump consumes no guard');
+  await key('d', true);
+  await page.waitForFunction(() => {
+    const s = JSON.parse(window.render_game_to_text());
+    return s.boss.x - s.player.x <= 205;
+  }, null, {timeout: 1000, polling: 'raf'});
+  await key('d', false);
+  await page.keyboard.press('j', {delay: 18});
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).boss.feedback === 'exposed', null, {timeout: 1500});
+  const reward = await state();
+  assert.equal(reward.boss.damage, 10, 'landing counterattack deals full damage');
+  assert.equal(reward.boss.state, 'recover', 'counterattack fits inside the advertised window');
+  await capture('sweep-reward');
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).time >= 6.1);
+  assert.equal((await state()).help_visible, false, 'help folds during combat');
+  await page.keyboard.press('h');
+  await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).help_visible);
+  await page.keyboard.press('h');
+  await page.waitForFunction(() => !JSON.parse(window.render_game_to_text()).help_visible);
+  checks.push('shell_chip_jump_full_damage_recovery_and_help_toggle');
+  await release();
+  await page.reload({waitUntil: 'domcontentloaded'});
+  await ready();
+}
+
 async function checkProjectilePause() {
   await key('u', true);
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.charge === 1);
@@ -251,6 +313,8 @@ try {
   const initial = await ready();
   assert.equal(initial.dash_enabled, false);
   await capture('ready');
+  if (!pressureOnly) {
+  await checkReadableSweep();
   await checkSlamCounter();
   await begin();
   // Step clear of the left boundary so the charge has its required escape
@@ -314,6 +378,7 @@ try {
   await release();
   await capture('ranged-victory');
   checks.push('ranged_only_victory_three_phases_without_energy');
+  }
 
   await begin();
   await release();
@@ -333,8 +398,16 @@ try {
     await page.waitForTimeout(70);
   }
   await key('d', false);
-  assert(sawReply, 'mashing into the braced shell provokes a phase-one return sweep');
-  assert.equal((await state()).stage, 'lost', 'stationary blind melee loses');
+  assert(!sawReply, 'shell contacts never add a surprise phase-one return sweep');
+  pressureState = await state();
+  assert(['won', 'lost'].includes(pressureState.stage), 'pressure comparison reaches an outcome');
+  // Fixed recovery replaces the old contact-dependent punishment. Record the
+  // balance outcome honestly; death/retry remains a separate lifecycle check.
+  if (pressureState.stage === 'won') {
+    await begin();
+    await release();
+    await waitStage('lost');
+  }
   deathState = await state();
   assert.equal(deathState.hp, 0);
   await capture('defeat');
@@ -356,7 +429,7 @@ try {
     checks.push('authored_combo_effects_phase_victory_and_reset');
   }
   await capture('retry');
-  checks.push('blind_melee_draws_reply_loses_and_retries');
+  checks.push('blind_melee_no_surprise_reply_and_retry');
 
   // A reload is an ordinary user action returning to the training menu;
   // it also verifies the independent prototype does not resume campaign data.
@@ -379,13 +452,13 @@ try {
   assert.deepEqual(afterDash.flags, []);
   checks.push('reload_ready_and_dash_comparison');
   assert.deepEqual(errors, [], 'no resource, browser or engine errors');
-  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: true, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, deathState, retryState, dashState, errors }, null, 2));
+  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: true, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, pressureState, deathState, retryState, dashState, errors }, null, 2));
   console.log(`PASS training route; ${output}`);
 } catch (error) {
   await release().catch(() => {});
   await capture('failure').catch(() => {});
   const current = await state().catch(() => null);
-  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: false, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, current, errors, trace, error: error.stack }, null, 2));
+  writeFileSync(path.join(output, 'report.json'), JSON.stringify({ passed: false, url, checks, effectClips: [...effectClips], effectEvidence, shots: [...shots], comboPhases: [...comboPhases], damage, shieldEvents, completeState, rangedState, pressureState, current, errors, trace, error: error.stack }, null, 2));
   console.error(current, errors);
   throw error;
 } finally {

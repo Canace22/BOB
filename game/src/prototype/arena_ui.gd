@@ -15,6 +15,10 @@ var start_button: Button
 var dash_button: Button
 var pause_button: Button
 var shake_button: Button
+var help_panel: Control
+var help_button: Button
+var help_expanded := true
+var help_folded_once := false
 @onready var arena: CrabArena = get_parent() as CrabArena
 
 
@@ -24,8 +28,11 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.theme = load("res://src/ui/theme.tres") as Theme
 	add_child(root)
-	_panel(root, Rect2(16, 12, 880, 130))
-	_panel(root, Rect2(16, 636, 890, 74))
+	_panel(root, Rect2(16, 12, 880, 112))
+	help_panel = Control.new()
+	help_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	root.add_child(help_panel)
+	_panel(help_panel, Rect2(16, 636, 890, 74))
 	title = _label(root, Vector2(32, 22), 22)
 	title.text = "搬壳母蟹 · 独立训练场"
 	stats = _label(root, Vector2(32, 58), 20)
@@ -37,12 +44,14 @@ func _ready() -> void:
 	message = _label(root, Vector2(310, 155), 22)
 	message.size = Vector2(660, 100)
 	message.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var controls := _label(root, Vector2(32, 648), 18)
+	var controls := _label(help_panel, Vector2(32, 648), 18)
 	controls.text = "A / D 移动   Space 跳跃（长按跳高）   J 连击   K 重击   U 蓄力   F 治疗   Esc 暂停\nU 松开发射 · J 打中可接 J / K · K 和 F 消耗 2 蓄振"
 	start_button = _button(root, Vector2(970, 22), "开始 · Enter", arena.start)
 	dash_button = _button(root, Vector2(970, 70), "冲刺：关闭", arena.toggle_dash)
 	pause_button = _button(root, Vector2(970, 118), "暂停 · Esc", arena.toggle_pause)
 	shake_button = _button(root, Vector2(970, 166), "震动：开启", _toggle_shake)
+	help_button = _button(root, Vector2(1010, 660), "操作 · H", toggle_help)
+	help_button.size.x = 230
 	victory_panel = Control.new()
 	victory_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(victory_panel)
@@ -100,13 +109,23 @@ func _toggle_shake() -> void:
 	arena.shake_enabled = not arena.shake_enabled
 
 
+func toggle_help() -> void:
+	help_expanded = not help_expanded
+	help_folded_once = true
+
+
 func _process(_delta: float) -> void:
 	if stats == null:
 		return
 	stats.text = "生命 %d / %d   蓄振 %d / %d" % [GameState.hp, arena.player.health.maximum,
 		GameState.energy, GameState.MAX_ENERGY]
 	stats.modulate = Color(1.0, 0.8, 0.65) if GameState.hp <= 2 else Color.WHITE
-	skills_status.text = _skill_hint() + "\n" + ("受击保护中 · 可以撤步" if arena.stage == "fighting" and arena.player.invulnerable > 0 else "战斗 %.1f 秒" % arena.battle_time)
+	skills_status.text = _skill_hint()
+	if arena.stage == "fighting" and arena.battle_time >= 6 and not help_folded_once:
+		help_expanded = false
+		help_folded_once = true
+	help_panel.visible = help_expanded or get_tree().paused
+	help_button.text = "收起操作 · H" if help_panel.visible else "操作 · H"
 	boss_bar.max_value = arena.boss.health.maximum
 	boss_bar.value = arena.boss.health.current
 	_update_boss_hud()
@@ -126,11 +145,12 @@ func _process(_delta: float) -> void:
 	for item: CanvasItem in [title, stats, skills_status, boss_title, boss_bar, stagger_label, stagger_bar, message]:
 		item.visible = not won
 	match arena.stage:
-		"ready": message.text = "重钳举高发亮时，K 可打断下砸 · 收招时近战攒盾\n%d 格生命 · F 治疗 · 按 Enter 开始" % arena.player.health.maximum
-		"entering": message.text = "一阶段 · 试探\n稳住脚步，看清钳子再出手"
+		"ready": message.text = "跳过低扫，收钳反击\n按 Enter 开始"
+		"entering": message.text = "看钳子，等破绽"
 		"won": result_time.text = "%.1f 秒 · 按 Enter 再战" % arena.battle_time
 		"lost": message.text = "别泄气，下一次等它收钳再反击\n按 Enter 立即重试"
 		_: message.text = "已暂停" if get_tree().paused else _combat_hint()
+	stagger_bar.visible = not won and not arena.boss.hurtbox.braced() and arena.boss.stagger_cooldown <= 0
 
 
 func _update_boss_hud() -> void:
@@ -138,9 +158,10 @@ func _update_boss_hud() -> void:
 	boss_title.text = "搬壳母蟹 · " + _phase_name(boss.phase + 1 if boss.state == "phase" else boss.phase)
 	stagger_bar.max_value = CrabMoves.STAGGER_LIMIT
 	stagger_bar.value = CrabMoves.STAGGER_LIMIT if boss.state == "stagger" else boss.stagger
-	stagger_label.text = "破防机会！" if boss.state == "stagger" else "破防积累 %d / %d" % [boss.stagger, CrabMoves.STAGGER_LIMIT]
-	if boss.stagger_cooldown > 0 and boss.state != "stagger":
-		stagger_label.text = "韧性恢复 %.1f 秒" % boss.stagger_cooldown
+	stagger_label.text = "护壳 · 减伤" if boss.hurtbox.braced() else "破绽 · 可反击"
+	stagger_label.modulate = Color(0.66, 0.84, 1.0) if boss.hurtbox.braced() else Color(1.0, 0.88, 0.60)
+	if boss.state == "stagger":
+		stagger_label.text = "破防！"
 
 
 func _phase_name(phase: int) -> String:
@@ -148,31 +169,26 @@ func _phase_name(phase: int) -> String:
 
 
 func _skill_hint() -> String:
-	var shield := "护盾就绪" if arena.player.hurtbox.guard > 0 else "护盾积累 %d / 4" % arena.skills.shield_charge
+	var shield := "护盾就绪" if arena.player.hurtbox.guard > 0 else "护盾积累 %d / %d" % [arena.skills.shield_charge, TrainingSkills.SHIELD_HITS]
 	if arena.player.actions.mode == "aim":
 		return shield + ("    蓄满 · 松开 U" if arena.player.actions.elapsed >= TrainingSkills.CHARGE_TIME else "    正在蓄力")
-	var ranged := "U 点射 / 按住蓄力" if arena.skills.cooldown <= 0 else "远程 %.1f 秒" % arena.skills.cooldown
-	return shield + "    " + ranged
+	return shield
 
 
 func _combat_hint() -> String:
 	var boss := arena.boss
 	match boss.state:
 		"phase":
-			var encouragement := "稳住，你已撼动它的重壳" if boss.phase == 1 else "最后一搏，留意连招的最后一击"
-			return encouragement + "\n" + _phase_name(mini(boss.phase + 1, 3)) + " · 现在可调整位置或治疗"
-		"stagger": return "破防！母蟹暂时不能攻击\n靠近连击，抓住输出机会"
-		"recover":
-			return "它仍在护壳 · 下次跳开或后退" if boss.hurtbox.braced() else "钳子打空了 · 现在反击！"
+			return _phase_name(mini(boss.phase + 1, 3))
+		"stagger": return "破防！反击"
+		"recover": return "收钳 · 反击"
 		"tell", "active":
 			if boss.hurtbox.counter_window():
-				return "重钳高举 · K 重击可打断！"
-			var move := "低钳扫 · 长按跳跃躲开"
+				return "举钳 · K 打断"
+			var move := "低扫 · 跳"
 			if boss.kind == "slam":
-				move = "重钳下砸 · 提前后退"
+				move = "下砸 · 后退"
 			elif boss.kind == "charge":
-				move = "重步冲撞 · 后退拉开距离"
-			if boss.hurtbox.glances >= 2 and boss.kind == "second":
-				return "护壳反扫 · 长按跳跃躲开"
-			return "护壳 · 第 %d / %d 击 · %s" % [boss.sequence_index + 1, maxi(1, boss.sequence.size()), move]
-	return "看钳子读招，躲开整套连招后反击"
+				move = "冲撞 · 后退"
+			return move + ("  %d/%d" % [boss.sequence_index + 1, boss.sequence.size()] if boss.sequence.size() > 1 else "")
+	return ""

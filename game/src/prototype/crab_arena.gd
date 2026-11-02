@@ -106,6 +106,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_ENTER:
 		if stage in ["ready", "won", "lost"]:
 			start()
+	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_H:
+		($UI as CrabArenaUI).toggle_help()
 	if stage == "fighting" and not get_tree().paused and event.is_action_pressed("ranged"):
 		skills.buffer_cast()
 	if freeze_left > 0 and not get_tree().paused and not event.is_echo():
@@ -138,13 +140,15 @@ func _process(delta: float) -> void:
 	camera.offset = Vector2(sin(shake_left * 180) * 3, cos(shake_left * 150) * 2) if shake_enabled and shake_left > 0 else Vector2.ZERO
 
 
-func _hit_feedback(_at: Vector2, heavy: bool) -> void:
+func _hit_feedback(at: Vector2, heavy: bool) -> void:
 	if stage != "fighting":
 		return
-	freeze_left = 0.09 if boss.state == "stagger" else (0.06 if heavy else 0.035)
+	var boss_hit := at.is_equal_approx(boss.hurtbox.global_position)
+	var result := boss.hurtbox.last_result if boss_hit else "player"
+	freeze_left = 0.09 if result == "break" else (0.018 if result == "shell" else (0.06 if heavy else 0.035))
 	world.process_mode = Node.PROCESS_MODE_DISABLED
-	if heavy or boss.state == "stagger":
-		shake_left = 0.16 if boss.state == "stagger" else 0.1
+	if result != "shell" and (heavy or result == "break"):
+		shake_left = 0.16 if result == "break" else 0.1
 
 
 func _impact_feedback(id: String) -> void:

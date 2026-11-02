@@ -5,6 +5,8 @@ extends Node2D
 var dust: CombatEffect
 var impact: CombatEffect
 var resonance: CombatEffect
+var received: CombatEffect
+var hit_label: Label
 var wakes: Array[CombatEffect] = []
 var shells: Array[Sprite2D] = []
 var shell_age := -1.0
@@ -20,6 +22,16 @@ func _ready() -> void:
 	resonance = _effect()
 	impact = _effect()
 	impact.z_index = 4
+	received = _effect()
+	received.z_index = 5
+	hit_label = Label.new()
+	hit_label.theme = load("res://src/ui/theme.tres") as Theme
+	hit_label.add_theme_font_size_override("font_size", 20)
+	hit_label.z_index = 6
+	hit_label.hide()
+	add_child(hit_label)
+	hit_label.top_level = true
+	boss.get_node("Hurtbox").resolved.connect(_received)
 	(boss.get_node("Hitbox") as Hitbox).landed.connect(_landed)
 	for i in 3:
 		wakes.append(_effect())
@@ -53,6 +65,8 @@ func reset() -> void:
 		dust.reset()
 		resonance.reset()
 		impact.reset()
+		received.reset()
+		hit_label.hide()
 	for wake: CombatEffect in wakes:
 		wake.reset()
 	for shell: Sprite2D in shells:
@@ -61,6 +75,8 @@ func reset() -> void:
 
 func _physics_process(delta: float) -> void:
 	impact.advance(delta)
+	received.advance(delta)
+	hit_label.visible = boss.hurtbox.feedback_left > 0 and boss.running
 	dust.advance(delta)
 	resonance.advance(delta)
 	for wake: CombatEffect in wakes:
@@ -132,6 +148,20 @@ func _landed(target: Hurtbox, _hit: HitData) -> void:
 		0.20, 0.72, boss.facing)
 
 
+func _received(result: String, hit: HitData) -> void:
+	var at := CombatEffect.contact_point(boss.hurtbox, hit.origin + Vector2(0, -38))
+	var shell := result == "shell"
+	var broken := result == "break"
+	received.modulate = Color(0.58, 0.86, 1.0) if shell else Color(1.0, 0.88, 0.60)
+	received.play("short2" if shell else ("heavy" if broken else "hit"), at,
+		48 if shell else (155 if broken else 80), 0.16 if shell else (0.45 if broken else 0.24), 0.85, boss.facing)
+	hit_label.text = ("弹刀" if shell else ("破防！" if broken else "命中")) + " −%d" % hit.damage
+	hit_label.modulate = received.modulate
+	hit_label.modulate.a = 1
+	hit_label.global_position = at + Vector2(-40, -62)
+	hit_label.show()
+
+
 func _charge_wake() -> void:
 	wake_x = boss.global_position.x
 	var wake := wakes[wake_index % wakes.size()]
@@ -144,5 +174,5 @@ func snapshot() -> Dictionary:
 	for wake: CombatEffect in wakes:
 		if wake.visible:
 			active_wakes.append(wake.snapshot())
-	return {"impact": impact.snapshot(), "contact": dust.snapshot(), "wakes": active_wakes, "resonance": resonance.snapshot(),
+	return {"impact": impact.snapshot(), "received": received.snapshot(), "contact": dust.snapshot(), "wakes": active_wakes, "resonance": resonance.snapshot(),
 		"contacts": contacts, "wake_count": wake_index}
