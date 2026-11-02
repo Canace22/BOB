@@ -134,6 +134,10 @@ func test_resolved_feedback_distinguishes_shell_hit_and_break_and_clears_on_retr
 	boss.hurtbox.receive(HitData.create(10, boss.position + Vector2(-190, 0)))
 	eq(boss.hurtbox.last_damage, 2, "feedback reports reduced damage rather than weapon damage")
 	eq(fx.received.effect_id, "short2", "shell uses a small deflection arc")
+	var shot := HitData.create(12, boss.position + Vector2(-300, -32))
+	shot.ranged = true
+	boss.hurtbox.receive(shot)
+	eq(fx.received.global_position.y, shot.origin.y, "ranged feedback stays at projectile height")
 	arena.stage = "fighting"
 	arena._hit_feedback(boss.hurtbox.global_position, false)
 	eq(arena.freeze_left, 0.018, "shell has only a short tap of hitstop")

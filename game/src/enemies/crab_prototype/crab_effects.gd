@@ -149,7 +149,8 @@ func _landed(target: Hurtbox, _hit: HitData) -> void:
 
 
 func _received(result: String, hit: HitData) -> void:
-	var at := CombatEffect.contact_point(boss.hurtbox, hit.origin + Vector2(0, -38))
+	var origin := hit.origin if hit.ranged else hit.origin + Vector2(0, -38)
+	var at := CombatEffect.contact_point(boss.hurtbox, origin)
 	var shell := result == "shell"
 	var broken := result == "break"
 	received.modulate = Color(0.58, 0.86, 1.0) if shell else Color(1.0, 0.88, 0.60)

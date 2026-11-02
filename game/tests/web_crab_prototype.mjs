@@ -266,6 +266,8 @@ async function checkProjectilePause() {
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused === false);
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.charged_hits === 1);
+  const impact = await state();
+  assert(Math.abs(impact.boss.effects.received.y - (impact.player.y - 32)) < 1, 'projectile impact stays at the shot height');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.cooldown === 0);
   await page.keyboard.press('u', {delay: 35});
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).skills.hits === 2);
