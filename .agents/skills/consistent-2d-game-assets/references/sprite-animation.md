@@ -1,12 +1,12 @@
 # Sprite animation sequences
 
-Use this workflow when delivering moving sprites. Static props and pose reference sheets do not need it.
+Use this asset-specific checklist alongside the project-local [2d-sprite-animation skill](../../2d-sprite-animation/SKILL.md), which owns the Framecraft workflow, scale-repair guidance, and playback acceptance rules. Static props and pose reference sheets do not need it.
 
 ## Define one action
 
 Separate **action states** from **frames within an action**. Idle, walk, and attack can select three different states; alternating these illustrations does not create a walk cycle. Each animated state needs an ordered sequence with its own timing.
 
-For an initial walk cycle, use 4–8 distinct phases; eight is a useful starting point when both legs and weight transfer must read. Choose fewer frames for deliberately limited animation. More frames do not repair inconsistent drawing or incorrect timing.
+Choose phases from the action’s contact, weight transfer, turning points, and recovery. Key events do not determine the final frame count: add transitions and set hold durations according to motion, style, and timing. Do not default to a fixed number of frames. More frames do not repair inconsistent drawing or incorrect timing.
 
 Write a brief before generation:
 

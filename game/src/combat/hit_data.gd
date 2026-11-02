@@ -3,6 +3,7 @@ extends Resource
 
 @export var damage: int = 1
 @export var heavy: bool = false
+@export var ranged: bool = false
 var origin: Vector2 = Vector2.ZERO
 
 

@@ -28,6 +28,11 @@ window/stretch/mode="canvas_items"
 
 [input]
 
+ranged={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":85)]
+}
+
 move_left={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"physical_keycode":65), Object(InputEventKey,"physical_keycode":4194319)]

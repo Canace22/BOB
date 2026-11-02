@@ -42,7 +42,7 @@ flowchart LR
 | --- | --- |
 | `src/core/` | `EventBus`（全局信号）、`GameState`（生命、蓄振、能力、标记、营地）、`SaveService`（存档读写与校验）。前两者是 autoload |
 | `src/main/` | 主场景：加载存档、切换房间、放置玩家、死亡重生、暂停 |
-| `src/prototype/` | 独立母蟹训练场、生命周期、HUD 与只读状态；进入前隔离 GameState，退出恢复，不读写主线存档 |
+| `src/prototype/` | 独立母蟹训练场、远程弹体/近战护盾、生命周期、HUD 与只读状态；进入前隔离 GameState，退出恢复，不读写主线存档 |
 | `src/player/` | 玩家场景、手感参数 `PlayerTuning`、攻击、动画 |
 | `src/combat/` | `Hitbox`、`Hurtbox`、`Health`、`HitData`，玩家和敌人共用 |
 | `src/enemies/` | `EnemyBase` 状态机，具体敌人只覆盖招式选择和数值 |

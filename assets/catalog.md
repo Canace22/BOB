@@ -78,6 +78,8 @@
 
 `game/art/manifest.json` 是正式工程的同步清单，记录旧 Godot 位图/音频与全局静态库的来源关系；`node tools/godot.mjs sync-art` 生成运行副本。接入结果见 [game/progress.md](../game/progress.md)。复用不计新增创作，静态姿态加程序反馈不计正式动作动画。
 
+母蟹训练场远程共鸣弹复用 `fx-heavy-ring`，近战护盾复用 `fx-echo-open-ring`，保持透明位图等比显示；出手复用玩家已有左右轻击。来源 SVG/PNG 保留原位，运行映射见上述清单。这次新增的是弹体、护盾与阶段组合的运行规则，没有新增美术动作。
+
 中文 UI 使用 [Noto Sans SC](source/noto-sans-sc/README.md) 字体，原文件在 `runtime/fonts/`，SIL OFL 1.1 许可证随运行副本保留。字体属于 UI 依赖，不计入静态精灵数量。
 
 Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字生成子集并重命名，完整原字体保留；生成方式与哈希见上述字体说明。场景图只调整 Godot 导入压缩，制作源、像素尺寸和场景坐标保持原值，不计新增美术创作。

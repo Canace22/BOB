@@ -64,12 +64,12 @@ func interact() -> void:
 
 func _on_damage(hit: HitData) -> void:
 	GameState.damage(hit.damage)
-	invulnerable = tuning.invulnerability
+	invulnerable = tuning.invulnerability + (0.2 if tuning.prototype_controls else 0.0)
 	hurtbox.immune = true
 	actions.change("hurt")
 	hitbox.deactivate()
 	var direction := 1.0 if position.x >= hit.origin.x else -1.0
-	velocity = Vector2(direction * 140, -130)
+	velocity = Vector2(direction * (210 if tuning.prototype_controls else 140), -130)
 	EventBus.sfx.emit("hurt")
 
 

@@ -60,7 +60,10 @@ func present(actor: CrabPrototype) -> void:
 		frame_index = attack_frame(actor)
 	elif actor.state == "phase":
 		action_id = "06_shell_shake"
-		frame_index = mini(11, int(actor.timer / 0.8 * 12))
+		frame_index = mini(11, int(actor.timer / CrabMoves.PHASE_TIME * 12))
+	elif actor.state == "stagger":
+		action_id = "02_claw_slam"
+		frame_index = 8 + mini(3, int(actor.timer / CrabMoves.STAGGER_TIME * 4))
 	elif actor.state == "dead":
 		action_id = "09_sink_fade"
 		frame_index = mini(11, int(death_clock * 8))
