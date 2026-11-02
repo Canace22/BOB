@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 19,
-  "updatedAt": "2026-11-02T06:40:34.511624+00:00",
+  "revision": 20,
+  "updatedAt": "2026-11-02T09:06:33.495Z",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24856,6 +24856,119 @@
         "limitations": [
           "仅母蟹训练场；无鱼群AI或碰撞",
           "既有位图变形与烘焙动画，不计新增创作帧"
+        ]
+      }
+    },
+    {
+      "id": "environment-main-soft-light",
+      "name": "main 水下柔光",
+      "kind": "effect",
+      "region": "训练场",
+      "tags": [
+        "main复用",
+        "环境",
+        "静态纹理"
+      ],
+      "status": "needs-review",
+      "notes": "静态原画位图加运行播放；已完成技术接入，用户审美确认另行判断。",
+      "target": "2d",
+      "file": "assets/runtime/xumen-soft-light/UNDERWATER-SOFT-LIGHT.png",
+      "runtimeFile": "game/art/environment/soft_light.png",
+      "width": 512,
+      "height": 768,
+      "bbox": [
+        65,
+        23,
+        447,
+        745
+      ],
+      "pivot": [
+        256,
+        384
+      ],
+      "sha256": "d3d689fc5e1cbbbd20eec10eb7f4f8b147d3acc4dc28e1e9b1427b60a947d680",
+      "alphaRange": [
+        0,
+        252
+      ],
+      "spriteType": "effect",
+      "integrationStatus": "integrated-prototype",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "zhaosongju main 49ed188a 的独立柔光位图原样复用，沿用来源生成原件与羽化母版",
+        "sourceFiles": [
+          "assets/source/xumen-soft-light/generated/underwater-light-original.png",
+          "assets/source/xumen-soft-light/master/UNDERWATER-SOFT-LIGHT.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-soft-light/prompt.txt"
+        ],
+        "references": [],
+        "rights": "复用BOB已有素材；来源及原制作记录随固定main提交保留，不新增外部授权声明。"
+      },
+      "qa": {
+        "passed": true,
+        "scope": "实际位图、比例/绘制层级、气泡边界回收、暂停/顿帧和独立浏览器键盘环境路线；美术确认单独判断。",
+        "report": "assets/source/crab-environment-main/README.md",
+        "evidence": [],
+        "limitations": [
+          "静态位图播放，不计新增逐帧动画。",
+          "缺图没有替代图，检查时必须修复文件。"
+        ]
+      }
+    },
+    {
+      "id": "environment-main-bubble",
+      "name": "main 原画气泡",
+      "kind": "effect",
+      "region": "训练场",
+      "tags": [
+        "main复用",
+        "环境",
+        "静态纹理"
+      ],
+      "status": "needs-review",
+      "notes": "静态原画位图加运行播放；已完成技术接入，用户审美确认另行判断。",
+      "target": "2d",
+      "file": "assets/runtime/xumen-reference-environment/bubble.png",
+      "runtimeFile": "game/art/environment/bubble.png",
+      "width": 12,
+      "height": 12,
+      "bbox": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "pivot": [
+        6,
+        6
+      ],
+      "sha256": "a20221fd0d97b348b6ebe0f13ce89f063dae79b469d9ef48ba22adbee4cf2f7f",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "spriteType": "effect",
+      "integrationStatus": "integrated-prototype",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "zhaosongju main 49ed188a 原画(883,232,12,12)裁片，原透明边缘隔离；没有程序生成圆环",
+        "sourceFiles": [
+          "assets/source/crab-environment-main/ambience-provenance.json"
+        ],
+        "prompts": [],
+        "references": [],
+        "rights": "复用BOB已有素材；来源及原制作记录随固定main提交保留，不新增外部授权声明。"
+      },
+      "qa": {
+        "passed": true,
+        "scope": "实际位图、比例/绘制层级、气泡边界回收、暂停/顿帧和独立浏览器键盘环境路线；美术确认单独判断。",
+        "report": "assets/source/crab-environment-main/README.md",
+        "evidence": [],
+        "limitations": [
+          "静态位图播放，不计新增逐帧动画。",
+          "缺图没有替代图，检查时必须修复文件。"
         ]
       }
     }

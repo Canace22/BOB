@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/Canace22/BOB",
+  "commit": "49ed188ac1f90ac8f1aaf61fa370169aa6edfb69",
+  "author": "zhaosongju",
+  "method": "Selective reuse of independent bitmap ambience; exact source images, adapted arena placement and clocks. No full branch merge or new artwork.",
+  "files": [
+    {
+      "path": "assets/runtime/xumen-soft-light/UNDERWATER-SOFT-LIGHT.png",
+      "sha256": "d3d689fc5e1cbbbd20eec10eb7f4f8b147d3acc4dc28e1e9b1427b60a947d680",
+      "size": [512, 768],
+      "runtime": "game/art/environment/soft_light.png",
+      "source": "assets/source/xumen-soft-light/generated/underwater-light-original.png"
+    },
+    {
+      "path": "assets/runtime/xumen-reference-environment/bubble.png",
+      "sha256": "a20221fd0d97b348b6ebe0f13ce89f063dae79b469d9ef48ba22adbee4cf2f7f",
+      "size": [12, 12],
+      "runtime": "game/art/environment/bubble.png",
+      "sourceAtCommit": "assets/source/xumen-reference-environment/original/reference.png",
+      "sourceRect": [883, 232, 12, 12],
+      "extractionAtCommit": "game/tools/whalebelly/reference_environment/export_assets.gd"
+    },
+    {
+      "path": "assets/source/xumen-soft-light/generated/underwater-light-original.png",
+      "sha256": "c2d2182abe2c9061f0be3cee7e5449c534c4f6da9c1119552a1c36d6572f177b",
+      "size": [1024, 1536]
+    }
+  ],
+  "adaptedFrom": [
+    "game/src/world/scenery/local_environment/elements/soft_underwater_light.gd",
+    "game/src/world/scenery/local_environment/elements/soft_underwater_light.gdshader",
+    "game/src/world/scenery/local_environment/elements/bubble_emitter.gd"
+  ],
+  "scope": "Two low-intensity light volumes and 14 background bubbles. Existing 22 fish, three baleen clusters, terrain, camera and combat remain. Shader preserves inherited tint; all clocks inherit World pause and hit-stop.",
+  "rights": "Existing BOB project assets and creation provenance; no new external license claim."
+}

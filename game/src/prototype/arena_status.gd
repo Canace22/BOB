@@ -34,6 +34,8 @@ func snapshot() -> Dictionary:
 func _environment_snapshot() -> Dictionary:
 	var schools: Array[Dictionary] = []
 	var baleen: Array[Dictionary] = []
+	var lights: Array[Dictionary] = []
+	var bubbles: Array[Dictionary] = []
 	for node: Node in arena.get_node("World/Scenery/Environment/EnvironmentMotion").get_children():
 		if node is AmbientFishSchool:
 			var school := node as AmbientFishSchool
@@ -45,7 +47,17 @@ func _environment_snapshot() -> Dictionary:
 			var sprite := node as AmbientAtlas
 			baleen.append({"frame": sprite.frame, "time": sprite.elapsed,
 				"texture": sprite.texture.resource_path})
-	return {"schools": schools, "baleen": baleen}
+		elif node is AmbientSoftLight:
+			var light := node as AmbientSoftLight
+			lights.append({"time": light.elapsed, "intensity": light.intensity,
+				"texture": light.texture.resource_path})
+		elif node is AmbientBubbles:
+			var emitter := node as AmbientBubbles
+			var bubble := emitter.bubbles[0]
+			bubbles.append({"time": emitter.elapsed, "count": emitter.bubbles.size(),
+				"position": [bubble.position.x, bubble.position.y],
+				"texture": bubble.texture.resource_path})
+	return {"schools": schools, "baleen": baleen, "lights": lights, "bubbles": bubbles}
 
 
 func _snapshot(_arguments: Array) -> void:

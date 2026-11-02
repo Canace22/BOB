@@ -27,6 +27,10 @@ try {
   const initial = await state();
   assert.equal(initial.environment.schools.reduce((n, s) => n + s.count, 0), 22);
   assert.equal(initial.environment.baleen.length, 3);
+  assert.equal(initial.environment.lights.length, 2);
+  assert.equal(initial.environment.bubbles.reduce((n, s) => n + s.count, 0), 14);
+  assert(initial.environment.lights.every(s => s.texture.endsWith('/environment/soft_light.png')));
+  assert(initial.environment.bubbles.every(s => s.texture.endsWith('/environment/bubble.png')));
   await shot('ready');
   // The ready camera and background are still. Sample two areas clear of actors and HUD.
   const baleenArea = {x: 235, y: 150, width: 115, height: 50};
@@ -48,6 +52,10 @@ try {
     assert(new Set(observations.map(s => s.schools[i].frame)).size >= 28, 'fish tail frames advance');
     assert(new Set(observations.map(s => s.schools[i].position[0])).size > 100, 'fish travel');
     assert(observations.every(s => s.schools[i].texture.endsWith(`${initial.environment.schools[i].species}.png`)));
+  }
+  assert(new Set(observations.map(s => s.lights[0].time)).size > 100, 'light breath advances');
+  for (let i = 0; i < 3; i++) {
+    assert(new Set(observations.map(s => s.bubbles[i].position[1])).size > 100, 'bubbles rise and recycle');
   }
   await page.locator('canvas').click({position: {x: 600, y: 450}});
   await page.keyboard.press('Enter');
@@ -75,7 +83,8 @@ try {
   assert.deepEqual(errors, []);
   writeFileSync(path.join(output, 'report.json'), JSON.stringify({passed: true, checks: [
     'fish_and_baleen_move_on_screen', 'three_schools_22_fish_and_three_baleen_load', 'full_cycle_and_authored_frames_advance',
-    'pause_resume_freezes_all_motion', 'real_movement_jump_and_ranged_combat', 'no_resource_errors_or_save_writes'],
+    'two_painted_lights_and_14_bitmap_bubbles', 'pause_resume_freezes_all_motion',
+    'real_movement_jump_and_ranged_combat', 'no_resource_errors_or_save_writes'],
     errors, initial, final: await state(), observations}, null, 2));
 } finally {
   await context.close();

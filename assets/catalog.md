@@ -25,6 +25,8 @@
 
 [main 环境素材接入](source/crab-environment-main/README.md)：原样复用三种鱼群图集和 V3 垂须图集；训练场放置22条鱼和3簇垂须，暂停与顿帧跟随世界。来源提交、哈希和适用边界见批次说明，实机与发布证据见 [游戏进度](../game/progress.md)。
 
+同批继续复用两张独立位图：512×768 水下柔光和12×12原画气泡；训练场配置2束柔光与14个背景气泡。柔光原件、母版与提示词见[源目录](source/xumen-soft-light/README.md)，原文件哈希与源脚本见[来源清单](source/crab-environment-main/ambience-provenance.json)。没有新增创作帧或碰撞；当前接入验收见游戏进度。
+
 ## 动画候选与平台处理
 
 续修批次 `player-animation-v2` 见[左右动作制作与接入](source/player-animation-v2/README.md)：独立朝向、公共脚底根、交替支撑腿和落地缓冲，新增两条动画台账。实际可用动作、实机检查与发布状态以 `catalog.json` 和 [游戏进度](../game/progress.md) 为准；下列 V1 试验继续保留。
