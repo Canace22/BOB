@@ -43,7 +43,7 @@ function observe(s, direction, clip) {
   if (clip) assert.equal(a.clip, clip);
   assert.equal(a.using_directional, true, `${direction}/${a.clip} must use new art`);
   assert(a.file.includes(`/animation-v2/${direction}/`), `${direction} loads its own bitmap: ${a.file}`);
-  assert.deepEqual(a.pivot, [192, 342], 'every pose uses the common registered pivot');
+  assert.deepEqual(a.pivot, [96, 171], 'every pose uses the common registered pivot');
   observations.push({ time: s.time, hp: s.hp, x: s.player.x, y: s.player.y, mode: s.player.mode,
     kind: s.player.kind, elapsed: s.player.elapsed, ...a });
   return s;
@@ -149,7 +149,7 @@ async function hurtAndHeal(direction) {
   await fresh(direction);
   // Deliberately stand still until a real boss hit; no health/state injection.
   const hurt = await clip(direction, 'hurt', 30000);
-  assert(hurt.hp < 4 && hurt.hp > 0, 'real incoming damage produces hurt');
+  assert(hurt.hp < hurt.max_hp && hurt.hp > 0, 'real incoming damage produces hurt');
   await capture(`${direction}-hurt`);
   await wait(() => { const p = JSON.parse(window.render_game_to_text()).player; return p.floor && p.mode === 'idle'; });
   await page.keyboard.press('f');

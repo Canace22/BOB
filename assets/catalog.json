@@ -24136,12 +24136,12 @@
       "target": "2d",
       "familyId": "tide-picker",
       "file": "assets/runtime/sprites/tide-picker-animation-v2/left/idle-00.png",
-      "width": 384,
-      "height": 384,
+      "width": 192,
+      "height": 192,
       "spriteType": "animated",
       "source": {
         "batchId": "player-animation-v2",
-        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸透明边缘处理",
+        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸整理后按 50% 软缩放",
         "references": [
           "assets/source/player-animation-v2/left/"
         ],
@@ -24152,10 +24152,10 @@
         "metadata": "assets/runtime/sprites/tide-picker-animation-v2/animations.json",
         "direction": "left",
         "pivot": [
-          192,
-          342
+          96,
+          171
         ],
-        "displayScale": 0.275
+        "displayScale": 0.55
       },
       "qa": {
         "userVisualApproval": "待用户实机反馈",
@@ -24188,12 +24188,12 @@
       "target": "2d",
       "familyId": "tide-picker",
       "file": "assets/runtime/sprites/tide-picker-animation-v2/right/idle-00.png",
-      "width": 384,
-      "height": 384,
+      "width": 192,
+      "height": 192,
       "spriteType": "animated",
       "source": {
         "batchId": "player-animation-v2",
-        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸透明边缘处理",
+        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸整理后按 50% 软缩放",
         "references": [
           "assets/source/player-animation-v2/right/"
         ],
@@ -24204,10 +24204,10 @@
         "metadata": "assets/runtime/sprites/tide-picker-animation-v2/animations.json",
         "direction": "right",
         "pivot": [
-          192,
-          342
+          96,
+          171
         ],
-        "displayScale": 0.275
+        "displayScale": 0.55
       },
       "qa": {
         "userVisualApproval": "待用户实机反馈",
