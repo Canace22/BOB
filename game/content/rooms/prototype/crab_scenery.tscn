@@ -1,6 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Texture2D" path="res://art/enemies/crab_video/environment.png" id="environment"]
+[ext_resource type="PackedScene" path="res://content/rooms/prototype/crab_environment_motion.tscn" id="motion"]
 [sub_resource type="RectangleShape2D" id="floor"]
 size = Vector2(2304, 64)
 
@@ -10,6 +11,8 @@ z_index = -10
 position = Vector2(570, 474)
 centered = false
 texture = ExtResource("environment")
+
+[node name="EnvironmentMotion" parent="." instance=ExtResource("motion")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(1152, 928)

@@ -20,6 +20,7 @@ func snapshot() -> Dictionary:
 		"hp": GameState.hp, "max_hp": arena.player.health.maximum,
 		"energy": GameState.energy, "time": arena.battle_time,
 		"skills": arena.skills.snapshot(),
+		"environment": _environment_snapshot(),
 		"dash_enabled": arena.dash_enabled, "freeze": arena.freeze_left,
 		"save_enabled": GameState.autosave, "flags": GameState.flags,
 		"player": {"x": p.position.x, "y": p.position.y, "floor": p.is_on_floor(),
@@ -27,6 +28,23 @@ func snapshot() -> Dictionary:
 			"facing": p.facing, "dead": p.dead, "invulnerable": p.invulnerable,
 			"animation": (p.get_node("Visual") as PlayerVisual).animation_snapshot()},
 		"boss": arena.boss.snapshot()}
+
+
+func _environment_snapshot() -> Dictionary:
+	var schools: Array[Dictionary] = []
+	var baleen: Array[Dictionary] = []
+	for node: Node in arena.get_node("World/Scenery/EnvironmentMotion").get_children():
+		if node is AmbientFishSchool:
+			var school := node as AmbientFishSchool
+			schools.append({"species": school.species, "count": school.fish.size(),
+				"time": school.elapsed, "frame": school.fish[0].frame,
+				"position": [school.fish[0].position.x, school.fish[0].position.y],
+				"texture": school.fish[0].texture.resource_path})
+		elif node is AmbientAtlas:
+			var sprite := node as AmbientAtlas
+			baleen.append({"frame": sprite.frame, "time": sprite.elapsed,
+				"texture": sprite.texture.resource_path})
+	return {"schools": schools, "baleen": baleen}
 
 
 func _snapshot(_arguments: Array) -> void:
