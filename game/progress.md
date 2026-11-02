@@ -14,6 +14,12 @@
 - 300 血 Boss 回归：`game/build/qa/player-animation-boss-final/` 无冲刺 32.534 秒通关、生命 4/4；三招、二阶段、暂停、死亡、Enter 重试、刷新和冲刺对照通过，错误为空。最后接地修复后的 `check`/44 项测试/Web 导出均成功，运行包 55.94 MiB、传输压缩 27.69 MiB；体积不等于实际下载耗时。线上发布另记。
 - 文档与技能：更新 README、台账、制作/接入说明、Godot Skill；通用动画 Skill 记录平台 60 FPS 预览限制。素材管理页增加逐帧动画类型显示，检查通过。源图/有效工程入库，废稿、重复中间输出和本地 QA 影像保留本机；用户美术认可仍待试玩反馈。
 
+### V2 玩家动作已发布至训练场
+
+- 2026-11-02 13:48（Asia/Shanghai），源码 `927f1a0f8e56b7c2753f96a0214bb82bdb5c9502`（动作提交 `85dfa07`，合并保留母蟹 V4 收尾），Pages `dc6358fb5d17625bd52d557bd63d95a0863ad6c1`；[部署任务](https://github.com/Canace22/BOB/actions/runs/41396042185) completed/success，实际 `godot-boss/build.json` 已核对一致。[独立训练场](https://canace22.github.io/BOB/godot-boss/)可刷新试玩。发布差异仅 `godot-boss/`，主线 `godot/build.json` 仍是 `167d44a`。
+- 线上完整玩家路线通过：`game/build/qa/player-animation-online-927f1a0/report.json`，103 条观测确认两向各 11 段与左 6 / 右 10 跑步整圈；停墙、暂停、跳落、三种攻击、冲刺、真实受伤及回血通过，错误为空。附 `route.webm`（5.54 MiB）、逐状态 PNG 和实际 HTTPS 版本记录；已目视右向重击、左向落地，另用独立 Chrome 按键转向/跳跃复核并保留准备画面供试玩。
+- 线上 Boss 路线 `game/build/qa/player-animation-boss-online-927f1a0/report.json` 通过：无冲刺 35.633 秒、生命 4/4；三招、二阶段、暂停、死亡重试、刷新和冲刺对照正常，错误为空。此结果仅验证运行路线；随后用户指出玩家/Boss 待机闪烁，作为新缺陷继续修复，不能用以上索引/按键检查抵消。
+
 ## 2026-11-02 · 螃蟹平台整理与玩家左右动作候选
 
 - 范围：用户要求优化此前视频拆分的螃蟹动作、补玩家动作，并明确每组动作不能只有一个朝向。制作按左右分别检查面朝方向、肢体和装备挂点；移动方向另记。当前仍是候选批次，完整左右动作集未完成，详见[批次说明](../assets/source/animation-platform-20261102.md)。
