@@ -38,6 +38,7 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 ## 已验证的恢复方式
 
 - 首屏性能：先用 `game/tests/web_startup.mjs` 记录线上冷/暖启动、Resource Timing 传输字节；HEAD 的未压缩长度不代表浏览器实际下载量。测速时避免其他下载/路线回归争用同一网络。
+- 精灵台压缩先拆开核对 `downloads.json` 中的引擎与资源字节。对有充足采样余量的小角色整组等比软缩放，同时换算公共根与显示倍率，保留逐帧时长和世界步幅。排除旧图集前检查动态路径、特效和回退，再从 Web 导出日志核对包含项并走按键路线。
 - 导出后由 `tools/prepare-web.mjs` 生成 gzip 和内容哈希，`game/web/preload.js` 只接管两个启动文件并使用独立资源缓存；原始包保留供无解压 API 的浏览器回退。`STARTUP_FALLBACK=1` / `STARTUP_NO_CACHE=1` 分别验证解压缺失和缓存不可用。
 - 新增中文后按[字体制作说明](../../../assets/source/noto-sans-sc/README.md)重建子集并同步；字体覆盖测试必须通过。场景图压缩改 `.import`，不缩图或改裁片坐标；复核游戏实际截图。
 

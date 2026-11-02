@@ -49,6 +49,8 @@ V4 将横扫、冲撞、走路和抖壳统一为待机的侧向镜头，补绘 4
 
 拾潮者 V2 使用独立左右位图动作：待机、跑步、上升/下降/落地、两段普攻、重击、受击、冲刺与调息。统一脚底根，跑步跟随实际位移；站定落地缓冲后回待机，移动落地接跑步。地面出招站稳，收招允许移动；武器和腰灯不随朝向交换挂点。画面仍是有限关键姿势的逐帧动画，连续性与用户试玩反馈分别记录在[制作说明](assets/source/player-animation-v2/README.md)和进度中。
 
+训练场使用精灵台压缩后的玩家贴图，原尺寸制作帧保存在素材库。首次下载量与实测启动时间见[进度记录](game/progress.md)。
+
 本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
 
 玩家动作专项复核运行 `node game/tests/web_player_animation.mjs`，默认验证两向完整动作并保存录像；`ANIMATION_SUITE=locomotion` 只跑移动和跳落。该脚本使用独立浏览器上下文，不修改玩家主线存档。

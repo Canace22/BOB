@@ -5,9 +5,9 @@ extends RefCounted
 const CLIPS := ["idle", "run", "jump_rise", "jump_fall", "land", "attack", "attack2", "heavy", "hurt", "dash", "heal"]
 const ATTACKS := ["attack", "attack2", "heavy"]
 
-var canvas := Vector2i(384, 384)
-var pivot := Vector2(192, 342)
-var display_scale: float = 0.275
+var canvas := Vector2i(192, 192)
+var pivot := Vector2(96, 171)
+var display_scale: float = 0.55
 var directions: Dictionary = {}
 var issues: PackedStringArray = []
 
