@@ -15,7 +15,6 @@ var frame_index: int = 0
 var using_directional: bool = false
 var phase_elapsed: float = 0
 var run_distance: float = 0
-var _clock: float = 0
 var _previous_position := Vector2.ZERO
 var _previous_grounded: bool = false
 var _initialized: bool = false
@@ -50,7 +49,6 @@ func reset_playback() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_clock += delta
 	direction = "left" if player.facing < 0 else "right"
 	var grounded := player.is_on_floor() or not player.is_physics_processing()
 	var displacement := player.global_position - _previous_position
@@ -112,7 +110,9 @@ func _present() -> void:
 		flip_h = false
 	else:
 		_present_legacy()
-	modulate.a = 0.45 if player.invulnerable > 0 and sin(_clock * 35) > 0 else 1.0
+	# Spawn/retry protection is not damage feedback. A real hurt action lasts 0.18s.
+	var showing_hurt := player.is_physics_processing() and not player.dead and player.actions.mode == "hurt"
+	modulate.a = 0.45 if showing_hurt and sin(player.actions.elapsed * 35) > 0 else 1.0
 	_present_effect()
 
 
@@ -172,6 +172,7 @@ func animation_snapshot() -> Dictionary:
 	var anchor := animations.pivot if using_directional else LEGACY_PIVOT
 	var animation := animations.clip(direction, clip_name)
 	return {"direction": direction, "clip": clip_name, "frame": frame_index, "file": _file,
+		"opacity": modulate.a,
 		"using_directional": using_directional, "pivot": [anchor.x, anchor.y],
 		"frame_count": animation.get("files", []).size(), "stride_pixels": animation.get("stride", 0),
 		"phase": phase_elapsed, "run_distance": run_distance}

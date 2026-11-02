@@ -45,11 +45,15 @@ Boss 在 65% / 35% 血量转入二、三阶段：单招逐步变为二连扫、�
 
 V4 将横扫、冲撞、走路和抖壳统一为待机的侧向镜头，补绘 48 帧；走路随实际位移推进，停住不空踏。来源、打包和剩余漂移见 [V4 记录](assets/source/crab-video-v4/README.md)。
 
+待机闪烁修复：玩家出生/重试的保护状态不再触发受击闪烁；准备与结果界面保持正常透明度。母蟹待机采用稳定的第 0 帧站姿，原待机重绘序列因壳纹和钳角跳变停用；这是静态待机，移动、出招和退场继续播放各自动作。
+
 拾潮者 V2 使用独立左右位图动作：待机、跑步、上升/下降/落地、两段普攻、重击、受击、冲刺与调息。统一脚底根，跑步跟随实际位移；站定落地缓冲后回待机，移动落地接跑步。地面出招站稳，收招允许移动；武器和腰灯不随朝向交换挂点。画面仍是有限关键姿势的逐帧动画，连续性与用户试玩反馈分别记录在[制作说明](assets/source/player-animation-v2/README.md)和进度中。
 
 本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
 
 玩家动作专项复核运行 `node game/tests/web_player_animation.mjs`，默认验证两向完整动作并保存录像；`ANIMATION_SUITE=locomotion` 只跑移动和跳落。该脚本使用独立浏览器上下文，不修改玩家主线存档。
+
+待机与受击反馈用 `node game/tests/web_idle_feedback.mjs`，默认访问独立 4190 预览；支持 `GAME_URL` 指向线上，持续采样左右待机透明度、暂停、真实伤害、死亡和重试，保存报告与录像。
 
 发布原型用 `node tools/deploy-pages.mjs --prototype`，只更新 `gh-pages` 的 `/godot-boss/`，不替换 `/godot/`、根入口或 V2。原型启动下载使用独立缓存 `bob-boss-downloads-v1`，不清理主线缓存。
 
