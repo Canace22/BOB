@@ -2,11 +2,14 @@ class_name CrabMoves
 extends RefCounted
 ## Seconds and world pixels. Cooldowns start after the whole recovery window.
 
+enum RetreatCombo { WAITING, READY, USED }
+
 const BODY_RADIUS := 150.0
 const BODY_HEIGHT := 240.0
 const PLAYER_RADIUS := 17.0
 const CHARGE_SPEED := 280.0
 const CHARGE_DISTANCE := 168.0
+const CHARGE_MIN_GAP := 120.0
 const RETREAT_SPACE := 180.0
 const PHASE_TIME := 1.2
 const STAGGER_TIME := 1.6
@@ -43,10 +46,24 @@ static func can_repeat(kind: String, previous: String, streak: int) -> bool:
 	return kind != previous or streak < 2
 
 
+static func set_cooldowns(cooldowns: Dictionary, sequence: Array[String]) -> void:
+	for attack: String in sequence:
+		var completed := "sweep" if attack == "second" else attack
+		cooldowns[completed] = value(completed, "cooldown")
+
+
+static func track_retreat(current: RetreatCombo, gap: float, moving_away: bool) -> RetreatCombo:
+	if current == RetreatCombo.USED:
+		return current
+	if gap < CHARGE_MIN_GAP:
+		return RetreatCombo.WAITING
+	return RetreatCombo.READY if moving_away else current
+
+
 static func select(distance: float, free_space: float, cooldowns: Dictionary,
-		previous: String, streak: int, rng: RandomNumberGenerator, retreat_space: float = INF) -> String:
-	if distance >= 120 and distance <= 350 and free_space >= RETREAT_SPACE and retreat_space >= RETREAT_SPACE:
-		if float(cooldowns.get("charge", 0)) <= 0 and can_repeat("charge", previous, streak):
+		previous: String, streak: int, rng: RandomNumberGenerator, retreat_space: float = INF, first_retreat: bool = false) -> String:
+	if distance >= CHARGE_MIN_GAP and distance <= 350 and free_space >= RETREAT_SPACE and retreat_space >= RETREAT_SPACE:
+		if first_retreat or (float(cooldowns.get("charge", 0)) <= 0 and can_repeat("charge", previous, streak)):
 			return "charge"
 	if distance > 100:
 		return ""

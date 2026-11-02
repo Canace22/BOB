@@ -28,6 +28,15 @@ try {
   assert.equal(initial.environment.schools.reduce((n, s) => n + s.count, 0), 22);
   assert.equal(initial.environment.baleen.length, 3);
   await shot('ready');
+  // The ready camera and background are still. Sample two areas clear of actors and HUD.
+  const baleenArea = {x: 235, y: 150, width: 115, height: 50};
+  const fishArea = {x: 230, y: 245, width: 370, height: 34};
+  const sampleArea = clip => page.screenshot({clip});
+  const baleenBefore = await sampleArea(baleenArea);
+  const fishBefore = await sampleArea(fishArea);
+  await page.waitForTimeout(700);
+  assert(!(await sampleArea(baleenArea)).equals(baleenBefore), 'baleen visibly moves below the roof');
+  assert(!(await sampleArea(fishArea)).equals(fishBefore), 'fish visibly swim across the open water');
   // Observe one complete 16-second group cycle, including all 48 baleen poses.
   for (let i = 0; i < 320; i++) {
     observations.push((await state()).environment);
@@ -65,7 +74,7 @@ try {
   assert.equal((await state()).save_enabled, false);
   assert.deepEqual(errors, []);
   writeFileSync(path.join(output, 'report.json'), JSON.stringify({passed: true, checks: [
-    'three_schools_22_fish_and_three_baleen_load', 'full_cycle_and_authored_frames_advance',
+    'fish_and_baleen_move_on_screen', 'three_schools_22_fish_and_three_baleen_load', 'full_cycle_and_authored_frames_advance',
     'pause_resume_freezes_all_motion', 'real_movement_jump_and_ranged_combat', 'no_resource_errors_or_save_writes'],
     errors, initial, final: await state(), observations}, null, 2));
 } finally {

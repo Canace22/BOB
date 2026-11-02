@@ -64,7 +64,7 @@ flowchart LR
 - **代码规模**：一个功能一个目录；单个脚本尽量不超过 250 行（`check` 会提示）；全部使用带类型的 GDScript 和 `class_name`。
 - **测试与游戏分离**：游戏代码里没有 QA 分支；测试在 `tests/` 里直接实例化场景并驱动。
 - **浏览器可观察性**：`src/core/web_status.gd` 提供只读 `render_game_to_text()`；不接受状态写入、传送或伤害命令。浏览器驱动在 `tests/web_playthrough.mjs`，通过真实键盘操作。
-- **原型隔离**：`src/main/boot.tscn` 默认加载主线；`?prototype=crab`、独立 `/godot-boss/` 或原生 `--crab-prototype` 进入训练场。训练场复制 `PlayerTuning` 并开启 `prototype_controls`，主线维持原手感。母蟹使用独立 `CrabPrototype/CrabMoves`，不改主线 `EnemyBase` 或奖励。
+- **原型隔离**：`src/main/boot.tscn` 默认加载主线；`?prototype=crab`、独立 `/godot-boss/` 或原生 `--crab-prototype` 进入训练场。训练场复制 `PlayerTuning` 并开启 `prototype_controls`，主线维持原手感。母蟹用 `CrabPrototype/CrabMoves` 选招，专属 `CrabShell` 依据当前招式和本轮实际接触处理护壳、反扫与下砸打断。远程蓄力由训练场的 `TrainingSkills` 接收输入，弹体在出手有效帧生成。
 - **正式美术**：遵循 [AGENTS.md 的 2D 素材规则](../AGENTS.md#正式美术必须使用2d素材)。缺图时先补素材，再在 `art/manifest.json` 登记同步。
 
 ## 存档

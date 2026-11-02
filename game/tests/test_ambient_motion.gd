@@ -4,7 +4,10 @@ const SCENE := preload("res://content/rooms/prototype/crab_environment_motion.ts
 
 
 func test_authored_atlases_and_draw_order_preserve_combat_space() -> void:
-	var scene := add(SCENE.instantiate())
+	var scenery := add(preload("res://content/rooms/prototype/crab_scenery.tscn").instantiate())
+	var board := scenery.get_node("Environment") as Sprite2D
+	var scene := board.get_node("EnvironmentMotion") as Control
+	eq(scene.get_global_rect(), Rect2(board.global_position, board.texture.get_size()), "clip matches the backdrop in the arena")
 	var total := 0
 	for node: Node in scene.get_children():
 		if node is AmbientFishSchool:
@@ -13,7 +16,7 @@ func test_authored_atlases_and_draw_order_preserve_combat_space() -> void:
 			for fish: Sprite2D in school.fish:
 				eq(fish.texture.get_size(), Vector2(2560, 896), "full fish atlas loaded")
 				check(fish.global_position.y < 750, "fish stay above fighting floor")
-			check(school.z_index < 0, "fish remain behind fighters")
+			check(school.z_index > 0 and board.z_index + school.z_index < 0, "fish draw above the backdrop and behind fighters")
 		elif node is AmbientAtlas:
 			var sprite := node as AmbientAtlas
 			eq(sprite.texture.get_size(), Vector2(3072, 2304), "V3 original atlas loaded")

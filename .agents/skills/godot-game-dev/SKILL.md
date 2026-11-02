@@ -38,6 +38,7 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 ## 已验证的恢复方式
 
 - 首屏性能：先用 `game/tests/web_startup.mjs` 记录线上冷/暖启动、Resource Timing 传输字节；HEAD 的未压缩长度不代表浏览器实际下载量。测速时避免其他下载/路线回归争用同一网络。
+- 精灵台压缩先拆开核对 `downloads.json` 中的引擎与资源字节。对有充足采样余量的小角色整组等比软缩放，同时换算公共根与显示倍率，保留逐帧时长和世界步幅。排除旧图集前检查动态路径、特效和回退，再从 Web 导出日志核对包含项并走按键路线。
 - 导出后由 `tools/prepare-web.mjs` 生成 gzip 和内容哈希，`game/web/preload.js` 只接管两个启动文件并使用独立资源缓存；原始包保留供无解压 API 的浏览器回退。`STARTUP_FALLBACK=1` / `STARTUP_NO_CACHE=1` 分别验证解压缺失和缓存不可用。
 - 新增中文后按[字体制作说明](../../../assets/source/noto-sans-sc/README.md)重建子集并同步；字体覆盖测试必须通过。场景图压缩改 `.import`，不缩图或改裁片坐标；复核游戏实际截图。
 
@@ -54,6 +55,8 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 测试脚本解析失败：runner 应报告不能实例化的 suite 并退出失败，不能在引擎窗口永久等待；先跑 `check` 再跑 `test`，不要仅看导入进程完成。并行代理写文件可以，Godot import/test/export 由一处串行安排，避免共享导入缓存竞争。
 - 玩家序列帧接入：公共画布/pivot、两向独立文件、逐帧时长和步幅以 `assets/runtime/sprites/tide-picker-animation-v2/animations.json` 为准；来源和导出见[制作说明](../../../assets/source/player-animation-v2/README.md)。攻击有效段必须落在帧边界；跑步按实际位移推进，不能只看全局时钟。素材缺项会显式回退旧图，验收须用只读 `player.animation.using_directional` 和实际文件路径确认新素材正在加载。
 - 动作专项按键路线：`tests/web_player_animation.mjs` 分完整/基础移动两种范围，保存两向姿势、暂停、撞墙与录屏；有限状态测试不能替代整圈换腿、脚滑和实际画面复核。Mac 引擎默认位置已由命令入口支持，仍严格检查项目固定版本。
-- 环境图集复用：保持原单元和固定根点，以 `AmbientAtlas` / `AmbientFishSchool` 及场景导出属性控制播放和摆放；动画继承 World 的暂停/顿帧，不用系统时间绕过暂停。源图、成员相位和固定来源提交记录在 `assets/source/crab-environment-main/`，`tests/web_environment_motion.mjs` 检查实际图集、完整周期及按键暂停；洞顶遮挡与战斗可读性仍要看截图和连续播放。全量 `sync-art` 可能重新编码其他派生 PNG，提交前检查并排除无关差异；恢复 LFS 文件时用正常 checkout/smudge，不能把 `git show` 的指针文本写成 PNG。
+- 环境图集复用：保持原单元和固定根点，以 `AmbientAtlas` / `AmbientFishSchool` 及场景导出属性控制播放和摆放；动画继承 World 的暂停/顿帧，不用系统时间绕过暂停。裁切层挂在背景板下，使用板内坐标。发布回归在准备页固定镜头取样鱼群与垂须两处画面，确认像素随动画变化，避免图集帧号正常但整层落在镜头外。源图、成员相位和固定来源提交记录在 `assets/source/crab-environment-main/`，`tests/web_environment_motion.mjs` 检查实际图集、完整周期及按键暂停；洞顶遮挡与战斗可读性仍要看截图和连续播放。全量 `sync-art` 可能重新编码其他派生 PNG，提交前检查并排除无关差异；恢复 LFS 文件时用正常 checkout/smudge，不能把 `git show` 的指针文本写成 PNG。
+- 待机闪烁要分别检查运行透明度和素材帧差：父角色停用物理处理时，子视觉节点仍可能推进；若无敌倒计时冻结而视觉依赖它闪烁，准备页会永久忽明忽暗。出生保护不能当作真实受击反馈；准备、死亡、胜利、重试都要观察数秒并记录透明度。纹理/轮廓跳变不能靠降 FPS 掩盖；停用不合格循环时明确记为静态姿态。
 
 - 连招特效从实际有效窗或 `landed` 触发，爆点按 Hurtbox 碰撞形状夹取，固定在世界位置。下一招前摇清掉上一招尾尘；阶段/胜利单次播放，重试清理。`VERIFY_EFFECTS=1` 扩展现有训练场按键路线，检查八组实际纹理、暂停、转阶段与胜利。透明度断言为浮点留容差。制作源见[连招特效说明](../../../assets/source/combo-vfx-v1/README.md)。
+- 调整战斗难度时用两条真实按键路线作对照。固定贴身方向连续按 J，记录是否引出反扫、胜负和双方余血；再按提示躲整套并打收招，确认仍能通关。护盾挡住也算母蟹打中，不能用玩家血量是否下降代替接触事件。U 分别验收点按、蓄满持续持有、松手和弹体暂停。

@@ -17,13 +17,19 @@ page.on('pageerror', error => errors.push(error.message));
 page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
 page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
 const url = process.env.GAME_URL ?? 'http://127.0.0.1:4187/BOB/godot/';
+const entry = new URL(url);
+const boss = entry.pathname.includes('/godot-boss/') || entry.searchParams.get('prototype') === 'crab';
 const results = [];
 try {
   for (const temperature of ['cold', 'warm']) {
     const started = Date.now();
     if (temperature === 'cold') await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 180000 });
     else await page.reload({ waitUntil: 'domcontentloaded', timeout: 180000 });
-    await page.waitForFunction(() => typeof window.render_game_to_text === 'function' && JSON.parse(window.render_game_to_text()).room === 'R1-01', null, { timeout: 180000 });
+    await page.waitForFunction(isBoss => {
+      if (typeof window.render_game_to_text !== 'function') return false;
+      const state = JSON.parse(window.render_game_to_text());
+      return isBoss ? state.stage === 'ready' : state.room === 'R1-01';
+    }, boss, { timeout: 180000 });
     const timing = await page.evaluate(() => ({ readyMs: performance.now(), resources: performance.getEntriesByType('resource').filter(r => /index\.(wasm|pck)|\/(wasm|pck)\.[a-f0-9]{16}\.gz/.test(r.name)).map(r => ({ file: new URL(r.name).pathname.split('/').pop(), durationMs: r.duration, endMs: r.responseEnd, transferBytes: r.transferSize, encodedBytes: r.encodedBodySize, decodedBytes: r.decodedBodySize })) }));
     results.push({ temperature, wallMs: Date.now() - started, ...timing });
     console.log(JSON.stringify(results.at(-1)));

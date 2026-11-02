@@ -23,7 +23,7 @@ func is_free() -> bool:
 func can_jump(player: Player) -> bool:
 	if not player.tuning.prototype_controls:
 		return mode in ["idle", "attack"]
-	return is_free() or can_cancel_attack(player)
+	return mode == "aim" or is_free() or can_cancel_attack(player)
 
 
 func attack_duration() -> float:
@@ -31,6 +31,8 @@ func attack_duration() -> float:
 
 
 func attack_active_start() -> float:
+	if attack_kind == "ranged":
+		return 0.06
 	return 0.30 if attack_kind == "heavy" else (0.16 if attack_kind == "short2" else 0.12)
 
 
@@ -43,6 +45,11 @@ func can_cancel_attack(player: Player) -> bool:
 	if player.tuning.prototype_controls:
 		recovery = attack_active_end() + (0.12 if attack_kind == "heavy" else 0.0)
 	return mode == "attack" and elapsed >= maxf(attack_active_end(), recovery)
+
+
+func can_link_hit(player: Player) -> bool:
+	return mode == "attack" and attack_kind in ["short1", "short2"] and activated \
+		and elapsed >= attack_active_end() and player.hitbox.has_landed()
 
 
 func cancel_attack(player: Player) -> void:
@@ -101,6 +108,8 @@ func consume_input() -> void:
 func step(player: Player, delta: float) -> void:
 	cooldown = maxf(0, cooldown - delta)
 	var buffered := read_input(player, delta)
+	if mode == "aim" and not buffered.is_empty():
+		change("idle")
 	var attack_pressed := pressed(&"attack", buffered)
 	var dash_pressed := pressed(&"dash", buffered)
 	if attack_pressed:
@@ -109,6 +118,11 @@ func step(player: Player, delta: float) -> void:
 		elif mode == "attack" and attack_kind == "short1" and elapsed >= (attack_active_start() if player.tuning.prototype_controls else 0.30):
 			combo = true
 			consume_input()
+	if player.tuning.prototype_controls and can_link_hit(player):
+		if pressed(&"heavy", buffered) and GameState.spend_energy(2):
+			begin_attack(player, "heavy")
+		elif combo:
+			begin_attack(player, "short2")
 	if player.tuning.prototype_controls and can_cancel_attack(player) and dash_pressed and dash_available():
 		cancel_attack(player)
 		start_dash(player)

@@ -81,14 +81,15 @@ func test_walk_uses_travel_not_wall_clock_and_retry_resets_stride() -> void:
 	eq(boss.visual.action_id, "11_charge", "charge uses authored side-view bracing sequence")
 
 
-func test_stagger_interrupts_attack_uses_authored_pose_and_cannot_chain_lock() -> void:
+func test_stagger_during_recovery_uses_authored_pose_and_cannot_chain_lock() -> void:
 	var boss := make_boss()
 	boss.begin()
 	boss.start_tell("slam")
 	boss.start_active()
+	boss.finish_active()
 	for index in 2:
 		boss.health.apply_hit(HitData.create(1, Vector2.ZERO, true))
-	eq(boss.state, "active", "two heavy hits build pressure without premature interrupt")
+	eq(boss.state, "recover", "two heavy hits build pressure without premature interrupt")
 	boss.health.apply_hit(HitData.create(1, Vector2.ZERO))
 	eq(boss.stagger, 98.0, "light hit adds less pressure than heavy")
 	boss.health.apply_hit(HitData.create(1, Vector2.ZERO))

@@ -12,7 +12,7 @@ position = Vector2(570, 474)
 centered = false
 texture = ExtResource("environment")
 
-[node name="EnvironmentMotion" parent="." instance=ExtResource("motion")]
+[node name="EnvironmentMotion" parent="Environment" instance=ExtResource("motion")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(1152, 928)

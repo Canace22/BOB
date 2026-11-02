@@ -9,7 +9,6 @@ const ACTION_PATHS := {"01_idle": ROOT + "01_idle.png", "02_claw_slam": ROOT + "
 	"11_charge": REFINED + "charge.png", "10_walk": REFINED + "walk.png",
 	"09_sink_fade": ROOT + "09_sink_fade.png"}
 var sheets: Dictionary[String, Texture2D] = {}
-var idle_clock := 0.0
 var death_clock := 0.0
 var action_id := "01_idle"
 var frame_index := 0
@@ -31,7 +30,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	idle_clock += delta
 	var distance := absf(boss.global_position.x - last_x)
 	last_x = boss.global_position.x
 	moving = boss.state == "observe" and distance > 0.01 and distance < 40
@@ -42,7 +40,6 @@ func _physics_process(delta: float) -> void:
 
 
 func reset() -> void:
-	idle_clock = 0
 	death_clock = 0
 	walk_distance = 0
 	last_x = boss.global_position.x
@@ -54,7 +51,8 @@ func present(actor: CrabPrototype) -> void:
 	if sheets.is_empty():
 		return
 	action_id = "01_idle"
-	frame_index = int(idle_clock * 8) % 11
+	# Current idle redraws change anatomy/texture between cells; hold the accepted pose.
+	frame_index = 0
 	if actor.state in ["tell", "active", "recover"]:
 		action_id = "04_sweep" if actor.kind in ["sweep", "second"] else "02_claw_slam"
 		if actor.kind == "charge":
@@ -78,6 +76,12 @@ func present(actor: CrabPrototype) -> void:
 	# Source faces left, so negative facing keeps positive scale.
 	scale = Vector2(-actor.facing, 1.0)
 	modulate = Color(1.35, 1.15, 0.95) if actor.flash > 0 else Color.WHITE
+	if actor.hurtbox != null and actor.hurtbox.counter_window():
+		modulate = Color(1.38, 1.22, 0.85)
+	elif actor.flash > 0 and actor.hurtbox.braced():
+		modulate = Color(0.74, 0.91, 1.18)
+	elif actor.state == "recover" and actor.flash <= 0:
+		modulate = Color(0.83, 0.93, 1.0) if actor.hurtbox.braced() else Color(1.12, 1.07, 0.93)
 	if actor.state == "dead":
 		modulate.a = clampf(1.0 - death_clock / 1.5, 0, 1)
 

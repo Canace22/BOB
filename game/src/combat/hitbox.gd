@@ -15,6 +15,10 @@ func activate(data: HitData) -> void:
 	active = true
 
 
+func has_landed() -> bool:
+	return not _targets.is_empty()
+
+
 func deactivate() -> void:
 	active = false
 

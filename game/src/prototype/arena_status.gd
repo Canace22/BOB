@@ -33,7 +33,7 @@ func snapshot() -> Dictionary:
 func _environment_snapshot() -> Dictionary:
 	var schools: Array[Dictionary] = []
 	var baleen: Array[Dictionary] = []
-	for node: Node in arena.get_node("World/Scenery/EnvironmentMotion").get_children():
+	for node: Node in arena.get_node("World/Scenery/Environment/EnvironmentMotion").get_children():
 		if node is AmbientFishSchool:
 			var school := node as AmbientFishSchool
 			schools.append({"species": school.species, "count": school.fish.size(),
