@@ -35,7 +35,7 @@ func test_chapter_save_isolation_and_restart() -> void:
 
 func test_guard_survives_and_does_not_grant_campaign_ability() -> void:
 	var guard := add((load("res://src/chapters/chapter_guard.tscn") as PackedScene).instantiate()) as ChapterEnemy
-	check(absf(guard.visual.position.y + guard.visual.texture.get_height() * guard.visual.scale.y / 2.0) < 1.0, "guard sprite feet align with floor")
+	check(absf(guard.visual.position.y + (440 - 256) * guard.visual.scale.y) < 1.0, "registered guard feet align with floor")
 	GameState.arena_active = true
 	guard.health.apply_hit(HitData.create(999, Vector2.ZERO))
 	eq(guard.state, "dead", "combat state ends")
@@ -79,7 +79,7 @@ func test_player_can_interact_with_resident_after_encounter() -> void:
 	await physics_frames(4)
 	GameState.set_flag("chapter.scavenger.1")
 	GameState.set_flag("chapter.scavenger.2")
-	scene.player.position = Vector2(2155, 1088)
+	scene.player.position = (scene.room.get_node("Gameplay/Resident") as Node2D).global_position
 	scene.player.interact()
 	check(dialogue.visible, "player interaction opens the resident dialogue")
 	while dialogue.visible:

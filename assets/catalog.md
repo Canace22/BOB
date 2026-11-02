@@ -9,6 +9,8 @@
 
 ## V5.2 完整静态资源库
 
+当前章节重制资源：[负壳守卫 40 个姿势](source/chapter-guard-v2/README.md)与[须庭、折井和居民 26 张位图](source/chapter-world-v2/README.md)。独立 `/godot-chapters/` 使用；台账登记为已接入、待用户视觉评审。工作台工程、实际导出、提示词及局限随制作源保存。
+
 `whalefall-v5-2-complete`：2026-10-27，新增 180 张，连同首批 12 张共 192 张独立静态 PNG；105 个需求家族与 36 房间需求映射记录在[完整清单](source/whalefall-v5-2-complete/coverage.json)。目录和当前状态以 [catalog.json](catalog.json) 为准。
 
 [验收范围与证据](source/whalefall-v5-2-complete/acceptance.md) · [174 件/7 页图集索引](runtime/sprites/whalefall-complete-atlas/index.json) · [静态组合配方](source/whalefall-v5-2-complete/review/components/README.md)。18 张背景保持独立，图集没有动作动画。当前 V2 Canvas 2D 从本批与首批资源选用 41 张原图，生成约 1.85 MiB 的 WebP 运行文件，约 45.37 MiB 的 PNG 原件保持不变；派生文件不重复计入资源数量。来源映射、导出命令和 `runtimeFile` 约定见[资源管理说明](README.md)，运行清单见 [art-manifest.js](../legacy/web/mvp-v2/art-manifest.js)，工作区、实机与线上状态见 [V2 进度](../legacy/web/mvp-v2/progress.md)。初版与 Three.js 版本没有新增运行引用。

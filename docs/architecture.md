@@ -120,7 +120,9 @@ Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` �
 
 ## 章节试玩
 
-`?chapters=1`、`/godot-chapters/` 或原生 `--chapters` 加载 `ChapterRun`。四个房间为 `content/rooms/chapters/N01-A` 至 `N02-B`，通过 WorldGraph 注册。Room、Player、战斗组件和既有场景位图复用；章节特有交互与 UI 位于 `src/chapters/`。
+`?chapters=1`、`/godot-chapters/` 或原生 `--chapters` 加载 `ChapterRun`。四个房间为 `content/rooms/chapters/N01-A` 至 `N02-B`，通过 WorldGraph 注册。复用 Room、Player 与战斗组件，场景和敌人使用专门制作的章节位图；章节脚本位于 `src/chapters/`。
+
+`BurdenGuard` 管理追近、转身、出招与退让；`GuardFrames` 从 JSON 读取独立姿势和时长，动画与伤害窗口使用同一游戏时钟。`GuardArmor` 根据命中方向和收招状态处理壳缘，挡住的攻击不计成功连招。`ChapterCamera` 使用本章节竞技场范围。`ChapterRescue` 组合四个老守护者支撑姿势与住巢位移，演出后才打开暂停对白；这不是完整逐帧救援短片。
 
 进入前保存完整 GameState 上下文，改用 `user://chapters-v1.json`；退出恢复旧路径、进度与运行状态。首次无有效章节存档时从 N01-A 开始，重新开始只清本章节进度。SaveService 格式仍为 v1，新增稳定房间 ID，不迁移旧主线档。叙事走 EventBus，阅读时暂停世界，关闭最后一页才记录完成标记。
 

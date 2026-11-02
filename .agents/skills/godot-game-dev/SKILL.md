@@ -66,3 +66,4 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 章节试作品复用正式工程模块时，入口、存档、缓存和发布目录一起隔离。第一、二章用 `--chapters` / `?chapters=1`，发布用 `node tools/deploy-pages.mjs --chapters`，只更新 `/godot-chapters/`。`tests/web_chapters.mjs` 实按四房、剧情、Boss 死亡重试及续档；非致死 Boss 需要检查重新加载后仍保留已退让外观。共享 WorldGraph 注册新房后，检查旧主线地图不要提前暴露章节路线。
 - 新 worktree 若检出 LFS 指针，先对所需资源运行 `git lfs checkout` 再导入。若先前失败已把 `.import` 标成 `valid=false`，仅恢复自己这次导入造成的 `.import` 差异，再重新导入；不能恢复别人的修改。
 - 本批新场景的 `PackedStringArray` 导出属性曾在 Web 资源包中丢失，虽然 headless 源场景测试通过。对白与前置标记改为 `Array[String]`，场景用匹配的类型化字符串数组声明，调用既有接口时显式转型；导出后用包内 SceneState 和真实浏览器核对。首次对白必须出现，居民交互必须同时满足两场短战标记，不能只以编译成功判定导出数据正确。
+- 目录同步目前只拷贝位图；动作 JSON 等非图片文件必须在 manifest 增加独立文件项。同步后先核对运行目录的元数据实际存在，再导入和测试，不能只看到 PNG 已复制就宣布整套动画接入。

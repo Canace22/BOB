@@ -1,6 +1,6 @@
 class_name ChapterEnemy
 extends EnemyBase
-## Reuses registered crab art. Defeated creatures withdraw, guards survive.
+## Shared chapter progress: defeated creatures withdraw, guards survive.
 
 
 func _ready() -> void:

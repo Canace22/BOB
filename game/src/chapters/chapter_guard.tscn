@@ -1,14 +1,14 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://src/chapters/chapter_enemy.gd" id="r0"]
+[ext_resource type="Script" path="res://src/chapters/burden_guard.gd" id="r0"]
 [ext_resource type="Script" path="res://src/combat/health.gd" id="r1"]
-[ext_resource type="Script" path="res://src/combat/hurtbox.gd" id="r2"]
+[ext_resource type="Script" path="res://src/chapters/guard_armor.gd" id="r2"]
 [ext_resource type="Script" path="res://src/combat/hitbox.gd" id="r3"]
-[ext_resource type="Texture2D" path="res://art/enemies/shell_crab_boss.png" id="r4"]
+[ext_resource type="Texture2D" path="res://art/chapters/guard/idle-00.png" id="r4"]
 [ext_resource type="Texture2D" path="res://art/fx/danger_line.png" id="r5"]
 
 [sub_resource type="RectangleShape2D" id="body"]
-size = Vector2(120, 95)
+size = Vector2(140, 140)
 
 [sub_resource type="RectangleShape2D" id="attack"]
 resource_local_to_scene = true
@@ -19,7 +19,7 @@ script = ExtResource("r0")
 collision_layer = 4
 collision_mask = 1
 boss = true
-speed = 78
+speed = 86
 radius = 60
 approach_distance = 145
 attack_reach = 175
@@ -27,11 +27,11 @@ victory_flag = "chapter.guard"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("body")
-position = Vector2(0, -47.5)
+position = Vector2(0, -70)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("r1")
-maximum = 160
+maximum = 120
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
 script = ExtResource("r2")
@@ -42,7 +42,7 @@ monitoring = false
 
 [node name="Shape" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("body")
-position = Vector2(0, -47.5)
+position = Vector2(0, -70)
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("r3")
@@ -55,8 +55,8 @@ shape = SubResource("attack")
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("r4")
-position = Vector2(0, -47.4140625)
-scale = Vector2(0.328125, 0.328125)
+position = Vector2(0, -138)
+scale = Vector2(0.75, 0.75)
 
 [node name="Warning" type="Sprite2D" parent="."]
 texture = ExtResource("r5")

@@ -1,137 +1,299 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://src/world/room.gd" id="r0"]
-[ext_resource type="PackedScene" path="res://content/rooms/R1/scenery/R1-04_scenery.tscn" id="r1"]
-[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r2"]
-[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r3"]
-[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r4"]
-[ext_resource type="Texture2D" path="res://art/scenery/v02/gate.png" id="r5"]
-[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r6"]
-[ext_resource type="Texture2D" path="res://art/props/shell_camp.png" id="r7"]
-[ext_resource type="PackedScene" path="res://src/chapters/chapter_guard.tscn" id="r8"]
-[ext_resource type="Script" path="res://src/world/pickup.gd" id="r9"]
-[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_open.png" id="r10"]
-[ext_resource type="Texture2D" path="res://art/props/dash_cocoon_closed.png" id="r11"]
-[ext_resource type="Script" path="res://src/chapters/chapter_arena.gd" id="r12"]
-[ext_resource type="Texture2D" path="res://art/props/arena_curtain_closed.png" id="r13"]
-[ext_resource type="Script" path="res://src/chapters/chapter_marker.gd" id="story"]
-[ext_resource type="Texture2D" path="res://art/scenery/v02/lamp.png" id="lamp"]
-[ext_resource type="Texture2D" path="res://art/props/migration_memory.png" id="memory"]
 
+[ext_resource type="Texture2D" path="res://art/chapters/world/well.png" id="r1"]
 
+[ext_resource type="Script" path="res://src/world/checkpoint.gd" id="r2"]
 
+[ext_resource type="Texture2D" path="res://art/chapters/world/lamp.png" id="r3"]
+
+[ext_resource type="Script" path="res://src/chapters/chapter_prompt.gd" id="r4"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/ground-a.png" id="r5"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/ground-b.png" id="r6"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/ledge.png" id="r7"]
+
+[ext_resource type="Script" path="res://src/chapters/chapter_door.gd" id="r8"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/arch.png" id="r9"]
+
+[ext_resource type="PackedScene" path="res://src/chapters/chapter_guard.tscn" id="r10"]
+
+[ext_resource type="Script" path="res://src/chapters/chapter_arena.gd" id="r11"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/pier.png" id="r12"]
+
+[ext_resource type="Script" path="res://src/chapters/chapter_marker.gd" id="r13"]
+
+[ext_resource type="Script" path="res://src/chapters/chapter_rescue.gd" id="r14"]
+
+[ext_resource type="Texture2D" path="res://art/chapters/world/nest.png" id="r15"]
+
+[sub_resource type="RectangleShape2D" id="s0"]
+size = Vector2(580, 25)
+
+[sub_resource type="RectangleShape2D" id="s1"]
+size = Vector2(580, 25)
+
+[sub_resource type="RectangleShape2D" id="s2"]
+size = Vector2(580, 25)
+
+[sub_resource type="RectangleShape2D" id="s3"]
+size = Vector2(579, 25)
+
+[sub_resource type="RectangleShape2D" id="s4"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="s5"]
+size = Vector2(220, 25)
 
 [node name="N02-B" type="Node2D"]
 script = ExtResource("r0")
 room_id = "N02-B"
-display_name = "第二章 · 封锁口"
+display_name = "第二章 · 负壳封锁口"
 dimensions = Vector2(2304, 1152)
-fall_damage = 0
 
-[node name="Scenery" parent="." instance=ExtResource("r1")]
+[node name="Scenery" type="Node2D" parent="."]
+
+
+[node name="Far" type="Node2D" parent="Scenery"]
+
+
+[node name="Middle" type="Node2D" parent="Scenery"]
+
+
+[node name="World" type="Node2D" parent="Scenery"]
+
+
+[node name="Foreground" type="Node2D" parent="Scenery"]
+
+
+[node name="Backdrop" type="Sprite2D" parent="Scenery/Far"]
+texture = ExtResource("r1")
+position = Vector2(1152, 576)
+scale = Vector2(1.38, 1.38)
 
 [node name="Entries" type="Node2D" parent="."]
 
 
 [node name="default" type="Marker2D" parent="Entries"]
-position = Vector2(192, 893)
+position = Vector2(180, 797)
 
 [node name="camp" type="Marker2D" parent="Entries"]
-position = Vector2(192, 893)
+position = Vector2(180, 797)
 
 [node name="Gameplay" type="Node2D" parent="."]
 z_index = 2
 
-[node name="E03" type="Marker2D" parent="Entries"]
-position = Vector2(137.6, 893)
-
-[node name="Door_E03" type="Node2D" parent="Gameplay"]
-position = Vector2(64, 896)
-script = ExtResource("r2")
-edge_id = "E03"
-target_room = "N02-A"
-target_entry = "E03"
-prompt = "E 返回折井"
-required_abilities = PackedStringArray()
-prerequisites = Array[String]([])
-
-[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E03"]
-texture = ExtResource("r3")
-position = Vector2(0, -70)
-scale = Vector2(0.2631578947368421, 0.2631578947368421)
-
-[node name="Prompt" type="Label" parent="Gameplay/Door_E03"]
-text = "E 返回折井"
-position = Vector2(-90, -160)
-theme_override_font_sizes/font_size = 16
-
-[node name="E04" type="Marker2D" parent="Entries"]
-position = Vector2(2166.4, 893)
-
 [node name="Camp" type="Node2D" parent="Gameplay"]
-position = Vector2(128, 896)
-script = ExtResource("r6")
+script = ExtResource("r2")
+position = Vector2(180, 800)
 room_id = "N02-B"
-prompt = "E 营地 · 休息并保存"
+prompt = "E 菌灯 · 休息"
 
 [node name="Sprite" type="Sprite2D" parent="Gameplay/Camp"]
-texture = ExtResource("r7")
-position = Vector2(0, -34)
-scale = Vector2(0.3385416666666667, 0.3385416666666667)
+texture = ExtResource("r3")
+position = Vector2(0, -47)
+scale = Vector2(0.25, 0.25)
 
 [node name="Prompt" type="Label" parent="Gameplay/Camp"]
-text = "E 营地 · 休息并保存"
-position = Vector2(-90, -112)
-theme_override_font_sizes/font_size = 16
+position = Vector2(-85, -140)
+text = "E 菌灯 · 休息"
+script = ExtResource("r4")
 
-[node name="Enemy0" parent="Gameplay" instance=ExtResource("r8")]
-position = Vector2(1408, 895)
+[node name="Floor0" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(0, 800)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/Floor0"]
+texture = ExtResource("r5")
+position = Vector2(-16.65071770334928, -244.21052631578945)
+scale = Vector2(1.38755980861244, 1.38755980861244)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/Floor0"]
+shape = SubResource("s0")
+position = Vector2(290.0, 12.5)
+disabled = false
+
+[node name="Floor1" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(575, 800)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/Floor1"]
+texture = ExtResource("r6")
+position = Vector2(-16.65071770334928, -244.21052631578945)
+scale = Vector2(1.38755980861244, 1.38755980861244)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/Floor1"]
+shape = SubResource("s1")
+position = Vector2(290.0, 12.5)
+disabled = false
+
+[node name="Floor2" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(1150, 800)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/Floor2"]
+texture = ExtResource("r5")
+position = Vector2(-16.65071770334928, -244.21052631578945)
+scale = Vector2(1.38755980861244, 1.38755980861244)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/Floor2"]
+shape = SubResource("s2")
+position = Vector2(290.0, 12.5)
+disabled = false
+
+[node name="Floor3" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(1725, 800)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/Floor3"]
+texture = ExtResource("r6")
+position = Vector2(-16.62200956937799, -243.78947368421055)
+scale = Vector2(1.3851674641148326, 1.3851674641148326)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/Floor3"]
+shape = SubResource("s3")
+position = Vector2(289.5, 12.5)
+disabled = false
+
+[node name="LeftEscapeShelf" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(740, 710)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/LeftEscapeShelf"]
+texture = ExtResource("r7")
+position = Vector2(-13.46938775510204, -98.77551020408163)
+scale = Vector2(0.5612244897959183, 0.5612244897959183)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/LeftEscapeShelf"]
+one_way_collision = true
+shape = SubResource("s4")
+position = Vector2(110.0, 12.5)
+disabled = false
+
+[node name="RightEscapeShelf" type="StaticBody2D" parent="Scenery/World"]
+position = Vector2(1490, 710)
+collision_layer = 1
+collision_mask = 0
+visible = true
+
+[node name="Art" type="Sprite2D" parent="Scenery/World/RightEscapeShelf"]
+texture = ExtResource("r7")
+position = Vector2(-13.46938775510204, -98.77551020408163)
+scale = Vector2(0.5612244897959183, 0.5612244897959183)
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="Scenery/World/RightEscapeShelf"]
+one_way_collision = true
+shape = SubResource("s5")
+position = Vector2(110.0, 12.5)
+disabled = false
+
+[node name="E03" type="Marker2D" parent="Entries"]
+position = Vector2(130, 797)
+
+[node name="Door_E03" type="Node2D" parent="Gameplay"]
+script = ExtResource("r8")
+position = Vector2(65, 800)
+target_room = "N02-A"
+target_entry = "E03"
+prerequisites = Array[String]([])
+prompt = "E 穿过通路"
+
+[node name="Sprite" type="Sprite2D" parent="Gameplay/Door_E03"]
+texture = ExtResource("r9")
+position = Vector2(0, -85)
+scale = Vector2(0.43, 0.43)
+
+[node name="Prompt" type="Label" parent="Gameplay/Door_E03"]
+position = Vector2(-85, -140)
+text = "E 穿过通路"
+script = ExtResource("r4")
+
+[node name="Enemy0" parent="Gameplay" instance=ExtResource("r10")]
+position = Vector2(1200, 799)
+victory_flag = "chapter.guard"
 
 [node name="Arena" type="Node2D" parent="Gameplay"]
-script = ExtResource("r12")
+script = ExtResource("r11")
 victory_flag = "chapter.guard"
-trigger_x = 530.0
-limits = Vector2(460.8, 2259.2)
+trigger_x = 540
+limits = Vector2(440, 1890)
 
 [node name="Curtain" type="Sprite2D" parent="Gameplay/Arena"]
-texture = ExtResource("r13")
-position = Vector2(448, 800)
-scale = Vector2(0.6, 0.6)
+texture = ExtResource("r12")
+position = Vector2(430, 650)
+scale = Vector2(0.72, 0.72)
 
 [node name="Challenge" type="Node2D" parent="Gameplay"]
-position = Vector2(550, 896)
-script = ExtResource("story")
+script = ExtResource("r13")
+position = Vector2(535, 800)
 title = "负壳守卫"
-pages = Array[String](["“下层封闭。来客，返回须庭。”\n重壳落在通路中央，钳尖挡住了最后一点空隙。", "让守卫停止封路：低扫时起跳，重壳下压时撤开，再趁收招靠近反击。\n半血后会接第二次低扫。F 消耗蓄振调息，失败后从左侧营地重试。"])
+pages = Array[String](["“下层封闭。来客，返回须庭。”\n重壳压在通路中央，两条扣带绷得笔直。", "壳缘会挡住正面攻击。\n看它抬钳或压壳，避开出招；绕到扣带一侧，或等收招后反击。"])
 flag_id = "chapter.challenge"
-prompt = "E 听取共鸣"
-automatic = true
 prerequisites = Array[String]([])
+automatic = true
+prompt = "E 听取共鸣"
 
 [node name="Sprite" type="Sprite2D" parent="Gameplay/Challenge"]
-texture = ExtResource("lamp")
-position = Vector2(0, -35)
-scale = Vector2(0.22, 0.22)
+texture = ExtResource("r3")
+position = Vector2(0, -45)
+scale = Vector2(0.23, 0.23)
 
 [node name="Prompt" type="Label" parent="Gameplay/Challenge"]
-position = Vector2(-90, -115)
-theme_override_font_sizes/font_size = 18
+position = Vector2(-85, -140)
+text = "E 听取共鸣"
+script = ExtResource("r4")
 
 [node name="Rescue" type="Node2D" parent="Gameplay"]
-position = Vector2(2050, 896)
-script = ExtResource("story")
-title = "第二章 · 守住路的人"
-pages = Array[String](["扣带断开，负壳守卫放下钳子。下层忽然传来求救：承路旧膜裂了，住巢正向深处滑落。", "老守护者越过众人，将长柄横进支架，顶住弯曲的梁。直到居民全部爬上稳台，他才回头看向你。\n“要找歌声，就沿胃室的供养路走。但先看清楚，路上住着谁。”", "两章试玩完成。\n负壳守卫仍活着，老守护者允许你继续前行。下一章尚未开放，可以返回探索两处回声，或按 Esc 重新开始。"])
+script = ExtResource("r14")
+position = Vector2(2020, 800)
+title = "守住路的人"
+pages = Array[String](["老守护者把住巢托回稳台，才回头接受来客的问候。\n“要找歌声，就沿胃室的供养路走。但先看清楚，路上住着谁。”", "负壳守卫仍活着。它低下钳子，重新收拢松开的扣带。\n第一、二章试玩结束。可以返回寻找两处回声，或按 Esc 重新开始。"])
 flag_id = "chapter.complete"
-prompt = "E 查看住巢的呼救"
-automatic = false
 prerequisites = Array[String](["chapter.guard"])
+automatic = false
+prompt = "E 听取共鸣"
 
 [node name="Sprite" type="Sprite2D" parent="Gameplay/Rescue"]
-texture = ExtResource("lamp")
-position = Vector2(0, -35)
-scale = Vector2(0.22, 0.22)
+texture = ExtResource("r3")
+position = Vector2(0, -45)
+scale = Vector2(0.23, 0.23)
 
 [node name="Prompt" type="Label" parent="Gameplay/Rescue"]
-position = Vector2(-90, -115)
-theme_override_font_sizes/font_size = 18
+position = Vector2(-85, -140)
+text = "E 听取共鸣"
+script = ExtResource("r4")
+
+[node name="Nest" type="Sprite2D" parent="Gameplay/Rescue"]
+texture = ExtResource("r15")
+position = Vector2(0, -180)
+scale = Vector2(0.46, 0.46)
+
+[node name="Elder" type="Sprite2D" parent="Gameplay/Rescue"]
+position = Vector2(105, -83)
+scale = Vector2(0.48, 0.48)
+
+[node name="Brace" type="Sprite2D" parent="Scenery/Middle"]
+texture = ExtResource("r12")
+position = Vector2(2090, 685)
+scale = Vector2(0.66, 0.66)

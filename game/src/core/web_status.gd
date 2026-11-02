@@ -19,7 +19,10 @@ func _snapshot(_arguments: Array) -> void:
 	var enemies: Array[Dictionary] = []
 	for node in get_tree().get_nodes_in_group("enemy"):
 		var enemy := node as EnemyBase
-		enemies.append({"x": enemy.position.x, "y": enemy.position.y, "boss": enemy.boss, "hp": enemy.health.current, "state": enemy.state, "timer": enemy.timer, "kind": enemy.kind})
+		var entry := {"x": enemy.position.x, "y": enemy.position.y, "boss": enemy.boss, "hp": enemy.health.current, "state": enemy.state, "timer": enemy.timer, "kind": enemy.kind, "facing": enemy.facing}
+		if enemy is BurdenGuard:
+			entry["animation"] = (enemy as BurdenGuard).frames.snapshot()
+		enemies.append(entry)
 	var from := player.global_position + Vector2(42, -8)
 	var ray := PhysicsRayQueryParameters2D.create(from, from + Vector2(0, 30), 1)
 	var state := {

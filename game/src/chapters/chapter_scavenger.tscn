@@ -1,10 +1,10 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://src/chapters/chapter_enemy.gd" id="r0"]
+[ext_resource type="Script" path="res://src/chapters/chapter_scavenger.gd" id="r0"]
 [ext_resource type="Script" path="res://src/combat/health.gd" id="r1"]
 [ext_resource type="Script" path="res://src/combat/hurtbox.gd" id="r2"]
 [ext_resource type="Script" path="res://src/combat/hitbox.gd" id="r3"]
-[ext_resource type="Texture2D" path="res://art/enemies/corpse_crab.png" id="r4"]
+[ext_resource type="Texture2D" path="res://art/chapters/world/scavenger-0.png" id="r4"]
 [ext_resource type="Texture2D" path="res://art/fx/danger_line.png" id="r5"]
 
 [sub_resource type="RectangleShape2D" id="body"]
@@ -55,8 +55,8 @@ shape = SubResource("attack")
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("r4")
-position = Vector2(0, -27.31863727)
-scale = Vector2(0.19238476953907815, 0.19238476953907815)
+position = Vector2(0, -59)
+scale = Vector2(0.36, 0.36)
 
 [node name="Warning" type="Sprite2D" parent="."]
 texture = ExtResource("r5")

@@ -1,0 +1,22 @@
+{
+  "export": "exports/sweep-framecraft.zip",
+  "checked_ticks": 91,
+  "distinct_poses": 8,
+  "duration_ms": 1820,
+  "alpha_equal": true,
+  "max_rgb_difference_255": 1,
+  "max_composite_difference_255": 0,
+  "export_loop": true,
+  "export_normalized_pivot": [
+    0.5,
+    1
+  ],
+  "runtime_override": {
+    "loop": false,
+    "pixel_pivot": [
+      256,
+      440
+    ]
+  },
+  "note": "50 FPS represents hold ticks, not new drawn poses. Browser atlas export causes low-alpha RGB rounding; original registered PNGs are runtime authority."
+}
