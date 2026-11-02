@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 16,
+  "revision": 17,
   "updatedAt": "2026-11-02T05:01:37.534642+00:00",
   "project": "BOB",
   "atlas": {
@@ -23402,21 +23402,23 @@
         "version": "godot-crab-prototype",
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/enemies/crab_prototype/crab_visual.gd",
-        "evidence": "game/progress.md"
+        "evidence": "game/progress.md",
+        "playback": "静态待机：固定第 0 帧；原重绘循环因局部形变停用"
       },
       "qa": {
         "scope": "V3 extraction validation; runtime checks recorded in game/progress.md",
         "limitations": [
           "重绘关键帧不是原视频逐帧还原",
           "动作间视角和体积仍有漂移",
-          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场"
+          "仅三种伤害招式；其他动作用于待机、移动、转阶段和退场",
+          "2026-11-02：待机不是连续呼吸动画，原图保留用于后续修绘"
         ],
         "technicalReview": {
           "passed": true,
           "checks": "Godot check; 36 tests; local keyboard battle, pause, death/retry, resource errors",
           "evidence": "game/build/qa/crab-video-final-local/report.json"
         },
-        "userVisualApproval": "V3 redraw direction approved; integrated scene awaiting feedback"
+        "userVisualApproval": "用户反馈待机闪烁；停用原循环，稳定站姿待实机反馈"
       },
       "width": 3584,
       "height": 1536,

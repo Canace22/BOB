@@ -53,3 +53,4 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 测试脚本解析失败：runner 应报告不能实例化的 suite 并退出失败，不能在引擎窗口永久等待；先跑 `check` 再跑 `test`，不要仅看导入进程完成。并行代理写文件可以，Godot import/test/export 由一处串行安排，避免共享导入缓存竞争。
 - 玩家序列帧接入：公共画布/pivot、两向独立文件、逐帧时长和步幅以 `assets/runtime/sprites/tide-picker-animation-v2/animations.json` 为准；来源和导出见[制作说明](../../../assets/source/player-animation-v2/README.md)。攻击有效段必须落在帧边界；跑步按实际位移推进，不能只看全局时钟。素材缺项会显式回退旧图，验收须用只读 `player.animation.using_directional` 和实际文件路径确认新素材正在加载。
 - 动作专项按键路线：`tests/web_player_animation.mjs` 分完整/基础移动两种范围，保存两向姿势、暂停、撞墙与录屏；有限状态测试不能替代整圈换腿、脚滑和实际画面复核。Mac 引擎默认位置已由命令入口支持，仍严格检查项目固定版本。
+- 待机闪烁要分别检查运行透明度和素材帧差：父角色停用物理处理时，子视觉节点仍可能推进；若无敌倒计时冻结而视觉依赖它闪烁，准备页会永久忽明忽暗。出生保护不能当作真实受击反馈；准备、死亡、胜利、重试都要观察数秒并记录透明度。纹理/轮廓跳变不能靠降 FPS 掩盖；停用不合格循环时明确记为静态姿态。
