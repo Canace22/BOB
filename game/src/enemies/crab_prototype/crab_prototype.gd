@@ -53,6 +53,8 @@ func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	flash = 0
 	cooldowns = {"slam": 0.0, "charge": 0.0}
 	rng.seed = random_seed
+	visual.reset()
+	($Effects as CrabPrototypeEffects).reset()
 	visual.present(self)
 
 
@@ -202,4 +204,5 @@ func snapshot() -> Dictionary:
 	return {"state": state, "timer": timer, "kind": kind, "phase": phase,
 		"facing": facing, "hp": health.current, "maximum": health.maximum,
 		"x": position.x, "y": position.y, "reason": selection_reason,
-		"cooldowns": cooldowns.duplicate(), "active": hitbox.active, "combo": combo_planned}
+		"cooldowns": cooldowns.duplicate(), "active": hitbox.active, "combo": combo_planned,
+		"animation": visual.action_id, "frame": visual.frame_index, "opacity": visual.modulate.a}
