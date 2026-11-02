@@ -1,0 +1,159 @@
+{
+  "method": "Manual visible helmet/lamp boxes on representative poses. Approximate art review measurements, not a segmentation or rescaling algorithm.",
+  "purpose": "One group scale chosen from rigid helmet plus lantern cross-check; not per-frame bbox fitting.",
+  "observedHeadWidthRangePx": [
+    80.8,
+    88.3
+  ],
+  "observedLampWidthRangePx": [
+    40.9,
+    49.2
+  ],
+  "remainingVariation": "Heavy lantern is proportionally larger than idle; group scaling cannot repair this local drawing variation. No local warp was applied.",
+  "records": [
+    {
+      "source": "raw/idle-v01.png",
+      "scale": 0.42628774422735344,
+      "manualHeadBox": [
+        246,
+        31,
+        443,
+        189
+      ],
+      "manualLampBox": [
+        269,
+        343,
+        365,
+        445
+      ],
+      "outputHeadWidthApprox": 84.0,
+      "outputLampWidthApprox": 40.9
+    },
+    {
+      "source": "raw/run-half-a-v01.png",
+      "scale": 0.48,
+      "manualHeadBox": [
+        291,
+        91,
+        469,
+        236
+      ],
+      "manualLampBox": [
+        270,
+        350,
+        360,
+        444
+      ],
+      "outputHeadWidthApprox": 85.4,
+      "outputLampWidthApprox": 43.2
+    },
+    {
+      "source": "raw/run-near-half-v04.png",
+      "scale": 0.48,
+      "manualHeadBox": [
+        399,
+        24,
+        583,
+        170
+      ],
+      "manualLampBox": [
+        365,
+        283,
+        456,
+        373
+      ],
+      "outputHeadWidthApprox": 88.3,
+      "outputLampWidthApprox": 43.7
+    },
+    {
+      "source": "raw/jump-air-v01.png",
+      "scale": 0.4,
+      "manualHeadBox": [
+        320,
+        51,
+        539,
+        222
+      ],
+      "manualLampBox": [
+        280,
+        352,
+        383,
+        451
+      ],
+      "outputHeadWidthApprox": 87.6,
+      "outputLampWidthApprox": 41.2
+    },
+    {
+      "source": "raw/land-v01.png",
+      "scale": 0.38461538461538464,
+      "manualHeadBox": [
+        306,
+        56,
+        516,
+        224
+      ],
+      "manualLampBox": [
+        283,
+        381,
+        399,
+        488
+      ],
+      "outputHeadWidthApprox": 80.8,
+      "outputLampWidthApprox": 44.6
+    },
+    {
+      "source": "raw/attack-v01.png",
+      "scale": 0.52,
+      "manualHeadBox": [
+        248,
+        146,
+        415,
+        278
+      ],
+      "manualLampBox": [
+        238,
+        392,
+        326,
+        477
+      ],
+      "outputHeadWidthApprox": 86.8,
+      "outputLampWidthApprox": 45.8
+    },
+    {
+      "source": "raw/attack2-v01.png",
+      "scale": 0.52,
+      "manualHeadBox": [
+        331,
+        170,
+        496,
+        305
+      ],
+      "manualLampBox": [
+        248,
+        385,
+        328,
+        457
+      ],
+      "outputHeadWidthApprox": 85.8,
+      "outputLampWidthApprox": 41.6
+    },
+    {
+      "source": "raw/heavy-v01-background-source.png",
+      "scale": 0.6,
+      "manualHeadBox": [
+        455,
+        137,
+        598,
+        255
+      ],
+      "manualLampBox": [
+        413,
+        345,
+        495,
+        426
+      ],
+      "outputHeadWidthApprox": 85.8,
+      "outputLampWidthApprox": 49.2
+    }
+  ]
+}

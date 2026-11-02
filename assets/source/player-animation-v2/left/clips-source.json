@@ -1,0 +1,168 @@
+{
+  "idle": {
+    "loop": true,
+    "poses": [
+      "idle-0",
+      "idle-1"
+    ],
+    "durations": [
+      500,
+      500
+    ]
+  },
+  "run": {
+    "loop": true,
+    "poses": [
+      "run-0",
+      "run-1",
+      "run-2",
+      "run-3",
+      "run-4",
+      "run-5"
+    ],
+    "durations": [
+      60,
+      60,
+      20,
+      80,
+      40,
+      20
+    ],
+    "stridePixels": 61.7
+  },
+  "jump_rise": {
+    "loop": false,
+    "poses": [
+      "air-0",
+      "air-1"
+    ],
+    "durations": [
+      80,
+      100
+    ]
+  },
+  "jump_fall": {
+    "loop": false,
+    "poses": [
+      "air-1",
+      "air-2"
+    ],
+    "durations": [
+      80,
+      100
+    ]
+  },
+  "land": {
+    "loop": false,
+    "poses": [
+      "land-1",
+      "land-0",
+      "land-1",
+      "land-2"
+    ],
+    "durations": [
+      20,
+      40,
+      40,
+      40
+    ]
+  },
+  "attack": {
+    "loop": false,
+    "poses": [
+      "attack-0",
+      "attack-1",
+      "attack-0",
+      "idle-0"
+    ],
+    "durations": [
+      120,
+      80,
+      100,
+      100
+    ],
+    "activeWindowMs": [
+      120,
+      200
+    ]
+  },
+  "attack2": {
+    "loop": false,
+    "poses": [
+      "attack2-0",
+      "attack2-1",
+      "attack2-0",
+      "idle-0"
+    ],
+    "durations": [
+      160,
+      80,
+      120,
+      140
+    ],
+    "activeWindowMs": [
+      160,
+      240
+    ]
+  },
+  "heavy": {
+    "loop": false,
+    "poses": [
+      "heavy-0",
+      "heavy-1",
+      "land-1",
+      "idle-0"
+    ],
+    "durations": [
+      300,
+      120,
+      200,
+      200
+    ],
+    "activeWindowMs": [
+      300,
+      420
+    ]
+  },
+  "hurt": {
+    "loop": false,
+    "poses": [
+      "hurt-0",
+      "hurt-1",
+      "idle-0"
+    ],
+    "durations": [
+      80,
+      100,
+      100
+    ]
+  },
+  "dash": {
+    "loop": false,
+    "poses": [
+      "land-0",
+      "dash-0",
+      "dash-1"
+    ],
+    "durations": [
+      40,
+      120,
+      60
+    ]
+  },
+  "heal": {
+    "loop": false,
+    "poses": [
+      "heal-0",
+      "heal-1",
+      "heal-0",
+      "idle-0"
+    ],
+    "durations": [
+      200,
+      240,
+      240,
+      120
+    ]
+  }
+}

@@ -22,7 +22,9 @@ func snapshot() -> Dictionary:
 		"save_enabled": GameState.autosave, "flags": GameState.flags,
 		"player": {"x": p.position.x, "y": p.position.y, "floor": p.is_on_floor(),
 			"mode": p.actions.mode, "kind": p.actions.attack_kind, "elapsed": p.actions.elapsed,
-			"facing": p.facing, "dead": p.dead}, "boss": arena.boss.snapshot()}
+			"facing": p.facing, "dead": p.dead,
+			"animation": (p.get_node("Visual") as PlayerVisual).animation_snapshot()},
+		"boss": arena.boss.snapshot()}
 
 
 func _snapshot(_arguments: Array) -> void:

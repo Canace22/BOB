@@ -1,0 +1,235 @@
+{
+  "direction": "left",
+  "canvas": [
+    384,
+    384
+  ],
+  "pivot": [
+    192,
+    342
+  ],
+  "scale": 0.275,
+  "standingHeight": 240,
+  "clips": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "left/idle-00.png",
+          "durationMs": 500
+        },
+        {
+          "file": "left/idle-01.png",
+          "durationMs": 500
+        }
+      ]
+    },
+    "run": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "left/run-00.png",
+          "durationMs": 60
+        },
+        {
+          "file": "left/run-01.png",
+          "durationMs": 60
+        },
+        {
+          "file": "left/run-02.png",
+          "durationMs": 20
+        },
+        {
+          "file": "left/run-03.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/run-04.png",
+          "durationMs": 40
+        },
+        {
+          "file": "left/run-05.png",
+          "durationMs": 20
+        }
+      ],
+      "stridePixels": 61.7
+    },
+    "jump_rise": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/jump_rise-00.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/jump_rise-01.png",
+          "durationMs": 100
+        }
+      ]
+    },
+    "jump_fall": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/jump_fall-00.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/jump_fall-01.png",
+          "durationMs": 100
+        }
+      ]
+    },
+    "land": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/land-00.png",
+          "durationMs": 20
+        },
+        {
+          "file": "left/land-01.png",
+          "durationMs": 40
+        },
+        {
+          "file": "left/land-02.png",
+          "durationMs": 40
+        },
+        {
+          "file": "left/land-03.png",
+          "durationMs": 40
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/attack-00.png",
+          "durationMs": 120
+        },
+        {
+          "file": "left/attack-01.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/attack-02.png",
+          "durationMs": 100
+        },
+        {
+          "file": "left/attack-03.png",
+          "durationMs": 100
+        }
+      ],
+      "activeWindowMs": [
+        120,
+        200
+      ]
+    },
+    "attack2": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/attack2-00.png",
+          "durationMs": 160
+        },
+        {
+          "file": "left/attack2-01.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/attack2-02.png",
+          "durationMs": 120
+        },
+        {
+          "file": "left/attack2-03.png",
+          "durationMs": 140
+        }
+      ],
+      "activeWindowMs": [
+        160,
+        240
+      ]
+    },
+    "heavy": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/heavy-00.png",
+          "durationMs": 300
+        },
+        {
+          "file": "left/heavy-01.png",
+          "durationMs": 120
+        },
+        {
+          "file": "left/heavy-02.png",
+          "durationMs": 200
+        },
+        {
+          "file": "left/heavy-03.png",
+          "durationMs": 200
+        }
+      ],
+      "activeWindowMs": [
+        300,
+        420
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/hurt-00.png",
+          "durationMs": 80
+        },
+        {
+          "file": "left/hurt-01.png",
+          "durationMs": 100
+        },
+        {
+          "file": "left/hurt-02.png",
+          "durationMs": 100
+        }
+      ]
+    },
+    "dash": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/dash-00.png",
+          "durationMs": 40
+        },
+        {
+          "file": "left/dash-01.png",
+          "durationMs": 120
+        },
+        {
+          "file": "left/dash-02.png",
+          "durationMs": 60
+        }
+      ]
+    },
+    "heal": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "left/heal-00.png",
+          "durationMs": 200
+        },
+        {
+          "file": "left/heal-01.png",
+          "durationMs": 240
+        },
+        {
+          "file": "left/heal-02.png",
+          "durationMs": 240
+        },
+        {
+          "file": "left/heal-03.png",
+          "durationMs": 120
+        }
+      ]
+    }
+  }
+}

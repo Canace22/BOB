@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOB directional player animation metadata v1",
+  "description": "Runtime path: res://art/player/animation-v2/animations.json. All frames use one canvas, pivot and positive isotropic scale. Missing clips explicitly fall back to old art; directions never borrow or mirror each other.",
+  "type": "object",
+  "required": ["version", "canvas", "pivot", "scale", "directions"],
+  "properties": {
+    "version": {"const": 1},
+    "canvas": {"type": "array", "items": {"type": "integer", "minimum": 1}, "minItems": 2, "maxItems": 2},
+    "pivot": {"type": "array", "items": {"type": "number", "minimum": 0}, "minItems": 2, "maxItems": 2},
+    "scale": {"type": "number", "exclusiveMinimum": 0},
+    "directions": {
+      "type": "object",
+      "required": ["left", "right"],
+      "properties": {"left": {"$ref": "#/$defs/direction"}, "right": {"$ref": "#/$defs/direction"}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "frame": {
+      "type": "object", "required": ["file", "durationMs"],
+      "properties": {
+        "file": {"type": "string", "pattern": "^(left|right)/[a-z0-9_-]+\\.png$"},
+        "durationMs": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "clip": {
+      "type": "object", "required": ["frames"],
+      "properties": {
+        "frames": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/frame"}},
+        "loop": {"type": "boolean", "description": "Only idle respects this flag. Run always loops by distance; other clips hold their last frame."}
+      }
+    },
+    "run": {
+      "allOf": [{"$ref": "#/$defs/clip"}], "required": ["stridePixels"],
+      "properties": {"stridePixels": {"type": "number", "exclusiveMinimum": 0, "description": "Actual world/game pixels traveled for one complete gait cycle, not source canvas pixels."}}
+    },
+    "attack": {
+      "allOf": [{"$ref": "#/$defs/clip"}], "required": ["activeWindowMs"],
+      "properties": {
+        "activeWindowMs": {"type": "array", "items": {"type": "number", "exclusiveMinimum": 0}, "minItems": 2, "maxItems": 2,
+          "description": "Authored strike phase start/end within clip duration; increasing, with nonempty anticipation/recovery. Adapter maps these to the real action damage window. Use frame boundaries."}
+      }
+    },
+    "direction": {
+      "type": "object",
+      "properties": {
+        "idle": {"$ref": "#/$defs/clip"}, "run": {"$ref": "#/$defs/run"},
+        "jump_rise": {"$ref": "#/$defs/clip"}, "jump_fall": {"$ref": "#/$defs/clip"}, "land": {"$ref": "#/$defs/clip"},
+        "attack": {"$ref": "#/$defs/attack"}, "attack2": {"$ref": "#/$defs/attack"}, "heavy": {"$ref": "#/$defs/attack"},
+        "hurt": {"$ref": "#/$defs/clip"}, "dash": {"$ref": "#/$defs/clip"}, "heal": {"$ref": "#/$defs/clip"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

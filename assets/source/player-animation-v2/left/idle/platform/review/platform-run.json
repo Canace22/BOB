@@ -1,0 +1,80 @@
+{
+  "platformCommit": "e5dc689",
+  "api": "http://127.0.0.1:8765",
+  "operation": "POST /api/compression/frame for each of 2 frames",
+  "settings": {
+    "scale": 1,
+    "algorithm": "lanczos",
+    "resizeMode": "soft",
+    "alphaThreshold": 8,
+    "sharpen": 0,
+    "colors": 256
+  },
+  "nativeSourceCanvas": [
+    384,
+    384
+  ],
+  "outputCanvas": [
+    384,
+    384
+  ],
+  "frameCount": 2,
+  "fps": 2,
+  "durationMs": 1000,
+  "inputBytes": 129351,
+  "outputBytes": 119516,
+  "savingsPercent": 7.603342842343697,
+  "exportMethod": "Unmodified Framecraft exportCompressionZip function, download captured in Node.",
+  "projectMethod": "Unmodified Framecraft saveProject/loadProject functions calling its actual HTTP API.",
+  "projectId": "811111f655b7423dbd4bc13b20517a0c",
+  "projectPath": "projects/811111f655b7423dbd4bc13b20517a0c.framecraft",
+  "reopened": {
+    "fps": 2,
+    "loopMode": "loop",
+    "frameCount": 2,
+    "compressionCount": 2,
+    "resultBytesVerified": true
+  },
+  "notPerformed": [
+    "UI playback observation",
+    "Compressed atlas export (browser Canvas required)",
+    "AI smoothing or generation",
+    "Godot integration"
+  ],
+  "records": [
+    {
+      "name": "frame-001.png",
+      "inputBytes": 64653,
+      "outputBytes": 59617,
+      "inputSha256": "4e5a95c227713604cf6edaf40686cf489c3df461c4936b69f686aced188b6b88",
+      "outputSha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "64653",
+        "x-compression-output-bytes": "59617",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-002.png",
+      "inputBytes": 64698,
+      "outputBytes": 59899,
+      "inputSha256": "76c6afb11f11cf9704506a9a2e5a002990a02de8e54bbc6cf280800f072b6849",
+      "outputSha256": "c2ce17dac35b7e40abb5c9a8494313474346eaa2df0033cbd9053def70284cc5",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "64698",
+        "x-compression-output-bytes": "59899",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    }
+  ]
+}

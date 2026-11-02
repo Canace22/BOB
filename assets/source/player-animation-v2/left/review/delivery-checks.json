@@ -1,0 +1,645 @@
+{
+  "canvas": [
+    384,
+    384
+  ],
+  "pivot": [
+    192,
+    342
+  ],
+  "gameScale": 0.275,
+  "standingHeightWorld": 66,
+  "checks": [
+    {
+      "clip": "idle",
+      "durationMs": 1000,
+      "posesInManifest": 2,
+      "uniqueDecodedFrames": 2,
+      "platformTicks": 2,
+      "platformFps": 2,
+      "projectId": "811111f655b7423dbd4bc13b20517a0c",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": true,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/idle-00.png",
+          "durationMs": 500,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        },
+        {
+          "file": "left/idle-01.png",
+          "durationMs": 500,
+          "alphaBbox": [
+            91,
+            100,
+            241,
+            342
+          ],
+          "sha256": "c2ce17dac35b7e40abb5c9a8494313474346eaa2df0033cbd9053def70284cc5"
+        }
+      ]
+    },
+    {
+      "clip": "run",
+      "durationMs": 280,
+      "posesInManifest": 6,
+      "uniqueDecodedFrames": 6,
+      "platformTicks": 14,
+      "platformFps": 50,
+      "projectId": "d58216d4477a4063afa9b01658bea632",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": true,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/run-00.png",
+          "durationMs": 60,
+          "alphaBbox": [
+            74,
+            139,
+            271,
+            346
+          ],
+          "sha256": "a52f99bd6432f40a14e936d4e53fc28f7547e163f464a45d78f830608c0e0af0"
+        },
+        {
+          "file": "left/run-01.png",
+          "durationMs": 60,
+          "alphaBbox": [
+            85,
+            134,
+            270,
+            344
+          ],
+          "sha256": "9236d55e202fc19ac01572a2e314a6bac277b9d8b94ae2a94fcf35468a100788"
+        },
+        {
+          "file": "left/run-02.png",
+          "durationMs": 20,
+          "alphaBbox": [
+            84,
+            134,
+            272,
+            348
+          ],
+          "sha256": "65f94a363506702b2df58b9705ce057d96e041bf72ef81d21ca949e4f4965486"
+        },
+        {
+          "file": "left/run-03.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            80,
+            141,
+            277,
+            348
+          ],
+          "sha256": "59997c3c0c522bbf942d643a3a98caff3e609e4887d17aa55527196ef48bb7c6"
+        },
+        {
+          "file": "left/run-04.png",
+          "durationMs": 40,
+          "alphaBbox": [
+            92,
+            135,
+            275,
+            344
+          ],
+          "sha256": "4403de7fec0ee28a20e7d0263bf2ee3cec95388a6f999d46bde7395fb0321f6d"
+        },
+        {
+          "file": "left/run-05.png",
+          "durationMs": 20,
+          "alphaBbox": [
+            82,
+            136,
+            268,
+            346
+          ],
+          "sha256": "9a61808bb50dab426f16cd9f924bd0650c5a7e6f2078be0888456be102779c11"
+        }
+      ]
+    },
+    {
+      "clip": "jump_rise",
+      "durationMs": 180,
+      "posesInManifest": 2,
+      "uniqueDecodedFrames": 2,
+      "platformTicks": 9,
+      "platformFps": 50,
+      "projectId": "7a77b185397348e3a1d5610a4a558f53",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/jump_rise-00.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            100,
+            94,
+            248,
+            343
+          ],
+          "sha256": "fb131ab124c7d265e0ee22701fa2fc73b808572349a73020fa03637cf54750f7"
+        },
+        {
+          "file": "left/jump_rise-01.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            100,
+            102,
+            250,
+            301
+          ],
+          "sha256": "d361f2e12453b241ae7f5854c1120872c702a507bb25243477eb31a008325791"
+        }
+      ]
+    },
+    {
+      "clip": "jump_fall",
+      "durationMs": 180,
+      "posesInManifest": 2,
+      "uniqueDecodedFrames": 2,
+      "platformTicks": 9,
+      "platformFps": 50,
+      "projectId": "179b625e47f7432a9719f282d858c275",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/jump_fall-00.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            100,
+            102,
+            250,
+            301
+          ],
+          "sha256": "d361f2e12453b241ae7f5854c1120872c702a507bb25243477eb31a008325791"
+        },
+        {
+          "file": "left/jump_fall-01.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            108,
+            122,
+            257,
+            345
+          ],
+          "sha256": "4be028a1214f3330dda8792829208fc6e21ef1c0e71cfe751d7bae97c8d6b6fa"
+        }
+      ]
+    },
+    {
+      "clip": "land",
+      "durationMs": 140,
+      "posesInManifest": 4,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 7,
+      "platformFps": 50,
+      "projectId": "7c269f75a76e4d60afb41e1a9502ae78",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/land-00.png",
+          "durationMs": 20,
+          "alphaBbox": [
+            93,
+            134,
+            248,
+            343
+          ],
+          "sha256": "3b799b0d84ecb6bf88bf85d345476f2ad863254d1615cbbec31d70490a554469"
+        },
+        {
+          "file": "left/land-01.png",
+          "durationMs": 40,
+          "alphaBbox": [
+            96,
+            158,
+            262,
+            343
+          ],
+          "sha256": "d919e8165c38e7dd4223e0afb6636391f8128d0d13e825aedbde83a909a92639"
+        },
+        {
+          "file": "left/land-02.png",
+          "durationMs": 40,
+          "alphaBbox": [
+            93,
+            134,
+            248,
+            343
+          ],
+          "sha256": "3b799b0d84ecb6bf88bf85d345476f2ad863254d1615cbbec31d70490a554469"
+        },
+        {
+          "file": "left/land-03.png",
+          "durationMs": 40,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    },
+    {
+      "clip": "attack",
+      "durationMs": 400,
+      "posesInManifest": 4,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 20,
+      "platformFps": 50,
+      "projectId": "01516aab49ee4f2abda287114c083210",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/attack-00.png",
+          "durationMs": 120,
+          "alphaBbox": [
+            92,
+            121,
+            244,
+            342
+          ],
+          "sha256": "ffeafa3569e2de5214ec1c74a72ecf7a352bb3de38a02296e473bb4f74f6ca67"
+        },
+        {
+          "file": "left/attack-01.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            2,
+            123,
+            242,
+            342
+          ],
+          "sha256": "aa51a6288a70deec84070cad853eb6d7749fa0275ed10038b456cfba0d14610c"
+        },
+        {
+          "file": "left/attack-02.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            92,
+            121,
+            244,
+            342
+          ],
+          "sha256": "ffeafa3569e2de5214ec1c74a72ecf7a352bb3de38a02296e473bb4f74f6ca67"
+        },
+        {
+          "file": "left/attack-03.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    },
+    {
+      "clip": "attack2",
+      "durationMs": 500,
+      "posesInManifest": 4,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 25,
+      "platformFps": 50,
+      "projectId": "92b9f90ae65b4254b61ddc54f01859cd",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/attack2-00.png",
+          "durationMs": 160,
+          "alphaBbox": [
+            50,
+            130,
+            245,
+            343
+          ],
+          "sha256": "9e0bf0d83483d167c50e524520cf84002f563f38e22e02f2cdfdfbdfc1c97209"
+        },
+        {
+          "file": "left/attack2-01.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            39,
+            85,
+            247,
+            343
+          ],
+          "sha256": "1770bd68a04959d8a2f6af3f75f117430f2d63940a132b4d3085463b5c110e75"
+        },
+        {
+          "file": "left/attack2-02.png",
+          "durationMs": 120,
+          "alphaBbox": [
+            50,
+            130,
+            245,
+            343
+          ],
+          "sha256": "9e0bf0d83483d167c50e524520cf84002f563f38e22e02f2cdfdfbdfc1c97209"
+        },
+        {
+          "file": "left/attack2-03.png",
+          "durationMs": 140,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    },
+    {
+      "clip": "heavy",
+      "durationMs": 820,
+      "posesInManifest": 4,
+      "uniqueDecodedFrames": 4,
+      "platformTicks": 41,
+      "platformFps": 50,
+      "projectId": "033cb54aedac4c94a03fdd249a52073a",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/heavy-00.png",
+          "durationMs": 300,
+          "alphaBbox": [
+            87,
+            72,
+            244,
+            342
+          ],
+          "sha256": "b4b16cf6b1c35b06ef84f19cf8e8d1c0bf672beced9c09d50c57dd737be9c8e1"
+        },
+        {
+          "file": "left/heavy-01.png",
+          "durationMs": 120,
+          "alphaBbox": [
+            7,
+            150,
+            244,
+            342
+          ],
+          "sha256": "d758d508c2e0c6602bfe91f37b63d391a6746910856be344598be2d99e9a0b03"
+        },
+        {
+          "file": "left/heavy-02.png",
+          "durationMs": 200,
+          "alphaBbox": [
+            93,
+            134,
+            248,
+            343
+          ],
+          "sha256": "3b799b0d84ecb6bf88bf85d345476f2ad863254d1615cbbec31d70490a554469"
+        },
+        {
+          "file": "left/heavy-03.png",
+          "durationMs": 200,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    },
+    {
+      "clip": "hurt",
+      "durationMs": 280,
+      "posesInManifest": 3,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 14,
+      "platformFps": 50,
+      "projectId": "d92c08cc788e4f1496715e1080930f69",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/hurt-00.png",
+          "durationMs": 80,
+          "alphaBbox": [
+            112,
+            115,
+            258,
+            343
+          ],
+          "sha256": "d690c3198bcff3bcb306cca7a3b201f6305dee6fc5cdaa3783041144086b3814"
+        },
+        {
+          "file": "left/hurt-01.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            94,
+            112,
+            241,
+            343
+          ],
+          "sha256": "e69ca4f635670e5702a3e4d6b30f4c493a73fcfaddeb35b90a84dfd2426a2397"
+        },
+        {
+          "file": "left/hurt-02.png",
+          "durationMs": 100,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    },
+    {
+      "clip": "dash",
+      "durationMs": 220,
+      "posesInManifest": 3,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 11,
+      "platformFps": 50,
+      "projectId": "f0d2e17875084e74a87ba68841e03e73",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/dash-00.png",
+          "durationMs": 40,
+          "alphaBbox": [
+            96,
+            158,
+            262,
+            343
+          ],
+          "sha256": "d919e8165c38e7dd4223e0afb6636391f8128d0d13e825aedbde83a909a92639"
+        },
+        {
+          "file": "left/dash-01.png",
+          "durationMs": 120,
+          "alphaBbox": [
+            54,
+            126,
+            293,
+            297
+          ],
+          "sha256": "0411a7cc9289fcf58255acb6b053dc28efed76ce1d8847249feef1ca1a7a36d8"
+        },
+        {
+          "file": "left/dash-02.png",
+          "durationMs": 60,
+          "alphaBbox": [
+            77,
+            137,
+            256,
+            342
+          ],
+          "sha256": "c7f355d3d32ce18c0f07e548b99f76d816034ee98a4183049c9c46dbe21197f6"
+        }
+      ]
+    },
+    {
+      "clip": "heal",
+      "durationMs": 800,
+      "posesInManifest": 4,
+      "uniqueDecodedFrames": 3,
+      "platformTicks": 20,
+      "platformFps": 25,
+      "projectId": "98fa46afd2364554a78b841d28c7bfa7",
+      "zipBytesMatch": true,
+      "canvas": [
+        384,
+        384
+      ],
+      "noCanvasEdgeContact": true,
+      "loop": false,
+      "platformManifestLoop": true,
+      "frames": [
+        {
+          "file": "left/heal-00.png",
+          "durationMs": 200,
+          "alphaBbox": [
+            53,
+            119,
+            251,
+            342
+          ],
+          "sha256": "2c9d66e04e328b43f5e6d0354968622cf9cb72e90f6b0294fc913593324a778e"
+        },
+        {
+          "file": "left/heal-01.png",
+          "durationMs": 240,
+          "alphaBbox": [
+            65,
+            104,
+            251,
+            342
+          ],
+          "sha256": "6d8c0382134d9ba366ce8ea868f5fd84da3e2790356037f69b211e918f2f4a2b"
+        },
+        {
+          "file": "left/heal-02.png",
+          "durationMs": 240,
+          "alphaBbox": [
+            53,
+            119,
+            251,
+            342
+          ],
+          "sha256": "2c9d66e04e328b43f5e6d0354968622cf9cb72e90f6b0294fc913593324a778e"
+        },
+        {
+          "file": "left/heal-03.png",
+          "durationMs": 120,
+          "alphaBbox": [
+            90,
+            102,
+            241,
+            343
+          ],
+          "sha256": "6da6f01c6149ab751ba1873ab6d8af0de6a51f856fccc1f94c2abb2ada2f31a4"
+        }
+      ]
+    }
+  ],
+  "notCertified": [
+    "User artistic acceptance",
+    "Gameplay foot-slip and input/state transitions; parent task handles actual game verification"
+  ]
+}

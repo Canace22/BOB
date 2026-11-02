@@ -29,7 +29,7 @@ BOB/
 
 Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → 负壳蟹 → 流膜育窝。包含短击连段、重鸣、调息、Boss、交互领取贴流冲、三段跨沟、营地与版本化存档、地图和暂停。舌台可收集碎片并打开持久壳闩短桥。
 
-七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。角色沿用旧版静态姿态加程序反馈；复用素材接入不代表制作了新的逐帧动画。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
+七个 R1 房间均保留独立场景；R1-06 / R1-07 的浮升、挂环门仍锁定，相关能力和后续区域不属于本批可玩内容。主线线上版本仍沿用旧玩家素材，本批新动作先在下方独立训练场验收与发布。实测范围、发布提交和限制见 [game/progress.md](game/progress.md)。
 
 ## 母蟹 Boss 独立原型
 
@@ -41,13 +41,17 @@ Godot 正式工程已迁移五房主路：外伤坡 → 须筛 → 舌台 → �
 
 V4 将横扫、冲撞、走路和抖壳统一为待机的侧向镜头，补绘 48 帧；走路随实际位移推进，停住不空踏。来源、打包和剩余漂移见 [V4 记录](assets/source/crab-video-v4/README.md)。
 
+拾潮者 V2 使用独立左右位图动作：待机、跑步、上升/下降/落地、两段普攻、重击、受击、冲刺与调息。统一脚底根，跑步跟随实际位移；站定落地缓冲后回待机，移动落地接跑步。地面出招站稳，收招允许移动；武器和腰灯不随朝向交换挂点。画面仍是有限关键姿势的逐帧动画，连续性与用户试玩反馈分别记录在[制作说明](assets/source/player-animation-v2/README.md)和进度中。
+
 本地直接运行 `node tools/godot.mjs run -- res://src/prototype/crab_arena.tscn`；Web 开发预览使用 `/BOB/godot/?prototype=crab`，可用 `PORT=4188` 启动独立服务。真实按键回归脚本为 `node game/tests/web_crab_prototype.mjs`（支持 `PLAYWRIGHT_MODULE`、`GAME_URL`、`TEST_LABEL`）。
+
+玩家动作专项复核运行 `node game/tests/web_player_animation.mjs`，默认验证两向完整动作并保存录像；`ANIMATION_SUITE=locomotion` 只跑移动和跳落。该脚本使用独立浏览器上下文，不修改玩家主线存档。
 
 发布原型用 `node tools/deploy-pages.mjs --prototype`，只更新 `gh-pages` 的 `/godot-boss/`，不替换 `/godot/`、根入口或 V2。原型启动下载使用独立缓存 `bob-boss-downloads-v1`，不清理主线缓存。
 
 ## 快速开始
 
-需要 Node.js 18+、Godot 4.7.2 和 Git LFS。
+需要 Node.js 18+、Godot 4.7.2 和 Git LFS。macOS 默认识别 `/Applications/Godot.app`，其他位置可用 `GODOT` 指定。
 
 ```sh
 git lfs install && git lfs pull

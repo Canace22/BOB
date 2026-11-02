@@ -1,0 +1,36 @@
+{
+  "source": "raw/heavy-v01-background-source.png",
+  "crop": [
+    0,
+    0,
+    820,
+    566
+  ],
+  "request": {
+    "mode": "birefnet",
+    "device": "cpu",
+    "resolution": "1024",
+    "birefnet_variant": "lite",
+    "key_color": "#426d6f",
+    "spill": "0"
+  },
+  "endpoint": "http://127.0.0.1:8766/api/matte",
+  "elapsedSeconds": 8.501,
+  "sourceSHA256": "a51220e7b3ebfce676a0a700dcac2d805907fb525ea5f6569a9f2919aa602d20",
+  "resultSHA256": "458ef5c19ea826f727bc4979db790223a8afb02f622dfcbcbd97a21b9f69e0e0",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "headers": {
+    "Connection": "close",
+    "Content-Length": "574539",
+    "Cache-Control": "no-store",
+    "Content-Type": "image/png",
+    "Date": "Mon, 02 Nov 2026 05:13:48 GMT",
+    "Server": "uvicorn",
+    "Vary": "Origin",
+    "X-Matte-Device": "cpu",
+    "X-Matte-Mode": "birefnet"
+  }
+}

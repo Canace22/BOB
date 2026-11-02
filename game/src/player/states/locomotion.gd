@@ -47,4 +47,5 @@ func step(player: Player, delta: float) -> void:
 			if player.actions.mode == "heal":
 				player.velocity.x = 0
 			elif player.actions.mode == "attack":
-				player.velocity.x *= 0.55
+				var planted := player.is_on_floor() and player.velocity.y >= 0 and player.actions.elapsed < player.actions.attack_active_end()
+				player.velocity.x = 0.0 if planted else player.velocity.x * 0.55

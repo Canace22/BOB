@@ -1,0 +1,43 @@
+{
+  "keep": [
+    "README.md",
+    "provenance.json",
+    "assemble.py",
+    "package_platform.py",
+    "verify.py",
+    "clips-source.json",
+    "references/*.png and registration.json",
+    "*/source/*.png and *.prompt.txt except excluded derivative below",
+    "registered/*.png",
+    "delivery/*",
+    "previews/*.webp",
+    "*/timeline-input/timeline.json",
+    "*/platform-options.json",
+    "*/platform/exports/*.zip",
+    "*/platform/projects/<current-projects.json id>.framecraft/**",
+    "*/platform/review/*.json",
+    "*/platform/game-metadata.json",
+    "review/*.json except local-only rejected marker measurement"
+  ],
+  "localOnly": [
+    "review/*.png",
+    "review/*.jpg",
+    "review/*.webp",
+    "review/rejected-marker-segmentation.json",
+    "review/combat-helmet-source-measurements.json",
+    "dash/source/pose-1.png",
+    "*/timeline-input/frames/",
+    "*/platform/processed/",
+    "*/platform/source/frames/",
+    "run/platform/projects/98a4aa38f2894ed0906668940032da1b.framecraft/",
+    "land/platform/projects/43233c813c1c4c78b99b758d26bf8956.framecraft/",
+    "attack/platform/projects/56c08901493a48e6863d5da995997602.framecraft/"
+  ],
+  "notes": [
+    "All original generation strips remain as source, including superseded poses within a strip.",
+    "Old 100FPS run/land projects fail real UI timing and are not delivery.",
+    "Old attack project preceded 2px transparent edge padding; current project identified in current-projects.json.",
+    "Source crops retained so assembly does not require recreating imagegen results; platform project embeds own frame data.",
+    "Root agent owns final gitignore/LFS/commit choices."
+  ]
+}

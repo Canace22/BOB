@@ -1,0 +1,32 @@
+{
+  "method": "Manual inspection at fixed output pixel scale using full helmet horizontal span and outer lens long-axis landmarks. Approximate estimates, not threshold component measurements.",
+  "inspectionImageLocalOnly": "marker-inspection.jpg",
+  "representativePoses": [
+    {
+      "pose": "idle-0",
+      "helmetWidthPx": 78,
+      "lensMajorAxisPx": 39
+    },
+    {
+      "pose": "run-0",
+      "helmetWidthPx": 77,
+      "lensMajorAxisPx": 35
+    },
+    {
+      "pose": "land-0",
+      "helmetWidthPx": 78,
+      "lensMajorAxisPx": 38
+    },
+    {
+      "pose": "heavy-1",
+      "helmetWidthPx": 79,
+      "lensMajorAxisPx": 37
+    }
+  ],
+  "uncertaintyPx": [
+    2,
+    4
+  ],
+  "interpretation": "Comparable helmet scale is preserved in these samples; lens projection differs with tilt. All pose contacts were visually compared at fixed scale, but these measurements do not certify exact rigid proportions or every frame.",
+  "rejectedMeasurement": "Automatic warm-color largest-component fragmented the helmet and dark component joined outline/cape, so rejected-marker-segmentation.json is NOT a scale acceptance result."
+}

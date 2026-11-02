@@ -1,0 +1,469 @@
+{
+  "method": "Manual anatomical anchors. Shared scale for each generated source group based on rigid helmet and lamp size, not per-frame bbox. Two complete hand-drawn gait halves reordered by actual limb phase. Landing near ankle and sole fixed; far-foot residual placement is visible in contact sheet.",
+  "canvas": [
+    384,
+    384
+  ],
+  "pivot": [
+    192,
+    342
+  ],
+  "records": [
+    {
+      "name": "idle-00",
+      "source": "raw/idle-v01.png",
+      "crop": [
+        0,
+        0,
+        645,
+        609
+      ],
+      "sourceScale": 0.42628774422735344,
+      "sourceAnchor": [
+        250,
+        594
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        60,
+        89
+      ],
+      "phase": "grounded breathing; near ankle and sole registered"
+    },
+    {
+      "name": "idle-01",
+      "source": "raw/idle-v01.png",
+      "crop": [
+        645,
+        0,
+        1290,
+        609
+      ],
+      "sourceScale": 0.42628774422735344,
+      "sourceAnchor": [
+        235,
+        594
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        67,
+        89
+      ],
+      "phase": "grounded breathing; near ankle and sole registered"
+    },
+    {
+      "name": "idle-02",
+      "source": "raw/idle-v01.png",
+      "crop": [
+        0,
+        609,
+        645,
+        1219
+      ],
+      "sourceScale": 0.42628774422735344,
+      "sourceAnchor": [
+        250,
+        573
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        60,
+        98
+      ],
+      "phase": "grounded breathing; near ankle and sole registered"
+    },
+    {
+      "name": "idle-03",
+      "source": "raw/idle-v01.png",
+      "crop": [
+        645,
+        609,
+        1290,
+        1219
+      ],
+      "sourceScale": 0.42628774422735344,
+      "sourceAnchor": [
+        235,
+        573
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        67,
+        98
+      ],
+      "phase": "grounded breathing; near ankle and sole registered"
+    },
+    {
+      "name": "run-00",
+      "source": "raw/run-near-half-v04.png",
+      "crop": [
+        0,
+        0,
+        745,
+        528
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        420,
+        496
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        -10,
+        104
+      ],
+      "phase": "near contact"
+    },
+    {
+      "name": "run-01",
+      "source": "raw/run-near-half-v04.png",
+      "crop": [
+        745,
+        0,
+        1490,
+        528
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        380,
+        496
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        10,
+        104
+      ],
+      "phase": "near support"
+    },
+    {
+      "name": "run-02",
+      "source": "raw/run-half-a-v01.png",
+      "crop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        315,
+        562
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        41,
+        72
+      ],
+      "phase": "near push, far knee forward"
+    },
+    {
+      "name": "run-03",
+      "source": "raw/run-half-a-v01.png",
+      "crop": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        310,
+        562
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        43,
+        72
+      ],
+      "phase": "flight, far leg reaches"
+    },
+    {
+      "name": "run-04",
+      "source": "raw/run-half-a-v01.png",
+      "crop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        320,
+        585
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        38,
+        61
+      ],
+      "phase": "far contact"
+    },
+    {
+      "name": "run-05",
+      "source": "raw/run-half-a-v01.png",
+      "crop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        324,
+        588
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        36,
+        60
+      ],
+      "phase": "far support"
+    },
+    {
+      "name": "run-06",
+      "source": "raw/run-near-half-v04.png",
+      "crop": [
+        0,
+        528,
+        745,
+        1055
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        420,
+        490
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        -10,
+        107
+      ],
+      "phase": "far push, near knee forward"
+    },
+    {
+      "name": "run-07",
+      "source": "raw/run-near-half-v04.png",
+      "crop": [
+        745,
+        528,
+        1490,
+        1055
+      ],
+      "sourceScale": 0.48,
+      "sourceAnchor": [
+        384,
+        490
+      ],
+      "targetAnchor": [
+        192,
+        342
+      ],
+      "offset": [
+        8,
+        107
+      ],
+      "phase": "flight, near leg reaches"
+    },
+    {
+      "name": "air-00",
+      "source": "raw/jump-air-v01.png",
+      "crop": [
+        0,
+        0,
+        690,
+        636
+      ],
+      "sourceScale": 0.4,
+      "sourceAnchor": [
+        340,
+        440
+      ],
+      "targetAnchor": [
+        192,
+        266
+      ],
+      "offset": [
+        56,
+        90
+      ],
+      "phase": "rise extended"
+    },
+    {
+      "name": "air-01",
+      "source": "raw/jump-air-v01.png",
+      "crop": [
+        690,
+        0,
+        1290,
+        636
+      ],
+      "sourceScale": 0.4,
+      "sourceAnchor": [
+        290,
+        467
+      ],
+      "targetAnchor": [
+        192,
+        266
+      ],
+      "offset": [
+        76,
+        79
+      ],
+      "phase": "rise tuck"
+    },
+    {
+      "name": "air-02",
+      "source": "raw/jump-air-v01.png",
+      "crop": [
+        0,
+        640,
+        690,
+        1219
+      ],
+      "sourceScale": 0.4,
+      "sourceAnchor": [
+        285,
+        370
+      ],
+      "targetAnchor": [
+        192,
+        266
+      ],
+      "offset": [
+        78,
+        118
+      ],
+      "phase": "fall opens"
+    },
+    {
+      "name": "air-03",
+      "source": "raw/jump-air-v01.png",
+      "crop": [
+        690,
+        640,
+        1290,
+        1219
+      ],
+      "sourceScale": 0.4,
+      "sourceAnchor": [
+        270,
+        370
+      ],
+      "targetAnchor": [
+        192,
+        266
+      ],
+      "offset": [
+        84,
+        118
+      ],
+      "phase": "fall feet ready"
+    },
+    {
+      "name": "land-00",
+      "source": "raw/land-v01.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "sourceScale": 0.38461538461538464,
+      "sourceAnchor": [
+        275,
+        663
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        61,
+        87
+      ],
+      "phase": "first contact"
+    },
+    {
+      "name": "land-01",
+      "source": "raw/land-v01.png",
+      "crop": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "sourceScale": 0.38461538461538464,
+      "sourceAnchor": [
+        245,
+        663
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        73,
+        87
+      ],
+      "phase": "knee compression"
+    },
+    {
+      "name": "land-02",
+      "source": "raw/land-v01.png",
+      "crop": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "sourceScale": 0.38461538461538464,
+      "sourceAnchor": [
+        245,
+        663
+      ],
+      "targetAnchor": [
+        167,
+        342
+      ],
+      "offset": [
+        73,
+        87
+      ],
+      "phase": "standing recovery"
+    }
+  ]
+}

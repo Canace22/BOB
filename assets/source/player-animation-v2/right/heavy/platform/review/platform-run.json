@@ -1,0 +1,743 @@
+{
+  "platformCommit": "e5dc689",
+  "api": "http://127.0.0.1:8765",
+  "operation": "POST /api/compression/frame for each of 41 frames",
+  "settings": {
+    "scale": 1,
+    "algorithm": "lanczos",
+    "resizeMode": "soft",
+    "alphaThreshold": 8,
+    "sharpen": 0,
+    "colors": 256
+  },
+  "nativeSourceCanvas": [
+    384,
+    384
+  ],
+  "outputCanvas": [
+    384,
+    384
+  ],
+  "frameCount": 41,
+  "fps": 50,
+  "durationMs": 820,
+  "inputBytes": 4505907,
+  "outputBytes": 4216370,
+  "savingsPercent": 6.425720726149031,
+  "exportMethod": "Unmodified Framecraft exportCompressionZip function, download captured in Node.",
+  "projectMethod": "Unmodified Framecraft saveProject/loadProject functions calling its actual HTTP API.",
+  "projectId": "cf8b983a0ac94354a5cb4d00a9ecf5b6",
+  "projectPath": "projects/cf8b983a0ac94354a5cb4d00a9ecf5b6.framecraft",
+  "reopened": {
+    "fps": 50,
+    "loopMode": "once",
+    "frameCount": 41,
+    "compressionCount": 41,
+    "resultBytesVerified": true
+  },
+  "notPerformed": [
+    "UI playback observation",
+    "Compressed atlas export (browser Canvas required)",
+    "AI smoothing or generation",
+    "Godot integration"
+  ],
+  "records": [
+    {
+      "name": "frame-001.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-002.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-003.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-004.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-005.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-006.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-007.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-008.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-009.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-010.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-011.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-012.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-013.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-014.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-015.png",
+      "inputBytes": 128321,
+      "outputBytes": 120235,
+      "inputSha256": "788ab1e23d538c7edf5c77de68c544cdea0baa2cd775297bbaea6df2a4d2b412",
+      "outputSha256": "fff4656102dd72bb25692ed3c9390f6dd91af877ff6db78e0b2c8a048996a6b4",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "128321",
+        "x-compression-output-bytes": "120235",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-016.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-017.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-018.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-019.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-020.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-021.png",
+      "inputBytes": 109614,
+      "outputBytes": 102221,
+      "inputSha256": "2e632465c37e94d1ed84c0235972c021b0f7a7571b7d43743c64cb310429c929",
+      "outputSha256": "fcae1526eb8389ee9c5465a21eb9b865b82ea807d7ca7912e57fad20b8c59a29",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "109614",
+        "x-compression-output-bytes": "102221",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-022.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-023.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-024.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-025.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-026.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-027.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-028.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-029.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-030.png",
+      "inputBytes": 101050,
+      "outputBytes": 94679,
+      "inputSha256": "5ba6b976cb7dba7c37f289ffb966d19e38cdc974dc01d9070d0b4e1e05d78ef1",
+      "outputSha256": "9df7e05ba07abfdd91bb711e084f09d47ae6ce69a200aa3b4201b2bc19f9bd44",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "101050",
+        "x-compression-output-bytes": "94679",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-031.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-032.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-033.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-034.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-035.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-036.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-037.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-038.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-039.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-040.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    },
+    {
+      "name": "frame-041.png",
+      "inputBytes": 92178,
+      "outputBytes": 86128,
+      "inputSha256": "50e6b1e55ca0e2dc920072f28f3d78c644a29183e165bee8c84f001de5daa25d",
+      "outputSha256": "3996a66ceeacea6a0c04aa53e509b7b31a8846207a20876a49333b5f6f7da178",
+      "width": 384,
+      "height": 384,
+      "headers": {
+        "x-compression-algorithm": "lanczos",
+        "x-compression-height": "384",
+        "x-compression-original-bytes": "92178",
+        "x-compression-output-bytes": "86128",
+        "x-compression-resize-mode": "soft",
+        "x-compression-width": "384"
+      }
+    }
+  ]
+}

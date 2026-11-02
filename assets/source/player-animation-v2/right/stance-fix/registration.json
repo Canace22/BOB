@@ -1,0 +1,80 @@
+{
+  "method": "Same source-group scale fixed from helmet and lamp size, same x/y registration for both new frames. Original gait frames unchanged. No bbox normalization or mirror.",
+  "records": [
+    {
+      "name": "near-stance-mid",
+      "source": "mid-late-v02.png",
+      "sourceSha256": "ef6c30b5243fcded84c8fdf1e5d64dd2716c822b41c2183306dbc4abdb4feff4",
+      "sourceRect": [
+        0,
+        0,
+        887,
+        887
+      ],
+      "scale": 0.374,
+      "offset": [
+        19,
+        48
+      ],
+      "canvas": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        342
+      ],
+      "alpha8Bbox": [
+        84,
+        113,
+        331,
+        344
+      ],
+      "sourceHelmetWidthApprox": 230,
+      "outputHelmetWidthApprox": 86,
+      "sourceLanternWidthApprox": 112,
+      "outputLanternWidthApprox": 42
+    },
+    {
+      "name": "far-stance-mid",
+      "source": "mid-late-v01.png",
+      "sourceSha256": "36c179c8b047e673492febba1f3c59e40ffacdb6a17a709edafe86681722484b",
+      "sourceRect": [
+        887,
+        0,
+        1774,
+        887
+      ],
+      "scale": 0.374,
+      "offset": [
+        19,
+        48
+      ],
+      "canvas": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        342
+      ],
+      "alpha8Bbox": [
+        79,
+        116,
+        324,
+        345
+      ],
+      "sourceHelmetWidthApprox": 230,
+      "outputHelmetWidthApprox": 86,
+      "sourceLanternWidthApprox": 112,
+      "outputLanternWidthApprox": 42
+    }
+  ],
+  "selection": "v02 first panel gives a more intermediate near-leg support pose. v02 second panel moved the support too far forward, so v01 second panel is retained. Both preserve correct near/far identity.",
+  "timingSuggestion": "Use visible planted toe x, not only requested midpoint. Near interval roughly100ms+60ms; far roughly120ms+100ms at50FPS. Owner should remeasure in assembled fullcycle and adjust stride/durations together.",
+  "notDone": [
+    "Framecraft export (right agent owns)",
+    "Runtime integration",
+    "User artistic acceptance"
+  ]
+}

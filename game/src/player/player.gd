@@ -80,6 +80,7 @@ func _on_death() -> void:
 
 func recover_fall() -> void:
 	position = last_safe
+	($Visual as PlayerVisual).reset_playback()
 	velocity = Vector2.ZERO
 	actions.change("idle")
 	hitbox.deactivate()
@@ -91,6 +92,7 @@ func recover_fall() -> void:
 
 func reset_at(at: Vector2) -> void:
 	position = at
+	($Visual as PlayerVisual).reset_playback()
 	last_safe = at
 	velocity = Vector2.ZERO
 	dead = false

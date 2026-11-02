@@ -18,6 +18,7 @@ function findGodot() {
     process.env.GODOT,
     join(ROOT, '.tools', 'godot', `Godot_v${VERSION}-stable_win64_console.exe`),
     join(ROOT, '.tools', 'godot', `Godot_v${VERSION}-stable_linux.x86_64`),
+    '/Applications/Godot.app/Contents/MacOS/Godot',
     `D:/Godot_v${VERSION}-stable_win64.exe/Godot_v${VERSION}-stable_win64_console.exe`,
   ].filter(Boolean);
   const found = candidates.find((path) => existsSync(path));

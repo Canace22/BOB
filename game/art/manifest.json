@@ -2,6 +2,9 @@
   "_doc": "Runtime art for game/. src is relative to the repo root; dest is under res://art/. Do not edit files in art/ by hand: change the source in assets/ and run `node tools/godot.mjs sync-art`. Scenery keeps original size because room scenes use pixel region_rects.",
   "entries": [
     { "src": "legacy/godot/first-level/assets/runtime/hero/", "dest": "player/" },
+    { "src": "assets/runtime/sprites/tide-picker-animation-v2/left/", "dest": "player/animation-v2/left/" },
+    { "src": "assets/runtime/sprites/tide-picker-animation-v2/right/", "dest": "player/animation-v2/right/" },
+    { "src": "assets/runtime/sprites/tide-picker-animation-v2/animations.json", "dest": "player/animation-v2/animations.json" },
     { "src": "legacy/godot/first-level/assets/runtime/crab.png", "dest": "enemies/corpse_crab.png" },
     { "src": "legacy/godot/first-level/assets/runtime/boss.png", "dest": "enemies/shell_crab_boss.png", "max": 640 },
     { "src": "assets/runtime/sprites/crab-boss-prototype/", "dest": "enemies/crab_prototype/" },

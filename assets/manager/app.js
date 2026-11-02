@@ -1,7 +1,7 @@
 const $ = id => document.getElementById(id);
 const statusNames = {accepted:'静态验收通过', 'needs-review':'待验收', 'needs-work':'待调整', archived:'已归档'};
 const kindNames = {character:'角色与生物', prop:'交互物', scenery:'场景件', background:'背景', ui:'界面素材', effect:'特效素材'};
-const spriteNames = {background:'独立背景', ui:'界面静态组件', effect:'特效静态纹理', static:'静态精灵'};
+const spriteNames = {background:'独立背景', ui:'界面静态组件', effect:'特效静态纹理', static:'静态精灵', animated:'逐帧动画'};
 let catalog, selectedId, original, pendingAction;
 let dirty = false, saving = false, loading = false;
 const images = new Map();

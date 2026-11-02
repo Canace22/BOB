@@ -1,0 +1,69 @@
+{
+  "generator": "Built-in image_gen tool, actual newly painted articulated poses.",
+  "canonical": "../../../runtime/sprites/tide-picker/idle-right.png",
+  "direction": "RIGHT independently drawn, never mirrored",
+  "acceptedSources": [
+    {
+      "file": "raw/idle-v01.png",
+      "sha256": "4ba6587ceb433361c13e378a2e5f16293c2015ab7bad56bca8b9f460f309d616"
+    },
+    {
+      "file": "raw/run-half-a-v01.png",
+      "sha256": "3b487994700d5d6598c778339b4d6f340b11f39880630cc25fce11c0defcbaac"
+    },
+    {
+      "file": "raw/run-near-contact-v03.png",
+      "sha256": "174756267fcd6d62891521132508d0a6696b82dc0f52d72d6c74c2827a742fd0"
+    },
+    {
+      "file": "raw/run-near-half-v04.png",
+      "sha256": "d3569b052ab0b3d19bf834d9a587e3504c436c1814d08d0edacc294cf46f6923"
+    },
+    {
+      "file": "raw/jump-air-v01.png",
+      "sha256": "99bf6c668a77916287525847166fbabc4e7e654acaf22038cf34efe4d31d437b"
+    },
+    {
+      "file": "raw/land-v01.png",
+      "sha256": "6f3200016e6602df59a11c97f3d66eaecaf571b7e872dc5512ebef59d9a34603"
+    },
+    {
+      "file": "raw/attack-v01.png",
+      "sha256": "4b4934279151ff427e35145ca0481db04986d5bf1d27456b359caf03eae8b3ba"
+    },
+    {
+      "file": "raw/attack2-v01.png",
+      "sha256": "662943d1341efcc2d6179573269dfa10db3b0ec85c342b3c3b89a2f8dd24d0c0"
+    },
+    {
+      "file": "raw/heavy-v01-background-source.png",
+      "sha256": "f461fdeb0b352d0574106272b5bf2d6cc458d62904813f3de28b0c1bcb051d02"
+    }
+  ],
+  "unusedLocalCandidates": {
+    "run-half-b-v01.png": "Leg depth repeats the other half; not used in delivery.",
+    "run-near-contact-v02.png": "Single-frame edit retained original support limb; superseded by v03 technical blockout generation.",
+    "heavy-v02-background-rejected.png": "Repeated transparent request retained haze; original v01 was instead matted through existing Framecraft API.",
+    "run-far-contact.png": "Mechanical crop of half-a for rejected v02, source pixels reproducible from retained sheet."
+  },
+  "guidesUsed": [
+    "guides/run-half-a-trajectory.png",
+    "guides/run-near-contact-blockout.png"
+  ],
+  "guidesUnused": [
+    "guides/run-half-b-trajectory.png",
+    "guides/run-near-contact-edit.png"
+  ],
+  "mechanicalOperations": [
+    "explicit rectangle crop",
+    "uniform scale shared per source group",
+    "integer canvas registration",
+    "platform compression/export"
+  ],
+  "alphaProcessing": {
+    "alreadyTransparent": "All accepted sheets except heavy-v01 retain generator alpha then platform threshold8.",
+    "heavy": "Existing Framecraft API at localhost8766, BiRefNet lite CPU, 1024 inference, original crop dimensions retained; matte_heavy.py and heavy/matting/pose-*.json record requests."
+  },
+  "stanceSupplement": "stance-fix/README.md",
+  "stanceRegistration": "stance-fix/registration.json"
+}

@@ -1,0 +1,73 @@
+{
+  "landing": {
+    "sourceNearAnkleX": [
+      521,
+      472,
+      449
+    ],
+    "sourceFarAnkleX": [
+      410,
+      357,
+      334
+    ],
+    "commonScale": 0.4088586030664395,
+    "targetNearAnkleX": 224,
+    "targetGroundY": 342,
+    "sourceAnkleY": [
+      594,
+      594,
+      594
+    ],
+    "manualPointUncertaintySourcePx": 3,
+    "farAnkleSpreadOutputPx": 1.635434412265758,
+    "note": "Deep compression to recovery keeps same two footprints; body articulation changes pelvis/head. Near ankle registered, far ankle residual about1.6px (<0.5gamepx), not the old115px mismatch."
+  },
+  "run": {
+    "sourcePelvisX": [
+      375,
+      540,
+      380,
+      360,
+      475,
+      380
+    ],
+    "nearStanceSourceAnklePairs": [
+      [
+        210,
+        375,
+        0.355
+      ],
+      [
+        496,
+        380,
+        0.355
+      ]
+    ],
+    "farStanceSourceAnklePairs": [
+      [
+        215,
+        360,
+        0.355
+      ],
+      [
+        496,
+        380,
+        0.355
+      ]
+    ],
+    "stancePhaseDelta": 0.42857142857142855,
+    "gameScale": 0.275,
+    "nearStrideEstimate": 64.00945833333334,
+    "farStrideEstimate": 59.45362500000001,
+    "selectedStridePixels": 61.7,
+    "relativeDifferencePercent": 7.380073800738004,
+    "method": "abs(registered stance ankle delta x) / phase interval * gameScale, separately for both legs.",
+    "limitations": "Ankle is a proxy on planted foot, with drawn foot roll and manual pelvis uncertainty. Discrete holds still need real-game foot-slip review."
+  },
+  "attack": {
+    "nearAnkleTargetX": 226,
+    "differenceFromOtherGroundedClipsPx": 2,
+    "worldDifferencePx": 0.55,
+    "reason": "Keeps extended fork alpha away from canvas edge; both attack poses use same adjustment."
+  }
+}

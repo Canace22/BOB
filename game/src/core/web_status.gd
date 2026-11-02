@@ -31,6 +31,7 @@ func _snapshot(_arguments: Array) -> void:
 		"player": {"x": player.position.x, "y": player.position.y, "floor": player.is_on_floor(),
 			"dead": player.dead, "facing": player.facing, "mode": player.actions.mode,
 			"elapsed": player.actions.elapsed, "kind": player.actions.attack_kind, "air_dash": player.actions.air_dash,
+			"animation": (player.get_node("Visual") as PlayerVisual).animation_snapshot(),
 			"floor_ahead": not player.get_world_2d().direct_space_state.intersect_ray(ray).is_empty()},
 		"enemies": enemies,
 	}

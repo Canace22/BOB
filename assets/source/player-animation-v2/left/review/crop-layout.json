@@ -1,0 +1,57 @@
+{
+  "default": "Two equal 887x887 rectangles in the 1774x887 generated strip; transparent pixels and native source scale preserved before registration.",
+  "heavy": {
+    "rects": [
+      [
+        250,
+        0,
+        530,
+        875
+      ],
+      [
+        895,
+        240,
+        765,
+        635
+      ]
+    ],
+    "placementOffsetsIn887Canvas": [
+      [
+        250,
+        0
+      ],
+      [
+        8,
+        240
+      ]
+    ],
+    "reason": "An opaque black divider at source x887 extended full height; explicit content rectangles omit divider without changing body pixels."
+  },
+  "dash": {
+    "rects": [
+      [
+        0,
+        0,
+        940,
+        887
+      ],
+      [
+        960,
+        0,
+        814,
+        887
+      ]
+    ],
+    "placementOffsets": [
+      [
+        0,
+        0
+      ],
+      [
+        73,
+        0
+      ]
+    ],
+    "reason": "Burst foot crosses nominal first panel by19px; explicit rectangles recover whole foot and exclude it from panel2. Second braking pose was superseded by recovery-v02 and is not delivered."
+  }
+}

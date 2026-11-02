@@ -1,0 +1,40 @@
+{
+  "name": "player-left-v2-idle",
+  "candidate": true,
+  "fps": 2,
+  "loop": true,
+  "durationMs": 1000,
+  "exportFile": "exports/player-left-v2-idle.zip",
+  "sourceFramesDirectory": "source/frames",
+  "canvas": [
+    384,
+    384
+  ],
+  "sourceCanvas": [
+    384,
+    384
+  ],
+  "scale": 1,
+  "pivot": [
+    192,
+    342
+  ],
+  "sourcePivot": [
+    192,
+    342
+  ],
+  "direction": "left",
+  "frameFiles": [
+    "processed/frame-001.png",
+    "processed/frame-002.png"
+  ],
+  "frameDurationMs": 500,
+  "overrides": [
+    "Platform manifest loop:true is overridden by the source action loop flag.",
+    "Platform bottom-center pivot is replaced with the known source root scaled by 1."
+  ],
+  "limitations": [
+    "Original hand-painted poses; no generated inbetweens claimed for repeated timing ticks.",
+    "Gameplay placement and user artistic acceptance handled separately."
+  ]
+}

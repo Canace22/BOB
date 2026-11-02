@@ -26,9 +26,16 @@ func attack_duration() -> float:
 	return 0.82 if attack_kind == "heavy" else (0.50 if attack_kind == "short2" else 0.40)
 
 
+func attack_active_start() -> float:
+	return 0.30 if attack_kind == "heavy" else (0.16 if attack_kind == "short2" else 0.12)
+
+
+func attack_active_end() -> float:
+	return attack_active_start() + (0.12 if attack_kind == "heavy" else 0.08)
+
+
 func can_cancel_attack(player: Player) -> bool:
-	var active_end := 0.42 if attack_kind == "heavy" else (0.24 if attack_kind == "short2" else 0.20)
-	return mode == "attack" and elapsed >= maxf(active_end, attack_duration() - player.tuning.action_buffer)
+	return mode == "attack" and elapsed >= maxf(attack_active_end(), attack_duration() - player.tuning.action_buffer)
 
 
 func cancel_attack(player: Player) -> void:
@@ -127,10 +134,10 @@ func begin_attack(player: Player, kind: String) -> void:
 
 func update_attack(player: Player) -> void:
 	var heavy := attack_kind == "heavy"
-	var start := 0.30 if heavy else (0.16 if attack_kind == "short2" else 0.12)
-	var active := 0.12 if heavy else 0.08
+	var start := attack_active_start()
+	var active_end := attack_active_end()
 	var duration := attack_duration()
-	if elapsed >= start and elapsed < start + active and not activated:
+	if elapsed >= start and elapsed < active_end and not activated:
 		activated = true
 		var reach := 153.6 if heavy else 83.2
 		var shape := player.hitbox.get_node("Shape") as CollisionShape2D
@@ -138,7 +145,7 @@ func update_attack(player: Player) -> void:
 		shape.position = Vector2(player.facing * (reach - 15) / 2, -32)
 		var damage := 24 if heavy else (14 if attack_kind == "short2" else 10)
 		player.hitbox.activate(HitData.create(damage, player.global_position, heavy))
-	if elapsed >= start + active:
+	if elapsed >= active_end:
 		player.hitbox.deactivate()
 	if elapsed >= duration:
 		if attack_kind == "short1" and combo:

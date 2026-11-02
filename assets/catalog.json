@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 15,
-  "updatedAt": "2026-10-30T10:27:12.472Z",
+  "revision": 16,
+  "updatedAt": "2026-11-02T05:01:37.534642+00:00",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24105,6 +24105,110 @@
           "重绘关键帧，局部纹理和腿部体积仍有漂移",
           "真人视觉读招与听感未由自动路线证明"
         ]
+      }
+    },
+    {
+      "id": "tide-picker-animation-v2-left",
+      "name": "拾潮者 V2 · 左向动作",
+      "kind": "character",
+      "region": "玩家",
+      "status": "needs-review",
+      "target": "2d",
+      "familyId": "tide-picker",
+      "file": "assets/runtime/sprites/tide-picker-animation-v2/left/idle-00.png",
+      "width": 384,
+      "height": 384,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "player-animation-v2",
+        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸透明边缘处理",
+        "references": [
+          "assets/source/player-animation-v2/left/"
+        ],
+        "originalId": "left"
+      },
+      "integrationStatus": "integrated",
+      "animation": {
+        "metadata": "assets/runtime/sprites/tide-picker-animation-v2/animations.json",
+        "direction": "left",
+        "pivot": [
+          192,
+          342
+        ],
+        "displayScale": 0.275
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "technicalReview": {
+          "passed": true,
+          "evidence": "game/build/qa/player-animation-feet-final/report.json",
+          "scope": "Final build: all 11 clips per direction and complete run cycles verified with real keys; foot planting and Boss regression recorded in game/progress.md."
+        },
+        "limitations": [
+          "Finite key poses with timed holds; user artistic acceptance remains pending.",
+          "Minor texture and lamp proportion changes remain; head/foot placement and local pose scales are recorded separately."
+        ]
+      },
+      "license": {
+        "scope": "用户授权用于 BOB；仓库原角色参考及本次生成，未新增第三方授权声明"
+      },
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/player/player_visual.gd",
+        "evidence": "game/progress.md"
+      }
+    },
+    {
+      "id": "tide-picker-animation-v2-right",
+      "name": "拾潮者 V2 · 右向动作",
+      "kind": "character",
+      "region": "玩家",
+      "status": "needs-review",
+      "target": "2d",
+      "familyId": "tide-picker",
+      "file": "assets/runtime/sprites/tide-picker-animation-v2/right/idle-00.png",
+      "width": 384,
+      "height": 384,
+      "spriteType": "animated",
+      "source": {
+        "batchId": "player-animation-v2",
+        "method": "内置 imagegen 独立朝向绘制；骨盆/支撑脚注册；Framecraft 原尺寸透明边缘处理",
+        "references": [
+          "assets/source/player-animation-v2/right/"
+        ],
+        "originalId": "right"
+      },
+      "integrationStatus": "integrated",
+      "animation": {
+        "metadata": "assets/runtime/sprites/tide-picker-animation-v2/animations.json",
+        "direction": "right",
+        "pivot": [
+          192,
+          342
+        ],
+        "displayScale": 0.275
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "technicalReview": {
+          "passed": true,
+          "evidence": "game/build/qa/player-animation-feet-final/report.json",
+          "scope": "Final build: all 11 clips per direction and complete run cycles verified with real keys; foot planting and Boss regression recorded in game/progress.md."
+        },
+        "limitations": [
+          "Finite key poses with timed holds; user artistic acceptance remains pending.",
+          "Minor texture and lamp proportion changes remain; head/foot placement and local pose scales are recorded separately."
+        ]
+      },
+      "license": {
+        "scope": "用户授权用于 BOB；仓库原角色参考及本次生成，未新增第三方授权声明"
+      },
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/src/player/player_visual.gd",
+        "evidence": "game/progress.md"
       }
     }
   ]

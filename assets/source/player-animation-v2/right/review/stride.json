@@ -1,0 +1,67 @@
+{
+  "method": "Manual ankle-to-ground x projection through full support, not bbox or only contact-to-mid-support. Approximate point placement \u00b13 output pixels; refine in gameplay.",
+  "canvas": [
+    384,
+    384
+  ],
+  "gameScale": 0.275,
+  "cycleDurationMs": 640,
+  "durationsMs": [
+    120,
+    80,
+    40,
+    20,
+    20,
+    140,
+    100,
+    80,
+    20,
+    20
+  ],
+  "near": {
+    "frames": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ankleProjectionXApprox": [
+      230,
+      174,
+      137,
+      112
+    ],
+    "supportStartMs": 0,
+    "supportEndMs": 240,
+    "deltaOutputPxApprox": 118,
+    "deltaPhase": 0.375,
+    "strideWorldPxApprox": 86.53333333333335
+  },
+  "far": {
+    "frames": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "ankleProjectionXApprox": [
+      238,
+      165,
+      121,
+      82
+    ],
+    "supportStartMs": 280,
+    "supportEndMs": 600,
+    "deltaOutputPxApprox": 156,
+    "deltaPhase": 0.5,
+    "strideWorldPxApprox": 85.80000000000001
+  },
+  "selectedStrideWorldPx": 86.0,
+  "stanceSupplement": "stance-fix/README.md",
+  "reason": "The 8-pose first draft used only early support intervals and overestimated stride at123.8. Two new drawings divide the later support; complete support measurements agree near86.",
+  "limits": [
+    "Ankle projection is approximate; toes roll during push-off.",
+    "Near/far contact intervals remain asymmetric; do not claim final gameplay foot-lock approval.",
+    "Airborne poses impose no ground contact constraint."
+  ]
+}

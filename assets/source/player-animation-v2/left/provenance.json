@@ -1,0 +1,120 @@
+{
+  "tool": "Built-in image_gen imagegen, reference-guided drawing/editing, transparent_background=true",
+  "canonical": "assets/runtime/sprites/tide-picker-left/base.png",
+  "noMirror": true,
+  "equipment": "Anatomical right hand near with fork; left hip far lantern.",
+  "sources": [
+    {
+      "image": "attack/source/poses-v01.png",
+      "prompt": "attack/source/poses-v01.prompt.txt",
+      "sha256": "3b0110010a966436c1e7f2bc85b0fb22d3a1284f607cb9d87ed9c1bc7c5bc506",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "attack2/source/poses-v01.png",
+      "prompt": "attack2/source/poses-v01.prompt.txt",
+      "sha256": "d712ebbb51530938e6b1f6da683af62b8f2a698020dda19a5f9b8838a0baccd1",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "dash/source/poses-v01.png",
+      "prompt": "dash/source/poses-v01.prompt.txt",
+      "sha256": "9a09e48071de0d6c16f2ab83cee573cc632a81309828c3a189036f4d81a94ac2",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "dash/source/recovery-v02.png",
+      "prompt": "dash/source/recovery-v02.prompt.txt",
+      "sha256": "7c3a1695e1f9454fa5ff823f4cee0bcca84a7795a31a08828f5463f2808cb6b9",
+      "actualPixels": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "image": "heal/source/poses-v01.png",
+      "prompt": "heal/source/poses-v01.prompt.txt",
+      "sha256": "c68b48d302e0965267c5c7915317fefdf85dd6183a0e0036278b12da38f741b8",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "heavy/source/poses-v01.png",
+      "prompt": "heavy/source/poses-v01.prompt.txt",
+      "sha256": "72506a431b5cdc68e50815ad4b9fe4d6d59f87901abaa11afd696e729cc4c625",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "hurt/source/poses-v01.png",
+      "prompt": "hurt/source/poses-v01.prompt.txt",
+      "sha256": "5999806719615f00f9a4b5b4f7ee2a090c5c287a53ad25620ee29367b97f4b3d",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    },
+    {
+      "image": "idle/source/breathe-v01.png",
+      "prompt": "idle/source/breathe-v01.prompt.txt",
+      "sha256": "f51021838afd8306891de5ad050ae4688b8415c66175d3b1bae3cdc41effd89d",
+      "actualPixels": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "image": "jump/source/air-v01.png",
+      "prompt": "jump/source/air-v01.prompt.txt",
+      "sha256": "d0e05bffb2f78ed7da504b4b7e68aa260372ac1d70f822f5a2d851dd311697ec",
+      "actualPixels": [
+        1881,
+        836
+      ]
+    },
+    {
+      "image": "jump/source/fall-ready-v02.png",
+      "prompt": "jump/source/fall-ready-v02.prompt.txt",
+      "sha256": "be26c524315c8cf53646143cda33f03e04085ba7901029b9774d20b1a9ecd537",
+      "actualPixels": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "image": "jump/source/landing-v01.png",
+      "prompt": "jump/source/landing-v01.prompt.txt",
+      "sha256": "3ff25fbfb738845d8bcfe8b4ca5576f9052ac9eca0789dd18089fbfaeee7a92c",
+      "actualPixels": [
+        2172,
+        724
+      ]
+    },
+    {
+      "image": "run/source/midstances-v01.png",
+      "prompt": "run/source/midstances-v01.prompt.txt",
+      "sha256": "e5ac453dc942b33003a6d3622e17ab5efb77d09e02f6c775144b6a0486ac0393",
+      "actualPixels": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "runKeys": {
+    "source": "assets/source/player-animation-platform-v1/left-run/keyposes-v02.png",
+    "method": "Existing accepted-for-reference 4 readable key drawings reused; 2 actual new midstances drawn, not mirrored or interpolated by image transforms."
+  }
+}
