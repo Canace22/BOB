@@ -21,6 +21,10 @@
 
 `crab-boss-prototype`：2026-10-28，按用户指定 `shell-mother-crab` 的多层巨贝壳身份补制5张关键静态姿态（低扫蓄力/挥出、抬钳/下砸、收钳横冲）；待机复用不计新创作。公共画布1024×768、脚底根 `(400,704)`、运行等比0.6，母蟹常态约452×294世界像素。[制作源与复跑](source/crab-boss-prototype/README.md)、[静态检查与限制](source/crab-boss-prototype/acceptance.md)，实际运行/发布验收见 [game/progress.md](../game/progress.md)。5件为关键姿态，不是正式逐帧动画；原先旧负壳蟹的试稿归档到本批 `superseded/`，没有接入。台账状态以 `catalog.json` 为准。
 
+## 训练场环境动画
+
+[main 环境素材接入](source/crab-environment-main/README.md)：原样复用三种鱼群图集和 V3 垂须图集；训练场放置22条鱼和3簇垂须，暂停与顿帧跟随世界。来源提交、哈希和适用边界见批次说明，实机与发布证据见 [游戏进度](../game/progress.md)。
+
 ## 动画候选与平台处理
 
 续修批次 `player-animation-v2` 见[左右动作制作与接入](source/player-animation-v2/README.md)：独立朝向、公共脚底根、交替支撑腿和落地缓冲，新增两条动画台账。实际可用动作、实机检查与发布状态以 `catalog.json` 和 [游戏进度](../game/progress.md) 为准；下列 V1 试验继续保留。
