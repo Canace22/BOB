@@ -17,6 +17,7 @@ var state := "waiting"
 var timer := 0.0
 var kind := "sweep"
 var facing := -1.0
+var retreat_combo := CrabMoves.RetreatCombo.WAITING
 var phase := 1
 var selection_reason := "waiting"
 var cooldowns: Dictionary = {"slam": 0.0, "charge": 0.0}
@@ -46,6 +47,7 @@ func reset_at(at: Vector2, random_seed: int = 7) -> void:
 	health.restore()
 	change("waiting")
 	hurtbox.immune = false
+	retreat_combo = CrabMoves.RetreatCombo.WAITING
 	phase = 1
 	kind = "sweep"
 	facing = -1
@@ -97,13 +99,17 @@ func _physics_process(delta: float) -> void:
 	visual.present(self)
 
 func step_ai(delta: float) -> void:
+	var offset := target.position.x - position.x if target != null else 0.0
+	var gap := maxf(0, absf(offset) - CrabMoves.BODY_RADIUS - CrabMoves.PLAYER_RADIUS)
+	if phase == 2 and target != null:
+		retreat_combo = CrabMoves.track_retreat(retreat_combo, gap, target.velocity.x * offset > 0 and target.actions.mode != "hurt")
 	timer += delta
 	stagger_cooldown = maxf(0, stagger_cooldown - delta)
 	for attack: String in cooldowns:
 		cooldowns[attack] = maxf(0, float(cooldowns[attack]) - delta)
 	match state:
 		"observe":
-			observe()
+			observe(gap)
 		"tell":
 			if kind == "charge" and timer < 0.9:
 				face_target()
@@ -117,7 +123,7 @@ func step_ai(delta: float) -> void:
 				velocity.x = facing * minf(CrabMoves.CHARGE_SPEED, _free_space() / maxf(delta, 0.001))
 		"recover":
 			if timer >= CrabMoves.value(kind, "recover"):
-				_set_cooldowns()
+				CrabMoves.set_cooldowns(cooldowns, sequence)
 				_finish_round()
 		"phase":
 			if timer >= CrabMoves.PHASE_TIME:
@@ -127,22 +133,16 @@ func step_ai(delta: float) -> void:
 			if timer >= CrabMoves.STAGGER_TIME:
 				_finish_round()
 
-func _set_cooldowns() -> void:
-	for attack: String in sequence:
-		var completed := "sweep" if attack == "second" else attack
-		cooldowns[completed] = CrabMoves.value(completed, "cooldown")
-
 func _finish_round() -> void:
 	change("phase" if CrabMoves.phase_for_health(health.current, health.maximum) > phase else "observe")
 
-func observe() -> void:
+func observe(distance: float) -> void:
 	face_target()
 	if CrabMoves.phase_for_health(health.current, health.maximum) > phase:
 		change("phase")
 		return
-	var distance := maxf(0, absf(target.position.x - position.x) - CrabMoves.BODY_RADIUS - CrabMoves.PLAYER_RADIUS)
 	var retreat := _retreat_space()
-	var selected := CrabMoves.select(distance, _free_space(), cooldowns, previous, streak, rng, retreat)
+	var selected := CrabMoves.select(distance, _free_space(), cooldowns, previous, streak, rng, retreat, first_retreat_ready())
 	if not selected.is_empty() and timer >= 0.35:
 		selection_reason = "near_weighted" if distance <= 100 else "distance_charge"
 		start_tell(selected)
@@ -151,6 +151,9 @@ func observe() -> void:
 		velocity.x = facing * speed
 	else:
 		selection_reason = "cooldown_or_repeat"
+
+func first_retreat_ready() -> bool:
+	return phase == 2 and retreat_combo == CrabMoves.RetreatCombo.READY
 
 func face_target() -> void:
 	if target != null:
@@ -170,6 +173,9 @@ func start_tell(attack: String) -> void:
 	round_index += 1
 	sequence = CrabMoves.sequence(attack, phase, round_index,
 		_retreat_space() >= CrabMoves.RETREAT_SPACE, float(cooldowns.get("slam", 0)) <= 0)
+	if attack == "charge" and first_retreat_ready():
+		sequence.append("sweep")
+		retreat_combo = CrabMoves.RetreatCombo.USED
 	sequence_index = 0
 	combo_planned = sequence.size() > 1
 	_tell(attack)
@@ -219,7 +225,7 @@ func _on_damage(hit: HitData) -> void:
 		stagger_cooldown = CrabMoves.STAGGER_COOLDOWN
 		hitbox.deactivate()
 		velocity.x = 0
-		_set_cooldowns()
+		CrabMoves.set_cooldowns(cooldowns, sequence)
 		sequence.clear()
 		combo_planned = false
 		change("stagger")
