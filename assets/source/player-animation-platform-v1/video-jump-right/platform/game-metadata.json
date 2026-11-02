@@ -1,0 +1,52 @@
+{
+  "name": "tide-picker-video-airborne-right-partial-native",
+  "candidate": true,
+  "fps": 12,
+  "loop": false,
+  "durationMs": 916.6666666666666,
+  "exportFile": "exports/tide-picker-video-airborne-right-partial-native.zip",
+  "sourceFramesDirectory": "source/frames",
+  "canvas": [
+    190,
+    150
+  ],
+  "sourceCanvas": [
+    190,
+    150
+  ],
+  "scale": 1,
+  "pivot": null,
+  "sourcePivot": null,
+  "direction": "facing right, source screen trajectory moves left",
+  "frameFiles": [
+    "processed/frame-001.png",
+    "processed/frame-002.png",
+    "processed/frame-003.png",
+    "processed/frame-004.png",
+    "processed/frame-005.png",
+    "processed/frame-006.png",
+    "processed/frame-007.png",
+    "processed/frame-008.png",
+    "processed/frame-009.png",
+    "processed/frame-010.png",
+    "processed/frame-011.png"
+  ],
+  "frameDurationMs": 83.33333333333333,
+  "overrides": [
+    "Platform manifest loop:true is overridden by the source action loop flag.",
+    "Root is unknown; calibrate before integration."
+  ],
+  "limitations": [
+    "Partial airborne segment only: missing initial takeoff and late descent/landing.",
+    "190x150 native source crops; AI input resolution does not create new native detail.",
+    "Lamp-based trackAnchor[70,79] is not anatomical root; game pivot remains null/unverified.",
+    "Alpha<=52 cleanup removes detected low-alpha background residues and also clips faint edge alpha; original AI PNGs are retained.",
+    "No Godot integration or user artistic approval."
+  ],
+  "trackAnchor": [
+    70,
+    79
+  ],
+  "trackAnchorKind": "lamp-based manual visible marker; not anatomical root",
+  "trackingTimeline": "../candidate/timeline.json"
+}

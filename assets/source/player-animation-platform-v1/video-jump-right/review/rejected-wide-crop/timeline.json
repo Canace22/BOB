@@ -1,0 +1,470 @@
+{
+  "name": "video-jump-right-partial",
+  "status": "candidate; processing/visual review required",
+  "source": "../../crab-animation-platform-v1/reference/user-crab-source-20261030.mp4",
+  "sourceFps": 24,
+  "sourceCanvas": [
+    1520,
+    608
+  ],
+  "canvas": [
+    224,
+    192
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivotPx": [
+    112,
+    120
+  ],
+  "groundLine": null,
+  "direction": "facing right while source screen position travels left",
+  "rootMethod": "Manual per-sample annotation of the orange waist/chest lantern center; integer translation only, no bbox normalization, scaling or per-frame foot alignment.",
+  "sourceRootTrajectoryRetained": true,
+  "missingPhases": [
+    "grounded preparation and initial takeoff before frame190",
+    "confirmed transition into game's existing idle"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-001.png",
+      "sourceFile": "source/frame-001.png",
+      "sourceFrameZeroBased": 190,
+      "sourceTimeSeconds": 7.916666666666667,
+      "sourceRootPx": [
+        620,
+        324
+      ],
+      "crop": [
+        508,
+        204,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-002.png",
+      "sourceFile": "source/frame-002.png",
+      "sourceFrameZeroBased": 192,
+      "sourceTimeSeconds": 8.0,
+      "sourceRootPx": [
+        588,
+        275
+      ],
+      "crop": [
+        476,
+        155,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-003.png",
+      "sourceFile": "source/frame-003.png",
+      "sourceFrameZeroBased": 194,
+      "sourceTimeSeconds": 8.083333333333334,
+      "sourceRootPx": [
+        572,
+        253
+      ],
+      "crop": [
+        460,
+        133,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-004.png",
+      "sourceFile": "source/frame-004.png",
+      "sourceFrameZeroBased": 196,
+      "sourceTimeSeconds": 8.166666666666666,
+      "sourceRootPx": [
+        562,
+        240
+      ],
+      "crop": [
+        450,
+        120,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-005.png",
+      "sourceFile": "source/frame-005.png",
+      "sourceFrameZeroBased": 198,
+      "sourceTimeSeconds": 8.25,
+      "sourceRootPx": [
+        549,
+        236
+      ],
+      "crop": [
+        437,
+        116,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-006.png",
+      "sourceFile": "source/frame-006.png",
+      "sourceFrameZeroBased": 200,
+      "sourceTimeSeconds": 8.333333333333334,
+      "sourceRootPx": [
+        529,
+        229
+      ],
+      "crop": [
+        417,
+        109,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 6,
+      "file": "frames/frame-007.png",
+      "sourceFile": "source/frame-007.png",
+      "sourceFrameZeroBased": 202,
+      "sourceTimeSeconds": 8.416666666666666,
+      "sourceRootPx": [
+        521,
+        229
+      ],
+      "crop": [
+        409,
+        109,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 7,
+      "file": "frames/frame-008.png",
+      "sourceFile": "source/frame-008.png",
+      "sourceFrameZeroBased": 204,
+      "sourceTimeSeconds": 8.5,
+      "sourceRootPx": [
+        491,
+        225
+      ],
+      "crop": [
+        379,
+        105,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 8,
+      "file": "frames/frame-009.png",
+      "sourceFile": "source/frame-009.png",
+      "sourceFrameZeroBased": 206,
+      "sourceTimeSeconds": 8.583333333333334,
+      "sourceRootPx": [
+        485,
+        224
+      ],
+      "crop": [
+        373,
+        104,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 9,
+      "file": "frames/frame-010.png",
+      "sourceFile": "source/frame-010.png",
+      "sourceFrameZeroBased": 208,
+      "sourceTimeSeconds": 8.666666666666666,
+      "sourceRootPx": [
+        481,
+        241
+      ],
+      "crop": [
+        369,
+        121,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 10,
+      "file": "frames/frame-011.png",
+      "sourceFile": "source/frame-011.png",
+      "sourceFrameZeroBased": 210,
+      "sourceTimeSeconds": 8.75,
+      "sourceRootPx": [
+        474,
+        254
+      ],
+      "crop": [
+        362,
+        134,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 11,
+      "file": "frames/frame-012.png",
+      "sourceFile": "source/frame-012.png",
+      "sourceFrameZeroBased": 212,
+      "sourceTimeSeconds": 8.833333333333334,
+      "sourceRootPx": [
+        460,
+        307
+      ],
+      "crop": [
+        348,
+        187,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 12,
+      "file": "frames/frame-013.png",
+      "sourceFile": "source/frame-013.png",
+      "sourceFrameZeroBased": 214,
+      "sourceTimeSeconds": 8.916666666666666,
+      "sourceRootPx": [
+        463,
+        335
+      ],
+      "crop": [
+        351,
+        215,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 13,
+      "file": "frames/frame-014.png",
+      "sourceFile": "source/frame-014.png",
+      "sourceFrameZeroBased": 216,
+      "sourceTimeSeconds": 9.0,
+      "sourceRootPx": [
+        460,
+        344
+      ],
+      "crop": [
+        348,
+        224,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 14,
+      "file": "frames/frame-015.png",
+      "sourceFile": "source/frame-015.png",
+      "sourceFrameZeroBased": 218,
+      "sourceTimeSeconds": 9.083333333333334,
+      "sourceRootPx": [
+        462,
+        346
+      ],
+      "crop": [
+        350,
+        226,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 15,
+      "file": "frames/frame-016.png",
+      "sourceFile": "source/frame-016.png",
+      "sourceFrameZeroBased": 220,
+      "sourceTimeSeconds": 9.166666666666666,
+      "sourceRootPx": [
+        461,
+        342
+      ],
+      "crop": [
+        349,
+        222,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 16,
+      "file": "frames/frame-017.png",
+      "sourceFile": "source/frame-017.png",
+      "sourceFrameZeroBased": 222,
+      "sourceTimeSeconds": 9.25,
+      "sourceRootPx": [
+        460,
+        341
+      ],
+      "crop": [
+        348,
+        221,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 17,
+      "file": "frames/frame-018.png",
+      "sourceFile": "source/frame-018.png",
+      "sourceFrameZeroBased": 224,
+      "sourceTimeSeconds": 9.333333333333334,
+      "sourceRootPx": [
+        460,
+        340
+      ],
+      "crop": [
+        348,
+        220,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 18,
+      "file": "frames/frame-019.png",
+      "sourceFile": "source/frame-019.png",
+      "sourceFrameZeroBased": 226,
+      "sourceTimeSeconds": 9.416666666666666,
+      "sourceRootPx": [
+        460,
+        341
+      ],
+      "crop": [
+        348,
+        221,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    },
+    {
+      "index": 19,
+      "file": "frames/frame-020.png",
+      "sourceFile": "source/frame-020.png",
+      "sourceFrameZeroBased": 228,
+      "sourceTimeSeconds": 9.5,
+      "sourceRootPx": [
+        459,
+        343
+      ],
+      "crop": [
+        347,
+        223,
+        224,
+        192
+      ],
+      "pivotPx": [
+        112,
+        120
+      ],
+      "durationMs": 83.33333333333333
+    }
+  ]
+}

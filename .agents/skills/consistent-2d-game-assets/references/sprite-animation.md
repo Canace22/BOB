@@ -45,6 +45,8 @@ If the output repeats the same pose, changes identity, swaps the weapon hand, or
 
 Keep source pixels and alpha intact during deterministic extraction. Record cell bounds and order explicitly; do not infer playback order from arbitrary filenames.
 
+- For pixel-exact video crops, YUV420 chroma alignment can shift odd crop coordinates. Decode to RGB before cropping, then compare decoded pixels against the same crop from a fully decoded source frame; record the source frame and rectangle. A model's 512px inference size is not the crop's native resolution. See the [BOB video-crop evidence](../../../../assets/source/player-animation-platform-v1/video-jump-right/README.md).
+
 - Use one global scale for the sequence and one output canvas size. Do not resize every visible bounding box to the same height or width: stride, crouch, cape spread, and sword extension legitimately change those bounds.
 - Register a stable root or pelvis axis against the master, with a shared ground reference. Preserve the small vertical motion belonging to weight transfer; do not align every head or every lowest alpha pixel independently.
 - Track each grounded foot's contact interval. A lifted foot, sword tip, or cape hem must not redefine the frame's ground anchor.

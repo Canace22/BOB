@@ -1,0 +1,3 @@
+{
+  "reason": "Crop ran on YUV420 before RGB conversion. Odd coordinates were chroma-aligned; first crop differed from the accepted native RGB crop (max channel error195), causing different matte. Fixed by select,format=rgb24,crop. Corrected crop pixel diff is exactly0 versus accepted source."
+}

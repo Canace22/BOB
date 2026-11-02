@@ -1,0 +1,373 @@
+{
+  "sourceDirectory": "/Users/canace/Desktop/草稿/巨蟹Boss_9组动作精灵图/crab_boss_sprites",
+  "sourceUrl": "https://xsj-ai-orange.seasungame.com/prod/video/20261030/ae2e5406-53a1-4150-b5e0-ff0cfe9fb254.mp4",
+  "sourceManifestSha256": "b29c28752bd8fce4fd7e9fd75b8fe1f3bb64172783a2982adfe053060cdd7766",
+  "method": "Framecraft local compression API, unchanged PNG ZIP export and project save/load functions.",
+  "parameters": {
+    "scale": 0.75,
+    "resizeMode": "soft",
+    "algorithm": "lanczos",
+    "alphaThreshold": 2,
+    "sharpen": 20,
+    "paletteQuantization": false
+  },
+  "actionCount": 9,
+  "frameCount": 360,
+  "fps": 12,
+  "sourceCanvas": [
+    896,
+    512
+  ],
+  "outputCanvas": [
+    672,
+    384
+  ],
+  "pivot": [
+    384,
+    336
+  ],
+  "inputBytes": 57514629,
+  "outputBytes": 34575979,
+  "savingsPercent": 39.88315737896875,
+  "gameIntegration": false,
+  "artisticAcceptance": false,
+  "directionsComplete": false,
+  "actions": [
+    {
+      "id": "01_idle",
+      "name": "待机",
+      "frames": 18,
+      "fps": 12,
+      "durationMs": 1500,
+      "loop": true,
+      "sourceStart": 0,
+      "sourceEndExclusive": 1.5,
+      "inputBytes": 2808770,
+      "outputBytes": 1675021,
+      "savingsPercent": 40.364607995670696,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "01_idle/projects/ee9f080bda9b4cc29f2c7e97026438c9.framecraft",
+      "projectName": "巨蟹视频_待机_75%PNG_v1",
+      "export": "01_idle/exports/01_idle.zip",
+      "metadata": "01_idle/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "02_claw_slam",
+      "name": "单钳下砸与收势",
+      "frames": 63,
+      "fps": 12,
+      "durationMs": 5250,
+      "loop": false,
+      "sourceStart": 1.5,
+      "sourceEndExclusive": 6.75,
+      "inputBytes": 9537071,
+      "outputBytes": 5754931,
+      "savingsPercent": 39.65724906525284,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "02_claw_slam/projects/d30b82030d474542bd53581bf5abb794.framecraft",
+      "projectName": "巨蟹视频_单钳下砸与收势_75%PNG_v1",
+      "export": "02_claw_slam/exports/02_claw_slam.zip",
+      "metadata": "02_claw_slam/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "03_jump_slam",
+      "name": "跳跃砸地",
+      "frames": 45,
+      "fps": 12,
+      "durationMs": 3750,
+      "loop": false,
+      "sourceStart": 6.75,
+      "sourceEndExclusive": 10.5,
+      "inputBytes": 6992940,
+      "outputBytes": 4211865,
+      "savingsPercent": 39.76975349423848,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "03_jump_slam/projects/6750fa9adf9245a790177b2d64c95882.framecraft",
+      "projectName": "巨蟹视频_跳跃砸地_75%PNG_v1",
+      "export": "03_jump_slam/exports/03_jump_slam.zip",
+      "metadata": "03_jump_slam/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "04_sweep",
+      "name": "低位横扫",
+      "frames": 48,
+      "fps": 12,
+      "durationMs": 4000,
+      "loop": false,
+      "sourceStart": 10.5,
+      "sourceEndExclusive": 14.5,
+      "inputBytes": 8174179,
+      "outputBytes": 4929731,
+      "savingsPercent": 39.69142344448292,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "04_sweep/projects/414ff64aef9541dca5deb5b4d3eac02b.framecraft",
+      "projectName": "巨蟹视频_低位横扫_75%PNG_v1",
+      "export": "04_sweep/exports/04_sweep.zip",
+      "metadata": "04_sweep/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "05_bubble",
+      "name": "吐球施放",
+      "frames": 48,
+      "fps": 12,
+      "durationMs": 4000,
+      "loop": false,
+      "sourceStart": 14.5,
+      "sourceEndExclusive": 18.5,
+      "inputBytes": 8867741,
+      "outputBytes": 5359339,
+      "savingsPercent": 39.563649863025994,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "05_bubble/projects/2f8f4b1547f449758338820923a13fc3.framecraft",
+      "projectName": "巨蟹视频_吐球施放_75%PNG_v1",
+      "export": "05_bubble/exports/05_bubble.zip",
+      "metadata": "05_bubble/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "06_shell_shake",
+      "name": "抖壳落石",
+      "frames": 39,
+      "fps": 12,
+      "durationMs": 3250,
+      "loop": false,
+      "sourceStart": 18.5,
+      "sourceEndExclusive": 21.75,
+      "inputBytes": 7419329,
+      "outputBytes": 4474688,
+      "savingsPercent": 39.688777785700026,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "06_shell_shake/projects/4c941ecf68b14777a76904508d4aacfd.framecraft",
+      "projectName": "巨蟹视频_抖壳落石_75%PNG_v1",
+      "export": "06_shell_shake/exports/06_shell_shake.zip",
+      "metadata": "06_shell_shake/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "07_body_slam",
+      "name": "抬身下砸",
+      "frames": 33,
+      "fps": 12,
+      "durationMs": 2750,
+      "loop": false,
+      "sourceStart": 21.75,
+      "sourceEndExclusive": 24.5,
+      "inputBytes": 6782777,
+      "outputBytes": 4113786,
+      "savingsPercent": 39.34953191001267,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "07_body_slam/projects/8693c0bdcfbc451da46ff9704c42b1a6.framecraft",
+      "projectName": "巨蟹视频_抬身下砸_75%PNG_v1",
+      "export": "07_body_slam/exports/07_body_slam.zip",
+      "metadata": "07_body_slam/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art."
+      ]
+    },
+    {
+      "id": "08_retreat",
+      "name": "后退",
+      "frames": 30,
+      "fps": 12,
+      "durationMs": 2500,
+      "loop": false,
+      "sourceStart": 24.5,
+      "sourceEndExclusive": 27,
+      "inputBytes": 4431319,
+      "outputBytes": 2664898,
+      "savingsPercent": 39.8621945294392,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "08_retreat/projects/84d6d6d07c564829b2035b753de11cd4.framecraft",
+      "projectName": "巨蟹视频_后退_75%PNG_v1",
+      "export": "08_retreat/exports/08_retreat.zip",
+      "metadata": "08_retreat/game-metadata.json",
+      "emptyFramesPreserved": [],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art.",
+        "Known source defect: frame 000 loses the left claw; source video contains overlapping player/foreground. Compression cannot restore it."
+      ]
+    },
+    {
+      "id": "09_sink_fade",
+      "name": "下沉淡出",
+      "frames": 36,
+      "fps": 12,
+      "durationMs": 3000,
+      "loop": false,
+      "sourceStart": 27,
+      "sourceEndExclusive": 30,
+      "inputBytes": 2500503,
+      "outputBytes": 1391720,
+      "savingsPercent": 44.34239830946014,
+      "canvas": [
+        672,
+        384
+      ],
+      "pivot": [
+        384,
+        336
+      ],
+      "project": "09_sink_fade/projects/19181a0f536e4999a7fd0e6605e6116d.framecraft",
+      "projectName": "巨蟹视频_下沉淡出_75%PNG_v1",
+      "export": "09_sink_fade/exports/09_sink_fade.zip",
+      "metadata": "09_sink_fade/game-metadata.json",
+      "emptyFramesPreserved": [
+        "027.png",
+        "028.png",
+        "029.png",
+        "030.png",
+        "031.png",
+        "032.png",
+        "033.png",
+        "034.png",
+        "035.png"
+      ],
+      "borderContactFrames": [],
+      "sourceBorderContactFrames": [],
+      "projectReopened": true,
+      "zipBytesVerified": true,
+      "knownLimitations": [
+        "Only resource size and transparency-edge processing; no redrawing or missing-limb repair.",
+        "Inherits source extraction defects, dust/foreground occlusion, and source-camera direction changes.",
+        "Opposite direction was not independently drawn; this is not a complete left/right set.",
+        "Not integrated into Godot and not accepted as final animation art.",
+        "Final 9 transparent frames 027–035 are intentional retained source timing, not discarded as empty frames."
+      ]
+    }
+  ]
+}

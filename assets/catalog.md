@@ -17,6 +17,18 @@
 
 `crab-boss-prototype`：2026-10-28，按用户指定 `shell-mother-crab` 的多层巨贝壳身份补制5张关键静态姿态（低扫蓄力/挥出、抬钳/下砸、收钳横冲）；待机复用不计新创作。公共画布1024×768、脚底根 `(400,704)`、运行等比0.6，母蟹常态约452×294世界像素。[制作源与复跑](source/crab-boss-prototype/README.md)、[静态检查与限制](source/crab-boss-prototype/acceptance.md)，实际运行/发布验收见 [game/progress.md](../game/progress.md)。5件为关键姿态，不是正式逐帧动画；原先旧负壳蟹的试稿归档到本批 `superseded/`，没有接入。台账状态以 `catalog.json` 为准。
 
+## 动画候选与平台处理
+
+2026-11-02 的 [批次说明](source/animation-platform-20261102.md)记录螃蟹优化与玩家左右动作的当前范围。以下只登记制作候选入口，不计入完整静态库数量，也未写入游戏运行清单；具体缺陷与验收证据见各批次说明。
+
+| 批次 ID | 制作产物 | 来源 | 当前状态 |
+| --- | --- | --- | --- |
+| crab-video-platform-v1 | [9 组原视频动作](source/crab-video-platform-v1/README.md)，360 帧、12 FPS、672×384；独立 Framecraft 工程和 PNG 序列 | 用户之前提供的视频拆帧，按原时间线做平台压缩与透明边缘整理；来源路径、时间与哈希随批次保留 | 保留原视角及转向；缺钳、遮挡等问题未重绘，独立对向未补，未接入 |
+| crab-animation-platform-v1 | [双钳重砸尺度版](source/crab-animation-platform-v1/README.md)，39 个播放帧、13 张不同图像、24 FPS、384×384；PNG/图集和 Framecraft 工程 | 既有尺度修正候选的派生压缩版；保留生成来源与原文件 | 原视角单次动作候选；平台播放控制与导出已检查，连续动作美术验收、对向和游戏接入未完成 |
+| player-animation-platform-v1 | [左右动作候选](source/player-animation-platform-v1/README.md)：左向短跳6姿势、面右空中段11帧及独立平台工程 | 左向按角色主参考和原片姿势补绘；右向来自同一原片的原生裁片/平台抠图 | 左向根部/落地待修，右向缺起跳与落地；左右跑动未通过，未接入 |
+
+玩家左右动作仍在试制，不能将现有静态左右图或试验帧登记为完整动作。候选暂不加入 `catalog.json` 的单件静态记录；取得可用动作、方向与接入证据后再按实际格式登记。
+
 ## R1 悬台支撑补件
 
 `r1-hanging-root`：2026-10-27，内置 imagegen 纯文本补制的透明静态骨纤根簇，作为悬空平台下方装饰；[来源、提示词与像素记录](source/r1-hanging-root/README.md)、[原始 PNG](runtime/sprites/r1-hanging-root/base.png)。这 1 件补件独立于原 192 件完整批次，未加入历史图集；V2 已选择其 WebP，运行选择总数为 42。当前验收与接入状态以 `catalog.json` 为准。

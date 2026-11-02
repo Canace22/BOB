@@ -1,0 +1,41 @@
+{
+  "name": "player-left-quarter01-candidate",
+  "candidate": true,
+  "fps": 30,
+  "loop": false,
+  "durationMs": 166.66666666666666,
+  "exportFile": "exports/player-left-quarter01-candidate.zip",
+  "sourceFramesDirectory": "source/frames",
+  "canvas": [
+    470,
+    470
+  ],
+  "sourceCanvas": [
+    627,
+    627
+  ],
+  "scale": 0.75,
+  "pivot": null,
+  "sourcePivot": null,
+  "direction": "left-quarter-only",
+  "frameFiles": [
+    "processed/frame-01.png",
+    "processed/frame-02.png",
+    "processed/frame-03.png",
+    "processed/frame-04.png",
+    "processed/frame-05.png"
+  ],
+  "frameDurationMs": 33.333333333333336,
+  "overrides": [
+    "Platform manifest loop:true is overridden by the source action loop flag.",
+    "Root is unknown; calibrate before integration."
+  ],
+  "limitations": [
+    "Only phases 1 to 5; not a complete run cycle.",
+    "Frame 4 may swap near/far leg identity before endpoint 5; rejected for gameplay until corrected.",
+    "Only shared cell scaling applied; root and ground baseline not registered.",
+    "Original 3-pose sheet is 2170x725; endpoints originate from 627x627 cells of the four-key sheet.",
+    "Platform compression does not create or repair poses.",
+    "No game integration, full-loop playback, movement-speed check or user art acceptance."
+  ]
+}

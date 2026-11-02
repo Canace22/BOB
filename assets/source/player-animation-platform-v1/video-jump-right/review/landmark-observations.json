@@ -1,0 +1,136 @@
+{
+  "method": "Manual visual estimates on native190x150 frames; coordinates have approximately +/-2px uncertainty and are not machine-measured anatomy. Two independent scale checks: helmet outer size and fork open-tip separation.",
+  "trackAnchorPx": [
+    70,
+    79
+  ],
+  "gamePivotPx": null,
+  "observations": [
+    {
+      "frame": 2,
+      "sourceFrame": 192,
+      "helmetOuterBoxApprox": [
+        74,
+        33,
+        101,
+        54
+      ],
+      "forkOpenTipsApprox": [
+        [
+          130,
+          64
+        ],
+        [
+          140,
+          72
+        ]
+      ],
+      "maskCenterApprox": [
+        87.5,
+        43.5
+      ],
+      "shoulderApprox": [
+        70,
+        60
+      ],
+      "lampCenterApprox": [
+        70,
+        80
+      ],
+      "pose": "upright, hook forward",
+      "helmetWidthApproxPx": 27,
+      "helmetHeightApproxPx": 21,
+      "forkTipDistanceApproxPx": 12.8,
+      "maskToShoulderApproxPx": [
+        -17.5,
+        16.5
+      ]
+    },
+    {
+      "frame": 5,
+      "sourceFrame": 198,
+      "helmetOuterBoxApprox": [
+        70,
+        29,
+        98,
+        52
+      ],
+      "forkOpenTipsApprox": [
+        [
+          106,
+          16
+        ],
+        [
+          116,
+          17
+        ]
+      ],
+      "maskCenterApprox": [
+        84,
+        40.5
+      ],
+      "shoulderApprox": [
+        66,
+        60
+      ],
+      "lampCenterApprox": [
+        73,
+        81
+      ],
+      "pose": "upright, hook raised",
+      "helmetWidthApproxPx": 28,
+      "helmetHeightApproxPx": 23,
+      "forkTipDistanceApproxPx": 10.0,
+      "maskToShoulderApproxPx": [
+        -18,
+        19.5
+      ]
+    },
+    {
+      "frame": 10,
+      "sourceFrame": 208,
+      "helmetOuterBoxApprox": [
+        96,
+        44,
+        120,
+        68
+      ],
+      "forkOpenTipsApprox": [
+        [
+          143,
+          80
+        ],
+        [
+          153,
+          85
+        ]
+      ],
+      "maskCenterApprox": [
+        108,
+        56
+      ],
+      "shoulderApprox": [
+        85,
+        68
+      ],
+      "lampCenterApprox": [
+        64,
+        79
+      ],
+      "pose": "body pitched forward; changed helmet/fork projection",
+      "helmetWidthApproxPx": 24,
+      "helmetHeightApproxPx": 24,
+      "forkTipDistanceApproxPx": 11.2,
+      "maskToShoulderApproxPx": [
+        -23,
+        12
+      ]
+    }
+  ],
+  "interpretation": [
+    "Frames2/5 are relatively comparable; frame10 changes body pitch and 2D projection, so do not normalize its width to the others.",
+    "Observed lantern position differs from the nominal tracking marker and from the mask-to-shoulder relation; lamp marker is not an anatomical game root.",
+    "Small fork tip distances have high relative measurement uncertainty at this native resolution.",
+    "Frames7-11 require perspective/pose review. No per-frame bbox scaling or anatomical scale correction was performed. Scale and game-pivot acceptance remain open."
+  ]
+}

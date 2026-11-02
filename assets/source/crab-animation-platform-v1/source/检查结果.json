@@ -1,0 +1,28 @@
+{
+  "frames": 39,
+  "canvas": [
+    512,
+    512
+  ],
+  "fps": 24,
+  "durationMs": 1625,
+  "endpointsEqual": true,
+  "borderContactFrames": [],
+  "generator": "built-in image_gen, two editing passes",
+  "nativeSheet": [
+    1619,
+    971
+  ],
+  "nativeCellApprox": [
+    324,
+    324
+  ],
+  "postprocess": "equal-cell extraction, one global scale to reference, shell-landmark translation, original bodyY offsets; no per-frame bbox normalization",
+  "limitations": [
+    "AI edited texture and small limb details differ from original",
+    "Native generated cell is about 324 pixels; 512-pixel output is resampled, not native 1088 quality",
+    "Shell-width feature measurement is an estimate, not artistic approval"
+  ],
+  "platformExportBytesPreserved": true,
+  "exportLoopNeedsOverride": true
+}

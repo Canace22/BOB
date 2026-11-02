@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-02",
+  "scope": "Left-facing run key-pose candidate only. No animation interpolation, Framecraft import, game integration, or user art acceptance.",
+  "method": "Built-in imagegen, reference-guided drawing; no mirror, procedural limb animation, or programmatic image repair.",
+  "identityReference": "assets/runtime/sprites/tide-picker-left/base.png",
+  "runtimeContextReference": "legacy/godot/first-level/assets/runtime/hero/idle_0.png",
+  "versions": [
+    {
+      "file": "keyposes-v01.png",
+      "prompt": "keyposes-v01.prompt.txt",
+      "generatedSource": "/Users/canace/.codex/generated_images/01a19a58-b039-7660-a7c1-0094e4248fbe/exec-4a4763ce-27b8-4d0c-81a5-1ee2b34f467f.png",
+      "status": "rejected-half-stride-repeat",
+      "issues": [
+        "Near/far leg identity did not visibly alternate across the two contact and passing pairs."
+      ]
+    },
+    {
+      "file": "keyposes-v02.png",
+      "prompt": "keyposes-v02.prompt.txt",
+      "generatedSource": "/Users/canace/.codex/generated_images/01a19a58-b039-7660-a7c1-0094e4248fbe/exec-f1adec3b-5797-4c55-bca7-1fd48c89f794.png",
+      "status": "four-key-phases-independently-readable-candidate",
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeAlphaMax": 0,
+      "phaseReadOrder": [
+        {
+          "cell": "top-left",
+          "phase": 1,
+          "observation": "Near/right brighter leg forward contact; far/left shadowed leg rear push."
+        },
+        {
+          "cell": "top-right",
+          "phase": 5,
+          "observation": "Near/right brighter leg supports under/rear of pelvis; far/left shadowed knee raised forward."
+        },
+        {
+          "cell": "bottom-left",
+          "phase": 9,
+          "observation": "Far/left shadowed leg forward contact; near/right brighter thigh crosses in front toward rear push."
+        },
+        {
+          "cell": "bottom-right",
+          "phase": 13,
+          "observation": "Far/left shadowed leg supports; near/right brighter knee raised forward."
+        }
+      ],
+      "identityObservation": "Fork remains in near/right hand to screen left; lantern stays screen-right at far/left posterior hip partly behind short cape; red tether remains near-shoulder to fork.",
+      "scaleObservation": "Visual comparison finds helmet diameter, helmet seam and visor broadly consistent. This is not a numerical scale certification; body posture and a few-pixel baseline shifts still require fixed-scale registration and playback.",
+      "notValidated": [
+        "Continuous 16-pose motion",
+        "Seam 16→1",
+        "Root registration",
+        "Stride against gameplay speed",
+        "Target-size visibility",
+        "Framecraft save/reopen/export",
+        "Godot state transitions",
+        "User visual acceptance"
+      ],
+      "independentReview": "Root agent independently viewed v02 and confirmed near/far leg alternation readable; this does not approve a full cycle or user art acceptance."
+    },
+    {
+      "file": "run16-v01-rejected.png",
+      "prompt": "run16-v01.prompt.txt",
+      "generatedSource": "/Users/canace/.codex/generated_images/01a19a58-b039-7660-a7c1-0094e4248fbe/exec-cf6629a5-2869-48f9-b261-cf2c22dcb0b0.png",
+      "status": "rejected-key-phase-order-and-scale-drift",
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "f48ad325efc9f00d55baedb681bfa37bf3b27a9be2f43c8b07b9215256012734",
+      "issues": [
+        "Requested frame5 far-knee-up became another contact pose.",
+        "Requested frame9 far-leg-contact is not reliably distinct from near-leg-contact.",
+        "Requested frame13 near-knee-up became another contact pose.",
+        "Rows vary in helmet size and root placement.",
+        "Sixteen distinct images do not establish one correctly phased cycle."
+      ],
+      "notProcessed": "Not cropped, compressed, or integrated as a usable animation."
+    }
+  ],
+  "quarterAttempt": {
+    "status": "rejected-limb-identity-transition",
+    "source": "quarter-01/inbetweens-v01.png",
+    "prompt": "quarter-01/inbetweens-v01.prompt.txt",
+    "timeline": "quarter-01/timeline.json",
+    "visualResult": "Frames 02/03 suggest near-leg support and far-leg recovery, but frame04 raises a foreground/near-looking leg before endpoint05 raises the far leg. This would switch limb identity in the sequence. No remaining quarters generated.",
+    "artChecks": [
+      {
+        "case": "Three distinct intermediate drawings",
+        "result": "pass: not duplicated holds"
+      },
+      {
+        "case": "Near/far leg continuation into endpoint05",
+        "result": "fail: frame04 appears to switch limb identity"
+      },
+      {
+        "case": "Asymmetric lantern and weapon identity",
+        "result": "far posterior lantern and near-hand fork retained visually; no mirror used"
+      },
+      {
+        "case": "Scale, registration and actual-speed foot locking",
+        "result": "unvalidated: only common cell scaling, no bbox normalization"
+      },
+      {
+        "case": "Framecraft processing, saved-project reopen, exported pixels",
+        "result": "technical pass only; not animation/art acceptance"
+      }
+    ],
+    "platform": {
+      "project": "quarter-01/platform/projects/45c6189921254c8da015a6d33371449a.framecraft",
+      "export": "quarter-01/platform/exports/player-left-quarter01-candidate.zip",
+      "frameCount": 5,
+      "fps": 30,
+      "playback": "once",
+      "sourceCanvas": [
+        627,
+        627
+      ],
+      "processedCanvas": [
+        470,
+        470
+      ],
+      "inputBytes": 1775829,
+      "outputBytes": 1015041,
+      "savingsPercent": 42.841287083384714,
+      "settings": {
+        "scale": 0.75,
+        "algorithm": "lanczos",
+        "resizeMode": "soft",
+        "alphaThreshold": 2,
+        "sharpen": 20,
+        "colors": 256
+      },
+      "projectReopened": {
+        "fps": 30,
+        "loopMode": "once",
+        "frameCount": 5,
+        "compressionCount": 5,
+        "resultBytesVerified": true
+      },
+      "exportLoopTrueWarning": "Platform export still sets loop:true; game-metadata.json records loop:false for this partial segment. No game loader consumes it.",
+      "frames": [
+        {
+          "file": "quarter-01/platform/processed/frame-01.png",
+          "size": [
+            470,
+            470
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "sha256": "6ee86cc1f521ad47c5e2e54f866f8e174a09a8d1b57b788e57cb60948a68ab96"
+        },
+        {
+          "file": "quarter-01/platform/processed/frame-02.png",
+          "size": [
+            470,
+            470
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "sha256": "7421efe463a896f2964f224c7105e044a5761e9457ef501bac9df75192361653"
+        },
+        {
+          "file": "quarter-01/platform/processed/frame-03.png",
+          "size": [
+            470,
+            470
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "sha256": "f755c5ac27328275233c9f39b64f3411482603811e3bf78f2466914779f23c55"
+        },
+        {
+          "file": "quarter-01/platform/processed/frame-04.png",
+          "size": [
+            470,
+            470
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "sha256": "b69b0e2edd0777c5243fa9e3399e39b151b512d3c1de58fcaef436fab7911902"
+        },
+        {
+          "file": "quarter-01/platform/processed/frame-05.png",
+          "size": [
+            470,
+            470
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "sha256": "1097d9dbd4745ba35d322c99964c7ba57364a7b0158fcc2321351cef510010f7"
+        }
+      ]
+    },
+    "notPerformed": [
+      "Full 16-pose cycle completion",
+      "UI playback observation (no UI requested)",
+      "Godot changes or game integration",
+      "User art acceptance"
+    ]
+  },
+  "currentBest": "keyposes-v02.png: four independently readable alternating-leg anchors only. No complete run animation delivered."
+}

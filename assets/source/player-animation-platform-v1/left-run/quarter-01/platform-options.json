@@ -1,0 +1,18 @@
+{
+  "output": "/Users/canace/Desktop/projects/BOB/assets/source/player-animation-platform-v1/left-run/quarter-01/platform",
+  "framesDirectory": "frames",
+  "fps": 30,
+  "loop": false,
+  "direction": "left-quarter-only",
+  "name": "拾潮者左向跑动_四分之一周期_腿身份待修",
+  "exportName": "player-left-quarter01-candidate",
+  "pivot": null,
+  "limitations": [
+    "Only phases 1 to 5; not a complete run cycle.",
+    "Frame 4 may swap near/far leg identity before endpoint 5; rejected for gameplay until corrected.",
+    "Only shared cell scaling applied; root and ground baseline not registered.",
+    "Original 3-pose sheet is 2170x725; endpoints originate from 627x627 cells of the four-key sheet.",
+    "Platform compression does not create or repair poses.",
+    "No game integration, full-loop playback, movement-speed check or user art acceptance."
+  ]
+}

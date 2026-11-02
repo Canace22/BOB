@@ -1,0 +1,31 @@
+{
+  "environment": "Framecraft isolated .venv-birefnet-lite; voice environment and port8765 unchanged",
+  "python": "3.12.11",
+  "packages": {
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "transformers": "4.57.6",
+    "timm": "1.0.26",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "kornia": "0.8.2",
+    "einops": "0.8.2",
+    "opencv-python-headless": "4.14.0.94",
+    "numpy": "2.5.4",
+    "pillow": "13.0.0",
+    "fastapi": "0.162.0",
+    "uvicorn": "0.54.0"
+  },
+  "service": "127.0.0.1:8766",
+  "device": "cpu",
+  "threads": 4,
+  "model": {
+    "repo": "ZhengPeng7/BiRefNet_lite",
+    "revision": "aa62cd87eafb9cc43056d08ef3615a14628b831d",
+    "expectedWeightBytes": 177634392,
+    "actualWeightBytes": 177634392,
+    "sha256": "4417d89795250e698c3cb0ae8df15743810065f646f48a694fdfa7ca052d0815"
+  },
+  "downloadTransport": "HF_HUB_DISABLE_XET=1; initial Xet attempt remained 0 bytes and was cancelled; same pinned Lite model via official HTTP",
+  "standardOrHrModelsInstalled": false
+}

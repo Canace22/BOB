@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-02",
+  "tool": "Framecraft actual Chrome UI via cua_repl",
+  "project": "71a7178e32174c18a78dcc913b56a16c",
+  "playback": {
+    "fps": 12,
+    "frames": 11,
+    "durationSeconds": 0.9166666666666666,
+    "mode": "once",
+    "replayFromFirstFrame": true,
+    "observedPlayingFrame": 3,
+    "observedStoppedAt": 11,
+    "observedStoppedButton": "播放大图动画预览"
+  },
+  "comparison": {
+    "sourceCanvas": [190, 150],
+    "outputCanvas": [190, 150],
+    "alphaThreshold": 52,
+    "sharpen": 0,
+    "displayMode": "same-size",
+    "observedFrame": 2,
+    "bottomDebrisRemoved": true
+  },
+  "localScreenshots": ["framecraft-preview.jpg", "framecraft-comparison.jpg"],
+  "limits": [
+    "Step 05 previews AI matte sources. Step 07 contains the actual transparency-cleaned results.",
+    "Only the airborne segment is retained; takeoff and landing are incomplete.",
+    "No verified game pivot, full jump continuity, Godot integration or user artistic approval."
+  ]
+}

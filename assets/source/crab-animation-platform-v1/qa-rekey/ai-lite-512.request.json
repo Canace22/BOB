@@ -1,0 +1,100 @@
+{
+  "input": "retreat-source-frame588.png",
+  "inputSha256": "14afdaee57b1d164542195a6d118a176604ebd5a14f1db246867dd6f7c61464d",
+  "output": "ai-lite-512.png",
+  "outputSha256": "f65f4d88993fee10a1a754219a24436bec230e1941758419d68b516d321ee14c",
+  "endpoint": "/api/matte",
+  "request": {
+    "mode": "birefnet",
+    "device": "cpu",
+    "resolution": "512",
+    "birefnet_variant": "lite",
+    "key_color": "#426d6f",
+    "spill": "0"
+  },
+  "httpStatus": 200,
+  "responseHeaders": {
+    "date": "Mon, 02 Nov 2026 04:01:16 GMT",
+    "server": "uvicorn",
+    "x-matte-mode": "birefnet",
+    "x-matte-device": "cpu",
+    "cache-control": "no-store",
+    "content-length": "1566930",
+    "content-type": "image/png",
+    "vary": "Origin"
+  },
+  "elapsedSeconds": 2.359,
+  "healthAfter": {
+    "status": "ok",
+    "cuda": false,
+    "gpu": null,
+    "device": "cpu",
+    "vram_total": 0,
+    "vram_free": 0,
+    "versions": {
+      "torch": "2.14.1",
+      "cuda": null
+    },
+    "busy": false,
+    "models": {
+      "birefnet": {
+        "loaded": true,
+        "downloaded": true,
+        "loading": false,
+        "variant": "lite",
+        "device": "cpu",
+        "error": null,
+        "variants": {
+          "standard": {
+            "repo": "ZhengPeng7/BiRefNet",
+            "revision": "e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4",
+            "downloaded": false,
+            "loaded": false
+          },
+          "hr-matting": {
+            "repo": "ZhengPeng7/BiRefNet_HR-matting",
+            "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+            "downloaded": false,
+            "loaded": false
+          },
+          "lite": {
+            "repo": "ZhengPeng7/BiRefNet_lite",
+            "revision": "aa62cd87eafb9cc43056d08ef3615a14628b831d",
+            "downloaded": true,
+            "loaded": true
+          }
+        },
+        "cache_dir": "/Users/canace/Documents/Codex/2026-11-02/https-github-com-eanojiang-sprite-workbench/work/sprite-workbench/backend/models/huggingface/hub"
+      },
+      "corridorkey": {
+        "loaded": false,
+        "downloaded": false,
+        "loading": false,
+        "device": null,
+        "resolution": null,
+        "screen_color": null,
+        "hint": null,
+        "error": null,
+        "variants": {
+          "green": {
+            "repo": "nikopueringer/CorridorKey_v1.0",
+            "revision": "f6386ddf042d8e92aeb5fd16cb9b101cff508195",
+            "filename": "CorridorKey_v1.0.safetensors",
+            "downloaded": false,
+            "loaded": false
+          },
+          "blue": {
+            "repo": "nikopueringer/CorridorKeyBlue_1.0",
+            "revision": "51e6ccaa4b703f54be20a72ac2c37784fb9ba1cd",
+            "filename": "CorridorKeyBlue_1.0.safetensors",
+            "downloaded": false,
+            "loaded": false
+          }
+        },
+        "cache_dir": "/Users/canace/Documents/Codex/2026-11-02/https-github-com-eanojiang-sprite-workbench/work/sprite-workbench/backend/models/corridorkey",
+        "source_revision": "97e55a453060745bead1befd293f6e523c4b845c",
+        "license": "CorridorKey Licence 1.0 / CC BY-NC-SA 4.0 with additional terms"
+      }
+    }
+  }
+}

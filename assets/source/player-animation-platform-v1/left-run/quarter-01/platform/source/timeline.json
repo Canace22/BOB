@@ -1,0 +1,56 @@
+{
+  "format": "bob-generated-quarter-candidate-v1",
+  "candidate": true,
+  "direction": "left",
+  "startPhase": 1,
+  "endPhase": 5,
+  "fps": 30,
+  "loop": false,
+  "frames": [
+    "frame-01.png",
+    "frame-02.png",
+    "frame-03.png",
+    "frame-04.png",
+    "frame-05.png"
+  ],
+  "sourceSheet": "inbetweens-v01.png",
+  "sourceSheetSize": [
+    2170,
+    725
+  ],
+  "sourceRects": [
+    [
+      0,
+      0,
+      723,
+      725
+    ],
+    [
+      723,
+      0,
+      1447,
+      725
+    ],
+    [
+      1447,
+      0,
+      2170,
+      725
+    ]
+  ],
+  "nativeCropCanvas": [
+    725,
+    725
+  ],
+  "commonOutputCanvas": [
+    627,
+    627
+  ],
+  "sharedIntermediateScale": 0.8648275862068966,
+  "registration": "Cell-coordinate placement only; no bbox normalization, root not yet registered. Endpoints copied unchanged.",
+  "observations": [
+    "Actual 3-column layout visually confirmed. Both internal seams have no alpha>=8 silhouettes; second seam has one trace-alpha pixel, preserved in assigned crop.",
+    "Middle pose plausibly supports near leg while far leg swings; final intermediate appears to raise near rather than far leg.",
+    "No full-cycle, contact, scale or gameplay acceptance."
+  ]
+}

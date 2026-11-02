@@ -1,0 +1,26 @@
+Use case: identity-preserve / stylized-concept.
+Asset type: actual 2D bitmap animation sprite sheet. Produce EXACTLY 16 DISTINCT sequential poses in a regular 4-column by 4-row grid on a transparent square canvas, reading left to right then top to bottom.
+Image 1 is the VERIFIED four-keypose LEFT-FACING run sheet. Its four poses define frames 1, 5, 9, 13 respectively. Image 2 is the original LEFT-facing identity/gear reference. Preserve this character and side view; do not mirror.
+Primary request: expand the established FOUR alternating-leg phases into ONE COMPLETE left-facing RUN-IN-PLACE cycle. The sixteen drawings must be mechanically successive, truly different poses rather than duplicated holds. Each row starts at one of Image 1's four anchors. Frame 16 advances naturally back into frame 1 but must NOT duplicate frame 1.
+Mandatory frame map:
+01 NEAR RIGHT foot reaches forward screen-left and contacts, FAR LEFT foot pushes behind screen-right (Image1 top-left).
+02 Near knee yields into load, far heel and toes lift from rear.
+03 Near support moves beneath pelvis, far foot folds under far rear thigh.
+04 Near support passes slightly behind pelvis, FAR knee swings forward rising.
+05 Near leg remains planted beneath/rear pelvis, FAR knee lifted forward, far foot tucked (Image1 top-right).
+06 Near ankle rises into toe push, far knee begins opening toward forward extension.
+07 Brief flight: far foot extends toward screen-left while near leg bends behind screen-right.
+08 Far foot descends toward upcoming forward contact; near leg unfolds behind ready to push.
+09 FAR LEFT foot reaches forward screen-left and contacts; NEAR RIGHT foot pushes behind screen-right (Image1 bottom-left, do NOT reuse frame01).
+10 Far knee yields under load, near heel/toes lift from rear.
+11 Far support beneath pelvis, near foot folds up beneath near rear thigh.
+12 Far support passes behind pelvis, NEAR knee swings forward rising.
+13 Far leg planted beneath/rear pelvis, NEAR knee lifted forward, near foot tucked (Image1 bottom-right, do NOT reuse frame05).
+14 Far ankle rises into toe push, near knee begins opening toward forward extension.
+15 Brief flight: near foot extends screen-left while far leg bends behind screen-right.
+16 Near foot descends just before forward contact, far leg unfolds behind; continue into frame01.
+Anatomical identity and overlaps are CRITICAL: NEAR anatomical RIGHT leg is brighter foreground and crosses IN FRONT at overlaps. FAR anatomical LEFT leg is shadowed background and passes BEHIND. Thus rows1/2 do NOT repeat rows3/4. Preserve two arms, two legs and exactly two complete webbed feet, consistent thigh and calf lengths, connected knees/ankles. No hand becomes a leg and no spare limb.
+All frames face and run toward screen LEFT with a constant camera. Keep torso orientation consistent with Image1. RIGHT near hand holds the same tuning fork at screen LEFT; LEFT-HIP amber lantern remains on the FAR posterior hip at screen RIGHT, partially hidden behind the short cape. It never becomes a near-side belly lantern. Same near-shoulder ring and red tether connections; no new hand, no changing grip, no missing weapon.
+Rigid proportions: same helmet diameter and visor opening size, same helmet rivet seam, same torso breadth/pelvis, same bone lengths, same fork length and fork-prong span, same lantern size throughout. Natural small vertical bob and cape/tether follow-through only. Same detailed teal feather/scallop cape, ivory helmet, gray limbs, gold lantern and vivid red rope. Keep short cape above mid-thigh so leg roots remain readable.
+Layout: exact 4x4 equal cells; each full character centered on the same local root x, same invisible ground baseline, same pixel scale; consistent ample transparent margins and gutters, no body part overlaps another cell, every toe and fork tip complete. Do NOT fit each bounding box to its cell independently. Prefer maximum native resolution, approximately 2048x2048 or larger if possible, with clean fine edges.
+Transparent alpha everywhere outside silhouettes, no labels, letters, numbers, grid, floor, shadows, background, motion blur, detached glow, smears or duplicate hold frames. This is a candidate action sheet for later pixel-scale and playback inspection, not a montage of repeated static running poses.

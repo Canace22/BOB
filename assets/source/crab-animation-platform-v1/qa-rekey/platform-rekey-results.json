@@ -1,0 +1,229 @@
+{
+  "source": {
+    "url": "https://xsj-ai-orange.seasungame.com/prod/video/20261030/ae2e5406-53a1-4150-b5e0-ff0cfe9fb254.mp4",
+    "file": "../reference/user-crab-source-20261030.mp4",
+    "sha256": "1a5b02e4f8399cdf8bf7d9581d26a6262feacdcd428395ac6df4f6102dd49c3c",
+    "frameZeroBased": 588,
+    "timeSeconds": 24.5,
+    "fps": 24,
+    "size": [
+      1520,
+      608
+    ]
+  },
+  "platform": {
+    "repository": "https://github.com/Canace22/sprite-workbench",
+    "commit": "e5dc68902bdd1e86402bfbeafe27e5ed301b539c",
+    "sourceFile": "src/lib/media.ts",
+    "sourceSha256": "ba0f1495ff4776368522e3c7ea2efa1cc3c3235a00da607cf80278a3701e60d2",
+    "invocation": "Imported unchanged exported TypeScript pure functions through esbuild; no HTTP or UI export. FFmpeg decode and PNG encode only."
+  },
+  "keySample": {
+    "xy": [
+      650,
+      180
+    ],
+    "color": "#426d6f"
+  },
+  "oldReference": {
+    "file": "old-retreat-000-missing-claw.png",
+    "size": [
+      896,
+      512
+    ],
+    "pivot": [
+      512,
+      448
+    ],
+    "sourceRoot": [
+      880,
+      480
+    ],
+    "sourceScale": 0.8
+  },
+  "candidates": [
+    {
+      "file": "chroma-t12-s10.png",
+      "exportedFunction": "chromaKeyPixels",
+      "options": {
+        "removeBackground": true,
+        "keyColor": "#426d6f",
+        "tolerance": 12,
+        "softness": 10,
+        "spill": 70,
+        "cleanup": "none"
+      },
+      "probes": {
+        "leftClaw": {
+          "xy": [
+            740,
+            330
+          ],
+          "alpha": 255
+        },
+        "shell": {
+          "xy": [
+            920,
+            270
+          ],
+          "alpha": 255
+        },
+        "background": {
+          "xy": [
+            650,
+            180
+          ],
+          "alpha": 0
+        },
+        "terrain": {
+          "xy": [
+            400,
+            500
+          ],
+          "alpha": 255
+        }
+      },
+      "transparentPixels": 243697,
+      "opaquePixels": 544982,
+      "outputSha256": "374e4408ea7f2876b7aecc7ffe898a6162f8c11913606c37c372f012d0b8d412"
+    },
+    {
+      "file": "chroma-t25-s15.png",
+      "exportedFunction": "chromaKeyPixels",
+      "options": {
+        "removeBackground": true,
+        "keyColor": "#426d6f",
+        "tolerance": 25,
+        "softness": 15,
+        "spill": 70,
+        "cleanup": "none"
+      },
+      "probes": {
+        "leftClaw": {
+          "xy": [
+            740,
+            330
+          ],
+          "alpha": 255
+        },
+        "shell": {
+          "xy": [
+            920,
+            270
+          ],
+          "alpha": 255
+        },
+        "background": {
+          "xy": [
+            650,
+            180
+          ],
+          "alpha": 0
+        },
+        "terrain": {
+          "xy": [
+            400,
+            500
+          ],
+          "alpha": 255
+        }
+      },
+      "transparentPixels": 416462,
+      "opaquePixels": 314500,
+      "outputSha256": "e34e308357a94efb87e52f401604962bd1601006be624d51cad674a92e932ffb"
+    },
+    {
+      "file": "chroma-t38-s20.png",
+      "exportedFunction": "chromaKeyPixels",
+      "options": {
+        "removeBackground": true,
+        "keyColor": "#426d6f",
+        "tolerance": 38,
+        "softness": 20,
+        "spill": 70,
+        "cleanup": "none"
+      },
+      "probes": {
+        "leftClaw": {
+          "xy": [
+            740,
+            330
+          ],
+          "alpha": 255
+        },
+        "shell": {
+          "xy": [
+            920,
+            270
+          ],
+          "alpha": 229
+        },
+        "background": {
+          "xy": [
+            650,
+            180
+          ],
+          "alpha": 0
+        },
+        "terrain": {
+          "xy": [
+            400,
+            500
+          ],
+          "alpha": 84
+        }
+      },
+      "transparentPixels": 596292,
+      "opaquePixels": 84680,
+      "outputSha256": "07b9930fdc810195de0843e79dc7f6a4e833961a9e93f8cdbffb7c4cda976292"
+    },
+    {
+      "file": "luma-default-black.png",
+      "exportedFunction": "lumaKeyPixels",
+      "options": {
+        "removeBackground": true,
+        "keyColor": "#000000",
+        "spill": 70,
+        "lumaBlack": 0,
+        "lumaWhite": 85,
+        "lumaGamma": 0.55,
+        "lumaStrength": 1.7,
+        "lumaPolarity": "bright"
+      },
+      "probes": {
+        "leftClaw": {
+          "xy": [
+            740,
+            330
+          ],
+          "alpha": 255
+        },
+        "shell": {
+          "xy": [
+            920,
+            270
+          ],
+          "alpha": 255
+        },
+        "background": {
+          "xy": [
+            650,
+            180
+          ],
+          "alpha": 254
+        },
+        "terrain": {
+          "xy": [
+            400,
+            500
+          ],
+          "alpha": 242
+        }
+      },
+      "transparentPixels": 706,
+      "opaquePixels": 177727,
+      "outputSha256": "179ca619a7f695da2e8c3811ea5e8baed18a82f3b565589e0f9c72b49b2dcaa5"
+    }
+  ],
+  "status": "single-frame candidates requiring visual inspection; not a game animation asset"
+}

@@ -1,0 +1,461 @@
+{
+  "date": "2026-11-02",
+  "status": "six-readable-left-jump-keyposes-unregistered-candidate",
+  "scope": "Source-asset review only; no runtime replacement or game acceptance.",
+  "source": "jump6-v01.png",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "authorship": "Built-in imagegen redraw using the left-facing canonical and three right-facing video pose references. Preparation and recovery are newly drawn; these six poses are not six extracted original-video frames.",
+  "realMotionReferences": [
+    {
+      "file": "../../crab-animation-platform-v1/qa-rekey/player-jump-190-ai512.png",
+      "frame": 190,
+      "timeSeconds": 7.916666666666667,
+      "canvas": [
+        190,
+        150
+      ],
+      "alpha32Bbox": [
+        35,
+        29,
+        123,
+        135
+      ],
+      "interpretation": "Already airborne / torso relatively upright and legs hanging. Does not establish the actual takeoff moment."
+    },
+    {
+      "file": "../../crab-animation-platform-v1/qa-rekey/player-jump-209-ai512.png",
+      "frame": 209,
+      "timeSeconds": 8.708333333333334,
+      "canvas": [
+        190,
+        150
+      ],
+      "alpha32Bbox": [
+        24,
+        25,
+        163,
+        129
+      ],
+      "interpretation": "Forward-leaning tucked airborne posture; cape lifts behind. Apex timing requires original trajectory."
+    },
+    {
+      "file": "../../crab-animation-platform-v1/qa-rekey/player-jump-228-ai512.png",
+      "frame": 228,
+      "timeSeconds": 9.5,
+      "canvas": [
+        190,
+        150
+      ],
+      "alpha32Bbox": [
+        24,
+        41,
+        142,
+        117
+      ],
+      "interpretation": "Low landing posture; original platform contacts may conceal parts of feet."
+    }
+  ],
+  "anatomicalConstraints": {
+    "facing": "Left in all poses; no mirroring of the right-facing video",
+    "nearSide": "Anatomical right arm/hand is near, grips fork on screen left",
+    "farSide": "Anatomical left arm is far and may be occluded; left-hip lantern stays on far posterior hip at screen right partly behind cape",
+    "tether": "Same near-shoulder brass ring connects via red tether to the fork; not exchanged between hands",
+    "referenceUse": "Canonical defines proportions, short cape and equipment identity. Video defines gesture and motion phase; its small pixels do not establish fingers or exact near/far leg anatomy.",
+    "observed": "No obvious extra limb or hand-to-leg fusion in this six-pose sheet; frame 4 cape spread and frame 6 return to original idle remain artistic review items."
+  },
+  "phases": [
+    {
+      "pose": 1,
+      "label": "anticipation",
+      "sourceSupport": "newly drawn",
+      "description": "Both knees bend, grounded shallow crouch"
+    },
+    {
+      "pose": 2,
+      "label": "extension / lift-off",
+      "sourceSupport": "interpretation from airborne reference",
+      "description": "Legs extend and toes leave floor; exact takeoff needs original timeline"
+    },
+    {
+      "pose": 3,
+      "label": "rising tuck",
+      "sourceSupport": "real airborne gesture constraint",
+      "description": "Both legs fold below body, torso relatively upright"
+    },
+    {
+      "pose": 4,
+      "label": "airborne forward lean",
+      "sourceSupport": "reference frame 209 gesture",
+      "description": "Torso leans left, tucked feet trail, cape lifts backward"
+    },
+    {
+      "pose": 5,
+      "label": "landing compression",
+      "sourceSupport": "reference frame 228 gesture plus redraw",
+      "description": "Deep knee bend and lowered torso"
+    },
+    {
+      "pose": 6,
+      "label": "rebound toward idle",
+      "sourceSupport": "newly drawn",
+      "description": "Knees still slightly bent; transition to canonical idle not validated"
+    }
+  ],
+  "scaleMeasurements": {
+    "coordinates": "Original 1536x1024 pixels; measurements are analysis only, no corrective scaling applied.",
+    "helmet": {
+      "method": "Manually selected upper/middle helmet cross-sections about 60px below crown. Measure warm helmet pixels with alpha>=128, R>100,G>75,B>40,R>1.04G,G>1.04B inside explicit x ranges. This is a comparable chord, not the physical full helmet diameter.",
+      "rows": [
+        190,
+        127,
+        105,
+        667,
+        718,
+        652
+      ],
+      "xRanges": [
+        [
+          140,
+          325
+        ],
+        [
+          620,
+          795
+        ],
+        [
+          1160,
+          1360
+        ],
+        [
+          145,
+          325
+        ],
+        [
+          665,
+          840
+        ],
+        [
+          1145,
+          1335
+        ]
+      ],
+      "measuredSpans": [
+        [
+          153,
+          299
+        ],
+        [
+          630,
+          770
+        ],
+        [
+          1180,
+          1332
+        ],
+        [
+          161,
+          301
+        ],
+        [
+          674,
+          816
+        ],
+        [
+          1157,
+          1307
+        ]
+      ],
+      "widths": [
+        146,
+        140,
+        152,
+        140,
+        142,
+        150
+      ],
+      "relativeToPose1Percent": [
+        0,
+        -4.11,
+        4.11,
+        -4.11,
+        -2.74,
+        2.74
+      ]
+    },
+    "fork": {
+      "method": "Within manually selected fork-cup ROIs, measure alpha>=128 bone highlights (R>190,G>140,B>90). Select the two largest components not touching ROI edges, which isolate the two bone prongs, and measure maximum point distance over their union to reduce in-plane rotation effects.",
+      "rois": [
+        [
+          60,
+          230,
+          180,
+          335
+        ],
+        [
+          540,
+          175,
+          650,
+          285
+        ],
+        [
+          1075,
+          150,
+          1190,
+          260
+        ],
+        [
+          50,
+          695,
+          165,
+          800
+        ],
+        [
+          575,
+          705,
+          690,
+          820
+        ],
+        [
+          1065,
+          680,
+          1190,
+          805
+        ]
+      ],
+      "cupBboxes": [
+        [
+          73,
+          241,
+          153,
+          320
+        ],
+        [
+          553,
+          185,
+          630,
+          266
+        ],
+        [
+          1089,
+          163,
+          1173,
+          241
+        ],
+        [
+          64,
+          705,
+          140,
+          781
+        ],
+        [
+          590,
+          721,
+          672,
+          801
+        ],
+        [
+          1077,
+          694,
+          1157,
+          773
+        ]
+      ],
+      "measuredDiameters": [
+        83.01,
+        81.15,
+        85.91,
+        81.02,
+        82.42,
+        83.87
+      ],
+      "relativeToPose1Percent": [
+        0,
+        -2.24,
+        3.49,
+        -2.4,
+        -0.71,
+        1.04
+      ]
+    },
+    "conclusion": "Both markers remain in roughly the same scale range; pose 3 is larger in both measurements. Approximately 4% marker variation remains, with perspective, threshold and manual landmark uncertainty. This does not certify rigid-size consistency or justify per-frame bbox normalization."
+  },
+  "layout": {
+    "file": "crop-layout.json",
+    "fixedCanvas": [
+      640,
+      640
+    ],
+    "scale": 1,
+    "method": "Explicit nonuniform source rects recover the pose-2 foot and pose-4 cape beyond nominal 512px grid lines. Each crop is placed at original cell-relative coordinates plus 64px margin.",
+    "registration": "Not anatomically registered"
+  },
+  "registrationProposal": {
+    "coordinates": "Unregistered 640x640 source frames",
+    "pelvisXManual": [
+      395,
+      325,
+      360,
+      400,
+      406,
+      354
+    ],
+    "pelvisUncertaintyPx": [
+      10,
+      15
+    ],
+    "desiredPelvisX": 384,
+    "proposedDeltaX": [
+      -11,
+      59,
+      24,
+      -16,
+      -22,
+      30
+    ],
+    "groundedNearFoot": [
+      {
+        "pose": 1,
+        "roi": [
+          350,
+          515,
+          480,
+          575
+        ],
+        "contact": [
+          405,
+          564
+        ]
+      },
+      {
+        "pose": 5,
+        "roi": [
+          265,
+          480,
+          420,
+          545
+        ],
+        "contact": [
+          336,
+          529
+        ]
+      },
+      {
+        "pose": 6,
+        "roi": [
+          325,
+          480,
+          470,
+          555
+        ],
+        "contact": [
+          399,
+          540
+        ]
+      }
+    ],
+    "footMethod": "Near-foot contact estimates use manually identified anatomical foot ROIs, alpha>=128, bottom-most 3px of that foot and median x. No whole-sprite bounding box was used.",
+    "desiredNearFootY": 564,
+    "groundedDeltaY": {
+      "pose1": 0,
+      "pose5": 35,
+      "pose6": 24
+    },
+    "pelvisAlignedFootX": {
+      "pose1": 394,
+      "pose5": 314,
+      "pose6": 429
+    },
+    "unresolved": "After proposed pelvis x alignment, the near-foot contact x changes by about 115px from pose5 to pose6. Aligning the foot instead shifts the inferred pelvis by a comparable amount. Near/far occlusion and hand-marked hip uncertainty need checking, but uniform translation alone cannot satisfy both landmarks.",
+    "decision": "Do not apply a misleading final registration. Keep original crops, root:null and the explicit suggested offsets as review evidence. A dedicated foot/hip correction is required before gameplay acceptance.",
+    "constraintCaution": "A fixed pelvis is a diagnostic alignment candidate, not necessarily the correct landing solution. Actual support foot, body advance and weight transfer must be considered with both feet.",
+    "nextCorrection": "Redraw or reference-ground the pose5 to pose6 body motion and relative two-foot placement together; translation alone is not acceptance."
+  },
+  "targetSizes": {
+    "canonicalLeft": [
+      1290,
+      1219
+    ],
+    "canonicalRight": [
+      1290,
+      1219
+    ],
+    "videoNativeCrop": [
+      190,
+      150
+    ],
+    "videoInferenceResolution": 512,
+    "note": "ai512 is model inference size, not 512px source detail. Keep native video crop and actual generated resolution separate.",
+    "generatedSheet": [
+      1536,
+      1024
+    ],
+    "explicitSourceCanvas": [
+      640,
+      640
+    ],
+    "platformCandidateCanvas": [
+      480,
+      480
+    ],
+    "currentGodotReference": {
+      "canvas": [
+        384,
+        288
+      ],
+      "pivot": [
+        192,
+        270
+      ],
+      "scale": 0.28,
+      "idleVisibleHeightApproximately": 66
+    },
+    "currentDirections": "V2 optimized left/right WebP files derive from corresponding canonical images. Current Godot still loads one legacy hero set and flips x; it does not load the canonical left sprite.",
+    "noRuntimeChange": true
+  },
+  "platform": {
+    "project": "platform/projects/2a85cb65e58a4b32882d66a5e519a388.framecraft",
+    "name": "拾潮者左向短跳_六关键姿势_未注册_v1",
+    "uniquePoses": 6,
+    "playbackTicks": 30,
+    "fps": 40,
+    "durationMs": 750,
+    "holdTicks": [
+      4,
+      4,
+      6,
+      6,
+      5,
+      5
+    ],
+    "loop": false,
+    "pivot": null,
+    "inputCanvas": [
+      640,
+      640
+    ],
+    "outputCanvas": [
+      480,
+      480
+    ],
+    "alphaThreshold": 8,
+    "inputBytes": 6090476,
+    "outputBytes": 3244368,
+    "savingsPercent": 46.730469014244534,
+    "evidence": [
+      "platform/review/platform-run.json",
+      "review/ui-checks.json"
+    ],
+    "timingNote": "0.75 seconds is a candidate review rhythm, not a measurement of the 1.583-second source-reference span or confirmed gameplay timing."
+  },
+  "incomplete": [
+    "Enough continuous inbetweens",
+    "Registered pelvis and foot contacts",
+    "Transition to canonical idle",
+    "Mirrored-direction parity as a complete action set",
+    "Game integration and input/state checks",
+    "User art acceptance"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "generation": "built-in imagegen",
+  "sourceImage": "jump6-v01.png",
+  "prompt": "jump6.prompt.txt",
+  "identityReference": "../../../runtime/sprites/tide-picker-left/base.png",
+  "motionReferences": [
+    {
+      "file": "references/player-jump-190-ai512-opaque-review.png",
+      "role": "right-facing motion reference only; grayscale review background is not intended final background",
+      "sourceVideoFrameZeroBased": 190,
+      "sourceVideoFps": 24,
+      "sha256": "3708e831295cd44d8b9aa975b8ef53e37c08f05dbad203267e56d90e8e7817f6"
+    },
+    {
+      "file": "references/player-jump-209-ai512-opaque-review.png",
+      "role": "right-facing motion reference only; grayscale review background is not intended final background",
+      "sourceVideoFrameZeroBased": 209,
+      "sourceVideoFps": 24,
+      "sha256": "0b4cf4ce34e809e5076ba81e51eaf02f1f0f027b5225ab9ed41cf7b30a66f8d2"
+    },
+    {
+      "file": "references/player-jump-228-ai512-opaque-review.png",
+      "role": "right-facing motion reference only; grayscale review background is not intended final background",
+      "sourceVideoFrameZeroBased": 228,
+      "sourceVideoFps": 24,
+      "sha256": "827b9970b07ec3d2b9aa5b8458d672c7f50e1ee26fc7c56ac7f132a7b674a01a"
+    }
+  ],
+  "nativeGeneratedCanvas": [
+    1536,
+    1024
+  ],
+  "limitations": [
+    "Six redrawn phases; not a pixel extraction of all source phases.",
+    "Unregistered candidate, not integrated."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "player-left-jump-sixposes-unregistered",
+  "candidate": true,
+  "fps": 40,
+  "loop": false,
+  "durationMs": 750,
+  "exportFile": "exports/player-left-jump-sixposes-unregistered.zip",
+  "sourceFramesDirectory": "source/frames",
+  "canvas": [
+    480,
+    480
+  ],
+  "sourceCanvas": [
+    640,
+    640
+  ],
+  "scale": 0.75,
+  "pivot": null,
+  "sourcePivot": null,
+  "direction": "left",
+  "frameFiles": [
+    "processed/frame-001.png",
+    "processed/frame-002.png",
+    "processed/frame-003.png",
+    "processed/frame-004.png",
+    "processed/frame-005.png",
+    "processed/frame-006.png",
+    "processed/frame-007.png",
+    "processed/frame-008.png",
+    "processed/frame-009.png",
+    "processed/frame-010.png",
+    "processed/frame-011.png",
+    "processed/frame-012.png",
+    "processed/frame-013.png",
+    "processed/frame-014.png",
+    "processed/frame-015.png",
+    "processed/frame-016.png",
+    "processed/frame-017.png",
+    "processed/frame-018.png",
+    "processed/frame-019.png",
+    "processed/frame-020.png",
+    "processed/frame-021.png",
+    "processed/frame-022.png",
+    "processed/frame-023.png",
+    "processed/frame-024.png",
+    "processed/frame-025.png",
+    "processed/frame-026.png",
+    "processed/frame-027.png",
+    "processed/frame-028.png",
+    "processed/frame-029.png",
+    "processed/frame-030.png"
+  ],
+  "frameDurationMs": 25,
+  "overrides": [
+    "Platform manifest loop:true is overridden by the source action loop flag.",
+    "Root is unknown; calibrate before integration."
+  ],
+  "limitations": [
+    "Six unique drawn key poses expanded to 30 playback ticks at 40 FPS; 0.75 seconds once.",
+    "This is source art only; no game integration and no user art acceptance.",
+    "Root is null and source poses are unregistered; do not interpret cell preservation as anatomical alignment.",
+    "Preparation and recovery are newly drawn. Only rising/tucked/landing gestures are constrained by the three real-video references.",
+    "Platform compression and alpha threshold do not repair anatomy or add inbetweens.",
+    "Scale measurements are approximate observations, not certification of rigid proportions."
+  ]
+}

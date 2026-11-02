@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-02",
+  "tool": "Framecraft actual Chrome UI via cua_repl",
+  "project": "2a85cb65e58a4b32882d66a5e519a388",
+  "playback": {
+    "fps": 40,
+    "ticks": 30,
+    "distinctPoses": 6,
+    "durationSeconds": 0.75,
+    "mode": "once",
+    "replayFromFirstFrame": true,
+    "observedPlayingButton": "暂停大图动画预览",
+    "observedStoppedAt": 30,
+    "observedStoppedButton": "播放大图动画预览"
+  },
+  "comparison": {
+    "sourceCanvas": [640, 640],
+    "outputCanvas": [480, 480],
+    "alphaThreshold": 8,
+    "displayMode": "same-size",
+    "uiSavingsPercent": 46.7,
+    "observedPose": "preparation",
+    "visibleTransparencyIntact": true
+  },
+  "localScreenshots": ["framecraft-preview.jpg", "framecraft-comparison.jpg"],
+  "limits": [
+    "Only UI timing/control and a static original/compressed comparison were verified.",
+    "Unregistered source has no verified game pivot. Six drawn poses do not establish sufficient inbetweens.",
+    "No foot contact, state transition, Godot integration or user artistic approval is claimed."
+  ]
+}

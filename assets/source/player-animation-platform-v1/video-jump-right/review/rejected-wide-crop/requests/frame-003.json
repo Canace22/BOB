@@ -1,0 +1,31 @@
+{
+  "endpoint": "/api/matte",
+  "request": {
+    "mode": "birefnet",
+    "device": "cpu",
+    "resolution": "512",
+    "birefnet_variant": "lite",
+    "key_color": "#426d6f",
+    "spill": "0"
+  },
+  "sourceFrameZeroBased": 194,
+  "crop": [
+    460,
+    133,
+    224,
+    192
+  ],
+  "elapsedSeconds": 1.497,
+  "responseHeaders": {
+    "date": "Mon, 02 Nov 2026 04:13:00 GMT",
+    "server": "uvicorn",
+    "x-matte-mode": "birefnet",
+    "x-matte-device": "cpu",
+    "cache-control": "no-store",
+    "content-length": "63168",
+    "content-type": "image/png",
+    "vary": "Origin"
+  },
+  "inputSha256": "e150ce96bc664013959360453f6e74b3a2d221b473da9715ca4ba5954abd1fff",
+  "outputSha256": "e9e9e7befc3abdcf75329d714393693578feaa6adc5bfb348a3c2a46c2480d37"
+}

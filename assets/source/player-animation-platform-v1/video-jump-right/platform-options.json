@@ -1,0 +1,26 @@
+{
+  "output": "/Users/canace/Desktop/projects/BOB/assets/source/player-animation-platform-v1/video-jump-right/platform",
+  "framesDirectory": "frames",
+  "fps": 12,
+  "loop": false,
+  "copySourceFrames": true,
+  "pivot": null,
+  "name": "拾潮者_原视频面右空中段_11帧_12fps_原生190x150",
+  "exportName": "tide-picker-video-airborne-right-partial-native",
+  "direction": "facing right, source screen trajectory moves left",
+  "settings": {
+    "scale": 1,
+    "algorithm": "lanczos",
+    "resizeMode": "soft",
+    "alphaThreshold": 52,
+    "sharpen": 0,
+    "colors": 256
+  },
+  "limitations": [
+    "Partial airborne segment only: missing initial takeoff and late descent/landing.",
+    "190x150 native source crops; AI input resolution does not create new native detail.",
+    "Lamp-based trackAnchor[70,79] is not anatomical root; game pivot remains null/unverified.",
+    "Alpha<=52 cleanup removes detected low-alpha background residues and also clips faint edge alpha; original AI PNGs are retained.",
+    "No Godot integration or user artistic approval."
+  ]
+}
