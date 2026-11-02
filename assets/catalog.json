@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 16,
-  "updatedAt": "2026-11-02T05:01:37.534642+00:00",
+  "revision": 17,
+  "updatedAt": "2026-11-02T06:20:22.145003+00:00",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24227,6 +24227,226 @@
         "manifest": "game/art/manifest.json",
         "renderer": "game/src/player/player_visual.gd",
         "evidence": "game/progress.md"
+      }
+    },
+    {
+      "id": "baleen-loop-v3",
+      "name": "V3 垂须循环",
+      "kind": "scenery",
+      "region": "全局",
+      "tags": [
+        "环境",
+        "序列帧",
+        "main复用"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/baleen-loop-v3/baleen-sway-atlas.png",
+      "width": 3072,
+      "height": 2304,
+      "spriteType": "animated",
+      "sha256": "7f7b50e6805321f46ae7fabd9eb0578331275bbe72fd127f1466077d5ded3361",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "main 既有绘画与烘焙动画图集原样复用",
+        "references": [
+          "assets/source/crab-environment-main/provenance.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          384,
+          384
+        ],
+        "frameCount": 48,
+        "fps": 12,
+        "pivot": [
+          192,
+          127
+        ],
+        "timing": "垂须4秒循环；鱼群16秒路径、各成员按源cycles错拍摆尾"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/content/rooms/prototype/crab_environment_motion.tscn",
+        "evidence": "game/progress.md"
+      },
+      "license": {
+        "scope": "用户授权将同仓库main已有素材用于BOB；原来源与制作记录见provenance"
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "limitations": [
+          "仅母蟹训练场；无鱼群AI或碰撞",
+          "既有位图变形与烘焙动画，不计新增创作帧"
+        ]
+      }
+    },
+    {
+      "id": "fish-schools-v01-silverfin",
+      "name": "银鳍梭鱼",
+      "kind": "scenery",
+      "region": "全局",
+      "tags": [
+        "环境",
+        "序列帧",
+        "main复用"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/silverfin/swim_atlas.png",
+      "width": 2560,
+      "height": 896,
+      "spriteType": "animated",
+      "sha256": "4c0fdf36e486facce2b4aba7fd2a9ab4cc66f7aa91770425b94897bc3969f8c9",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "main 既有绘画与烘焙动画图集原样复用",
+        "references": [
+          "assets/source/crab-environment-main/provenance.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          224
+        ],
+        "frameCount": 32,
+        "fps": null,
+        "pivot": [
+          160,
+          112
+        ],
+        "timing": "垂须4秒循环；鱼群16秒路径、各成员按源cycles错拍摆尾"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/content/rooms/prototype/crab_environment_motion.tscn",
+        "evidence": "game/progress.md"
+      },
+      "license": {
+        "scope": "用户授权将同仓库main已有素材用于BOB；原来源与制作记录见provenance"
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "limitations": [
+          "仅母蟹训练场；无鱼群AI或碰撞",
+          "既有位图变形与烘焙动画，不计新增创作帧"
+        ]
+      }
+    },
+    {
+      "id": "fish-schools-v01-tealback",
+      "name": "青背圆鳍鱼",
+      "kind": "scenery",
+      "region": "全局",
+      "tags": [
+        "环境",
+        "序列帧",
+        "main复用"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/tealback/swim_atlas.png",
+      "width": 2560,
+      "height": 896,
+      "spriteType": "animated",
+      "sha256": "b4dc0df932711835748f0fd13e642d47d3df859edb64a20b84d72109f53d2aa4",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "main 既有绘画与烘焙动画图集原样复用",
+        "references": [
+          "assets/source/crab-environment-main/provenance.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          224
+        ],
+        "frameCount": 32,
+        "fps": null,
+        "pivot": [
+          160,
+          112
+        ],
+        "timing": "垂须4秒循环；鱼群16秒路径、各成员按源cycles错拍摆尾"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/content/rooms/prototype/crab_environment_motion.tscn",
+        "evidence": "game/progress.md"
+      },
+      "license": {
+        "scope": "用户授权将同仓库main已有素材用于BOB；原来源与制作记录见provenance"
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "limitations": [
+          "仅母蟹训练场；无鱼群AI或碰撞",
+          "既有位图变形与烘焙动画，不计新增创作帧"
+        ]
+      }
+    },
+    {
+      "id": "fish-schools-v01-lantern",
+      "name": "微光鳍鱼",
+      "kind": "scenery",
+      "region": "全局",
+      "tags": [
+        "环境",
+        "序列帧",
+        "main复用"
+      ],
+      "status": "needs-review",
+      "target": "2d",
+      "file": "assets/runtime/sprites/fish-schools-v01/lantern/swim_atlas.png",
+      "width": 2560,
+      "height": 896,
+      "spriteType": "animated",
+      "sha256": "35fa603d8b3c6433fd9d2ecaa6eb3b1b59687cfaa790ca077b42042bc4d9463f",
+      "source": {
+        "batchId": "crab-environment-main",
+        "method": "main 既有绘画与烘焙动画图集原样复用",
+        "references": [
+          "assets/source/crab-environment-main/provenance.json"
+        ]
+      },
+      "animation": {
+        "frameSize": [
+          320,
+          224
+        ],
+        "frameCount": 32,
+        "fps": null,
+        "pivot": [
+          160,
+          112
+        ],
+        "timing": "垂须4秒循环；鱼群16秒路径、各成员按源cycles错拍摆尾"
+      },
+      "integrationStatus": "integrated",
+      "integration": {
+        "version": "godot-crab-prototype",
+        "manifest": "game/art/manifest.json",
+        "renderer": "game/content/rooms/prototype/crab_environment_motion.tscn",
+        "evidence": "game/progress.md"
+      },
+      "license": {
+        "scope": "用户授权将同仓库main已有素材用于BOB；原来源与制作记录见provenance"
+      },
+      "qa": {
+        "userVisualApproval": "待用户实机反馈",
+        "limitations": [
+          "仅母蟹训练场；无鱼群AI或碰撞",
+          "既有位图变形与烘焙动画，不计新增创作帧"
+        ]
       }
     }
   ]

@@ -54,3 +54,4 @@ description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩�
 - 测试脚本解析失败：runner 应报告不能实例化的 suite 并退出失败，不能在引擎窗口永久等待；先跑 `check` 再跑 `test`，不要仅看导入进程完成。并行代理写文件可以，Godot import/test/export 由一处串行安排，避免共享导入缓存竞争。
 - 玩家序列帧接入：公共画布/pivot、两向独立文件、逐帧时长和步幅以 `assets/runtime/sprites/tide-picker-animation-v2/animations.json` 为准；来源和导出见[制作说明](../../../assets/source/player-animation-v2/README.md)。攻击有效段必须落在帧边界；跑步按实际位移推进，不能只看全局时钟。素材缺项会显式回退旧图，验收须用只读 `player.animation.using_directional` 和实际文件路径确认新素材正在加载。
 - 动作专项按键路线：`tests/web_player_animation.mjs` 分完整/基础移动两种范围，保存两向姿势、暂停、撞墙与录屏；有限状态测试不能替代整圈换腿、脚滑和实际画面复核。Mac 引擎默认位置已由命令入口支持，仍严格检查项目固定版本。
+- 环境图集复用：保持原单元和固定根点，以 `AmbientAtlas` / `AmbientFishSchool` 及场景导出属性控制播放和摆放；动画继承 World 的暂停/顿帧，不用系统时间绕过暂停。源图、成员相位和固定来源提交记录在 `assets/source/crab-environment-main/`，`tests/web_environment_motion.mjs` 检查实际图集、完整周期及按键暂停；洞顶遮挡与战斗可读性仍要看截图和连续播放。全量 `sync-art` 可能重新编码其他派生 PNG，提交前检查并排除无关差异；恢复 LFS 文件时用正常 checkout/smudge，不能把 `git show` 的指针文本写成 PNG。
