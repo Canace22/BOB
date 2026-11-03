@@ -6,6 +6,8 @@
 
 ## 查看与管理
 
+直接打开[线上美术资源预览](https://canace22.github.io/BOB/art/)，可搜索、筛选、放大和下载素材，查看完整需求与拼装预览。线上为只读快照；更新命令为 `node tools/deploy-art-pages.mjs`，详见[预览与发布说明](manager/README.md)。
+
 仓库根目录运行 `npm --prefix assets/manager start`，打开[本机管理页](http://127.0.0.1:4176/)。可搜索、筛选、查看原图及来源，修改名称、标签、备注和验收状态；点击保存写入 [catalog.json](catalog.json)，刷新或重启后保留。归档按钮仅改变台账状态，不删除图片。
 
 管理页需要自己的服务API，不能用游戏静态服务器代替。端口被占用时，在PowerShell设置 `$env:PORT=4177` 再启动服务。页面的静态图像检查、用户美术确认和游戏接入分别记录。

@@ -7,6 +7,7 @@
 | [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
 | [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
 | [V2 原画版在线试玩](https://canace22.github.io/BOB/mvp-v2/) | 冻结的 Canvas 2D 原型，保留可玩 |
+| [美术资源在线预览](https://canace22.github.io/BOB/art/) | 搜索、筛选、放大与下载素材，查看需求及拼装预览 |
 
 ## 目录
 
