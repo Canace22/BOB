@@ -1,3 +1,4 @@
+import { readOnly, siteUrl, catalogUrl } from './runtime.js';
 const $ = id => document.getElementById(id);
 const statusNames = {accepted:'静态验收通过', 'needs-review':'待验收', 'needs-work':'待调整', archived:'已归档'};
 const kindNames = {character:'角色与生物', prop:'交互物', scenery:'场景件', background:'背景', ui:'界面素材', effect:'特效素材'};
@@ -14,7 +15,7 @@ function element(tag, text, className) {
 }
 
 function localUrl(file) {
-  return '/' + file.split('/').map(encodeURIComponent).join('/');
+  return siteUrl(file);
 }
 
 function setMessage(id, text, error = false) {
@@ -143,11 +144,11 @@ function formValue() {
 }
 
 function updateDirty() {
-  dirty = Boolean(original && JSON.stringify(formValue()) !== JSON.stringify(original));
-  for (const id of ['edit-name', 'edit-tags', 'edit-notes', 'edit-status']) $(id).disabled = saving || loading;
+  dirty = !readOnly && Boolean(original && JSON.stringify(formValue()) !== JSON.stringify(original));
+  for (const id of ['edit-name', 'edit-tags', 'edit-notes', 'edit-status']) $(id).disabled = readOnly || saving || loading;
   $('save').disabled = saving || loading || !dirty;
   $('reset').disabled = saving || loading || !dirty;
-  $('save-state').textContent = saving ? '正在保存…' : loading ? '正在读取…' : dirty ? '有未保存的更改' : '已保存';
+  $('save-state').textContent = readOnly ? '只读预览' : saving ? '正在保存…' : loading ? '正在读取…' : dirty ? '有未保存的更改' : '已保存';
   $('save-state').classList.toggle('dirty', dirty);
 }
 
@@ -183,8 +184,8 @@ async function loadCatalog() {
   setMessage('load-message', '正在读取项目资源…');
   $('refresh').disabled = true;
   try {
-    const response = await fetch('/api/catalog', {cache:'no-store'});
-    if (!response.ok) throw new Error('无法读取资源清单，请确认服务已启动后重试。');
+    const response = await fetch(catalogUrl, {cache:'no-store'});
+    if (!response.ok) throw new Error('无法读取资源清单，请稍后刷新重试。');
     const data = await response.json();
     if (!Array.isArray(data.assets)) throw new Error('资源清单格式不正确，请检查 catalog.json。');
     catalog = data;
@@ -204,7 +205,7 @@ async function loadCatalog() {
 
 async function saveAsset(event) {
   event.preventDefault();
-  if (!dirty || saving || !$('edit-form').reportValidity()) return;
+  if (readOnly || !dirty || saving || !$('edit-form').reportValidity()) return;
   saving = true; updateDirty(); setMessage('save-message', '正在写入项目资源清单…');
   try {
     const response = await fetch(`/api/assets/${encodeURIComponent(selectedId)}`, {method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify({revision:catalog.revision, ...formValue()})});
@@ -253,4 +254,10 @@ $('discard').addEventListener('click', () => {
 });
 window.addEventListener('beforeunload', event => {if (dirty) {event.preventDefault(); event.returnValue = '';}});
 window.addEventListener('resize', drawPreview);
+if (readOnly) {
+  document.querySelector('.save-actions').hidden = true;
+  document.querySelector('.persistence-note').textContent = '线上提供只读预览。管理信息请在本机资源管理页修改，再重新发布。';
+  document.querySelector('.library-note strong').textContent = '线上美术资源预览（只读）。';
+  $('catalog-export').href = catalogUrl;
+}
 loadCatalog();

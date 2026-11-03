@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BOB 美术资源库</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="identity"><span class="project-mark" aria-hidden="true">◒</span><div><h1>美术资源库</h1><p>BOB 鲸腹遗城</p></div></div>
-    <nav aria-label="资源操作"><a href="/requirements.html">完整需求与缺项</a><a id="atlas-image" hidden download>下载首批静态图集</a><a id="atlas-json" hidden download>图集坐标</a><a href="/api/catalog/export" download>导出清单</a><button id="refresh" type="button">刷新</button></nav>
+    <nav aria-label="资源操作"><a href="./requirements.html">完整需求与缺项</a><a id="atlas-image" hidden download>下载首批静态图集</a><a id="atlas-json" hidden download>图集坐标</a><a id="catalog-export" href="./api/catalog/export" download>导出清单</a><button id="refresh" type="button">刷新</button></nav>
   </header>
-  <div class="library-note"><p><strong>这里展示独立素材与静态图集。</strong>静态检查、用户美术确认和游戏接入分别记录。<a href="/requirements.html">查看完整制作清单</a></p><span id="atlas-state">正在读取图集…</span></div>
+  <div class="library-note"><p><strong>这里展示独立素材与静态图集。</strong>静态检查、用户美术确认和游戏接入分别记录。<a href="./requirements.html">查看完整制作清单</a></p><span id="atlas-state">正在读取图集…</span></div>
   <main class="workspace">
     <section class="collection" aria-label="美术素材">
       <div class="collection-heading"><h2>素材</h2><span id="count">加载中</span></div>
@@ -52,6 +52,6 @@
     </aside>
   </main>
   <dialog id="unsaved-dialog" aria-labelledby="unsaved-title"><h2 id="unsaved-title">还有未保存的更改</h2><p>继续编辑可保留当前草稿；放弃后再切换，原图不会改变。</p><div><button id="keep-editing" class="primary" type="button">继续编辑</button><button id="discard" type="button">放弃更改并继续</button></div></dialog>
-  <script type="module" src="/app.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

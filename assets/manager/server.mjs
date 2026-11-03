@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { createCatalogStore, RequestError } from './store.mjs';
 
 const defaultRoot = fileURLToPath(new URL('../../', import.meta.url));
-const uiFiles = new Set(['index.html', 'app.js', 'styles.css', 'requirements.html', 'requirements.js']);
+const uiFiles = new Set(['index.html', 'app.js', 'styles.css', 'requirements.html', 'requirements.js', 'runtime.js']);
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif', '.json': 'application/json; charset=utf-8', '.md': 'text/plain; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
 
 function json(res, status, data, headers = {}) {
