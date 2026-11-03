@@ -1,5 +1,6 @@
 # WhalebellyRuins 完整可玩内容恢复
 
+> 本页保留恢复阶段的来源和验收记录。2026-11-03 已归档旧模块、旧预览与未使用资源；当前资源以 `game/content/whalebelly/runtime-resources.json` 为准，制作与压缩见 [Framecraft 批次](../assets/source/framecraft-runtime/README.md)。
 > 当前归档清单、存档兼容与最终验收补充见[恢复说明](whalebelly-recovery.md)。本页保留恢复阶段记录。
 
 2026-10-31。本次修正此前只接入环境预览的遗漏：原工程的完整可玩入口、角色、战斗和七房内容已迁入 `game/`，并恢复为 F5 默认入口。
@@ -7,14 +8,13 @@
 ## 开发与运行入口
 
 - 唯一项目仍是 `game/project.godot`，默认场景为 `game/content/whalebelly/main.tscn`。
-- 原有模块化五房版本保留在 `game/src/main/main.tscn`，可单独运行；没有删除它的代码、场景或存档。
+- 原模块化五房版本已移到[归档分支](legacy-archive.md)，其代码、场景、素材和测试一并保留。
 - 独立角色/技能试玩：`game/content/whalebelly/tide_demo.tscn`；原七房角色参数场：`game/content/whalebelly/test/PlayerTest.tscn`。
 - 环境展示与各动作预览也迁入 `game/content/whalebelly/`，保持原有场景关系；它们不再是恢复工作的唯一交付。
 
 ```sh
 node tools/godot.mjs run
 node tools/godot.mjs run -- res://content/whalebelly/tide_demo.tscn
-node tools/godot.mjs run -- res://src/main/main.tscn
 ```
 
 ## 找回的实际内容
@@ -30,7 +30,7 @@ node tools/godot.mjs run -- res://src/main/main.tscn
 
 路径映射和原文件 SHA256 见 `game/content/whalebelly/recovery-manifest.json`，共记录 1914 个恢复文件。1655 个位图、音频及字体等二进制素材与原件逐字节一致。资源同步清单仍是 `game/art/manifest.json`，文本资源在同步时改写原 `res://` 路径；不把制作源换成视频播放器或静态总图。
 
-`tools/recover-whalebelly.mjs` 是一次性恢复工具，默认拒绝覆盖已恢复模块。后续开发直接修改 `game/`；不要用 `--refresh` 覆盖后续修正。恢复阶段保留经过验证的原实现，暂未为拆小文件重写旧主循环；历史脚本的无类型声明警告仅在恢复模块内兼容，不关闭全项目检查。
+归档分支的 `tools/recover-whalebelly.mjs` 是一次性恢复工具，默认拒绝覆盖已恢复模块。后续开发直接修改 `game/`；不要用 `--refresh` 覆盖后续修正。恢复阶段保留经过验证的原实现，暂未为拆小文件重写旧主循环；历史脚本的无类型声明警告仅在恢复模块内兼容，不关闭全项目检查。
 
 ## 原有进度保护
 

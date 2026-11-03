@@ -2,6 +2,8 @@
 name: "develop-web-game"
 description: "仅用于 BOB legacy/web/ 历史 Canvas 2D 与 Three.js 原型的参考和回归；Godot 正式工程使用 godot-game-dev。"
 ---
+> 2026-11-03：完整旧版已移到 `codex/archive-legacy-20261103`；下文Web流程仅在按[归档说明](../../../docs/legacy-archive.md)独立检出后使用。当前分支的资源与Godot接入以[正式开发Skill](../godot-game-dev/SKILL.md)和Framecraft批次为准。
+
 
 
 > Godot 正式工程请使用 [godot-game-dev](../godot-game-dev/SKILL.md)。以下 Web 专项流程仅供 `legacy/web/` 历史原型参考与回归，不能用于继续开发旧版本；共享素材制作仍可参考美术规则。

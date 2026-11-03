@@ -35,6 +35,7 @@ func drive(target:Vector2,next_room:int=-99,budget:int=1100) -> bool:
 		await physics_frame
 	host.release_controls();return false
 func run() -> void:
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://build/qa/whalebelly/tide-main-integration"))
 	host=load("res://content/whalebelly/main.tscn").instantiate();host.qa=true;host.qa_full_abilities=false;host.integration_external_test=true;root.add_child(host);current_scene=host
 	await step(40)
 	if "--reload-fixture" in OS.get_cmdline_user_args():

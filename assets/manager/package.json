@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check store.mjs && node --check app.js && node --check requirements.js",
+    "check": "node --check server.mjs && node --check store.mjs && node --check app.js && node --check requirements.js && node --check runtime.js && node --check build.mjs && node --check ../../tools/deploy-art-pages.mjs",
+    "build": "node build.mjs",
     "test": "node --test tests/server.test.mjs",
-    "test:ui": "node tests/ui.mjs"
+    "test:ui": "node tests/ui.mjs",
+    "test:preview": "node tests/preview.mjs"
   }
 }

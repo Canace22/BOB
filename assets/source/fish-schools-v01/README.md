@@ -4,7 +4,7 @@
 
 - 原画与可编辑曲线：[source/](source/)，`fish-motion.js`为动画母版，`export_and_check.py`烘焙帧和预览。
 - 运行资源：[../../runtime/sprites/fish-schools-v01/](../../runtime/sprites/fish-schools-v01/)，含单帧、图集、透明组合图、成员与相位清单。
-- Godot入口：[../../../godot/WhalebellyRuins/scenes/environment/fish_school_gallery.tscn](../../../godot/WhalebellyRuins/scenes/environment/fish_school_gallery.tscn)。现有工程F6运行，空格暂停，R重置，1/2/3显隐。
+- Godot入口：[../../../godot/WhalebellyRuins/scenes/environment/fish_school_gallery.tscn](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/godot/WhalebellyRuins/scenes/environment/fish_school_gallery.tscn)。现有工程F6运行，空格暂停，R重置，1/2/3显隐。
 - 三组可复用场景：同工程 scenes/environment/elements/{silverfin,tealback,lantern}_school_v01.tscn。
 - 完整可播放交付：`G:/鲸落万物生/outputs/海底鱼群动画_v01/预览.html`。
 - 证据：review/；Godot实际渲染截图和检测在工程 evidence/fish_schools/。

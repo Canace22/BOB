@@ -10,7 +10,7 @@ var elapsed: float = 0.0
 
 func _ready() -> void:
 	var names: Array[String] = ["silverfin","tealback"]
-	var atlas := load("res://art/environment/fish_schools/"+names[species]+"/swim_atlas.png") as Texture2D
+	var atlas := load("res://art/whalebelly/fish_schools/"+names[species]+"/swim_atlas.png") as Texture2D
 	for i in population:
 		var fish := Sprite2D.new()
 		fish.name = "Fish%02d" % i

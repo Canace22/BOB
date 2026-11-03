@@ -8,7 +8,3 @@ const ROOMS: Dictionary[String, String] = {
 const ABILITIES: Dictionary[String, String] = {
 	"ability.dash": "贴流冲", "ability.float": "浮升（后续区域）", "ability.anchor": "挂环（后续区域）",
 }
-
-
-static func room_path(id: String) -> String:
-	return "res://content/rooms/R1/%s.tscn" % id if ROOMS.has(id) else ""

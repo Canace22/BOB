@@ -4,13 +4,19 @@
 
 制作与原件/母版入口：[r1-chapter-scenes](source/r1-chapter-scenes/README.md)。逐件ID、来源、层级与方法在`chapter.json`及各房`elements.json`；运行PNG由`game/art/manifest.json`登记同步。当前接入与验收以`game/progress.md`为准，不将已准备的后续房间规格当作完成场景。
 
+## 2026-11-03 当前资源整理
+
+完整旧目录、旧模块和仅供旧预览使用的资源在[归档分支](../docs/legacy-archive.md)。远端资源整理批次运行图片856张，经Framecraft保真压缩约135.26 → 121.07 MiB；9个源工程保留原件、Alpha与坐标。该批次930项同步来源全部位于assets，详见[工作台批次与引用清单](source/framecraft-runtime/README.md)。未接入的可复用原画与未来区域素材继续保留。
+
+下方按日期保留各批次的制作记录；历史接入结论不能代替当前清单。旧资源链接指向归档分支。
+
 ## WhalebellyRuins恢复接入（2026-10-31）
 
-原运行素材逐字节恢复至 `game/art/whalebelly/`，由 `game/art/manifest.json` 登记来源与同步路径。未直接引用的历史原图、母版、旧音效和配置在 `game/production_sources/whalebelly/source-index.json` 登记；全局编辑源仍保留原位。本轮只恢复与接入，没有重新生成美术；[范围与实机验证](../docs/whalebelly-recovery.md)。
+原运行素材逐字节恢复至 `game/art/whalebelly/`，由 `game/art/manifest.json` 登记来源与同步路径。未直接引用的历史原图、母版、旧音效和配置已随 `game/production_sources/whalebelly/source-index.json` 归档；全局编辑源仍保留原位。本轮只恢复与接入，没有重新生成美术；[范围与实机验证](../docs/whalebelly-recovery.md)。
 
 ## 拾潮者基础动作首版（2026-10-28）
 
-`tide-picker-locomotion-v01`：[制作源、Blender母版与验收](source/tide-picker-locomotion-v01/README.md)，[可播放预览](source/tide-picker-locomotion-v01/preview.html)。IDLE / Walk / Run各8帧，透明PNG、图集、统一锚点和Godot评审场景已产出。状态为candidate：腿部交替仍需精修，未替换主关卡。三个动作独立登记到catalog.json，不混入历史静态图集。
+`tide-picker-locomotion-v01`：[制作源、Blender母版与验收](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/source/tide-picker-locomotion-v01/README.md)，[可播放预览](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/source/tide-picker-locomotion-v01/preview.html)。IDLE / Walk / Run各8帧，透明PNG、图集、统一锚点和Godot评审场景已产出。状态为candidate：腿部交替仍需精修，未替换主关卡。三个动作独立登记到catalog.json，不混入历史静态图集。
 
 登记已有概念资源和新资源批次；制作规划留在设计文档。独立资源的名称、标签、备注与当前验收状态以 [catalog.json](catalog.json) 为准，可通过[管理页面](README.md#查看与管理)维护，不在本页重复登记可变状态。
 
@@ -23,7 +29,7 @@
 
 `whalefall-v5-2-complete`：2026-10-27，新增 180 张，连同首批 12 张共 192 张独立静态 PNG；105 个需求家族与 36 房间需求映射记录在[完整清单](source/whalefall-v5-2-complete/coverage.json)。目录和当前状态以 [catalog.json](catalog.json) 为准。
 
-[验收范围与证据](source/whalefall-v5-2-complete/acceptance.md) · [174 件/7 页图集索引](runtime/sprites/whalefall-complete-atlas/index.json) · [静态组合配方](source/whalefall-v5-2-complete/review/components/README.md)。18 张背景保持独立，图集没有动作动画。当前 V2 Canvas 2D 从本批与首批资源选用 41 张原图，生成约 1.85 MiB 的 WebP 运行文件，约 45.37 MiB 的 PNG 原件保持不变；派生文件不重复计入资源数量。来源映射、导出命令和 `runtimeFile` 约定见[资源管理说明](README.md)，运行清单见 [art-manifest.js](../legacy/web/mvp-v2/art-manifest.js)，工作区、实机与线上状态见 [V2 进度](../legacy/web/mvp-v2/progress.md)。初版与 Three.js 版本没有新增运行引用。
+[验收范围与证据](source/whalefall-v5-2-complete/acceptance.md) · [174 件/7 页图集索引](runtime/sprites/whalefall-complete-atlas/index.json) · [静态组合配方](source/whalefall-v5-2-complete/review/components/README.md)。18 张背景保持独立，图集没有动作动画。当前 V2 Canvas 2D 从本批与首批资源选用 41 张原图，生成约 1.85 MiB 的 WebP 运行文件，约 45.37 MiB 的 PNG 原件保持不变；派生文件不重复计入资源数量。来源映射、导出命令和 `runtimeFile` 约定见[资源管理说明](README.md)，运行清单见 [art-manifest.js](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-v2/art-manifest.js)，工作区、实机与线上状态见 [V2 进度](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-v2/progress.md)。初版与 Three.js 版本没有新增运行引用。
 
 ## R1 悬台支撑补件
 
@@ -66,7 +72,7 @@
 
 ## 模型、动画与音频
 
-当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。
+旧Three.js程序几何与声音实现已归档。当前Godot使用位图逐帧角色及原音效，来源由同步清单和当前资源表记录；独立模型/骨骼动画按新需求另行登记。V2历史静态姿态不计作逐帧动作。
 
 ## 本轮参考图环境场景
 
@@ -90,9 +96,9 @@ BEAM-01/02/03已替换为不含场景纹理的独立柔光贴图和12秒Shader�
 
 ## 拾潮者视频动作 V02
 
-主关卡Idle现已采用 [提灯守望 V03](source/tide-picker-idle-v03/README.md)：70帧/12FPS/6秒透明动画，完整原画承载视频运动，17项Godot实景功能检查通过；用户审美待确认。V02三动作仍保留为独立候选，Walk/Run没有因Idle接入而升级验收状态。
+主关卡Idle现已采用 [提灯守望 V03](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/source/tide-picker-idle-v03/README.md)：70帧/12FPS/6秒透明动画，完整原画承载视频运动，17项Godot实景功能检查通过；用户审美待确认。V02三动作仍保留为独立候选，Walk/Run没有因Idle接入而升级验收状态。
 
-IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光流循环桥接。Run复用历史Wan视频，IDLE含局部呼吸修正。三组均为待精修候选，仅独立Godot评审场景；主关卡未替换。[来源、母版与限制](source/tide-picker-locomotion-v02-video/README.md)。
+IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光流循环桥接。Run复用历史Wan视频，IDLE含局部呼吸修正。三组均为待精修候选，仅独立Godot评审场景；主关卡未替换。[来源、母版与限制](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/source/tide-picker-locomotion-v02-video/README.md)。
 
 ### 左上和右下近景拆分
 
@@ -113,7 +119,7 @@ IDLE 88帧、Walk 78帧、Run 48帧；合计214张512×512 RGBA，包含20张光
 
 ## 2026-10-29 拾潮者 Walk V03
 
-[视频走路制作记录](source/tide-picker-walk-v03/README.md)：84帧、12FPS、7秒，原视频6.041667秒向上取整；相位匹配稳定段重定时，补回骨叉并清理透明底。接入唯一Godot主关卡移动状态，16项GPU主场景回归通过；源片变形、循环接缝和固定帧率滑步仍在，视觉状态candidate。
+[视频走路制作记录](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/source/tide-picker-walk-v03/README.md)：84帧、12FPS、7秒，原视频6.041667秒向上取整；相位匹配稳定段重定时，补回骨叉并清理透明底。接入唯一Godot主关卡移动状态，16项GPU主场景回归通过；源片变形、循环接缝和固定帧率滑步仍在，视觉状态candidate。
 
 ## 2026-10-29 拾潮者 Run V03
 
@@ -158,4 +164,6 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 
 ## 模型、动画与音频
 
-当前没有独立的模型、骨骼动画或音频文件登记。Three.js 版本几何体及基础动画由 `mvp-nightmare/renderer.js` 生成，各版声音由各自 `audio.js` 合成。V2 新增素材为静态姿态和状态图，不能当作逐帧动画。正式资源交付后逐项登记源文件、导出文件和接入证据。
+旧Three.js程序几何与声音实现已归档。当前Godot使用位图逐帧角色及原音效，来源由同步清单和当前资源表记录；独立模型/骨骼动画按新需求另行登记。V2历史静态姿态不计作逐帧动作。
+
+合并本地六房环境后，运行清单共994项（含64项r1-chapter-scenes），来源均位于assets；本地制作源与环境动态继续保留。

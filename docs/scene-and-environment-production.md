@@ -1,6 +1,6 @@
 # 场景与环境动态制作说明
 
-> 2026-10-31 合并说明：正式开发入口为 [game/project.godot](../game/project.godot)。下文描述合并前的历史工程；环境动态已迁入 [新工程预览](../game/content/environment/local_environment_preview.tscn)，运行方式见 [迁移验收](godot-local-integration.md)。
+> 2026-10-31 合并说明：正式开发入口为 [game/project.godot](../game/project.godot)。下文描述合并前的历史工程；环境动态已迁入 [新工程预览](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/game/content/environment/local_environment_preview.tscn)，运行方式见 [迁移验收](godot-local-integration.md)。
 
 整理日期：2026-10-31。以须门遗港 R1-01 当前工程为实例，说明从参考图到分层场景、独立动效，再到主关卡接入的制作方法。本次整理核对源码和已有证据，没有重新生成素材或运行游戏测试。
 
@@ -95,7 +95,7 @@
 
 当前指导轨迹测得下段峰峰值约17.5px、细尖约36.5px，细尖主频延迟约0.276秒；这些是设计轨迹测量，不是逐根真实纤维追踪。自然度仍需播放确认。
 
-制作与复跑入口：[制作脚本](../tools/baleen_loop_v3.py)、[Krita转换脚本](../tools/baleen_kra_native.py)、[接入脚本](../tools/integrate_baleen_loop_v3.py)、[完整记录](../assets/source/baleen-loop-v3/integration/README.md)。历史Blender绘画网格烘焙与旧Wan光流投射方案保留在源目录，顶部三处当前不再使用这些旧图集。
+制作与复跑入口：[制作脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/baleen_loop_v3.py)、[Krita转换脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/baleen_kra_native.py)、[接入脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/integrate_baleen_loop_v3.py)、[完整记录](../assets/source/baleen-loop-v3/integration/README.md)。历史Blender绘画网格烘焙与旧Wan光流投射方案保留在源目录，顶部三处当前不再使用这些旧图集。
 
 ### B. 鱼群：身体动作与游动路径分别制作
 
@@ -103,7 +103,7 @@
 
 三组路径分别是持续穿越、聚散回游和弧形队列。按路径速度方向调朝向与少量角度，转侧时压窄宽度表现转向；这是2D表现，不是完整3D转身。跨边界回收先淡出，不能在屏幕内突然跳回。摆尾与队形共享可暂停时钟，但分别核对循环。
 
-原画和动作母版在[鱼群源目录](../assets/source/fish-schools-v01/README.md)；实际播放为 [fish_school_v01.gd](../legacy/godot/WhalebellyRuins/scenes/environment/elements/fish_school_v01.gd)。没有鱼群碰撞、受惊AI或伤害。
+原画和动作母版在[鱼群源目录](../assets/source/fish-schools-v01/README.md)；实际播放为 [fish_school_v01.gd](../game/content/whalebelly/environment/elements/fish_school_v01.gd)。没有鱼群碰撞、受惊AI或伤害。
 
 ### C. 气泡：透明位图实例与区域回收
 
@@ -111,7 +111,7 @@
 
 按时间计算上升位置和小幅横摆，在区间上下边界淡入淡出后回收同一批实例。近处气泡需要独立深度，不能仅把背景气泡放大。当前7区56实例，无需持续创建与销毁节点；实现是精灵池，不是GPUParticles2D。
 
-参考：[发射器脚本](../legacy/godot/WhalebellyRuins/scenes/environment/elements/bubble_emitter.gd)、[桥下修复与三个新增区域](../assets/source/xumen-underbridge-repair/README.md)。
+参考：[发射器脚本](../game/content/whalebelly/environment/elements/bubble_emitter.gd)、[桥下修复与三个新增区域](../assets/source/xumen-underbridge-repair/README.md)。
 
 ### D. 水面与光束：不同效果分开处理
 
@@ -121,7 +121,7 @@
 
 Shader手动采样贴图时，应核对`COLOR`是否已含贴图颜色与Alpha，避免重复乘法让效果变暗、变薄。分别检查关闭效果的底图、仅效果层和完整场景。
 
-参考：[水面Shader](../legacy/godot/WhalebellyRuins/scenes/environment/elements/water_surface.gdshader)、[柔光制作与棱角修复](../assets/source/xumen-soft-light/README.md)。
+参考：[水面Shader](../game/content/whalebelly/environment/elements/water_surface.gdshader)、[柔光制作与棱角修复](../assets/source/xumen-soft-light/README.md)。
 
 ### E. 植物、藤蔓与前景
 
@@ -129,13 +129,13 @@ Shader手动采样贴图时，应核对`COLOR`是否已含贴图颜色与Alpha�
 
 前景从洞壁和底图中拆出来后，还要清除所有底层副本。左上、底部、右下相接处使用同一倍率，保留32px有限余量与局部补底。前景跟随感来自它与世界层不同的相机响应，不是把前景绑在角色身上。
 
-角色跟随由现有 [campaign_camera.gd](../legacy/godot/WhalebellyRuins/scripts/campaign_camera.gd) 计算，环境接收相机偏移；`Tab`切换跟随与全房视图。来源、蒙版及接缝修复见[前景说明](../assets/source/xumen-foreground-edges/README.md)。
+角色跟随由现有 [campaign_camera.gd](../game/src/campaign/campaign_camera.gd) 计算，环境接收相机偏移；`Tab`切换跟随与全房视图。来源、蒙版及接缝修复见[前景说明](../assets/source/xumen-foreground-edges/README.md)。
 
 ## 4. 统一接入方式
 
-环境子件集中在 `legacy/godot/WhalebellyRuins/scenes/environment/elements/`，总布局在 [xumen_reference.tscn](../legacy/godot/WhalebellyRuins/scenes/environment/xumen_reference.tscn)。
+环境子件集中在 `game/content/whalebelly/environment/elements/`，总布局在 [xumen_reference.tscn](../game/content/whalebelly/environment/xumen_reference.tscn)。
 
-[`reference_environment.gd`](../legacy/godot/WhalebellyRuins/scenes/environment/reference_environment.gd)维护一个`elapsed`时钟，将时间和相机偏移传给各子件的`update_at()`。帧动画/植物/光束使用`external_clock=true`，鱼群使用`autoplay=false`；独立预览时可自行计时。避免环境与子件同时累加时间导致双倍速度。
+[`reference_environment.gd`](../game/content/whalebelly/environment/reference_environment.gd)维护一个`elapsed`时钟，将时间和相机偏移传给各子件的`update_at()`。帧动画/植物/光束使用`external_clock=true`，鱼群使用`autoplay=false`；独立预览时可自行计时。避免环境与子件同时累加时间导致双倍速度。
 
 关掉动画保持当前姿态；速度归零、场景树暂停也应冻结。恢复时从原姿态继续；重载则按相同初值和预热分布初始化。循环用统一时钟不意味着所有元素周期相同，不能要求4秒时整场景所有效果都回到首帧。
 
@@ -168,12 +168,12 @@ Krita用于绘画修整与可编辑时间轴；ComfyUI负责调用Wan视频模�
 
 | 范围 | 现有入口 |
 | --- | --- |
-| V3垂须与主关卡 | [tests/baleen_loop_v3.gd](../legacy/godot/WhalebellyRuins/tests/baleen_loop_v3.gd)，`--baleen-mode=environment`或`main` |
-| 整体环境状态 | [tests/motion_elements_qa.gd](../legacy/godot/WhalebellyRuins/tests/motion_elements_qa.gd) |
-| 水面遮挡与范围 | [tests/water_surface_qa.gd](../legacy/godot/WhalebellyRuins/tests/water_surface_qa.gd) |
+| V3垂须与主关卡 | [tests/baleen_loop_v3.gd](../game/tests/whalebelly/baleen_loop_v3.gd)，`--baleen-mode=environment`或`main` |
+| 整体环境状态 | [tests/motion_elements_qa.gd](../game/tests/whalebelly/motion_elements_qa.gd) |
+| 水面遮挡与范围 | [tests/water_surface_qa.gd](../game/tests/whalebelly/water_surface_qa.gd) |
 | 光束/前景/桥下 | 同工程`tests/soft_light_qa.gd`、`foreground_edges_qa.gd`、`underbridge_qa.gd` |
-| 当前鱼群主场景 | [tests/fish_schools_main.gd](../legacy/godot/WhalebellyRuins/tests/fish_schools_main.gd) |
-| V3打包验证 | [tools/package_baleen_loop_v3.py](../tools/package_baleen_loop_v3.py) |
+| 当前鱼群主场景 | [tests/fish_schools_main.gd](../game/tests/whalebelly/fish_schools_main.gd) |
+| V3打包验证 | [tools/package_baleen_loop_v3.py](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/package_baleen_loop_v3.py) |
 
 例如使用固定Godot4.7.2，在BOB根目录运行：
 

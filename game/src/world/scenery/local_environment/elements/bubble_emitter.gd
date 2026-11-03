@@ -15,7 +15,7 @@ func _ready() -> void:
 	for i in range(population):
 		var sprite := Sprite2D.new()
 		sprite.name="Bubble_%02d"%i
-		sprite.texture=preload("res://art/environment/reference_environment/bubble.png")
+		sprite.texture=preload("res://art/whalebelly/reference_environment/bubble.png")
 		var near_bubble: bool=near_layer and i<3
 		var size_px: float=(10.0+float(i)*3.0) if near_bubble else lerpf(size_range.x,size_range.y,fmod(float(i*17+seed_id*3),5.0)/4.0)
 		sprite.scale=Vector2.ONE*size_px/12.0

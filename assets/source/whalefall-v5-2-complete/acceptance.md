@@ -19,19 +19,19 @@
 
 ## 五组验收
 
-1. 文件与覆盖：192项原图、尺寸、来源、提示词、SVG、缩略图及105家族输出对应；原12项保留。详见[完整性检查](review/delivery-integrity.json)。
+1. 文件与覆盖：192项原图、尺寸、来源、提示词、SVG、缩略图及105家族输出对应；原12项保留。详见本地报告 `review/delivery-integrity.json`。
 2. 图像与比例：全部候选经过深浅底真实合成；角色保持1U基准，同体状态保留共同比例和根点。六区域按60px/U放置，主角双脚绘制接触误差0px。见[区域记录](review/region-assembly/qa.json)。这不证明碰撞或可达性。
 3. 状态组件：18机关/奖励组、6处栖息地前后组合，7个开放通道alpha采样为0；四张组合板从最终192项台账复跑后逐像素一致，51项引用齐全。见[组合记录](review/components/README.md)。
-4. 图集：174项静态精灵打入7页，每页不超过4096²，4px间隔和2px复制外扩；18背景独立。全部裁片与源图缩放结果逐像素相同，frame不重叠、外缘透明、ZIP字节一致。见[图集报告](../../runtime/sprites/whalefall-complete-atlas/verification-report.json)。`animations`为空。
-5. 管理页：192图实载、筛选、保存刷新、草稿保护、归档恢复、冲突/网络错误、105家族清单、手机390px布局均通过；Node服务5项测试通过，写测试只在临时副本。见[页面测试](review/manager-ui-tests.json)和[页面截图](review/BOB-完整素材管理页.png)。
+4. 图集：174项静态精灵打入7页，每页不超过4096²，4px间隔和2px复制外扩；18背景独立。全部裁片与源图缩放结果逐像素相同，frame不重叠、外缘透明、ZIP字节一致。见本地报告 `assets/runtime/sprites/whalefall-complete-atlas/verification-report.json`。`animations`为空。
+5. 管理页：192图实载、筛选、保存刷新、草稿保护、归档恢复、冲突/网络错误、105家族清单、手机390px布局均通过；Node服务5项测试通过，写测试只在临时副本。见本地报告 `review/manager-ui-tests.json`和本地截图 `review/BOB-完整素材管理页.png`。
 
-接触表、管理页截图和被拒中间稿留在本机，不进入 Git。JSON 记录、拼装预览、缩略图、逐件 PNG 和图集随仓库保存。
+接触表、管理页截图和被拒中间稿留在本机，不进入 Git。来源、配方、人工验收结论、管理页选用的拼装预览、缩略图、逐件 PNG 和分页图集随仓库保存。2026-11-02 起，自动验收报告与 ZIP 只留本地；下述历史报告路径可能需要复跑后生成，存储规则见[资源存储与清理](../../../docs/resource-storage.md)。
 
 ## 交付结构
 
 - 每件原始PNG：`assets/runtime/sprites/<ID>/`；提示词、来源、可编辑SVG：`assets/source/<ID>/`。
 - [资源台账](../../catalog.json)为可编辑真相源；[需求覆盖](coverage.json)按稳定ID关联，不用图集frame数充当完成百分比。
-- [完整静态图集ZIP](../../runtime/sprites/whalefall-complete-atlas/whalefall-complete-atlas.zip)及[index.json](../../runtime/sprites/whalefall-complete-atlas/index.json)。UI保持原生画布与nineSlice；世界精灵128px/U；背景按完整画布投影。
+- 完整静态图集 PNG/JSON 及[index.json](../../runtime/sprites/whalefall-complete-atlas/index.json)。UI保持原生画布与nineSlice；世界精灵128px/U；背景按完整画布投影。ZIP 用本目录 `tools/pack-atlases.py` 按需生成。
 - [状态规则](state-rules.json)、[机关配方](review/components/components-recipe.json)与[拼装预览索引](previews.json)。
 
 ## 后续边界

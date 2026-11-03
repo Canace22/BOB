@@ -1,46 +1,45 @@
 ---
 name: godot-game-dev
-description: 在 BOB 的 game/ Godot 正式工程中开发、迁移或修复玩法与房间，执行 headless 和真实浏览器键盘路线验收，并发布 Godot Web 版本；旧原型只作参考。
+description: 在BOB的game/正式Godot工程开发、修复与接入，执行资源审计、headless及真实浏览器验收并发布Web版。
 ---
 
-# BOB Godot 开发
+# BOB Godot正式开发
 
-当前默认入口已恢复为 `content/whalebelly/main.tscn`，详见[恢复说明](../../../docs/whalebelly-recovery.md)。原模块版仍在 `src/main/main.tscn`；接续时先核对 `project.godot` 的实际入口，按对应测试与存档路径验收，不把独立环境预览当作玩法已迁入。
+先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[进度](../../../game/progress.md)，核对 `project.godot`。当前默认入口是 `content/whalebelly/main.tscn`。完整旧工程、模块化五房、旧资源与专用测试已移到 `codex/archive-legacy-20261103`，按[归档说明](../../../docs/legacy-archive.md)独立检出。
 
-先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[当前进度](../../../game/progress.md)。正式源码与场景只在 `game/`；从 `legacy/` 定向查数值或素材，不能在那里开发。
+## 开发与资源
 
-## 改动与产物
-
-- 根据稳定 ID 找到 `game/content/rooms/R1/<ID>.tscn`，门的去向/入口/条件、拾取物、营地和敌人直接配置在场景。布景在 `scenery/`；碰撞只随 World 运动，不能挂在视差层下面。
-- 玩家动作在 `src/player/states/`，战斗判定共用 `Hitbox/Hurtbox/Health`。每次挥击对同一 Hurtbox 只结算一次；Boss 胜利和玩家交互领取冲刺是两个独立进度。
-- 素材先入 `assets/`、登记来源和台账，再改 `game/art/manifest.json` 并运行 `node tools/godot.mjs sync-art`。旧位图可以复用，程序线条/色块、拉长横图不能补缺。UI 中文字体和 OFL 许可也随清单同步。
-- 场景是维护入口。`game/tools/import_rooms.mjs` 仅用于一次性迁移，拒绝覆盖已有场景；不要靠重新生成覆盖手工修正。
-- 修改存档格式时同步校验、迁移与测试。独立目录 `WhalefallGame`；测试只写 `test-save.json`，不改用户 `save.json`。
+- 源码在 `game/src/campaign/`，房间在 `game/content/whalebelly/r1/`，当前环境在 `game/content/whalebelly/environment/`。保持稳定ID、原角色技能、七房内容和V6存档；不以旧静态版本替代已恢复的动态效果。
+- 素材先入 `assets/` 并维护台账，再写 `game/art/manifest.json`、运行 `node tools/godot.mjs sync-art`。当前清单不依赖 `legacy/`；正式画面遵循根2D美术规则。
+- 已有精灵/图集的整理与压缩用个人 `2d-sprite-animation` Skill的Framecraft流程。可批量调用真实本机接口，原件与实际输出一并存 `.framecraft`，保存后重开。BOB已验证配方见[压缩批次](../../../assets/source/framecraft-runtime/README.md)。
+- 手绘素材优先原尺寸保真PNG、阈值0、锐化0；逐张比较尺寸、可见RGBA与Alpha，只清理全透明像素的隐藏RGB。若输出更大，保留原文件并记录实际平台结果。调色板会改变颜色/半透明边缘，不能将它称为无损。
+- 不把进入同步清单当作当前在用。归档前从正式入口、七房、现用角色参数场和预览检查引用，保守展开动态加载；使用 `node game/tools/audit_resources.mjs` 和 `runtime-resources.json`。确认旧版专用的资源、消费者、专用测试及同步项一起移出。原画库和未来区域素材不因尚未接入而自动归档。
+- 保存完整归档分支并普通推送后，再移出当前分支；只改本批相关文件。已存在的无关修改保留。一次性恢复工具与历史清单不当作当前验收入口。
 
 ## 验证
 
-在仓库根运行 `node tools/godot.mjs check` 与 `node tools/godot.mjs test`。工具校验 `.godot-version`；不能只看 Godot 退出码，输出中的 `ERROR:` 和脚本错误也算失败。测试使用固定步长加速，驱动只在 `tests/`。
+1. 仓库根运行 `node tools/godot.mjs check` 和 `node tools/godot.mjs test`。固定Godot4.7.2，日志中的脚本错误和 `ERROR:` 都算失败；现用测试与旧版已归档测试分别计数。
+2. 对图片批次运行 `python assets/source/framecraft-runtime/compress.py --verify`，检查源工程、哈希、像素、Alpha和当前清单来源存在。验证实际导出文件，不只相信界面设置。
+3. 当前主线连续路线使用 `tests/whalebelly/campaign_route_test.gd`，仅写QA存档；真实按键Web验证使用 `web_whalebelly.mjs`，不能再用旧模块版的 `web_playthrough.mjs`。
+4. `node tools/godot.mjs export-web` 后，运行 `node game/tests/serve_web.mjs` 的独立4187服务；用Node20+和Playwright执行 `node game/tests/web_whalebelly.mjs`。`PLAYWRIGHT_MODULE`指定现有模块，`GAME_URL`指定入口，`TEST_LABEL`隔离证据。
+5. 查看 `game/build/qa/` 的实际截图，检查角色接地、素材比例、透明边缘、遮挡、中文和动态效果；技术检查不等于用户美术认可。截图、自动报告和视频只留本地。
 
-玩法/发布改动再执行：
+## 存档与发布
 
-1. `node tools/godot.mjs export-web`，需要匹配版本的 `web_nothreads_release.zip` 导出模板。只用 Web 单线程，Pages 没有隔离响应头。
-2. `node game/tests/serve_web.mjs` 启独立 4187 服务，带 `/BOB/godot/` 前缀。不要刷新用户当前试玩页。
-3. 用 Node 20+ 执行 `node game/tests/web_playthrough.mjs`。`PLAYWRIGHT_MODULE` 可指定已安装 Playwright，`CHROME_PATH` 指定浏览器；默认找 Playwright Chromium，再用本机 Chrome。`GAME_URL` 可指线上入口，`TEST_LABEL` 隔离证据目录。
-4. 脚本创建独立浏览器上下文，以真实键盘通过五房、Boss、交互领取、三段冲刺沟；测试地图暂停与刷新续档。读取 `render_game_to_text()` 只观察状态，不改状态或用传送代替路线。
-5. 查看 `game/build/qa/<label>/` 的截图与报告，检查角色接地、素材比例、遮挡、中文提示及界面。截图不自动代表用户认可美术；音效事件无错误也不等于试听通过。
+主线V6在 `user://whalebelly/`。`CampaignSaveBridge`只在目标不存在时复制有效旧档。测试、捕获及隔离试玩不导入真实进度；浏览器使用独立上下文，不刷新用户正在玩的页面。
 
-桌面窗口复核可运行 `node tools/godot.mjs run -- res://tests/manual_preview.tscn`，这会开启隔离进度、不写实际存档。截图证据与工具链只保留本地。纯文档改动检查链接和 `git diff --check` 即可。
+按根[持续交付流程](../../../AGENTS.md#持续迭代与边做边玩)提交已验证批次，提交不含AI署名。运行 `node tools/deploy-pages.mjs`，普通推送 `gh-pages`，保留在线历史目录。只更新根入口时用 `--entry-only`；`--build-only`产生未提交staging后须先核对，不重置未知修改。
 
-## 提交与发布
+推送后检查部署成功、线上 `godot/build.json` 的源码提交和当前入口，再跑受影响线上按键路线。把源码/发布提交、结果和限制写入 `game/progress.md`；推送成功不能直接当作上线成功。
 
-按根[持续交付流程](../../../AGENTS.md#持续迭代与边做边玩)提交已验证批次。运行 `node tools/deploy-pages.mjs`，合并 `/godot/` 并从 `game/pages/index.html` 更新根入口，默认跳转 Godot；保留 `mvp-v2/` 等历史目录和 `gh-pages` 历史，普通推送。仅修复默认入口时使用 `--entry-only`，不导出或替换已上线游戏包；验证根地址实际跳转、禁用 JavaScript 时的跳转、历史入口和游戏启动，游戏无变化时无需重复整条战斗路线。`--build-only` 只准备产物，不提交推送；准备后再次运行会拒绝未提交的 staging，先检查后显式处理，不要重置未知修改。
+## 恢复与边界
 
 检查部署状态与线上 `godot/build.json` 的源码提交，再对线上入口运行同一浏览器路线。把源码提交、发布提交、结果和限制记入 `game/progress.md`。发布失败保留稳定远端，不把本地成功记成已上线。
 
 ## 已验证的恢复方式
 
 - 旧工程迁入新结构时，先盘点实际运行入口、角色/战斗、房间与碰撞、机关、动画/Shader、声音、HUD、存档及试玩场。冻结归档或独立环境预览不能代替可玩内容恢复。先在 `game/` 中保留完整兼容模块并跑原功能/连续路线，再渐进拆分；不得用较早的模块化版本覆盖较新的已开发功能。
-- Whalebelly 恢复入口为 `content/whalebelly/main.tscn`，运行模块在 `src/campaign/`；原模块化入口仍为 `src/main/main.tscn`。资源与制作源清单见 `docs/whalebelly-game-recovery.md`，V6 进度由 `CampaignSaveBridge` 隔离并只在目标不存在时导入。当前工作前再次核对 `project.godot`，不要沿用旧入口假设。
+- Whalebelly 恢复入口为 `content/whalebelly/main.tscn`，运行模块在 `src/campaign/`；原模块化入口已移至归档分支，历史路径为 `src/main/main.tscn`。资源与制作源清单见 `docs/whalebelly-game-recovery.md`，V6 进度由 `CampaignSaveBridge` 隔离并只在目标不存在时导入。当前工作前再次核对 `project.godot`，不要沿用旧入口假设。
 - 运行路径迁移同时检查动态拼接的资源名、原有参数和中文字体。Web 无系统中文字体时，Label 必须显式使用嵌入字体或继承已配置的 Theme；本机可读不证明 Web 可读。增量 Web 导出应刷新压缩文件哈希对应的 HTML 加载器。
 - 用户要求校验产物与视频不入库时，测试源码和简短结论可保留，生成的截图、JSON、日志、录像及历史导出结果仅存本地；源素材路径/哈希清单用于溯源，不混入测试结果。
 
@@ -63,3 +62,13 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 涉及场景制作、参考图还原与环境动件时，默认配合[场景与环境动态制作](../scene-environment-motion/SKILL.md)主动识别和制作。本Skill继续负责正式工程路径、玩法、测试和发布；不重复建立生产流程。
 
 - 基础跳跃表现应按真实运动阶段选择已有位图帧，避免把固定时长的起跳/落地整段直接播放到空中。落地覆盖必须可被移动、跳跃和战斗打断；独立跑步适配器同时核对逻辑动画态与实际显示态。回归入口为game/tests/whalebelly/locomotion_visual.gd，覆盖真实主场景输入、姿态与控制响应。
+
+- 新资源引用要覆盖动态拼接路径；字体必须嵌入并检查中文覆盖。本机正常不证明Web正常。
+- `game/build/` 要有 `.gdignore`，导出排除测试/工具/证据；Git忽略不等于Godot不会打包。
+- Web模板缺失时安装固定版本的官方单线程模板，不降级引擎。Chromium缺失可用 `CHROME_PATH` 或已安装Chrome，不把工具缺失算玩法失败。
+- Pages检出只展开 `/godot/`、根入口和 `.nojekyll`，使用 `blob:none` 保留其余版本的Git树。Git2.32需要先 `sparse-checkout init --no-cone`，再 `set` 路径；不要把 `--no-cone` 传给旧版 `set`。拉取后的合并用 `--no-stat`，避免统计差异时触发无关美术大文件的懒下载。
+- 并发Pages发布导致非快进拒绝时，保留本地发布提交，重新fetch远端并正常merge（`--no-stat`），检查 `/godot/` 外与远端一致后普通push；不强推，也不为重试重复导出。真实内容冲突先检查归属，再处理。
+- Web大包启动等待只读状态就绪，使用明确超时；不以 `networkidle` 超时判存档损坏。按键后等待状态条件，不做同一帧瞬时判定。
+- 场景、参考图与环境动态继续配合[场景环境Skill](../scene-environment-motion/SKILL.md)，本Skill负责正式工程接入、测试和发布。
+
+- 跨分支合并归档变更时，除静态引用外还要实跑所有房间：本地Chapter环境依赖旧目录中的EnvironmentBubbleEmitter及动态拼接的鱼群路径。保留在用共享组件，并改接当前whalebelly素材路径，不能以归档目录为由删除仍被使用的依赖。
