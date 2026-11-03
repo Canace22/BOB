@@ -63,6 +63,8 @@ export function buildArtPreview({ root = repository, output = previewOutput, sou
   // Validate the entire input before replacing a previous local build.
   if (existsSync(output)) rmSync(output, { recursive: true });
   mkdirSync(output);
+  // Preserve the exported bytes and serve real images even with global Git LFS settings.
+  writeFileSync(path.join(output, '.gitattributes'), '* -text -filter\n');
   for (const name of uiFiles) {
     let content = readFileSync(path.join(root, 'assets/manager', name), 'utf8');
     if (name.endsWith('.html')) content = content.replace('<html lang="zh-CN">', '<html lang="zh-CN" data-mode="preview">');

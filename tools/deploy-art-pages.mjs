@@ -35,7 +35,7 @@ try {
     writeFileSync(path.join(staging, '.nojekyll'), '');
     for (const key of ['user.name', 'user.email']) run(['config', key, read(['config', key])], staging);
     run(['add', '--', 'art', '.nojekyll'], staging);
-    const changed = read(['diff', '--cached', '--name-only'], staging).split('\n').filter(Boolean);
+    const changed = read(['diff', '--cached', '--name-only', '-z'], staging).split('\0').filter(Boolean);
     if (changed.some(file => file !== '.nojekyll' && !file.startsWith('art/'))) throw new Error('Changes outside art publication.');
     if (changed.length) run(['commit', '-m', `发布美术资源预览 ${source.slice(0, 7)}`], staging);
     run(['push', remote, 'HEAD:gh-pages'], staging);
