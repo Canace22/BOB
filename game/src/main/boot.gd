@@ -12,5 +12,5 @@ func _ready() -> void:
 	if OS.has_feature("web"):
 		chapters = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).get('chapters') === '1' || location.pathname.includes('/godot-chapters/')"))
 	if chapters:
-		path = "res://src/chapters/chapter_run.tscn"
+		path = "res://src/chapters/chapter_flow.tscn"
 	add_child((load(path) as PackedScene).instantiate())

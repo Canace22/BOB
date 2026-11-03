@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func snapshot() -> Dictionary:
 	var p := arena.player
-	return {"room": "prototype.crab", "stage": arena.stage, "paused": get_tree().paused,
+	return {"room": "chapter.mother" if arena is ChapterMotherBattle else "prototype.crab", "stage": arena.stage, "paused": get_tree().paused,
 		"hp": GameState.hp, "max_hp": arena.player.health.maximum,
 		"energy": GameState.energy, "time": arena.battle_time,
 		"skills": arena.skills.snapshot(),

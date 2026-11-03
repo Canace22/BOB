@@ -18,6 +18,12 @@ func _ready() -> void:
 func _snapshot(_arguments: Array) -> void:
 	var enemies: Array[Dictionary] = []
 	for node in get_tree().get_nodes_in_group("enemy"):
+		if node is CrabPrototype:
+			var mother := (node as CrabPrototype).snapshot()
+			mother["boss"] = true
+			mother["state"] = "dead" if GameState.has_flag("chapter.mother_victory") else mother.state
+			enemies.append(mother)
+			continue
 		var enemy := node as EnemyBase
 		var entry := {"x": enemy.position.x, "y": enemy.position.y, "boss": enemy.boss, "hp": enemy.health.current, "state": enemy.state, "timer": enemy.timer, "kind": enemy.kind, "facing": enemy.facing}
 		if enemy is BurdenGuard:
@@ -39,5 +45,7 @@ func _snapshot(_arguments: Array) -> void:
 			"floor_ahead": not player.get_world_2d().direct_space_state.intersect_ray(ray).is_empty()},
 		"enemies": enemies,
 	}
+	if get_parent() is ChapterRun and (get_parent() as ChapterRun).skills != null:
+		state["skills"] = (get_parent() as ChapterRun).skills.snapshot()
 	var window := JavaScriptBridge.get_interface("window")
 	window.bob_state_json = JSON.stringify(state)

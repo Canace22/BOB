@@ -1,6 +1,6 @@
 class_name TrainingSkills
 extends Node
-## Training-only ranged attack and melee guard. Mainline never instantiates this node.
+## Ranged attack and melee guard shared by training and the connected chapter route.
 
 const PROJECTILE := preload("res://src/prototype/resonance_projectile.tscn")
 const CHARGE_TIME := 0.52

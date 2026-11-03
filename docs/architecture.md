@@ -120,10 +120,14 @@ Godot 命令会校验引擎版本，并把日志里的脚本错误和 `ERROR:` �
 
 ## 章节试玩
 
-`?chapters=1`、`/godot-chapters/` 或原生 `--chapters` 加载 `ChapterRun`。四个房间为 `content/rooms/chapters/N01-A` 至 `N02-B`，通过 WorldGraph 注册。复用 Room、Player 与战斗组件，场景和敌人使用专门制作的章节位图；章节脚本位于 `src/chapters/`。
+`?chapters=1`、`/godot-chapters/` 或原生 `--chapters` 加载 `ChapterFlow`。四个房间为 `content/rooms/chapters/N01-A` 至 `N02-B`，通过 WorldGraph 注册。流程管理器在章节探索 `ChapterRun` 与母蟹战 `ChapterMotherBattle` 之间切换；前一个场景完整退出、恢复外层 GameState 后才进入下一个，避免两个玩家、碰撞世界、声音或输入监听并存。
 
-`BurdenGuard` 管理追近、转身、出招与退让；`GuardFrames` 从 JSON 读取独立姿势和时长，动画与伤害窗口使用同一游戏时钟。`GuardArmor` 根据命中方向和收招状态处理壳缘，挡住的攻击不计成功连招。`ChapterCamera` 使用本章节竞技场范围。`ChapterRescue` 组合四个老守护者支撑姿势与住巢位移，演出后才打开暂停对白；这不是完整逐帧救援短片。
+`ChapterMotherBattle` 复用原 `crab_arena.tscn` 和 `CrabArena`，只定制自动开战、胜利保存与返回章节；三阶段 AI、原动作、场景、护盾、远程、顿帧和反馈均使用原实现。`ChapterBattleUI` 将胜利按钮改为继续救巢，关闭训练专用冲刺开关。胜利以原有接地站姿留场，不播放淡出死亡；回章节保持非敌对母蟹。旧 `BurdenGuard` 及素材保留为制作历史，章节运行房间不再实例化。
+
+探索也实例化 `TrainingSkills`，沿用原战斗操作与护盾；章节最大生命为 6，`GameState.max_hp` 是运行上下文，退出恢复主线的 4，不改存档格式。换房清空临时弹体。`ChapterRescue` 的四个支撑姿势与住巢位移继续用于战后救巢。
 
 进入前保存完整 GameState 上下文，改用 `user://chapters-v1.json`；退出恢复旧路径、进度与运行状态。首次无有效章节存档时从 N01-A 开始，重新开始只清本章节进度。SaveService 格式仍为 v1，新增稳定房间 ID，不迁移旧主线档。叙事走 EventBus，阅读时暂停世界，关闭最后一页才记录完成标记。
+
+封锁口挑战后先保存 N02-B 营地，战斗本身仍关闭全局自动存档；胜利直接写入同一章节路径的 `chapter.guard` 与 `chapter.mother_victory`，写成功才能继续。旧版有 guard/complete 而无 mother_victory 的记录只撤回这两项，保留收集与机关。未救巢的胜利存档返回住巢旁，已完成存档正常回营地，不重复开战。
 
 发布使用 `node tools/deploy-pages.mjs --chapters`，只合并 `godot-chapters/`，不更新根入口。压缩包缓存独立为 `bob-chapters-downloads-v1`。真实键盘验证使用 `game/tests/web_chapters.mjs`；本地服务可设置 PORT=4193，GAME_URL 指定带 chapters=1 的地址。

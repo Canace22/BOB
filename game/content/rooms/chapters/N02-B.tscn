@@ -20,9 +20,7 @@
 
 [ext_resource type="Texture2D" path="res://art/chapters/world/arch.png" id="r9"]
 
-[ext_resource type="PackedScene" path="res://src/chapters/chapter_guard.tscn" id="r10"]
 
-[ext_resource type="Script" path="res://src/chapters/chapter_arena.gd" id="r11"]
 
 [ext_resource type="Texture2D" path="res://art/chapters/world/pier.png" id="r12"]
 
@@ -229,26 +227,11 @@ position = Vector2(-85, -140)
 text = "E 穿过通路"
 script = ExtResource("r4")
 
-[node name="Enemy0" parent="Gameplay" instance=ExtResource("r10")]
-position = Vector2(1200, 799)
-victory_flag = "chapter.guard"
-
-[node name="Arena" type="Node2D" parent="Gameplay"]
-script = ExtResource("r11")
-victory_flag = "chapter.guard"
-trigger_x = 540
-limits = Vector2(440, 1890)
-
-[node name="Curtain" type="Sprite2D" parent="Gameplay/Arena"]
-texture = ExtResource("r12")
-position = Vector2(430, 650)
-scale = Vector2(0.72, 0.72)
-
 [node name="Challenge" type="Node2D" parent="Gameplay"]
 script = ExtResource("r13")
 position = Vector2(535, 800)
-title = "负壳守卫"
-pages = Array[String](["“下层封闭。来客，返回须庭。”\n重壳压在通路中央，两条扣带绷得笔直。", "壳缘会挡住正面攻击。\n看它抬钳或压壳，避开出招；绕到扣带一侧，或等收招后反击。"])
+title = "封路的搬壳母蟹"
+pages = Array[String](["“下层封闭。来客，返回须庭。”\n巨贝壳挡在通路中央，母蟹张开双钳。", "它护壳时难以撼动，收钳后才有破绽。\n跳过低扫、后退躲下砸；J 连击、K 重击，U 蓄满松开发射。护盾能挡下一次攻击。"])
 flag_id = "chapter.challenge"
 prerequisites = Array[String]([])
 automatic = true
@@ -268,7 +251,7 @@ script = ExtResource("r4")
 script = ExtResource("r14")
 position = Vector2(2020, 800)
 title = "守住路的人"
-pages = Array[String](["老守护者把住巢托回稳台，才回头接受来客的问候。\n“要找歌声，就沿胃室的供养路走。但先看清楚，路上住着谁。”", "负壳守卫仍活着。它低下钳子，重新收拢松开的扣带。\n第一、二章试玩结束。可以返回寻找两处回声，或按 Esc 重新开始。"])
+pages = Array[String](["老守护者把住巢托回稳台，才回头接受来客的问候。\n“要找歌声，就沿胃室的供养路走。但先看清楚，路上住着谁。”", "搬壳母蟹仍活着。它低下钳子，退到通路一旁。\n第一、二章试玩结束。可以返回寻找两处回声，或按 Esc 重新开始。"])
 flag_id = "chapter.complete"
 prerequisites = Array[String](["chapter.guard"])
 automatic = false

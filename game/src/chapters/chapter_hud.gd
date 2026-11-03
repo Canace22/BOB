@@ -3,7 +3,7 @@ extends GameHud
 
 
 func refresh() -> void:
-	$Top/Stats.text = "生命 %d / 4    蓄振 %d / 4    回声 %d / 2" % [GameState.hp, GameState.energy, int(GameState.has_flag("chapter.echo.1")) + int(GameState.has_flag("chapter.echo.2"))]
+	$Top/Stats.text = "生命 %d / 6    蓄振 %d / 4    回声 %d / 2" % [GameState.hp, GameState.energy, int(GameState.has_flag("chapter.echo.1")) + int(GameState.has_flag("chapter.echo.2"))]
 	$Top/Room.text = WorldGraph.ROOMS.get(GameState.current_room, "鲸落万物生 · 两章试玩")
 	var goal: String = {"N01-A": "越过滤缝 · 须根高处传来短鸣", "N01-B": "借高低路分开食腐甲 · 找到补巢者", "N02-A": "沿膜褶下行 · 放下短桥便于返回", "N02-B": "在菌灯旁休息 · 前往封锁口"}.get(GameState.current_room, "")
 	if GameState.has_flag("chapter.guard"):
@@ -11,12 +11,16 @@ func refresh() -> void:
 	if GameState.has_flag("chapter.complete"):
 		goal = "两章试玩完成 · 可返回找回声，Esc 可重新开始"
 	$Top/Goal.text = goal
-	$Controls.text = "A/D 移动 · Space 跳跃（长按更高）· J 连击 · K 重击 · F 调息回血 · E 交互 · Tab 地图 · Esc 暂停"
+	$Controls.text = "A/D 移动 · Space 跳跃 · J 连击 · K 重击 · U 蓄满松开发射 · F 回血 · E 交互 · Tab 地图 · Esc 暂停"
 
 
 func _process(delta: float) -> void:
 	remaining = maxf(0, remaining - delta)
 	$Message.visible = remaining > 0
+	var journey := get_parent() as ChapterRun
+	if journey != null and journey.skills != null:
+		var shield := "护盾就绪" if journey.player.hurtbox.guard > 0 else "护盾 %d / 6" % journey.skills.shield_charge
+		$Top/Stats.text = "生命 %d / 6    蓄振 %d / 4    回声 %d / 2    %s" % [GameState.hp, GameState.energy, int(GameState.has_flag("chapter.echo.1")) + int(GameState.has_flag("chapter.echo.2")), shield]
 	var guards := get_tree().get_nodes_in_group("chapter_guard")
 	$Boss.visible = GameState.arena_active and not guards.is_empty()
 	if $Boss.visible:

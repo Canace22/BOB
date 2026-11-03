@@ -14,6 +14,7 @@ var current_room := ""
 var abilities: Array[String] = []
 var flags: Array[String] = []
 var hp := MAX_HP
+var max_hp := MAX_HP
 var energy := MAX_ENERGY
 var arena_active := false
 
@@ -63,7 +64,7 @@ func rest_at(room_id: String) -> void:
 
 
 func restore() -> void:
-	hp = MAX_HP
+	hp = max_hp
 	energy = MAX_ENERGY
 	EventBus.stats_changed.emit()
 

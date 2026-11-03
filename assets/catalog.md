@@ -9,7 +9,7 @@
 
 ## V5.2 完整静态资源库
 
-当前章节重制资源：[负壳守卫 40 个姿势](source/chapter-guard-v2/README.md)与[须庭、折井和居民 26 张位图](source/chapter-world-v2/README.md)。独立 `/godot-chapters/` 使用；台账登记为已接入、待用户视觉评审。工作台工程、实际导出、提示词及局限随制作源保存。
+章节重制资源：[负壳守卫 40 个姿势](source/chapter-guard-v2/README.md)与[须庭、折井和居民 26 张位图](source/chapter-world-v2/README.md)。2026-11-03 按用户要求接入原母蟹战，40 个守卫姿势保留为历史候选、不再用于章节路线；环境和居民继续使用。工作台工程、实际导出、提示词及局限随制作源保存。
 
 `whalefall-v5-2-complete`：2026-10-27，新增 180 张，连同首批 12 张共 192 张独立静态 PNG；105 个需求家族与 36 房间需求映射记录在[完整清单](source/whalefall-v5-2-complete/coverage.json)。目录和当前状态以 [catalog.json](catalog.json) 为准。
 
