@@ -92,6 +92,8 @@ var state: String = "idle"
 var state_time: float = 0.0
 var state_duration: float = 0.0
 var invulnerable: float = 0.0
+# Damage feedback is independent of jump/dash/respawn protection.
+var damage_flash_left: float = 0.0
 var armor: float = 0.0
 var hitstop: float = 0.0
 var coyote: float = 0.0
@@ -236,6 +238,7 @@ func _physics_process(dt: float) -> void:
 		return
 	for key in cooldowns: cooldowns[key] = maxf(0,cooldowns[key]-dt)
 	invulnerable = maxf(0,invulnerable-dt)
+	damage_flash_left = maxf(0,damage_flash_left-dt)
 	armor = maxf(0,armor-dt)
 	wall_lock = maxf(0,wall_lock-dt)
 	jump_buffer = maxf(0,jump_buffer-dt)
@@ -280,7 +283,7 @@ func _physics_process(dt: float) -> void:
 	move_and_slide()
 	if position.y > world_bounds.end.y+100: take_damage(max_health,Vector2.ZERO,true)
 	$Visual.scale.x = visual_scale*facing
-	body.material.set_shader_parameter("flash",1.0 if invulnerable>0 and int(invulnerable*30)%2==0 else 0.0)
+	body.material.set_shader_parameter("flash",1.0 if damage_flash_left>0 and int(damage_flash_left*30)%2==0 else 0.0)
 	if state_duration <= 0:state=locomotion_animation()
 	_choose_animation(state)
 	var rate := (maxf(.3,absf(velocity.x)*anim.get_animation("game/run").length/run_cycle_distance) if state=="run" else 1.0)*animation_fps/12.0
@@ -458,6 +461,7 @@ func take_damage(amount: int=15,source: Vector2=Vector2.ZERO,force: bool=false) 
 	health=maxi(0,health-amount)
 	soul=maxi(0,soul-hurt_soul_loss)
 	invulnerable=hurt_invulnerability
+	damage_flash_left=hurt_invulnerability
 	stats_changed.emit(health,soul)
 	damaged.emit()
 	if health<=0:
@@ -488,5 +492,7 @@ func respawn() -> void:
 	pending_action=""
 	dead_signal_sent=false
 	invulnerable=.5
+	damage_flash_left=0.0
+	body.material.set_shader_parameter("flash",0.0)
 	for key in cooldowns: cooldowns[key]=0.0
 	stats_changed.emit(health,soul)
