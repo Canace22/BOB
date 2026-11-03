@@ -1,0 +1,1654 @@
+{
+  "schemaVersion": 1,
+  "phase": "all-static-before-animation",
+  "pixelsPerUnit": 128,
+  "coordinateContract": "atBasePixel 是原始基底画布局部坐标，先乘base world尺度，再把子件anchorPixel对到此点；子件用自己的world尺度。缺anchorPixel时使用manifest pivot。rotationDeg绕anchor旋转，z从小到大绘制。 所有world尺寸以catalog的bbox轴长计算。baseBrightness为程序绘制亮度，inheritBaseRotation=false允许邻近NPC不随壳托转动。",
+  "formulas": {
+    "assetScale": "world.units * pixelsPerUnit / bbox-axis-length",
+    "childPosition": "baseOrigin + (atBasePixel - basePivot) * baseScale",
+    "childDraw": "translate(childPosition); rotate(rotationDeg); scale(childScale); drawImage(-anchorPixel.x,-anchorPixel.y)"
+  },
+  "componentRecipes": [
+    {
+      "id": "pressure-valve",
+      "name": "三档压力阀",
+      "baseAssetId": "pressure-valve-base",
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "states": [
+        {
+          "id": "low",
+          "parts": [
+            {
+              "assetId": "ui-valve-three-ticks",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.65
+              }
+            },
+            {
+              "assetId": "pressure-valve-handle",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": -50,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                684,
+                906
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid",
+          "parts": [
+            {
+              "assetId": "ui-valve-three-ticks",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.65
+              }
+            },
+            {
+              "assetId": "pressure-valve-handle",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": 0,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                684,
+                906
+              ]
+            }
+          ]
+        },
+        {
+          "id": "high",
+          "parts": [
+            {
+              "assetId": "ui-valve-three-ticks",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.65
+              }
+            },
+            {
+              "assetId": "pressure-valve-handle",
+              "atBasePixel": [
+                735,
+                555
+              ],
+              "rotationDeg": 50,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                684,
+                906
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": "天然孔洞不是刻线；3档由ui-valve-three-ticks清楚表示，只有手柄旋转。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "bypass-valve",
+      "name": "血巢旁通阀",
+      "baseAssetId": "bypass-valve-base",
+      "coversRequirementIds": [
+        "settlement-valve"
+      ],
+      "states": [
+        {
+          "id": "idle",
+          "parts": [
+            {
+              "assetId": "bypass-valve-lever",
+              "atBasePixel": [
+                768,
+                251
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                760,
+                766
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pressed",
+          "parts": [
+            {
+              "assetId": "bypass-valve-lever",
+              "atBasePixel": [
+                768,
+                300
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                760,
+                766
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": "压盖沿固定轴下移49 base px；下一轮减慢25%为游戏规则。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "mass-seat",
+      "name": "质量座空载/载壳",
+      "baseAssetId": "shell-mass-seat",
+      "coversRequirementIds": [
+        "shell-mass-seat"
+      ],
+      "states": [
+        {
+          "id": "empty",
+          "parts": []
+        },
+        {
+          "id": "loaded",
+          "parts": [
+            {
+              "assetId": "empty-shell",
+              "atBasePixel": [
+                831,
+                430
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ],
+      "notes": "质量漂移壳盘另为mass-drift-platform，移动距离由关卡规则决定。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "bone-travel-node",
+      "name": "骨音交通节点",
+      "baseAssetId": "bone-sound-node",
+      "coversRequirementIds": [
+        "bone-sound-node"
+      ],
+      "states": [
+        {
+          "id": "visited-unattuned",
+          "parts": []
+        },
+        {
+          "id": "attuned",
+          "parts": [
+            {
+              "assetId": "ui-progress-bone",
+              "atBasePixel": [
+                688,
+                549
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.33
+              }
+            }
+          ]
+        }
+      ],
+      "notes": "未发现不显示；6个交通节点复用此基底，旅行菜单是UI。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "progress-PBS",
+      "name": "三槽状态预览/同步",
+      "baseAssetId": "progress-three-slots",
+      "coversRequirementIds": [
+        "progress-three-slots"
+      ],
+      "states": [
+        {
+          "id": "missing",
+          "parts": []
+        },
+        {
+          "id": "partial",
+          "parts": [
+            {
+              "assetId": "ui-progress-pressure",
+              "atBasePixel": [
+                659,
+                338
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.36
+              }
+            },
+            {
+              "assetId": "ui-progress-bone",
+              "atBasePixel": [
+                655,
+                620
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.36
+              }
+            }
+          ]
+        },
+        {
+          "id": "synchronized",
+          "parts": [
+            {
+              "assetId": "ui-progress-pressure",
+              "atBasePixel": [
+                659,
+                338
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.36
+              }
+            },
+            {
+              "assetId": "ui-progress-bone",
+              "atBasePixel": [
+                655,
+                620
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.36
+              }
+            },
+            {
+              "assetId": "ui-progress-silence",
+              "atBasePixel": [
+                657,
+                909
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.36
+              }
+            }
+          ]
+        }
+      ],
+      "notes": "三个槽分别绑定P/B/S布尔状态，partial仅为示例，不限制8种逻辑组合。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "blowhole-latch",
+      "name": "喷气孔闩",
+      "baseAssetId": "blowhole-latch-closed",
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "states": [
+        {
+          "id": "near-locked",
+          "parts": []
+        },
+        {
+          "id": "far-operable",
+          "parts": [
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                323,
+                825
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.38
+              }
+            }
+          ]
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "blowhole-latch-open"
+        }
+      ],
+      "notes": "近侧没有可操作红结；耳门近侧两环连同现有环的固定短绳为锁环，交互禁用。开闭为静态换图，按每态注册表定位，不当动画帧。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "gut-latch",
+      "name": "胃侧红结闩",
+      "baseAssetId": "gut-latch-closed",
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "states": [
+        {
+          "id": "near-locked",
+          "parts": []
+        },
+        {
+          "id": "far-operable",
+          "parts": [
+            {
+              "assetId": "red-tether-knot",
+              "atBasePixel": [
+                514,
+                770
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                780,
+                547
+              ],
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.65
+              }
+            }
+          ]
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "gut-latch-open"
+        }
+      ],
+      "notes": "近侧没有可操作红结；耳门近侧两环连同现有环的固定短绳为锁环，交互禁用。开闭为静态换图，按每态注册表定位，不当动画帧。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "ear-latch",
+      "name": "耳海双环闩",
+      "baseAssetId": "ear-latch-closed",
+      "coversRequirementIds": [
+        "permanent-latches"
+      ],
+      "states": [
+        {
+          "id": "near-locked",
+          "parts": [
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                482,
+                690
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            },
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                698,
+                690
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "id": "far-operable",
+          "parts": [
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                482,
+                690
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            },
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                698,
+                690
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            },
+            {
+              "assetId": "red-tether-knot",
+              "atBasePixel": [
+                592,
+                735
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                780,
+                547
+              ],
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.35
+              }
+            }
+          ]
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "ear-latch-open"
+        }
+      ],
+      "notes": "近侧没有可操作红结；耳门近侧两环连同现有环的固定短绳为锁环，交互禁用。开闭为静态换图，按每态注册表定位，不当动画帧。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "anchor-pull-gate",
+      "name": "固定红索组合拉闸",
+      "baseAssetId": "anchor-pull-gate-closed",
+      "coversRequirementIds": [
+        "anchor-pull-gate"
+      ],
+      "states": [
+        {
+          "id": "before-P",
+          "parts": []
+        },
+        {
+          "id": "anchor-exposed",
+          "parts": [
+            {
+              "assetId": "bone-anchor-ring",
+              "atBasePixel": [
+                569,
+                135
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "id": "permanently-open",
+          "parts": [],
+          "baseAssetId": "anchor-pull-gate-open"
+        }
+      ],
+      "notes": "P降强流后显示锚环；水流是独立FX，门永久打开后不再依赖绳索。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "release-sluice",
+      "name": "释放导流闸",
+      "baseAssetId": "release-sluice-closed",
+      "coversRequirementIds": [
+        "release-sluice"
+      ],
+      "states": [
+        {
+          "id": "closed",
+          "parts": []
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "release-sluice-open"
+        }
+      ],
+      "notes": "只制作必要静态外观。关闭倒计时、进战、授能和过渡动画后置。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "soft-membrane-fissure",
+      "name": "双瓣短柔膜缝",
+      "baseAssetId": "soft-membrane-fissure-closed",
+      "coversRequirementIds": [
+        "soft-membrane-fissure"
+      ],
+      "states": [
+        {
+          "id": "closed",
+          "parts": []
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "soft-membrane-fissure-open"
+        }
+      ],
+      "notes": "只制作必要静态外观。关闭倒计时、进战、授能和过渡动画后置。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "arena-soft-curtain",
+      "name": "战斗软帘",
+      "baseAssetId": "arena-soft-curtain-closed",
+      "coversRequirementIds": [
+        "arena-soft-curtain"
+      ],
+      "states": [
+        {
+          "id": "closed",
+          "parts": []
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "arena-soft-curtain-open"
+        }
+      ],
+      "notes": "只制作必要静态外观。关闭倒计时、进战、授能和过渡动画后置。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "dash-grant-cocoon",
+      "name": "A1授能膜茧",
+      "baseAssetId": "dash-grant-cocoon-closed",
+      "coversRequirementIds": [
+        "dash-grant-cocoon"
+      ],
+      "states": [
+        {
+          "id": "closed",
+          "parts": []
+        },
+        {
+          "id": "open",
+          "parts": [],
+          "baseAssetId": "dash-grant-cocoon-open"
+        }
+      ],
+      "notes": "只制作必要静态外观。关闭倒计时、进战、授能和过渡动画后置。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "calcium-pearl",
+      "name": "完整带环钙珠",
+      "baseAssetId": "ringed-calcium-pearl",
+      "coversRequirementIds": [
+        "ringed-calcium-pearl"
+      ],
+      "states": [
+        {
+          "id": "intact-ringed",
+          "parts": [
+            {
+              "assetId": "fx-pearl-rings",
+              "atBasePixel": [
+                663.5,
+                609
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.65
+              }
+            }
+          ]
+        }
+      ],
+      "notes": "实体完整、外环独立；训练珠伤害为0，敌方珠伤害由数据决定。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "release-larvae",
+      "name": "释放碗与幼体",
+      "baseAssetId": "release-bowl",
+      "coversRequirementIds": [
+        "release-sluice"
+      ],
+      "states": [
+        {
+          "id": "waiting",
+          "parts": [
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                650,
+                447
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.35
+              }
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                900,
+                410
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.35
+              }
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                1150,
+                447
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.35
+              }
+            }
+          ]
+        },
+        {
+          "id": "released-empty",
+          "parts": []
+        }
+      ],
+      "notes": "幼体沿路径释放的动作后置；不将群体烘焙到碗里。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "reward-life",
+      "name": "三腔生命碎片固定奖励",
+      "baseAssetId": "reward-socket-life",
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "states": [
+        {
+          "id": "available",
+          "parts": [
+            {
+              "assetId": "life-fragment",
+              "atBasePixel": [
+                703,
+                459
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                655.5,
+                1133
+              ]
+            }
+          ]
+        },
+        {
+          "id": "collected-empty",
+          "parts": []
+        }
+      ],
+      "notes": "module示例可换六模块中任一个；生命碎片身份始终三腔，不当新模块。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "reward-module",
+      "name": "模块固定奖励",
+      "baseAssetId": "reward-socket-module",
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "states": [
+        {
+          "id": "available",
+          "parts": [
+            {
+              "assetId": "module-round-chamber",
+              "atBasePixel": [
+                701,
+                477
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "collected-empty",
+          "parts": []
+        }
+      ],
+      "notes": "module示例可换六模块中任一个；生命碎片身份始终三腔，不当新模块。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "reward-memory",
+      "name": "迁徙记忆固定奖励",
+      "baseAssetId": "reward-socket-memory",
+      "coversRequirementIds": [
+        "reward-socket"
+      ],
+      "states": [
+        {
+          "id": "available",
+          "parts": [
+            {
+              "assetId": "migration-memory",
+              "atBasePixel": [
+                702,
+                462
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "collected-empty",
+          "parts": []
+        }
+      ],
+      "notes": "module示例可换六模块中任一个；生命碎片身份始终三腔，不当新模块。",
+      "status": "static-composition-candidate"
+    }
+  ],
+  "habitatRecipes": [
+    {
+      "id": "H1",
+      "name": "净流壳窝",
+      "baseAssetId": "habitat-shell-nest",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": []
+        },
+        {
+          "id": "after",
+          "parts": [
+            {
+              "assetId": "empty-shell",
+              "atBasePixel": [
+                887,
+                492
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                1100,
+                415
+              ],
+              "rotationDeg": 0,
+              "z": 2,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.28
+              }
+            }
+          ]
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R1-05",
+        "quote": "安放空壳，幼体停泊。"
+      },
+      "notes": "空壳独立；幼体静态停泊示意，游动动画后置。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "H2",
+      "name": "肺膜育床",
+      "baseAssetId": "nursery-shell-support",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": [
+            {
+              "assetId": "nursery-sac",
+              "atBasePixel": [
+                -480,
+                814
+              ],
+              "rotationDeg": 0,
+              "z": -1,
+              "opacity": 1,
+              "inheritBaseRotation": false
+            },
+            {
+              "assetId": "nursery-valve-leaf",
+              "atBasePixel": [
+                660,
+                605
+              ],
+              "rotationDeg": 12,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                523,
+                1336
+              ]
+            },
+            {
+              "assetId": "nursery-valve-leaf",
+              "atBasePixel": [
+                880,
+                605
+              ],
+              "rotationDeg": -12,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                523,
+                1336
+              ]
+            }
+          ],
+          "baseRotationDeg": -8
+        },
+        {
+          "id": "after",
+          "parts": [
+            {
+              "assetId": "nursery-sac",
+              "atBasePixel": [
+                -480,
+                814
+              ],
+              "rotationDeg": 0,
+              "z": -1,
+              "opacity": 1,
+              "inheritBaseRotation": false
+            },
+            {
+              "assetId": "nursery-valve-leaf",
+              "atBasePixel": [
+                660,
+                605
+              ],
+              "rotationDeg": -25,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                523,
+                1336
+              ]
+            },
+            {
+              "assetId": "nursery-valve-leaf",
+              "atBasePixel": [
+                880,
+                605
+              ],
+              "rotationDeg": 25,
+              "z": 1,
+              "opacity": 1,
+              "anchorPixel": [
+                523,
+                1336
+              ]
+            }
+          ]
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R2-s17",
+        "quote": "调平补压床旁壳托，孔瓣恢复规律开合。"
+      },
+      "notes": "育囊在壳托旁，不把高2.2U育囊塞入1.7U壳托；静态开瓣样例不等于呼吸动画。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "H3",
+      "name": "胃枢菌圃",
+      "baseAssetId": "habitat-fungus-bed",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": [
+            {
+              "assetId": "habitat-shade",
+              "atBasePixel": [
+                400,
+                610
+              ],
+              "rotationDeg": 15,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                181,
+                782
+              ]
+            }
+          ],
+          "baseBrightness": 0.32
+        },
+        {
+          "id": "after",
+          "parts": [
+            {
+              "assetId": "habitat-shade",
+              "atBasePixel": [
+                400,
+                610
+              ],
+              "rotationDeg": -100,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                181,
+                782
+              ]
+            },
+            {
+              "assetId": "fx-fungus-glow",
+              "atBasePixel": [
+                887,
+                475
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 0.28,
+              "worldOverride": {
+                "axis": "width",
+                "units": 1.25
+              }
+            }
+          ]
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R3-s17",
+        "quote": "旋灯罩暗面，幼菌亮起，主路不变。"
+      },
+      "notes": "菌芽属于基底；亮起由独立光层表示，不新增生物或掉落。 before状态使用brightness(0.32)压低已画菌芽亮度；不烘焙新暗图。铰点接在床左侧。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "H4",
+      "name": "回游壳群",
+      "baseAssetId": "habitat-shell-nest",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": []
+        },
+        {
+          "id": "arranged",
+          "parts": [
+            {
+              "assetId": "empty-shell",
+              "atBasePixel": [
+                887,
+                492
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "after-boss",
+          "parts": [
+            {
+              "assetId": "empty-shell",
+              "atBasePixel": [
+                887,
+                492
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                1150,
+                410
+              ],
+              "rotationDeg": 0,
+              "z": 2,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.28
+              }
+            }
+          ]
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R3-06/R3-07",
+        "quote": "布置壳群后，母蟹胜利完成回游栖息地。"
+      },
+      "notes": "arranged不是完成；必须由母蟹胜利状态解锁after-boss；不强迫主路打可选母蟹。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "H5",
+      "name": "断脊红冠",
+      "baseAssetId": "red-crown-colony",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": [
+            {
+              "assetId": "empty-shell",
+              "atBasePixel": [
+                790,
+                550
+              ],
+              "rotationDeg": 0,
+              "z": 2,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 1.15
+              }
+            }
+          ]
+        },
+        {
+          "id": "after",
+          "parts": [],
+          "baseAssetId": "red-crown-colony-restored"
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R4-04",
+        "quote": "移走压住红冠的空壳，红冠舒展。"
+      },
+      "notes": "空壳以压住群落中上部示意，恢复后同根部注册；群落不作为敌人。",
+      "status": "static-composition-candidate"
+    },
+    {
+      "id": "H6",
+      "name": "尾下幼体槽",
+      "baseAssetId": "habitat-larva-trough",
+      "coversRequirementIds": [
+        "shared-habitat-beds"
+      ],
+      "states": [
+        {
+          "id": "before",
+          "parts": [
+            {
+              "assetId": "tail-flow-shutter",
+              "atBasePixel": [
+                1490,
+                475
+              ],
+              "rotationDeg": 180,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                365,
+                520
+              ]
+            }
+          ]
+        },
+        {
+          "id": "after",
+          "parts": [
+            {
+              "assetId": "tail-flow-shutter",
+              "atBasePixel": [
+                1490,
+                475
+              ],
+              "rotationDeg": -90,
+              "z": 2,
+              "opacity": 1,
+              "anchorPixel": [
+                365,
+                520
+              ]
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                710,
+                525
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                900,
+                500
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            },
+            {
+              "assetId": "sea-larva",
+              "atBasePixel": [
+                1090,
+                525
+              ],
+              "rotationDeg": 0,
+              "z": 1,
+              "opacity": 1,
+              "worldOverride": {
+                "axis": "width",
+                "units": 0.3
+              }
+            }
+          ]
+        }
+      ],
+      "sourceEvidence": {
+        "section": "R5-s17",
+        "quote": "尾根侧台旋开遮流瓣，幼体进入低速凹槽。"
+      },
+      "notes": "幼体、槽、遮流瓣分层；流水速度和幼体路径由程序设置。",
+      "status": "static-composition-candidate"
+    }
+  ],
+  "stateRegistration": {
+    "blowhole-latch": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "blowhole-latch-closed",
+          "canvas": [
+            1024,
+            1536
+          ],
+          "bbox": [
+            128,
+            44,
+            895,
+            1491
+          ],
+          "pivot": [
+            511.5,
+            1491
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        },
+        "open": {
+          "assetId": "blowhole-latch-open",
+          "canvas": [
+            1024,
+            1536
+          ],
+          "bbox": [
+            125,
+            35,
+            903,
+            1469
+          ],
+          "pivot": [
+            514.0,
+            1469
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        }
+      }
+    },
+    "gut-latch": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "gut-latch-closed",
+          "canvas": [
+            1024,
+            1536
+          ],
+          "bbox": [
+            134,
+            104,
+            905,
+            1423
+          ],
+          "pivot": [
+            519.5,
+            1423
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        },
+        "open": {
+          "assetId": "gut-latch-open",
+          "canvas": [
+            1024,
+            1536
+          ],
+          "bbox": [
+            107,
+            14,
+            934,
+            1433
+          ],
+          "pivot": [
+            520.5,
+            1433
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        }
+      }
+    },
+    "ear-latch": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "ear-latch-closed",
+          "canvas": [
+            1182,
+            1330
+          ],
+          "bbox": [
+            251,
+            94,
+            932,
+            1247
+          ],
+          "pivot": [
+            591.5,
+            1247
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        },
+        "open": {
+          "assetId": "ear-latch-open",
+          "canvas": [
+            1182,
+            1330
+          ],
+          "bbox": [
+            222,
+            28,
+            960,
+            1255
+          ],
+          "pivot": [
+            591.0,
+            1255
+          ],
+          "world": {
+            "axis": "height",
+            "units": 2.5
+          }
+        }
+      }
+    },
+    "anchor-pull-gate": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "anchor-pull-gate-closed",
+          "canvas": [
+            1138,
+            1382
+          ],
+          "bbox": [
+            204,
+            99,
+            935,
+            1287
+          ],
+          "pivot": [
+            569.5,
+            1287
+          ],
+          "world": {
+            "axis": "height",
+            "units": 3.0
+          }
+        },
+        "open": {
+          "assetId": "anchor-pull-gate-open",
+          "canvas": [
+            1137,
+            1383
+          ],
+          "bbox": [
+            200,
+            100,
+            929,
+            1287
+          ],
+          "pivot": [
+            564.5,
+            1287
+          ],
+          "world": {
+            "axis": "height",
+            "units": 3.0
+          }
+        }
+      }
+    },
+    "release-sluice": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "release-sluice-closed",
+          "canvas": [
+            1683,
+            935
+          ],
+          "bbox": [
+            57,
+            179,
+            1628,
+            759
+          ],
+          "pivot": [
+            842.5,
+            759
+          ],
+          "world": {
+            "axis": "width",
+            "units": 3.2
+          }
+        },
+        "open": {
+          "assetId": "release-sluice-open",
+          "canvas": [
+            1682,
+            935
+          ],
+          "bbox": [
+            57,
+            178,
+            1627,
+            760
+          ],
+          "pivot": [
+            842.0,
+            760
+          ],
+          "world": {
+            "axis": "width",
+            "units": 3.2
+          }
+        }
+      }
+    },
+    "soft-membrane-fissure": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "soft-membrane-fissure-closed",
+          "canvas": [
+            1890,
+            832
+          ],
+          "bbox": [
+            277,
+            179,
+            1614,
+            652
+          ],
+          "pivot": [
+            945.5,
+            652
+          ],
+          "world": {
+            "axis": "width",
+            "units": 1.5
+          }
+        },
+        "open": {
+          "assetId": "soft-membrane-fissure-open",
+          "canvas": [
+            1889,
+            832
+          ],
+          "bbox": [
+            275,
+            177,
+            1617,
+            651
+          ],
+          "pivot": [
+            946.0,
+            651
+          ],
+          "world": {
+            "axis": "width",
+            "units": 1.5
+          }
+        }
+      }
+    },
+    "arena-soft-curtain": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "arena-soft-curtain-closed",
+          "canvas": [
+            1012,
+            1554
+          ],
+          "bbox": [
+            11,
+            27,
+            1002,
+            1507
+          ],
+          "pivot": [
+            506,
+            27
+          ],
+          "world": {
+            "axis": "height",
+            "units": 3.0
+          }
+        },
+        "open": {
+          "assetId": "arena-soft-curtain-open",
+          "canvas": [
+            1011,
+            1555
+          ],
+          "bbox": [
+            10,
+            27,
+            1002,
+            1474
+          ],
+          "pivot": [
+            506,
+            27
+          ],
+          "world": {
+            "axis": "height",
+            "units": 3.0
+          }
+        }
+      }
+    },
+    "dash-grant-cocoon": {
+      "mode": "static-state-swap",
+      "note": "独立生成存在轻微轮廓重绘；逐态以注册点与统一尺寸确定性放置，不按相同原始像素坐标直接闪切。动画需后续拆层或专门帧制作。",
+      "states": {
+        "closed": {
+          "assetId": "dash-grant-cocoon-closed",
+          "canvas": [
+            1278,
+            1230
+          ],
+          "bbox": [
+            380,
+            246,
+            919,
+            1034
+          ],
+          "pivot": [
+            650,
+            1031
+          ],
+          "world": {
+            "axis": "height",
+            "units": 0.9
+          },
+          "pixelScaleRelativeToClosed": 1
+        },
+        "open": {
+          "assetId": "dash-grant-cocoon-open",
+          "canvas": [
+            1278,
+            1230
+          ],
+          "bbox": [
+            180,
+            107,
+            1087,
+            1111
+          ],
+          "pivot": [
+            649,
+            1109
+          ],
+          "world": {
+            "axis": "height",
+            "units": 0.9
+          },
+          "pixelScaleRelativeToClosed": 0.75
+        }
+      }
+    }
+  },
+  "acceptanceBoundary": "静态组合验证，不是动画、物理碰撞或用户美术验收。门框形状有轻微重绘，不冒充逐像素一致。",
+  "reuseNotes": [
+    "existing骨环内含固定短红绳，作为锁环时绳尾也固定，交互权限由状态限制。",
+    "所有亮度、计时、压力、水流、交通菜单与8种P/B/S组合均为程序行为，不增PNG。"
+  ]
+}

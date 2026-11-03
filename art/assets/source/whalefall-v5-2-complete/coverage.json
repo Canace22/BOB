@@ -1,0 +1,3497 @@
+{
+  "previews": [
+    {
+      "name": "R1 口腔裂隙",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r1.png"
+    },
+    {
+      "name": "R2 肺心膜域",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r2.png"
+    },
+    {
+      "name": "R3 胃肠褶域",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r3.png"
+    },
+    {
+      "name": "R4 椎旁骨域",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r4.png"
+    },
+    {
+      "name": "R5 头耳回声域",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r5-head.png"
+    },
+    {
+      "name": "R5 远尾归海段",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/r5-tail.png"
+    },
+    {
+      "name": "迁徙记忆鲸群投影",
+      "file": "assets/source/whalefall-v5-2-complete/review/region-assembly/migration-projection-assembly.png"
+    },
+    {
+      "name": "阀门、质量座与三槽状态",
+      "file": "assets/source/whalefall-v5-2-complete/review/components/mechanisms-composition-board.png"
+    },
+    {
+      "name": "门闩前后侧与开闭状态",
+      "file": "assets/source/whalefall-v5-2-complete/review/components/doors-composition-board.png"
+    },
+    {
+      "name": "奖励拾取前后与归海释放",
+      "file": "assets/source/whalefall-v5-2-complete/review/components/rewards-composition-board.png"
+    },
+    {
+      "name": "六处栖息地前后状态",
+      "file": "assets/source/whalefall-v5-2-complete/review/components/habitats-composition-board.png"
+    }
+  ],
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-27T06:12:22.212Z",
+  "phase": "static-first",
+  "note": "根据两份指定设计逐项盘点。静态文件、状态组合与后续动作分别登记；实际文件与审核状态以项目台账为准。",
+  "sources": [
+    "http://10.11.140.20:8765/simple/",
+    "http://10.11.140.20:8765/full/"
+  ],
+  "requirements": [
+    {
+      "id": "tide-picker",
+      "name": "拾潮者",
+      "group": "actors",
+      "states": [
+        "拾潮者右向基础姿态",
+        "拾潮者左向基础姿态"
+      ],
+      "outputIds": [
+        "tide-picker",
+        "tide-picker-left"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "all"
+      ],
+      "evidence": "移动、跳跃；短击：近身两段攻击；重鸣；调息；交互、灯罩。 动作原图：短击、重鸣、受击与重新出发的姿态；图板是动作设计，不是可运行动画。 贴流冲；浮膜；锚定；迎珠；敛膜潜隙。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "animation": [
+        "待机",
+        "移动",
+        "跳跃与落地",
+        "短击第1段",
+        "短击第2段",
+        "重鸣",
+        "调息",
+        "受击",
+        "重新出发",
+        "交互（开闩/交谈/调律）",
+        "灯罩开/关",
+        "贴流冲",
+        "浮膜展开、浮升、缓降与收起",
+        "固定环锚定、悬挂与脱环",
+        "迎珠",
+        "敛膜潜隙"
+      ],
+      "initialAuditNote": "当前只有右向待机 PNG。 独立部件拆分是根据动作和独立控制需要提出的制作分层，不声称原图已提供分层源文件。 左右朝向须保持解剖左腰灯与工具关系，不能直接镜像；具体方向/帧数/播放速率在动画制作规格中确定，源文未给帧数。",
+      "note": "左右基础静态形象已制作；手持物和腰灯按角色自身左右核对，动作帧另做。"
+    },
+    {
+      "id": "corpse-crab",
+      "name": "尸蟹",
+      "group": "actors",
+      "states": [
+        "尸蟹基础形象"
+      ],
+      "outputIds": [
+        "corpse-crab"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R1",
+        "R3"
+      ],
+      "evidence": "尸蟹：抬钳后低扫。 两端固定台内2.5U来回；举钳0.65秒后横扫1.6U，恢复0.7秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R1-s15"
+      ],
+      "animation": [
+        "待机/台内巡逻",
+        "举钳预告",
+        "低位横扫",
+        "露侧腹恢复"
+      ],
+      "initialAuditNote": "静态原型已有，E01 的预告/攻击/恢复图板不等于已交付连续动画。"
+    },
+    {
+      "id": "fat-sniffer",
+      "name": "嗅脂甲",
+      "group": "actors",
+      "states": [
+        "嗅脂甲基础形象"
+      ],
+      "outputIds": [
+        "fat-sniffer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R3"
+      ],
+      "evidence": "受灯光吸引，锁定方向后低冲。 未警觉追灯，收壳0.8秒后冲撞3U，恢复0.9秒。 精英嗅脂甲：两次冲撞间另给0.6秒亮足预告；每次恢复0.8秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R3-s15"
+      ],
+      "animation": [
+        "台内巡逻/追灯",
+        "收壳锁向预告",
+        "低位冲撞",
+        "冲撞后恢复",
+        "精英第二冲撞前亮足预告",
+        "精英第二冲撞及恢复"
+      ],
+      "initialAuditNote": "精英不是新的生物造型，不重复计为第10种普通敌人；复用模板但要补齐组合招状态。"
+    },
+    {
+      "id": "membrane-ray",
+      "name": "膜缘鳐",
+      "group": "actors",
+      "states": [
+        "膜缘鳐基础形象"
+      ],
+      "outputIds": [
+        "membrane-ray"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R2"
+      ],
+      "evidence": "收膜后沿固定高度横冲。 中层水道往返4U；收膜0.7秒锁当前高度，直冲后贴壁恢复0.8秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R2-s15"
+      ],
+      "animation": [
+        "水道往返",
+        "收膜锁高预告",
+        "固定高度横冲",
+        "贴壁恢复"
+      ],
+      "initialAuditNote": "详细册简称膜鳐，和膜缘鳐是同一敌人，不另建一只。"
+    },
+    {
+      "id": "blind-eel",
+      "name": "盲鳗（孔鳗变体）",
+      "group": "actors",
+      "states": [
+        "盲鳗（孔鳗变体）基础形象"
+      ],
+      "outputIds": [
+        "blind-eel"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R3"
+      ],
+      "evidence": "孔鳗共享动作模板（盲鳗／缝栖鳗未各画专图）。 孔口出现黏液与涟漪后伸头封路。 孔鳗：固定孔口，不追出本屏；鼓囊0.75秒后直线黏液，露头恢复0.8秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R3-s15"
+      ],
+      "animation": [
+        "藏于孔口",
+        "鼓囊/涟漪预告",
+        "探头与直线黏液攻击",
+        "露头恢复",
+        "缩回孔口"
+      ],
+      "initialAuditNote": "采用一个孔鳗基础模板、两个地区变体交付；E02 未分别画盲鳗和缝栖鳗专图。 简版强调伸头封路，详细版明确直线黏液攻击；制作时保留详细版攻击与简版探头轮廓，不将其擅自变为自由游泳敌人。"
+    },
+    {
+      "id": "slit-eel",
+      "name": "缝栖鳗（孔鳗变体）",
+      "group": "actors",
+      "states": [
+        "缝栖鳗（孔鳗变体）基础形象"
+      ],
+      "outputIds": [
+        "slit-eel"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R5"
+      ],
+      "evidence": "从软膜缝伸出，封住一条路线。 固定膜孔，两侧轮换；鼓膜0.8秒后探出，露头0.85秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R5-s15"
+      ],
+      "animation": [
+        "藏于柔膜孔",
+        "鼓膜预告",
+        "探出封路（两侧）",
+        "露头恢复",
+        "退回膜缝"
+      ],
+      "initialAuditNote": "与盲鳗共享 hole-eel 模板；需不同栖息附着及地区表现，不重复生成第三种“孔鳗”。"
+    },
+    {
+      "id": "resonant-clam",
+      "name": "鸣贝／吐珠鸣贝",
+      "group": "actors",
+      "states": [
+        "鸣贝／吐珠鸣贝基础形象"
+      ],
+      "outputIds": [
+        "resonant-clam"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R4"
+      ],
+      "evidence": "张合后吐出一颗钙珠。 固定平台附着；三圈波纹0.9秒后吐带环完整珠。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R4-s15"
+      ],
+      "animation": [
+        "附着闭合",
+        "张壳/三圈波纹预告",
+        "吐珠",
+        "露软缘与合壳恢复"
+      ],
+      "initialAuditNote": "迎珠使用完整带环钙珠，不是碎石雨。 普通鸣贝与悬脊鸣贝 Boss 分别登记；共享生物语言不等于同一套尺寸与状态素材。"
+    },
+    {
+      "id": "bone-clinger",
+      "name": "附骨甲",
+      "group": "actors",
+      "states": [
+        "附骨甲基础形象"
+      ],
+      "outputIds": [
+        "bone-clinger"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R4"
+      ],
+      "evidence": "收壳后按固定弧线扑向落点。 骨台内2U往返；收壳0.7秒跃扑落点，落地露足0.8秒。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R4-s15"
+      ],
+      "animation": [
+        "骨台巡逻",
+        "收壳预告",
+        "固定弧线跃扑",
+        "落地倒伏/露足恢复"
+      ],
+      "initialAuditNote": "落点预告属于该动作的配套效果，可由统一 VFX 条目管理，不能凭静态站姿视为完成。"
+    },
+    {
+      "id": "baleen-shrimp-swarm",
+      "name": "剪须虾群",
+      "group": "actors",
+      "states": [
+        "剪须虾群基础形象"
+      ],
+      "outputIds": [
+        "baleen-shrimp-swarm"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R1"
+      ],
+      "evidence": "聚团后沿标记水道冲过；散开时通过或短击。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast"
+      ],
+      "animation": [
+        "聚团预告",
+        "沿水道冲线",
+        "散群恢复"
+      ],
+      "initialAuditNote": "简版明确列为普通敌人，详细版 R1 当前逐房敌人表未安排实例；保留素材需求并标注落位待对齐，不因缺落位删去。"
+    },
+    {
+      "id": "amphipod-swarm",
+      "name": "端足群",
+      "group": "actors",
+      "states": [
+        "端足群基础形象"
+      ],
+      "outputIds": [
+        "amphipod-swarm"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R2"
+      ],
+      "evidence": "围绕营养节点聚集后冲线。 端足群流：固定一条横流走廊；亮方向线0.9秒后整体横穿；一次攻击最多扣1格。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R2-s15"
+      ],
+      "animation": [
+        "围绕节点聚集",
+        "方向线预告",
+        "群体横穿",
+        "散群恢复"
+      ],
+      "initialAuditNote": "群中个体不是各自叠加判伤的多只敌人；不要用个体数量冒充新资源类型数量。"
+    },
+    {
+      "id": "yusuo",
+      "name": "余索",
+      "group": "actors",
+      "states": [
+        "余索基础形象"
+      ],
+      "outputIds": [
+        "yusuo"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R3",
+        "camp"
+      ],
+      "evidence": "余索：友好NPC／老修索匠；提醒已发现但尚未进入的旧门。 胃枢 H3 菌圃及余索已见门提示不提供新钥匙或跑腿链。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R3-s9"
+      ],
+      "animation": [
+        "驻留/待机",
+        "交谈与旧门提示"
+      ],
+      "initialAuditNote": "按 N01 左列识别外形，原文没有其战斗招式或跑腿任务链。"
+    },
+    {
+      "id": "beituo",
+      "name": "贝驮",
+      "group": "actors",
+      "states": [
+        "贝驮基础形象"
+      ],
+      "outputIds": [
+        "beituo"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R3"
+      ],
+      "evidence": "贝驮：友好NPC／受保护搬壳蟹；递壳、搬空壳、迁居，回应玩家安置。 搬壳完成后空壳由杂乱变为壳口朝海。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R3-s19"
+      ],
+      "animation": [
+        "待机",
+        "递壳",
+        "搬空壳移动",
+        "迁居/安置回应"
+      ],
+      "initialAuditNote": "E03 下排的受保护搬壳蟹与贝驮生态族群复用，不应再登记为敌人。 已有 empty-shell 只是道具，不能算贝驮角色已完成。"
+    },
+    {
+      "id": "nursery-sac",
+      "name": "育囊",
+      "group": "actors",
+      "states": [
+        "育囊基础形象"
+      ],
+      "outputIds": [
+        "nursery-sac"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R2"
+      ],
+      "evidence": "育囊：友好NPC／扎根育床共生体；免费补充浮膜的移动压力。 H2 肺膜育床：调平补压床旁壳托，孔瓣恢复规律开合。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R2-s17"
+      ],
+      "animation": [
+        "扎根待机",
+        "交互补压",
+        "孔瓣恢复规律开合"
+      ],
+      "initialAuditNote": "不替代营地回血；补压来自共生体，不是死亡鲸体恢复呼吸。 壳托/补压床属环境机关条目，角色条目仅列交互关联。"
+    },
+    {
+      "id": "gate-shell-crab",
+      "name": "门庭负壳蟹",
+      "group": "actors",
+      "states": [
+        "门庭负壳蟹基础形象"
+      ],
+      "outputIds": [
+        "gate-shell-crab"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R1"
+      ],
+      "evidence": "横扫0.8秒预告/0.75秒恢复，壳砸1.1秒/1秒；半血二扫另预告0.55秒。 阻门蟹背着迁徙者遗弃的多层壳，战后露出被遮住的红结。",
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s18",
+        "http://10.11.140.20:8765/full/#R1-s19"
+      ],
+      "animation": [
+        "战前/待机",
+        "举钳横扫预告",
+        "横扫",
+        "横扫恢复",
+        "抬壳预告",
+        "壳砸",
+        "壳砸恢复",
+        "半血独立亮钳二扫预告",
+        "追加横扫",
+        "败后停伤/露出红结"
+      ],
+      "initialAuditNote": "不能用尸蟹静态图直接当作此 Boss 已完成；外形及教学招式不同。"
+    },
+    {
+      "id": "blood-nest-swarm",
+      "name": "血巢潮群",
+      "group": "actors",
+      "states": [
+        "血巢潮群基础形象"
+      ],
+      "outputIds": [
+        "blood-nest-swarm",
+        "blood-nest-core"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R2"
+      ],
+      "evidence": "聚流预告1秒锁一条水道；外露1秒时近击；环散1.1秒前摇；半血后0.8秒重复旧冲线已标轨。 群体聚散围着废弃血巢，不画成戴主角灯的大怪物。",
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s18",
+        "http://10.11.140.20:8765/full/#R2-s19"
+      ],
+      "animation": [
+        "围绕血巢聚集",
+        "锁定水道聚流预告",
+        "冲线",
+        "外露核心/输出窗",
+        "环散预告",
+        "环散",
+        "半血旧轨重复预告与冲线",
+        "败后停伤"
+      ],
+      "initialAuditNote": "应把群体、核心与场景血巢分清，不能绘成单个巨大拟人怪。"
+    },
+    {
+      "id": "shell-mother-crab",
+      "name": "搬壳母蟹",
+      "group": "actors",
+      "states": [
+        "搬壳母蟹基础形象",
+        "搬壳母蟹65%脱壳后外观",
+        "搬壳母蟹30%脱壳后外观"
+      ],
+      "outputIds": [
+        "shell-mother-crab",
+        "shell-mother-crab-phase-65",
+        "shell-mother-crab-phase-30"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R3"
+      ],
+      "evidence": "钳推0.9秒前摇；0.8秒恢复；落壳1.2秒地面标影；65%/30%脱空壳后多慢滚壳；锚拉松壳0.9秒停顿。",
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s18"
+      ],
+      "animation": [
+        "战前/待机",
+        "钳推预告",
+        "钳推",
+        "钳推恢复",
+        "落壳标点预告",
+        "落壳",
+        "65%脱壳形态",
+        "30%脱壳形态",
+        "慢滚壳",
+        "松壳被锚拉停顿",
+        "败后停伤/巢位重排"
+      ],
+      "initialAuditNote": "可选 Boss，不能和友好贝驮合并；空壳道具可复用但需尺寸、运动与形态适配。"
+    },
+    {
+      "id": "spine-resonant-clams",
+      "name": "悬脊鸣贝",
+      "group": "actors",
+      "states": [
+        "悬脊鸣贝基础形象"
+      ],
+      "outputIds": [
+        "spine-resonant-clams"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R4"
+      ],
+      "evidence": "两贝固定左右附着，共享300耐受；一吐珠一露软缘0.85秒；低震预告1秒；半血节拍0.75秒。 一贝吐珠时另一贝露软缘；低位合震提前1秒标带。",
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s15",
+        "http://10.11.140.20:8765/full/#R4-s18"
+      ],
+      "animation": [
+        "双贝附着待机",
+        "一侧吐珠预告",
+        "吐珠",
+        "另一侧露软缘",
+        "两侧交替",
+        "低位合震预告",
+        "低位合震",
+        "半血加速交替",
+        "败后声槽稳定/停伤"
+      ],
+      "initialAuditNote": "两只贝是同一个 Boss 的两实例，不虚增成两个 Boss；普通鸣贝图板不能替代 Boss 构图与尺寸验收。"
+    },
+    {
+      "id": "silent-membrane",
+      "name": "缄声覆膜",
+      "group": "actors",
+      "states": [
+        "缄声覆膜基础形象"
+      ],
+      "outputIds": [
+        "silent-membrane"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R5"
+      ],
+      "evidence": "前扫0.8秒、垂落1秒均有轮廓预告；攻击后0.8秒输出窗；地上旧位置空心圆1.4秒后产生回声；同屏最多一回声＋一实体，不复制主角。 覆膜退去后历史纹理显现。",
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s18",
+        "http://10.11.140.20:8765/full/#R5-s19"
+      ],
+      "animation": [
+        "骨面附着待机",
+        "前扫轮廓预告",
+        "前扫",
+        "垂落轮廓预告",
+        "垂落",
+        "附着面暴露恢复",
+        "旧位置延迟回声",
+        "半血每第二招旧轨重复",
+        "败后覆膜褪去/停伤"
+      ],
+      "initialAuditNote": "回声不复制玩家形象；Boss 位于耳骨外周骨面，不能画成居于巨大耳蜗的怪。"
+    },
+    {
+      "id": "sea-larva",
+      "name": "归海幼体",
+      "group": "actors",
+      "states": [
+        "归海幼体基础形象"
+      ],
+      "outputIds": [
+        "sea-larva"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R5"
+      ],
+      "evidence": "无战斗技能；路线打开后顺水离开。 释放幼体；支线越多，尾声的生命与声音越丰富；少收集也有完整基础结局。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/simple/#ending"
+      ],
+      "animation": [
+        "避流窝中停留",
+        "释放启动",
+        "顺水归海",
+        "结局群体丰度变化"
+      ],
+      "initialAuditNote": "已有单个幼体静态图；群体编排/释放运动/丰度变体未完成，不添加战斗或受击掉落。"
+    },
+    {
+      "id": "red-crown-colony",
+      "name": "红冠群落",
+      "group": "actors",
+      "states": [
+        "红冠群落恢复前外观",
+        "红冠群落恢复后外观"
+      ],
+      "outputIds": [
+        "red-crown-colony",
+        "red-crown-colony-restored"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [],
+      "regions": [
+        "R4"
+      ],
+      "evidence": "红冠群落：受保护扎根生态；无追击技能；以群落变化表现栖息地恢复。 受保护红冠扎根骨孔，显示死亡鲸骨如何成为新住处。",
+      "sources": [
+        "http://10.11.140.20:8765/simple/#cast",
+        "http://10.11.140.20:8765/full/#R4-s19"
+      ],
+      "animation": [],
+      "initialAuditNote": "没有独立角色设定图；以断脊区域与 R4-04 原画为依据，不编造行动或攻击动作。"
+    },
+    {
+      "id": "scene-water-depth",
+      "name": "海水深层与低对比水雾",
+      "group": "scenes",
+      "states": [
+        "靛蓝口腔",
+        "灰蓝肺心",
+        "暗橄榄胃肠",
+        "墨青断脊",
+        "头耳深水",
+        "尾端外海"
+      ],
+      "outputIds": [
+        "r1-mouth-depth",
+        "r2-lung-depth",
+        "r3-gastric-depth",
+        "r4-vertebrae-depth",
+        "r5-cranial-depth",
+        "r5-tail-depth",
+        "r1-water-base",
+        "r2-water-base",
+        "r3-water-base",
+        "r4-water-base",
+        "r5-head-water-base",
+        "r5-tail-water-base"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-06",
+        "R1-07",
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06",
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08",
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07",
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06",
+        "R5-07",
+        "R5-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#R3-s20",
+        "http://10.11.140.20:8765/full/#R4-s20",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "evidence": "背景最远水体 k=0.10；全程水下，没有空气界面。",
+      "stateRules": "L0 k=.10、L1 k=.25；canvas宽32U，完整画布中心对齐。5新增+1既有整合背景仅可选fallback，不能再据其声称独立L0/L1。六代表拼装只验证组件和比例，不证明36房路线或长过渡已施工。",
+      "initialAuditNote": "现有 R1 单屏图合并了景深内容，不能算完成可独立视差的六套水体。",
+      "note": "6张独立L0水体与6张透明L1器官层已制作；整合背景保留为可选用图。"
+    },
+    {
+      "id": "r1-oral-background",
+      "name": "上颚与口腔大轮廓",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-mouth-depth",
+        "r1-oral-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "evidence": "上颚与深口腔大轮廓，远器官 k=0.25；鲸须仅从上颚垂下。",
+      "initialAuditNote": "已有一张口腔单屏背景；36房背景布局与景深分离尚未验收。"
+    },
+    {
+      "id": "r1-wound-section",
+      "name": "口角皮肤脂层肌层断面",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-wound-section"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R1-01"
+      ],
+      "evidence": "地标：皮肤-脂层-肌层断面和远处上颚须列。",
+      "initialAuditNote": "与口腔衬层分开，避免所有 R1 房间一个洞壁。"
+    },
+    {
+      "id": "r1-esophagus-section",
+      "name": "塌陷食管纵裂壁与口咽远景",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-esophagus-fold"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-05"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#room-R1-05"
+      ],
+      "evidence": "L0暗食管纵向深隙；L1远处口咽大轮廓；L2肌褶与红绳；L4剥离肌膜边。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r1-nasal-section",
+      "name": "喷气孔隔壁与鼻道外侧断面",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-nasal-wall"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20",
+        "http://10.11.140.20:8765/full/#room-R1-06"
+      ],
+      "evidence": "L0头背外海；L1实心颅骨与鼻道壁；L2创伤断面和修索；L4暗骨板边。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r1-baleen-middle",
+      "name": "上颚鲸须中景垂帘",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-baleen-curtain"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "evidence": "中景层：修补红结、弃壳与旧须帘，k=0.50。",
+      "initialAuditNote": "已有静态单件；不用于 R2-R5 或食管鼻道。"
+    },
+    {
+      "id": "r1-baleen-foreground",
+      "name": "暗鲸须与壳缘前景框片",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r1-baleen-shadow"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "evidence": "深靛鲸须剪影与少量壳缘，k=1.20；遮到主角和落点时淡出。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r1-tongue-platform-kit",
+      "name": "湿舌台、稳定宽台与恢复坡",
+      "group": "scenes",
+      "states": [
+        "稳定台",
+        "坡段",
+        "舌根宽场"
+      ],
+      "outputIds": [
+        "r1-tongue-ledge",
+        "r1-tongue-ramp"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04",
+        "R1-05",
+        "R1-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s4",
+        "http://10.11.140.20:8765/full/#R1-s20"
+      ],
+      "evidence": "湿舌宽台、明确台面亮边；宽台与可恢复底坡；底部恢复坡不能绕过 Boss。",
+      "initialAuditNote": "已有一个静态平台模块；拼接、坡度与各房碰撞轮廓未完成，不能按单件认整套完成。"
+    },
+    {
+      "id": "r1-weighted-tongue",
+      "name": "承重舌膜变形台",
+      "group": "scenes",
+      "states": [
+        "稳定",
+        "承重预告",
+        "变形/恢复"
+      ],
+      "outputIds": [
+        "r1-weight-membrane",
+        "r1-weight-membrane-pressed"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-03"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s16",
+        "http://10.11.140.20:8765/full/#room-R1-03"
+      ],
+      "evidence": "承重舌膜；先有方向线/表面形变至少0.7秒，再激活。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r2-lung-pleura",
+      "name": "肺叶外表与脱层胸膜",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r2-lung-depth",
+        "r2-lung-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#room-R2-02"
+      ],
+      "evidence": "灰蓝肺叶；巨大肺表面曲率与远处肋影；不是两间肺泡。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r2-pericardium-heart",
+      "name": "静止心包破口与厚心肌断面",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r2-heart-rupture"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-03",
+        "R2-04"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R2-03",
+        "http://10.11.140.20:8765/full/#room-R2-04"
+      ],
+      "evidence": "厚心肌断面、断裂腱索与血巢生物群；心脏不跳动。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r2-trachea-transition",
+      "name": "心包至气管外侧过渡材料",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r2-trachea-wall"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-05"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20",
+        "http://10.11.140.20:8765/full/#room-R2-05"
+      ],
+      "evidence": "L1气管外侧软骨环与纵隔；L2心包裂缘和修索。",
+      "initialAuditNote": "气管环外侧有实壁，不能画成心室直插喷气孔的空管。"
+    },
+    {
+      "id": "r2-soft-platform-kit",
+      "name": "软膜稳定台与底部软床",
+      "group": "scenes",
+      "states": [
+        "稳定落台",
+        "无伤软底床",
+        "分级补压落台"
+      ],
+      "outputIds": [
+        "r2-membrane-platform",
+        "r2-soft-bed"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "evidence": "软膜稳定台、补压共生体、群流缺口和底部软床，k=1.00。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r2-patches-nursery-shells",
+      "name": "胸膜补丁、旧育壳与红绳",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r2-membrane-patch"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "evidence": "不同年代补丁、旧育壳与宽度不同的红绳，k=0.50。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r2-membrane-foreground",
+      "name": "暗紫红膜缘与稀疏管束",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r2-foreground-membrane"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R2-01",
+        "R2-02",
+        "R2-03",
+        "R2-04",
+        "R2-05",
+        "R2-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "evidence": "暗紫红膜缘和稀疏管束，k=1.20；不遮盖上方落台或横流预告。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r3-gastric-folds",
+      "name": "暖赭胃壁大褶与沉积袋",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r3-gastric-depth",
+        "r3-gastric-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s20",
+        "http://10.11.140.20:8765/full/#room-R3-08"
+      ],
+      "evidence": "大面积暖赭胃褶与向肠侧收束的软组织；胃顶向下可见胃枢的同一大壁褶。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r3-liver-mesentery",
+      "name": "肝叶外缘与系膜脂槽",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r3-liver-edge",
+        "r3-mesentery-fold"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-03",
+        "R3-04"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-03",
+        "http://10.11.140.20:8765/full/#room-R3-04"
+      ],
+      "evidence": "肝侧走实心肝叶外缘，肠侧走纵裂边与系膜。",
+      "initialAuditNote": "不在实心肝脏内部挖长廊。"
+    },
+    {
+      "id": "r3-intestinal-fold",
+      "name": "肠纵裂边、回折肠袢与母蟹侧腔",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r3-intestinal-loop"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-05",
+        "R3-06",
+        "R3-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-06",
+        "http://10.11.140.20:8765/full/#room-R3-07"
+      ],
+      "evidence": "肠袢向头回折到母蟹占据的侧腔；外景能看到回弯而不是继续无限向尾。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r3-bank-platform-kit",
+      "name": "胃肠稳定岸台与刹车褶边",
+      "group": "scenes",
+      "states": [
+        "固定宽岸",
+        "褶边台",
+        "教学恢复坡"
+      ],
+      "outputIds": [
+        "r3-bank-platform"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "evidence": "稳定岸台、漂台离散位置、锯齿危险酸槽与明确闸门；胃枢安全地面避免使用酸色。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r3-shell-nests-traces",
+      "name": "壳巢群、拖痕与沉积旧壳",
+      "group": "scenes",
+      "states": [
+        "原迁居杂乱",
+        "迁居完成朝海排列"
+      ],
+      "outputIds": [
+        "empty-shell",
+        "r3-shell-nest-before",
+        "r3-shell-nest-after"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s19",
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "evidence": "壳巢群、搬运拖痕、修补红绳与废弃阀痕；旧壳半埋在新沉积物下。",
+      "stateRules": "同一位置切换before/after，保持壳巢规模；不要为每个房间新增同类摆放图。",
+      "initialAuditNote": "已有单个可安置空壳，可复用部分形状；巢群、拖痕与生态前后状态缺失。"
+    },
+    {
+      "id": "r3-mucosa-foreground",
+      "name": "暗褶壁、深褐壳缘与垂索",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r3-foreground-fold"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-01",
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s20"
+      ],
+      "evidence": "深褐壳缘、暗褶壁和少量垂索，k=1.20；不遮盖冲撞方向及落壳预告。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r4-vertebrae-sequence",
+      "name": "椎体外表序列与外伤窗",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r4-vertebrae-depth",
+        "r4-vertebrae-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "evidence": "巨大椎骨序列与外伤窗，k=0.25；保持脊椎延伸方向。",
+      "initialAuditNote": "胸段可见肋根；腰尾无新肋笼，游玩在椎体外侧。"
+    },
+    {
+      "id": "r4-tailward-vertebrae",
+      "name": "腰尾渐细椎列与长廊景深",
+      "group": "scenes",
+      "states": [
+        "向头维护廊",
+        "向尾渐细廊"
+      ],
+      "outputIds": [
+        "r4-tapering-vertebrae"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-06",
+        "R5-01",
+        "R5-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s20",
+        "http://10.11.140.20:8765/full/#room-R5-01",
+        "http://10.11.140.20:8765/full/#room-R5-07"
+      ],
+      "evidence": "R4-06 L1腰椎外表和渐细椎列，无肋笼延伸；头向 E25 约60–70米，尾向 E31 约15–20米。",
+      "initialAuditNote": "两条既有边内的无战斗过渡，不新增房间，也不能共用直接头尾门。"
+    },
+    {
+      "id": "r4-bone-platform-kit",
+      "name": "哑象牙骨台、稳定阶台与回落台",
+      "group": "scenes",
+      "states": [
+        "固定宽台",
+        "高低路线落台",
+        "分流台"
+      ],
+      "outputIds": [
+        "r4-bone-platform"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "evidence": "哑象牙宽台、稳定回落菌毯与两路汇合门，k=1.00。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r4-fungal-recovery",
+      "name": "菌毯恢复床",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r4-fungal-bed"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-03",
+        "R4-04"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s4",
+        "http://10.11.140.20:8765/full/#R4-s16"
+      ],
+      "evidence": "底部菌毯只负责恢复；菌毯回落区。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r4-thin-bone",
+      "name": "选修薄骨片",
+      "group": "scenes",
+      "states": [
+        "完整",
+        "裂纹预告",
+        "破落"
+      ],
+      "outputIds": [
+        "r4-thin-bone",
+        "r4-thin-bone-cracked",
+        "r4-thin-bone-broken"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R4-07"
+      ],
+      "evidence": "薄骨片脚下先出现0.9秒裂纹，再落向下接台。",
+      "stateRules": "共享原画布与安装点；断裂碎片为实际形变状态，不能用透明度代替。过渡动作尚未制作。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r4-training-traces",
+      "name": "旧练习槽、骨孔与修索痕迹",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r4-training-groove"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s19",
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "evidence": "修索绳结、骨孔群落和旧练习槽；修索室整齐短绳与断绳相对照。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r4-bone-foreground",
+      "name": "暗骨片与断索前景",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r4-foreground-bone"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R4-01",
+        "R4-02",
+        "R4-03",
+        "R4-04",
+        "R4-05",
+        "R4-06",
+        "R4-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s20"
+      ],
+      "evidence": "暗骨片、局部红冠与断索，k=1.20；尖锐轮廓不能误指不存在的接触伤害。",
+      "initialAuditNote": "红冠生物本体由生态角色清单去重管理。"
+    },
+    {
+      "id": "r5-cranial-background",
+      "name": "大块颅底骨板与紧凑耳骨",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r5-cranial-depth",
+        "r5-cranial-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-02"
+      ],
+      "evidence": "L1大块颅底骨板与紧凑耳骨实体；游玩在耳骨外周，不把耳蜗扩大成洞城。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r5-ear-soft-tissue",
+      "name": "耳周软组织、膜袋与住民声槽",
+      "group": "scenes",
+      "states": [
+        "覆膜遮挡前",
+        "覆膜褪去声纹显现"
+      ],
+      "outputIds": [
+        "r5-echo-wall-covered",
+        "r5-echo-wall-revealed"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s19",
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "evidence": "L2耳周软组织和住民声槽；同心声纹、修补线、旧幼体印痕与红结。",
+      "stateRules": "切换covered/revealed；两源图宽相差1px，世界安装点需对齐，不能直接宣称逐帧动画一致。鲸记忆投影仍须另层。",
+      "initialAuditNote": "声纹图案与空心声波特效分别制作，不能把声纹当巨型耳蜗。"
+    },
+    {
+      "id": "r5-cranial-platform-kit",
+      "name": "颅外骨面稳定台与安全池边",
+      "group": "scenes",
+      "states": [
+        "宽输出台",
+        "两侧避险台",
+        "池边稳定台"
+      ],
+      "outputIds": [
+        "r5-cranial-platform"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "evidence": "中央输出台、两侧稳定台、Boss触发边界；硬骨不可穿。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r5-cranial-foreground",
+      "name": "颅侧暗骨板与软膜边",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r5-cranial-foreground"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-01",
+        "R5-02",
+        "R5-03",
+        "R5-04",
+        "R5-05",
+        "R5-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20"
+      ],
+      "evidence": "深靛颅侧骨板与尾端暗膜缘，k=1.20；不得遮住短缝入口或回声空心圈。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r5-tail-tendons",
+      "name": "尾柄肌腱、纤维裂谷与无骨尾叶",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r5-tail-depth",
+        "r5-tail-far-layer"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "evidence": "L1尾柄纵向肌腱与无骨尾叶；L2剥离纤维和幼体水路。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r5-tail-channel-kit",
+      "name": "尾端稳定槽台与释放水路",
+      "group": "scenes",
+      "states": [
+        "观察宽台",
+        "连续释放槽",
+        "出口碗/槽"
+      ],
+      "outputIds": [
+        "r5-tail-channel"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "evidence": "L3稳定槽台/导流闸/幼体；释放槽是纤维组织裂谷与聚落导流口。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r5-tail-foreground",
+      "name": "尾端暗筋膜框片",
+      "group": "scenes",
+      "states": [
+        "静态"
+      ],
+      "outputIds": [
+        "r5-tail-foreground"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-07",
+        "R5-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s20",
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "evidence": "L4暗筋膜；尾鳍瓣内不长骨架。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "r3-hazard-surfaces",
+      "name": "黏液槽、减速脂面与酸槽边",
+      "group": "scenes",
+      "states": [
+        "黏液面",
+        "脂面",
+        "酸槽锯齿边",
+        "腐蚀粒子"
+      ],
+      "outputIds": [
+        "mucus-hazard-surface",
+        "fat-slow-surface",
+        "acid-hazard-edge"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-02",
+        "R3-04",
+        "R3-06"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s16"
+      ],
+      "evidence": "低压黏液槽；减速脂面；酸槽锯齿边＋腐蚀漂粒，危险边始终亮于背景。",
+      "initialAuditNote": "不把安全胃枢台面涂成酸色；微生物沉积，不是活鲸分泌胃酸。"
+    },
+    {
+      "id": "r3-falling-deposit",
+      "name": "胃顶沉积落屑",
+      "group": "scenes",
+      "states": [
+        "沉积完整",
+        "预告",
+        "落屑碎片"
+      ],
+      "outputIds": [
+        "falling-deposit-mass",
+        "falling-deposit-shard"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-08"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s16"
+      ],
+      "evidence": "落屑预警区；先有方向线/表面形变至少0.7秒，再激活。",
+      "initialAuditNote": ""
+    },
+    {
+      "id": "bone-resonator",
+      "name": "U形骨鸣器",
+      "group": "props",
+      "states": [
+        "正面/游戏侧向",
+        "握持与收起接口"
+      ],
+      "outputIds": [
+        "bone-resonator"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "骨鸣器负责近身攻击和共振。",
+      "rooms": [],
+      "initialAuditNote": "已嵌在主角姿态中，未提供独立可挂接件；不把整张主角PNG当工具交付。"
+    },
+    {
+      "id": "fungus-lamp",
+      "name": "密封菌灯与灯罩",
+      "group": "props",
+      "states": [
+        "灯罩开启",
+        "灯罩闭合",
+        "独立光效层"
+      ],
+      "outputIds": [
+        "fungus-lamp-open",
+        "fungus-lamp-closed"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "L灯罩；关灯可降低未警觉嗅脂甲的感知。",
+      "rooms": [],
+      "initialAuditNote": "主角图中灯为开启状态；独立灯和闭罩状态缺失。"
+    },
+    {
+      "id": "red-tether",
+      "name": "红索/红绳",
+      "group": "props",
+      "states": [
+        "松弛",
+        "拉直/受力",
+        "端部红结"
+      ],
+      "outputIds": [
+        "red-tether-knot",
+        "red-tether-segment"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "红绳只连接指定锚环；挂环不能攻击。",
+      "rooms": [],
+      "initialAuditNote": "环上残绳和主角绘入绳均不能替代任意长度的运行绳索。长度/弯曲用程序，不需为每条绳另画图。"
+    },
+    {
+      "id": "bone-anchor-ring",
+      "name": "固定骨质锚环",
+      "group": "props",
+      "states": [
+        "固定环基底",
+        "连接红索时的挂点"
+      ],
+      "outputIds": [
+        "bone-anchor-ring",
+        "anchor-tissue-mount",
+        "anchor-bone-mount"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s11"
+      ],
+      "evidence": "只抓预置环；主路间距≤4.5U；脱环再攻击。",
+      "rooms": [],
+      "initialAuditNote": "基础环已做；连接反馈可程序实现，不重复计算每房的环。"
+    },
+    {
+      "id": "shell-camp",
+      "name": "壳形营地",
+      "group": "props",
+      "states": [
+        "基础壳体",
+        "未登记/已登记/休息反馈"
+      ],
+      "outputIds": [
+        "shell-camp"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "八处营地负责休息；亲自到达后E登记，可免费更换模块。",
+      "rooms": [],
+      "initialAuditNote": "仅基础静态图已做。8个放置实例复用；状态反馈尚未制作或接入。"
+    },
+    {
+      "id": "empty-shell",
+      "name": "空壳/大壳掩体",
+      "group": "props",
+      "states": [
+        "空壳基础",
+        "安置/搬运接口"
+      ],
+      "outputIds": [
+        "empty-shell"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-06"
+      ],
+      "evidence": "以壳掩体隔开蟹和孔鳗；安置单只空壳在两档质量座上。",
+      "rooms": [],
+      "initialAuditNote": "静态空壳已做；不同尺度用途按真实关卡尺寸验证，不把每个摆放实例当新品类。"
+    },
+    {
+      "id": "life-fragment",
+      "name": "三腔生命碎片",
+      "group": "props",
+      "states": [
+        "可拾取"
+      ],
+      "outputIds": [
+        "life-fragment"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "全游戏固定生命碎片8枚；初始4格生命，集齐4枚加1格，最多6格。",
+      "rooms": [],
+      "initialAuditNote": "一套图可复用8个固定实例；已收取空槽见reward-socket，不重复制作8个同形碎片。"
+    },
+    {
+      "id": "migration-memory",
+      "name": "迁徙记忆片/声纹片",
+      "group": "props",
+      "states": [
+        "未收取片",
+        "已读声纹反馈"
+      ],
+      "outputIds": [
+        "migration-memory"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R1-07"
+      ],
+      "evidence": "记忆袋取碎片和声纹；奖励只留空槽与新声纹。",
+      "rooms": [],
+      "initialAuditNote": "鲸须/呼吸/最后静默是叙事变体；文本与声部不同不自动要求三张全新物件美术。"
+    },
+    {
+      "id": "reward-socket",
+      "name": "奖励空槽",
+      "group": "props",
+      "states": [
+        "生命碎片空槽",
+        "模块空槽",
+        "记忆槽/新声纹"
+      ],
+      "outputIds": [
+        "reward-socket-life",
+        "reward-socket-module",
+        "reward-socket-memory"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R1-03"
+      ],
+      "evidence": "已取碎片显示空槽；模块空槽仍可辨；奖励只留空槽与新声纹。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "不同奖励槽轮廓可共享底座并换内轮廓。必须在清单中覆盖拾取后的状态。"
+    },
+    {
+      "id": "symbiosis-modules",
+      "name": "六个共生模块",
+      "group": "props",
+      "states": [
+        "稳足",
+        "滑膜",
+        "系索",
+        "圆腔",
+        "复振",
+        "静菌"
+      ],
+      "outputIds": [
+        "module-steady-foot",
+        "module-sliding-membrane",
+        "module-tether",
+        "module-round-chamber",
+        "module-reverberation",
+        "module-quiet-fungus"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "运动槽选稳足/滑膜/系索；共鸣槽选圆腔/复振/静菌。",
+      "rooms": [],
+      "initialAuditNote": "这是1个资源家族、6个具名变体，不能只做一个图标算6项。P01中部分造型与6名称缺逐项标注，需进一步锁定对应，不能自行把灯形物当额外奖励。"
+    },
+    {
+      "id": "settlement-valve",
+      "name": "聚落导流阀/遮流瓣",
+      "group": "props",
+      "states": [
+        "三档压力阀低/中/高",
+        "血巢旁通阀闲置/触发",
+        "尾下遮流瓣关/开"
+      ],
+      "outputIds": [
+        "pressure-valve-base",
+        "pressure-valve-handle",
+        "bypass-valve-base",
+        "bypass-valve-lever",
+        "tail-flow-shutter",
+        "ui-valve-three-ticks"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-02"
+      ],
+      "evidence": "阀低中高三档刻线；旁通阀减慢下一轮25%；尾根侧台旋开遮流瓣。",
+      "rooms": [],
+      "stateRules": "pressure handle以人工hub为pivot旋转到3档；bypass lever切2姿态；tail-flow-shutter旋开。档位应有刻线/方向信号，不只靠颜色。",
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "三种玩法变体；可共用底座、手柄，再按参考材质与标记变化。不是金属工业闸阀。"
+    },
+    {
+      "id": "floating-platform",
+      "name": "漂台/漂盘",
+      "group": "props",
+      "states": [
+        "压力控制三档停靠",
+        "质量座控制两档停靠"
+      ],
+      "outputIds": [
+        "floating-platform",
+        "mass-drift-platform"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-02"
+      ],
+      "evidence": "中档把漂台对齐固定岸；两档质量座只改变漂盘停靠位置。",
+      "rooms": [],
+      "stateRules": "压力三档与质量两档改变Y坐标，保持比例和碰撞一致，不重复生成五张同图。",
+      "initialAuditNote": "位置变化由运行逻辑实现，不需要五张位置不同的PNG；平台本体需从原画分出。与环境清单合并去重。"
+    },
+    {
+      "id": "shell-mass-seat",
+      "name": "空壳两档质量座",
+      "group": "props",
+      "states": [
+        "未放壳",
+        "放壳"
+      ],
+      "outputIds": [
+        "shell-mass-seat"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R3-06"
+      ],
+      "evidence": "先安置单只空壳在两档质量座上，只改变漂盘停靠位置。",
+      "rooms": [],
+      "stateRules": "empty-shell只在已放壳显示，按接触点落座；empty-shell不等同贝驮角色。",
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "座与空壳分层，不能把二者烘焙成唯一图。"
+    },
+    {
+      "id": "habitat-shade",
+      "name": "菌圃遮光片",
+      "group": "props",
+      "states": [
+        "明档",
+        "暗档"
+      ],
+      "outputIds": [
+        "habitat-shade"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R3-s17"
+      ],
+      "evidence": "把侧边遮光片旋至暗档，幼菌点亮，主通路不变。",
+      "rooms": [],
+      "initialAuditNote": "与主角灯罩是不同物件；与生态场景清单合并去重。"
+    },
+    {
+      "id": "nursery-shell-support",
+      "name": "育床壳托/补压床支承",
+      "group": "props",
+      "states": [
+        "未调平",
+        "已调平"
+      ],
+      "outputIds": [
+        "nursery-shell-support",
+        "nursery-valve-leaf"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s17"
+      ],
+      "evidence": "调平补压床旁壳托，孔瓣恢复规律开合。",
+      "rooms": [],
+      "initialAuditNote": "育囊本体归NPC清单，床/壳托及孔瓣需拆层；与场景清单合并。"
+    },
+    {
+      "id": "permanent-latches",
+      "name": "永久捷径闩",
+      "group": "props",
+      "states": [
+        "喷气孔孔瓣关/开及无把手背面",
+        "胃侧红结闩关/开及闩背",
+        "耳海双环闩关/开及锁环侧"
+      ],
+      "outputIds": [
+        "blowhole-latch-closed",
+        "blowhole-latch-open",
+        "gut-latch-closed",
+        "gut-latch-open",
+        "ear-latch-closed",
+        "ear-latch-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s12"
+      ],
+      "evidence": "E旋开孔瓣；E拉红结闩；E松双环闩。三个近侧均不可提前开启。",
+      "rooms": [],
+      "stateRules": "喷气孔可操作侧叠骨环，须门侧省略；胃侧可操作侧叠red-tether-knot，胃枢侧省略；耳门两侧均可有锁环，最后静默可操作侧额外叠拉结。使用attachmentPoints，不镜像假造反面。",
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "一个闩族包含3个明确外形变体。只改变状态ID不等于已有三套美术。"
+    },
+    {
+      "id": "anchor-pull-gate",
+      "name": "固定红索拉闸/组合门",
+      "group": "props",
+      "states": [
+        "闭合",
+        "P降流显露环",
+        "挂环拉起",
+        "永久打开"
+      ],
+      "outputIds": [
+        "anchor-pull-gate-closed",
+        "anchor-pull-gate-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R4-01"
+      ],
+      "evidence": "已有P时阀会降强流；再挂固定环拉闸，松索后走上稳定骨台。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "环复用bone-anchor-ring；流复用特效，门体另做。与场景清单合并。"
+    },
+    {
+      "id": "bone-sound-node",
+      "name": "骨音交通节点",
+      "group": "props",
+      "states": [
+        "未发现",
+        "亲访未调律",
+        "已调律/可旅行"
+      ],
+      "outputIds": [
+        "bone-sound-node"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s14"
+      ],
+      "evidence": "6个交通节点要先亲访、再调律；B之前发现不等于调律。",
+      "rooms": [],
+      "stateRules": "未发现不显示地图节点，亲访未调律显示暗基底，已调律叠暖/冷声环。不能通过新图规避先亲访再调律的逻辑。",
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "T1胃枢/T2肺口/T3肠侧/T4脊椎/T5颅入口/T6尾根复用。未发现通常不可显示，不等于必须多画一件物体。"
+    },
+    {
+      "id": "progress-three-slots",
+      "name": "P/B/S三槽装置",
+      "group": "props",
+      "states": [
+        "三槽基底",
+        "每槽缺失/已满足",
+        "三项同步"
+      ],
+      "outputIds": [
+        "progress-three-slots"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R5-07"
+      ],
+      "evidence": "三槽只预览P/B/S，不增加收集锁；集齐后一次E同步，永久打开去释放槽的门。",
+      "rooms": [],
+      "stateRules": "P/B/S逐槽独立开关，全部满足再同步；不额外要求八张组合图。",
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "P/B/S是进程状态，不是3个新钥匙/宝石；头端预览与尾端终局装置可共用符号层。"
+    },
+    {
+      "id": "release-sluice",
+      "name": "尾端导流闸/释放碗",
+      "group": "props",
+      "states": [
+        "闭合/待同步",
+        "打开宽槽",
+        "已释放反馈"
+      ],
+      "outputIds": [
+        "release-sluice-closed",
+        "release-sluice-open",
+        "release-bowl"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R5-08"
+      ],
+      "evidence": "打开聚落导流闸释放幼体到海水；右释放碗和幼体保留。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "释放碗与门闸可作为同一装置的拆层部件；地形沟槽属于场景。幼体复用现有sea-larva。"
+    },
+    {
+      "id": "soft-membrane-fissure",
+      "name": "双瓣短柔膜缝",
+      "group": "props",
+      "states": [
+        "闭合",
+        "开放",
+        "有人占用延迟闭合",
+        "闭合前轮廓预告"
+      ],
+      "outputIds": [
+        "soft-membrane-fissure-closed",
+        "soft-membrane-fissure-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s16"
+      ],
+      "evidence": "双瓣轮廓+收缩声纹；标记柔膜缝≤1.5U，不穿硬墙。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "主路/选修/战斗短缝共用规则，按房间放置；与场景清单合并。"
+    },
+    {
+      "id": "ringed-calcium-pearl",
+      "name": "完整带环钙珠",
+      "group": "props",
+      "states": [
+        "完整飞行",
+        "可迎击环",
+        "迎击回弹反馈"
+      ],
+      "outputIds": [
+        "ringed-calcium-pearl"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s11"
+      ],
+      "evidence": "Q侧向接完整带环珠，0.18秒窗口；不是下劈踩敌。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "训练珠与敌方珠共享外形，伤害与队伍为数据；不是空心圆球或破碎珠。"
+    },
+    {
+      "id": "safe-pearl-emitter",
+      "name": "安全吐珠练习器",
+      "group": "props",
+      "states": [
+        "待机",
+        "吐珠预告",
+        "吐珠/恢复"
+      ],
+      "outputIds": [
+        "safe-pearl-emitter"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R4-02"
+      ],
+      "evidence": "练习器只吐带环完整珠且不会伤人。",
+      "rooms": [],
+      "initialAuditNote": "与敌人鸣贝分开登记，不能把它当第十种普通敌人。"
+    },
+    {
+      "id": "arena-soft-curtain",
+      "name": "战斗软帘",
+      "group": "props",
+      "states": [
+        "可通行",
+        "战斗封闭",
+        "战后开放"
+      ],
+      "outputIds": [
+        "arena-soft-curtain-closed",
+        "arena-soft-curtain-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R1-04"
+      ],
+      "evidence": "跨软帘才进入战斗；营地位于战斗边界外安全前室。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "各Boss房可按区域材质复用帘的结构；与场景门清单合并去重。"
+    },
+    {
+      "id": "dash-grant-cocoon",
+      "name": "贴流冲授予膜茧",
+      "group": "props",
+      "states": [
+        "胜前封闭",
+        "胜后可承接/已取得"
+      ],
+      "outputIds": [
+        "dash-grant-cocoon-closed",
+        "dash-grant-cocoon-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R1-04"
+      ],
+      "evidence": "R1-04现有提示词明确闭合小膜茧在胜利后授A1；正文要求胜利保存后E承接A1。",
+      "rooms": [],
+      "recipeFile": "assets/source/whalefall-v5-2-complete/review/components/components-recipe.json",
+      "initialAuditNote": "造型依据是房间原画/提示词，不等于A1为可重复拾取掉落。其余A2/A3/A4/A5授能是事件；不能统一另造五枚神器。"
+    },
+    {
+      "id": "habitat-six-sites",
+      "name": "六处栖息地基座及修复状态",
+      "group": "props",
+      "states": [
+        "未帮助",
+        "完成后恢复"
+      ],
+      "outputIds": [
+        "habitat-shell-nest",
+        "habitat-fungus-bed",
+        "habitat-larva-trough"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R1-05",
+        "R2-01",
+        "R3-01",
+        "R3-06",
+        "R4-04",
+        "R5-07"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s17",
+        "http://10.11.140.20:8765/full/#R2-s17",
+        "http://10.11.140.20:8765/full/#R3-s17",
+        "http://10.11.140.20:8765/full/#R4-s17",
+        "http://10.11.140.20:8765/full/#R5-s17"
+      ],
+      "evidence": "六处生态支线：须门清流窝、肺膜育床、胃枢菌圃、肠侧搬壳巢、肋骨红冠园、尾下幼体槽。",
+      "initialAuditNote": "六处栖息地共享各自床、壳托、菌落、红冠和幼体；需要分别给出帮助前后的静态组合。"
+    },
+    {
+      "id": "ui-map",
+      "name": "地图与路线",
+      "group": "ui",
+      "states": [
+        "已走实线",
+        "可见未达虚线",
+        "未知留白",
+        "当前地点",
+        "营地与旅行节点图标",
+        "已发现门的缺项提示"
+      ],
+      "outputIds": [
+        "ui-panel-frame",
+        "ui-map-player",
+        "ui-map-camp",
+        "ui-map-travel",
+        "ui-map-door",
+        "ui-map-memory"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "地图实线是已走路线，虚线是看见但未进入，未知区域留白。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "依据房间图数据画轮廓与连接线；已走实线，可见未达虚线，未知不绘制。节点图标附房名/门缺项文本；当前地点高亮，不能凭图标绘制结果声称路径状态已接入。"
+    },
+    {
+      "id": "ui-module-camp",
+      "name": "营地模块搭配",
+      "group": "ui",
+      "states": [
+        "运动槽",
+        "共鸣槽",
+        "六模块图标",
+        "选中/不可用/已装备反馈"
+      ],
+      "outputIds": [
+        "ui-panel-frame",
+        "ui-slot-frame",
+        "ui-slot-selected",
+        "ui-resonance-full",
+        "ui-motion-slot",
+        "module-steady-foot",
+        "module-sliding-membrane",
+        "module-tether",
+        "module-round-chamber",
+        "module-reverberation",
+        "module-quiet-fungus",
+        "bone-resonator"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "营地免费更换两槽模块；I02中部为两栏选择。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "两类各3模块；选中叠边框，已装备叠勾号/文字，未获得降饱和+锁定文本；运动标记复用ui-motion-slot，共鸣类别可复用独立骨鸣器缩略图。角色展示复用主角静态，不另做无需求依据的UI专属人物。"
+    },
+    {
+      "id": "ui-pause-settings",
+      "name": "暂停与设置",
+      "group": "ui",
+      "states": [
+        "面板",
+        "设置/音量/音乐/亮度/手柄符号",
+        "滑杆",
+        "按键重绑定框"
+      ],
+      "outputIds": [
+        "ui-panel-frame",
+        "ui-keycap",
+        "ui-slider-track",
+        "ui-slider-thumb",
+        "ui-setting-gear",
+        "ui-setting-volume",
+        "ui-setting-music",
+        "ui-setting-brightness",
+        "ui-setting-controller"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "I02右侧展示这些设置图形；正文明确按键可重绑。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "面板九宫格或矢量边框；轨道不动，滑块位置按值变化；禁用靠灰度+文字。键帽中文字/手柄形状由输入映射绘制，不预烘焙E/Q字母。"
+    },
+    {
+      "id": "ui-life",
+      "name": "生命显示",
+      "group": "ui",
+      "states": [
+        "当前/空生命格",
+        "4至6格布局",
+        "碎片进度"
+      ],
+      "outputIds": [
+        "ui-life-full",
+        "ui-life-empty",
+        "life-fragment"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "初始4格生命，集齐4枚碎片加1格，最多6格。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "按上限绘4–6格，当前生命格使用full，其余empty；碎片进度复用life-fragment缩略图+文字n/4，满4更新生命上限，不需要4张进度PNG。"
+    },
+    {
+      "id": "ui-resonance",
+      "name": "蓄振显示",
+      "group": "ui",
+      "states": [
+        "0至4格",
+        "消耗2格反馈"
+      ],
+      "outputIds": [
+        "ui-resonance-full",
+        "ui-resonance-empty"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "蓄振最多4格；重鸣或调息消耗2格。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "总计4格按值替换；消耗2格仅切换对应两格并用短时alpha反馈。显示状态可完整覆盖，消费时序尚属后续实现。"
+    },
+    {
+      "id": "ui-pressure",
+      "name": "浮膜余压提示",
+      "group": "ui",
+      "states": [
+        "4秒余压",
+        "补压恢复",
+        "耗尽提示"
+      ],
+      "outputIds": [
+        "ui-pressure-full",
+        "ui-pressure-empty"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s11"
+      ],
+      "evidence": "浮膜压力4秒；补压台恢复。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "full置于empty上按剩余压力0–1裁切/遮罩；4秒为计时参数而非4张图。补压恢复填充，耗尽用空槽+文字/短闪。"
+    },
+    {
+      "id": "ui-interaction",
+      "name": "交互/按键提示",
+      "group": "ui",
+      "states": [
+        "E交互",
+        "L灯罩",
+        "Q短击/迎珠",
+        "R重鸣",
+        "依据设备重绑定后的按键符号"
+      ],
+      "outputIds": [
+        "ui-keycap"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s5"
+      ],
+      "evidence": "能力动作按已解锁提示；键位可重绑。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "以动作绑定表渲染键帽或手柄符号与短文案；E/L/Q/R仅默认绑定。动态文字/矢量符号足够，不要求全部键位PNG。"
+    },
+    {
+      "id": "ui-progression",
+      "name": "能力与P/B/S来源符号",
+      "group": "ui",
+      "states": [
+        "A1至A5能力识别",
+        "P/B/S状态",
+        "缺项对应区域/来源"
+      ],
+      "outputIds": [
+        "ui-ability-dash",
+        "ui-ability-float",
+        "ui-ability-anchor",
+        "ui-ability-parry",
+        "ui-ability-fissure",
+        "ui-progress-pressure",
+        "ui-progress-bone",
+        "ui-progress-silence"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R5-07"
+      ],
+      "evidence": "可见未达门显示已发现的缺项线索；尾根缺P/B/S显示对应区域符号。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "A1–A5与P/B/S分别按获得状态着色/透明度；缺项列已知区域/来源文本，不新增钥匙、货币或全收集锁。"
+    },
+    {
+      "id": "ui-travel-selection",
+      "name": "旅行目的地选择",
+      "group": "ui",
+      "states": [
+        "6节点列表",
+        "仅亲访已调律可选",
+        "当前位置"
+      ],
+      "outputIds": [
+        "ui-panel-frame",
+        "ui-map-player",
+        "ui-map-camp",
+        "ui-map-travel"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R4-06"
+      ],
+      "evidence": "地图只列B+亲访+已调律的可用目的地。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "6节点列表复用节点图标。可选条件为亲访且B后在节点完成调律；当前位置单独标识，禁用态文字说明原因。图形足够但逻辑需实机验证。"
+    },
+    {
+      "id": "ui-dialogue-memory",
+      "name": "交谈与记忆文本容器",
+      "group": "ui",
+      "states": [
+        "NPC对话",
+        "已见门提示",
+        "记忆正文/确认"
+      ],
+      "outputIds": [
+        "ui-panel-frame",
+        "ui-map-memory"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#characters"
+      ],
+      "evidence": "余索在营地交谈，提醒已发现尚未进入的旧门；记忆改变声部。",
+      "rooms": [],
+      "note": "静态阶段提供图标、面板与可复用视觉组件；动态文字、布局和按键由界面代码负责。",
+      "stateRules": "对话、已见门提示、记忆正文、可跳过字幕用同一面板+排版+确认键帽。R5-05鲸群视觉不是文字弹窗替代，另见GAP-01。"
+    },
+    {
+      "id": "fx-resonance",
+      "name": "短击/重鸣共振",
+      "group": "fx",
+      "states": [
+        "短击作用范围反馈",
+        "重鸣波纹/命中反馈"
+      ],
+      "outputIds": [
+        "fx-short-swipe",
+        "fx-heavy-ring",
+        "fx-hit-burst"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "骨鸣器负责近身攻击和共振；动作板04含短击重鸣。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "短击弧线朝向旋转/镜像并按真实命中范围缩放，重鸣环按半径/alpha扩张；命中复用hit-burst，材质齐备，2段动作和计时不在静态验收内。"
+    },
+    {
+      "id": "fx-dash-membrane",
+      "name": "贴流冲与浮膜能力效果",
+      "group": "fx",
+      "states": [
+        "冲刺膜/拖尾",
+        "浮膜展开/收拢",
+        "余压反馈"
+      ],
+      "outputIds": [
+        "fx-dash-trail",
+        "float-membrane",
+        "ui-pressure-full",
+        "ui-pressure-empty"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "五能力原图；流膜育窝主角带半透明膜冲过沟。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "冲刺拖尾随方向；浮膜独立挂接主角背部，展开态使用完整膜；收起可隐藏，展开/收拢动作留后续动画，不为每个时刻额外计一张静态。"
+    },
+    {
+      "id": "fx-anchor-line",
+      "name": "锚定绳线",
+      "group": "fx",
+      "states": [
+        "连接",
+        "拉力",
+        "脱环"
+      ],
+      "outputIds": [
+        "red-tether-knot",
+        "red-tether-segment",
+        "bone-anchor-ring"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "红绳只连接指定锚环；挂环不能攻击。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "红结固定于端点，红索段沿两点直线或受力曲线重复；连接/拉力/脱环为可见性、曲率、端点变换。必须使用ring挂点，不能用bbox中心代替接触点。"
+    },
+    {
+      "id": "fx-pearl-telegraph",
+      "name": "鸣贝三圈波纹与迎珠反馈",
+      "group": "fx",
+      "states": [
+        "三圈预告",
+        "完整珠环",
+        "回击反馈"
+      ],
+      "outputIds": [
+        "fx-pearl-rings",
+        "fx-parry-spark",
+        "ringed-calcium-pearl"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R4-s15"
+      ],
+      "evidence": "三圈波纹0.9秒后吐带环完整珠；Q迎击。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "三圈预告按0.9秒逐次点亮；完整带环珠实例平移，迎击时闪线叠加；环不以碎片替代。"
+    },
+    {
+      "id": "fx-danger-telegraph",
+      "name": "方向/轨迹/落点危险预告",
+      "group": "fx",
+      "states": [
+        "方向线",
+        "表面形变",
+        "亮钳",
+        "落壳落点",
+        "合震标带",
+        "群流锁线"
+      ],
+      "outputIds": [
+        "fx-danger-line",
+        "fx-danger-landing",
+        "fx-short-swipe",
+        "fx-heavy-ring"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R1-s16"
+      ],
+      "evidence": "所有变动地形先给预告；每屏优先不超过两类主动伤害源。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "方向锁线/合震标带旋转与长度对应伤害区；落壳/落点用椭圆缩放。亮钳、亮足应使用指定部位mask或骨骼子层着色，不能整只无差别发光；表面形变由对应地形形变或轮廓曲线实现，现阶段尚无动画验收。孔鳗独立黏液见GAP-02。"
+    },
+    {
+      "id": "fx-echo-ring",
+      "name": "空心回声与静默合圈",
+      "group": "fx",
+      "states": [
+        "旧位空心圈",
+        "1.4秒延迟攻击",
+        "胜后静默2秒合拢"
+      ],
+      "outputIds": [
+        "fx-echo-open-ring",
+        "fx-silence-ring",
+        "fx-short-swipe"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#room-R5-04"
+      ],
+      "evidence": "旧位置空心圆1.4秒后产生回声；安全站立两秒让空圆合拢取得S。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "旧位保存world坐标绘空心圈，1.4秒后复用攻击弧线执行延迟攻击，不复制主角；胜后2秒静默缩拢环。环可组成预告/完成状态，时序待实现。"
+    },
+    {
+      "id": "fx-fissure-warning",
+      "name": "柔膜缝收缩声纹/轮廓预告",
+      "group": "fx",
+      "states": [
+        "开放提示",
+        "闭合前闪轮廓"
+      ],
+      "outputIds": [
+        "fx-fissure-outline",
+        "soft-membrane-fissure-closed",
+        "soft-membrane-fissure-open"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R5-s16"
+      ],
+      "evidence": "双瓣轮廓+收缩声纹，闭合前闪轮廓。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "双瓣开/关为已制状态，预闭合叠轮廓并闪alpha；占用中维持open并延迟计时，不要求第三张同形图。"
+    },
+    {
+      "id": "fx-underwater-atmosphere",
+      "name": "水下悬粒/冷光/菌灯光",
+      "group": "fx",
+      "states": [
+        "景深悬粒",
+        "有方向流粒",
+        "薄雾",
+        "封闭琥珀菌光",
+        "冷光透射"
+      ],
+      "outputIds": [
+        "fx-particle-soft",
+        "fx-particle-drift",
+        "fx-cold-beam",
+        "fx-fungus-glow",
+        "fx-water-mist"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/full/#R2-s20"
+      ],
+      "evidence": "全程水下；悬粒薄雾分配景深，预告附近降密度；无明火。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "粒子实例、尺寸、颜色、alpha和速度随所在景深；方向流粒反映水流变化，酸性沉积只染色/密度调整。菌灯光源随灯罩开关，闭罩隐藏光层；避免新造火焰或鲸体呼吸。"
+    },
+    {
+      "id": "fx-hit-recovery",
+      "name": "受击与恢复反馈",
+      "group": "fx",
+      "states": [
+        "受击",
+        "失败保护",
+        "重新出发"
+      ],
+      "outputIds": [
+        "fx-hit-burst",
+        "fx-recovery-motes"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#player"
+      ],
+      "evidence": "04动作原图含受击与重新出发；危险扣1格回稳定台，1秒保护不连扣。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "受击短闪复用hit-burst，失败保护使用短时alpha+无敌计时，重新出发/调息复用微光；主角受击姿态属于后续动画，不能称已完成。"
+    },
+    {
+      "id": "fx-habitat-response",
+      "name": "栖息地恢复反馈",
+      "group": "fx",
+      "states": [
+        "幼菌亮起",
+        "孔瓣规律开合",
+        "红冠舒展",
+        "幼体进入低速槽"
+      ],
+      "outputIds": [
+        "fx-fungus-glow",
+        "fx-recovery-motes",
+        "habitat-shell-nest",
+        "habitat-fungus-bed",
+        "habitat-larva-trough",
+        "red-crown-colony",
+        "red-crown-colony-restored",
+        "sea-larva",
+        "nursery-valve-leaf",
+        "habitat-shade",
+        "r3-shell-nest-before",
+        "r3-shell-nest-after",
+        "tail-flow-shutter"
+      ],
+      "outputPlanComplete": true,
+      "sources": [
+        "http://10.11.140.20:8765/simple/#growth"
+      ],
+      "evidence": "六栖息地一次帮助后回访显示变化。",
+      "rooms": [],
+      "note": "静态阶段提供纹理或图形；时序、运动和动作同步在下一阶段制作。",
+      "stateRules": "H1放空壳后显示幼体；H2壳托调平+孔瓣旋转；H3遮光片转暗+幼菌glow；H4使用壳巢before/after明确壳口变化；H5移走压冠壳+红冠restored；H6转遮流瓣+幼体位置进入槽。六支线分别使用对应物件组合，不把3个栖息地底座当成6种状态。"
+    },
+    {
+      "id": "fx-eel-mucus",
+      "name": "孔鳗直线黏液发射物",
+      "group": "fx",
+      "states": [
+        "独立黏液弹体",
+        "直线发射与遮挡"
+      ],
+      "outputIds": [
+        "eel-mucus-projectile"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R3-02",
+        "R3-04"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/"
+      ],
+      "evidence": "R3敌人表：孔鳗鼓囊0.75秒后直线黏液，露头恢复0.8秒；空壳挡线。",
+      "note": "静态阶段交付独立弹体；飞行、碰撞、预告与发射时序在动作/接入阶段实现。"
+    },
+    {
+      "id": "fx-migration-projection",
+      "name": "迁徙记忆鲸群投影",
+      "group": "fx",
+      "states": [
+        "鲸轮廓投影",
+        "多实例群影"
+      ],
+      "outputIds": [
+        "migration-whale-projection"
+      ],
+      "outputPlanComplete": true,
+      "rooms": [
+        "R5-05"
+      ],
+      "sources": [
+        "http://10.11.140.20:8765/full/"
+      ],
+      "evidence": "R5-05迁徙记忆的鲸群投影与44_R5-05原画。",
+      "note": "单只透明投影用于多实例组成鲸群，属于记忆效果；不作为新增实体生物。"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "sizeU": [
+        30,
+        18
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-wound-section",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/07_R1-01.png"
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "sizeU": [
+        38,
+        21
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "red-tether",
+        "permanent-latches",
+        "ui-progression",
+        "anchor-pull-gate",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/08_R1-02.png"
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "sizeU": [
+        36,
+        18
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "r1-weighted-tongue",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/09_R1-03.png"
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "sizeU": [
+        36,
+        18
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/10_R1-04.png"
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "sizeU": [
+        38,
+        18
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-esophagus-section",
+        "r1-tongue-platform-kit",
+        "red-tether",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/11_R1-05.png"
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "sizeU": [
+        24,
+        24
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-nasal-section",
+        "red-tether",
+        "permanent-latches",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/12_R1-06.png"
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "sizeU": [
+        28,
+        19
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r1-oral-background",
+        "r1-baleen-middle",
+        "r1-baleen-foreground",
+        "r1-tongue-platform-kit",
+        "red-tether",
+        "bone-anchor-ring",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/13_R1-07.png"
+    },
+    {
+      "id": "R2-01",
+      "name": "育床",
+      "sizeU": [
+        28,
+        23
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/15_R2-01.png"
+    },
+    {
+      "id": "R2-02",
+      "name": "双层肺膜",
+      "sizeU": [
+        34,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/16_R2-02.png"
+    },
+    {
+      "id": "R2-03",
+      "name": "心室观察台",
+      "sizeU": [
+        30,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-pericardium-heart",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/17_R2-03.png"
+    },
+    {
+      "id": "R2-04",
+      "name": "血巢潮群",
+      "sizeU": [
+        36,
+        23
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-pericardium-heart",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "settlement-valve",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/18_R2-04.png"
+    },
+    {
+      "id": "R2-05",
+      "name": "回流出口",
+      "sizeU": [
+        32,
+        21
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-trachea-transition",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "permanent-latches",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/19_R2-05.png"
+    },
+    {
+      "id": "R2-06",
+      "name": "最后呼吸囊",
+      "sizeU": [
+        25,
+        27
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r2-lung-pleura",
+        "r2-soft-platform-kit",
+        "r2-patches-nursery-shells",
+        "r2-membrane-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/20_R2-06.png"
+    },
+    {
+      "id": "R3-01",
+      "name": "胃枢",
+      "sizeU": [
+        48,
+        30
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "permanent-latches",
+        "ui-progression",
+        "anchor-pull-gate",
+        "bone-anchor-ring",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/22_R3-01.png"
+    },
+    {
+      "id": "R3-02",
+      "name": "漂台阀",
+      "sizeU": [
+        34,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "settlement-valve",
+        "floating-platform",
+        "r3-hazard-surfaces",
+        "fx-underwater-atmosphere",
+        "fx-eel-mucus"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/23_R3-02.png"
+    },
+    {
+      "id": "R3-03",
+      "name": "肝叶灯罩",
+      "sizeU": [
+        38,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-liver-mesentery",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/24_R3-03.png"
+    },
+    {
+      "id": "R3-04",
+      "name": "脂槽刹车",
+      "sizeU": [
+        40,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-liver-mesentery",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "r3-hazard-surfaces",
+        "fx-underwater-atmosphere",
+        "fx-eel-mucus"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/25_R3-04.png"
+    },
+    {
+      "id": "R3-05",
+      "name": "肠入口",
+      "sizeU": [
+        32,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "bone-anchor-ring",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/26_R3-05.png"
+    },
+    {
+      "id": "R3-06",
+      "name": "迁居搬盘",
+      "sizeU": [
+        40,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "bone-anchor-ring",
+        "shell-mass-seat",
+        "floating-platform",
+        "r3-hazard-surfaces",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/27_R3-06.png"
+    },
+    {
+      "id": "R3-07",
+      "name": "搬壳母蟹",
+      "sizeU": [
+        40,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-intestinal-fold",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "permanent-latches",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/28_R3-07.png"
+    },
+    {
+      "id": "R3-08",
+      "name": "胃顶沉积袋",
+      "sizeU": [
+        30,
+        25
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r3-gastric-folds",
+        "r3-bank-platform-kit",
+        "r3-shell-nests-traces",
+        "r3-mucosa-foreground",
+        "red-tether",
+        "r3-falling-deposit",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/29_R3-08.png"
+    },
+    {
+      "id": "R4-01",
+      "name": "组合门",
+      "sizeU": [
+        30,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "ui-progression",
+        "anchor-pull-gate",
+        "bone-anchor-ring",
+        "fx-underwater-atmosphere",
+        "fx-danger-telegraph"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/31_R4-01.png"
+    },
+    {
+      "id": "R4-02",
+      "name": "低骨训练",
+      "sizeU": [
+        36,
+        24
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "ui-progression",
+        "anchor-pull-gate",
+        "safe-pearl-emitter",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/32_R4-02.png"
+    },
+    {
+      "id": "R4-03",
+      "name": "上锚路线",
+      "sizeU": [
+        36,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-fungal-recovery",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "bone-anchor-ring",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/33_R4-03.png"
+    },
+    {
+      "id": "R4-04",
+      "name": "下菌毯路线",
+      "sizeU": [
+        40,
+        21
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-fungal-recovery",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "bone-anchor-ring",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/34_R4-04.png"
+    },
+    {
+      "id": "R4-05",
+      "name": "悬脊鸣贝",
+      "sizeU": [
+        40,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/35_R4-05.png"
+    },
+    {
+      "id": "R4-06",
+      "name": "稳定交通椎",
+      "sizeU": [
+        34,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r4-bone-platform-kit",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/36_R4-06.png"
+    },
+    {
+      "id": "R4-07",
+      "name": "修索小室",
+      "sizeU": [
+        32,
+        25
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-vertebrae-sequence",
+        "r4-bone-platform-kit",
+        "r4-thin-bone",
+        "r4-training-traces",
+        "r4-bone-foreground",
+        "red-tether",
+        "bone-anchor-ring",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/37_R4-07.png"
+    },
+    {
+      "id": "R5-01",
+      "name": "三槽记忆",
+      "sizeU": [
+        30,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "ui-progression",
+        "anchor-pull-gate",
+        "progress-three-slots",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/40_R5-01.png"
+    },
+    {
+      "id": "R5-02",
+      "name": "安全池",
+      "sizeU": [
+        32,
+        21
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "soft-membrane-fissure",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/41_R5-02.png"
+    },
+    {
+      "id": "R5-03",
+      "name": "薄缝训练",
+      "sizeU": [
+        38,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "soft-membrane-fissure",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/42_R5-03.png"
+    },
+    {
+      "id": "R5-04",
+      "name": "缄声覆膜",
+      "sizeU": [
+        40,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "soft-membrane-fissure",
+        "fx-underwater-atmosphere",
+        "fx-echo-ring"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/43_R5-04.png"
+    },
+    {
+      "id": "R5-05",
+      "name": "最后静默",
+      "sizeU": [
+        28,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "permanent-latches",
+        "fx-underwater-atmosphere",
+        "fx-echo-ring",
+        "fx-migration-projection"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/44_R5-05.png"
+    },
+    {
+      "id": "R5-06",
+      "name": "记忆侧囊",
+      "sizeU": [
+        28,
+        22
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-cranial-background",
+        "r5-ear-soft-tissue",
+        "r5-cranial-platform-kit",
+        "r5-cranial-foreground",
+        "red-tether",
+        "soft-membrane-fissure",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/45_R5-06.png"
+    },
+    {
+      "id": "R5-07",
+      "name": "尾根观察",
+      "sizeU": [
+        34,
+        21
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r4-tailward-vertebrae",
+        "r5-tail-tendons",
+        "r5-tail-channel-kit",
+        "r5-tail-foreground",
+        "red-tether",
+        "progress-three-slots",
+        "habitat-six-sites",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/46_R5-07.png"
+    },
+    {
+      "id": "R5-08",
+      "name": "归海释放槽",
+      "sizeU": [
+        40,
+        20
+      ],
+      "requirementIds": [
+        "scene-water-depth",
+        "r5-tail-tendons",
+        "r5-tail-channel-kit",
+        "r5-tail-foreground",
+        "red-tether",
+        "release-sluice",
+        "fx-underwater-atmosphere"
+      ],
+      "assemblyVerified": false,
+      "reference": "http://10.11.140.20:8765/simple/images/47_R5-08.png"
+    }
+  ]
+}
