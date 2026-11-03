@@ -19,11 +19,13 @@ try {
     if (existsSync(staging) && (lstatSync(staging).isSymbolicLink() || realpathSync(staging) !== staging)) throw new Error('Linked Pages checkout.');
     if (!existsSync(path.join(staging, '.git'))) {
       if (existsSync(staging)) throw new Error('Pages checkout exists without .git; inspect before reuse.');
-      run(['clone', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
+      run(['clone', '--filter=blob:none', '--sparse', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
     } else {
       if (read(['status', '--porcelain'], staging)) throw new Error('Pages checkout has pending changes; inspect before reuse.');
       run(['pull', '--ff-only', remote, 'gh-pages'], staging);
     }
+    // Keep other version trees in the index without downloading their game packages.
+    run(['sparse-checkout', 'set', 'art'], staging);
     const destination = path.join(staging, 'art');
     if (existsSync(destination)) {
       if (lstatSync(destination).isSymbolicLink() || realpathSync(destination) !== destination) throw new Error('Linked art directory.');
