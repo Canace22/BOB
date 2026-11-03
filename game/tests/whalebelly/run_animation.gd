@@ -69,7 +69,7 @@ func run() -> void:
 	check("wall_stops_run",p.position.distance_to(blocked_at)<.1 and run.sprite.frame==held)
 	Input.action_release("tp_right");wall.queue_free();await tick(5)
 	# Wrap uses the same production clock and one 1/12-second interval.
-	p.animation_state="run";run.active=true;run.elapsed=6.99
+	p.animation_state="run";p.display_action="run";run.active=true;run.elapsed=6.99
 	run.update(.02,1.0)
 	check("loop_wraps",run.sprite.frame==0)
 	await tick(3)

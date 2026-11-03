@@ -136,6 +136,7 @@ var lower_frame: int = 0:
 @onready var body: Sprite2D = $Visual/Body
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var tree: AnimationTree = $AnimationTree
+var locomotion_visual := TideLocomotionVisual.new()
 var playback: AnimationNodeStateMachinePlayback
 
 func _ready() -> void:
@@ -295,6 +296,7 @@ func _physics_process(dt: float) -> void:
 		$Visual/Legs.visible=split
 		$Visual/Legs.material.set_shader_parameter("flash",body.material.get_shader_parameter("flash"))
 	tree.advance(dt)
+	locomotion_visual.update(self, dt)
 	cooldowns_changed.emit(cooldowns.duplicate())
 	availability_changed.emit(jump_count<2,cooldowns.dash<=0 and ability_available("A1_dash"))
 
@@ -474,6 +476,7 @@ func take_damage(amount: int=15,source: Vector2=Vector2.ZERO,force: bool=false) 
 	return true
 
 func respawn() -> void:
+	locomotion_visual.reset()
 	position=spawn_point
 	facing=1.0
 	wall_lock=0

@@ -27,7 +27,7 @@ func setup(player: CharacterBody2D, target_height: float) -> void:
 	actor.get_node("Visual").add_child(sprite)
 
 func update(delta: float, travelled_x: float) -> void:
-	var runing: bool = actor.animation_state == "run" and actor.is_on_floor()
+	var runing: bool = actor.animation_state == "run" and actor.display_action == "run" and actor.is_on_floor()
 	if runing and not active: elapsed = 0.0
 	if runing and absf(travelled_x)>0.01:
 		elapsed = fposmod(elapsed + delta,7.0)
