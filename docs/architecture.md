@@ -54,6 +54,8 @@ node game/tests/web_whalebelly.mjs
 
 `node tools/deploy-pages.mjs` 导出单线程Web版，更新已有 `gh-pages` 的 `/godot/` 和默认根入口，普通推送，保留V2等在线历史目录。需要匹配版本的 `web_nothreads_release.zip` 模板。
 
+Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
+
 导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。保留原始包用于缺少解压API的浏览器。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。

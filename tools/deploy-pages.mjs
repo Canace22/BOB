@@ -24,12 +24,22 @@ function prepare() {
   const remote = read(['remote', 'get-url', 'origin']);
   const source = read(['rev-parse', 'HEAD']);
   assertLocalDirectory(staging, root);
-  if (!existsSync(path.join(staging, '.git'))) {
+  const freshCheckout = !existsSync(path.join(staging, '.git'));
+  if (freshCheckout) {
     if (existsSync(staging)) throw new Error('Staging exists without .git; inspect it before reuse.');
-    run('git', ['clone', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
+    run('git', ['clone', '--filter=blob:none', '--sparse', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
   } else {
     if (read(['status', '--porcelain'], staging)) throw new Error('Staging has uncommitted changes; inspect before reuse.');
-    run('git', ['pull', '--ff-only', remote, 'gh-pages'], staging);
+  }
+  // Keep every published version in Git without downloading unrelated art blobs.
+  run('git', ['config', 'remote.origin.promisor', 'true'], staging);
+  run('git', ['config', 'remote.origin.partialclonefilter', 'blob:none'], staging);
+  run('git', ['sparse-checkout', 'init', '--no-cone'], staging);
+  run('git', ['sparse-checkout', 'set', '/godot/', '/index.html', '/.nojekyll'], staging);
+  if (!freshCheckout) {
+    run('git', ['fetch', '--filter=blob:none', remote, 'gh-pages'], staging);
+    // Diffstat can lazily download unrelated blobs on older Git versions.
+    run('git', ['merge', '--ff-only', '--no-stat', 'FETCH_HEAD'], staging);
   }
   const dest = path.join(staging, 'godot');
   if (entryOnly && !existsSync(path.join(dest, 'index.html'))) throw new Error('Publish the Godot game before updating its default entry.');
