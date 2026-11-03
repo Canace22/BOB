@@ -2,12 +2,30 @@
 
 以「鲸落」为题材的 2D 战斗 + 收集探索游戏（类空洞骑士），使用 Godot 4.7.2 开发。
 
+## 在线页面
+
+### 游戏与美术
+
 | 入口 | 说明 |
 | --- | --- |
 | [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
 | [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
-| [V2 原画版在线试玩](https://canace22.github.io/BOB/mvp-v2/) | 冻结的 Canvas 2D 原型，保留可玩 |
+| [Godot 章节原型](https://canace22.github.io/BOB/godot-chapters/) | 独立发布的章节原型，入口为 `chapters-v1` |
+| [Godot Boss 原型](https://canace22.github.io/BOB/godot-boss/) | 独立发布的母蟹 Boss 原型，入口为 `crab-prototype` |
 | [美术资源在线预览](https://canace22.github.io/BOB/art/) | 搜索、筛选、放大与下载素材，查看需求及拼装预览 |
+| [完整美术需求与缺项](https://canace22.github.io/BOB/art/requirements.html) | 查看资源家族、缺项、状态组合及房间需求映射 |
+
+### 历史试玩与工具
+
+| 入口 | 说明 |
+| --- | --- |
+| [V2 原画版在线试玩](https://canace22.github.io/BOB/mvp-v2/) | 冻结的 Canvas 2D 须门遗港原型 |
+| [V2 旧四区试玩](https://canace22.github.io/BOB/mvp-v2/legacy.html) | 保留鲸口、胃库、肺缘与肋骨的旧四区玩法 |
+| [地图与场景工作台](https://canace22.github.io/BOB/mvp-v2/scene-lab.html) | 查看旧四区的地图实体、场景分层和制作来源 |
+| [历史 MVP 原型](https://canace22.github.io/BOB/mvp/) | 保留的早期试玩入口 |
+| [历史梦魇原型](https://canace22.github.io/BOB/nightmare/) | 保留的 Nightmare 试玩入口 |
+
+以上覆盖当前 `gh-pages` 分支的全部 11 个 HTML 页面入口，2026-11-03 已核对线上访问，均返回 HTTP 200。各版玩法与发布验收以对应进度记录为准。
 
 ## 目录
 
