@@ -16,20 +16,19 @@ BOB/
 ├── assets/      # 全局素材库、制作源与资源台账
 ├── docs/        # 架构说明、世界观与原画设计
 ├── tools/       # godot.mjs 命令入口、Pages 发布脚本
-├── legacy/      # 冻结只读：旧 Godot 工程、Web 原型、旧制作脚本
 ├── .agents/     # 项目 Skill
 └── AGENTS.md    # 协作规则（AI 与人共用）
 ```
 
-架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](legacy/README.md)。
+架构、模块与约定见 [docs/architecture.md](docs/architecture.md)。旧版本说明见 [legacy/README.md](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/README.md)。
 
-2026-10-31 已完整恢复原 WhalebellyRuins 可玩内容。打开 `game/project.godot` 按 F5，默认运行原七房、CampaignPlayer、完整 3C/技能、Run 动画、HUD 及主地图环境动态；不再仅有独立环境预览。[恢复范围、操作与验收](docs/whalebelly-game-recovery.md)。原模块化五房场景仍保留在 `game/src/main/main.tscn`。
+2026-10-31 已完整恢复原 WhalebellyRuins 可玩内容。打开 `game/project.godot` 按 F5，默认运行原七房、CampaignPlayer、完整 3C/技能、Run 动画、HUD 及主地图环境动态；不再仅有独立环境预览。[恢复范围、操作与验收](docs/whalebelly-game-recovery.md)。旧模块化五房、旧动画预览与完整 `legacy/` 已移到[归档分支](docs/legacy-archive.md)。
 
 ## 当前内容
 
-默认入口已恢复原 WhalebellyRuins：七房地形、道路与支路、逐帧拾潮者、短击/下劈/迎珠/重鸣/调息、能力门、Boss、营地、V6存档和镜头。R1-01 使用分层环境、62条鱼、垂须、气泡、水面与前景；15组动作库及84帧跑步保留。
+默认入口已恢复原 WhalebellyRuins：七房地形、道路与支路、逐帧拾潮者、短击/下劈/迎珠/重鸣/调息、能力门、Boss、营地、V6存档和镜头。R1-01 使用分层环境、62条鱼、垂须、气泡、水面与前景；15组动作库及84帧跑步保留；当前使用540张身体帧、180张独立特效帧，旧合成帧已归档。
 
-主线已验证前五房至首关出口；支路机制专项通过不代表七房全部连续路线已验证。恢复细节与制作源清单见[恢复说明](docs/whalebelly-recovery.md)，实际测试与限制见 [game/progress.md](game/progress.md)。线上目前仍是恢复前的稳定模块版。
+主线已验证前五房至首关出口；支路机制专项通过不代表七房全部连续路线已验证。恢复细节与制作源清单见[恢复说明](docs/whalebelly-recovery.md)，实际测试与限制见 [game/progress.md](game/progress.md)。线上版本与本地验证状态以进度中的最新发布记录为准。
 
 ## 快速开始
 
@@ -55,7 +54,7 @@ node game/tests/serve_web.mjs       # 独立终端保持运行，端口 4187
 node game/tests/web_whalebelly.mjs # 恢复版真实按键/营地/刷新冒烟验收
 ```
 
-`PLAYWRIGHT_MODULE` 可指定现有模块路径，`GAME_URL` 指定验收服务地址。恢复版测试与原模块版 `web_playthrough.mjs` 不同，不能混用。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
+`PLAYWRIGHT_MODULE` 可指定现有模块路径，`GAME_URL` 指定验收服务地址。旧模块版及其专用测试已归档；当前按键验收使用 `web_whalebelly.mjs`。测试自动创建独立浏览器上下文，报告和截图在 `game/build/qa/`（不提交）。
 
 ## 操作（桌面键盘）
 
@@ -78,5 +77,7 @@ Web 导出后自动生成压缩下载文件与加载说明，浏览器缓存按�
 ## 美术资源
 
 正式画面只用入库的 2D 位图素材，规则见 [AGENTS.md](AGENTS.md#正式美术必须使用2d素材)。素材管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)。管理页面：`npm --prefix assets/manager start`，打开 http://127.0.0.1:4176/ 。
+
+运行图片统一经过[Framecraft 保真压缩](assets/source/framecraft-runtime/README.md)，仅同步新版实际使用的资源。
 
 大型素材使用 Git LFS。编辑器缓存、验收截图、第三方工具和日志不入库，见[迁移与提交范围](docs/workspace-migration.md)。

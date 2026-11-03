@@ -1,5 +1,6 @@
 # WhalebellyRuins 内容恢复
 
+> 本页保留恢复阶段的来源和验收记录。2026-11-03 已归档旧模块、旧预览与未使用资源；当前资源以 `game/content/whalebelly/runtime-resources.json` 为准，制作与压缩见 [Framecraft 批次](../assets/source/framecraft-runtime/README.md)。
 2026-10-31。拉新后的 `game/` 仅迁入独立环境预览，默认玩法仍是简化的模块版，导致原角色动作、技能和七房表现看似消失。原件实际保存在 `legacy/godot/WhalebellyRuins/` 与仓库外备份中。
 
 ## 当前入口与恢复范围
@@ -10,15 +11,15 @@
 | --- | --- |
 | 七房主场景、原地形与路线 | `game/content/whalebelly/main.tscn`、`r1/` |
 | 拾潮者角色、动作、技能、原5生命参数 | `game/content/whalebelly/CampaignPlayer.tscn`、`game/src/campaign/` |
-| 84帧/12FPS跑步、原Walk/Idle及15组动作库 | `game/art/whalebelly/animations/`及运行资源 |
+| 84帧/12FPS跑步与15组身体/特效动作库；旧Walk/Idle预览已归档 | `game/art/whalebelly/animations/`及运行资源 |
 | 三组62条鱼、48帧/12FPS垂须、56个气泡、水面、柔光、前景 | `game/content/whalebelly/environment/`与`game/art/whalebelly/` |
 | 原音效变体、HUD、帮助、镜头、机关与V6存档 | `game/src/campaign/` |
-| 拉新后的模块版 | 保留 `game/src/main/main.tscn`，未删除 |
-| 历史原图、旧母版、配置、文档 | `game/production_sources/whalebelly/`，不导出 |
+| 拉新后的模块版 | 已归档至 `codex/archive-legacy-20261103` |
+| 历史原图、旧母版、配置、文档 | 归档分支的 `game/production_sources/whalebelly/`，不在当前分支导出 |
 
 `game/content/whalebelly/recovery-manifest.json` 记录1914项原运行文件的来源和路径映射；包含30个原运行脚本、109个原场景和8个Shader。所有来源SHA256与原件一致，复制的二进制资源与原件一致；文本只做路径/类名适配及明确的兼容修复。95份附加制作源、工具配置和文档由 `production_sources/whalebelly/source-index.json` 登记。原零字节占位文件单独列明，不冒充功能。
 
-`tools/recover-whalebelly.mjs` 是一次性恢复工具，默认拒绝覆盖；**不要用 `--refresh` 覆盖当前已修复源码**。常规素材同步仍用 `game/art/manifest.json` 和 `sync-art`，JSON/TRES资源路径同步改写。
+归档分支的 `tools/recover-whalebelly.mjs` 是一次性恢复工具，默认拒绝覆盖；**不要用 `--refresh` 覆盖当前已修复源码**。常规素材同步仍用 `game/art/manifest.json` 和 `sync-art`，JSON/TRES资源路径同步改写。
 
 ## 存档保护
 

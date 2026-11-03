@@ -20,7 +20,7 @@
 | 镜头 | 跟随主角；战斗时缩到 0.68，固定到写死的房间坐标 | 从竞技场范围配置取景；平滑入场并保持主角足够大 |
 | 资源 | 主角姿态帧、螃蟹静态图和已有特效位图 | 螃蟹独立招式姿态/动画尚需制作，静态旋转不能算动作动画 |
 
-依据：[主角参数](../../game/src/player/player_tuning.tres)、[动作](../../game/src/player/states/actions.gd)、[敌人](../../game/src/enemies/enemy_base.gd)、[镜头](../../game/src/main/camera_rig.gd)、[资源清单](../../game/art/manifest.json)。
+依据：[主角参数](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/game/src/player/player_tuning.tres)、[动作](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/game/src/player/states/actions.gd)、[敌人](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/game/src/enemies/enemy_base.gd)、[镜头](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/game/src/main/camera_rig.gd)、[资源清单](../../game/art/manifest.json)。
 
 当前主线在胜利后才解锁冲刺。因此基准模式不带冲刺，每招都必须能靠移动和跳跃躲避；原型可另设「已解锁冲刺」对照模式，只改变本次训练状态。
 

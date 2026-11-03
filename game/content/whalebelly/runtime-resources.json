@@ -1,0 +1,3769 @@
+{
+  "archiveBranch": "codex/archive-legacy-20261103",
+  "roots": [
+    "project.godot",
+    "content/whalebelly/main.tscn",
+    "content/whalebelly/tide_demo.tscn",
+    "content/whalebelly/test/PlayerTest.tscn",
+    "content/whalebelly/characters/run_preview.tscn",
+    "content/whalebelly/environment/motion_preview.tscn",
+    "art/fonts/OFL.txt",
+    "art/whalebelly/runtime/tide-picker-run-v03/manifest.json"
+  ],
+  "dynamicPaths": [
+    {
+      "owner": "src/campaign/main.gd",
+      "pattern": "art/whalebelly/runtime/audio/**"
+    },
+    {
+      "owner": "src/campaign/main.gd",
+      "pattern": "art/whalebelly/runtime/audio/**"
+    },
+    {
+      "owner": "src/campaign/main.gd",
+      "pattern": "content/whalebelly/r1/**"
+    },
+    {
+      "owner": "src/campaign/main.gd",
+      "pattern": "art/whalebelly/reference/r1/**"
+    },
+    {
+      "owner": "src/campaign/tide_player.gd",
+      "pattern": "art/whalebelly/animations/player/body/%s/%03d.png"
+    },
+    {
+      "owner": "src/campaign/tide_player.gd",
+      "pattern": "art/whalebelly/animations/player/effects/%s/%03d.png"
+    },
+    {
+      "owner": "content/whalebelly/environment/elements/motion_element.gd",
+      "pattern": "content/whalebelly/environment/elements/**"
+    },
+    {
+      "owner": "content/whalebelly/environment/elements/fish_school_v01.gd",
+      "pattern": "art/whalebelly/fish_schools/%s/swim_atlas.png"
+    }
+  ],
+  "files": [
+    {
+      "path": "art/fonts/OFL.txt",
+      "owner": "current entry"
+    },
+    {
+      "path": "art/fonts/WhalefallUI.ttf",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A1_dash/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A2_float/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A3_anchor/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A4_parry/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/A5_slit/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/defeat/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/heavy/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/hit/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/000.png",
+      "owner": "content/whalebelly/Player.tscn"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/idle/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/interact/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/jump_land/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/recover/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/run/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_01/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/body/strike_02/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A1_dash/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A2_float/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A3_anchor/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/A4_parry/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/000.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/001.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/002.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/003.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/004.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/005.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/006.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/007.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/008.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/009.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/010.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/011.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/012.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/013.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/014.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/015.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/016.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/017.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/018.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/019.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/020.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/021.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/022.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/023.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/024.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/025.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/026.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/027.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/028.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/029.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/030.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/031.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/032.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/033.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/034.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/animations/player/effects/heavy/035.png",
+      "owner": "src/campaign/tide_player.gd"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-LEFT.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_loop_v3/CLEAN-ROOF.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/baleen_wan22/BALEEN-DISTANT.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-DISTANT.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-02-far.png",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-02.png",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-03-far.png",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-03.png",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-04-far.png",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-04.png",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-05-far.png",
+      "owner": "content/whalebelly/r1/R1-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-05.png",
+      "owner": "content/whalebelly/r1/R1-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-06-far.png",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-06.png",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-07-far.png",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/clean/R1-07.png",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/fish_schools/lantern/swim_atlas.png",
+      "owner": "content/whalebelly/environment/elements/fish_school_v01.gd"
+    },
+    {
+      "path": "art/whalebelly/fish_schools/manifest.json",
+      "owner": "content/whalebelly/environment/elements/fish_school_v01.gd"
+    },
+    {
+      "path": "art/whalebelly/fish_schools/silverfin/swim_atlas.png",
+      "owner": "content/whalebelly/environment/elements/fish_school_v01.gd"
+    },
+    {
+      "path": "art/whalebelly/fish_schools/tealback/swim_atlas.png",
+      "owner": "content/whalebelly/environment/elements/fish_school_v01.gd"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-DECOR-01.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-DECOR-11.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-ENV-DEPTH.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-WALL-L.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CLEAN-WALL-R.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/CORNER-BACKING.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/FRONT-BOTTOM-PAD.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/FRONT-BOTTOM-RIGHT.png",
+      "owner": "content/whalebelly/environment/elements/FRONT-BOTTOM-RIGHT.tscn"
+    },
+    {
+      "path": "art/whalebelly/foreground_edges/FRONT-TOP-LEFT.png",
+      "owner": "content/whalebelly/environment/elements/FRONT-TOP-LEFT.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-02-actors.svg",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-02-classes.svg",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-02-EnemyArt0.svg",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-02-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-actors.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-classes.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-EnemyArt0.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-EnemyArt1.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-03-RewardArt.svg",
+      "owner": "content/whalebelly/r1/R1-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-actors.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-classes.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-claw.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-DoorArt.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-EnemyArt0.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-04-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-05-actors.svg",
+      "owner": "content/whalebelly/r1/R1-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-05-classes.svg",
+      "owner": "content/whalebelly/r1/R1-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-05-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-06-actors.svg",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-06-classes.svg",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-06-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-06-RewardArt.svg",
+      "owner": "content/whalebelly/r1/R1-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-07-actors.svg",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-07-classes.svg",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-07-PlayerArt.svg",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/masks/R1-07-RewardArt.svg",
+      "owner": "content/whalebelly/r1/R1-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-01.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-02.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-03.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-04.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-05.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BALEEN-06.png",
+      "owner": "content/whalebelly/environment/elements/BALEEN-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BEAM-01.png",
+      "owner": "content/whalebelly/environment/elements/BEAM-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BEAM-02.png",
+      "owner": "content/whalebelly/environment/elements/BEAM-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/BEAM-03.png",
+      "owner": "content/whalebelly/environment/elements/BEAM-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/CAUSTIC-RIBBONS.png",
+      "owner": "content/whalebelly/environment/elements/CAUSTIC-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/CHARACTER.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-02.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-03.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-04.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-05.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-06.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-07.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-08.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-09.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-10.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/DECOR-12.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-01.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-02.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-03.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-04.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-05.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-06.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-07.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-08.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-08.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-09.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-09.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-10.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-10.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-11.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-11.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-12.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-12.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-13.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-13.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-14.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-14.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-15.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-15.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-16.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-16.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-17.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-17.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-18.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-18.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-19.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-19.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-20.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-20.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-21.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-21.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-22.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-22.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-23.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-23.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-24.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-24.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-25.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-25.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-26.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-26.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-02-27.png",
+      "owner": "content/whalebelly/environment/elements/FISH-02-27.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-01.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-02.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-03.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-04.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-05.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-05.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-06.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-06.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-07.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-07.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-08.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-08.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-09.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-09.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-10.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-10.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-11.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-11.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-12.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-12.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-13.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-13.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-14.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-14.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-15.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-15.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-16.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-16.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-17.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-17.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-18.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-18.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-19.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-19.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-20.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-20.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FISH-03-21.png",
+      "owner": "content/whalebelly/environment/elements/FISH-03-21.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/FRONT-CONTINUOUS.png",
+      "owner": "content/whalebelly/environment/elements/FRONT-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/LAMP.png",
+      "owner": "content/whalebelly/environment/elements/LAMP.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/MID-01.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/MID-02.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/MID-03.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/PLANT-01.png",
+      "owner": "content/whalebelly/environment/elements/PLANT-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/PLANT-02.png",
+      "owner": "content/whalebelly/environment/elements/PLANT-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/PLANT-03.png",
+      "owner": "content/whalebelly/environment/elements/PLANT-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/PLANT-04.png",
+      "owner": "content/whalebelly/environment/elements/PLANT-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/PORTAL.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/VINE-01.png",
+      "owner": "content/whalebelly/environment/elements/VINE-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/VINE-02.png",
+      "owner": "content/whalebelly/environment/elements/VINE-02.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/VINE-03.png",
+      "owner": "content/whalebelly/environment/elements/VINE-03.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/VINE-04.png",
+      "owner": "content/whalebelly/environment/elements/VINE-04.tscn"
+    },
+    {
+      "path": "art/whalebelly/motion_elements/WATER-SURFACE.png",
+      "owner": "content/whalebelly/environment/elements/WATER-SURFACE.tscn"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-01.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-01.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-02.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-02.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-03.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-03.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-04.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-04.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-05.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-05.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-06.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-06.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-07.png",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference/r1/R1-07.svg",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/reference_environment/bubble.png",
+      "owner": "content/whalebelly/environment/elements/bubble_emitter.gd"
+    },
+    {
+      "path": "art/whalebelly/reference_environment/CHARACTER.png",
+      "owner": "content/whalebelly/r1/R1-01.tscn"
+    },
+    {
+      "path": "art/whalebelly/reference_environment/source-reference.png",
+      "owner": "art/whalebelly/rooms.json"
+    },
+    {
+      "path": "art/whalebelly/rooms.json",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/collect.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/collect_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/collect_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/dash.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/dash_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/dash_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heal.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heal_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heal_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heavy.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heavy_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/heavy_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hit.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hit_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hit_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hurt.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hurt_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/hurt_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/jump.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/jump_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/jump_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/save.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/save_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/save_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/slam.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/slam_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/slam_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/strike.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/strike_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/strike_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/sweep.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/sweep_2.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/sweep_3.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/audio/water_bed.wav",
+      "owner": "src/campaign/main.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/crab.png",
+      "owner": "src/campaign/tide_target.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/tide-picker-run-v03/manifest.json",
+      "owner": "current entry"
+    },
+    {
+      "path": "art/whalebelly/runtime/tide-picker-run-v03/run-atlas.png",
+      "owner": "art/whalebelly/runtime/tide-picker-run-v03/run.tres"
+    },
+    {
+      "path": "art/whalebelly/runtime/tide-picker-run-v03/run.tres",
+      "owner": "src/campaign/run_preview.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/v02/lamp.png",
+      "owner": "src/campaign/tide_demo.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/v04/ledge.png",
+      "owner": "src/campaign/tide_demo.gd"
+    },
+    {
+      "path": "art/whalebelly/runtime/v04/oral-depth.png",
+      "owner": "src/campaign/tide_demo.gd"
+    },
+    {
+      "path": "art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png",
+      "owner": "content/whalebelly/environment/elements/soft_underwater_light.tscn"
+    },
+    {
+      "path": "art/whalebelly/underbridge/FOREGROUND-BACKING-SOFT.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    },
+    {
+      "path": "art/whalebelly/underbridge/ROAD-UNDERSIDE-RESTORED.png",
+      "owner": "content/whalebelly/environment/xumen_reference.tscn"
+    }
+  ]
+}

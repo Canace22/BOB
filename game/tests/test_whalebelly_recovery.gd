@@ -6,13 +6,17 @@ func test_recovered_campaign_is_default_and_all_seven_rooms_exist() -> void:
 	eq(rooms.size(), 7, "All authored rooms recovered")
 	for room: Dictionary in rooms:
 		check(ResourceLoader.exists("res://content/whalebelly/r1/" + str(room.id) + ".tscn"), "Authored room exists: " + str(room.id))
-	check(ResourceLoader.exists("res://src/main/main.tscn"), "Modular campaign remains available")
+	check(not FileAccess.file_exists("res://src/main/main.tscn"), "Old modular campaign is archived")
 
 func test_recovered_runtime_dependencies_exist_in_game() -> void:
-	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/recovery-manifest.json"))
+	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/runtime-resources.json"))
 	for entry: Dictionary in manifest.files:
-		var destination: String = str(entry.destination).trim_prefix("game/")
+		var destination: String = str(entry.path)
 		check(FileAccess.file_exists("res://" + destination), "Recovered dependency exists: " + destination)
+	var sync: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://art/manifest.json"))
+	for entry: Dictionary in sync.entries:
+		check(str(entry.src).begins_with("assets/"), "Sync uses the active library: " + str(entry.src))
+		check(FileAccess.file_exists("res://../" + str(entry.src)), "Sync source exists: " + str(entry.src))
 	var player := (load("res://content/whalebelly/CampaignPlayer.tscn") as PackedScene).instantiate()
 	eq(player.max_speed, 265.0, "Original movement baseline retained")
 	eq(player.max_health, 5, "Original campaign health retained")

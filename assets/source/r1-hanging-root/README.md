@@ -26,10 +26,10 @@
 
 极低透明像素延伸至画布边缘；沿用库中 alpha ≥ 8 的包围盒约定确定可见尺度，未裁剪或改写原始 PNG。三支骨纤根的非矩形下缘保留，不能纵向拉伸为通屏柱。
 
-运行文件由现有[导出脚本](../../../mvp-v2/tools/export-runtime-art.py)按 384 像素边界、WebP quality 82 等比生成：[r1-hanging-root.webp](../../runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp)，384 × 288，21,232 bytes。导出倍率 X/Y 均为 `0.26519337016574585`；清单中的 bbox / pivot 已转换为运行像素，不可重复缩放。运行选择增至 42 项，共 1,959,728 bytes；原件哈希导出前后不变。
+运行文件由现有[导出脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-v2/tools/export-runtime-art.py)按 384 像素边界、WebP quality 82 等比生成：[r1-hanging-root.webp](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp)，384 × 288，21,232 bytes。导出倍率 X/Y 均为 `0.26519337016574585`；清单中的 bbox / pivot 已转换为运行像素，不可重复缩放。运行选择增至 42 项，共 1,959,728 bytes；原件哈希导出前后不变。
 
 ## 接入范围与验收
 
 仅用于 `mvp-v2` R1 选定悬台；从顶部中心挂到既有平台下方，等比显示，不自动增加站立面、碰撞或新玩法。单张静态精灵，不是动画。未重新打包历史 174 件静态图集。
 
-已执行：原件目检；尺寸/alpha/bbox/哈希核对；WebP 导出与透明度检查；真实按键五房路线、育窝悬台挂点/等比/遮挡/可达性检查。最终只绘制在 R1-05 两个独立中间台下，不加在连续丘面或高井叠台；现已登记接入。证据与发布结果见 [V2进度](../../../mvp-v2/progress.md)。用户美术确认仍独立记录。
+已执行：原件目检；尺寸/alpha/bbox/哈希核对；WebP 导出与透明度检查；真实按键五房路线、育窝悬台挂点/等比/遮挡/可达性检查。最终只绘制在 R1-05 两个独立中间台下，不加在连续丘面或高井叠台；现已登记接入。证据与发布结果见 [V2进度](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-v2/progress.md)。用户美术确认仍独立记录。

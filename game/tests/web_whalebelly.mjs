@@ -5,7 +5,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 const require = createRequire(import.meta.url);
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE ?? 'playwright');
-const out = path.resolve('game/build/qa/whalebelly-recovery/web');
+const out = path.resolve('game/build/qa', process.env.TEST_LABEL ?? 'whalebelly-recovery/web');
 fs.mkdirSync(out, {recursive:true});
 const bundled = chromium.executablePath();
 const browser = await chromium.launch({headless:true, executablePath:fs.existsSync(bundled) ? bundled : 'C:/Program Files/Google/Chrome/Application/chrome.exe', args:['--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']});

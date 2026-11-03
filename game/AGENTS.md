@@ -5,8 +5,8 @@
 ## 动手前
 
 1. 读 `docs/architecture.md`，确定改动属于哪个模块目录。
-2. 只读相关目录；房间问题直接读 `content/rooms/<区域>/<房间ID>.tscn`。
-3. `legacy/` 下的旧工程只作参考，不在里面开发。
+2. 只读相关目录；房间问题直接读 `content/whalebelly/r1/<房间ID>.tscn`。
+3. 旧版本已移到 `codex/archive-legacy-20261103`，按[归档说明](../docs/legacy-archive.md)独立检出。
 
 ## 写代码
 

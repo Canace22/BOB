@@ -2,6 +2,8 @@
 name: bob-desktop-verification
 description: 对 BOB 鲸腹遗城 V2、初版和 Three.js 原型执行桌面浏览器回归，选择真实输入通关、死亡恢复、存档隔离与 Pages 路径检查；纯文档修改只检查文档和链接。
 ---
+> 2026-11-03：完整旧版已移到 `codex/archive-legacy-20261103`；下文Web流程仅在按[归档说明](../../../docs/legacy-archive.md)独立检出后使用。当前分支的资源与Godot接入以[正式开发Skill](../godot-game-dev/SKILL.md)和Framecraft批次为准。
+
 
 > Godot 正式工程请使用 [godot-game-dev](../godot-game-dev/SKILL.md)。以下 Web 专项流程仅供 `legacy/web/` 历史原型参考与回归，不能用于继续开发旧版本；共享素材制作仍可参考美术规则。
 
@@ -21,8 +23,8 @@ description: 对 BOB 鲸腹遗城 V2、初版和 Three.js 原型执行桌面浏�
 | 初版 `mvp/` | `npm start`，默认 4173 | `npm run check` | `node tests/playthrough.mjs`、`node tests/recovery.mjs` |
 | Three.js 版 `mvp-nightmare/` | 首次 `npm install`，再 `npm start`，默认 4174 | `npm run check` | `npm test` |
 
-- V2 测试使用 `GAME_URL`，默认 4175；开发预览应指向实际开发端口。资源管理页也默认占用 4176，同时使用时通过 `PORT` 为开发服务另选端口。Playwright 与浏览器回退机制见 [V2 说明](../../../legacy/web/mvp-v2/README.md#验证)。`npm test` 包括机制、生态、地形、快照 HTTP 测试与真实按键全路线；新资源另外检查请求、比例、状态与失败回退。
-- Three.js 版测试支持 `BASE_URL`、`TEST_OUTPUT`、`HEADED`。依赖安装见[版本说明](../../../legacy/web/mvp-nightmare/README.md#检查与验收)；也可通过 `PLAYWRIGHT_MODULE` 指向已有可导入入口。
+- V2 测试使用 `GAME_URL`，默认 4175；开发预览应指向实际开发端口。资源管理页也默认占用 4176，同时使用时通过 `PORT` 为开发服务另选端口。Playwright 与浏览器回退机制见 [V2 说明](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-v2/README.md#验证)。`npm test` 包括机制、生态、地形、快照 HTTP 测试与真实按键全路线；新资源另外检查请求、比例、状态与失败回退。
+- Three.js 版测试支持 `BASE_URL`、`TEST_OUTPUT`、`HEADED`。依赖安装见[版本说明](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/web/mvp-nightmare/README.md#检查与验收)；也可通过 `PLAYWRIGHT_MODULE` 指向已有可导入入口。
 - 初版两个测试目前硬编码 4173 和作者机器的 Playwright 绝对路径，不支持上述环境变量。运行前检查依赖是否存在；换环境时按本次需要做最小的路径适配并记录，不能宣称设置 `PLAYWRIGHT_MODULE` 即可运行旧脚本。
 - 当前 `mvp/package.json` 的 `check` 检查 V2 与发布脚本；修改初版文件时显式运行对应 `node --check`，不可据此声称初版语法已覆盖。语法通过不代表关卡数据或玩法正确。
 - 输出位于对应版本的 `output/playthrough/`、初版另有 `output/recovery/`。Three.js 版支持改输出目录，初版有相对工作目录的截图路径，应在 `mvp/` 内运行。重跑会覆盖同名证据，有保留需要时先归档。
