@@ -40,7 +40,7 @@ func _ready() -> void:
 	var source_height:float=textures.idle[0].get_image().get_used_rect().size.y
 	visual_scale=target_height/maxf(source_height,1)
 	$Visual.scale=Vector2.ONE*visual_scale
-	run_visual=load("res://src/campaign/action_visual.gd").new() if ResourceLoader.exists("res://src/campaign/action_visual.gd") else preload("res://src/campaign/campaign_run_visual.gd").new()
+	run_visual=preload("res://src/campaign/action_visual.gd").new()
 	run_visual.name="RunVisualController"
 	add_child(run_visual)
 	run_visual.setup(self,target_height)

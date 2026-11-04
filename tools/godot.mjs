@@ -51,6 +51,16 @@ const importProject = () => {
   return godot(['--import']);
 };
 
+function checkPackedGame() {
+  const cwd = join(GAME, 'build/qa/package-audit/empty-runtime');
+  mkdirSync(cwd, { recursive: true });
+  const result = spawnSync(findGodot(), ['--headless', '--main-pack', join(GAME, 'build/web/index.pck'),
+    '--script', join(GAME, 'tests/whalebelly/exported_package.gd')], { cwd, encoding: 'utf8' });
+  const output = `${result.stdout ?? ''}${result.stderr ?? ''}`;
+  process.stdout.write(output);
+  return /SCRIPT ERROR|Parse Error|^ERROR:/m.test(output) ? 1 : result.status ?? 1;
+}
+
 function scriptFiles(dir) {
   return readdirSync(dir).flatMap((name) => {
     const path = join(dir, name);
@@ -89,8 +99,13 @@ const commands = {
   'sync-art': () => importProject() || godot(['-s', 'res://tools/sync_art.gd']) || importProject(),
   'export-web': () => {
     mkdirSync(join(GAME, 'build', 'web'), { recursive: true });
+    const selection = spawnSync(process.execPath, [join(ROOT, 'tools', 'prepare-web-export.mjs')], { stdio: 'inherit' });
+    if (selection.status !== 0) return selection.status ?? 1;
     const result = importProject() || godot(['--export-release', 'Web', 'build/web/index.html']);
     if (result !== 0) return result;
+    const audit = spawnSync(process.execPath, [join(ROOT, 'tools', 'audit-web-package.mjs')], { stdio: 'inherit' });
+    if (audit.status !== 0) return audit.status ?? 1;
+    if (checkPackedGame() !== 0) return 1;
     return spawnSync(process.execPath, [join(ROOT, 'tools', 'prepare-web.mjs')], { stdio: 'inherit' }).status ?? 1;
   },
 };

@@ -36,6 +36,8 @@
 
 `content/whalebelly/runtime-resources.json` 记录当前资源及引用拥有者。`node game/tools/audit_resources.mjs` 从正式入口、当前角色参数场、Run与环境预览检查引用，并展开身体/特效帧、七房、鱼群和音效的动态路径。它采用保守的路径族检查；新增加载方式时同步维护审计规则，再做实机验证。
 
+发布使用该审计的 `--release` 模式，只从正式入口及项目配置展开依赖；本地参数场和独立预览不参与发布选择。`tools/prepare-web-export.mjs` 生成选定资源，`tools/audit-web-package.mjs` 校验实际PCK清单和哈希，再从空目录运行包内36项动作与七房。当前控制器复用一张旧待机底图，其余旧帧在当前图集覆盖完整时从发布排除。完整规则与体积构成见[Web包体](web-package.md)。
+
 `recovery-manifest.json` 保留2026-10-31恢复时的1914项历史来源，不再充当当前文件必须全部存在的清单。未使用的旧合成帧、旧动画预览、重复环境与旧模块资源已归档；可复用原画库和未来区域素材仍保留。
 
 ## 存档
@@ -64,7 +66,7 @@ node game/tests/web_whalebelly.mjs
 
 ## Web发布
 
-`node tools/deploy-pages.mjs` 导出单线程Web版，更新已有 `gh-pages` 的 `/godot/` 和默认根入口，普通推送，保留V2等在线历史目录。需要匹配版本的 `web_nothreads_release.zip` 模板。
+`node tools/deploy-pages.mjs` 导出单线程Web版，更新已有 `gh-pages` 的 `/godot/` 和默认根入口，普通推送，保留V2等在线历史目录。需要匹配版本的 `web_nothreads_release.zip` 模板。`export-web` 会先生成正式资源选择，再审计PCK和执行外部包体测试；不得改回全量资源导出来绕过缺依赖。
 
 Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
 
