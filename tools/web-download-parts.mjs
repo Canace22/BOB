@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { gzipSync, gunzipSync } from 'node:zlib';
+import path from 'node:path';
 
 export const PART_BYTES = 64 * 1024 * 1024;
 export const sha256 = data => createHash('sha256').update(data).digest('hex');
@@ -38,4 +39,10 @@ export function buildDownloadEntry(data, extension, write, partBytes = PART_BYTE
 
 export function publicationOmissions(manifest) {
   return new Set(Object.entries(manifest).filter(([, info]) => info.rawParts?.length).map(([name]) => name));
+}
+
+export function includePublicationFile(file, exported, omitted) {
+  // Windows fs.cpSync supplies \\?\ paths to nested filter calls.
+  const relative = path.relative(path.toNamespacedPath(exported), path.toNamespacedPath(file));
+  return !/\.(import|uid|log)$/.test(file) && !omitted.has(relative);
 }
