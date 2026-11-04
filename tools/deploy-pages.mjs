@@ -2,9 +2,14 @@
 // Publish /godot/ and its default root entry; preserve historical version directories.
 import { execFileSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { publicationOmissions } from './web-download-parts.mjs';
+import { publicationOmissions, includePublicationFile } from './web-download-parts.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+
+if (process.argv.includes('--lore-only')) {
+  await import('./deploy-lore-pages.mjs');
+  process.exit(process.exitCode ?? 0);
+}
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const staging = path.join(root, '.pages-dist-godot');
@@ -59,7 +64,7 @@ function prepare() {
     mkdirSync(dest);
     const downloads = JSON.parse(readFileSync(path.join(exported, 'downloads.json'), 'utf8'));
     const omitted = publicationOmissions(downloads);
-    cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) && !(path.dirname(file) === exported && omitted.has(path.basename(file))) });
+    cpSync(exported, dest, { recursive: true, filter: file => includePublicationFile(file, exported, omitted) });
     for (const file of readdirSync(dest)) {
       const item = statSync(path.join(dest, file));
       if (item.isFile() && item.size >= 100 * 1024 * 1024) throw new Error(`Publication file exceeds GitHub limit: ${file}`);

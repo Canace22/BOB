@@ -3,11 +3,11 @@
   "roots": [
     "project.godot",
     "content/whalebelly/main.tscn",
+    "art/fonts/OFL.txt",
     "content/whalebelly/tide_demo.tscn",
     "content/whalebelly/test/PlayerTest.tscn",
     "content/whalebelly/characters/run_preview.tscn",
     "content/whalebelly/environment/motion_preview.tscn",
-    "art/fonts/OFL.txt",
     "art/whalebelly/runtime/tide-picker-run-v03/manifest.json"
   ],
   "dynamicPaths": [
@@ -36,6 +36,14 @@
       "pattern": "art/whalebelly/animations/player/effects/%s/%03d.png"
     },
     {
+      "owner": "src/campaign/boss/crab_visual.gd",
+      "pattern": "art/enemies/crab_video/**"
+    },
+    {
+      "owner": "src/campaign/boss/crab_visual.gd",
+      "pattern": "art/enemies/crab_video_v4/**"
+    },
+    {
       "owner": "src/ui/ui_style.gd",
       "pattern": "art/ui/**"
     },
@@ -61,6 +69,42 @@
     }
   ],
   "files": [
+    {
+      "path": "art/enemies/crab_video/01_idle.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video/02_claw_slam.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video/09_sink_fade.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video/impact_dust.png",
+      "owner": "src/campaign/boss/crab_effects.gd"
+    },
+    {
+      "path": "art/enemies/crab_video/shell_turn.png",
+      "owner": "src/campaign/boss/crab_effects.gd"
+    },
+    {
+      "path": "art/enemies/crab_video_v4/charge.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video_v4/phase.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video_v4/sweep.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
+    {
+      "path": "art/enemies/crab_video_v4/walk.png",
+      "owner": "src/campaign/boss/crab_visual.gd"
+    },
     {
       "path": "art/fonts/OFL.txt",
       "owner": "current entry"
