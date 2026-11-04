@@ -80,6 +80,7 @@ var room_preview: bool = false
 var ui_session_started: bool = false
 var ui_interactive_in_tests: bool = false
 var last_save_ok: bool = true
+var continuity: CampaignContinuity
 
 func _ready() -> void:
 	var isolated := qa or not capture_path.is_empty()
@@ -110,6 +111,9 @@ func _ready() -> void:
 		push_error("No room data")
 		get_tree().quit(1)
 		return
+	continuity = CampaignContinuity.new()
+	continuity.host = self
+	add_child(continuity)
 	setup_inputs()
 	overlay = Node2D.new()
 	overlay.z_index = 80
@@ -339,6 +343,7 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	mechanisms.host = self
 	scenery.add_child(mechanisms)
 	update_layers()
+	continuity.bind_room()
 	update_camera()
 	if ui_session_started and record_discovery and not practice: save_progress(false)
 
@@ -596,6 +601,7 @@ func enter_door(door:Dictionary) -> void:
 				return
 	sfx("save")
 	record_event("door", {"from":room_index,"to":destination})
+	continuity.begin_transition()
 	load_room(destination, door.get("spawn", []))
 	notify("已穿过相邻解剖区域通道")
 	return

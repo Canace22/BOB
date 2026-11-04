@@ -5,9 +5,22 @@ var data: WhaleUICampaignData
 var nodes: Array[Dictionary] = []
 var buttons: Dictionary = {}
 var depths: Dictionary = {}
+const ANATOMY_POSITIONS: Dictionary = {
+	0:Vector2(.09,.70),1:Vector2(.29,.67),2:Vector2(.49,.70),
+	3:Vector2(.69,.70),4:Vector2(.89,.70),5:Vector2(.62,.10),6:Vector2(.48,.36),
+}
+var anatomy: TextureRect
 
 func _ready() -> void:
 	nodes=data.map_rooms()
+	anatomy = TextureRect.new()
+	anatomy.name = "WhaleHeadAnatomy"
+	anatomy.texture = preload("res://art/xumen-continuity/r1-anatomy-overview.png")
+	anatomy.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	anatomy.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	anatomy.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	anatomy.modulate = Color(.62,.71,.77,.38)
+	add_child(anatomy)
 	var known: Dictionary={}
 	for room: Dictionary in nodes: known[int(room.index)]=room
 	if not nodes.is_empty():
@@ -46,24 +59,16 @@ func select_room(index: int) -> void:
 	selected.emit(index)
 
 func _layout() -> void:
-	var max_depth: int=0
-	for value: int in depths.values(): max_depth=maxi(max_depth,value)
-	var columns: Dictionary={}
+	if is_instance_valid(anatomy): anatomy.size=size
+	var width: float=clampf(size.x*.155,90,155)
 	for room: Dictionary in nodes:
 		var id: int=int(room.index)
-		var depth: int=int(depths.get(id,max_depth))
-		if not columns.has(depth): columns[depth]=[]
-		columns[depth].append(id)
-	var width: float=minf(180,(size.x-50)/maxi(1,max_depth+1)-20)
-	var spacing: float=minf(230,(size.x-width-50)/maxi(1,max_depth))
-	var origin: float=(size.x-width-max_depth*spacing)*0.5
-	for depth: int in columns:
-		var ids: Array=columns[depth]
-		for row: int in range(ids.size()):
-			var button: Button=buttons[ids[row]]
-			button.custom_minimum_size.x=width
-			button.size=Vector2(width,64)
-			button.position=Vector2(origin+depth*spacing,size.y*(row+1)/float(ids.size()+1)-32)
+		var button: Button=buttons[id]
+		button.custom_minimum_size=Vector2(width,64)
+		button.size=Vector2(width,64)
+		var normalized: Vector2=ANATOMY_POSITIONS.get(id,Vector2(.5,.5))
+		button.position=normalized*size-button.size*.5
+		button.position=button.position.clamp(Vector2.ZERO,(size-button.size).max(Vector2.ZERO))
 	queue_redraw()
 
 func _draw() -> void:
@@ -78,8 +83,12 @@ func _draw() -> void:
 			var begin: Vector2=a.position+a.size*0.5
 			var end: Vector2=b.position+b.size*0.5
 			var visited: bool=room.visited and data.host.visited.get(str(data.host.rooms[target].id),false)
-			if visited: draw_line(begin,end,WhaleUIStyle.MUTED,1.5,true)
-			else: draw_dashed_line(begin,end,Color("587a80"),1.5,7,true)
+			var route:=PackedVector2Array([begin,end])
+			if id==1 and target==5:
+				route=PackedVector2Array([begin,Vector2(begin.x*.72,size.y*.15),Vector2(end.x,size.y*.15),end])
+			for segment:int in range(route.size()-1):
+				if visited:draw_line(route[segment],route[segment+1],WhaleUIStyle.MUTED,1.5,true)
+				else:draw_dashed_line(route[segment],route[segment+1],Color("587a80"),1.5,7,true)
 			# Only reveal requirements authored on an explored side of this passage.
 			var requirement: String = str(door.get("ability","")) if room.visited else ""
 			if requirement.is_empty() and data.host.visited.get(str(data.host.rooms[target].id),false):
@@ -87,6 +96,7 @@ func _draw() -> void:
 					if int(reverse.to)==id: requirement=str(reverse.get("ability",""))
 			if not requirement.is_empty():
 				var center: Vector2=(begin+end)*0.5
+				if id==1 and target==5:center=Vector2(begin.x*.78,size.y*.35)
 				var diamond: PackedVector2Array=PackedVector2Array([center+Vector2(0,-9),center+Vector2(9,0),center+Vector2(0,9),center+Vector2(-9,0),center+Vector2(0,-9)])
 				draw_colored_polygon(diamond,WhaleUIStyle.INK)
 				draw_polyline(diamond,WhaleUIStyle.AMBER,2,true)

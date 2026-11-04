@@ -39,6 +39,8 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 
 ## 已验证的恢复方式
 
+- 连续世界概念接入已有七房时，先保留原碰撞/门点，用受静态轮廓保护的共用远景和独立门边动件建立视觉关系。旧World/Reward裁片可能带烘焙水色；直接换Far会露出矩形或多边形边界，应先实机比较并做柔边退让。七房仍按原ID加载，短过门混合不等于全局无缝碰撞。制作源、原件与复跑在`assets/source/xumen-continuity-v1/`；专项`tests/whalebelly/xumen_continuity_qa.gd`，只读浏览器`tests/web_xumen_continuity.mjs`。QA保存/重载须顺序执行，避免并行测试抢同一QA文件。
+
 - 旧工程迁入新结构时，先盘点实际运行入口、角色/战斗、房间与碰撞、机关、动画/Shader、声音、HUD、存档及试玩场。冻结归档或独立环境预览不能代替可玩内容恢复。先在 `game/` 中保留完整兼容模块并跑原功能/连续路线，再渐进拆分；不得用较早的模块化版本覆盖较新的已开发功能。
 - Whalebelly 恢复入口为 `content/whalebelly/main.tscn`，运行模块在 `src/campaign/`；原模块化入口已移至归档分支，历史路径为 `src/main/main.tscn`。资源与制作源清单见 `docs/whalebelly-game-recovery.md`，V6 进度由 `CampaignSaveBridge` 隔离并只在目标不存在时导入。当前工作前再次核对 `project.godot`，不要沿用旧入口假设。
 - 运行路径迁移同时检查动态拼接的资源名、原有参数和中文字体。Web 无系统中文字体时，Label 必须显式使用嵌入字体或继承已配置的 Theme；本机可读不证明 Web 可读。增量 Web 导出应刷新压缩文件哈希对应的 HTML 加载器。

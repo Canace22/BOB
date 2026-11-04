@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3]
+[gd_scene load_steps=27 format=3]
 
 [ext_resource type="PackedScene" path="res://content/whalebelly/environment/chapter/R1-04.tscn" id="chapter"]
 
@@ -23,6 +23,21 @@
 [ext_resource type="Texture2D" path="res://art/whalebelly/clean/R1-04.png" id="11"]
 
 [ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-04-claw.svg" id="12"]
+
+[ext_resource type="PackedScene" path="res://content/whalebelly/environment/continuity/E03_R1-04.tscn" id="seam_E03"]
+
+[ext_resource type="PackedScene" path="res://content/whalebelly/environment/continuity/E04_R1-04.tscn" id="seam_E04"]
+
+[ext_resource type="Script" path="res://src/world/scenery/chapter/continuous_depth.gd" id="oral_script"]
+[ext_resource type="Texture2D" path="res://art/xumen-continuity/continuous-oral-depth.png" id="oral_texture"]
+[ext_resource type="Shader" path="res://src/world/scenery/chapter/continuous_depth.gdshader" id="oral_shader"]
+
+[ext_resource type="Texture2D" path="res://art/xumen-continuity/depth-guard-R1-04.png" id="oral_guard"]
+
+[sub_resource type="ShaderMaterial" id="OralWater"]
+shader = ExtResource("oral_shader")
+shader_parameter/guard_mask = ExtResource("oral_guard")
+shader_parameter/room_size = Vector2(1591,989)
 
 [sub_resource type="ShaderMaterial" id="Layer0"]
 
@@ -353,3 +368,16 @@ centered = false
 material = SubResource("Claw")
 
 [node name="ChapterEnvironment" parent="." instance=ExtResource("chapter")]
+
+[node name="Continuity_E03" parent="." instance=ExtResource("seam_E03")]
+
+[node name="Continuity_E04" parent="." instance=ExtResource("seam_E04")]
+
+[node name="ContinuousOralDepth" type="Sprite2D" parent="."]
+z_index = -29
+position = Vector2(-1050.88,-16)
+scale = Vector2(1.4544198895027625,1.4544198895027625)
+texture = ExtResource("oral_texture")
+material = SubResource("OralWater")
+centered = false
+script = ExtResource("oral_script")

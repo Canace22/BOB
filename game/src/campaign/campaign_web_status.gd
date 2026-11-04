@@ -49,6 +49,7 @@ func snapshot() -> Dictionary:
 		"enemies": enemies,
 		"audio": audio_state,
 		"environment": environment_state,
+		"continuity": host.continuity.state(),
 	}
 
 func _snapshot(_arguments: Array) -> void:

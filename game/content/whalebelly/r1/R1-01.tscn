@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" path="res://content/whalebelly/environment/xumen_reference.tscn" id="1"]
 
 [ext_resource type="Texture2D" path="res://art/whalebelly/reference_environment/CHARACTER.png" id="2"]
+
+[ext_resource type="PackedScene" path="res://content/whalebelly/environment/continuity/E01_R1-01.tscn" id="seam_E01"]
+
+
+
 
 [node name="R1-01" type="Node2D"]
 
@@ -45,3 +50,5 @@ texture = ExtResource("2")
 centered = false
 
 [editable path="ReferenceEnvironment"]
+
+[node name="Continuity_E01" parent="." instance=ExtResource("seam_E01")]
