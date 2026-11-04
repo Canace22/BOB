@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "status": "local_verified_pending_publication",
+  "status": "deployed_verified",
   "engine": "Godot 4.7.2 stable",
   "entry": "game/content/whalebelly/main.tscn",
   "scope": "R1 seven existing rooms and their six internal connections; retain seven room IDs, collision surfaces, abilities, boss and V6 saves. Existing chapter exit and R2 remote latch remain stubs.",
@@ -36,7 +36,7 @@
     {
       "id": "B4",
       "work": "actual GPU runtime, bidirectional movement, pause/resume, camera edges, saves and branch gates; movie; commit; Web deploy and verify",
-      "status": "local_verified_pending_publication"
+      "status": "passed"
     }
   ],
   "methods": {
@@ -72,5 +72,15 @@
     "new seam art is a visual collar around original ground, not a fake replacement collision",
     "diagram is not a claim of global seamless physics"
   ],
-  "next": "Commit validated local batch, deploy with existing Pages script, verify source version and actual browser input."
+  "next": "Current visual-integration scope complete. Resume from game/progress.md; a natural E02 door-frame and physical connector sample is a possible later task, not implemented by this batch.",
+  "onlineVerification": {
+    "url": "https://canace22.github.io/BOB/godot/",
+    "passed": 18,
+    "failed": 0,
+    "errors": [],
+    "evidence": "game/build/qa/xumen-continuity/web-online/report.json",
+    "scope": "Real keyboard movement, jump, R1-01 to R1-02, pause/resume, map, physical camp and reload; other rooms use explicit preview keys, not continuous-traversal proof. Published runtime source remains sourceCommit; final documentation commit does not require another runtime deployment."
+  },
+  "sourceCommit": "80fda23108cebdd4fa163fc1e91889d50969bfba",
+  "pagesCommit": "ee3a98bbaf0e8ca3b996b1cff415b4413bed33a1"
 }
