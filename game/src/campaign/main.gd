@@ -8,6 +8,7 @@ extends Node2D
 @export var camera_dash_zoom:float=1.05 # New default; Inspector adjustable.
 const PlayerUI = preload("res://content/whalebelly/PlayerUI.tscn")
 const EnemyProxy = preload("res://src/campaign/campaign_enemy_proxy.gd")
+const MotherCrab = preload("res://src/campaign/boss/crab_boss.gd")
 const CampaignCamera = preload("res://src/campaign/campaign_camera.gd")
 var player_soul:int=99
 var camera_feedback:float=0
@@ -308,6 +309,13 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 		if visual != null: visual.visible = alive
 		enemies.append({"pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
 	for enemy:Dictionary in enemies:
+		if enemy.boss and enemy.alive:
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := MotherCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scenery.get_node("World").add_child(crab)
+			continue
 		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
 		scenery.get_node("World").add_child(proxy)
 	bind_player_ui()
@@ -473,6 +481,7 @@ func ground_y(x: float, near_y: float) -> float:
 
 func update_enemies(dt: float) -> void:
 	for enemy: Dictionary in enemies:
+		if enemy.has("actor"): continue
 		if not enemy.alive: continue
 		enemy.timer = float(enemy.timer) + dt
 		enemy.hurt = maxf(0.0, float(enemy.hurt) - dt)
@@ -536,7 +545,8 @@ func damage_enemy(enemy:Dictionary,amount:int) -> void:
 		enemy.alive = false
 		sfx("slam")
 		record_event("enemy_defeated", {"id":enemy.key})
-		if is_instance_valid(enemy.visual): enemy.visual.visible = false
+		if enemy.has("actor"): enemy.actor.on_defeated()
+		elif is_instance_valid(enemy.visual): enemy.visual.visible = false
 		if enemy.boss:
 			defeated[enemy.key] = true
 			abilities.dash = true
@@ -683,6 +693,7 @@ func draw_overlay() -> void:
 			overlay.draw_circle(point(door.pos) - Vector2(0,40), 35, Color(1,0.8,0.2,0.4))
 		for p: Array in room.get("rings", []): overlay.draw_circle(point(p), 20, Color(0.3,0.9,1), false, 2)
 	for enemy: Dictionary in enemies:
+		if enemy.has("actor"): continue
 		if enemy.alive and enemy.state in ["tell", "active"]:
 			var radius: float = 170.0 if enemy.boss else 85.0
 			var color: Color = Color(1,0.45,0.15,0.75) if enemy.state == "tell" else Color(0.8,0.95,1,0.9)

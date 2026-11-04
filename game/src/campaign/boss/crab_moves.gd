@@ -1,0 +1,95 @@
+class_name CampaignCrabMoves
+extends RefCounted
+## Seconds and world pixels. Cooldowns start after the whole recovery window.
+
+enum RetreatCombo { WAITING, READY, USED }
+
+const BODY_RADIUS := 150.0
+const BODY_HEIGHT := 240.0
+const PLAYER_RADIUS := 17.0
+const CHARGE_SPEED := 280.0
+const CHARGE_DISTANCE := 168.0
+const CHARGE_MIN_GAP := 120.0
+const RETREAT_SPACE := 180.0
+const PHASE_TIME := 1.2
+const STAGGER_TIME := 1.6
+const STAGGER_LIMIT := 100.0
+const STAGGER_COOLDOWN := 6.0
+const MOVES := {
+	"sweep": {"tell": 0.85, "active": 0.18, "recover": 1.3, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"second": {"tell": 0.65, "active": 0.18, "recover": 1.3, "reach": 265.0, "height": 85.0, "cooldown": 0.0},
+	"slam": {"tell": 1.25, "active": 0.18, "recover": 1.5, "reach": 280.0, "height": 280.0, "cooldown": 4.0},
+	"charge": {"tell": 1.35, "active": 0.6, "recover": 1.5, "reach": 174.0, "height": 240.0, "cooldown": 5.0},
+}
+
+
+static func value(kind: String, key: String) -> float:
+	return float(MOVES[kind][key])
+
+
+static func attack_rect(kind: String, facing: float) -> Rect2:
+	var reach := value(kind, "reach")
+	var height := value(kind, "height")
+	var inside := BODY_RADIUS - 25
+	if kind == "charge":
+		return Rect2(Vector2(-BODY_RADIUS - 12 + facing * 12, -height), Vector2(BODY_RADIUS * 2 + 24, height))
+	return Rect2(Vector2(inside if facing > 0 else -reach, -height), Vector2(reach - inside, height))
+
+
+static func can_repeat(kind: String, previous: String, streak: int) -> bool:
+	return kind != previous or streak < 2
+
+
+static func set_cooldowns(cooldowns: Dictionary, sequence: Array[String]) -> void:
+	for attack: String in sequence:
+		var completed := "sweep" if attack == "second" else attack
+		cooldowns[completed] = value(completed, "cooldown")
+
+
+static func track_retreat(current: RetreatCombo, gap: float, moving_away: bool) -> RetreatCombo:
+	if current == RetreatCombo.USED:
+		return current
+	if gap < CHARGE_MIN_GAP:
+		return RetreatCombo.WAITING
+	return RetreatCombo.READY if moving_away else current
+
+
+static func select(distance: float, free_space: float, cooldowns: Dictionary,
+		previous: String, streak: int, rng: RandomNumberGenerator, retreat_space: float = INF, first_retreat: bool = false) -> String:
+	if distance >= CHARGE_MIN_GAP and distance <= 350 and free_space >= RETREAT_SPACE and retreat_space >= RETREAT_SPACE:
+		if first_retreat or (float(cooldowns.get("charge", 0)) <= 0 and can_repeat("charge", previous, streak)):
+			return "charge"
+	if distance > 100:
+		return ""
+	# A cornered player must always retain the stationary-jump counterplay.
+	if retreat_space < RETREAT_SPACE:
+		return "sweep"
+	var sweep := can_repeat("sweep", previous, streak)
+	var slam := float(cooldowns.get("slam", 0)) <= 0 and can_repeat("slam", previous, streak)
+	if sweep and slam:
+		return "sweep" if rng.randf() < 0.65 else "slam"
+	if slam:
+		return "slam"
+	return "sweep" if sweep else ""
+
+
+static func phase_for_health(current: int, maximum: int) -> int:
+	if current * 100 <= maximum * 35:
+		return 3
+	return 2 if current * 100 <= maximum * 65 else 1
+
+
+static func sequence(attack: String, phase: int, round_index: int,
+		can_retreat: bool, slam_ready: bool) -> Array[String]:
+	if phase == 1:
+		return [attack]
+	if attack == "sweep":
+		if can_retreat and slam_ready and round_index % 2 == 0:
+			return ["sweep", "slam"]
+		return ["sweep", "second"]
+	if phase == 3 and can_retreat:
+		if attack == "charge":
+			return ["charge", "sweep"]
+		if attack == "slam":
+			return ["slam", "sweep", "second"]
+	return [attack]

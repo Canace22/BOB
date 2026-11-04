@@ -179,3 +179,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 2026-11-04 正式 UI 系统
 
 [UI V1 图标母版](source/whalefall-ui-v1/README.md)保留十份可编辑 SVG，来源为本项目现有 UI V1 原创设计，通过 manifest 同步至 game/art/ui；叶、回声、壳与装饰线实际使用，其余保留图标不表示共生玩法已完成。字体子集使用明确的 Regular 400 字重，并通过中文字形覆盖检查。常规 UI 使用引擎控件、文字和矢量图形，未替换正式角色/场景素材。数据接口、已实现页面及验收范围见 [UI 系统](../docs/ui-system.md)。
+
+## 2026-11-04 主线母蟹
+
+选择性恢复 `codex/crab-boss-prototype@581397ab` 的 [V3制作源](source/crab-video-v3/README.md)与[V4制作源](source/crab-video-v4/README.md)：主线同步V3待机、下砸、退场，V4走路、横扫、冲撞、抖壳共七张身体图集，以及接触尘与飞壳两张效果位图。导出位于 `assets/runtime/sprites/crab-video-v3/`、`crab-video-v4/`，同步到 `game/art/enemies/`。未新增生成素材，V4的48帧仍为既有重绘关键帧；来源和漂移限制沿用原说明。字体重建加入“弹刀/破防”的实际字形。[主线接入与验收边界](../docs/mother-crab-integration.md)。

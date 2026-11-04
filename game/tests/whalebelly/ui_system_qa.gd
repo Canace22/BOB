@@ -150,7 +150,7 @@ func run() -> void:
 	check("Boss HUD binds living Boss",not ui.data.boss().is_empty())
 	await screenshot("09-boss")
 	for enemy: Dictionary in host.enemies:
-		if enemy.boss: host.damage_enemy(enemy,10)
+		if enemy.boss: host.damage_enemy(enemy,int(enemy.max_hp))
 	await step()
 	check("Boss HUD disappears after victory",ui.data.boss().is_empty())
 	host.load_room(0)

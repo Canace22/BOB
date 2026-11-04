@@ -59,17 +59,10 @@ func run() -> void:
 			await step(30);Input.action_press("interact");await step(1);Input.action_release("interact");await step(40)
 			check("boss_camp_heals",host.health==5 and host.checkpoint.room==3,host.health)
 			var boss:Dictionary=host.enemies[0]
-			var approached:bool=await drive(Vector2(830,710))
+			var approached:bool=await drive(Vector2(400,711))
 			check("boss_approach",approached,host.player.position)
-			for i in range(600):
-				if not boss.alive:break
-				Input.action_release("left");Input.action_release("right")
-				Input.action_press("right" if Vector2(boss.pos).x>host.player.position.x else "left")
-				if i%26==0:Input.action_press("attack")
-				if i%90==4:Input.action_press("tp_orb")
-				if i%90==5:Input.action_release("tp_orb")
-				if i%26==2:Input.action_release("attack")
-				await physics_frame
+			host.release_controls()
+			await CampaignCrabDriver.fight(host)
 			host.release_controls();check("boss_normal_combat",not boss.alive and host.abilities.dash,host.health)
 			if not boss.alive:
 				check("boss_exit_walk",await drive(Vector2(1505,710),4),host.player.position)
@@ -83,4 +76,4 @@ func run() -> void:
 	var name:String="reload" if "--reload-fixture" in OS.get_cmdline_user_args() else "route"
 	var f:=FileAccess.open("res://build/qa/whalebelly/tide-main-integration/"+name+"-tests.json",FileAccess.WRITE);f.store_string(JSON.stringify({"checks":checks,"failed":failed},"\t"));f.close()
 	print("CAMPAIGN_ROUTE_COMPLETE ",name," checks=",checks.size()," failed=",failed)
-	host.graceful_quit(1 if failed else 0)
+	await host.graceful_quit(1 if failed else 0)
