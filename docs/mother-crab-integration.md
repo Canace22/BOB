@@ -26,3 +26,5 @@ R1-04 的简化负壳守卫已替换为之前独立训练场的母蟹。正常�
 在仓库根目录运行 `node tools/godot.mjs check` 和 `node tools/godot.mjs test`。`test_campaign_crab.gd` 覆盖唯一目标、护壳/反制/远程、攻击范围与角落连招、奖励和旧档重载。
 
 `game/tests/whalebelly/crab_campaign_qa.gd` 从正常房间出生点用真实输入战斗；`campaign_route_test.gd` 覆盖连续到达、Boss 与出口。Web 使用 `game/tests/web_campaign_crab.mjs`，只读状态驱动键盘，使用独立浏览器上下文。具体已执行结果和线上版本见 [工程进度](../game/progress.md)。
+
+公网首次下载较慢时，可设置 `WEB_READY_TIMEOUT_MS=600000` 延长启动等待；脚本每30秒记录实际下载进度，异常时保存截图。测试不会跳过启动包或用本地资源代替线上资源。
