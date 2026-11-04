@@ -1,8 +1,10 @@
+import {renderMap} from './map.js';
 const $ = selector => document.querySelector(selector);
 const workspace = $('#workspace');
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
-const categories = ['人物', '组织', '世界规则', '地点', '章节', '战斗', '叙事说明', '待定事项', '原始文稿', '总览'];
+const categories = ['人物', '路线地图', '组织', '世界规则', '地点', '章节', '战斗', '叙事说明', '待定事项', '原始文稿', '总览'];
 const icons = {
+  '路线地图':'<path d="m3 5 6-2 6 3 6-2v15l-6 2-6-3-6 2zM9 3v15M15 6v15"/>',
   '人物':'<circle cx="12" cy="7" r="3.5"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/>',
   '组织':'<path d="m12 3 8 4v6c0 4-8 8-8 8s-8-4-8-8V7z"/>',
   '世界规则':'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
@@ -103,14 +105,16 @@ function sources() {
   return `<div class="catalog"><section class="list-pane" aria-label="原始文稿"><div class="list-head">完整原文 · 2 份</div>${data.documents.map(d => `<button class="record" data-source="${d.id}" aria-current="${d.id === doc.id}"><strong>${escape(d.name)}</strong><small>${escape(d.version)}</small></button>`).join('')}</section><article class="reading" id="reader" tabindex="-1"><div class="eyebrow">SOURCE DOCUMENT / 原始文稿</div><h1>${escape(doc.name)}</h1><div class="meta">${escape(doc.version)}<div class="read-actions"><a href="${doc.id}.md" download>下载 Markdown 原稿 ↓</a><button data-back>返回上一页</button></div></div><div class="prose">${markdown(doc.raw)}</div></article></div>`;
 }
 function render() {
+  const mapScroll = $('.map-canvas')?.scrollLeft || 0;
   $('#categories').innerHTML = categories.map(c => `<button data-category="${c}" aria-current="${state.c === c}" aria-label="${c}">${icon(c)}<span>${c}</span></button>`).join('');
   $('#breadcrumb').textContent = state.c || '总览';
-  $('#category-count').textContent = state.c === '原始文稿' ? '2 份原稿' : state.c === '总览' ? `${data.records.length} 个设定条目` : `${data.records.filter(r=>r.category===state.c).length} 个条目`;
+  $('#category-count').textContent = state.c === '路线地图' ? '开发编排视图' : state.c === '原始文稿' ? '2 份原稿' : state.c === '总览' ? `${data.records.length} 个设定条目` : `${data.records.filter(r=>r.category===state.c).length} 个条目`;
   $('#search').value = state.q || '';
   $('#status-filters').innerHTML = [['','全部'],['基础初稿','基础初稿'],['叙事提案','叙事提案']].map(([value,label])=>`<button data-status="${value}" aria-pressed="${(state.s||'')===value}">${label}</button>`).join('');
   $('#source-filters').innerHTML = [['','全部'],['world','世界观原稿'],['story','主线叙事原稿']].map(([value,label])=>`<button data-origin="${value}" aria-pressed="${(state.src||'')===value}">${label}</button>`).join('');
-  $('.toolbar').hidden = state.c === '原始文稿';
-  workspace.innerHTML = state.c === '原始文稿' ? sources() : (!state.c || state.c === '总览') && !state.q && !state.s && !state.src ? overview() : catalog();
+  $('.toolbar').hidden = ['原始文稿','路线地图'].includes(state.c);
+  workspace.innerHTML = state.c === '路线地图' ? renderMap(data,state,escape) : state.c === '原始文稿' ? sources() : (!state.c || state.c === '总览') && !state.q && !state.s && !state.src ? overview() : catalog();
+  if ($('.map-canvas')) $('.map-canvas').scrollLeft = mapScroll;
   if (state.line && state.c === '原始文稿') requestAnimationFrame(() => $(`#line-${Number(state.line)}`)?.scrollIntoView({block:'start'}));
 }
 document.addEventListener('click', async event => {
@@ -147,7 +151,12 @@ document.addEventListener('keydown', event => {
     event.preventDefault(); const next = event.key === 'ArrowDown' ? event.target.nextElementSibling : event.target.previousElementSibling; next?.focus();
   }
 });
-window.addEventListener('hashchange', () => { if (data) { state = readState(); render(); } });
+window.addEventListener('hashchange', () => {
+  if (!data) return;
+  const previous = state;
+  state = readState(); render();
+  if (state.c === '路线地图' && state.node !== previous.node && innerWidth < 761) $('#reader')?.scrollIntoView({behavior:'smooth'});
+});
 try {
   const response = await fetch('data.json');
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
