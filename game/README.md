@@ -25,6 +25,29 @@ node tools/godot.mjs test
 
 当前Web启动文件约103.15 MiB，较本轮压缩前减少约30%。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码，具体设置与恢复方式见[本批说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
 
+## 新主线第一章须庭
+
+独立入口为 `content/story/main.tscn`，房间稳定ID为 `story-c01-xuting`；默认 F5 仍进入七房。须庭包含补巢者共鸣、两侧食腐甲非致死退却、内侧指路及出口完成。第二章折井尚未开放，完成界面可返回标题或留在本章探索；具体本轮验证与发布结果见[进度](progress.md)。
+
+在仓库根目录执行：
+
+```sh
+node tools/godot.mjs run -- res://content/story/main.tscn
+node tools/godot.mjs run -- res://content/story/main.tscn -- --story-qa
+node tools/godot.mjs export-story-web
+node game/tests/serve_web.mjs --story
+node tools/deploy-pages.mjs --story-only --build-only
+node tools/deploy-pages.mjs --story-only
+```
+
+Web 本地地址 http://127.0.0.1:4193/BOB/godot-story/ ，对应[章节 Pages 入口](https://canace22.github.io/BOB/godot-story/)。`--build-only` 只构建，不推送或修改 Pages 检出；正式章节发布只替换 `/godot-story/`，保留默认根入口与历史版本。发布源码、`story-c01` 入口及启动场景写入 `build.json`。构建脚本在 `build/story-export-project/` 创建隔离工程副本并复制导入缓存，仅修改副本 `run/main_scene` 后导出到 `build/story-web/`，不临时更改正式 `project.godot`。官方Web发布模板禁用命令行场景路径覆盖，因此HTML不传场景参数；章节主场景直接写入导出包。
+
+操作：`A/D` 移动、`Space/K` 跳跃、`J/Q` 短击，靠近补巢者按 `E` 共鸣，靠近安全台按 `E` 恢复。对话 `E/Enter` 翻页，`Esc` 中断不完成事件；菜单支持鼠标、Tab焦点和Enter。`Esc` 暂停/恢复，`M` 静音，游戏中 `Tab` 切换跟随/全景，死亡后 `R` 重试。菜单关闭后需松开游戏按键再恢复控制。
+
+本章存档 `user://story-c01/progress.json`、测试档 `user://story-c01-qa/progress.json` 与旧 V6 隔离。四个事件按 `met_mender → foragers_retreated → route_known → completed` 顺序保存：首次交流完整结束、两侧敌人实际退回聚食处并停止敌对、内侧指路完整结束、玩家到达出口。跳过战斗、逃出探测范围或中断对话不能推进。死亡重置未完成遭遇，已保存的事件保持；重入按持久阶段恢复世界，不恢复攻击时钟。存档写入成功后才更新内存，失败提示可重试；损坏主档尝试 `.bak`，新旅途先保留 `.before-new`。
+
+素材来源：[环境](../assets/source/story-c01/environment/README.md)、[角色图集](../assets/source/story-c01/characters/README.md)、[原创合成低鸣与共鸣](../assets/source/story-c01/audio/README.md)。图集是有限帧样板，退却包含姿态重组；低鸣不是鲸类真实录音。技术通过、场景实机结果与用户审美认可分开记录，不以素材入库宣称整体美术已获认可。
+
 ## R1后续六房环境
 
 R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使用。数字 **2–7** 为已有房间预览；**Tab** 切换全景/跟随镜头，**F4** 查看四层，**F2** 对照原图。预览不是能力解锁；正式入口仍按Boss、浮游和锚环限制推进。R1-06/07是后续能力回访房，**F9** 只临时开放当前会话的练习能力。

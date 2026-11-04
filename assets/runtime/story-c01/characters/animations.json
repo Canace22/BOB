@@ -1,0 +1,142 @@
+{
+    "actors":  {
+                   "mender":  {
+                                  "texture":  "res://art/story-c01/characters/mender-atlas.png",
+                                  "display_height":  90,
+                                  "actions":  {
+                                                  "mend":  {
+                                                               "loop":  true,
+                                                               "frames":  [
+                                                                              0,
+                                                                              1,
+                                                                              2,
+                                                                              3
+                                                                          ],
+                                                               "fps":  4
+                                                           },
+                                                  "talk":  {
+                                                               "loop":  true,
+                                                               "frames":  [
+                                                                              4,
+                                                                              5,
+                                                                              6,
+                                                                              7
+                                                                          ],
+                                                               "fps":  4
+                                                           },
+                                                  "walk":  {
+                                                               "loop":  true,
+                                                               "frames":  [
+                                                                              8,
+                                                                              9,
+                                                                              10,
+                                                                              11
+                                                                          ],
+                                                               "fps":  6
+                                                           },
+                                                  "idle":  {
+                                                               "loop":  true,
+                                                               "frames":  [
+                                                                              12,
+                                                                              13,
+                                                                              14,
+                                                                              15
+                                                                          ],
+                                                               "fps":  3
+                                                           }
+                                              },
+                                  "columns":  4,
+                                  "reference_height":  186,
+                                  "rows":  4,
+                                  "root":  [
+                                               168,
+                                               300
+                                           ],
+                                  "cell_size":  [
+                                                    336,
+                                                    336
+                                                ]
+                              },
+                   "forager":  {
+                                   "texture":  "res://art/story-c01/characters/forager-atlas.png",
+                                   "display_height":  70,
+                                   "actions":  {
+                                                   "feed":  {
+                                                                "loop":  true,
+                                                                "frames":  [
+                                                                               0,
+                                                                               1,
+                                                                               2,
+                                                                               3
+                                                                           ],
+                                                                "fps":  4
+                                                            },
+                                                   "walk":  {
+                                                                "loop":  true,
+                                                                "frames":  [
+                                                                               4,
+                                                                               5,
+                                                                               6,
+                                                                               7
+                                                                           ],
+                                                                "fps":  8
+                                                            },
+                                                   "warn":  {
+                                                                "loop":  false,
+                                                                "frames":  [
+                                                                               8,
+                                                                               9
+                                                                           ],
+                                                                "fps":  4
+                                                            },
+                                                   "attack":  {
+                                                                  "loop":  false,
+                                                                  "frames":  [
+                                                                                 8,
+                                                                                 9,
+                                                                                 10,
+                                                                                 11
+                                                                             ],
+                                                                  "fps":  8
+                                                              },
+                                                   "lunge":  {
+                                                                 "loop":  false,
+                                                                 "frames":  [
+                                                                                10,
+                                                                                11
+                                                                            ],
+                                                                 "fps":  8
+                                                             },
+                                                   "hurt":  {
+                                                                "loop":  false,
+                                                                "frames":  [
+                                                                               12,
+                                                                               13
+                                                                           ],
+                                                                "fps":  10
+                                                            },
+                                                   "retreat":  {
+                                                                   "loop":  true,
+                                                                   "frames":  [
+                                                                                  14,
+                                                                                  15,
+                                                                                  13,
+                                                                                  14
+                                                                              ],
+                                                                   "fps":  7
+                                                               }
+                                               },
+                                   "columns":  4,
+                                   "reference_height":  143,
+                                   "rows":  4,
+                                   "root":  [
+                                                168,
+                                                300
+                                            ],
+                                   "cell_size":  [
+                                                     336,
+                                                     336
+                                                 ]
+                               }
+               }
+}

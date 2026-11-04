@@ -6,6 +6,15 @@ import { publicationOmissions, includePublicationFile } from './web-download-par
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+if (process.argv.includes('--story-only')) {
+  if (process.argv.includes('--lore-only') || process.argv.includes('--entry-only')) {
+    throw new Error('--story-only cannot be combined with another publication target.');
+  }
+  const { deployStoryPages } = await import('./deploy-story-pages.mjs');
+  deployStoryPages();
+  process.exit(process.exitCode ?? 0);
+}
+
 if (process.argv.includes('--lore-only')) {
   await import('./deploy-lore-pages.mjs');
   process.exit(process.exitCode ?? 0);

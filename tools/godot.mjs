@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Single entry for the Godot project in game/. Usage: node tools/godot.mjs <command> [-- extra args]
-// Commands: check | test | run | editor | sync-art | export-web
+// Commands: check | test | run | editor | sync-art | export-web | export-story-web
 import { spawnSync, spawn } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { prepareStoryProject, STORY_SCENE } from './story-export-project.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const GAME = join(ROOT, 'game');
@@ -35,8 +36,8 @@ function findGodot() {
 }
 
 // Godot exits 0 even when a -s script fails to parse, so script errors in the output count as failure.
-function godot(args, { headless = true } = {}) {
-  const full = [...(headless ? ['--headless'] : []), '--path', GAME, ...args];
+function godot(args, { headless = true, project = GAME } = {}) {
+  const full = [...(headless ? ['--headless'] : []), '--path', project, ...args];
   const result = spawnSync(findGodot(), full, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   const output = `${result.stdout ?? ''}${result.stderr ?? ''}`;
   process.stdout.write(output);
@@ -92,6 +93,18 @@ const commands = {
     const result = importProject() || godot(['--export-release', 'Web', 'build/web/index.html']);
     if (result !== 0) return result;
     return spawnSync(process.execPath, [join(ROOT, 'tools', 'prepare-web.mjs')], { stdio: 'inherit' }).status ?? 1;
+  },
+  'export-story-web': () => {
+    mkdirSync(join(GAME, 'build', 'story-web'), { recursive: true });
+    if (importProject() !== 0) return 1;
+    const project = prepareStoryProject(GAME);
+    const result = godot(['--import'], { project }) || godot(['--export-release', 'Web',
+      join(GAME, 'build', 'story-web', 'index.html')], { project });
+    if (result !== 0) return result;
+    return spawnSync(process.execPath, [join(ROOT, 'tools', 'prepare-web.mjs'),
+      '--directory', 'game/build/story-web', '--main-scene', STORY_SCENE,
+      '--project-config', join(project, 'project.godot')],
+    { stdio: 'inherit' }).status ?? 1;
   },
 };
 

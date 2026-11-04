@@ -5,6 +5,10 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 
 # BOB Godot正式开发
 
+独立章节样板使用 `src/story/` 与 `content/story/`，`node tools/godot.mjs export-story-web` 在 `build/story-export-project/` 复制工程和导入缓存，仅改副本主场景；用 `node game/tests/serve_web.mjs --story` 和 `web_story_c01.mjs` 验收，再以 `node tools/deploy-pages.mjs --story-only` 发布 `/godot-story/`。官方 Web 模板已实测拒绝命令行场景路径覆盖，不能仅凭 JS 转发 args 就判定能切场景；不改共享 `project.godot` 或重编引擎绕过。发布检查保证其它 Pages 目录树不变。
+
+对话结束后即使物理键已释放，当前物理 tick 仍可能保留 `just_pressed`。恢复控制前清空缓冲，并等一个完整无按键物理边界，避免 E 结束共鸣又重新打开。用真实 E 按下/抬起同 tick 单测和浏览器关闭对话、按住移动/攻击关闭暂停复验；仅检查 `is_physical_key_pressed` 不足以证明输入已清理。章节存档、原生 QA 路径与浏览器上下文必须隔离，截图位置夹具不替代连续键盘路线。
+
 先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[进度](../../../game/progress.md)，核对 `project.godot`。当前默认入口是 `content/whalebelly/main.tscn`。完整旧工程、模块化五房、旧资源与专用测试已移到 `codex/archive-legacy-20261103`，按[归档说明](../../../docs/legacy-archive.md)独立检出。
 
 ## 开发与资源

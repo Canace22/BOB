@@ -11,6 +11,7 @@
 | [世界观数据库](https://canace22.github.io/BOB/lore/) | 开发用设定卡片、全文搜索、腔室示意地图与章节路线，追溯原稿 |
 | [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
 | [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
+| [新主线第一章 · 须庭](https://canace22.github.io/BOB/godot-story/) | 独立章节入口 `story-c01`；发布与本轮验收状态见[进度](game/progress.md) |
 | [Godot 章节原型](https://canace22.github.io/BOB/godot-chapters/) | 独立发布的章节原型，入口为 `chapters-v1` |
 | [Godot Boss 原型](https://canace22.github.io/BOB/godot-boss/) | 独立发布的母蟹 Boss 原型，入口为 `crab-prototype` |
 | [美术资源在线预览](https://canace22.github.io/BOB/art/) | 搜索、筛选、放大与下载素材，查看需求及拼装预览 |
@@ -30,7 +31,7 @@
 
 世界观页面从两份新稿生成，保留初稿与提案状态。本地运行 `node game/pages/lore/serve.mjs`，打开 http://127.0.0.1:4191/BOB/lore/ 。修改原稿后重新构建或重启服务即可同步；[使用与维护说明](docs/world-archive.md)。
 
-新主线的[前三章关卡与制作方案](docs/level-design/chapters-01-03.md)已完成首批拆解和复用盘点，下一制作批次为第一章须庭样板；方案中的新房间与剧情事件尚未接入当前试玩。
+新主线按[前三章关卡与制作方案](docs/level-design/chapters-01-03.md)推进，第一章须庭样板在独立场景 `game/content/story/main.tscn`：与补巢者共鸣、穿越须板聚食区、击退食腐甲、获知折井方向并抵达出口。第二、三章仍是制作方案；正式七房默认入口保持独立。第一章的实机通过项、资源待验及线上版本见[进度](game/progress.md)。
 
 ## 目录
 
@@ -99,6 +100,8 @@ node tools/deploy-pages.mjs
 
 只更新世界观数据库时运行 `node tools/deploy-pages.mjs --lore-only`，仅发布 `/lore/`，保留所有游戏和美术入口。
 
+只发布新主线须庭时运行 `node tools/deploy-pages.mjs --story-only`，仅替换 `/godot-story/`，保留默认入口、`/godot/` 及历史 `/godot-chapters/`。加 `--build-only` 仅在隔离工程副本中构建到 `game/build/story-web/`，不操作 Pages 检出或更改正式工程默认入口；章节发布检出为 `.pages-dist-story/`。发布后核对该入口的 `build.json` 中 `source`、`entry: story-c01`、`sceneSelection: isolated-project-setting` 和真实路线。
+
 导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，同时将根入口跳转到 `godot/`，保留 `mvp-v2/` 等历史版本目录。只修正默认入口时使用 `node tools/deploy-pages.mjs --entry-only`，不重新导出或替换游戏包。流程见 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
 
 导出需要安装 Godot 4.7.2 官方模板中的 `web_nothreads_release.zip`。发布脚本在 `.pages-dist-godot/` 保留独立的 Pages 检出；`godot/build.json` 记录源码版本，推送后还需核实 Pages 部署和线上路线。
@@ -106,6 +109,18 @@ node tools/deploy-pages.mjs
 Web 导出后自动生成压缩下载文件与加载说明，浏览器缓存按内容哈希区分版本；支持的浏览器会复用已下载引擎和资源包。加载页会显示实际压缩下载量与启动阶段。原始文件保留，供缺少解压 API 的浏览器使用。首屏测速运行 `node game/tests/web_startup.mjs`，环境变量与上面的浏览器验收一致。
 
 中文 UI 使用[字体子集](assets/source/noto-sans-sc/README.md)。新增中文后重建字体并运行素材同步；完整原字体保留在素材库，验收测试会检查缺字。
+
+## 第一章须庭 · 独立试玩
+
+```sh
+node tools/godot.mjs run -- res://content/story/main.tscn
+node tools/godot.mjs export-story-web
+node game/tests/serve_web.mjs --story
+```
+
+本地 Web 地址为 http://127.0.0.1:4193/BOB/godot-story/ 。章节使用 `A/D` 移动、`Space/K` 跳跃、`J/Q` 短击、`E` 共鸣/歇息；对话用 `E/Enter` 翻页，`Esc` 暂别不记为完成。`Esc` 暂停、`M` 静音、`Tab` 切换跟随/全景；死亡后 `R` 重试。完整读完首次共鸣、两只敌人实际退回聚食处、内侧指路完成后，主动走到右侧出口结束本章；完成后可继续探索。
+
+章节进度在 `user://story-c01/progress.json`，不读取或迁入七房 V6。独立测试可在场景参数后追加 `-- --story-qa`，使用 `user://story-c01-qa/progress.json`；浏览器验收还需独立上下文。保存失败会提示并可重试，损坏主档尝试上一版 `.bak`，确认新旅途另留 `.before-new`。操作与边界见[工程说明](game/README.md#新主线第一章须庭)。
 
 ## 美术资源
 

@@ -40,7 +40,7 @@
 
 **样板验收**：局部动作与路径分别播放；转向处身份不变；群体密度和遮挡可读；多轮无瞬移、无积累；暂停/恢复不重排。
 
-**已有证据**：三种单鱼32相位帧、3组28/14/20条共62个实例，群体16秒；用户认可单件/群体表现并要求提炼复用。源代码与实际主场景/独立包报告在项目`assets/source/fish-schools-v01/`、`scenes/environment/elements/fish_school_v01.gd`。这些数量和时长是案例值，不是通用默认。
+**已有证据**：三种单鱼32相位帧、3组28/14/20条共62个实例，群体16秒；用户认可单件/群体表现并要求提炼复用。制作记录保留于项目`assets/source/fish-schools-v01/`；原案例脚本在[历史归档工程](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/godot/WhalebellyRuins/scenes/environment/elements/fish_school_v01.gd)，当前运行副本为`game/content/whalebelly/environment/elements/fish_school_v01.gd`。这些数量和时长是案例值，不是通用默认，历史报告不作为当前入口通过证据。
 
 ## R2 固定端、渐增幅度、传播延迟（来自垂须）
 
@@ -56,7 +56,7 @@
 
 **视频辅助边界**：模型不保证循环。已验证案例使用周期指导控制形状、模型仅低强度细化，再将材质残差回到原画坐标作周期拟合；不能称直接视频抠帧。种子、工作流、原始输出、后期参数都保留。
 
-**已有证据**：8个派生姿态、48帧/12FPS/4秒、Krita48帧真实回导逐像素一致；三处0/13/29帧错相接入，根部与接缝检查通过。用户表示垂须单件动态效果好并要求迁移；未据此升级完整场景所有审美状态。项目`assets/source/baleen-loop-v3/`、`tools/baleen_loop_v3.py`、`tools/baleen_kra_native.py`记录具体方法。Wan2.2、CFG/denoise等仅是当时实际工具与参数，不锁死后续工具。
+**已有证据**：8个派生姿态、48帧/12FPS/4秒、Krita48帧真实回导逐像素一致；三处0/13/29帧错相接入，根部与接缝检查通过。用户表示垂须单件动态效果好并要求迁移；未据此升级完整场景所有审美状态。制作记录保留于项目`assets/source/baleen-loop-v3/`；[历史制作脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/baleen_loop_v3.py)和[Krita回导脚本](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/work/local-production/tools/baleen_kra_native.py)在归档分支，当前工作树无这些旧`tools/`路径。Wan2.2、CFG/denoise等仅是当时实际工具与参数，不锁死后续工具。
 
 ## R3 区域预热、生命周期与有界回收（来自气泡）
 
@@ -70,7 +70,7 @@
 
 **样板验收**：运行多个生命周期数量有界、边界回收不闪现；前后景排序；暂停/零速/恢复/重载；近景不遮挡必需操作区域。
 
-**已有证据**：独立气泡PNG、7区域56实例，180秒加速状态测试核对范围与回收；另有实际运行截图和包体检查。用户认可气泡单件效果并要求迁移。项目`scenes/environment/elements/bubble_emitter.gd`与`assets/source/xumen-underbridge-repair/`保留方法；加速测试不是连续人工观感验证。
+**已有证据**：独立气泡PNG、7区域56实例，180秒加速状态测试核对范围与回收；另有实际运行截图和包体检查。用户认可气泡单件效果并要求迁移。原脚本在[历史归档工程](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/godot/WhalebellyRuins/scenes/environment/elements/bubble_emitter.gd)，当前副本为`game/content/whalebelly/environment/elements/bubble_emitter.gd`，制作记录在`assets/source/xumen-underbridge-repair/`。加速测试不是连续人工观感验证。
 
 ## R4 水域表面与纯光效独立（来自水面/光束修复）
 
@@ -89,6 +89,12 @@
 **验收**：相机合法边界/缩放组合内不露边、无副本、无直线裁口；区分镜头越界和资产缺边。证据来自项目`xumen-foreground-edges`和V3静态细丝清理。
 
 ## 经验升级规则
+
+### 2026-11-04 须庭迁移证据（项目实例）
+
+第一章将既有鱼图集、垂须图集和气泡发射器接入独立宿主，由一个外部时钟管理。实际GPU定位夹具 `game/tests/story/environment_qa.tscn` 首轮及返修复验24项检查均通过，包括树暂停、恢复、动画开关和零速保持；180秒时间跳转后鱼16、气泡13、污絮9保持有界。该检查证明本实例的时钟/生命周期接入，不证明180秒连续观感或用户审美认可。母版和坐标见 `assets/source/story-c01/environment/README.md`；后续资源/坐标变化仍须复验。
+
+与R5相关的实际失败：从不规则地形位图裁取中段重复拼接，即使顶面重叠，下缘不同深度仍会露出竖直裁口。须庭默认跟随镜头的GPU截图暴露了这个问题，单看原件和全景不足以发现。优先保留完整自然边缘等比重叠，或正式补绘可拼接接缝；不能用纯色块、非等比拉伸遮住。此次完整原件重叠修复经同一GPU夹具复验，并实际查看左/中/右跟随镜头与全景，直切口消失且接地检查保持通过。迁移边界：自然重叠接点仍可见，适合骨片构造，不等同于无缝贴图；需要完全连续软组织时应补绘专用接缝。
 
 每条新增经验写：问题/适用特征、固定约束、制作分解、实用工具、母版/脚本、实际证据、失败和修正、迁移边界、状态。没有证据的迁移为candidate；既有案例的成功不证明迁移对象已经成功。记录用户反馈的具体对象和版本，不能将“喜欢单件”写成“全场景最终验收”。
 

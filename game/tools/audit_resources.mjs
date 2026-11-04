@@ -22,6 +22,9 @@ for (const file of all.filter(file => file.endsWith('.gd'))) {
 }
 const roots = ['project.godot', 'content/whalebelly/main.tscn', 'content/whalebelly/tide_demo.tscn', 'content/whalebelly/test/PlayerTest.tscn', 'content/whalebelly/characters/run_preview.tscn', 'content/whalebelly/environment/motion_preview.tscn', 'art/fonts/OFL.txt', 'art/whalebelly/runtime/tide-picker-run-v03/manifest.json'];
 const reached = new Map(roots.map(root => [root, 'current entry']));
+// The separately exported chapter is an active entry, even while project.godot keeps the stable campaign.
+roots.push('content/story/main.tscn');
+reached.set('content/story/main.tscn', 'independent story entry');
 const queue = [...roots];
 const missing = [];
 const dynamic = [];

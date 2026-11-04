@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 36,
+  "revision": 38,
   "updatedAt": "2026-11-04",
   "project": "BOB",
   "atlas": {
@@ -601,7 +601,27 @@
         "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/shell-camp.webp",
         "archiveBranch": "codex/archive-legacy-20261103"
-      }
+      },
+      "storyUses": [
+        {
+          "chapter": "story-c01",
+          "runtimeFile": "game/art/story-c01/environment/shell-camp.png",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "sha256": "436202630c27af6e5e3c92a176525da63ec29c8641fbdb94b5d81d54c580f06e",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "bone-anchor-ring",
@@ -7043,7 +7063,27 @@
         "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp",
         "archiveBranch": "codex/archive-legacy-20261103"
-      }
+      },
+      "storyUses": [
+        {
+          "chapter": "story-c01",
+          "runtimeFile": "game/art/story-c01/environment/bone-platform.png",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "sha256": "b3e88cb8c60d21ce4a76a2686f3255f3a28a8095f580f6543df701d5ba358acf",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "r4-fungal-bed",
@@ -22383,7 +22423,27 @@
         "sourceAdaptation": "仅复用生态基座外观；保留 V2 原居民与三态规则",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/habitat-shell-nest.webp",
         "archiveBranch": "codex/archive-legacy-20261103"
-      }
+      },
+      "storyUses": [
+        {
+          "chapter": "story-c01",
+          "runtimeFile": "game/art/story-c01/environment/shell-nest.png",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "sha256": "3d9d517624fe375e7f84949c6fd5612a43788d32580e4ee57113a103bc2108ea",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "habitat-fungus-bed",
@@ -22525,7 +22585,27 @@
         "sourceAdaptation": "仅复用生态基座外观；保留 V2 原居民与三态规则",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/habitat-fungus-bed.webp",
         "archiveBranch": "codex/archive-legacy-20261103"
-      }
+      },
+      "storyUses": [
+        {
+          "chapter": "story-c01",
+          "runtimeFile": "game/art/story-c01/environment/fungus-bed.png",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "sha256": "0de628f10312ea3b70b7a7c65e470060455c7ac0a8d7a12cbe0d569d7522be45",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "habitat-larva-trough",
@@ -22990,7 +23070,27 @@
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-hanging-root.webp",
         "evidence": "mvp-v2/progress.md",
         "archiveBranch": "codex/archive-legacy-20261103"
-      }
+      },
+      "storyUses": [
+        {
+          "chapter": "story-c01",
+          "runtimeFile": "game/art/story-c01/environment/hanging-root.png",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "sha256": "cf3cc22de9119d4e0a167ab51a9829e5092ca24a741401e40e9078af6db09baa",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "xumen-reference-environment/MID-01",
@@ -28566,6 +28666,614 @@
           }
         }
       }
+    },
+    {
+      "id": "story-c01-xuting-panorama",
+      "name": "须庭 · 独立宽景",
+      "kind": "background",
+      "region": "须庭",
+      "tags": [
+        "新主线",
+        "第一章",
+        "2D",
+        "环境"
+      ],
+      "status": "needs-review",
+      "notes": "新绘宽景2048×683，等比映射3200世界宽，不拉长旧横图。",
+      "target": "2d",
+      "file": "assets/runtime/story-c01/environment/xuting-panorama.png",
+      "width": 2172,
+      "height": 724,
+      "source": {
+        "batchId": "story-c01",
+        "method": "built-in image_gen; original PNG and production prompts retained",
+        "sourceFiles": [
+          "assets/source/story-c01/environment/README.md"
+        ],
+        "rights": "本项目任务生成并留存制作源；未使用新下载第三方声画，不新增对外授权承诺。"
+      },
+      "sha256": "58fd1b29bc2f76f3026143b54d9719c0edf3a535d31f8cd3cb53d643c82f8ccf",
+      "runtimeFile": "game/art/story-c01/environment/xuting-panorama.png",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "evidence": [
+              "assets/source/story-c01/environment/README.md"
+            ],
+            "scope": "source/runtime hash, PNG dimensions, production checks"
+          },
+          "runtime": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          },
+          "art": {
+            "status": "pending",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "story-c01-baleen-buttress",
+      "name": "须庭 · 中央须板支撑",
+      "kind": "scenery",
+      "region": "须庭",
+      "tags": [
+        "新主线",
+        "第一章",
+        "2D",
+        "环境"
+      ],
+      "status": "needs-review",
+      "notes": "采用V1宽须板，V2高塔修改弃用；按原图等比缩放，碰撞另按场景合同。",
+      "target": "2d",
+      "file": "assets/runtime/story-c01/environment/baleen-buttress.png",
+      "width": 1478,
+      "height": 1064,
+      "source": {
+        "batchId": "story-c01",
+        "method": "built-in image_gen; original PNG and production prompts retained",
+        "sourceFiles": [
+          "assets/source/story-c01/environment/README.md"
+        ],
+        "rights": "本项目任务生成并留存制作源；未使用新下载第三方声画，不新增对外授权承诺。"
+      },
+      "sha256": "4acb0899825870971bb8124d32fa268cd66acca2ddb0e1d1b9ad316f46c2e7f1",
+      "runtimeFile": "game/art/story-c01/environment/baleen-buttress.png",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "evidence": [
+              "assets/source/story-c01/environment/README.md"
+            ],
+            "scope": "source/runtime hash, PNG dimensions, production checks"
+          },
+          "runtime": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          },
+          "art": {
+            "status": "pending",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "story-c01-returning-silt",
+      "name": "须庭 · 回流污絮",
+      "kind": "effect",
+      "region": "须庭",
+      "tags": [
+        "新主线",
+        "第一章",
+        "2D",
+        "环境"
+      ],
+      "status": "needs-review",
+      "notes": "透明污絮粒子沿回流轨迹移动，不登记成角色逐帧动画。",
+      "target": "2d",
+      "file": "assets/runtime/story-c01/environment/returning-silt.png",
+      "width": 1774,
+      "height": 887,
+      "source": {
+        "batchId": "story-c01",
+        "method": "built-in image_gen; original PNG and production prompts retained",
+        "sourceFiles": [
+          "assets/source/story-c01/environment/README.md"
+        ],
+        "rights": "本项目任务生成并留存制作源；未使用新下载第三方声画，不新增对外授权承诺。"
+      },
+      "sha256": "7c26c84cc53ed7881de92812ecf6876925c05122c2b5a0fd27cd58bd93bc7d43",
+      "runtimeFile": "game/art/story-c01/environment/returning-silt.png",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "evidence": [
+              "assets/source/story-c01/environment/README.md"
+            ],
+            "scope": "source/runtime hash, PNG dimensions, production checks"
+          },
+          "runtime": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          },
+          "art": {
+            "status": "pending",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "story-c01-forager-atlas",
+      "name": "须庭 · 食腐甲动作图集",
+      "kind": "character-animation",
+      "region": "须庭",
+      "tags": [
+        "新主线",
+        "第一章",
+        "2D",
+        "逐帧样板"
+      ],
+      "status": "needs-review",
+      "notes": "4×4真实姿态格；聚食/行走/预告/近扑/受击/退却，退却复用13–15帧重组；用户审美待确认。",
+      "target": "2d",
+      "file": "assets/runtime/story-c01/characters/forager-atlas.png",
+      "width": 1344,
+      "height": 1344,
+      "source": {
+        "batchId": "story-c01",
+        "method": "built-in image_gen; original PNG and production prompts retained",
+        "sourceFiles": [
+          "assets/source/story-c01/characters/README.md"
+        ],
+        "rights": "本项目任务生成并留存制作源；未使用新下载第三方声画，不新增对外授权承诺。"
+      },
+      "sha256": "12fdd332147be7d29b9319f1160596262eda5937e718deec7ee7aaccb656ea10",
+      "runtimeFile": "game/art/story-c01/characters/forager-atlas.png",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "evidence": [
+              "assets/source/story-c01/characters/README.md"
+            ],
+            "scope": "source/runtime hash, PNG dimensions, production checks"
+          },
+          "runtime": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          },
+          "art": {
+            "status": "pending",
+            "user_approved": false
+          }
+        }
+      },
+      "animation": {
+        "metadataFile": "assets/runtime/story-c01/characters/animations.json",
+        "columns": 4,
+        "rows": 4,
+        "frameCount": 16,
+        "cellSize": [
+          336,
+          336
+        ],
+        "root": [
+          168,
+          300
+        ],
+        "actions": [
+          "feed",
+          "walk",
+          "warn",
+          "attack",
+          "lunge",
+          "hurt",
+          "retreat"
+        ]
+      }
+    },
+    {
+      "id": "story-c01-mender-atlas",
+      "name": "须庭 · 补巢者动作图集",
+      "kind": "character-animation",
+      "region": "须庭",
+      "tags": [
+        "新主线",
+        "第一章",
+        "2D",
+        "逐帧样板"
+      ],
+      "status": "needs-review",
+      "notes": "4×4真实姿态格；修补/交流/行走/静息。镜像整体翻转不对称菌灯与壳，不宣称独立左右动作。",
+      "target": "2d",
+      "file": "assets/runtime/story-c01/characters/mender-atlas.png",
+      "width": 1344,
+      "height": 1344,
+      "source": {
+        "batchId": "story-c01",
+        "method": "built-in image_gen; original PNG and production prompts retained",
+        "sourceFiles": [
+          "assets/source/story-c01/characters/README.md"
+        ],
+        "rights": "本项目任务生成并留存制作源；未使用新下载第三方声画，不新增对外授权承诺。"
+      },
+      "sha256": "58b4b19fe3fb870f68cf8d41428413d277a397c8321b348aced1b79f044793f3",
+      "runtimeFile": "game/art/story-c01/characters/mender-atlas.png",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "evidence": [
+              "assets/source/story-c01/characters/README.md"
+            ],
+            "scope": "source/runtime hash, PNG dimensions, production checks"
+          },
+          "runtime": {
+            "status": "passed",
+            "scope": "local-web-keyboard-and-gpu-environment",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json",
+              "game/build/qa/story-c01/environment-checks.json"
+            ]
+          },
+          "art": {
+            "status": "pending",
+            "user_approved": false
+          }
+        }
+      },
+      "animation": {
+        "metadataFile": "assets/runtime/story-c01/characters/animations.json",
+        "columns": 4,
+        "rows": 4,
+        "frameCount": 16,
+        "cellSize": [
+          336,
+          336
+        ],
+        "root": [
+          168,
+          300
+        ],
+        "actions": [
+          "mend",
+          "talk",
+          "walk",
+          "idle"
+        ]
+      }
     }
-  ]
+  ],
+  "batches": {
+    "story-c01": {
+      "name": "新主线第一章 · 须庭",
+      "updatedAt": "2026-11-04",
+      "manifest": "game/art/manifest.json",
+      "status": "needs-review",
+      "counts": {
+        "newImages": 5,
+        "reusedImages": 5,
+        "audio": 2,
+        "metadata": 1,
+        "syncFiles": 13
+      },
+      "notes": "技术检查与游戏实机、整体审美验收分开；只读台账不代表线上已更新。非图片伴随文件不进入图片管理卡片。",
+      "resources": [
+        {
+          "file": "assets/runtime/story-c01/environment/xuting-panorama.png",
+          "runtimeFile": "game/art/story-c01/environment/xuting-panorama.png",
+          "sha256": "58fd1b29bc2f76f3026143b54d9719c0edf3a535d31f8cd3cb53d643c82f8ccf",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "story-c01-xuting-panorama",
+          "type": "new-image",
+          "width": 2172,
+          "height": 724,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/environment/baleen-buttress.png",
+          "runtimeFile": "game/art/story-c01/environment/baleen-buttress.png",
+          "sha256": "4acb0899825870971bb8124d32fa268cd66acca2ddb0e1d1b9ad316f46c2e7f1",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "story-c01-baleen-buttress",
+          "type": "new-image",
+          "width": 1478,
+          "height": 1064,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/environment/returning-silt.png",
+          "runtimeFile": "game/art/story-c01/environment/returning-silt.png",
+          "sha256": "7c26c84cc53ed7881de92812ecf6876925c05122c2b5a0fd27cd58bd93bc7d43",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "story-c01-returning-silt",
+          "type": "new-image",
+          "width": 1774,
+          "height": 887,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/sprites/r4-bone-platform/base.png",
+          "runtimeFile": "game/art/story-c01/environment/bone-platform.png",
+          "sha256": "b3e88cb8c60d21ce4a76a2686f3255f3a28a8095f580f6543df701d5ba358acf",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "r4-bone-platform",
+          "type": "reused-image",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/sprites/r1-hanging-root/base.png",
+          "runtimeFile": "game/art/story-c01/environment/hanging-root.png",
+          "sha256": "cf3cc22de9119d4e0a167ab51a9829e5092ca24a741401e40e9078af6db09baa",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "r1-hanging-root",
+          "type": "reused-image",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/sprites/habitat-shell-nest/base.png",
+          "runtimeFile": "game/art/story-c01/environment/shell-nest.png",
+          "sha256": "3d9d517624fe375e7f84949c6fd5612a43788d32580e4ee57113a103bc2108ea",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "habitat-shell-nest",
+          "type": "reused-image",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/sprites/shell-camp/base.png",
+          "runtimeFile": "game/art/story-c01/environment/shell-camp.png",
+          "sha256": "436202630c27af6e5e3c92a176525da63ec29c8641fbdb94b5d81d54c580f06e",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "shell-camp",
+          "type": "reused-image",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/sprites/habitat-fungus-bed/base.png",
+          "runtimeFile": "game/art/story-c01/environment/fungus-bed.png",
+          "sha256": "0de628f10312ea3b70b7a7c65e470060455c7ac0a8d7a12cbe0d569d7522be45",
+          "sourceReadme": "assets/source/story-c01/environment/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "habitat-fungus-bed",
+          "type": "reused-image",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/audio/resonance.wav",
+          "runtimeFile": "game/art/story-c01/audio/resonance.wav",
+          "sha256": "c486d005072ab21ed33805e6984b76173c7d35357163d7d65fba1d6e27604938",
+          "sourceReadme": "assets/source/story-c01/audio/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "durationSeconds": 0.55,
+          "resourceId": "story-c01-resonance",
+          "type": "original-synthesized-audio",
+          "listeningStatus": "pending",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/audio/whale-call.wav",
+          "runtimeFile": "game/art/story-c01/audio/whale-call.wav",
+          "sha256": "dd49646b0d6207f466f4cceef0ee0871e7c2432fe24b184b5e96fc46db6942ae",
+          "sourceReadme": "assets/source/story-c01/audio/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "durationSeconds": 3.2,
+          "resourceId": "story-c01-whale-call",
+          "type": "original-synthesized-audio",
+          "listeningStatus": "pending",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/characters/animations.json",
+          "runtimeFile": "game/art/story-c01/characters/animations.json",
+          "sha256": "c10c4e4fd0138a17cc2c57527923302557ca93b3243ec1555a56a767d0b167ea",
+          "sourceReadme": "assets/source/story-c01/characters/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "resourceId": "story-c01-animation-metadata",
+          "type": "animation-metadata",
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/characters/forager-atlas.png",
+          "runtimeFile": "game/art/story-c01/characters/forager-atlas.png",
+          "sha256": "12fdd332147be7d29b9319f1160596262eda5937e718deec7ee7aaccb656ea10",
+          "sourceReadme": "assets/source/story-c01/characters/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "story-c01-forager-atlas",
+          "type": "new-image",
+          "width": 1344,
+          "height": 1344,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        },
+        {
+          "file": "assets/runtime/story-c01/characters/mender-atlas.png",
+          "runtimeFile": "game/art/story-c01/characters/mender-atlas.png",
+          "sha256": "58b4b19fe3fb870f68cf8d41428413d277a397c8321b348aced1b79f044793f3",
+          "sourceReadme": "assets/source/story-c01/characters/README.md",
+          "technicalStatus": "passed",
+          "integrationStatus": "integrated",
+          "userArtApproval": false,
+          "assetId": "story-c01-mender-atlas",
+          "type": "new-image",
+          "width": 1344,
+          "height": 1344,
+          "runtimeValidation": {
+            "status": "passed",
+            "scope": "local-web-integration",
+            "evidence": [
+              "game/progress.md",
+              "game/build/qa/story-c01/web/report.json"
+            ]
+          }
+        }
+      ],
+      "integrationStatus": "integrated",
+      "publicationStatus": "pending",
+      "runtimeValidation": {
+        "status": "passed",
+        "scope": "local-web-keyboard-and-gpu-environment",
+        "evidence": [
+          "game/progress.md",
+          "game/build/qa/story-c01/web/report.json",
+          "game/build/qa/story-c01/environment-checks.json"
+        ]
+      }
+    }
+  }
 }

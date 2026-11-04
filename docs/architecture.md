@@ -19,6 +19,8 @@
 | `src/campaign/boss/` | 母蟹三招、阶段连招、护壳/破防和逐帧显示；通过主线敌人字典及 `R1-04:0` 连接奖励与存档 |
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
 | `src/ui/` | 正式标题、HUD、模态页面与设置；注入主线宿主，只读实际状态并请求主线操作。旧 tide_hud 保留给独立角色参数场 |
+| `src/story/` | 新主线须庭独立宿主、四阶段事件、非致死遭遇、共鸣UI、存档及只读Web状态；复用角色控制与逐帧显示，不导入V6 |
+| `content/story/` | 第一章入口、玩家适配及须庭环境场景；地形、碰撞和稳定标记由环境场景拥有 |
 | `content/whalebelly/r1/` | 七个房间场景、道路碰撞、分层贴图和节点 |
 | `content/whalebelly/environment/` | 当前环境场景、各动件脚本/Shader；保留恢复阶段的组织方式 |
 | `content/whalebelly/Player.tscn`、`CampaignPlayer.tscn` | 角色动作与主线参数 |
@@ -47,6 +49,10 @@
 
 UI新版保留V6结构并增加可选`visited`房间ID字典。发现定义为正式进入房间，同时在地图显示其配置的相邻出口；房间预览不登记、练习不保存。旧档至少恢复检查点及明确获得奖励/击败Boss的房间，不猜测其余历史路线。原子写入保留`.bak`，确认新旅途另保留`.before-new`；标题与加载共用V6校验。UI设置独立存于`ui_settings.cfg`，不混入玩法状态；QA使用`ui_qa_settings.cfg`。
 
+第一章独立 `StoryProgress` 使用版本1、稳定房间ID `story-c01-xuting`，存储于 `user://story-c01/progress.json`；`--story-qa` 使用 `user://story-c01-qa/progress.json`。它只接受完整前缀事件链 `c01.met_mender → c01.foragers_retreated → c01.route_known → c01.completed`，不读或迁入V6；未知标记、不合法类型和跳跃阶段均拒绝。`flags` getter 返回独立快照，宿主必须使用 `advance()`/`reset_progress()`，写盘成功后才发布内存状态。临时文件原子替换主档，保留 `.bak`；恢复可报告，新旅途保留 `.before-new`，失败可重试。
+
+`StoryMain` 拥有世界暂停、角色输入清理、恢复与镜头；`StoryFlow` 依据交战和实际退回聚食状态推进事件。`StoryUI` 只发开始、对话完成/中断、重试及暂停请求，不直接写存档或暂停树；中断不触发剧情完成。环境统一驱动有界动件时钟，角色图集播放器只负责帧切换。运行只读快照用于验收，不能代替真实键盘路线。
+
 ## 命令与验证
 
 在仓库根目录运行，需要Node.js 18+、Git LFS和Godot 4.7.2。命令入口依次查找 `GODOT`、`.tools/godot/` 和已配置的本机引擎。
@@ -66,6 +72,12 @@ node game/tests/web_whalebelly.mjs
 ## Web发布
 
 `node tools/deploy-pages.mjs` 导出单线程Web版，更新已有 `gh-pages` 的 `/godot/` 和默认根入口，普通推送，保留V2等在线历史目录。需要匹配版本的 `web_nothreads_release.zip` 模板。
+
+新主线使用 `node tools/godot.mjs export-story-web` 导出到 `game/build/story-web/`。仍采用同一Web preset（显式包含 `art/story-c01/characters/*.json`），通过 `story-export-project.mjs` 将工程源文件和已有 `.godot/imported` 缓存复制到 `game/build/story-export-project/`，排除嵌套build、编辑器状态及旧导出缓存；复制真实文件，不以硬链接共享可写缓存。只在副本 `project.godot` 中设置章节 `run/main_scene`，再导入和导出。正式 `project.godot` 保持不变，章节独立入口、存档路径和下载哈希分开。
+
+官方Web发布模板不支持命令行场景路径覆盖：直接把章节路径加入 `GODOT_CONFIG.args` 会报 `compiled without support for path overrides` 并中止。必须把章节入口烘入隔离工程导出包，HTML保持无场景参数；`prepare-web.mjs` 校验副本设置并清除旧增量HTML中残留的章节参数，`build.json.sceneSelection` 记录 `isolated-project-setting`，发布器拒绝旧覆盖方案。修改共享工程设置再还原或重编引擎都不是该工作流。
+
+`node tools/deploy-pages.mjs --story-only` 使用 `.pages-dist-story/` 稀疏检出，仅替换 `/godot-story/`；`--build-only` 只导出，不检出或推送。发布前比较其他顶层Git树ID，保证根入口、`godot/`、`godot-chapters/`、V2等内容不变；复用既有分片/压缩方法，正常推送，禁止强推。首次空索引在窄sparse规则后用 `read-tree -mu HEAD` 填充，避免把未展开目录误当删除；提交使用quiet避免旧Git输出统计触发大blob下载。推送后回读远端SHA，仍需检查Pages部署及实际路线。工具验证：`node --test tools/test-story-web.mjs tools/test-web-download-parts.mjs`。
 
 Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
 
