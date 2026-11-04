@@ -41,11 +41,12 @@ node game/tests/serve_web.mjs
 node game/tests/web_corpse_crab.mjs
 ```
 
-构建依赖Pillow、NumPy。浏览器脚本支持`PLAYWRIGHT_MODULE`、`CHROME_PATH`、`GAME_URL`、`TEST_OUTPUT`；默认本批4199端口，服务需指定同端口。所有证据留在忽略目录 `game/build/qa/corpse-crab/`。
+构建依赖Pillow、NumPy。浏览器脚本支持`PLAYWRIGHT_MODULE`、`CHROME_PATH`、`GAME_URL`、`TEST_OUTPUT`；默认本批4199端口，启动服务前设置环境变量`PORT=4199`（PowerShell：`$env:PORT='4199'`）。`RECORD_BROWSER=1`额外保存浏览器原始录像，报告中的`gameplayStartMs`标记下载结束时刻；canvas录像可能漏掉浏览器没有呈现的等待时段，不能用它推算墙钟时长。所有证据留在忽略目录 `game/build/qa/corpse-crab/`。
 
 - 单元回归：57项通过，新增5项覆盖点位/唯一伤害接收者、跨时点低扫、实际玩家命中去重、弹体死亡与重进、距离帧及单次镜像；包含既有母蟹回归。
 - GPU双向覆盖：`native/coverage.json`和`native/pose-fixture.mp4`；七状态左右共14行。该录像是正式场景状态夹具，不冒充自然战斗。
 - 实际输入：`web-v4/report.json`，12项全部通过，浏览器/引擎错误为空；`尸蟹_主场景键盘实测.mp4`展示左右读招、受击、击杀、切房、玩家死亡复活。使用独立浏览器上下文，不改用户存档。
+- 公网复核：`online/report.json`同样12项通过，首次就绪132.537秒；发布与源码绑定见[进度](../game/progress.md)。`尸蟹_线上实机验收.mp4`从浏览器原录像只去掉下载等待，未加速战斗时间轴。
 - 查看了透明边明暗底、接地与正式尺寸、左右大钳预备/低扫、死亡收拢姿势。技术/AI视觉复核通过，未代替用户美术签收。未新增移动触屏或声音听感验收。
 
 ## 性能边界

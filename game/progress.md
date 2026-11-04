@@ -9,6 +9,14 @@
 - RTX5060/i5-14600K、1280×720、60fps限帧，相同两房夹具预热120/采样240帧：本批常态中位16.760/16.663ms、P95为19.554/17.940ms；重复特效最大44.693/42.360ms。中位接近60fps，不能宣称全程稳定60fps。完整基线/当前数据和内存见接入说明。未做触屏、声音听感及长时Web性能验收。
 - 造型采用有限姿势保持式动画，步足摆动较小；AI视觉复核不代替用户审美签收。工作区原有须门连续地图改动保留，不混入本次提交。源码/发布版本与线上验收在完成后追加。
 
+### 尸蟹发布与线上复核
+
+- 实现源码 `35ec9bdbb622999dc0914874064eecaf5d4e5f28` 已正常推送main；发布提交 `15e3a2ab11c867dbf822decb3106b4babfa9843a` 正常推送gh-pages，变更只在godot目录。2026-11-04 17:08（Asia/Shanghai）确认[部署任务](https://github.com/Canace22/BOB/actions/runs/41804230768)成功，线上 `godot/build.json` 与本批源码一致。
+- [正式入口](https://canace22.github.io/BOB/godot/)的独立Chrome真实键盘12项全部通过，浏览器/引擎错误为空，包含双向攻击、反击击杀、暂停、实际门切房、普通重生及玩家死亡复活。冷启动就绪132.537秒，是本次网络样本，不作加载耗时保证。启动压缩文件107.68MiB，按现有工具分片发布。
+- 线上报告/截图 `game/build/qa/corpse-crab/online/`；浏览器原录像保留在其 `browser-video/`，只裁掉前置下载等待的交付录像为 `game/build/qa/corpse-crab/尸蟹_线上实机验收.mp4`。canvas录像可能省略未呈现的等待时段，不能据此推算墙钟时间；新增可选`RECORD_BROWSER=1`保存浏览器原时间轴与`gameplayStartMs`。
+- 初次发布在Windows已有入口文件的`cpSync` unlink分支报errno0，已确认入口与来源逐字节一致、14个运行发布文件与导出一致后继续同一staging。发布工具改为单文件`copyFileSync`，文件清单禁用重命名扫描，避免稀疏clone为相似度分析下载旧大包。语法、已有中文路径覆盖及实际`--entry-only --build-only`通过，staging保持干净；没有额外改动游戏包。
+- 已更新制作合同、台账、README、架构、接入/性能文档、项目Godot Skill，以及个人通用Skill的真实输入窗口验收经验。技术通过与用户审美认可仍分别记录。原工作区未提交的连续地图内容保留，当前可打开同仓库独立检出的 `work/corpse-crab-production/game/project.godot` 或线上入口试玩。
+
 ## 2026-11-04 · Framecraft增量处理与场景纹理压缩
 
 - 在独立 `codex/framecraft-compression-20261104` 检出中基于 `fdc4de61` 处理，避免混入主工作区正在写入的Boss与剧情内容。新增111张六房环境/角色图集经Framecraft真实接口保真处理，56,073,932 → 54,906,216字节；两个工程经项目API保存重开，并在工作台界面重开确认。旧856对与本批111对的尺寸、可见RGBA、Alpha及哈希均通过。

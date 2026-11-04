@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Publish /godot/ and its default root entry; preserve historical version directories.
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { cpSync, copyFileSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { publicationOmissions, includePublicationFile } from './web-download-parts.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -69,7 +69,7 @@ function prepare() {
     }
     writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false }, null, 2));
   }
-  cpSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
+  copyFileSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
   writeFileSync(path.join(staging, '.nojekyll'), '');
   return { remote, source };
 }
@@ -81,7 +81,7 @@ try {
   } else {
     for (const key of ['user.name', 'user.email']) run('git', ['config', key, read(['config', key])], staging);
     run('git', ['add', '--', ...(entryOnly ? [] : ['godot']), 'index.html', '.nojekyll'], staging);
-    const changed = read(['diff', '--cached', '--name-only'], staging).split('\n').filter(Boolean);
+    const changed = read(['diff', '--cached', '--name-only', '--no-renames'], staging).split('\n').filter(Boolean);
     if (changed.some(file => !['.nojekyll', 'index.html'].includes(file) && (entryOnly || !file.startsWith('godot/')))) throw new Error('Unexpected staged files outside the publication scope.');
     if (changed.length) run('git', ['commit', '--quiet', '-m', `发布 Godot ${entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
     run('git', ['push', remote, 'HEAD:gh-pages'], staging);

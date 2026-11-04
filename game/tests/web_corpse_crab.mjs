@@ -7,13 +7,13 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE??'playwright');
 const out=path.resolve(process.env.TEST_OUTPUT??'game/build/qa/corpse-crab/web');
 fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH??'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']});
-const context=await browser.newContext({viewport:{width:1280,height:720}});
+const context=await browser.newContext({viewport:{width:1280,height:720},...(process.env.RECORD_BROWSER==='1'?{recordVideo:{dir:path.join(out,'browser-video'),size:{width:1280,height:720}}}:{})});
 const page=await context.newPage();page.setDefaultTimeout(Number(process.env.READY_TIMEOUT_MS??600000));
 const checks=[],errors=[],snapshots=[],held=new Set();
-const start=Date.now();
+const start=Date.now();let gameplayStartMs=null;
 const state=()=>page.evaluate(()=>JSON.parse(window.render_game_to_text()));
 const sleep=ms=>page.waitForTimeout(ms);
-const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,snapshots,elapsedMs:Date.now()-start,method:'Fresh profile; real keyboard/mouse only; room 2/3 keys are explicit fixtures; no state writes'},null,2));
+const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,snapshots,elapsedMs:Date.now()-start,gameplayStartMs,method:'Fresh profile; real keyboard/mouse only; room 2/3 keys are explicit fixtures; no state writes'},null,2));
 const check=(name,pass)=>{checks.push({name,pass:Boolean(pass)});save();console.log(pass?'PASS':'FAIL',name);if(!pass)throw Error(name)};
 page.on('pageerror',e=>errors.push(e.message));
 page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
@@ -28,7 +28,7 @@ let recorder;
 try {
  await page.goto(process.env.GAME_URL??'http://127.0.0.1:4199/BOB/godot/',{waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>typeof window.render_game_to_text==='function');
- console.log('READY',Date.now()-start);await click('NewGame');await tap('2');await sleep(600);
+ console.log('READY',Date.now()-start);gameplayStartMs=Date.now()-start;await click('NewGame');await tap('2');await sleep(600);
  let s=await state();check('R1-02 contains one animated ordinary crab',s.room==='R1-02'&&s.enemies.length===1&&s.enemies[0].combat?.type==='corpse-crab');
  // Record canvas only after loading, not a long blank download video.
  recorder=await page.evaluate(()=>{const canvas=document.querySelector('#canvas');if(!canvas.captureStream||typeof MediaRecorder==='undefined')return false;window.crabChunks=[];window.crabRecorder=new MediaRecorder(canvas.captureStream(30),{mimeType:'video/webm;codecs=vp9',videoBitsPerSecond:3500000});window.crabRecorder.ondataavailable=e=>{if(e.data.size)window.crabChunks.push(e.data)};window.crabRecorder.start();return true});
