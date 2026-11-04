@@ -30,6 +30,8 @@
 
 `game/art/manifest.json` 同步当前资源，所有来源均在 `assets/`；实际数量以资源审计为准。既有856张图片经过[Framecraft保真压缩](../assets/source/framecraft-runtime/README.md)，画布、可见像素和Alpha不变；9个 `.framecraft` 工程保留原件与结果。新36动作制作、源片选段与透明图集见[制作源](../assets/source/tide-picker-action36/README.md)，其候选/验收状态不沿用旧素材结论。文本、遮罩、音频及字体在 `assets/runtime/godot-support/` 等库目录保存。
 
+后续111张图片由Framecraft增量批次保真处理，额外保留两个源工程；50张场景的Godot导入改为质量0.9的轻度有损编码，保持原PNG、像素尺寸、Alpha与坐标。角色和特效仍为保真导入。处理与运行包体分别统计，配置和恢复说明见[本批记录](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
+
 动作本体与FX可有独立帧数；世界环读取图层 `frame_count`/`event_frame`，按真实释放或落地启动，不随本体帧索引截断。影潮穿行复用dash本体并施冷青色调，深钟复用dive本体及地面环，保留各自伤害/范围/无敌逻辑；这些不是独立生成的两套美术。逐项来源、复用、参数和待验状态见[36项资产覆盖](action36-asset-coverage.md)，根目录 `build_asset_coverage.py` 可按实际清单及哈希绑定验收记录重建。
 
 `content/whalebelly/runtime-resources.json` 记录当前资源及引用拥有者。`node game/tools/audit_resources.mjs` 从正式入口、当前角色参数场、Run与环境预览检查引用，并展开身体/特效帧、七房、鱼群和音效的动态路径。它采用保守的路径族检查；新增加载方式时同步维护审计规则，再做实机验证。

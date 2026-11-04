@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 from threading import Lock
 import urllib.parse
 import urllib.request
@@ -149,7 +150,15 @@ def main():
     if (HERE / 'provenance.json').exists():
         raise SystemExit('This batch is already saved. Use --verify; create a new batch for new sources.')
     assert json.load(opener.open(args.url + '/api/health'))['status'] == 'ok'
-    paths = sorted(path for path in (ROOT / 'game/art').rglob('*') if path.suffix.lower() in ('.png', '.jpg', '.webp'))
+    if args.batch:
+        manifest = json.loads((ROOT / 'game/art/manifest.json').read_text(encoding='utf-8'))
+        paths = sorted(ROOT / 'game/art' / entry['dest'] for entry in manifest['entries']
+                       if entry['dest'].endswith('.png') and not entry['src'].startswith('assets/runtime/sprites/framecraft-runtime'))
+        if not paths:
+            raise SystemExit('No new PNGs outside existing Framecraft batches.')
+        HERE.mkdir(parents=True, exist_ok=True)
+    else:
+        paths = sorted(path for path in (ROOT / 'game/art').rglob('*') if path.suffix.lower() in ('.png', '.jpg', '.webp'))
     assert all(path.suffix == '.png' for path in paths), 'Handle non-PNG paths explicitly before converting formats'
     print(f'Processing {len(paths)} PNGs through Framecraft', flush=True)
     records = []
@@ -171,6 +180,9 @@ def main():
         projects.append(save_project(batch, len(projects) + 1))
     provenance = dict(tool='Framecraft e5dc68902bdd1e86402bfbeafe27e5ed301b539c', endpoint='/api/compression/frame', archiveBranch=ARCHIVE, settings=SETTINGS,
                       inputBytes=sum(x['before'] for x in records), outputBytes=sum(x['after'] for x in records), imageCount=len(records), projects=projects, images=records)
+    if args.batch:
+        provenance.pop('archiveBranch')
+        provenance['sourceCommit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     (HERE / 'provenance.json').write_text(json.dumps(provenance, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     repoint_manifest(records)
     print(json.dumps({key: provenance[key] for key in ('imageCount', 'inputBytes', 'outputBytes')}), flush=True)
@@ -180,5 +192,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--url', default='http://127.0.0.1:8765')
     parser.add_argument('--verify', action='store_true')
+    parser.add_argument('--batch', help='New incremental batch name; existing batches are never overwritten')
     args = parser.parse_args()
+    if args.batch:
+        if not args.batch or any(char not in 'abcdefghijklmnopqrstuvwxyz0123456789-' for char in args.batch):
+            parser.error('--batch accepts lowercase letters, digits and hyphens only')
+        HERE = HERE / 'batches' / args.batch
+        RUNTIME = ROOT / 'assets/runtime/sprites/framecraft-runtime-batches' / args.batch
     main()

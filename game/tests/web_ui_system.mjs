@@ -25,7 +25,9 @@ try{
  check('Fresh profile cannot Continue',(await state()).ui.controls.find(c=>c.name==='Continue').disabled);
  await shot('01-title');await click('Settings');await click('Numbers');await click('Contrast');await click('Motion');
  check('UI settings respond to real clicks',!(await state()).ui.numbers&&(await state()).ui.contrast&&(await state()).ui.reduce_motion);
- await page.keyboard.press('m');check('M mutes actual audio',(await state()).audio.muted);await page.keyboard.press('m');
+ await page.keyboard.press('m');await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).audio.muted);
+ check('M mutes actual audio',(await state()).audio.muted);await page.keyboard.press('m');
+ await page.waitForFunction(()=>!JSON.parse(window.render_game_to_text()).audio.muted);
  await shot('02-settings');await click('SettingsBack');check('Settings returns to title',(await state()).ui.page==='title');
  await click('NewGame');await gameplay();await shot('03-hud');
  const before=await state();await hold('d',450);check('Real D moves player',(await state()).player.x>before.player.x+30);
@@ -52,7 +54,7 @@ try{
  check('Authored doorway still changes room',(await state()).room==='R1-02');
  check('Room discovery follows real traversal',(await state()).ui.visited['R1-02']===true);
  await page.keyboard.press('c');await sleep(160);check('Map expands from visited room',(await state()).ui.map_nodes.length>2);await shot('08-expanded-map');await click('Back');await gameplay();
- await page.keyboard.press('Escape');await click('Settings');
+ await page.keyboard.press('Escape');await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).ui.page==='pause');await click('Settings');
  for(const size of [{width:1920,height:1080},{width:1280,height:720},{width:2560,height:1080}]){
    await page.setViewportSize(size);await sleep(700);const s=await state();
    check(`All controls in actual viewport ${size.width}`,s.ui.controls.every(c=>c.x>=-1&&c.y>=-1&&c.x+c.width<=s.ui.width+1&&c.y+c.height<=s.ui.height+1));
