@@ -269,3 +269,7 @@ Pages首次稀疏检出卡在读取马上要替换的13个旧godot包blob；停�
 `node tools/godot.mjs check`：0错误。`node tools/godot.mjs test`：51通过、1失败，失败为当前工作区 test_campaign_crab 的真实图集加载（crab_video/crab_video_v4 缺少可加载资源）；顺序重跑同样失败。本页通过 .gdignore 隔离，不加载这些资源，本批不发布游戏包或声称游戏回归全通过。
 
 维护与复验方法写入 docs/world-archive.md，README增加入口和 --lore-only 发布命令。本次为独立查阅工具，无新游戏能力、正式美术或关卡接入；已有通用Skill足够，未新增重复Skill。发布状态待下段核实。
+
+线上交付已核实：源码提交 `0832d2f10015a3a371ff196f659b872fab1d36a7`；Pages发布提交 `2d910e2cc19b65094507c4161c8a0a63958d24a1`；GitHub Actions运行 [41785656800](https://github.com/Canace22/BOB/actions/runs/41785656800) 成功。入口 [世界观数据库](https://canace22.github.io/BOB/lore/)。线上7个发布文件与本地产物逐字节一致，build.json中的源码提交、两份原稿哈希及58条记录一致；发布差异仅lore/下7个文件，游戏与其它入口未改变。
+
+线上独立Chrome复验14项通过：人物8卡片、基础初稿3项与叙事来源5项筛选、全文搜索高亮、无结果恢复、12章与终章详情、深链接刷新、原文行定位、复制完成/降级反馈、手机卡片与详情无页面溢出、键盘搜索焦点、无JavaScript错误。本地额外验证人物→章节关联、原稿下载、加载失败提示及重试恢复。视觉证据online-blue-reading.png、online-blue-mobile.png；不将浏览器技术验收记录为用户审美确认。
