@@ -110,3 +110,11 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - 现用入口：tests/whalebelly/ui_system_qa.gd、tests/web_ui_system.mjs，产物仅在build/qa/ui-system。详见docs/ui-system.md；不要用历史原型HTML充当正式游戏验证。
 
 - 公网大包冷启动使用独立持久QA上下文时，下载进度、就绪耗时、操作断言与视频封装分别留证；断言报告先落盘再关闭浏览器。持久上下文的默认空白页也可能产生独立录像，收尾阻塞不能误判为游戏断言失败或直接丢弃已完成证据。本批只在核对PID、父进程及专属输出路径后结束QA空白页编码器，游戏录像与完整原始报告保留；不得清理用户浏览器或注入本地缓存冒充公网首次加载。见action36的web-online-persistent记录。
+
+## 七房实际连通
+
+正常入口由`src/campaign/connected/`同时摆放七房与六条有碰撞的连接段；原房间ID及局部V6保存保持。自然跨房保留同一角色并对全部场景/镜头等量重定位，不能用load_room新建角色或整屏快照假称连续行走。迁移期间显式保护角色_exit_tree清理，真正退出/死亡继续释放；旧机关和战斗的显式process_mode须单独禁用，自主环境保持可暂停。
+
+旧QA默认房间隔离，仅验原机制；正式连通专项设置qa_connected=true。`connected_world_qa.gd`、顺序`-- --reload-connected`与真实键盘`web_connected_world.mjs`覆盖当前行为，证据在build/qa/xumen-connected。不要并行写QA存档。自然切换保留缓存状态，显式重载/新旅途/死亡清除旧上下文，避免复用旧主角目标或已死亡敌人。支路S+空格下行时必须检查回到hub的落差范围。
+
+运行时蒙版匹配绘画场景边界，等量重定位后更新材质原点；排除角色/战斗动态精灵。无自定义fragment的Sprite不要重复乘texture，否则颜色平方变暗。详细制作源与边界见assets/source/xumen-connected-v2/README.md。

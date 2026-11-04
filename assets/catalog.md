@@ -195,3 +195,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 2026-11-04 主线母蟹
 
 选择性恢复 `codex/crab-boss-prototype@581397ab` 的 [V3制作源](source/crab-video-v3/README.md)与[V4制作源](source/crab-video-v4/README.md)：主线同步V3待机、下砸、退场，V4走路、横扫、冲撞、抖壳共七张身体图集，以及接触尘与飞壳两张效果位图。导出位于 `assets/runtime/sprites/crab-video-v3/`、`crab-video-v4/`，同步到 `game/art/enemies/`。未新增生成素材，V4的48帧仍为既有重绘关键帧；来源和漂移限制沿用原说明。字体重建加入“弹刀/破防”的实际字形。[主线接入与验收边界](../docs/mother-crab-integration.md)。
+
+## 2026-11-04 须门遗港实际连通 V2
+
+[制作源与边界](source/xumen-connected-v2/README.md)：内置imagegen补画水平通道、上行通道和透明骨质平台三件原画，保存原件、两份OpenRaster、蒙版与锚点。manifest选择6张实际运行位图，旧矩形step仅作失败候选保留。四段主路与两条支路有真实碰撞，七房静态几何同时存在；鱼群/气泡/垂须继承原场景。来源记录、参数、制作阶段与验收见generation.json/production.json及game/progress.md，不把源码图数当作实机已显示数量。

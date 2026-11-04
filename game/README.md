@@ -1,6 +1,6 @@
 # 鲸腹遗城 · 当前工程
 
-2026-11-04：须门遗港七房已接入连续空间设计的共用口腔远景、六条连接双向动件与0.24秒过门混合；C地图以鲸头原画定位主路和上层支路。原道路与玩法保留，仍按房间加载。来源、母版、验收及后续边界见[制作说明](../assets/source/xumen-continuity-v1/README.md)。
+2026-11-04：须门遗港七房现位于同一物理空间，四段主路和两条上层支路由实际地形连接。直接沿道路行走跨房，不按E换图，也不使用过门快照；角色实例、速度和镜头连续。上层通道支持S+空格逐层下降，浮游/锚环条件保留。V6仍保存房间ID与局部检查点。来源、母版、验收及边界见[实际连通制作说明](../assets/source/xumen-connected-v2/README.md)；[V1](../assets/source/xumen-continuity-v1/README.md)仅为之前的视觉接入记录。
 
 用Godot 4.7.2打开 `project.godot`，按F5进入正式标题界面，选择新旅途或继续已有存档。入口仍为 `content/whalebelly/main.tscn`，实际运行WhalebellyRuins七房主关卡。
 

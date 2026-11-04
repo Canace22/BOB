@@ -7,7 +7,7 @@ var buttons: Dictionary = {}
 var depths: Dictionary = {}
 const ANATOMY_POSITIONS: Dictionary = {
 	0:Vector2(.09,.70),1:Vector2(.29,.67),2:Vector2(.49,.70),
-	3:Vector2(.69,.70),4:Vector2(.89,.70),5:Vector2(.62,.10),6:Vector2(.48,.36),
+	3:Vector2(.69,.70),4:Vector2(.89,.70),5:Vector2(.32,.10),6:Vector2(.50,.28),
 }
 var anatomy: TextureRect
 

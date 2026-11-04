@@ -142,6 +142,7 @@ var lower_frame: int = 0:
 var locomotion_visual := TideLocomotionVisual.new()
 var playback: AnimationNodeStateMachinePlayback
 var skill_controller := TideSkillController.new()
+var scene_reparenting: bool = false
 
 func _ready() -> void:
 	CampaignSaveBridge.prepare(false)
@@ -553,4 +554,4 @@ func respawn() -> void:
 	stats_changed.emit(health,soul)
 
 func _exit_tree() -> void:
-	skill_controller.dispose()
+	if not scene_reparenting:skill_controller.dispose()

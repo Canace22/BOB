@@ -50,6 +50,7 @@ func snapshot() -> Dictionary:
 		"audio": audio_state,
 		"environment": environment_state,
 		"continuity": host.continuity.state(),
+		"connected_world":host.connected_world.snapshot() if host.connected_world!=null and host.connected_world.enabled else {"enabled":false},
 	}
 
 func _snapshot(_arguments: Array) -> void:

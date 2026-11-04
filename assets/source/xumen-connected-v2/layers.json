@@ -1,0 +1,24 @@
+{
+  "floorTop": 624,
+  "floorScale": 1,
+  "layers": [
+    {
+      "id": "CON-FAR",
+      "path": "background.png",
+      "motion": "static painted depth; existing adjacent fish/bubbles reused"
+    },
+    {
+      "id": "CON-GROUND",
+      "path": "floor.png",
+      "motion": "rigid, pixel UV repeat; shares top contour with collision"
+    },
+    {
+      "id": "CON-FRONT",
+      "path": "foreground.png",
+      "motion": "static near frame"
+    }
+  ],
+  "source": "built-in imagegen",
+  "sourcePath": "originals/tunnel.png",
+  "editor": "master/tunnel.ora"
+}

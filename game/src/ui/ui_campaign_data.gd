@@ -23,6 +23,8 @@ func prompt() -> String:
 			var needed: String = door.get("ability", "")
 			if needed == "boss" and not boss().is_empty(): return "先击败负壳守卫"
 			if not needed.is_empty() and needed != "boss" and not host.has_ability(needed): return "需要" + ability_name(needed)
+			var connected: XumenConnectedWorld=host.get("connected_world")
+			if connected!=null and connected.enabled and int(door.to)>=0:return "沿通路直接前进"
 			return "穿过通道（方向＋交互）"
 	return ""
 
