@@ -126,6 +126,8 @@ func reset_context(index: int) -> void:
 	host.add_child(scene)
 	chunks[index]=scene
 	scene.name="Chunk_"+str(host.rooms[index].id)
+	var baked: CanvasItem=scene.get_node_or_null("World/PlayerArt")
+	if baked!=null:baked.hide()
 	edge_masks.bind_chunk(index,scene,host.point(host.rooms[index].size))
 	contexts.erase(index)
 

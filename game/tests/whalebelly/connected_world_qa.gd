@@ -92,6 +92,11 @@ func run() -> void:
 	await step(30)
 	check("death_respawn_connected",host.health==5 and host.room_index==0 and host.player.get_instance_id()!=dying,{"health":host.health,"state":host.player.state,"changed":host.player.get_instance_id()!=dying})
 	check("respawn_skill_binding",host.player.skill_controller.actor==host.player and host.player_ui.player==host.player)
+	var ghosts: Array[String]=[]
+	for id: int in host.connected_world.chunks:
+		var art: CanvasItem=host.connected_world.chunks[id].get_node_or_null("World/PlayerArt")
+		if art!=null and art.visible:ghosts.append(str(host.rooms[id].id))
+	check("reload_has_no_baked_player_duplicates",ghosts.is_empty(),ghosts)
 	if DisplayServer.get_name()!="headless":
 		await process_frame;await process_frame
 		get_root().get_texture().get_image().save_png("res://build/qa/xumen-connected/connected-main.png")
