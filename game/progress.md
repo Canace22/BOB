@@ -242,3 +242,11 @@ Windows10、i5-14600K（14核20线程）、RTX5060、约64GB RAM、Godot4.7.2 GL
 **发布：本地实现与验收已通过，正在进行源码提交、最终Web导出/浏览器复验和Pages部署；尚未把推送或构建当作线上生效。**
 
 最终成片补验：绘制层返修后重新录制全36项×两向，72/72通过、0失败；`game/build/qa/action36/coverage-final.mp4`共2780帧/24fps（115.833秒）。该片为明确练习/临时条件的覆盖展示，与35.25秒连续游玩片分开，不再以旧不可见地环候选片作为最终交付。
+
+### 最终Web返修
+
+源码9b339a74已普通推送。最终Web初次路线23/27、独立新Chrome复现25/27，切房/镜头后续失败；保留web-final及web-final-audio-retry。真实异常为Godot Web Sample._duplicateAudioBuffer在播放24秒water_bed时createBuffer(2,1152000,48000)失败，AudioContext running、JS heap约177MB，不能忽略为无关日志。
+
+定向修复仅Web环境音使用AudioServer.PLAYBACK_TYPE_STREAM，保留环境音文件/音量/淡出和桌面行为；只读Web状态新增实际playing/playback_type/muted，浏览器路线新增开始与切房后流式环境音仍播放断言，共29项。修复后最终结果另记，不把静音当修复。
+
+Pages首次稀疏检出卡在读取马上要替换的13个旧godot包blob；停止本任务下载进程后，只移除godot/索引旧项并放入本次导出，其他历史顶层tree逐项一致。发布脚本现优先只检出根入口，再完整替换godot子树，避免重复下载弃用旧包。准备目录未发布，浏览器通过后再提交推送。

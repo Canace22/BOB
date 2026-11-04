@@ -33,6 +33,7 @@ try {
   await ready();await page.keyboard.press('Enter');await sleep(700);
   const initial=await capture('01-start');
   check('actual campaign starts in R1-01',initial.room==='R1-01');
+  check('Web ambience plays through stream playback',initial.audio.playing&&initial.audio.playback_type===1&&!initial.audio.muted);
   check('default main camera follows at playable scale',initial.camera.following&&initial.camera.zoom>=.95);
   await hold('d',650);const right=await capture('02-right');
   check('D moves physical actor right',right.player.x>initial.player.x+80&&right.player.facing===1);
@@ -88,6 +89,7 @@ try {
   await page.keyboard.up('d');await sleep(300);
   check('walking through authored door changes the actual main room',(await state()).room!==roomBefore);
   const next=await capture('11-next-room');
+  check('authored room transition retains playing streamed ambience',next.audio.playing&&next.audio.playback_type===1&&!next.audio.muted);
   check('next authored room retains follow camera and playable scale',next.camera.following&&next.camera.zoom>=.95);
   await page.keyboard.press('Tab');await sleep(250);
   check('Tab selects full-room panorama',!(await state()).camera.following);

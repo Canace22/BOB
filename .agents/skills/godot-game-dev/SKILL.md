@@ -82,3 +82,7 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - 实机视频须记录控制方式与练习/测试夹具，源视频和脚本直接注入伤害不冒充正常游玩。帧编码期间的耗时不能作为60fps性能证据；另测无录制运行并记录同机外部负载。实例与回归脚本见 `docs/action36-controls.md`、`game/tests/whalebelly/action36_*.gd`。
 
 - 世界空间效果的`top_level`不保证继承预期的场景绘制层；显式核对最终Z层。直接设`z_index=-1`可能把环与残影放到整张背景后。以实际角色层为基准设置绝对层，并同时保留地面原点、方向、尺寸和碰撞；用发力帧截图及两向历史残影复验，不能只靠节点存在断言。
+
+- 完整替换Pages的godot子树时，旧包blob下载可能长时间停滞。先只稀疏检出根入口，按明确godot/前缀移除索引旧项，再复制验证后的导出并加入该稀疏路径；不请求旧大包来立即删除。提交前比较顶层tree，所有非godot历史目录必须与原HEAD一致。只更新根入口的发布仍需保留现有godot检查。
+
+- Godot Web若在重建房间时出现Sample._duplicateAudioBuffer/createBuffer错误，保留堆栈并在新浏览器上下文复现，不能静音掩盖。24秒环境音本批改用Web专属AudioServer.PLAYBACK_TYPE_STREAM，桌面默认不变；验收同时检查真实切房、后续按键和playing/type/muted，环境音内容与短音效保留。

@@ -54,6 +54,9 @@ func _ready() -> void:
 		fog_node.add_child(mist)
 	ambience = AudioStreamPlayer.new()
 	ambience.name = "WaterAmbience"
+	# Web Sample duplicates the 24-second buffer on room re-entry. Streaming
+	# keeps ambience audible without that failing AudioContext allocation path.
+	if OS.has_feature("web"): ambience.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
 	ambience.volume_db = -80.0
 	ambience.stream = make_ambience()
 	add_child(ambience)

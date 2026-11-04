@@ -36,11 +36,18 @@ function prepare() {
   run('git', ['config', 'remote.origin.promisor', 'true'], staging);
   run('git', ['config', 'remote.origin.partialclonefilter', 'blob:none'], staging);
   run('git', ['sparse-checkout', 'init', '--no-cone'], staging);
-  run('git', ['sparse-checkout', 'set', '/godot/', '/index.html', '/.nojekyll'], staging);
+  // Full publication replaces this subtree, so do not fetch its obsolete blobs.
+  run('git', ['sparse-checkout', 'set', ...(entryOnly ? ['/godot/'] : []), '/index.html', '/.nojekyll'], staging);
   if (!freshCheckout) {
     run('git', ['fetch', '--filter=blob:none', remote, 'gh-pages'], staging);
     // Diffstat can lazily download unrelated blobs on older Git versions.
     run('git', ['merge', '--ff-only', '--no-stat', 'FETCH_HEAD'], staging);
+  }
+  if (!entryOnly) {
+    const previous = execFileSync('git', ['ls-files', '-z', '--', 'godot/'], { cwd: staging });
+    if (previous.length) execFileSync('git', ['update-index', '--force-remove', '-z', '--stdin'], { cwd: staging, input: previous });
+    // New files are copied below; adding the sparse pattern needs no checkout.
+    writeFileSync(path.join(staging, '.git/info/sparse-checkout'), '/godot/\n/index.html\n/.nojekyll\n');
   }
   const dest = path.join(staging, 'godot');
   if (entryOnly && !existsSync(path.join(dest, 'index.html'))) throw new Error('Publish the Godot game before updating its default entry.');

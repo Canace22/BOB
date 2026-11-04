@@ -14,6 +14,10 @@ func _ready() -> void:
 
 func snapshot() -> Dictionary:
 	var environment := host.scenery.get_node_or_null("ChapterEnvironment") as ChapterRoomEnvironment
+	var ambience: AudioStreamPlayer=host.scenery.get_node_or_null("EnvironmentMotion/WaterAmbience")
+	var audio_state: Dictionary={"playing":false,"playback_type":-1,"muted":AudioServer.is_bus_mute(0)}
+	if ambience!=null:
+		audio_state.merge({"playing":ambience.playing,"playback_type":ambience.playback_type,"paused":ambience.stream_paused},true)
 	var environment_state: Dictionary = {}
 	if environment != null:
 		environment_state = {"room":environment.room_id,"time":environment.elapsed,"counts":environment.content_counts()}
@@ -37,6 +41,7 @@ func snapshot() -> Dictionary:
 			"skill_elapsed":host.player.skill_controller.elapsed,
 			"attack_id":host.player.skill_controller.attack_id},
 		"enemies": enemies,
+		"audio": audio_state,
 		"environment": environment_state,
 	}
 
