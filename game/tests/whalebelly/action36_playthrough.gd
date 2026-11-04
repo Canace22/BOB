@@ -1,7 +1,7 @@
 extends SceneTree
 ## Uninterrupted default main scene. Only physical-key InputEvents change play;
 ## enemy damage, health, resources, position, doors and respawn are never injected.
-const OUT: String="res://build/qa/action36/playthrough"
+const OUT: String="res://build/qa/action36/playthrough-current-ui"
 var host: Node2D
 var checks: Array[Dictionary]=[]
 var inputs: Array[Dictionary]=[]
@@ -12,7 +12,9 @@ func _initialize() -> void: run.call_deferred()
 func tick(count: int) -> void:
 	for frame: int in count: await physics_frame
 func key(code: Key, pressed: bool) -> void:
-	if bool(held.get(code,false))==pressed:return
+	if bool(held.get(code,false))==pressed and Input.is_physical_key_pressed(code)==pressed:return
+	if bool(held.get(code,false))==pressed:
+		print("PLAYTHROUGH INPUT_RESTORE ",OS.get_keycode_string(code)," pressed=",pressed)
 	held[code]=pressed
 	var event:=InputEventKey.new()
 	event.physical_keycode=code;event.keycode=code;event.pressed=pressed
@@ -37,10 +39,12 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.qa_full_abilities=false;host.integration_external_test=true
+	host.ui_interactive_in_tests=true
 	root.add_child(host);current_scene=host
-	var overlay:=CanvasLayer.new();overlay.layer=100;root.add_child(overlay)
-	banner=Label.new();banner.position=Vector2(16,50)
-	banner.add_theme_font_size_override("font_size",18)
+	var overlay:=CanvasLayer.new();overlay.layer=1023;root.add_child(overlay)
+	banner=Label.new();banner.position=Vector2(16,166);banner.size=Vector2(1248,28)
+	banner.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	banner.add_theme_font_size_override("font_size",16)
 	banner.add_theme_color_override("font_outline_color",Color.BLACK)
 	banner.add_theme_constant_override("outline_size",6);overlay.add_child(banner)
 	await tick(45)
@@ -77,6 +81,7 @@ func run() -> void:
 	var previous_room: String=str(host.room.id)
 	key(KEY_D,true)
 	for frame: int in 600:
+		key(KEY_D,true)
 		await tick(1)
 		if str(host.room.id)!=previous_room:break
 	key(KEY_D,false);await tick(30)
@@ -85,7 +90,7 @@ func run() -> void:
 	if host.room.id=="R1-02":await actual_enemy_death()
 	for code: int in held:key(code,false)
 	var failed: int=checks.filter(func(row: Dictionary) -> bool:return not row.pass).size()
-	FileAccess.open(OUT.path_join("report.json"),FileAccess.WRITE).store_string(JSON.stringify({"method":"Uninterrupted default main; engine physical-key events (not OS keyboard); QA isolates save only; F9 explicitly enables and restores practice; no position/health/resource/enemy/damage injection; actual authored enemy causes hurt/death and normal checkpoint respawn", "checks":checks,"stages":stages,"inputs":inputs,"failed":failed},"\t"))
+	FileAccess.open(OUT.path_join("report.json"),FileAccess.WRITE).store_string(JSON.stringify({"method":"Uninterrupted default main; engine physical-key events (not OS keyboard); QA isolates save and skips title; interactive death menu enabled; F9 explicitly enables and restores practice; no position/health/resource/enemy/damage injection; actual authored enemy causes hurt/death and R confirms normal checkpoint respawn", "checks":checks,"stages":stages,"inputs":inputs,"failed":failed},"\t"))
 	await host.graceful_quit(1 if failed else 0)
 func actual_enemy_death() -> void:
 	stage("FORMAL COMBAT | Authored enemy attacks cause all damage | No health injection")
@@ -93,6 +98,7 @@ func actual_enemy_death() -> void:
 	var initial_health: int=host.player.health
 	var hurt_seen: bool=false
 	var defeat_seen: bool=false
+	var retry_sent: bool=false
 	var attack_sent: bool=false
 	var enemy_damaged: bool=false
 	var enemy_initial_health: int=int(host.enemies[0].hp) if not host.enemies.is_empty() else 0
@@ -101,8 +107,12 @@ func actual_enemy_death() -> void:
 		if host.player.health<=0:
 			key(KEY_A,false);key(KEY_D,false)
 			if not defeat_seen:
-				defeat_seen=true;stage("ACTUAL ENEMY DEATH | Waiting for normal checkpoint respawn")
+				defeat_seen=true;stage("PLAYER DEATH | Waiting for the authored retry menu")
 				await shot("13-actual-death")
+			if host.player_ui.page_id=="death" and not retry_sent:
+				stage("DEATH MENU | Real R key confirms checkpoint retry")
+				await shot("13b-death-menu");await tick(30)
+				await tap(KEY_R,3);retry_sent=true
 		elif not host.enemies.is_empty():
 			enemy_damaged=enemy_damaged or int(host.enemies[0].hp)<enemy_initial_health
 			var delta: float=float(host.enemies[0].pos.x)-host.player.position.x
@@ -116,6 +126,7 @@ func actual_enemy_death() -> void:
 	check("attack_reaches_authored_enemy",attack_sent and enemy_damaged)
 	check("actual_enemy_hurt",hurt_seen)
 	check("actual_enemy_defeat",defeat_seen)
+	check("death_menu_retry_by_R",retry_sent)
 	check("normal_checkpoint_respawn",host.player.get_instance_id()!=actor_id and host.player.health==5 and not host.practice)
 	stage("FORMAL CHECKPOINT RESPAWN | Same default campaign actor | Controls restored")
 	await tick(45);await hold(KEY_D,20);await hold(KEY_A,20)

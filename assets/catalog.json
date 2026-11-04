@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 35,
+  "revision": 36,
   "updatedAt": "2026-11-04",
   "project": "BOB",
   "atlas": {
@@ -27757,23 +27757,24 @@
       "tags": [
         "2D",
         "动作",
-        "视频提取"
+        "AI补制",
+        "精灵表"
       ],
       "target": "2d",
       "file": "assets/runtime/sprites/tide-picker-action36/abyss_scream-body.png",
-      "width": 1935,
-      "height": 738,
+      "width": 1968,
+      "height": 390,
       "frameCount": 20,
       "fps": 24,
       "pivot": [
-        100,
-        238
+        82,
+        190
       ],
       "source": "assets/source/tide-picker-action36/README.md",
-      "sourceKind": "video-extraction",
-      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\31_abyss_scream_final_retry.mp4",
-      "sourceSha256": "7458c8969552c52557a6659ea23660768d61b3deb33a970b2bb5e068622571a9",
-      "sha256": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\abyss_scream-v2.png",
+      "sourceSha256": "16d4ac23673493166035a0093f6a36d1ab481f3aa7bad7807a32a3ea0f515a18",
+      "sha256": "9f5d31e4527f7ab280c8bc4ffcb126e08b16a1066df884bfc823c0d3875e8fa4",
       "runtimeScene": "game/content/whalebelly/main.tscn",
       "runtimeFile": "game/art/tide-picker-action36/abyss_scream-body.png",
       "status": "accepted",
@@ -27783,35 +27784,35 @@
         "file": "assets\\source\\tide-picker-action36\\validation.json",
         "hashMatched": true,
         "hashes": {
-          "body": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+          "body": "9f5d31e4527f7ab280c8bc4ffcb126e08b16a1066df884bfc823c0d3875e8fa4",
           "fx": "d920c605faef889c82e68852f2d6ec0aaaded7741321d7aa05e2b2e84aa9bdc1"
         },
         "stages": {
           "technical": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
               "game/build/qa/action36/atlas-integrity.json"
             ]
           },
           "runtime": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
-              "game/build/qa/action36/coverage/report.json",
-              "game/build/qa/action36/coverage-final.log",
-              "game/build/qa/action36/playthrough/report.json"
+              "game/build/qa/action36/coverage/report-abyss_scream.json",
+              "game/build/qa/action36/abyss-runtime.log"
             ]
           },
           "art": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
-              "game/build/qa/action36/coverage-right-review.jpg",
-              "game/build/qa/action36/coverage-left-review.jpg"
+              "assets/source/tide-picker-action36/anatomy-fix/review.md",
+              "assets/source/tide-picker-action36/review/abyss-anatomy/registered.jpg",
+              "game/build/qa/action36/abyss-anatomy.mp4"
             ],
             "reviewer_kind": "agent",
             "user_approved": false
@@ -27853,35 +27854,35 @@
         "file": "assets\\source\\tide-picker-action36\\validation.json",
         "hashMatched": true,
         "hashes": {
-          "body": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+          "body": "9f5d31e4527f7ab280c8bc4ffcb126e08b16a1066df884bfc823c0d3875e8fa4",
           "fx": "d920c605faef889c82e68852f2d6ec0aaaded7741321d7aa05e2b2e84aa9bdc1"
         },
         "stages": {
           "technical": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
               "game/build/qa/action36/atlas-integrity.json"
             ]
           },
           "runtime": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
-              "game/build/qa/action36/coverage/report.json",
-              "game/build/qa/action36/coverage-final.log",
-              "game/build/qa/action36/playthrough/report.json"
+              "game/build/qa/action36/coverage/report-abyss_scream.json",
+              "game/build/qa/action36/abyss-runtime.log"
             ]
           },
           "art": {
             "status": "passed",
-            "reviewer": "agent/root + agent/camera_validation",
-            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "reviewer": "agent/root",
+            "reviewed_at": "2026-11-04T14:18:07.033520+08:00",
             "evidence": [
-              "game/build/qa/action36/coverage-right-review.jpg",
-              "game/build/qa/action36/coverage-left-review.jpg"
+              "assets/source/tide-picker-action36/anatomy-fix/review.md",
+              "assets/source/tide-picker-action36/review/abyss-anatomy/registered.jpg",
+              "game/build/qa/action36/abyss-anatomy.mp4"
             ],
             "reviewer_kind": "agent",
             "user_approved": false

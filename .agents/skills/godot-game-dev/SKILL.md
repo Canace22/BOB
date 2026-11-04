@@ -98,3 +98,5 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - 隐藏原生窗口截图可能读到旧帧；等待渲染帧并 force_draw 后捕获。原生窗口受显示器宽度钳制，超宽验收用实际浏览器 viewport，不能只把截图命名为2560。
 - UI 浏览器回归可输出只读控件矩形，真实鼠标按 viewport 和黑边换算点击；不可用脚本调用按钮回调冒充鼠标验收。独立浏览器上下文、QA存档和设置路径隔离；伤害/Boss夹具与自然路线分别记录。
 - 现用入口：tests/whalebelly/ui_system_qa.gd、tests/web_ui_system.mjs，产物仅在build/qa/ui-system。详见docs/ui-system.md；不要用历史原型HTML充当正式游戏验证。
+
+- 公网大包冷启动使用独立持久QA上下文时，下载进度、就绪耗时、操作断言与视频封装分别留证；断言报告先落盘再关闭浏览器。持久上下文的默认空白页也可能产生独立录像，收尾阻塞不能误判为游戏断言失败或直接丢弃已完成证据。本批只在核对PID、父进程及专属输出路径后结束QA空白页编码器，游戏录像与完整原始报告保留；不得清理用户浏览器或注入本地缓存冒充公网首次加载。见action36的web-online-persistent记录。
