@@ -8,7 +8,7 @@ func run() -> void:
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.qa_connected=true;host.qa_full_abilities=false;host.integration_external_test=true
 	root.add_child(host);current_scene=host
-	host.load_room(2 if edge=="E03" else 1,[1917,600 if edge=="E03" else 713]);host.player.controls_enabled=false
+	host.load_room({"E02":1,"E03":2,"E04":3}[edge],[1917,600 if edge=="E03" else 713]);host.player.controls_enabled=false
 	for frame: int in range(100):await process_frame
 	var times: Array[float]=[]
 	var last: int=Time.get_ticks_usec()

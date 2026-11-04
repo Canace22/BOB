@@ -7,13 +7,13 @@ func step(n: int) -> void:
 func run() -> void:
 	for arg: String in OS.get_cmdline_user_args():
 		if arg.begins_with("--edge="):edge=arg.trim_prefix("--edge=")
-	var offset: float=2184.0 if edge=="E03" else 0.0
-	var floor_y: float=661.847 if edge=="E03" else 626.847
+	var offset: float={"E02":0.0,"E03":2184.0,"E04":4287.0}[edge]
+	var floor_y: float={"E02":626.847,"E03":661.847,"E04":722.847}[edge]
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.qa_connected=true;host.qa_full_abilities=false;host.integration_external_test=true
 	root.add_child(host);current_scene=host
 	await step(40)
-	host.load_room(2 if edge=="E03" else 1,[1400,715]);await step(15)
+	host.load_room({"E02":1,"E03":2,"E04":3}[edge],[1400,700]);await step(15)
 	host.player.set_physics_process(false)
 	for pass_index: int in range(2):
 		if pass_index==1:

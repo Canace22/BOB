@@ -1,14 +1,14 @@
 {
-  "stage": "E03_local_passed",
+  "stage": "E04_local_passed",
   "edges": {
     "E02": "online_technical_visual_ai_passed",
-    "E03": "local_technical_visual_ai_passed",
-    "E04": "pending",
+    "E03": "online_technical_visual_ai_passed",
+    "E04": "local_technical_visual_ai_passed",
     "E33": "pending",
     "E35": "pending"
   },
   "precondition": "E01 online passed",
-  "next": "E03 publication and online verification",
+  "next": "E04 publish and online test then E33",
   "verified": {
     "check_errors": 0,
     "engineering": 57,
@@ -32,5 +32,20 @@
     "connected": 38,
     "E01_regression": 23,
     "chrome_local": 10
+  },
+  "publication_E03": {
+    "source": "6af59ef0dc0e52283d543cee19ff95f0af0abf15",
+    "pages": "f09f26237be1495cb8490df01c4df59c6c5617fd",
+    "run": 41929967970,
+    "deployment": "success",
+    "online_keyboard": "10/10 errors0,52s playback"
+  },
+  "verified_E04": {
+    "engineering": 57,
+    "native": 15,
+    "connected": 38,
+    "chrome_local": 11,
+    "motion_seconds": 52,
+    "evidence": "game/build/qa/xumen-transitions/E04-*"
   }
 }

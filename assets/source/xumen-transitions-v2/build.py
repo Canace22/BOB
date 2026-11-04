@@ -66,7 +66,8 @@ def main_edge(edge, index, floor_y, gx, canvas_x):
         y=sample(ROOMS[index]['surfaces'][0],wx-a[0])+a[1] if wx<left else sample(ROOMS[index+1]['surfaces'][0],wx-b[0])+b[1] if wx>right else floor_y
         off=round(y-gy); tops.append(off)
         out[off:off+source.shape[0],x]=source[:,x]
-    save(fade(Image.fromarray(out),190,230),edge+'-ground')
+    ground_width=1400 if edge=='E04' else 1600
+    save(fade(Image.fromarray(out).crop((0,0,ground_width,500)),190,230),edge+'-ground')
     arch=Image.open(S/'originals'/(edge+'-arch.png')).convert('RGBA')
     arch=arch.resize((1300,round(arch.height*1300/arch.width)),Image.Resampling.LANCZOS)
     save(fade(arch,160,180),edge+'-arch')
@@ -77,7 +78,7 @@ def main_edge(edge, index, floor_y, gx, canvas_x):
     for ri in [index,index+1]:
         w,h=map(int,ROOMS[ri]['size']); ox,oy=ORIGINS[ri]
         yy,xx=np.mgrid[:h,:w]; wx=xx+ox; wy=yy+oy
-        f=np.clip((wx-gx)/190,0,1)*np.clip((gx+1600-wx)/230,0,1)
+        f=np.clip((wx-gx)/190,0,1)*np.clip((gx+ground_width-wx)/230,0,1)
         save(Image.fromarray((255*(1-f)).astype('uint8')).convert('RGBA'),edge+'-other-owner-'+str(ri))
         if ri==1:
             protect=np.clip((450-wy)/80,0,1)*np.clip((wx-3490)/80,0,1)
@@ -161,11 +162,31 @@ def clean_e03_room_layers():
     a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');save(Image.fromarray(a),'arena-middle-clean')
     Image.fromarray((selection*255).astype('uint8')).save(S/'masters/arena-middle-E03-water.png')
 
+def clean_e04_room_layers():
+    for ri,name,source in [(3,'arena-world-clean',O/'arena-world-clean.png'),(4,'nursery-world-clean',R/'game/art/r1-chapter-scenes/R1-05/World.png')]:
+        im=Image.open(source).convert('RGBA');a=np.array(im)
+        yy,xx=np.mgrid[:im.height,:im.width]
+        lip=np.array([sample(ROOMS[ri]['surfaces'][0],x-16)+16 for x in range(im.width)])
+        zone=(xx>1050 if ri==3 else xx<1160)&(yy<lip[None,:]-2)&(yy>350)
+        rgb=a[:,:,:3].astype(float)
+        selection=zone*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.2)/12,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.12)/12,0,1)
+        a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');save(Image.fromarray(a),name)
+        Image.fromarray((selection*255).astype('uint8')).save(S/'masters'/(name+'-E04-water.png'))
+    # The nursery ceiling is folded tissue, so retain it unchanged beyond the
+    # ownership overlap. Its left water wedge is removed only in that volume.
+    im=Image.open(R/'game/art/r1-chapter-scenes/R1-05/Middle.png').convert('RGBA')
+    a=np.array(im);yy,xx=np.mgrid[:im.height,:im.width];rgb=a[:,:,:3].astype(float)
+    ramp=np.clip((yy-80)/160,0,1)*np.clip((1160-xx)/180,0,1)
+    selection=ramp*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.3)/18,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/18,0,1)
+    a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');save(Image.fromarray(a),'nursery-middle-clean')
+
 if __name__=='__main__':
     config={}
     config['E02']=main_edge('E02',1,626.847,3310,3029)
     clean_e02_room_layers()
     config['E03']=main_edge('E03',2,661.847,5494,5213)
     clean_e03_room_layers()
+    config['E04']=main_edge('E04',3,722.847,7597,7316)
+    clean_e04_room_layers()
     write(S/'masters/placements.json',config)
     write(S/'masters/export-hashes.json',{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in O.glob('*.png')})

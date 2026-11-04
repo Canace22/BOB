@@ -21,8 +21,11 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 	if id==3:
 		chunk.get_node("ChapterEnvironment/World/Surface").texture=preload("res://art/xumen-transitions/arena-world-clean.png")
 		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-transitions/arena-middle-clean.png")
+	if id==4:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=preload("res://art/xumen-transitions/nursery-world-clean.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-transitions/nursery-middle-clean.png")
 	for edge: String in XumenAuthoredTransitions.EDGES:
-		if (edge=="E02" and id in [1,2]) or (edge=="E03" and id in [2,3]):
+		if (edge=="E02" and id in [1,2]) or (edge=="E03" and id in [2,3]) or (edge=="E04" and id in [3,4]):
 			var old_joint: Node2D=chunk.get_node_or_null("Continuity_"+edge)
 			if old_joint!=null:
 				old_joint.hide()
@@ -76,11 +79,12 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 			material.set_shader_parameter("e01_owner",[preload("res://art/xumen-e01/R1-01-ownership.png"),preload("res://art/xumen-e01/R1-02-ownership.png")][id])
 		if id==1 and str(chunk.get_path_to(node)).begins_with("ChapterEnvironment/Far/"):
 			material.set_shader_parameter("e01_far_clean",1.0)
-		if id in [1,2]:
+		if id in [1,2,3,4]:
 			var path: String=str(chunk.get_path_to(node))
 			var far_layer: bool=path.begins_with("Far/") or path.begins_with("ChapterEnvironment/Far/") or path=="ContinuousOralDepth"
 			var world_layer: bool=path.begins_with("World/") or path.begins_with("ChapterEnvironment/World/")
-			var owner: String="E02-"+("far-owner-" if far_layer else "owner-" if world_layer else "other-owner-")+str(id)
+			var owner_edge: String="E02" if id<3 else "E04"
+			var owner: String=owner_edge+"-"+("far-owner-" if far_layer else "owner-" if world_layer else "other-owner-")+str(id)
 			material.set_shader_parameter("use_joint_owner",true)
 			material.set_shader_parameter("joint_owner",load("res://art/xumen-transitions/"+owner+".png"))
 		if id in [2,3]:

@@ -6,10 +6,11 @@ var parts: Dictionary={}
 var schools: Array[ChapterFishGroup]=[]
 var emitters: Array[EnvironmentBubbleEmitter]=[]
 var elapsed: float=0.0
-const EDGES: Array[String]=["E02","E03"]
+const EDGES: Array[String]=["E02","E03","E04"]
 const PLATES: Dictionary={
 	"E02":{"depth":Vector2(3029,-269.153),"arch":Vector2(3460,-253.153),"ground":Vector2(3310,546.847)},
-	"E03":{"depth":Vector2(5213,-234.153),"arch":Vector2(5644,-218.153),"ground":Vector2(5494,581.847)}
+	"E03":{"depth":Vector2(5213,-234.153),"arch":Vector2(5644,-218.153),"ground":Vector2(5494,581.847)},
+	"E04":{"depth":Vector2(7316,-173.153),"arch":Vector2(7747,-157.153),"ground":Vector2(7597,642.847)}
 }
 
 func _ready() -> void:

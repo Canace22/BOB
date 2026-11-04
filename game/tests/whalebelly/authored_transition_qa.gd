@@ -18,8 +18,8 @@ func walk(target: float) -> bool:
 func run() -> void:
 	for arg: String in OS.get_cmdline_user_args():
 		if arg.begins_with("--edge="):edge=arg.trim_prefix("--edge=")
-	var source: int=2 if edge=="E03" else 1
-	var shift: float=2184 if edge=="E03" else 0
+	var source: int={"E02":1,"E03":2,"E04":3}[edge]
+	var shift: float={"E02":0.0,"E03":2184.0,"E04":4287.0}[edge]
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.qa_connected=true;host.qa_full_abilities=false;host.integration_external_test=true
 	root.add_child(host);current_scene=host;await step(35)
@@ -28,6 +28,11 @@ func run() -> void:
 	check("unchanged_26_collision_instances",world.passages.supports==26)
 	check(edge+"_old_floor_removed",not world.passages.get_node("Floor_"+edge).has_node("PaintedFloor"))
 	check(edge+"_all_plates_loaded",art.parts[edge].size()==3 and art.parts[edge].ground.texture!=null)
+	if edge=="E04":
+		check("E04_locked_before_boss",not world.passages.unlocked(world.layout.edges[3]))
+		# Explicit defeated-boss fixture for bidirectional connector test.
+		# Normal combat and earned unlock are covered by connected_world_qa.
+		host.defeated["R1-04:0"]=true
 	# Explicit starting fixture; crossing itself uses the existing input and physics.
 	host.load_room(source,[1450,600 if source==2 else 715]);await step(20)
 	var id: int=host.player.get_instance_id()
@@ -44,7 +49,7 @@ func run() -> void:
 	art.update_at(2);check("fish_body_and_route",art.schools[0].sprites[0].position!=fish_at and art.schools[0].sprites[0].hframes==8)
 	art.update_at(180);check("bubbles_bounded_recycled",art.emitters[0].bubbles.size()==4 and art.emitters[0].recycled>0)
 	art.update_at(host.clock)
-	check("boss_gate_preserved",not world.passages.unlocked(world.layout.edges[3]))
+	check("boss_gate_preserved",world.passages.unlocked(world.layout.edges[3])==(edge=="E04"))
 	# Leave the QA save at an actual camp for the following independent process.
 	host.load_room(0,[110,610]);await step(25)
 	host.release_controls();Input.action_press("interact");await step(1)

@@ -1,5 +1,5 @@
 {
-  "scope": "E02 and E03; later edges pending",
+  "scope": "E02/E03/E04; branches pending",
   "assumptions": "Motion values proposed from approved recipes, tested locally; user aesthetic separate.",
   "common": {
     "collision": "not_applicable: unchanged original passage bodies",
@@ -167,5 +167,40 @@
     "restoration": "persistent host.clock",
     "no_new_interactions": true,
     "evidence": "game/build/qa/xumen-transitions/E03-*"
+  },
+  "E04": {
+    "plates": {
+      "depth": [
+        7316,
+        -173.153
+      ],
+      "arch": [
+        7747,
+        -157.153
+      ],
+      "ground": [
+        7597,
+        642.847
+      ]
+    },
+    "ground_width": 1400,
+    "reason": "ends before original nursery first gap; no false new platform",
+    "static": [
+      "independent throat arch",
+      "bone to membrane road",
+      "original nursery platform silhouettes"
+    ],
+    "motion": {
+      "fish": 12,
+      "bubbles": 8,
+      "preferred": "approved body atlas + path, prewarmed bounded pool",
+      "backup": "new atlas or native particle sample if needed",
+      "reason": "same submerged medium with distinct world anchors"
+    },
+    "state": "host.clock persistent and pausable",
+    "collision": "unchanged original bodies",
+    "gate": "original Boss defeat required",
+    "sound": "same chapter water stream; no new audio",
+    "evidence": "game/build/qa/xumen-transitions/E04-* and e04-local"
   }
 }
