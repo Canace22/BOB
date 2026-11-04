@@ -199,3 +199,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 2026-11-04 须门遗港实际连通 V2
 
 [制作源与边界](source/xumen-connected-v2/README.md)：内置imagegen补画水平通道、上行通道和透明骨质平台三件原画，保存原件、两份OpenRaster、蒙版与锚点。manifest选择6张实际运行位图，旧矩形step仅作失败候选保留。四段主路与两条支路有真实碰撞，七房静态几何同时存在；鱼群/气泡/垂须继承原场景。来源记录、参数、制作阶段与验收见generation.json/production.json及game/progress.md，不把源码图数当作实机已显示数量。
+
+## 须门遗港过渡样式图 V1
+
+[三张原画与来源](source/xumen-transition-style-v1/README.md)用于确定主路斜拱、骨膜渐变与骨壁上行三类过渡。源图/提示词/哈希保存于同目录；[图册](../docs/鲸腹遗城原画集/过渡样式设计/原画册.html)有路线/分层开关。概念资料，不进入运行manifest，不宣称实机接入。
