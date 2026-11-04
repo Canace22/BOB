@@ -35,6 +35,8 @@ function prepare() {
   // Keep every published version in Git without downloading unrelated art blobs.
   run('git', ['config', 'remote.origin.promisor', 'true'], staging);
   run('git', ['config', 'remote.origin.partialclonefilter', 'blob:none'], staging);
+  // Rename inference can lazily fetch obsolete package blobs, even for --name-only.
+  run('git', ['config', 'diff.renames', 'false'], staging);
   run('git', ['sparse-checkout', 'init', '--no-cone'], staging);
   // Full publication replaces this subtree, so do not fetch its obsolete blobs.
   run('git', ['sparse-checkout', 'set', ...(entryOnly ? ['/godot/'] : []), '/index.html', '/.nojekyll'], staging);
@@ -78,7 +80,8 @@ try {
     run('git', ['add', '--', ...(entryOnly ? [] : ['godot']), 'index.html', '.nojekyll'], staging);
     const changed = read(['diff', '--cached', '--name-only'], staging).split('\n').filter(Boolean);
     if (changed.some(file => !['.nojekyll', 'index.html'].includes(file) && (entryOnly || !file.startsWith('godot/')))) throw new Error('Unexpected staged files outside the publication scope.');
-    if (changed.length) run('git', ['commit', '-m', `发布 Godot ${entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
+    // A commit's default summary also fetches deleted binary blobs for diffstat.
+    if (changed.length) run('git', ['commit', '--quiet', '-m', `发布 Godot ${entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
     run('git', ['push', remote, 'HEAD:gh-pages'], staging);
     console.log(`Pages publication commit: ${read(['rev-parse', 'HEAD'], staging)}. Verify deployment and https://canace22.github.io/BOB/.`);
   }

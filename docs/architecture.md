@@ -68,6 +68,8 @@ node game/tests/web_whalebelly.mjs
 
 Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
 
+发布检出另外关闭 `diff.renames`，避免带哈希包名的删除/新增在 `--name-only` 检查中触发旧大包的懒下载；提交用 `--quiet`，避免默认摘要计算已删除大包的diffstat。这项配置只作用于发布检出。
+
 导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。大包分别拆为64MiB的压缩/原始分片，并检查分片及串接SHA256；缺少解压API的浏览器使用原始分片。导出保留原文件，发布只在完整原始分片覆盖后省略超限单文件。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源；最终线上启动结果另见进度。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。

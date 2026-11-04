@@ -68,6 +68,7 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - `game/build/` 要有 `.gdignore`，导出排除测试/工具/证据；Git忽略不等于Godot不会打包。
 - Web模板缺失时安装固定版本的官方单线程模板，不降级引擎。Chromium缺失可用 `CHROME_PATH` 或已安装Chrome，不把工具缺失算玩法失败。
 - Pages检出只展开 `/godot/`、根入口和 `.nojekyll`，使用 `blob:none` 保留其余版本的Git树。Git2.32需要先 `sparse-checkout init --no-cone`，再 `set` 路径；不要把 `--no-cone` 传给旧版 `set`。拉取后的合并用 `--no-stat`，避免统计差异时触发无关美术大文件的懒下载。
+- filtered发布检出还应关闭 `diff.renames`：即使 `diff --cached --name-only`，重命名推断也可能为旧哈希包名拉取弃用大包。提交加 `--quiet`，避免默认提交摘要为计算删除二进制的diffstat继续取旧包。配置只限发布检出，保留主仓库设置；接续已验证staging时先确认源码版本、差异仅在godot/及根入口，再普通提交/推送，不重复导出或重置未知改动。
 - 并发Pages发布导致非快进拒绝时，保留本地发布提交，重新fetch远端并正常merge（`--no-stat`），检查 `/godot/` 外与远端一致后普通push；不强推，也不为重试重复导出。真实内容冲突先检查归属，再处理。
 - Web大包启动等待只读状态就绪，使用明确超时；不以 `networkidle` 超时判存档损坏。按键后等待状态条件，不做同一帧瞬时判定。
 - 场景、参考图与环境动态继续配合[场景环境Skill](../scene-environment-motion/SKILL.md)，本Skill负责正式工程接入、测试和发布。
