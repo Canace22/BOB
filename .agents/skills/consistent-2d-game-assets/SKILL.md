@@ -13,6 +13,8 @@ Read [the collaboration rules](../../../AGENTS.md) and [the global art style](..
 
 ## Core decisions
 
+For connected-map concept art based on an existing game, use [world continuity concepts](references/world-continuity-concepts.md). Preserve source topology, distinguish concept from implemented rooms, and pair continuous environment art with an exact connection contract; new seam methods remain candidates until engine-tested.
+
 - Prefer an approved gameplay screenshot as the primary style reference. It carries perspective, scale, palette, line weight, lighting, texture density, and neighboring-object context at once.
 - Generate a new asset inside the target scene before isolating it when visual consistency matters more than exact reproduction.
 - Treat model-based “extraction” as reference-guided redrawing. It may alter structure, proportions, colors, and small details even when the prompt says “exactly.”
