@@ -79,7 +79,8 @@ func _spawn_foragers() -> void:
 		var enemy := StoryForager.new()
 		enemy.stable_id = "forager-left" if index==0 else "forager-right"
 		enemy.home = mark("EnemyHomeLeft" if index==0 else "EnemyHomeRight")
-		enemy.territory = Vector2(900, 1360) if index==0 else Vector2(1780, 2180)
+		enemy.territory = Vector2(900, 1360) if index==0 else Vector2(1780, 2440)
+		enemy.rush_count = 1 if index == 0 else 2
 		enemy.player = player
 		enemy.z_index = 5
 		world.add_child(enemy)

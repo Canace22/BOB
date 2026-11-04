@@ -3,10 +3,8 @@ extends RefCounted
 ## Short playable adaptation of chapter one; resonance conveys meanings, not mind reading.
 
 const INTRO: Array[String] = [
-	"菌灯下，覆着旧壳的居民用细触肢牵住纤维，把碎壳缀进巢壁。",
-	"拾潮者：我是从外面来的。这里……有人在唱歌。",
-	"补巢者停下手里的活，回应了你的问候。",
-	"补巢者：再等一轮巡视。里面的食腐甲还没有清理。",
+	"菌灯下，居民把碎壳缀进巢壁。\n拾潮者：我是从外面来的。这里……有人在唱歌。",
+	"补巢者停下手里的活：再等一轮巡视。里面的食腐甲还没有清理。",
 	"须板深处又传来一小段低鸣。你想再靠近一些。"
 ]
 const ROUTE: Array[String] = [

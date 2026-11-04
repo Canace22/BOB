@@ -73,11 +73,15 @@ node game/tests/web_whalebelly.mjs
 
 `node tools/deploy-pages.mjs` 导出单线程Web版，更新已有 `gh-pages` 的 `/godot/` 和默认根入口，普通推送，保留V2等在线历史目录。需要匹配版本的 `web_nothreads_release.zip` 模板。
 
-新主线使用 `node tools/godot.mjs export-story-web` 导出到 `game/build/story-web/`。仍采用同一Web preset（显式包含 `art/story-c01/characters/*.json`），通过 `story-export-project.mjs` 将工程源文件和已有 `.godot/imported` 缓存复制到 `game/build/story-export-project/`，排除嵌套build、编辑器状态及旧导出缓存；复制真实文件，不以硬链接共享可写缓存。只在副本 `project.godot` 中设置章节 `run/main_scene`，再导入和导出。正式 `project.godot` 保持不变，章节独立入口、存档路径和下载哈希分开。
+新主线使用 `node tools/godot.mjs export-story-web` 导出到 `game/build/story-web/`。通过 `story-export-project.mjs` 将工程源文件和已有 `.godot/imported` 缓存复制到 `game/build/story-export-project/`，排除嵌套build、编辑器状态及旧导出缓存；复制真实文件，不以硬链接共享可写缓存。只在副本 `project.godot` 中设置章节 `run/main_scene`，再导入和导出。正式 `project.godot` 保持不变，章节独立入口、存档路径和下载哈希分开。
+
+副本的Web preset由 `story-export-resources.mjs` 设置为 `export_filter="resources"`：从章节入口、autoload与字体许可开始，递归追踪字面量 `res://` 引用及实际使用的 `class_name`，写入明确的 `export_files`，另按文件显式包含动作JSON和TXT。动态加载只允许已登记的动作图集、UI及鱼群目录；发现未知表达式即报错，新增动态资源必须补充规则。当前闭包130项，审计报告为 `game/build/story-export-resources.json`，包含资源引用者与动态规则。
+
+旧角色独立帧只保留初始化需要的 `body/idle/000.png`，其余排除前必须确认章节玩家启用图集、不预载旧帧、控制器缓存别名优化存在，而且15组旧CLIPS全部有有效图集替代。完整36项动作图集保持原帧数与尺寸；这一步移除重复旧库，不裁减正在播放的动画。`story-pck-audit.mjs`读取PCK头部与目录表，避免为统计而把整个大包读入内存。2026-11-04本地实际启动压缩文件合计115.51→49.41 MiB，压缩PCK 41,651,618字节，原始PCK 42,112,360字节。另有[本章10张PNG的Framecraft处理](../assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)节省9.02%源文件字节，不能单独解释Web降幅；优化版尚未发布，线上仍为 `f75a6b13` 对应版本。
 
 官方Web发布模板不支持命令行场景路径覆盖：直接把章节路径加入 `GODOT_CONFIG.args` 会报 `compiled without support for path overrides` 并中止。必须把章节入口烘入隔离工程导出包，HTML保持无场景参数；`prepare-web.mjs` 校验副本设置并清除旧增量HTML中残留的章节参数，`build.json.sceneSelection` 记录 `isolated-project-setting`，发布器拒绝旧覆盖方案。修改共享工程设置再还原或重编引擎都不是该工作流。
 
-`node tools/deploy-pages.mjs --story-only` 使用 `.pages-dist-story/` 稀疏检出，仅替换 `/godot-story/`；`--build-only` 只导出，不检出或推送。发布前比较其他顶层Git树ID，保证根入口、`godot/`、`godot-chapters/`、V2等内容不变；复用既有分片/压缩方法，正常推送，禁止强推。首次空索引在窄sparse规则后用 `read-tree -mu HEAD` 填充，避免把未展开目录误当删除；提交使用quiet避免旧Git输出统计触发大blob下载。推送后回读远端SHA，仍需检查Pages部署及实际路线。工具验证：`node --test tools/test-story-web.mjs tools/test-web-download-parts.mjs`。
+`node tools/deploy-pages.mjs --story-only` 使用 `.pages-dist-story/` 稀疏检出，仅替换 `/godot-story/`；`--build-only` 只导出，不检出或推送。发布前比较其他顶层Git树ID，保证根入口、`godot/`、`godot-chapters/`、V2等内容不变；复用既有分片/压缩方法，正常推送，禁止强推。首次空索引在窄sparse规则后用 `read-tree -mu HEAD` 填充，避免把未展开目录误当删除；提交使用quiet避免旧Git输出统计触发大blob下载。推送后回读远端SHA，仍需检查Pages部署及实际路线。工具验证：`node --test tools/test-story-web.mjs tools/test-story-export-resources.mjs tools/test-web-download-parts.mjs`。
 
 Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
 

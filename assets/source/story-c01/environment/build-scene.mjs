@@ -37,14 +37,14 @@ node('Scenery','Node2D','.',{z_index:-4});
 sprite('MenderNest','Scenery','nest',294,685,.15,{modulate:'Color(0.62, 0.70, 0.70, 1)'});
 sprite('CampShelter','Scenery','camp',515,632,.15,{modulate:'Color(0.80, 0.84, 0.80, 1)'});
 sprite('InnerNest','Scenery','nest',2460,692,.135,{modulate:'Color(0.50, 0.63, 0.62, 1)'});
-sprite('ForageLeft','Scenery','food',1162,728,.065,{modulate:'Color(0.42, 0.50, 0.42, 1)'});
-sprite('ForageRight','Scenery','food',1835,728,.065,{modulate:'Color(0.42, 0.50, 0.42, 1)'});
+sprite('ForageLeft','Scenery','food',1222,728,.065,{modulate:'Color(0.42, 0.50, 0.42, 1)'});
+sprite('ForageRight','Scenery','food',2175,728,.065,{modulate:'Color(0.42, 0.50, 0.42, 1)'});
 node('Terrain','Node2D','.',{z_index:-2});
 // Preserve the complete irregular painted contour: cropped midsections exposed
 // vertical cuts below the road. Natural ends overlap by about sixty pixels.
 for(let i=0;i<4;i++)sprite('Road'+i,'Terrain','bone',i*900-200,647,.5,{
  modulate:'Color(0.54, 0.63, 0.63, 1)'});
-for(const [name,x]of [['Left',1050],['Right',1810]]){
+for(const [name,x]of [['Left',940],['Right',1810]]){
  sprite(name+'Root','Terrain','root',x+6,634,.16,{modulate:'Color(0.43, 0.53, 0.54, 1)'});
  sprite(name+'Perch','Terrain','bone',x-10,614,.14,{modulate:'Color(0.63, 0.72, 0.72, 1)'});
 }
@@ -52,7 +52,7 @@ sprite('BaleenDivider','Terrain','barrier',1393.08,568.6,.23941068,{modulate:'Co
 node('Collisions','Node2D','.');
 for(const [name,shape,x,y,oneWay]of [
  ['Road','Floor',1600,900,false],['Divider','Barrier',1570,715,false],
- ['LeftPerch','Perch',1185,658,true],['RightPerch','Perch',1945,658,true],
+ ['LeftPerch','Perch',1075,658,true],['RightPerch','Perch',1945,658,true],
  ['LeftEdge','Boundary',-20,500,false],['RightEdge','Boundary',3220,500,false]
 ]){
  node(name,'StaticBody2D','Collisions',{position:v(x,y),collision_layer:1,collision_mask:0});
@@ -71,8 +71,8 @@ for(let i=0;i<9;i++)sprite('Wisp'+i,'ReturningSilt','silt',0,0,.018+(i%3)*.004,{
 node('Markers','Node2D','.');
 for(const [name,x,y] of [
  ['PlayerSpawn',150,780],['MenderStart',430,780],['MenderEnd',2550,780],
- ['Camp',620,780],['EncounterStart',900,780],['EnemyHomeLeft',1230,780],
- ['EnemyHomeRight',1900,780],['Exit',2990,780],['ReturningCurrent',2780,658],
+ ['Camp',620,780],['EncounterStart',900,780],['EnemyHomeLeft',1290,780],
+ ['EnemyHomeRight',2240,780],['Exit',2990,780],['ReturningCurrent',2780,658],
 ])node(name,'Marker2D','Markers',{position:v(x,y)});
 mkdirSync(path.dirname(dest),{recursive:true});
 writeFileSync(dest,scene);

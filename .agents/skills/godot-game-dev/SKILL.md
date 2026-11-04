@@ -7,6 +7,10 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 
 独立章节样板使用 `src/story/` 与 `content/story/`，`node tools/godot.mjs export-story-web` 在 `build/story-export-project/` 复制工程和导入缓存，仅改副本主场景；用 `node game/tests/serve_web.mjs --story` 和 `web_story_c01.mjs` 验收，再以 `node tools/deploy-pages.mjs --story-only` 发布 `/godot-story/`。官方 Web 模板已实测拒绝命令行场景路径覆盖，不能仅凭 JS 转发 args 就判定能切场景；不改共享 `project.godot` 或重编引擎绕过。发布检查保证其它 Pages 目录树不变。
 
+章节缩包先检查实际入口依赖，再用 [story-export-resources.mjs](../../../tools/story-export-resources.mjs) 为隔离副本写明确资源列表与JSON/TXT包含项；不要沿用全工程 `all_resources`。检查 `game/build/story-export-resources.json` 的引用者、动态目录与排除依据。扫描器只追踪字面量 `res://` 和类名依赖，并对已遇到但未登记的资源表达式报错；它不是完整GDScript分析器，新增相对路径、UID或变量构造的加载仍须人工审计并补规则。旧独立动作帧只有在运行图集替代、缓存别名和完整动作映射验证通过后才能排除；保持正在播放的图集尺寸与帧数。规则报错时修复依赖声明或恢复必要资源，不绕过检查直接发包。
+
+选择性导出后运行 `node --test tools/test-story-web.mjs tools/test-story-export-resources.mjs tools/test-web-download-parts.mjs`，以 [PCK目录工具](../../../tools/story-pck-audit.mjs) 对照实际包内资源/导入映射，再走独立Web真实路线；静态闭包与工具测试不能替代引擎运行。PCK分类只给字节归属及旧包估算，实际下载量以新 `downloads.json` 的压缩引擎与PCK合计为准，PNG源文件节省另列。当前方法与130项资源样板见[架构](../../../docs/architecture.md#web发布)；发布状态仍以进度和线上验收为准，不把本地包变小记成已上线。
+
 对话结束后即使物理键已释放，当前物理 tick 仍可能保留 `just_pressed`。恢复控制前清空缓冲，并等一个完整无按键物理边界，避免 E 结束共鸣又重新打开。用真实 E 按下/抬起同 tick 单测和浏览器关闭对话、按住移动/攻击关闭暂停复验；仅检查 `is_physical_key_pressed` 不足以证明输入已清理。章节存档、原生 QA 路径与浏览器上下文必须隔离，截图位置夹具不替代连续键盘路线。
 
 先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[进度](../../../game/progress.md)，核对 `project.godot`。当前默认入口是 `content/whalebelly/main.tscn`。完整旧工程、模块化五房、旧资源与专用测试已移到 `codex/archive-legacy-20261103`，按[归档说明](../../../docs/legacy-archive.md)独立检出。

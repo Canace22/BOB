@@ -19,6 +19,8 @@ node tools/godot.mjs sync-art
 
 新增素材使用 `--batch <新批次名>`，只选择同步清单中尚未经过 Framecraft 的 PNG；已有批次不会覆盖。运行前确认 Git LFS 已还原图片实体。新批次的原件、结果及输入源码提交保存在 `batches/<批次名>/`，运行副本在 `assets/runtime/sprites/framecraft-runtime-batches/<批次名>/`。加 `--verify --batch <批次名>` 可独立复核，之后运行 `node tools/godot.mjs sync-art`。
 
+只处理一个章节时增加 `--dest-prefix story-c01/`，避免把清单中其它未压缩图片混入；`--fresh` 强制实际请求压缩接口而不复用本地响应缓存。新批次工程保存真实平台响应，运行副本再按体积选平台结果或原件；两者分别保存哈希，不能用较小原件冒充平台输出。已验证的 [须庭 10 图批次](batches/story-c01-2026-11-04/README.md) 原尺寸 PNG 减少 9.02%，工作台保存重开与可见像素校验通过；该比例不是 Godot 包体收益。
+
 PNG 文件缩小不等于 Godot 导出包按相同比例缩小。Godot 会重新编码纹理，应比较实际 Web 导出与启动下载文件；场景的轻度有损编码只修改 `.import`，保留原 PNG 和坐标。对实际导入纹理复核尺寸、Alpha 与颜色，再看七房实机；低透明边缘等偏差较大的对象继续保真导入。角色/特效本批保持保真编码。
 
 在工作台顶部选择本目录的 `projects/`，打开对应工程即可比较原帧和压缩帧。项目文件和正式导出入库，ZIP 传输包不入库。最终体积与游戏验证见 [game/progress.md](../../../game/progress.md)。

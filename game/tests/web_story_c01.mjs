@@ -10,6 +10,9 @@ const browser = await chromium.launch({ headless: true, executablePath: process.
 const context = await browser.newContext({ viewport: { width:1280,height:720 } });
 const page = await context.newPage();
 const checks=[], errors=[], snapshots=[];
+let startup = null;
+const careful = process.env.COMBAT_STYLE === 'careful';
+const combat = [];
 page.on('pageerror', e=>{errors.push(e.message);console.error(e.message);});
 page.on('console', m=>{ if(m.type()==='error') {errors.push(m.text());console.error(m.text());} });
 const sleep=ms=>page.waitForTimeout(ms);
@@ -24,11 +27,60 @@ async function click(text){const s=await state();const c=s.ui.controls.find(c=>c
 async function moveTo(x){for(let i=0;i<100;i++){const s=await state(),dx=x-s.player.x;if(Math.abs(dx)<12)return; if(s.ui.page==='death')throw Error('Died walking');await hold(dx>0?'d':'a',Math.min(220,Math.max(40,Math.abs(dx)/265*1000)));}throw Error('Cannot reach '+x);}
 async function dialogue(){await page.keyboard.press('e');await until(s=>s.ui.page==='dialogue');await sleep(240);for(let i=0;i<10;i++){if((await state()).ui.page!=='dialogue')break;await page.keyboard.press('e');await sleep(240);}await gameplay();}
 async function fight(index){for(let i=0;i<35;i++){const s=await state(),e=s.enemies[index];if(e.state==='settled')return;if(s.ui.page==='death')throw Error('Died in combat');if(e.state==='retreat'){await sleep(250);continue;}const dx=e.x-s.player.x;if(Math.abs(dx)>87)await hold(dx>0?'d':'a',Math.min(160,(Math.abs(dx)-75)/265*1000));else {if(Math.sign(dx)!==s.player.facing)await hold(dx>0?'d':'a',40);await page.keyboard.press('j');await sleep(390);}}throw Error('Combat stalled '+JSON.stringify(await state()));}
+async function carefulFight(index) {
+ for(let i=0;i<200;i++) {
+  const s=await state(),e=s.enemies[index],dx=e.x-s.player.x;
+  if(e.state==='settled')return;
+  if(s.ui.page==='death')throw Error('Died using careful strategy');
+  if(e.state==='retreat'){await sleep(150);continue;}
+  if(index===1&&s.player.y>740) {
+   // Stay on the open right-hand floor: each warning permits one short backstep.
+   // Wait for both rushes rather than jumping back onto the observation perch.
+   if(e.state==='tell'&&e.rush_index===1&&s.player.x>2410&&dx<0) {
+    combat.push({kind:'jump-inward-at-edge',index,hp:s.player.health,x:s.player.x});
+    await page.keyboard.down('a');await page.keyboard.down('Space');await sleep(560);await page.keyboard.up('a');await page.keyboard.up('Space');
+    await until(s=>s.player.floor,1800);
+   } else if(e.state==='tell'&&Math.abs(dx)<175) {
+    combat.push({kind:'backstep-tell',index,hp:s.player.health,rush:e.rush_index,x:s.player.x,enemyX:e.x});
+    await hold(dx>0?'a':'d',Math.min(160,Math.max(40,(175-Math.abs(dx))/265*1000)));
+   } else if(e.state==='recover'&&e.phase_time<0.35) {
+    if(Math.abs(dx)>145)await hold(dx>0?'d':'a',Math.min(100,(Math.abs(dx)-125)/265*1000));
+    else {if(Math.sign(dx)!==s.player.facing)await hold(dx>0?'d':'a',40);combat.push({kind:'counter',index,hp:s.player.health,phase:e.state,rush:e.rush_index});await page.keyboard.press('j');await sleep(280);}
+   } else if(e.state==='approach'&&Math.abs(dx)>150)await hold(dx>0?'d':'a',80);
+   else await sleep(40);
+   continue;
+  }
+  if(s.player.floor&&s.player.y<710) {
+   if(e.state==='recover') {combat.push({kind:'leave-perch',index,hp:s.player.health,phase:e.state});await moveTo(index===0?1235:2110);await until(s=>s.player.floor&&s.player.y>740,4000);}
+   else await sleep(60);
+   continue;
+  }
+  if(e.state==='tell'&&s.player.floor) {
+   const direction=dx>0?'d':'a';combat.push({kind:'jump-over-tell',index,hp:s.player.health,time:e.phase_time,rush:e.rush_index});
+   await page.keyboard.down(direction);await page.keyboard.down('Space');await sleep(560);await page.keyboard.up(direction);await page.keyboard.up('Space');
+   await until(s=>s.player.floor,1800);continue;
+  }
+  if(e.state==='recover'&&s.player.floor) {
+   if(Math.abs(dx)>145)await hold(dx>0?'d':'a',Math.min(160,(Math.abs(dx)-120)/265*1000));
+   else {if(Math.sign(dx)!==s.player.facing)await hold(dx>0?'d':'a',40);combat.push({kind:'counter',index,hp:s.player.health,phase:e.state});await page.keyboard.press('j');await sleep(280);}
+  } else if(e.state==='approach'&&Math.abs(dx)>150)await hold(dx>0?'d':'a',120);
+  else await sleep(60);
+ }
+ throw Error('Careful combat stalled '+JSON.stringify(await state()));
+}
+async function encounter(index) {
+ const before=await state(),started=Date.now();await (careful?carefulFight(index):fight(index));const after=await state();
+ combat.push({kind:'result',index,strategy:careful?'observe-jump-backstep-counter':'stand-and-repeat-J',durationMs:Date.now()-started,healthBefore:before.player.health,healthAfter:after.player.health,enemy:after.enemies[index]});
+ if(index===0)check(careful?'Reading the first tell allows an unharmed counter':'Repeated J no longer suppresses every attack',careful?after.player.health===before.player.health:after.player.health<before.player.health);
+}
 async function leapTo(x){await page.keyboard.down('d');await page.keyboard.down('Space');await sleep(430);await page.keyboard.up('Space');await until(s=>s.player.x>=x,6000);await page.keyboard.up('d');await sleep(600);}
 try {
  console.log('Loading isolated chapter browser');
+ const bootStarted = Date.now();
  await page.goto(process.env.GAME_URL??'http://127.0.0.1:4193/BOB/godot-story/',{waitUntil:'domcontentloaded',timeout:240000});
  console.log('HTML loaded; waiting for Godot');await ready();
+ startup = { readyMs:Date.now()-bootStarted, resources:await page.evaluate(()=>performance.getEntriesByType('resource').map(r=>({name:r.name,transferSize:r.transferSize,encodedBodySize:r.encodedBodySize,duration:r.duration}))) };
+ console.log('Cold startup ms',startup.readyMs,'resource transfer bytes',startup.resources.reduce((sum,r)=>sum+r.transferSize,0));
  check('Fresh story title and isolated save path',(await state()).ui.page==='title'&&(await state()).save_path==='user://story-c01/progress.json');
  await shot('01-title');await click('开始新旅途');await gameplay();
  await moveTo(410);await page.keyboard.press('e');await until(s=>s.ui.page==='dialogue');await shot('02-resonance');await page.keyboard.press('Escape');await gameplay();
@@ -43,11 +95,25 @@ try {
  // Natural enemy damage and death, then a real R retry from the safe camp.
  await moveTo(1120);await until(s=>s.ui.page==='death',45000);await shot('03-death');await page.keyboard.press('r');await gameplay();
  check('Death restores saved conversation and health',(await state()).flags['c01.met_mender']&&(await state()).player.health===5&&Math.abs((await state()).player.x-620)<15);
- await moveTo(1080);await fight(0);await shot('04-left-retreated');
+ await moveTo(1080);await encounter(0);await shot('04-left-retreated');
  check('One retreat cannot advance whole encounter',!(await state()).flags['c01.foragers_retreated']);
  // Land on first one-way perch, then clear the central baleen support.
- await moveTo(1170);await hold('Space',520);await sleep(600);await moveTo(1280);await leapTo(1510);await moveTo(1690);await leapTo(1870);await moveTo(2140);await sleep(600);
- await fight(1);await until(s=>s.flags['c01.foragers_retreated']);await shot('05-both-retreated');
+ await moveTo(1170);await hold('Space',520);await sleep(600);await moveTo(1280);await leapTo(1510);await moveTo(1690);await leapTo(1870);
+ if(careful) {
+  await moveTo(2010);
+  // Cross the encounter threshold in the air and land back on the perch;
+  // walking to its extreme edge lets braking drift carry the player off.
+  await page.keyboard.down('d');await page.keyboard.down('Space');await until(s=>s.enemies[1].active,3000);
+  await page.keyboard.up('d');await hold('a',350);await page.keyboard.up('Space');
+  await until(s=>s.player.floor&&s.player.y<710,3000);const perched=await state();
+  await until(s=>s.enemies[1].state==='tell'&&s.enemies[1].rush_index===1);
+  await shot('04b-perch-first-warning');
+  await until(s=>s.enemies[1].state==='tell'&&s.enemies[1].rush_index===2);
+  await until(s=>s.enemies[1].state==='recover');
+  check('High perch reveals both warnings without remote damage',(await state()).player.health===perched.player.health&&(await state()).player.y<710);
+  await shot('04b-observed-double-rush');await leapTo(2220);await until(s=>s.player.floor&&s.player.y>740);
+ } else {await moveTo(2140);await sleep(600);}
+ await encounter(1);await until(s=>s.flags['c01.foragers_retreated']);await shot('05-both-retreated');
  check('Both enemies remain alive at their feeding homes',(await state()).enemies.every(e=>e.alive&&e.state==='settled'&&Math.abs(e.x-e.home_x)<6));
  await moveTo(2995);check('Exit before directions does not complete',!(await state()).flags['c01.completed']);
  await until(s=>Math.abs(s.mender.x-2550)<3,20000);await moveTo(2530);await dialogue();
@@ -58,5 +124,5 @@ try {
  check('Reload keeps all four facts without repeat combat',Object.keys((await state()).flags).length===4&&(await state()).enemies.every(e=>e.state==='settled'));
  await shot('08-restored');check('Browser and engine error free',errors.length===0);
 }catch(e){errors.push(String(e.stack??e));console.error(String(e));try{await page.screenshot({path:path.join(out,'failure.png')});snapshots.push({name:'failure',...await state()});}catch{}}
-finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,snapshots,method:'Real keyboard and mouse, fresh isolated browser context, read-only state; no teleport/damage injection'},null,2));await context.close();await browser.close();}
+finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,snapshots,startup,combat,method:'Real keyboard and mouse, fresh isolated browser context, read-only state; no teleport/damage injection'},null,2));await context.close();await browser.close();}
 if(errors.length||checks.some(c=>!c.pass))process.exitCode=1;

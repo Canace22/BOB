@@ -85,7 +85,7 @@ func run() -> void:
 			if child is CollisionShape2D: debug.shapes.append(child)
 	for fixture: Dictionary in [
 		{"id":"left-residents","foot":Vector2(150,780),"camera":Vector2(640,640),"floor":780.0},
-		{"id":"left-perch","foot":Vector2(1185,650),"camera":Vector2(1360,640),"floor":650.0},
+		{"id":"left-perch","foot":Vector2(1075,650),"camera":Vector2(1280,640),"floor":650.0},
 		{"id":"central-divider","foot":Vector2(1570,650),"camera":Vector2(1570,640),"floor":650.0},
 		{"id":"right-perch","foot":Vector2(1945,650),"camera":Vector2(1840,640),"floor":650.0},
 		{"id":"right-current","foot":Vector2(2580,780),"camera":Vector2(2560,640),"floor":780.0}

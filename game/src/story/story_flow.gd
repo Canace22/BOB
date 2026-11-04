@@ -29,7 +29,7 @@ func tick(delta: float) -> void:
 			host.record("encounter_started")
 		if encounter_started:
 			encounter_time += delta
-			if encounter_time > 1.4 and host.player.position.x > 1330:
+			if encounter_time > 1.4 and host.player.position.x >= 2070:
 				host.foragers[1].engage()
 			if host.foragers.all(func(enemy: StoryForager) -> bool: return enemy.state == "settled") and save_retry_left<=0:
 				if commit("c01.foragers_retreated"):
@@ -103,6 +103,12 @@ func commit(id: String) -> bool:
 func hint() -> String:
 	if host.player.position.distance_to(host.mender.position)<135: return "E  共鸣 · 补巢者"
 	if host.player.position.distance_to(host.mark("Camp"))<110: return "E  歇息 · 安全台"
+	for enemy: StoryForager in host.foragers:
+		if not enemy.active or absf(enemy.position.x-host.player.position.x)>310: continue
+		if enemy.state == "tell": return "它收紧了壳足——跃过它，或退到扑击之外"
+		if enemy.state == "lunge": return "第二只会接着再扑一次" if enemy.rush_index < enemy.rush_count else "绕到身后，等它停下再出手"
+		if enemy.state == "recover": return "扑击停下了——靠近反击，再留出退路"
+		if enemy.state == "approach" and host.player.position.y<700: return "高台可以观察扑击；选好落点再跃下"
 	if host.player.position.x>=host.mark("Exit").x-170 and not host.progress.has_flag("c01.route_known"):
 		return "先完成内侧指路，再沿支架前往折井"
 	return "A / D 移动 · Space 跳跃 · J 短击 · Esc 暂停"

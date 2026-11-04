@@ -61,19 +61,24 @@ test('isolated project bakes chapter entry and copies cache without altering sou
   const game = fixture(t);
   const original = '[application]\nconfig/name="Fixture"\nrun/main_scene="res://old/main.tscn"\n\n[rendering]\nsetting=true\n';
   file(game, 'project.godot', original);
+  const preset = '[preset.0]\nname="Web"\nexport_filter="all_resources"\ninclude_filter="art/**/*.json"\n\n[preset.0.options]\nvariant/thread_support=false\n';
+  file(game, 'export_presets.cfg', preset);
   file(game, 'content/story/main.tscn', 'scene');
   file(game, '.godot/imported/fixture.ctex', 'cached texture');
   file(game, '.godot/editor/layout.cfg', 'editor state');
   file(game, 'build/old-export.pck', 'exclude recursive build');
-  const isolated = prepareStoryProject(game);
+  const resourceReport = { resources: [{ file: 'content/story/main.tscn', owner: 'fixture' }] };
+  const isolated = prepareStoryProject(game, { resourceReport });
   assert.equal(readFileSync(path.join(game, 'project.godot'), 'utf8'), original);
+  assert.equal(readFileSync(path.join(game, 'export_presets.cfg'), 'utf8'), preset);
+  assert.match(readFileSync(path.join(isolated, 'export_presets.cfg'), 'utf8'), /export_filter="resources"/);
   assert.equal(readFileSync(path.join(isolated, 'project.godot'), 'utf8'), storyProjectSettings(original));
   assert.equal(existsSync(path.join(isolated, 'build')), false);
   assert.equal(existsSync(path.join(isolated, '.godot/editor')), false);
   assert.equal(readFileSync(path.join(isolated, '.godot/imported/fixture.ctex'), 'utf8'), 'cached texture');
   file(isolated, '.godot/imported/fixture.ctex', 'changed isolated cache');
   assert.equal(readFileSync(path.join(game, '.godot/imported/fixture.ctex'), 'utf8'), 'cached texture');
-  prepareStoryProject(game);
+  prepareStoryProject(game, { resourceReport });
   assert.equal(readFileSync(path.join(isolated, '.godot/imported/fixture.ctex'), 'utf8'), 'cached texture');
 });
 

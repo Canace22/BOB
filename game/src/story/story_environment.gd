@@ -6,7 +6,7 @@ const WORLD_SIZE := Vector2(3200, 1000)
 const SURFACES: Array[Rect2] = [
 	Rect2(0, 780, 3200, 240),
 	Rect2(1410, 650, 320, 130),
-	Rect2(1050, 650, 270, 16),
+	Rect2(940, 650, 270, 16),
 	Rect2(1810, 650, 270, 16),
 ]
 @export var animation_enabled: bool = true

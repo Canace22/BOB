@@ -23,7 +23,7 @@ node tools/godot.mjs test
 
 找不到引擎时，将 `GODOT` 设置为现有Godot 4.7.2 console可执行文件。运行素材由 `art/manifest.json` 从 `assets/` 同步，不依赖旧工程目录。图片来源、工作台工程与压缩方式见 [Framecraft批次](../assets/source/framecraft-runtime/README.md)。
 
-当前Web启动文件约103.15 MiB，较本轮压缩前减少约30%。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码，具体设置与恢复方式见[本批说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
+默认七房Web的既有批次启动文件约103.15 MiB，较该批压缩前减少约30%。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码，具体设置与恢复方式见[本批说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。独立第一章数据另见下文。
 
 ## 新主线第一章须庭
 
@@ -43,6 +43,12 @@ node tools/deploy-pages.mjs --story-only
 Web 本地地址 http://127.0.0.1:4193/BOB/godot-story/ ，对应[章节 Pages 入口](https://canace22.github.io/BOB/godot-story/)。`--build-only` 只构建，不推送或修改 Pages 检出；正式章节发布只替换 `/godot-story/`，保留默认根入口与历史版本。发布源码、`story-c01` 入口及启动场景写入 `build.json`。构建脚本在 `build/story-export-project/` 创建隔离工程副本并复制导入缓存，仅修改副本 `run/main_scene` 后导出到 `build/story-web/`，不临时更改正式 `project.godot`。官方Web发布模板禁用命令行场景路径覆盖，因此HTML不传场景参数；章节主场景直接写入导出包。
 
 操作：`A/D` 移动、`Space/K` 跳跃、`J/Q` 短击，靠近补巢者按 `E` 共鸣，靠近安全台按 `E` 恢复。对话 `E/Enter` 翻页，`Esc` 中断不完成事件；菜单支持鼠标、Tab焦点和Enter。`Esc` 暂停/恢复，`M` 静音，游戏中 `Tab` 切换跟随/全景，死亡后 `R` 重试。菜单关闭后需松开游戏按键再恢复控制。
+
+食腐甲收紧壳足后沿预警方向扑击，普通短击不会打断已经开始的预警。左侧一扑、右侧二连扑，每次都有独立预兆，最后一扑结束后留出反击时间。可跳过、后撤或登上两侧高台观察，再选择落点出手；击退后它们仍存活并返回聚食处。这一轮是战斗节奏样板，尚未扩展第二章。
+
+章节导出副本采用明确资源列表，从入口、autoload、脚本引用及已登记动态加载目录递归选择130项资源；遇到未知动态加载写法直接报错。排除无关旧房和已由动作图集替代的独立帧库，保留运行中的36项动作图集、环境动态和原尺寸图片，不减帧。选择报告在 `build/story-export-resources.json`；[架构说明](../docs/architecture.md#web发布)记录维护规则。
+
+2026-11-04本地优化导出：压缩引擎10,153,810字节、压缩PCK 41,651,618字节，共49.41 MiB，优化前115.51 MiB；原始PCK为42,112,360字节。10张PNG实际经[Framecraft增量处理](../assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，12.94→11.77 MiB（−9.02%）；Web总量还受导出资源范围和Godot纹理编码影响，不将两种收益混算。优化版尚未发布，线上仍为 `f75a6b13` 对应版本；优化版路线复验和发布以[进度](progress.md)最新记录为准。
 
 本章存档 `user://story-c01/progress.json`、测试档 `user://story-c01-qa/progress.json` 与旧 V6 隔离。四个事件按 `met_mender → foragers_retreated → route_known → completed` 顺序保存：首次交流完整结束、两侧敌人实际退回聚食处并停止敌对、内侧指路完整结束、玩家到达出口。跳过战斗、逃出探测范围或中断对话不能推进。死亡重置未完成遭遇，已保存的事件保持；重入按持久阶段恢复世界，不恢复攻击时钟。存档写入成功后才更新内存，失败提示可重试；损坏主档尝试 `.bak`，新旅途先保留 `.before-new`。
 

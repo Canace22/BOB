@@ -49,7 +49,7 @@ def compress(path):
     output = RUNTIME / relative
     cache = ROOT / 'game/build/qa/framecraft-compression/cache' / (sha(source) + '.png')
     with CACHE_LOCKS.setdefault(sha(source), Lock()):
-        result = cache.read_bytes() if cache.is_file() else b''
+        result = cache.read_bytes() if cache.is_file() and not args.fresh else b''
         try:
             with Image.open(BytesIO(result)) as image:
                 image.verify()
@@ -69,7 +69,7 @@ def compress(path):
     chosen = result if len(result) < len(source) else source
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(chosen)
-    return dict(dest=relative, width=original.shape[1], height=original.shape[0], before=len(source), after=len(chosen), sourceSha256=sha(source), sha256=sha(chosen), platformSha256=sha(result), selected='framecraft' if chosen is result else 'original-smaller')
+    return dict(dest=relative, width=original.shape[1], height=original.shape[0], before=len(source), after=len(chosen), platformBytes=len(result), sourceSha256=sha(source), sha256=sha(chosen), platformSha256=sha(result), selected='framecraft' if chosen is result else 'original-smaller')
 
 
 def save_project(batch, index):
@@ -82,7 +82,10 @@ def save_project(batch, index):
             frames.append(frame)
             results.append(dict(frame, id=f'output-{i}', file='compression/results/' + name))
             bundle.write(ROOT / 'game/art' / item['dest'], frame['file'])
-            bundle.write(RUNTIME / item['dest'], results[-1]['file'])
+            # Store the real platform response even when the smaller original wins.
+            cache = ROOT / 'game/build/qa/framecraft-compression/cache' / (item['sourceSha256'] + '.png')
+            assert sha(cache.read_bytes()) == item['platformSha256']
+            bundle.write(cache, results[-1]['file'])
         manifest = dict(format='framecraft-project-v1', name=f'BOB runtime compression {index:03}', fps=12, source=None, frames=frames,
                         workspace=dict(options=dict(removeBackground=False, targetHeight=720, padding=0, layout='original', alignment='center', cleanup='none'), start=1, end=len(frames), cursor=1, stride=1, loopMode='once', sheetColumns=8, sheetRows=(len(frames)+7)//8, background='checker', sequenceMode=True),
                         compression=dict(settings=SETTINGS, lastSettings=SETTINGS, sourceLabel='Runtime image compression batch; game timing unchanged', fps=12, sources=frames, results=results))
@@ -92,6 +95,12 @@ def save_project(batch, index):
     reopened = json.load(opener.open(args.url + '/api/projects/' + saved['id'] + query))
     assert len(reopened['compression']['results']) == len(batch)
     assert reopened['compression']['settings'] == SETTINGS
+    for item, original, result in zip(batch, reopened['frames'], reopened['compression']['results']):
+        assert original['name'] == result['name'] == item['dest']
+        directory = Path(saved['path'])
+        assert sha((directory / original['file']).read_bytes()) == item['sourceSha256']
+        assert sha((directory / result['file']).read_bytes()) == item['platformSha256']
+        item['platformFile'] = (directory / result['file']).relative_to(ROOT).as_posix()
     return dict(id=saved['id'], path=Path(saved['path']).relative_to(ROOT).as_posix(), count=len(batch), reopened=True)
 
 
@@ -101,6 +110,9 @@ def repoint_manifest(records):
     images = {item['dest']: item for item in records}
     entries = []
     for entry in manifest['entries']:
+        if args.dest_prefix and not entry['dest'].startswith(args.dest_prefix):
+            entries.append(entry)
+            continue
         source = ROOT / entry['src']
         pairs = [(p, entry['dest'] + p.name) for p in sorted(source.iterdir()) if p.suffix.lower() in ('.png', '.ogg', '.wav')] if entry['src'].endswith('/') else [(source, entry['dest'])]
         for original, destination in pairs:
@@ -140,6 +152,13 @@ def verify():
             b = np.asarray(image.convert('RGBA'))
         assert a.shape == b.shape and np.array_equal(a[:, :, 3], b[:, :, 3])
         assert np.array_equal(a[a[:, :, 3] > 0], b[a[:, :, 3] > 0])
+        if item.get('platformFile'):
+            platform = (ROOT / item['platformFile']).read_bytes()
+            assert sha(platform) == item['platformSha256'], item['dest'] + ': changed platform response'
+            with Image.open(BytesIO(platform)) as image:
+                p = np.asarray(image.convert('RGBA'))
+            assert a.shape == p.shape and np.array_equal(a[:, :, 3], p[:, :, 3])
+            assert np.array_equal(a[a[:, :, 3] > 0], p[a[:, :, 3] > 0])
     print(f"Verified {len(originals)} original/output pairs and {len(provenance['projects'])} portable projects", flush=True)
 
 
@@ -153,7 +172,12 @@ def main():
     if args.batch:
         manifest = json.loads((ROOT / 'game/art/manifest.json').read_text(encoding='utf-8'))
         paths = sorted(ROOT / 'game/art' / entry['dest'] for entry in manifest['entries']
-                       if entry['dest'].endswith('.png') and not entry['src'].startswith('assets/runtime/sprites/framecraft-runtime'))
+                       if entry['dest'].endswith('.png') and not entry['src'].startswith('assets/runtime/sprites/framecraft-runtime')
+                       and (not args.dest_prefix or entry['dest'].startswith(args.dest_prefix)))
+        by_dest = {entry['dest']: entry['src'] for entry in manifest['entries']}
+        for path in paths:
+            source = ROOT / by_dest[path.relative_to(ROOT / 'game/art').as_posix()]
+            assert source.read_bytes() == path.read_bytes(), f'Sync mismatch: {path}'
         if not paths:
             raise SystemExit('No new PNGs outside existing Framecraft batches.')
         HERE.mkdir(parents=True, exist_ok=True)
@@ -161,6 +185,8 @@ def main():
         paths = sorted(path for path in (ROOT / 'game/art').rglob('*') if path.suffix.lower() in ('.png', '.jpg', '.webp'))
     assert all(path.suffix == '.png' for path in paths), 'Handle non-PNG paths explicitly before converting formats'
     print(f'Processing {len(paths)} PNGs through Framecraft', flush=True)
+    for path in paths:
+        print('  ' + path.relative_to(ROOT / 'game/art').as_posix(), flush=True)
     records = []
     with ThreadPoolExecutor(max_workers=3) as pool:
         for i, record in enumerate(pool.map(compress, paths)):
@@ -183,6 +209,9 @@ def main():
     if args.batch:
         provenance.pop('archiveBranch')
         provenance['sourceCommit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+        provenance['destPrefix'] = args.dest_prefix
+        for item in records:
+            item['sourcePath'] = by_dest[item['dest']]
     (HERE / 'provenance.json').write_text(json.dumps(provenance, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     repoint_manifest(records)
     print(json.dumps({key: provenance[key] for key in ('imageCount', 'inputBytes', 'outputBytes')}), flush=True)
@@ -193,7 +222,11 @@ if __name__ == '__main__':
     parser.add_argument('--url', default='http://127.0.0.1:8765')
     parser.add_argument('--verify', action='store_true')
     parser.add_argument('--batch', help='New incremental batch name; existing batches are never overwritten')
+    parser.add_argument('--dest-prefix', help='Limit a new batch to this game/art destination subtree')
+    parser.add_argument('--fresh', action='store_true', help='Call the actual compression API even if a local result cache exists')
     args = parser.parse_args()
+    if args.dest_prefix and (not args.batch or args.dest_prefix.startswith('/') or '..' in args.dest_prefix.split('/') or '\\' in args.dest_prefix):
+        parser.error('--dest-prefix requires --batch and a safe relative destination prefix')
     if args.batch:
         if not args.batch or any(char not in 'abcdefghijklmnopqrstuvwxyz0123456789-' for char in args.batch):
             parser.error('--batch accepts lowercase letters, digits and hyphens only')

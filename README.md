@@ -122,10 +122,12 @@ node game/tests/serve_web.mjs --story
 
 章节进度在 `user://story-c01/progress.json`，不读取或迁入七房 V6。独立测试可在场景参数后追加 `-- --story-qa`，使用 `user://story-c01-qa/progress.json`；浏览器验收还需独立上下文。保存失败会提示并可重试，损坏主档尝试上一版 `.bak`，确认新旅途另留 `.before-new`。操作与边界见[工程说明](game/README.md#新主线第一章须庭)。
 
+本章优化导出仅选择入口实际需要的130项资源，保留使用中的原尺寸位图及完整动画帧。2026-11-04本地实测启动压缩下载量由115.51降至49.41 MiB；这是导出范围收敛与素材处理后的合计结果。另有10张PNG实际经[Framecraft处理](assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，源文件12.94→11.77 MiB（−9.02%），不能把该比例当作Web包降幅。优化版尚未发布；线上仍为源码 `f75a6b13` 对应版本，最新路线复验与发布状态见[进度](game/progress.md)。
+
 ## 美术资源
 
 正式画面只用入库的 2D 位图素材，规则见 [AGENTS.md](AGENTS.md#正式美术必须使用2d素材)。素材管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)。管理页面：`npm --prefix assets/manager start`，打开 http://127.0.0.1:4176/ 。
 
-运行图片经过[Framecraft 保真处理](assets/source/framecraft-runtime/README.md)，场景运行纹理另作轻度有损压缩，保留原件、尺寸和透明度。当前Web启动文件约103.15 MiB，较本轮处理前减少30%。
+运行图片经过[Framecraft 保真处理](assets/source/framecraft-runtime/README.md)，场景运行纹理另作轻度有损压缩，保留原件、尺寸和透明度。默认七房Web的既有批次启动文件约103.15 MiB，较该批处理前减少30%；该数字不适用于独立第一章。
 
 大型素材使用 Git LFS。编辑器缓存、验收截图、第三方工具和日志不入库，见[迁移与提交范围](docs/workspace-migration.md)。
