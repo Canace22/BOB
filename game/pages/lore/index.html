@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#009cff">
+  <link rel="icon" href="data:,">
+  <title>世界观数据库 · 鲸落万物生</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="map.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#reader">跳到正文</a>
+  <header class="app-header">
+    <a class="brand" href="#c=总览"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg></span><span>鲸落万物生<small>世界观数据库</small></span></a>
+    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜索人物、地点、概念或原文…" aria-label="全文搜索"><kbd>/</kbd></label>
+    <a class="header-link" href="#c=原始文稿">查看原稿 ↗</a>
+    <span class="project-avatar" aria-label="鲸落万物生">鲸</span>
+  </header>
+  <aside class="sidebar">
+    <nav id="categories" aria-label="设定分类"></nav>
+    <div class="sidebar-bottom"><a href="../godot/" target="_blank" rel="noopener">游戏 ↗</a><a href="../art/" target="_blank" rel="noopener">美术 ↗</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><b id="breadcrumb">人物</b><span id="category-count"></span></div><span class="draft-label"><i></i> 初稿资料 · 含完整剧情</span></header>
+    <section class="toolbar" aria-label="查找设定">
+      <div class="filter-row"><span class="filter-label">设定状态</span><div id="status-filters" class="filter-options"></div></div>
+      <div class="filter-row"><span class="filter-label">资料来源</span><div id="source-filters" class="filter-options"></div></div>
+    </section>
+    <div id="workspace"><p role="status" class="loading">正在整理设定档案…</p></div>
+  </main>
+  <noscript>请启用 JavaScript 浏览数据库。也可以下载 <a href="world.md">世界观原稿</a> 和 <a href="story.md">叙事原稿</a>。</noscript>
+</body>
+</html>

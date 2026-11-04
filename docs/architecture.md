@@ -16,6 +16,7 @@
 | `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
 | `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头和机关表现 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
+| `src/campaign/boss/` | 母蟹三招、阶段连招、护壳/破防和逐帧显示；通过主线敌人字典及 `R1-04:0` 连接奖励与存档 |
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
 | `src/ui/` | 正式标题、HUD、模态页面与设置；注入主线宿主，只读实际状态并请求主线操作。旧 tide_hud 保留给独立角色参数场 |
 | `content/whalebelly/r1/` | 七个房间场景、道路碰撞、分层贴图和节点 |

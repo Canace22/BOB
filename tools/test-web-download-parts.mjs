@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, cpSync, existsSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { randomBytes, webcrypto } from 'node:crypto';
 import { gunzipSync } from 'node:zlib';
 import vm from 'node:vm';
-import { buildDownloadEntry, publicationOmissions, sha256 } from './web-download-parts.mjs';
+import { buildDownloadEntry, publicationOmissions, includePublicationFile, sha256 } from './web-download-parts.mjs';
 
 const source = randomBytes(180000);
 const artifacts = new Map();
@@ -22,6 +24,30 @@ artifacts.set('index.wasm',smallSource);
 assert(small.file && !small.rawParts);
 assert.equal(publicationOmissions({ 'index.wasm': small }).size, 0);
 console.log('PASS chunk size, compressed/raw round trips, hashes, publication omission');
+
+const copyRoot = mkdtempSync(path.join(tmpdir(), 'bob-web-publication-'));
+assert.equal(path.dirname(copyRoot), path.resolve(tmpdir()));
+try {
+  const exported = path.join(copyRoot, 'exported'), published = path.join(copyRoot, 'published');
+  mkdirSync(path.join(exported, 'nested'), {recursive:true});
+  writeFileSync(path.join(exported, 'index.pck'), source);
+  writeFileSync(path.join(exported, 'index.wasm'), smallSource);
+  writeFileSync(path.join(exported, 'nested', 'index.pck'), 'keep nested content');
+  writeFileSync(path.join(exported, 'index.pck.import'), 'editor metadata');
+  for (const part of info.rawParts) writeFileSync(path.join(exported, part.file), artifacts.get(part.file));
+  const omitted = publicationOmissions({'index.pck':info});
+  cpSync(exported,published,{recursive:true,filter:file=>includePublicationFile(file,exported,omitted)});
+  assert(!existsSync(path.join(published,'index.pck')));
+  assert(!existsSync(path.join(published,'index.pck.import')));
+  assert(existsSync(path.join(published,'index.wasm')));
+  assert(existsSync(path.join(published,'nested','index.pck')));
+  for (const part of info.rawParts) assert.equal(sha256(readFileSync(path.join(published,part.file))),part.sha256);
+  console.log('PASS real filesystem copy omits root PCK on Windows namespaced paths');
+} finally {
+  assert.equal(path.dirname(copyRoot), path.resolve(tmpdir()));
+  assert(path.basename(copyRoot).startsWith('bob-web-publication-'));
+  rmSync(copyRoot,{recursive:true});
+}
 
 const loader = readFileSync(new URL('../game/web/preload.js', import.meta.url), 'utf8');
 const base = 'http://localhost:4187/';

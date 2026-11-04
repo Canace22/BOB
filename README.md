@@ -8,6 +8,7 @@
 
 | 入口 | 说明 |
 | --- | --- |
+| [世界观数据库](https://canace22.github.io/BOB/lore/) | 开发用设定卡片、全文搜索、腔室示意地图与章节路线，追溯原稿 |
 | [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
 | [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
 | [Godot 章节原型](https://canace22.github.io/BOB/godot-chapters/) | 独立发布的章节原型，入口为 `chapters-v1` |
@@ -25,7 +26,9 @@
 | [历史 MVP 原型](https://canace22.github.io/BOB/mvp/) | 保留的早期试玩入口 |
 | [历史梦魇原型](https://canace22.github.io/BOB/nightmare/) | 保留的 Nightmare 试玩入口 |
 
-以上覆盖当前 `gh-pages` 分支的全部 11 个 HTML 页面入口，2026-11-03 已核对线上访问，均返回 HTTP 200。各版玩法与发布验收以对应进度记录为准。
+游戏与美术入口于 2026-11-03 核对过线上访问。世界观数据库单独发布；各入口的最新发布与验收以对应进度记录为准。
+
+世界观页面从两份新稿生成，保留初稿与提案状态。本地运行 `node game/pages/lore/serve.mjs`，打开 http://127.0.0.1:4191/BOB/lore/ 。修改原稿后重新构建或重启服务即可同步；[使用与维护说明](docs/world-archive.md)。
 
 ## 目录
 
@@ -46,6 +49,8 @@ BOB/
 ## 当前内容
 
 默认入口已恢复原 WhalebellyRuins：七房地形、道路与支路、逐帧拾潮者、短击/下劈/迎珠/重鸣/调息、能力门、Boss、营地、V6存档和镜头。R1-01 使用分层环境、62条鱼、垂须、气泡、水面与前景；15组动作库及84帧跑步保留；当前使用540张身体帧、180张独立特效帧，旧合成帧已归档。
+
+R1-04使用之前训练场的母蟹Boss，现有地形和主角技能保持原样；击败后照常获得冲刺并打开出口。[操作与接入范围](docs/mother-crab-integration.md)。
 
 R1-02至R1-07已继续接入独立四层环境与动件，保留原房间、碰撞和能力门。[六房制作源与方法](assets/source/r1-chapter-scenes/README.md) · [主工程操作](game/README.md)。本地实机验收页与录像在 `game/build/qa/r1-chapter-scenes/`；线上仍保留原稳定版。
 
@@ -89,6 +94,8 @@ node game/tests/web_whalebelly.mjs # 恢复版真实按键/营地/刷新冒烟�
 ```sh
 node tools/deploy-pages.mjs
 ```
+
+只更新世界观数据库时运行 `node tools/deploy-pages.mjs --lore-only`，仅发布 `/lore/`，保留所有游戏和美术入口。
 
 导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，同时将根入口跳转到 `godot/`，保留 `mvp-v2/` 等历史版本目录。只修正默认入口时使用 `node tools/deploy-pages.mjs --entry-only`，不重新导出或替换游戏包。流程见 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
 

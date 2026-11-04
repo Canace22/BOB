@@ -56,8 +56,7 @@ func run() -> void:
 	await enter(3)
 	var boss:Dictionary=host.enemies[0]
 	host.player.invulnerable=100
-	for n in range(10):
-		host.player.position=boss.pos+Vector2(-105,0);host.player.facing=1;await tap("tp_attack");await step(30)
+	await CampaignCrabDriver.fight(host)
 	check("boss_unlock_and_original_save",not boss.alive and host.abilities.dash and host.defeated.get(boss.key,false),boss.hp)
 	check("earned_dash",host.player.request_action("A1_dash"));await step(30)
 	await shot("main-boss")
@@ -120,4 +119,4 @@ func run() -> void:
 	var failed:int=checks.filter(func(c):return not c.pass).size()
 	var f:=FileAccess.open("res://build/qa/whalebelly/tide-main-integration/main-tests.json",FileAccess.WRITE);f.store_string(JSON.stringify({"checks":checks,"failed":failed},"\t"));f.close()
 	print("MAIN_INTEGRATION_COMPLETE checks=",checks.size()," failed=",failed)
-	host.graceful_quit(1 if failed else 0)
+	await host.graceful_quit(1 if failed else 0)

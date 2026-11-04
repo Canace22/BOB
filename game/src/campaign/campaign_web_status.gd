@@ -24,6 +24,7 @@ func snapshot() -> Dictionary:
 	var enemies: Array[Dictionary] = []
 	for enemy: Dictionary in host.enemies:
 		enemies.append({"x": enemy.pos.x, "y": enemy.pos.y, "boss": enemy.boss, "hp": enemy.hp, "alive": enemy.alive})
+		if enemy.has("actor"): enemies[-1].combat = enemy.actor.snapshot()
 	return {
 		"campaign": "WhalebellyRuins", "room": host.room.id,
 		"hp": host.health, "soul": host.player_soul, "completed": host.completed,
