@@ -85,6 +85,7 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 
 - 完整替换Pages的godot子树时，旧包blob下载可能长时间停滞。先只稀疏检出根入口，按明确godot/前缀移除索引旧项，再复制验证后的导出并加入该稀疏路径；不请求旧大包来立即删除。提交前比较顶层tree，所有非godot历史目录必须与原HEAD一致。只更新根入口的发布仍需保留现有godot检查。
 - Windows的`fs.cpSync`过滤器可能收到`\\?\`前缀路径。发布排除原始大包时先统一为`path.toNamespacedPath`再求相对路径，不能直接比较`dirname`字符串；`node tools/test-web-download-parts.mjs`用实际文件复制复现并验证分片、原始回退和历史目录保留。
+- 部分克隆的Pages检出提交也使用`git commit --quiet`，避免默认提交摘要为统计已删除旧PCK而触发大型blob懒下载。若提交已写入而摘要卡住，确认提交存在后只终止本任务的摘要/下载进程，保留提交并正常合并最新远端后推送，不重新导出或强推。
 
 - Godot Web若在重建房间时出现Sample._duplicateAudioBuffer/createBuffer错误，保留堆栈并在新浏览器上下文复现，不能静音掩盖。24秒环境音本批改用Web专属AudioServer.PLAYBACK_TYPE_STREAM，桌面默认不变；验收同时检查真实切房、后续按键和playing/type/muted，环境音内容与短音效保留。
 
