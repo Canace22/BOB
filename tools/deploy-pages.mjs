@@ -6,6 +6,11 @@ import { publicationOmissions } from './web-download-parts.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+if (process.argv.includes('--lore-only')) {
+  await import('./deploy-lore-pages.mjs');
+  process.exit(process.exitCode ?? 0);
+}
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const staging = path.join(root, '.pages-dist-godot');
 const exported = path.join(root, 'game/build/web');
