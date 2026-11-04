@@ -1,15 +1,16 @@
 {
-  "status": "verified_pending_final_publication",
+  "status": "deployed_verified",
   "engine": "Godot4.7.2",
   "scope": "Seven existing physical chunks, six original edges; persistent player and local-coordinate rebasing; no new chapter",
   "checks": {
     "engineering": 57,
     "connectedNative": 38,
     "independentReload": 2,
-    "webLocal": 12
+    "webLocal": 12,
+    "webOnline": 12
   },
   "evidence": "game/build/qa/xumen-connected/",
-  "next": "Final check and Web export, publish existing Pages workflow, verify actual online keyboard round trip.",
+  "next": "This requested chapter connectivity scope is complete. Preserve accepted assets; later art polish can refine old plate seams and vary organic ledges without changing physical graph.",
   "limits": [
     "No new cross-room enemy pursuit",
     "Upper branches use explicit ability fixtures in QA",
@@ -22,5 +23,10 @@
     "p95Ms": "21.84–24.49",
     "fps": "57–58",
     "scope": "warm environmental sample without capture; no combat guarantee"
-  }
+  },
+  "sourceCommit": "685334328e14c58f5c27b498d057fe376abe8548",
+  "pagesCommit": "e15d901c72f1d0fe55d0ca664764317afa973286",
+  "url": "https://canace22.github.io/BOB/godot/",
+  "deployment": "41830534694 success",
+  "onlineEvidence": "game/build/qa/xumen-connected/web-online/report.json"
 }

@@ -443,3 +443,11 @@ RTX5060、1280×720、Compatibility暖机独立采样（不录制/截图）约57
 已更新README/架构/素材台账及Godot Skill，个人scene-environment-motion配方补充空间重定位时的蒙版所有权，证据范围不扩成美术签收。恢复先读本节和production.json、runtime-manifest.json；不重生已有合格资产，定向返修后跑check/test与connected_world_qa及web_connected_world。当前本地范围完成，发布和线上实际按键结果另记。
 
 发布前补查：显式加载会重建旧房间，未激活的重建房可能露出原画角色。重建时立即隐藏baked PlayerArt，连通专项补充全七房查重，最终38/38及独立重载2/2通过。首个运行发布540bb691 / Pages51e5e6c已生成；这项修正将进入最终发布，不能把前次包当最终状态。
+
+### 实际连通最终线上验收
+
+运行源码`685334328e14c58f5c27b498d057fe376abe8548`，Pages提交`e15d901c72f1d0fe55d0ca664764317afa973286`，部署[41830534694](https://github.com/Canace22/BOB/actions/runs/41830534694) completed/success。实际[正式入口](https://canace22.github.io/BOB/godot/)的build.json对应此源码，downloads.json与发布准备包完整一致；其它Pages目录相对前次发布无差异，正常推送保留历史。启动压缩合计约119.10MiB，首次下载仍需等待。
+
+最终公网独立Chrome真实按键12/12通过，资源/JS/引擎错误0。从正式默认入口步行01→02→01，相同角色ID、绝对位置和相机连续；没有E换图、数字预览或快照过渡。暂停/恢复独立环境、C地图、实体营地和刷新续档通过。已查看公网actual-bridge-walking.png与connected-map.png。线上路线仅覆盖首两房往返，其余六边/Boss/支路由本地原生专项38/38覆盖；不夸称全章公网通关。最终独立进程重载2/2、工程57/57、check0错误，6张源图与运行图SHA256一致，资源审计missing为空。
+
+本地实际连通与验收.html汇总实际截图和actual-keyboard-roundtrip.mp4；录像为首两房真实按键往返与营地/续档，不是全章通关。上层静帧明确是布局夹具。原画接缝及同形平台可继续美术精修，尚无用户整体审美签收。安装技能的配方库及项目Godot Skill已更新，并保存26个唯一地形实例/七房坐标快照。当前用户范围的实际连通、验证和发布完成，最终收尾只更新文档/状态，不再改变线上运行包。
