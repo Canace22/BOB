@@ -32,7 +32,7 @@ node tools/deploy-pages.mjs --lore-only --build-only
 node tools/deploy-pages.mjs --lore-only
 ```
 
-第一次命令仅构建，第二次通过独立检出 `.pages-dist/lore-publication/` 正常推送 `gh-pages`。只更新 `/lore/`，不导出或替换游戏包。`lore/build.json` 保存源码提交和两份原稿的 SHA-256；发布后应与本地产物核对，不能仅以 push 成功判断上线。
+第一次命令仅构建，第二次通过独立检出 `.pages-dist/lore-publication/` 正常推送 `gh-pages`。只更新 `/lore/`，不导出或替换游戏包。`lore/build.json` 保存源码提交和两份原稿的 SHA-256，原稿统一为 UTF-8 / LF 后计算，以匹配线上下载文件；发布后应核对原稿哈希及 Pages 提交中的文件内容，不能仅以 push 成功判断上线。
 
 每次检查这五组操作：人物卡片与两种筛选；全文搜索及无结果清空；十二章、详情和关联跳转；原文行号、下载及分享链接刷新；桌面和390px手机布局、键盘焦点与加载失败重试。验收截图和临时脚本保留在 `game/build/lore-design/`。
 

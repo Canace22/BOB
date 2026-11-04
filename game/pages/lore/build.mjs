@@ -14,7 +14,8 @@ export function buildLore(source = execFileSync('git', ['rev-parse', 'HEAD'], {c
   const records = [], documents = [];
   for (const [id, name, status] of definition) {
     const file = `docs/${name}.md`;
-    const raw = readFileSync(path.join(root, file), 'utf8');
+    // Git/Pages normalize text to LF. Hash and publish the same canonical bytes.
+    const raw = readFileSync(path.join(root, file), 'utf8').replace(/\r\n?/g, '\n');
     const lines = raw.replace(/\r/g, '').split('\n');
     const doc = {id, name, file, raw, version: raw.match(/版本：([^。\r\n]+)/)?.[1] ?? '未标版本', sha256: createHash('sha256').update(raw).digest('hex')};
     documents.push(doc);
