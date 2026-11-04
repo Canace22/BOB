@@ -1,0 +1,2010 @@
+{
+  "version": 1,
+  "actions": {
+    "run": {
+      "id": "run",
+      "title": "跑步",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\run-v3.png",
+      "source_sha256": "8586ad807eb6e732d29607e6cbc86c2d6c971c81799400797d368e0c800f222b",
+      "source_kind": "AI-authored replacement key-pose sheet; not extracted from video",
+      "reference_height": 160,
+      "loop": true,
+      "frame_count": 8,
+      "fps": 12,
+      "fx": null,
+      "scale": 0.4,
+      "root_source": [
+        242,
+        416
+      ],
+      "source_facing": "right",
+      "direction_rule": "single right-facing source; one runtime facing mirror",
+      "source_grid": [
+        4,
+        2
+      ],
+      "source_cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ],
+      "status": "source_pose_and_alpha_reviewed_pending_gameplay",
+      "method": "fixed per-action scale and baseline; original source pixel colors; no per-frame height normalization; semantic alpha for parry / source alpha for run; detached speckle cleanup",
+      "frame_review": [
+        {
+          "frame": 0,
+          "source_box": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "source_alpha_bbox": [
+            57,
+            10,
+            416,
+            416
+          ],
+          "registered_alpha_bbox": [
+            118,
+            93,
+            262,
+            256
+          ]
+        },
+        {
+          "frame": 1,
+          "source_box": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "source_alpha_bbox": [
+            58,
+            24,
+            417,
+            417
+          ],
+          "registered_alpha_bbox": [
+            119,
+            99,
+            262,
+            257
+          ]
+        },
+        {
+          "frame": 2,
+          "source_box": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "source_alpha_bbox": [
+            52,
+            23,
+            417,
+            416
+          ],
+          "registered_alpha_bbox": [
+            115,
+            99,
+            262,
+            256
+          ]
+        },
+        {
+          "frame": 3,
+          "source_box": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "source_alpha_bbox": [
+            49,
+            6,
+            418,
+            372
+          ],
+          "registered_alpha_bbox": [
+            115,
+            92,
+            263,
+            238
+          ]
+        },
+        {
+          "frame": 4,
+          "source_box": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "source_alpha_bbox": [
+            44,
+            20,
+            419,
+            417
+          ],
+          "registered_alpha_bbox": [
+            113,
+            97,
+            263,
+            256
+          ]
+        },
+        {
+          "frame": 5,
+          "source_box": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "source_alpha_bbox": [
+            58,
+            33,
+            421,
+            421
+          ],
+          "registered_alpha_bbox": [
+            119,
+            103,
+            264,
+            258
+          ]
+        },
+        {
+          "frame": 6,
+          "source_box": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "source_alpha_bbox": [
+            50,
+            31,
+            420,
+            397
+          ],
+          "registered_alpha_bbox": [
+            115,
+            102,
+            264,
+            249
+          ]
+        },
+        {
+          "frame": 7,
+          "source_box": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "source_alpha_bbox": [
+            52,
+            12,
+            422,
+            384
+          ],
+          "registered_alpha_bbox": [
+            116,
+            95,
+            264,
+            244
+          ]
+        }
+      ],
+      "events": {
+        "authority": "existing skill timeline; sprite poses do not grant or define parry immunity",
+        "candidate_contact_frame": null
+      },
+      "visual_review": "v3_alternating_support_leg_and_all_registered_phases_reviewed; exaggerated_eight_pose_cycle_for_in_game_trial",
+      "known_limits": [
+        "Eight authored poses, not smooth mocap; large leg displacement into flight phases 4/8 is retained.",
+        "Phase 1 uses light near-leg front contact; phase 5 dark far-leg front contact. Source knee/hip overlap is stylized, not anatomically exact.",
+        "Contact foot bottom varies by 0-2 asset pixels; airborne phase feet are intentionally raised.",
+        "Real-time main-scene loop, physical speed matching and left-facing playback remain to be checked by game owner."
+      ],
+      "body": {
+        "texture": "res://art/tide-picker-action36/run-body.png",
+        "frames": [
+          [
+            0,
+            0,
+            157,
+            172
+          ],
+          [
+            157,
+            0,
+            157,
+            172
+          ],
+          [
+            314,
+            0,
+            157,
+            172
+          ],
+          [
+            471,
+            0,
+            157,
+            172
+          ],
+          [
+            628,
+            0,
+            157,
+            172
+          ],
+          [
+            785,
+            0,
+            157,
+            172
+          ],
+          [
+            942,
+            0,
+            157,
+            172
+          ],
+          [
+            1099,
+            0,
+            157,
+            172
+          ]
+        ],
+        "pivot": [
+          82,
+          167
+        ],
+        "size": [
+          1256,
+          172
+        ],
+        "sha256": "2dfefa76a81c96a437c99be2b157777da24a7c727dec38b520ad14beef6057e9"
+      }
+    },
+    "parry": {
+      "id": "parry",
+      "title": "迎珠·偏转",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\parry-v1.png",
+      "source_sha256": "874870cd294a518207d1d8dea72146520be3daa41d4843d6a508dce50b86a740",
+      "source_kind": "AI-authored replacement key-pose sheet; not extracted from video",
+      "reference_height": 160,
+      "loop": false,
+      "frame_count": 6,
+      "fps": 16,
+      "fx": null,
+      "scale": 0.367816091954023,
+      "root_source": [
+        250,
+        460
+      ],
+      "source_facing": "right",
+      "direction_rule": "single right-facing source; one runtime facing mirror",
+      "source_grid": [
+        3,
+        2
+      ],
+      "source_cells": [
+        [
+          0,
+          0,
+          512,
+          512
+        ],
+        [
+          512,
+          0,
+          1024,
+          512
+        ],
+        [
+          1024,
+          0,
+          1536,
+          512
+        ],
+        [
+          0,
+          512,
+          512,
+          1024
+        ],
+        [
+          512,
+          512,
+          1024,
+          1024
+        ],
+        [
+          1024,
+          512,
+          1536,
+          1024
+        ]
+      ],
+      "status": "source_pose_and_alpha_reviewed_pending_gameplay",
+      "method": "fixed per-action scale and baseline; original source pixel colors; no per-frame height normalization; semantic alpha for parry / source alpha for run; detached speckle cleanup",
+      "frame_review": [
+        {
+          "frame": 0,
+          "source_box": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "source_alpha_bbox": [
+            108,
+            22,
+            441,
+            463
+          ],
+          "registered_alpha_bbox": [
+            140,
+            94,
+            263,
+            258
+          ]
+        },
+        {
+          "frame": 1,
+          "source_box": [
+            512,
+            0,
+            1024,
+            512
+          ],
+          "source_alpha_bbox": [
+            89,
+            36,
+            420,
+            463
+          ],
+          "registered_alpha_bbox": [
+            133,
+            99,
+            255,
+            258
+          ]
+        },
+        {
+          "frame": 2,
+          "source_box": [
+            1024,
+            0,
+            1536,
+            512
+          ],
+          "source_alpha_bbox": [
+            84,
+            45,
+            491,
+            462
+          ],
+          "registered_alpha_bbox": [
+            131,
+            104,
+            281,
+            258
+          ]
+        },
+        {
+          "frame": 3,
+          "source_box": [
+            0,
+            512,
+            512,
+            1024
+          ],
+          "source_alpha_bbox": [
+            89,
+            34,
+            466,
+            462
+          ],
+          "registered_alpha_bbox": [
+            133,
+            99,
+            272,
+            258
+          ]
+        },
+        {
+          "frame": 4,
+          "source_box": [
+            512,
+            512,
+            1024,
+            1024
+          ],
+          "source_alpha_bbox": [
+            87,
+            25,
+            432,
+            462
+          ],
+          "registered_alpha_bbox": [
+            132,
+            96,
+            260,
+            258
+          ]
+        },
+        {
+          "frame": 5,
+          "source_box": [
+            1024,
+            512,
+            1536,
+            1024
+          ],
+          "source_alpha_bbox": [
+            93,
+            24,
+            427,
+            462
+          ],
+          "registered_alpha_bbox": [
+            134,
+            95,
+            258,
+            258
+          ]
+        }
+      ],
+      "events": {
+        "authority": "existing skill timeline; sprite poses do not grant or define parry immunity",
+        "candidate_contact_frame": 2
+      },
+      "visual_review": "six_source_poses_and_registered_dark_light_sheet_reviewed; gameplay_pending",
+      "body": {
+        "texture": "res://art/tide-picker-action36/parry-body.png",
+        "frames": [
+          [
+            0,
+            0,
+            156,
+            170
+          ],
+          [
+            156,
+            0,
+            156,
+            170
+          ],
+          [
+            312,
+            0,
+            156,
+            170
+          ],
+          [
+            468,
+            0,
+            156,
+            170
+          ],
+          [
+            624,
+            0,
+            156,
+            170
+          ],
+          [
+            780,
+            0,
+            156,
+            170
+          ]
+        ],
+        "pivot": [
+          64,
+          165
+        ],
+        "size": [
+          936,
+          170
+        ],
+        "sha256": "695323dd46170928e824f355668bb7c4a1221cbcbf14c81d3d7b6cc41554067c"
+      },
+      "matte_method": "BiRefNet General Lite; detached component cleanup; local rejected-background soft-edge unmix; premultiplied-alpha registration"
+    },
+    "wall_jump": {
+      "id": "wall_jump",
+      "title": "蹬壁反跳",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\wall_jump-v1.png",
+      "source_sha256": "e906527e02219fae801ffb420574624b160955ba62ed542890cf83a12613f312",
+      "source_kind": "AI-authored replacement key-pose sheet; not extracted from video",
+      "reference_height": 160,
+      "loop": false,
+      "frame_count": 8,
+      "fps": 20,
+      "fx": null,
+      "scale": 0.4,
+      "root_source": [
+        242,
+        416
+      ],
+      "source_facing": "right",
+      "direction_rule": "single right-facing source; one runtime facing mirror",
+      "source_grid": [
+        4,
+        2
+      ],
+      "source_cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ],
+      "status": "source_pose_and_alpha_reviewed_pending_gameplay",
+      "method": "fixed per-action source scale; original source colors; source alpha with detached-speckle cleanup; premultiplied-alpha registration; no per-frame height normalization",
+      "frame_review": [
+        {
+          "frame": 0,
+          "source_box": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "source_alpha_bbox": [
+            50,
+            90,
+            404,
+            372
+          ],
+          "source_opaque_bbox": [
+            51,
+            91,
+            404,
+            370
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 24697,
+          "registered_alpha_bbox": [
+            113,
+            96,
+            254,
+            209
+          ],
+          "registration_shift": [
+            7,
+            74
+          ]
+        },
+        {
+          "frame": 1,
+          "source_box": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "source_alpha_bbox": [
+            28,
+            49,
+            403,
+            402
+          ],
+          "source_opaque_bbox": [
+            29,
+            51,
+            401,
+            400
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 31381,
+          "registered_alpha_bbox": [
+            110,
+            97,
+            260,
+            238
+          ],
+          "registration_shift": [
+            -8.5,
+            31.0
+          ]
+        },
+        {
+          "frame": 2,
+          "source_box": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "source_alpha_bbox": [
+            19,
+            25,
+            414,
+            389
+          ],
+          "source_opaque_bbox": [
+            21,
+            26,
+            414,
+            388
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 27479,
+          "registered_alpha_bbox": [
+            102,
+            97,
+            261,
+            243
+          ],
+          "registration_shift": [
+            2.5,
+            7.0
+          ]
+        },
+        {
+          "frame": 3,
+          "source_box": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "source_alpha_bbox": [
+            47,
+            7,
+            421,
+            327
+          ],
+          "source_opaque_bbox": [
+            48,
+            9,
+            420,
+            327
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 21350,
+          "registered_alpha_bbox": [
+            112,
+            98,
+            262,
+            226
+          ],
+          "registration_shift": [
+            5.5,
+            -12.5
+          ]
+        },
+        {
+          "frame": 4,
+          "source_box": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "source_alpha_bbox": [
+            37,
+            10,
+            415,
+            314
+          ],
+          "source_opaque_bbox": [
+            37,
+            11,
+            414,
+            312
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 35664,
+          "registered_alpha_bbox": [
+            108,
+            98,
+            261,
+            219
+          ],
+          "registration_shift": [
+            3.5,
+            -9.5
+          ]
+        },
+        {
+          "frame": 5,
+          "source_box": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "source_alpha_bbox": [
+            38,
+            9,
+            412,
+            361
+          ],
+          "source_opaque_bbox": [
+            39,
+            10,
+            410,
+            360
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 37711,
+          "registered_alpha_bbox": [
+            112,
+            97,
+            261,
+            238
+          ],
+          "registration_shift": [
+            -1.5,
+            -10.0
+          ]
+        },
+        {
+          "frame": 6,
+          "source_box": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "source_alpha_bbox": [
+            58,
+            12,
+            413,
+            407
+          ],
+          "source_opaque_bbox": [
+            58,
+            13,
+            412,
+            407
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 27048,
+          "registered_alpha_bbox": [
+            118,
+            97,
+            261,
+            256
+          ],
+          "registration_shift": [
+            0.5,
+            -5.0
+          ]
+        },
+        {
+          "frame": 7,
+          "source_box": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "source_alpha_bbox": [
+            92,
+            17,
+            406,
+            429
+          ],
+          "source_opaque_bbox": [
+            93,
+            18,
+            405,
+            428
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 29089,
+          "registered_alpha_bbox": [
+            134,
+            97,
+            260,
+            262
+          ],
+          "registration_shift": [
+            -4.5,
+            -1.0
+          ]
+        }
+      ],
+      "events": {
+        "authority": "existing skill timeline and physics; sprite poses do not create damage or immunity",
+        "candidate_contact_frame": null
+      },
+      "visual_review": "source_two_hands_two_feet_and_registered_dark_light_sheet_reviewed; gameplay_pending",
+      "registration_points": [
+        [
+          249,
+          142
+        ],
+        [
+          233.5,
+          99
+        ],
+        [
+          244.5,
+          75
+        ],
+        [
+          247.5,
+          55.5
+        ],
+        [
+          245.5,
+          58.5
+        ],
+        [
+          240.5,
+          58
+        ],
+        [
+          242.5,
+          63
+        ],
+        [
+          237.5,
+          67
+        ]
+      ],
+      "reference_registration": [
+        242,
+        68
+      ],
+      "registration_method": "reviewed helmet-center translation only; fixed source scale; limb/cape pose offsets retained, world trajectory owned by physics",
+      "known_limits": [
+        "Authored wall-jump key poses with no wall baked in; push direction/collision are physics-owned.",
+        "Head-center registration removes sheet translation; intentional knee tuck and cape motion remain.",
+        "In-game left/right wall contact and wall-jump transition remain untested by this source processor."
+      ],
+      "body": {
+        "texture": "res://art/tide-picker-action36/wall_jump-body.png",
+        "frames": [
+          [
+            0,
+            0,
+            166,
+            172
+          ],
+          [
+            166,
+            0,
+            166,
+            172
+          ],
+          [
+            332,
+            0,
+            166,
+            172
+          ],
+          [
+            498,
+            0,
+            166,
+            172
+          ],
+          [
+            664,
+            0,
+            166,
+            172
+          ],
+          [
+            830,
+            0,
+            166,
+            172
+          ],
+          [
+            996,
+            0,
+            166,
+            172
+          ],
+          [
+            1162,
+            0,
+            166,
+            172
+          ]
+        ],
+        "pivot": [
+          93,
+          163
+        ],
+        "size": [
+          1328,
+          172
+        ],
+        "sha256": "af2b9d40383d6e30c847c408bde384ce3374dd2f260b38a4c90d308b5bdb436d"
+      }
+    },
+    "heavy": {
+      "id": "heavy",
+      "title": "重鸣·涨潮环",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\heavy-v1.png",
+      "source_sha256": "eabde296d6cbd59069d0ca5bb4e1d7d756538143624dc9102e7d0bd87c466592",
+      "source_kind": "AI-authored replacement key-pose sheet; not extracted from video",
+      "reference_height": 160,
+      "loop": false,
+      "frame_count": 8,
+      "fps": 16,
+      "fx": null,
+      "scale": 0.43243243243243246,
+      "root_source": [
+        220,
+        414
+      ],
+      "source_facing": "right",
+      "direction_rule": "single right-facing source; one runtime facing mirror",
+      "source_grid": [
+        4,
+        2
+      ],
+      "source_cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ],
+      "status": "source_pose_and_alpha_reviewed_pending_gameplay",
+      "method": "fixed per-action source scale; original source colors; source alpha with detached-speckle cleanup; premultiplied-alpha registration; no per-frame height normalization",
+      "frame_review": [
+        {
+          "frame": 0,
+          "source_box": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "source_alpha_bbox": [
+            82,
+            44,
+            354,
+            416
+          ],
+          "source_opaque_bbox": [
+            83,
+            45,
+            353,
+            415
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 21134,
+          "registered_alpha_bbox": [
+            132,
+            96,
+            250,
+            257
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 1,
+          "source_box": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "source_alpha_bbox": [
+            89,
+            45,
+            347,
+            414
+          ],
+          "source_opaque_bbox": [
+            90,
+            46,
+            346,
+            414
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 19298,
+          "registered_alpha_bbox": [
+            136,
+            97,
+            248,
+            256
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 2,
+          "source_box": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "source_alpha_bbox": [
+            73,
+            11,
+            347,
+            416
+          ],
+          "source_opaque_bbox": [
+            73,
+            12,
+            346,
+            414
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 20898,
+          "registered_alpha_bbox": [
+            129,
+            81,
+            248,
+            257
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 3,
+          "source_box": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "source_alpha_bbox": [
+            67,
+            79,
+            382,
+            415
+          ],
+          "source_opaque_bbox": [
+            68,
+            79,
+            382,
+            413
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 19199,
+          "registered_alpha_bbox": [
+            125,
+            110,
+            263,
+            256
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 4,
+          "source_box": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "source_alpha_bbox": [
+            71,
+            135,
+            355,
+            414
+          ],
+          "source_opaque_bbox": [
+            72,
+            136,
+            354,
+            412
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 17192,
+          "registered_alpha_bbox": [
+            127,
+            135,
+            251,
+            256
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 5,
+          "source_box": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "source_alpha_bbox": [
+            65,
+            111,
+            352,
+            414
+          ],
+          "source_opaque_bbox": [
+            67,
+            112,
+            351,
+            413
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 19592,
+          "registered_alpha_bbox": [
+            126,
+            125,
+            250,
+            256
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 6,
+          "source_box": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "source_alpha_bbox": [
+            73,
+            80,
+            363,
+            414
+          ],
+          "source_opaque_bbox": [
+            73,
+            81,
+            361,
+            413
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 19870,
+          "registered_alpha_bbox": [
+            129,
+            111,
+            254,
+            256
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "frame": 7,
+          "source_box": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "source_alpha_bbox": [
+            83,
+            45,
+            357,
+            416
+          ],
+          "source_opaque_bbox": [
+            85,
+            46,
+            356,
+            414
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 23582,
+          "registered_alpha_bbox": [
+            133,
+            97,
+            252,
+            257
+          ],
+          "registration_shift": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "events": {
+        "authority": "existing skill timeline and physics; sprite poses do not create damage or immunity",
+        "candidate_contact_frame": null
+      },
+      "visual_review": "source_eight_grounded_poses_and_registered_dark_light_sheet_reviewed; gameplay_pending",
+      "known_limits": [
+        "Eight authored key poses with shared grounded baseline; no optical-flow interpolation.",
+        "Foot-contact envelope differs by up to 3 source pixels (1.3 output pixels); recovery must use skill time mapping.",
+        "Body has no baked ring or hitbox; FX is integrated separately by game owner.",
+        "Main-scene playback, strike event alignment and left-facing attack remain untested by source processor."
+      ],
+      "body": {
+        "texture": "res://art/tide-picker-action36/heavy-body.png",
+        "frames": [
+          [
+            0,
+            0,
+            144,
+            182
+          ],
+          [
+            144,
+            0,
+            144,
+            182
+          ],
+          [
+            288,
+            0,
+            144,
+            182
+          ],
+          [
+            432,
+            0,
+            144,
+            182
+          ],
+          [
+            576,
+            0,
+            144,
+            182
+          ],
+          [
+            720,
+            0,
+            144,
+            182
+          ],
+          [
+            864,
+            0,
+            144,
+            182
+          ],
+          [
+            1008,
+            0,
+            144,
+            182
+          ]
+        ],
+        "pivot": [
+          70,
+          178
+        ],
+        "size": [
+          1152,
+          182
+        ],
+        "sha256": "2be5b27c99b9ec517b631485ca559c17d919b1c770f976a63cd0c91a997eef2c"
+      }
+    },
+    "dive": {
+      "id": "dive",
+      "title": "坠潮·沉钟",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\dive-v1.png",
+      "source_sha256": "6632729c975be5706c853542204b2fc24f81a7149407310ec3fe258fed9456f3",
+      "source_kind": "AI-authored replacement key-pose sheet; not extracted from video",
+      "reference_height": 160,
+      "loop": false,
+      "frame_count": 8,
+      "fps": 16,
+      "fx": null,
+      "scale": 0.4383561643835616,
+      "root_source": [
+        220,
+        409
+      ],
+      "source_facing": "right",
+      "direction_rule": "single right-facing source; one runtime facing mirror",
+      "source_grid": [
+        4,
+        2
+      ],
+      "source_cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ],
+      "status": "source_pose_and_alpha_reviewed_pending_gameplay",
+      "method": "fixed per-action source scale; original source colors; source alpha with detached-speckle cleanup; premultiplied-alpha registration; no per-frame height normalization",
+      "frame_review": [
+        {
+          "frame": 0,
+          "source_box": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "source_alpha_bbox": [
+            82,
+            39,
+            373,
+            406
+          ],
+          "source_opaque_bbox": [
+            83,
+            40,
+            372,
+            405
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 16346,
+          "registered_alpha_bbox": [
+            127,
+            93,
+            256,
+            256
+          ],
+          "registration_shift": [
+            10,
+            0
+          ]
+        },
+        {
+          "frame": 1,
+          "source_box": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "source_alpha_bbox": [
+            93,
+            90,
+            360,
+            345
+          ],
+          "source_opaque_bbox": [
+            95,
+            91,
+            359,
+            344
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 11522,
+          "registered_alpha_bbox": [
+            131,
+            116,
+            249,
+            229
+          ],
+          "registration_shift": [
+            12,
+            0
+          ]
+        },
+        {
+          "frame": 2,
+          "source_box": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "source_alpha_bbox": [
+            85,
+            28,
+            341,
+            410
+          ],
+          "source_opaque_bbox": [
+            85,
+            30,
+            340,
+            409
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 14682,
+          "registered_alpha_bbox": [
+            129,
+            89,
+            242,
+            257
+          ],
+          "registration_shift": [
+            10,
+            0
+          ]
+        },
+        {
+          "frame": 3,
+          "source_box": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "source_alpha_bbox": [
+            128,
+            3,
+            322,
+            440
+          ],
+          "source_opaque_bbox": [
+            130,
+            5,
+            321,
+            439
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 16454,
+          "registered_alpha_bbox": [
+            139,
+            65,
+            224,
+            257
+          ],
+          "registration_shift": [
+            30,
+            30
+          ]
+        },
+        {
+          "frame": 4,
+          "source_box": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "source_alpha_bbox": [
+            66,
+            118,
+            359,
+            410
+          ],
+          "source_opaque_bbox": [
+            68,
+            118,
+            357,
+            408
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 22244,
+          "registered_alpha_bbox": [
+            125,
+            129,
+            253,
+            257
+          ],
+          "registration_shift": [
+            0,
+            0
+          ]
+        },
+        {
+          "frame": 5,
+          "source_box": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "source_alpha_bbox": [
+            79,
+            157,
+            354,
+            410
+          ],
+          "source_opaque_bbox": [
+            80,
+            159,
+            353,
+            408
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 12191,
+          "registered_alpha_bbox": [
+            130,
+            146,
+            252,
+            257
+          ],
+          "registration_shift": [
+            0,
+            0
+          ]
+        },
+        {
+          "frame": 6,
+          "source_box": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "source_alpha_bbox": [
+            87,
+            85,
+            365,
+            409
+          ],
+          "source_opaque_bbox": [
+            88,
+            86,
+            363,
+            408
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 17212,
+          "registered_alpha_bbox": [
+            133,
+            114,
+            256,
+            256
+          ],
+          "registration_shift": [
+            0,
+            0
+          ]
+        },
+        {
+          "frame": 7,
+          "source_box": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "source_alpha_bbox": [
+            84,
+            42,
+            374,
+            411
+          ],
+          "source_opaque_bbox": [
+            86,
+            43,
+            373,
+            409
+          ],
+          "source_border_pixels_alpha_gt12": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "detached_alpha_mass_removed": 15836,
+          "registered_alpha_bbox": [
+            132,
+            95,
+            260,
+            257
+          ],
+          "registration_shift": [
+            0,
+            0
+          ]
+        }
+      ],
+      "events": {
+        "authority": "existing skill timeline and physics; sprite poses do not create damage or immunity",
+        "candidate_contact_frame": null
+      },
+      "visual_review": "source_eight_poses_and_registered_dark_light_sheet_reviewed; gameplay_pending",
+      "registration_points": [
+        [
+          230,
+          409
+        ],
+        [
+          232,
+          409
+        ],
+        [
+          230,
+          409
+        ],
+        [
+          250,
+          439
+        ],
+        [
+          220,
+          409
+        ],
+        [
+          220,
+          409
+        ],
+        [
+          220,
+          409
+        ],
+        [
+          220,
+          409
+        ]
+      ],
+      "reference_registration": [
+        220,
+        409
+      ],
+      "registration_method": "manual root-axis translation; airborne extended-foot reference and pelvis-axis estimate; tucked frame stays elevated; shared landing baseline for frames 5-8; world trajectory owned by physics",
+      "known_limits": [
+        "Eight authored poses: air preparation 1-2, descent 3-4, impact/compression 5-6, recovery 7-8.",
+        "Frame 4 cape has 5 source pixels of top padding at alpha>64; reviewed silhouette is complete, with no opaque boundary contact.",
+        "Airborne root estimates remove whole-cell translation; knee tuck and landing compression are preserved rather than grounding each alpha-bottom.",
+        "Body contains no ground ring; physics landing must gate impact poses and separately anchored world FX.",
+        "Main-scene land timing and left-facing playback remain untested by source processor."
+      ],
+      "body": {
+        "texture": "res://art/tide-picker-action36/dive-body.png",
+        "frames": [
+          [
+            0,
+            0,
+            141,
+            198
+          ],
+          [
+            141,
+            0,
+            141,
+            198
+          ],
+          [
+            282,
+            0,
+            141,
+            198
+          ],
+          [
+            423,
+            0,
+            141,
+            198
+          ],
+          [
+            564,
+            0,
+            141,
+            198
+          ],
+          [
+            705,
+            0,
+            141,
+            198
+          ],
+          [
+            846,
+            0,
+            141,
+            198
+          ],
+          [
+            987,
+            0,
+            141,
+            198
+          ]
+        ],
+        "pivot": [
+          70,
+          194
+        ],
+        "size": [
+          1128,
+          198
+        ],
+        "sha256": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3"
+      }
+    }
+  }
+}

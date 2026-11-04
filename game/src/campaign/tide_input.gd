@@ -8,7 +8,8 @@ static func install() -> void:
 		"tp_up": [KEY_W, KEY_UP], "tp_down": [KEY_S, KEY_DOWN],
 		"tp_jump": [KEY_K, KEY_SPACE], "tp_attack": [KEY_J, KEY_Q],
 		"tp_dash": [KEY_L, KEY_SHIFT], "tp_orb": [KEY_U], "tp_heavy": [KEY_I],
-		"tp_heal": [KEY_P], "tp_slit": [KEY_O], "tp_interact": [KEY_E], "tp_respawn": [KEY_R]
+		"tp_heal": [KEY_P], "tp_slit": [KEY_O], "tp_interact": [KEY_E], "tp_respawn": [KEY_R],
+		"tp_parry": [KEY_B], "tp_scan": [KEY_T], "tp_long_dash": [KEY_V], "tp_walk": [KEY_CTRL], "tp_base_skills":[KEY_F10]
 	}
 	for action in keys:
 		if not InputMap.has_action(action): InputMap.add_action(action)

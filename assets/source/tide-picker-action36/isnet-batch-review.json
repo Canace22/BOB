@@ -1,0 +1,689 @@
+{
+  "scope": "ISNet completed runtime body/FX atlas review, not live-game acceptance",
+  "actions": {
+    "walk": {
+      "status": "needs_matte_repair",
+      "body_review": "24帧逐帧深浅底检查：5/14地影明显，4/16/21脚边尾影；叉头基本完整。部分脚形与自由手运动模糊来自源片。",
+      "fx_review": "manifest fx is null",
+      "next_action": "BiRefNet重抠样板5/14，再决定全动作；抠像不修源变形。",
+      "frame_count": 24,
+      "body_sha256": "3213768d8e3f0f3978f1527fb51c657c32ead573bb15d1d60c7d804497f2287f",
+      "source_sha256": "be5909f6d06b0d10f808409614402c15fbe3a7be8295460d1e1a04a05a44991c",
+      "evidence": "review/isnet-batch/walk-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            5,
+            14
+          ],
+          "issue": "baked floor shadow outside boots",
+          "recommended_fix": "BiRefNet re-matte diagnostic then decide action-wide repair",
+          "severity": "high"
+        },
+        {
+          "frames": [
+            4,
+            16,
+            21
+          ],
+          "issue": "foot edge smear and short shadow tail; some source motion blur",
+          "recommended_fix": "distinguish alpha spill from source foot deformation",
+          "severity": "medium"
+        }
+      ]
+    },
+    "jump": {
+      "status": "candidate_clean",
+      "body_review": "18帧身体、叉齿、红绳完整；无显著地影、道具或裁切。",
+      "fx_review": "manifest fx is null",
+      "next_action": "在游戏中按rise/apex/fall/land切段；不得把全展示段作为单次跳跃时长。",
+      "frame_count": 18,
+      "body_sha256": "81815d06c6f255c781ee4dba4e5dfdffaf03153453d400ddaa3ea7010ec2f22d",
+      "source_sha256": "578790c178ecd353fb50210ff938b704ff57c528566abde683ea37aafef7afd7",
+      "evidence": "review/isnet-batch/jump-body-all.jpg"
+    },
+    "double_jump": {
+      "status": "candidate_with_baked_membrane",
+      "body_review": "16帧身体完整；膜翼从2到12存在于body内，边缘清楚，不是独立FX。",
+      "fx_review": "已看16帧独立FX：只有少量淡残光，主膜翼在body；不重复生成同翼。",
+      "next_action": "保留一次烘焙膜翼，禁止额外叠同膜翼；须实机验证触发与结束。",
+      "frame_count": 16,
+      "body_sha256": "5d6497e463f68f477d65e7cd0b54158d1cd15e7c7d580004866cc8b571867755",
+      "source_sha256": "904dd3673a39ca1b7efe75873fcdc076357b58fc880fb8c704a07f212fd2fa39",
+      "evidence": "review/isnet-batch/double_jump-body-all.jpg"
+    },
+    "wall_slide": {
+      "status": "needs_magenta_cleanup",
+      "body_review": "20帧仍留穿过手/身体的品红竖条及脚下细线；披风边有少量粉溢色，叉及主体未缺失。",
+      "fx_review": "manifest fx is null",
+      "next_action": "对本品红背景源做限定色键与溢色清理，保护红绳；不要全局删红。",
+      "frame_count": 20,
+      "body_sha256": "c32aece40f6707372c7df532f40ad0003b50a6e3d188c1dea271d977c6ef0610",
+      "source_sha256": "35f905f80e5d4b2805f9cceeb9fc33414b1158da1649c0f49a0824880fd02aa2",
+      "evidence": "review/isnet-batch/wall_slide-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "issue": "magenta vertical strip and edge spill remain from source backdrop",
+          "recommended_fix": "source-specific magenta exclusion/despill preserving red cord",
+          "severity": "high"
+        }
+      ]
+    },
+    "wall_jump": {
+      "status": "needs_source_limb_review",
+      "body_review": "10帧叉/身体无明显透明缺块，但左后蹼状肢体与下方及右方两脚同时出现，像额外靴/手脚混淆。",
+      "fx_review": "manifest fx is null",
+      "next_action": "复核左后附肢是否符合角色手形；如不符需补制，BiRefNet不能修复造型。",
+      "frame_count": 10,
+      "body_sha256": "47f2a6bc84df6acfbc78b86709f3fc5075a225b9c7b935d491e3aeb7d08ef1fc",
+      "source_sha256": "bc03ea69269074e5393c84500146ac04a2f99e4e41559cee96b1fd8d2bfa1702",
+      "evidence": "review/isnet-batch/wall_jump-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "issue": "rear-left webbed appendage resembles third boot alongside two feet",
+          "recommended_fix": "review source limb identity; targeted key-pose replacement if malformed",
+          "severity": "high"
+        }
+      ],
+      "replacement_candidate": "sprite-sheets/wall_jump-v1.png; clean two-hand/two-foot registered preview reviewed; gameplay agent owns integration"
+    },
+    "float": {
+      "status": "needs_registration_repair",
+      "body_review": "24帧本体与烘焙膜翼干净，但13/22整体向左上跳；torso错误切换到[421,213]/[421,222]，相邻正常约[380,123]/[379,132.5]。",
+      "fx_review": "null; membrane baked into body",
+      "next_action": "修注册离群，13用[379.75,123]，22用[379,132.5]或稳定跟踪；勿重生成。",
+      "frame_count": 24,
+      "body_sha256": "c119cdd35e03252b8bc4eb9c8c3b47038159fe629a094e0ba1ae3f8dea7ddb57",
+      "source_sha256": "2df7921762b5af870a64e7e68826eb7e5d2a1a1887df69a245cd9186ccc83be2",
+      "evidence": "review/isnet-batch/float-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            13,
+            22
+          ],
+          "issue": "torso detection switches to distant component, causing whole-body registration jump",
+          "recommended_fix": "replace torso13 with [379.75,123], torso22 with [379,132.5], or robust temporal tracking",
+          "severity": "high"
+        }
+      ]
+    },
+    "anchor": {
+      "status": "candidate_minor_magenta_fringe",
+      "body_review": "20帧本体完整，无原吊环/外绳/地影；少量脚尖、披风边品红溢色。",
+      "fx_review": "null; runtime rope is world-space",
+      "next_action": "限定品红去溢色；采用已复核20帧真实握叉手挂点。",
+      "frame_count": 20,
+      "body_sha256": "5cb314542ab38abd85d3b803cec52bdf2584d739ad39a5f180e20f0409766d71",
+      "source_sha256": "f1c6031ffaf6712d4d506bb9857fe035c5d50b81a31dc404e113578549184ab6",
+      "evidence": "review/isnet-batch/anchor-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "issue": "minor magenta fringe on cape/feet",
+          "recommended_fix": "source-specific magenta despill; no deletion of red cord",
+          "severity": "low"
+        }
+      ]
+    },
+    "strike2": {
+      "status": "needs_source_pose_repair",
+      "body_review": "12帧中的1/2手与叉严重融化；3–8举叉姿态完整。",
+      "fx_review": "null",
+      "next_action": "补关键姿势或明确跳过变形帧；换matte不能修造型。",
+      "frame_count": 12,
+      "body_sha256": "c896896f78c00b50dc3f58ce56679dabc16320d068dd348ab457aabdf6950144",
+      "source_sha256": "76cd838a8782a9fbd2d31e4e25d89eb052df4e0d5e8e1d09017996460b34bb00",
+      "evidence": "review/isnet-batch/strike2-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            1,
+            2
+          ],
+          "issue": "source fork and hand melt during windup",
+          "recommended_fix": "targeted source pose repair or reviewed frame omission",
+          "severity": "high"
+        }
+      ]
+    },
+    "upper": {
+      "status": "candidate_baked_tip_flash",
+      "body_review": "12帧身体和叉完整，3/5等水平闪光部分随body。",
+      "fx_review": "已看独立加法FX12帧，为body保护区外剩余闪光，未发现额外道具。",
+      "next_action": "确认技能事件；不要重复叠同一叉尖闪光。",
+      "frame_count": 12,
+      "body_sha256": "0de2254e4d715bb2151d7188a10607ef4b3584006cb0c19f4f0ab7041a1261f6",
+      "source_sha256": "175afbc6d7f3734e42bbacaf9b200fd21a16ef81bc6ca84eda25a2ac1a84ea00",
+      "evidence": "review/isnet-batch/upper-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "issue": "tip flash partly baked into body and remainder in FX",
+          "recommended_fix": "retain complementary masks; do not add duplicate flash",
+          "severity": "low"
+        }
+      ]
+    },
+    "pogo": {
+      "status": "candidate_clean",
+      "body_review": "12帧身体、下刺叉完整，选择接壳前片段成功，无贝壳/地影残留。",
+      "fx_review": "null",
+      "next_action": "真实碰撞驱动反弹，非源展示贝壳碰撞。",
+      "frame_count": 12,
+      "body_sha256": "39a5d4d8a9e0f36c64bb0b2dcd9122f134f00f325c97318dac9f430a5a36e294",
+      "source_sha256": "e9de8229beb7e58843c617302819269825057573646850fc1b65287d317f627a",
+      "evidence": "review/isnet-batch/pogo-body-all.jpg"
+    },
+    "orb": {
+      "status": "candidate_with_source_release_smear",
+      "body_review": "16帧主体完整，无独立源弹体粘连；蓄力口光烘于body，10帧推出时手/叉有源模糊拉伸，11–15恢复可辨。",
+      "fx_review": "null; independently simulated projectile",
+      "next_action": "复核发射瞬间；若10帧影响阅读，换清楚推出姿势，不靠matte修原形。",
+      "frame_count": 16,
+      "body_sha256": "a26cfcf99e0f5740bbbd58c1938471878ff92ccd9a0b6306ff796515b1869a43",
+      "source_sha256": "0e1baa53783cb809a8e2ce573ed7512bcc90a0634c1187c7fade6c234c005832",
+      "evidence": "review/isnet-batch/orb-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            10
+          ],
+          "issue": "release pose source hand/fork motion smear; fork shape changes during bright flash",
+          "recommended_fix": "review release gameplay frame; replace with clean release pose if unreadable",
+          "severity": "medium"
+        }
+      ]
+    },
+    "heavy": {
+      "status": "needs_ground_layer_repair",
+      "body_review": "16帧完整；8–11局部冲击与12/13整圈地环进入body。",
+      "fx_review": "独立FX多为body保护外残光；12/13环主要留在body。",
+      "next_action": "源y330..410拆明亮青环，保留深靴与象牙叉；竖溅y295..330另处理。",
+      "frame_count": 16,
+      "body_sha256": "ec52f5b961fc5ed6703692b8c5f5c8bff8f0f1c76929ec7ede45a202c94863a0",
+      "source_sha256": "ebb7699346e38e933f0445b2a601a6bf9bf060fc3801217653696dcb1524cb2d",
+      "evidence": "review/isnet-batch/heavy-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "issue": "world-space ground ring is baked into body; strongest full rings at12/13",
+          "recommended_fix": "split bright cyan only within source y330..410, preserve boots/fork, keep y295..330 splash separate",
+          "severity": "high"
+        }
+      ]
+    },
+    "dive": {
+      "status": "needs_ground_layer_and_weapon_review",
+      "body_review": "20帧body12含整圈落地环；1–19源武器柄长成杖，区别于角色短叉。",
+      "fx_review": "独立FX13–19环可见，12仅残光；须与body互补后固定真实落地点。",
+      "next_action": "环源y350..432限定色拆，保护靴/柄；长柄是源造型问题需记录或补制。",
+      "frame_count": 20,
+      "body_sha256": "4a1013fadac5881c60f73d0845b78d37640795ee32221f525364ed37983ef82b",
+      "source_sha256": "d610099b9f6223fc8bf5a76b9315d43a598689343a591ddfee725ac210810685",
+      "evidence": "review/isnet-batch/dive-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            12
+          ],
+          "issue": "impact ground ring baked into body",
+          "recommended_fix": "split source y350..432 bright cyan with boot/shaft protection and world-space layer",
+          "severity": "high"
+        },
+        {
+          "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "issue": "source short fork becomes long staff shaft",
+          "recommended_fix": "targeted source weapon repair or explicitly retain as known art defect; matting cannot shorten shaft",
+          "severity": "medium"
+        }
+      ]
+    },
+    "slit": {
+      "status": "needs_magenta_cleanup",
+      "body_review": "18帧叉与手完整，但手臂/红绳间品红底留块、靴边粉边。源动作从蹲变直又蹲。",
+      "fx_review": "null",
+      "next_action": "品红排除/去溢色后复核，潜隙期间展示高度须配合缩矮碰撞与头顶空间。",
+      "frame_count": 18,
+      "body_sha256": "16a23c773e7889b5d111e695825b1d0e98895b4d078c222fc85ce3afa78465b6",
+      "source_sha256": "66e0d5d42e67dec6d3cd72f7f114e76745f5b354fe841c6f51f1e7476a4dcf66",
+      "evidence": "review/isnet-batch/slit-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "issue": "magenta source backdrop retained inside cord/arm opening and edges",
+          "recommended_fix": "source-specific magenta removal/despill preserving red cord",
+          "severity": "high"
+        }
+      ]
+    },
+    "heal": {
+      "status": "candidate_clean",
+      "body_review": "24帧身体、手叉与红绳清楚，抬手触灯动作完整，无地影/背景。",
+      "fx_review": "null; waist lamp illumination remains in body",
+      "next_action": "治疗时序仍由技能驱动。",
+      "frame_count": 24,
+      "body_sha256": "af47fc84ef0a4b7ca5e21717980578db2fa8cc5ed8c280dc602b7011ed78bb38",
+      "source_sha256": "457aacc80a99be14735da508a88669e1a1b087f976416f7aee584612940dcc29",
+      "evidence": "review/isnet-batch/heal-body-all.jpg"
+    },
+    "scan": {
+      "status": "needs_ground_fx_boundary_repair",
+      "body_review": "16帧身体完整，轻微脚边暖光，无大块地环烘焙。",
+      "fx_review": "环下半被floor cutoff裁掉；仅剩上半环。源15外环还在视频边界被截。",
+      "next_action": "扫描环为琥珀色，源ROI y320..432，保持body保护并取消floor cutoff，最后边界裁切需早收/淡出。",
+      "frame_count": 16,
+      "body_sha256": "3d712e5d452d6ea955e1d875219e5c6279b57bfd06190d31c143e5ef1aa64c8a",
+      "source_sha256": "0c7081b87a29a72ad49206b79c19f83e6a91802787deb15ca9c5e3e5d6492a3c",
+      "evidence": "review/isnet-batch/scan-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "issue": "floor cutoff removes lower half of amber scan ring",
+          "recommended_fix": "scan-specific source ROI y320..432, protect existing body and remove floor cutoff",
+          "severity": "high"
+        },
+        {
+          "frames": [
+            15
+          ],
+          "issue": "late expanding outer ring clipped by original video left/right boundaries",
+          "recommended_fix": "end or fade before clipped expansion; no invented continuation",
+          "severity": "medium"
+        }
+      ]
+    },
+    "interact": {
+      "status": "candidate_clean",
+      "body_review": "13帧伸手/撤回本体清楚，无测试圆把手，保留另一手握叉。",
+      "fx_review": "null",
+      "next_action": "事件在往返中点触发一次，不因反向帧再触发。",
+      "frame_count": 13,
+      "body_sha256": "b4118d36ed9d01db572102f4183263b5a51822a2d7314bc1a6a6ce3647662596",
+      "source_sha256": "d1e413d5b0cc1c3153d50f9db2b5d41ebb80cbcb73a40c7fc2aaf631d5bc742e",
+      "evidence": "review/isnet-batch/interact-body-all.jpg"
+    },
+    "defeat": {
+      "status": "candidate_clean",
+      "body_review": "36帧跪下、本体与叉清楚，最后灯熄灭；中间包含静态保持。",
+      "fx_review": "null",
+      "next_action": "游戏死亡状态不能被静态保持长度锁死复活。",
+      "frame_count": 36,
+      "body_sha256": "5123e542f30f073545759f035359e8588dfb144d58348cd296937351468564c3",
+      "source_sha256": "800bc12d9b2cbba695e1b4ed0e3e80eb789148c0adc7fd60b9fc19e4a02bcbaf",
+      "evidence": "review/isnet-batch/defeat-body-all.jpg"
+    },
+    "shadow_dash": {
+      "status": "needs_clean_body_reuse",
+      "body_review": "1–7长黑尾与灰白角色残像一起进入body，3–7左侧硬裁；4/5多出第二个灰角色，6/7灰像异常。",
+      "fx_review": "null; source afterimages are incorrectly baked into body",
+      "next_action": "复用已清楚dash位图本体+运行时影潮着色与历史位置残影；显式记录复用来源。",
+      "frame_count": 12,
+      "body_sha256": "16f1e164c863f2131871cd4010831fbcb79fe65cd042364aac53cc397906e732",
+      "source_sha256": "eed2fb3ca476d1f0dbdd8edb190e40dfb8964437f89a4a3192b2fa4fe9b49dcd",
+      "evidence": "review/isnet-batch/shadow_dash-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "issue": "black tail and gray duplicate afterimages baked into body; left hard crop and inconsistent primary silhouette",
+          "recommended_fix": "reuse reviewed clean dash bitmap with shadow tint and physical-position afterimages; document reuse provenance",
+          "severity": "high"
+        }
+      ]
+    },
+    "great_slash": {
+      "status": "candidate_baked_local_arc",
+      "body_review": "16帧：7/9/10/11/13有烘焙局部刀弧；9–11三帧脚被发力亮闪短暂遮挡，12恢复，14/15完整，不属于持续缺脚。",
+      "fx_review": "已看16帧：body与FX互补；8–15下边硬截断。",
+      "next_action": "取消刀弧地面硬截；保留局部烘焙方式且不重复同刀光；94px实机检查。",
+      "frame_count": 16,
+      "body_sha256": "ad197842fe7e4a051e0ec54f400d0f11cd70604fb7152f9b64700d5a47f3dd08",
+      "source_sha256": "3fc88a1b6da7c4b6fbec1d94ad222bc9c9466a480a6e4544d7f95c05025f28f1",
+      "evidence": "review/isnet-batch/great_slash-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "issue": "FX arc hard floor cutoff",
+          "recommended_fix": "remove inappropriate ground cutoff for local arc",
+          "severity": "medium"
+        },
+        {
+          "frames": [
+            7,
+            9,
+            10,
+            11,
+            13
+          ],
+          "issue": "local cyan arc baked into body; feet briefly occluded 9-11 during force phase",
+          "recommended_fix": "document local baked effect and avoid duplicate overlay; verify at gameplay scale",
+          "severity": "low"
+        }
+      ]
+    },
+    "dash_slash": {
+      "status": "candidate_baked_local_arc",
+      "body_review": "12帧身体完整；4含亮刀弧，5–11姿态可读。",
+      "fx_review": "已看12帧：互补刀弧，6灰色地面残片，6–9底纹。",
+      "next_action": "保留局部刀弧，清理地面残留且取消刀弧硬截。",
+      "frame_count": 12,
+      "body_sha256": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+      "source_sha256": "b45d44135b6aa208db6a8b1a203852b5eba130ba40cb5280e9e84f5b6332db42",
+      "evidence": "review/isnet-batch/dash_slash-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "issue": "FX floor remnants and horizontal cutoff",
+          "recommended_fix": "remove floor remnants while preserving blade arc",
+          "severity": "medium"
+        }
+      ]
+    },
+    "cyclone": {
+      "status": "needs_disconnected_leg_restore",
+      "body_review": "24帧中6/9/12/14/16整段腿脚缺失；原源片各帧双腿可见，属于分离损失。",
+      "fx_review": "腰部旋转环已拆为互补FX，但6–21残留地面投影环；body局部青光烘焙。",
+      "next_action": "恢复躯干下方独立腿脚组件，去FX地面投影。",
+      "frame_count": 24,
+      "body_sha256": "fce3204ed6e03125d739b4c6516b92475a5bac27ec0e496fb488553bbfe1d1ae",
+      "source_sha256": "f6b78ff08ecf2801a0a77cae7afd0b3f0f5bac5b776a5c6d7f48acf4e1bc192e",
+      "evidence": "review/isnet-batch/cyclone-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            6,
+            9,
+            12,
+            14,
+            16
+          ],
+          "issue": "both legs removed although complete in source",
+          "recommended_fix": "preserve legitimate disconnected dark leg components below torso; source proof review/cyclone-source-leg-review.jpg",
+          "severity": "high"
+        },
+        {
+          "frames": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "issue": "floor projection ring retained in FX below waist ring",
+          "recommended_fix": "remove projected floor ring without removing spinning waist ring",
+          "severity": "medium"
+        }
+      ]
+    },
+    "crystal_dash": {
+      "status": "candidate_clean",
+      "body_review": "24帧身体完整，蓄力0–13、飞行14–22、退出23；无明显背景残留。",
+      "fx_review": "manifest fx is null",
+      "next_action": "按蓄力/飞行循环/退出段播放，由物理推进与撞墙退出；不可整段展示时长驱动物理。",
+      "frame_count": 24,
+      "body_sha256": "fc97110781e9ae845ba5f79a6edb32846177bd26c41a8a9097bf4367d16f50fc",
+      "source_sha256": "48dff6fc19bd5bb2985d1343f54ed83f7ea1161851dc349a743f56935a7cf633",
+      "evidence": "review/isnet-batch/crystal_dash-body-all.jpg",
+      "findings": []
+    },
+    "up_spell": {
+      "status": "candidate_local_baked_effect",
+      "body_review": "完整身体与高举手；2为瞬时竖弧发力帧，3–12举手持续，13–15收势。",
+      "fx_review": "16帧独立上方三层弧完整；2部分局部弧在body，互补不重复。",
+      "next_action": "按实际持续/多段窗口播放，实机验证上方攻击范围与弧对齐；不叠加重复局部效果。",
+      "frame_count": 16,
+      "body_sha256": "db92ec47ae3d633af3815c1924e45ec4c6b964e96d6dba8d5c52d1fa3a2791f1",
+      "source_sha256": "ccf38962ff4838601cd0c1b9a0ebaac977e2e573bdffac9fc02d87cb254be008",
+      "evidence": "review/isnet-batch/up_spell-body-all.jpg"
+    },
+    "abyss_scream": {
+      "status": "candidate_local_baked_effect",
+      "body_review": "完整身体与高举手；3局部上弧烘焙，4–16举手持续，17–19收势。",
+      "fx_review": "20帧独立上方三层弧完整；当前additive显示浅色轮廓，暗芯在此混合方式下不作遮挡。",
+      "next_action": "按实际持续/多段窗口播放，实机验证上方攻击范围与弧对齐；不叠加重复局部效果。",
+      "frame_count": 20,
+      "body_sha256": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+      "source_sha256": "7458c8969552c52557a6659ea23660768d61b3deb33a970b2bb5e068622571a9",
+      "evidence": "review/isnet-batch/abyss_scream-body-all.jpg"
+    },
+    "shadow_orb": {
+      "status": "candidate_baked_charge",
+      "body_review": "16帧完整；5–11叉口球为蓄力状态烘焙，12–15发射后body不含离体球。",
+      "fx_review": "manifest fx is null",
+      "next_action": "发射事件对齐11→12，运行弹体独立；不再叠同一叉口蓄球。",
+      "frame_count": 16,
+      "body_sha256": "2a665f4527c5865a50b6ab37f2f8ab48e0634978ef5affafdb08ef370387d4d6",
+      "source_sha256": "2eedbe5c1e2ba91d324a3724be004fdc981da71fa36ec31194860284300d4894",
+      "evidence": "review/isnet-batch/shadow_orb-body-all.jpg",
+      "findings": []
+    },
+    "dark_dive": {
+      "status": "needs_registration_and_dark_ring",
+      "body_review": "24帧身体短叉与四肢完整；10–17注册误选地环造成明显横漂瞬移；8轻微地环附脚。",
+      "fx_review": "0–18几乎为空；19–23只提取浅色尾环，暗青主环未作为FX保留。",
+      "next_action": "10–17按已提供真披风坐标override；源地环y270..329应alpha提取而非仅additive残光，保护脚底293。",
+      "frame_count": 24,
+      "body_sha256": "fec47f3d43472bc43d0652451691d15f7adfe8005baece2b2cdb8d71c71ca175",
+      "source_sha256": "545a35db2953e2c801e4c0c8f1612567b5b443d4ca2129521a215eb84bb96130",
+      "evidence": "review/isnet-batch/dark_dive-body-all.jpg",
+      "findings": [
+        {
+          "frames": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "issue": "registration torso chooses ground ring instead of cape, causing body teleport",
+          "recommended_fix": "override cape centers: 10 [340,202],11 [343,211],12 [347,213],13-15 [350,211],16-17 [351,211]",
+          "severity": "high"
+        },
+        {
+          "frames": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "issue": "dark cyan impact rings absent from FX; additive residual extraction omits dark authored ring",
+          "recommended_fix": "extract independent alpha ring in source y270..329 protecting body or documented reuse of repaired impact FX",
+          "severity": "high"
+        }
+      ],
+      "production_decision": "原版拒用：注册选中地环瞬移且暗青主环丢失。正式升级复用dive新8姿态本体与独立dive地环，深青tint和1.2尺度；原视频仅superseded_source，非重新提取成功。"
+    },
+    "swim": {
+      "status": "candidate_loop_check",
+      "body_review": "24帧身体、叉、红绳完整，无水池/背景残留；首尾手脚姿势不同。",
+      "fx_review": "manifest fx is null",
+      "next_action": "实机循环检查接缝，按循环窗口选帧；物理由水域/耐蚀条件控制。",
+      "frame_count": 24,
+      "body_sha256": "39a32937b7b36c500805715e79d056aab942d8b46e393d94c0b3465c88e66fcf",
+      "source_sha256": "cc5e81a40fb761d22fa7e22f25bf5a23356aa69656ba23537bd629c745338f68",
+      "evidence": "review/isnet-batch/swim-body-all.jpg"
+    },
+    "tram": {
+      "status": "candidate_clean",
+      "body_review": "16帧完整，手持票证为本动作必要道具保留，无源门背景。",
+      "fx_review": "manifest fx is null",
+      "next_action": "交互由通行证条件/真实门状态触发，不能当攻击。",
+      "frame_count": 16,
+      "body_sha256": "299c75dafa5d67ccee10493530f8c5b5be74d63e5734428ee1e0f029964076be",
+      "source_sha256": "63f3263434b7080ebe631e07993b53ead267c46b95fcd02fecd871de7ec7a687",
+      "evidence": "review/isnet-batch/tram-body-all.jpg"
+    },
+    "turn": {
+      "status": "candidate_direction_rule",
+      "body_review": "8帧完整，原源本身从0向右转至7向左。",
+      "fx_review": "manifest fx is null",
+      "next_action": "以进入turn的旧facing固定镜像，结束后新facing；不能进入即新facing翻整段；移动不等转身锁。",
+      "frame_count": 8,
+      "body_sha256": "779693a770153bbdf0367cec5d1b741e25c92be48af5b00525af0a6472a87779",
+      "source_sha256": "99ee8662073218ef502524cc41664792193a789c0d2ba3388a0297a33206dbc4",
+      "evidence": "review/isnet-batch/turn-body-all.jpg"
+    }
+  }
+}

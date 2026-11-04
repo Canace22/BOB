@@ -109,7 +109,9 @@ func run() -> void:
 	check("soft_bed_safe_return",host.player.health==4 and host.player.position.distance_to(safe)<5 and host.player.is_on_floor(),[safe,host.player.position])
 	check("safe_point_not_over_pit",safe.x<357)
 	await enter(0);await tap("tp_right",10);Input.action_press("tp_right");await tap("tp_attack");await step(8)
-	check("moving_attack_layers",host.player.get_node("Visual/Legs").visible);await shot("main-moving-attack");Input.action_release("tp_right")
+	var visual:Node=host.player.run_visual
+	var new_body:bool=visual.active and visual.sprite.visible and not host.player.body.visible and not host.player.get_node("Visual/Legs").visible
+	check("moving_attack_single_body",new_body and visual.current_key in ["strike1","strike2"]);await shot("main-moving-attack");Input.action_release("tp_right")
 	await step(30);root.size=Vector2i(1280,800);root.content_scale_size=Vector2i(1280,800);await step(5);await shot("main-ui-16x10")
 	host.player_ui._show_guide();await step(2);await shot("main-guide");host.player_ui.guide.queue_free();host.player_ui.guide=null;host.player.controls_enabled=true
 	host.checkpoint={"room":3,"pos":[90,610]};host.save_progress(false)

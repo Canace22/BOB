@@ -1,0 +1,163 @@
+{
+  "scope": "Repaired atlas all-frame review; not runtime acceptance",
+  "versions": {
+    "wall_slide": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "f1454cf42c699a84dce1e6cb42bb5630f5d33b0b52e5d9382c5e6029318f30ec",
+        "frame_count": 20,
+        "body_review": "20帧品红竖条、脚下线和粉边已去，红绳保留；9–13腹侧小空隙需实机尺度确认。",
+        "fx_review": "null",
+        "evidence": "review/isnet-repair-v1/wall_slide-body-all.jpg"
+      }
+    ],
+    "float": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "a2a5a7664c6d5f669f72f69417a972968283761fefda764f0ad924548210aaa5",
+        "frame_count": 24,
+        "body_review": "24帧，13/22根定位瞬移已消除；膜翼与身体完整。",
+        "fx_review": "null",
+        "evidence": "review/isnet-repair-v1/float-body-all.jpg"
+      }
+    ],
+    "anchor": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "03e2ae7722224cf7fd08891723fe88953964864c7885a2b7ea421e2748fdc32d",
+        "frame_count": 20,
+        "body_review": "20帧粉边已清理，双脚、叉、红绳完整；挂点已单独20帧核对。",
+        "fx_review": "null",
+        "evidence": "review/isnet-repair-v1/anchor-body-all.jpg"
+      }
+    ],
+    "strike2": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "9d50259a073b8bda0ebb2c6c680da875286b3818c0d9d990f5c701b95c03db86",
+        "fx_sha256": null,
+        "frame_count": 8,
+        "body_review": "8帧，原坏帧1/2剔除；完整斜上发力，事件应新1。",
+        "fx_review": "null",
+        "evidence": "review/isnet-repair-v1/strike2-body-all.jpg"
+      }
+    ],
+    "upper": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "0de2254e4d715bb2151d7188a10607ef4b3584006cb0c19f4f0ab7041a1261f6",
+        "fx_sha256": "23740ac7b827cebf4b51c1a0501dc95d4e7c49fbe5e6292349b24d4f84683c21",
+        "frame_count": 12,
+        "body_review": "12帧身体完整，武器顶部闪线为局部烘焙。",
+        "fx_review": "12帧互补局部闪线，无截断。",
+        "evidence": "review/isnet-repair-v1/upper-body-all.jpg"
+      }
+    ],
+    "slit": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "83f0d8c1935f239529691e85cb30e76985a32f367591c45bf202c4ec75bb51c6",
+        "fx_sha256": null,
+        "frame_count": 18,
+        "body_review": "18帧品红臂间块/脚边粉溢已清，红绳完整。",
+        "fx_review": "null",
+        "evidence": "review/isnet-repair-v1/slit-body-all.jpg"
+      }
+    ],
+    "scan": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "3d712e5d452d6ea955e1d875219e5c6279b57bfd06190d31c143e5ef1aa64c8a",
+        "fx_sha256": "bfd3e7152bb53fbc48c8ed826cb7e4dbc83f1ee80618d5af7892427e5e085620",
+        "frame_count": 16,
+        "body_review": "16帧脚与灯完整。",
+        "fx_review": "16帧整环下半恢复，13淡出14/15空，避免源末尾裁切。",
+        "evidence": "review/isnet-repair-v1/scan-body-all.jpg"
+      }
+    ],
+    "great_slash": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "ad197842fe7e4a051e0ec54f400d0f11cd70604fb7152f9b64700d5a47f3dd08",
+        "fx_sha256": "ca7759c97bb145126acd8a8e98842d76dae9f83532477b25652becd25525a83f",
+        "frame_count": 16,
+        "body_review": "16帧；局部刀弧烘焙，9–11短促脚亮闪，94px合成可读。",
+        "fx_review": "刀弧下半硬截已修，少量源地面反光保留。",
+        "evidence": "review/isnet-repair-v1/great_slash-body-all.jpg",
+        "composite_evidence": "review/isnet-repair-v1/great_slash-composite-94px.png"
+      }
+    ],
+    "dash_slash": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_with_minor_dust",
+        "body_sha256": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+        "fx_sha256": "ee994f4826f2332ccdb99fedec1675dbcbe3cecd46b5e379d7b0b3b20306f52b",
+        "frame_count": 12,
+        "body_review": "12帧身体完整，4局部刀弧烘焙。",
+        "fx_review": "刀弧硬截已修；1/5/6灰扬尘仍在FX，建议剔除低饱和灰团避免随体带走。",
+        "evidence": "review/isnet-repair-v1/dash_slash-body-all.jpg",
+        "composite_evidence": "review/isnet-repair-v1/dash_slash-composite-94px.png"
+      },
+      {
+        "version": "final-repair-v2",
+        "status": "needs_dust_roi_repair",
+        "body_sha256": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+        "fx_sha256": "09222987eff4d5c7a48272c4b85988ad379f9147423ac53b42e6d21c9d1fac70",
+        "frame_count": 12,
+        "body_review": "12帧身体完整，无灰团。",
+        "fx_review": "新版09222987仍有1/5/6灰尘；94px可见，主要处于ground以上未被原规则剔除。已提供原源ROI与颜色。",
+        "evidence": "review/final-repair-v2/dash_slash-body-all.jpg",
+        "semantic_model": {
+          "family": "isnet",
+          "file": "isnet-general-use.onnx",
+          "sha256": "60920e99c45464f2ba57bee2ad08c919a52bbf852739e96947fbb4358c0d964a",
+          "provider": "cpu",
+          "resolution": 1024,
+          "cache": "review/mask-cache; model+preprocess+RGB SHA256"
+        }
+      }
+    ],
+    "cyclone": [
+      {
+        "version": "isnet-repair-v1",
+        "status": "candidate_repair_verified",
+        "body_sha256": "42c0371aaa13152c625301f0f575645687b76e450ce0f4db5e477cb7b46cfe60",
+        "fx_sha256": "7a33721418a1de8a5d3e06ff539c27f2bd88861a927ac7f752a8f95b85b64e14",
+        "frame_count": 24,
+        "body_review": "24帧；原6/9/12/14/16腿脚恢复，94px与互补FX合成可读。",
+        "fx_review": "腰部旋环完整；地面投影环已删除，亮环处身体间隙由互补FX填充。",
+        "evidence": "review/isnet-repair-v1/cyclone-body-all.jpg",
+        "composite_evidence": "review/isnet-repair-v1/cyclone-composite-94px.png"
+      }
+    ],
+    "walk": [
+      {
+        "version": "final-repair-v2",
+        "status": "candidate_matte_repair_verified",
+        "body_sha256": "acb88e0a631390cc81ea0566c9a2aa1921928bd79609eda46321cec8e3d6f9f0",
+        "fx_sha256": null,
+        "frame_count": 24,
+        "body_review": "BiRefNet24帧，原5/14显著地影已去，叉/红绳/暗身保留；部分脚与自由手源运动拖影仍在，不能宣称源变形已修。",
+        "fx_review": "null",
+        "evidence": "review/final-repair-v2/walk-body-all.jpg",
+        "semantic_model": {
+          "family": "birefnet",
+          "file": "birefnet-general-lite.onnx",
+          "sha256": "5600024376f572a557870a5eb0afb1e5961636bef4e1e22132025467d0f03333",
+          "provider": "cpu",
+          "resolution": 1024,
+          "cache": "review/mask-cache; model+preprocess+RGB SHA256"
+        }
+      }
+    ]
+  }
+}

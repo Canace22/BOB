@@ -1,0 +1,2023 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "source_review agent",
+  "reviewDate": "2026-11-04",
+  "method": "Viewed 360 original-source frames on 36 contact sheets sampled every 0.5 sec, 0..4.5 sec. Actual media dimensions/count/fps read using OpenCV. No full-motion playback or alpha output QA performed. Suggested trim/event/anchor numbers are approximate candidates for downstream dense-frame review, not accepted production metadata.",
+  "globalRules": [
+    "Use a single scale per source based on initial upright body height, never rescale each frame bbox.",
+    "Remove source camera/global actor root motion separately from intentional local limb/body deformation. Airborne ground shadows are not foot-root coordinates.",
+    "Target reference character height may be 80–110px in current room; art canvas padding need not match physics collider.",
+    "Do not apply one neutral-background matte recipe to walls, membrane, swim, door or hit-target clips without masks.",
+    "Source runtime retiming is necessary: source seconds are not gameplay wind-up or recovery.",
+    "No loop candidate here has been verified by playback, so treat as candidate and inspect last-to-first seam after root registration."
+  ],
+  "actions": [
+    {
+      "key": "idle",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\01_idle_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.5,
+        4.5
+      ],
+      "loopCandidateSeconds": [
+        0.5,
+        4.5
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "微呼吸，首尾仍需播放检查；不以头盔包围框追踪缩放。",
+      "reviewEvidence": "integration_review/01_idle.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "walk",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\02_walk.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.65,
+        4.15
+      ],
+      "loopCandidateSeconds": [
+        1.45,
+        3.6
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.457,
+        "groundYNormalized": 0.8523,
+        "bodyHeightNormalized": 0.5909,
+        "centerXApproxPixels": 877,
+        "groundYApproxPixels": 920,
+        "bodyHeightApproxPixels": 638,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "行进动画；应按骨盆/脚接触定位作去整体漂移，首尾步态候选未证明闭合。",
+      "reviewEvidence": "integration_review/02_walk.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "run",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\03_run.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.45,
+        4.1
+      ],
+      "loopCandidateSeconds": [
+        1.1,
+        2.2
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.3388,
+        "groundYNormalized": 0.9205,
+        "bodyHeightNormalized": 0.5341,
+        "centerXApproxPixels": 650,
+        "groundYApproxPixels": 994,
+        "bodyHeightApproxPixels": 577,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "右移明显，武器姿势及腿型有源漂移；抽取完整两步相位后检查脚滑，不把起停接入循环。",
+      "reviewEvidence": "integration_review/03_run.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "jump",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\04_jump_final_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.6,
+        3.6
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "takeoff",
+          "timeSeconds": 1.15,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "apex",
+          "timeSeconds": 1.75,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "land",
+          "timeSeconds": 2.45,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "按真实起落选择起跳/上升/下降/落地，空中整个人抬升是source root motion，不能叠加游戏位移。",
+      "reviewEvidence": "integration_review/04_jump.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "double_jump",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\05_double_jump_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.75,
+        4.5
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "wing_open",
+          "timeSeconds": 2.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "wing_close",
+          "timeSeconds": 4.15,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "保留半透明薄膜；去掉一段跳过程，以二段展开对应触发。",
+      "reviewEvidence": "integration_review/05_double_jump.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "wall_slide",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\06_wall_slide.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.35,
+        2.75
+      ],
+      "loopCandidateSeconds": [
+        1.5,
+        2.5
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2237,
+        "groundYNormalized": 0.9545,
+        "bodyHeightNormalized": 0.6136,
+        "centerXApproxPixels": 430,
+        "groundYApproxPixels": 1031,
+        "bodyHeightApproxPixels": 663,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "右侧墙x约0.685W；墙与脚/手重叠且同属深色，不可largest-component后整块导出。需要手工墙mask/修补被遮部位。",
+      "reviewEvidence": "integration_review/06_wall_slide.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "wall_jump",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\07_wall_jump.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.65,
+        2.3
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "push_off",
+          "timeSeconds": 1.75,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.3835,
+        "groundYNormalized": 0.9886,
+        "bodyHeightNormalized": 0.4545,
+        "centerXApproxPixels": 736,
+        "groundYApproxPixels": 1068,
+        "bodyHeightApproxPixels": 491,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "left during suggested push-off segment",
+      "notes": "源为右墙向左弹离，2.5秒后再朝右；只取离墙段且记录left sourceFacing，不能当右向动作二次镜像。",
+      "reviewEvidence": "integration_review/07_wall_jump.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "dash",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\08_dash.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.2,
+        2.75
+      ],
+      "loopCandidateSeconds": [
+        1.65,
+        2.55
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "launch",
+          "timeSeconds": 1.25,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "剔除3秒后坐姿滑停；拖尾与本体分离；1.5秒叉端近右边界，必须逐帧检查裁切。",
+      "reviewEvidence": "integration_review/08_dash.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "float",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\09_float_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.65,
+        3.85
+      ],
+      "loopCandidateSeconds": [
+        2.05,
+        3.5
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "wing_open",
+          "timeSeconds": 1.8,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "横向大薄膜是角色部件不是应删的背景；需保留透明度，固定躯干root避免随浮升抖动。",
+      "reviewEvidence": "integration_review/09_float.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "anchor",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\10_anchor_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        2.35,
+        4.15
+      ],
+      "loopCandidateSeconds": [
+        2.65,
+        3.9
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "grip",
+          "timeSeconds": 2.4,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "release",
+          "timeSeconds": 4.15,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2685,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.4432,
+        "centerXApproxPixels": 344,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 319,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "必须剔除顶部吊环/悬线与红绳到固定环的部分，角色挂点单独输出；动态绳由真实anchor点驱动。身体与绳连接处需人工检查。",
+      "reviewEvidence": "integration_review/10_anchor.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "strike1",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\11_strike1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.9,
+        4.05
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "swing_start",
+          "timeSeconds": 2.35,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hit",
+          "timeSeconds": 2.75,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "recover",
+          "timeSeconds": 3.45,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.457,
+        "groundYNormalized": 0.9318,
+        "bodyHeightNormalized": 0.7273,
+        "centerXApproxPixels": 877,
+        "groundYApproxPixels": 1006,
+        "bodyHeightApproxPixels": 785,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "实际挥叉仅后半段；橙白刀光覆盖左披风/右叉，独立特效必须避免body上重复发光。",
+      "reviewEvidence": "integration_review/11_strike1.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "strike2",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\12_strike2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.05,
+        4.4
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "swing_start",
+          "timeSeconds": 1.55,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hit",
+          "timeSeconds": 1.9,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "recover",
+          "timeSeconds": 3.7,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.9205,
+        "bodyHeightNormalized": 0.5909,
+        "centerXApproxPixels": 951,
+        "groundYApproxPixels": 994,
+        "bodyHeightApproxPixels": 638,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "1.9秒后长举叉停顿，运行重定时应压缩持势，不要把整段3秒蓄作连招恢复。",
+      "reviewEvidence": "integration_review/12_strike2.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "upper",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\13_upper_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.4,
+        4.45
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "hit",
+          "timeSeconds": 1.95,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "glint",
+          "timeSeconds": 2.5,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "recover",
+          "timeSeconds": 4.0,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "上挑抬叉后持续举叉较长，提取短发力段和收势分开；高光横线作为独立命中特效。",
+      "reviewEvidence": "integration_review/13_upper.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "pogo",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\14_pogo_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.3,
+        3.9
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "downward_pose",
+          "timeSeconds": 1.65,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "contact",
+          "timeSeconds": 2.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "rebound",
+          "timeSeconds": 3.25,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2621,
+        "groundYNormalized": 0.8864,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 335,
+        "groundYApproxPixels": 638,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "画面x约0.61W地面有贝壳目标，不能纳入body；下刺后长停顿不是游戏反弹停顿，命中后应立即按物理反弹选帧。",
+      "reviewEvidence": "integration_review/14_pogo.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "orb",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\15_orb_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.8,
+        4.15
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "charge",
+          "timeSeconds": 2.45,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "release",
+          "timeSeconds": 3.35,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "2.5秒青光直接覆盖叉尖；3.5秒以后弹体和地面反光独立去除，弹体运行从挂点发射，不沿源画面轨迹。",
+      "reviewEvidence": "integration_review/15_orb.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "heavy",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\16_heavy.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.75,
+        3.75
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "raise",
+          "timeSeconds": 1.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "impact",
+          "timeSeconds": 2.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "ring",
+          "timeSeconds": 2.55,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4794,
+        "groundYNormalized": 0.8295,
+        "bodyHeightNormalized": 0.5,
+        "centerXApproxPixels": 920,
+        "groundYApproxPixels": 896,
+        "bodyHeightApproxPixels": 540,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "地面环直接穿过脚边，必须独立地面特效；靠固定地面root保脚底，不按环bbox居中。",
+      "reviewEvidence": "integration_review/16_heavy.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "dive",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\17_dive_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.6,
+        4.45
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "tuck",
+          "timeSeconds": 2.0,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "descend",
+          "timeSeconds": 2.8,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "impact",
+          "timeSeconds": 3.3,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "下砸分悬空/下降/落地；落地环必须由实际is_on_floor事件触发，不用源片固定3.3秒伤害。",
+      "reviewEvidence": "integration_review/17_dive.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "parry",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\18_parry.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.65,
+        3.65
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "contact",
+          "timeSeconds": 2.05,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "deflect",
+          "timeSeconds": 2.35,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "sparkle",
+          "timeSeconds": 2.8,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2749,
+        "groundYNormalized": 0.9318,
+        "bodyHeightNormalized": 0.6705,
+        "centerXApproxPixels": 528,
+        "groundYApproxPixels": 1006,
+        "bodyHeightApproxPixels": 724,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "右侧incoming光球是测试目标，应移除；动作挥手和跳起夸张，短防御窗口不能整段3秒。",
+      "reviewEvidence": "integration_review/18_parry.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "slit",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\19_slit_final_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.5,
+        1.85
+      ],
+      "loopCandidateSeconds": [
+        0.6,
+        1.5
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.1918,
+        "groundYNormalized": 0.8636,
+        "bodyHeightNormalized": 0.5909,
+        "centerXApproxPixels": 245,
+        "groundYApproxPixels": 622,
+        "bodyHeightApproxPixels": 425,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "仅进入紫膜前身体可完整取；2.3–4.2秒被紫膜半透明遮挡。骨叉拖绳后且开头出框，建议body-only补制或明确复用dash，不把该源直接当正式完成。",
+      "reviewEvidence": "integration_review/19_slit.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "heal",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\20_heal.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.9,
+        3.75
+      ],
+      "loopCandidateSeconds": [
+        1.4,
+        2.6
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "hands_on_lamp",
+          "timeSeconds": 1.55,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.9432,
+        "bodyHeightNormalized": 0.7955,
+        "centerXApproxPixels": 951,
+        "groundYApproxPixels": 1019,
+        "bodyHeightApproxPixels": 859,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "手抚腰灯姿态较克制，可将准备/持续/结束分段；治疗光应独立于身体受击闪白。",
+      "reviewEvidence": "integration_review/20_heal.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "scan",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\21_scan.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.5,
+        4.25
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "point",
+          "timeSeconds": 1.9,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "pulse",
+          "timeSeconds": 2.6,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.521,
+        "groundYNormalized": 0.8523,
+        "bodyHeightNormalized": 0.6136,
+        "centerXApproxPixels": 1000,
+        "groundYApproxPixels": 920,
+        "bodyHeightApproxPixels": 663,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "地面橙环分层，身体指叉可复用持续姿态；环不应随人物移动。",
+      "reviewEvidence": "integration_review/21_scan.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "interact",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\22_interact.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        2.1,
+        3.8
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "reach",
+          "timeSeconds": 2.7,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "contact",
+          "timeSeconds": 3.0,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.3324,
+        "groundYNormalized": 0.9659,
+        "bodyHeightNormalized": 0.8864,
+        "centerXApproxPixels": 638,
+        "groundYApproxPixels": 1043,
+        "bodyHeightApproxPixels": 957,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "右侧悬浮圆按钮/道具必须去除；3秒手与按钮重叠需要mask，不能将按钮一起贴角色。",
+      "reviewEvidence": "integration_review/22_interact.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "hurt",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\23_hurt.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.65,
+        3.5
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "recoil",
+          "timeSeconds": 1.85,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "stumble",
+          "timeSeconds": 2.5,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4474,
+        "groundYNormalized": 0.9432,
+        "bodyHeightNormalized": 0.7273,
+        "centerXApproxPixels": 859,
+        "groundYApproxPixels": 1019,
+        "bodyHeightApproxPixels": 785,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "2秒叉端贴近上边界；受击不用播放源前1.5秒待机；恢复要可按逻辑打断。",
+      "reviewEvidence": "integration_review/23_hurt.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "defeat",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\24_defeat.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.35,
+        4.75
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "kneel",
+          "timeSeconds": 1.0,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "lamp_off",
+          "timeSeconds": 4.35,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4794,
+        "groundYNormalized": 0.9545,
+        "bodyHeightNormalized": 0.9091,
+        "centerXApproxPixels": 920,
+        "groundYApproxPixels": 1031,
+        "bodyHeightApproxPixels": 982,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "跪地后持势可缩短；末段灯熄灭，注意角色骨架高度不随bbox缩短而放大。",
+      "reviewEvidence": "integration_review/24_defeat.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "shadow_dash",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\25_shadow_dash_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.65,
+        4.1
+      ],
+      "loopCandidateSeconds": [
+        2.55,
+        3.7
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "launch",
+          "timeSeconds": 1.8,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "黑色本体与墨尾同色且相连，靠亮度难拆；用前缘角色ROI/手工mask分本体，残影单独产出；0.5–1.5为长准备不接入短冲。",
+      "reviewEvidence": "integration_review/25_shadow_dash.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "great_slash",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\26_great_slash.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.7,
+        4.6
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "charge",
+          "timeSeconds": 1.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "swing",
+          "timeSeconds": 2.35,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hit",
+          "timeSeconds": 2.8,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "大青弧掠过脚与披风，不能普通色键移除青色而破坏角色；应mask分层或补制body-only。",
+      "reviewEvidence": "integration_review/26_great_slash.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "dash_slash",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\27_dash_slash.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        2.1,
+        4.6
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "dash",
+          "timeSeconds": 2.35,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "swing",
+          "timeSeconds": 2.85,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hit",
+          "timeSeconds": 3.3,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "先短冲后挥，地面尘土不能留在body；青弧遮到身体，应单独特效。",
+      "reviewEvidence": "integration_review/27_dash_slash.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "cyclone",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\28_cyclone.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.4,
+        4.45
+      ],
+      "loopCandidateSeconds": [
+        2.15,
+        4.15
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "rotation_start",
+          "timeSeconds": 2.0,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "身体真正旋转会改变观察朝向；环穿过腰部，需独立layer且避免背面保留正面眼。首尾循环候选未证明闭合。",
+      "reviewEvidence": "integration_review/28_cyclone.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "crystal_dash",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\29_crystal_dash.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.7,
+        4.4
+      ],
+      "loopCandidateSeconds": [
+        3.0,
+        4.0
+      ],
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "charge",
+          "timeSeconds": 1.4,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "launch",
+          "timeSeconds": 2.75,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "蓄力态和长冲态分开；尾焰、尘土、地面发光不入身体；持续长冲使用短循环本体和世界空间尾迹。",
+      "reviewEvidence": "integration_review/29_crystal_dash.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "up_spell",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\30_up_spell_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.65,
+        4.0
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "release",
+          "timeSeconds": 1.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hold_start",
+          "timeSeconds": 1.5,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "fade",
+          "timeSeconds": 3.35,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.5341,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 385,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "扇形与手间有一定间隙，较易独立分层；上举手轮廓不要被特效剔除。",
+      "reviewEvidence": "integration_review/30_up_spell.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "abyss_scream",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\31_abyss_scream_final_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.65,
+        4.0
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "release",
+          "timeSeconds": 1.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "hold_start",
+          "timeSeconds": 1.5,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "fade",
+          "timeSeconds": 3.35,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.5341,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 385,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "与up_spell同身体编辑源；可共用本体并独立dark arcs，但源clip深色弧与披风同色不应靠色域一刀删。",
+      "reviewEvidence": "integration_review/31_abyss_scream.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "shadow_orb",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\32_shadow_orb.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.45,
+        3.05
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "charge",
+          "timeSeconds": 1.3,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "release",
+          "timeSeconds": 2.3,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "强光/黑弹体先长驻叉端后飞出；分离charge effect和世界弹体，不把未发射光球算伤害命中。",
+      "reviewEvidence": "integration_review/32_shadow_orb.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "dark_dive",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\33_dark_dive_retry.mp4",
+      "width": 1470,
+      "height": 630,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.75,
+        4.55
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "takeoff",
+          "timeSeconds": 1.15,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "descend",
+          "timeSeconds": 1.95,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "impact",
+          "timeSeconds": 2.4,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "second_ring",
+          "timeSeconds": 3.4,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.5188,
+        "groundYNormalized": 0.8896,
+        "bodyHeightNormalized": 0.6125,
+        "centerXApproxPixels": 763,
+        "groundYApproxPixels": 560,
+        "bodyHeightApproxPixels": 386,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "原片1470x630超宽，源身体比多数片小；以初始站姿高度作统一scale；落地环在脚下需独立层。",
+      "reviewEvidence": "integration_review/33_dark_dive.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "swim",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\34_swim.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.0,
+        4.15
+      ],
+      "loopCandidateSeconds": [
+        1.75,
+        3.25
+      ],
+      "loopVerified": false,
+      "eventCandidates": [],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2876,
+        "groundYNormalized": null,
+        "bodyHeightNormalized": 0.75,
+        "centerXApproxPixels": 368,
+        "groundYApproxPixels": null,
+        "bodyHeightApproxPixels": 540,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "水面全程贯穿胸部，颜色叠加覆盖身体；不能当干净body。建议body-only游姿补制，水面波纹由场景实际水域驱动。",
+      "reviewEvidence": "integration_review/34_swim.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "tram",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\35_tram.mp4",
+      "width": 1470,
+      "height": 630,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        1.1,
+        2.8
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "reach",
+          "timeSeconds": 1.7,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "card_contact",
+          "timeSeconds": 2.15,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.2812,
+        "groundYNormalized": 0.9115,
+        "bodyHeightNormalized": 0.6635,
+        "centerXApproxPixels": 413,
+        "groundYApproxPixels": 574,
+        "bodyHeightApproxPixels": 418,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right at entry",
+      "notes": "原片1470x630；门/读卡柱从x约0.44W开始，最右手交叠读卡面，需精确mask补掌，门动画保持场景所有。",
+      "reviewEvidence": "integration_review/35_tram.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    },
+    {
+      "key": "turn",
+      "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\36_turn_retry.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frameCount": 121,
+      "duration": 5.041666666666667,
+      "recommendedSourceRangeSeconds": [
+        0.6,
+        2.85
+      ],
+      "loopCandidateSeconds": null,
+      "loopVerified": false,
+      "eventCandidates": [
+        {
+          "event": "front",
+          "timeSeconds": 1.4,
+          "uncertaintySeconds": 0.25
+        },
+        {
+          "event": "left_facing",
+          "timeSeconds": 2.45,
+          "uncertaintySeconds": 0.25
+        }
+      ],
+      "initialReferencePose": {
+        "frame": 0,
+        "centerXNormalized": 0.4954,
+        "groundYNormalized": 0.875,
+        "bodyHeightNormalized": 0.6364,
+        "centerXApproxPixels": 634,
+        "groundYApproxPixels": 630,
+        "bodyHeightApproxPixels": 458,
+        "method": "Visual estimate from displayed first-frame review, ±2% of frame dimension; excludes weapon extension where separable. Not a segmentation measurement."
+      },
+      "sourceFacing": "right-to-left transition",
+      "notes": "源从右朝向转到左朝向，转身画面不能同时按最终facing再镜像；朝向改变应即刻控制，短非阻塞过渡选择方向相关源。",
+      "reviewEvidence": "integration_review/36_turn.jpg",
+      "productionStatus": "needs-cleanup",
+      "reviewedSampleTimesSeconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ]
+    }
+  ],
+  "projectileExtractionCandidates": [
+    {
+      "key": "orb",
+      "sourceFrameZeroBased": 83,
+      "timeSeconds": 3.4583333333333335,
+      "coordinateFrame": [
+        768,
+        432
+      ],
+      "center": [
+        640,
+        222
+      ],
+      "coreBBoxXYXY": [
+        616,
+        202,
+        666,
+        242
+      ],
+      "glowCropXYXY": [
+        595,
+        177,
+        692,
+        272
+      ],
+      "sourceScaleFactor": 1.6666666666666667,
+      "status": "visible complete flying core; glow connected to thin beam at left, needs alpha separation",
+      "evidence": "integration_review/orb_f083_768.png"
+    },
+    {
+      "key": "shadow_orb",
+      "sourceFrameZeroBased": 59,
+      "timeSeconds": 2.4583333333333335,
+      "coordinateFrame": [
+        768,
+        432
+      ],
+      "center": [
+        698,
+        201
+      ],
+      "coreBBoxXYXY": [
+        648,
+        165,
+        748,
+        236
+      ],
+      "glowCropXYXY": [
+        633,
+        148,
+        767,
+        253
+      ],
+      "sourceScaleFactor": 1.6666666666666667,
+      "status": "visible complete flying core; left muzzle flash and tight right margin require bounded alpha mask",
+      "evidence": "integration_review/shadow_orb_f059_768.png"
+    },
+    {
+      "key": "shadow_orb",
+      "sourceFrameZeroBased": 57,
+      "timeSeconds": 2.375,
+      "coordinateFrame": [
+        768,
+        432
+      ],
+      "center": [
+        563,
+        202
+      ],
+      "coreBBoxXYXY": [
+        513,
+        164,
+        613,
+        241
+      ],
+      "glowCropXYXY": [
+        494,
+        145,
+        635,
+        260
+      ],
+      "sourceScaleFactor": 1.6666666666666667,
+      "status": "cleaner sphere appearance BEFORE departure; grip at left x<514 must be removed; do not label this a flying source frame",
+      "evidence": "integration_review/shadow_orb_f057_768.png"
+    }
+  ]
+}

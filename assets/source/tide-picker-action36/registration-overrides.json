@@ -1,0 +1,19 @@
+{
+  "float": {
+    "torso_per_frame": {
+      "13": [
+        379.75,
+        123
+      ],
+      "22": [
+        379,
+        132.5
+      ]
+    },
+    "reason": "Reviewed source cape detector switched to a different component on frames 13 and 22. Linear interpolation of adjacent cape medians removes accidental root translation only; source pixels and poses are unchanged.",
+    "working_width": 768,
+    "reviewer": "agent/source_review",
+    "source_frame_count": 24,
+    "source_sha256": "2df7921762b5af870a64e7e68826eb7e5d2a1a1887df69a245cd9186ccc83be2"
+  }
+}

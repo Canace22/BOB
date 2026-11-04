@@ -1,21 +1,15 @@
 import { readFileSync, writeFileSync, readdirSync, unlinkSync } from 'node:fs';
-import { createHash } from 'node:crypto';
-import { gzipSync, gunzipSync } from 'node:zlib';
+import { buildDownloadEntry } from './web-download-parts.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const web = path.join(root, 'game/build/web');
-for (const file of readdirSync(web)) if (/^(wasm|pck)\.[0-9a-f]{16}\.gz$/.test(file)) unlinkSync(path.join(web, file));
+for (const file of readdirSync(web)) if (/^(wasm|pck)\.[0-9a-f]{16}\.(gz|(?:gzip|raw)\.part-\d+\.bin)$/.test(file)) unlinkSync(path.join(web, file));
 const manifest = {};
 for (const extension of ['wasm', 'pck']) {
   const data = readFileSync(path.join(web, `index.${extension}`));
-  const packed = gzipSync(data, { level: 9 });
-  if (!gunzipSync(packed).equals(data)) throw new Error(`Compression verification failed: ${extension}`);
-  const hash = createHash('sha256').update(packed).digest('hex').slice(0, 16);
-  const file = `${extension}.${hash}.gz`;
-  writeFileSync(path.join(web, file), packed);
-  manifest[`index.${extension}`] = { file, packedBytes: packed.length, rawBytes: data.length, type: extension === 'wasm' ? 'application/wasm' : 'application/octet-stream' };
+  manifest[`index.${extension}`] = buildDownloadEntry(data, extension, (file, bytes) => writeFileSync(path.join(web, file), bytes));
 }
 const loader = readFileSync(path.join(root, 'game/web/preload.js'), 'utf8');
 const target = path.join(web, 'index.html');

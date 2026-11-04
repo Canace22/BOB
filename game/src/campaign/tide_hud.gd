@@ -54,9 +54,11 @@ func _show_guide() -> void:
 	player.controls_enabled=false
 	guide=PanelContainer.new();guide.set_anchors_and_offsets_preset(Control.PRESET_CENTER);guide.position=Vector2(-440,-230);guide.size=Vector2(880,460);panel.add_child(guide)
 	var style:=StyleBoxFlat.new();style.bg_color=Color(.015,.035,.05,.96);style.border_color=Color(.3,.62,.64);style.set_border_width_all(1);style.set_content_margin_all(28);guide.add_theme_stylebox_override("panel",style)
-	var text:=Label.new();text.text="拾潮者 · 潮汐试炼\n\nA / D、← / → 移动　 W / ↑ 向上　 S / ↓ 向下\nK / 空格 跳跃 · 轻按短跳 / 按住高跳 · 再按二段跳\n贴墙下落滑行，按 K 蹬墙跳\nJ / Q 短击　 空中 S + J 下劈反弹\nL / Shift 贴流冲　 O 潜隙冲刺\nU 迎珠　 I 重鸣　 P 调息（地面引导）\nE 与潮灯交互　 R 死亡后重生　 H 重看本说明\n\n灰壳练习靶可受击；红色标记靶会造成接触伤害。\n按任意键继续";text.add_theme_font_size_override("font_size",21);guide.add_child(text)
+	var text:=Label.new();text.text="拾潮者 · 潮汐试炼\n\nA / D、← / → 移动　 W / ↑ 向上　 S / ↓ 向下\nK / 空格 跳跃 · 轻按短跳 / 按住高跳 · 再按二段跳\n贴墙下落滑行，按 K 蹬墙跳\nJ / Q 短击　 空中 S + J 下劈反弹\nL / Shift 贴流冲　 O 潜隙冲刺\nU 叉鸣弹　 I 重鸣　 P 调息（地面引导）\nE 与潮灯交互　 R 死亡后重生　 H 重看本说明\n\n灰壳练习靶可受击；红色标记靶会造成接触伤害。\n按任意键继续";text.add_theme_font_size_override("font_size",21);guide.add_child(text)
 	if campaign_mode:
-		text.text="鲸腹遗城 · 拾潮者\n\nA/D、方向键 移动　 K/空格 跳跃、二段跳、蹬墙\nJ/Q 短击　 空中 S+J 下劈反弹\nL/Shift 冲刺　 O 潜隙　 U 迎珠　 I 重鸣　 P 调息\nE 拾取/存档；走入门口过门，A/D+E也可过门\nW 浮游　 G 锚环牵引　 舌膜处 S+K/空格 下潜\nF5 存档　 F6 读取　 Esc 暂停　 M 静音　 H 帮助\n\n沿用已有能力解锁：Boss后获得冲刺；F9临时练习。\n死亡动画结束后返回原检查点，R可手动返回。\n\n按任意键继续"
+		text.add_theme_font_size_override("font_size",18)
+		text.text="鲸腹遗城 · 拾潮者\n\nA/D 移动 · Ctrl慢走 · K/空格 跳跃/二段跳/蹬墙\nJ/Q 短击 · 连按斜击 · W+J上挑 · 空中S+J下刺反弹\n按住J再松开重劈 · S+松开回旋 · 冲刺中J冲刺斩\nL/Shift 冲刺 · O潜隙 · V地面蓄力后松开长冲\nU叉鸣弹 · W+U上涌 · 空中S+U下砸 · I重鸣\nB偏转 · T探潮 · P调息 · E拾取/存档/通行凭证\nW浮游 · G锚环 · 舌膜处S+K/空格下潜\nF5存档 · F6读取 · Esc暂停 · M静音 · H帮助\n\n冲刺/剑技：击败负壳守卫；上涌/下砸：舌台奖励。\n完成本章升级潮术；F9练习，F10切换基础/升级。\n死亡后返回检查点；R手动返回。按任意键继续"
+
 
 func _input(event:InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo:return
@@ -107,7 +109,7 @@ func _draw_status() -> void:
 		status.draw_circle(center,17,Color(.25,.65,.8) if filled else Color(.15,.22,.27))
 		status.draw_arc(center,18,-PI/2,-PI/2+TAU*clampf((soul_value-i*33)/33.0,0,1),24,Color(.6,.9,1),2)
 	status.draw_string(font,Vector2(241,y+65),"魂 %02d / 99"%soul_value,HORIZONTAL_ALIGNMENT_LEFT,-1,14)
-	var names:=["短击","贴流冲","迎珠","重鸣"]
+	var names:=["短击","贴流冲","叉鸣弹","重鸣"]
 	var hotkeys:=["J","L","U","I"]
 	var keys:=["","dash","orb","heavy"]
 	for i in range(4):
@@ -124,6 +126,13 @@ func _draw_status() -> void:
 		status.draw_string(font,rect.position+Vector2(27,67),hotkeys[i],HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(.8,.75,.55))
 	status.draw_string(font,Vector2(790,y+22),"二段跳 ●" if double_ready else "二段跳 ○",HORIZONTAL_ALIGNMENT_LEFT,-1,17,Color(.6,.85,.9))
 	status.draw_string(font,Vector2(790,y+53),"冲刺 ●" if dash_ready else "冲刺 ○",HORIZONTAL_ALIGNMENT_LEFT,-1,17,Color(.6,.85,.9))
+	var skill: TideSkillController=player.skill_controller
+	if skill.active:
+		status.draw_string(font,Vector2(20,y-28),str(TideSkillCatalog.TITLES.get(skill.visual_key,"潮术"))+" · 施展中",HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(.7,.9,.85))
+	elif skill.input.attack_hold>=0.55 or skill.input.long_hold>=0.6:
+		status.draw_string(font,Vector2(20,y-28),"蓄力完成 · 松开释放",HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(.95,.8,.45))
+	elif not skill.last_key.is_empty() and float(cd_values.get(skill.last_key,0))>0.0:
+		status.draw_string(font,Vector2(20,y-28),"%s · 冷却 %.1f" % [TideSkillCatalog.TITLES.get(skill.last_key,"潮术"),float(cd_values[skill.last_key])],HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(.6,.7,.75))
 	if not header_text.is_empty():status.draw_string(font,Vector2(20,32),header_text,HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color(.65,.82,.85))
 
 func _background() -> StyleBoxFlat:

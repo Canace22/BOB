@@ -47,3 +47,7 @@ assets/runtime/sprites/r1-chapter-scenes/**/*.png filter=lfs diff=lfs merge=lfs 
 
 
 # Historical editable sources recovered inside the active project, excluded from export.
+
+# Source sheets and runtime atlases for the action36 production batch.
+assets/source/tide-picker-action36/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/runtime/sprites/tide-picker-action36/*.png filter=lfs diff=lfs merge=lfs -text

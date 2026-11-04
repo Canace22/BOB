@@ -2,13 +2,18 @@
 
 正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 七房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
 
+七房默认使用角色跟随镜头，Tab统一切换跟随/全景；原图对照、截图和分层查看保留全景行为。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
+
 ## 代码与内容
 
 | 路径（相对 game/） | 职责 |
 | --- | --- |
 | `src/campaign/main.gd` | 七房切换、机关、敌人/Boss、能力、营地、HUD、V6进度 |
 | `src/campaign/tide_player.gd`、`campaign_player.gd` | 完整角色动作与技能、主关卡参数适配、动画事件 |
-| `src/campaign/campaign_run_visual.gd` | 当前84帧/12FPS跑步；物理由角色控制 |
+| `src/campaign/action_visual.gd`、`tide_world_effects.gd` | 正式主角的可变帧图集、实际状态/阶段映射、世界特效与历史残影；物理由角色控制 |
+| `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
+| `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
+| `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
 | `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头和机关表现 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
@@ -22,7 +27,9 @@
 
 ## 资源归属
 
-`game/art/manifest.json` 仅同步当前引用的930个文件，所有来源均在 `assets/`。其中856张图片经过[Framecraft保真压缩](../assets/source/framecraft-runtime/README.md)，画布、可见像素和Alpha不变；9个 `.framecraft` 工程保留原件与结果。文本、遮罩、音频及字体在 `assets/runtime/godot-support/` 等库目录保存。
+`game/art/manifest.json` 同步当前资源，所有来源均在 `assets/`；实际数量以资源审计为准。既有856张图片经过[Framecraft保真压缩](../assets/source/framecraft-runtime/README.md)，画布、可见像素和Alpha不变；9个 `.framecraft` 工程保留原件与结果。新36动作制作、源片选段与透明图集见[制作源](../assets/source/tide-picker-action36/README.md)，其候选/验收状态不沿用旧素材结论。文本、遮罩、音频及字体在 `assets/runtime/godot-support/` 等库目录保存。
+
+动作本体与FX可有独立帧数；世界环读取图层 `frame_count`/`event_frame`，按真实释放或落地启动，不随本体帧索引截断。影潮穿行复用dash本体并施冷青色调，深钟复用dive本体及地面环，保留各自伤害/范围/无敌逻辑；这些不是独立生成的两套美术。逐项来源、复用、参数和待验状态见[36项资产覆盖](action36-asset-coverage.md)，根目录 `build_asset_coverage.py` 可按实际清单及哈希绑定验收记录重建。
 
 `content/whalebelly/runtime-resources.json` 记录当前资源及引用拥有者。`node game/tools/audit_resources.mjs` 从正式入口、当前角色参数场、Run与环境预览检查引用，并展开身体/特效帧、七房、鱼群和音效的动态路径。它采用保守的路径族检查；新增加载方式时同步维护审计规则，再做实机验证。
 
@@ -56,6 +63,6 @@ node game/tests/web_whalebelly.mjs
 
 Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口及 `.nojekyll`；其他页面在Git树中保留。同步合并关闭差异统计，避免旧版Git为输出统计而下载未展开的大型图片。并发发布导致推送非快进时，保留发布提交，获取并合并远端后普通推送，检查Godot范围外与远端一致。
 
-导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。保留原始包用于缺少解压API的浏览器。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源。
+导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。大包分别拆为64MiB的压缩/原始分片，并检查分片及串接SHA256；缺少解压API的浏览器使用原始分片。导出保留原文件，发布只在完整原始分片覆盖后省略超限单文件。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源；最终线上启动结果另见进度。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。

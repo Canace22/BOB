@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 28,
-  "updatedAt": "2026-11-03",
+  "revision": 35,
+  "updatedAt": "2026-11-04",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24990,6 +24990,3581 @@
         "godot/WhalebellyRuins/scenes/environment/elements/BALEEN-CENTER.tscn",
         "godot/WhalebellyRuins/scenes/environment/elements/BALEEN-RIGHT.tscn"
       ]
+    },
+    {
+      "id": "tide-picker-action36-idle",
+      "name": "拾潮者 · 待机",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/idle-body.png",
+      "width": 1896,
+      "height": 522,
+      "frameCount": 36,
+      "fps": 12,
+      "pivot": [
+        75,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\01_idle_retry.mp4",
+      "sourceSha256": "3ac93dfdce9abab3a69765d9408882406eebbdf65cb8fbd781ff9ec40fb4967a",
+      "sha256": "399aeabb25b0e5bfb22f365d2ac0900a881e3082c6f4f51a454969e08baf732b",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/idle-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "399aeabb25b0e5bfb22f365d2ac0900a881e3082c6f4f51a454969e08baf732b",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-run",
+      "name": "拾潮者 · 跑步",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/run-body.png",
+      "width": 1256,
+      "height": 172,
+      "frameCount": 8,
+      "fps": 12,
+      "pivot": [
+        82,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\run-v3.png",
+      "sourceSha256": "8586ad807eb6e732d29607e6cbc86c2d6c971c81799400797d368e0c800f222b",
+      "sha256": "2dfefa76a81c96a437c99be2b157777da24a7c727dec38b520ad14beef6057e9",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/run-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2dfefa76a81c96a437c99be2b157777da24a7c727dec38b520ad14beef6057e9",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dash",
+      "name": "拾潮者 · 贴流冲",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dash-body.png",
+      "width": 1880,
+      "height": 360,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        86,
+        173
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\08_dash.mp4",
+      "sourceSha256": "c421b96716dd0e01b264d14a1ca7722d642f2f50bffb0ddd4627a4ea644c29db",
+      "sha256": "d015a0107036cce4d133cb80c95629d7281e8c78f2ace199ee0431d07e2fe9d4",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dash-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "d015a0107036cce4d133cb80c95629d7281e8c78f2ace199ee0431d07e2fe9d4",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dash-right.png",
+              "game/build/qa/action36/coverage/dash-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-strike1",
+      "name": "拾潮者 · 扣潮·横击",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/strike1-body.png",
+      "width": 2023,
+      "height": 408,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        85,
+        199
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\11_strike1.mp4",
+      "sourceSha256": "fcd1cd124ab8caf4a41409c2d06c349b313f31ac1c728fe9cccc361907bbf783",
+      "sha256": "2336f76735aabbbc42de0389b2b00ddf5321e43029912f1b05002b0990daade0",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/strike1-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2336f76735aabbbc42de0389b2b00ddf5321e43029912f1b05002b0990daade0",
+          "fx": "c5d386bc470ab255a6befa49c4fe9e75b2e33c8166659f58639a42ffc40c2c90"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-strike1-fx",
+      "name": "拾潮者 · 扣潮·横击效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/strike1-fx.png",
+      "width": 1960,
+      "height": 260,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        79,
+        172
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\11_strike1.mp4",
+      "sourceSha256": "fcd1cd124ab8caf4a41409c2d06c349b313f31ac1c728fe9cccc361907bbf783",
+      "sha256": "c5d386bc470ab255a6befa49c4fe9e75b2e33c8166659f58639a42ffc40c2c90",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/strike1-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2336f76735aabbbc42de0389b2b00ddf5321e43029912f1b05002b0990daade0",
+          "fx": "c5d386bc470ab255a6befa49c4fe9e75b2e33c8166659f58639a42ffc40c2c90"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-hurt",
+      "name": "拾潮者 · 受击与踉跄",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/hurt-body.png",
+      "width": 1960,
+      "height": 434,
+      "frameCount": 10,
+      "fps": 24,
+      "pivot": [
+        133,
+        209
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\23_hurt.mp4",
+      "sourceSha256": "cdc73074d684359ef91482affbd2f36fb46aae6375951aceb49cf4d31b01edf4",
+      "sha256": "109597157bacb9998d4581982a932c3b6487e7fa121821a51035795af94a5e3b",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/hurt-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "109597157bacb9998d4581982a932c3b6487e7fa121821a51035795af94a5e3b",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-walk",
+      "name": "拾潮者 · 行走",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/walk-body.png",
+      "width": 1914,
+      "height": 549,
+      "frameCount": 24,
+      "fps": 12,
+      "pivot": [
+        87,
+        176
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\02_walk.mp4",
+      "sourceSha256": "be5909f6d06b0d10f808409614402c15fbe3a7be8295460d1e1a04a05a44991c",
+      "sha256": "acb88e0a631390cc81ea0566c9a2aa1921928bd79609eda46321cec8e3d6f9f0",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/walk-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "acb88e0a631390cc81ea0566c9a2aa1921928bd79609eda46321cec8e3d6f9f0",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-jump",
+      "name": "拾潮者 · 跳跃与落地",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/jump-body.png",
+      "width": 2028,
+      "height": 404,
+      "frameCount": 18,
+      "fps": 24,
+      "pivot": [
+        79,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\04_jump_final_retry.mp4",
+      "sourceSha256": "578790c178ecd353fb50210ff938b704ff57c528566abde683ea37aafef7afd7",
+      "sha256": "81815d06c6f255c781ee4dba4e5dfdffaf03153453d400ddaa3ea7010ec2f22d",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/jump-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "81815d06c6f255c781ee4dba4e5dfdffaf03153453d400ddaa3ea7010ec2f22d",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-double_jump",
+      "name": "拾潮者 · 空中二段跃",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/double_jump-body.png",
+      "width": 2002,
+      "height": 424,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        85,
+        165
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\05_double_jump_retry.mp4",
+      "sourceSha256": "904dd3673a39ca1b7efe75873fcdc076357b58fc880fb8c704a07f212fd2fa39",
+      "sha256": "5d6497e463f68f477d65e7cd0b54158d1cd15e7c7d580004866cc8b571867755",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/double_jump-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "5d6497e463f68f477d65e7cd0b54158d1cd15e7c7d580004866cc8b571867755",
+          "fx": "8769348b39beb798fd3b208a58fed304d0157c451923a8945a3ca55163430d04"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-double_jump-fx",
+      "name": "拾潮者 · 空中二段跃效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/double_jump-fx.png",
+      "width": 1584,
+      "height": 34,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        28,
+        52
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\05_double_jump_retry.mp4",
+      "sourceSha256": "904dd3673a39ca1b7efe75873fcdc076357b58fc880fb8c704a07f212fd2fa39",
+      "sha256": "8769348b39beb798fd3b208a58fed304d0157c451923a8945a3ca55163430d04",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/double_jump-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "5d6497e463f68f477d65e7cd0b54158d1cd15e7c7d580004866cc8b571867755",
+          "fx": "8769348b39beb798fd3b208a58fed304d0157c451923a8945a3ca55163430d04"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-wall_slide",
+      "name": "拾潮者 · 贴壁缓降",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/wall_slide-body.png",
+      "width": 1924,
+      "height": 382,
+      "frameCount": 20,
+      "fps": 12,
+      "pivot": [
+        87,
+        195
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\wall_slide-body.mp4",
+      "sourceSha256": "35f905f80e5d4b2805f9cceeb9fc33414b1158da1649c0f49a0824880fd02aa2",
+      "sha256": "f1454cf42c699a84dce1e6cb42bb5630f5d33b0b52e5d9382c5e6029318f30ec",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/wall_slide-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "f1454cf42c699a84dce1e6cb42bb5630f5d33b0b52e5d9382c5e6029318f30ec",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-wall_jump",
+      "name": "拾潮者 · 蹬壁反跳",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/wall_jump-body.png",
+      "width": 1328,
+      "height": 172,
+      "frameCount": 8,
+      "fps": 20,
+      "pivot": [
+        93,
+        163
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\wall_jump-v1.png",
+      "sourceSha256": "e906527e02219fae801ffb420574624b160955ba62ed542890cf83a12613f312",
+      "sha256": "af2b9d40383d6e30c847c408bde384ce3374dd2f260b38a4c90d308b5bdb436d",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/wall_jump-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "af2b9d40383d6e30c847c408bde384ce3374dd2f260b38a4c90d308b5bdb436d",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-float",
+      "name": "拾潮者 · 浮膜滑翔",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/float-body.png",
+      "width": 1820,
+      "height": 712,
+      "frameCount": 24,
+      "fps": 12,
+      "pivot": [
+        177,
+        133
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\09_float_retry.mp4",
+      "sourceSha256": "2df7921762b5af870a64e7e68826eb7e5d2a1a1887df69a245cd9186ccc83be2",
+      "sha256": "a2a5a7664c6d5f669f72f69417a972968283761fefda764f0ad924548210aaa5",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/float-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a2a5a7664c6d5f669f72f69417a972968283761fefda764f0ad924548210aaa5",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-anchor",
+      "name": "拾潮者 · 红索锚定与脱环",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/anchor-body.png",
+      "width": 2025,
+      "height": 810,
+      "frameCount": 20,
+      "fps": 24,
+      "pivot": [
+        113,
+        231
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\anchor-body.mp4",
+      "sourceSha256": "f1c6031ffaf6712d4d506bb9857fe035c5d50b81a31dc404e113578549184ab6",
+      "sha256": "03e2ae7722224cf7fd08891723fe88953964864c7885a2b7ea421e2748fdc32d",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/anchor-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "03e2ae7722224cf7fd08891723fe88953964864c7885a2b7ea421e2748fdc32d",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json",
+              "game/build/qa/action36/anchor.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/anchor-right.png",
+              "game/build/qa/action36/coverage/anchor-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-strike2",
+      "name": "拾潮者 · 回拨·斜击",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/strike2-body.png",
+      "width": 1656,
+      "height": 249,
+      "frameCount": 8,
+      "fps": 24,
+      "pivot": [
+        86,
+        240
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\12_strike2.mp4",
+      "sourceSha256": "76cd838a8782a9fbd2d31e4e25d89eb052df4e0d5e8e1d09017996460b34bb00",
+      "sha256": "9d50259a073b8bda0ebb2c6c680da875286b3818c0d9d990f5c701b95c03db86",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/strike2-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "9d50259a073b8bda0ebb2c6c680da875286b3818c0d9d990f5c701b95c03db86",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-upper",
+      "name": "拾潮者 · 挑潮·上挑",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/upper-body.png",
+      "width": 1824,
+      "height": 464,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        100,
+        211
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\13_upper_retry.mp4",
+      "sourceSha256": "175afbc6d7f3734e42bbacaf9b200fd21a16ef81bc6ca84eda25a2ac1a84ea00",
+      "sha256": "0de2254e4d715bb2151d7188a10607ef4b3584006cb0c19f4f0ab7041a1261f6",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/upper-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "0de2254e4d715bb2151d7188a10607ef4b3584006cb0c19f4f0ab7041a1261f6",
+          "fx": "23740ac7b827cebf4b51c1a0501dc95d4e7c49fbe5e6292349b24d4f84683c21"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-upper-fx",
+      "name": "拾潮者 · 挑潮·上挑效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/upper-fx.png",
+      "width": 2032,
+      "height": 96,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        122,
+        223
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\13_upper_retry.mp4",
+      "sourceSha256": "175afbc6d7f3734e42bbacaf9b200fd21a16ef81bc6ca84eda25a2ac1a84ea00",
+      "sha256": "23740ac7b827cebf4b51c1a0501dc95d4e7c49fbe5e6292349b24d4f84683c21",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/upper-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "0de2254e4d715bb2151d7188a10607ef4b3584006cb0c19f4f0ab7041a1261f6",
+          "fx": "23740ac7b827cebf4b51c1a0501dc95d4e7c49fbe5e6292349b24d4f84683c21"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-pogo",
+      "name": "拾潮者 · 点潮·下刺反弹",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/pogo-body.png",
+      "width": 1969,
+      "height": 340,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        -18,
+        218
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\14_pogo_retry.mp4",
+      "sourceSha256": "e9de8229beb7e58843c617302819269825057573646850fc1b65287d317f627a",
+      "sha256": "39a5d4d8a9e0f36c64bb0b2dcd9122f134f00f325c97318dac9f430a5a36e294",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/pogo-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "39a5d4d8a9e0f36c64bb0b2dcd9122f134f00f325c97318dac9f430a5a36e294",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-orb",
+      "name": "拾潮者 · 叉鸣弹",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/orb-body.png",
+      "width": 1832,
+      "height": 302,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        114,
+        146
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\15_orb_retry.mp4",
+      "sourceSha256": "0e1baa53783cb809a8e2ce573ed7512bcc90a0634c1187c7fade6c234c005832",
+      "sha256": "a26cfcf99e0f5740bbbd58c1938471878ff92ccd9a0b6306ff796515b1869a43",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/orb-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a26cfcf99e0f5740bbbd58c1938471878ff92ccd9a0b6306ff796515b1869a43",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-heavy",
+      "name": "拾潮者 · 重鸣·涨潮环",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/heavy-body.png",
+      "width": 1152,
+      "height": 182,
+      "frameCount": 8,
+      "fps": 16,
+      "pivot": [
+        70,
+        178
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\heavy-v1.png",
+      "sourceSha256": "eabde296d6cbd59069d0ca5bb4e1d7d756538143624dc9102e7d0bd87c466592",
+      "sha256": "2be5b27c99b9ec517b631485ca559c17d919b1c770f976a63cd0c91a997eef2c",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/heavy-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2be5b27c99b9ec517b631485ca559c17d919b1c770f976a63cd0c91a997eef2c",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/heavy-right.png",
+              "game/build/qa/action36/coverage/heavy-left.png",
+              "game/build/qa/action36/coverage/heavy-right-event-2.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-heavy-fx",
+      "name": "拾潮者 · 重鸣·涨潮环效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/ground-ring-fx.png",
+      "width": 1120,
+      "height": 224,
+      "frameCount": 8,
+      "fps": 20,
+      "pivot": [
+        140,
+        64
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\ground_ring-v2.png",
+      "sourceSha256": "7b7df1f35458dbb563afb52317cbf2bfaf22ed4f6b6f7ec6cb0a7217d316811b",
+      "sha256": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/ground-ring-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2be5b27c99b9ec517b631485ca559c17d919b1c770f976a63cd0c91a997eef2c",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/heavy-right.png",
+              "game/build/qa/action36/coverage/heavy-left.png",
+              "game/build/qa/action36/coverage/heavy-right-event-2.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dive",
+      "name": "拾潮者 · 坠潮·沉钟",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dive-body.png",
+      "width": 1128,
+      "height": 198,
+      "frameCount": 8,
+      "fps": 16,
+      "pivot": [
+        70,
+        194
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\dive-v1.png",
+      "sourceSha256": "6632729c975be5706c853542204b2fc24f81a7149407310ec3fe258fed9456f3",
+      "sha256": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dive-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dive-right.png",
+              "game/build/qa/action36/coverage/dive-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dive-fx",
+      "name": "拾潮者 · 坠潮·沉钟效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/ground-ring-fx.png",
+      "width": 1120,
+      "height": 224,
+      "frameCount": 8,
+      "fps": 20,
+      "pivot": [
+        140,
+        64
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\ground_ring-v2.png",
+      "sourceSha256": "7b7df1f35458dbb563afb52317cbf2bfaf22ed4f6b6f7ec6cb0a7217d316811b",
+      "sha256": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/ground-ring-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dive-right.png",
+              "game/build/qa/action36/coverage/dive-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-parry",
+      "name": "拾潮者 · 迎珠·偏转",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/parry-body.png",
+      "width": 936,
+      "height": 170,
+      "frameCount": 6,
+      "fps": 16,
+      "pivot": [
+        64,
+        165
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\parry-v1.png",
+      "sourceSha256": "874870cd294a518207d1d8dea72146520be3daa41d4843d6a508dce50b86a740",
+      "sha256": "695323dd46170928e824f355668bb7c4a1221cbcbf14c81d3d7b6cc41554067c",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/parry-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "695323dd46170928e824f355668bb7c4a1221cbcbf14c81d3d7b6cc41554067c",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-heal",
+      "name": "拾潮者 · 合灯调息",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/heal-body.png",
+      "width": 1968,
+      "height": 348,
+      "frameCount": 24,
+      "fps": 24,
+      "pivot": [
+        76,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\20_heal.mp4",
+      "sourceSha256": "457aacc80a99be14735da508a88669e1a1b087f976416f7aee584612940dcc29",
+      "sha256": "af47fc84ef0a4b7ca5e21717980578db2fa8cc5ed8c280dc602b7011ed78bb38",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/heal-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "af47fc84ef0a4b7ca5e21717980578db2fa8cc5ed8c280dc602b7011ed78bb38",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-scan",
+      "name": "拾潮者 · 照见·骨音探潮",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/scan-body.png",
+      "width": 1969,
+      "height": 344,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        83,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\21_scan.mp4",
+      "sourceSha256": "0c7081b87a29a72ad49206b79c19f83e6a91802787deb15ca9c5e3e5d6492a3c",
+      "sha256": "3d712e5d452d6ea955e1d875219e5c6279b57bfd06190d31c143e5ef1aa64c8a",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/scan-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "3d712e5d452d6ea955e1d875219e5c6279b57bfd06190d31c143e5ef1aa64c8a",
+          "fx": "bfd3e7152bb53fbc48c8ed826cb7e4dbc83f1ee80618d5af7892427e5e085620"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-scan-fx",
+      "name": "拾潮者 · 照见·骨音探潮效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/scan-fx.png",
+      "width": 1808,
+      "height": 232,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        225,
+        29
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\21_scan.mp4",
+      "sourceSha256": "0c7081b87a29a72ad49206b79c19f83e6a91802787deb15ca9c5e3e5d6492a3c",
+      "sha256": "bfd3e7152bb53fbc48c8ed826cb7e4dbc83f1ee80618d5af7892427e5e085620",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/scan-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "3d712e5d452d6ea955e1d875219e5c6279b57bfd06190d31c143e5ef1aa64c8a",
+          "fx": "bfd3e7152bb53fbc48c8ed826cb7e4dbc83f1ee80618d5af7892427e5e085620"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-interact",
+      "name": "拾潮者 · 伸手交互",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/interact-body.png",
+      "width": 1980,
+      "height": 354,
+      "frameCount": 13,
+      "fps": 24,
+      "pivot": [
+        62,
+        169
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\22_interact.mp4",
+      "sourceSha256": "d1e413d5b0cc1c3153d50f9db2b5d41ebb80cbcb73a40c7fc2aaf631d5bc742e",
+      "sha256": "b4118d36ed9d01db572102f4183263b5a51822a2d7314bc1a6a6ce3647662596",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/interact-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "b4118d36ed9d01db572102f4183263b5a51822a2d7314bc1a6a6ce3647662596",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-defeat",
+      "name": "拾潮者 · 力竭归零",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/defeat-body.png",
+      "width": 2040,
+      "height": 507,
+      "frameCount": 36,
+      "fps": 24,
+      "pivot": [
+        90,
+        164
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\24_defeat.mp4",
+      "sourceSha256": "800bc12d9b2cbba695e1b4ed0e3e80eb789148c0adc7fd60b9fc19e4a02bcbaf",
+      "sha256": "5123e542f30f073545759f035359e8588dfb144d58348cd296937351468564c3",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/defeat-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "5123e542f30f073545759f035359e8588dfb144d58348cd296937351468564c3",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-shadow_dash",
+      "name": "拾潮者 · 影潮穿行",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dash-body.png",
+      "width": 1880,
+      "height": 360,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        86,
+        173
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\08_dash.mp4",
+      "sourceSha256": "c421b96716dd0e01b264d14a1ca7722d642f2f50bffb0ddd4627a4ea644c29db",
+      "sha256": "d015a0107036cce4d133cb80c95629d7281e8c78f2ace199ee0431d07e2fe9d4",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dash-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "d015a0107036cce4d133cb80c95629d7281e8c78f2ace199ee0431d07e2fe9d4",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/shadow_dash-right.png",
+              "game/build/qa/action36/coverage/shadow_dash-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-great_slash",
+      "name": "拾潮者 · 蓄潮·重劈",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/great_slash-body.png",
+      "width": 1680,
+      "height": 892,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        197,
+        204
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\26_great_slash.mp4",
+      "sourceSha256": "3fc88a1b6da7c4b6fbec1d94ad222bc9c9466a480a6e4544d7f95c05025f28f1",
+      "sha256": "ad197842fe7e4a051e0ec54f400d0f11cd70604fb7152f9b64700d5a47f3dd08",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/great_slash-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "ad197842fe7e4a051e0ec54f400d0f11cd70604fb7152f9b64700d5a47f3dd08",
+          "fx": "ca7759c97bb145126acd8a8e98842d76dae9f83532477b25652becd25525a83f"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-great_slash-fx",
+      "name": "拾潮者 · 蓄潮·重劈效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/great_slash-fx.png",
+      "width": 1820,
+      "height": 1032,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        226,
+        223
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\26_great_slash.mp4",
+      "sourceSha256": "3fc88a1b6da7c4b6fbec1d94ad222bc9c9466a480a6e4544d7f95c05025f28f1",
+      "sha256": "ca7759c97bb145126acd8a8e98842d76dae9f83532477b25652becd25525a83f",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/great_slash-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "ad197842fe7e4a051e0ec54f400d0f11cd70604fb7152f9b64700d5a47f3dd08",
+          "fx": "ca7759c97bb145126acd8a8e98842d76dae9f83532477b25652becd25525a83f"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dash_slash",
+      "name": "拾潮者 · 奔潮·冲刺劈砍",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dash_slash-body.png",
+      "width": 1939,
+      "height": 350,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        120,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\27_dash_slash.mp4",
+      "sourceSha256": "b45d44135b6aa208db6a8b1a203852b5eba130ba40cb5280e9e84f5b6332db42",
+      "sha256": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dash_slash-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+          "fx": "1e818759a43db6489141f58499f426403422f3123769964992e0c7193d16e111"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dash_slash-right.png",
+              "game/build/qa/action36/coverage/dash_slash-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dash_slash-fx",
+      "name": "拾潮者 · 奔潮·冲刺劈砍效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dash_slash-fx.png",
+      "width": 1716,
+      "height": 654,
+      "frameCount": 12,
+      "fps": 24,
+      "pivot": [
+        226,
+        208
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\27_dash_slash.mp4",
+      "sourceSha256": "b45d44135b6aa208db6a8b1a203852b5eba130ba40cb5280e9e84f5b6332db42",
+      "sha256": "1e818759a43db6489141f58499f426403422f3123769964992e0c7193d16e111",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dash_slash-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "49afdc8c874eae4657fc46b72ffb9747f034aa4bcbb2e18acb900db795b387e2",
+          "fx": "1e818759a43db6489141f58499f426403422f3123769964992e0c7193d16e111"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dash_slash-right.png",
+              "game/build/qa/action36/coverage/dash_slash-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-cyclone",
+      "name": "拾潮者 · 旋潮·回旋斩",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/cyclone-body.png",
+      "width": 1939,
+      "height": 724,
+      "frameCount": 24,
+      "fps": 24,
+      "pivot": [
+        117,
+        174
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\28_cyclone.mp4",
+      "sourceSha256": "f6b78ff08ecf2801a0a77cae7afd0b3f0f5bac5b776a5c6d7f48acf4e1bc192e",
+      "sha256": "42c0371aaa13152c625301f0f575645687b76e450ce0f4db5e477cb7b46cfe60",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/cyclone-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "42c0371aaa13152c625301f0f575645687b76e450ce0f4db5e477cb7b46cfe60",
+          "fx": "7a33721418a1de8a5d3e06ff539c27f2bd88861a927ac7f752a8f95b85b64e14"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-cyclone-fx",
+      "name": "拾潮者 · 旋潮·回旋斩效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/cyclone-fx.png",
+      "width": 1796,
+      "height": 792,
+      "frameCount": 24,
+      "fps": 24,
+      "pivot": [
+        220,
+        149
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\28_cyclone.mp4",
+      "sourceSha256": "f6b78ff08ecf2801a0a77cae7afd0b3f0f5bac5b776a5c6d7f48acf4e1bc192e",
+      "sha256": "7a33721418a1de8a5d3e06ff539c27f2bd88861a927ac7f752a8f95b85b64e14",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/cyclone-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "42c0371aaa13152c625301f0f575645687b76e450ce0f4db5e477cb7b46cfe60",
+          "fx": "7a33721418a1de8a5d3e06ff539c27f2bd88861a927ac7f752a8f95b85b64e14"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-crystal_dash",
+      "name": "拾潮者 · 凝流·蓄力长冲",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/crystal_dash-body.png",
+      "width": 1928,
+      "height": 468,
+      "frameCount": 24,
+      "fps": 24,
+      "pivot": [
+        112,
+        150
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\29_crystal_dash.mp4",
+      "sourceSha256": "48dff6fc19bd5bb2985d1343f54ed83f7ea1161851dc349a743f56935a7cf633",
+      "sha256": "fc97110781e9ae845ba5f79a6edb32846177bd26c41a8a9097bf4367d16f50fc",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/crystal_dash-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "fc97110781e9ae845ba5f79a6edb32846177bd26c41a8a9097bf4367d16f50fc",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-up_spell",
+      "name": "拾潮者 · 潮声·上涌",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/up_spell-body.png",
+      "width": 1863,
+      "height": 430,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        101,
+        207
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\30_up_spell_retry.mp4",
+      "sourceSha256": "ccf38962ff4838601cd0c1b9a0ebaac977e2e573bdffac9fc02d87cb254be008",
+      "sha256": "db92ec47ae3d633af3815c1924e45ec4c6b964e96d6dba8d5c52d1fa3a2791f1",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/up_spell-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "db92ec47ae3d633af3815c1924e45ec4c6b964e96d6dba8d5c52d1fa3a2791f1",
+          "fx": "efd2402422015d88ef400d3da96a1d12254cbf458d68adf0d5c2234b8eeff9a0"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-up_spell-fx",
+      "name": "拾潮者 · 潮声·上涌效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/up_spell-fx.png",
+      "width": 1820,
+      "height": 777,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        116,
+        262
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\30_up_spell_retry.mp4",
+      "sourceSha256": "ccf38962ff4838601cd0c1b9a0ebaac977e2e573bdffac9fc02d87cb254be008",
+      "sha256": "efd2402422015d88ef400d3da96a1d12254cbf458d68adf0d5c2234b8eeff9a0",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/up_spell-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "db92ec47ae3d633af3815c1924e45ec4c6b964e96d6dba8d5c52d1fa3a2791f1",
+          "fx": "efd2402422015d88ef400d3da96a1d12254cbf458d68adf0d5c2234b8eeff9a0"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-abyss_scream",
+      "name": "拾潮者 · 深潮·共鸣啸",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/abyss_scream-body.png",
+      "width": 1935,
+      "height": 738,
+      "frameCount": 20,
+      "fps": 24,
+      "pivot": [
+        100,
+        238
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\31_abyss_scream_final_retry.mp4",
+      "sourceSha256": "7458c8969552c52557a6659ea23660768d61b3deb33a970b2bb5e068622571a9",
+      "sha256": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/abyss_scream-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+          "fx": "d920c605faef889c82e68852f2d6ec0aaaded7741321d7aa05e2b2e84aa9bdc1"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-abyss_scream-fx",
+      "name": "拾潮者 · 深潮·共鸣啸效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/abyss_scream-fx.png",
+      "width": 1841,
+      "height": 762,
+      "frameCount": 20,
+      "fps": 24,
+      "pivot": [
+        119,
+        259
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\31_abyss_scream_final_retry.mp4",
+      "sourceSha256": "7458c8969552c52557a6659ea23660768d61b3deb33a970b2bb5e068622571a9",
+      "sha256": "d920c605faef889c82e68852f2d6ec0aaaded7741321d7aa05e2b2e84aa9bdc1",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/abyss_scream-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "1d78869696841cfbd4d3c8eb4decc1859bfeb16334857650ce2e4549ec9745cb",
+          "fx": "d920c605faef889c82e68852f2d6ec0aaaded7741321d7aa05e2b2e84aa9bdc1"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-shadow_orb",
+      "name": "拾潮者 · 深鸣·穿潮弹",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/shadow_orb-body.png",
+      "width": 1848,
+      "height": 336,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        92,
+        160
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\32_shadow_orb.mp4",
+      "sourceSha256": "2eedbe5c1e2ba91d324a3724be004fdc981da71fa36ec31194860284300d4894",
+      "sha256": "2a665f4527c5865a50b6ab37f2f8ab48e0634978ef5affafdb08ef370387d4d6",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/shadow_orb-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "2a665f4527c5865a50b6ab37f2f8ab48e0634978ef5affafdb08ef370387d4d6",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dark_dive",
+      "name": "拾潮者 · 坠潮·深钟",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/dive-body.png",
+      "width": 1128,
+      "height": 198,
+      "frameCount": 8,
+      "fps": 16,
+      "pivot": [
+        70,
+        194
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\dive-v1.png",
+      "sourceSha256": "6632729c975be5706c853542204b2fc24f81a7149407310ec3fe258fed9456f3",
+      "sha256": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/dive-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dark_dive-right.png",
+              "game/build/qa/action36/coverage/dark_dive-left.png",
+              "game/build/qa/action36/coverage/dark_dive-left-event-5.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-dark_dive-fx",
+      "name": "拾潮者 · 坠潮·深钟效果层",
+      "kind": "effect-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "AI补制",
+        "精灵表"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/ground-ring-fx.png",
+      "width": 1120,
+      "height": 224,
+      "frameCount": 8,
+      "fps": 20,
+      "pivot": [
+        140,
+        64
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "sprite-sheet-ai",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\ground_ring-v2.png",
+      "sourceSha256": "7b7df1f35458dbb563afb52317cbf2bfaf22ed4f6b6f7ec6cb0a7217d316811b",
+      "sha256": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/ground-ring-fx.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "a2992027fb18aac15dd17962f5dad267f42c6011135669bf88f3b26bc296e5f3",
+          "fx": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9"
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/coverage/dark_dive-right.png",
+              "game/build/qa/action36/coverage/dark_dive-left.png",
+              "game/build/qa/action36/coverage/dark_dive-left-event-5.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-swim",
+      "name": "拾潮者 · 耐蚀浮游",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/swim-body.png",
+      "width": 1926,
+      "height": 462,
+      "frameCount": 24,
+      "fps": 12,
+      "pivot": [
+        127,
+        146
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\swim-body.mp4",
+      "sourceSha256": "cc5e81a40fb761d22fa7e22f25bf5a23356aa69656ba23537bd629c745338f68",
+      "sha256": "39a32937b7b36c500805715e79d056aab942d8b46e393d94c0b3465c88e66fcf",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/swim-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "39a32937b7b36c500805715e79d056aab942d8b46e393d94c0b3465c88e66fcf",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg",
+              "game/build/qa/action36/swim-two-cycles-review.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-tram",
+      "name": "拾潮者 · 通行凭证·启门",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/tram-body.png",
+      "width": 1936,
+      "height": 338,
+      "frameCount": 16,
+      "fps": 24,
+      "pivot": [
+        75,
+        164
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\tram-body.mp4",
+      "sourceSha256": "63f3263434b7080ebe631e07993b53ead267c46b95fcd02fecd871de7ec7a687",
+      "sha256": "299c75dafa5d67ccee10493530f8c5b5be74d63e5734428ee1e0f029964076be",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/tram-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "299c75dafa5d67ccee10493530f8c5b5be74d63e5734428ee1e0f029964076be",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-turn",
+      "name": "拾潮者 · 原地转向",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/turn-body.png",
+      "width": 1168,
+      "height": 172,
+      "frameCount": 8,
+      "fps": 24,
+      "pivot": [
+        65,
+        164
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\36_turn_retry.mp4",
+      "sourceSha256": "99ee8662073218ef502524cc41664792193a789c0d2ba3388a0297a33206dbc4",
+      "sha256": "779693a770153bbdf0367cec5d1b741e25c92be48af5b00525af0a6472a87779",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/turn-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "779693a770153bbdf0367cec5d1b741e25c92be48af5b00525af0a6472a87779",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-slit",
+      "name": "拾潮者 · 敛膜潜隙",
+      "kind": "character-animation",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "动作",
+        "视频提取"
+      ],
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/slit-body.png",
+      "width": 1910,
+      "height": 344,
+      "frameCount": 18,
+      "fps": 24,
+      "pivot": [
+        90,
+        167
+      ],
+      "source": "assets/source/tide-picker-action36/README.md",
+      "sourceKind": "video-extraction",
+      "sourceFile": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\slit-r2-body.mp4",
+      "sourceSha256": "66e0d5d42e67dec6d3cd72f7f114e76745f5b354fe841c6f51f1e7476a4dcf66",
+      "sha256": "83f0d8c1935f239529691e85cb30e76985a32f367591c45bf202c4ec75bb51c6",
+      "runtimeScene": "game/content/whalebelly/main.tscn",
+      "runtimeFile": "game/art/tide-picker-action36/slit-body.png",
+      "status": "accepted",
+      "integrationStatus": "main-level-integrated",
+      "userArtApproval": false,
+      "validation": {
+        "file": "assets\\source\\tide-picker-action36\\validation.json",
+        "hashMatched": true,
+        "hashes": {
+          "body": "83f0d8c1935f239529691e85cb30e76985a32f367591c45bf202c4ec75bb51c6",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/atlas-integrity.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage-right-review.jpg",
+              "game/build/qa/action36/coverage-left-review.jpg"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-projectile",
+      "name": "拾潮者 · 叉鸣弹",
+      "kind": "effect",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "源像素提取"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/projectile.png",
+      "width": 97,
+      "height": 95,
+      "source": "assets/source/tide-picker-action36/effects-sources.json",
+      "sha256": "9ef249aabf6c1bbc35b9528f06d7d59f6d8f7beee5a4bf2b3fd6ee717ac79683",
+      "integrationStatus": "main-level-integrated",
+      "runtimeFile": "game/art/tide-picker-action36/projectile.png",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "hashes": {
+          "body": "9ef249aabf6c1bbc35b9528f06d7d59f6d8f7beee5a4bf2b3fd6ee717ac79683",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "assets/source/tide-picker-action36/effects-sources.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/orb-right.png",
+              "game/build/qa/action36/coverage/orb-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-shadow_projectile",
+      "name": "拾潮者 · 深鸣弹",
+      "kind": "effect",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "源像素提取"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/shadow_projectile.png",
+      "width": 135,
+      "height": 106,
+      "source": "assets/source/tide-picker-action36/effects-sources.json",
+      "sha256": "88a663b9a7b80f48870f30af5c2f9ddd86b17fce532796d97d7820bbffb4932a",
+      "integrationStatus": "main-level-integrated",
+      "runtimeFile": "game/art/tide-picker-action36/shadow_projectile.png",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "hashes": {
+          "body": "88a663b9a7b80f48870f30af5c2f9ddd86b17fce532796d97d7820bbffb4932a",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "assets/source/tide-picker-action36/effects-sources.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/shadow_orb-right.png",
+              "game/build/qa/action36/coverage/shadow_orb-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "tide-picker-action36-tether",
+      "name": "拾潮者 · 红索位图",
+      "kind": "effect",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "特效",
+        "源像素提取"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/tide-picker-action36/tether.png",
+      "width": 1300,
+      "height": 174,
+      "source": "assets/source/tide-picker-action36/effects-sources.json",
+      "sha256": "5d42f05211e16f544ee3c051976d76d6327f2c3539e41d8e908735b8c25374e0",
+      "integrationStatus": "main-level-integrated",
+      "runtimeFile": "game/art/tide-picker-action36/tether.png",
+      "userArtApproval": false,
+      "validation": {
+        "hashMatched": true,
+        "hashes": {
+          "body": "5d42f05211e16f544ee3c051976d76d6327f2c3539e41d8e908735b8c25374e0",
+          "fx": null
+        },
+        "stages": {
+          "technical": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "assets/source/tide-picker-action36/effects-sources.json"
+            ]
+          },
+          "runtime": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:37:07.631601+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/report.json",
+              "game/build/qa/action36/coverage-final.log",
+              "game/build/qa/action36/playthrough/report.json",
+              "game/build/qa/action36/anchor.json"
+            ]
+          },
+          "art": {
+            "status": "passed",
+            "reviewer": "agent/root + agent/camera_validation",
+            "reviewed_at": "2026-11-04T01:29:51.122614+00:00",
+            "evidence": [
+              "game/build/qa/action36/coverage/anchor-right.png",
+              "game/build/qa/action36/coverage/anchor-left.png"
+            ],
+            "reviewer_kind": "agent",
+            "user_approved": false
+          }
+        }
+      }
     }
   ]
 }

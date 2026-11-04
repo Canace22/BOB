@@ -2,7 +2,11 @@
 
 用Godot 4.7.2打开 `project.godot`，按F5启动WhalebellyRuins七房主关卡：`content/whalebelly/main.tscn`。首次操作说明按Enter关闭。
 
-`A/D`移动，`K/空格`跳跃，`J/Q`短击，`L/Shift`冲刺，`U`迎珠，`I`重鸣，`P`调息，`O`潜隙，`E`交互，`W`浮游，`G`牵引，`Esc`暂停，`H`帮助，`M`静音。能力沿用解锁限制。
+`A/D`移动，`Ctrl+方向`行走，`K/空格`跳跃，`J/Q`攻击，`L/Shift`冲刺，`U`叉鸣弹/潮术，`B`偏转，`I`重鸣，`P`调息，`O`潜隙，`T`探潮，`V`蓄力长冲，`E`交互，`W`浮游，`G`牵引，`Esc`暂停，`H`帮助，`M`静音。方向+攻击/潮术及长按派生见[36项动作、操作与参数](../docs/action36-controls.md)。能力遵循正式解锁，F9临时练习、F10在练习中切换基础/升级组。
+
+本批动作资产正在接入和返修。代码可达、资源导入与外观验收分别记录；当前完成情况与录屏以[进度](progress.md)最新记录为准，不能把36项候选图集等同于全部验收完成。
+
+默认七房为跟随镜头，Tab切换跟随/全景；原图、截图和分层查看仍用既有全景行为。F9退出练习时恢复进入前的正式能力/进度快照，F10只切换会话内技能组。逐项资产及当前验收状态见[36项覆盖表](../docs/action36-asset-coverage.md)。
 
 在仓库根目录运行：
 
@@ -17,7 +21,7 @@ node tools/godot.mjs test
 
 ## R1后续六房环境
 
-R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使用。数字 **2–7** 为已有房间预览；**Tab** 切换已有全景/跟随镜头，**F4** 查看四层，**F2** 对照原图。预览不是能力解锁；正式入口仍按Boss、浮游和锚环限制推进。R1-06/07是后续能力回访房，**F9** 仅开启已有临时练习能力。
+R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使用。数字 **2–7** 为已有房间预览；**Tab** 切换全景/跟随镜头，**F4** 查看四层，**F2** 对照原图。预览不是能力解锁；正式入口仍按Boss、浮游和锚环限制推进。R1-06/07是后续能力回访房，**F9** 只临时开放当前会话的练习能力。
 
 原件、SVG选区/根线、OpenRaster母版与方法清单：[制作说明](../assets/source/r1-chapter-scenes/README.md)。本地实机验收页在 `build/qa/r1-chapter-scenes/场景验收与对照.html`，含24FPS环境展示与六房截图；日志/录像只保留本地。当前阶段见 [进度](progress.md)。
 
@@ -30,3 +34,5 @@ R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使�
 Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 `node game/tests/serve_web.mjs`，使用 `node game/tests/web_whalebelly.mjs` 真实按键验收。可用 `GAME_URL` 指定线上入口、`TEST_LABEL` 区分证据。测试创建独立浏览器上下文；报告、截图和录像只留本地。
 
 模块边界、发布和资源审计见[架构](../docs/architecture.md)，本轮执行结果见[进度](progress.md)。
+
+资源维护：本体和世界FX分别保存帧数，释放/落地从FX自己的 `event_frame` 启动。影潮穿行复用dash本体加冷青色调；深钟复用dive本体和环，升级差异保留在技能逻辑中。资源审计运行 `node game/tools/audit_resources.mjs`；覆盖表用仓库根目录 `python build_asset_coverage.py` 更新，不因此自动认可候选美术。

@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "effects": {
+    "ground_ring": {
+      "id": "ground_ring",
+      "source_kind": "AI-authored transparent 4x2 pure effect sprite sheet",
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\sprite-sheets\\ground_ring-v2.png",
+      "source_sha256": "7b7df1f35458dbb563afb52317cbf2bfaf22ed4f6b6f7ec6cb0a7217d316811b",
+      "reference_height": 160,
+      "frame_count": 8,
+      "fps": 20,
+      "event_frame": 0,
+      "loop": false,
+      "space": "world",
+      "blend": "normal",
+      "texture": "res://art/tide-picker-action36/ground-ring-fx.png",
+      "frames": [
+        [
+          0,
+          0,
+          280,
+          112
+        ],
+        [
+          280,
+          0,
+          280,
+          112
+        ],
+        [
+          560,
+          0,
+          280,
+          112
+        ],
+        [
+          840,
+          0,
+          280,
+          112
+        ],
+        [
+          0,
+          112,
+          280,
+          112
+        ],
+        [
+          280,
+          112,
+          280,
+          112
+        ],
+        [
+          560,
+          112,
+          280,
+          112
+        ],
+        [
+          840,
+          112,
+          280,
+          112
+        ]
+      ],
+      "pivot": [
+        140,
+        64
+      ],
+      "size": [
+        1120,
+        224
+      ],
+      "sha256": "a3d7122591691f19ea69998c8734fa0abf464ce7f88e1c56bf1029cd30ffa2f9",
+      "source_grid": [
+        4,
+        2
+      ],
+      "source_cell": [
+        543,
+        362
+      ],
+      "source_ellipse_centers": [
+        [
+          270.3306,
+          191.7426
+        ],
+        [
+          270.3715,
+          192.8306
+        ],
+        [
+          270.4937,
+          195.0194
+        ],
+        [
+          269.4273,
+          197.5534
+        ],
+        [
+          268.3038,
+          193.9834
+        ],
+        [
+          268.939,
+          194.8269
+        ],
+        [
+          270.6472,
+          195.03
+        ],
+        [
+          271.3289,
+          194.719
+        ]
+      ],
+      "source_main_ring_bounds": [
+        [
+          242,
+          178,
+          58,
+          29
+        ],
+        [
+          213,
+          172,
+          115,
+          42
+        ],
+        [
+          177,
+          166,
+          190,
+          58
+        ],
+        [
+          142,
+          163,
+          259,
+          71
+        ],
+        [
+          122,
+          156,
+          295,
+          76
+        ],
+        [
+          121,
+          159,
+          299,
+          72
+        ],
+        [
+          123,
+          161,
+          300,
+          69
+        ],
+        [
+          124,
+          162,
+          298,
+          67
+        ]
+      ],
+      "fixed_scale": 0.8,
+      "maximum_ring_width_reference": 240,
+      "alpha_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.75,
+        0.35,
+        0.08
+      ],
+      "alpha_debris_cutoff": 4,
+      "method": "retain source RGB and authored alpha; largest ring component ellipse-center registration; one fixed scale; final three frames alpha fade; normal alpha blend",
+      "status": "candidate_pending_composite_review",
+      "recommended_instances": {
+        "heavy": {
+          "scale": 1.0
+        },
+        "dive": {
+          "scale": 1.6
+        },
+        "dark_dive": {
+          "scale": 2.1,
+          "tint": "deep teal, set by gameplay configuration"
+        }
+      },
+      "known_limits": [
+        "Single authored ring design reused at configured scale; gameplay radius and lifetime require live verification."
+      ]
+    }
+  }
+}

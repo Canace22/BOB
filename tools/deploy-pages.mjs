@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Publish /godot/ and its default root entry; preserve historical version directories.
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { publicationOmissions } from './web-download-parts.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -47,7 +48,13 @@ function prepare() {
     assertLocalDirectory(dest, staging);
     if (existsSync(dest)) rmSync(dest, { recursive: true });
     mkdirSync(dest);
-    cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) });
+    const downloads = JSON.parse(readFileSync(path.join(exported, 'downloads.json'), 'utf8'));
+    const omitted = publicationOmissions(downloads);
+    cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) && !(path.dirname(file) === exported && omitted.has(path.basename(file))) });
+    for (const file of readdirSync(dest)) {
+      const item = statSync(path.join(dest, file));
+      if (item.isFile() && item.size >= 100 * 1024 * 1024) throw new Error(`Publication file exceeds GitHub limit: ${file}`);
+    }
     writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false }, null, 2));
   }
   cpSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));

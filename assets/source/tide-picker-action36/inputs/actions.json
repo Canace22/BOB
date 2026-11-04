@@ -1,0 +1,363 @@
+[
+  {
+    "index": 1,
+    "key": "idle",
+    "title": "待机",
+    "design": "双脚稳住，胸腔轻起伏，披风滞后摆动",
+    "duration": 5,
+    "promptFile": "prompts/01_idle.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\01_idle_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 2,
+    "key": "walk",
+    "title": "行走",
+    "design": "脚跟着地→承重→后脚蹬地，左右腿交替",
+    "duration": 5,
+    "promptFile": "prompts/02_walk.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\02_walk.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 3,
+    "key": "run",
+    "title": "跑步",
+    "design": "大跨步、身体前倾、腾空换脚",
+    "duration": 5,
+    "promptFile": "prompts/03_run.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\03_run.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 4,
+    "key": "jump",
+    "title": "跳跃与落地",
+    "design": "压低→蹬地→收腿顶点→落地缓冲",
+    "duration": 5,
+    "promptFile": "prompts/04_jump.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\04_jump_final_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 5,
+    "key": "double_jump",
+    "title": "空中二段跃",
+    "design": "第一跳后打开浮膜，再次上提",
+    "duration": 5,
+    "promptFile": "prompts/05_double_jump.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\05_double_jump_retry.mp4",
+    "reference": "P10 帝王之翼"
+  },
+  {
+    "index": 6,
+    "key": "wall_slide",
+    "title": "贴壁缓降",
+    "design": "手脚朝墙、重心后移，接触点连续",
+    "duration": 5,
+    "promptFile": "prompts/06_wall_slide.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\06_wall_slide.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 7,
+    "key": "wall_jump",
+    "title": "蹬壁反跳",
+    "design": "脚压墙→蹬伸→向外抛物线→落地",
+    "duration": 5,
+    "promptFile": "prompts/07_wall_jump.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\07_wall_jump.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 8,
+    "key": "dash",
+    "title": "贴流冲",
+    "design": "短启动、压低水平掠出、刹停后恢复",
+    "duration": 5,
+    "promptFile": "prompts/08_dash.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\08_dash.mp4",
+    "reference": "P01 蛾翼披风",
+    "prompt": "One fast LOW DASH toward the right. Start left of center. Crouch very briefly, then push off once, tuck BOTH feet beneath the body and GLIDE horizontally one and a half body widths within half a second. A short pale turquoise streak trails behind the cape. Touch down, slide to a quick stop, stand ready. The motion is a single smooth burst with no running steps, no cycling legs, no jump arc, no flips. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion."
+  },
+  {
+    "index": 9,
+    "key": "float",
+    "title": "浮膜滑翔",
+    "design": "肩下软膜展开、重心悬挂、缓慢下降",
+    "duration": 5,
+    "promptFile": "prompts/09_float.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\09_float_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 10,
+    "key": "anchor",
+    "title": "红索锚定与脱环",
+    "design": "索接固定骨环→收腿摆荡→脱手落地",
+    "duration": 5,
+    "promptFile": "prompts/10_anchor.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\10_anchor_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 11,
+    "key": "strike1",
+    "title": "扣潮·横击",
+    "design": "后压扭腰→踏步横扫→回收",
+    "duration": 5,
+    "promptFile": "prompts/11_strike1.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\11_strike1.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 12,
+    "key": "strike2",
+    "title": "回拨·斜击",
+    "design": "下沉低蓄→斜上提拉→重心回收",
+    "duration": 5,
+    "promptFile": "prompts/12_strike2.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\12_strike2.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 13,
+    "key": "upper",
+    "title": "挑潮·上挑",
+    "design": "屈膝→躯干伸展→骨叉指上→回位",
+    "duration": 5,
+    "promptFile": "prompts/13_upper.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\13_upper_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 14,
+    "key": "pogo",
+    "title": "点潮·下刺反弹",
+    "design": "腾空→骨叉朝下→触点反弹→落地",
+    "duration": 5,
+    "promptFile": "prompts/14_pogo.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\14_pogo_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 15,
+    "key": "orb",
+    "title": "叉鸣弹",
+    "design": "双手蓄压→前推→单颗鸣珠脱离",
+    "duration": 5,
+    "promptFile": "prompts/15_orb.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\15_orb_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 16,
+    "key": "heavy",
+    "title": "重鸣·涨潮环",
+    "design": "下蹲蓄力→双手下压→单圈地面扩散",
+    "duration": 5,
+    "promptFile": "prompts/16_heavy.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\16_heavy.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 17,
+    "key": "dive",
+    "title": "坠潮·沉钟",
+    "design": "跃起收身→骨叉朝下→快速坠地→深蹲吸收",
+    "duration": 5,
+    "promptFile": "prompts/17_dive.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\17_dive_retry.mp4",
+    "reference": "P04 荒芜俯冲"
+  },
+  {
+    "index": 18,
+    "key": "parry",
+    "title": "迎珠·偏转",
+    "design": "面向来珠→横叉接触→珠返向→小跳回稳",
+    "duration": 5,
+    "promptFile": "prompts/18_parry.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\18_parry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 19,
+    "key": "slit",
+    "title": "敛膜潜隙",
+    "design": "收披风缩肘→侧肩穿柔膜→完整出缝",
+    "duration": 5,
+    "promptFile": "prompts/19_slit.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\19_slit_final_retry.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 20,
+    "key": "heal",
+    "title": "合灯调息",
+    "design": "双手靠近腰灯、呼吸、暖光脉冲后回位",
+    "duration": 5,
+    "promptFile": "prompts/20_heal.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\20_heal.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 21,
+    "key": "scan",
+    "title": "照见·骨音探潮",
+    "design": "灯光抬亮、观察前方、单次波纹扩散",
+    "duration": 5,
+    "promptFile": "prompts/21_scan.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\21_scan.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 22,
+    "key": "interact",
+    "title": "伸手交互",
+    "design": "空手伸出→触碰→收回",
+    "duration": 5,
+    "promptFile": "prompts/22_interact.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\22_interact.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 23,
+    "key": "hurt",
+    "title": "受击与踉跄",
+    "design": "上身后仰、前脚离地、后脚接重→回稳",
+    "duration": 5,
+    "promptFile": "prompts/23_hurt.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\23_hurt.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 24,
+    "key": "defeat",
+    "title": "力竭归零",
+    "design": "膝盖失力→跪地→头垂下→静止",
+    "duration": 5,
+    "promptFile": "prompts/24_defeat.txt",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_空洞骑士参考_全动作展示\\24_defeat.mp4",
+    "reference": "项目既有动作 / 实机通用运动"
+  },
+  {
+    "index": 25,
+    "key": "shadow_dash",
+    "title": "影潮穿行",
+    "reference": "P02 暗影披风",
+    "design": "短促压身→墨色水平穿行→轮廓复原",
+    "duration": 5,
+    "prompt": "The diver faces right at the left third. Briefly compress the knees, then burst horizontally two body-widths to the right in ONE very quick low dash. During the dash the body briefly becomes a dark teal silhouette with three fading black afterimages. Feet do not run. Reform the identical diver at the right third and brake into ready stance. One dash only. No teleport cuts, no tumbling. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\25_shadow_dash_retry.mp4"
+  },
+  {
+    "index": 26,
+    "key": "great_slash",
+    "title": "蓄潮·重劈",
+    "reference": "P06 强力劈砍",
+    "design": "下沉蓄力→骨叉大幅前劈→收势",
+    "duration": 5,
+    "prompt": "One charged GREAT SLASH toward the right. Hold the ONE two-prong fork behind the shoulder while knees bend for 1.5 seconds; a small warm light builds around the fork. Then step forward once and drive the same fork in a fast broad overhead-to-forward arc, creating ONE wide pale cyan crescent in front of the body. Stop the fork low in front. Recover. Feet stay on the floor. The fork is short, rigid and never becomes a sword. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\26_great_slash.mp4"
+  },
+  {
+    "index": 27,
+    "key": "dash_slash",
+    "title": "奔潮·冲刺劈砍",
+    "reference": "P07 冲刺劈砍",
+    "design": "蓄力→水平冲进→向前劈砍→刹停",
+    "duration": 5,
+    "prompt": "One DASH SLASH. Begin at left third, face right. Charge the fork close to the body for one second, then slide rapidly two body widths toward the right with knees low and feet barely skimming the ground. At the end of that horizontal dash, swing the SAME short tuning fork forward in one decisive wide slash with a cyan crescent. Brake and regain stance. Dash comes BEFORE the slash. No leap, no somersault, no running cycle. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\27_dash_slash.mp4"
+  },
+  {
+    "index": 28,
+    "key": "cyclone",
+    "title": "旋潮·回旋斩",
+    "reference": "P14 旋风劈砍",
+    "design": "低蓄力→连续水平回旋→减速归位",
+    "duration": 5,
+    "prompt": "One CYCLONE SLASH. Crouch and charge, extend the short tuning fork sideways, then spin the entire body upright around its VERTICAL AXIS for two complete rotations. A thin horizontal cyan circular slash ribbon wraps around waist height. Feet pivot and shuffle in a small circle. Helmet stays ABOVE the feet throughout, no cartwheel or somersault. Decelerate, end facing right holding the original short fork. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\28_cyclone.mp4"
+  },
+  {
+    "index": 29,
+    "key": "crystal_dash",
+    "title": "凝流·蓄力长冲",
+    "reference": "P11 水晶之心",
+    "design": "贴地蓄力→持续直线长冲→减速落稳",
+    "duration": 5,
+    "prompt": "One charged LONG HORIZONTAL DASH. Stand at left quarter facing right, squat and hold a strong charge for 1.5 seconds, small teal shards gathering behind the cape. Launch rightward in a straight sustained low horizontal glide across the middle half of the frame for two seconds, feet tucked together without running, long straight luminous wake trailing left. Brake at right quarter, plant feet and return to stance. Strong distinction between long held charge, sustained flight, and landing. No upward flight or flip. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\29_crystal_dash.mp4"
+  },
+  {
+    "index": 30,
+    "key": "up_spell",
+    "title": "潮声·上涌",
+    "reference": "P13 嚎叫幽灵",
+    "design": "下沉聚气→向上释放→回收",
+    "duration": 5,
+    "prompt": "One UPWARD SONIC SPELL. Feet remain planted. Crouch briefly, tilt helmet slightly upward, raise the empty left palm; keep the single short fork in the right hand. Three pale cyan rounded wave lobes surge UPWARD above the helmet in a compact fan, then dissipate. Shoulders lift in recoil, then lower into the original stance. The effect only occupies the space ABOVE the head; no forward beam, no ground impact, no jump. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\30_up_spell_retry.mp4"
+  },
+  {
+    "index": 31,
+    "key": "abyss_scream",
+    "title": "深潮·共鸣啸",
+    "reference": "P03 深渊尖啸",
+    "design": "深蓄压→头顶多段爆发→重心复位",
+    "duration": 5,
+    "prompt": "One powerful UPGRADED UPWARD SPELL. Bend knees, brace the one short fork close to chest, look upward. Release THREE successive dark teal and ivory shockwave pulses vertically above the helmet, each pulse rising through the previous pulse and fading. Feet stay planted with visible strain and recoil in shoulders, cape lifts from the upward current, then settles. All effects are above the character. No forward projectile, no full-screen explosion, no extra weapons. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\31_abyss_scream_final_retry.mp4"
+  },
+  {
+    "index": 32,
+    "key": "shadow_orb",
+    "title": "深鸣·穿潮弹",
+    "reference": "P12 暗影之魂",
+    "design": "骨叉前指→深色弹体脱离→后坐收势",
+    "duration": 5,
+    "prompt": "Fire one empowered horizontal projectile to the RIGHT. Draw the ONE short fork to chest, point its two prongs horizontally right, then thrust it forward once. ONE compact dark teal oval energy projectile with an ivory core forms BETWEEN THE PRONGS, cleanly detaches, flies right across the frame, and exits. Small backward recoil in shoulders; recover ready stance. Keep fork attached to the same hand, its rigid short shaft never grows. No continuous laser, no second fork. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\32_shadow_orb.mp4"
+  },
+  {
+    "index": 33,
+    "key": "dark_dive",
+    "title": "坠潮·深钟",
+    "reference": "P05 黑暗降临",
+    "design": "小幅腾空→快速垂直落地→双层冲击",
+    "duration": 5,
+    "prompt": "One upgraded vertical ground slam. Make a modest jump of half a body height with entire helmet visible. At apex tuck knees, point the short fork down, drop straight down rapidly FEET FIRST. Land in deep squat, fork touching ground just beside the boots. On landing, a dark teal ground ring spreads left and right, followed immediately by a second smaller ivory ring. Stand back up. No horizontal travel, no headfirst landing, no somersault. Keep weapon constant length. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\33_dark_dive_retry.mp4"
+  },
+  {
+    "index": 34,
+    "key": "swim",
+    "title": "耐蚀浮游",
+    "reference": "P09 伊思玛的眼泪",
+    "design": "入水浮起→交替划水→减速浮停",
+    "duration": 5,
+    "prompt": "A shallow calm teal pool stretches across the bottom third. The original diver starts floating on the LEFT side of the water surface, helmet and shoulders above water. Face RIGHT. Swim steadily rightward to the right third using alternating small arm paddles and gentle kicks beneath the surface. Cape streams behind and soft ripples expand from the torso. Keep the fork secured alongside the body and amber lamp attached to the waist. Slow and float at the end. No walking on water, no new diving equipment, no sinking helmet. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\34_swim.mp4"
+  },
+  {
+    "index": 35,
+    "key": "tram",
+    "title": "通行凭证·启门",
+    "reference": "P08 电车通行证",
+    "design": "取证→插入侧面槽口→门开→收手",
+    "duration": 5,
+    "prompt": "The original diver stands facing RIGHT next to a simple small bronze ticket reader and a closed rounded stone gate on the right. Keep the short fork in right hand. With empty left hand, lift ONE small ivory rectangular token from belt, extend that hand and visibly insert the token into the reader slot. A small amber indicator lights, the gate slides UP, revealing a dark doorway. Withdraw the hand and settle. Clear hand-to-slot contact. No walking through solid gate and no magic attack. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\35_tram.mp4"
+  },
+  {
+    "index": 36,
+    "key": "turn",
+    "title": "原地转向",
+    "reference": "补充 左右状态衔接",
+    "design": "右向站姿→脚下换轴→左向站姿",
+    "duration": 5,
+    "prompt": "The original diver starts facing RIGHT. Pause for one second, then pivot both feet and rotate the entire body naturally through a brief front view to face LEFT. End holding the same single short fork in the same anatomical hand, amber lamp still attached to the same hip. Hold left-facing stance for two seconds. Character stays centered at the same scale, no horizontal travel. This is one 180-degree standing turn, not a spin, not a flip. Preserve exactly the illustrated diver from {{Image 1}}: ivory rigid round helmet with dark porthole, short teal cape, single amber hip lamp, red cord, ONE short U-shaped two-prong fork, webbed dark boots. Keep the same hand-painted 2D art style. Fixed wide side-view camera with full body and effects in frame and generous empty margins, no zoom or cuts. Simple warm grey studio background and visible floor unless this action specifies a pool or gate. Five seconds, clear anticipation, action and recovery, not slow motion.",
+    "source": "G:\\鲸落万物生\\outputs\\拾潮者_14集参考_左右动作全集\\36_turn_retry.mp4"
+  }
+]

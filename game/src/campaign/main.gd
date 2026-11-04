@@ -26,7 +26,7 @@ var status: Label
 var reference: Sprite2D
 var reference_visible: bool = false
 var layer_solo: int = -1
-var zoomed: bool = false
+var zoomed: bool = true
 var reference_follow: bool = true
 var camera_room_id: String = ""
 var outlines: bool = false
@@ -384,6 +384,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if quitting: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if event.physical_keycode == KEY_ESCAPE:
+		if is_instance_valid(player):
+			player.skill_controller.input.clear()
+			player.pending_action=""
+			player.jump_buffer=0.0
 		get_tree().paused = not get_tree().paused
 		record_event("pause", {"paused":get_tree().paused})
 		return
@@ -396,10 +400,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if get_tree().paused: return
 	match event.physical_keycode:
 		KEY_TAB:
-			if room.get("layered_environment",false):
-				reference_follow=not reference_follow
-				zoomed=false
-			else: zoomed=not zoomed
+			zoomed=not (zoomed or reference_camera_active())
+			reference_follow=zoomed
 		KEY_F2:
 			reference_visible = not reference_visible
 			reference.visible = reference_visible
@@ -420,7 +422,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				checkpoint = practice_restore.checkpoint
 				completed = practice_restore.completed
 				load_room(room_index, [player.position.x,player.position.y])
-			notify("练习模式：浮游、锚环、冲刺可用；不写入能力进度" if practice else "已恢复正式能力进度")
+			notify("练习模式：全部动作与技能可用；不写入能力进度" if practice else "已恢复正式能力进度")
 			record_event("practice", {"enabled":practice})
 		KEY_F5: manual_save()
 		KEY_F6:
@@ -483,7 +485,7 @@ func update_enemies(dt: float) -> void:
 		elif enemy.state == "active":
 			if not enemy.hit_sent and float(enemy.timer)>0.10 and absf(delta.x) < range_limit and absf(delta.y) < 115:
 				enemy.hit_sent = true
-				player.hurt(1)
+				player.take_damage(1,pos)
 			if float(enemy.timer) > 0.2:
 				enemy.state = "recover"
 				enemy.timer = 0.0

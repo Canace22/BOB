@@ -24,7 +24,7 @@ try {
     if (temperature === 'cold') await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 180000 });
     else await page.reload({ waitUntil: 'domcontentloaded', timeout: 180000 });
     await page.waitForFunction(() => typeof window.render_game_to_text === 'function' && JSON.parse(window.render_game_to_text()).room === 'R1-01', null, { timeout: 180000 });
-    const timing = await page.evaluate(() => ({ readyMs: performance.now(), resources: performance.getEntriesByType('resource').filter(r => /index\.(wasm|pck)|\/(wasm|pck)\.[a-f0-9]{16}\.gz/.test(r.name)).map(r => ({ file: new URL(r.name).pathname.split('/').pop(), durationMs: r.duration, endMs: r.responseEnd, transferBytes: r.transferSize, encodedBytes: r.encodedBodySize, decodedBytes: r.decodedBodySize })) }));
+    const timing = await page.evaluate(() => ({ readyMs: performance.now(), resources: performance.getEntriesByType('resource').filter(r => /index\.(wasm|pck)|\/(wasm|pck)\.[a-f0-9]{16}\.(?:gz|(?:gzip|raw)\.part-\d+\.bin)/.test(r.name)).map(r => ({ file: new URL(r.name).pathname.split('/').pop(), durationMs: r.duration, endMs: r.responseEnd, transferBytes: r.transferSize, encodedBytes: r.encodedBodySize, decodedBytes: r.decodedBodySize })) }));
     results.push({ temperature, wallMs: Date.now() - started, ...timing });
     console.log(JSON.stringify(results.at(-1)));
     await page.screenshot({ path: path.join(output, `${temperature}.png`) });

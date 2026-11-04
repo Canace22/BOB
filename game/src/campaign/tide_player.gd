@@ -11,6 +11,7 @@ signal damaged
 signal died
 signal interaction_requested(target: Node)
 signal animation_tag(tag: String)
+signal skill_effect(key: String, event: String, origin: Vector2, direction: float)
 
 @export_category("Movement")
 @export var max_speed: float = 180.0
@@ -73,6 +74,7 @@ signal animation_tag(tag: String)
 @export var animation_fps: float = 12.0
 @export var run_cycle_distance: float = 96.0
 @export var preload_actions: bool = true
+@export var atlas_visual_enabled: bool = false
 @export var lower_body_layer_enabled: bool = true
 @export var world_bounds := Rect2(0, 0, 1000, 1100)
 
@@ -128,6 +130,7 @@ var display_action: String = "idle":
 			_set_texture(visual_frame)
 var textures: Dictionary = {}
 var effect_textures: Dictionary = {}
+var atlas_coverage: Dictionary = {}
 var lower_frame: int = 0:
 	set(value):
 		lower_frame=value
@@ -138,6 +141,7 @@ var lower_frame: int = 0:
 @onready var tree: AnimationTree = $AnimationTree
 var locomotion_visual := TideLocomotionVisual.new()
 var playback: AnimationNodeStateMachinePlayback
+var skill_controller := TideSkillController.new()
 
 func _ready() -> void:
 	CampaignSaveBridge.prepare(false)
@@ -165,9 +169,15 @@ func _ready() -> void:
 		wall_ray.position.y=-collision_size.y*.5
 		wall_ray.target_position.x=side*(collision_size.x*.5+3)
 	$Visual.scale = Vector2.ONE * visual_scale
+	if atlas_visual_enabled:
+		var coverage_path: String="res://art/tide-picker-action36/animations.json"
+		if FileAccess.file_exists(coverage_path):
+			var parsed: Variant=JSON.parse_string(FileAccess.get_file_as_string(coverage_path))
+			if parsed is Dictionary: atlas_coverage=parsed.get("actions",{})
 	if preload_actions:
 		for id in CLIPS:_cache_clip(id)
 	_build_animation_tree()
+	skill_controller.setup(self)
 	stats_changed.emit(health, soul)
 
 func _build_animation_tree() -> void:
@@ -216,14 +226,29 @@ func _choose_animation(id: String) -> void:
 
 func _cache_clip(source_id: String) -> void:
 	if not CLIPS.has(source_id):return
+	if source_id!="idle" and atlas_visual_enabled and textures.has("idle") and _has_atlas_clip(source_id):
+		# Old AnimationPlayer tracks still update indices/markers, but its hidden body
+		# must not allocate a second 36-frame library already represented by an atlas.
+		textures[source_id]=textures.idle
+		return
 	if not textures.has(source_id):
 		var frames: Array[Texture2D] = []
-		for i in range(36): frames.append(load("res://art/whalebelly/animations/player/body/%s/%03d.png" % [source_id,i]))
+		for i in range(36):
+			var frame_index: int=0 if source_id=="idle" and atlas_visual_enabled and _has_atlas_clip("idle") else i
+			frames.append(load("res://art/whalebelly/animations/player/body/%s/%03d.png" % [source_id,frame_index]))
 		textures[source_id] = frames
 		if source_id in ["heavy","A1_dash","A2_float","A3_anchor","A4_parry"]:
 			var effects: Array[Texture2D] = []
 			for i in range(36):effects.append(load("res://art/whalebelly/animations/player/effects/%s/%03d.png" % [source_id,i]))
 			effect_textures[source_id]=effects
+
+func _has_atlas_clip(id: String) -> bool:
+	var mapping: Dictionary={"idle":"idle","run":"run","jump_land":"jump","strike_02":"double_jump","strike_01":"strike1","heavy":"heavy","hit":"hurt","recover":"heal","interact":"interact","defeat":"defeat","A1_dash":"dash","A2_float":"float","A3_anchor":"pogo","A4_parry":"orb","A5_slit":"slit"}
+	var key: String=str(mapping.get(id,""))
+	if not atlas_coverage.has(key): return false
+	var spec: Dictionary=atlas_coverage[key]
+	if not spec.has("body") or not ResourceLoader.exists(str(spec.body.get("texture",""))): return false
+	return spec.get("fx")==null or ResourceLoader.exists(str(spec.fx.get("texture","")))
 
 func _set_texture(value: int) -> void:
 	if animation_state.is_empty(): return
@@ -233,7 +258,9 @@ func _set_texture(value: int) -> void:
 		$Visual/Effect.texture=effect_textures[source_id][clampi(value,0,35)] if effect_textures.has(source_id) else null
 
 func _physics_process(dt: float) -> void:
-	if not controls_enabled: return
+	if not controls_enabled:
+		skill_controller.input.clear()
+		return
 	if hitstop > 0:
 		hitstop = maxf(0,hitstop-dt)
 		return
@@ -260,13 +287,13 @@ func _physics_process(dt: float) -> void:
 	_update_action_events()
 	var axis := movement_axis()
 	var locked := state in ["recover","interact","hit","defeat"]
-	if absf(axis)>0.1 and state not in ["A1_dash","A5_slit"] and not locked: facing=signf(axis)
-	if state in ["A1_dash","A5_slit"]:
+	if absf(axis)>0.1 and state not in ["A1_dash","A5_slit"] and not locked and not skill_controller.active: facing=signf(axis)
+	if state_duration>0.0 and state in ["A1_dash","A5_slit"]:
 		velocity = Vector2(facing*(dash_speed if state=="A1_dash" else slit_speed),0)
 	else:
 		if state != "hit":
 			var control := 1.0 if grounded else air_control
-			if wall_lock <= 0: velocity.x = move_toward(velocity.x,0.0 if locked else axis*max_speed,(friction if is_zero_approx(axis) or locked else acceleration)*control*dt)
+			if wall_lock <= 0: velocity.x = move_toward(velocity.x,0.0 if locked else axis*max_speed*(0.42 if Input.is_action_pressed("tp_walk") else 1.0),(friction if is_zero_approx(axis) or locked else acceleration)*control*dt)
 		if not grounded:
 			if short_jump and velocity.y<0:
 				var remaining := maxf(0, short_jump_height-(jump_start_y-position.y))
@@ -282,6 +309,7 @@ func _physics_process(dt: float) -> void:
 	collision_mask=movement_collision_mask()
 	_before_move(dt)
 	move_and_slide()
+	skill_controller.after_move()
 	if position.y > world_bounds.end.y+100: take_damage(max_health,Vector2.ZERO,true)
 	$Visual.scale.x = visual_scale*facing
 	body.material.set_shader_parameter("flash",1.0 if damage_flash_left>0 and int(damage_flash_left*30)%2==0 else 0.0)
@@ -303,7 +331,8 @@ func _physics_process(dt: float) -> void:
 func _read_input() -> void:
 	if Input.is_action_just_pressed("tp_jump"): jump_buffer=jump_buffer_time
 	if Input.is_action_just_released("tp_jump"): short_jump=true
-	var mapping := {"tp_attack":"A3_anchor" if Input.is_action_pressed("tp_down") and not is_on_floor() else "strike_01","tp_dash":"A1_dash","tp_slit":"A5_slit","tp_orb":"A4_parry","tp_heavy":"heavy","tp_heal":"recover","tp_interact":"interact"}
+	skill_controller.input.read(get_physics_process_delta_time())
+	var mapping := {"tp_slit":"A5_slit", "tp_heavy":"heavy", "tp_heal":"recover"}
 	for action in mapping:
 		if Input.is_action_just_pressed(action):
 			if not request_action(mapping[action]):
@@ -314,20 +343,24 @@ func movement_axis() -> float:
 	return Input.get_axis("tp_left","tp_right")
 
 func movement_collision_mask() -> int:
-	return phase_collision_mask if state in ["A1_dash","A5_slit"] else world_collision_mask
+	if skill_controller.active and skill_controller.visual_key=="shadow_dash": return world_collision_mask & ~4
+	return world_collision_mask if skill_controller.active else (phase_collision_mask if state_duration>0.0 and state in ["A1_dash","A5_slit"] else world_collision_mask)
 
-func _before_move(_dt:float) -> void:
-	pass
+func _before_move(dt:float) -> void:
+	skill_controller.apply_motion(dt)
 
 func locomotion_animation() -> String:
 	if not is_on_floor():return "A2_float" if _wall_direction()!=0 and velocity.y>0 else "jump_land"
 	return "run" if absf(velocity.x)>5 else "idle"
 
 func _can_jump_cancel() -> bool:
+	if skill_controller.active: return skill_controller.can_cancel("jump")
 	return state_duration<=0 or state=="strike_02" or (state in ["strike_01","A3_anchor"] and state_time>=2.0/animation_fps+1.0/animation_fps+attack_recovery*.5)
 
 func _try_jump() -> void:
 	var wall := _wall_direction()
+	if (wall==0 or is_on_floor()) and coyote<=0 and jump_count>=2: return
+	if skill_controller.active: skill_controller.cancel()
 	if wall!=0 and not is_on_floor():
 		velocity=Vector2(-wall*wall_jump_x,-sqrt(2*gravity*wall_jump_height))
 		wall_lock=.15
@@ -341,7 +374,10 @@ func _try_jump() -> void:
 		jump_count=2
 		_enter("strike_02",.35)
 	else: return
-	if state!="strike_02": state_duration=0
+	if state!="strike_02":
+		state="jump_land"
+		state_time=0.0
+		state_duration=0.0
 	jump_start_y=position.y
 	short_jump=false
 	apex_used=false
@@ -358,9 +394,14 @@ func _wall_direction() -> float:
 
 func ability_available(_action:String) -> bool:return true
 
+func skill_unlocked(_rule: String) -> bool: return true
+func skill_practice_enabled() -> bool: return true
+
 func request_action(action: String) -> bool:
+	if TideSkillCatalog.ACTIONS.has(action): return skill_controller.request(action)
+	if skill_controller.active and not skill_controller.can_cancel("dash" if action=="A1_dash" else "skill"): return false
 	if health<=0 or not controls_enabled: return false
-	if state_duration>0:
+	if state_duration>0 and not skill_controller.active:
 		if action==state: return false
 		if PRIORITY.get(action,0)<=PRIORITY.get(state,0): return false
 		if state in ["strike_01","A3_anchor"] and action=="A1_dash" and not _can_jump_cancel(): return false
@@ -386,6 +427,12 @@ func request_action(action: String) -> bool:
 	return true
 
 func _enter(action: String,duration: float) -> void:
+	if not skill_controller.entering: skill_controller.cancel()
+	if action in ["hit","defeat","interact"]: clear_projectiles()
+	if action in ["hit","defeat","recover","interact"]:
+		skill_controller.input.clear()
+		pending_action=""
+		jump_buffer=0.0
 	state=action
 	state_time=0
 	state_duration=duration
@@ -397,12 +444,15 @@ func _enter(action: String,duration: float) -> void:
 	animation_tag.emit(action+":start")
 
 func _update_action_events() -> void:
+	if skill_controller.active:
+		skill_controller.tick()
+		return
 	if state_duration<=0: return
 	if state=="defeat" and dead_signal_sent:return
 	var clip := anim.get_animation("game/"+state)
 	var marker := "damage" if state in ["strike_01","A3_anchor"] else "release"
 	var trigger := clip.get_marker_time(marker)*12.0/animation_fps if clip.has_marker(marker) else 2.0/animation_fps
-	if state in ["strike_01","A3_anchor"] and state_time>=trigger and state_time<trigger+1.0/animation_fps:
+	if state in ["strike_01","A3_anchor"] and state_time>=trigger and (not event_done or state_time<trigger+1.0/animation_fps):
 		_melee(state=="A3_anchor")
 	if not event_done and state_time>=trigger:
 		event_done=true
@@ -443,22 +493,22 @@ func _hit(enemy: Node,amount: int,gain_soul: bool) -> void:
 	if hit_targets.has(enemy.get_instance_id()): return
 	hit_targets[enemy.get_instance_id()]=true
 	enemy.take_hit(amount)
+	var impact: Vector2=enemy.hurt_rect().get_center() if enemy.has_method("hurt_rect") else enemy.global_position
+	skill_effect.emit(skill_controller.visual_key if skill_controller.active else state,"impact",impact,facing)
 	if gain_soul: soul=mini(max_soul,soul+soul_per_hit)
 	stats_changed.emit(health,soul)
 	hitstop=hitstop_duration
 	hit_confirmed.emit()
 
 func _spawn_orb() -> void:
-	var projectile := preload("res://src/campaign/tide_orb.gd").new()
-	projectile.position=global_position+Vector2(facing*24,-24)
-	projectile.direction=facing
-	projectile.speed=orb_speed
-	projectile.life=orb_lifetime
-	projectile.damage=orb_damage
-	projectile.caster=self
-	get_parent().add_child(projectile)
+	skill_controller.attacks.projectile(orb_damage,facing)
+
+func clear_projectiles() -> void:
+	for projectile: Node in get_tree().get_nodes_in_group("tide_player_projectiles"):
+		if projectile.caster==self: projectile.queue_free()
 
 func take_damage(amount: int=15,source: Vector2=Vector2.ZERO,force: bool=false) -> bool:
+	if not force and skill_controller.parry_damage(source): return false
 	if health<=0 or (invulnerable>0 and not force): return false
 	health=maxi(0,health-amount)
 	soul=maxi(0,soul-hurt_soul_loss)
@@ -476,6 +526,8 @@ func take_damage(amount: int=15,source: Vector2=Vector2.ZERO,force: bool=false) 
 	return true
 
 func respawn() -> void:
+	skill_controller.cancel()
+	skill_controller.input.clear()
 	locomotion_visual.reset()
 	position=spawn_point
 	facing=1.0
@@ -499,3 +551,6 @@ func respawn() -> void:
 	body.material.set_shader_parameter("flash",0.0)
 	for key in cooldowns: cooldowns[key]=0.0
 	stats_changed.emit(health,soul)
+
+func _exit_tree() -> void:
+	skill_controller.dispose()

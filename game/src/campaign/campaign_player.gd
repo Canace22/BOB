@@ -11,6 +11,7 @@ var armed_doors:Dictionary={}
 var host: Node2D
 var art: Node2D
 var last_safe:=Vector2.ZERO
+const GRAPPLE_FOOT_OFFSET:=Vector2(0,55)
 var grapple_target:=Vector2.INF
 var float_left:float=1.5
 var drop_timer:float=0
@@ -20,10 +21,13 @@ var qa_mode:bool=false
 var qa_axis:float=0
 var transition_locked:bool=false
 var run_visual: Node
+var world_effects: TideWorldEffects
 
 func _ready() -> void:
 	spawn_lock_left=spawn_input_lock
 	world_bounds=Rect2(Vector2.ZERO,host.point(host.room.size))
+	preload_actions=false
+	atlas_visual_enabled=true
 	super._ready()
 	floor_max_angle=deg_to_rad(55)
 	floor_snap_length=24
@@ -36,10 +40,14 @@ func _ready() -> void:
 	var source_height:float=textures.idle[0].get_image().get_used_rect().size.y
 	visual_scale=target_height/maxf(source_height,1)
 	$Visual.scale=Vector2.ONE*visual_scale
-	run_visual=preload("res://src/campaign/campaign_run_visual.gd").new()
+	run_visual=load("res://src/campaign/action_visual.gd").new() if ResourceLoader.exists("res://src/campaign/action_visual.gd") else preload("res://src/campaign/campaign_run_visual.gd").new()
 	run_visual.name="RunVisualController"
 	add_child(run_visual)
 	run_visual.setup(self,target_height)
+	world_effects=TideWorldEffects.new()
+	world_effects.name="WorldEffects"
+	add_child(world_effects)
+	world_effects.setup(self,target_height)
 	for ray:RayCast2D in [$Foot0,$"Foot-10",$Foot10]:ray.target_position.y=30
 	health=clampi(host.health,0,max_health)
 	soul=host.player_soul
@@ -52,6 +60,7 @@ func _ready() -> void:
 	damaged.connect(func():host.sfx("hurt");host.camera_feedback=.18;host.record_event("player_hurt",{"health":health}))
 	died.connect(func():host.respawn.call_deferred())
 	animation_tag.connect(_campaign_tag)
+	skill_effect.connect(_campaign_skill_effect)
 	stats_changed.emit(health,soul)
 
 func _sync_stats(h:int,s:int) -> void:
@@ -64,19 +73,31 @@ func _campaign_tag(tag:String) -> void:
 	elif tag=="strike_01:start":host.sfx("strike");host.record_event("attack",{"room":host.room_index})
 	elif tag=="heavy:release":host.sfx("heavy")
 	elif tag=="recover:end":host.sfx("heal")
+	elif tag.ends_with(":release") and TideSkillCatalog.ACTIONS.has(tag.trim_suffix(":release")):
+		host.sfx("heavy" if tag.begins_with("dive") or tag.begins_with("dark_dive") else "sweep")
+		host.record_event("skill_release",{"id":tag.trim_suffix(":release"),"facing":facing})
+
+func _campaign_skill_effect(key: String, event: String, _origin: Vector2, _direction: float) -> void:
+	if event=="land":
+		host.sfx("heavy")
+		host.camera_feedback=0.12
+	elif key=="parry" and event=="success": host.sfx("hit")
 
 func _physics_process(dt:float) -> void:
 	var reference_mode:bool=host.reference_visible or host.layer_solo>=0 or not host.capture_path.is_empty()
 	$Visual.visible=not reference_mode
 	if art!=null:art.visible=reference_mode
-	if reference_mode or transition_locked:return
+	if reference_mode or transition_locked:
+		skill_controller.input.clear()
+		return
 	if host.health!=health:
 		health=clampi(host.health,0,max_health)
 		stats_changed.emit(health,soul)
 	spawn_lock_left=maxf(0,spawn_lock_left-dt)
 	drop_timer=maxf(0,drop_timer-dt)
 	if is_on_floor():float_left=1.5;membrane_boost=false
-	interacted_target=host if interaction_nearby() else null
+	var gate: Node=skill_controller.nearby_gate()
+	interacted_target=gate if is_instance_valid(gate) else (host if interaction_nearby() else null)
 	var before_move_x:float=position.x
 	super._physics_process(dt)
 	run_visual.update(dt,position.x-before_move_x)
@@ -131,13 +152,20 @@ func _find_ring() -> void:
 	if grapple_target!=Vector2.INF:grapple_target=Vector2.INF;return
 	var distance:float=390
 	for point:Array in host.room.get("rings",[]):
-		var target:Vector2=host.point(point)+Vector2(0,55)
+		var target:Vector2=host.point(point)+GRAPPLE_FOOT_OFFSET
 		if position.distance_to(target)<distance and position.distance_to(target)>90 and (target.x-position.x)*facing>-35:
 			distance=position.distance_to(target);grapple_target=target
 	if grapple_target!=Vector2.INF:host.record_event("anchor",{"target":[grapple_target.x,grapple_target.y]})
 
+func grapple_anchor_world_position() -> Vector2:
+	# grapple_target remains the feet's movement destination in the room frame.
+	if grapple_target==Vector2.INF:return Vector2.INF
+	return get_parent().to_global(grapple_target-GRAPPLE_FOOT_OFFSET)
+
 func _before_move(dt:float) -> void:
 	floating=false
+	super._before_move(dt)
+	if skill_controller.active: return
 	if drop_timer>0:velocity.y=maxf(velocity.y,180)
 	if grapple_target!=Vector2.INF:
 		velocity=position.direction_to(grapple_target)*640
@@ -150,7 +178,19 @@ func locomotion_animation() -> String:
 	if floating:return "A2_float"
 	return super.locomotion_animation()
 
+func skill_unlocked(rule: String) -> bool:
+	if host.practice or (host.qa and host.qa_full_abilities): return true
+	match rule:
+		"always": return true
+		"chapter": return host.completed
+		"R1-03": return host.collected.get("R1-03",false)
+		_: return host.has_ability(rule)
+
+func skill_practice_enabled() -> bool:
+	return host.practice or (host.qa and host.qa_full_abilities)
+
 func ability_available(action:String) -> bool:
+	if TideSkillCatalog.ACTIONS.has(action): return skill_unlocked(str(TideSkillCatalog.definition(action).unlock))
 	return host.has_ability("dash") if action in ["A1_dash","A5_slit"] else true
 
 func request_action(action:String) -> bool:
@@ -175,6 +215,7 @@ func hurt(amount:int,fall:bool=false) -> void:
 	if fall:position=last_safe;velocity=Vector2.ZERO;grapple_target=Vector2.INF
 
 func interaction_nearby() -> bool:
+	if is_instance_valid(skill_controller.nearby_gate()): return true
 	var reward:Array=host.room.get("reward",[])
 	if reward.size()==2 and position.distance_to(host.point(reward))<100 and not host.collected.get(str(host.room.id),false):return true
 	for door:Dictionary in host.room.get("doors",[]):
@@ -187,6 +228,10 @@ func _interact_campaign(_target:Node) -> void:
 	_finish_interact.call_deferred()
 
 func _finish_interact() -> void:
+	world_effects.clear()
+	clear_projectiles()
+	skill_controller.cancel()
+	skill_controller.input.clear()
 	# Defer the old room-changing callback until the physics/animation tick finishes.
 	host.interact()
 	if is_inside_tree():transition_locked=false
@@ -209,6 +254,10 @@ func _check_door_entry() -> void:
 			break
 
 func _finish_door(door:Dictionary) -> void:
+	world_effects.clear()
+	clear_projectiles()
+	skill_controller.cancel()
+	skill_controller.input.clear()
 	host.enter_door(door)
 	if is_inside_tree():transition_locked=false
 
