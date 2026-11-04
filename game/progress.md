@@ -259,3 +259,11 @@ Pages首次稀疏检出卡在读取马上要替换的13个旧godot包blob；停�
 本地 check 0错误、工程测试48/48、原生GPU主线58/58、UI专项28/28、真实浏览器26/26且0错误；资源审计missing为空。专项伤害/资源/Boss使用独立QA夹具，浏览器鼠标键盘走真实营地和房间路线。1280×720、1920×1080及浏览器2560×1080已验，超宽沿用16:9黑边。手柄、触控和重绑定专项未验证。截图、日志与录像在build/qa/ui-system，仅本地保留。
 
 已更新README、架构、UI说明、资源台账、字体制作说明及Godot开发Skill。源码提交 `c411552c1897fbc5d9556ed12f8a4480897df5a0` 已普通推送；正在发布与线上复验，结果另记。发布首次被旧 sparse-checkout.lock 阻止；检查无Git进程后仅移除该零字节残留锁并使用原脚本重试，未重置检出或远端历史。
+
+
+### UI 发布与公网验证结果
+
+- 运行源码 `c411552c1897fbc5d9556ed12f8a4480897df5a0`；Pages发布 `952abd489705c129191d4d689a5b03abf15f1abe`，普通推送，其他历史顶层tree逐项保持一致。[部署41765916305](https://github.com/Canace22/BOB/actions/runs/41765916305)成功；实际 [Godot入口](https://canace22.github.io/BOB/godot/) 的build.json源码版本与downloads.json哈希清单均匹配。
+- 原脚本重试已成功导出、准备Godot目录，但Node复制根index.html遇到Windows文件错误。保留准备结果，用原生Copy-Item补齐根入口，逐文件SHA校验与导出相同，检查历史tree和提交范围后完成同等普通提交/推送；没有重复创建发布历史或强推。
+- 公网浏览器使用全新存储、真实Pages下载，900秒等待时仍为126.9/147.5MiB，未进入标题，未执行游戏操作断言。`build/qa/ui-system/online-run.log`、`online/report.json`、`online/network.json`保留超时证据。线上部署/清单核验通过，**线上冷启动及交互未验证通过**；不以本地缓存注入替代公网加载。首载包体和当前网络是交付限制。
+- 同一最终导出的本地真实浏览器26/26、GPU UI28/28、主线58/58、工程48/48已通过。可通过 `node tools/godot.mjs run` 或独立本地Web服务试玩；本轮全部页面截图、死亡重试记录和操作录像位于 `build/qa/ui-system/`。用户真实存档未用于测试。
