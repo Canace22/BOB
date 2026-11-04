@@ -27,15 +27,16 @@
 
 ## 当前游戏的图片处理
 
-当前856张运行图片用Framecraft保真PNG处理，约135.26 → 121.07 MiB，保持原尺寸、可见像素、Alpha、裁片与锚点。9个可重开的 `.framecraft` 工程保存原件与结果；来源哈希、实际平台输出和复核命令见[压缩批次](source/framecraft-runtime/README.md)。
+当前967张运行图片已分批用Framecraft保真PNG处理，原件与结果保存在11个可重开的 `.framecraft` 工程。新增111张的保真PNG约53.48 → 52.36 MiB；50张场景另用Godot质量0.9的轻度有损导入，Web启动文件约147.46 → 103.15 MiB。图片尺寸、Alpha与动画数据不变，角色和特效保持保真。来源哈希、具体边界和复核命令见[压缩批次](source/framecraft-runtime/README.md)。
 
 ```sh
 python assets/source/framecraft-runtime/compress.py --verify
+python assets/source/framecraft-runtime/compress.py --verify --batch 2026-11-04
 node game/tools/audit_resources.mjs
 node tools/godot.mjs sync-art
 ```
 
-压缩验证需要Pillow和NumPy，可使用现有Framecraft的Python环境。素材同步只从 `assets/` 读取，不需要恢复旧工程。动态加载路径、930个当前同步文件及其拥有者见 `game/content/whalebelly/runtime-resources.json`。
+压缩验证需要Pillow和NumPy，可使用现有Framecraft的Python环境。素材同步只从 `assets/` 读取，不需要恢复旧工程。动态加载路径、当前同步文件及其拥有者见 `game/content/whalebelly/runtime-resources.json`，实际引用以审计结果为准。
 
 完整 `legacy/`、旧模块版、四批旧角色动画和旧版专用运行副本已移到[归档分支](../docs/legacy-archive.md)。台账中的V2接入记录保留历史分支标记；这些记录不代表当前Godot的加载关系。当前资源与尚未接入的创作素材按用途分别判断，不能仅因未被主场景引用就删除母版或未来区域素材。
 

@@ -1,5 +1,9 @@
 # 美术资源台账
 
+## 2026-11-04 新增资源压缩
+
+六房环境及拾潮者动作的111张既有PNG通过Framecraft保真处理，约53.48 → 52.36 MiB，原件和结果保存为两个可重开工程。50张场景的Godot运行编码另用质量0.9轻度有损压缩，Alpha和尺寸不变；角色、特效和偏差较大的平台边缘保持保真。派生副本不新增创作资产ID，原母版、台账原图和制作记录保持有效。来源哈希、工程、导入设置和恢复方法见[本批说明](source/framecraft-runtime/batches/2026-11-04/README.md)。
+
 ## R1后续六房环境分件（2026-10-31）
 
 制作与原件/母版入口：[r1-chapter-scenes](source/r1-chapter-scenes/README.md)。逐件ID、来源、层级与方法在`chapter.json`及各房`elements.json`；运行PNG由`game/art/manifest.json`登记同步。当前接入与验收以`game/progress.md`为准，不将已准备的后续房间规格当作完成场景。

@@ -31,6 +31,8 @@ assets/runtime/baleen-wan22/*.png filter=lfs diff=lfs merge=lfs -text
 # Restored Whalebelly campaign runtime art.
 assets/source/framecraft-runtime/projects/**/*.png filter=lfs diff=lfs merge=lfs -text
 assets/runtime/sprites/framecraft-runtime/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/source/framecraft-runtime/batches/*/projects/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/runtime/sprites/framecraft-runtime-batches/**/*.png filter=lfs diff=lfs merge=lfs -text
 assets/runtime/godot-support/**/*.wav filter=lfs diff=lfs merge=lfs -text
 assets/runtime/godot-support/**/*.ogg filter=lfs diff=lfs merge=lfs -text
 assets/runtime/godot-support/**/*.ttf filter=lfs diff=lfs merge=lfs -text

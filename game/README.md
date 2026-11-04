@@ -21,6 +21,8 @@ node tools/godot.mjs test
 
 找不到引擎时，将 `GODOT` 设置为现有Godot 4.7.2 console可执行文件。运行素材由 `art/manifest.json` 从 `assets/` 同步，不依赖旧工程目录。图片来源、工作台工程与压缩方式见 [Framecraft批次](../assets/source/framecraft-runtime/README.md)。
 
+当前Web启动文件约103.15 MiB，较本轮压缩前减少约30%。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码，具体设置与恢复方式见[本批说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
+
 ## R1后续六房环境
 
 R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使用。数字 **2–7** 为已有房间预览；**Tab** 切换全景/跟随镜头，**F4** 查看四层，**F2** 对照原图。预览不是能力解锁；正式入口仍按Boss、浮游和锚环限制推进。R1-06/07是后续能力回访房，**F9** 只临时开放当前会话的练习能力。

@@ -1,6 +1,6 @@
 # Framecraft 运行图片压缩
 
-正式工程当前使用的 856 张运行图片通过 Framecraft 的本机压缩接口处理，约 135.26 → 121.07 MiB（减少 10.48%）。输出放在 `assets/runtime/sprites/framecraft-runtime/`；`game/art/manifest.json` 同步到游戏。原始文件保存在本目录 `projects/` 的 9 个可重开 `.framecraft` 工程中。
+这里保存运行图片的 Framecraft 处理方法、原件和来源记录。2026-11-03 的 856 张图片约 135.26 → 121.07 MiB，原件保存在 `projects/` 的 9 个可重开工程；新增 111 张图片的处理及游戏包压缩见 [2026-11-04 批次](batches/2026-11-04/README.md)。
 
 本批保留原尺寸、完整颜色与 Alpha：保真 PNG、100% 尺寸、透明阈值 0、锐化 0。只清零完全透明像素里不可见的 RGB。若平台输出比输入更大，保留较小的输入文件；两者都经过可见像素与透明度一致性核对。没有使用调色板量化或重新抠图。
 
@@ -16,5 +16,9 @@ node tools/godot.mjs sync-art
 ```
 
 该脚本调用真实的 `/api/compression/frame`，按帧数和像素量拆分工程，再通过 `/api/projects` 保存并重开验证。脚本拒绝覆盖已完成批次；新增素材建立新批次。已有批次执行 `python assets/source/framecraft-runtime/compress.py --verify` 检查输出和来源工程；引用复核执行 `node game/tools/audit_resources.mjs`。临时缓存与自动验收报告放在 `game/build/qa/`。
+
+新增素材使用 `--batch <新批次名>`，只选择同步清单中尚未经过 Framecraft 的 PNG；已有批次不会覆盖。运行前确认 Git LFS 已还原图片实体。新批次的原件、结果及输入源码提交保存在 `batches/<批次名>/`，运行副本在 `assets/runtime/sprites/framecraft-runtime-batches/<批次名>/`。加 `--verify --batch <批次名>` 可独立复核，之后运行 `node tools/godot.mjs sync-art`。
+
+PNG 文件缩小不等于 Godot 导出包按相同比例缩小。Godot 会重新编码纹理，应比较实际 Web 导出与启动下载文件；场景的轻度有损编码只修改 `.import`，保留原 PNG 和坐标。对实际导入纹理复核尺寸、Alpha 与颜色，再看七房实机；低透明边缘等偏差较大的对象继续保真导入。角色/特效本批保持保真编码。
 
 在工作台顶部选择本目录的 `projects/`，打开对应工程即可比较原帧和压缩帧。项目文件和正式导出入库，ZIP 传输包不入库。最终体积与游戏验证见 [game/progress.md](../../../game/progress.md)。

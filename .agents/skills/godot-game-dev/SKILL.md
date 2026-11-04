@@ -13,6 +13,7 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 - 素材先入 `assets/` 并维护台账，再写 `game/art/manifest.json`、运行 `node tools/godot.mjs sync-art`。当前清单不依赖 `legacy/`；正式画面遵循根2D美术规则。
 - 已有精灵/图集的整理与压缩用个人 `2d-sprite-animation` Skill的Framecraft流程。可批量调用真实本机接口，原件与实际输出一并存 `.framecraft`，保存后重开。BOB已验证配方见[压缩批次](../../../assets/source/framecraft-runtime/README.md)。
 - 手绘素材优先原尺寸保真PNG、阈值0、锐化0；逐张比较尺寸、可见RGBA与Alpha，只清理全透明像素的隐藏RGB。若输出更大，保留原文件并记录实际平台结果。调色板会改变颜色/半透明边缘，不能将它称为无损。
+- 增量处理使用 `compress.py --batch <新名称>`，先还原Git LFS实体；不要覆盖旧批次。PNG压缩收益与Godot包体分别统计：引擎会重新编码。需要继续缩包时，可对场景试验原尺寸 `compress/mode=1`、质量0.9，实际解码检查尺寸、Alpha和可见RGB，再看七房实机。偏差较大的对象保留mode0，不能只以体积小为验收依据；角色/特效不自动沿用场景参数。配方、50张适用清单与回退例见[增量批次](../../../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
 - 不把进入同步清单当作当前在用。归档前从正式入口、七房、现用角色参数场和预览检查引用，保守展开动态加载；使用 `node game/tools/audit_resources.mjs` 和 `runtime-resources.json`。确认旧版专用的资源、消费者、专用测试及同步项一起移出。原画库和未来区域素材不因尚未接入而自动归档。
 - 保存完整归档分支并普通推送后，再移出当前分支；只改本批相关文件。已存在的无关修改保留。一次性恢复工具与历史清单不当作当前验收入口。
 
