@@ -18,8 +18,11 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 	if id==2:
 		chunk.get_node("ChapterEnvironment/World/Surface").texture=preload("res://art/xumen-transitions/tongue-world-clean.png")
 		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-transitions/tongue-middle-clean.png")
+	if id==3:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=preload("res://art/xumen-transitions/arena-world-clean.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-transitions/arena-middle-clean.png")
 	for edge: String in XumenAuthoredTransitions.EDGES:
-		if edge=="E02" and id in [1,2]:
+		if (edge=="E02" and id in [1,2]) or (edge=="E03" and id in [2,3]):
 			var old_joint: Node2D=chunk.get_node_or_null("Continuity_"+edge)
 			if old_joint!=null:
 				old_joint.hide()
@@ -39,7 +42,7 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 		if not compiled.has(key):
 			var code: String=source
 			if code.find("void fragment()")<0:code+="\nvoid fragment(){}"
-			code=code.replace("shader_type canvas_item;","shader_type canvas_item;\nuniform vec2 chunk_origin; uniform vec2 chunk_size; varying vec2 chunk_pixel; uniform float e01_far_clean=0.0; uniform sampler2D e01_owner; uniform bool use_e01_owner=false; uniform sampler2D joint_owner; uniform bool use_joint_owner=false;")
+			code=code.replace("shader_type canvas_item;","shader_type canvas_item;\nuniform vec2 chunk_origin; uniform vec2 chunk_size; varying vec2 chunk_pixel; uniform float e01_far_clean=0.0; uniform sampler2D e01_owner; uniform bool use_e01_owner=false; uniform sampler2D joint_owner; uniform bool use_joint_owner=false; uniform sampler2D next_owner; uniform bool use_next_owner=false;")
 			var vertex: int=code.find("void vertex()")
 			if vertex>=0:
 				var start: int=code.find("{",vertex)+1
@@ -61,6 +64,7 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 				end+=1
 			code=code.insert(end-1,"\nif(use_e01_owner) COLOR.a*=texture(e01_owner,clamp((chunk_pixel-chunk_origin)/chunk_size,vec2(0.0),vec2(1.0))).r; COLOR.a*=mix(1.0,smoothstep(800.0,1400.0,chunk_pixel.x-chunk_origin.x),e01_far_clean);\n")
 			code=code.insert(end-1,"\nif(use_joint_owner) COLOR.a*=texture(joint_owner,clamp((chunk_pixel-chunk_origin)/chunk_size,vec2(0.0),vec2(1.0))).r;\n")
+			code=code.insert(end-1,"\nif(use_next_owner) COLOR.a*=texture(next_owner,clamp((chunk_pixel-chunk_origin)/chunk_size,vec2(0.0),vec2(1.0))).r;\n")
 			var shader:=Shader.new()
 			shader.code=code
 			compiled[key]=shader
@@ -79,6 +83,12 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 			var owner: String="E02-"+("far-owner-" if far_layer else "owner-" if world_layer else "other-owner-")+str(id)
 			material.set_shader_parameter("use_joint_owner",true)
 			material.set_shader_parameter("joint_owner",load("res://art/xumen-transitions/"+owner+".png"))
+		if id in [2,3]:
+			var path: String=str(chunk.get_path_to(node))
+			var far_layer: bool=path.begins_with("Far/") or path.begins_with("ChapterEnvironment/Far/") or path=="ContinuousOralDepth"
+			var owner: String="E03-"+("far-owner-" if far_layer else "owner-")+str(id)
+			material.set_shader_parameter("use_next_owner",true)
+			material.set_shader_parameter("next_owner",load("res://art/xumen-transitions/"+owner+".png"))
 		node.material=material
 		items.append(material)
 	materials[id]=items

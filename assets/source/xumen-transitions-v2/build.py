@@ -138,9 +138,34 @@ def clean_e02_room_layers():
     aa=np.array(im);aa[:,:,3]=(aa[:,:,3].astype(float)*np.array(mask.filter(ImageFilter.GaussianBlur(1)))/255).astype('uint8')
     save(Image.fromarray(aa),'tongue-middle-clean');mask.save(S/'masters/tongue-middle-mask.png')
 
+def clean_e03_room_layers():
+    # World-space joint reaches only each room's tail/head, keeping the reward
+    # platform outside the replacement volume. Water selection excludes bone,
+    # lamps and attached vegetation and never changes the physical contour.
+    for ri,name,source in [(2,'tongue-world-clean',O/'tongue-world-clean.png'),(3,'arena-world-clean',R/'game/art/r1-chapter-scenes/R1-04/World.png')]:
+        im=Image.open(source).convert('RGBA');a=np.array(im)
+        yy,xx=np.mgrid[:im.height,:im.width]
+        lip=np.array([sample(ROOMS[ri]['surfaces'][0],x-16)+16 for x in range(im.width)])
+        zone=(xx>940 if ri==2 else xx<920)&(yy<lip[None,:]-2)&(yy>350)
+        rgb=a[:,:,:3].astype(float)
+        blue=np.clip((rgb[:,:,2]-rgb[:,:,0]*1.2)/12,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.12)/12,0,1)
+        selection=zone*blue
+        Image.fromarray((selection*255).astype('uint8')).save(S/'masters'/(name+'-E03-water.png'))
+        a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');save(Image.fromarray(a),name)
+    # Above the arena entrance the old ceiling has an opaque water wedge.
+    im=Image.open(R/'game/art/r1-chapter-scenes/R1-04/Middle.png').convert('RGBA')
+    a=np.array(im);yy,xx=np.mgrid[:im.height,:im.width];rgb=a[:,:,:3].astype(float)
+    zone=(xx<850)&(yy>160)&(yy<650)
+    ramp=np.clip((yy-160)/130,0,1)*np.clip((850-xx)/180,0,1)
+    selection=zone*ramp*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.3)/18,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/18,0,1)
+    a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');save(Image.fromarray(a),'arena-middle-clean')
+    Image.fromarray((selection*255).astype('uint8')).save(S/'masters/arena-middle-E03-water.png')
+
 if __name__=='__main__':
     config={}
     config['E02']=main_edge('E02',1,626.847,3310,3029)
     clean_e02_room_layers()
+    config['E03']=main_edge('E03',2,661.847,5494,5213)
+    clean_e03_room_layers()
     write(S/'masters/placements.json',config)
     write(S/'masters/export-hashes.json',{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in O.glob('*.png')})

@@ -6,9 +6,10 @@ var parts: Dictionary={}
 var schools: Array[ChapterFishGroup]=[]
 var emitters: Array[EnvironmentBubbleEmitter]=[]
 var elapsed: float=0.0
-const EDGES: Array[String]=["E02"]
+const EDGES: Array[String]=["E02","E03"]
 const PLATES: Dictionary={
-	"E02":{"depth":Vector2(3029,-269.153),"arch":Vector2(3460,-253.153),"ground":Vector2(3310,546.847)}
+	"E02":{"depth":Vector2(3029,-269.153),"arch":Vector2(3460,-253.153),"ground":Vector2(3310,546.847)},
+	"E03":{"depth":Vector2(5213,-234.153),"arch":Vector2(5644,-218.153),"ground":Vector2(5494,581.847)}
 }
 
 func _ready() -> void:
@@ -27,14 +28,15 @@ func _ready() -> void:
 		parts[edge]=layers
 		var school:=ChapterFishGroup.new()
 		school.name=edge+"_FISH"
-		school.bounds=Rect2(3910,300,250,100)
+		var shift: Vector2=PLATES[edge].depth-PLATES.E02.depth
+		school.bounds=Rect2(Vector2(3910,300)+shift,Vector2(250,100))
 		school.population=12;school.species=1;school.phase=2.7
 		school.z_index=-18
 		add_child(school);schools.append(school)
 		for i: int in range(2):
 			var bubble:=EnvironmentBubbleEmitter.new()
 			bubble.name=edge+"_BUBBLE_"+str(i)
-			bubble.bounds=Rect2(3910+i*290,280,55,310)
+			bubble.bounds=Rect2(Vector2(3910+i*290,280)+shift,Vector2(55,310))
 			bubble.population=4; bubble.external_clock=true
 			bubble.seed_id=310+i*43; bubble.base_speed=11
 			bubble.bubble_opacity=.19; bubble.z_index=0

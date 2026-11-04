@@ -1,6 +1,7 @@
 extends SceneTree
 var host: WhalebellyMain
 var checks: Array[Dictionary]=[]
+var edge: String="E02"
 func _initialize() -> void:call_deferred("run")
 func step(n: int) -> void:
 	for i: int in range(n):await physics_frame
@@ -15,21 +16,25 @@ func walk(target: float) -> bool:
 		await physics_frame
 	host.release_controls();return false
 func run() -> void:
+	for arg: String in OS.get_cmdline_user_args():
+		if arg.begins_with("--edge="):edge=arg.trim_prefix("--edge=")
+	var source: int=2 if edge=="E03" else 1
+	var shift: float=2184 if edge=="E03" else 0
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.qa_connected=true;host.qa_full_abilities=false;host.integration_external_test=true
 	root.add_child(host);current_scene=host;await step(35)
 	var world: XumenConnectedWorld=host.connected_world
 	var art: XumenAuthoredTransitions=world.authored
 	check("unchanged_26_collision_instances",world.passages.supports==26)
-	check("E02_old_floor_removed",not world.passages.get_node("Floor_E02").has_node("PaintedFloor"))
-	check("E02_all_plates_loaded",art.parts.E02.size()==3 and art.parts.E02.ground.texture!=null)
+	check(edge+"_old_floor_removed",not world.passages.get_node("Floor_"+edge).has_node("PaintedFloor"))
+	check(edge+"_all_plates_loaded",art.parts[edge].size()==3 and art.parts[edge].ground.texture!=null)
 	# Explicit starting fixture; crossing itself uses the existing input and physics.
-	host.load_room(1,[1450,715]);await step(20)
+	host.load_room(source,[1450,600 if source==2 else 715]);await step(20)
 	var id: int=host.player.get_instance_id()
-	check("E02_forward_actual_input",await walk(4610),world.snapshot())
-	check("E02_arrive_tongue_same_player",host.room_index==2 and host.player.get_instance_id()==id)
-	check("E02_reverse_actual_input",await walk(3610),world.snapshot())
-	check("E02_arrive_hub_same_player",host.room_index==1 and host.player.get_instance_id()==id)
+	check(edge+"_forward_actual_input",await walk(4610+shift),world.snapshot())
+	check(edge+"_arrive_same_player",host.room_index==source+1 and host.player.get_instance_id()==id)
+	check(edge+"_reverse_actual_input",await walk(3610+shift),world.snapshot())
+	check(edge+"_return_same_player",host.room_index==source and host.player.get_instance_id()==id)
 	check("no_dissolve",not host.continuity.transition.active)
 	var before: float=art.elapsed
 	paused=true;await create_timer(.2,true).timeout
@@ -46,7 +51,7 @@ func run() -> void:
 	Input.action_release("interact");await step(65)
 	check("camp_written_for_independent_reload",host.last_save_ok and host.checkpoint.room==0 and host.checkpoint.pos.size()==2)
 	var failed: int=checks.filter(func(c: Dictionary)->bool:return not c.pass).size()
-	var file:=FileAccess.open("res://build/qa/xumen-transitions/qa.json",FileAccess.WRITE)
+	var file:=FileAccess.open("res://build/qa/xumen-transitions/"+edge+"-qa.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(checks,"\t"));file.close()
 	print("AUTHORED_COMPLETE checks=",checks.size()," failed=",failed)
 	await host.graceful_quit(1 if failed else 0)
