@@ -207,3 +207,5 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## E01 联合过渡样板
 
 [制作源、母版与复验](source/xumen-e01-seam-v1/README.md)：5份新原件，8张运行位图；独立骨路、斜拱、远景、前景及复用动件。接入与发布状态见game/progress.md。
+
+- [须门后续五边专用过渡](source/xumen-transitions-v2/README.md)：E01样板通过后逐边制作，当前具体状态见production.json；原件、母版、蒙版与运行PNG分开保存。

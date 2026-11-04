@@ -1,0 +1,22 @@
+{
+  "stage": "E02_local_passed",
+  "edges": {
+    "E02": "local_technical_visual_ai_passed",
+    "E03": "pending",
+    "E04": "pending",
+    "E33": "pending",
+    "E35": "pending"
+  },
+  "precondition": "E01 online passed",
+  "next": "E02 publish and online verification, then E03 dedicated variant",
+  "verified": {
+    "check_errors": 0,
+    "engineering": 57,
+    "E02_native": 14,
+    "connected_route": 38,
+    "independent_reload": 2,
+    "chrome_local": 10,
+    "evidence": "game/build/qa/xumen-transitions/",
+    "user_aesthetic": "not_signed"
+  }
+}

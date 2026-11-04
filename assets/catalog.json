@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 38,
+  "revision": 45,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -28772,6 +28772,132 @@
       },
       "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
       "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-transitions-E02-arch",
+      "name": "E02-arch 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/E02-arch.png",
+      "width": 1300,
+      "height": 867,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
+    },
+    {
+      "id": "xumen-transitions-E02-depth",
+      "name": "E02-depth 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/E02-depth.png",
+      "width": 2164,
+      "height": 1535,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
+    },
+    {
+      "id": "xumen-transitions-E02-ground",
+      "name": "E02-ground 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/E02-ground.png",
+      "width": 1600,
+      "height": 500,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
+    },
+    {
+      "id": "xumen-transitions-hub-world-clean",
+      "name": "hub-world-clean 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/hub-world-clean.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
+    },
+    {
+      "id": "xumen-transitions-tongue-middle-clean",
+      "name": "tongue-middle-clean 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/tongue-middle-clean.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
+    },
+    {
+      "id": "xumen-transitions-tongue-world-clean",
+      "name": "tongue-world-clean 联合过渡",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-transitions-v2/tongue-world-clean.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; contour registration and OpenRaster layers",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/02-骨膜渐变-深腔过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-transitions-v2/elements.json",
+      "notes": "User aesthetic separate; collision unchanged."
     }
   ]
 }
