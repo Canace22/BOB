@@ -6,11 +6,11 @@
 
 其中5件新PNG（宽景、中央须板、回流污絮、两张角色动作图集）新增独立资产ID；5件旧件（骨台、骨根、住巢、营地、菌床）保留原ID和历史状态，在 `storyUses` 追加本章使用，不能把复用副本计作新创作。2件WAV与1件动作JSON记录为该批次的非图片伴随文件，避免管理页把它们当图片预览。原创合成低鸣不是鲸类真实录音。
 
-已核对13项源文件、运行副本哈希、PNG尺寸、动作JSON及音频技术结果；本地独立Web真实键鼠路线15项通过且无引擎/浏览器错误，GPU环境24项及返修截图复核通过。章节记录为 `integrated`，运行验收范围限于本地；新资源保留 `needs-review`、`userArtApproval: false`，音频听感待验，线上仍待核实。实际源码/发布与完整证据见[游戏进度](../game/progress.md)。图集有16个真实姿态格，食腐甲退却使用有限帧重组；动态污絮是粒子路径运动，不登记成生物逐帧动作。采用宽须板V1，修改失真的V2保留制作源并明确弃用。
+初版已核对13项源文件、运行副本哈希、PNG尺寸、动作JSON及音频技术结果；本地独立Web真实键鼠路线15项通过且无引擎/浏览器错误，GPU环境24项及返修截图复核通过。章节记录为 `integrated`；初版验证范围限于本地，后续公网结果见下段。新资源保留 `needs-review`、`userArtApproval: false`，音频听感待验。实际源码/发布与完整证据见[游戏进度](../game/progress.md)。图集有16个真实姿态格，食腐甲退却使用有限帧重组；动态污絮是粒子路径运动，不登记成生物逐帧动作。采用宽须板V1，修改失真的V2保留制作源并明确弃用。
 
 10张PNG随后实际经[Framecraft增量批次](source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)处理，12.94→11.77 MiB（−9.02%）；原始 `file/sha256` 保留，另登记压缩 `runtimeSource/runtimeSha256`、[provenance](source/framecraft-runtime/batches/story-c01-2026-11-04/provenance.json)与[可重开工程](source/framecraft-runtime/batches/story-c01-2026-11-04/projects/8f42227e71a74cd991c867165acce602.framecraft/project.json)。旧资产只在 `storyUses` 增加本章映射，不改历史运行身份。正式同步源来自 `assets/runtime/sprites/framecraft-runtime-batches/story-c01-2026-11-04/`，PNG尺寸、Alpha、可见RGBA和动作帧保留。
 
-结合章节130项资源选择后，本地Web启动压缩下载115.51→49.41 MiB；这包含移除无关资源的收益，不等于PNG压缩率。上方路线通过记录属于此前样板，优化包及后续玩法改动须复验；优化包尚未发布，线上仍为 `f75a6b13` 对应版本，后续状态以游戏进度为准。
+结合章节130项资源选择后，Web启动压缩下载115.51→49.41 MiB；这包含移除无关资源的收益，不等于PNG压缩率。优化包与战斗迭代已发布为源码 `006f5170`，本地连按路线16项、谨慎路线17项及公网谨慎路线17项通过，实际PCK和下载哈希已核对。此前样板的15项记录保留为历史，新版证据及首载限制见[游戏进度](../game/progress.md)。线上技术通过不改变用户美术认可及音频听感待确认状态。
 
 ## 2026-11-04 新增资源压缩
 

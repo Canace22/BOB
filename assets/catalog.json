@@ -29509,14 +29509,15 @@
         }
       ],
       "integrationStatus": "integrated",
-      "publicationStatus": "pending",
+      "publicationStatus": "published",
       "runtimeValidation": {
         "status": "passed",
-        "scope": "local-web-keyboard-and-gpu-environment",
+        "scope": "local-and-online-web-keyboard-and-local-gpu-environment",
         "evidence": [
           "game/progress.md",
-          "game/build/qa/story-c01/web/report.json",
-          "game/build/qa/story-c01/environment-checks.json"
+          "game/build/qa/story-c01/combat-stand/report.json",
+          "game/build/qa/story-c01/combat-careful-r4/report.json",
+          "game/build/qa/story-c01/combat-online/report.json"
         ]
       },
       "compression": {
@@ -29530,18 +29531,20 @@
         "technicalStatus": "passed"
       },
       "optimizedExport": {
-        "status": "local-export-completed",
-        "publicationStatus": "pending",
-        "runtimeValidationStatus": "local-web-passed",
+        "status": "published-and-online-verified",
+        "publicationStatus": "published",
+        "runtimeValidationStatus": "local-and-online-web-passed",
         "selectedResources": 130,
         "baselineBootMiB": 115.51,
         "packedBootMiB": 49.41,
         "packedWasmBytes": 10153810,
-        "packedPckBytes": 41651618,
-        "rawPckBytes": 42112360,
-        "onlineSourceAtMeasurement": "f75a6b13b1d484a306f8244c0e0bef8c1721e094",
+        "packedPckBytes": 41653851,
+        "rawPckBytes": 42114936,
+        "onlineSourceAtMeasurement": "006f5170bf4fce355e9f20b9ef353b4bc3dc0a5c",
         "evidence": "game/progress.md",
-        "scope": "PNG compression plus selective resource export; no image resizing or active animation frame removal"
+        "scope": "PNG compression plus selective resource export; no image resizing or active animation frame removal",
+        "sourceCommit": "006f5170bf4fce355e9f20b9ef353b4bc3dc0a5c",
+        "publicationCommit": "5b55b1a5363bd2c68233442deae5a5b5b77fd5c3"
       }
     }
   }

@@ -48,7 +48,7 @@ Web 本地地址 http://127.0.0.1:4193/BOB/godot-story/ ，对应[章节 Pages �
 
 章节导出副本采用明确资源列表，从入口、autoload、脚本引用及已登记动态加载目录递归选择130项资源；遇到未知动态加载写法直接报错。排除无关旧房和已由动作图集替代的独立帧库，保留运行中的36项动作图集、环境动态和原尺寸图片，不减帧。选择报告在 `build/story-export-resources.json`；[架构说明](../docs/architecture.md#web发布)记录维护规则。
 
-2026-11-04本地优化导出：压缩引擎10,153,810字节、压缩PCK 41,651,618字节，共49.41 MiB，优化前115.51 MiB；原始PCK为42,112,360字节。10张PNG实际经[Framecraft增量处理](../assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，12.94→11.77 MiB（−9.02%）；Web总量还受导出资源范围和Godot纹理编码影响，不将两种收益混算。优化版尚未发布，线上仍为 `f75a6b13` 对应版本；优化版路线复验和发布以[进度](progress.md)最新记录为准。
+2026-11-04最终发布导出：压缩引擎10,153,810字节、压缩PCK 41,653,851字节，共49.41 MiB，优化前115.51 MiB；原始PCK为42,114,936字节。10张PNG实际经[Framecraft增量处理](../assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，12.94→11.77 MiB（−9.02%）；Web总量还受导出资源范围和Godot纹理编码影响，不将两种收益混算。线上源码为 `006f5170`；实机路线复验和发布证据见[进度](progress.md)。已有通关存档可在标题选择“开始新旅途”体验战斗迭代。
 
 本章存档 `user://story-c01/progress.json`、测试档 `user://story-c01-qa/progress.json` 与旧 V6 隔离。四个事件按 `met_mender → foragers_retreated → route_known → completed` 顺序保存：首次交流完整结束、两侧敌人实际退回聚食处并停止敌对、内侧指路完整结束、玩家到达出口。跳过战斗、逃出探测范围或中断对话不能推进。死亡重置未完成遭遇，已保存的事件保持；重入按持久阶段恢复世界，不恢复攻击时钟。存档写入成功后才更新内存，失败提示可重试；损坏主档尝试 `.bak`，新旅途先保留 `.before-new`。
 

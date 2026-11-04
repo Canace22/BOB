@@ -122,7 +122,7 @@ node game/tests/serve_web.mjs --story
 
 章节进度在 `user://story-c01/progress.json`，不读取或迁入七房 V6。独立测试可在场景参数后追加 `-- --story-qa`，使用 `user://story-c01-qa/progress.json`；浏览器验收还需独立上下文。保存失败会提示并可重试，损坏主档尝试上一版 `.bak`，确认新旅途另留 `.before-new`。操作与边界见[工程说明](game/README.md#新主线第一章须庭)。
 
-本章优化导出仅选择入口实际需要的130项资源，保留使用中的原尺寸位图及完整动画帧。2026-11-04本地实测启动压缩下载量由115.51降至49.41 MiB；这是导出范围收敛与素材处理后的合计结果。另有10张PNG实际经[Framecraft处理](assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，源文件12.94→11.77 MiB（−9.02%），不能把该比例当作Web包降幅。优化版尚未发布；线上仍为源码 `f75a6b13` 对应版本，最新路线复验与发布状态见[进度](game/progress.md)。
+本章优化导出仅选择入口实际需要的130项资源，保留使用中的原尺寸位图及完整动画帧。2026-11-04启动压缩下载量由115.51降至49.41 MiB；这是导出范围收敛与素材处理后的合计结果。另有10张PNG实际经[Framecraft处理](assets/source/framecraft-runtime/batches/story-c01-2026-11-04/README.md)，源文件12.94→11.77 MiB（−9.02%），不能把该比例当作Web包降幅。战斗与高台迭代已发布为源码 `006f5170`；最新实机复验与限制见[进度](game/progress.md)。已有通关存档可在标题选择“开始新旅途”体验新的战斗节奏。
 
 ## 美术资源
 
