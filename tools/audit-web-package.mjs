@@ -34,6 +34,7 @@ const duplicates = [...byHash.values()].filter(group => group.length > 1);
 const groups = new Map();
 for (const entry of files) {
   const group = entry.source.startsWith('art/tide-picker-action36/') ? 'current character atlases'
+    : entry.source.startsWith('art/enemies/') ? 'current mother crab'
     : entry.source.startsWith('art/whalebelly/reference/') || entry.source.endsWith('/source-reference.png') ? 'F2 source comparison'
     : entry.source.startsWith('art/') && /\.(png|svg)$/.test(entry.source) ? 'room art and environment motion'
     : 'audio, fonts, scenes, scripts and metadata';

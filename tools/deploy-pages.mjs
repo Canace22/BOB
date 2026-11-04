@@ -26,7 +26,10 @@ function assertLocalDirectory(target, parent) {
 }
 
 function prepare() {
-  if (!entryOnly) run(process.execPath, ['tools/godot.mjs', 'export-web']);
+  if (!entryOnly) {
+    run(process.execPath, ['tools/godot.mjs', 'export-web']);
+    run(process.execPath, ['tools/check-web-release.mjs']);
+  }
   const remote = read(['remote', 'get-url', 'origin']);
   const source = read(['rev-parse', 'HEAD']);
   assertLocalDirectory(staging, root);
@@ -69,7 +72,11 @@ function prepare() {
       const item = statSync(path.join(dest, file));
       if (item.isFile() && item.size >= 100 * 1024 * 1024) throw new Error(`Publication file exceeds GitHub limit: ${file}`);
     }
-    writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false }, null, 2));
+    const review = JSON.parse(readFileSync(path.join(root, 'game/build/qa/package-audit/release-review.json'), 'utf8'));
+    if (review.source !== source) throw new Error('Release review does not match the current source revision.');
+    writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false,
+      package: { pckBytes:review.pckBytes, startupBytes:review.startupBytes, previousSource:review.previousSource,
+        previousStartupBytes:review.previousStartupBytes, deltaPercent:review.deltaPercent } }, null, 2));
   }
   cpSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
   writeFileSync(path.join(staging, '.nojekyll'), '');

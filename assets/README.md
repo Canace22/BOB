@@ -27,7 +27,7 @@
 
 ## 当前游戏的图片处理
 
-当前967张同步图片已分批用Framecraft保真PNG处理，原件与结果保存在11个可重开的 `.framecraft` 工程。新增111张的保真PNG约53.48 → 52.36 MiB；50张场景另用Godot质量0.9的轻度有损导入。正式发布继续排除旧动作和独立预览专用资源，启动下载约54.08 MiB，具体见[包体说明](../docs/web-package.md)。图片尺寸、Alpha与动画数据不变，角色和特效保持保真。来源哈希与复核命令见[压缩批次](source/framecraft-runtime/README.md)。
+此前967张同步图片已分批用Framecraft保真PNG处理，原件与结果保存在11个可重开的 `.framecraft` 工程。新增111张的保真PNG约53.48 → 52.36 MiB；50张场景另用Godot质量0.9的轻度有损导入。正式发布排除旧动作和独立预览专用资源，保留新母蟹及主角修复后启动下载约57.58 MiB，具体见[包体说明](../docs/web-package.md)。图片尺寸、Alpha与动画数据保留，后续动作修复和母蟹分别按其制作记录管理，不能套用旧批次的全量像素结论。来源哈希与复核命令见[压缩批次](source/framecraft-runtime/README.md)。
 
 ```sh
 python assets/source/framecraft-runtime/compress.py --verify

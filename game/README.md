@@ -23,7 +23,7 @@ node tools/godot.mjs test
 
 找不到引擎时，将 `GODOT` 设置为现有Godot 4.7.2 console可执行文件。运行素材由 `art/manifest.json` 从 `assets/` 同步，不依赖旧工程目录。图片来源、工作台工程与压缩方式见 [Framecraft批次](../assets/source/framecraft-runtime/README.md)。
 
-当前Web启动下载约54.08 MiB，发布包排除已由当前图集覆盖的旧帧和独立预览专用资源，本地工程继续保留它们。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码。具体设置见[图片处理批次](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)，正式包的选择及复核见[包体说明](../docs/web-package.md)。
+含当前母蟹的Web启动下载约57.58 MiB，发布包排除已由当前图集覆盖的旧帧和独立预览专用资源，本地工程继续保留它们。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，主角和特效沿用原有保真编码。具体设置见[图片处理批次](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)，正式包的选择及复核见[包体说明](../docs/web-package.md)。
 
 ## R1后续六房环境
 

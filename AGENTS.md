@@ -76,6 +76,7 @@
 - 代码、场景或关卡数据改动，在仓库根目录运行 `node tools/godot.mjs check` 和 `node tools/godot.mjs test`，并按键实际走一遍受影响路线。阶段状态与验收证据记录到 `game/progress.md`。
 - 资源接入检查实际加载、比例、遮挡、碰撞与可达性、相关动作和存档；按实际加载器能力验证失败处理，未实现的回退要明确说明。
 - 发布用 `node tools/deploy-pages.mjs`：导出 Web 版并合并进已有 `gh-pages` 分支的 `/godot/` 目录，保留 V2 等其他内容，正常推送，不强推；按上方[持续交付流程](#持续迭代与边做边玩)执行并核实线上结果。`legacy/` 下的旧版本只在必要时按 [legacy/README.md](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/README.md) 处理。
+- 每次发布试玩版本都按[Web包体说明](docs/web-package.md)复核实际PCK、开发/旧资源混入、重复项和启动下载量，比较线上版本与体积增减；异常增长先查明并处理。交付必须显示源码/发布版本、PCK与启动大小、线上验证结果；预算和发布闸门由[Godot开发Skill](.agents/skills/godot-game-dev/SKILL.md)及现有脚本执行。
 - 纯文档修改检查事实、相对链接及 `git diff --check`，无需运行游戏回归。专项命令、依赖限制和证据边界见下方桌面验收 Skill。
 
 ## 项目 Skill
