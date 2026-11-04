@@ -46,10 +46,19 @@ export function buildLore(source = execFileSync('git', ['rev-parse', 'HEAD'], {c
     flush();
   }
   const chapters = records.filter(r => r.category === '章节');
+  const tableRows = title => records.find(r => r.title === title).body.split('\n').filter(line => line.startsWith('|')).slice(2).map(line => line.slice(1,-1).split('|').map(cell => cell.trim()));
+  const routeRows = tableRows('章节路线');
+  const battleRows = tableRows('战斗顺序与剧情承接');
   chapters.forEach((chapter, i) => {
     chapter.number = i + 1;
     chapter.place = chapter.body.match(/^腔室：(.+?)。/m)?.[1];
     const combat = chapter.body.split('### 战斗安排')[1]?.trim();
+    const battle = battleRows.find(row => row[0] === `N${String(i+1).padStart(2,'0')}-01`);
+    chapter.plot = routeRows[i]?.[2] || chapter.summary;
+    chapter.encounter = routeRows[i]?.[3] || '';
+    chapter.encounterKind = !battle ? '休整与判断' : battle[1].startsWith('否') ? '可选遭遇' : battle[1].includes('主要') ? '主要对抗' : '短遭遇';
+    chapter.motive = battle?.[2] || '本章不安排强制交战';
+    chapter.aftermath = battle?.[3] || (i === 9 ? '核对封城记录与鲸生前回声，理解守护者的功绩和代价' : '根据沿途证据决定有限开闸，沿回流长腔折返前往尾根');
     records.push({id: `place-${i + 1}`, title: chapter.place, category: '地点', status: '叙事提案', doc: 'story', line: chapter.line, body: chapter.body.split('\n\n').slice(0, 2).join('\n\n'), summary: chapter.summary, chapter: chapter.id});
     if (combat) records.push({id: `combat-${i + 1}`, title: `${String(i + 1).padStart(2, '0')} · ${chapter.place}`, category: '战斗', status: '叙事提案', doc: 'story', line: chapter.line, body: combat, summary: combat, chapter: chapter.id});
   });
@@ -63,7 +72,7 @@ export function buildLore(source = execFileSync('git', ['rev-parse', 'HEAD'], {c
   }
   const data = {source, documents, records};
   mkdirSync(output, {recursive: true});
-  for (const file of ['index.html', 'style.css', 'app.js']) cpSync(path.join(root, 'game/pages/lore', file), path.join(output, file));
+  for (const file of ['index.html', 'style.css', 'map.css', 'app.js', 'map.js']) cpSync(path.join(root, 'game/pages/lore', file), path.join(output, file));
   writeFileSync(path.join(output, 'data.json'), JSON.stringify(data));
   writeFileSync(path.join(output, 'build.json'), JSON.stringify({source, documents: documents.map(({file, sha256, version}) => ({file, sha256, version})), records: records.length}, null, 2));
   for (const doc of documents) writeFileSync(path.join(output, `${doc.id}.md`), doc.raw);

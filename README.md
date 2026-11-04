@@ -8,7 +8,7 @@
 
 | 入口 | 说明 |
 | --- | --- |
-| [世界观数据库](https://canace22.github.io/BOB/lore/) | 分类浏览世界规则、人物、组织与十二章提案，全文搜索并追溯原稿 |
+| [世界观数据库](https://canace22.github.io/BOB/lore/) | 开发用设定卡片、全文搜索、腔室示意地图与章节路线，追溯原稿 |
 | [默认在线试玩](https://canace22.github.io/BOB/) | 自动跳转到当前 Godot 正式版 |
 | [Godot 版在线试玩](https://canace22.github.io/BOB/godot/) | 正式工程 `game/` 的 Web 导出 |
 | [Godot 章节原型](https://canace22.github.io/BOB/godot-chapters/) | 独立发布的章节原型，入口为 `chapters-v1` |
