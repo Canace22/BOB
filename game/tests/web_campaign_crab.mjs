@@ -9,10 +9,11 @@ const out=path.resolve('game/build/qa',process.env.TEST_LABEL??'crab-campaign/we
 fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH??'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']});
 const context=await browser.newContext({viewport:{width:1280,height:720}});
-const page=await context.newPage();page.setDefaultTimeout(180000);
+const page=await context.newPage();page.setDefaultTimeout(Number(process.env.WEB_READY_TIMEOUT_MS??180000));
 const checks=[],errors=[],snapshots=[],held=new Set();
 page.on('pageerror',e=>errors.push(e.message));
 page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+page.on('requestfailed',r=>errors.push(r.url()+': '+r.failure()?.errorText));
 const state=()=>page.evaluate(()=>JSON.parse(window.render_game_to_text()));
 const sleep=ms=>page.waitForTimeout(ms);
 const check=(name,pass)=>{checks.push({name,pass:Boolean(pass)});console.log(pass?'PASS':'FAIL',name);if(!pass)throw new Error(name)};
@@ -24,7 +25,10 @@ async function click(name){const s=await state();const c=s.ui.controls.find(x=>x
 async function walk(x,deadline=10000){const end=Date.now()+deadline;while(Date.now()<end){const s=await state();if(Math.abs(s.player.x-x)<20)break;await key('d',s.player.x<x);await key('a',s.player.x>x);await sleep(60)}await release()}
 try{
  await page.goto(process.env.GAME_URL??'http://127.0.0.1:4187/BOB/godot/',{waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>typeof window.render_game_to_text==='function');
+ const startupProgress=setInterval(()=>{
+   page.evaluate(()=>({detail:document.querySelector('#status-detail')?.textContent,progress:document.querySelector('#status-progress')?.value})).then(s=>console.log('STARTUP',JSON.stringify(s))).catch(()=>{});
+ },30000);
+ try{await page.waitForFunction(()=>typeof window.render_game_to_text==='function')}finally{clearInterval(startupProgress)}
  await click('NewGame');await sleep(400);await tap('4');await sleep(500);
  let s=await state();check('Room fixture loads exactly one mother crab',s.room==='R1-04'&&s.enemies.filter(e=>e.boss&&e.alive&&e.combat).length===1);
  check('Dash remains locked before victory',!s.abilities.dash&&s.enemies[0].combat.maximum===300);
@@ -69,6 +73,6 @@ try{
  await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>typeof window.render_game_to_text==='function');await click('Continue');await sleep(400);
  s=await state();check('V6 reload preserves defeat and dash',s.room==='R1-04'&&s.abilities.dash&&s.enemies.every(e=>!e.boss||!e.alive));await shot('06-reload');
  check('No browser or engine errors',errors.length===0);
-}catch(e){errors.push(String(e.stack??e));console.error(String(e))}
+}catch(e){errors.push(String(e.stack??e));console.error(String(e));await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{})}
 finally{await release();await browser.close();fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,snapshots,method:'Existing room-preview fixture; real camp, death/retry, keyboard fight, exit and V6 reload in fresh context'},null,2))}
 if(errors.length||checks.some(c=>!c.pass))process.exitCode=1;

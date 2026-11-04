@@ -24,7 +24,7 @@ func test_real_mother_crab_replaces_only_the_boss() -> void:
 	check(crab.visual.texture != null,"real atlas loaded")
 	check(not host.abilities.dash,"boss does not grant an ability on spawn")
 	host.load_room(1)
-	check(not host.enemies[0].has("actor"),"regular crab stays on existing adapter")
+	check(host.enemies[0].actor is CampaignCorpseCrab,"ordinary crab has its own adapter, not the boss")
 
 func test_shell_exposure_counter_and_projectile_dispatch() -> void:
 	var host := campaign()

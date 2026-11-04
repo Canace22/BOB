@@ -8,6 +8,7 @@ extends Node2D
 @export var camera_dash_zoom:float=1.05 # New default; Inspector adjustable.
 const PlayerUI = preload("res://content/whalebelly/PlayerUI.tscn")
 const EnemyProxy = preload("res://src/campaign/campaign_enemy_proxy.gd")
+const CorpseCrab = preload("res://src/campaign/enemies/corpse_crab.gd")
 const MotherCrab = preload("res://src/campaign/boss/crab_boss.gd")
 const CampaignCamera = preload("res://src/campaign/campaign_camera.gd")
 var player_soul:int=99
@@ -311,11 +312,18 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 		var boss: bool = source.get("boss", false)
 		var alive: bool = not (boss and defeated.get(key, false))
 		if visual != null: visual.visible = alive
-		enemies.append({"pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+		enemies.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
 	for enemy:Dictionary in enemies:
 		if enemy.boss and enemy.alive:
 			if is_instance_valid(enemy.visual): enemy.visual.hide()
 			var crab := MotherCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scenery.get_node("World").add_child(crab)
+			continue
+		if not enemy.boss and enemy.type == "corpse-crab":
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := CorpseCrab.new()
 			crab.host = self
 			crab.data = enemy
 			scenery.get_node("World").add_child(crab)
@@ -546,6 +554,8 @@ func damage_enemy(enemy:Dictionary,amount:int) -> void:
 	sfx("hit")
 	record_event("enemy_hit", {"id":enemy.key,"hp":enemy.hp})
 	enemy.hurt = 0.18
+	if int(enemy.hp) > 0 and enemy.has("actor") and enemy.actor.has_method("on_damaged"):
+		enemy.actor.on_damaged()
 	if int(enemy.hp) <= 0:
 		enemy.alive = false
 		sfx("slam")

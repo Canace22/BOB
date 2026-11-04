@@ -1,13 +1,14 @@
 const positions = [[100,350],[340,330],[460,430],[630,465],[780,395],[620,160],[450,215],[760,235],[900,135],[105,130],[190,235],[1010,360]];
 const tones = {'主要对抗':'major','短遭遇':'short','可选遭遇':'optional','休整与判断':'quiet'};
 const point = (x,y) => `${x},${y}`;
+const stopBefore = (from,to) => {const length=Math.hypot(to[0]-from[0],to[1]-from[1]);return to.map((v,i)=>v-(to[i]-from[i])*34/length)};
 const link = (n, mode, emphasis='') => '#'+new URLSearchParams({c:'路线地图',node:String(n),layout:mode,k:emphasis});
 
 function spatial(chapters, selected, state, escape) {
   const route = chapters.slice(0,-1).map((chapter,i) => {
     const from=positions[i],to=positions[i+1];
     if(i===10) return '';
-    const line=i===8 ? `M${point(...from)} V60 H${to[0]} V${to[1]-24}` : `M${point(...from)} L${point(...to)}`;
+    const line=i===8 ? `M${point(...from)} V60 H${to[0]} V${to[1]-34}` : `M${point(...from)} L${point(...stopBefore(from,to))}`;
     return `<path class="route-edge ${selected===i+1 || selected===i+2?'active-edge':''}" d="${line}" marker-end="url(#arrow)"/>`;
   }).join('');
   return `<div class="map-canvas"><svg viewBox="0 0 1100 570" role="group" aria-label="十二章叙事空间示意图。十一章后沿回流长腔折返，再到尾根主闸。">
@@ -15,7 +16,7 @@ function spatial(chapters, selected, state, escape) {
     <rect class="map-zone" x="30" y="85" width="230" height="425" rx="22"/><text class="zone-label" x="50" y="482">头部相关腔室</text>
     <rect class="map-zone" x="285" y="95" width="545" height="415" rx="22"/><text class="zone-label" x="310" y="125">组织与体腔</text>
     <rect class="map-zone" x="850" y="85" width="220" height="425" rx="22"/><text class="zone-label" x="875" y="482">脊椎与尾根</text>
-    <g>${route}<path class="route-edge return-edge ${selected===11 || selected===12?'active-edge':''}" d="M190,235 V35 H900 V135 L1010,360" marker-end="url(#arrow)"/><text class="edge-label" x="510" y="24">11 → 经回流长腔折返 → 12</text></g>
+    <g>${route}<path class="route-edge return-edge ${selected===11 || selected===12?'active-edge':''}" d="M190,235 V35 H900 V135 L${point(...stopBefore(positions[8],positions[11]))}" marker-end="url(#arrow)"/><text class="edge-label" x="510" y="24">11 → 经回流长腔折返 → 12</text></g>
     ${chapters.map((c,i)=>{const [x,y]=positions[i];return `<a href="${escape(link(c.number,'space',state.k))}" aria-label="选择第${c.number}章 ${escape(c.place)}，${c.encounterKind}" class="map-node ${tones[c.encounterKind]} ${selected===c.number?'selected-node':''} ${state.k && state.k!==c.encounterKind?'dim-node':''}"><circle class="node-halo" cx="${x}" cy="${y}" r="29"/><circle class="node-circle" cx="${x}" cy="${y}" r="21"/><text class="node-number" x="${x}" y="${y+5}" text-anchor="middle">${String(c.number).padStart(2,'0')}</text><text class="node-label" x="${x}" y="${y+43}" text-anchor="middle">${escape(c.place)}</text>${c.encounterKind==='主要对抗'?`<path class="combat-marker" d="M${x+17},${y-30} l6,10 h-12z"/>`:''}</a>`}).join('')}
   </svg></div>`;
 }
