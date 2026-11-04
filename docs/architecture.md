@@ -17,6 +17,7 @@
 | `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头和机关表现 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
+| `src/ui/` | 正式标题、HUD、模态页面与设置；注入主线宿主，只读实际状态并请求主线操作。旧 tide_hud 保留给独立角色参数场 |
 | `content/whalebelly/r1/` | 七个房间场景、道路碰撞、分层贴图和节点 |
 | `content/whalebelly/environment/` | 当前环境场景、各动件脚本/Shader；保留恢复阶段的组织方式 |
 | `content/whalebelly/Player.tscn`、`CampaignPlayer.tscn` | 角色动作与主线参数 |
@@ -40,6 +41,8 @@
 正式主线使用 `user://whalebelly/artmatch_save.json`（V6）。桌面首次启动仅在目标不存在时复制原 `WhalefallArtmatchV05` 的有效存档，保留原件；已有目标不覆盖。浏览器使用自身站点存储。保留的兼容存档服务有独立的 `user://save.json`，不能混作主线V6进度。
 
 测试只写独立测试档，真实浏览器使用独立上下文。隔离试玩入口为 `tests/whalebelly/manual_play.tscn`。
+
+UI新版保留V6结构并增加可选`visited`房间ID字典。发现定义为正式进入房间，同时在地图显示其配置的相邻出口；房间预览不登记、练习不保存。旧档至少恢复检查点及明确获得奖励/击败Boss的房间，不猜测其余历史路线。原子写入保留`.bak`，确认新旅途另保留`.before-new`；标题与加载共用V6校验。UI设置独立存于`ui_settings.cfg`，不混入玩法状态；QA使用`ui_qa_settings.cfg`。
 
 ## 命令与验证
 

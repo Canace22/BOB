@@ -74,6 +74,11 @@ var sound_last_time: Dictionary = {}
 var qa_output: String = "user://whalebelly/artmatch_flow.json"
 var font: Font
 var overlay: Node2D
+var visited: Dictionary = {}
+var room_preview: bool = false
+var ui_session_started: bool = false
+var ui_interactive_in_tests: bool = false
+var last_save_ok: bool = true
 
 func _ready() -> void:
 	var isolated := qa or not capture_path.is_empty()
@@ -198,6 +203,7 @@ func _ready() -> void:
 	load_room(room_index)
 	if not checkpoint.pos.is_empty() and int(checkpoint.room) == room_index and capture_path.is_empty():
 		player.position = restored_room_position(point(checkpoint.pos))
+	if not qa and capture_path.is_empty(): player_ui.open("title")
 	if not capture_path.is_empty():
 		ui.visible = false
 		player.set_physics_process(false)
@@ -233,9 +239,14 @@ func setup_inputs() -> void:
 		for code: int in map[action]:
 			var event: InputEventKey = InputEventKey.new()
 			event.physical_keycode = code
-			InputMap.action_add_event(action, event)
+			if not InputMap.action_has_event(action,event): InputMap.action_add_event(action, event)
+	if not InputMap.has_action("ui_region_map"):
+		InputMap.add_action("ui_region_map")
+		var map_key := InputEventKey.new()
+		map_key.physical_keycode = KEY_C
+		InputMap.action_add_event("ui_region_map",map_key)
 
-func load_room(index: int, target_spawn: Array = []) -> void:
+func load_room(index: int, target_spawn: Array = [], record_discovery: bool = true) -> void:
 	# The authored starting room is visible in main.tscn and shares the same
 	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
 	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
@@ -255,6 +266,9 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 		reference.queue_free()
 	room_index = index
 	room = rooms[index]
+	room_preview = not record_discovery
+	if record_discovery and not practice:
+		visited[str(room.id)] = true
 	if authored_room != null and index == 0:
 		scenery = authored_room
 	else:
@@ -292,7 +306,7 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 		var boss: bool = source.get("boss", false)
 		var alive: bool = not (boss and defeated.get(key, false))
 		if visual != null: visual.visible = alive
-		enemies.append({"pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+		enemies.append({"pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
 	for enemy:Dictionary in enemies:
 		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
 		scenery.get_node("World").add_child(proxy)
@@ -318,6 +332,7 @@ func load_room(index: int, target_spawn: Array = []) -> void:
 	scenery.add_child(mechanisms)
 	update_layers()
 	update_camera()
+	if ui_session_started and record_discovery and not practice: save_progress(false)
 
 func restored_room_position(value: Vector2) -> Vector2:
 	# R1-01's new road retains the old world width. Existing checkpoints and
@@ -332,18 +347,13 @@ func reference_camera_active() -> bool:
 
 func bind_player_ui() -> void:
 	if not is_instance_valid(player_ui):
-		player_ui=PlayerUI.instantiate()
-		player_ui.player=player
-		player_ui.campaign_mode=true
-		player_ui.edge_margin=18
-		player_ui.header_text=""
-		player_ui.guide_path="user://whalebelly/tide_campaign_guide.cfg"
-		player_ui.guide_enabled=not qa and capture_path.is_empty()
-		player_ui.process_mode=Node.PROCESS_MODE_PAUSABLE
+		player_ui=WhaleCampaignUI.new()
+		player_ui.host=self
 		add_child(player_ui)
 	else:player_ui.bind_player(player)
 	player_ui.visible=capture_path.is_empty()
 	status.hide()
+	info.hide()
 	interaction_hint=Label.new();interaction_hint.name="InteractionHint"
 	interaction_hint.add_theme_font_override("font", font)
 	interaction_hint.text="按 E 交互";interaction_hint.position=Vector2(-48,-125)
@@ -358,11 +368,10 @@ func update_camera() -> void:
 func _process(dt: float) -> void:
 	if quitting: return
 	if get_tree().paused:
-		status.show()
-		status.text = "暂停 · Esc 继续 · M 静音"
+		status.hide()
 		return
 	status.hide()
-	if is_instance_valid(interaction_hint):interaction_hint.visible=player.interaction_nearby() and player.health>0 and not reference_visible
+	if is_instance_valid(interaction_hint): interaction_hint.hide()
 	clock += dt
 	flash = maxf(0.0, flash - dt)
 	message_time = maxf(0.0, message_time - dt)
@@ -412,7 +421,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			update_layers()
 		KEY_F9:
 			if not practice:
-				practice_restore = {"abilities":abilities.duplicate(true),"collected":collected.duplicate(true),"defeated":defeated.duplicate(true),"checkpoint":checkpoint.duplicate(true),"completed":completed}
+				practice_restore = {"abilities":abilities.duplicate(true),"collected":collected.duplicate(true),"defeated":defeated.duplicate(true),"checkpoint":checkpoint.duplicate(true),"completed":completed,"visited":visited.duplicate(true)}
 				practice = true
 			else:
 				practice = false
@@ -421,6 +430,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				defeated = practice_restore.defeated
 				checkpoint = practice_restore.checkpoint
 				completed = practice_restore.completed
+				visited = practice_restore.visited
 				load_room(room_index, [player.position.x,player.position.y])
 			notify("练习模式：全部动作与技能可用；不写入能力进度" if practice else "已恢复正式能力进度")
 			record_event("practice", {"enabled":practice})
@@ -431,7 +441,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_R: respawn()
 		_:
 			if event.physical_keycode >= KEY_1 and event.physical_keycode <= KEY_7:
-				load_room(event.physical_keycode - KEY_1)
+				load_room(event.physical_keycode - KEY_1, [], false)
 				notify("房间预览跳转，不改变已记录的检查点")
 
 func update_layers() -> void:
@@ -583,14 +593,17 @@ func enter_door(door:Dictionary) -> void:
 func try_camp() -> bool:
 	var default_camps: Dictionary = {0:[93,550],3:[80,610],4:[110,503]}
 	var camp: Array = room.get("camp",default_camps.get(room_index,[]))
-	if camp.size() == 2 and player.position.distance_to(point(camp)) < 180:
+	if player.health > 0 and camp.size() == 2 and player.position.distance_to(point(camp)) < 180:
 		checkpoint = {"room": room_index, "pos": [player.position.x, player.position.y]}
 		sfx("save")
 		record_event("physical_camp_save", {"room":room_index,"camp":camp,"player":checkpoint.pos})
 		record_event("checkpoint", checkpoint)
 		health = 5
+		player.health = health
+		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
-		notify("存档点已记录，生命恢复")
+		notify("存档点已记录，生命恢复" if last_save_ok else "生命恢复，但存档写入失败")
+		if not qa or ui_interactive_in_tests: player_ui.open.call_deferred("camp")
 		return true
 	return false
 
@@ -601,26 +614,54 @@ func notify(text: String) -> void:
 
 func save_progress(show_message: bool = true) -> void:
 	if practice and not qa:
+		last_save_ok = false
 		notify("练习状态不写入正式存档")
 		return
-	var payload: Dictionary = {"version": 6, "checkpoint": checkpoint, "collected": collected, "defeated": defeated, "abilities": abilities, "completed":completed}
-	var file: FileAccess = FileAccess.open("user://whalebelly/artmatch_qa_save.json" if qa else "user://whalebelly/artmatch_save.json", FileAccess.WRITE)
-	if file != null: file.store_string(JSON.stringify(payload, "\t"))
+	var payload: Dictionary = {"version": 6, "checkpoint": checkpoint, "collected": collected, "defeated": defeated, "abilities": abilities, "completed":completed,"visited":visited}
+	last_save_ok = WhaleUISaveAccess.write(save_path(),payload) == OK
 	persist_events()
-	if show_message: notify("已保存检查点与永久进度（F6 读取）")
+	if not last_save_ok: notify("存档写入失败，请检查存储空间")
+	elif show_message: notify("已保存检查点与永久进度（F6 读取）")
 
 func load_progress() -> void:
-	var save_path: String = "user://whalebelly/artmatch_qa_save.json" if qa else "user://whalebelly/artmatch_save.json"
-	if not FileAccess.file_exists(save_path): return
-	var payload: Variant = JSON.parse_string(FileAccess.get_file_as_string(save_path))
-	if not payload is Dictionary: return
+	var payload: Dictionary = WhaleUISaveAccess.read(save_path(),rooms)
+	if payload.is_empty(): return
 	checkpoint = payload.get("checkpoint", checkpoint)
 	room_index = clampi(int(checkpoint.room), 0, rooms.size() - 1)
 	completed = payload.get("completed",false)
 	collected = payload.get("collected", {})
 	defeated = payload.get("defeated", {})
 	if int(payload.get("version",0)) >= 6: abilities = payload.get("abilities", abilities)
+	visited = payload.get("visited",{}).duplicate(true)
+	visited[str(rooms[room_index].id)] = true
+	for known: String in collected: visited[known] = true
+	for known: String in defeated: visited[known.get_slice(":",0)] = true
 	notify("已读取保存进度")
+
+func save_path() -> String:
+	return "user://whalebelly/artmatch_qa_save.json" if qa else "user://whalebelly/artmatch_save.json"
+
+func start_ui_session(fresh: bool) -> bool:
+	if fresh:
+		var payload: Dictionary = {"version":6,"checkpoint":{"room":0,"pos":[]},"collected":{},"defeated":{},"abilities":{"dash":false,"float":false,"anchor":false},"completed":false,"visited":{str(rooms[0].id):true}}
+		if FileAccess.file_exists(save_path()):
+			if DirAccess.copy_absolute(save_path(),save_path()+".before-new") != OK: return false
+		if WhaleUISaveAccess.write(save_path(),payload) != OK: return false
+	elif WhaleUISaveAccess.read(save_path(),rooms).is_empty(): return false
+	practice = false
+	practice_restore.clear()
+	ui_session_started = true
+	health = 5
+	player_soul = 99
+	load_progress()
+	load_room(room_index, checkpoint.get("pos",[]))
+	return true
+
+func on_player_died() -> void:
+	if qa and not ui_interactive_in_tests: respawn()
+	elif is_instance_valid(player_ui):
+		player_ui.history.clear()
+		player_ui.open("death",false)
 
 func respawn() -> void:
 	sfx("slam")

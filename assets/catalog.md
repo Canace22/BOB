@@ -175,3 +175,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 48份运行文件经manifest/sync-art进入正式CampaignPlayer，包括44张唯一动画图集（22.095MiB）、3张支持位图及动画元数据。run/parry/wall_jump/heavy/dive为AI补制关键姿势；独立纯地环替代原片脚叉缺口。影冲和深钟显式复用已清理本体。视频抠像、补制、复用三种来源不会混称独立视频生成。
 
 保留源运动模糊、离散姿势和半透明反混的限制；技法、输入和取得条件见[36项操作说明](../docs/action36-controls.md)，逐项来源与状态见[覆盖表](../docs/action36-asset-coverage.md)，实测性能和最终发布状态见[工程进度](../game/progress.md)。验收录像/截图与自动报告仅本地保存，已入库正式美术及可复跑脚本不会随测试清理删除。
+
+## 2026-11-04 正式 UI 系统
+
+[UI V1 图标母版](source/whalefall-ui-v1/README.md)保留十份可编辑 SVG，来源为本项目现有 UI V1 原创设计，通过 manifest 同步至 game/art/ui；叶、回声、壳与装饰线实际使用，其余保留图标不表示共生玩法已完成。字体子集使用明确的 Regular 400 字重，并通过中文字形覆盖检查。常规 UI 使用引擎控件、文字和矢量图形，未替换正式角色/场景素材。数据接口、已实现页面及验收范围见 [UI 系统](../docs/ui-system.md)。

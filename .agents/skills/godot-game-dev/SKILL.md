@@ -86,3 +86,12 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - 完整替换Pages的godot子树时，旧包blob下载可能长时间停滞。先只稀疏检出根入口，按明确godot/前缀移除索引旧项，再复制验证后的导出并加入该稀疏路径；不请求旧大包来立即删除。提交前比较顶层tree，所有非godot历史目录必须与原HEAD一致。只更新根入口的发布仍需保留现有godot检查。
 
 - Godot Web若在重建房间时出现Sample._duplicateAudioBuffer/createBuffer错误，保留堆栈并在新浏览器上下文复现，不能静音掩盖。24秒环境音本批改用Web专属AudioServer.PLAYBACK_TYPE_STREAM，桌面默认不变；验收同时检查真实切房、后续按键和playing/type/muted，环境音内容与短音效保留。
+
+## UI 接入已验证方法
+
+- 先比较设计稿与真实数值：当前生命5、蓄振99、常用消耗33。视觉分段须表达实际支付次数并保留精确数字；无共生后端时显示不可用，不将设计稿静态配置复制为状态。
+- UI 根可用 ALWAYS 处理暂停菜单，世界保持暂停；关闭后清除动作/跳跃缓冲，等游戏按键释放再恢复，分别验证按住移动和攻击关闭菜单。模态栈恢复原页面焦点，角色重建解绑旧信号。
+- Noto 可变字体默认可能是 Thin100；字体子集显式实例化 Regular400，重建后检查中文覆盖与亮背景实机可读性。
+- 隐藏原生窗口截图可能读到旧帧；等待渲染帧并 force_draw 后捕获。原生窗口受显示器宽度钳制，超宽验收用实际浏览器 viewport，不能只把截图命名为2560。
+- UI 浏览器回归可输出只读控件矩形，真实鼠标按 viewport 和黑边换算点击；不可用脚本调用按钮回调冒充鼠标验收。独立浏览器上下文、QA存档和设置路径隔离；伤害/Boss夹具与自然路线分别记录。
+- 现用入口：tests/whalebelly/ui_system_qa.gd、tests/web_ui_system.mjs，产物仅在build/qa/ui-system。详见docs/ui-system.md；不要用历史原型HTML充当正式游戏验证。

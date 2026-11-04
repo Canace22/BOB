@@ -58,7 +58,7 @@ func _ready() -> void:
 	notification.connect(func(text):host.notify(text))
 	hit_confirmed.connect(func():host.camera_feedback=.12)
 	damaged.connect(func():host.sfx("hurt");host.camera_feedback=.18;host.record_event("player_hurt",{"health":health}))
-	died.connect(func():host.respawn.call_deferred())
+	died.connect(func():host.on_player_died.call_deferred())
 	animation_tag.connect(_campaign_tag)
 	skill_effect.connect(_campaign_skill_effect)
 	stats_changed.emit(health,soul)

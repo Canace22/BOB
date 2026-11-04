@@ -26,8 +26,10 @@ def main():
     available = font.getBestCmap()
     codepoints = sorted(ord(c) for c in characters if ord(c) in available)
     if "fvar" in font:
-        # Preserve the existing default appearance rather than selecting a new weight.
+        # The upstream variable default is Thin (100); game UI needs readable Regular.
         axes = {axis.axisTag: axis.defaultValue for axis in font["fvar"].axes}
+        if "wght" in axes:
+            axes["wght"] = 400
         instantiateVariableFont(font, axes, inplace=True)
     options = subset.Options()
     options.recalc_timestamp = False
@@ -50,8 +52,9 @@ def main():
         "bytes": TARGET.stat().st_size,
         "characters": len(codepoints),
         "fonttools": __version__,
+        "weight": 400,
     }
-    (Path(__file__).parent / "subset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+    (Path(__file__).parent / "subset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(metadata))
 
 

@@ -78,7 +78,7 @@ func run() -> void:
 	host.checkpoint={"room":0,"pos":[120,host.ground_y(120,550)]}
 	host.player.invulnerable=0;host.player.take_damage(5,Vector2.ZERO,true);await step(190)
 	check("death_returns_checkpoint",host.room_index==0 and host.health==5 and host.player.soul==99,[host.room_index,host.health])
-	check("respawn_ui_rebound",host.player_ui.player==host.player and not host.player_ui.death.visible)
+	check("respawn_ui_rebound",host.player_ui.player==host.player and host.player_ui.page_id!="death")
 	var before:Vector2=host.player.position;paused=true;await tap("tp_right",15);paused=false
 	check("pause_stops_actor",host.player.position==before)
 	await enter(2,[840,620]);await step(90)
@@ -113,7 +113,7 @@ func run() -> void:
 	var new_body:bool=visual.active and visual.sprite.visible and not host.player.body.visible and not host.player.get_node("Visual/Legs").visible
 	check("moving_attack_single_body",new_body and visual.current_key in ["strike1","strike2"]);await shot("main-moving-attack");Input.action_release("tp_right")
 	await step(30);root.size=Vector2i(1280,800);root.content_scale_size=Vector2i(1280,800);await step(5);await shot("main-ui-16x10")
-	host.player_ui._show_guide();await step(2);await shot("main-guide");host.player_ui.guide.queue_free();host.player_ui.guide=null;host.player.controls_enabled=true
+	host.player_ui.open("help");await step(2);await shot("main-guide");host.player_ui.close_all();await step(20)
 	host.checkpoint={"room":3,"pos":[90,610]};host.save_progress(false)
 	var saved:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("user://whalebelly/artmatch_qa_save.json"))
 	check("save_v6_schema",saved.version==6 and saved.abilities.dash and saved.checkpoint.room==3)
