@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 36,
+  "revision": 37,
   "updatedAt": "2026-11-04",
   "project": "BOB",
   "atlas": {
@@ -28566,6 +28566,38 @@
           }
         }
       }
+    },
+    {
+      "id": "corpse-crab-actions-v1",
+      "name": "尸蟹 · 七状态动作",
+      "kind": "character",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "尸蟹",
+        "逐帧动作"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/corpse-crab-actions-v1/attack.png",
+      "width": 1024,
+      "height": 512,
+      "spriteType": "animation-atlas",
+      "integrationStatus": "verified",
+      "notes": "24个原始姿势、7种游戏状态；整体镜像。本地主场景与12项键盘测试通过，用户审美未签收；详见docs/corpse-crab-integration.md。",
+      "source": {
+        "method": "内置image_gen姿势表；确定性裁片配准，非视频提帧",
+        "model": "未暴露",
+        "references": [
+          "assets/runtime/sprites/corpse-crab/idle.png"
+        ],
+        "prompts": [
+          "assets/source/corpse-crab-actions-v1/prompts/attack.txt",
+          "assets/source/corpse-crab-actions-v1/prompts/walk.txt",
+          "assets/source/corpse-crab-actions-v1/prompts/life.txt"
+        ]
+      },
+      "metadata": "assets/runtime/sprites/corpse-crab-actions-v1/animations.json"
     }
   ]
 }
