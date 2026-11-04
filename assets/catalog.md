@@ -203,3 +203,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 须门遗港过渡样式图 V1
 
 [三张原画与来源](source/xumen-transition-style-v1/README.md)用于确定主路斜拱、骨膜渐变与骨壁上行三类过渡。源图/提示词/哈希保存于同目录；[图册](../docs/鲸腹遗城原画集/过渡样式设计/原画册.html)有路线/分层开关。概念资料，不进入运行manifest，不宣称实机接入。
+
+## E01 联合过渡样板
+
+[制作源、母版与复验](source/xumen-e01-seam-v1/README.md)：5份新原件，8张运行位图；独立骨路、斜拱、远景、前景及复用动件。接入与发布状态见game/progress.md。

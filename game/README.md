@@ -46,3 +46,7 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 模块边界、发布和资源审计见[架构](../docs/architecture.md)，本轮执行结果见[进度](progress.md)。
 
 资源维护：本体和世界FX分别保存帧数，释放/落地从FX自己的 `event_frame` 启动。影潮穿行复用dash本体加冷青色调；深钟复用dive本体和环，升级差异保留在技能逻辑中。资源审计运行 `node game/tools/audit_resources.mjs`；覆盖表用仓库根目录 `python build_asset_coverage.py` 更新，不因此自动认可候选美术。
+
+## E01过渡样板
+
+外伤坡→须筛采用联合骨路、斜拱和独立环境动件；原角色与地形保持。通过正常A/D行走往返。来源与复跑见[制作说明](../assets/source/xumen-e01-seam-v1/README.md)，最新发布状态见[进度](progress.md)。

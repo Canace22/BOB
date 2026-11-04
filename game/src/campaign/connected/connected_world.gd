@@ -13,9 +13,27 @@ var crossings: int=0
 var active_index: int=0
 var edge_masks:=XumenChunkEdges.new()
 var far_underpaint: Sprite2D
+var e01: XumenE01Transition
+var ambience: AudioStreamPlayer
+var persistent_projectiles: Node2D
 
 func _ready() -> void:
 	process_mode=Node.PROCESS_MODE_PAUSABLE
+	if enabled:
+		ambience=AudioStreamPlayer.new()
+		ambience.name="ChapterWaterAmbience"
+		var bed: AudioStreamWAV=preload("res://art/whalebelly/runtime/audio/water_bed.wav").duplicate()
+		bed.loop_mode=AudioStreamWAV.LOOP_FORWARD
+		bed.loop_begin=0
+		bed.loop_end=int(bed.get_length()*bed.mix_rate)
+		ambience.stream=bed
+		if OS.has_feature("web"):ambience.playback_type=AudioServer.PLAYBACK_TYPE_STREAM
+		ambience.volume_db=-29
+		add_child(ambience)
+		ambience.play()
+		persistent_projectiles=Node2D.new()
+		persistent_projectiles.name="PersistentProjectiles"
+		add_child(persistent_projectiles)
 
 func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 	if chunks.is_empty():
@@ -50,17 +68,26 @@ func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 		passages.host=host
 		host.add_child(passages)
 		passages.position=-origin
+		e01=XumenE01Transition.new()
+		e01.host=host
+		host.add_child(e01)
+		e01.position=-origin
+		prepare_e01_neighbours()
 		set_bounds()
 		return
 	var old_index: int=active_index
 	var traveller: CharacterBody2D=host.player if switching else null
 	var absolute: Vector2=host.player.position+origin
 	var velocity: Vector2=host.player.velocity
+	var live_orbs: Dictionary={}
+	if traveller!=null:
+		for orb: Node2D in get_tree().get_nodes_in_group("tide_player_projectiles"):
+			if orb.caster==traveller:
+				live_orbs[orb]=orb.global_position+origin
+				if orb.get_parent()!=persistent_projectiles:orb.reparent(persistent_projectiles,true)
 	contexts[old_index]={"enemies":host.enemies.duplicate()}
 	if traveller!=null:
-		# Retain the old campaign boundary rule for short-lived combat effects.
-		traveller.world_effects.clear()
-		traveller.clear_projectiles()
+		# Natural crossing preserves live FX/projectile age; explicit reload still resets.
 		move_player(traveller,host,true)
 	else:
 		host.player.queue_free()
@@ -74,6 +101,11 @@ func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 		edge_masks.move_chunk(id,chunks[id].position)
 	far_underpaint.position-=shift
 	passages.position=-origin
+	e01.position=-origin
+	if traveller!=null:
+		traveller.world_effects.rebase(shift)
+		for orb: Node2D in get_tree().get_nodes_in_group("tide_player_projectiles"):
+			if live_orbs.has(orb):orb.global_position=live_orbs[orb]-origin
 	host.camera.position-=shift
 	host.camera.follow_anchor-=shift
 	if traveller!=null:
@@ -101,6 +133,7 @@ func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 		host._load_isolated_room(index,spawn,discover,chunks[index],traveller)
 		contexts[index]={"enemies":host.enemies.duplicate()}
 	set_active(index,true)
+	prepare_e01_neighbours()
 	host.player.z_index=20 if host.scenery.has_node("ReferenceEnvironment") else 3
 	if traveller!=null:
 		traveller.velocity=velocity
@@ -135,6 +168,8 @@ func set_active(index: int, active: bool) -> void:
 	var scene: Node2D=chunks[index]
 	scene.process_mode=Node.PROCESS_MODE_PAUSABLE if active else Node.PROCESS_MODE_DISABLED
 	# Autonomous painted motion is safe outside the active gameplay context.
+	var reference_env: Node=scene.get_node_or_null("ReferenceEnvironment")
+	if reference_env!=null:reference_env.process_mode=Node.PROCESS_MODE_PAUSABLE
 	var chapter: Node=scene.get_node_or_null("ChapterEnvironment")
 	if chapter!=null:chapter.process_mode=Node.PROCESS_MODE_PAUSABLE
 	for runtime: String in ["EnvironmentMotion","VisualMechanisms"]:
@@ -143,7 +178,9 @@ func set_active(index: int, active: bool) -> void:
 	var audio: AudioStreamPlayer=scene.get_node_or_null("EnvironmentMotion/WaterAmbience")
 	if audio!=null:audio.stream_paused=not active
 	for actor: Dictionary in contexts.get(index,{}).get("enemies",[]):
-		if actor.has("actor") and is_instance_valid(actor.actor):actor.actor.process_mode=scene.process_mode
+		if actor.has("actor") and is_instance_valid(actor.actor):
+			actor.actor.process_mode=scene.process_mode
+			if actor.actor is CampaignCorpseCrab or actor.actor is CampaignCrabBoss:actor.actor.target=host.player
 
 func move_player(actor: TidePlayer, parent: Node, keep_global: bool) -> void:
 	actor.scene_reparenting=true
@@ -200,4 +237,9 @@ func camera_follow(dt: float) -> void:
 
 func snapshot() -> Dictionary:
 	var at: Vector2=host.player.position+origin
-	return {"enabled":enabled,"chunks":chunks.size(),"edges":layout.edges.size(),"crossings":crossings,"player_id":host.player.get_instance_id(),"world_x":at.x,"world_y":at.y,"origin":[origin.x,origin.y],"camera_world":[host.camera.position.x+origin.x,host.camera.position.y+origin.y]}
+	return {"enabled":enabled,"chunks":chunks.size(),"edges":layout.edges.size(),"crossings":crossings,"player_id":host.player.get_instance_id(),"world_x":at.x,"world_y":at.y,"origin":[origin.x,origin.y],"camera_world":[host.camera.position.x+origin.x,host.camera.position.y+origin.y],"e01":e01.snapshot() if is_instance_valid(e01) else {}}
+
+func prepare_e01_neighbours() -> void:
+	for id: int in [0,1]:
+		if not contexts.has(id):contexts[id]={"enemies":host.create_room_enemies(host.rooms[id],chunks[id])}
+		set_active(id,id==host.room_index)

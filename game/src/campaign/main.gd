@@ -322,33 +322,7 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 		player.reparent(scenery.get_node("World"),false)
 		player.scene_reparenting=false
 	else:scenery.get_node("World").add_child(player)
-	enemies.clear()
-	for i: int in range(room.get("enemies", []).size()):
-		var source: Dictionary = room.enemies[i]
-		var origin: Vector2 = point(source.pos)
-		var visual: Node2D = scenery.get_node_or_null("World/EnemyArt" + str(i))
-		var key: String = str(room.id) + ":" + str(i)
-		var boss: bool = source.get("boss", false)
-		var alive: bool = not (boss and defeated.get(key, false))
-		if visual != null: visual.visible = alive
-		enemies.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
-	for enemy:Dictionary in enemies:
-		if enemy.boss and enemy.alive:
-			if is_instance_valid(enemy.visual): enemy.visual.hide()
-			var crab := MotherCrab.new()
-			crab.host = self
-			crab.data = enemy
-			scenery.get_node("World").add_child(crab)
-			continue
-		if not enemy.boss and enemy.type == "corpse-crab":
-			if is_instance_valid(enemy.visual): enemy.visual.hide()
-			var crab := CorpseCrab.new()
-			crab.host = self
-			crab.data = enemy
-			scenery.get_node("World").add_child(crab)
-			continue
-		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
-		scenery.get_node("World").add_child(proxy)
+	enemies=create_room_enemies(room,scenery)
 	bind_player_ui()
 	reference = Sprite2D.new()
 	reference.centered = false
@@ -373,6 +347,36 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 	continuity.bind_room()
 	update_camera()
 	if ui_session_started and record_discovery and not practice: save_progress(false)
+
+func create_room_enemies(definition: Dictionary, scene: Node2D) -> Array:
+	var result: Array=[]
+	for i: int in range(definition.get("enemies", []).size()):
+		var source: Dictionary = definition.enemies[i]
+		var origin: Vector2 = point(source.pos)
+		var visual: Node2D = scene.get_node_or_null("World/EnemyArt" + str(i))
+		var key: String = str(definition.id) + ":" + str(i)
+		var boss: bool = source.get("boss", false)
+		var alive: bool = not (boss and defeated.get(key, false))
+		if visual != null: visual.visible = alive
+		result.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+	for enemy:Dictionary in result:
+		if enemy.boss and enemy.alive:
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := MotherCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scene.get_node("World").add_child(crab)
+			continue
+		if not enemy.boss and enemy.type == "corpse-crab":
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := CorpseCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scene.get_node("World").add_child(crab)
+			continue
+		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
+		scene.get_node("World").add_child(proxy)
+	return result
 
 func restored_room_position(value: Vector2) -> Vector2:
 	# R1-01's new road retains the old world width. Existing checkpoints and

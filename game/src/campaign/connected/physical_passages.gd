@@ -29,7 +29,7 @@ func _ready() -> void:
 			floor_span(Vector2(minf(end.x,points[-1].x),end.y),Vector2(maxf(end.x,points[-1].x),end.y),str(edge.id)+"_upper",62)
 		else:
 			floor_span(points[0]-Vector2(18,0),points[-1]+Vector2(18,0),str(edge.id))
-			backdrop((points[0]+points[-1])*.5)
+			if str(edge.id)!="E01":backdrop((points[0]+points[-1])*.5)
 		if not str(edge.ability).is_empty():gate(edge,points[0])
 
 func floor_span(a: Vector2,b: Vector2,id: String,depth: float=300) -> void:
@@ -53,6 +53,9 @@ func floor_span(a: Vector2,b: Vector2,id: String,depth: float=300) -> void:
 		body.add_child(ledge)
 		supports+=1
 		return
+	if id=="E01":
+		supports+=1
+		return
 	var art:=Polygon2D.new()
 	art.name="PaintedFloor"
 	art.texture=FLOOR
@@ -70,7 +73,7 @@ func shaft_backdrop(begin: Vector2,end: Vector2) -> void:
 		art.texture=SHAFT if layer==0 else SHAFT_WALLS
 		art.position=(begin+end)*.5-Vector2(0,50)
 		art.scale=Vector2.ONE*scale_value
-		art.z_index=-40 if layer==0 else -12
+		art.z_index=-40 if layer==0 else -35
 		add_child(art)
 
 func backdrop(ground: Vector2) -> void:

@@ -176,3 +176,9 @@ func clear() -> void:
 	if is_instance_valid(rope): rope.hide()
 	last_ghost=Vector2.INF
 	ghost_clock=0.0
+
+func rebase(shift: Vector2) -> void:
+	for item: Dictionary in particles:item.node.global_position-=shift
+	if last_ghost!=Vector2.INF:last_ghost-=shift
+	if is_instance_valid(rope) and rope.visible:
+		for i: int in rope.points.size():rope.set_point_position(i,rope.points[i]-shift)

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 37,
-  "updatedAt": "2026-11-04",
+  "revision": 38,
+  "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -24886,7 +24886,7 @@
       "width": 864,
       "height": 496,
       "frameCount": 97,
-      "fps": 24.0,
+      "fps": 24,
       "duration": 4.041666666666667,
       "sha256": "a6e9ae3d3067d5b90bf8a6a70244ba62c8ace28e4678bbaca9872a9707e5d90f",
       "source": "assets/source/tide-combat-videos-v01/mini-orb/README.md",
@@ -24913,7 +24913,7 @@
       "width": 864,
       "height": 496,
       "frameCount": 97,
-      "fps": 24.0,
+      "fps": 24,
       "duration": 4.041666666666667,
       "sha256": "7d16c71c8e3b61591af51c38c1384744a48d9b6291bb7c93d27a26a2992d8782",
       "source": "assets/source/tide-combat-videos-v01/mini-upper/README.md",
@@ -24940,7 +24940,7 @@
       "width": 864,
       "height": 496,
       "frameCount": 97,
-      "fps": 24.0,
+      "fps": 24,
       "duration": 4.041666666666667,
       "sha256": "cd082ed4eafae984b93eb5520128baa28809558fb8b1b3042dbff04c3b52e94b",
       "source": "assets/source/tide-combat-videos-v01/mini-pogo/README.md",
@@ -28598,6 +28598,180 @@
         ]
       },
       "metadata": "assets/runtime/sprites/corpse-crab-actions-v1/animations.json"
+    },
+    {
+      "id": "xumen-e01-depth",
+      "name": "E01外伤坡→须筛 · depth",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/depth.png",
+      "width": 2164,
+      "height": 1535,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-e01-arch",
+      "name": "E01外伤坡→须筛 · arch",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/arch.png",
+      "width": 1076,
+      "height": 717,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-e01-ground",
+      "name": "E01外伤坡→须筛 · ground",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/ground.png",
+      "width": 1600,
+      "height": 430,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-e01-foreground",
+      "name": "E01外伤坡→须筛 · foreground",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/foreground.png",
+      "width": 2164,
+      "height": 1535,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-e01-hub-world-clean",
+      "name": "E01外伤坡→须筛 · hub-world-clean",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/hub-world-clean.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
+    },
+    {
+      "id": "xumen-e01-hub-middle-clean",
+      "name": "E01外伤坡→须筛 · hub-middle-clean",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "E01",
+        "过渡样板",
+        "独立分层"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-e01-seam-v1/hub-middle-clean.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen, editable masks and OpenRaster",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-e01-seam-v1/prompts.json"
+        ]
+      },
+      "metadata": "assets/source/xumen-e01-seam-v1/elements.json",
+      "notes": "Original collision retained. Local runtime passed; user aesthetic approval and online deployment tracked in progress."
     }
   ]
 }

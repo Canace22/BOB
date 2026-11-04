@@ -45,8 +45,11 @@ try{
  s=await walk(1400);check('physical reverse crossing 02 to 01',s.room==='R1-01'&&s.connected_world.player_id===id&&s.connected_world.crossings===2);
  await walk(125);await page.waitForTimeout(700);await page.keyboard.press('e');
  await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).checkpoint.pos.length===2,null,{timeout:10000});
- check('physical camp still saves',(await state()).checkpoint.room===0);
+ s=await state();check('physical camp still saves',s.checkpoint.room===0&&s.ui.save_ok,s.checkpoint);
+ fs.writeFileSync(path.join(out,'saved-state.json'),JSON.stringify(s,null,2));
+ await page.waitForTimeout(2200);
  await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>typeof window.render_game_to_text==='function',null,{timeout:600000});await page.keyboard.press('Enter');await page.waitForTimeout(600);s=await state();
+ fs.writeFileSync(path.join(out,'reloaded-state.json'),JSON.stringify(s,null,2));
  check('reload restores local save into connected world',s.room==='R1-01'&&s.connected_world.chunks===7&&s.player.x<200&&s.checkpoint.pos.length===2,s.connected_world);
  check('no browser engine or resource errors',errors.length===0,errors);
 }finally{

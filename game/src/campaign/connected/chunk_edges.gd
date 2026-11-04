@@ -6,8 +6,17 @@ var materials: Dictionary={}
 
 func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 	var items: Array[ShaderMaterial]=[]
+	if id<2:
+		var old_portal: Node2D=chunk.get_node_or_null("Continuity_E01")
+		if old_portal!=null:
+			old_portal.hide()
+			old_portal.process_mode=Node.PROCESS_MODE_DISABLED
+	if id==1:
+		var surface: Sprite2D=chunk.get_node("ChapterEnvironment/World/Surface")
+		surface.texture=preload("res://art/xumen-e01/hub-world-clean.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-e01/hub-middle-clean.png")
 	for node: Node in chunk.find_children("*","CanvasItem",true,false):
-		if not (node is Sprite2D or node is Polygon2D):continue
+		if not (node is Sprite2D or node is Polygon2D or node is MeshInstance2D):continue
 		var parent: Node=node.get_parent()
 		var actor: bool=false
 		while parent!=null and parent!=chunk:
@@ -17,9 +26,11 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 		if str(node.name) in ["PlayerArt","EnemyArt0","EnemyArt1","EnemyArt2"]:continue
 		var old: ShaderMaterial=node.material as ShaderMaterial
 		var source: String=old.shader.code if old!=null else "shader_type canvas_item;\nvoid fragment(){}"
-		if not compiled.has(source):
+		var key: String=source+str(id<2)
+		if not compiled.has(key):
 			var code: String=source
-			code=code.replace("shader_type canvas_item;","shader_type canvas_item;\nuniform vec2 chunk_origin; uniform vec2 chunk_size; varying vec2 chunk_pixel;")
+			if code.find("void fragment()")<0:code+="\nvoid fragment(){}"
+			code=code.replace("shader_type canvas_item;","shader_type canvas_item;\nuniform vec2 chunk_origin; uniform vec2 chunk_size; varying vec2 chunk_pixel; uniform float e01_far_clean=0.0; uniform sampler2D e01_owner; uniform bool use_e01_owner=false;")
 			var vertex: int=code.find("void vertex()")
 			if vertex>=0:
 				var start: int=code.find("{",vertex)+1
@@ -33,15 +44,30 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 				if code[end]=="}":depth-=1
 				end+=1
 			code=code.insert(end-1,"\nvec2 cp=chunk_pixel-chunk_origin; COLOR.a*=smoothstep(0.0,80.0,cp.x)*(1.0-smoothstep(chunk_size.x-80.0,chunk_size.x,cp.x))*smoothstep(0.0,40.0,cp.y)*(1.0-smoothstep(chunk_size.y-60.0,chunk_size.y,cp.y));\n")
+			end=code.find("{",code.find("void fragment()"))+1
+			depth=1
+			while depth>0 and end<code.length():
+				if code[end]=="{":depth+=1
+				if code[end]=="}":depth-=1
+				end+=1
+			code=code.insert(end-1,"\nif(use_e01_owner) COLOR.a*=texture(e01_owner,clamp((chunk_pixel-chunk_origin)/chunk_size,vec2(0.0),vec2(1.0))).r; COLOR.a*=mix(1.0,smoothstep(800.0,1400.0,chunk_pixel.x-chunk_origin.x),e01_far_clean);\n")
 			var shader:=Shader.new()
 			shader.code=code
-			compiled[source]=shader
+			compiled[key]=shader
 		var material:=old.duplicate() as ShaderMaterial if old!=null else ShaderMaterial.new()
-		material.shader=compiled[source]
+		material.shader=compiled[key]
 		material.set_shader_parameter("chunk_size",size)
+		if id<2:
+			material.set_shader_parameter("use_e01_owner",true)
+			material.set_shader_parameter("e01_owner",[preload("res://art/xumen-e01/R1-01-ownership.png"),preload("res://art/xumen-e01/R1-02-ownership.png")][id])
+		if id==1 and str(chunk.get_path_to(node)).begins_with("ChapterEnvironment/Far/"):
+			material.set_shader_parameter("e01_far_clean",1.0)
 		node.material=material
 		items.append(material)
 	materials[id]=items
 
 func move_chunk(id: int,at: Vector2) -> void:
-	for material: ShaderMaterial in materials.get(id,[]):material.set_shader_parameter("chunk_origin",at)
+	for material: ShaderMaterial in materials.get(id,[]):
+		material.set_shader_parameter("chunk_origin",at)
+		material.set_shader_parameter("room_origin",at)
+		material.set_shader_parameter("scene_origin",at)

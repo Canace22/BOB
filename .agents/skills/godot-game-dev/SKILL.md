@@ -118,3 +118,10 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 旧QA默认房间隔离，仅验原机制；正式连通专项设置qa_connected=true。`connected_world_qa.gd`、顺序`-- --reload-connected`与真实键盘`web_connected_world.mjs`覆盖当前行为，证据在build/qa/xumen-connected。不要并行写QA存档。自然切换保留缓存状态，显式重载/新旅途/死亡清除旧上下文，避免复用旧主角目标或已死亡敌人。支路S+空格下行时必须检查回到hub的落差范围。
 
 运行时蒙版匹配绘画场景边界，等量重定位后更新材质原点；排除角色/战斗动态精灵。无自定义fragment的Sprite不要重复乘texture，否则颜色平方变暗。详细制作源与边界见assets/source/xumen-connected-v2/README.md。
+
+
+### 联合过渡样板与连续对象
+
+E01用独立专用远景、骨拱与骨路，同时清理两房旧水色；先检查关闭前景后的结构和原碰撞，不用全局蓝色键。干净生成式提取仍需按既有顶面配准，逐带平移会裂缝，应使用连续映射并GPU回查。来源与边界见assets/source/xumen-e01-seam-v1。
+
+自然跨界FX保留年龄并按原点等量移动；弹体先记世界坐标，再迁入章级容器，避免跟旧房停更。caster退出信号应区分reparent和真正离树。相同水床用单实例避免重启/叠响。E01专项23项与真实浏览器可复验；不同音色混音和全部其它边的新画片尚未由此验证。

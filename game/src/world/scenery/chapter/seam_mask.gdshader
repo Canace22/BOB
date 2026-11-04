@@ -13,6 +13,7 @@ void vertex() {
 	world_pixel = (MODEL_MATRIX * vec4(VERTEX,0.0,1.0)).xy;
 }
 void fragment() {
+	vec2 room_pixel=world_pixel-scene_origin;
 	vec4 pixel = texture(TEXTURE, UV);
 	float end_fade = smoothstep(0.03, 0.18, UV.x) * (1.0 - smoothstep(0.82, 0.97, UV.x));
 	float y_fade = smoothstep(0.0, 0.09, UV.y) * (1.0 - smoothstep(0.83, 1.0, UV.y));
@@ -26,9 +27,9 @@ void fragment() {
 	float caustic = 0.98 + 0.02 * sin(clock * 0.43 + UV.x * 9.0 + UV.y * 4.0);
 	pixel.rgb *= caustic;
 	pixel.a *= end_fade * y_fade * open_mask * strength;
-	pixel.a *= smoothstep(0.0,20.0,world_pixel.x) * (1.0-smoothstep(scene_width-20.0,scene_width,world_pixel.x));
+	pixel.a *= smoothstep(0.0,20.0,room_pixel.x) * (1.0-smoothstep(scene_width-20.0,scene_width,room_pixel.x));
 	// Never paint a second ground plane across the real collision or reward platform.
-	pixel.a *= 1.0-smoothstep(portal_ground-200.0,portal_ground-100.0,world_pixel.y);
+	pixel.a *= 1.0-smoothstep(portal_ground-200.0,portal_ground-100.0,room_pixel.y);
 	if (water_only > 0.5) pixel.a *= arch;
 	COLOR = pixel;
 }

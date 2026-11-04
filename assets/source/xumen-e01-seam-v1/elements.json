@@ -1,0 +1,357 @@
+{
+  "scope": "E01 only; higher branch artwork outside current batch",
+  "expected_unique_families": 13,
+  "fish_total": 22,
+  "bubble_total": 10,
+  "flex_total": 3,
+  "items": [
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_DEPTH",
+      "layer": "far",
+      "runtime": "depth.png",
+      "world_anchor": [
+        845,
+        -264.153
+      ],
+      "count": 1,
+      "motion": "12s restrained brightness",
+      "preferred": "unique open-water plate, 1.2% RGB envelope",
+      "backup": "independent masked water light shader",
+      "reason": "preserve anatomy and readable route",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_DEPTH"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_MID_ARCH",
+      "layer": "middle",
+      "runtime": "arch.png",
+      "world_anchor": [
+        1389,
+        -20.153
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "painted RGBA; fixed world anchor",
+      "backup": "editable source repaint",
+      "reason": "preserve anatomy and readable route",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_MID_ARCH"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_WORLD_GROUND",
+      "layer": "playable",
+      "runtime": "ground.png",
+      "world_anchor": [
+        1100,
+        531.847
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "painted RGBA; fixed world anchor",
+      "backup": "editable source repaint",
+      "reason": "new bone painted once; contour-conformed without changing collision",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_WORLD_GROUND"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FRONT",
+      "layer": "foreground",
+      "runtime": "foreground.png",
+      "world_anchor": [
+        845,
+        -530
+      ],
+      "count": 1,
+      "motion": "bounded world-camera parallax",
+      "preferred": "independent alpha frame, world camera *0.008",
+      "backup": "fixed foreground if margins insufficient",
+      "reason": "preserve anatomy and readable route",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FRONT"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FLEX_0",
+      "layer": "middle",
+      "runtime": "existing whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "world_anchor": [
+        1705,
+        170
+      ],
+      "count": 1,
+      "motion": "4s 48frame12FPS, phase 0",
+      "preferred": "reuse validated fixed-root/delayed-tip atlas, shared clock",
+      "backup": "pinned mesh if new contour required",
+      "reason": "fixed painted root, material identity and looping motion already proven; new placement reviewed",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FLEX_0"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FLEX_1",
+      "layer": "middle",
+      "runtime": "existing whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "world_anchor": [
+        1875,
+        105
+      ],
+      "count": 1,
+      "motion": "4s 48frame12FPS, phase 13",
+      "preferred": "reuse validated fixed-root/delayed-tip atlas, shared clock",
+      "backup": "pinned mesh if new contour required",
+      "reason": "fixed painted root, material identity and looping motion already proven; new placement reviewed",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FLEX_1"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FLEX_2",
+      "layer": "middle",
+      "runtime": "existing whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "world_anchor": [
+        2045,
+        40
+      ],
+      "count": 1,
+      "motion": "4s 48frame12FPS, phase 26",
+      "preferred": "reuse validated fixed-root/delayed-tip atlas, shared clock",
+      "backup": "pinned mesh if new contour required",
+      "reason": "fixed painted root, material identity and looping motion already proven; new placement reviewed",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FLEX_2"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FISH_0",
+      "layer": "far",
+      "runtime": "existing fish_schools/silverfin/swim_atlas.png",
+      "world_anchor": [
+        1700,
+        300
+      ],
+      "count": 10,
+      "motion": "32phase body plus24s bounded path",
+      "preferred": "existing local swim atlas + separate path and phase",
+      "backup": "new swim atlas if identity/style changes",
+      "reason": "avoid paper-cutout sliding and unlimited instances",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FISH_0"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_BUBBLE_0",
+      "layer": "middle",
+      "runtime": "existing reference_environment/bubble.png",
+      "world_anchor": [
+        1780,
+        250
+      ],
+      "count": 5,
+      "motion": "upward variable speed + prewarm/fade/recycle",
+      "preferred": "existing bounded bitmap pool shared clock",
+      "backup": "GPUParticles only if needed scale rises",
+      "reason": "no baked copies; count10 stable",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_BUBBLE_0"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_FISH_1",
+      "layer": "far",
+      "runtime": "existing fish_schools/tealback/swim_atlas.png",
+      "world_anchor": [
+        1930,
+        395
+      ],
+      "count": 12,
+      "motion": "32phase body plus24s bounded path",
+      "preferred": "existing local swim atlas + separate path and phase",
+      "backup": "new swim atlas if identity/style changes",
+      "reason": "avoid paper-cutout sliding and unlimited instances",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_FISH_1"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_BUBBLE_1",
+      "layer": "middle",
+      "runtime": "existing reference_environment/bubble.png",
+      "world_anchor": [
+        2080,
+        250
+      ],
+      "count": 5,
+      "motion": "upward variable speed + prewarm/fade/recycle",
+      "preferred": "existing bounded bitmap pool shared clock",
+      "backup": "GPUParticles only if needed scale rises",
+      "reason": "no baked copies; count10 stable",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_BUBBLE_1"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_HUB_SUPPORT",
+      "layer": "playable",
+      "runtime": "hub-world-clean.png",
+      "world_anchor": [
+        2167,
+        -102.153
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "painted RGBA; fixed world anchor",
+      "backup": "editable source repaint",
+      "reason": "regenerated alpha extraction removes baked water; original three physical platforms remain unchanged",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_HUB_SUPPORT"
+    },
+    {
+      "collision": "not_applicable:visuals use existing unchanged physical passages",
+      "interaction": "not_applicable:environment, no new gameplay",
+      "sound": "not_applicable:reused single chapter water bed, no per-prop emitters",
+      "state": "persistent node; host.clock pauses; fresh process restarts environment clock",
+      "scale": "1 exported pixel = 1 world pixel",
+      "acceptance": "AI visual review + actual native/Chrome evidence; user aesthetic not signed",
+      "id": "E01_HUB_CEILING",
+      "layer": "middle",
+      "runtime": "hub-middle-clean.png",
+      "world_anchor": [
+        2167,
+        -102.153
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "painted RGBA; fixed world anchor",
+      "backup": "editable source repaint",
+      "reason": "editable spatial silhouette mask keeps anatomy; never blue chroma key",
+      "source_status": "observed reference; motion parameters proposed and runtime-tested",
+      "node": "Transition_E01/E01_HUB_CEILING"
+    }
+  ],
+  "ownershipMasks": [
+    "R1-01-ownership.png",
+    "R1-02-ownership.png"
+  ],
+  "all_files": {
+    "arch.png": {
+      "size": [
+        1076,
+        717
+      ],
+      "sha256": "c5da420d6abbd7f9ffce6fcc94a8732a1fdf007fe1e39dcc0cacbc750c3c0c97"
+    },
+    "depth.png": {
+      "size": [
+        2164,
+        1535
+      ],
+      "sha256": "82bc65325a05503d289e1045f245ce39ce5f605f8378fee241cd6441bff32a30"
+    },
+    "foreground.png": {
+      "size": [
+        2164,
+        1535
+      ],
+      "sha256": "5b627313e75b26d9ec324b0ce219af169c0eca7a10b781a16a945c9987e79c03"
+    },
+    "ground.png": {
+      "size": [
+        1600,
+        430
+      ],
+      "sha256": "1523ee79733a58891711a5ac5ed3de89441b574d34c0b3cb0a3d78c3de3b2765"
+    },
+    "hub-middle-clean.png": {
+      "size": [
+        1704,
+        973
+      ],
+      "sha256": "26cd42016af855235c6699425f2f9445fdeacc8a38a0e0482334772b3c89cb31"
+    },
+    "hub-world-clean.png": {
+      "size": [
+        1704,
+        973
+      ],
+      "sha256": "78945b329d54c1b78b1632a38110abee0817d656132822b1b488e794e0c3895e"
+    },
+    "R1-01-ownership.png": {
+      "size": [
+        1671,
+        941
+      ],
+      "sha256": "5d588e91c7bdac58a2f803572e83594007fb50aea077130462fe978efe1ff121"
+    },
+    "R1-02-ownership.png": {
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "79a50ef30893653cd99da1ee42b546a9775d31bc3fbf5871c34dfba662a5250b"
+    }
+  }
+}

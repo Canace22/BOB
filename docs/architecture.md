@@ -75,3 +75,5 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。大包分别拆为64MiB的压缩/原始分片，并检查分片及串接SHA256；缺少解压API的浏览器使用原始分片。导出保留原文件，发布只在完整原始分片覆盖后省略超限单文件。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源；最终线上启动结果另见进度。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。
+
+E01专用视觉位于src/campaign/connected/e01_transition.gd，独立世界锚点与host.clock；章级单一水床、持久弹体和FX原点迁移由connected_world负责。create_room_enemies复用原创建逻辑，提前准备E01邻房但不启用其战斗。原V6及地形数据不变，详见[样板](../assets/source/xumen-e01-seam-v1/README.md)。
