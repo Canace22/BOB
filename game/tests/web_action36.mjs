@@ -10,7 +10,7 @@ const chrome = process.env.CHROME_PATH ?? 'C:/Program Files/Google/Chrome/Applic
 const browser = await chromium.launch({headless:true, executablePath:chrome, args:['--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']});
 const context = await browser.newContext({viewport:{width:1280,height:720}, recordVideo:{dir:out,size:{width:1280,height:720}}});
 const page = await context.newPage();
-page.setDefaultTimeout(180000);
+page.setDefaultTimeout(Number(process.env.READY_TIMEOUT_MS ?? 180000));
 const checks = [], errors = [], states = [];
 page.on('pageerror', e => errors.push(e.message));
 page.on('console', m => {if(m.type()==='error')errors.push(m.text());});
@@ -101,9 +101,10 @@ try {
   check('no browser or engine errors',errors.length===0);
 } catch(e) {thrown=String(e.stack??e);errors.push(thrown);}
 finally {
+  // Persist assertions before video finalization, which may outlive the browser checks.
+  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({method:'real Playwright keyboard; read-only snapshot; independent browser storage; explicit F9 practice for extended skills',checks,errors,states},null,2));
   const video=page.video();await context.close();
   if(video){const source=await video.path();fs.copyFileSync(source,path.join(out,'main-keyboard.webm'));}
   await browser.close();
-  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({method:'real Playwright keyboard; read-only snapshot; independent browser storage; explicit F9 practice for extended skills',checks,errors,states},null,2));
 }
 if(thrown||errors.length||checks.some(c=>!c.pass))process.exitCode=1;
