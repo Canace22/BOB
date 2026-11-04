@@ -1,5 +1,7 @@
 # 36动作最终接入复核
 
+> 2026-11-04用户复核更正：`abyss_scream`举手时第三手漏检，本文此前该动作的外观通过结论撤回。以[两臂定向修复](anatomy-fix/review.md)和本轮独立实机证据为准；历史合集不是修复后的证明。
+
 2026-11-04，复核者 agent/root、agent/camera_validation。此结论为 AI 源资产与实际游戏复核，不是用户审美确认。逐项字节哈希及证据保存在本地 validation.json，并由 register.py 写入台账的独立 technical/runtime/art 字段。
 
 ## 实际采用与返修

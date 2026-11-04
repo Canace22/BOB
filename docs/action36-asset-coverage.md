@@ -2,7 +2,7 @@
 
 由仓库根目录 `build_asset_coverage.py` 根据实际 `animations.json`、[操作映射](action36-controls.md)、独立 `validation.json`（存在时）和哈希绑定的图集完整性报告生成。重跑：`python build_asset_coverage.py`。本表不会写入验收状态或修改运行清单。
 
-动画清单 SHA-256：`02cc9bf74a721351c480cd675f25754a614ae7f84fa01f11b6eeed02f19ee502`。
+动画清单 SHA-256：`a18bd70cbd33d4b1f13319ba25a618f5c3a207e47e9e9963bb6b8c40dc94243f`。
 
 技术完整性只包含源/图集帧数、字节哈希、透明边界和矩形范围；不代表操控、美术或正式取得流程通过。逻辑回归与GPU外观分别记录，最终日志见 `game/build/qa/action36/tests-final.log`；不能以逻辑测试替代外观结论。逐项实机/美术状态仅采用当前图集哈希匹配且证据完整的 validation 记录；缺失时明确待验，候选不自动升格。
 
@@ -33,14 +33,14 @@
 | `scan` 照见·骨音探潮 | scan；代理interact；新增 | 视频提取 [21_scan.mp4](<G:/鲸落万物生/outputs/拾潮者_空洞骑士参考_全动作展示/21_scan.mp4>) | 16 / 24 | 世界地面环 16帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | T；基础/探索；420像素探查、reveal接口；主场景/隔离F9 |
 | `interact` 伸手交互 | interact；复用+换图 | 视频提取 [22_interact.mp4](<G:/鲸落万物生/outputs/拾潮者_空洞骑士参考_全动作展示/22_interact.mp4>) | 13 / 24 | 无独立图集FX | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 门/营地/奖励旁E；基础/交互；仅有效目标、延迟安全切房；主场景/隔离F9 |
 | `hurt` 受击与踉跄 | hit；复用+清理 | 视频提取 [23_hurt.mp4](<G:/鲸落万物生/outputs/拾潮者_空洞骑士参考_全动作展示/23_hurt.mp4>) | 10 / 24 | 无独立图集FX | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 受伤且非无敌；基础/状态；扣血、硬直、打断残留；主场景/隔离F9 |
-| `defeat` 力竭归零 | defeat；复用+换图 | 视频提取 [24_defeat.mp4](<G:/鲸落万物生/outputs/拾潮者_空洞骑士参考_全动作展示/24_defeat.mp4>) | 36 / 24 | 无独立图集FX | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 生命归零；基础/状态；动画继续、3秒后营地复活；主场景/隔离F9 |
+| `defeat` 力竭归零 | defeat；复用+换图 | 视频提取 [24_defeat.mp4](<G:/鲸落万物生/outputs/拾潮者_空洞骑士参考_全动作展示/24_defeat.mp4>) | 36 / 24 | 无独立图集FX | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 生命归零；基础/状态；动画继续、死亡菜单按R返回检查点；主场景/隔离F9 |
 | `shadow_dash` 影潮穿行 | shadow_dash；代理A1_dash；新增 | 视频提取 [08_dash.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/08_dash.mp4>)；复用dash本体，冷青色调 | 12 / 24 | 无独立图集FX；历史本体快照残影，世界空间 | 复用修复本体，保留独立升级逻辑 | 完整性通过 / 证据通过 / 独立审阅通过 | 章末后L/Shift；章末/冲刺升级；免敌层、世界墙保留；主场景/隔离F9 |
 | `great_slash` 蓄潮·重劈 | great_slash；代理heavy；新增 | 视频提取 [26_great_slash.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/26_great_slash.mp4>) | 16 / 24 | 角色局部层 16帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 按住J≥0.55秒松开；冲刺/蓄力派生；蓄力受击取消、单次伤害；主场景/隔离F9 |
 | `dash_slash` 奔潮·冲刺劈砍 | dash_slash；代理strike_01；新增 | 视频提取 [27_dash_slash.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/27_dash_slash.mp4>) | 12 / 24 | 角色局部层 12帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 冲刺中J；冲刺/移动攻击；方向锁、真实前冲；主场景/隔离F9 |
 | `cyclone` 旋潮·回旋斩 | cyclone；代理heavy；新增 | 视频提取 [28_cyclone.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/28_cyclone.mp4>) | 24 / 24 | 角色局部层 24帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 按住J≥0.55秒，S+松开；冲刺/蓄力派生；三段各一次、时间跨越；主场景/隔离F9 |
 | `crystal_dash` 凝流·蓄力长冲 | crystal_dash；代理A1_dash；新增 | 视频提取 [29_crystal_dash.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/29_crystal_dash.mp4>) | 24 / 24 | 无独立图集FX；历史本体快照残影，世界空间 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 地面按V≥0.6秒松开；冲刺/蓄力移动；移动扫击、撞墙退出、跳取消；主场景/隔离F9 |
 | `up_spell` 潮声·上涌 | up_spell；代理heavy；新增 | 视频提取 [30_up_spell_retry.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/30_up_spell_retry.mp4>) | 16 / 24 | 角色局部层 16帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | W/上+U；舌台/方向潮术；上方命中、共享潮术冷却；主场景/隔离F9 |
-| `abyss_scream` 深潮·共鸣啸 | abyss_scream；代理heavy；新增 | 视频提取 [31_abyss_scream_final_retry.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/31_abyss_scream_final_retry.mp4>) | 20 / 24 | 角色局部层 20帧；同源拆分 | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 章末后W/上+U；章末/上涌升级；三段脉冲、单次扣费；主场景/隔离F9 |
+| `abyss_scream` 深潮·共鸣啸 | abyss_scream；代理heavy；新增 | AI补制精灵表 [abyss_scream-v2.png](<G:/鲸落万物生/BOB/assets/source/tide-picker-action36/sprite-sheets/abyss_scream-v2.png>) | 20 / 24 | 角色局部层 20帧；[31_abyss_scream_final_retry.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/31_abyss_scream_final_retry.mp4>) | 新增AI精灵表替换缺陷视频本体 | 完整性通过 / 证据通过 / 独立审阅通过 | 章末后W/上+U；章末/上涌升级；三段脉冲、单次扣费；主场景/隔离F9 |
 | `shadow_orb` 深鸣·穿潮弹 | shadow_orb；代理A4_parry；新增 | 视频提取 [32_shadow_orb.mp4](<G:/鲸落万物生/outputs/拾潮者_14集参考_左右动作全集/32_shadow_orb.mp4>) | 16 / 24 | 无独立图集FX；shadow_projectile.png离体弹体；来源见effects-sources.json | 复用现有源片并返修抠像/配准 | 完整性通过 / 证据通过 / 独立审阅通过 | 章末后U；章末/弹体升级；穿敌不穿墙、每敌一次；主场景/隔离F9 |
 | `dark_dive` 坠潮·深钟 | dark_dive；代理heavy；新增 | AI补制精灵表 [dive-v1.png](<G:/鲸落万物生/BOB/assets/source/tide-picker-action36/sprite-sheets/dive-v1.png>)；复用dive本体及地面环 | 8 / 16 | 世界地面环 8帧，event_frame=4；[ground_ring-v2.png](<G:/鲸落万物生/BOB/assets/source/tide-picker-action36/sprite-sheets/ground_ring-v2.png>) | 复用修复本体，保留独立升级逻辑 | 完整性通过 / 证据通过 / 独立审阅通过 | 章末后空中S/下+U；章末/下砸升级；真实落地、0.28秒落地保护；主场景/隔离F9 |
 | `swim` 耐蚀浮游 | TideSkillWater + visual_key=swim；新增组件 | 视频提取 [swim-body.mp4](<G:/鲸落万物生/BOB/assets/source/tide-picker-action36/jobs/swim-body.mp4>) | 24 / 12 | 无独立图集FX | 新增AI补制视频并提取本体 | 完整性通过 / 证据通过 / 独立审阅通过 | 进入显式水面Area；章末/被动环境能力；未解锁受酸伤、出水还原；独立最小条件，非正式七房已配置 |

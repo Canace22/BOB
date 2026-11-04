@@ -55,6 +55,8 @@ Measurements such as head height, torso width, root offset, and limb length help
 
 ## Judge the motion in playback
 
+For held-prop casting, name the weapon arm and the free casting arm before generation. Trace the same free hand from rest through raise/cast/lower, checking that its former resting hand disappears when raised; counting only the raised hand and weapon grip misses a third hand under the cape. Inspect body-only frames without effects, both facings, and the transition poses. Record whole-body mirroring separately from anatomical left/right identity.
+
 Create and actually view a looping animated preview or a browser recording, then verify the sequence in the target game. A static contact sheet helps inspect drawing quality but cannot prove smoothness. For a loop, watch several repetitions including the last-to-first seam. For a one-shot, watch both entry and recovery into its next state.
 
 Use these checks, adapting the inputs to the project:
