@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 54,
+  "revision": 56,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -29329,6 +29329,279 @@
       "file": "assets/runtime/scenes/xumen-vertical-v1/E33-upper.png",
       "width": 400,
       "height": 41,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-depth",
+      "name": "E35-depth 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-depth.png",
+      "width": 1965,
+      "height": 2542,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-ledge-0",
+      "name": "E35-ledge-0 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-ledge-0.png",
+      "width": 210,
+      "height": 25,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-ledge-1",
+      "name": "E35-ledge-1 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-ledge-1.png",
+      "width": 210,
+      "height": 31,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-ledge-2",
+      "name": "E35-ledge-2 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-ledge-2.png",
+      "width": 210,
+      "height": 35,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-lower-middle",
+      "name": "E35-lower-middle 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-lower-middle.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-lower-world",
+      "name": "E35-lower-world 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-lower-world.png",
+      "width": 1704,
+      "height": 973,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-lower",
+      "name": "E35-lower 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-lower.png",
+      "width": 190,
+      "height": 25,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-neighbor-middle",
+      "name": "E35-neighbor-middle 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-neighbor-middle.png",
+      "width": 1508,
+      "height": 1097,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-neighbor-world",
+      "name": "E35-neighbor-world 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-neighbor-world.png",
+      "width": 1508,
+      "height": 1097,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-spine",
+      "name": "E35-spine 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-spine.png",
+      "width": 623,
+      "height": 1662,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-upper-middle",
+      "name": "E35-upper-middle 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-upper-middle.png",
+      "width": 1604,
+      "height": 1033,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-upper-world",
+      "name": "E35-upper-world 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-upper-world.png",
+      "width": 1604,
+      "height": 1033,
+      "integrationStatus": "runtime-verified-local",
+      "source": {
+        "method": "built-in imagegen; portrait and spatial registration",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-style-v1/images/03-骨壁生台-上行过渡.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-vertical-v1/elements.json",
+      "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-vertical-E35-upper",
+      "name": "E35-upper 骨壁生台",
+      "kind": "environment",
+      "region": "R1",
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-vertical-v1/E35-upper.png",
+      "width": 292,
+      "height": 35,
       "integrationStatus": "runtime-verified-local",
       "source": {
         "method": "built-in imagegen; portrait and spatial registration",

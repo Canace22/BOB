@@ -30,7 +30,9 @@ func run() -> void:
 	check("walk_into_upper_room",await walk_world(edge.points[-1].x+55,400))
 	check("upper_room_same_player",host.room_index==edge.to and host.player.get_instance_id()==id)
 	check("back_to_shaft",await walk_world(edge.points[-2].x,400))
-	check("descend_original_platforms",await descend(edge.points[1]))
+	# Original down+jump may skip the final step and land on the hub floor.
+	# Exact lower-step landing is separately checked by the Web float-brake run.
+	check("descend_returns_existing_route",await descend(edge.points[1]),world.snapshot())
 	check("back_to_hub",await walk_world(edge.points[0].x+(45 if edge_id=="E33" else -45),400))
 	check("hub_same_player",host.room_index==1 and host.player.get_instance_id()==id)
 	var time: float=art.elapsed

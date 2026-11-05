@@ -31,7 +31,12 @@ try{
  await page.waitForFunction(()=>typeof window.render_game_to_text==='function',null,{timeout:600000});await page.keyboard.press('Enter');await page.waitForTimeout(650);
  check('new shaft assets present',(await state()).connected_world.shafts.edges.includes(edge));
  // Existing preview and practice keys are explicit test fixtures; no injected state.
- await page.keyboard.press('F9');await page.keyboard.press(edge==='E33'?'6':'7');await page.waitForTimeout(600);
+ await page.keyboard.press('F9');
+ // R1-07's authored preview spawn is above its first real gap. Drift/float
+ // onto the existing left landing using actual keys, not a position fixture.
+ if(edge==='E35'){await page.keyboard.down('a');await page.keyboard.down('w')}
+ await page.keyboard.press(edge==='E33'?'6':'7');await page.waitForTimeout(600);
+ if(edge==='E35'){await page.keyboard.up('a');await page.keyboard.up('w')}
  const id=(await state()).connected_world.player_id;
  await walk(axis);await page.screenshot({path:path.join(out,'top.png')});
  await climbOrDescend(false);await page.screenshot({path:path.join(out,'bottom.png')});

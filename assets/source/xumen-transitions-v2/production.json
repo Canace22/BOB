@@ -1,14 +1,14 @@
 {
-  "stage": "E33_art",
+  "stage": "E35_publish",
   "edges": {
     "E02": "online_technical_visual_ai_passed",
     "E03": "online_technical_visual_ai_passed",
     "E04": "online_technical_visual_ai_passed",
-    "E33": "pending",
-    "E35": "pending"
+    "E33": "online_technical_visual_ai_passed",
+    "E35": "local_technical_visual_ai_passed"
   },
   "precondition": "E01 online passed",
-  "next": "E33 vertical bone shaft and ledge variants",
+  "next": "Publish E35, verify online build and keyboard, then finalize six-edge report",
   "verified": {
     "check_errors": 0,
     "engineering": 57,
@@ -54,5 +54,23 @@
     "run": 41936324274,
     "deployment": "success",
     "online_keyboard": "11/11 errors0,normal boss fight,52s motion"
+  },
+  "publication_E33": {
+    "source": "a99022020de1a72e2ad0ae422aebba1913398527",
+    "pages": "f587429d3405b580147e29dfac11118e0bbae0a9",
+    "run": 41940682360,
+    "deployment": "success",
+    "online_keyboard": "9/9 errors0,52s playback"
+  },
+  "verified_E35": {
+    "check_errors": 0,
+    "engineering": 57,
+    "native": 29,
+    "E33_regression": 27,
+    "connected": 38,
+    "independent_reload": 2,
+    "chrome_local": 9,
+    "motion_seconds": 52,
+    "resources_missing": 0
   }
 }

@@ -61,13 +61,29 @@ def build(edge):
         items.append({'id':'E33-crown','file':'E33-crown.png','at':[1389,-270],'z':-2})
         im=Image.open(R/'assets/runtime/scenes/xumen-e01-seam-v1/arch.png').convert('RGBA');a=np.array(im);f=np.clip(np.arange(im.height)/60,0,1)
         a[:,:,3]=(a[:,:,3]*f[:,None]).astype('uint8');Image.fromarray(a).save(O/'E33-e01-arch-top.png')
+    if edge=='E35':
+        for layer,source in [('world','assets/runtime/scenes/xumen-transitions-v2/hub-world-clean.png'),('middle','assets/runtime/scenes/xumen-e01-seam-v1/hub-middle-clean.png')]:
+            im=Image.open(R/source).convert('RGBA');a=np.array(im);yy,xx=np.mgrid[:im.height,:im.width];rgb=a[:,:,:3].astype(float)
+            zone=np.clip((xx-1280)/100,0,1)*np.clip((560-yy)/100,0,1)
+            sel=zone*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.35)/18,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/18,0,1)
+            Image.fromarray((sel*255).astype('uint8')).save(S/'masters'/('E35-lower-'+layer+'-selection.png'))
+            a[:,:,3]=(a[:,:,3]*(1-sel)).astype('uint8');Image.fromarray(a).save(O/('E35-lower-'+layer+'.png'))
+        # The new right shaft can see the already accepted left branch room's
+        # far right wall. Compose cleanup on E33 output, preserving its entry.
+        for layer in ['world','middle']:
+            im=Image.open(O/('E33-upper-'+layer+'.png')).convert('RGBA');a=np.array(im);yy,xx=np.mgrid[:im.height,:im.width];rgb=a[:,:,:3].astype(float)
+            zone=np.clip((xx-1020)/120,0,1)*np.clip((yy-180)/70,0,1)
+            sel=zone*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.35)/9,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/9,0,1)
+            Image.fromarray((sel*255).astype('uint8')).save(S/'masters'/('E35-neighbor-'+layer+'-selection.png'))
+            a[:,:,3]=(a[:,:,3]*(1-sel)).astype('uint8');Image.fromarray(a).save(O/('E35-neighbor-'+layer+'.png'))
     # Bounded operator selection only at the upper entry's old baked water.
     ri=5 if edge=='E33' else 6
     for layer in ['World','Middle']:
         im=Image.open(R/f'game/art/r1-chapter-scenes/R1-0{ri+1}/{layer}.png').convert('RGBA');a=np.array(im)
         yy,xx=np.mgrid[:im.height,:im.width];rgb=a[:,:,:3].astype(float)
-        zone=np.clip((850-xx)/180,0,1)*np.clip((yy-270)/80,0,1)
-        selection=zone*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.35)/18,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/18,0,1)
+        zone=np.clip((850-xx)/180,0,1)*np.clip((yy-(130 if edge=='E35' else 270))/80,0,1)
+        divisor=9 if edge=='E35' else 18
+        selection=zone*np.clip((rgb[:,:,2]-rgb[:,:,0]*1.35)/divisor,0,1)*np.clip((rgb[:,:,1]-rgb[:,:,0]*1.15)/divisor,0,1)
         Image.fromarray((selection*255).astype('uint8')).save(S/'masters'/(edge+'-'+layer+'-water-selection.png'))
         a[:,:,3]=(a[:,:,3]*(1-selection)).astype('uint8');Image.fromarray(a).save(O/(edge+'-upper-'+layer.lower()+'.png'))
     data={'canvas':canvas,'instances':items,'collisionChanged':False,'source':'built-in imagegen; portrait-native; deterministic alpha/contour registration','userAesthetic':'pending'}

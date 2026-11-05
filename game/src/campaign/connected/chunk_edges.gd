@@ -27,6 +27,15 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 	if id==5 and "E33" in XumenAuthoredShafts.EDGES:
 		chunk.get_node("ChapterEnvironment/World/Surface").texture=load("res://art/xumen-vertical/E33-upper-world.png")
 		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=load("res://art/xumen-vertical/E33-upper-middle.png")
+	if id==6 and "E35" in XumenAuthoredShafts.EDGES:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=load("res://art/xumen-vertical/E35-upper-world.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=load("res://art/xumen-vertical/E35-upper-middle.png")
+	if id==5 and "E35" in XumenAuthoredShafts.EDGES:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=load("res://art/xumen-vertical/E35-neighbor-world.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=load("res://art/xumen-vertical/E35-neighbor-middle.png")
+	if id==1 and "E35" in XumenAuthoredShafts.EDGES:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=load("res://art/xumen-vertical/E35-lower-world.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=load("res://art/xumen-vertical/E35-lower-middle.png")
 	for branch: String in XumenAuthoredShafts.EDGES:
 		if id==1 or (id==5 and branch=="E33") or (id==6 and branch=="E35"):
 			var portal: Node2D=chunk.get_node_or_null("Continuity_"+branch)

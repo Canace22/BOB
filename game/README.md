@@ -52,3 +52,5 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 ## E01过渡样板
 
 外伤坡→须筛采用联合骨路、斜拱和独立环境动件；原角色与地形保持。通过正常A/D行走往返。来源与复跑见[制作说明](../assets/source/xumen-e01-seam-v1/README.md)，最新发布状态见[进度](progress.md)。
+
+其余主路E02/E03/E04采用专用骨膜渐变；E33/E35使用独立高幅骨壁和八/十级原单向平台，保持同一角色自然跨房。上行空格，下穿S+空格；浮游W可制动，能力仍遵循原门槛，F9只作不存档练习。来源、母版与验收见[上行接头说明](../assets/source/xumen-vertical-v1/README.md)及进度。

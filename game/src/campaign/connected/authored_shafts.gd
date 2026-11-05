@@ -1,7 +1,7 @@
 class_name XumenAuthoredShafts
 extends Node2D
 ## Portrait-native bone spines, distinct original-top aligned ledges.
-const EDGES: Array[String]=["E33"]
+const EDGES: Array[String]=["E33","E35"]
 var host: WhalebellyMain
 var parts: Dictionary={}
 var schools: Array[ChapterFishGroup]=[]

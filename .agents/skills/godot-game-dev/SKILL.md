@@ -113,6 +113,8 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 
 ## 七房实际连通
 
+上行接头用原生高幅远景、中景骨壁与三种以上独立台面，不能拉长横图。底/中/顶及关前景截图会暴露旧横图的平切顶；先补独立结构延伸再局部退让Alpha，保留原碰撞。`authored_shaft_qa.gd`逐帧原输入上下返，Web驱动需确认最低落点高度：既有0.35秒下穿免碰可能跨过最后一台，E33已用真实W浮游短制动后落台，不能把落到更低主路当作支路成功。浏览器F9/房间预览夹具与正常取得能力分别标注。来源与复跑见`assets/source/xumen-vertical-v1/README.md`。
+
 正常入口由`src/campaign/connected/`同时摆放七房与六条有碰撞的连接段；原房间ID及局部V6保存保持。自然跨房保留同一角色并对全部场景/镜头等量重定位，不能用load_room新建角色或整屏快照假称连续行走。迁移期间显式保护角色_exit_tree清理，真正退出/死亡继续释放；旧机关和战斗的显式process_mode须单独禁用，自主环境保持可暂停。
 
 旧QA默认房间隔离，仅验原机制；正式连通专项设置qa_connected=true。`connected_world_qa.gd`、顺序`-- --reload-connected`与真实键盘`web_connected_world.mjs`覆盖当前行为，证据在build/qa/xumen-connected。不要并行写QA存档。自然切换保留缓存状态，显式重载/新旅途/死亡清除旧上下文，避免复用旧主角目标或已死亡敌人。支路S+空格下行时必须检查回到hub的落差范围。
