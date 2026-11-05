@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 68,
+  "revision": 69,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -32121,6 +32121,234 @@
       "qa": {
         "scope": "概念图查看、文件与图册核对；非游戏实测",
         "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e01",
+      "name": "须门接续 · 外伤坡 → 须筛",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E01-外伤坡到须筛.png",
+      "width": 1942,
+      "height": 809,
+      "sha256": "f33a5e0b502212b2370e9fb46aaf46ac867071a287334f5e432a69c56ba9f811",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A01-外伤坡.png",
+          "assets/source/xumen-keyart-v2/images/A02-须筛.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-afd87c6c-844b-4d18-ab5e-4587bc80dd4c"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e02",
+      "name": "须门接续 · 须筛 → 舌台",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E02-须筛到舌台.png",
+      "width": 1942,
+      "height": 809,
+      "sha256": "223defc108fb9ad6d43acc4b4338706f73cd89b75d54c084e72cbda8df7b7480",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A02-须筛.png",
+          "assets/source/xumen-keyart-v2/images/A03-舌台.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-49565bcd-f61b-413d-a756-b69af49b5385"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e03",
+      "name": "须门接续 · 舌台 → 蟹前室",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E03-舌台到蟹前室.png",
+      "width": 1942,
+      "height": 809,
+      "sha256": "4baa74715d11210fb2f43b2e692b1fe6a10182bcb2e750cec9e1ca77a74c5b43",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A03-舌台.png",
+          "assets/source/xumen-keyart-v2/images/A04-负壳蟹.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-a3290da7-a051-4ec4-b79f-9cffb368f540"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e04",
+      "name": "须门接续 · 蟹场 → 流膜育窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E04-蟹场到流膜育窝.png",
+      "width": 1942,
+      "height": 809,
+      "sha256": "62a8861437d2c9c828fe0c7bf5cfc776226c4600accf0859a499ee7f8546187b",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A04-负壳蟹.png",
+          "assets/source/xumen-keyart-v2/images/A05-流膜育窝.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-b6e85383-e5ee-4f74-81d5-805f9c344cb9"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e33",
+      "name": "须门接续 · 须筛旧伤坡 → 喷气孔上层",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E33-旧伤坡到喷气孔.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "f0e198555eb8c675c9abb70f98c9d70d9a9d3b17cb58736b797ce4c650a7fb9f",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A02-须筛.png",
+          "assets/source/xumen-keyart-v2/images/A06-喷气孔上层.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-ac0a54de-0ea0-4c02-8955-84dff41288c4"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-keyart-v1-e35",
+      "name": "须门接续 · 须根锚环 → 鲸须记忆袋",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接续原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-keyart-v1/images/E35-须根到记忆袋.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "1d2ac9220968df44ab95d6c037343e83e910ddc219f4f7a750403a664313cb76",
+      "notes": "六边既有关系的专用接续原画。无新增房间、玩法或运行变更。",
+      "source": {
+        "batchId": "xumen-seam-keyart-v1",
+        "method": "built-in imagegen; reference-guided joined-space concept",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/images/A02-须筛.png",
+          "assets/source/xumen-keyart-v2/images/A07-鲸须记忆袋.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-keyart-v1/prompts.json"
+        ],
+        "generation": "exec-1c9c82d2-4c86-4b05-959f-1edba0f998e5"
+      },
+      "qa": {
+        "scope": "概念文件、六边合同与图册；非引擎验证",
+        "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
         "userApproved": false
       }
     }

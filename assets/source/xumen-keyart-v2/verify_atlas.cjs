@@ -29,8 +29,13 @@ const { pathToFileURL, fileURLToPath } = require('node:url');
   }
   const nodes=await page.locator('.graph-node').count();
   const edges=await page.locator('.graph-edge').count();
+  const connectorImages=await page.locator('.seam-board img').count();
+  const connectorIds=await page.locator('[data-seam]').evaluateAll(xs=>xs.map(x=>x.dataset.seam));
   await page.locator('details').evaluateAll(ds=>ds.forEach(d=>d.open=false));
   await page.locator('#labels').click();
+  await page.locator('#seam-notes').click();
+  const seamNotesHidden=await page.locator('#connections').evaluate(el=>el.classList.contains('hide-seam-notes'));
+  await page.locator('#seam-notes').click();
   const labelHidden=await page.locator('.hero').evaluate(el=>el.classList.contains('hide'));
   await page.locator('#labels').click();
   await page.locator('.graph-node[data-room="R1-04"]').click();
@@ -42,12 +47,19 @@ const { pathToFileURL, fileURLToPath } = require('node:url');
   await page.locator('.hero').screenshot({path:path.join(review,'atlas-desktop.png')});
   await page.goto(pathToFileURL(file).href+'#R1-04');
   await page.locator('#R1-04 > a').screenshot({path:path.join(review,'atlas-boss.png')});
+  await page.locator('nav').evaluate(el=>el.style.visibility='hidden');
+  await page.locator('#E01 .seam-board').screenshot({path:path.join(review,'atlas-E01.png')});
+  await page.locator('#E33 .seam-board').screenshot({path:path.join(review,'atlas-E33.png')});
+  await page.locator('nav').evaluate(el=>el.style.visibility='');
   await page.setViewportSize({width:390,height:844});
   await page.goto(pathToFileURL(file).href);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   await page.screenshot({path:path.join(review,'atlas-mobile.png')});
-  const result={images,broken,errors,nodes,edges,labelHidden,roomJump,edgeJump,mobilePageOverflow:overflow,
-    passed:images.every(i=>i.ok)&&!broken.length&&!errors.length&&nodes===7&&edges===6&&labelHidden&&roomJump&&edgeJump&&!overflow};
+  await page.goto(pathToFileURL(file).href+'#E35');
+  await page.locator('#E35 .seam-board').screenshot({path:path.join(review,'atlas-seam-mobile.png')});
+  const seamOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+  const result={images,broken,errors,nodes,edges,connectorImages,connectorIds,labelHidden,seamNotesHidden,roomJump,edgeJump,mobilePageOverflow:overflow,seamMobileOverflow:seamOverflow,
+    passed:images.every(i=>i.ok)&&!broken.length&&!errors.length&&nodes===7&&edges===6&&connectorImages===6&&JSON.stringify(connectorIds)===JSON.stringify(['E01','E02','E03','E04','E33','E35'])&&labelHidden&&seamNotesHidden&&roomJump&&edgeJump&&!overflow&&!seamOverflow};
   fs.writeFileSync(path.join(review,'browser-results.json'),JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
   await browser.close();
