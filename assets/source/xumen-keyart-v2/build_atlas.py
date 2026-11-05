@@ -19,6 +19,9 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def main():
+    sys.path.insert(0,str(ROOT/'assets/source/xumen-overall-layout-v1'))
+    from build_layout import main as build_overall_layout, STYLE as MAP_STYLE, SCRIPT as MAP_SCRIPT
+    build_overall_layout()
     sys.path.insert(0,str(ROOT/'assets/source/xumen-seam-keyart-v1'))
     from render_atlas import build as build_connections, STYLE as CONNECTION_STYLE, SCRIPT as CONNECTION_SCRIPT
     d = read(SRC/'design.json')
@@ -86,7 +89,7 @@ def main():
     style='''
     :root{color-scheme:dark;--bg:#081923;--card:#102630;--line:#31505a;--ink:#e4e1d3;--muted:#9bb6bb;--gold:#deb375}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:68px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 system-ui,"Microsoft YaHei",sans-serif}a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}nav{position:sticky;top:0;background:#081923ed;border-bottom:1px solid var(--line);z-index:10;display:flex;gap:22px;padding:12px 4vw;overflow:auto;white-space:nowrap}main{max-width:1510px;margin:auto;padding:0 3vw 70px}header{padding:65px 0 35px}h1{font-size:clamp(32px,4vw,60px);margin:8px 0 10px;letter-spacing:.08em}h2{font-size:30px;margin:6px 0 18px}h3{font-size:18px;margin:20px 0 8px}.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--muted)}.lead{font-size:20px;max-width:1000px}.notice{border-left:3px solid var(--gold);padding:14px 20px;background:var(--card)}section,.room{margin-top:50px;padding-top:20px;border-top:1px solid var(--line)}img{display:block;width:100%;height:auto;border-radius:4px}.hero{position:relative;margin:20px 0}.tag{position:absolute;transform:translate(-50%,-50%);background:#06141edf;padding:3px 8px;border:1px solid #caa97b88;border-radius:4px;font-size:clamp(8px,1vw,14px);white-space:nowrap}.hero.hide .tag{display:none}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:36px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.edge{padding:20px;background:var(--card);border:1px solid var(--line);border-radius:7px}.sectiontitle{display:flex;justify-content:space-between;align-items:center}.route{color:#bcd6d7}.gate{color:var(--gold)}ul{padding-left:20px}details{border:1px solid var(--line);border-radius:5px;margin:16px 0;padding:10px 15px}summary{cursor:pointer;color:var(--gold)}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.75 ui-monospace,monospace;color:var(--muted)}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:14px}th{color:var(--gold)}small{color:var(--muted)}button{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:5px;cursor:pointer}svg{width:100%;background:#0d222b;border-radius:6px}svg path{stroke:#8eaeb8;stroke-width:3;fill:none}svg rect{fill:#183944;stroke:#8eaeb8;stroke-width:1.5}svg text{fill:var(--ink);text-anchor:middle;font:15px system-ui}.graph-edge text{fill:var(--gold)}.layout svg text{font-size:155px}.layout svg rect{stroke-width:10}footer{color:var(--muted);font-size:13px;margin-top:50px}.room img{background:#06131c}@media(max-width:800px){main{padding:0 16px 40px}header{padding-top:35px}.grid,.cards{grid-template-columns:1fr;gap:15px}.tag{padding:1px 3px}nav{gap:17px;font-size:14px}.lead{font-size:17px}.sectiontitle{align-items:start;gap:15px}h2{font-size:25px}}
     '''
-    style+=CONNECTION_STYLE
+    style+=CONNECTION_STYLE+MAP_STYLE
     html=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>须门遗港 · 原画精修设计</title><style>{style}</style></head><body>
     <nav><a href="#top">须门遗港</a><a href="#geography">鲸头全景</a><a href="#topology">七房六边</a><a href="#R1-01">逐房原画</a><a href="#connections">过渡合同</a><a href="#motion">分层与动态</a><a href="#review">审核与来源</a></nav>
     <main id="top"><header><div class="eyebrow">WHALEBELLY RUINS / XUMEN LOST HARBOR / CONCEPT V2 · 2026.11.05</div><h1>须门遗港 · 原画精修</h1><p class="lead">一个巨大的口腔，七段不同的探索空间。用同一根颌骨、连续的舌背和逐渐变化的组织，让玩家看见自己正在深入鲸体。</p><p class="notice">8张新概念原画：整区鲸头剖面＋七房。本轮未改游戏。概念像素不代表跳距或碰撞，画中孔洞不自动增加连接。用户审美评审待反馈。</p></header>
@@ -102,6 +105,10 @@ def main():
     controls='<div class="seam-tools"><button id="seam-notes" aria-pressed="true">显示 / 隐藏接续注记</button><span>6张专用联合原画 · 四条水平主路 / 两条上行回访线</span></div>'
     html=html.replace('<h2>六条连接如何接续</h2>','<h2>六条连接如何接续</h2>'+controls)
     html=html.replace('</script></body>','</script><script>'+CONNECTION_SCRIPT+'</script></body>')
+    html=html.replace('<a href="#geography">鲸头全景</a>','<a href="#overall-layout">总布局图</a><a href="#geography">鲸头全景</a>')
+    overall=(ROOT/'assets/source/xumen-overall-layout-v1/section.html').read_text(encoding='utf-8')
+    html=html.replace('<section id="geography">',overall+'<section id="geography">')
+    html=html.replace('</script></body>','</script><script>'+MAP_SCRIPT+'</script></body>')
     html='\n'.join(line.rstrip() for line in html.splitlines())+'\n'
     (OUT/'原画册.html').write_bytes(html.encode('utf-8'))
     write(SRC/'production.json', {'scope':d['scope'],'stage':'concept_delivered','runtime':'unchanged','user_art_review':'pending','atlas':str(OUT.relative_to(ROOT)/'原画册.html'),'images':len(art),'rooms':7,'edges':6,'next':'用户确认视觉方向后，按既有六边做联合母版和分层接入，不直接拼接概念图。'})
