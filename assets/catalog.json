@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 67,
+  "revision": 68,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -31812,6 +31812,317 @@
         ]
       },
       "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-keyart-v2-a00",
+      "name": "须门遗港精修 · A00-须门遗港-鲸头连续空间",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A00-须门遗港-鲸头连续空间.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "b6812b524b648b99e264a994a545689fa71b3cc1329ea1000bcc48dad3949bb0",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/chapter.png",
+          "assets/source/xumen-keyart-v2/inputs/room01.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-e5a145a2-5443-4983-9b1c-0087e6c0f4d6"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a01",
+      "name": "须门遗港精修 · A01-外伤坡",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A01-外伤坡.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "59cd2944cd7fe8a6257818d74e6cab5b1bef7b5c5203ead08b2bd0dfaa9f0ecc",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room01.png",
+          "assets/source/xumen-keyart-v2/images/A00-须门遗港-鲸头连续空间.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-0b8212a1-8643-404f-9c44-60048852c96d"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a02",
+      "name": "须门遗港精修 · A02-须筛",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A02-须筛.png",
+      "width": 1671,
+      "height": 941,
+      "sha256": "2af3e6f6f81bf7beafb814ae87973bcc710fc6b2f78821081c1e7b2f361488a7",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/A02-style-candidate.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-da7db255-7fe3-4cb4-8cc6-b3326e718bb1"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a03",
+      "name": "须门遗港精修 · A03-舌台",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A03-舌台.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "d54269b2377f46fab2c57fcca2d253539661911c4c6d1246ea2c89c168411d49",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room03.png",
+          "assets/source/xumen-keyart-v2/images/A01-外伤坡.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-c4947839-c357-4e39-938b-573a4347d9fa"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a04",
+      "name": "须门遗港精修 · A04-负壳蟹",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A04-负壳蟹.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "991e296db697eaf8570b06a119ca473e59d82a74637a86a9596a259953be0ce6",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room04.png",
+          "assets/source/xumen-keyart-v2/images/A03-舌台.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-28fa5028-f9e7-4037-b9d0-13b259b10d0e"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a05",
+      "name": "须门遗港精修 · A05-流膜育窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A05-流膜育窝.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "9651d929b59b03b4c0f9a2f83b0267c9e11c7f602dda56a80cd8d7656e6b7e83",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room05.png",
+          "assets/source/xumen-keyart-v2/images/A04-负壳蟹.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-b22cfac4-422c-47cf-9284-c98b9e4ffe41"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a06",
+      "name": "须门遗港精修 · A06-喷气孔上层",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A06-喷气孔上层.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "8eb453ab646cb89818d1e5fe0d9789f3ca5d8bbfbd4e1570190e9a0c2dba67cd",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room06.png",
+          "assets/source/xumen-keyart-v2/images/A00-须门遗港-鲸头连续空间.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-a283321e-6d10-430d-bf97-cf33fa87323e"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-keyart-v2-a07",
+      "name": "须门遗港精修 · A07-鲸须记忆袋",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "原画",
+        "概念候选",
+        "手绘",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-keyart-v2/images/A07-鲸须记忆袋.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0bba53660149678f4e123933c88fece94abe410c15599db2a28e6720be11f16b",
+      "notes": "概念候选；非分层运行资产；七房六边保留。用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-keyart-v2",
+        "method": "built-in imagegen; reference-guided concept painting",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-keyart-v2/inputs/room07.png",
+          "assets/source/xumen-keyart-v2/inputs/A02-style-candidate.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-keyart-v2/prompts.json"
+        ],
+        "generation": "exec-2fa9b642-028c-46fa-9d01-e681fd13754e"
+      },
+      "qa": {
+        "scope": "概念图查看、文件与图册核对；非游戏实测",
+        "report": "assets/source/xumen-keyart-v2/acceptance.md",
+        "userApproved": false
+      }
     }
   ]
 }
