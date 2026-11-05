@@ -1,0 +1,18 @@
+{
+  "id": "panorama-final",
+  "prompt": "Use case: precise-object-edit. Keep this panorama pixel composition and entire scenery unchanged. Make ONE local addition only: place ONE tiny original bone-shell scavenger crab on the LEFT small tongue mound at x44% of the full image, with its feet at y75% of image height, in the lower middle portion directly left of the sagging membrane. Match the SAME size, shell style and muted orange-ivory coloring as the existing small crab standing on RIGHT tongue mound at x54% width,y73% height. Face the new left crab toward right. Do not move the existing right crab, the filter crab at x29%, or the large boss at x73%. This produces THREE small crabs total (one filter + two tongue) and ONE large boss. The new crab should be small and clearly separated from red tether rings overhead. Preserve the existing engraved shard, both upper pockets and their thick solid divider, all THREE fixed rings along upper-right access, exactly two dark nasal ovals only in upper-left, all floor/root shapes, fore/mid/back layers, fish/bubbles, lamps, tiny diver, color, light, skyless underwater setting. No other additions or changes, no text, arrows or interface.",
+  "references": [
+    {
+      "file": "inputs/refined.png",
+      "role": "precise edit target"
+    }
+  ],
+  "generation": "exec-95d274e6-52bb-4c63-8b69-447c0c6f4a3d",
+  "output": "inputs/pre-cleanup.png",
+  "tool": "built-in image_gen",
+  "runtimeIntegrated": false,
+  "history": [
+    "prompts/initial.json",
+    "prompts/refined.json"
+  ]
+}

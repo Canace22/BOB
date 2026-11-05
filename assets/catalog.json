@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 69,
+  "revision": 70,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -32349,6 +32349,49 @@
       "qa": {
         "scope": "概念文件、六边合同与图册；非引擎验证",
         "report": "assets/source/xumen-seam-keyart-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-real-scene-v1-panorama",
+      "name": "须门遗港 · 总布局实景全景",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "连续实景原画",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-real-scene-v1/images/总布局-实景全景.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "3cd80331469c0edbb9e094d824d822fb81fff720d109295510fc04a9e06911df",
+      "notes": "七房六边的联合实景风格原画；不是Godot截图；精确碰撞仍以工程为准。",
+      "source": {
+        "batchId": "xumen-real-scene-v1",
+        "method": "built-in imagegen; joint scene painting and targeted refinement",
+        "model": "not exposed",
+        "generation": "exec-00de450f-d162-4c57-969b-2ea5cf0a870c",
+        "references": [
+          "inputs/layout.png",
+          "assets/source/xumen-keyart-v2/images/A01-外伤坡.png",
+          "assets/source/xumen-keyart-v2/images/A04-负壳蟹.png",
+          "assets/source/xumen-seam-keyart-v1/images/E33-旧伤坡到喷气孔.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-real-scene-v1/generation.json",
+          "assets/source/xumen-real-scene-v1/prompts/initial.json",
+          "assets/source/xumen-real-scene-v1/prompts/refined.json",
+          "assets/source/xumen-real-scene-v1/prompts/detail.json"
+        ]
+      },
+      "qa": {
+        "scope": "概念视觉与图册实际检查；无引擎验收",
+        "report": "assets/source/xumen-real-scene-v1/acceptance.md",
         "userApproved": false
       }
     }
