@@ -24,6 +24,13 @@ func bind_chunk(id: int,chunk: Node2D,size: Vector2) -> void:
 	if id==4:
 		chunk.get_node("ChapterEnvironment/World/Surface").texture=preload("res://art/xumen-transitions/nursery-world-clean.png")
 		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=preload("res://art/xumen-transitions/nursery-middle-clean.png")
+	if id==5 and "E33" in XumenAuthoredShafts.EDGES:
+		chunk.get_node("ChapterEnvironment/World/Surface").texture=load("res://art/xumen-vertical/E33-upper-world.png")
+		chunk.get_node("ChapterEnvironment/Middle/Surface").texture=load("res://art/xumen-vertical/E33-upper-middle.png")
+	for branch: String in XumenAuthoredShafts.EDGES:
+		if id==1 or (id==5 and branch=="E33") or (id==6 and branch=="E35"):
+			var portal: Node2D=chunk.get_node_or_null("Continuity_"+branch)
+			if portal!=null:portal.hide();portal.process_mode=Node.PROCESS_MODE_DISABLED
 	for edge: String in XumenAuthoredTransitions.EDGES:
 		if (edge=="E02" and id in [1,2]) or (edge=="E03" and id in [2,3]) or (edge=="E04" and id in [3,4]):
 			var old_joint: Node2D=chunk.get_node_or_null("Continuity_"+edge)

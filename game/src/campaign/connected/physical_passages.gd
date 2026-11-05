@@ -21,7 +21,7 @@ func _ready() -> void:
 			var begin: Vector2=points[1]
 			var end: Vector2=points[-2]
 			var count: int=ceili(absf(end.y-begin.y)/130)
-			shaft_backdrop(begin,end)
+			if not str(edge.id) in XumenAuthoredShafts.EDGES:shaft_backdrop(begin,end)
 			floor_span(Vector2(minf(points[0].x,begin.x),begin.y),Vector2(maxf(points[0].x,begin.x),begin.y),str(edge.id)+"_lower",62)
 			for i: int in range(count+1):
 				var at: Vector2=begin.lerp(end,float(i)/count)
@@ -42,6 +42,9 @@ func floor_span(a: Vector2,b: Vector2,id: String,depth: float=300) -> void:
 	polygon.polygon=PackedVector2Array([a,b,b+Vector2(0,38),a+Vector2(0,38)])
 	polygon.one_way_collision=depth<100
 	body.add_child(polygon)
+	if depth<100 and id.get_slice("_",0) in XumenAuthoredShafts.EDGES:
+		supports+=1
+		return
 	if depth<100:
 		var ledge:=Sprite2D.new()
 		ledge.texture=LEDGE

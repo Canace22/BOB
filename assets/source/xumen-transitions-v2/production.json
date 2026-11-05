@@ -1,14 +1,14 @@
 {
-  "stage": "E04_local_passed",
+  "stage": "E33_art",
   "edges": {
     "E02": "online_technical_visual_ai_passed",
     "E03": "online_technical_visual_ai_passed",
-    "E04": "local_technical_visual_ai_passed",
+    "E04": "online_technical_visual_ai_passed",
     "E33": "pending",
     "E35": "pending"
   },
   "precondition": "E01 online passed",
-  "next": "E04 publish and online test then E33",
+  "next": "E33 vertical bone shaft and ledge variants",
   "verified": {
     "check_errors": 0,
     "engineering": 57,
@@ -47,5 +47,12 @@
     "chrome_local": 11,
     "motion_seconds": 52,
     "evidence": "game/build/qa/xumen-transitions/E04-*"
+  },
+  "publication_E04": {
+    "source": "5b86292a0dd35ea4872dce21f96f5e3468998e97",
+    "pages": "f05ebbcf37b6582a13742190643782e19d181144",
+    "run": 41936324274,
+    "deployment": "success",
+    "online_keyboard": "11/11 errors0,normal boss fight,52s motion"
   }
 }

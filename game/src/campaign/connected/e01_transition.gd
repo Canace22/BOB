@@ -14,6 +14,7 @@ func _ready() -> void:
 	process_mode=Node.PROCESS_MODE_PAUSABLE
 	plate("E01_DEPTH", "depth",Vector2(845,-264.153),-28)
 	plate("E01_MID_ARCH","arch",Vector2(1389,-20.153),-1)
+	if "E33" in XumenAuthoredShafts.EDGES:parts.E01_MID_ARCH.texture=load("res://art/xumen-vertical/E33-e01-arch-top.png")
 	plate("E01_WORLD_GROUND","ground",Vector2(1100,531.847),12)
 	plate("E01_FRONT","foreground",Vector2(845,-530),15)
 	for i: int in range(2):

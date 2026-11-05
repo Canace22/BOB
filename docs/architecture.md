@@ -76,4 +76,4 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。
 
-E01专用视觉位于src/campaign/connected/e01_transition.gd，独立世界锚点与host.clock；章级单一水床、持久弹体和FX原点迁移由connected_world负责。create_room_enemies复用原创建逻辑，提前准备E01邻房但不启用其战斗。原V6及地形数据不变，详见[样板](../assets/source/xumen-e01-seam-v1/README.md)。
+E01专用视觉位于src/campaign/connected/e01_transition.gd，独立世界锚点与host.clock；章级单一水床、持久弹体和FX原点迁移由connected_world负责。create_room_enemies复用原创建逻辑，提前准备E01邻房但不启用其战斗。原V6及地形数据不变，详见[样板](../assets/source/xumen-e01-seam-v1/README.md)。上行连接的高幅远景/中景骨壁/独立台面由`authored_shafts.gd`加载坐标清单，`physical_passages`仅保留原碰撞，统一随章原点平移；来源和验收见[骨壁生台](../assets/source/xumen-vertical-v1/README.md)。
