@@ -10,12 +10,12 @@ const edge=process.env.EDGE||'E02',shift={E02:0,E03:2184,E04:4287}[edge],source=
 page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
 const state=()=>page.evaluate(()=>JSON.parse(window.render_game_to_text()));
 function check(id,pass,detail){checks.push({id,pass,detail});console.log(id,pass);if(!pass)throw Error(id)}
-async function walk(x){const key=(await state()).connected_world.world_x<x?'d':'a';await page.keyboard.down(key);try{for(let i=0;i<500;i++){const s=await state();route.push({x:s.connected_world.world_x,room:s.room,id:s.connected_world.player_id});if(Math.abs(s.connected_world.world_x-x)<25)return s;if(i%18===0)await page.keyboard.press('Space');await page.waitForTimeout(60)}throw Error('walk timeout '+x)}finally{await page.keyboard.up(key)}}
+async function walk(x){const key=(await state()).connected_world.world_x<x?'d':'a';await page.keyboard.down(key);try{for(let i=0;i<500;i++){const s=await state();route.push({x:s.connected_world.world_x,room:s.room,id:s.connected_world.player_id});if(Math.abs(s.connected_world.world_x-x)<25||(key==='d'&&s.connected_world.world_x>=x)||(key==='a'&&s.connected_world.world_x<=x))return s;if(i%18===0)await page.keyboard.press('Space');await page.waitForTimeout(60)}throw Error('walk timeout '+x)}finally{await page.keyboard.up(key)}}
 try{
  await page.goto(process.env.GAME_URL||'http://127.0.0.1:4196/BOB/godot/',{waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>typeof window.render_game_to_text==='function',null,{timeout:600000});
  await page.keyboard.press('Enter');await page.waitForTimeout(650);
- check('new authored layers present',(await state()).connected_world.authored.edges.includes(edge));
+ check('unified chapter layers present',(await state()).connected_world.unified.meshes===91);
  // Explicit room-start fixture through the existing preview key; all subsequent crossing uses keyboard.
  if(edge==='E04'){
   // Actual pre-existing keyboard counterplay; no defeated flag injection.
@@ -44,14 +44,14 @@ try{
  await walk(4610+shift);check(edge+' forward physical crossing same player',(await state()).room==='R1-0'+(source+1)&&(await state()).connected_world.player_id===id);
  await page.screenshot({path:path.join(out,edge+'-destination.png')});
  await walk(3610+shift);check(edge+' reverse physical crossing same player',(await state()).room==='R1-0'+source&&(await state()).connected_world.player_id===id);
- await walk(4100+shift);const t0=(await state()).connected_world.authored.time;
- await page.keyboard.press('Escape');await page.waitForTimeout(200);const held=(await state()).connected_world.authored.time;
- await page.waitForTimeout(600);check('authored environment clock paused',(await state()).connected_world.authored.time===held);
- await page.keyboard.press('Escape');await page.waitForTimeout(500);check('authored environment resumed',(await state()).connected_world.authored.time>held);
+ await walk(4100+shift);const t0=(await state()).connected_world.unified.time;
+ await page.keyboard.press('Escape');await page.waitForTimeout(200);const held=(await state()).connected_world.unified.time;
+ await page.waitForTimeout(600);check('authored environment clock paused',(await state()).connected_world.unified.time===held);
+ await page.keyboard.press('Escape');await page.waitForTimeout(500);check('authored environment resumed',(await state()).connected_world.unified.time>held);
  if(process.env.MOTION_CHECK!=='0'){
   for(let i=0;i<13;i++){if(i%3===0)await page.screenshot({path:path.join(out,edge+'-motion-'+i+'.png')});await page.waitForTimeout(4000)}
-  const s=await state();check('52s continuous playback',s.connected_world.authored.time-t0>50,s.connected_world.authored);
-  check('bounded transition populations',s.connected_world.authored.fish>=12&&s.connected_world.authored.bubbles>=8);
+  const s=await state();check('52s continuous playback',s.connected_world.unified.time-t0>50,s.connected_world.authored);
+  check('bounded transition populations',s.connected_world.unified.fish===80&&s.connected_world.unified.bubbles===66);
  }
  check('no screenshot dissolve',!(await state()).continuity.transition_active);
  check('chapter water stream still playing',(await state()).audio.playing);

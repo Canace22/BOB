@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 56,
+  "revision": 67,
   "updatedAt": "2026-11-05",
   "project": "BOB",
   "atlas": {
@@ -29612,6 +29612,2206 @@
       },
       "metadata": "assets/source/xumen-vertical-v1/elements.json",
       "notes": "Original collision unchanged; middle spine has no collider."
+    },
+    {
+      "id": "xumen-unified-arch",
+      "name": "arch 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/arch.png",
+      "width": 686,
+      "height": 340,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-bone-material",
+      "name": "bone-material 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/bone-material.png",
+      "width": 512,
+      "height": 512,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-coral",
+      "name": "coral 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/coral.png",
+      "width": 382,
+      "height": 268,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-0-0",
+      "name": "Far-0-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-0-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-0-1",
+      "name": "Far-0-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-0-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-0-2",
+      "name": "Far-0-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-0-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-0-3",
+      "name": "Far-0-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-0-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-1-0",
+      "name": "Far-1-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-1-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-1-1",
+      "name": "Far-1-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-1-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-1-2",
+      "name": "Far-1-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-1-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-1-3",
+      "name": "Far-1-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-1-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-10-0",
+      "name": "Far-10-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-10-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-10-1",
+      "name": "Far-10-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-10-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-10-2",
+      "name": "Far-10-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-10-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-10-3",
+      "name": "Far-10-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-10-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-11-0",
+      "name": "Far-11-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-11-0.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-11-1",
+      "name": "Far-11-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-11-1.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-11-2",
+      "name": "Far-11-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-11-2.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-11-3",
+      "name": "Far-11-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-11-3.png",
+      "width": 320,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-2-0",
+      "name": "Far-2-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-2-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-2-1",
+      "name": "Far-2-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-2-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-2-2",
+      "name": "Far-2-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-2-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-2-3",
+      "name": "Far-2-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-2-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-3-0",
+      "name": "Far-3-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-3-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-3-1",
+      "name": "Far-3-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-3-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-3-2",
+      "name": "Far-3-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-3-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-3-3",
+      "name": "Far-3-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-3-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-4-0",
+      "name": "Far-4-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-4-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-4-1",
+      "name": "Far-4-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-4-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-4-2",
+      "name": "Far-4-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-4-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-4-3",
+      "name": "Far-4-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-4-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-5-0",
+      "name": "Far-5-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-5-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-5-1",
+      "name": "Far-5-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-5-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-5-2",
+      "name": "Far-5-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-5-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-5-3",
+      "name": "Far-5-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-5-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-6-0",
+      "name": "Far-6-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-6-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-6-1",
+      "name": "Far-6-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-6-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-6-2",
+      "name": "Far-6-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-6-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-6-3",
+      "name": "Far-6-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-6-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-7-0",
+      "name": "Far-7-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-7-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-7-1",
+      "name": "Far-7-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-7-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-7-2",
+      "name": "Far-7-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-7-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-7-3",
+      "name": "Far-7-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-7-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-8-0",
+      "name": "Far-8-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-8-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-8-1",
+      "name": "Far-8-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-8-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-8-2",
+      "name": "Far-8-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-8-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-8-3",
+      "name": "Far-8-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-8-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-9-0",
+      "name": "Far-9-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-9-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-9-1",
+      "name": "Far-9-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-9-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-9-2",
+      "name": "Far-9-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-9-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Far-9-3",
+      "name": "Far-9-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Far-9-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-front-0",
+      "name": "front-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/front-0.png",
+      "width": 457,
+      "height": 356,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-front-1",
+      "name": "front-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/front-1.png",
+      "width": 477,
+      "height": 246,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-front-2",
+      "name": "front-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/front-2.png",
+      "width": 462,
+      "height": 357,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-kelp",
+      "name": "kelp 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/kelp.png",
+      "width": 416,
+      "height": 340,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-lamp",
+      "name": "lamp 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/lamp.png",
+      "width": 255,
+      "height": 314,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-memory",
+      "name": "memory 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/memory.png",
+      "width": 242,
+      "height": 216,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-0-0",
+      "name": "Middle-0-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-0-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-0-1",
+      "name": "Middle-0-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-0-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-0-2",
+      "name": "Middle-0-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-0-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-0-3",
+      "name": "Middle-0-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-0-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-1-0",
+      "name": "Middle-1-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-1-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-1-2",
+      "name": "Middle-1-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-1-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-1-3",
+      "name": "Middle-1-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-1-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-10-0",
+      "name": "Middle-10-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-10-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-10-1",
+      "name": "Middle-10-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-10-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-10-2",
+      "name": "Middle-10-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-10-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-10-3",
+      "name": "Middle-10-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-10-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-11-0",
+      "name": "Middle-11-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-11-0.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-11-1",
+      "name": "Middle-11-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-11-1.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-11-2",
+      "name": "Middle-11-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-11-2.png",
+      "width": 320,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-11-3",
+      "name": "Middle-11-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-11-3.png",
+      "width": 320,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-2-0",
+      "name": "Middle-2-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-2-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-2-1",
+      "name": "Middle-2-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-2-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-2-2",
+      "name": "Middle-2-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-2-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-2-3",
+      "name": "Middle-2-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-2-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-3-0",
+      "name": "Middle-3-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-3-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-3-1",
+      "name": "Middle-3-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-3-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-3-2",
+      "name": "Middle-3-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-3-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-3-3",
+      "name": "Middle-3-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-3-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-4-0",
+      "name": "Middle-4-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-4-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-4-1",
+      "name": "Middle-4-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-4-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-4-2",
+      "name": "Middle-4-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-4-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-4-3",
+      "name": "Middle-4-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-4-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-5-0",
+      "name": "Middle-5-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-5-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-5-2",
+      "name": "Middle-5-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-5-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-5-3",
+      "name": "Middle-5-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-5-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-6-0",
+      "name": "Middle-6-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-6-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-6-1",
+      "name": "Middle-6-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-6-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-6-2",
+      "name": "Middle-6-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-6-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-6-3",
+      "name": "Middle-6-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-6-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-7-0",
+      "name": "Middle-7-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-7-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-7-1",
+      "name": "Middle-7-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-7-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-7-2",
+      "name": "Middle-7-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-7-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-7-3",
+      "name": "Middle-7-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-7-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-8-0",
+      "name": "Middle-8-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-8-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-8-1",
+      "name": "Middle-8-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-8-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-8-2",
+      "name": "Middle-8-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-8-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-8-3",
+      "name": "Middle-8-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-8-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-9-0",
+      "name": "Middle-9-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-9-0.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-9-1",
+      "name": "Middle-9-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-9-1.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-9-2",
+      "name": "Middle-9-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-9-2.png",
+      "width": 1024,
+      "height": 1024,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-Middle-9-3",
+      "name": "Middle-9-3 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/Middle-9-3.png",
+      "width": 1024,
+      "height": 448,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-rim-0",
+      "name": "rim-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/rim-0.png",
+      "width": 1024,
+      "height": 68,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-rim-1",
+      "name": "rim-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/rim-1.png",
+      "width": 1024,
+      "height": 68,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-rim-2",
+      "name": "rim-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/rim-2.png",
+      "width": 1024,
+      "height": 68,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-ring",
+      "name": "ring 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/ring.png",
+      "width": 290,
+      "height": 303,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-support-0",
+      "name": "support-0 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/support-0.png",
+      "width": 491,
+      "height": 490,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-support-1",
+      "name": "support-1 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/support-1.png",
+      "width": 507,
+      "height": 532,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
+    },
+    {
+      "id": "xumen-unified-support-2",
+      "name": "support-2 统一母版资产",
+      "kind": "environment",
+      "region": "R1",
+      "target": "2d",
+      "status": "candidate",
+      "file": "assets/runtime/scenes/xumen-unified-v1/support-2.png",
+      "width": 496,
+      "height": 485,
+      "integrationStatus": "runtime-verified",
+      "source": {
+        "method": "built-in imagegen; same-source world master and texture kit",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-unified-v1/originals/world-composition.png"
+        ]
+      },
+      "metadata": "assets/source/xumen-unified-v1/elements.json"
     }
   ]
 }

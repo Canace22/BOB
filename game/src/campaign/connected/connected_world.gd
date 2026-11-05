@@ -16,6 +16,7 @@ var far_underpaint: Sprite2D
 var e01: XumenE01Transition
 var authored: XumenAuthoredTransitions
 var shafts: XumenAuthoredShafts
+var unified: XumenUnifiedScene
 var ambience: AudioStreamPlayer
 var persistent_projectiles: Node2D
 func _ready() -> void:
@@ -80,6 +81,9 @@ func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 		shafts.host=host
 		host.add_child(shafts)
 		shafts.position=-origin
+		if XumenUnifiedScene.ACTIVE:
+			unified=load("res://content/whalebelly/environment/unified/unified_world.tscn").instantiate();unified.host=host
+			host.add_child(unified);unified.position=-origin
 		prepare_e01_neighbours()
 		set_bounds()
 		return
@@ -112,6 +116,7 @@ func load_room(index: int, spawn: Array=[], discover: bool=true) -> void:
 	e01.position=-origin
 	authored.position=-origin
 	shafts.position=-origin
+	if is_instance_valid(unified):unified.position=-origin
 	if traveller!=null:
 		traveller.world_effects.rebase(shift)
 		for orb: Node2D in get_tree().get_nodes_in_group("tide_player_projectiles"):
@@ -247,7 +252,7 @@ func camera_follow(dt: float) -> void:
 
 func snapshot() -> Dictionary:
 	var at: Vector2=host.player.position+origin
-	return {"enabled":enabled,"chunks":chunks.size(),"edges":layout.edges.size(),"crossings":crossings,"player_id":host.player.get_instance_id(),"world_x":at.x,"world_y":at.y,"origin":[origin.x,origin.y],"camera_world":[host.camera.position.x+origin.x,host.camera.position.y+origin.y],"e01":e01.snapshot() if is_instance_valid(e01) else {},"authored":authored.snapshot() if is_instance_valid(authored) else {},"shafts":shafts.snapshot() if is_instance_valid(shafts) else {}}
+	return {"enabled":enabled,"chunks":chunks.size(),"edges":layout.edges.size(),"crossings":crossings,"player_id":host.player.get_instance_id(),"world_x":at.x,"world_y":at.y,"origin":[origin.x,origin.y],"camera_world":[host.camera.position.x+origin.x,host.camera.position.y+origin.y],"e01":e01.snapshot() if is_instance_valid(e01) else {},"authored":authored.snapshot() if is_instance_valid(authored) else {},"shafts":shafts.snapshot() if is_instance_valid(shafts) else {},"unified":unified.snapshot() if is_instance_valid(unified) else {}}
 
 func prepare_e01_neighbours() -> void:
 	for id: int in [0,1]:

@@ -1,0 +1,5101 @@
+{
+  "canvas": [
+    -640,
+    -1880,
+    11584,
+    3520
+  ],
+  "method": "world-space unified master + painted texture mesh, independent rims/supports",
+  "elements": [
+    {
+      "id": "MAIN-JAW-ROAD-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        0.0,
+        610.959
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "MAIN-JAW-ROAD-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        0.0,
+        610.959
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2343.0,
+        411.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2343.0,
+        411.847
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2345.0,
+        256.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2345.0,
+        256.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-3-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2309.0,
+        97.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-3-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2309.0,
+        97.847
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-4-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3543.0,
+        193.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-4-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3543.0,
+        193.847
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        5414.0,
+        508.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        5414.0,
+        508.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4367.0,
+        759.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4367.0,
+        759.847
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        7053.0,
+        658.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        7053.0,
+        658.847
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        7679.0,
+        663.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        7679.0,
+        663.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9160.0,
+        759.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9160.0,
+        759.847
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9464.0,
+        735.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9464.0,
+        735.847
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-3-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9884.0,
+        753.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-3-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        9884.0,
+        753.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-0-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2283.0,
+        -685.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-0-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2283.0,
+        -685.153
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2693.0,
+        -826.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2693.0,
+        -826.153
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2896.0,
+        -986.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2896.0,
+        -986.153
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-3-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3195.0,
+        -1133.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-3-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3195.0,
+        -1133.153
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-4-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2283.0,
+        -886.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-4-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2283.0,
+        -886.153
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-5-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2463.0,
+        -608.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-5-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2463.0,
+        -608.153
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-0-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4033.0,
+        -911.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-0-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4033.0,
+        -911.153
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4595.0,
+        -897.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        4595.0,
+        -897.153
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        5059.0,
+        -895.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        5059.0,
+        -895.153
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_0-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        103.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_0-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        103.847
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -8.296
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -8.296
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -120.439
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -120.439
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_3-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -232.582
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_3-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -232.582
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_4-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -344.724
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_4-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -344.724
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_5-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -456.867
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_5-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -456.867
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_6-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -569.01
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_6-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -569.01
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_7-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -681.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_7-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2018.0,
+        -681.153
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-lower-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2123.0,
+        103.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-lower-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2123.0,
+        103.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-upper-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2123.0,
+        -681.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-upper-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        2123.0,
+        -681.153
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_0-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        190.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_0-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        190.847
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_1-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        68.403
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_1-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        68.403
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_2-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -54.042
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_2-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -54.042
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_3-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -176.486
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_3-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -176.486
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_4-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -298.931
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_4-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -298.931
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_5-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -421.375
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_5-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -421.375
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_6-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -543.82
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_6-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -543.82
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_7-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -666.264
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_7-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -666.264
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_8-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -788.709
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_8-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -788.709
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_9-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -911.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_9-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3788.0,
+        -911.153
+      ],
+      "asset": "rim-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-lower-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3843.0,
+        190.847
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-lower-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3843.0,
+        190.847
+      ],
+      "asset": "rim-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-upper-body",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3893.0,
+        -911.153
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-upper-rim",
+      "category": "meshes",
+      "layer": "World",
+      "position": [
+        3893.0,
+        -911.153
+      ],
+      "asset": "rim-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "outer-palate",
+      "category": "meshes",
+      "layer": "Middle",
+      "position": [
+        -640.0,
+        85.0
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "filter-palate",
+      "category": "meshes",
+      "layer": "Middle",
+      "position": [
+        2380.0,
+        -40.0
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tongue-vault",
+      "category": "meshes",
+      "layer": "Middle",
+      "position": [
+        4450.0,
+        30.0
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "arena-vault",
+      "category": "meshes",
+      "layer": "Middle",
+      "position": [
+        6500.0,
+        10.0
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "throat-vault",
+      "category": "meshes",
+      "layer": "Middle",
+      "position": [
+        8760.0,
+        10.0
+      ],
+      "asset": "bone-material.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-0",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        240,
+        722.9819578122906
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-1",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        960,
+        747.1036277145812
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-2",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        1710,
+        761.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-3",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2590,
+        704.847
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-4",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3350,
+        762.2684285714286
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-5",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3980,
+        756.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-6",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        4610,
+        771.4755714285714
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-7",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        5560,
+        800.497
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-8",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        6480,
+        793.687
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-9",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        7340,
+        861.427
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-10",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        8230,
+        852.847
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "jaw-root-11",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        8810,
+        873.5269999999999
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2357.0,
+        430.0898571428571
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2358.0,
+        273.25876470588236
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-3-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2339.5,
+        122.44111764705882
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-surface-4-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3614.0,
+        207.52700000000002
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        5419.5,
+        523.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        5118.0,
+        880.5293529411764
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        7083.5,
+        674.62825
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        7702.5,
+        674.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        9215.5,
+        768.847
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        9533.0,
+        752.607
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-surface-3-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        9990.0,
+        756.5386666666667
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-0-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2435.5,
+        -665.0696666666666
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2742.5,
+        -813.153
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3024.5,
+        -974.153
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-3-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3392.0,
+        -1123.853
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-4-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2300.5,
+        -877.0815714285715
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-surface-5-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3026.0,
+        -485.9376153846154
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-0-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        4149.5,
+        -885.078
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-1-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        4666.5,
+        -884.153
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-surface-2-buttress",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        5247.0,
+        -887.1463333333334
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_0-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2036.5,
+        118.847
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_1-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2056.5,
+        6.704000000000001
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_2-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2024.5,
+        -105.439
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_3-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2062.5,
+        -217.582
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_4-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2030.5,
+        -329.724
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_5-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2050.5,
+        -441.867
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_6-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2036.5,
+        -554.01
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E33_7-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2056.5,
+        -666.153
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-lower-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2129.5,
+        118.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E33-upper-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        2192.5,
+        -666.153
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_0-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3800.5,
+        205.847
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_1-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3820.5,
+        83.403
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_2-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3806.5,
+        -39.042
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_3-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3826.5,
+        -161.486
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_4-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3794.5,
+        -283.931
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_5-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3832.5,
+        -406.375
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_6-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3800.5,
+        -528.82
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_7-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3820.5,
+        -651.264
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_8-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3806.5,
+        -773.709
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "Floor_E35_9-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3826.5,
+        -896.153
+      ],
+      "asset": "support-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-lower-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3769.5,
+        205.847
+      ],
+      "asset": "support-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "E35-upper-grown-root",
+      "category": "instances",
+      "layer": "Middle",
+      "position": [
+        3908.5,
+        -896.153
+      ],
+      "asset": "support-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-01-camp",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        64,
+        542.0284713111881
+      ],
+      "asset": "lamp.png",
+      "motion": "lamp",
+      "interaction": "lamp",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-ring-0",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3285,
+        406.847
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-ring-1",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3406,
+        297.847
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-02-ring-2",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3518,
+        179.84699999999998
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-03-memory",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5478,
+        457.847
+      ],
+      "asset": "memory.png",
+      "motion": "memory:2",
+      "interaction": "memory:2",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-04-camp",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        6602,
+        594.8559635854342
+      ],
+      "asset": "lamp.png",
+      "motion": "lamp",
+      "interaction": "lamp",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-05-camp",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        8735,
+        655.9829477124183
+      ],
+      "asset": "lamp.png",
+      "motion": "lamp",
+      "interaction": "lamp",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-06-memory",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3432,
+        -1196.153
+      ],
+      "asset": "memory.png",
+      "motion": "memory:5",
+      "interaction": "memory:5",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-ring-0",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4501,
+        -1134.153
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-ring-1",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4651,
+        -1133.153
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-ring-2",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4907,
+        -1132.153
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-ring-3",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5029,
+        -1132.153
+      ],
+      "asset": "ring.png",
+      "motion": "static",
+      "interaction": "ring",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "R1-07-memory",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5309,
+        -976.153
+      ],
+      "asset": "memory.png",
+      "motion": "memory:6",
+      "interaction": "memory:6",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-0",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        6019.43,
+        626.847
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-0",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5954.43,
+        614.1739230769231
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-4",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3722.04,
+        154.00842857142857
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-6",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5457.24,
+        812.3732222222222
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-6",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5392.24,
+        799.7001452991453
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-9",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        9318.27,
+        713.847
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-9",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        9253.27,
+        701.1739230769231
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-10",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        9640.36,
+        701.8175084745762
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-11",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        10109.94,
+        698.7377407407407
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-12",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        2571.25,
+        -722.7613333333334
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-12",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        2506.25,
+        -735.4344102564103
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-13",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        2843.23,
+        -868.1349101123595
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-14",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3152.09,
+        -1027.6115217391305
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-15",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3542.88,
+        -1177.4412857142856
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-15",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3477.88,
+        -1190.1143626373625
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-17",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        3301.32,
+        -590.7610000000001
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-18",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4273.01,
+        -937.7241428571429
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-18",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4208.01,
+        -950.3972197802198
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-19",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        4774.71,
+        -937.76356
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-20",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        5394.82,
+        -940.3166
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "flora-30",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        2267.2,
+        -716.153
+      ],
+      "asset": "coral.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "kelp-30",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        2202.2,
+        -728.8260769230769
+      ],
+      "asset": "kelp.png",
+      "motion": "kelp",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bottom-pinned tessellated bitmap, 11s",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-0",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        -10,
+        678.3481276682668
+      ],
+      "asset": "front-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-1",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        940,
+        682.1036277145812
+      ],
+      "asset": "front-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-2",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        1790,
+        696.847
+      ],
+      "asset": "front-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-3",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        2990,
+        618.847
+      ],
+      "asset": "front-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-4",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        4440,
+        709.817
+      ],
+      "asset": "front-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-5",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        5990,
+        726.847
+      ],
+      "asset": "front-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-6",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        7120,
+        794.202
+      ],
+      "asset": "front-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-7",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        8390,
+        787.847
+      ],
+      "asset": "front-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "front-main-8",
+      "category": "instances",
+      "layer": "Foreground",
+      "position": [
+        9620,
+        814.847
+      ],
+      "asset": "front-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "boss-seal",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        8024,
+        615.8090991253644
+      ],
+      "asset": "arch.png",
+      "motion": "static",
+      "interaction": "gate",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "throat-exit",
+      "category": "instances",
+      "layer": "World",
+      "position": [
+        10064,
+        627.7653673469388
+      ],
+      "asset": "arch.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-0",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        -640,
+        -1880
+      ],
+      "asset": "Far-0-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-1",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        384,
+        -1880
+      ],
+      "asset": "Far-1-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-2",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        1408,
+        -1880
+      ],
+      "asset": "Far-2-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-3",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        2432,
+        -1880
+      ],
+      "asset": "Far-3-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-4",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        3456,
+        -1880
+      ],
+      "asset": "Far-4-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-5",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        4480,
+        -1880
+      ],
+      "asset": "Far-5-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-6",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        5504,
+        -1880
+      ],
+      "asset": "Far-6-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-7",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        6528,
+        -1880
+      ],
+      "asset": "Far-7-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-8",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        7552,
+        -1880
+      ],
+      "asset": "Far-8-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-9",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        8576,
+        -1880
+      ],
+      "asset": "Far-9-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-10",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        9600,
+        -1880
+      ],
+      "asset": "Far-10-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-11",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        10624,
+        -1880
+      ],
+      "asset": "Far-11-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-12",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        -640,
+        -856
+      ],
+      "asset": "Far-0-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-13",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        384,
+        -856
+      ],
+      "asset": "Far-1-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-14",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        1408,
+        -856
+      ],
+      "asset": "Far-2-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-15",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        2432,
+        -856
+      ],
+      "asset": "Far-3-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-16",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        3456,
+        -856
+      ],
+      "asset": "Far-4-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-17",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        4480,
+        -856
+      ],
+      "asset": "Far-5-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-18",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        5504,
+        -856
+      ],
+      "asset": "Far-6-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-19",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        6528,
+        -856
+      ],
+      "asset": "Far-7-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-20",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        7552,
+        -856
+      ],
+      "asset": "Far-8-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-21",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        8576,
+        -856
+      ],
+      "asset": "Far-9-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-22",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        9600,
+        -856
+      ],
+      "asset": "Far-10-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-23",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        10624,
+        -856
+      ],
+      "asset": "Far-11-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-24",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        -640,
+        168
+      ],
+      "asset": "Far-0-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-25",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        384,
+        168
+      ],
+      "asset": "Far-1-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-26",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        1408,
+        168
+      ],
+      "asset": "Far-2-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-27",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        2432,
+        168
+      ],
+      "asset": "Far-3-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-28",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        3456,
+        168
+      ],
+      "asset": "Far-4-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-29",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        4480,
+        168
+      ],
+      "asset": "Far-5-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-30",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        5504,
+        168
+      ],
+      "asset": "Far-6-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-31",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        6528,
+        168
+      ],
+      "asset": "Far-7-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-32",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        7552,
+        168
+      ],
+      "asset": "Far-8-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-33",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        8576,
+        168
+      ],
+      "asset": "Far-9-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-34",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        9600,
+        168
+      ],
+      "asset": "Far-10-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-35",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        10624,
+        168
+      ],
+      "asset": "Far-11-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-36",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        -640,
+        1192
+      ],
+      "asset": "Far-0-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-37",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        384,
+        1192
+      ],
+      "asset": "Far-1-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-38",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        1408,
+        1192
+      ],
+      "asset": "Far-2-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-39",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        2432,
+        1192
+      ],
+      "asset": "Far-3-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-40",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        3456,
+        1192
+      ],
+      "asset": "Far-4-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-41",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        4480,
+        1192
+      ],
+      "asset": "Far-5-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-42",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        5504,
+        1192
+      ],
+      "asset": "Far-6-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-43",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        6528,
+        1192
+      ],
+      "asset": "Far-7-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-44",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        7552,
+        1192
+      ],
+      "asset": "Far-8-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-45",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        8576,
+        1192
+      ],
+      "asset": "Far-9-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-46",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        9600,
+        1192
+      ],
+      "asset": "Far-10-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-47",
+      "category": "tiles",
+      "layer": "Far",
+      "position": [
+        10624,
+        1192
+      ],
+      "asset": "Far-11-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-48",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        -640,
+        -1880
+      ],
+      "asset": "Middle-0-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-49",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        384,
+        -1880
+      ],
+      "asset": "Middle-1-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-50",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        1408,
+        -1880
+      ],
+      "asset": "Middle-2-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-51",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        2432,
+        -1880
+      ],
+      "asset": "Middle-3-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-52",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        3456,
+        -1880
+      ],
+      "asset": "Middle-4-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-53",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        4480,
+        -1880
+      ],
+      "asset": "Middle-5-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-54",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        5504,
+        -1880
+      ],
+      "asset": "Middle-6-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-55",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        6528,
+        -1880
+      ],
+      "asset": "Middle-7-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-56",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        7552,
+        -1880
+      ],
+      "asset": "Middle-8-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-57",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        8576,
+        -1880
+      ],
+      "asset": "Middle-9-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-58",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        9600,
+        -1880
+      ],
+      "asset": "Middle-10-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-59",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        10624,
+        -1880
+      ],
+      "asset": "Middle-11-0.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-60",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        -640,
+        -856
+      ],
+      "asset": "Middle-0-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-61",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        1408,
+        -856
+      ],
+      "asset": "Middle-2-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-62",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        2432,
+        -856
+      ],
+      "asset": "Middle-3-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-63",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        3456,
+        -856
+      ],
+      "asset": "Middle-4-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-64",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        5504,
+        -856
+      ],
+      "asset": "Middle-6-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-65",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        6528,
+        -856
+      ],
+      "asset": "Middle-7-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-66",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        7552,
+        -856
+      ],
+      "asset": "Middle-8-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-67",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        8576,
+        -856
+      ],
+      "asset": "Middle-9-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-68",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        9600,
+        -856
+      ],
+      "asset": "Middle-10-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-69",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        10624,
+        -856
+      ],
+      "asset": "Middle-11-1.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-70",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        -640,
+        168
+      ],
+      "asset": "Middle-0-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-71",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        384,
+        168
+      ],
+      "asset": "Middle-1-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-72",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        1408,
+        168
+      ],
+      "asset": "Middle-2-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-73",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        2432,
+        168
+      ],
+      "asset": "Middle-3-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-74",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        3456,
+        168
+      ],
+      "asset": "Middle-4-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-75",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        4480,
+        168
+      ],
+      "asset": "Middle-5-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-76",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        5504,
+        168
+      ],
+      "asset": "Middle-6-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-77",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        6528,
+        168
+      ],
+      "asset": "Middle-7-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-78",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        7552,
+        168
+      ],
+      "asset": "Middle-8-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-79",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        8576,
+        168
+      ],
+      "asset": "Middle-9-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-80",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        9600,
+        168
+      ],
+      "asset": "Middle-10-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-81",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        10624,
+        168
+      ],
+      "asset": "Middle-11-2.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-82",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        -640,
+        1192
+      ],
+      "asset": "Middle-0-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-83",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        384,
+        1192
+      ],
+      "asset": "Middle-1-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-84",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        1408,
+        1192
+      ],
+      "asset": "Middle-2-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-85",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        2432,
+        1192
+      ],
+      "asset": "Middle-3-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-86",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        3456,
+        1192
+      ],
+      "asset": "Middle-4-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-87",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        4480,
+        1192
+      ],
+      "asset": "Middle-5-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-88",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        5504,
+        1192
+      ],
+      "asset": "Middle-6-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-89",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        6528,
+        1192
+      ],
+      "asset": "Middle-7-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-90",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        7552,
+        1192
+      ],
+      "asset": "Middle-8-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-91",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        8576,
+        1192
+      ],
+      "asset": "Middle-9-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-92",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        9600,
+        1192
+      ],
+      "asset": "Middle-10-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "tiles-93",
+      "category": "tiles",
+      "layer": "Middle",
+      "position": [
+        10624,
+        1192
+      ],
+      "asset": "Middle-11-3.png",
+      "motion": "static",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "sprite/painted texture Polygon2D",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-0",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        -537.44,
+        -35.93124999999999
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-1",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        -307.79999999999995,
+        -49.4453125
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-2",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        -78.16,
+        -72.0
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-3",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        197.56,
+        -70.85
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-4",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        427.20000000000005,
+        -91.05555555555556
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-5",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        656.84,
+        -91.76666666666665
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-6",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        932.56,
+        -43.67777777777776
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-7",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        1162.2,
+        -19.888888888888886
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-8",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        1391.84,
+        -34.262162162162156
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-9",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        2482.56,
+        -197.54864864864862
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-10",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        2712.2,
+        -231.28571428571428
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-11",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        2941.84,
+        -249.42142857142858
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    },
+    {
+      "id": "BALEEN-12",
+      "category": "fronds",
+      "layer": "Middle",
+      "position": [
+        3217.56,
+        -204.34642857142856
+      ],
+      "asset": "res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "motion": "baleen",
+      "interaction": "none: environmental art",
+      "collision": "existing room/passages own collision; visual nodes add none",
+      "method": "bitmap frame loop 48/12fps",
+      "runtime": "content/whalebelly/environment/unified/unified_world.tscn + unified_scene.gd",
+      "acceptance": "specialist.json; fixed camera view/no-front; real route regression",
+      "user_art_review": "not_yet_reviewed"
+    }
+  ],
+  "generation_rules": [
+    {
+      "id": "FISH",
+      "instances": 80,
+      "groups": 8,
+      "mechanism": "existing 32-frame swim atlas + separate path",
+      "method": "reuse validated ChapterFishGroup",
+      "alternative": "bone animation needs new rig and was unnecessary"
+    },
+    {
+      "id": "BUBBLES",
+      "instances": 66,
+      "zones": 10,
+      "mechanism": "prewarmed bounded bitmap pool, fade at edges",
+      "method": "reuse EnvironmentBubbleEmitter",
+      "alternative": "unbounded emitters rejected for state/pause control"
+    },
+    {
+      "id": "WATER",
+      "instances": 1,
+      "mechanism": "single shared material across same-source tiles, world coordinate phase, low amplitude light change",
+      "alternative": "full-screen refraction rejected because roads/actors must remain rigid"
+    }
+  ]
+}

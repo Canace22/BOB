@@ -209,3 +209,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 [制作源、母版与复验](source/xumen-e01-seam-v1/README.md)：5份新原件，8张运行位图；独立骨路、斜拱、远景、前景及复用动件。接入与发布状态见game/progress.md。
 
 - [须门后续五边专用过渡](source/xumen-transitions-v2/README.md)：E01样板通过后逐边制作，当前具体状态见production.json；原件、母版、蒙版与运行PNG分开保存。
+
+## 须门遗港统一重制
+
+[连续母版与手绘贴图地形](source/xumen-unified-v1/README.md)：8张原件、OpenRaster全区母版、110张当前运行位图与逐元素表。91网格、100静态/交互物件，鱼80、泡66、垂须13、柔性植物7独立接入；数量类别不混算。新画面候选、运行验证通过，用户审美待反馈；性能限制见验收记录。

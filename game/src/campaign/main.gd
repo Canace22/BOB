@@ -768,6 +768,7 @@ func run_qa() -> void:
 	await graceful_quit()
 
 func update_parallax() -> void:
+	if connected_world!=null and is_instance_valid(connected_world.unified):return
 	var shift: Vector2 = Vector2.ZERO
 	if zoomed and not reference_visible and capture_path.is_empty() and layer_solo < 0:
 		var center: Vector2 = point(room.size) * 0.5

@@ -129,3 +129,9 @@ E01用独立专用远景、骨拱与骨路，同时清理两房旧水色；先�
 自然跨界FX保留年龄并按原点等量移动；弹体先记世界坐标，再迁入章级容器，避免跟旧房停更。caster退出信号应区分reparent和真正离树。相同水床用单实例避免重启/叠响。E01专项23项与真实浏览器可复验；不同音色混音和全部其它边的新画片尚未由此验证。
 
 E02补充：地面画片在原房交点切换轮廓，不在向房内延伸的碰撞端切换，否则会造出视觉直台阶。远水/地面/上层结构用分开的所有权蒙版；保护支路时不要同时保护旧水色。保存动作有0.5秒时序，内存检查点不等于已落盘；等待交互完成再做独立进程重载。实机证据见assets/source/xumen-transitions-v2/review/acceptance.md。
+
+### 统一母版取代旧房绘画
+
+默认入口新增unified_world.tscn后，旧房依然拥有物理与机关，但其ReferenceEnvironment/ChapterEnvironment/EnvironmentMotion及旧接头整体隐藏停用。主循环update_parallax不能重新启用旧环境；子件若显式PAUSABLE，父DISABLED也可能不能代表全部子件已停，检查实际活动对象。新QA和Web暂停应读connected_world.unified.time；旧接头兼容节点存在不代表它当前显示。动态JSON必须加入Web include_filter，不能用桌面文件存在替代导出验证。
+
+单源世界母版、手绘纹理网格、凹形rim四边形UV、切块Alpha、原膜下通路可见性及GPU根锚检查见assets/source/xumen-unified-v1。旧接头历史通过不代表用户认可，其整体观感已被用户否定。完整/静态/关绘画/空场景性能分别保留，不根据单次中位数宣称稳定60。路径目标判断需处理读状态越过目标，竖井下穿按实际落台逐次输入，别改物理来迎合固定等待驱动。
