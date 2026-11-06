@@ -1,0 +1,29 @@
+{
+  "stage": "concept_delivered_static_checked",
+  "scope": "七房跳跃进阶与低伤害飞怪设计，不改Godot",
+  "completed": [
+    "read current profile, geometry and existing scene art",
+    "7 revised room concepts + 1 enemy anatomy/action sheet",
+    "rejected R1-02 continuous catch-road bypass and saved corrected painting",
+    "8-image provenance catalog registration; originals preserved",
+    "switchable seven-room panorama + candidate guides",
+    "18 ideal trajectories and 3 anchor searches screened",
+    "seven composed-room screenshots inspected"
+  ],
+  "runtimeChanged": false,
+  "userArtReview": "pending",
+  "evidence": [
+    "review/checks.json",
+    "review/trajectory-screen.json",
+    "review/七房进阶-总览.png",
+    "acceptance.md"
+  ],
+  "notImplemented": [
+    "new terrain collisions",
+    "enemy animation and AI",
+    "damage/softbed protection",
+    "actual jump and combat balancing"
+  ],
+  "next": "工程接入阶段先制作R1-02样板，对齐五落点/限高拱/四凹台并制作一个灯鳍动作与AI；实机往返通过后扩展",
+  "resume": "读本文件与acceptance.md，核对art-manifest.json；运行build_atlas.py与verify.cjs恢复图册，不重新生成合格原画。"
+}

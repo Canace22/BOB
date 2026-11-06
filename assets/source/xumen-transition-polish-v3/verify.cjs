@@ -1,7 +1,7 @@
 const {chromium}=require('C:/Users/Kingsoft/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');const {pathToFileURL}=require('node:url');
 (async()=>{
- const review=path.join(__dirname,'review');fs.mkdirSync(review,{recursive:true});
+ const review=process.env.BOB_REVIEW_DIR||path.join(__dirname,'review');fs.mkdirSync(review,{recursive:true});
  const spec=JSON.parse(fs.readFileSync(path.join(__dirname,'specs.json'),'utf8'));
  const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'art-manifest.json'),'utf8'));
  assert.equal(manifest.paintings,4);assert.equal(manifest.reusedPaintings,2);
@@ -11,7 +11,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
  await page.goto(url+'#real-scene');await page.addStyleTag({content:'html{scroll-behavior:auto!important}'});
  const root=page.locator('#real-scene');
  const loaded=await root.locator('svg image').evaluateAll(xs=>Promise.all(xs.map(x=>new Promise(resolve=>{const im=new Image();im.onload=()=>resolve(true);im.onerror=()=>resolve(false);im.src=x.getAttribute('href')}))));
- assert.equal(loaded.length,28);assert.ok(loaded.every(Boolean));assert.equal(await root.locator('[data-polish-edge]').count(),6);
+ assert.equal(loaded.length,35);assert.ok(loaded.every(Boolean));assert.equal(await root.locator('[data-polish-edge]').count(),6);
  const core=()=>root.locator('[data-reference-room]').evaluateAll(xs=>xs.map(x=>[x.id,...['x','y','width','height','href'].map(a=>x.getAttribute(a))]));const originalCore=await core();
  await root.locator('.reference-scroll').screenshot({path:path.join(review,'全景-本轮.png')});
  await root.locator('[data-polish-compare]').click();assert.equal(await root.locator('.polished-seam-layer').evaluate(x=>getComputedStyle(x).display),'none');
@@ -29,5 +29,5 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
  await page.evaluate(({context})=>{const [x,y,w,h]=context;const scale=Math.min(1500/w,1300/h);const svg=document.querySelector('#real-scene svg');svg.setAttribute('viewBox',context.join(' '));svg.style.cssText=`width:${Math.round(w*scale)}px;height:${Math.round(h*scale)}px;background:#071923;border:0;display:block;border-radius:0`;svg.querySelector('.reference-room-notes').style.display='none';document.body.append(svg);for(const c of [...document.body.children])if(c!==svg)c.style.display='none';document.body.style.cssText='margin:0;overflow:hidden;background:#071923'},s);
  await page.locator('body > svg').screenshot({path:path.join(review,s.id+'-本轮.png')});
  }
- assert.equal(errors.length,0);fs.writeFileSync(path.join(review,'checks.json'),JSON.stringify({passed:true,images:loaded.length,newPaintings:4,reusedContourPasses:2,threeDistinctVersions:true,roomSourceGeometryUnchanged:true,maskStyleCorrect:true,focused,mobileOverflow:false,errors,runtimeTested:false},null,2)+'\n');await browser.close();console.log('PASS: V3 plus ecological overlays, 28 images, hashes, contours, 3 versions, 7 rooms preserved, 6 focus and mobile.');
+ assert.equal(errors.length,0);fs.writeFileSync(path.join(review,'checks.json'),JSON.stringify({passed:true,images:loaded.length,newPaintings:4,reusedContourPasses:2,threeDistinctVersions:true,roomSourceGeometryUnchanged:true,maskStyleCorrect:true,focused,mobileOverflow:false,errors,runtimeTested:false},null,2)+'\n');await browser.close();console.log('PASS: V3 plus ecological overlays, 35 images, hashes, contours, 3 versions, 7 rooms preserved, 6 focus and mobile.');
 })().catch(e=>{console.error(e);process.exit(1)});

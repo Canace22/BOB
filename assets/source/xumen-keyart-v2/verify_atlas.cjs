@@ -7,7 +7,8 @@ const { pathToFileURL, fileURLToPath } = require('node:url');
 (async () => {
   const root = path.resolve(__dirname, '../../..');
   const file = path.join(root, 'docs/鲸腹遗城原画集/须门遗港精修设计/原画册.html');
-  const review = path.join(__dirname, 'review');
+  const review = process.env.BOB_REVIEW_DIR || path.join(__dirname, 'review');
+  fs.mkdirSync(review,{recursive:true});
   const browser = await chromium.launch({headless:true});
   const page = await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
   const errors=[];

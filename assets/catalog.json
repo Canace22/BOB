@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 75,
+  "revision": 76,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32838,6 +32838,306 @@
       "qa": {
         "scope": "实际图册单区域像素差异与视觉检查；非Godot验收",
         "report": "assets/source/xumen-root-glow-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-01",
+      "name": "外伤坡 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-01.png",
+      "width": 1670,
+      "height": 941,
+      "sha256": "3dbf3c20cfaa84cfff2006375ca411427533260c009b8fd953360233465867b7",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-01-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-3b736b3c-cc5a-4b14-98e7-295f83eb72c5"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-02",
+      "name": "须筛 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-02.png",
+      "width": 1670,
+      "height": 941,
+      "sha256": "55833dfd793a27ced56d231bc14b30abc28d4df558a8f8618f1fe4b5e2e2cbda",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-02-candidate-bypass.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-336d9ed5-2f05-416e-8519-4b6e5739237c"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-03",
+      "name": "舌台 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-03.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "334f285926dee359b1eb696485af210ecd9adf7b884fca20128c7e200b8bd50f",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-03-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-1f202cb0-f9e4-4f3f-b6d3-51d4bb664227"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-04",
+      "name": "负壳蟹前庭 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-04.png",
+      "width": 1591,
+      "height": 989,
+      "sha256": "db60f8cdf755d463d588051ab67f87961a5140bb906ceaba0b3e726d4034375a",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-04-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-9f83514e-372e-43f7-addb-e8b0c5d370d0"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-05",
+      "name": "流膜育窝 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-05.png",
+      "width": 1612,
+      "height": 976,
+      "sha256": "70edf599226895ad5c52d26fe59bf556033cc5c791550ff6ce5b0eeff198e18c",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-05-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-73a45b45-951a-4f92-a6b2-6525116b9ec8"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-06",
+      "name": "喷气孔上层 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-06.png",
+      "width": 1477,
+      "height": 1065,
+      "sha256": "a48de763476391765e70c2bdb66441026ed3e8e6fa59d8a91fbaefe1091b9dc2",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-06-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-15d15acc-165a-4335-8cdd-8623c56e2638"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-07",
+      "name": "鲸须记忆袋 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-07.png",
+      "width": 1571,
+      "height": 1001,
+      "sha256": "7211b58c24b8de4be7c090b5869f6c8962888b7eb12761774316f972d1093ad3",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-07-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-aa0edf2f-4327-46f0-821a-0dc51282d76b"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-enemy-lanternfin",
+      "name": "逆流灯鳍动作概念板",
+      "kind": "enemy-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6a111480f324ae6d76406ed9080af4c7f4194f438409e2dea5fbd27fbea16888",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-02-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-a4573ac3-a8a2-47f5-aa87-2942e2c108b5"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
         "userApproved": false
       }
     }
