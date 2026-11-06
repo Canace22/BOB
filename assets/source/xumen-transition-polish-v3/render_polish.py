@@ -15,10 +15,15 @@ def build():
         x,y,w,h=s['context'];sid=s['id'];file=s.get('file',f'images/{sid}.png')
         assert (SRC/file).exists(),f'Missing paint: {sid}'
         bits.append(f'<image data-polish-edge="{sid}" data-polish-kind="{s["kind"]}" href="../../../assets/source/xumen-transition-polish-v3/{file}" x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="xMidYMid slice" mask="url(#polish-{sid})"/>')
+    import sys
+    sys.path.insert(0,str(SRC.parent/'xumen-ecology-niches-v1'))
+    from render_niches import build as build_niches
+    bits.append(build_niches())
     bits.append('</g>');return ''.join(bits)
 
 def controls():
-    return '<div class="reference-tools"><button data-polish-compare aria-pressed="true">本轮结构精修：开（点击对照上一版）</button><span class="polish-indicator">本轮：实接骨梁／封闭承重带／随形收边</span></div><p class="polish-note">两处上下层间的矩形空白补成封闭骨壁，四个关键交汇补绘，另两处沿原拱口收边；没有新增可走房间或捷径。原图文件完整保留。<a href="../../../assets/source/xumen-transition-polish-v3/README.md">本轮原件、提示词与审核</a></p>'
+    from render_niches import controls as niche_controls
+    return '<div class="reference-tools"><button data-polish-compare aria-pressed="true">本轮结构精修：开（点击对照上一版）</button><span class="polish-indicator">本轮：实接骨梁／封闭承重带／随形收边</span></div><p class="polish-note">两处上下层间的矩形空白补成封闭骨壁，四个关键交汇补绘，另两处沿原拱口收边；没有新增可走房间或捷径。原图文件完整保留。<a href="../../../assets/source/xumen-transition-polish-v3/README.md">本轮原件、提示词与审核</a></p>'+niche_controls()
 
 STYLE='''
 .hide-painted-seams .polished-seam-layer,.hide-polish .polished-seam-layer{display:none}.polish-note,.polish-indicator{font-size:14px;color:#c8b99d}

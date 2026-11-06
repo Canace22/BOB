@@ -57,7 +57,7 @@ def build():
     standalone=world.replace('</defs>','</defs><style>.reference-room-notes{font-family:system-ui,"Microsoft YaHei",sans-serif}</style>')
     (SRC/'原图保真全景.svg').write_bytes(standalone.encode('utf-8'))
     repaints=read(ROOT/'assets/source/xumen-seam-repaint-v2/specs.json')
-    save(SRC/'assembly.json',{'type':'native room sources with contextual boundary repaint layers; static concept assembly','canvas':layout['canvas'],'rooms':manifest,'connections':plans,'boundaryRepaints':repaints,'structuralPolish':read(ROOT/'assets/source/xumen-transition-polish-v3/specs.json'),'referenceCount':8,'activeRoomCount':7,'roomInteriorResampling':False,'borderOverlays':True,'runtimeChanged':False,'seamStatus':'V3: rooted joints and closed structural separators; static browser review; user art and engine acceptance pending'})
+    save(SRC/'assembly.json',{'type':'native room sources with contextual boundary repaint layers; static concept assembly','canvas':layout['canvas'],'rooms':manifest,'connections':plans,'boundaryRepaints':repaints,'structuralPolish':read(ROOT/'assets/source/xumen-transition-polish-v3/specs.json'),'ecologyDetails':read(ROOT/'assets/source/xumen-ecology-niches-v1/design.json'),'referenceCount':8,'activeRoomCount':7,'roomInteriorResampling':False,'borderOverlays':True,'runtimeChanged':False,'seamStatus':'V3 plus two shallow coral niches; static browser review; user art and engine acceptance pending'})
     buttons=''.join(f'<button data-reference-focus="{c["id"]}">{c["name"]}</button>' for c in coverage['rooms'])
     cards=''
     for c in coverage['rooms']:

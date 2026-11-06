@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 73,
+  "revision": 74,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32762,6 +32762,44 @@
       "qa": {
         "scope": "静态浏览器构图与版本切换；引擎未测试",
         "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-ecology-niches-v1-e02",
+      "name": "须筛接续 · 珊瑚与藤蔓浅窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "珊瑚",
+        "海生藤蔓",
+        "浅凹装饰",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-ecology-niches-v1/images/E02-coral-niches.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "55c83840a51378b4b7fd93ddce5764347b3e7694a377d5a954efd1229702bbde",
+      "notes": "两处低位门状洞口变为封闭浅凹，珊瑚和贴壁藤蔓，右侧克制暖光；只在两块局部蒙版显示，非新增门、营地或可交互地点。",
+      "source": {
+        "batchId": "xumen-ecology-niches-v1",
+        "method": "built-in imagegen local edit; two local SVG masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-ecology-niches-v1/inputs/E02-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-ecology-niches-v1/generation.json"
+        ],
+        "generation": "exec-d13be89f-3d54-4135-b82e-187dea70c21f"
+      },
+      "qa": {
+        "scope": "实际图册局部和像素差异；非Godot验收",
+        "report": "assets/source/xumen-ecology-niches-v1/acceptance.md",
         "userApproved": false
       }
     }
