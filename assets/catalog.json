@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 71,
+  "revision": 72,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32392,6 +32392,228 @@
       "qa": {
         "scope": "概念视觉与图册实际检查；无引擎验收",
         "report": "assets/source/xumen-real-scene-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e01",
+      "name": "须门接缝精修 · 外伤坡到须筛",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E01.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "9de0e064fc68e9783c03bc284fde28c4ec31aefcb517bbb8154c5837596ac35a",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E01-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-5011eeb5-b484-49b0-8768-c3978c8902c0"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e02",
+      "name": "须门接缝精修 · 须筛到舌台",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E02.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "9b7b2a8e1898f7b5e11760cf39251e8cbf16212e3191c66adde04cd1cdfc28fe",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E02-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-56c173e3-6dda-4576-bb66-c691efa97b7e"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e03",
+      "name": "须门接缝精修 · 舌台到蟹场",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E03.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "87f81ba60e02666ae5a473e02b94bad0eadf69f8024421bf2ece437d296ca406",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E03-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-a47a0b8a-89c6-4ff0-857d-186f06c073c6"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e04",
+      "name": "须门接缝精修 · 蟹场到育窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E04.png",
+      "width": 1310,
+      "height": 1201,
+      "sha256": "27c55f0976c884c269802cccad49eeb5c71d93d749dbe4f785b8aafa1103b09e",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E04-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-8703a1e9-b3d5-4169-97b1-94df2844bb3c"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e33",
+      "name": "须门接缝精修 · 须筛到喷气孔上层",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E33.png",
+      "width": 926,
+      "height": 1698,
+      "sha256": "54f312cc27fe1ae0235818a912af480fca86cf216a111e2864b7c659143889d0",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E33-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-65dbfedd-8446-4ee2-9427-50fbd15b3d31"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e35",
+      "name": "须门接缝精修 · 须筛到记忆袋",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E35.png",
+      "width": 926,
+      "height": 1698,
+      "sha256": "ce3d07df8a0b3711cba4e9889d2a98246a3d0cd0bed13f553fac38ff4a819799",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E35-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-e9c64ddf-356c-4d78-b963-fc5eb0035e98"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
         "userApproved": false
       }
     }
