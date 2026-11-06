@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 74,
+  "revision": 75,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32800,6 +32800,44 @@
       "qa": {
         "scope": "实际图册局部和像素差异；非Godot验收",
         "report": "assets/source/xumen-ecology-niches-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-root-glow-v1-e01",
+      "name": "骨根琥珀灯蕊珊瑚",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "发光珊瑚",
+        "实心骨根",
+        "非交互装饰",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-root-glow-v1/images/E01-glow-coral.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "61c35a71e532e80d6055c81b451100746b6523ec055c2286918d6629f05a32bf",
+      "notes": "替换用户圈中的低位壳洞，删除椭圆门框与低位红绳，实心骨根附着暖光珊瑚；上方圆形开口、三层平台、角色与主路保留。纯原画光色。",
+      "source": {
+        "batchId": "xumen-root-glow-v1",
+        "method": "built-in imagegen; one local masked object replacement",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-root-glow-v1/inputs/E01-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-root-glow-v1/generation.json"
+        ],
+        "generation": "exec-74504d31-d502-4ea0-9bdf-34f5edba9b04"
+      },
+      "qa": {
+        "scope": "实际图册单区域像素差异与视觉检查；非Godot验收",
+        "report": "assets/source/xumen-root-glow-v1/acceptance.md",
         "userApproved": false
       }
     }

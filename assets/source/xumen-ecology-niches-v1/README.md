@@ -13,3 +13,5 @@ render_niches.py将同一幅补绘通过两块小型随形蒙版放回原坐标�
 验证：`node assets/source/xumen-ecology-niches-v1/verify.cjs`实际截图前后对照，确认两处以外像素不变；审核边界见acceptance.md。重建执行register.py与../xumen-keyart-v2/build_atlas.py。review/为本地可复跑截图与检查数据，不作为新美术入库。
 
 本批只更新静态原画册，未修改game/、未构建或发布Godot。
+
+后续[E01发光珊瑚替换](../xumen-root-glow-v1/README.md)复用同一局部显示器，每个元素可指定自己的视口和素材；全组现在3块蒙版、2份新画，图册开关统一名为“生态装饰”。本目录原两处浅窝的源图与位置未变。

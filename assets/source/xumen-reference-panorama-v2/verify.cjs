@@ -46,7 +46,7 @@ const {pathToFileURL}=require('node:url');
   const repaints=await scope.locator('[data-repaint-edge]').count();
   const polish=await scope.locator('[data-polish-edge]').count();
   const details=await scope.locator('[data-ecology-detail]').count();
-  const result={rooms,edges,repaints,polish,details,images,faithful,hashes,focus,alternate,notesHidden,nativeWidth,mobileOverflow,errors,passed:rooms===7&&edges===6&&repaints===6&&polish===6&&details===2&&images.length===27&&images.every(x=>x.loaded)&&faithful&&hashes&&focus.every((s,i)=>s.includes('R1-0'+(i+1)))&&alternate.endsWith('01-entry-alt.png')&&notesHidden&&nativeWidth&&!mobileOverflow&&!errors.length};
+  const result={rooms,edges,repaints,polish,details,images,faithful,hashes,focus,alternate,notesHidden,nativeWidth,mobileOverflow,errors,passed:rooms===7&&edges===6&&repaints===6&&polish===6&&details===3&&images.length===28&&images.every(x=>x.loaded)&&faithful&&hashes&&focus.every((s,i)=>s.includes('R1-0'+(i+1)))&&alternate.endsWith('01-entry-alt.png')&&notesHidden&&nativeWidth&&!mobileOverflow&&!errors.length};
   fs.writeFileSync(path.join(review,'results.json'),JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result));await browser.close();if(!result.passed)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exit(1)});
