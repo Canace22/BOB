@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 72,
+  "revision": 73,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32614,6 +32614,154 @@
       "qa": {
         "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
         "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e33",
+      "name": "须门过渡结构精修 · 上层骨壁与须筛洞顶",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E33.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "093c4a02d7c4ee41879f027ad50e61536604495d5fa7d504fc13e4f0e6686a40",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E33-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-144b4d5c-9d3c-4ecd-acfd-620dfc910248"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e35",
+      "name": "须门过渡结构精修 · 记忆袋下壁与舌台穹顶",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E35.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "efc7d7615fbc32f8654ccd4925f1780301d9caaaeb2407936cffc38e7a4dc341",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E35-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-1a711d64-7243-4325-9cb4-9e922d4ea61d"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e01",
+      "name": "须门过渡结构精修 · 外伤坡与上行壁根部",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E01.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "e19eff97927d4993908d37cb9244bb843368c4e973c9feee1bb3ae98a59405a1",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E01-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-4b19f2db-c8ca-4baa-afaa-f6db0c9b3559"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e02",
+      "name": "须门过渡结构精修 · 须筛高低双层接口",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E02.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "d97b59497263d863c35025250b4560b2f870c1938fef8f4f0bd2c8153bd6d6a1",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E02-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-8309171f-e815-4498-8262-39734607bbb6"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
         "userApproved": false
       }
     }

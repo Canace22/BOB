@@ -21,3 +21,5 @@
 重新生成图册与核对数据：执行同目录`build_atlas.py`、`register_sources.py`、`verify_data.py`；浏览器验证执行`node assets/source/xumen-keyart-v2/verify_atlas.cjs`。无需重新生成已有8张原画。
 
 2026-11-06接缝返修：#real-scene在七房源图保留版上加入xumen-seam-repaint-v2六处实际上下文补绘；接口边缘通过SVG蒙版叠合，核心房间结构保持。E01/E02/E03/E04道路与拱口、E33/E35上下落脚点经过静态浏览器复查；新增对照和六处放大定位。制作源、提示词、返修记录、验证与未接入边界见新批次README/acceptance/progress。
+
+同日V3：继续按用户反馈补实E01骨梁、保持E02开敞，补两处上下层非可玩结构带，E03/E04复用收边。来源xumen-transition-polish-v3，图册增加与上一版比较；仍是原画概念，不改game/。

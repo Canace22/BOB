@@ -43,6 +43,9 @@ def build():
     sys.path.insert(0,str(ROOT/'assets/source/xumen-seam-repaint-v2'))
     from render_seams import build as build_seams, controls as seam_controls, notes as seam_notes
     bits.append(build_seams())
+    sys.path.insert(0,str(ROOT/'assets/source/xumen-transition-polish-v3'))
+    from render_polish import build as build_polish, controls as polish_controls
+    bits.append(build_polish())
     # Notes outside the artwork; a separate layer can be hidden.
     bits.append('<g class="reference-room-notes" aria-hidden="true">')
     for room,c in zip(layout['rooms'],coverage['rooms']):
@@ -54,7 +57,7 @@ def build():
     standalone=world.replace('</defs>','</defs><style>.reference-room-notes{font-family:system-ui,"Microsoft YaHei",sans-serif}</style>')
     (SRC/'原图保真全景.svg').write_bytes(standalone.encode('utf-8'))
     repaints=read(ROOT/'assets/source/xumen-seam-repaint-v2/specs.json')
-    save(SRC/'assembly.json',{'type':'native room sources with contextual boundary repaint layers; static concept assembly','canvas':layout['canvas'],'rooms':manifest,'connections':plans,'boundaryRepaints':repaints,'referenceCount':8,'activeRoomCount':7,'roomInteriorResampling':False,'borderOverlays':True,'runtimeChanged':False,'seamStatus':'six contextual paintings over connection/border zones; browser composition reviewed; user art and engine acceptance pending'})
+    save(SRC/'assembly.json',{'type':'native room sources with contextual boundary repaint layers; static concept assembly','canvas':layout['canvas'],'rooms':manifest,'connections':plans,'boundaryRepaints':repaints,'structuralPolish':read(ROOT/'assets/source/xumen-transition-polish-v3/specs.json'),'referenceCount':8,'activeRoomCount':7,'roomInteriorResampling':False,'borderOverlays':True,'runtimeChanged':False,'seamStatus':'V3: rooted joints and closed structural separators; static browser review; user art and engine acceptance pending'})
     buttons=''.join(f'<button data-reference-focus="{c["id"]}">{c["name"]}</button>' for c in coverage['rooms'])
     cards=''
     for c in coverage['rooms']:
@@ -64,6 +67,8 @@ def build():
     html=html.replace('实景总览 · 完整原图保留版','实景总览 · 七房保留＋六处接缝精修')
     html=html.replace('当前是保真排布母版，接续像素接缝与引擎效果仍需后续验收。','六处接口已有独立局部重绘与可编辑叠合蒙版；当前只作静态原画接续，不代表引擎接入。')
     html=html.replace('<div class="reference-focus-tools">',seam_notes()+seam_controls()+'<div class="reference-focus-tools">',1)
+    html=html.replace('<div class="reference-focus-tools seam-focus-tools">',polish_controls()+'<div class="reference-focus-tools seam-focus-tools">',1)
+    html=html.replace('实景总览 · 七房保留＋六处接缝精修','实景总览 · 过渡结构再精修')
     html=html.replace('器官适配与像素接缝另行处理，不再通过改写房间内部来“统一风格”。','六处边界已补绘接续，原房内部的玩法结构保留；引擎适配与用户审美验收另行记录。')
     return html
 STYLE='''
