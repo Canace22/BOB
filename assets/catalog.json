@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 71,
+  "revision": 76,
   "updatedAt": "2026-11-06",
   "project": "BOB",
   "atlas": {
@@ -32392,6 +32392,752 @@
       "qa": {
         "scope": "概念视觉与图册实际检查；无引擎验收",
         "report": "assets/source/xumen-real-scene-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e01",
+      "name": "须门接缝精修 · 外伤坡到须筛",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E01.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "9de0e064fc68e9783c03bc284fde28c4ec31aefcb517bbb8154c5837596ac35a",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E01-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-5011eeb5-b484-49b0-8768-c3978c8902c0"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e02",
+      "name": "须门接缝精修 · 须筛到舌台",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E02.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "9b7b2a8e1898f7b5e11760cf39251e8cbf16212e3191c66adde04cd1cdfc28fe",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E02-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-56c173e3-6dda-4576-bb66-c691efa97b7e"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e03",
+      "name": "须门接缝精修 · 舌台到蟹场",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E03.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "87f81ba60e02666ae5a473e02b94bad0eadf69f8024421bf2ece437d296ca406",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E03-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-a47a0b8a-89c6-4ff0-857d-186f06c073c6"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e04",
+      "name": "须门接缝精修 · 蟹场到育窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E04.png",
+      "width": 1310,
+      "height": 1201,
+      "sha256": "27c55f0976c884c269802cccad49eeb5c71d93d749dbe4f785b8aafa1103b09e",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E04-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-8703a1e9-b3d5-4169-97b1-94df2844bb3c"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e33",
+      "name": "须门接缝精修 · 须筛到喷气孔上层",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E33.png",
+      "width": 926,
+      "height": 1698,
+      "sha256": "54f312cc27fe1ae0235818a912af480fca86cf216a111e2864b7c659143889d0",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E33-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-65dbfedd-8446-4ee2-9427-50fbd15b3d31"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-seam-repaint-v2-e35",
+      "name": "须门接缝精修 · 须筛到记忆袋",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "接口补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-seam-repaint-v2/images/E35.png",
+      "width": 926,
+      "height": 1698,
+      "sha256": "ce3d07df8a0b3711cba4e9889d2a98246a3d0cd0bed13f553fac38ff4a819799",
+      "notes": "基于实际两端房图局部补绘，SVG蒙版覆盖接口边缘；原房结构与源文件保留。静态图册已复核，非Godot验收，用户审美待反馈。",
+      "source": {
+        "batchId": "xumen-seam-repaint-v2",
+        "method": "built-in imagegen contextual repaint + SVG overlap masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-seam-repaint-v2/inputs/E35-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-seam-repaint-v2/generation.json"
+        ],
+        "generation": "exec-e9c64ddf-356c-4d78-b963-fc5eb0035e98"
+      },
+      "qa": {
+        "scope": "实际浏览器拼接、六处放大与切换；非引擎测试",
+        "report": "assets/source/xumen-seam-repaint-v2/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e33",
+      "name": "须门过渡结构精修 · 上层骨壁与须筛洞顶",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E33.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "093c4a02d7c4ee41879f027ad50e61536604495d5fa7d504fc13e4f0e6686a40",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E33-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-144b4d5c-9d3c-4ecd-acfd-620dfc910248"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e35",
+      "name": "须门过渡结构精修 · 记忆袋下壁与舌台穹顶",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E35.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "efc7d7615fbc32f8654ccd4925f1780301d9caaaeb2407936cffc38e7a4dc341",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E35-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-1a711d64-7243-4325-9cb4-9e922d4ea61d"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e01",
+      "name": "须门过渡结构精修 · 外伤坡与上行壁根部",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E01.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "e19eff97927d4993908d37cb9244bb843368c4e973c9feee1bb3ae98a59405a1",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E01-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-4b19f2db-c8ca-4baa-afaa-f6db0c9b3559"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-transition-polish-v3-e02",
+      "name": "须门过渡结构精修 · 须筛高低双层接口",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "局部结构补绘",
+        "概念候选",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-transition-polish-v3/images/E02.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "d97b59497263d863c35025250b4560b2f870c1938fef8f4f0bd2c8153bd6d6a1",
+      "notes": "仅在接口或非可玩结构带显示，核心七房源图保留；静态组合审核，非Godot验收。",
+      "source": {
+        "batchId": "xumen-transition-polish-v3",
+        "method": "built-in imagegen local repaint; contour-constrained overlay",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-transition-polish-v3/inputs/E02-v2.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-transition-polish-v3/generation.json"
+        ],
+        "generation": "exec-8309171f-e815-4498-8262-39734607bbb6"
+      },
+      "qa": {
+        "scope": "静态浏览器构图与版本切换；引擎未测试",
+        "report": "assets/source/xumen-transition-polish-v3/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-ecology-niches-v1-e02",
+      "name": "须筛接续 · 珊瑚与藤蔓浅窝",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "珊瑚",
+        "海生藤蔓",
+        "浅凹装饰",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-ecology-niches-v1/images/E02-coral-niches.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "55c83840a51378b4b7fd93ddce5764347b3e7694a377d5a954efd1229702bbde",
+      "notes": "两处低位门状洞口变为封闭浅凹，珊瑚和贴壁藤蔓，右侧克制暖光；只在两块局部蒙版显示，非新增门、营地或可交互地点。",
+      "source": {
+        "batchId": "xumen-ecology-niches-v1",
+        "method": "built-in imagegen local edit; two local SVG masks",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-ecology-niches-v1/inputs/E02-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-ecology-niches-v1/generation.json"
+        ],
+        "generation": "exec-d13be89f-3d54-4135-b82e-187dea70c21f"
+      },
+      "qa": {
+        "scope": "实际图册局部和像素差异；非Godot验收",
+        "report": "assets/source/xumen-ecology-niches-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-root-glow-v1-e01",
+      "name": "骨根琥珀灯蕊珊瑚",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "发光珊瑚",
+        "实心骨根",
+        "非交互装饰",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-root-glow-v1/images/E01-glow-coral.png",
+      "width": 1374,
+      "height": 1145,
+      "sha256": "61c35a71e532e80d6055c81b451100746b6523ec055c2286918d6629f05a32bf",
+      "notes": "替换用户圈中的低位壳洞，删除椭圆门框与低位红绳，实心骨根附着暖光珊瑚；上方圆形开口、三层平台、角色与主路保留。纯原画光色。",
+      "source": {
+        "batchId": "xumen-root-glow-v1",
+        "method": "built-in imagegen; one local masked object replacement",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-root-glow-v1/inputs/E01-before.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-root-glow-v1/generation.json"
+        ],
+        "generation": "exec-74504d31-d502-4ea0-9bdf-34f5edba9b04"
+      },
+      "qa": {
+        "scope": "实际图册单区域像素差异与视觉检查；非Godot验收",
+        "report": "assets/source/xumen-root-glow-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-01",
+      "name": "外伤坡 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-01.png",
+      "width": 1670,
+      "height": 941,
+      "sha256": "3dbf3c20cfaa84cfff2006375ca411427533260c009b8fd953360233465867b7",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-01-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-3b736b3c-cc5a-4b14-98e7-295f83eb72c5"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-02",
+      "name": "须筛 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-02.png",
+      "width": 1670,
+      "height": 941,
+      "sha256": "55833dfd793a27ced56d231bc14b30abc28d4df558a8f8618f1fe4b5e2e2cbda",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-02-candidate-bypass.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-336d9ed5-2f05-416e-8519-4b6e5739237c"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-03",
+      "name": "舌台 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-03.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "334f285926dee359b1eb696485af210ecd9adf7b884fca20128c7e200b8bd50f",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-03-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-1f202cb0-f9e4-4f3f-b6d3-51d4bb664227"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-04",
+      "name": "负壳蟹前庭 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-04.png",
+      "width": 1591,
+      "height": 989,
+      "sha256": "db60f8cdf755d463d588051ab67f87961a5140bb906ceaba0b3e726d4034375a",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-04-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-9f83514e-372e-43f7-addb-e8b0c5d370d0"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-05",
+      "name": "流膜育窝 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-05.png",
+      "width": 1612,
+      "height": 976,
+      "sha256": "70edf599226895ad5c52d26fe59bf556033cc5c791550ff6ce5b0eeff198e18c",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-05-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-73a45b45-951a-4f92-a6b2-6525116b9ec8"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-06",
+      "name": "喷气孔上层 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-06.png",
+      "width": 1477,
+      "height": 1065,
+      "sha256": "a48de763476391765e70c2bdb66441026ed3e8e6fa59d8a91fbaefe1091b9dc2",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-06-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-15d15acc-165a-4335-8cdd-8623c56e2638"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-r1-07",
+      "name": "鲸须记忆袋 · 进阶跳跃候选",
+      "kind": "environment-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/R1-07.png",
+      "width": 1571,
+      "height": 1001,
+      "sha256": "7211b58c24b8de4be7c090b5869f6c8962888b7eb12761774316f972d1093ad3",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-07-current.png",
+          "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-aa0edf2f-4327-46f0-821a-0dc51282d76b"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
+        "userApproved": false
+      }
+    },
+    {
+      "id": "xumen-challenge-v1-enemy-lanternfin",
+      "name": "逆流灯鳍动作概念板",
+      "kind": "enemy-concept",
+      "region": "R1 须门遗港",
+      "tags": [
+        "跳跃挑战",
+        "原画设计",
+        "未接入"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "not-integrated",
+      "userArtApproval": false,
+      "file": "assets/source/xumen-challenge-v1/images/enemy-lanternfin.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6a111480f324ae6d76406ed9080af4c7f4194f438409e2dea5fbd27fbea16888",
+      "notes": "七房六边保留；房内地形获本轮授权重设计。概念画与候选坐标不等于碰撞或动画。",
+      "source": {
+        "batchId": "xumen-challenge-v1",
+        "method": "built-in imagegen; referenced scene redesign",
+        "model": "not exposed",
+        "references": [
+          "assets/source/xumen-challenge-v1/inputs/R1-02-current.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-challenge-v1/generation.json"
+        ],
+        "generation": "exec-a4573ac3-a8a2-47f5-aa87-2942e2c108b5"
+      },
+      "qa": {
+        "scope": "静态原画与图册浏览器；非Godot验收",
+        "report": "assets/source/xumen-challenge-v1/acceptance.md",
         "userApproved": false
       }
     }

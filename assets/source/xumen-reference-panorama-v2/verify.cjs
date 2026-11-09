@@ -2,7 +2,7 @@ const {chromium}=require('C:/Users/Kingsoft/.cache/codex-runtimes/codex-primary-
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {pathToFileURL}=require('node:url');
 (async()=>{
-  const root=path.resolve(__dirname,'../../..'),review=path.join(__dirname,'review');
+  const root=path.resolve(__dirname,'../../..'),review=process.env.BOB_REVIEW_DIR||path.join(__dirname,'review');
   fs.mkdirSync(review,{recursive:true});
   const url=pathToFileURL(path.join(root,'docs/鲸腹遗城原画集/须门遗港精修设计/原画册.html')).href;
   const browser=await chromium.launch({headless:true});
@@ -43,7 +43,10 @@ const {pathToFileURL}=require('node:url');
   await page.waitForFunction(()=>document.querySelector('#real-scene .reference-status').textContent.includes('R1-07'));
   const mobileOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   await page.screenshot({path:path.join(review,'手机-定位记忆袋.png')});
-  const result={rooms,edges,images,faithful,hashes,focus,alternate,notesHidden,nativeWidth,mobileOverflow,errors,passed:rooms===7&&edges===6&&images.length===13&&images.every(x=>x.loaded)&&faithful&&hashes&&focus.every((s,i)=>s.includes('R1-0'+(i+1)))&&alternate.endsWith('01-entry-alt.png')&&notesHidden&&nativeWidth&&!mobileOverflow&&!errors.length};
+  const repaints=await scope.locator('[data-repaint-edge]').count();
+  const polish=await scope.locator('[data-polish-edge]').count();
+  const details=await scope.locator('[data-ecology-detail]').count();
+  const result={rooms,edges,repaints,polish,details,images,faithful,hashes,focus,alternate,notesHidden,nativeWidth,mobileOverflow,errors,passed:rooms===7&&edges===6&&repaints===6&&polish===6&&details===3&&images.length===35&&images.every(x=>x.loaded)&&faithful&&hashes&&focus.every((s,i)=>s.includes('R1-0'+(i+1)))&&alternate.endsWith('01-entry-alt.png')&&notesHidden&&nativeWidth&&!mobileOverflow&&!errors.length};
   fs.writeFileSync(path.join(review,'results.json'),JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result));await browser.close();if(!result.passed)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exit(1)});

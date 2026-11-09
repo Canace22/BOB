@@ -1,0 +1,201 @@
+{
+  "passed": true,
+  "kind": "analytic screening only",
+  "runtimeTested": false,
+  "nominalJumpHeight": 154.71428571428572,
+  "apexHoldAssumption": 0.08,
+  "segments": [
+    {
+      "room": "R1-01",
+      "segment": 0,
+      "mode": "full-jump",
+      "gap": 150,
+      "rise": 41,
+      "requiredWithFootMargin": 178,
+      "idealReach": 271.2,
+      "margin": 93.2
+    },
+    {
+      "room": "R1-01",
+      "segment": 1,
+      "mode": "full-jump",
+      "gap": 150,
+      "rise": 70,
+      "requiredWithFootMargin": 178,
+      "idealReach": 256.67,
+      "margin": 78.67
+    },
+    {
+      "room": "R1-01",
+      "segment": 2,
+      "mode": "full-jump",
+      "gap": 160,
+      "rise": -132,
+      "requiredWithFootMargin": 188,
+      "idealReach": 333.61,
+      "margin": 145.61
+    },
+    {
+      "room": "R1-02",
+      "segment": 0,
+      "mode": "short-hop",
+      "gap": 120,
+      "rise": 78,
+      "requiredWithFootMargin": 148,
+      "idealReach": 184.46,
+      "margin": 36.46
+    },
+    {
+      "room": "R1-02",
+      "segment": 1,
+      "mode": "full-jump",
+      "gap": 160,
+      "rise": 74,
+      "requiredWithFootMargin": 188,
+      "idealReach": 254.49,
+      "margin": 66.49
+    },
+    {
+      "room": "R1-02",
+      "segment": 2,
+      "mode": "full-jump",
+      "gap": 150,
+      "rise": -84,
+      "requiredWithFootMargin": 178,
+      "idealReach": 318.85,
+      "margin": 140.85
+    },
+    {
+      "room": "R1-02",
+      "segment": 3,
+      "mode": "full-jump",
+      "gap": 150,
+      "rise": -63,
+      "requiredWithFootMargin": 178,
+      "idealReach": 311.93,
+      "margin": 133.93
+    },
+    {
+      "room": "R1-03",
+      "segment": 0,
+      "mode": "full-jump",
+      "gap": 140,
+      "rise": 75,
+      "requiredWithFootMargin": 168,
+      "idealReach": 253.93,
+      "margin": 85.93
+    },
+    {
+      "room": "R1-03",
+      "segment": 1,
+      "mode": "full-jump",
+      "gap": 160,
+      "rise": -60,
+      "requiredWithFootMargin": 188,
+      "idealReach": 310.91,
+      "margin": 122.91
+    },
+    {
+      "room": "R1-03",
+      "segment": 2,
+      "mode": "full-jump",
+      "gap": 160,
+      "rise": 60,
+      "requiredWithFootMargin": 188,
+      "idealReach": 261.93,
+      "margin": 73.93
+    },
+    {
+      "room": "R1-03",
+      "segment": 3,
+      "mode": "full-jump",
+      "gap": 150,
+      "rise": -110,
+      "requiredWithFootMargin": 178,
+      "idealReach": 327.01,
+      "margin": 149.01
+    },
+    {
+      "room": "R1-05",
+      "segment": 0,
+      "mode": "jump-dash",
+      "gap": 260,
+      "rise": -9,
+      "requiredWithFootMargin": 288,
+      "idealReach": 399.42,
+      "margin": 111.42
+    },
+    {
+      "room": "R1-05",
+      "segment": 1,
+      "mode": "jump-dash",
+      "gap": 260,
+      "rise": 55,
+      "requiredWithFootMargin": 288,
+      "idealReach": 371.46,
+      "margin": 83.46
+    },
+    {
+      "room": "R1-05",
+      "segment": 2,
+      "mode": "jump-dash",
+      "gap": 230,
+      "rise": -53,
+      "requiredWithFootMargin": 258,
+      "idealReach": 415.52,
+      "margin": 157.52
+    },
+    {
+      "room": "R1-06",
+      "segment": 0,
+      "mode": "full-jump",
+      "gap": 90,
+      "rise": 141,
+      "requiredWithFootMargin": 118,
+      "idealReach": 201.92,
+      "margin": 83.92
+    },
+    {
+      "room": "R1-06",
+      "segment": 1,
+      "mode": "full-jump",
+      "gap": 90,
+      "rise": 100,
+      "requiredWithFootMargin": 118,
+      "idealReach": 238.69,
+      "margin": 120.69
+    },
+    {
+      "room": "R1-06",
+      "segment": 2,
+      "mode": "full-jump",
+      "gap": 100,
+      "rise": 60,
+      "requiredWithFootMargin": 128,
+      "idealReach": 261.93,
+      "margin": 133.93
+    },
+    {
+      "room": "R1-06",
+      "segment": 3,
+      "mode": "full-jump",
+      "gap": 90,
+      "rise": 147,
+      "requiredWithFootMargin": 118,
+      "idealReach": 192.7,
+      "margin": 74.7
+    }
+  ],
+  "anchorSearchDistancesFromAttachedPlayer": [
+    282.31,
+    280.04,
+    282.31
+  ],
+  "flyInstances": 8,
+  "limitations": [
+    "Ideal maximum horizontal speed; acceleration, input release timing, actual ceilings and collision not simulated.",
+    "Artwork is not a collision mesh; guide coordinates require alignment during engine production.",
+    "A2 side branch and A3 anchor chain retain original ability gates.",
+    "Enemy warning corridors/protection rules, softbed double-damage prevention and jump-dash timing require runtime tests."
+  ]
+}
