@@ -1,0 +1,57 @@
+{
+  "worldCanvas": [
+    845,
+    -264.153,
+    2164,
+    1536
+  ],
+  "scale": 1,
+  "groundOrigin": [
+    1100,
+    531.847
+  ],
+  "archOrigin": [
+    1389,
+    -20.153
+  ],
+  "core": [
+    1645,
+    631.847,
+    564,
+    38
+  ],
+  "originalCollisionsChanged": false,
+  "generation": "built-in imagegen; 5 actual generated bitmaps; clean ownership masks and equal-scale exports",
+  "sources": {
+    "arch.png": "c3ef3cb81cd85645b1ea45344930d96d6e70d3f734da618c716cda5b7e364ad7",
+    "depth.png": "3352907b509767e822fe4f8b2f5d4ab01504f117c18fec9ae78fd74a7533c38c",
+    "foreground.png": "a02d3c93abc00fc4151608938edddd0a21a840af15d1db92ccf5426f2ec04f8f",
+    "ground.png": "df0770c9ca888b83c3220250a7bbe2f76d2ef615c2f7f81ca21d9d2232529711",
+    "hub-platform-extraction.png": "6212d436844b2740e64d27b48aea8f26624b43773f4e67f70ce6d94fafc398a3"
+  },
+  "exports": {
+    "arch.png": "c5da420d6abbd7f9ffce6fcc94a8732a1fdf007fe1e39dcc0cacbc750c3c0c97",
+    "depth.png": "82bc65325a05503d289e1045f245ce39ce5f605f8378fee241cd6441bff32a30",
+    "foreground.png": "5b627313e75b26d9ec324b0ce219af169c0eca7a10b781a16a945c9987e79c03",
+    "ground.png": "1523ee79733a58891711a5ac5ed3de89441b574d34c0b3cb0a3d78c3de3b2765",
+    "hub-middle-clean.png": "26cd42016af855235c6699425f2f9445fdeacc8a38a0e0482334772b3c89cb31",
+    "hub-world-clean.png": "78945b329d54c1b78b1632a38110abee0817d656132822b1b488e794e0c3895e",
+    "R1-01-ownership.png": "5d588e91c7bdac58a2f803572e83594007fb50aea077130462fe978efe1ff121",
+    "R1-02-ownership.png": "79a50ef30893653cd99da1ee42b546a9775d31bc3fbf5871c34dfba662a5250b"
+  },
+  "foregroundOrigin": [
+    845,
+    -530
+  ],
+  "drawOrder": {
+    "depth": -28,
+    "arch": -1,
+    "ground": 12,
+    "foreground": 15
+  },
+  "notes": [
+    "Source scenery retained; joint road expanded X1100..2700 after real review.",
+    "Ground cross-sections follow original contour. Hub platform cutout is continuous-mapped onto unchanged original top lines.",
+    "ORA contains structural plates, foreground is independent PNG at recorded offset; deterministic build.py retains all masks."
+  ]
+}

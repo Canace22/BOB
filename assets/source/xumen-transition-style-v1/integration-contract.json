@@ -1,0 +1,556 @@
+{
+  "version": "1.0",
+  "scope": "seamless transition integration specification only; no runtime patch or publication",
+  "sources": {
+    "rooms": {
+      "path": "game/art/whalebelly/rooms.json",
+      "sha256": "67a4ab77a037ae880cefffe5d57a382822a30074be5e0209fcd0a4396431c1e5"
+    },
+    "layout": {
+      "path": "game/src/campaign/connected/connected_layout.gd",
+      "sha256": "cca9b5f4d7958f60fc12707ec6e905949d2dd194f56b2f0f204c8ea813d1dd4b"
+    },
+    "snapshot": {
+      "path": "assets/source/xumen-connected-v2/layout-snapshot.json",
+      "sha256": "37326373651f7dcf7d525498b59c1aa18e5f292cb252af5faaf383b7260c3128"
+    }
+  },
+  "coordinates": {
+    "unit": "Godot world pixel at1x; exported illustration pixels are not automatically world pixels",
+    "x": "right positive",
+    "y": "down positive",
+    "roomToWorld": "room.origin + local",
+    "rebase": "world = local + activeOrigin; scene and camera translate by negative deltaOrigin",
+    "rounding": "numbers shown to0.001; runtime source remains authoritative"
+  },
+  "defaults": {
+    "artOverlap": 256,
+    "workingMargin": 800,
+    "minimumStandingClearance": 97,
+    "proposedJumpVisualClearance": 240,
+    "worldTopTolerance": 2,
+    "collisionTolerance": 0,
+    "landmarkScreenTolerance": 1,
+    "referenceViewport": [
+      1280,
+      720
+    ],
+    "checkZooms": [
+      1,
+      0.9523809523809523
+    ],
+    "warning": "All art margins and tolerances are project-specific proposals, not measured success. Check real viewport/zoom coverage and adjust margins instead of stretching."
+  },
+  "policy": {
+    "keepSevenRooms": true,
+    "keepSixEdges": true,
+    "keepV6": true,
+    "keepExistingCollision": true,
+    "keepAbilityGates": true,
+    "newPlayableRegions": false,
+    "wholeImageAsRuntime": false,
+    "blurAsSeamFix": false
+  },
+  "edges": [
+    {
+      "id": "E01",
+      "from": "R1-01",
+      "to": "R1-02",
+      "fromName": "外伤坡",
+      "toName": "须筛",
+      "style": "T01",
+      "anchors": {
+        "from": [
+          1663,
+          631.847
+        ],
+        "to": [
+          2191,
+          631.847
+        ]
+      },
+      "existingFloor": {
+        "x": [
+          1645,
+          2209
+        ],
+        "y": 631.847,
+        "width": 564,
+        "thickness": 38
+      },
+      "roomBoundaryGap": 512,
+      "proposedArtReplacement": {
+        "x": [
+          1389,
+          2465
+        ],
+        "width": 1076,
+        "overlapEachSide": 256
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          845,
+          3009
+        ],
+        "y": [
+          -264.153,
+          1271.847
+        ],
+        "width": 2164,
+        "height": 1536
+      },
+      "gate": "none",
+      "preserve": "Original surface and ability graph; proposed art must conform, no collision changes.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "E02",
+      "from": "R1-02",
+      "to": "R1-03",
+      "fromName": "须筛",
+      "toName": "舌台",
+      "style": "T02",
+      "anchors": {
+        "from": [
+          3847,
+          626.847
+        ],
+        "to": [
+          4375,
+          626.847
+        ]
+      },
+      "existingFloor": {
+        "x": [
+          3829,
+          4393
+        ],
+        "y": 626.847,
+        "width": 564,
+        "thickness": 38
+      },
+      "roomBoundaryGap": 512,
+      "proposedArtReplacement": {
+        "x": [
+          3573,
+          4649
+        ],
+        "width": 1076,
+        "overlapEachSide": 256
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          3029,
+          5193
+        ],
+        "y": [
+          -269.153,
+          1266.847
+        ],
+        "width": 2164,
+        "height": 1536
+      },
+      "gate": "none",
+      "preserve": "Original surface and ability graph; proposed art must conform, no collision changes.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "E03",
+      "from": "R1-03",
+      "to": "R1-04",
+      "fromName": "舌台",
+      "toName": "负壳蟹",
+      "style": "T02",
+      "anchors": {
+        "from": [
+          6031,
+          661.847
+        ],
+        "to": [
+          6559,
+          661.847
+        ]
+      },
+      "existingFloor": {
+        "x": [
+          6013,
+          6577
+        ],
+        "y": 661.847,
+        "width": 564,
+        "thickness": 38
+      },
+      "roomBoundaryGap": 512,
+      "proposedArtReplacement": {
+        "x": [
+          5757,
+          6833
+        ],
+        "width": 1076,
+        "overlapEachSide": 256
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          5213,
+          7377
+        ],
+        "y": [
+          -234.153,
+          1301.847
+        ],
+        "width": 2164,
+        "height": 1536
+      },
+      "gate": "none",
+      "preserve": "Original surface and ability graph; proposed art must conform, no collision changes.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "E04",
+      "from": "R1-04",
+      "to": "R1-05",
+      "fromName": "负壳蟹",
+      "toName": "流膜育窝",
+      "style": "T02",
+      "anchors": {
+        "from": [
+          8134,
+          722.847
+        ],
+        "to": [
+          8662,
+          722.847
+        ]
+      },
+      "existingFloor": {
+        "x": [
+          8116,
+          8680
+        ],
+        "y": 722.847,
+        "width": 564,
+        "thickness": 38
+      },
+      "roomBoundaryGap": 512,
+      "proposedArtReplacement": {
+        "x": [
+          7860,
+          8936
+        ],
+        "width": 1076,
+        "overlapEachSide": 256
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          7316,
+          9480
+        ],
+        "y": [
+          -173.153,
+          1362.847
+        ],
+        "width": 2164,
+        "height": 1536
+      },
+      "gate": "boss defeated",
+      "preserve": "Original surface and ability graph; proposed art must conform, no collision changes.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "E33",
+      "from": "R1-02",
+      "to": "R1-06",
+      "fromName": "须筛",
+      "toName": "喷气孔上层",
+      "style": "T03",
+      "anchors": {
+        "from": [
+          2333,
+          103.847
+        ],
+        "to": [
+          2383,
+          -681.153
+        ]
+      },
+      "shaftX": 2123,
+      "rise": 785,
+      "platformCount": 8,
+      "platforms": [
+        {
+          "id": "Floor_E33_0",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": 103.847,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_1",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -8.296,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_2",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -120.439,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_3",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -232.582,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_4",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -344.724,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_5",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -456.867,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_6",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -569.01,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E33_7",
+          "x": [
+            2018,
+            2228
+          ],
+          "y": -681.153,
+          "width": 210,
+          "oneWay": true
+        }
+      ],
+      "gate": "float",
+      "existingAccess": {
+        "lower": [
+          [
+            2333,
+            103.847
+          ],
+          [
+            2123,
+            103.847
+          ]
+        ],
+        "upper": [
+          [
+            2123,
+            -681.153
+          ],
+          [
+            2383,
+            -681.153
+          ]
+        ]
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          1218,
+          3183
+        ],
+        "y": [
+          -1401.153,
+          743.847
+        ]
+      },
+      "visualRule": "Paint an irregular continuous bone spine in middle depth; three or more distinct ledge silhouettes align with ALL original tops. Support pixels stay behind traversal and do not imply blocking walls.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "E35",
+      "from": "R1-02",
+      "to": "R1-07",
+      "fromName": "须筛",
+      "toName": "鲸须记忆袋",
+      "style": "T03",
+      "anchors": {
+        "from": [
+          3843,
+          190.847
+        ],
+        "to": [
+          4045,
+          -911.153
+        ]
+      },
+      "shaftX": 3893,
+      "rise": 1102,
+      "platformCount": 10,
+      "platforms": [
+        {
+          "id": "Floor_E35_0",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": 190.847,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_1",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": 68.403,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_2",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -54.042,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_3",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -176.486,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_4",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -298.931,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_5",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -421.375,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_6",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -543.82,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_7",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -666.264,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_8",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -788.709,
+          "width": 210,
+          "oneWay": true
+        },
+        {
+          "id": "Floor_E35_9",
+          "x": [
+            3788,
+            3998
+          ],
+          "y": -911.153,
+          "width": 210,
+          "oneWay": true
+        }
+      ],
+      "gate": "anchor",
+      "existingAccess": {
+        "lower": [
+          [
+            3843,
+            190.847
+          ],
+          [
+            3893,
+            190.847
+          ]
+        ],
+        "upper": [
+          [
+            3893,
+            -911.153
+          ],
+          [
+            4045,
+            -911.153
+          ]
+        ]
+      },
+      "proposedWorkingCanvas": {
+        "x": [
+          2988,
+          4845
+        ],
+        "y": [
+          -1631.153,
+          830.847
+        ]
+      },
+      "visualRule": "Paint an irregular continuous bone spine in middle depth; three or more distinct ledge silhouettes align with ALL original tops. Support pixels stay behind traversal and do not imply blocking walls.",
+      "status": "specified_not_implemented"
+    }
+  ]
+}

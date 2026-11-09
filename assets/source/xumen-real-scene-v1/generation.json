@@ -1,0 +1,19 @@
+{
+  "id": "panorama",
+  "prompt": "Use case: precise-object-edit. Make only ONE tiny cleanup in this existing panorama. At approximately x41% of full image width and y69% of image height (left shoulder of the first small tongue mound), there is an EXTRA tiny pale/orange crab-like silhouette partly blended into pale ecological growth. REMOVE ONLY this extra tiny animal, restore a few simple pale tube corals over the same dusty-rose mound skin. Keep the larger small crab at x44.5%,y73% (right shoulder of this left tongue mound), keep the small crab at x53%,y72% (right tongue mound), keep the filter crab at x29%,y75%, and keep the large boss at x73%. Do not remove any of those four intended creatures. Exact target is the extra small silhouette immediately LEFT of the newly added crab on the left tongue mound. No other changes: preserve full composition, floor, membrane, colors, lighting, all upper pockets, nasal rims, anchor rings, lamps, hero, foreground and original texture. No added elements, labels or HUD.",
+  "references": [
+    {
+      "file": "inputs/pre-cleanup.png",
+      "role": "precise cleanup target"
+    }
+  ],
+  "generation": "exec-00de450f-d162-4c57-969b-2ea5cf0a870c",
+  "output": "images/总布局-实景全景.png",
+  "tool": "built-in image_gen",
+  "runtimeIntegrated": false,
+  "history": [
+    "prompts/initial.json",
+    "prompts/refined.json",
+    "prompts/detail.json"
+  ]
+}

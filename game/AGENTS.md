@@ -5,8 +5,8 @@
 ## 动手前
 
 1. 读 `docs/architecture.md`，确定改动属于哪个模块目录。
-2. 只读相关目录；房间问题直接读 `content/rooms/<区域>/<房间ID>.tscn`。
-3. `legacy/` 下的旧工程只作参考，不在里面开发。
+2. 只读相关目录；房间问题直接读 `content/whalebelly/r1/<房间ID>.tscn`。
+3. 旧版本已移到 `codex/archive-legacy-20261103`，按[归档说明](../docs/legacy-archive.md)独立检出。
 
 ## 写代码
 
@@ -25,3 +25,8 @@ node tools/godot.mjs test
 ```
 
 改动玩法时补充或更新 `tests/test_*.gd`，并按按键实际走一遍受影响的路线。阶段状态与验收证据写入 `game/progress.md`。
+
+
+## 场景和环境动态
+
+涉及场景布景、参考图还原、环境动态或独立鱼群/柔性物/气泡时，默认应用[场景与环境动态制作](../.agents/skills/scene-environment-motion/SKILL.md)。主动扫描并选择合适动画方式，先样板再接入，批末回写成功配方；不新增本次未要求的玩法或碰撞。

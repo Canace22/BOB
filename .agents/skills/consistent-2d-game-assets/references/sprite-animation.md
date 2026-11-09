@@ -55,6 +55,8 @@ Measurements such as head height, torso width, root offset, and limb length help
 
 ## Judge the motion in playback
 
+For held-prop casting, name the weapon arm and the free casting arm before generation. Trace the same free hand from rest through raise/cast/lower, checking that its former resting hand disappears when raised; counting only the raised hand and weapon grip misses a third hand under the cape. Inspect body-only frames without effects, both facings, and the transition poses. Record whole-body mirroring separately from anatomical left/right identity.
+
 Create and actually view a looping animated preview or a browser recording, then verify the sequence in the target game. A static contact sheet helps inspect drawing quality but cannot prove smoothness. For a loop, watch several repetitions including the last-to-first seam. For a one-shot, watch both entry and recovery into its next state.
 
 Use these checks, adapting the inputs to the project:
@@ -71,7 +73,27 @@ On failure, correct one identified defect and replay the same scenario. Preserve
 
 ## Deliver the sequence
 
+### Reviewed video-to-runtime extraction
+
+- A semantic foreground mask is not a character-only mask. Inspect body and FX separately: connected floor rings can enter the body, while a bright waist ring can disconnect real legs. Preserve reviewed limb components rather than filling the bright gap or removing dark costume pixels. See `assets/source/tide-picker-action36/semantic_matte.py` and the hash-bound source/repair reviews.
+- Premultiply RGB by alpha before affine registration, then unpremultiply after resampling. Use one fixed action scale and explicit source root; review detector outliers against adjacent actual poses. Store hand-corrected root samples with source hash and frame count, so a different source cannot silently reuse them.
+- Do not infer additive light from every colored source effect. A dark teal ground ring on beige needs ordinary alpha; source-occluded feet/weapon holes are not a complete independent world effect. If separation leaves missing body pixels or recognizable occlusion gaps, replace the affected body/effect source and retain the rejected extraction evidence.
+- A replacement key-pose sheet is an AI-authored sheet, not video extraction or skeletal motion capture. Preserve the actual prompt, reference, sheet dimensions, per-cell translation and known pose limits. Keep rejected images local under the repository storage policy.
+- Body and independent world FX can have different frame counts. Record each layer's frames and event start separately, then test actual hit/release/landing behavior. Register technical, runtime and art review independently against current body/FX hashes; source review alone is not main-scene acceptance.
+
+For generated sheets, verify the actual pixel dimensions and row baselines before extraction: requested dimensions may differ from the output, and the second row may have an editorial vertical offset. Preserve one source scale and record explicit crop rectangles and pelvis translations. If repeated corrections keep the same leg leading both half-cycles or enlarge thighs across attached props, retain the best candidate and switch to a layered joint-based workflow; technical playback success does not resolve anatomical continuity. See `assets/source/tide-picker-locomotion-v01/README.md` for a scoped candidate and rejected correction record. A Blender project that sequences textured cards is a 2D timing master, not a skeletal animation rig.
+
 Save the source atlas, actual prompt and references, extraction script or crop manifest, and ordered frame files. Record canvas dimensions, shared scale, root/ground convention, facing, frame order, durations or stride relationship, looping policy, and transition behavior. Include the contact sheet, animated preview or recording, runtime evidence, and known limitations. Keep an unaccepted candidate distinguishable from the active runtime asset.
+
+### Continuous-video candidates
+
+- A cropped source video cannot yield complete body sprites by adding transparent padding. When complete reference art exists, a scoped alternative is to reproject the measured motion onto that art, preserve rigid shell/prop regions and zero grounded-foot motion. Record it as processed video-driven 2D baking, preserve the source motion field, and inspect any warp distortion. Merge identical seam poses with explicit durations instead of appending a duplicate first frame. Validate the actual player's state selector: an existing static-cutout idle override can hide a successfully imported animation. See `assets/source/tide-picker-idle-v03/README.md` and the main-scene regression `tests/idle_animation.gd`.
+
+- Distinguish source frame count, selected chronological frames, derived loop-bridge frames, and final playback FPS. More native frames do not prove a complete alternating gait. Preserve actual prompts/job IDs, including rejected trials.
+- Reused historical video must retain its original job identity and preview FPS; retiming it does not make it a newly generated source. Save lossless source pixels separately from viewing MP4s.
+- Optical-flow loop bridges can hide a large pose discontinuity by morphing the feet or equipment. Inspect the bridge at slow speed, mark derived frames in the manifest, and do not call it seamless solely from pixel-delta scores.
+- If an expressive breathing prompt creates gestures or changes a rigid helmet, retain the stable source and record any localized corrective deformation explicitly. Fixed feet and rigid-head motion require separate weights; this is processed video, not additional AI-generated action frames.
+- Neutral background shadows often survive automatic matting. Inspect on light and dark backgrounds and preserve foot interiors when removing the shadow. A packed Blender image-card timeline is a timing master, not a rig. Example: `assets/source/tide-picker-locomotion-v02-video/README.md`.
 
 ## Direct 16-frame generation experiment
 
@@ -85,3 +107,44 @@ The [2026-10-28 BOB trial](../../../../assets/source/tide-picker/run16-trial-v01
 - Alpha-mask differences are diagnostic signals, not animation scores; apparent seam improvement must still pass pose and playback review.
 
 The next proposed experiment is to approve key poses before generating the full sixteen-frame sequence and to repair the seam as a joint multi-frame unit. This proposal remains unverified; do not present it as a proven production recipe.
+
+## 环境分件补充（Godot实机验证）
+
+- 鱼群使用独立个体时，避免同一个正弦路径让所有鱼同时翻转；可使用有预热分布、边缘透明回收的持续游动。尾摆帧与路径分别定义循环。
+- 动态贴图要留足透明余量；含屋顶/洞壁的裁片必须拆成固定根片和动片，不能只把UV位移整体加大。
+- CanvasItem光纹Shader注意`COLOR`已可能含贴图采样；再次乘采样会把alpha平方，导致动画几乎看不见。用vertex传递调制色，在fragment只采样/混合一次，并通过实际像素变化复查。
+- 录制模式的帧时间包含编码，不等于实时帧率。另跑无录制场景测量。参考实现与证据见`assets/source/xumen-motion-elements/README.md`。
+
+## Blender绘画裁片的烘焙帧
+
+- 用原画纹理驱动带UV网格时，保留固定根部和透明余量；同一相机、帧尺寸和原点输出所有帧。不要逐帧紧裁。
+- 检查残留背景小岛，再批量渲染；位图连通性、尖端蒙版与色域只能辅助提取，必须复查细丝未被误删。
+- 用额外的循环闭合帧验证形态键几何，但导出帧不重复闭合帧；同时验固定点误差、首尾像素变化和实际Godot场景。
+- 母版打包绘画纹理，明确自动生成器会重建母版，避免覆盖人工Texture Paint/曲线修改。渲染后的PNG序列是2D动画，不能宣称为逐帧手绘。参见assets/source/baleen-blender/README.md。
+
+- 背景裁片不能直接作为加法光束：原画中的几何会随图层位移错位。移除裁片时还应检查背景是否有配套扣除蒙版；恢复原背景连续性，再叠加不含场景物体的独立透明光效，比较镜头两端与关闭光效后的画面。
+
+- 补齐前景边角时，逐一检查所有承载同一原画区域的静态图层，不能只新增前景而保留底层重复轮廓。底部与侧边相接的分件应保持同一视差，并保留画外像素余量；按真实游戏缩放和相机边界验证，另做全景视差压力图，区分相机越界与素材断边。
+
+- 桥下或屋檐出现直线截断时，分别检查遮挡层和原素材裁切蒙版。只隐藏补底后稍有改善不能证明根因已消除；必须与原图局部轮廓对照。补回悬挂组织时排除已由动态节点拥有的区域，关闭粒子另拍对照，避免重复叠影或用特效掩盖裁片缺口。参考本项目xumen-underbridge-repair。
+
+
+### 用户指定固定FPS与整秒时长
+
+- 稀疏细丝放在黑底上生成视频可能引起背景条纹和形体融合。先做代表样片；失败时保留记录，改用有场景语义的上下文输入。即便上下文片可用，也要检查镜头漂移；把局部运动场投射到批准原画时，明确记录减漂移、根部权重、限幅和回位包络，不能称为直接视频抠帧。Krita原生导入后检查KRA内部关键帧数、FPS和播放范围。示例：assets/source/baleen-wan22。
+
+先读取实际解码帧数/FPS，用ceil(duration)×目标FPS确定帧槽，不以平台标称秒数代替；6秒生成片可能有145帧/24FPS，实际需上取整7秒。尾部补间若有重影应舍弃；改选相位匹配连续区间并重定时时，明确区分完整源时长、选段时长和播放时长，逐帧记录来源，不声称原速直接抽帧。固定FPS优先时不得暗中使用速度倍率；顶墙、暂停和命中停顿仍须冻结动画时钟，保留移动速度则明确记录可能滑步。当前主场景可能已切换控制器，应从main_scene追踪实际实例，不能只改历史player.gd。例：tide-picker-walk-v03及tests/walk_animation.gd。
+
+- 复用视频去底脚本前检查新动作的道具运动范围。Walk的硬编码骨叉修复蒙版不可直接套到大幅摆叉Run；中性背景阈值也可能误删象牙高光。用亮度保护和明暗底实际渲染复查，无法补回的画外像素要明确记录。源片时长向上取整时，记录是补尾还是整体重定时，固定播放FPS与源片动作速度分别陈述。见`assets/source/tide-picker-run-v03/README.md`。
+
+### 关键原画引导环境动画与Krita回导
+
+- 单簇细丝可先绘制多个关键姿态，再保存独立的运动指导片，交给Wan做低强度视频细化。指导补间、模型输出和固定根部/透明修正分别登记；不能将光流补间称为逐帧手绘，也不能把新关键原画说成Wan生成。
+- 高强度视频细化可能让细丝偏色、融合。先检代表帧，保留失败结果，降低细化强度做定向返修。绿色去底后必须检查浅底；模型轮廓外的灰雾残影可用已绘制指导alpha限定，但须声明透明轮廓由原画引导保留。
+- Krita插件队列消费用可覆盖的replace或唯一归档名，旧consumed文件会让rename失败并堵住导入。插件不可用时可用原生CLI把逐帧分层ORA转成KRA像素块，再组织时间轴；必须实际通过Krita导出全部动画帧并逐像素对照。ZIP旧文件名可能未设UTF-8标志，不能直接拿XML中文画布名当ZIP目录；内部统一ASCII路径，并移除重复animation节点。见`assets/source/baleen-keyart-v2`和`tools/baleen_kra_native.py`。
+
+### 细丝末端跟随与周期指导
+
+- 软组织动画可先锁定附着带，沿长度逐步增加摆幅与相位延迟。直接按每列alpha最底点归一化可能在轮廓凹口处产生局部翻折；使用平滑长度场，并检验雅可比与逆映射残差。派生姿态要注明由已有绘画变形，不登记为新增手绘。
+- 视频模型细化不保证首尾连续。可将模型材质残差反映射到原画坐标、限制周期谐波并小比例混合，轮廓保持原画指导；这属于后期制作，不能宣称直接抠帧。几何位置和速度闭合、最终像素首尾步长、真实播放感受分别验收。导出不重复闭合帧；末帧与首帧不同是正常相位差，接缝应与普通帧间变化比较。示例：`assets/source/baleen-loop-v3`及`tools/baleen_loop_v3.py`。
+- 将孤立动画替换进场景时，逐一检查背景、洞顶和所谓ROOT贴图的实际像素。名字不能证明只含根部：旧贴图可能带整段静态细丝、骨枝、侧壁和蓝色背景。清除重复所有权时保留非动态结构，用现有干净绘画补齐遮挡区，并在全景及相机两端核查。先在临时PCK运行当前主场景验收，通过后再替换现有试玩包；示例：`tools/integrate_baleen_loop_v3.py`和`tools/package_baleen_loop_v3.py`。

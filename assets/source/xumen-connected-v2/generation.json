@@ -1,0 +1,28 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "thirdPartyPaidCalls": 0,
+  "promptRecord": "normalized production requirements from tool calls; observed output deviation explicitly recorded",
+  "images": [
+    {
+      "id": "CON-TUNNEL",
+      "original": "originals/tunnel.png",
+      "toolOutput": "exec-fa1f70e5-8f29-40ca-bf8a-a3751c05b0fc.png",
+      "prompt": "Production painted original 2D side-view whale-carcass connector tunnel; dark teal-blue underwater depth, porous pale whale bone arches upper border and corners, tiny gold anemones, cream baleen upper edges, warm pink porous tissue below. Clear flat walkable floor across full image; no actors, enemies, fish, bubbles, HUD, text, rewards or doors. Orthographic playable side elevation; material/color reference world-continuity-v1/images/02-r1-continuous.png and 06-r1-seams.png. Request floor at74percent; observed floor at624/1024, runtime ground anchored to observed pixels rather than requested percentage.",
+      "sha256": "e7aeedfff47a2e39bae600596aacd0e3a797e7346f3db727a7df6a2818b3b877"
+    },
+    {
+      "id": "CON-SHAFT",
+      "original": "originals/shaft.png",
+      "toolOutput": "exec-7e7cad52-d0fa-45b8-b62f-823b06905034.png",
+      "prompt": "Production original 2D side elevation vertical passage, portrait2:3. Ruined cream and coral-pink porous bone sides framing central open blue water, clear ascending passage bottom to top. No central floors/platforms, actors, fish, bubbles, UI or text. Sparse cream baleen and tiny gold plants static; hand-painted matte top-left light. Reference originals/tunnel.png.",
+      "sha256": "9c46c86e18590c7efce39a65a6b8058025e17fcf976bbb2244ca5d78c1feb28b"
+    },
+    {
+      "id": "CON-LEDGE",
+      "original": "originals/ledge.png",
+      "toolOutput": "exec-56fb9713-0a1d-411b-9bf6-17d70e848899.png",
+      "prompt": "One independent transparent 2D terrain sprite: horizontal mostly flat walkable upper lip, warm rose-coral porous whale bone and torn tissue, irregular tapering underside with three hanging rootlets, chipped ends, tiny pale sea plants at ends. Orthographic side view, warm top-left highlight and purple underside. No scenery, water backdrop, characters, labels. Natural organic broken bone, not rectangular block. Reference originals/tunnel.png.",
+      "sha256": "4d914774a4d75a9dc844a30324fe699805a3cf217a58193f96f0456ca77e165b"
+    }
+  ]
+}

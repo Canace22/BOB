@@ -1,0 +1,36 @@
+{
+  "sanitization": "URL query/fragment removed; credential-like values redacted. Job status is original CLI response.",
+  "response": {
+    "intent": "poll_task",
+    "data": {
+      "task_id": "vj_8bc82add-d050-4bfc-9b41-a08c90118096",
+      "status": "completed",
+      "progress": 100,
+      "created_at": 1793726217000,
+      "started_at": 1793726217000,
+      "completed_at": 1793726334000,
+      "data": [
+        {
+          "url": "https://xsj-ai-orange.seasungame.com/prod/video/20261104/83db151e-71c9-4512-abd8-5af854492530.mp4",
+          "thumbnail_url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261104/4f202ea3-5a0b-48b0-8a66-ce5672f54a9c.jpg",
+          "intranet_url": "https://ssg-intranet-dl.seasungame.com/techai-art-dev/vendor-jobs/vj_8bc82add-d050-4bfc-9b41-a08c90118096/primary/b8c8b0f7-853f-42b0-94fb-c87829b96c9b.mp4",
+          "role": "primary"
+        },
+        {
+          "url": "https://xsj-ai-orange.seasungame.com/prod/video/20261104/b3a78d17-bd28-4e40-81da-c051c191b649.mp4",
+          "intranet_url": "https://ssg-intranet-dl.seasungame.com/techai-art-dev/vendor-jobs/vj_8bc82add-d050-4bfc-9b41-a08c90118096/preview_video/42916272-b2fe-4aa1-af97-1a2a0ef5d93c.mp4",
+          "role": "preview_video"
+        }
+      ],
+      "workflow_id": "3ebee3ac-48d7-4d55-9e9d-bb2836d9e6b2",
+      "node_id": "skills_v_f44daa2085",
+      "provider": "ByteDance",
+      "model": "doubao-seedance-2-5-260628",
+      "vendor_task_id": "cgt-20261104011657-6kvqc"
+    },
+    "workflowId": "3ebee3ac-48d7-4d55-9e9d-bb2836d9e6b2",
+    "canvasName": "鲸落万物生-门庭蟹战斗演出",
+    "canvasUrl": "https://tech.seasungame.com/gaiclient/renderer/",
+    "canvasLinkHint": "请打开画布列表页，在列表中找到「鲸落万物生-门庭蟹战斗演出」并点击进入查看结果。"
+  }
+}

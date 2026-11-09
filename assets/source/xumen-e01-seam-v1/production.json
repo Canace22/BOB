@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "edge": "E01",
+  "stage": "A4_online_passed",
+  "status": "passed_technical_visual_ai",
+  "next": "E02 dedicated T02 tongue transition, then E03 E04 E33 E35 individually",
+  "gate": "E01 technical gate passed; user aesthetic review separate",
+  "tools": {
+    "engine": "4.7.2 Compatibility",
+    "image": "built-in imagegen",
+    "paidExternal": false
+  },
+  "verified": {
+    "native_e01": 23,
+    "engineering": 57,
+    "connected_route": 38,
+    "independent_reload": 2,
+    "chrome_roundtrip": 12,
+    "motion_chrome": 7,
+    "audio": "single existing water_bed, continuous loop identity; no new timbre; actual ear review not renewed",
+    "visual": "AI reviewed left/mid/right, no-front, clean hub cutout and alignment; user aesthetic separate"
+  },
+  "evidence": "game/build/qa/xumen-e01/",
+  "publication": {
+    "source": "7da138f650ab6a017ded19d438289a635414c831",
+    "pages": "42c152cce5a535072ed1ee400882935a677d2ac5",
+    "run": "41906564892",
+    "deployment": "success",
+    "online_keyboard": "12/12 errors0",
+    "url": "https://canace22.github.io/BOB/godot/"
+  }
+}

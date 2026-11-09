@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/motion_element.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/LAMP.png" id="2"]
+[node name="LAMP" type="Sprite2D"]
+texture = ExtResource("2")
+centered = false
+script = ExtResource("1")
+animation_kind = "light"
+source_origin = Vector2(37, 354)
+period = 8.0
+phase = 4.88
+intensity = 0.26

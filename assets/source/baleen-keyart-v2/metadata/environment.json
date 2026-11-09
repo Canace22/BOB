@@ -1,0 +1,66 @@
+{
+  "system": {
+    "os": "win32",
+    "ram_total": 68474249216,
+    "ram_free": 19759771648,
+    "comfyui_version": "0.42.0",
+    "required_frontend_version": "1.57.1",
+    "installed_templates_version": null,
+    "required_templates_version": "0.11.96",
+    "comfy_package_versions": [
+      {
+        "name": "comfyui-frontend-package",
+        "installed": "1.57.1",
+        "required": "1.57.1"
+      },
+      {
+        "name": "comfyui-workflow-templates",
+        "installed": null,
+        "required": "0.11.96"
+      },
+      {
+        "name": "comfyui-embedded-docs",
+        "installed": "0.5.14",
+        "required": "0.5.14"
+      },
+      {
+        "name": "comfy-aimdo",
+        "installed": "0.6.0",
+        "required": "0.6.0"
+      },
+      {
+        "name": "comfy-kitchen",
+        "installed": "0.2.40",
+        "required": "0.2.40"
+      }
+    ],
+    "python_version": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "pytorch_version": "2.14.1+cu130",
+    "embedded_python": false,
+    "deploy_environment": "local-git",
+    "argv": [
+      "main.py",
+      "--listen",
+      "127.0.0.1",
+      "--port",
+      "8188",
+      "--lowvram",
+      "--reserve-vram",
+      "1",
+      "--vram-headroom",
+      "0.5",
+      "--disable-auto-launch"
+    ]
+  },
+  "devices": [
+    {
+      "name": "cuda:0 NVIDIA GeForce RTX 5060 : cudaMallocAsync",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8546484224,
+      "vram_free": 7222948032,
+      "torch_vram_total": 100663296,
+      "torch_vram_free": 65368256
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/world/scenery/chapter/continuity_portal.gd" id="s0"]
+[ext_resource type="Script" path="res://src/world/scenery/chapter/fish_group.gd" id="s1"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="s2"]
+[ext_resource type="Shader" path="res://src/world/scenery/chapter/seam_mask.gdshader" id="shader"]
+[ext_resource type="Texture2D" path="res://art/xumen-continuity/seam-3-Glimpse.png" id="t0"]
+
+[sub_resource type="ShaderMaterial" id="Mask"]
+shader = ExtResource("shader")
+shader_parameter/strength = 0.38
+shader_parameter/part = 0.0
+shader_parameter/scene_width = 1591
+shader_parameter/portal_ground = 710
+
+[node name="Continuity_E04" type="Node2D"]
+position = Vector2(641,310)
+script = ExtResource("s0")
+edge_id = "E04"
+destination_id = "R1-05"
+strip = 3
+side = 1
+portal_y = 710
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -29
+
+[node name="PlateFar" type="Sprite2D" parent="Far"]
+texture = ExtResource("t0")
+centered = false
+scale = Vector2(0.8455467869222097,0.8455467869222097)
+material = SubResource("Mask")
+
+[node name="Middle" type="Node2D" parent="."]
+z_index = -14
+
+[node name="Fish" type="Node2D" parent="Far"]
+script = ExtResource("s1")
+bounds = Rect2(510,120,330,100)
+population = 0
+phase = 1.2000000000000002
+
+[node name="Bubbles" type="Node2D" parent="Middle"]
+script = ExtResource("s2")
+bounds = Rect2(570,85,110,170)
+population = 4
+external_clock = true
+base_speed = 8.0
+bubble_opacity = 0.18

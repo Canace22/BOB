@@ -1,0 +1,630 @@
+{
+  "jobs": [
+    {
+      "id": "MID-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\MID-01.svg",
+      "box": [
+        125,
+        140,
+        365,
+        340
+      ],
+      "mode": "plain",
+      "source": "clean",
+      "layer": -50,
+      "motion": "static"
+    },
+    {
+      "id": "MID-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\MID-02.svg",
+      "box": [
+        360,
+        130,
+        460,
+        370
+      ],
+      "mode": "plain",
+      "source": "clean",
+      "layer": -50,
+      "motion": "static"
+    },
+    {
+      "id": "MID-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\MID-03.svg",
+      "box": [
+        775,
+        145,
+        440,
+        420
+      ],
+      "mode": "plain",
+      "source": "clean",
+      "layer": -50,
+      "motion": "static"
+    },
+    {
+      "id": "ROOF",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\ROOF.svg",
+      "box": [
+        0,
+        0,
+        1280,
+        126
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 0,
+      "motion": "static"
+    },
+    {
+      "id": "WALL-L",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\WALL-L.svg",
+      "box": [
+        0,
+        28,
+        156,
+        456
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 0,
+      "motion": "static"
+    },
+    {
+      "id": "WALL-R",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\WALL-R.svg",
+      "box": [
+        1170,
+        0,
+        110,
+        720
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 0,
+      "motion": "static"
+    },
+    {
+      "id": "ROAD",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\ROAD.svg",
+      "box": [
+        0,
+        386,
+        1280,
+        334
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 10,
+      "motion": "static"
+    },
+    {
+      "id": "PORTAL",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\PORTAL.svg",
+      "box": [
+        1,
+        324,
+        127,
+        151
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 12,
+      "motion": "static"
+    },
+    {
+      "id": "LAMP",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\LAMP.svg",
+      "box": [
+        39,
+        358,
+        68,
+        96
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 13,
+      "motion": "smooth_luminance"
+    },
+    {
+      "id": "BALEEN-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-01.svg",
+      "box": [
+        110,
+        37,
+        207,
+        274
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "BALEEN-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-02.svg",
+      "box": [
+        264,
+        0,
+        226,
+        273
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "BALEEN-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-03.svg",
+      "box": [
+        443,
+        0,
+        187,
+        220
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "BALEEN-04",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-04.svg",
+      "box": [
+        579,
+        0,
+        153,
+        155
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "BALEEN-05",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-05.svg",
+      "box": [
+        735,
+        0,
+        153,
+        129
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "BALEEN-06",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BALEEN-06.svg",
+      "box": [
+        902,
+        0,
+        305,
+        326
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 4,
+      "motion": "root_sway"
+    },
+    {
+      "id": "DECOR-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-01.svg",
+      "box": [
+        0,
+        86,
+        142,
+        252
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-02.svg",
+      "box": [
+        0,
+        410,
+        146,
+        77
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-03.svg",
+      "box": [
+        226,
+        439,
+        109,
+        41
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-04",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-04.svg",
+      "box": [
+        335,
+        393,
+        177,
+        61
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-05",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-05.svg",
+      "box": [
+        509,
+        365,
+        150,
+        65
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-06",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-06.svg",
+      "box": [
+        686,
+        391,
+        151,
+        78
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-07",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-07.svg",
+      "box": [
+        831,
+        436,
+        147,
+        69
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-08",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-08.svg",
+      "box": [
+        1039,
+        464,
+        173,
+        68
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-09",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-09.svg",
+      "box": [
+        228,
+        500,
+        256,
+        108
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-10",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-10.svg",
+      "box": [
+        576,
+        475,
+        260,
+        119
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-11",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-11.svg",
+      "box": [
+        925,
+        535,
+        287,
+        158
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "DECOR-12",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\DECOR-12.svg",
+      "box": [
+        649,
+        614,
+        280,
+        50
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 11,
+      "motion": "static"
+    },
+    {
+      "id": "PLANT-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\PLANT-01.svg",
+      "box": [
+        270,
+        410,
+        44,
+        53
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "PLANT-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\PLANT-02.svg",
+      "box": [
+        651,
+        340,
+        45,
+        63
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "PLANT-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\PLANT-03.svg",
+      "box": [
+        795,
+        447,
+        35,
+        44
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "PLANT-04",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\PLANT-04.svg",
+      "box": [
+        1145,
+        427,
+        40,
+        79
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "VINE-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\VINE-01.svg",
+      "box": [
+        321,
+        526,
+        36,
+        92
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "VINE-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\VINE-02.svg",
+      "box": [
+        447,
+        534,
+        46,
+        82
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "VINE-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\VINE-03.svg",
+      "box": [
+        778,
+        545,
+        45,
+        89
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "VINE-04",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\VINE-04.svg",
+      "box": [
+        1005,
+        570,
+        53,
+        83
+      ],
+      "mode": "warm",
+      "source": "reference",
+      "layer": 12,
+      "motion": "root_sway"
+    },
+    {
+      "id": "FISH-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\FISH-02.svg",
+      "box": [
+        553,
+        150,
+        221,
+        81
+      ],
+      "mode": "fish",
+      "source": "reference",
+      "layer": -30,
+      "motion": "drift"
+    },
+    {
+      "id": "FISH-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\FISH-03.svg",
+      "box": [
+        866,
+        325,
+        196,
+        74
+      ],
+      "mode": "fish",
+      "source": "reference",
+      "layer": -30,
+      "motion": "drift"
+    },
+    {
+      "id": "BEAM-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BEAM-01.svg",
+      "box": [
+        626,
+        0,
+        150,
+        295
+      ],
+      "mode": "beam",
+      "source": "clean",
+      "layer": -35,
+      "motion": "smooth_luminance"
+    },
+    {
+      "id": "BEAM-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BEAM-02.svg",
+      "box": [
+        792,
+        0,
+        172,
+        315
+      ],
+      "mode": "beam",
+      "source": "clean",
+      "layer": -35,
+      "motion": "smooth_luminance"
+    },
+    {
+      "id": "BEAM-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\BEAM-03.svg",
+      "box": [
+        909,
+        47,
+        144,
+        263
+      ],
+      "mode": "beam",
+      "source": "clean",
+      "layer": -35,
+      "motion": "smooth_luminance"
+    },
+    {
+      "id": "FRONT-01",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\FRONT-01.svg",
+      "box": [
+        0,
+        482,
+        443,
+        238
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 50,
+      "motion": "static"
+    },
+    {
+      "id": "FRONT-02",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\FRONT-02.svg",
+      "box": [
+        321,
+        586,
+        555,
+        134
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 50,
+      "motion": "static"
+    },
+    {
+      "id": "FRONT-03",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\FRONT-03.svg",
+      "box": [
+        832,
+        620,
+        448,
+        100
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 50,
+      "motion": "static"
+    },
+    {
+      "id": "CHARACTER",
+      "mask": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\masks\\CHARACTER.svg",
+      "box": [
+        142,
+        393,
+        78,
+        76
+      ],
+      "mode": "plain",
+      "source": "reference",
+      "layer": 20,
+      "motion": "static"
+    }
+  ],
+  "source": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\original\\reference.png",
+  "clean": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\generated\\clean-occlusions.png",
+  "backing": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\generated\\dynamic-backing.png",
+  "underpaint": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-reference-environment\\generated\\depth-underpaint.png",
+  "runtime": "G:\\鲸落万物生\\BOB\\assets\\runtime\\xumen-reference-environment",
+  "project_runtime": "res://assets/reference_environment",
+  "size": [
+    1280,
+    720
+  ]
+}

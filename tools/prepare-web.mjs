@@ -1,26 +1,26 @@
 import { readFileSync, writeFileSync, readdirSync, unlinkSync } from 'node:fs';
-import { createHash } from 'node:crypto';
-import { gzipSync, gunzipSync } from 'node:zlib';
+import { buildDownloadEntry } from './web-download-parts.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const web = path.join(root, 'game/build/web');
-for (const file of readdirSync(web)) if (/^(wasm|pck)\.[0-9a-f]{16}\.gz$/.test(file)) unlinkSync(path.join(web, file));
+for (const file of readdirSync(web)) if (/^(wasm|pck)\.[0-9a-f]{16}\.(gz|(?:gzip|raw)\.part-\d+\.bin)$/.test(file)) unlinkSync(path.join(web, file));
 const manifest = {};
 for (const extension of ['wasm', 'pck']) {
   const data = readFileSync(path.join(web, `index.${extension}`));
-  const packed = gzipSync(data, { level: 9 });
-  if (!gunzipSync(packed).equals(data)) throw new Error(`Compression verification failed: ${extension}`);
-  const hash = createHash('sha256').update(packed).digest('hex').slice(0, 16);
-  const file = `${extension}.${hash}.gz`;
-  writeFileSync(path.join(web, file), packed);
-  manifest[`index.${extension}`] = { file, packedBytes: packed.length, rawBytes: data.length, type: extension === 'wasm' ? 'application/wasm' : 'application/octet-stream' };
+  manifest[`index.${extension}`] = buildDownloadEntry(data, extension, (file, bytes) => writeFileSync(path.join(web, file), bytes));
 }
 const loader = readFileSync(path.join(root, 'game/web/preload.js'), 'utf8');
 const target = path.join(web, 'index.html');
 let html = readFileSync(target, 'utf8');
 const marker = '<script src="index.js"></script>';
+// Godot can retain its HTML shell on incremental exports. Replace the previous
+// generated loader so the page cannot keep hashes of files removed above.
+if (html.includes('BOB_WEB_FILES')) {
+  html = html.replace(/<script>window\.BOB_WEB_FILES = [\s\S]*?<\/script>\s*(?=<script src="index\.js"><\/script>)/, '');
+  html = html.replace(/\n<div id="status-detail"[^>]*>[\s\S]*?<\/div>/, '');
+}
 if (!html.includes(marker) || html.includes('BOB_WEB_FILES')) throw new Error('Unexpected Godot Web HTML; inspect before patching.');
 html = html.replace(marker, `<script>window.BOB_WEB_FILES = ${JSON.stringify(manifest)};\n${loader}</script>\n${marker}`);
 html = html.replace('<progress id="status-progress"></progress>', '<progress id="status-progress"></progress>\n<div id="status-detail" role="status" style="position:absolute;bottom:calc(10% + 24px);width:100%;text-align:center;color:#ddd;font:16px sans-serif">正在准备游戏…</div>');

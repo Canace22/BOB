@@ -1,3 +1,4 @@
+import { siteUrl, catalogUrl } from './runtime.js';
 const $ = id => document.getElementById(id);
 const groupNames = {actors:'角色与生物', scenes:'场景与背景', props:'道具与机关', ui:'界面素材', fx:'特效素材'};
 const stateNames = {missing:'尚缺素材', partial:'已有部分', ready:'静态文件齐备'};
@@ -33,13 +34,13 @@ function requirementCard(row, result) {
   const details = el('details'); details.append(el('summary', '来源、文件与后续动作'));
   if (row.evidence) details.append(el('p', row.evidence));
   if (row.stateRules) details.append(el('p', '静态组合：' + row.stateRules));
-  if (row.recipeFile) {const a=el('a','查看组件挂点与状态组合');a.href='/'+row.recipeFile;a.target='_blank';a.rel='noopener';details.append(a);}
+  if (row.recipeFile) {const a=el('a','查看组件挂点与状态组合');a.href=siteUrl(row.recipeFile);a.target='_blank';a.rel='noopener';details.append(a);}
   if (row.initialAuditNote) details.append(el('p', '初次盘点记录：' + row.initialAuditNote));
   const list = el('ul');
   for (const id of result.expected) {
     const asset = catalog.assets.find(a => a.id === id);
     const item = el('li');
-    if (asset) {const a = el('a', `${asset.name} · ${asset.status === 'accepted' ? '静态验收通过' : '待验收或调整'}`); a.href = '/' + asset.file; a.target = '_blank'; a.rel = 'noopener'; item.append(a);}
+    if (asset) {const a = el('a', `${asset.name} · ${asset.status === 'accepted' ? '静态验收通过' : '待验收或调整'}`); a.href = siteUrl(asset.file); a.target = '_blank'; a.rel = 'noopener'; item.append(a);}
     else item.textContent = `${id} · 尚未入库`;
     list.append(item);
   }
@@ -56,8 +57,8 @@ function render() {
     ['静态文件齐备的家族', ready], ['尚未齐备的家族', rows.length - ready]
   ].map(([name, value]) => {const item = el('div'); item.append(el('strong', String(value)), el('span', name));return item;}));
   $('assembly-previews').replaceChildren(...(plan.previews || []).map(preview => {
-    const link = el('a'); link.href = '/' + preview.file; link.target = '_blank'; link.rel = 'noopener';
-    const image = document.createElement('img'); image.src = '/' + preview.file; image.alt = preview.name; image.loading = 'lazy';
+    const link = el('a'); link.href = siteUrl(preview.file); link.target = '_blank'; link.rel = 'noopener';
+    const image = document.createElement('img'); image.src = siteUrl(preview.file); image.alt = preview.name; image.loading = 'lazy';
     link.append(image, el('span', preview.name)); return link;
   }));
   const visible = rows.filter(x => matches(x.row, x.result));
@@ -74,7 +75,7 @@ async function load() {
   $('reload').disabled = true;
   $('plan-note').textContent = '正在核对需求与项目文件…';
   try {
-    const responses = await Promise.all([fetch('/assets/source/whalefall-v5-2-complete/coverage.json', {cache:'no-store'}), fetch('/api/catalog', {cache:'no-store'})]);
+    const responses = await Promise.all([fetch(siteUrl('assets/source/whalefall-v5-2-complete/coverage.json'), {cache:'no-store'}), fetch(catalogUrl, {cache:'no-store'})]);
     if (responses.some(r => !r.ok)) throw new Error('读取失败，请确认管理服务与需求文件存在。');
     [plan, catalog] = await Promise.all(responses.map(r=>r.json()));
     render(); $('plan-note').textContent = plan.note;

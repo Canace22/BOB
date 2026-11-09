@@ -1,0 +1,478 @@
+{
+  "version": 1,
+  "actions": {
+    "anchor": {
+      "source": "G:\\鲸落万物生\\BOB\\assets\\source\\tide-picker-action36\\jobs\\anchor-body.mp4",
+      "source_sha256": "f1c6031ffaf6712d4d506bb9857fe035c5d50b81a31dc404e113578549184ab6",
+      "working_width": 768,
+      "working_height": 432,
+      "reference_height": 160,
+      "frame_count": 20,
+      "range_seconds": [
+        2.35,
+        4.15
+      ],
+      "scale": 0.8204926237713123,
+      "root_source": [
+        213.2736,
+        376.7904
+      ],
+      "registration": "offset=(source_grip - root_source - (torso(frame)-torso(source0))) * scale; both x/y shift, identical airborne anchor build path",
+      "socket_name": "tether",
+      "socket_semantics": "center of actual raised hand gripping fork/handle; NOT empty hand or chest",
+      "direction_rule": "offset x multiplied once by facing; source and offsets are right-facing",
+      "estimated_manual_error_source_pixels": 4,
+      "status": "all_20_source_and_registered_grip_markers_visually_reviewed; game_rope_attachment_pending",
+      "frames": [
+        {
+          "frame": 0,
+          "seconds": 2.35,
+          "source_frame": 56,
+          "source_xy": [
+            400.0,
+            161.0
+          ],
+          "torso_shift_xy": [
+            110.0,
+            -73.0
+          ],
+          "offset_from_player_root_160": [
+            62.953445248527224,
+            -117.15846994535517
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 1,
+          "seconds": 2.444736842105263,
+          "source_frame": 59,
+          "source_xy": [
+            413.0,
+            161.0
+          ],
+          "torso_shift_xy": [
+            121.0,
+            -77.0
+          ],
+          "offset_from_player_root_160": [
+            64.59443049606985,
+            -113.87649945026992
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 2,
+          "seconds": 2.5394736842105265,
+          "source_frame": 61,
+          "source_xy": [
+            442.0,
+            176.0
+          ],
+          "torso_shift_xy": [
+            171.0,
+            -71.0
+          ],
+          "offset_from_player_root_160": [
+            47.36408539687229,
+            -106.49206583632811
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 3,
+          "seconds": 2.6342105263157896,
+          "source_frame": 63,
+          "source_xy": [
+            471.0,
+            184.0
+          ],
+          "torso_shift_xy": [
+            191.0,
+            -64.0
+          ],
+          "offset_from_player_root_160": [
+            54.7485190108141,
+            -105.6715732125568
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 4,
+          "seconds": 2.7289473684210526,
+          "source_frame": 65,
+          "source_xy": [
+            493.0,
+            180.0
+          ],
+          "torso_shift_xy": [
+            232.0,
+            -50.0
+          ],
+          "offset_from_player_root_160": [
+            39.15915915915917,
+            -120.44044044044041
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 5,
+          "seconds": 2.823684210526316,
+          "source_frame": 68,
+          "source_xy": [
+            538.0,
+            155.0
+          ],
+          "torso_shift_xy": [
+            275.0,
+            -37.0
+          ],
+          "offset_from_player_root_160": [
+            40.80014440670179,
+            -151.6191601437503
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 6,
+          "seconds": 2.918421052631579,
+          "source_frame": 70,
+          "source_xy": [
+            560.0,
+            149.0
+          ],
+          "torso_shift_xy": [
+            317.0,
+            -32.0
+          ],
+          "offset_from_player_root_160": [
+            24.39029193127555,
+            -160.64457900523473
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 7,
+          "seconds": 3.0131578947368425,
+          "source_frame": 72,
+          "source_xy": [
+            573.0,
+            138.0
+          ],
+          "torso_shift_xy": [
+            357.0,
+            -36.0
+          ],
+          "offset_from_player_root_160": [
+            2.236991089450116,
+            -166.3880273716339
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 8,
+          "seconds": 3.1078947368421055,
+          "source_frame": 75,
+          "source_xy": [
+            579.0,
+            133.0
+          ],
+          "torso_shift_xy": [
+            377.0,
+            -30.0
+          ],
+          "offset_from_player_root_160": [
+            -9.249905643348256,
+            -175.41344623311835
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 9,
+          "seconds": 3.2026315789473685,
+          "source_frame": 77,
+          "source_xy": [
+            582.0,
+            133.0
+          ],
+          "torso_shift_xy": [
+            397.0,
+            -32.0
+          ],
+          "offset_from_player_root_160": [
+            -23.198280247460563,
+            -173.77246098557572
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 10,
+          "seconds": 3.297368421052632,
+          "source_frame": 79,
+          "source_xy": [
+            580.0,
+            132.0
+          ],
+          "torso_shift_xy": [
+            401.0,
+            -29.0
+          ],
+          "offset_from_player_root_160": [
+            -28.121235990088437,
+            -177.05443148066095
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 11,
+          "seconds": 3.392105263157895,
+          "source_frame": 81,
+          "source_xy": [
+            576.0,
+            132.0
+          ],
+          "torso_shift_xy": [
+            405.0,
+            -27.0
+          ],
+          "offset_from_player_root_160": [
+            -34.68517698025894,
+            -178.69541672820358
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 12,
+          "seconds": 3.4868421052631584,
+          "source_frame": 84,
+          "source_xy": [
+            552.0,
+            151.0
+          ],
+          "torso_shift_xy": [
+            367.0,
+            -24.0
+          ],
+          "offset_from_player_root_160": [
+            -23.198280247460563,
+            -165.5675347478626
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 13,
+          "seconds": 3.5815789473684214,
+          "source_frame": 86,
+          "source_xy": [
+            534.0,
+            155.0
+          ],
+          "torso_shift_xy": [
+            344.0,
+            -21.0
+          ],
+          "offset_from_player_root_160": [
+            -19.095817128604004,
+            -164.74704212409128
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 14,
+          "seconds": 3.6763157894736844,
+          "source_frame": 88,
+          "source_xy": [
+            507.0,
+            155.0
+          ],
+          "torso_shift_xy": [
+            293.0,
+            -30.0
+          ],
+          "offset_from_player_root_160": [
+            0.5960058419074914,
+            -157.36260851014947
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 15,
+          "seconds": 3.7710526315789474,
+          "source_frame": 91,
+          "source_xy": [
+            486.0,
+            159.0
+          ],
+          "torso_shift_xy": [
+            252.0,
+            -36.0
+          ],
+          "offset_from_player_root_160": [
+            17.005858317333736,
+            -149.15768227243635
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 16,
+          "seconds": 3.865789473684211,
+          "source_frame": 93,
+          "source_xy": [
+            482.0,
+            159.0
+          ],
+          "torso_shift_xy": [
+            244.0,
+            -39.0
+          ],
+          "offset_from_player_root_160": [
+            20.287828812418987,
+            -146.6962044011224
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 17,
+          "seconds": 3.9605263157894743,
+          "source_frame": 95,
+          "source_xy": [
+            477.0,
+            159.0
+          ],
+          "torso_shift_xy": [
+            236.0,
+            -41.0
+          ],
+          "offset_from_player_root_160": [
+            22.74930668373292,
+            -145.0552191535798
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 18,
+          "seconds": 4.055263157894737,
+          "source_frame": 97,
+          "source_xy": [
+            478.0,
+            159.0
+          ],
+          "torso_shift_xy": [
+            232.0,
+            -42.0
+          ],
+          "offset_from_player_root_160": [
+            26.851769802589484,
+            -144.23472652980848
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        },
+        {
+          "frame": 19,
+          "seconds": 4.15,
+          "source_frame": 100,
+          "source_xy": [
+            479.0,
+            159.0
+          ],
+          "torso_shift_xy": [
+            231.0,
+            -44.5
+          ],
+          "offset_from_player_root_160": [
+            28.492755050132107,
+            -142.1834949703802
+          ],
+          "method": "manual grip-center measurement on this selected source frame; no image interpolation"
+        }
+      ],
+      "evidence": [
+        "review/anchor-socket-marked20.jpg",
+        "review/anchor-socket-registered20.jpg"
+      ],
+      "sockets_per_frame": {
+        "tether": [
+          [
+            62.953445248527224,
+            -117.15846994535517
+          ],
+          [
+            64.59443049606985,
+            -113.87649945026992
+          ],
+          [
+            47.36408539687229,
+            -106.49206583632811
+          ],
+          [
+            54.7485190108141,
+            -105.6715732125568
+          ],
+          [
+            39.15915915915917,
+            -120.44044044044041
+          ],
+          [
+            40.80014440670179,
+            -151.6191601437503
+          ],
+          [
+            24.39029193127555,
+            -160.64457900523473
+          ],
+          [
+            2.236991089450116,
+            -166.3880273716339
+          ],
+          [
+            -9.249905643348256,
+            -175.41344623311835
+          ],
+          [
+            -23.198280247460563,
+            -173.77246098557572
+          ],
+          [
+            -28.121235990088437,
+            -177.05443148066095
+          ],
+          [
+            -34.68517698025894,
+            -178.69541672820358
+          ],
+          [
+            -23.198280247460563,
+            -165.5675347478626
+          ],
+          [
+            -19.095817128604004,
+            -164.74704212409128
+          ],
+          [
+            0.5960058419074914,
+            -157.36260851014947
+          ],
+          [
+            17.005858317333736,
+            -149.15768227243635
+          ],
+          [
+            20.287828812418987,
+            -146.6962044011224
+          ],
+          [
+            22.74930668373292,
+            -145.0552191535798
+          ],
+          [
+            26.851769802589484,
+            -144.23472652980848
+          ],
+          [
+            28.492755050132107,
+            -142.1834949703802
+          ]
+        ]
+      }
+    }
+  }
+}

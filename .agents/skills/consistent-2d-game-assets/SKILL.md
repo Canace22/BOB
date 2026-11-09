@@ -13,6 +13,8 @@ Read [the collaboration rules](../../../AGENTS.md) and [the global art style](..
 
 ## Core decisions
 
+For connected-map concept art based on an existing game, use [world continuity concepts](references/world-continuity-concepts.md). Preserve source topology, distinguish concept from implemented rooms, and pair continuous environment art with an exact connection contract; new seam methods remain candidates until engine-tested.
+
 - Prefer an approved gameplay screenshot as the primary style reference. It carries perspective, scale, palette, line weight, lighting, texture density, and neighboring-object context at once.
 - Generate a new asset inside the target scene before isolating it when visual consistency matters more than exact reproduction.
 - Treat model-based “extraction” as reference-guided redrawing. It may alter structure, proportions, colors, and small details even when the prompt says “exactly.”
@@ -21,6 +23,8 @@ Read [the collaboration rules](../../../AGENTS.md) and [the global art style](..
 - Keep source screenshots and approved assets unchanged. Save every candidate and accepted result as a new file.
 
 ## Route the task
+
+For scene construction, reference-scene reconstruction or environmental motion (including a single fish school, hanging fringe or particle emitter), apply [scene-environment-motion](../scene-environment-motion/SKILL.md) as the production workflow. This skill continues to supply image/style/asset consistency checks; do not create a second competing pipeline.
 
 1. If the user provides a gameplay screenshot, use it as the edit target and main visual reference.
 2. If the user provides approved isolated assets but no screenshot, build a small reference board or temporary scene containing representative assets at their real relative scale.
@@ -80,3 +84,13 @@ For each accepted asset, provide or record:
 - Known limitations or required manual cleanup
 
 Do not claim “production-ready” until the asset passes deterministic scene placement and transparent-edge checks.
+
+## Godot reference-layer lessons
+
+For deterministic SubViewport extraction, export straight alpha (`blend_disabled`) to avoid dark seams from double premultiplication. Provide a few pixels of hidden-paint overlap below cutout edges and validate at the intended camera offsets. A stationary reconstruction can hide baked duplicates: inspect isolated layers and moving frames separately. Keyed hanging foliage may include rigid attachment pixels; explicitly zero motion on those pixels and do not label such a crop as a universally reusable clean object. See the scoped example in `assets/source/xumen-reference-environment/README.md`.
+
+For reference-video refinements, keep static placement invariant and change local motion within the existing cutout overlap. Initialize waves relative to their time-zero phase to retain the authored resting pose. Advance one scene clock only when animation is enabled; stopping animation must hold the current pose instead of resetting shader time. Test scene-tree pause, inspector toggles, zero speed, deterministic reload and bounded particle recycling separately. Near bubbles need their own draw depth as well as size/speed; a larger bubble behind the road does not establish foreground depth. Use actual renderer captures and existing level integration checks before repackaging; see `godot/WhalebellyRuins/tests/reference_environment_motion.gd`.
+
+## Scene and environment production routing
+
+For scene construction, reference-scene reconstruction or an environmental motion element, apply [scene-environment-motion](../scene-environment-motion/SKILL.md) for proactive identification, method selection, production and evidence-backed learning. Retain this skill's asset/style consistency checks without starting a competing pipeline.

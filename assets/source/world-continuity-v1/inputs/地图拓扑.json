@@ -1,0 +1,2387 @@
+{
+  "version": "V5.1",
+  "date": "2026-10-22",
+  "scope": "36房39边的概念设计拓扑；事件、门槛与首次开侧可复现静态验证；不等同引擎通关实测",
+  "sources": [
+    "V4/门槛与连通.json",
+    "V4.3/references/V4_基础设定.md",
+    "V4.3/references/V4.2_完整动作规则.md",
+    "V4.3/逐帧玩法设计说明.md"
+  ],
+  "counts": {
+    "rooms": 36,
+    "mainStructureRooms": 30,
+    "optionalRooms": 6,
+    "checkpoints": 8,
+    "travelNodes": 6
+  },
+  "rooms": [
+    {
+      "id": "R1-01",
+      "region": "R1",
+      "name": "外伤坡",
+      "kind": "main_structure",
+      "experience": "基础走跳；第一营地",
+      "recovery": "无伤宽坡",
+      "grants": [],
+      "x": 80,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R1-02",
+      "region": "R1",
+      "name": "须筛",
+      "kind": "main_structure",
+      "experience": "尸蟹退步反击；A1返程闩",
+      "recovery": "底部返坡",
+      "grants": [],
+      "x": 280,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R1-03",
+      "region": "R1",
+      "name": "舌台",
+      "kind": "main_structure",
+      "experience": "双蟹错拍；主路碎片",
+      "recovery": "宽台脱战",
+      "grants": [],
+      "x": 480,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R1-04",
+      "region": "R1",
+      "name": "负壳蟹",
+      "kind": "main_structure",
+      "experience": "Boss 180；胜后 A1",
+      "recovery": "门前营地",
+      "grants": [
+        "A1"
+      ],
+      "x": 480,
+      "y": 400,
+      "grantWhen": "本房Boss胜利并保存后授予A1",
+      "bossFlag": "BOSS_R1"
+    },
+    {
+      "id": "R1-05",
+      "region": "R1",
+      "name": "流膜育窝",
+      "kind": "main_structure",
+      "experience": "三次短冲教学；去胃枢",
+      "recovery": "最近稳定台",
+      "grants": [],
+      "x": 280,
+      "y": 400,
+      "grantWhen": null
+    },
+    {
+      "id": "R1-06",
+      "region": "R1",
+      "name": "喷气孔上层",
+      "kind": "optional",
+      "experience": "选修：A2；静菌模块",
+      "recovery": "低台恢复",
+      "grants": [],
+      "x": 80,
+      "y": 540,
+      "grantWhen": null
+    },
+    {
+      "id": "R1-07",
+      "region": "R1",
+      "name": "鲸须记忆袋",
+      "kind": "optional",
+      "experience": "选修：A3；碎片＋记忆",
+      "recovery": "安静高台",
+      "grants": [],
+      "x": 280,
+      "y": 540,
+      "grantWhen": null
+    },
+    {
+      "id": "R2-01",
+      "region": "R2",
+      "name": "育床",
+      "kind": "main_structure",
+      "experience": "先取 A2；浮升练习",
+      "recovery": "软膜底床",
+      "grants": [
+        "A2"
+      ],
+      "x": 770,
+      "y": 280,
+      "grantWhen": "安全授能交互完成，非仅进入房间"
+    },
+    {
+      "id": "R2-02",
+      "region": "R2",
+      "name": "双层肺膜",
+      "kind": "main_structure",
+      "experience": "膜鳐锁线；滑膜侧台",
+      "recovery": "固定补压台",
+      "grants": [],
+      "x": 970,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R2-03",
+      "region": "R2",
+      "name": "心室观察台",
+      "kind": "main_structure",
+      "experience": "群流横流；碎片＋营地",
+      "recovery": "观察宽台",
+      "grants": [],
+      "x": 1170,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R2-04",
+      "region": "R2",
+      "name": "血巢潮群",
+      "kind": "main_structure",
+      "experience": "Boss 240；胜后 P",
+      "recovery": "全部阀复位",
+      "grants": [
+        "P"
+      ],
+      "x": 1170,
+      "y": 400,
+      "grantWhen": "本房Boss胜利并保存后授予P",
+      "bossFlag": "BOSS_R2"
+    },
+    {
+      "id": "R2-05",
+      "region": "R2",
+      "name": "回流出口",
+      "kind": "main_structure",
+      "experience": "舒缓浮升；喷气孔捷径",
+      "recovery": "固定落台",
+      "grants": [],
+      "x": 970,
+      "y": 400,
+      "grantWhen": null
+    },
+    {
+      "id": "R2-06",
+      "region": "R2",
+      "name": "最后呼吸囊",
+      "kind": "optional",
+      "experience": "选修：A2；碎片＋记忆",
+      "recovery": "分段安全台",
+      "grants": [],
+      "x": 770,
+      "y": 540,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-01",
+      "region": "R3",
+      "name": "胃枢",
+      "kind": "main_structure",
+      "experience": "两支自由先后；营地＋交通",
+      "recovery": "无敌人",
+      "grants": [],
+      "x": 80,
+      "y": 910,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-02",
+      "region": "R3",
+      "name": "漂台阀",
+      "kind": "main_structure",
+      "experience": "小压力谜题；单孔鳗",
+      "recovery": "物件召回",
+      "grants": [],
+      "x": 310,
+      "y": 910,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-03",
+      "region": "R3",
+      "name": "肝叶灯罩",
+      "kind": "main_structure",
+      "experience": "嗅脂甲；背坡复振模块",
+      "recovery": "固定高台",
+      "grants": [],
+      "x": 540,
+      "y": 910,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-04",
+      "region": "R3",
+      "name": "脂槽刹车",
+      "kind": "main_structure",
+      "experience": "蟹＋鳗；掩体；碎片",
+      "recovery": "固定退路",
+      "grants": [],
+      "x": 770,
+      "y": 910,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-05",
+      "region": "R3",
+      "name": "肠入口",
+      "kind": "main_structure",
+      "experience": "先得 A3；固定环练习",
+      "recovery": "宽落台补给",
+      "grants": [
+        "A3"
+      ],
+      "x": 770,
+      "y": 1040,
+      "grantWhen": "安全授能交互完成，非仅进入房间"
+    },
+    {
+      "id": "R3-06",
+      "region": "R3",
+      "name": "迁居搬盘",
+      "kind": "main_structure",
+      "experience": "锚越酸槽；搬壳蟹受保护",
+      "recovery": "酸回岸扣1格",
+      "grants": [],
+      "x": 540,
+      "y": 1040,
+      "grantWhen": null
+    },
+    {
+      "id": "R3-07",
+      "region": "R3",
+      "name": "搬壳母蟹",
+      "kind": "main_structure",
+      "experience": "区域正式Boss 260；可绕过；胜利开胃侧回折闩侧捷径＋H4迁居结果（H4沿用V4；胜利触发为V5明确）",
+      "recovery": "门前营地",
+      "grants": [],
+      "x": 310,
+      "y": 1040,
+      "grantWhen": "本房Boss胜利并保存后可开胃侧回折闩闩及完成H4",
+      "bossFlag": "BOSS_R3"
+    },
+    {
+      "id": "R3-08",
+      "region": "R3",
+      "name": "胃顶沉积袋",
+      "kind": "optional",
+      "experience": "选修：A2；精英＋碎片",
+      "recovery": "回底部宽台",
+      "grants": [],
+      "x": 80,
+      "y": 1200,
+      "grantWhen": null
+    },
+    {
+      "id": "R4-01",
+      "region": "R4",
+      "name": "组合门",
+      "kind": "main_structure",
+      "experience": "入域门：P＋A3",
+      "recovery": "开后不复锁",
+      "grants": [],
+      "x": 1150,
+      "y": 910,
+      "grantWhen": null
+    },
+    {
+      "id": "R4-02",
+      "region": "R4",
+      "name": "低骨训练",
+      "kind": "main_structure",
+      "experience": "先得 A4；无害接珠练习",
+      "recovery": "普通返坡",
+      "grants": [
+        "A4"
+      ],
+      "x": 1370,
+      "y": 910,
+      "grantWhen": "安全授能交互完成，非仅进入房间"
+    },
+    {
+      "id": "R4-03",
+      "region": "R4",
+      "name": "上锚路线",
+      "kind": "main_structure",
+      "experience": "反弹＋一次空冲；碎片",
+      "recovery": "下层菌毯",
+      "grants": [],
+      "x": 1590,
+      "y": 890,
+      "grantWhen": null
+    },
+    {
+      "id": "R4-04",
+      "region": "R4",
+      "name": "下菌毯路线",
+      "kind": "main_structure",
+      "experience": "固定锚＋附骨甲",
+      "recovery": "脱环后攻击",
+      "grants": [],
+      "x": 1590,
+      "y": 1000,
+      "grantWhen": null
+    },
+    {
+      "id": "R4-05",
+      "region": "R4",
+      "name": "悬脊鸣贝",
+      "kind": "main_structure",
+      "experience": "Boss 300；胜后 B",
+      "recovery": "门前营地",
+      "grants": [
+        "B"
+      ],
+      "x": 1810,
+      "y": 930,
+      "grantWhen": "本房Boss胜利并保存后授予B",
+      "bossFlag": "BOSS_R4"
+    },
+    {
+      "id": "R4-06",
+      "region": "R4",
+      "name": "稳定交通椎",
+      "kind": "main_structure",
+      "experience": "调律交通；通往头和尾",
+      "recovery": "无伤害叙事",
+      "grants": [],
+      "x": 1810,
+      "y": 1190,
+      "grantWhen": null
+    },
+    {
+      "id": "R4-07",
+      "region": "R4",
+      "name": "修索小室",
+      "kind": "optional",
+      "experience": "选修：A3/A4；系索模块",
+      "recovery": "分段稳定台",
+      "grants": [],
+      "x": 1370,
+      "y": 1190,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-01",
+      "region": "R5",
+      "name": "三槽记忆",
+      "kind": "main_structure",
+      "experience": "入域门：B＋A4＋A2",
+      "recovery": "无战观察",
+      "grants": [],
+      "x": 1460,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-02",
+      "region": "R5",
+      "name": "安全池",
+      "kind": "main_structure",
+      "experience": "先得 A5；无害潜隙",
+      "recovery": "失败退回入口",
+      "grants": [
+        "A5"
+      ],
+      "x": 1660,
+      "y": 280,
+      "grantWhen": "安全授能交互完成，非仅进入房间"
+    },
+    {
+      "id": "R5-03",
+      "region": "R5",
+      "name": "薄缝训练",
+      "kind": "main_structure",
+      "experience": "缝鳗换边；捷径＋营地",
+      "recovery": "固定安全台",
+      "grants": [],
+      "x": 1860,
+      "y": 280,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-04",
+      "region": "R5",
+      "name": "缄声覆膜",
+      "kind": "main_structure",
+      "experience": "Boss 340；胜后静默得 S",
+      "recovery": "胜利先存档",
+      "grants": [
+        "S"
+      ],
+      "x": 1860,
+      "y": 400,
+      "grantWhen": "Boss胜利先保存；本房安全静默2秒再授S",
+      "bossFlag": "BOSS_R5"
+    },
+    {
+      "id": "R5-05",
+      "region": "R5",
+      "name": "最后静默",
+      "kind": "main_structure",
+      "experience": "记忆声部；返脊椎",
+      "recovery": "不追加战斗",
+      "grants": [],
+      "x": 1660,
+      "y": 400,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-06",
+      "region": "R5",
+      "name": "记忆侧囊",
+      "kind": "optional",
+      "experience": "选修：A5；碎片",
+      "recovery": "容错落台",
+      "grants": [],
+      "x": 1460,
+      "y": 540,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-07",
+      "region": "R5",
+      "name": "尾根观察",
+      "kind": "main_structure",
+      "experience": "可提前观察；缺项指来源",
+      "recovery": "尾根营地区域",
+      "grants": [],
+      "x": 1380,
+      "y": 1540,
+      "grantWhen": null
+    },
+    {
+      "id": "R5-08",
+      "region": "R5",
+      "name": "归海释放槽",
+      "kind": "main_structure",
+      "experience": "最终门：P＋B＋S",
+      "recovery": "宽平台尾声",
+      "grants": [
+        "END"
+      ],
+      "x": 1720,
+      "y": 1540,
+      "grantWhen": "P/B/S同步交互成功"
+    }
+  ],
+  "edges": [
+    {
+      "from": "R1-01",
+      "to": "R1-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E01",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E01",
+        "from": "R1-01",
+        "to": "R1-02",
+        "nature": "创伤腔连续",
+        "via": "口角创口→口腔侧壁",
+        "why": "沿口角创口边缘入真正口腔侧壁；皮脂断面逐渐换为口腔衬层。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E02",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E02",
+        "from": "R1-02",
+        "to": "R1-03",
+        "nature": "天然邻接",
+        "via": "须筛下缘→舌背",
+        "why": "从鲸须下缘下降到舌背，须筛仍在头顶；这是同一口腔内换层。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R1-03",
+      "to": "R1-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E03",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E03",
+        "from": "R1-03",
+        "to": "R1-04",
+        "nature": "天然邻接",
+        "via": "舌背→舌根→口咽前庭",
+        "why": "沿舌背向头后方来到舌根口咽前庭，不穿器官壁。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R1-04",
+      "to": "R1-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R1胜利后开放出口",
+      "completionFlags": [
+        "BOSS_R1"
+      ],
+      "id": "E04",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E04",
+        "from": "R1-04",
+        "to": "R1-05",
+        "nature": "天然腔道＋分解损伤",
+        "via": "咽前台→咽后→塌陷食管纵裂边",
+        "why": "越过被蟹阻挡的咽前台，沿塌陷食管纵裂边进入育窝；管壁在画面连续。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": [
+          "BOSS_R1"
+        ]
+      }
+    },
+    {
+      "from": "R1-05",
+      "to": "R3-01",
+      "requires": [
+        "A1"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E05",
+      "requiresAll": [
+        "A1"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E05",
+        "from": "R1-05",
+        "to": "R3-01",
+        "nature": "天然消化道走向＋纵裂边通行",
+        "via": "咽后食管→胸腔内食管走向→横膈食管裂孔附近→前胃",
+        "why": "从咽后食管沿头向尾下降，穿横膈食管裂孔区域到前胃入口；实际可走空间来自死后管壁纵裂，不把正常窄食管画成大厅。长过渡留食管纹与横膈轮廓。",
+        "distanceClass": "长廊",
+        "conditions": [
+          "A1"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-01",
+      "to": "R2-02",
+      "requires": [
+        "A2"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E06",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E06",
+        "from": "R2-01",
+        "to": "R2-02",
+        "nature": "同器官外表面邻接",
+        "via": "肺后缘胸膜面→肺叶外侧剥离层",
+        "why": "育床在肺后缘，沿剥离胸膜上行到肺叶外侧双层台；不是进入肺泡。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A2"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-02",
+      "to": "R2-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E07",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E07",
+        "from": "R2-02",
+        "to": "R2-03",
+        "nature": "胸腔内损伤过渡",
+        "via": "肺外表面→胸膜破口→纵隔→心包外缘",
+        "why": "离开肺叶表面，经胸膜开口沿纵隔下降到心包外缘；用背侧肺→腹侧心位置变化解释。",
+        "distanceClass": "跨器官",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-03",
+      "to": "R2-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E08",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E08",
+        "from": "R2-03",
+        "to": "R2-04",
+        "nature": "破口进入",
+        "via": "心包外缘→心包旧破口→心室断壁旁",
+        "why": "从心包外观察台，经已破裂心包边进入心室断壁旁的群体巢；完整心包不能凭空相通。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-04",
+      "to": "R2-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "completionFlags": [
+        "BOSS_R2"
+      ],
+      "requiresCompletion": "BOSS_R2胜利后开放出口",
+      "id": "E09",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E09",
+        "from": "R2-04",
+        "to": "R2-05",
+        "nature": "破口离开＋胸腔转向",
+        "via": "心室断壁旁→心包侧破口→前纵隔→气管旁",
+        "why": "从心室断壁旁经同侧心包大破口返回前纵隔，再上到气管旁回廊；血巢不通过血管直达鼻孔。",
+        "distanceClass": "跨器官",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": [
+          "BOSS_R2"
+        ]
+      }
+    },
+    {
+      "from": "R3-01",
+      "to": "R2-01",
+      "requires": [
+        "A1"
+      ],
+      "kind": "branch",
+      "evidence": "V4区域连通图＋R3胃枢双出口",
+      "note": "",
+      "bidirectional": true,
+      "id": "E10",
+      "requiresAll": [
+        "A1"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E10",
+        "from": "R3-01",
+        "to": "R2-01",
+        "nature": "横膈/胃壁死后破口＋修补通道",
+        "via": "前胃外侧→横膈后面→横膈旧撕裂→肺后缘",
+        "why": "从前胃外侧裂口沿横膈后面上行，经横膈旧撕裂到肺后缘胸膜面；这里不是胃食管天然分叉去肺。",
+        "distanceClass": "跨器官",
+        "conditions": [
+          "A1"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-01",
+      "to": "R3-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E11",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E11",
+        "from": "R3-01",
+        "to": "R3-02",
+        "nature": "同器官褶层",
+        "via": "前胃裂缘→大胃褶",
+        "why": "从前胃纵裂边沿大胃褶到漂台阀；阀为聚落安装的海水导流物。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-02",
+      "to": "R3-03",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E12",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E12",
+        "from": "R3-02",
+        "to": "R3-03",
+        "nature": "胃壁破口＋腹腔表面",
+        "via": "胃壁旧破口→腹腔→肝叶外缘",
+        "why": "从胃褶旧裂口穿出胃腔到肝叶上/外表面邻近空间；不能在肝内挖空长走廊。",
+        "distanceClass": "跨器官",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-03",
+      "to": "R3-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E13",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E13",
+        "from": "R3-03",
+        "to": "R3-04",
+        "nature": "腹膜表面邻接",
+        "via": "肝叶外表面邻隙→系膜脂质沉积槽",
+        "why": "沿肝外缘邻近结缔组织到系膜脂质沉积槽；远景保留肝的实心大形。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-04",
+      "to": "R3-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E14",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E14",
+        "from": "R3-04",
+        "to": "R3-05",
+        "nature": "腹腔邻接＋肠管破口",
+        "via": "系膜→胃出口附近→肠管纵裂入口",
+        "why": "沿系膜回到胃出口附近肠段的纵裂口，在入槽前授A3；没有肝通肠的正常隧道。",
+        "distanceClass": "跨器官",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-05",
+      "to": "R3-06",
+      "requires": [
+        "A3"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E15",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E15",
+        "from": "R3-05",
+        "to": "R3-06",
+        "nature": "肠袢纵裂／系膜表面",
+        "via": "肠纵裂边→同一肠袢的系膜搬盘台",
+        "why": "沿同一回折肠袢及其系膜跨越沉积槽；挂环贴裂缘布设，非管腔内的任意吊点。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A3"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-06",
+      "to": "R3-07",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E16",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E16",
+        "from": "R3-06",
+        "to": "R3-07",
+        "nature": "肠袢连续",
+        "via": "回折肠袢→母蟹侧巢",
+        "why": "肠袢向头回折到母蟹占据的侧腔；外景能看到回弯而不是继续无限向尾。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-07",
+      "to": "R3-01",
+      "requires": [],
+      "kind": "shortcut",
+      "evidence": "V4/V4.2母蟹胜利开胃侧回折回环",
+      "note": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R3且从R3-07完成开闩",
+      "id": "E17",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_ESOPHAGUS",
+        "from": "R3-07",
+        "requiresAll": [],
+        "completionFlags": [
+          "BOSS_R3"
+        ],
+        "action": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。",
+        "persistent": true
+      },
+      "anatomy": {
+        "id": "E17",
+        "from": "R3-07",
+        "to": "R3-01",
+        "nature": "分解破口＋聚落改造捷径",
+        "via": "回折肠袢侧腔→系膜维护坡→前胃外壁旧破口→胃枢",
+        "why": "母蟹房与前胃外壁因回折肠袢在腹腔中邻近；开闩后沿系膜外侧旧维护坡进入胃壁既有破口返胃枢。旧名“食道捷径”应在说明中改称“胃侧回折捷径（旧名食道闩）”，不是肠末端通食管的天然捷径。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": {
+          "flag": "SC_ESOPHAGUS",
+          "from": "R3-07",
+          "requiresAll": [],
+          "completionFlags": [
+            "BOSS_R3"
+          ],
+          "action": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。",
+          "persistent": true
+        },
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-01",
+      "to": "R4-01",
+      "requires": [
+        "P",
+        "A3"
+      ],
+      "kind": "gate",
+      "evidence": "V4门槛表定位 R3-01 肋侧强流闸",
+      "note": "",
+      "bidirectional": true,
+      "id": "E18",
+      "requiresAll": [
+        "P",
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "肋侧强流闸",
+        "firstInteractionAt": "R3-01",
+        "permanent": true,
+        "action": "核验P+A3后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomy": {
+        "id": "E18",
+        "from": "R3-01",
+        "to": "R4-01",
+        "nature": "腹腔背外侧创伤＋修补闸",
+        "via": "胃外缘→腹腔背壁/横膈背外侧创伤→椎旁外廊",
+        "why": "胃枢外缘上行，穿腹壁/横膈背外侧撕裂到椎旁外廊；P控制的是海水流，A3拉的是聚落旧闸。不是进入脊髓或骨髓。",
+        "distanceClass": "跨器官",
+        "conditions": [
+          "P",
+          "A3"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-01",
+      "to": "R4-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E19",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E19",
+        "from": "R4-01",
+        "to": "R4-02",
+        "nature": "椎旁外侧连续",
+        "via": "胸腰椎外侧→外露训练台",
+        "why": "沿显露椎体外缘向尾来到训练台；远景椎列连续。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-03",
+      "requires": [
+        "A4"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E20",
+      "requiresAll": [
+        "A4"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E20",
+        "from": "R4-02",
+        "to": "R4-03",
+        "nature": "同椎旁区域分层",
+        "via": "训练台→椎体侧上缘",
+        "why": "从训练台升上椎体侧上缘；上路通过迎珠/一次空冲连接，不能画入椎管。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A4"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-04",
+      "requires": [
+        "A3"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E21",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E21",
+        "from": "R4-02",
+        "to": "R4-04",
+        "nature": "同椎旁区域分层",
+        "via": "训练台→椎体下外侧肌膜沟",
+        "why": "从训练台沿外侧肌膜沟下降到固定环低路线；上路仍可在远景看见。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A3"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-03",
+      "to": "R4-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E22",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E22",
+        "from": "R4-03",
+        "to": "R4-05",
+        "nature": "外侧上路汇合",
+        "via": "椎旁上路→双贝宽骨台",
+        "why": "沿后腰椎侧上缘下降到双贝所在宽骨台，汇入共同战斗房。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-04",
+      "to": "R4-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E23",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E23",
+        "from": "R4-04",
+        "to": "R4-05",
+        "nature": "外侧下路汇合",
+        "via": "椎旁下路→双贝宽骨台",
+        "why": "沿后腰椎下缘上到同一双贝宽台；上/下路线只是高度不同，不跨越隐藏器官。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-05",
+      "to": "R4-06",
+      "requires": [
+        "B"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E24",
+      "requiresAll": [
+        "B"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E24",
+        "from": "R4-05",
+        "to": "R4-06",
+        "nature": "椎旁纵向连续",
+        "via": "后腰椎外缘→腰尾交界分流台",
+        "why": "沿后腰椎外廊到腰尾交界分流台，渐少软组织和变细椎列给尾向感。",
+        "distanceClass": "局部",
+        "conditions": [
+          "B"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-01",
+      "requires": [
+        "B",
+        "A4",
+        "A2"
+      ],
+      "kind": "gate",
+      "evidence": "V4区域连通图＋正文头耳路线",
+      "note": "",
+      "bidirectional": true,
+      "id": "E25",
+      "requiresAll": [
+        "B",
+        "A4",
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "头耳三槽门",
+        "firstInteractionAt": "R4-06",
+        "permanent": true,
+        "action": "核验B+A4+A2后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomy": {
+        "id": "E25",
+        "from": "R4-06",
+        "to": "R5-01",
+        "nature": "长距离椎旁维护回廊",
+        "via": "腰尾分流→向头椎旁维护长廊→胸椎外缘→颈后外侧→枕骨侧面→耳区创伤口",
+        "why": "从腰尾交界沿椎柱外侧向头回行约60–70m，经胸椎外缘、颈后外侧至枕骨侧面，再到耳骨周围创伤入口。它不是相邻两房共享一堵墙，也不是骨内天然直管；用连续背景长廊/过渡镜头明确行程。仍为既有E25，不新增战斗房。",
+        "distanceClass": "长廊",
+        "conditions": [
+          "B",
+          "A4",
+          "A2"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-01",
+      "to": "R5-02",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E26",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E26",
+        "from": "R5-01",
+        "to": "R5-02",
+        "nature": "后颅底外侧损伤腔邻接",
+        "via": "枕骨外侧→耳骨外周积水凹部",
+        "why": "从枕骨侧入口沿耳骨外周来到安全池；不把耳蜗扩大到整张地图。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-02",
+      "to": "R5-03",
+      "requires": [
+        "A5"
+      ],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序；V5.1补齐文字已要求的内部动作门",
+      "note": "",
+      "bidirectional": true,
+      "id": "E27",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E27",
+        "from": "R5-02",
+        "to": "R5-03",
+        "nature": "外周软膜连续",
+        "via": "耳骨外周凹部→软膜褶",
+        "why": "安全池旁剥离软膜形成短缝练习区，硬颅骨始终封闭。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A5"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-03",
+      "to": "R5-04",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "id": "E28",
+      "requiresAll": [],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E28",
+        "from": "R5-03",
+        "to": "R5-04",
+        "nature": "创伤腔中的邻接平台",
+        "via": "软膜褶→暴露颅底骨面",
+        "why": "沿膜褶到覆膜附着的暴露颅底骨面，耳骨保持远景相同地标。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-04",
+      "to": "R5-05",
+      "requires": [],
+      "kind": "main",
+      "evidence": "V4正文区域路线顺序",
+      "note": "",
+      "bidirectional": true,
+      "completionFlags": [
+        "BOSS_R5"
+      ],
+      "requiresCompletion": "BOSS_R5胜利后开放出口",
+      "id": "E29",
+      "requiresAll": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E29",
+        "from": "R5-04",
+        "to": "R5-05",
+        "nature": "同一耳周腔绕行",
+        "via": "覆膜后骨面→耳周腔后侧声槽台",
+        "why": "击败覆膜后沿骨面外周进入其后声槽台；S仍在R5-04安全静默取得。",
+        "distanceClass": "局部",
+        "conditions": [],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": [
+          "BOSS_R5"
+        ]
+      }
+    },
+    {
+      "from": "R5-03",
+      "to": "R5-05",
+      "requires": [
+        "A5"
+      ],
+      "kind": "shortcut",
+      "evidence": "V5具体挂接提案；V4只规定双向捷径",
+      "note": "覆膜胜后从最后静默侧潜过短柔膜缝，E松双环闩；薄缝训练侧只能看见锁环。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "requiresCompletion": "BOSS_R5且从R5-05完成开闩",
+      "id": "E30",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_EAR",
+        "from": "R5-05",
+        "requiresAll": [
+          "A5"
+        ],
+        "completionFlags": [
+          "BOSS_R5"
+        ],
+        "action": "覆膜胜后从最后静默侧潜过短柔膜缝，E松双环闩；薄缝训练侧只能看见锁环。",
+        "persistent": true
+      },
+      "anatomy": {
+        "id": "E30",
+        "from": "R5-03",
+        "to": "R5-05",
+        "nature": "聚落闩＋短柔膜支路",
+        "via": "后侧声槽→回折软膜短缝→薄缝训练台",
+        "why": "从战后声槽台穿回折软膜短缝开启双环闩，返薄缝训练；不穿完整颅骨。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A5"
+        ],
+        "unlock": {
+          "flag": "SC_EAR",
+          "from": "R5-05",
+          "requiresAll": [
+            "A5"
+          ],
+          "completionFlags": [
+            "BOSS_R5"
+          ],
+          "action": "覆膜胜后从最后静默侧潜过短柔膜缝，E松双环闩；薄缝训练侧只能看见锁环。",
+          "persistent": true
+        },
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-07",
+      "requires": [
+        "B"
+      ],
+      "kind": "main",
+      "evidence": "V4脊椎至尾根观察；B是到达脊椎交通椎的已有结果",
+      "note": "",
+      "bidirectional": true,
+      "id": "E31",
+      "requiresAll": [
+        "B"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E31",
+        "from": "R4-06",
+        "to": "R5-07",
+        "nature": "尾椎外侧长廊",
+        "via": "腰尾分流→渐细尾椎外缘→尾柄幼体窝",
+        "why": "分流台向尾，沿逐渐变细的尾椎外缘到尾柄窝；应显示约15–20m渐细过渡，不能把尾根贴到头耳旁。",
+        "distanceClass": "长廊",
+        "conditions": [
+          "B"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-07",
+      "to": "R5-08",
+      "requires": [
+        "P",
+        "B",
+        "S"
+      ],
+      "kind": "gate",
+      "evidence": "V4尾根同步环",
+      "note": "",
+      "bidirectional": true,
+      "id": "E32",
+      "requiresAll": [
+        "P",
+        "B",
+        "S"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "gate": {
+        "name": "尾根同步环",
+        "firstInteractionAt": "R5-07",
+        "permanent": true,
+        "action": "核验P+B+S后E开启；缺项显示已知来源；本身不消耗能力或旗标"
+      },
+      "anatomy": {
+        "id": "E32",
+        "from": "R5-07",
+        "to": "R5-08",
+        "nature": "尾柄裂缘至海水",
+        "via": "尾柄外侧→尾鳍基部纤维裂谷→外海",
+        "why": "从尾柄外侧幼体槽走向尾鳍基部纤维裂谷，打开聚落导流闸释放幼体到海水；尾鳍瓣内无新骨架。",
+        "distanceClass": "局部",
+        "conditions": [
+          "P",
+          "B",
+          "S"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V5回访房入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E33",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E33",
+        "from": "R1-02",
+        "to": "R1-06",
+        "nature": "非天然连通：头侧创伤路线",
+        "via": "口腔上侧→上颚衬层剥离→颅侧旧创伤坡→鼻道破口→喷气孔内缘",
+        "why": "口腔须筛上层经上颚衬层剥离与颅侧旧创伤坡抵达鼻道外缘，再从鼻道破口到喷气孔上层；绝不是嘴直接通鼻/肺的正常管道。A2只解决创伤高差。",
+        "distanceClass": "跨器官",
+        "conditions": [
+          "A2"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-05",
+      "to": "R1-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "shortcut",
+      "evidence": "V4喷气孔回须门方向；V5明确两端房号",
+      "note": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。首次打开后永久双向；局部水压/死亡不复锁。",
+      "bidirectional": true,
+      "id": "E34",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "unlock": {
+        "flag": "SC_BLOWHOLE",
+        "from": "R2-05",
+        "requiresAll": [
+          "A2"
+        ],
+        "completionFlags": [
+          "BOSS_R2"
+        ],
+        "action": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。",
+        "persistent": true
+      },
+      "requiresCompletion": "BOSS_R2且从R2-05完成开闩",
+      "anatomy": {
+        "id": "E34",
+        "from": "R2-05",
+        "to": "R1-06",
+        "nature": "呼吸道走向＋死后破口/修补",
+        "via": "前胸气管旁→喉/鼻道遗迹→鼻道纵裂修补台→喷气孔内缘",
+        "why": "从前胸气管旁回廊沿喉/鼻道遗迹朝头顶上行，局部利用死后纵裂边和聚落修补台；远侧闩打开到喷气孔上层。途中必须看见向头上行、头顶双孔，不能从心脏垂直冒出一根气柱。",
+        "distanceClass": "长廊",
+        "conditions": [
+          "A2"
+        ],
+        "unlock": {
+          "flag": "SC_BLOWHOLE",
+          "from": "R2-05",
+          "requiresAll": [
+            "A2"
+          ],
+          "completionFlags": [
+            "BOSS_R2"
+          ],
+          "action": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。",
+          "persistent": true
+        },
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-07",
+      "requires": [
+        "A3"
+      ],
+      "kind": "optional",
+      "evidence": "V4须筛鲸须根骨环",
+      "note": "",
+      "bidirectional": true,
+      "id": "E35",
+      "requiresAll": [
+        "A3"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E35",
+        "from": "R1-02",
+        "to": "R1-07",
+        "nature": "须根衬层侧袋",
+        "via": "须筛→上颚须根附着面脱层袋",
+        "why": "从须筛攀固定环至上颚须根旁脱层口袋；是口腔内上层回访。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A3"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R2-02",
+      "to": "R2-06",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V5选修入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E36",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E36",
+        "from": "R2-02",
+        "to": "R2-06",
+        "nature": "肺缘剥离侧袋",
+        "via": "肺表面→肺缘剥离褶袋",
+        "why": "肺膜主路升入同一肺缘褶袋上方盲端，死亡器官不持续呼吸，补压来自共生体。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A2"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R3-01",
+      "to": "R3-08",
+      "requires": [
+        "A2"
+      ],
+      "kind": "optional",
+      "evidence": "V4胃顶回访＋V5明确胃枢挂接",
+      "note": "",
+      "bidirectional": true,
+      "id": "E37",
+      "requiresAll": [
+        "A2"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E37",
+        "from": "R3-01",
+        "to": "R3-08",
+        "nature": "胃壁高褶袋",
+        "via": "胃枢→同一胃壁穹顶高褶",
+        "why": "从前胃枢纽沿同一胃壁高褶上行到沉积袋，侧路在同一器官穹顶；不新接肺。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A2"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R4-02",
+      "to": "R4-07",
+      "requires": [
+        "A3",
+        "A4"
+      ],
+      "kind": "optional",
+      "evidence": "V5修索小室入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E38",
+      "requiresAll": [
+        "A3",
+        "A4"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E38",
+        "from": "R4-02",
+        "to": "R4-07",
+        "nature": "椎旁外侧膜袋",
+        "via": "椎旁训练台→肌腱剥离侧袋",
+        "why": "从低骨训练循断绳透光孔到旁侧旧肌腱褶室，组合能力解决固定环和高度。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A3",
+          "A4"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    },
+    {
+      "from": "R5-02",
+      "to": "R5-06",
+      "requires": [
+        "A5"
+      ],
+      "kind": "optional",
+      "evidence": "V5记忆侧囊入口挂接提案",
+      "note": "",
+      "bidirectional": true,
+      "id": "E39",
+      "requiresAll": [
+        "A5"
+      ],
+      "completionFlags": [],
+      "direction": "twoWayAfterConditions",
+      "anatomy": {
+        "id": "E39",
+        "from": "R5-02",
+        "to": "R5-06",
+        "nature": "耳周软膜盲袋",
+        "via": "耳区安全池→共生短膜缝→耳周侧袋",
+        "why": "从安全池穿标记短柔膜进入耳区侧袋；不把耳蜗腔或半规管画成可走城市。",
+        "distanceClass": "局部",
+        "conditions": [
+          "A5"
+        ],
+        "unlock": null,
+        "sourceBasis": "既有拓扑边保留；via/破口/修补通道是本轮原创关卡连接设计，不是现实鲸体天然通路结论。",
+        "completionFlags": []
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "入鲸",
+      "room": "R1-01",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "本房固定安全宽台；恢复生命与蓄振",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": null
+    },
+    {
+      "name": "蟹前",
+      "room": "R1-04",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "所属房入口安全前室；战斗边界外，独立镜头停靠，不额外计房",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": 15
+    },
+    {
+      "name": "胃枢",
+      "room": "R3-01",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "本房固定安全宽台；恢复生命与蓄振",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": null
+    },
+    {
+      "name": "心前",
+      "room": "R2-03",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "本房固定安全宽台；恢复生命与蓄振",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": 15
+    },
+    {
+      "name": "母蟹前",
+      "room": "R3-07",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "所属房入口安全前室；战斗边界外，独立镜头停靠，不额外计房",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": 15
+    },
+    {
+      "name": "鸣贝前",
+      "room": "R4-05",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "所属房入口安全前室；战斗边界外，独立镜头停靠，不额外计房",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": 15
+    },
+    {
+      "name": "覆膜前",
+      "room": "R5-03",
+      "scope": "room",
+      "evidence": "V4.2房表",
+      "note": "本房固定安全宽台；恢复生命与蓄振",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": 15
+    },
+    {
+      "name": "尾根",
+      "room": "R5-07",
+      "scope": "R5-tail",
+      "evidence": "V4仅定位尾根区域；未指定房号",
+      "note": "本房固定安全宽台；恢复生命与蓄振",
+      "activation": "亲自到达后E登记；可免费更换模块",
+      "retryTargetSeconds": null
+    }
+  ],
+  "travel": [
+    {
+      "name": "胃枢",
+      "room": "R3-01",
+      "scope": "R3",
+      "evidence": "V4.2房表明确交通",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T1",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R3-01"
+      }
+    },
+    {
+      "name": "肺口",
+      "room": "R2-01",
+      "scope": "R2",
+      "evidence": "V5.1明确房级落位提案；V5仅区域级",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T2",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R2-01"
+      }
+    },
+    {
+      "name": "肠侧",
+      "room": "R3-05",
+      "scope": "R3",
+      "evidence": "V5.1明确房级落位提案；V5仅区域级",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T3",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R3-05"
+      }
+    },
+    {
+      "name": "脊椎",
+      "room": "R4-06",
+      "scope": "R4",
+      "evidence": "V4.2房表明确交通",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T4",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R4-06"
+      }
+    },
+    {
+      "name": "颅入口",
+      "room": "R5-01",
+      "scope": "R5-head",
+      "evidence": "V5.1明确房级落位提案；V5仅区域级",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T5",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R5-01"
+      }
+    },
+    {
+      "name": "尾根",
+      "room": "R5-07",
+      "scope": "R5-tail",
+      "evidence": "V5.1明确房级落位提案；V5仅区域级",
+      "requires": [
+        "B",
+        "亲访",
+        "E调律"
+      ],
+      "note": "B前可记录发现但不能预调律；B后需回到节点E。两端均已调律且当前在节点才可旅行；目的地未亲访不可选。",
+      "id": "T6",
+      "activation": {
+        "requiresAll": [
+          "B"
+        ],
+        "physicalVisit": true,
+        "localInteract": "E调律",
+        "flag": "TUNED_R5-07"
+      }
+    }
+  ],
+  "fragments": [
+    "R1-03",
+    "R2-03",
+    "R3-04",
+    "R4-03",
+    "R1-07",
+    "R2-06",
+    "R3-08",
+    "R5-06"
+  ],
+  "habitats": {
+    "count": 6,
+    "rooms": [
+      {
+        "id": "H1",
+        "room": "R1-05",
+        "name": "须门清流窝",
+        "action": "冲刺教学后将一只空壳安置在侧台，清流窝显露",
+        "requiresAll": [
+          "A1"
+        ]
+      },
+      {
+        "id": "H2",
+        "room": "R2-01",
+        "name": "肺膜育床",
+        "action": "调平补压床旁壳托，孔瓣恢复规律开合",
+        "requiresAll": [
+          "A2"
+        ]
+      },
+      {
+        "id": "H3",
+        "room": "R3-01",
+        "name": "胃枢菌圃",
+        "action": "把侧边遮光片旋至暗档，幼菌点亮，主通路不变",
+        "requiresAll": []
+      },
+      {
+        "id": "H4",
+        "room": "R3-06",
+        "name": "肠侧搬壳巢",
+        "action": "母蟹胜后回迁居搬盘完成安置；战前可预摆，完成旗标等待胜利",
+        "requiresAll": [
+          "BOSS_R3"
+        ]
+      },
+      {
+        "id": "H5",
+        "room": "R4-04",
+        "name": "肋骨红冠园",
+        "action": "经锚环到安全侧台，移开压冠空壳，红冠舒展",
+        "requiresAll": [
+          "A3"
+        ]
+      },
+      {
+        "id": "H6",
+        "room": "R5-07",
+        "name": "尾下幼体槽",
+        "action": "尾根侧台旋开遮流瓣，幼体进入低速凹槽",
+        "requiresAll": [
+          "B"
+        ]
+      }
+    ],
+    "note": "V5.1房级落位提案；不新增房间；生态结果不构成终局门槛。"
+  },
+  "state": {
+    "persistent": [
+      "A1–A5",
+      "P/B/S",
+      "发现房",
+      "永久捷径",
+      "调律交通节点",
+      "模块",
+      "碎片",
+      "记忆",
+      "栖息地生态结果",
+      "Boss胜利"
+    ],
+    "temporary": [
+      "局部水压",
+      "饵盘/空壳位置",
+      "敌警戒",
+      "未完成Boss耐受与阶段",
+      "选修薄骨片状态"
+    ],
+    "markers": [
+      "未解",
+      "危险",
+      "想回访"
+    ],
+    "mapRule": "已走实线；已见未入虚线；未知留白。静态制作图显示全图，不是玩家初始UI。"
+  },
+  "ambiguities": [
+    "母蟹为区域正式Boss，完整建议游玩路线包含它；主线能力门不强制击败。A3在战前取得，允许回头后以P+A3推进；胜利提供食道侧捷径与H4迁居结果（H4沿用V4，胜利触发为V5明确），不增必打旗标或单向陷阱。",
+    "R4-03与R4-04是并行主线结构房，通关仅需其一；30不等于30房全部必经。",
+    "S以V4.2/4.3为准在R5-04胜后授予，R5-05仅记忆与舒缓。",
+    "V4未给全部房级支线挂接；edges.evidence含V5者是明确的新布局提案。"
+  ],
+  "legend": {
+    "roomRectangle": "主线结构房，未必每条路线都经过",
+    "roomDashedRoundRect": "选修房",
+    "camp": "⌂，房外安全区计在所属房内",
+    "boss": "◆，正式区域Boss",
+    "travel": "◎，需B+亲访+调律",
+    "grant": "★，完成对应授能事件后取得"
+  },
+  "initial": {
+    "room": "R1-01",
+    "flags": []
+  },
+  "regions": [
+    {
+      "id": "R1",
+      "name": "须门遗港",
+      "stage": "前期",
+      "focus": "走跳、短击、冲刺"
+    },
+    {
+      "id": "R2",
+      "name": "肺心潮庭",
+      "stage": "中期可先后",
+      "focus": "高度、浮膜与群流"
+    },
+    {
+      "id": "R3",
+      "name": "胃肠沉城",
+      "stage": "中期枢纽",
+      "focus": "遮光、掩体与固定锚"
+    },
+    {
+      "id": "R4",
+      "name": "鸣肋断脊",
+      "stage": "后期",
+      "focus": "迎珠上路与锚环下路"
+    },
+    {
+      "id": "R5",
+      "name": "耳海归墟",
+      "stage": "后期／尾声",
+      "focus": "头耳潜隙；沿脊椎返尾"
+    }
+  ],
+  "events": [
+    {
+      "id": "EV_BOSS_R1",
+      "room": "R1-04",
+      "type": "bossVictory",
+      "requiresAll": [],
+      "grants": [
+        "BOSS_R1",
+        "A1"
+      ],
+      "action": "完成Boss战；停止伤害，先保存胜利与A1",
+      "optional": false
+    },
+    {
+      "id": "EV_BOSS_R2",
+      "room": "R2-04",
+      "type": "bossVictory",
+      "requiresAll": [],
+      "grants": [
+        "BOSS_R2",
+        "P"
+      ],
+      "action": "完成Boss战；停止伤害，先保存胜利与P",
+      "optional": false
+    },
+    {
+      "id": "EV_BOSS_R3",
+      "room": "R3-07",
+      "type": "bossVictory",
+      "requiresAll": [],
+      "grants": [
+        "BOSS_R3"
+      ],
+      "action": "完成Boss战；停止伤害，先保存胜利",
+      "optional": true
+    },
+    {
+      "id": "EV_BOSS_R4",
+      "room": "R4-05",
+      "type": "bossVictory",
+      "requiresAll": [],
+      "grants": [
+        "BOSS_R4",
+        "B"
+      ],
+      "action": "完成Boss战；停止伤害，先保存胜利与B",
+      "optional": false
+    },
+    {
+      "id": "EV_BOSS_R5",
+      "room": "R5-04",
+      "type": "bossVictory",
+      "requiresAll": [],
+      "grants": [
+        "BOSS_R5"
+      ],
+      "action": "完成Boss战；停止伤害，先保存胜利",
+      "optional": false
+    },
+    {
+      "id": "EV_A2",
+      "room": "R2-01",
+      "type": "abilityInteraction",
+      "requiresAll": [],
+      "grants": [
+        "A2"
+      ],
+      "action": "安全授能点按E完成；动画结束即保存，走进房间不自动授能"
+    },
+    {
+      "id": "EV_A3",
+      "room": "R3-05",
+      "type": "abilityInteraction",
+      "requiresAll": [],
+      "grants": [
+        "A3"
+      ],
+      "action": "安全授能点按E完成；动画结束即保存，走进房间不自动授能"
+    },
+    {
+      "id": "EV_A4",
+      "room": "R4-02",
+      "type": "abilityInteraction",
+      "requiresAll": [],
+      "grants": [
+        "A4"
+      ],
+      "action": "安全授能点按E完成；动画结束即保存，走进房间不自动授能"
+    },
+    {
+      "id": "EV_A5",
+      "room": "R5-02",
+      "type": "abilityInteraction",
+      "requiresAll": [],
+      "grants": [
+        "A5"
+      ],
+      "action": "安全授能点按E完成；动画结束即保存，走进房间不自动授能"
+    },
+    {
+      "id": "EV_S",
+      "room": "R5-04",
+      "type": "safeSilence",
+      "requiresAll": [
+        "BOSS_R5"
+      ],
+      "grants": [
+        "S"
+      ],
+      "action": "胜利后无伤害区静默2秒；空圆闭合为视觉提示；离房可回到同一点补领"
+    },
+    {
+      "id": "EV_END",
+      "room": "R5-08",
+      "type": "endingInteraction",
+      "requiresAll": [
+        "P",
+        "B",
+        "S"
+      ],
+      "grants": [
+        "END"
+      ],
+      "action": "归海同步交互；缺项不消耗资源，确认后保存尾声"
+    }
+  ],
+  "abilities": [
+    {
+      "id": "A1",
+      "name": "贴流冲",
+      "room": "R1-04",
+      "condition": "负壳蟹胜利",
+      "uses": [
+        "R1-05跨宽沟进入胃枢",
+        "R3-04撤离锁定冲撞",
+        "R4-03迎珠后一次空冲接上台"
+      ],
+      "revisit": "R1-02须筛同房高低回路：冲过帘侧宽沟，从内侧推开短返闩；不新增世界边",
+      "hidden": "R1-07接近奖励台时缩短暴露时间，入口仍要求A3",
+      "challenge": "R2-02膜鳐锁线后横移躲避",
+      "limit": "每次离地一次；迎珠不刷新；不穿酸/墙/持续激流"
+    },
+    {
+      "id": "A2",
+      "name": "浮膜",
+      "room": "R2-01",
+      "condition": "安全育床E授能",
+      "uses": [
+        "R2-02上下换水道",
+        "R1-06升至喷气孔上层",
+        "R3-08升上胃顶沉积袋"
+      ],
+      "revisit": "R1-02→R1-06；R3-01→R3-08",
+      "hidden": "R2-06三段补压，固定碎片与记忆",
+      "challenge": "血巢潮群的上下缺口选择",
+      "limit": "压力4秒；补压台恢复；R3主路不需A2"
+    },
+    {
+      "id": "A3",
+      "name": "锚定",
+      "room": "R3-05",
+      "condition": "肠入口E授能",
+      "uses": [
+        "R3-06固定环过酸槽",
+        "R3-01配P开强流闸",
+        "R4-04下路固定环稳过缺口"
+      ],
+      "revisit": "R1-02→R1-07鲸须记忆袋",
+      "hidden": "R4-07与A4组合取系索",
+      "challenge": "母蟹松壳可选弱化；挂环时不攻击",
+      "limit": "只抓预置环；主路间距≤4.5U；脱环再攻击"
+    },
+    {
+      "id": "A4",
+      "name": "迎珠",
+      "room": "R4-02",
+      "condition": "低骨训练E授能",
+      "uses": [
+        "R4-03接完整珠上升",
+        "R4-07迎珠后锚定稳定",
+        "R5-01三槽门的迎珠槽交互"
+      ],
+      "revisit": "R4-02低骨房初见高侧台，获能力后同房回访；外域不新增硬门",
+      "hidden": "R4-07系索模块，两线索见断绳与透光孔",
+      "challenge": "悬脊鸣贝回珠18伤害；直接打亦可胜",
+      "limit": "Q侧向接完整带环珠；0.18秒窗口；不是下劈踩敌"
+    },
+    {
+      "id": "A5",
+      "name": "敛膜潜隙",
+      "room": "R5-02",
+      "condition": "安全池E授能",
+      "uses": [
+        "R5-03短柔膜缝换边",
+        "R5-02→R5-06入记忆侧囊",
+        "R5-05从远侧开耳海返程捷径"
+      ],
+      "revisit": "R5-01初见隔膜旁同房声纹凹槽；返程潜入得叙事，不追加成长奖励",
+      "hidden": "R5-06固定碎片；两个入口暗示为穿膜漂粒和对侧微光",
+      "challenge": "缄声覆膜旧位置回声前换边",
+      "limit": "标记柔膜缝≤1.5U；不穿硬墙；未出缝不闭合"
+    }
+  ],
+  "progressionFlags": [
+    {
+      "id": "P",
+      "room": "R2-04",
+      "event": "EV_BOSS_R2",
+      "meaning": "潮压稳定；开肋侧强流闸与尾槽"
+    },
+    {
+      "id": "B",
+      "room": "R4-05",
+      "event": "EV_BOSS_R4",
+      "meaning": "骨音调律；允许亲访节点调律、头耳门与尾槽"
+    },
+    {
+      "id": "S",
+      "room": "R5-04",
+      "event": "EV_S",
+      "meaning": "胜后安全静默完成；尾槽条件"
+    }
+  ],
+  "stages": [
+    {
+      "id": "start",
+      "name": "初见须门",
+      "flags": []
+    },
+    {
+      "id": "dash",
+      "name": "冲刺进入胃枢",
+      "flags": [
+        "BOSS_R1",
+        "A1"
+      ]
+    },
+    {
+      "id": "lung",
+      "name": "肺心先行",
+      "flags": [
+        "BOSS_R1",
+        "A1",
+        "A2",
+        "BOSS_R2",
+        "P"
+      ]
+    },
+    {
+      "id": "gut",
+      "name": "胃肠先行",
+      "flags": [
+        "BOSS_R1",
+        "A1",
+        "A3"
+      ]
+    },
+    {
+      "id": "join",
+      "name": "两支汇合",
+      "flags": [
+        "BOSS_R1",
+        "A1",
+        "A2",
+        "BOSS_R2",
+        "P",
+        "A3"
+      ]
+    },
+    {
+      "id": "bone",
+      "name": "骨音解锁",
+      "flags": [
+        "BOSS_R1",
+        "A1",
+        "A2",
+        "BOSS_R2",
+        "P",
+        "A3",
+        "A4",
+        "BOSS_R4",
+        "B"
+      ]
+    },
+    {
+      "id": "final",
+      "name": "尾槽条件齐备",
+      "flags": [
+        "BOSS_R1",
+        "A1",
+        "A2",
+        "BOSS_R2",
+        "P",
+        "A3",
+        "A4",
+        "BOSS_R4",
+        "B",
+        "A5",
+        "BOSS_R5",
+        "S"
+      ]
+    }
+  ],
+  "changes": [
+    "修复三个Boss授予描述错误引用R5-04静默事件",
+    "补齐三段内部动作门A2/A3/A5与R2/R5战后出口条件",
+    "三个捷径用机器字段明定首次开侧及永久开闩旗标",
+    "把未定位营地、交通、六生态节点落在既有房间；均标V5.1提案",
+    "区分房间到达、授能、Boss胜利、静默、开闩与调律六类事件"
+  ]
+}

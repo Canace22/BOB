@@ -1,0 +1,35 @@
+用法：G:\鲸落万物生\BOB\work\wan22-production\krita\krita-x64-5.3.4.1\bin\krita.exe [选项] [file(s)]
+
+选项：
+  -v, --version                                显示版本信息。
+  -?, -h, --help                               在命令行选项上显示帮助。
+  --help-all                                   显示包括 Qt 特有选项的帮助。
+  --template                                   用模板新建图像
+  --new-image <colorspace,depth,width,height>  新建一个图像。
+                                               可用的色彩空间模式参数如下：
+                                                  * RGBA
+                                                  * XYZA
+                                                  * LABA
+                                                  * CMYKA
+                                                  * GRAY
+                                                  * YCbCrA
+                                               可用的通道位深度参数如下：
+                                                  * U8 (8 位整数)
+                                                  * U16 (16 位整数)
+                                                  * F16 (16 位浮点)
+                                                  * F32 (32 位浮点)
+
+  --workspace <workspace>                      Krita 启动时使用的工作区名称
+  --windowlayout <windowlayout>                Krita 启动时使用的窗口布局名称
+  --load-session <load-session>                Krita 启动时加载的会话名称
+  --canvasonly                                 Krita 启动为隐藏面板模式
+  --nosplash                                   不显示启动画面
+  --fullscreen                                 以全屏模式启动 Krita
+  --export                                     导出到指定的文件名并退出
+  --export-sequence                            导出动画到指定文件名并退出
+  --export-filename <filename>                 导出的文件名
+  --file-layer <file-layer>                    要添加到已有文件或者新文件的文件图层
+  --resource-location <file-layer>             用于覆盖已配置的 Krita 资源位置的位置
+
+参数：
+  [file(s)]                                    要打开的文件或 URL

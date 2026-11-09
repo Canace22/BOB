@@ -1,0 +1,658 @@
+{
+  "id": "corpse-crab-actions-v1",
+  "canvas": [
+    256,
+    256
+  ],
+  "anchor": [
+    144,
+    224
+  ],
+  "source_scale": 0.48,
+  "world_scale": 0.82,
+  "facing": "left",
+  "direction": "whole-body-mirror",
+  "model": "image_gen; model identifier not exposed",
+  "clips": {
+    "idle": {
+      "sheet": "life",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        2,
+        1
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "walk": {
+      "sheet": "walk",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stride_pixels": 40,
+      "loop": true
+    },
+    "tell": {
+      "sheet": "attack",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "duration": 0.7
+    },
+    "active": {
+      "sheet": "attack",
+      "frames": [
+        3,
+        4,
+        5
+      ],
+      "duration": 0.2,
+      "events": [
+        {
+          "id": "sweep",
+          "time": 0.06
+        }
+      ]
+    },
+    "recover": {
+      "sheet": "attack",
+      "frames": [
+        6,
+        7
+      ],
+      "duration": 1.1
+    },
+    "hurt": {
+      "sheet": "life",
+      "frames": [
+        4,
+        5
+      ],
+      "duration": 0.22
+    },
+    "dead": {
+      "sheet": "life",
+      "frames": [
+        5,
+        6,
+        7
+      ],
+      "duration": 0.5
+    }
+  },
+  "sheets": {
+    "attack": {
+      "file": "attack.png",
+      "columns": 4,
+      "rows": 2,
+      "frame_count": 8,
+      "source": "assets/source/corpse-crab-actions-v1/attack-source.png",
+      "source_sha256": "62adc839e93b87a2a7c8f3b4d0c81e260ca640f1b54ed59c6000dcdb72ce28ac",
+      "sha256": "3bef61848a076903cb61bc4bfb7e779c02c26728165a3e5bdb38ad83841c5b77",
+      "frames": [
+        {
+          "source_rect": [
+            0,
+            0,
+            440,
+            443
+          ],
+          "source_root": [
+            270,
+            376
+          ],
+          "offset": [
+            14,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            98,
+            219,
+            231
+          ]
+        },
+        {
+          "source_rect": [
+            440,
+            0,
+            890,
+            443
+          ],
+          "source_root": [
+            713,
+            376
+          ],
+          "offset": [
+            13,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            19,
+            98,
+            219,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            0,
+            1320,
+            443
+          ],
+          "source_root": [
+            1156,
+            376
+          ],
+          "offset": [
+            16,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            26,
+            69,
+            219,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            1320,
+            0,
+            1774,
+            443
+          ],
+          "source_root": [
+            1599,
+            376
+          ],
+          "offset": [
+            10,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            13,
+            98,
+            220,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            443,
+            440,
+            887
+          ],
+          "source_root": [
+            270,
+            819
+          ],
+          "offset": [
+            14,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            18,
+            98,
+            219,
+            235
+          ]
+        },
+        {
+          "source_rect": [
+            440,
+            443,
+            890,
+            887
+          ],
+          "source_root": [
+            713,
+            819
+          ],
+          "offset": [
+            13,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            18,
+            99,
+            219,
+            233
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            443,
+            1320,
+            887
+          ],
+          "source_root": [
+            1156,
+            819
+          ],
+          "offset": [
+            16,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            20,
+            99,
+            219,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            1320,
+            443,
+            1774,
+            887
+          ],
+          "source_root": [
+            1599,
+            819
+          ],
+          "offset": [
+            10,
+            44
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            99,
+            220,
+            231
+          ]
+        }
+      ]
+    },
+    "walk": {
+      "file": "walk.png",
+      "columns": 4,
+      "rows": 2,
+      "frame_count": 8,
+      "source": "assets/source/corpse-crab-actions-v1/walk-source.png",
+      "source_sha256": "66b08277c10ee2ac488e174a62b0be580a846a23e6835550c355f86b9b7925a5",
+      "sha256": "aa41302103042ce2e424dc9dfa96a85caee7ea06a5ebbbc0f966079bbfb0d2b2",
+      "frames": [
+        {
+          "source_rect": [
+            0,
+            0,
+            444,
+            443
+          ],
+          "source_root": [
+            270,
+            356
+          ],
+          "offset": [
+            14,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            19,
+            91,
+            221,
+            229
+          ]
+        },
+        {
+          "source_rect": [
+            444,
+            0,
+            890,
+            443
+          ],
+          "source_root": [
+            713,
+            356
+          ],
+          "offset": [
+            15,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            91,
+            223,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            0,
+            1333,
+            443
+          ],
+          "source_root": [
+            1156,
+            356
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            91,
+            225,
+            229
+          ]
+        },
+        {
+          "source_rect": [
+            1333,
+            0,
+            1774,
+            443
+          ],
+          "source_root": [
+            1599,
+            356
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            21,
+            91,
+            224,
+            230
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            443,
+            444,
+            887
+          ],
+          "source_root": [
+            270,
+            799
+          ],
+          "offset": [
+            14,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            20,
+            91,
+            221,
+            230
+          ]
+        },
+        {
+          "source_rect": [
+            444,
+            443,
+            890,
+            887
+          ],
+          "source_root": [
+            713,
+            799
+          ],
+          "offset": [
+            15,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            21,
+            91,
+            225,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            443,
+            1333,
+            887
+          ],
+          "source_root": [
+            1156,
+            799
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            21,
+            91,
+            223,
+            228
+          ]
+        },
+        {
+          "source_rect": [
+            1333,
+            443,
+            1774,
+            887
+          ],
+          "source_root": [
+            1599,
+            799
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            92,
+            224,
+            229
+          ]
+        }
+      ]
+    },
+    "life": {
+      "file": "life.png",
+      "columns": 4,
+      "rows": 2,
+      "frame_count": 8,
+      "source": "assets/source/corpse-crab-actions-v1/life-source.png",
+      "source_sha256": "403ddaee4b2716f0aa2c7f0576d128c3fef7b4fe16f0a6a94065822b79600507",
+      "sha256": "27e42114e16487d7594e326ca7498277738c54639bd2235723657ee324fd3b80",
+      "frames": [
+        {
+          "source_rect": [
+            0,
+            0,
+            444,
+            443
+          ],
+          "source_root": [
+            270,
+            356
+          ],
+          "offset": [
+            14,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            19,
+            97,
+            222,
+            230
+          ]
+        },
+        {
+          "source_rect": [
+            444,
+            0,
+            890,
+            443
+          ],
+          "source_root": [
+            713,
+            356
+          ],
+          "offset": [
+            15,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            96,
+            222,
+            230
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            0,
+            1333,
+            443
+          ],
+          "source_root": [
+            1156,
+            356
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            20,
+            95,
+            223,
+            229
+          ]
+        },
+        {
+          "source_rect": [
+            1333,
+            0,
+            1774,
+            443
+          ],
+          "source_root": [
+            1599,
+            356
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            21,
+            96,
+            223,
+            230
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            443,
+            444,
+            887
+          ],
+          "source_root": [
+            270,
+            799
+          ],
+          "offset": [
+            14,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            22,
+            85,
+            221,
+            223
+          ]
+        },
+        {
+          "source_rect": [
+            444,
+            443,
+            890,
+            887
+          ],
+          "source_root": [
+            713,
+            799
+          ],
+          "offset": [
+            15,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            26,
+            98,
+            219,
+            223
+          ]
+        },
+        {
+          "source_rect": [
+            890,
+            443,
+            1333,
+            887
+          ],
+          "source_root": [
+            1156,
+            799
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            27,
+            110,
+            212,
+            224
+          ]
+        },
+        {
+          "source_rect": [
+            1333,
+            443,
+            1774,
+            887
+          ],
+          "source_root": [
+            1599,
+            799
+          ],
+          "offset": [
+            16,
+            53
+          ],
+          "visible_bbox_alpha32": [
+            24,
+            121,
+            214,
+            224
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed by built-in tool",
+  "paidExternal": false,
+  "references": [
+    "assets/source/xumen-transition-style-v1/images/01-颌骨斜拱-主路过渡.png",
+    "game/build/qa/xumen-polish/before/E01-1.png",
+    "review/platform-detail.png"
+  ],
+  "jobs": [
+    {
+      "id": "depth",
+      "output": "originals/depth.png",
+      "prompt": "Production background plate ONLY: blue/teal deep underwater recession, immense distant porous whale jaw bones, low contrast. Open central water, hand-painted gouache. No ground, ceiling, baleen, plants, fish, bubbles, lamps, characters or UI. Full hidden background, edge-to-edge paint; preserve reference materials."
+    },
+    {
+      "id": "ground",
+      "output": "originals/ground.png",
+      "prompt": "Transparent continuous whale lower-jaw causeway, ivory/rose/grey-blue porous bone; nearly horizontal upper walking edge. Thick irregular underside and cavities, no repeated tiles. No scenery, characters, fish, lamps, text or plants above route; independent terrain asset."
+    },
+    {
+      "id": "arch",
+      "output": "originals/arch.png",
+      "prompt": "Transparent middle-layer organic diagonal whale jaw strut curving upward from lower-left into top-right ceiling beam. Large open center under arch; no ground or flexible organisms, no water, no fish, no lamps. Hand-painted porous bone matching approved T01."
+    },
+    {
+      "id": "hub-platform-extraction",
+      "output": "originals/hub-platform-extraction.png",
+      "prompt": "Precise background extraction: preserve three left organic platforms and bottom red-rope doorway. Remove all blue-water pixels around/between; transparent background. Repaint small obscured wall areas into one continuous support. Preserve original arrangement; no new platforms, no shifted door, no text."
+    },
+    {
+      "id": "foreground",
+      "output": "originals/foreground.png",
+      "prompt": "Transparent foreground frame only: two sparse dark navy out-of-focus porous bone/coral sponge clumps at bottom-left/right, irregular silhouettes and tiny amber stalks. Upper85percent empty; no horizontal black band, scenery, ground, fish, bubbles, characters, text."
+    }
+  ],
+  "note": "Semantic production prompts retained; service job IDs are output filenames. User aesthetic acceptance is separate from generation/import."
+}

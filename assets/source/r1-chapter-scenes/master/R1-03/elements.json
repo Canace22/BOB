@@ -1,0 +1,582 @@
+{
+  "id": "R1-03",
+  "name": "舌台",
+  "size": [
+    1672,
+    941
+  ],
+  "reference": "res://art/whalebelly/reference/r1/R1-03.png",
+  "source_clean": "res://art/whalebelly/clean/R1-03.png",
+  "clean_file": "assets/source/r1-chapter-scenes/generated/R1-03-clean.png",
+  "original_scene": "res://content/whalebelly/r1/R1-03.tscn",
+  "runtime": "assets/runtime/sprites/r1-chapter-scenes/R1-03",
+  "master": "assets/source/r1-chapter-scenes/master/R1-03",
+  "elements": [
+    {
+      "id": "R1-03-FAR",
+      "kind": "static",
+      "layer": "Far",
+      "rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "status": "static",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "primary_method": "masked source pixels exported to PNG",
+      "alternative": "manual repaint only if a hidden surface fails",
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface"
+    },
+    {
+      "id": "R1-03-CEILING-WALLS",
+      "kind": "static",
+      "layer": "Middle",
+      "rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "status": "static",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "primary_method": "masked source pixels exported to PNG",
+      "alternative": "manual repaint only if a hidden surface fails",
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/Surface"
+    },
+    {
+      "id": "R1-03-ROAD-PLATFORMS",
+      "kind": "static",
+      "layer": "World",
+      "rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "status": "static",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "primary_method": "masked source pixels exported to PNG",
+      "alternative": "manual repaint only if a hidden surface fails",
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/Surface"
+    },
+    {
+      "id": "R1-03-NEAR-FRAME",
+      "kind": "static",
+      "layer": "Foreground",
+      "rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "status": "static",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "primary_method": "masked source pixels exported to PNG",
+      "alternative": "manual repaint only if a hidden surface fails",
+      "reason": "preserve contours/materials; no terrain deformation",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Foreground/Surface"
+    },
+    {
+      "id": "R1-03-BALEEN-1",
+      "kind": "flex",
+      "layer": "Middle",
+      "rect": [
+        350,
+        0,
+        590,
+        280
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "root": "top",
+      "amplitude": 7,
+      "period": 10,
+      "phase": 0.87,
+      "selector": "warm",
+      "primary_method": "tessellated bitmap mesh; pinned root and downstream phase delay",
+      "alternative": "painted frames/Krita",
+      "reason": "retain original pale strands and editable attachment; low amplitude water flow",
+      "mask_file": "R1-03/R1-03-BALEEN-1-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+      "index": 0,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-03-BALEEN-1",
+      "attachment_curve": [
+        [
+          350,
+          145
+        ],
+        [
+          450,
+          90
+        ],
+        [
+          600,
+          5
+        ],
+        [
+          940,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "R1-03-BALEEN-2",
+      "kind": "flex",
+      "layer": "Middle",
+      "rect": [
+        1040,
+        0,
+        450,
+        410
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "root": "top",
+      "amplitude": 7,
+      "period": 12,
+      "phase": 1.74,
+      "selector": "warm",
+      "primary_method": "tessellated bitmap mesh; pinned root and downstream phase delay",
+      "alternative": "painted frames/Krita",
+      "reason": "retain original pale strands and editable attachment; low amplitude water flow",
+      "mask_file": "R1-03/R1-03-BALEEN-2-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+      "index": 1,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-03-BALEEN-2",
+      "attachment_curve": [
+        [
+          1040,
+          0
+        ],
+        [
+          1200,
+          0
+        ],
+        [
+          1300,
+          65
+        ],
+        [
+          1400,
+          140
+        ],
+        [
+          1490,
+          230
+        ]
+      ]
+    },
+    {
+      "id": "R1-03-VINE-1",
+      "kind": "flex",
+      "layer": "World",
+      "rect": [
+        330,
+        600,
+        65,
+        145
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "root": "top",
+      "amplitude": 3,
+      "period": 10,
+      "phase": 1.9,
+      "selector": "plant",
+      "primary_method": "same pinned mesh with reduced amplitude",
+      "alternative": "segmented bones baked to frames",
+      "reason": "attached hanging organic growth; rigid platform pixels excluded",
+      "mask_file": "R1-03/R1-03-VINE-1-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-VINE-1.png",
+      "index": 2,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-03-VINE-1"
+    },
+    {
+      "id": "R1-03-VINE-2",
+      "kind": "flex",
+      "layer": "World",
+      "rect": [
+        1035,
+        565,
+        62,
+        175
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "root": "top",
+      "amplitude": 3,
+      "period": 11,
+      "phase": 2.8,
+      "selector": "plant",
+      "primary_method": "same pinned mesh with reduced amplitude",
+      "alternative": "segmented bones baked to frames",
+      "reason": "attached hanging organic growth; rigid platform pixels excluded",
+      "mask_file": "R1-03/R1-03-VINE-2-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-VINE-2.png",
+      "index": 3,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-03-VINE-2"
+    },
+    {
+      "id": "R1-03-FISH-1",
+      "kind": "fish",
+      "layer": "Far",
+      "rect": [
+        550,
+        285,
+        270,
+        100
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "population": 18,
+      "species": 1,
+      "period": 24,
+      "phase": 1.7,
+      "primary_method": "existing 32-frame bitmap swim + independent bounded school path",
+      "alternative": "new painted swim cycle if silhouette mismatches",
+      "reason": "fish visible in source; avoid moving a static fish silhouette",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/R1-03-FISH-1",
+      "runtime_asset": "res://art/environment/fish_schools/tealback/swim_atlas.png"
+    },
+    {
+      "id": "R1-03-FISH-2",
+      "kind": "fish",
+      "layer": "Far",
+      "rect": [
+        1330,
+        365,
+        230,
+        90
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "population": 22,
+      "species": 0,
+      "period": 24,
+      "phase": 3.4,
+      "primary_method": "existing 32-frame bitmap swim + independent bounded school path",
+      "alternative": "new painted swim cycle if silhouette mismatches",
+      "reason": "fish visible in source; avoid moving a static fish silhouette",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/R1-03-FISH-2",
+      "runtime_asset": "res://art/environment/fish_schools/silverfin/swim_atlas.png"
+    },
+    {
+      "id": "R1-03-BUBBLES-1",
+      "kind": "bubbles",
+      "layer": "Middle",
+      "rect": [
+        250,
+        230,
+        110,
+        300
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "population": 7,
+      "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
+      "alternative": "native particles using the same authored sprite",
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-03-BUBBLES-1",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
+    },
+    {
+      "id": "R1-03-BUBBLES-2",
+      "kind": "bubbles",
+      "layer": "Middle",
+      "rect": [
+        700,
+        275,
+        130,
+        300
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "population": 7,
+      "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
+      "alternative": "native particles using the same authored sprite",
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-03-BUBBLES-2",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
+    },
+    {
+      "id": "R1-03-BUBBLES-3",
+      "kind": "bubbles",
+      "layer": "Middle",
+      "rect": [
+        1250,
+        330,
+        100,
+        240
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "population": 7,
+      "primary_method": "existing bitmap emitter, prewarmed bounded lifetimes and edge fade",
+      "alternative": "native particles using the same authored sprite",
+      "reason": "small slow waterborne bubbles; no new gameplay",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Middle/R1-03-BUBBLES-3",
+      "runtime_asset": "res://art/environment/reference_environment/bubble.png"
+    },
+    {
+      "id": "R1-03-LAMP-1",
+      "kind": "lamp",
+      "layer": "World",
+      "rect": [
+        45,
+        425,
+        75,
+        140
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "period": 8,
+      "amplitude": 0.045,
+      "primary_method": "owned lamp pixel cutout and smooth intensity modulation",
+      "alternative": "PointLight2D with a matched bitmap falloff",
+      "reason": "preserve baked material highlights and warm focus without extra lamp copies",
+      "mask_file": "R1-03/R1-03-LAMP-1-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-LAMP-1.png",
+      "index": 4,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-03-LAMP-1"
+    },
+    {
+      "id": "R1-03-LAMP-2",
+      "kind": "lamp",
+      "layer": "World",
+      "rect": [
+        1535,
+        450,
+        75,
+        135
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "period": 9,
+      "amplitude": 0.045,
+      "primary_method": "owned lamp pixel cutout and smooth intensity modulation",
+      "alternative": "PointLight2D with a matched bitmap falloff",
+      "reason": "preserve baked material highlights and warm focus without extra lamp copies",
+      "mask_file": "R1-03/R1-03-LAMP-2-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-LAMP-2.png",
+      "index": 5,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/World/R1-03-LAMP-2"
+    },
+    {
+      "id": "R1-03-WATER-LIGHT",
+      "kind": "water",
+      "layer": "Far",
+      "rect": [
+        535.04,
+        272.89,
+        568.48,
+        254.07000000000002
+      ],
+      "status": "motion",
+      "evidence_basis": "observed artwork; timing proposed and tested in engine",
+      "collision": "none: decoration; authored world collision retained",
+      "interaction": "none: existing gameplay owned by campaign",
+      "sound": "none: preserve existing ambience",
+      "restore": "deterministic clock reset on room reload",
+      "period": 13,
+      "amplitude": 0.025,
+      "primary_method": "separate locally masked background-water pixels; subtle luminance drift",
+      "alternative": "local refraction only after surface mask approval",
+      "reason": "water is behind the platforms; no air shoreline or full-screen distortion",
+      "mask_file": "R1-03/R1-03-WATER-LIGHT-mask.svg",
+      "runtime_file": "r1-chapter-scenes/R1-03/R1-03-WATER-LIGHT.png",
+      "index": 6,
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "ChapterEnvironment/Far/Surface.material/water_mask"
+    },
+    {
+      "id": "R1-03-EXISTING-PlayerArt",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        213,
+        503,
+        96,
+        81
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
+    },
+    {
+      "id": "R1-03-EXISTING-EnemyArt0",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        480,
+        475,
+        133,
+        80
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
+    },
+    {
+      "id": "R1-03-EXISTING-EnemyArt1",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        1025,
+        481,
+        126,
+        82
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
+    },
+    {
+      "id": "R1-03-EXISTING-RewardArt",
+      "kind": "existing_actor",
+      "status": "motion",
+      "layer": "World",
+      "rect": [
+        1105,
+        391,
+        60,
+        48
+      ],
+      "primary_method": "preserve existing actor/controller/action animation and permanent-state bindings",
+      "alternative": "not remade within environment scope",
+      "collision": "original actor collision retained",
+      "interaction": "original gameplay retained",
+      "sound": "original event sounds retained",
+      "restore": "original V6 campaign state",
+      "reason": "visible actor is already implemented; exclude its pixels from scenery ownership",
+      "anchor": "export-map origin; source pixels, scale 1:1",
+      "scene_binding": "original campaign actor binding retained"
+    }
+  ],
+  "doors": [
+    {
+      "pos": [
+        75,
+        578
+      ],
+      "to": 1,
+      "spawn": [
+        1510,
+        715
+      ],
+      "ability": ""
+    },
+    {
+      "pos": [
+        1605,
+        612
+      ],
+      "to": 3,
+      "spawn": [
+        381,
+        709
+      ],
+      "ability": ""
+    }
+  ],
+  "source_sha256": "e55c9050968eb727ab3a481e06f2166f6e282f6bb6294024b9a560ee5c723a81"
+}

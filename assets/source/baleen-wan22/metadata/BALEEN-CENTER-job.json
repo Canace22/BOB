@@ -1,0 +1,52 @@
+{
+  "id": "BALEEN-CENTER",
+  "prompt_id": "f701fb72-8f91-4ae3-8559-361169362e5e",
+  "status": "generated_needs_review",
+  "started": 1793247005.5036254,
+  "model": "wan2.2_ti2v_5B_fp16.safetensors",
+  "loading": "fp8_e4m3fn",
+  "settings": {
+    "amplitude": 5.0,
+    "atlas_columns": 8,
+    "atlas_rows": 9,
+    "fps": 12,
+    "frames": 72,
+    "id": "BALEEN-CENTER",
+    "partition": [
+      650,
+      900
+    ],
+    "period_seconds": 6,
+    "phase": 1.7,
+    "rect": [
+      630,
+      -16,
+      290,
+      230
+    ],
+    "z": 4,
+    "width": 384,
+    "height": 320,
+    "length": 49,
+    "source_fps": 24,
+    "target_fps": 12,
+    "steps": 20,
+    "cfg": 5.0,
+    "seed": 291029102,
+    "fit": {
+      "scale": 1.103448275862069,
+      "size": [
+        320,
+        254
+      ],
+      "offset": [
+        32,
+        33
+      ]
+    },
+    "prompt": "Locked off camera. This isolated ivory whale baleen fringe hangs down from a fixed upper root. Fine individual hanging strands sway gently sideways in a slow underwater current, their tips trailing and settling. Soft flowing ripple travels downward. Root and dark attachment remain completely stationary. Tiny natural phase differences between strands. Keep the exact ivory blue painted texture, silhouette and number of strands. Black background stays empty and still, no new objects. Hand painted 2D game environmental animation, graceful restrained subtle motion.",
+    "negative": "camera motion, pan, zoom, rotation, fast motion, storm, violent flapping, melting, morphing, changing shape, growing, disappearing strands, new objects, fish, bubbles, text, logo, flashes, flicker, moving roots, moving rocks, floating entire object"
+  },
+  "elapsed_seconds": 280.18,
+  "frames": 49
+}

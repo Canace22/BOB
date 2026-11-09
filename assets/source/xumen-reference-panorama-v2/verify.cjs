@@ -1,0 +1,49 @@
+const {chromium}=require('C:/Users/Kingsoft/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {pathToFileURL}=require('node:url');
+(async()=>{
+  const root=path.resolve(__dirname,'../../..'),review=path.join(__dirname,'review');
+  fs.mkdirSync(review,{recursive:true});
+  const url=pathToFileURL(path.join(root,'docs/鲸腹遗城原画集/须门遗港精修设计/原画册.html')).href;
+  const browser=await chromium.launch({headless:true});
+  const page=await browser.newPage({viewport:{width:1500,height:1100}}),errors=[];
+  page.on('pageerror',e=>errors.push(String(e)));
+  await page.goto(url+'#real-scene');
+  await page.addStyleTag({content:'html{scroll-behavior:auto!important}'});
+  const scope=page.locator('#real-scene');
+  const rooms=await scope.locator('[data-reference-room]').count(),edges=await scope.locator('[data-reference-edge]').count();
+  const images=await scope.locator('svg image').evaluateAll(xs=>Promise.all(xs.map(el=>new Promise(resolve=>{
+    const im=new Image();im.onload=()=>resolve({src:el.getAttribute('href'),loaded:true,width:im.naturalWidth,height:im.naturalHeight,displayWidth:Number(el.getAttribute('width')),displayHeight:Number(el.getAttribute('height')),room:el.dataset.referenceRoom||null});
+    im.onerror=()=>resolve({src:el.getAttribute('href'),loaded:false});im.src=el.getAttribute('href');
+  }))));
+  const faithful=images.filter(x=>x.room).every(x=>x.width===x.displayWidth&&x.height===x.displayHeight);
+  const inputs=JSON.parse(fs.readFileSync(path.join(__dirname,'inputs.json'),'utf8'));
+  const hashes=inputs.every(r=>crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,r.file))).digest('hex')===r.sha256);
+  await page.locator('nav').evaluate(x=>x.style.visibility='hidden');
+  await scope.locator('.reference-scroll').screenshot({path:path.join(review,'全区-保真总览.png')});
+  const focus=[];
+  for(const id of ['R1-01','R1-02','R1-03','R1-04','R1-05','R1-06','R1-07']){
+    await scope.locator(`.reference-focus-tools [data-reference-focus="${id}"]`).click();
+    await page.waitForFunction(id=>document.querySelector('#real-scene .reference-status').textContent.includes(id),id);
+    focus.push(await scope.locator('.reference-status').innerText());
+    await scope.locator('.reference-scroll').screenshot({path:path.join(review,id+'-原图位置.png')});
+  }
+  await scope.locator('[data-reference-action="entry"]').click();
+  const alternate=await scope.locator('#locked-R1-01').getAttribute('href');
+  await scope.locator('[data-reference-action="entry"]').click();
+  await scope.locator('[data-reference-action="notes"]').click();
+  const notesHidden=await scope.evaluate(el=>el.classList.contains('hide-reference-notes'));
+  await scope.locator('[data-reference-action="notes"]').click();
+  await scope.locator('[data-reference-action="fit"]').click();
+  await scope.locator('[data-reference-action="native"]').click();
+  const nativeWidth=await scope.locator('.reference-canvas').evaluate(el=>el.style.width==='11584px');
+  await scope.locator('[data-reference-action="fit"]').click();
+  await page.setViewportSize({width:390,height:844});await page.goto(url+'#real-scene');
+  await scope.locator('.reference-focus-tools [data-reference-focus="R1-07"]').click();
+  await page.waitForFunction(()=>document.querySelector('#real-scene .reference-status').textContent.includes('R1-07'));
+  const mobileOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+  await page.screenshot({path:path.join(review,'手机-定位记忆袋.png')});
+  const result={rooms,edges,images,faithful,hashes,focus,alternate,notesHidden,nativeWidth,mobileOverflow,errors,passed:rooms===7&&edges===6&&images.length===13&&images.every(x=>x.loaded)&&faithful&&hashes&&focus.every((s,i)=>s.includes('R1-0'+(i+1)))&&alternate.endsWith('01-entry-alt.png')&&notesHidden&&nativeWidth&&!mobileOverflow&&!errors.length};
+  fs.writeFileSync(path.join(review,'results.json'),JSON.stringify(result,null,2)+'\n');
+  console.log(JSON.stringify(result));await browser.close();if(!result.passed)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

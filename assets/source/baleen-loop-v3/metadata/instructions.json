@@ -1,0 +1,18 @@
+{
+  "scope": "Standalone 2D baleen loop; no game or gameplay changes",
+  "steps": [
+    "Register existing ivory painted baleen on 384 square with 24 pixel padding; design eight delayed-tip poses.",
+    "Bake 73 guide frames at 24 FPS. Pin root, increase bend amplitude downstream and delay tips.",
+    "Run ComfyUI Wan2.2 TI2V 5B low-denoise video refinement; preserve job ID and raw frames.",
+    "Inverse-warp model color into material coordinates; fit 2 temporal harmonics; retain painted alpha and 78 percent original color.",
+    "Bake 48 unique frames at 12 FPS, four-second periodic loop; create Krita native master and export all frames for comparison.",
+    "Check root, tip displacement, closure velocity, transparent padding, light/dark previews, real Krita roundtrip."
+  ],
+  "retry": "Retain failed results; repair only defective stage. Never resubmit existing running job.",
+  "reference_video": "../baleen-chaos/seedance2-source.mp4",
+  "art_lineage": "../baleen-keyart-v2/keyposes/paint-00.png; derived pose drawings, not fresh hand-painted cells",
+  "output_frames": 48,
+  "output_fps": 12,
+  "guide_frames": 73,
+  "guide_fps": 24
+}

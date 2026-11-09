@@ -1,0 +1,68 @@
+{
+  "id": "CONTEXT-MOTION",
+  "prompt_id": "5f32dc4e-297f-41a5-85d4-2696f48cf668",
+  "status": "generated_needs_review",
+  "started": 1793247415.930247,
+  "model": "wan2.2_ti2v_5B_fp16.safetensors",
+  "loading": "fp8_e4m3fn",
+  "settings": {
+    "amplitude": 5.0,
+    "atlas_columns": 8,
+    "atlas_rows": 9,
+    "fps": 12,
+    "frames": 72,
+    "id": "CONTEXT-MOTION",
+    "partition": [
+      650,
+      900
+    ],
+    "period_seconds": 6,
+    "phase": 1.7,
+    "rect": [
+      630,
+      -16,
+      290,
+      230
+    ],
+    "z": 4,
+    "width": 640,
+    "height": 384,
+    "length": 49,
+    "source_fps": 24,
+    "target_fps": 12,
+    "steps": 24,
+    "cfg": 5.0,
+    "seed": 291029301,
+    "fit": {
+      "scale": 1.103448275862069,
+      "size": [
+        320,
+        254
+      ],
+      "offset": [
+        32,
+        33
+      ]
+    },
+    "prompt": "Fixed camera underwater scene. The camera and cave remain absolutely still. Only the long fine ivory hanging baleen strands gently sway in a slow underwater current, with their upper roots firmly attached to the stationary cave roof. Slight flowing waves travel down the strands, the flexible tips drift a small distance sideways and gently return. Delicate asynchronous natural underwater movement. Preserve the hand painted illustration, original colors, architecture and silhouette. Slow serene atmospheric environmental animation.",
+    "negative": "camera movement, zoom, pan, changing scenery, morphing rocks, moving bridge, collapsing cave, violent wind, fast motion, melting, distorted forms, new objects, color shift, glitches, stripes, text",
+    "input_transform": {
+      "source_size": [
+        1280,
+        720
+      ],
+      "resized": [
+        640,
+        360
+      ],
+      "generation": [
+        640,
+        384
+      ],
+      "center_crop_source_width": 1200,
+      "crop_left_source": 40
+    }
+  },
+  "elapsed_seconds": 440.26,
+  "frames": 49
+}

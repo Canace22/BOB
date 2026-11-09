@@ -1,0 +1,6 @@
+R1 chapter scene production 2026-10-31
+Scope: R1-02 -> R1-03 -> R1-04 -> R1-05, then designed revisit rooms R1-06/R1-07. Preserve R1-01, authored terrain, actors, room links, ability gates and player saves. No new regions/mechanics.
+Inputs: current game/content/whalebelly/r1 and art/whalebelly; G:/鲸落万物生/outputs/须门遗港_R1_全景与分层拆解/data/r1-design.json, elements.json; original room artwork.
+Tools: Godot4.7.2 file/CLI GPU; existing SVG ownership masks and bitmap exports; built-in imagegen only for fish-removal clean background; existing fish atlases and bounded bubble instances. Root-pinned tessellated mesh animation for image-derived hanging elements, no procedural replacement art. Python only metadata/SVG/contact sheets; no substitute generated scenery.
+Per-room gate: native layered PNGs + independently owned moving cutouts + opaque repaired underpaint; zero-time static compare; pinned-root/loop/pause/zero-speed/reload/camera tests; main entry walk/jump and neighbor links; sources and evidence. Repair only failing piece.
+First sample: R1-02. Pass before propagation. All performance/evidence ignored under game/build/qa/r1-chapter-scenes. Runtime/scenes/scripts in game, production source in assets.

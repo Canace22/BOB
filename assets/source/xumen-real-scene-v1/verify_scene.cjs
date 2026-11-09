@@ -1,0 +1,1 @@
+require('../xumen-reference-panorama-v2/verify.cjs');

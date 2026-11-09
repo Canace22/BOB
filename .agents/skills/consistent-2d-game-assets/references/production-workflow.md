@@ -2,6 +2,8 @@
 
 Read this reference for asset sets, project-bound delivery, or repeated generation.
 
+For this project's reference-image environment and independent motion workflow, use [the current scene production guide](../../../../docs/scene-and-environment-production.md). It maps layer extraction, authored-frame versus Shader/path motion, shared clocks, real scene bindings and evidence to existing assets and tools; keep historical batch records separate from current runtime facts.
+
 ## 1. Establish the art baseline
 
 Choose one approved gameplay screenshot that represents the target area. Prefer a real runtime capture over a mood board. It should reveal:

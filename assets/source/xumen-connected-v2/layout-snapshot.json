@@ -1,0 +1,286 @@
+{
+  "rooms": [
+    {
+      "id": "R1-01",
+      "origin": [
+        0,
+        0
+      ],
+      "size": [
+        1671,
+        939.9375
+      ]
+    },
+    {
+      "id": "R1-02",
+      "origin": [
+        2183,
+        -86.15300000000002
+      ],
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "R1-03",
+      "origin": [
+        4367,
+        61.84699999999998
+      ],
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "R1-04",
+      "origin": [
+        6551,
+        17.84699999999998
+      ],
+      "size": [
+        1591,
+        989
+      ]
+    },
+    {
+      "id": "R1-05",
+      "origin": [
+        8654,
+        171.84699999999998
+      ],
+      "size": [
+        1612,
+        976
+      ]
+    },
+    {
+      "id": "R1-06",
+      "origin": [
+        2283,
+        -1476.153
+      ],
+      "size": [
+        1476,
+        1065
+      ]
+    },
+    {
+      "id": "R1-07",
+      "origin": [
+        4033,
+        -1476.153
+      ],
+      "size": [
+        1572,
+        1001
+      ]
+    }
+  ],
+  "doorGraph": "six existing edges E01/E02/E03/E04/E33/E35",
+  "roomDataSha256": "67a4ab77a037ae880cefffe5d57a382822a30074be5e0209fcd0a4396431c1e5",
+  "floorInstances": [
+    {
+      "id": "Floor_E01",
+      "edge": "E01",
+      "collision": "solid top contour,38px thick",
+      "art": "floor.png via pixel UV",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E02",
+      "edge": "E02",
+      "collision": "solid top contour,38px thick",
+      "art": "floor.png via pixel UV",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E03",
+      "edge": "E03",
+      "collision": "solid top contour,38px thick",
+      "art": "floor.png via pixel UV",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E04",
+      "edge": "E04",
+      "collision": "solid top contour,38px thick",
+      "art": "floor.png via pixel UV",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_lower",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_0",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_1",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_2",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_3",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_4",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_5",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_6",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_7",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E33_upper",
+      "edge": "E33",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_lower",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_0",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_1",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_2",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_3",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_4",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_5",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_6",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_7",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_8",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_9",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    },
+    {
+      "id": "Floor_E35_upper",
+      "edge": "E35",
+      "collision": "one-way top contour,38px thick",
+      "art": "ledge.png, equal-scale, ground anchor79px",
+      "layer": 2
+    }
+  ],
+  "expectedFloorInstances": 26,
+  "gateInstances": [
+    {
+      "id": "AbilityGate_E04",
+      "shapes": 2,
+      "condition": "boss defeated"
+    },
+    {
+      "id": "AbilityGate_E33",
+      "shapes": 2,
+      "condition": "float"
+    },
+    {
+      "id": "AbilityGate_E35",
+      "shapes": 2,
+      "condition": "anchor"
+    }
+  ],
+  "collisionVisual": "same top line, original room ground unscaled; model source remains connected_layout.gd"
+}

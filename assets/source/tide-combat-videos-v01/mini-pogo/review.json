@@ -1,0 +1,53 @@
+{
+  "taskId": "vj_8a7a9291-a106-48be-a27a-1f4a5cf6ecc4",
+  "nodeId": "skills_v_e6d9dfba2d",
+  "url": "https://xsj-ai-orange.seasungame.com/prod/video/20261029/a30fbd47-8b3c-4176-839c-ae253823c085.mp4",
+  "frames": 97,
+  "decodedFrames": 97,
+  "fps": 24.0,
+  "duration": 4.041666666666667,
+  "size": [
+    864,
+    496
+  ],
+  "requestedDuration": 4,
+  "requestedResolution": "480P",
+  "requestedAspectRatio": "16:9",
+  "source": "source.mp4",
+  "file": "pogo-mini.mp4",
+  "sha256": "cd082ed4eafae984b93eb5520128baa28809558fb8b1b3042dbff04c3b52e94b",
+  "processing": "Video stream copied, audio removed; no retiming or frame interpolation",
+  "status": "candidate",
+  "integrationStatus": "not-integrated",
+  "userArtApproval": false,
+  "sampleTimes": [
+    0,
+    0.5,
+    0.8,
+    1.0,
+    1.2,
+    1.5,
+    1.8,
+    2.1,
+    2.5,
+    2.9,
+    3.4,
+    3.9
+  ],
+  "visualReviewMethod": "抽查12个时间点接触表，另检查1秒原尺寸峰值帧；未连续播放验收",
+  "quotaBefore": 131,
+  "quotaAfter": 38,
+  "observedBalanceChange": 93,
+  "quotaNote": "共享账户观察到的余额变化，未来实际扣费可能变化。",
+  "actualAspectRatio": "54:31",
+  "visualReview": {
+    "framing": "多数抽查帧内全身和骨叉完整；1秒原尺寸帧的头顶距上边仅数像素，跳跃安全边距不足。",
+    "motion": "小跳到骨台上方，转叉向下并在约1.5秒接触，出现小涟漪；约2.5秒再次腾空，约3.4秒落至台旁。",
+    "limitations": [
+      "脚先落上台面并撑叉停顿，接触到再次腾空约间隔1秒，缺少即时反弹的清楚因果。",
+      "跳跃峰值头顶过于贴近画面上边缘，未达到提示词要求的安全构图。",
+      "转叉靠近头壳，下点阶段叉柄比例和握持细节有漂移。",
+      "尚非即时点潮反弹的正式游戏动作，需精修时序与接触姿态。"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "stage": "SC06",
+  "completed": [
+    "SC00",
+    "SC01",
+    "SC02",
+    "SC03 major composition review",
+    "SC04",
+    "SC05 state/render/recording checks",
+    "SC06 portable package launch + actual screenshot",
+    "Water-surface correction: 6 rendered checks + 17 environment checks + 4 loop checks",
+    "Water surface updated portable package: exit0 and actual screenshot",
+    "Four Blender frame groups integrated; 17 curtain + 17 environment + 4 loop + 6 water checks passed",
+    "Independent soft-light repair: background polygon holes restored; new painted light material; actual main movement verified",
+    "Two independent corner foreground elements, matching bottom parallax, cleaned10 static layers and bounded backing",
+    "Restored clipped bridge hanging silhouette, softened backing matte, added 20 bubbles in 3 zones; rendered and package verified",
+    "Four Wan2.2 video-derived groups, 36 frames each, 12FPS, native Krita masters and runtime verified",
+    "V3 delayed-tip atlas in three main-level instances; static duplicates cleaned; source and portable runtime verified"
+  ],
+  "pending": [],
+  "evidence": "G:\\鲸落万物生\\BOB\\godot\\WhalebellyRuins\\evidence\\baleen_loop_v3",
+  "limitations": [
+    "Fine matte edges are approximate",
+    "No continuous human per-frame playback certification"
+  ],
+  "repairs": [
+    "foreground backing too broad -> bounded swept region",
+    "synchronized fish turn -> continuous flow",
+    "baleen sidewall deformation -> rigid root mask",
+    "caustic alpha squared -> vertex tint preserved",
+    "packed res:// is read-only -> explicit diagnostic output directory"
+  ],
+  "status": "delivered_with_documented_visual_limits",
+  "version_control": "Included in the verified batch commit; see git log.",
+  "current_revision": "baleen_loop_v3_main"
+}

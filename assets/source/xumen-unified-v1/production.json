@@ -1,0 +1,45 @@
+{
+  "stage": "published_runtime_verified",
+  "scope": "seven existing rooms and six existing links",
+  "old_visual_review": "user rejected previous stitched connector art",
+  "completed": [
+    "8 painted source images",
+    "continuous world master OpenRaster",
+    "91 bitmap-textured meshes",
+    "100 independent static/interactive sprite instances",
+    "94 Far/Middle tiles from one world master",
+    "13 approved baleen loops,7 bottom-pinned plants,80 fish,66 bubbles",
+    "57 unit checks,38 connected-route checks,18 specialist,2 independent reload",
+    "13 Chrome main-route checks;E33 8;E35 9 incl 52s motion",
+    "5 rendered bitmap tests: root/tips/loop/water/rebase",
+    "all six edges in independent Chrome keyboard runs incl normal E04 boss fight",
+    "26 current fixed/no-front GPU captures reviewed",
+    "performance full/static/no-render/no-nodes/empty controls recorded",
+    "Pages deployment success, build.json exact source, online Chrome 13 checks incl bidirectional crossing/pause/camp/reload"
+  ],
+  "pending": [],
+  "user_art_review": "not reviewed",
+  "next": "Await visual feedback; performance p95 target remains unmet and needs isolated foreground profiling. Do not regenerate approved motion assets.",
+  "limitations": [
+    "User visual approval pending",
+    "Native environment median16.65ms/p95 30.357ms in latest profile; empty control16.661/31.398ms. Stable60 not certified; other full samples worse and retained.",
+    "~1692.65MiB texture monitor includes retained old room resources; further memory optimization not done",
+    "Native audio Dummy for QA; Web stream active but no new human listening acceptance",
+    "Prompt brief reconstructed from surviving job metadata, original exact prompts unavailable"
+  ],
+  "release": {
+    "source": "4582ec6191630fd76ef4ae2a23220b1cc0ec4de2",
+    "pages": "8e0cf1ca7f6144c3b809f4da5535450b287a9086",
+    "deployment": 41973783340,
+    "deployment_status": "success",
+    "build_json_verified": true,
+    "url": "https://canace22.github.io/BOB/godot/",
+    "online_checks": 13,
+    "online_errors": [],
+    "online_report": "game/build/qa/xumen-connected/unified-online/report.json"
+  },
+  "unmet_quality_targets": [
+    "stable frame pacing p95<20ms not verified",
+    "user visual approval not yet received"
+  ]
+}

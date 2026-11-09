@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-04",
+  "status": "deployed_verified",
+  "engine": "Godot 4.7.2 stable",
+  "entry": "game/content/whalebelly/main.tscn",
+  "scope": "R1 seven existing rooms and their six internal connections; retain seven room IDs, collision surfaces, abilities, boss and V6 saves. Existing chapter exit and R2 remote latch remain stubs.",
+  "reference": "assets/source/world-continuity-v1/images/02-r1-continuous.png and 06-r1-seams.png",
+  "batches": [
+    {
+      "id": "B1",
+      "edges": [
+        "E02"
+      ],
+      "work": "clean three-strip source; editable masks; reusable layered seam actor; sample into R1-02/R1-03; static comparison then motion",
+      "status": "passed"
+    },
+    {
+      "id": "B2",
+      "edges": [
+        "E01",
+        "E03",
+        "E04"
+      ],
+      "work": "attach all main-path seam windows and common distant organ landmarks; preserve existing collision",
+      "status": "passed"
+    },
+    {
+      "id": "B3",
+      "edges": [
+        "E33",
+        "E35"
+      ],
+      "work": "old cranial-wound and baleen-root-pocket connections; preserve locked gates; chapter anatomical overview in map",
+      "status": "passed"
+    },
+    {
+      "id": "B4",
+      "work": "actual GPU runtime, bidirectional movement, pause/resume, camera edges, saves and branch gates; movie; commit; Web deploy and verify",
+      "status": "passed"
+    }
+  ],
+  "methods": {
+    "rigid": {
+      "primary": "source bitmaps and editable masks; border/collar anchored to the original portal",
+      "alternative": "new hand-painted asset if masked composition fails",
+      "reason": "keep existing ground collision and safe landing edges"
+    },
+    "baleen": {
+      "primary": "existing tessellated fixed-root bitmap with delayed bending",
+      "alternative": "approved frame animation for high-amplitude isolated pieces",
+      "reason": "small underwater sway; no terrain deformation"
+    },
+    "fish": {
+      "primary": "existing 32-phase painted swim atlas plus separate bounded path",
+      "alternative": "fixed spline only if depth needs it",
+      "reason": "retain body motion independently from route"
+    },
+    "bubbles": {
+      "primary": "approved bitmap pool, prewarm, boundary fade and bounded recycling",
+      "alternative": "GPU particles if later profile requires it",
+      "reason": "small count, deterministic pause and restart"
+    },
+    "water_light": {
+      "primary": "soft local water mask driven by shared pausable clock",
+      "alternative": "painted short caustic cycle",
+      "reason": "background water only; no rectangle overlay or whole-terrain distortion"
+    }
+  },
+  "guardrails": [
+    "no new regions or abilities",
+    "original role/enemy/reward pixels removed from new source before animation",
+    "new seam art is a visual collar around original ground, not a fake replacement collision",
+    "diagram is not a claim of global seamless physics"
+  ],
+  "next": "Current visual-integration scope complete. Resume from game/progress.md; a natural E02 door-frame and physical connector sample is a possible later task, not implemented by this batch.",
+  "onlineVerification": {
+    "url": "https://canace22.github.io/BOB/godot/",
+    "passed": 18,
+    "failed": 0,
+    "errors": [],
+    "evidence": "game/build/qa/xumen-continuity/web-online/report.json",
+    "scope": "Real keyboard movement, jump, R1-01 to R1-02, pause/resume, map, physical camp and reload; other rooms use explicit preview keys, not continuous-traversal proof. Published runtime source remains sourceCommit; final documentation commit does not require another runtime deployment."
+  },
+  "sourceCommit": "80fda23108cebdd4fa163fc1e91889d50969bfba",
+  "pagesCommit": "ee3a98bbaf0e8ca3b996b1cff415b4413bed33a1"
+}

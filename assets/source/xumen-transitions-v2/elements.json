@@ -1,0 +1,206 @@
+{
+  "scope": "E02/E03/E04; branches pending",
+  "assumptions": "Motion values proposed from approved recipes, tested locally; user aesthetic separate.",
+  "common": {
+    "collision": "not_applicable: unchanged original passage bodies",
+    "interaction": "not_applicable: visual transition only",
+    "sound": "not_applicable: existing chapter water stream shared",
+    "restore": "persistent chapter node; host.clock pauses; fresh process restarts environmental clock",
+    "acceptance": "actual PNG loading, GPU fixed views and no-front, input traversal, pause, bounded counts"
+  },
+  "items": [
+    {
+      "id": "E02_DEPTH",
+      "layer": "far",
+      "asset": "E02-depth.png",
+      "position": [
+        3029,
+        -269.153
+      ],
+      "count": 1,
+      "motion": "14s 1% brightness",
+      "preferred": "unique low-contrast water plate",
+      "alternative": "masked local water shader",
+      "reason": "no duplication or ground warping",
+      "node": "AuthoredTransitions/E02_depth"
+    },
+    {
+      "id": "E02_ARCH",
+      "layer": "middle",
+      "asset": "E02-arch.png",
+      "position": [
+        3460,
+        -253.153
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "independent transparent painted structure",
+      "alternative": "local repaint",
+      "reason": "bone remains rigid",
+      "node": "AuthoredTransitions/E02_arch"
+    },
+    {
+      "id": "E02_GROUND",
+      "layer": "playable",
+      "asset": "E02-ground.png",
+      "position": [
+        3310,
+        546.847
+      ],
+      "count": 1,
+      "motion": "static",
+      "preferred": "new art translated by column to original contour",
+      "alternative": "manual contour painting",
+      "reason": "walk lip matches original collision",
+      "node": "AuthoredTransitions/E02_ground"
+    },
+    {
+      "id": "E02_HUB_SUPPORT",
+      "layer": "playable",
+      "asset": "hub-world-clean.png",
+      "count": 1,
+      "motion": "static",
+      "preferred": "clean generative extraction, continuous upper-lip registration",
+      "alternative": "manual traced extraction",
+      "reason": "preserve branch and anchor ring layout while removing baked water",
+      "node": "Chunk_R1-02/ChapterEnvironment/World/Surface"
+    },
+    {
+      "id": "E02_TONGUE_WORLD",
+      "layer": "playable",
+      "asset": "tongue-world-clean.png",
+      "count": 1,
+      "motion": "existing membrane material",
+      "preferred": "editable spatial mask and bounded auxiliary water selection",
+      "alternative": "new clean extraction",
+      "reason": "no global colour key or duplicate terrain",
+      "node": "Chunk_R1-03/ChapterEnvironment/World/Surface"
+    },
+    {
+      "id": "E02_TONGUE_CEILING",
+      "layer": "middle",
+      "asset": "tongue-middle-clean.png",
+      "count": 1,
+      "motion": "static, existing independent fronds retained",
+      "preferred": "spatial silhouette mask",
+      "alternative": "clean extraction",
+      "reason": "remove baked wedge without deforming rigid ceiling",
+      "node": "Chunk_R1-03/ChapterEnvironment/Middle/Surface"
+    },
+    {
+      "id": "E02_FISH",
+      "layer": "far",
+      "position": [
+        3910,
+        300
+      ],
+      "count": 12,
+      "motion": "32 body phases plus24s bounded path",
+      "preferred": "approved swim atlas plus separate choreography",
+      "alternative": "new swim atlas if species changes",
+      "reason": "avoid paper sliding",
+      "node": "AuthoredTransitions/E02_FISH"
+    },
+    {
+      "id": "E02_BUBBLE",
+      "layer": "middle",
+      "position_rules": [
+        [
+          3910,
+          280,
+          55,
+          310
+        ],
+        [
+          4200,
+          280,
+          55,
+          310
+        ]
+      ],
+      "count": 8,
+      "motion": "prewarm, ascend, fade and bounded reuse",
+      "preferred": "approved RGBA pool, shared clock",
+      "alternative": "native particles if scale requires",
+      "reason": "stable populations and no edge bursts",
+      "node": "AuthoredTransitions/E02_BUBBLE_0 and1"
+    },
+    {
+      "id": "E02_FRONT",
+      "layer": "foreground",
+      "count_rule": "original two room layers, ownership mask removes repaint volume",
+      "motion": "existing small camera response",
+      "preferred": "reuse original independent layers",
+      "alternative": "new foreground if footprint changes",
+      "reason": "no additional black cover over seam",
+      "node": "Chunk_R1-02 and03/ChapterEnvironment/Foreground"
+    }
+  ],
+  "E03": {
+    "plates": {
+      "depth": [
+        5213,
+        -234.153
+      ],
+      "arch": [
+        5644,
+        -218.153
+      ],
+      "ground": [
+        5494,
+        581.847
+      ]
+    },
+    "static": [
+      "new rigid bone arch",
+      "contour conformed causeway",
+      "clean arena world and middle"
+    ],
+    "motion": {
+      "fish": 12,
+      "bubbles": 8,
+      "method": "same approved mechanisms as E02 with distinct world anchors",
+      "alternatives": "new body atlas or particles only if medium/scale changes"
+    },
+    "collision": "unchanged",
+    "sound": "shared chapter stream",
+    "restoration": "persistent host.clock",
+    "no_new_interactions": true,
+    "evidence": "game/build/qa/xumen-transitions/E03-*"
+  },
+  "E04": {
+    "plates": {
+      "depth": [
+        7316,
+        -173.153
+      ],
+      "arch": [
+        7747,
+        -157.153
+      ],
+      "ground": [
+        7597,
+        642.847
+      ]
+    },
+    "ground_width": 1400,
+    "reason": "ends before original nursery first gap; no false new platform",
+    "static": [
+      "independent throat arch",
+      "bone to membrane road",
+      "original nursery platform silhouettes"
+    ],
+    "motion": {
+      "fish": 12,
+      "bubbles": 8,
+      "preferred": "approved body atlas + path, prewarmed bounded pool",
+      "backup": "new atlas or native particle sample if needed",
+      "reason": "same submerged medium with distinct world anchors"
+    },
+    "state": "host.clock persistent and pausable",
+    "collision": "unchanged original bodies",
+    "gate": "original Boss defeat required",
+    "sound": "same chapter water stream; no new audio",
+    "evidence": "game/build/qa/xumen-transitions/E04-* and e04-local"
+  }
+}

@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 // Publish /godot/ and its default root entry; preserve historical version directories.
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, copyFileSync, existsSync, mkdirSync, lstatSync, realpathSync, rmSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { publicationOmissions, includePublicationFile } from './web-download-parts.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+
+if (process.argv.includes('--lore-only')) {
+  await import('./deploy-lore-pages.mjs');
+  process.exit(process.exitCode ?? 0);
+}
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const staging = path.join(root, '.pages-dist-godot');
@@ -24,12 +30,29 @@ function prepare() {
   const remote = read(['remote', 'get-url', 'origin']);
   const source = read(['rev-parse', 'HEAD']);
   assertLocalDirectory(staging, root);
-  if (!existsSync(path.join(staging, '.git'))) {
+  const freshCheckout = !existsSync(path.join(staging, '.git'));
+  if (freshCheckout) {
     if (existsSync(staging)) throw new Error('Staging exists without .git; inspect it before reuse.');
-    run('git', ['clone', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
+    run('git', ['clone', '--filter=blob:none', '--sparse', '--depth=1', '--single-branch', '--branch', 'gh-pages', remote, staging]);
   } else {
     if (read(['status', '--porcelain'], staging)) throw new Error('Staging has uncommitted changes; inspect before reuse.');
-    run('git', ['pull', '--ff-only', remote, 'gh-pages'], staging);
+  }
+  // Keep every published version in Git without downloading unrelated art blobs.
+  run('git', ['config', 'remote.origin.promisor', 'true'], staging);
+  run('git', ['config', 'remote.origin.partialclonefilter', 'blob:none'], staging);
+  run('git', ['sparse-checkout', 'init', '--no-cone'], staging);
+  // Full publication replaces this subtree, so do not fetch its obsolete blobs.
+  run('git', ['sparse-checkout', 'set', ...(entryOnly ? ['/godot/'] : []), '/index.html', '/.nojekyll'], staging);
+  if (!freshCheckout) {
+    run('git', ['fetch', '--filter=blob:none', remote, 'gh-pages'], staging);
+    // Diffstat can lazily download unrelated blobs on older Git versions.
+    run('git', ['merge', '--ff-only', '--no-stat', 'FETCH_HEAD'], staging);
+  }
+  if (!entryOnly) {
+    const previous = execFileSync('git', ['ls-files', '-z', '--', 'godot/'], { cwd: staging });
+    if (previous.length) execFileSync('git', ['update-index', '--force-remove', '-z', '--stdin'], { cwd: staging, input: previous });
+    // New files are copied below; adding the sparse pattern needs no checkout.
+    writeFileSync(path.join(staging, '.git/info/sparse-checkout'), '/godot/\n/index.html\n/.nojekyll\n');
   }
   const dest = path.join(staging, 'godot');
   if (entryOnly && !existsSync(path.join(dest, 'index.html'))) throw new Error('Publish the Godot game before updating its default entry.');
@@ -37,10 +60,16 @@ function prepare() {
     assertLocalDirectory(dest, staging);
     if (existsSync(dest)) rmSync(dest, { recursive: true });
     mkdirSync(dest);
-    cpSync(exported, dest, { recursive: true, filter: file => !/\.(import|uid|log)$/.test(file) });
+    const downloads = JSON.parse(readFileSync(path.join(exported, 'downloads.json'), 'utf8'));
+    const omitted = publicationOmissions(downloads);
+    cpSync(exported, dest, { recursive: true, filter: file => includePublicationFile(file, exported, omitted) });
+    for (const file of readdirSync(dest)) {
+      const item = statSync(path.join(dest, file));
+      if (item.isFile() && item.size >= 100 * 1024 * 1024) throw new Error(`Publication file exceeds GitHub limit: ${file}`);
+    }
     writeFileSync(path.join(dest, 'build.json'), JSON.stringify({ source, exportedAt: new Date().toISOString(), engine: '4.7.2', threads: false }, null, 2));
   }
-  cpSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
+  copyFileSync(path.join(root, 'game/pages/index.html'), path.join(staging, 'index.html'));
   writeFileSync(path.join(staging, '.nojekyll'), '');
   return { remote, source };
 }
@@ -52,9 +81,9 @@ try {
   } else {
     for (const key of ['user.name', 'user.email']) run('git', ['config', key, read(['config', key])], staging);
     run('git', ['add', '--', ...(entryOnly ? [] : ['godot']), 'index.html', '.nojekyll'], staging);
-    const changed = read(['diff', '--cached', '--name-only'], staging).split('\n').filter(Boolean);
+    const changed = read(['diff', '--cached', '--name-only', '--no-renames'], staging).split('\n').filter(Boolean);
     if (changed.some(file => !['.nojekyll', 'index.html'].includes(file) && (entryOnly || !file.startsWith('godot/')))) throw new Error('Unexpected staged files outside the publication scope.');
-    if (changed.length) run('git', ['commit', '-m', `发布 Godot ${entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
+    if (changed.length) run('git', ['commit', '--quiet', '-m', `发布 Godot ${entryOnly ? '默认入口' : '首关'} ${source.slice(0, 7)}`], staging);
     run('git', ['push', remote, 'HEAD:gh-pages'], staging);
     console.log(`Pages publication commit: ${read(['rev-parse', 'HEAD'], staging)}. Verify deployment and https://canace22.github.io/BOB/.`);
   }

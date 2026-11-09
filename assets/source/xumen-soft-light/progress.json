@@ -1,0 +1,15 @@
+{
+  "status": "implemented_runtime_verified",
+  "scope": "Only defective light cutouts and their background holes",
+  "checks": {
+    "light": 16,
+    "background": 3,
+    "main_route": 27
+  },
+  "runtime_pending": [],
+  "visual_limits": [
+    "Sample images and loop endpoints reviewed; no claim of human frame-by-frame review"
+  ],
+  "next_action": "Tune only independent light strength/period if requested; do not reintroduce polygon background cutouts",
+  "commit": "See git log for this verified batch"
+}

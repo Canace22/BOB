@@ -1,0 +1,198 @@
+{
+  "intent": "image_to_video",
+  "l1": {
+    "intent": "image_to_video",
+    "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次点潮接触后的空中反弹。角色右前方有一块低矮圆润灰色弹性骨台，作为命中参照。0到0.5秒屈膝；0.5到1.1秒蹼足蹬地小跳到骨台正上方，最高只离地约半个身高。1.1到1.5秒自然下落中收腿，右手将骨叉转为竖直向下，叉口比脚底稍低，左手短扶柄；1.5秒叉口轻触骨台上表面，接触点出现一小圈灰青涟漪，手肘屈曲吸收反力；1.5到2.1秒身体立刻由下落转为向上反弹，两脚离开骨台，骨叉收回胸前，披风下摆滞后；2.1到3秒自然落在骨台旁地面，双膝弯曲站稳；3到4秒恢复戒备。先接触再反弹的因果要清楚，只有一次小反弹，不主动加速重砸，不戳穿骨台、不产生地裂或爆炸。最高点的头壳与叉口均不出画；无文字、敌人、火焰或声音。\n",
+    "model": "doubao-seedance-2-0-mini-260615",
+    "wait": false,
+    "aspectRatio": "16:9",
+    "resolution": "480P",
+    "duration": 4,
+    "sourceNodeId": "skills_img_0bebad861f",
+    "generationType": "reference",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "session": {
+    "sessionId": "sess_6b22b2880aa9",
+    "state": "released",
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "marker": "skills_sess_6b22b2880aa9",
+    "baseUpdatedAt": "2026-10-29T15:41:03+08:00",
+    "trustedUrlCount": 1,
+    "history": [
+      "locked",
+      "transforming",
+      "validating",
+      "applying",
+      "task_running",
+      "applying_result",
+      "released"
+    ],
+    "error": null
+  },
+  "dryRun": false,
+  "bind": {
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "boundAt": 1793259662,
+    "skillsSessionId": "sess_6b22b2880aa9",
+    "pendingTasks": [
+      {
+        "taskId": "vj_8a7a9291-a106-48be-a27a-1f4a5cf6ecc4",
+        "nodeId": "skills_v_e6d9dfba2d",
+        "kind": "video",
+        "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次点潮接触后的空中反弹。角色右前方有一块低矮圆润灰色弹性骨台，作为命中参照。0到0.5秒屈膝；0.5到1.1秒蹼足蹬地小跳到骨台正上方，最高只离地约半个身高。1.1到1.5秒自然下落中收腿，右手将骨叉转为竖直向下，叉口比脚底稍低，左手短扶柄；1.5秒叉口轻触骨台上表面，接触点出现一小圈灰青涟漪，手肘屈曲吸收反力；1.5到2.1秒身体立刻由下落转为向上反弹，两脚离开骨台，骨叉收回胸前，披风下摆滞后；2.1到3秒自然落在骨台旁地面，双膝弯曲站稳；3到4秒恢复戒备。先接触再反弹的因果要清楚，只有一次小反弹，不主动加速重砸，不戳穿骨台、不产生地裂或爆炸。最高点的头壳与叉口均不出画；无文字、敌人、火焰或声音。"
+      }
+    ],
+    "name": "独眼提灯者-Idle",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "sessionDir": "C:\\Users\\Kingsoft\\.codex\\artifacts\\tide-skills-video-session",
+  "pendingDrained": [],
+  "ops": [
+    {
+      "op": "add_node",
+      "node": {
+        "id": "skills_v_e6d9dfba2d",
+        "type": "video",
+        "position": {
+          "x": 3481.814052629361,
+          "y": 1872.8394827043232
+        },
+        "data": {
+          "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次点潮接触后的空中反弹。角色右前方有一块低矮圆润灰色弹性骨台，作为命中参照。0到0.5秒屈膝；0.5到1.1秒蹼足蹬地小跳到骨台正上方，最高只离地约半个身高。1.1到1.5秒自然下落中收腿，右手将骨叉转为竖直向下，叉口比脚底稍低，左手短扶柄；1.5秒叉口轻触骨台上表面，接触点出现一小圈灰青涟漪，手肘屈曲吸收反力；1.5到2.1秒身体立刻由下落转为向上反弹，两脚离开骨台，骨叉收回胸前，披风下摆滞后；2.1到3秒自然落在骨台旁地面，双膝弯曲站稳；3到4秒恢复戒备。先接触再反弹的因果要清楚，只有一次小反弹，不主动加速重砸，不戳穿骨台、不产生地裂或爆炸。最高点的头壳与叉口均不出画；无文字、敌人、火焰或声音。",
+          "model": "doubao-seedance-2-mini",
+          "generationType": "reference",
+          "generationMode": "image",
+          "status": "idle",
+          "taskIds": [],
+          "skills_marker": "skills_sess_6b22b2880aa9",
+          "creationSource": "chaos-skills",
+          "contractModel": "doubao-seedance-2-0-mini-260615",
+          "aspectRatio": "16:9",
+          "ratio": "16:9",
+          "duration": "4",
+          "resolution": "480P",
+          "title": "制作4秒2D横版游戏角色攻击动作效果视频，只展示…",
+          "label": "制作4秒2D横版游戏角色攻击动作效果视频，只展示…",
+          "hasUpstream": true,
+          "inheritedFrom": "skills_img_0bebad861f",
+          "inheritedData": {
+            "type": "image",
+            "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          }
+        }
+      }
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_e6d9dfba2d",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image-input",
+          "text": "",
+          "content": ""
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "add_edge",
+      "id": "e-skills_img_0bebad861f-skills_v_e6d9dfba2d",
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_e6d9dfba2d",
+      "sourceHandle": "output",
+      "targetHandle": "input"
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_e6d9dfba2d",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image",
+          "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "submit_video",
+      "nodeId": "skills_v_e6d9dfba2d",
+      "model": "doubao-seedance-2-0-mini-260615",
+      "body": {
+        "model": "doubao-seedance-2-0-mini-260615",
+        "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次点潮接触后的空中反弹。角色右前方有一块低矮圆润灰色弹性骨台，作为命中参照。0到0.5秒屈膝；0.5到1.1秒蹼足蹬地小跳到骨台正上方，最高只离地约半个身高。1.1到1.5秒自然下落中收腿，右手将骨叉转为竖直向下，叉口比脚底稍低，左手短扶柄；1.5秒叉口轻触骨台上表面，接触点出现一小圈灰青涟漪，手肘屈曲吸收反力；1.5到2.1秒身体立刻由下落转为向上反弹，两脚离开骨台，骨叉收回胸前，披风下摆滞后；2.1到3秒自然落在骨台旁地面，双膝弯曲站稳；3到4秒恢复戒备。先接触再反弹的因果要清楚，只有一次小反弹，不主动加速重砸，不戳穿骨台、不产生地裂或爆炸。最高点的头壳与叉口均不出画；无文字、敌人、火焰或声音。",
+        "aspect_ratio": "16:9",
+        "duration": 4,
+        "resolution": "480P",
+        "metadata": {
+          "reference_images": [
+            "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          ]
+        }
+      },
+      "appId": 200001704,
+      "appName": "游戏技术研发"
+    }
+  ],
+  "seedanceComplianceHint": "Seedance 2.x 参考素材在 --apply 时会上传火山虚拟人像库。普通生图和 TTS 配音通常过不了合规；请先换成人像/角色素材或已有 asset://，否则改纯文生。合规失败后不要用同一批 URL 再 --apply。",
+  "plannedNodeIds": [
+    "skills_v_e6d9dfba2d"
+  ],
+  "reusedNodeIds": [
+    "skills_v_e6d9dfba2d",
+    "skills_v_e6d9dfba2d"
+  ],
+  "textNodeId": "skills_v_e6d9dfba2d",
+  "edgesAdded": [
+    {
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_e6d9dfba2d"
+    }
+  ],
+  "resolvedAppId": 200001704,
+  "resolvedAppName": "游戏技术研发",
+  "seedanceCompliance": [
+    {
+      "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png",
+      "assetRef": "asset://asset-20261029154104-ms8jl",
+      "status": "Active",
+      "statusMessage": "",
+      "localPersistWarning": "",
+      "assetId": "asset-20261029154104-ms8jl",
+      "canvasAssetId": "asset-20261029154104-ms8jl",
+      "primaryAssetId": "asset-20261029154104-ms8jl",
+      "primaryProject": "GAI",
+      "projectName": "GAI",
+      "name": "5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40_2026-10-29-07-41-02"
+    }
+  ],
+  "lockHeld": true,
+  "lockHint": "skills_lock kept; pendingTasks in bind.json — next poll --writeback --apply or next --apply will auto-drain completed tasks and unlock when empty",
+  "tasks": [
+    {
+      "nodeId": "skills_v_e6d9dfba2d",
+      "taskId": "vj_8a7a9291-a106-48be-a27a-1f4a5cf6ecc4",
+      "submit": {
+        "task_id": "vj_8a7a9291-a106-48be-a27a-1f4a5cf6ecc4",
+        "status": "pending",
+        "created_at": 1793259666770
+      },
+      "kind": "video",
+      "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次点潮接触后的空中反弹。角色右前方有一块低矮圆润灰色弹性骨台，作为命中参照。0到0.5秒屈膝；0.5到1.1秒蹼足蹬地小跳到骨台正上方，最高只离地约半个身高。1.1到1.5秒自然下落中收腿，右手将骨叉转为竖直向下，叉口比脚底稍低，左手短扶柄；1.5秒叉口轻触骨台上表面，接触点出现一小圈灰青涟漪，手肘屈曲吸收反力；1.5到2.1秒身体立刻由下落转为向上反弹，两脚离开骨台，骨叉收回胸前，披风下摆滞后；2.1到3秒自然落在骨台旁地面，双膝弯曲站稳；3到4秒恢复戒备。先接触再反弹的因果要清楚，只有一次小反弹，不主动加速重砸，不戳穿骨台、不产生地裂或爆炸。最高点的头壳与叉口均不出画；无文字、敌人、火焰或声音。"
+    }
+  ],
+  "workflow": {
+    "id": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "updated_at": "2026-10-29T15:41:07+08:00"
+  },
+  "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+  "canvasName": "独眼提灯者-Idle",
+  "canvasUrl": "https://tech.seasungame.com/gaiclient/renderer/#/drawing",
+  "canvasLinkHint": "请打开画布列表页，在列表中找到「独眼提灯者-Idle」并点击进入查看结果。"
+}

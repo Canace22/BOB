@@ -1,0 +1,13 @@
+{
+  "scope": "Restore the user's seven complete room compositions in a native-resolution world assembly; no game changes",
+  "rooms": [
+    {"id":"R1-01","file":"03-entry.png","alternate":"01-entry-alt.png","name":"外伤坡","mustKeep":["中央完整起伏拱路与桥下空间","顶部长短错落乳白须幕","左侧暖光壳窝、原姿势主角","对侧巨骨与暗底前景"]},
+    {"id":"R1-02","file":"04-filter.png","name":"须筛","mustKeep":["低位连续主路和单尸蟹","左壁三层高台","右侧三固定环与高位入口","成组须幕、深水鱼群"]},
+    {"id":"R1-03","file":"05-tongue.png","name":"舌台","mustKeep":["两个分开的尸蟹高点","中央下垂承重舌膜","完整下层回收路线","右侧独立奖励高台与两侧暖壳"]},
+    {"id":"R1-04","file":"06-boss.png","name":"负壳蟹","mustKeep":["完整负壳蟹造型与巨钳","宽平战场","左右各一座侧台","左安全前室、右侧封帘"]},
+    {"id":"R1-05","file":"07-nursery.png","name":"流膜育窝","mustKeep":["两座中间岛加两端稳定台","三处清晰缺口","缺口下三组透明软床","完整根部支撑、原顶部须幕与两侧窝口"]},
+    {"id":"R1-06","file":"08-upper.png","name":"喷气孔上层","mustKeep":["三段升高的大平台","底部完整回收坡","右上奖励与封闩口","原远骨、鱼群与顶部须幕"]},
+    {"id":"R1-07","file":"02-memory.png","name":"鲸须记忆袋","mustKeep":["四个横向固定锚环","三组落脚平台与两道缺口","右端完整奖励构图","厚须幕、深水层与近景框边"]}
+  ],
+  "rules":["No generative redraw or reduction of room interiors.","Connectors are separately referenced joint-concept strips behind room images, not pixel-perfect seamless validation.","Keep the latest user-provided appearance even where earlier anatomical variants differ; do not silently remove roofs, platforms or rewards.","Reward clusters in art do not add gameplay reward instances.","The previous condensed panorama is historical and cannot be described as covering these complete room designs."]
+}

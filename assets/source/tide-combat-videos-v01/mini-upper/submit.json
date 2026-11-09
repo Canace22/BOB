@@ -1,0 +1,198 @@
+{
+  "intent": "image_to_video",
+  "l1": {
+    "intent": "image_to_video",
+    "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次挑潮向上攻击。0到0.6秒低重心戒备；0.6到0.9秒双膝微屈、右肘短收；0.9到1.3秒后蹼足蹬地转髋，右肘沿脸前外侧向上送叉，叉口朝正上方，上挑终点高过头顶但与头壳保持间隙。左手向侧下平衡，两只脚始终踩地。叉口只留一小道灰青向上弧纹，快速消散。1.3到2秒弯肘收叉回到胸前，披风滞后落下；2到4秒稳定戒备。攻击从下向上清楚有力，不向前刺，不起跳，不绕头横扫，不发射弹丸。骨叉与画面上边始终保留15%安全边距，无文字、敌人、火焰、大爆炸或声音。\n",
+    "model": "doubao-seedance-2-0-mini-260615",
+    "wait": false,
+    "aspectRatio": "16:9",
+    "resolution": "480P",
+    "duration": 4,
+    "sourceNodeId": "skills_img_0bebad861f",
+    "generationType": "reference",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "session": {
+    "sessionId": "sess_6b22b2880aa9",
+    "state": "released",
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "marker": "skills_sess_6b22b2880aa9",
+    "baseUpdatedAt": "2026-10-29T15:37:55+08:00",
+    "trustedUrlCount": 1,
+    "history": [
+      "locked",
+      "transforming",
+      "validating",
+      "applying",
+      "task_running",
+      "applying_result",
+      "released"
+    ],
+    "error": null
+  },
+  "dryRun": false,
+  "bind": {
+    "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "boundAt": 1793259475,
+    "skillsSessionId": "sess_6b22b2880aa9",
+    "pendingTasks": [
+      {
+        "taskId": "vj_dad04d8c-dd78-4f8c-9826-ec1b9d0060db",
+        "nodeId": "skills_v_63e3bd53d7",
+        "kind": "video",
+        "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次挑潮向上攻击。0到0.6秒低重心戒备；0.6到0.9秒双膝微屈、右肘短收；0.9到1.3秒后蹼足蹬地转髋，右肘沿脸前外侧向上送叉，叉口朝正上方，上挑终点高过头顶但与头壳保持间隙。左手向侧下平衡，两只脚始终踩地。叉口只留一小道灰青向上弧纹，快速消散。1.3到2秒弯肘收叉回到胸前，披风滞后落下；2到4秒稳定戒备。攻击从下向上清楚有力，不向前刺，不起跳，不绕头横扫，不发射弹丸。骨叉与画面上边始终保留15%安全边距，无文字、敌人、火焰、大爆炸或声音。"
+      }
+    ],
+    "name": "独眼提灯者-Idle",
+    "appId": 200001704,
+    "appName": "游戏技术研发"
+  },
+  "sessionDir": "C:\\Users\\Kingsoft\\.codex\\artifacts\\tide-skills-video-session",
+  "pendingDrained": [],
+  "ops": [
+    {
+      "op": "add_node",
+      "node": {
+        "id": "skills_v_63e3bd53d7",
+        "type": "video",
+        "position": {
+          "x": 3481.814052629361,
+          "y": 1502.8394827043232
+        },
+        "data": {
+          "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次挑潮向上攻击。0到0.6秒低重心戒备；0.6到0.9秒双膝微屈、右肘短收；0.9到1.3秒后蹼足蹬地转髋，右肘沿脸前外侧向上送叉，叉口朝正上方，上挑终点高过头顶但与头壳保持间隙。左手向侧下平衡，两只脚始终踩地。叉口只留一小道灰青向上弧纹，快速消散。1.3到2秒弯肘收叉回到胸前，披风滞后落下；2到4秒稳定戒备。攻击从下向上清楚有力，不向前刺，不起跳，不绕头横扫，不发射弹丸。骨叉与画面上边始终保留15%安全边距，无文字、敌人、火焰、大爆炸或声音。",
+          "model": "doubao-seedance-2-mini",
+          "generationType": "reference",
+          "generationMode": "image",
+          "status": "idle",
+          "taskIds": [],
+          "skills_marker": "skills_sess_6b22b2880aa9",
+          "creationSource": "chaos-skills",
+          "contractModel": "doubao-seedance-2-0-mini-260615",
+          "aspectRatio": "16:9",
+          "ratio": "16:9",
+          "duration": "4",
+          "resolution": "480P",
+          "title": "制作4秒2D横版游戏角色攻击动作效果视频，只展示…",
+          "label": "制作4秒2D横版游戏角色攻击动作效果视频，只展示…",
+          "hasUpstream": true,
+          "inheritedFrom": "skills_img_0bebad861f",
+          "inheritedData": {
+            "type": "image",
+            "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          }
+        }
+      }
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_63e3bd53d7",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image-input",
+          "text": "",
+          "content": ""
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "add_edge",
+      "id": "e-skills_img_0bebad861f-skills_v_63e3bd53d7",
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_63e3bd53d7",
+      "sourceHandle": "output",
+      "targetHandle": "input"
+    },
+    {
+      "op": "patch_node_data",
+      "nodeId": "skills_v_63e3bd53d7",
+      "set": {
+        "hasUpstream": true,
+        "inheritedFrom": "skills_img_0bebad861f",
+        "inheritedData": {
+          "type": "image",
+          "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+        }
+      },
+      "_kernel": true
+    },
+    {
+      "op": "submit_video",
+      "nodeId": "skills_v_63e3bd53d7",
+      "model": "doubao-seedance-2-0-mini-260615",
+      "body": {
+        "model": "doubao-seedance-2-0-mini-260615",
+        "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次挑潮向上攻击。0到0.6秒低重心戒备；0.6到0.9秒双膝微屈、右肘短收；0.9到1.3秒后蹼足蹬地转髋，右肘沿脸前外侧向上送叉，叉口朝正上方，上挑终点高过头顶但与头壳保持间隙。左手向侧下平衡，两只脚始终踩地。叉口只留一小道灰青向上弧纹，快速消散。1.3到2秒弯肘收叉回到胸前，披风滞后落下；2到4秒稳定戒备。攻击从下向上清楚有力，不向前刺，不起跳，不绕头横扫，不发射弹丸。骨叉与画面上边始终保留15%安全边距，无文字、敌人、火焰、大爆炸或声音。",
+        "aspect_ratio": "16:9",
+        "duration": 4,
+        "resolution": "480P",
+        "metadata": {
+          "reference_images": [
+            "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png"
+          ]
+        }
+      },
+      "appId": 200001704,
+      "appName": "游戏技术研发"
+    }
+  ],
+  "seedanceComplianceHint": "Seedance 2.x 参考素材在 --apply 时会上传火山虚拟人像库。普通生图和 TTS 配音通常过不了合规；请先换成人像/角色素材或已有 asset://，否则改纯文生。合规失败后不要用同一批 URL 再 --apply。",
+  "plannedNodeIds": [
+    "skills_v_63e3bd53d7"
+  ],
+  "reusedNodeIds": [
+    "skills_v_63e3bd53d7",
+    "skills_v_63e3bd53d7"
+  ],
+  "textNodeId": "skills_v_63e3bd53d7",
+  "edgesAdded": [
+    {
+      "source": "skills_img_0bebad861f",
+      "target": "skills_v_63e3bd53d7"
+    }
+  ],
+  "resolvedAppId": 200001704,
+  "resolvedAppName": "游戏技术研发",
+  "seedanceCompliance": [
+    {
+      "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40.png",
+      "assetRef": "asset://asset-20261029153756-h9zb6",
+      "status": "Active",
+      "statusMessage": "",
+      "localPersistWarning": "",
+      "assetId": "asset-20261029153756-h9zb6",
+      "canvasAssetId": "asset-20261029153756-h9zb6",
+      "primaryAssetId": "asset-20261029153756-h9zb6",
+      "primaryProject": "GAI",
+      "projectName": "GAI",
+      "name": "5e8873f1-b00a-401e-9bf1-6cbf3e9c4c40_2026-10-29-07-37-55"
+    }
+  ],
+  "lockHeld": true,
+  "lockHint": "skills_lock kept; pendingTasks in bind.json — next poll --writeback --apply or next --apply will auto-drain completed tasks and unlock when empty",
+  "tasks": [
+    {
+      "nodeId": "skills_v_63e3bd53d7",
+      "taskId": "vj_dad04d8c-dd78-4f8c-9826-ec1b9d0060db",
+      "submit": {
+        "task_id": "vj_dad04d8c-dd78-4f8c-9826-ec1b9d0060db",
+        "status": "pending",
+        "created_at": 1793259479504
+      },
+      "kind": "video",
+      "prompt": "制作4秒2D横版游戏角色攻击动作效果视频，只展示一次动作。严格参考同一角色：圆形象牙单镜片头壳、青绿披风、左髋密封琥珀菌灯、红绳、右手短柄U形双叉骨鸣器、两只蹼足；手绘描边厚涂。人物朝右三分之四侧面，横向16:9固定远景，纯米灰背景，无运镜无切镜，人物站立高度占画面45%，地面位于画面高度82%，头顶上方和两侧留足运动空间。全身、叉口、披风和蹼足全程完整入画。骨叉是短柄双叉共鸣器，固定右手握柄、刚性不伸缩；灯挂在髋部，红绳自然跟随。只演示一次挑潮向上攻击。0到0.6秒低重心戒备；0.6到0.9秒双膝微屈、右肘短收；0.9到1.3秒后蹼足蹬地转髋，右肘沿脸前外侧向上送叉，叉口朝正上方，上挑终点高过头顶但与头壳保持间隙。左手向侧下平衡，两只脚始终踩地。叉口只留一小道灰青向上弧纹，快速消散。1.3到2秒弯肘收叉回到胸前，披风滞后落下；2到4秒稳定戒备。攻击从下向上清楚有力，不向前刺，不起跳，不绕头横扫，不发射弹丸。骨叉与画面上边始终保留15%安全边距，无文字、敌人、火焰、大爆炸或声音。"
+    }
+  ],
+  "workflow": {
+    "id": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+    "updated_at": "2026-10-29T15:38:00+08:00"
+  },
+  "workflowId": "8f27cc11-039d-4cdb-8423-7271b5c5682e",
+  "canvasName": "独眼提灯者-Idle",
+  "canvasUrl": "https://tech.seasungame.com/gaiclient/renderer/#/drawing",
+  "canvasLinkHint": "请打开画布列表页，在列表中找到「独眼提灯者-Idle」并点击进入查看结果。"
+}

@@ -1,0 +1,102 @@
+{
+  "intent": "read",
+  "data": {
+    "id": "143ce895-ff62-4d03-9804-75ca654afaa4",
+    "user_id": "zhaosongju",
+    "name": "须门遗港-自然垂须动画",
+    "description": "须门遗港自然垂须视频：根部固定，海水推动柔性弯曲，末端滞后回弹，各簇异步。",
+    "nodes": [
+      {
+        "id": "skills_img_3ef6d33800",
+        "type": "image-input",
+        "position": {
+          "x": 100,
+          "y": 200
+        },
+        "data": {
+          "creationSource": "chaos-skills",
+          "fromUpload": true,
+          "label": "fd14aaf9-8a2a-4e68-8b00-6d8a03c80219",
+          "model": "",
+          "output": {
+            "thumbnail_url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/a6913fd4-f93c-445f-9bde-ca88482aa609.webp",
+            "type": "image",
+            "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png",
+            "urls": [
+              "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png"
+            ]
+          },
+          "pending_task_ids": [],
+          "prompt": "",
+          "role": "media_attach",
+          "skills_marker": "skills_sess_d98a9f80a10a",
+          "sourceImages": [
+            {
+              "thumbnail_url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png",
+              "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png"
+            }
+          ],
+          "status": "ready",
+          "thumbnail_url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png"
+        }
+      },
+      {
+        "id": "skills_v_086075fcec",
+        "type": "video",
+        "position": {
+          "x": 100,
+          "y": 520
+        },
+        "data": {
+          "aspectRatio": "16:9",
+          "contractModel": "doubao-seedance-2-0-260128",
+          "creationSource": "chaos-skills",
+          "duration": "5",
+          "generationMode": "image",
+          "generationType": "image",
+          "hasUpstream": true,
+          "inheritedData": {
+            "thumbnail_url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png",
+            "type": "image",
+            "url": "https://xsj-ai-orange.seasungame.com/prod/chapterimg/20261029/fd14aaf9-8a2a-4e68-8b00-6d8a03c80219.png"
+          },
+          "inheritedFrom": "skills_img_3ef6d33800",
+          "label": "Locked-off 2D painted un…",
+          "model": "doubao-seedance-2",
+          "prompt": "Locked-off 2D painted underwater cavern shot, exactly preserve the reference composition, architecture, arched road, colors, lighting direction and small character pose. Animate the ivory baleen fringes hanging from the ceiling and the distant hanging fringe as delicate flexible filaments immersed in seawater. Their attachment points remain absolutely stationary. A gentle irregular lateral current produces small traveling bends progressing down each filament: upper sections barely move, middle sections bend softly, tips lag behind then slowly settle with damped rebound. Neighboring filaments and separate clusters respond with subtly different phases and amplitudes, retaining their lengths, fine tapered silhouettes and strand separation. Motion is continuous, slow, fluid and clearly visible at the tips, never rigid pendulum rotation or synchronized blanket waving. Gentle water resistance and buoyancy; avoid snapping or whipping. Keep rock ceiling, walls, road, foreground, lamp, character and framing stable. No camera pan, zoom, cuts, global image warping, melting geometry, extra appendages, merging strands, stretching roots or exposure flicker. The animation focus is the natural underwater movement of the baleen.",
+          "ratio": "16:9",
+          "resolution": "1080P",
+          "skills_marker": "skills_sess_d98a9f80a10a",
+          "status": "pending",
+          "taskId": "vj_875e639c-783c-41ec-bbf7-41c0a525d35a",
+          "taskIds": [
+            "vj_875e639c-783c-41ec-bbf7-41c0a525d35a"
+          ],
+          "title": "Locked-off 2D painted un…"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-skills_img_3ef6d33800-skills_v_086075fcec",
+        "source": "skills_img_3ef6d33800",
+        "target": "skills_v_086075fcec"
+      }
+    ],
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    },
+    "pinLabels": {
+      "skills_lock": "sess_d98a9f80a10a|1793254754"
+    },
+    "canEdit": true,
+    "created_at": "2026-10-29T14:11:14+08:00",
+    "updated_at": "2026-10-29T14:14:15+08:00"
+  },
+  "workflowId": "143ce895-ff62-4d03-9804-75ca654afaa4",
+  "canvasName": "须门遗港-自然垂须动画",
+  "canvasUrl": "https://tech.seasungame.com/gaiclient/renderer/#/drawing",
+  "canvasLinkHint": "请打开画布列表页，在列表中找到「须门遗港-自然垂须动画」并点击进入查看结果。"
+}

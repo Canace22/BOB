@@ -4,11 +4,11 @@
 
 1. 2026-10-28 将 `G:/鲸落万物生/godot`、`G:/鲸落万物生/work` 完整迁入 BOB（共 68,424 个文件，逐项核对了存在性和大小），并修正脚本与入口文档中的旧路径，修正清单见 `tools/migration-path-updates.json`。
 2. 同日收窄提交范围（提交 `ee37312`）：编辑器缓存、验收截图、第三方工具和日志取消跟踪，只保留在本地。
-3. 同日决定以 Godot 重做正式版本：新工程放在 `game/`，旧的 `godot/`、`work/`、`mvp/`、`mvp-v2/`、`mvp-nightmare/` 整体移入 `legacy/`，见 [legacy/README.md](../legacy/README.md) 和[架构说明](architecture.md)。
+3. 同日决定以 Godot 重做正式版本：新工程放在 `game/`，旧的 `godot/`、`work/`、`mvp/`、`mvp-v2/`、`mvp-nightmare/` 整体移入 `legacy/`，见 [legacy/README.md](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/README.md) 和[架构说明](architecture.md)。
 
 ## 当前入库范围
 
-- `legacy/godot/`：三个旧 Godot 工程的场景、脚本、素材、制作文档和制作历史。
+- `legacy/godot/`：三个旧 Godot 工程的场景、脚本、素材、制作文档和制作记录；制作历史中的构建/代码 ZIP 快照只留本地，见[资源存储与清理](resource-storage.md)。
 - `legacy/work/`：旧制作脚本与资料。
 - `legacy/web/`：三个 Web 原型。
 - 以下内容只保留在本地，不入库；需要旧版本时可从 `8a3a20d` 及更早的提交中找回（当时路径没有 `legacy/` 前缀）：
@@ -29,7 +29,7 @@ git lfs pull
 ## 路径与运行
 
 - 旧 Godot 工程入口：`legacy/godot/first-level/project.godot`、`legacy/godot/first-level-artmatch/project.godot`、`legacy/godot/first-level-v02-graybox/project.godot`。
-- Web 原型的服务和发布脚本已改为按新位置解析仓库根目录，运行方式见 [legacy/README.md](../legacy/README.md)。
+- Web 原型的服务和发布脚本已改为按新位置解析仓库根目录，运行方式见 [legacy/README.md](https://github.com/Canace22/BOB/blob/codex/archive-legacy-20261103/legacy/README.md)。
 - `legacy/work/` 中的制作脚本写死了原机器的绝对路径（`G:/鲸落万物生`、`C:/Users/Kingsoft`），`outputs/` 和 `builds/` 也不在本仓库中。这些脚本只作为历史记录，不能直接运行。历史日志、快照和验收记录中的旧路径描述的是当时的环境。
 
 ## 验证

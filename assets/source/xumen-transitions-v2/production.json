@@ -1,0 +1,89 @@
+{
+  "stage": "six_edges_technical_visual_ai_complete",
+  "edges": {
+    "E02": "online_technical_visual_ai_passed",
+    "E03": "online_technical_visual_ai_passed",
+    "E04": "online_technical_visual_ai_passed",
+    "E33": "online_technical_visual_ai_passed",
+    "E35": "online_technical_visual_ai_passed"
+  },
+  "precondition": "E01 online passed",
+  "next": "No further connection production in current scope; user aesthetic and deeper old-room polish recorded separately",
+  "verified": {
+    "check_errors": 0,
+    "engineering": 57,
+    "E02_native": 14,
+    "connected_route": 38,
+    "independent_reload": 2,
+    "chrome_local": 10,
+    "evidence": "game/build/qa/xumen-transitions/",
+    "user_aesthetic": "not_signed"
+  },
+  "publication_E02": {
+    "source": "3c6f24f83a192b859ad6ec623476bada6fa1359b",
+    "pages": "571d75778296d86b3e798b77839626da1a544850",
+    "run": 41921810556,
+    "deployment": "success",
+    "online_keyboard": "10/10 errors0"
+  },
+  "verified_E03": {
+    "native": 14,
+    "engineering": 57,
+    "connected": 38,
+    "E01_regression": 23,
+    "chrome_local": 10
+  },
+  "publication_E03": {
+    "source": "6af59ef0dc0e52283d543cee19ff95f0af0abf15",
+    "pages": "f09f26237be1495cb8490df01c4df59c6c5617fd",
+    "run": 41929967970,
+    "deployment": "success",
+    "online_keyboard": "10/10 errors0,52s playback"
+  },
+  "verified_E04": {
+    "engineering": 57,
+    "native": 15,
+    "connected": 38,
+    "chrome_local": 11,
+    "motion_seconds": 52,
+    "evidence": "game/build/qa/xumen-transitions/E04-*"
+  },
+  "publication_E04": {
+    "source": "5b86292a0dd35ea4872dce21f96f5e3468998e97",
+    "pages": "f05ebbcf37b6582a13742190643782e19d181144",
+    "run": 41936324274,
+    "deployment": "success",
+    "online_keyboard": "11/11 errors0,normal boss fight,52s motion"
+  },
+  "publication_E33": {
+    "source": "a99022020de1a72e2ad0ae422aebba1913398527",
+    "pages": "f587429d3405b580147e29dfac11118e0bbae0a9",
+    "run": 41940682360,
+    "deployment": "success",
+    "online_keyboard": "9/9 errors0,52s playback"
+  },
+  "verified_E35": {
+    "check_errors": 0,
+    "engineering": 57,
+    "native": 29,
+    "E33_regression": 27,
+    "connected": 38,
+    "independent_reload": 2,
+    "chrome_local": 9,
+    "motion_seconds": 52,
+    "resources_missing": 0
+  },
+  "publication_E35": {
+    "source": "91b75ea8e656fafa061f0862cf8944613e825776",
+    "pages": "b5849b203b0d38558bf6ea008a7ddda4552f7e5d",
+    "run": 41943011371,
+    "deployment": "success",
+    "online_keyboard": "9/9 errors0,actual same-player up/down roundtrip,52s playback"
+  },
+  "final_package_E33_regression": {
+    "chrome": 8,
+    "errors": 0,
+    "evidence": "game/build/qa/xumen-transitions/e33-online-final-regression",
+    "long_playback": "omitted here; previous E33 online52s retained"
+  }
+}

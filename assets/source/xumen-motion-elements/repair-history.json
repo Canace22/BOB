@@ -1,0 +1,38 @@
+[
+  {
+    "stage": "SC02",
+    "failure": "GDScript could not infer c after Image.duplicate()",
+    "repair": "Explicit Image types for duplicated bitmap buffers",
+    "retest": "Native export completed:146 PNGs"
+  },
+  {
+    "stage": "SC03",
+    "failure": "Foreground backing replaced visible midground too broadly",
+    "repair": "Limit backing alpha to foreground swept region",
+    "retest": "Fixed-camera and both pan endpoints inspected"
+  },
+  {
+    "stage": "SC04",
+    "failure": "Sinusoidal swim paths made fish flatten and turn together",
+    "repair": "Individual tail atlases plus continuous one-way flow with transparent boundary recycling",
+    "retest": "64s actual render, fish displacement and wrap-alpha checks"
+  },
+  {
+    "stage": "SC04",
+    "failure": "Right-side curtain crop included static wall pixels",
+    "repair": "Rigid root mask at left/right attachment and32px horizontal transparent padding",
+    "retest": "Time03 render and loop endpoints"
+  },
+  {
+    "stage": "SC04",
+    "failure": "Caustic texture alpha was multiplied twice, making changes too weak",
+    "repair": "Vertex tint separated from a single fragment texture sample",
+    "retest": "Actual Godot screenshots and12s rendered loop"
+  },
+  {
+    "stage": "SC06",
+    "failure": "Could not create directory: res://evidence; Can't save PNG in packed resources",
+    "repair": "No unsolicited evidence writes in normal preview; explicit output argument or user directory for requested captures",
+    "retest": "Final portable package exited0; package.log has no errors; actual PNGs saved"
+  }
+]
