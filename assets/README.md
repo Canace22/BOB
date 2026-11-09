@@ -4,6 +4,14 @@
 
 制作前阅读[美术风格规范](art-style.md)，查找[原画集](../docs/鲸腹遗城原画集/README.md)和[资源台账](catalog.md)。正式画面使用入库的2D位图；分层、鱼群、垂须、气泡等制作方法见[场景与环境动态](../docs/scene-and-environment-production.md)。
 
+## 现在先打开
+
+| 要找 | 打开 |
+| --- | --- |
+| 最新地图 | [七房进阶总览](source/xumen-challenge-v1/review/七房进阶-总览.png)，入口说明在[原画集](../docs/鲸腹遗城原画集/README.md) |
+| 正在玩的关卡 | `game/content/whalebelly/environment/unified/unified_world.tscn` |
+| 按名字搜全部素材 | [线上预览](https://canace22.github.io/BOB/art/)，或本机运行 `npm --prefix assets/manager start` |
+
 ## 查看与管理
 
 直接打开[线上美术资源预览](https://canace22.github.io/BOB/art/)，可搜索、筛选、放大和下载素材，查看完整需求与拼装预览。线上为只读快照；更新命令为 `node tools/deploy-art-pages.mjs`，详见[预览与发布说明](manager/README.md)。

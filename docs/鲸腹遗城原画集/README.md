@@ -1,5 +1,12 @@
 # 鲸腹遗城原画集
 
+要看当前地图，先打开这两处：
+
+- [七房进阶总览](../../assets/source/xumen-challenge-v1/review/七房进阶-总览.png)：2026-11-06 的最新整图。下层从外伤坡到育窝，上层是喷气孔和记忆袋。
+- [原画册 · 实景总览](须门遗港精修设计/原画册.html#real-scene)：同一张图，可关回旧地形、打开候选落点。
+
+游戏里正在跑的连续世界在 `game/content/whalebelly/environment/unified/unified_world.tscn`。台面坐标在 [总布局.svg](../../assets/source/xumen-overall-layout-v1/总布局.svg)。
+
 制作新资源先看[全局美术风格规范](../../assets/art-style.md)：基准图、配色、材质、角色识别和验收要求。
 
 - [连续世界设计原画册](连续世界设计/原画册.html)：2026-11-04，6张新原画，整鲸空间、首章七房连续全景、三段房门接缝、跨区过渡；含可点击36房39边图。概念设计，尚未作为无缝关卡接入。
