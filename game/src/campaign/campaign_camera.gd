@@ -15,10 +15,6 @@ var was_following: bool = false
 
 func update_follow(dt:float) -> void:
 	if not is_instance_valid(host.player):return
-	var connected: XumenConnectedWorld=host.get("connected_world")
-	if connected!=null and connected.enabled and not connected.chunks.is_empty():
-		connected.camera_follow(dt)
-		return
 	var follow:bool=(host.zoomed or host.reference_camera_active()) and not host.reference_visible and host.capture_path.is_empty() and host.layer_solo < 0
 	var world_size:Vector2=host.point(host.room.size)
 	var changed_room: bool = tracked_room != str(host.room.id)

@@ -1,8 +1,6 @@
 # 鲸腹遗城 · 当前工程
 
-须门遗港已重构为连续世界母版＋手绘贴图地形，覆盖原七房/六连接；同一主路轮廓跨越四条水平接点。Godot可编辑场景在 `content/whalebelly/environment/unified/unified_world.tscn`，可编辑绘画母版及制作方式见[统一重制](../assets/source/xumen-unified-v1/README.md)。玩法、角色、Boss、能力门与V6沿用原实现；当前验收与性能边界见[进度](progress.md)。
-
-2026-11-04：须门遗港七房现位于同一物理空间，四段主路和两条上层支路由实际地形连接。直接沿道路行走跨房，不按E换图，也不使用过门快照；角色实例、速度和镜头连续。上层通道支持S+空格逐层下降，浮游/锚环条件保留。V6仍保存房间ID与局部检查点。来源、母版、验收及边界见[实际连通制作说明](../assets/source/xumen-connected-v2/README.md)；[V1](../assets/source/xumen-continuity-v1/README.md)仅为之前的视觉接入记录。
+2026-11-04：须门遗港七房已接入连续空间设计的共用口腔远景、六条连接双向动件与0.24秒过门混合；C地图以鲸头原画定位主路和上层支路。原道路与玩法保留，仍按房间加载。来源、母版、验收及后续边界见[制作说明](../assets/source/xumen-continuity-v1/README.md)。
 
 用Godot 4.7.2打开 `project.godot`，按F5进入正式标题界面，选择新旅途或继续已有存档。入口仍为 `content/whalebelly/main.tscn`，实际运行WhalebellyRuins七房主关卡。
 
@@ -29,7 +27,7 @@ node tools/godot.mjs test
 
 找不到引擎时，将 `GODOT` 设置为现有Godot 4.7.2 console可执行文件。运行素材由 `art/manifest.json` 从 `assets/` 同步，不依赖旧工程目录。图片来源、工作台工程与压缩方式见 [Framecraft批次](../assets/source/framecraft-runtime/README.md)。
 
-当前Web启动文件约103.15 MiB，较本轮压缩前减少约30%。50张场景使用原尺寸的轻度有损导入；原件、Alpha及动画数据保留，角色和特效仍为保真编码，具体设置与恢复方式见[本批说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
+当前[在线试玩](https://canace22.github.io/BOB/godot/)的启动下载约112.30 MiB，首次进入需要等待。场景压缩设置与原件恢复方式见[资源说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
 
 ## R1后续六房环境
 
@@ -48,9 +46,3 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 模块边界、发布和资源审计见[架构](../docs/architecture.md)，本轮执行结果见[进度](progress.md)。
 
 资源维护：本体和世界FX分别保存帧数，释放/落地从FX自己的 `event_frame` 启动。影潮穿行复用dash本体加冷青色调；深钟复用dive本体和环，升级差异保留在技能逻辑中。资源审计运行 `node game/tools/audit_resources.mjs`；覆盖表用仓库根目录 `python build_asset_coverage.py` 更新，不因此自动认可候选美术。
-
-## E01过渡样板
-
-外伤坡→须筛采用联合骨路、斜拱和独立环境动件；原角色与地形保持。通过正常A/D行走往返。来源与复跑见[制作说明](../assets/source/xumen-e01-seam-v1/README.md)，最新发布状态见[进度](progress.md)。
-
-其余主路E02/E03/E04采用专用骨膜渐变；E33/E35使用独立高幅骨壁和八/十级原单向平台，保持同一角色自然跨房。上行空格，下穿S+空格；浮游W可制动，能力仍遵循原门槛，F9只作不存档练习。来源、母版与验收见[上行接头说明](../assets/source/xumen-vertical-v1/README.md)及进度。

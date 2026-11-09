@@ -52,15 +52,14 @@ func _ready() -> void:
 		mist.texture = texture
 		mist.scale = Vector2(3.2, 1.1)
 		fog_node.add_child(mist)
-	if host.connected_world==null or not host.connected_world.enabled:
-		ambience = AudioStreamPlayer.new()
-		ambience.name = "WaterAmbience"
-		# Web Sample duplicates the 24-second buffer on room re-entry. Streaming
-		# keeps ambience audible without that failing AudioContext allocation path.
-		if OS.has_feature("web"): ambience.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
-		ambience.volume_db = -80.0
-		ambience.stream = make_ambience()
-		add_child(ambience)
+	ambience = AudioStreamPlayer.new()
+	ambience.name = "WaterAmbience"
+	# Web Sample duplicates the 24-second buffer on room re-entry. Streaming
+	# keeps ambience audible without that failing AudioContext allocation path.
+	if OS.has_feature("web"): ambience.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
+	ambience.volume_db = -80.0
+	ambience.stream = make_ambience()
+	add_child(ambience)
 	on_room_loaded()
 
 func _part(part_name: String, depth: int, callback: Callable) -> Node2D:

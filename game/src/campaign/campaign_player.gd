@@ -102,10 +102,7 @@ func _physics_process(dt:float) -> void:
 	super._physics_process(dt)
 	run_visual.update(dt,position.x-before_move_x)
 	_check_door_entry()
-	if host.connected_world!=null and host.connected_world.enabled:
-		var chapter_bounds: Vector2=host.connected_world.walk_bounds()
-		position.x=clampf(position.x,chapter_bounds.x,chapter_bounds.y)
-	else:position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
+	position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
 	if is_on_floor() and position.y<float(host.room.size[1])-65 and stable_floor_point():last_safe=position
 	if health<=0:return
 	for bed:Dictionary in host.room.get("soft_beds",[]):
@@ -131,9 +128,6 @@ func _read_input() -> void:
 		var modern:String={"attack":"tp_attack","dash":"tp_dash","interact":"tp_interact"}[old]
 		if Input.is_action_just_pressed(old) and not Input.is_action_just_pressed(modern):request_action({"attack":"strike_01","dash":"A1_dash","interact":"interact"}[old])
 	var pressed_jump:bool=Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("tp_jump")
-	if pressed_jump and Input.is_action_pressed("down") and is_on_floor() and host.connected_world!=null and host.connected_world.enabled:
-		if host.connected_world.passages.on_branch_step(position+host.connected_world.origin):
-			drop_timer=.35;jump_buffer=0;coyote=0;velocity.y=160
 	if pressed_jump and Input.is_action_pressed("down") and host.room_index==2 and position.x>700 and position.x<970 and position.y<730 and is_on_floor():
 		var mechanism:Node=host.scenery.get_node_or_null("VisualMechanisms")
 		if mechanism!=null and float(mechanism.membrane_drop)>15:
@@ -246,7 +240,6 @@ func respawn() -> void:
 	if is_instance_valid(host):host.respawn.call_deferred()
 
 func _check_door_entry() -> void:
-	if host.connected_world!=null and host.connected_world.enabled:return
 	if not automatic_doors or not controls_enabled or health<=0 or transition_locked or state=="interact":return
 	for i in range(host.room.get("doors",[]).size()):
 		var door:Dictionary=host.room.doors[i]
