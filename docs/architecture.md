@@ -4,7 +4,7 @@
 
 七房默认使用角色跟随镜头，Tab统一切换跟随/全景；原图对照、截图和分层查看保留全景行为。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
 
-当前正常入口启用`src/campaign/connected/`：七个原场景同时拥有物理位置，六条连接具有可走地形；角色跨房只切换上下文并等量重定位局部坐标，角色实例和绝对空间位置保留。四条主路为平接地形，两条上层支路为单向平台通道。旧V6保存局部房间坐标，暂停/重载/死亡继续走原接口。旧专项默认qa隔离房间以回归原机制，本批`connected_world_qa.gd`显式启用正式连通行为，不能用旧专项冒充连续世界验收。详细边界见[制作说明](../assets/source/xumen-connected-v2/README.md)。
+当前正式入口按房间加载，使用[须门遗港场景衔接](../assets/source/xumen-continuity-v1/README.md)的共用远景、连接动件和过门混合。后续[实际连通场景](../assets/source/xumen-connected-v2/README.md)及[统一母版](../assets/source/xumen-unified-v1/README.md)的制作源仍保留在资源库。
 
 ## 代码与内容
 
@@ -75,9 +75,3 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。大包分别拆为64MiB的压缩/原始分片，并检查分片及串接SHA256；缺少解压API的浏览器使用原始分片。导出保留原文件，发布只在完整原始分片覆盖后省略超限单文件。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源；最终线上启动结果另见进度。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。
-
-E01专用视觉位于src/campaign/connected/e01_transition.gd，独立世界锚点与host.clock；章级单一水床、持久弹体和FX原点迁移由connected_world负责。create_room_enemies复用原创建逻辑，提前准备E01邻房但不启用其战斗。原V6及地形数据不变，详见[样板](../assets/source/xumen-e01-seam-v1/README.md)。上行连接的高幅远景/中景骨壁/独立台面由`authored_shafts.gd`加载坐标清单，`physical_passages`仅保留原碰撞，统一随章原点平移；来源和验收见[骨壁生台](../assets/source/xumen-vertical-v1/README.md)。
-
-## 须门统一场景
-
-当前默认连通入口叠加 `content/whalebelly/environment/unified/unified_world.tscn`，统一Far/Middle同源切块、独立纹理网格地形和前景，不按房间交接绘画。原七房仍持有物理、敌人和机关，旧绘画/动态停用；相机视差只由unified_scene管理，膜面Shader读取原机关下沉。分层母版、生成源码和限制见[制作源](../assets/source/xumen-unified-v1/README.md)。

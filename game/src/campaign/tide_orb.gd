@@ -12,7 +12,7 @@ var radius: float = 7.0
 func _ready() -> void:
 	add_to_group("tide_player_projectiles")
 	if is_instance_valid(caster):
-		caster.tree_exiting.connect(_caster_exiting)
+		caster.tree_exiting.connect(queue_free)
 		caster.damaged.connect(queue_free)
 	collision_layer=0
 	collision_mask=1
@@ -53,6 +53,3 @@ func _physics_process(dt:float) -> void:
 				queue_free()
 				return
 	if life<=0 or not wall.is_empty(): queue_free()
-
-func _caster_exiting() -> void:
-	if not is_instance_valid(caster) or not caster.scene_reparenting:queue_free()

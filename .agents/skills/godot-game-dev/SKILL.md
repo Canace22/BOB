@@ -7,6 +7,8 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 
 先读[架构](../../../docs/architecture.md)、[工程规则](../../../game/AGENTS.md)和[进度](../../../game/progress.md)，核对 `project.godot`。当前默认入口是 `content/whalebelly/main.tscn`。完整旧工程、模块化五房、旧资源与专用测试已移到 `codex/archive-legacy-20261103`，按[归档说明](../../../docs/legacy-archive.md)独立检出。
 
+当前须门遗港恢复为[分房加载的场景衔接版](../../../assets/source/xumen-continuity-v1/README.md)；下方七房实际连通、接头样板和统一母版属于后续开发记录，按进度核对运行入口后再选对应验收。
+
 ## 开发与资源
 
 - 源码在 `game/src/campaign/`，房间在 `game/content/whalebelly/r1/`，当前环境在 `game/content/whalebelly/environment/`。保持稳定ID、原角色技能、七房内容和V6存档；不以旧静态版本替代已恢复的动态效果。
@@ -34,6 +36,8 @@ description: 在BOB的game/正式Godot工程开发、修复与接入，执行资
 推送后检查部署成功、线上 `godot/build.json` 的源码提交和当前入口，再跑受影响线上按键路线。把源码/发布提交、结果和限制写入 `game/progress.md`；推送成功不能直接当作上线成功。
 
 ## 恢复与边界
+
+恢复已发布版本时，先区分验收文档提交与实际运行源码。如果已有当时通过验收的 Pages 构建，可校验包清单和分片后复用同一 `godot/` 子树，以当前 `gh-pages` 为父提交正常推送；确认差异仅在 `godot/`。若同时恢复源码，保留后续美术制作源，按旧资源清单核对运行副本，避免同步时引入同路径的新版文件。
 
 检查部署状态与线上 `godot/build.json` 的源码提交，再对线上入口运行同一浏览器路线。把源码提交、发布提交、结果和限制记入 `game/progress.md`。发布失败保留稳定远端，不把本地成功记成已上线。
 

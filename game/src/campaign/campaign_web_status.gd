@@ -15,7 +15,6 @@ func _ready() -> void:
 func snapshot() -> Dictionary:
 	var environment := host.scenery.get_node_or_null("ChapterEnvironment") as ChapterRoomEnvironment
 	var ambience: AudioStreamPlayer=host.scenery.get_node_or_null("EnvironmentMotion/WaterAmbience")
-	if host.connected_world!=null and host.connected_world.enabled:ambience=host.connected_world.ambience
 	var audio_state: Dictionary={"playing":false,"playback_type":-1,"muted":AudioServer.is_bus_mute(0)}
 	if ambience!=null:
 		audio_state.merge({"playing":ambience.playing,"playback_type":ambience.playback_type,"paused":ambience.stream_paused},true)
@@ -51,7 +50,6 @@ func snapshot() -> Dictionary:
 		"audio": audio_state,
 		"environment": environment_state,
 		"continuity": host.continuity.state(),
-		"connected_world":host.connected_world.snapshot() if host.connected_world!=null and host.connected_world.enabled else {"enabled":false},
 	}
 
 func _snapshot(_arguments: Array) -> void:

@@ -4,15 +4,13 @@ uniform float amplitude = 5.0;
 uniform float period = 8.0;
 uniform float phase = 0.0;
 uniform float pin_end = 0.18;
-uniform bool pin_bottom = false;
 uniform float root_heights[13];
 void vertex(){
  float t=clock*6.28318530718/period;
  float column=clamp(UV.x*12.0,0.0,11.9999);
  int i=int(floor(column));
  float root=mix(root_heights[i],root_heights[i+1],fract(column));
- float axis_y=pin_bottom?1.0-UV.y:UV.y;
- float downstream=clamp((axis_y-root)/max(0.05,1.0-root),0.0,1.0);
+ float downstream=clamp((UV.y-root)/max(0.05,1.0-root),0.0,1.0);
  float weight=smoothstep(pin_end,1.0,downstream);
  float lag=downstream*1.5;
  // Root fixed; downstream delay. Subtract rest phase to preserve reference at t=0.

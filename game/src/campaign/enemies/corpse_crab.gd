@@ -103,7 +103,7 @@ func _decide(dt: float) -> void:
 	velocity.x = facing*(45.0 if same_level and absf(offset.x)<500 else 28.0)
 
 func floor_ahead(x: float) -> bool:
-	var probe := PhysicsRayQueryParameters2D.create(get_parent().to_global(Vector2(x,position.y-30)),get_parent().to_global(Vector2(x,position.y+38)),1)
+	var probe := PhysicsRayQueryParameters2D.create(Vector2(x,position.y-30),Vector2(x,position.y+38),1)
 	return not get_world_2d().direct_space_state.intersect_ray(probe).is_empty()
 
 func advance_action(dt: float) -> void:

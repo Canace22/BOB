@@ -82,8 +82,6 @@ var ui_session_started: bool = false
 var ui_interactive_in_tests: bool = false
 var last_save_ok: bool = true
 var continuity: CampaignContinuity
-var connected_world: XumenConnectedWorld
-var qa_connected: bool = false
 
 func _ready() -> void:
 	var isolated := qa or not capture_path.is_empty()
@@ -208,10 +206,6 @@ func _ready() -> void:
 		if arg.begins_with("--qa-output="): qa_output = arg.trim_prefix("--qa-output=")
 	if capture_path.is_empty() and not qa: load_progress()
 	else: room_index = capture_room
-	connected_world=XumenConnectedWorld.new()
-	connected_world.host=self
-	connected_world.enabled=(not qa or qa_connected) and capture_path.is_empty()
-	add_child(connected_world)
 	load_room(room_index)
 	if not checkpoint.pos.is_empty() and int(checkpoint.room) == room_index and capture_path.is_empty():
 		player.position = restored_room_position(point(checkpoint.pos))
@@ -259,12 +253,6 @@ func setup_inputs() -> void:
 		InputMap.action_add_event("ui_region_map",map_key)
 
 func load_room(index: int, target_spawn: Array = [], record_discovery: bool = true) -> void:
-	if connected_world!=null and connected_world.enabled:
-		connected_world.load_room(index,target_spawn,record_discovery)
-	else:
-		_load_isolated_room(index,target_spawn,record_discovery)
-
-func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery: bool = true, prepared: Node2D=null, traveller: CharacterBody2D=null) -> void:
 	# The authored starting room is visible in main.tscn and shares the same
 	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
 	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
@@ -287,9 +275,7 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 	room_preview = not record_discovery
 	if record_discovery and not practice:
 		visited[str(room.id)] = true
-	if prepared!=null:
-		scenery=prepared
-	elif authored_room != null and index == 0:
+	if authored_room != null and index == 0:
 		scenery = authored_room
 	else:
 		if authored_room != null:
@@ -302,14 +288,13 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 	if reference_environment != null: reference_environment.level_host = self
 	var default_spawn: Array = room.spawn if not capture_path.is_empty() else room.get("play_spawn", room.spawn)
 	var spawn: Vector2 = restored_room_position(point(default_spawn if target_spawn.is_empty() else target_spawn))
-	player = traveller if traveller!=null else player_scene.instantiate()
+	player = player_scene.instantiate()
 	player.host = self
 	player.name = "Player"
 	player.position = spawn
 	player.z_index = 20 if reference_environment != null else 3
 	var cutout: Node2D = scenery.get_node_or_null("World/PlayerArt")
-	if cutout!=null and traveller!=null:cutout.hide()
-	if cutout != null and traveller==null:
+	if cutout != null:
 		var pivot: Node2D = Node2D.new()
 		pivot.name = "ReferenceArtPivot"
 		player.add_child(pivot)
@@ -317,12 +302,34 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 		cutout.position -= point(room.spawn)
 		if reference_environment != null: cutout.z_index = 0
 		player.art = pivot
-	if player.get_parent()!=null:
-		player.scene_reparenting=true
-		player.reparent(scenery.get_node("World"),false)
-		player.scene_reparenting=false
-	else:scenery.get_node("World").add_child(player)
-	enemies=create_room_enemies(room,scenery)
+	scenery.get_node("World").add_child(player)
+	enemies.clear()
+	for i: int in range(room.get("enemies", []).size()):
+		var source: Dictionary = room.enemies[i]
+		var origin: Vector2 = point(source.pos)
+		var visual: Node2D = scenery.get_node_or_null("World/EnemyArt" + str(i))
+		var key: String = str(room.id) + ":" + str(i)
+		var boss: bool = source.get("boss", false)
+		var alive: bool = not (boss and defeated.get(key, false))
+		if visual != null: visual.visible = alive
+		enemies.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+	for enemy:Dictionary in enemies:
+		if enemy.boss and enemy.alive:
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := MotherCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scenery.get_node("World").add_child(crab)
+			continue
+		if not enemy.boss and enemy.type == "corpse-crab":
+			if is_instance_valid(enemy.visual): enemy.visual.hide()
+			var crab := CorpseCrab.new()
+			crab.host = self
+			crab.data = enemy
+			scenery.get_node("World").add_child(crab)
+			continue
+		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
+		scenery.get_node("World").add_child(proxy)
 	bind_player_ui()
 	reference = Sprite2D.new()
 	reference.centered = false
@@ -348,36 +355,6 @@ func _load_isolated_room(index: int, target_spawn: Array = [], record_discovery:
 	update_camera()
 	if ui_session_started and record_discovery and not practice: save_progress(false)
 
-func create_room_enemies(definition: Dictionary, scene: Node2D) -> Array:
-	var result: Array=[]
-	for i: int in range(definition.get("enemies", []).size()):
-		var source: Dictionary = definition.enemies[i]
-		var origin: Vector2 = point(source.pos)
-		var visual: Node2D = scene.get_node_or_null("World/EnemyArt" + str(i))
-		var key: String = str(definition.id) + ":" + str(i)
-		var boss: bool = source.get("boss", false)
-		var alive: bool = not (boss and defeated.get(key, false))
-		if visual != null: visual.visible = alive
-		result.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
-	for enemy:Dictionary in result:
-		if enemy.boss and enemy.alive:
-			if is_instance_valid(enemy.visual): enemy.visual.hide()
-			var crab := MotherCrab.new()
-			crab.host = self
-			crab.data = enemy
-			scene.get_node("World").add_child(crab)
-			continue
-		if not enemy.boss and enemy.type == "corpse-crab":
-			if is_instance_valid(enemy.visual): enemy.visual.hide()
-			var crab := CorpseCrab.new()
-			crab.host = self
-			crab.data = enemy
-			scene.get_node("World").add_child(crab)
-			continue
-		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
-		scene.get_node("World").add_child(proxy)
-	return result
-
 func restored_room_position(value: Vector2) -> Vector2:
 	# R1-01's new road retains the old world width. Existing checkpoints and
 	# incoming door coordinates project to the new ground without save rewrites.
@@ -398,9 +375,6 @@ func bind_player_ui() -> void:
 	player_ui.visible=capture_path.is_empty()
 	status.hide()
 	info.hide()
-	if player.has_node("InteractionHint"):
-		interaction_hint=player.get_node("InteractionHint")
-		return
 	interaction_hint=Label.new();interaction_hint.name="InteractionHint"
 	interaction_hint.add_theme_font_override("font", font)
 	interaction_hint.text="按 E 交互";interaction_hint.position=Vector2(-48,-125)
@@ -616,9 +590,6 @@ func interact() -> void:
 
 func enter_door(door:Dictionary) -> void:
 	var destination: int = int(door.to)
-	if destination>=0 and connected_world!=null and connected_world.enabled:
-		notify("沿实际通路前进；E用于营地、拾取与机关")
-		return
 	if destination < 0:
 		if destination == -1 and room_index == 4:
 			completed = true
@@ -768,7 +739,6 @@ func run_qa() -> void:
 	await graceful_quit()
 
 func update_parallax() -> void:
-	if connected_world!=null and is_instance_valid(connected_world.unified):return
 	var shift: Vector2 = Vector2.ZERO
 	if zoomed and not reference_visible and capture_path.is_empty() and layer_solo < 0:
 		var center: Vector2 = point(room.size) * 0.5
