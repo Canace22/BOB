@@ -20,6 +20,8 @@ func shot(label: String) -> void:
 func run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
 	host = load("res://content/whalebelly/main.tscn").instantiate()
+	host.set_script(preload("res://tests/whalebelly/doorway_test_host.gd"))
+	host.suite = "doors"
 	host.qa = true
 	host.integration_external_test = true
 	root.add_child(host)

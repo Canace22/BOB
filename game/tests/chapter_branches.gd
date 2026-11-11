@@ -45,7 +45,7 @@ func drive(target: Vector2, grounded: bool=false, expected: int=-1, budget: int=
 			held_jump-=1
 			if held_jump==0: Input.action_release("tp_jump")
 		since_jump+=1
-		var launch := player.is_on_floor() and delta.y < -40 and since_jump>35
+		var launch: bool = (player.is_on_floor() and delta.y < -40 or player.grapple_hanging) and since_jump>35
 		if player.is_on_floor():
 			for surface: Array in host.room.surfaces:
 				var edge: Vector2=host.point(surface[-1] if delta.x>0 else surface[0])
