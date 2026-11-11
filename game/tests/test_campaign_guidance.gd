@@ -45,6 +45,10 @@ func test_boss_and_completion_goals_follow_saved_flags() -> void:
 	eq(CampaignGuidance.next_room(host), "", "Live Boss blocks forward recommendation")
 	host.defeated["R1-04:0"] = true
 	eq(CampaignGuidance.next_room(host), "R1-05", "Saved Boss defeat opens onward goal")
+	host.visited = {"R1-04":true}
+	var data := WhaleUICampaignData.new()
+	data.host = host
+	check(data.room_description(4).contains("已具备"), "Defeated Boss gate is described as open")
 	host.completed = true
 	eq(CampaignGuidance.next_room(host), "", "Completed chapter has no fake next room")
 	check(CampaignGuidance.hint(host).contains("首关完成"), "Completion survives a revisit")

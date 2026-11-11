@@ -63,7 +63,7 @@ func room_description(index: int) -> String:
 			if not host.visited.get(str(source.id), false): continue
 			for door: Dictionary in source.get("doors", []):
 				if int(door.to) == index and not str(door.get("ability", "")).is_empty():
-					var available: bool = host.has_ability(str(door.ability))
+					var available: bool = bool(host.defeated.get(str(source.id) + ":0", false)) if str(door.ability) == "boss" else host.has_ability(str(door.ability))
 					requirement = ("\n已具备：" if available else "\n需要：") + ability_name(str(door.ability))
 		return CampaignGuidance.description(host, str(r.id)) + "\n已发现，尚未探索。" + requirement
 	var details: String = CampaignGuidance.description(host, str(r.id)) + "\n已探索" + (" · 当前位置" if index == host.room_index else "")
