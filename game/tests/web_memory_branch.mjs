@@ -9,6 +9,7 @@ const browser = await chromium.launch({channel:'chrome',headless:true,args:['--a
 const context = await browser.newContext({viewport:{width:1440,height:900}});
 const page = await context.newPage();
 const checks = [], errors = [];
+let routeFinished = false;
 page.on('pageerror', error => errors.push(error.message));
 page.on('console', message => {if(message.type()==='error') errors.push(message.text());});
 const state = () => page.evaluate(() => JSON.parse(window.render_game_to_text()));
@@ -127,7 +128,11 @@ try {
     await page.screenshot({path:path.join(out,'main-route-continued.png')});
   }
   check('no_browser_errors',errors.length===0,errors);
+  routeFinished = true;
+} catch(error) {
+  errors.push(String(error.stack || error));
+  throw error;
 } finally {
-  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,passed:checks.length>=14&&checks.every(c=>c.pass)&&!errors.length,scope:'Fresh isolated browser, real keys from title to memory reward and back; no preview, F9, position or save injection.'},null,2));
+  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,passed:routeFinished&&checks.every(c=>c.pass)&&!errors.length,scope:'Fresh isolated browser, real keys from title to memory reward and back; no preview, F9, position or save injection.'},null,2));
   await browser.close();
 }
