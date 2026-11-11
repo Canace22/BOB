@@ -141,3 +141,7 @@ E02补充：地面画片在原房交点切换轮廓，不在向房内延伸的�
 默认入口新增unified_world.tscn后，旧房依然拥有物理与机关，但其ReferenceEnvironment/ChapterEnvironment/EnvironmentMotion及旧接头整体隐藏停用。主循环update_parallax不能重新启用旧环境；子件若显式PAUSABLE，父DISABLED也可能不能代表全部子件已停，检查实际活动对象。新QA和Web暂停应读connected_world.unified.time；旧接头兼容节点存在不代表它当前显示。动态JSON必须加入Web include_filter，不能用桌面文件存在替代导出验证。
 
 单源世界母版、手绘纹理网格、凹形rim四边形UV、切块Alpha、原膜下通路可见性及GPU根锚检查见assets/source/xumen-unified-v1。旧接头历史通过不代表用户认可，其整体观感已被用户否定。完整/静态/关绘画/空场景性能分别保留，不根据单次中位数宣称稳定60。路径目标判断需处理读状态越过目标，竖井下穿按实际落台逐次输入，别改物理来迎合固定等待驱动。
+
+## 门与通道接入
+
+入口行为按当前画面的朝向与地形判断，不把靠边骨拱自动当横向出口。逐门节点保存稳定目标ID和表现参数，原房间图继续拥有条件/落点；提示和交互共用相同范围与优先级。门槛用已有位图裁片前置，转场完全变黑后才换房，生成目标角色后再释放输入。离开小范围才重新激活。全图静态配置检查不能替代14门输入、落点及Web检查；房间夹具与自然路线分开。实例见assets/source/doorways-v1与tests/whalebelly/doorways.gd。

@@ -411,7 +411,7 @@ func _process(dt: float) -> void:
 	overlay.queue_redraw()
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if quitting: return
+	if quitting or continuity.travelling: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if event.physical_keycode == KEY_ESCAPE:
 		if is_instance_valid(player):
@@ -581,14 +581,16 @@ func interact() -> void:
 		notify("收集本房记忆 / 补给，已保存")
 		save_progress(false)
 		return
-	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") and try_camp(): return
-	for door: Dictionary in room.get("doors", []):
-		if player.position.distance_to(point(door.pos)) > 125: continue
-		enter_door(door)
+	var entrance: CampaignDoorway = continuity.nearby_door()
+	if entrance != null:
+		if not entrance.armed: return
+		enter_door(entrance.data)
 		return
-	notify("E 使用灯台 / 拾取；靠近门按 A/D + E 穿行")
+	if try_camp(): return
+	notify("靠近洞门按 E 进入；侧向通道直接穿行")
 
 func enter_door(door:Dictionary) -> void:
+	if continuity.travelling or player.health <= 0: return
 	var destination: int = int(door.to)
 	if destination < 0:
 		if destination == -1 and room_index == 4:
@@ -609,11 +611,7 @@ func enter_door(door:Dictionary) -> void:
 			if enemy.boss and enemy.alive:
 				notify("先击败负壳守卫")
 				return
-	sfx("save")
-	record_event("door", {"from":room_index,"to":destination})
-	continuity.begin_transition()
-	load_room(destination, door.get("spawn", []))
-	notify("已穿过相邻解剖区域通道")
+	continuity.travel(door)
 	return
 
 func try_camp() -> bool:

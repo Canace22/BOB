@@ -1,4 +1,6 @@
-[gd_scene load_steps=29 format=3]
+[gd_scene load_steps=30 format=3]
+
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="doorway_script"]
 
 [ext_resource type="PackedScene" path="res://content/whalebelly/environment/chapter/R1-02.tscn" id="chapter"]
 
@@ -347,3 +349,37 @@ texture = ExtResource("oral_texture")
 material = SubResource("OralWater")
 centered = false
 script = ExtResource("oral_script")
+
+[node name="Doorways" type="Node2D" parent="."]
+
+[node name="Entrance1" type="Node2D" parent="Doorways"]
+script = ExtResource("doorway_script")
+destination_id = "R1-01"
+kind = "door"
+direction = -1.0
+height = 170.0
+prompt_offset = Vector2(0, -186)
+
+[node name="Entrance2" type="Node2D" parent="Doorways"]
+script = ExtResource("doorway_script")
+destination_id = "R1-03"
+kind = "door"
+direction = 1.0
+height = 160.0
+prompt_offset = Vector2(0, -176)
+
+[node name="Entrance3" type="Node2D" parent="Doorways"]
+script = ExtResource("doorway_script")
+destination_id = "R1-06"
+kind = "door"
+direction = -1.0
+height = 145.0
+prompt_offset = Vector2(0, -161)
+
+[node name="Entrance4" type="Node2D" parent="Doorways"]
+script = ExtResource("doorway_script")
+destination_id = "R1-07"
+kind = "door"
+direction = 1.0
+height = 150.0
+prompt_offset = Vector2(0, -166)

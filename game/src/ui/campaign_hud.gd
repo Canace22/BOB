@@ -6,6 +6,8 @@ var leaf: Texture2D
 var echo: Texture2D
 var map_button: Button
 var pause_button: Button
+var prompt_alpha: float = 0.0
+var last_prompt: String = ""
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -19,6 +21,12 @@ func _ready() -> void:
 		add_child(button)
 	resized.connect(_layout)
 	_layout()
+
+func _process(dt: float) -> void:
+	var current: String = controller.data.prompt() if is_instance_valid(controller) and is_instance_valid(controller.host.player) else ""
+	if current != last_prompt: prompt_alpha = 0.0
+	last_prompt = current
+	prompt_alpha = move_toward(prompt_alpha, 1.0, dt * 7.0)
 
 func _layout() -> void:
 	map_button.position = Vector2(size.x-282, size.y-61)
@@ -59,11 +67,17 @@ func _draw() -> void:
 	_draw_actions(p)
 	map_button.text = WhaleUIStyle.key("ui_region_map") + "  地图"
 	var prompt: String = controller.data.prompt()
+	var prompt_key: String = "tp_interact"
 	if not prompt.is_empty():
 		var point: Vector2 = p.get_global_transform_with_canvas().origin
-		var content: String = WhaleUIStyle.key("tp_interact") + "  " + prompt
+		var entrance: CampaignDoorway = controller.data.prompt_door()
+		if entrance != null:
+			point = entrance.get_global_transform_with_canvas() * entrance.prompt_offset
+		else: point.y -= 130
+		var show_key: bool = entrance == null or (entrance.restriction().is_empty() and not (entrance.kind == "exit" and controller.host.completed))
+		var content: String = ("[" + WhaleUIStyle.key(prompt_key) + "]  " if show_key else "") + prompt
 		var width: float = WhaleUIStyle.FONT.get_string_size(content,HORIZONTAL_ALIGNMENT_LEFT,-1,17).x
-		text(Vector2(clampf(point.x-width*0.5,24,maxf(24,size.x-width-24)),clampf(point.y-130,185,size.y-185)), content)
+		text(Vector2(clampf(point.x-width*0.5,24,maxf(24,size.x-width-24)),clampf(point.y,150,size.y-100)), content, 17, Color(WhaleUIStyle.BONE, prompt_alpha))
 	var boss: Dictionary = controller.data.boss()
 	if not boss.is_empty():
 		var width: float = minf(620,size.x*0.48)

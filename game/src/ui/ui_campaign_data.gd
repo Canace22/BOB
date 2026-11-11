@@ -12,19 +12,23 @@ func at_camp() -> bool:
 
 func prompt() -> String:
 	var p: Node2D = host.player
-	if not is_instance_valid(p) or p.health <= 0: return ""
+	if not is_instance_valid(p) or p.health <= 0 or host.continuity.travelling: return ""
 	var gate: Node = p.skill_controller.nearby_gate()
 	if is_instance_valid(gate): return "使用通行节点"
 	var reward: Array = host.room.get("reward", [])
 	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return "拾取记忆 / 补给"
+	var entrance: CampaignDoorway = prompt_door()
+	if entrance != null: return entrance.prompt()
 	if at_camp(): return "在营地歇息"
-	for door: Dictionary in host.room.get("doors", []):
-		if p.position.distance_to(host.point(door.pos)) < 125:
-			var needed: String = door.get("ability", "")
-			if needed == "boss" and not boss().is_empty(): return "先击败负壳守卫"
-			if not needed.is_empty() and needed != "boss" and not host.has_ability(needed): return "需要" + ability_name(needed)
-			return "穿过通道（方向＋交互）"
 	return ""
+
+func prompt_door() -> CampaignDoorway:
+	var p: Node2D = host.player
+	if not is_instance_valid(p) or p.health <= 0: return null
+	if is_instance_valid(p.skill_controller.nearby_gate()): return null
+	var reward: Array = host.room.get("reward", [])
+	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return null
+	return host.continuity.nearby_door()
 
 func boss() -> Dictionary:
 	for enemy: Dictionary in host.enemies:

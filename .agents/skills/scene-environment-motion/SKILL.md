@@ -5,7 +5,7 @@ description: BOB场景、参考图还原及环境动件的默认制作入口。�
 
 # 场景与环境动态制作 · 项目入口
 
-先读取完整通用主源 `C:/Users/Kingsoft/.codex/skills/scene-environment-motion/SKILL.md`，并按本次任务加载其配方库和执行合同。本入口不重复维护完整流程。
+先查当前用户 Skill 目录中的 `scene-environment-motion/SKILL.md`，不要使用其他机器的绝对路径。若通用主源已安装，读取它及本次需要的配方和执行合同。若本机未安装，明确记录缺口，并使用本仓库保留的[执行合同](references/production-contract.md)和[配方库](references/motion-recipes.md)执行项目范围内的工作；不将这些早期项目说明宣称为通用主源的最新版本。
 
 - 场景制作/还原/优化、环境动态或单个环境元素默认使用，不要求用户再次点名。主动识别static/motion/inspect、说明选型，先单件样板再扩展和接入。
 - 正式开发位置以根AGENTS和[Godot开发Skill](../godot-game-dev/SKILL.md)为准；已冻结的legacy只作定向参考，不能继续开发历史入口。

@@ -4,10 +4,7 @@ extends "res://src/campaign/tide_player.gd"
 # Compatibility boundary: authored rooms, enemy dictionaries and V6 saves stay owned by main.gd.
 @export var spawn_input_lock:float=0.1 # New default: discard carried input on room load.
 var spawn_lock_left:float=0
-@export var automatic_doors:bool=true # Added default; preserve E as alternate interaction.
-@export var door_entry_radius:float=48.0
-@export var door_rearm_distance:float=160.0
-var armed_doors:Dictionary={}
+@export var automatic_doors:bool=true # Only authored side passages auto-enter.
 var host: Node2D
 var art: Node2D
 var last_safe:=Vector2.ZERO
@@ -218,8 +215,7 @@ func interaction_nearby() -> bool:
 	if is_instance_valid(skill_controller.nearby_gate()): return true
 	var reward:Array=host.room.get("reward",[])
 	if reward.size()==2 and position.distance_to(host.point(reward))<100 and not host.collected.get(str(host.room.id),false):return true
-	for door:Dictionary in host.room.get("doors",[]):
-		if position.distance_to(host.point(door.pos))<125:return true
+	if host.continuity.nearby_door() != null: return true
 	var camp:Array=host.room.get("camp",{0:[93,550],3:[80,610],4:[110,503]}.get(host.room_index,[]))
 	return camp.size()==2 and position.distance_to(host.point(camp))<180
 
@@ -234,24 +230,17 @@ func _finish_interact() -> void:
 	skill_controller.input.clear()
 	# Defer the old room-changing callback until the physics/animation tick finishes.
 	host.interact()
-	if is_inside_tree():transition_locked=false
+	if is_inside_tree() and not host.continuity.travelling:transition_locked=false
 
 func respawn() -> void:
 	if is_instance_valid(host):host.respawn.call_deferred()
 
 func _check_door_entry() -> void:
 	if not automatic_doors or not controls_enabled or health<=0 or transition_locked or state=="interact":return
-	for i in range(host.room.get("doors",[]).size()):
-		var door:Dictionary=host.room.doors[i]
-		# Existing camps overlap some return-door triggers: keep those doors explicit E.
-		var camp:Array=host.room.get("camp",{0:[93,550],3:[80,610],4:[110,503]}.get(host.room_index,[]))
-		if camp.size()==2 and host.point(door.pos).distance_to(host.point(camp))<180:continue
-		var delta:Vector2=host.point(door.pos)-position
-		if delta.length()>door_rearm_distance:armed_doors[i]=true
-		if armed_doors.get(i,false) and absf(delta.x)<door_entry_radius and absf(delta.y)<125 and absf(movement_axis())>.1:
-			armed_doors[i]=false;transition_locked=true
-			_finish_door.call_deferred(door)
-			break
+	var door: Dictionary = host.continuity.automatic_entry()
+	if not door.is_empty():
+		transition_locked = true
+		_finish_door.call_deferred(door)
 
 func _finish_door(door:Dictionary) -> void:
 	world_effects.clear()
@@ -259,7 +248,7 @@ func _finish_door(door:Dictionary) -> void:
 	skill_controller.cancel()
 	skill_controller.input.clear()
 	host.enter_door(door)
-	if is_inside_tree():transition_locked=false
+	if is_inside_tree() and not host.continuity.travelling:transition_locked=false
 
 func stable_floor_point() -> bool:
 	for surface: Array in host.room.surfaces:
