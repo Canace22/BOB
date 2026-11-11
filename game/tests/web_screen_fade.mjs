@@ -17,7 +17,12 @@ const check=(id,pass,detail)=>{checks.push({id,pass,detail});console.log(JSON.st
 async function until(predicate,timeout=20000){const end=Date.now()+timeout;while(Date.now()<end){const s=await state();if(predicate(s))return s;await sleep(25);}throw Error('timeout '+JSON.stringify(await state()));}
 try {
  await page.goto(process.env.GAME_URL||'http://127.0.0.1:4187/BOB/godot/',{waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>typeof window.render_game_to_text==='function',null,{timeout:240000});
+ const bootProgress=setInterval(async()=>{
+  try { console.log('BOOT '+await page.locator('#status-detail').innerText({timeout:1000})); } catch {}
+ },30000);
+ try {
+  await page.waitForFunction(()=>typeof window.render_game_to_text==='function',null,{timeout:Number(process.env.READY_TIMEOUT_MS||900000)});
+ } finally {clearInterval(bootProgress);}
  await page.keyboard.press('Enter');await sleep(700);
  await page.keyboard.down('d');
  let s=await until(s=>s.continuity.transition_active);
@@ -50,6 +55,9 @@ try {
  await page.keyboard.press('Escape');await until(s=>!s.paused);
  check('pause still works after transition',true);
  check('no engine or browser errors',errors.length===0,errors);
+} catch(error) {
+ await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});
+ throw error;
 } finally {
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,passed:checks.length===8&&checks.every(c=>c.pass)&&!errors.length,scope:'Isolated browser; real movement, automatic door, natural enemy death and R retry.'},null,2));
  await context.close();await browser.close();
