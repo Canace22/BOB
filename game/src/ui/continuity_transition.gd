@@ -1,41 +1,40 @@
 class_name XumenContinuityTransition
 extends CanvasLayer
-## Short scene-texture dissolve. It never replaces real room art or physics.
-var plate: TextureRect
-var elapsed: float = 0.0
+## Screen fade is UI; scenery remains authored bitmap assets.
+var plate: ColorRect
 var active: bool = false
-const DURATION: float = 0.24
+const FADE_OUT: float = 0.20
+const FADE_IN: float = 0.25
+const BLACK_HOLD: float = 0.08
 
 func _ready() -> void:
-	layer=90
-	process_mode=Node.PROCESS_MODE_PAUSABLE
-	plate=TextureRect.new()
+	layer = 110 # Cover the HUD too, including a paused death menu.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	plate = ColorRect.new()
 	plate.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	plate.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	plate.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
-	plate.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	plate.color = Color.BLACK
+	plate.modulate.a = 0.0
 	plate.hide()
 	add_child(plate)
 
-func _exit_tree() -> void:
-	if is_instance_valid(plate):plate.texture=null
-	active=false
+func fade_out(duration: float = FADE_OUT, hold: float = BLACK_HOLD) -> void:
+	active = true
+	plate.size = get_viewport().get_visible_rect().size
+	plate.show()
+	var tween: Tween = create_tween()
+	tween.tween_property(plate, "modulate:a", 1.0, duration)
+	await tween.finished
+	# Let the fully black frame reach the screen before synchronous room loading.
+	await get_tree().create_timer(hold, true).timeout
+
+func fade_in(duration: float = FADE_IN) -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(plate, "modulate:a", 0.0, duration)
+	await tween.finished
+	plate.hide()
+	active = false
 
 func begin() -> void:
-	if DisplayServer.get_name()=="headless": return
-	var image: Image=get_viewport().get_texture().get_image()
-	plate.texture=ImageTexture.create_from_image(image)
-	plate.size=get_viewport().get_visible_rect().size
-	plate.modulate=Color.WHITE
-	plate.show()
-	elapsed=0.0
-	active=true
-
-func _process(dt:float) -> void:
-	if not active:return
-	elapsed+=dt
-	plate.modulate.a=1.0-smoothstep(0.0,DURATION,elapsed)
-	if elapsed>=DURATION:
-		active=false
-		plate.hide()
-		plate.texture=null
+	await fade_out()
+	await fade_in()

@@ -234,7 +234,7 @@ func _finish_interact() -> void:
 	skill_controller.input.clear()
 	# Defer the old room-changing callback until the physics/animation tick finishes.
 	host.interact()
-	if is_inside_tree():transition_locked=false
+	if is_inside_tree() and not host.continuity.transition.active:transition_locked=false
 
 func respawn() -> void:
 	if is_instance_valid(host):host.respawn.call_deferred()
@@ -259,7 +259,7 @@ func _finish_door(door:Dictionary) -> void:
 	skill_controller.cancel()
 	skill_controller.input.clear()
 	host.enter_door(door)
-	if is_inside_tree():transition_locked=false
+	if is_inside_tree() and not host.continuity.transition.active:transition_locked=false
 
 func stable_floor_point() -> bool:
 	for surface: Array in host.room.surfaces:
