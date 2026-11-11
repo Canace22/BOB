@@ -54,7 +54,8 @@ def main():
         "fonttools": __version__,
         "weight": 400,
     }
-    (Path(__file__).parent / "subset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8", newline="\n")
+    with (Path(__file__).parent / "subset.json").open("w", encoding="utf-8", newline="\n") as output:
+        output.write(json.dumps(metadata, indent=2) + "\n")
     print(json.dumps(metadata))
 
 
