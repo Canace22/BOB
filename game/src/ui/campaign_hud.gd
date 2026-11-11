@@ -59,9 +59,16 @@ func _draw() -> void:
 	_draw_actions(p)
 	map_button.text = WhaleUIStyle.key("ui_region_map") + "  地图"
 	var prompt: String = controller.data.prompt()
+	var prompt_key: String = "tp_interact"
+	if prompt.is_empty() and p is WhalebellyCampaignPlayer and controller.host.has_ability("anchor"):
+		if p.grapple_target != Vector2.INF:
+			prompt = "接下一环 · 空格跃离" if p.grapple_hanging else "松开锚环"
+		elif p.ring_candidate() != Vector2.INF:
+			prompt = "牵引前方圆环 · 到环停挂 · 空格跃离"
+		prompt_key = "grapple"
 	if not prompt.is_empty():
 		var point: Vector2 = p.get_global_transform_with_canvas().origin
-		var content: String = WhaleUIStyle.key("tp_interact") + "  " + prompt
+		var content: String = WhaleUIStyle.key(prompt_key) + "  " + prompt
 		var width: float = WhaleUIStyle.FONT.get_string_size(content,HORIZONTAL_ALIGNMENT_LEFT,-1,17).x
 		text(Vector2(clampf(point.x-width*0.5,24,maxf(24,size.x-width-24)),clampf(point.y-130,185,size.y-185)), content)
 	var boss: Dictionary = controller.data.boss()

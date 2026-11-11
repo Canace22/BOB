@@ -38,7 +38,7 @@ var clock: float = 0.0
 var checkpoint: Dictionary = {"room": 0, "pos": []}
 var collected: Dictionary = {}
 var defeated: Dictionary = {}
-var abilities: Dictionary = {"dash": false, "float": false, "anchor": false}
+var abilities: Dictionary = {"dash": false, "float": false, "anchor": true}
 var enemies: Array = []
 var message: String = ""
 var message_time: float = 0.0
@@ -577,8 +577,15 @@ func interact() -> void:
 		record_event("reward", {"room":str(room.id)})
 		var reward_art: Node2D = scenery.get_node_or_null("World/RewardArt")
 		if reward_art != null: reward_art.visible = false
-		health = 5
-		notify("收集本房记忆 / 补给，已保存")
+		health = player.max_health
+		player.health = health
+		if str(room.id) == "R1-07":
+			abilities.float = true
+			player.soul = player.max_soul
+			record_event("ability_unlocked", {"id":"float"})
+			notify("记忆已收集 · 获得浮游：空中按住 W；生命与蓄振已恢复")
+		else: notify("收集本房记忆 / 补给，已保存")
+		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
 		return
 	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") and try_camp(): return
@@ -666,6 +673,8 @@ func load_progress() -> void:
 	collected = payload.get("collected", {})
 	defeated = payload.get("defeated", {})
 	if int(payload.get("version",0)) >= 6: abilities = payload.get("abilities", abilities)
+	abilities.anchor = true
+	if collected.get("R1-07",false): abilities.float = true
 	visited = payload.get("visited",{}).duplicate(true)
 	visited[str(rooms[room_index].id)] = true
 	for known: String in collected: visited[known] = true
@@ -677,7 +686,7 @@ func save_path() -> String:
 
 func start_ui_session(fresh: bool) -> bool:
 	if fresh:
-		var payload: Dictionary = {"version":6,"checkpoint":{"room":0,"pos":[]},"collected":{},"defeated":{},"abilities":{"dash":false,"float":false,"anchor":false},"completed":false,"visited":{str(rooms[0].id):true}}
+		var payload: Dictionary = {"version":6,"checkpoint":{"room":0,"pos":[]},"collected":{},"defeated":{},"abilities":{"dash":false,"float":false,"anchor":true},"completed":false,"visited":{str(rooms[0].id):true}}
 		if FileAccess.file_exists(save_path()):
 			if DirAccess.copy_absolute(save_path(),save_path()+".before-new") != OK: return false
 		if WhaleUISaveAccess.write(save_path(),payload) != OK: return false
@@ -1282,7 +1291,7 @@ func run_normal_qa() -> void:
 	for event: Dictionary in events:
 		if event.event == "player_death": death_count+=1
 		if event.event == "room_enter": entered.append(event.data.room)
-	report.pass = passed and completed and not abilities.get("float",false) and not abilities.get("anchor",false)
+	report.pass = passed and completed and not abilities.get("float",false) and abilities.get("anchor",false)
 	report.deaths = death_count
 	report.room_entries = entered
 	report.final_abilities = abilities
@@ -1300,7 +1309,7 @@ func run_normal_reload_qa() -> void:
 	load_progress()
 	load_room(room_index,checkpoint.get("pos",[]))
 	await wait_physics(45)
-	var result: Dictionary = {"pass":room_index==4 and completed and abilities.get("dash",false) and not abilities.get("float",false) and not abilities.get("anchor",false) and player.is_on_floor(),"independent_process":true,"room":room_index,"completed":completed,"abilities":abilities,"grounded":player.is_on_floor()}
+	var result: Dictionary = {"pass":room_index==4 and completed and abilities.get("dash",false) and not abilities.get("float",false) and abilities.get("anchor",false) and player.is_on_floor(),"independent_process":true,"room":room_index,"completed":completed,"abilities":abilities,"grounded":player.is_on_floor()}
 	result.boss_stable_id_saved = defeated.get("R1-04:0",false)
 	await walk_to(Vector2(100,553),400)
 	Input.action_press("left")

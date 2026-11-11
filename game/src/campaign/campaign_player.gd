@@ -13,6 +13,7 @@ var art: Node2D
 var last_safe:=Vector2.ZERO
 const GRAPPLE_FOOT_OFFSET:=Vector2(0,55)
 var grapple_target:=Vector2.INF
+var grapple_hanging: bool = false
 var float_left:float=1.5
 var drop_timer:float=0
 var floating:bool=false
@@ -141,6 +142,10 @@ func _read_input() -> void:
 	if membrane_boost:short_jump=false
 
 func _try_jump() -> void:
+	if grapple_target != Vector2.INF and grapple_hanging:
+		grapple_target = Vector2.INF
+		grapple_hanging = false
+		coyote = coyote_time
 	var rebound:bool=host.room_index==2 and position.x>700 and position.x<970 and position.y>730 and is_on_floor()
 	membrane_boost=rebound
 	super._try_jump()
@@ -149,13 +154,23 @@ func _try_jump() -> void:
 
 func _find_ring() -> void:
 	if state_duration>0:return
-	if grapple_target!=Vector2.INF:grapple_target=Vector2.INF;return
-	var distance:float=390
-	for point:Array in host.room.get("rings",[]):
-		var target:Vector2=host.point(point)+GRAPPLE_FOOT_OFFSET
-		if position.distance_to(target)<distance and position.distance_to(target)>90 and (target.x-position.x)*facing>-35:
-			distance=position.distance_to(target);grapple_target=target
+	if grapple_target!=Vector2.INF and not grapple_hanging:
+		grapple_target=Vector2.INF
+		return
+	grapple_hanging = false
+	grapple_target = ring_candidate()
 	if grapple_target!=Vector2.INF:host.record_event("anchor",{"target":[grapple_target.x,grapple_target.y]})
+
+func ring_candidate() -> Vector2:
+	var distance: float = 390
+	var candidate := Vector2.INF
+	for point: Array in host.room.get("rings",[]):
+		var target: Vector2 = host.point(point)+GRAPPLE_FOOT_OFFSET
+		var gap: float = position.distance_to(target)
+		if gap<distance and gap>90 and (target.x-position.x)*facing>-35:
+			distance=gap
+			candidate=target
+	return candidate
 
 func grapple_anchor_world_position() -> Vector2:
 	# grapple_target remains the feet's movement destination in the room frame.
@@ -169,7 +184,10 @@ func _before_move(dt:float) -> void:
 	if drop_timer>0:velocity.y=maxf(velocity.y,180)
 	if grapple_target!=Vector2.INF:
 		velocity=position.direction_to(grapple_target)*640
-		if position.distance_to(grapple_target)<24:grapple_target=Vector2.INF;velocity.y=-340;float_left=1.5
+		if grapple_hanging or position.distance_to(grapple_target)<24:
+			grapple_hanging=true
+			velocity=Vector2.ZERO
+			float_left=1.5
 	elif Input.is_action_pressed("float") and host.has_ability("float") and not is_on_floor() and float_left>0 and velocity.y>-160 and state_duration<=0:
 		float_left-=dt;velocity.y=move_toward(velocity.y,-160,2200*dt);floating=true
 
@@ -198,7 +216,7 @@ func request_action(action:String) -> bool:
 		host.notify("冲刺尚未解锁：击败负壳守卫获得；F9可临时练习")
 		return false
 	var accepted:bool=super.request_action(action)
-	if accepted:grapple_target=Vector2.INF
+	if accepted:grapple_target=Vector2.INF;grapple_hanging=false
 	return accepted
 
 func _melee(downward:bool) -> void:
@@ -274,5 +292,5 @@ func stable_floor_point() -> bool:
 
 func take_damage(amount:int=1,source:Vector2=Vector2.ZERO,force:bool=false) -> bool:
 	var accepted:bool=super.take_damage(amount,source,force)
-	if accepted:grapple_target=Vector2.INF;floating=false;membrane_boost=false
+	if accepted:grapple_target=Vector2.INF;grapple_hanging=false;floating=false;membrane_boost=false
 	return accepted

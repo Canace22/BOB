@@ -62,6 +62,9 @@ func room_description(index: int) -> String:
 		return "已发现相邻通路，内部尚未探索。" + requirement
 	var details: String = "已探索" + (" · 当前位置" if index == host.room_index else "")
 	if r.has("camp") or index in [0,3,4]: details += "\n壳形营地：恢复生命、记录检查点"
-	if host.collected.get(str(r.id), false): details += "\n本房补给 / 记忆已收集"
+	if host.collected.get(str(r.id), false):
+		details += "\n本房补给 / 记忆已收集"
+		if str(r.id) == "R1-07":
+			details += "\n已获得浮游：空中按住 W，短暂浮升。\n记忆：水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。"
 	if host.defeated.get(str(r.id)+":0", false): details += "\n守关者已击败"
 	return details
