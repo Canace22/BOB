@@ -77,6 +77,9 @@ func _draw() -> void:
 		elif p.ring_candidate() != Vector2.INF:
 			prompt = "牵引前方圆环 · 到环停挂 · 空格跃离"
 		prompt_key = "grapple"
+	if prompt.is_empty():
+		prompt = CampaignGuidance.float_prompt(controller.host)
+		prompt_key = "float"
 	if not prompt.is_empty():
 		var point: Vector2 = p.get_global_transform_with_canvas().origin
 		var entrance: CampaignDoorway = controller.data.prompt_door()

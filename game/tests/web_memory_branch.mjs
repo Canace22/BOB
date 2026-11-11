@@ -23,6 +23,15 @@ async function until(predicate, timeout=15000) {
   while(Date.now()<deadline) {const s=await state(); if(predicate(s)) return s; await pause(65);}
   throw Error('Timed out: '+JSON.stringify(await state()));
 }
+async function clickControl(name) {
+  const s=await state(), c=s.ui.controls.find(c=>c.name===name);
+  if(!c||c.disabled) throw Error('Unavailable control '+name);
+  const rect=await page.locator('#canvas').boundingBox();
+  const scale=Math.min(rect.width/s.ui.width,rect.height/s.ui.height);
+  await page.mouse.click(rect.x+(rect.width-s.ui.width*scale)/2+(c.x+c.width/2)*scale,
+    rect.y+(rect.height-s.ui.height*scale)/2+(c.y+c.height/2)*scale);
+  await pause(250);
+}
 async function walk(x, room, expected=room) {
   let s=await state(); const direction=s.player.x<x?'d':'a';
   await page.keyboard.down(direction);
@@ -70,7 +79,9 @@ try {
     await pause(350);
     check('ring_'+(i+1),true,(await state()).player);
   }
-  await page.keyboard.down('Space');await page.keyboard.down('d');await pause(450);
+  await page.keyboard.down('Space');await page.keyboard.down('d');
+  // Hold through the actual landing; wall-clock delays can cut the jump short under load.
+  await until(s=>s.room==='R1-07'||(s.player.floor&&s.player.y<320&&s.player.x>1450),10000);
   await page.keyboard.up('Space');
   await until(s=>s.room==='R1-07'||(s.room==='R1-02'&&s.player.x>1585),12000);await page.keyboard.up('d');
   if((await state()).room==='R1-02') await page.keyboard.press('e');
@@ -95,6 +106,21 @@ try {
     check('unknown_boss_stays_hidden',!s.ui.map_nodes.some(n=>n.id==='R1-04'));
     await page.setViewportSize({width:1280,height:720});await pause(500);
     await page.screenshot({path:path.join(out,'memory-map-1280.png')});
+    if(process.env.CHECK_VISUAL_MAP) {
+      s=await state();
+      check('compact_map_no_scroll',!s.ui.map_view.needs_scroll&&!s.ui.map_view.memory_visible);
+      check('visible_return_arrow',s.ui.map_view.route_points===2&&s.ui.map_view.hint==='返回须筛');
+      await clickControl('ReadMemory');
+      check('memory_opens_on_click',(await state()).ui.map_view.memory_visible);
+      await page.screenshot({path:path.join(out,'memory-open.png')});
+      await clickControl('ReadMemory');
+      check('memory_collapses_on_click',!(await state()).ui.map_view.memory_visible);
+      await clickControl('Room_R1-06');
+      check('room_selection_does_not_move_player',(await state()).room==='R1-07'&&!(await state()).ui.controls.some(c=>c.name==='ReadMemory'));
+      await clickControl('Room_R1-07');
+      check('reselect_memory_stays_collapsed',!(await state()).ui.map_view.memory_visible);
+      await page.screenshot({path:path.join(out,'map-compact-final.png')});
+    }
     await page.setViewportSize({width:1440,height:900});await pause(300);
   }
   await page.keyboard.press('Escape');await pause(300);

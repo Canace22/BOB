@@ -60,7 +60,7 @@ static func short_hint(host: Node2D) -> String:
 static func short_detail(host: Node2D, id: String) -> String:
 	if CampaignRelics.ITEMS.has(id):
 		var item: Dictionary = CampaignRelics.ITEMS[id]
-		return ("已获得：" if host.collected.get(id,false) else "右上方收集：") + str(item.name) + " · 护盾上限 +%d" % item.charges + (" · 需浮游" if id == "R1-06" and not host.has_ability("float") else "")
+		return ("已获得：" if host.collected.get(id,false) else "右上方收集：") + str(item.name) + " · 护盾上限 +%d" % item.charges + ((" · 先去记忆袋获得浮游" if not host.has_ability("float") else " · 左侧上行，原路返回") if id == "R1-06" else "")
 	match id:
 		"R1-07": return "浮游已获得" if host.collected.get(id,false) else "支路 · 浮游"
 		"R1-06": return "支路 · 需浮游" if not host.has_ability("float") else "支路 · 原路返回"
