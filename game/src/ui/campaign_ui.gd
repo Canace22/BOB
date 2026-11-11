@@ -7,6 +7,7 @@ var data := WhaleUICampaignData.new()
 var preferences := WhaleUIPreferences.new()
 var panel: Control
 var hud: WhaleCampaignHUD
+var shade: ColorRect
 var modal: Control
 var body: VBoxContainer
 var heading: Label
@@ -44,7 +45,7 @@ func _ready() -> void:
 	modal = Control.new()
 	panel.add_child(modal)
 	modal.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	var shade := ColorRect.new()
+	shade = ColorRect.new()
 	shade.color = Color(0.018, 0.055, 0.075, 0.96)
 	modal.add_child(shade)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -80,7 +81,9 @@ func bind_player(next: TidePlayer) -> void:
 	player.stats_changed.connect(_stats)
 	_stats(player.health, player.soul)
 	location_left = 4.0
-	if page_id == "death": close_all()
+	if page_id == "death":
+		if busy: modal.hide()
+		else: close_all()
 
 func _stats(hp: int, soul: int) -> void:
 	health_value = hp
@@ -115,6 +118,7 @@ func open(page: String, push: bool = true) -> void:
 	for child: Node in body.get_children():
 		body.remove_child(child)
 		child.queue_free()
+	shade.color = Color.BLACK if page == "death" else Color(0.018, 0.055, 0.075, 0.96)
 	modal.show()
 	hud.hide()
 	WhaleUIPages.build(self, page)
@@ -159,10 +163,10 @@ func start_game(fresh: bool) -> void:
 	previous_pause = false
 	close_all()
 
-func retry() -> void:
+func retry(at_checkpoint: bool = false) -> void:
 	if busy: return
 	busy = true
-	await host.respawn()
+	await host.respawn(not at_checkpoint and not data.boss().is_empty())
 	busy = false
 	previous_controls = true
 	previous_pause = false

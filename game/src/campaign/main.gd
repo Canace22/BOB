@@ -706,7 +706,7 @@ func on_player_died() -> void:
 		player_ui.history.clear()
 		player_ui.open("death",false)
 
-func respawn() -> void:
+func respawn(retry_boss: bool = false) -> void:
 	if continuity.transition.active: return
 	player.transition_locked = true
 	player.invulnerable = maxf(player.invulnerable, 2.0)
@@ -717,13 +717,14 @@ func respawn() -> void:
 	record_event("player_death", {"room":room_index})
 	health = 5
 	player_soul=99
-	load_room(clampi(int(checkpoint.room), 0, rooms.size() - 1), checkpoint.get("pos", []))
+	var retry_here: bool = retry_boss and not player_ui.data.boss().is_empty()
+	load_room(room_index if retry_here else clampi(int(checkpoint.room), 0, rooms.size() - 1), [] if retry_here else checkpoint.get("pos", []))
 	player.transition_locked = true
 	player.invulnerable = 1.5
 	await continuity.transition.fade_in(0.35)
 	player.transition_locked = false
 	player_ui.clear_input()
-	notify("已返回检查点")
+	notify("重新挑战" if retry_here else "已返回检查点")
 
 func draw_overlay() -> void:
 	if room.is_empty() or reference_visible: return

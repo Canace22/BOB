@@ -108,9 +108,13 @@ static func _death(ui: WhaleCampaignUI) -> void:
 	column.add_child(WhaleUIStyle.icon("leaf",Vector2(52,70)))
 	column.add_child(WhaleUIStyle.label("潮水会记得来路。",24))
 	var index: int = clampi(int(ui.host.checkpoint.room),0,ui.host.rooms.size()-1)
-	column.add_child(WhaleUIStyle.paragraph("返回 "+str(ui.host.rooms[index].name)+" 的检查点。\n本次已获得的能力、收集和开启的通路保留。"))
-	action(column,"Retry",WhaleUIStyle.key("tp_respawn")+"  返回检查点",ui.retry)
-	ui.footer.text = "再次出发，听见生命的回声。"
+	column.add_child(WhaleUIStyle.paragraph(("重新挑战将回到本房入口，双方生命恢复。\n" if not ui.data.boss().is_empty() else "")+"返回检查点："+str(ui.host.rooms[index].name)+"。\n本次已获得的能力、收集和开启的通路保留。"))
+	if not ui.data.boss().is_empty():
+		action(column,"Retry",WhaleUIStyle.key("tp_respawn")+"  重新挑战",ui.retry)
+		action(column,"Checkpoint","返回检查点",func() -> void: ui.retry(true))
+	else:
+		action(column,"Retry",WhaleUIStyle.key("tp_respawn")+"  返回检查点",ui.retry)
+	ui.footer.text = "R / Enter 重试 · 鼠标点击选择"
 
 static func _help(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "拾潮者 · 操作手记"
