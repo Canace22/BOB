@@ -41,6 +41,8 @@ R1-02至R1-07已接入独立四层与环境动件，主场景运行时直接使�
 
 主线存档为 `user://whalebelly/artmatch_save.json`。桌面仅在目标尚无存档时复制旧目录的有效V6进度，不覆盖新档或删除原件；浏览器不会读取本机AppData。隔离试玩使用 `node tools/godot.mjs run -- res://tests/whalebelly/manual_play.tscn`。
 
+起始房骨路已按可见路面校正碰撞，修复坡顶和下坡时脚踩进路面的现象。已有存档可继续使用，载入时会落到修正后的地面。
+
 Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 `node game/tests/serve_web.mjs`，使用 `node game/tests/web_whalebelly.mjs` 真实按键验收。可用 `GAME_URL` 指定线上入口、`TEST_LABEL` 区分证据。测试创建独立浏览器上下文；报告、截图和录像只留本地。
 
 模块边界、发布和资源审计见[架构](../docs/architecture.md)，本轮执行结果见[进度](progress.md)。

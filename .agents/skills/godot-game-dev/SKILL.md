@@ -70,6 +70,8 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 
 - 基础跳跃表现应按真实运动阶段选择已有位图帧，避免把固定时长的起跳/落地整段直接播放到空中。落地覆盖必须可被移动、跳跃和战斗打断；独立跑步适配器同时核对逻辑动画态与实际显示态。回归入口为game/tests/whalebelly/locomotion_visual.gd，覆盖真实主场景输入、姿态与控制响应。
 
+- 脚底穿进绘画地面时，先区分物理离地、动作pivot与碰撞轮廓。地面像素可能同时位于ROAD和DECOR等静态图层，须对照完整合成画面，不能只沿单张ROAD的Alpha边缘描线。同步场景碰撞、rooms.json资源源文件与运行副本；用旧V6落点验证投影兼容。圆底胶囊在斜坡上的脚底中心与竖直地面采样存在正常间距，结合坡角检查，不能误当悬空。R1-01专项：tests/test_ground_profile.gd、tests/whalebelly/ground_contact.gd、tests/web_ground_contact.mjs；真实键盘往返与截图共同验收。
+
 - 新资源引用要覆盖动态拼接路径；字体必须嵌入并检查中文覆盖。本机正常不证明Web正常。
 - `game/build/` 要有 `.gdignore`，导出排除测试/工具/证据；Git忽略不等于Godot不会打包。
 - Web模板缺失时安装固定版本的官方单线程模板，不降级引擎。Chromium缺失可用 `CHROME_PATH` 或已安装Chrome，不把工具缺失算玩法失败。
