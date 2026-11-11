@@ -27,17 +27,20 @@ try{
  await page.waitForFunction(()=>typeof window.render_game_to_text==='function');
  await page.keyboard.press('Enter');await page.waitForTimeout(600);
  check('seven-room live entrance',(await state()).room==='R1-01');
- await page.keyboard.down('d');await room('R1-02');await page.keyboard.up('d');
- check('natural side passage needs movement only',(await state()).room==='R1-02');
+ await walkTo(1495);await page.waitForTimeout(250);
+ check('visible first doorway exposes E prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.prompt==='主线 · 须筛'));
+ await page.screenshot({path:path.join(out,'first-door-prompt.png')});
+ await page.keyboard.press('e');await room('R1-02');
+ check('E enters from visible first doorway',(await state()).room==='R1-02');
  await walkTo(110);await page.waitForTimeout(250);
- check('background arch exposes enter prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.kind==='door'&&d.prompt.length>0));
+ check('background arch exposes enter prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.prompt==='主线 · 外伤坡'));
  await page.screenshot({path:path.join(out,'door-prompt.png')});
  await page.keyboard.press('e');await room('R1-01');
  check('E returns through arch',true);
  await hold('d',450);
  check('arrival cannot immediately bounce',(await state()).room==='R1-01');
  await walkTo(1430);await page.keyboard.down('d');await room('R1-02');await page.keyboard.up('d');
- check('leaving entrance rearms passage',true);
+ check('leaving entrance rearms movement-only passage',true);
  // Existing preview keys isolate other rooms; these are not a continuous campaign run.
  await page.keyboard.press('F9');
  for(const [number,target,doorX] of [[3,'R1-02',110],[4,'R1-03',110],[5,'R1-04',130],[6,'R1-02',130],[7,'R1-02',125]]){

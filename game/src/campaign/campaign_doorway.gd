@@ -65,7 +65,6 @@ func prompt() -> String:
 	if not armed: return ""
 	var reason: String = restriction()
 	if not reason.is_empty(): return reason
-	if kind == "passage": return ""
 	if kind == "exit": return CampaignGuidance.door_label(host, data)
 	return CampaignGuidance.door_label(host, data)
 
