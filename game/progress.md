@@ -610,3 +610,9 @@ RTX5060、1280×720、Compatibility暖机独立采样（不录制/截图）约57
 验证：工程check/test、Boss死亡与重复R、原检查点保留、二次死亡后鼠标返回、浏览器自然敌伤路线。原生伤害夹具与浏览器4号房预览起点分别说明，均使用隔离存档。本地check无错误、工程60/60、死亡重试5/5、既有淡黑7/7、Chrome7/7通过，浏览器errors为空；death-black.png已复核黑底、中文与按钮。首轮Chrome断言误用旧占位血量10，已改读Boss实际maximum=300，最终通过；初次独立检出LFS指针导致导入失败，恢复本地LFS实体和导入记录后重验通过。证据仅本地game/build/qa/boss-retry/。README、UI说明与Godot Skill同步；发布版本待补。
 
 最终组合保留新门交互、探索提示与主角尺寸：check零错误、64/64工程、5/5死亡专项、Chrome7/7通过，errors=[]。字体按合并后的全部UI重建；证据boss-retry/combined/。
+
+### 贴地修复交付收尾（2026-11-11）
+
+修复已写回本地main提交2813acf8；隔离验证为check 0错误、58/58，合并已发布支线后为60/60，GPU 10/10、独立Chrome本地14/14均通过。同步更新README、Godot开发Skill与回归脚本。最终由包含本补丁及支线/过场修复的整合源码1b2fed317e8fafd7d01238e4849e40297c3343bc发布，Pages提交e65d120842e0c1acef729e27103c2043ee1f14fb，部署42939999563成功；公网build.json及downloads.json已匹配。原工作区并行改动保留。
+
+公网冷启动首轮300秒超时且无引擎错误；独立持久QA浏览器重试确认下载持续推进。用户要求立即收尾后停止等待，公网真实按键路线尚未执行完，不记为线上玩法验收通过。本地截图、测试报告及首载日志留game/build/qa/ground-contact/。试玩：https://canace22.github.io/BOB/godot/ 。本批没有继续扩展功能。
