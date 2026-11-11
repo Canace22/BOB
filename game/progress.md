@@ -542,3 +542,10 @@ RTX5060、1280×720、Compatibility暖机独立采样（不录制/截图）约57
 更新工程README、Godot开发Skill及可复跑测试。没有新增美术资源；本批不重写素材台账。浏览器验证、源码/Pages提交和线上结果在完成后补记。
 
 本地独立Chrome真实键盘14/14通过：跑坡往返、Ctrl慢走下坡、Space起落、营地保存后刷新并从标题继续、01→02→01过门均正常，errors为空。首轮浏览器脚本在刷新后的标题页提前检查grounded导致失败，已改为真实Enter继续后检查；没有修改存档逻辑。最终GPU专项10/10且无引擎错误；一次headless旧落点重载专项在退出时报告资源仍占用，保留日志，不把该次退出算干净通过。实际截图已核对right-slope、slope-descent、crest-return；证据web-local-final/。
+
+
+### 贴地修复交付收尾（2026-11-11）
+
+修复已写回本地main提交2813acf8；隔离验证为check 0错误、58/58，合并已发布支线后为60/60，GPU 10/10、独立Chrome本地14/14均通过。同步更新README、Godot开发Skill与回归脚本。最终由包含本补丁及支线/过场修复的整合源码1b2fed317e8fafd7d01238e4849e40297c3343bc发布，Pages提交e65d120842e0c1acef729e27103c2043ee1f14fb，部署42939999563成功；公网build.json及downloads.json已匹配。原工作区并行改动保留。
+
+公网冷启动首轮300秒超时且无引擎错误；独立持久QA浏览器重试确认下载持续推进。用户要求立即收尾后停止等待，公网真实按键路线尚未执行完，不记为线上玩法验收通过。本地截图、测试报告及首载日志留game/build/qa/ground-contact/。试玩：https://canace22.github.io/BOB/godot/ 。本批没有继续扩展功能。
