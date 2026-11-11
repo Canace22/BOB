@@ -68,6 +68,9 @@ static func _pause(ui: WhaleCampaignUI) -> void:
 
 static func _map(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "潮路手记 · 须门遗港"
+	var guidance := WhaleUIStyle.paragraph(CampaignGuidance.hint(ui.host), WhaleUIStyle.AMBER)
+	guidance.name = "MapGuidance"
+	ui.body.add_child(guidance)
 	var map := WhaleUIMap.new()
 	map.data = ui.data
 	map.custom_minimum_size = Vector2(0,310)
