@@ -36,6 +36,7 @@ func snapshot() -> Dictionary:
 			"reduce_motion":host.player_ui.preferences.reduce_motion,"visited":host.visited,
 			"save_ok":host.last_save_ok,"map_nodes":host.player_ui.data.map_rooms(),
 			"guidance":CampaignGuidance.hint(host),"room_description":host.player_ui.data.room_description(host.room_index),
+			"map_view":WhaleUIMapPage.snapshot(host.player_ui),
 			"controls":host.player_ui.control_snapshot(),"width":host.player_ui.panel.size.x,"height":host.player_ui.panel.size.y},
 		"checkpoint": host.checkpoint,
 		"camera": {"x":host.camera.position.x,"y":host.camera.position.y,

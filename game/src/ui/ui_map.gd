@@ -21,6 +21,7 @@ func _ready() -> void:
 	anatomy.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	anatomy.modulate = Color(.62,.71,.77,.38)
 	add_child(anatomy)
+	anatomy.show_behind_parent = true
 	var known: Dictionary={}
 	for room: Dictionary in nodes: known[int(room.index)]=room
 	if not nodes.is_empty():
@@ -37,14 +38,12 @@ func _ready() -> void:
 	for room: Dictionary in nodes:
 		var id: int=int(room.index)
 		var label: String=str(room.name)
-		if room.current: label="所在 · "+label
-		label += "\n" + ("下一步 · " if room.next else "") + str(room.route_kind)
-		if not room.visited: label += "\n未探索"
 		var button: Button=WhaleUIStyle.button(label,select_room.bind(id))
 		button.name="Room_"+str(room.id)
-		button.custom_minimum_size=Vector2(140,76)
+		button.custom_minimum_size=Vector2(140,48)
 		button.add_theme_font_size_override("font_size",14)
-		if not room.visited: button.modulate=Color(0.66,0.8,0.81)
+		if not room.visited and not room.next: button.modulate=Color(0.66,0.8,0.81)
+		button.tooltip_text = str(room.route_kind) + (" · 未探索" if not room.visited else "")
 		if room.next: button.add_theme_stylebox_override("normal",WhaleUIStyle.box(Color("152f35"),WhaleUIStyle.TEAL))
 		if room.current: button.add_theme_stylebox_override("normal",WhaleUIStyle.box(Color("263c3b"),WhaleUIStyle.AMBER))
 		if room.visited and room.camp:
@@ -65,8 +64,8 @@ func _layout() -> void:
 	for room: Dictionary in nodes:
 		var id: int=int(room.index)
 		var button: Button=buttons[id]
-		button.custom_minimum_size=Vector2(width,76)
-		button.size=Vector2(width,76)
+		button.custom_minimum_size=Vector2(width,48)
+		button.size=Vector2(width,48)
 		var normalized: Vector2=ANATOMY_POSITIONS.get(id,Vector2(.5,.5))
 		button.position=normalized*size-button.size*.5
 		button.position=button.position.clamp(Vector2.ZERO,(size-button.size).max(Vector2.ZERO))
@@ -104,8 +103,41 @@ func _draw() -> void:
 				var label: String=WhaleUICampaignData.ability_name(requirement)
 				var width: float=WhaleUIStyle.FONT.get_string_size(label,HORIZONTAL_ALIGNMENT_LEFT,-1,14).x
 				draw_string(WhaleUIStyle.FONT,center+Vector2(-width*0.5,27),label,HORIZONTAL_ALIGNMENT_LEFT,-1,14,WhaleUIStyle.BONE)
+	_draw_recommended_route()
 	for room: Dictionary in nodes:
 		if room.current and buttons.has(int(room.index)):
 			var button: Button=buttons[int(room.index)]
 			var center: Vector2=button.position+Vector2(button.size.x*0.5,-12)
 			draw_colored_polygon(PackedVector2Array([center+Vector2(-7,-6),center+Vector2(7,-6),center+Vector2(0,5)]),WhaleUIStyle.AMBER)
+
+# An arrow from the current room to the recommended neighbour stays readable
+# even when both endpoints are covered by their clickable room labels.
+func recommended_route() -> PackedVector2Array:
+	var current := -1
+	var next := -1
+	for room: Dictionary in nodes:
+		if room.current: current = int(room.index)
+		if room.next: next = int(room.index)
+	if not buttons.has(current) or not buttons.has(next): return PackedVector2Array()
+	var a: Button = buttons[current]
+	var b: Button = buttons[next]
+	var begin := a.position + a.size * 0.5
+	var end := b.position + b.size * 0.5
+	var direction := (end - begin).normalized()
+	return PackedVector2Array([_edge(a, direction), _edge(b, -direction)])
+
+func _edge(button: Button, direction: Vector2) -> Vector2:
+	var half := button.size * 0.5 + Vector2(10,10)
+	var distance := minf(half.x / maxf(absf(direction.x),0.001), half.y / maxf(absf(direction.y),0.001))
+	return button.position + button.size * 0.5 + direction * distance
+
+func _draw_recommended_route() -> void:
+	var route := recommended_route()
+	if route.size() != 2: return
+	var direction := (route[1] - route[0]).normalized()
+	var side := direction.orthogonal()
+	draw_line(route[0],route[1],WhaleUIStyle.INK,9,true)
+	draw_line(route[0],route[1],WhaleUIStyle.AMBER,3,true)
+	for ratio: float in [0.5,1.0]:
+		var tip: Vector2 = route[0].lerp(route[1],ratio)
+		draw_colored_polygon(PackedVector2Array([tip,tip-direction*13+side*7,tip-direction*13-side*7]),WhaleUIStyle.AMBER)

@@ -1,6 +1,7 @@
 class_name WhaleUICampaignData
 extends RefCounted
 ## Read model for the active campaign. Gameplay and saves remain host-owned.
+const MEMORY_TEXT := "水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。"
 var host: Node2D
 
 func camp_position() -> Array:
@@ -71,6 +72,6 @@ func room_description(index: int) -> String:
 	if host.collected.get(str(r.id), false):
 		details += "\n本房补给 / 记忆已收集"
 		if str(r.id) == "R1-07":
-			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。" % WhaleUIStyle.key("float")
+			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：" % WhaleUIStyle.key("float") + MEMORY_TEXT
 	if host.defeated.get(str(r.id)+":0", false): details += "\n守关者已击败"
 	return details

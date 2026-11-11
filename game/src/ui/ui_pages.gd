@@ -67,25 +67,7 @@ static func _pause(ui: WhaleCampaignUI) -> void:
 	column.add_child(WhaleUIStyle.paragraph("返回标题后再继续，将回到最近保存的检查点。"))
 
 static func _map(ui: WhaleCampaignUI) -> void:
-	ui.heading.text = "潮路手记 · 须门遗港"
-	var guidance := WhaleUIStyle.paragraph(CampaignGuidance.hint(ui.host), WhaleUIStyle.AMBER)
-	guidance.name = "MapGuidance"
-	ui.body.add_child(guidance)
-	var map := WhaleUIMap.new()
-	map.data = ui.data
-	map.custom_minimum_size = Vector2(0,310)
-	map.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	ui.body.add_child(map)
-	var detail: Label = WhaleUIStyle.paragraph("")
-	detail.custom_minimum_size.y = 74
-	detail.name = "MapDetail"
-	ui.body.add_child(detail)
-	map.selected.connect(func(index: int) -> void:
-		detail.text = str(ui.host.rooms[index].name)+"\n"+ui.data.room_description(index))
-	map.select_room(ui.host.room_index)
-	var row: VBoxContainer = menu(ui)
-	action(row,"Back","返回",ui.back)
-	ui.footer.text = "房间连接示意 · 三角：所在 · 壳形：营地 · 菱形：能力门 · 虚线：已知未探索 · 未知留白"
+	WhaleUIMapPage.build(ui)
 
 static func _camp(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "壳巢歇息 · "+str(ui.host.room.name)
