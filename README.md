@@ -115,6 +115,6 @@ Web 导出后自动生成压缩下载文件与加载说明，浏览器缓存按�
 
 正式画面只用入库的 2D 位图素材，规则见 [AGENTS.md](AGENTS.md#正式美术必须使用2d素材)。素材管理：[全局风格规范](assets/art-style.md) · [目录约定](assets/README.md) · [资源台账](assets/catalog.md)。管理页面：`npm --prefix assets/manager start`，打开 http://127.0.0.1:4176/ 。
 
-运行图片经过[Framecraft 保真处理](assets/source/framecraft-runtime/README.md)，场景运行纹理另作轻度有损压缩，保留原件、尺寸和透明度。当前Web启动文件约103.15 MiB，较本轮处理前减少30%。
+运行图片经过[Framecraft 保真处理](assets/source/framecraft-runtime/README.md)，场景运行纹理另作轻度有损压缩，保留原件、尺寸和透明度。当前 Web 启动下载约 114.99 MiB。
 
 大型素材使用 Git LFS。编辑器缓存、验收截图、第三方工具和日志不入库，见[迁移与提交范围](docs/workspace-migration.md)。

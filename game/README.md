@@ -33,7 +33,7 @@ node tools/godot.mjs test
 
 找不到引擎时，将 `GODOT` 设置为现有Godot 4.7.2 console可执行文件。运行素材由 `art/manifest.json` 从 `assets/` 同步，不依赖旧工程目录。图片来源、工作台工程与压缩方式见 [Framecraft批次](../assets/source/framecraft-runtime/README.md)。
 
-当前[在线试玩](https://canace22.github.io/BOB/godot/)的启动下载约112.30 MiB，首次进入需要等待。场景压缩设置与原件恢复方式见[资源说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
+当前[在线试玩](https://canace22.github.io/BOB/godot/)的启动下载约114.99 MiB，首次进入需要等待。场景压缩设置与原件恢复方式见[资源说明](../assets/source/framecraft-runtime/batches/2026-11-04/README.md)。
 
 ## R1后续六房环境
 
