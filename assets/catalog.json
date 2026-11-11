@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 76,
-  "updatedAt": "2026-11-06",
+  "revision": 77,
+  "updatedAt": "2026-11-11",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -33140,6 +33140,27 @@
         "report": "assets/source/xumen-challenge-v1/acceptance.md",
         "userApproved": false
       }
+    },
+    {
+      "id": "doorways-v1-tunnel",
+      "name": "七房骨拱通道内景",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "2D",
+        "洞门",
+        "静态",
+        "门槛遮挡"
+      ],
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/sprites/doorways-v1/tunnel.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "4f8a6c616cd5efb54f3c1ac24cf3452edbf7dfb968d12927abc7b23cd3f36bf6",
+      "source": "assets/source/doorways-v1/tunnel-original.png",
+      "notes": "内置 imagegen 单资产；原件、完整提示词和14门分类见 assets/source/doorways-v1/README.md。按门等比缩放；底部裁片为前景门槛。技术验收与用户审美认可分别记录。"
     }
   ]
 }

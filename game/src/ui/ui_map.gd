@@ -38,13 +38,14 @@ func _ready() -> void:
 		var id: int=int(room.index)
 		var label: String=str(room.name)
 		if room.current: label="所在 · "+label
-		elif not room.visited: label+="\n未探索"
-		elif room.camp: label+="\n营地"
+		label += "\n" + ("下一步 · " if room.next else "") + str(room.route_kind)
+		if not room.visited: label += "\n未探索"
 		var button: Button=WhaleUIStyle.button(label,select_room.bind(id))
 		button.name="Room_"+str(room.id)
-		button.custom_minimum_size=Vector2(140,64)
-		button.add_theme_font_size_override("font_size",16)
+		button.custom_minimum_size=Vector2(140,76)
+		button.add_theme_font_size_override("font_size",14)
 		if not room.visited: button.modulate=Color(0.66,0.8,0.81)
+		if room.next: button.add_theme_stylebox_override("normal",WhaleUIStyle.box(Color("152f35"),WhaleUIStyle.TEAL))
 		if room.current: button.add_theme_stylebox_override("normal",WhaleUIStyle.box(Color("263c3b"),WhaleUIStyle.AMBER))
 		if room.visited and room.camp:
 			button.icon = load("res://art/ui/shell.svg") as Texture2D
@@ -64,8 +65,8 @@ func _layout() -> void:
 	for room: Dictionary in nodes:
 		var id: int=int(room.index)
 		var button: Button=buttons[id]
-		button.custom_minimum_size=Vector2(width,64)
-		button.size=Vector2(width,64)
+		button.custom_minimum_size=Vector2(width,76)
+		button.size=Vector2(width,76)
 		var normalized: Vector2=ANATOMY_POSITIONS.get(id,Vector2(.5,.5))
 		button.position=normalized*size-button.size*.5
 		button.position=button.position.clamp(Vector2.ZERO,(size-button.size).max(Vector2.ZERO))
