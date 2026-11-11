@@ -127,7 +127,7 @@ func _read_input() -> void:
 		if mechanism!=null and float(mechanism.membrane_drop)>15:
 			drop_timer=.28;jump_buffer=0;coyote=0;velocity.y=180
 			host.sfx("sweep");host.record_event("membrane_dive",{"position":[position.x,position.y],"drop":mechanism.membrane_drop})
-	if Input.is_action_just_pressed("float") and not host.has_ability("float"):host.notify("浮游尚未解锁；F9可进入原有能力练习模式")
+	if Input.is_action_just_pressed("float") and not host.has_ability("float"):host.notify("浮游尚未解锁；沿须筛右侧圆环进入鲸须记忆袋，拾取记忆")
 	if Input.is_action_just_pressed("grapple"):
 		if not host.has_ability("anchor"):host.notify("锚环尚未解锁；F9可进入原有能力练习模式")
 		else:_find_ring()
@@ -182,6 +182,8 @@ func _before_move(dt:float) -> void:
 			velocity=Vector2.ZERO
 			float_left=1.5
 	elif Input.is_action_pressed("float") and host.has_ability("float") and not is_on_floor() and float_left>0 and velocity.y>-160 and state_duration<=0:
+		# Floating has its own lift; releasing jump must not cap it at short-jump height.
+		short_jump=false
 		float_left-=dt;velocity.y=move_toward(velocity.y,-160,2200*dt);floating=true
 
 func locomotion_animation() -> String:

@@ -40,7 +40,10 @@ static func description(host: Node2D, id: String) -> String:
 			if host.collected.get(id, false):
 				return "支路已完成 · 左门返回须筛，从高台左缘落回下层，再向右去舌台。"
 			return "可选支路 · 取得浮游后原路返回，没有右侧出口。"
-		"R1-06": return "可选补给支路 · 远侧连接后续区域，目前未开放；探索后原路返回须筛。"
+		"R1-06":
+			if not host.has_ability("float"):
+				return "可选补给支路 · 先沿须筛右侧圆环进入鲸须记忆袋，拾取记忆获得浮游。\n远侧区域未开放，探索后原路返回须筛。"
+			return "可选补给支路 · 从须筛左侧平台逐层上行。\n%s 起跳，空中按住 %s 浮游，松开落台。\n远侧闩尚未开放，探索后沿原路返回须筛。" % [WhaleUIStyle.key("tp_jump"), WhaleUIStyle.key("float")]
 		"R1-05": return "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
 	return "主线通路"
 
@@ -52,3 +55,12 @@ static func door_label(host: Node2D, door: Dictionary) -> String:
 	var id: String = str(host.rooms[target].id)
 	var prefix: String = "返回" if str(host.room.id) in ["R1-06", "R1-07"] else route_kind(id)
 	return prefix + " · " + str(host.rooms[target].name)
+
+static func float_prompt(host: Node2D) -> String:
+	var p: Node2D = host.player
+	if not is_instance_valid(p) or p.health <= 0 or host.continuity.travelling: return ""
+	var room_id: String = str(host.room.id)
+	if room_id != "R1-06" and not (room_id == "R1-02" and p.position.x < 380): return ""
+	if not host.has_ability("float"): return ""
+	if p.is_on_floor(): return "%s 起跳后按住浮游 · 松开落台" % WhaleUIStyle.key("tp_jump")
+	return "按住浮游 · 松开落台" if p.float_left > 0 else "浮游已用完 · 落台恢复"

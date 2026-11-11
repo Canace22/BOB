@@ -60,7 +60,7 @@ static func short_hint(host: Node2D) -> String:
 static func short_detail(host: Node2D, id: String) -> String:
 	match id:
 		"R1-07": return "浮游已获得" if host.collected.get(id,false) else "支路 · 浮游"
-		"R1-06": return "支路 · 需浮游" if not host.has_ability("float") else "支路 · 原路返回"
+		"R1-06": return "支路 · 先去记忆袋获得浮游" if not host.has_ability("float") else "支路 · 左侧浮游上行 · 原路返回"
 	return ""
 
 static func snapshot(ui: WhaleCampaignUI) -> Dictionary:
