@@ -174,7 +174,7 @@ func save_preferences() -> void:
 	footer.text = "设置已保存 · Esc 返回" if preferences.write() == OK else "设置已生效，但写入失败；本次会话有效。"
 
 func _input(event: InputEvent) -> void:
-	if host.continuity.transition.active: return
+	if host.continuity.travelling or host.continuity.transition.active: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if event.physical_keycode == KEY_ESCAPE:
 		if page_id.is_empty(): open("pause")

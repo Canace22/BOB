@@ -64,6 +64,7 @@ func _draw() -> void:
 	if controller.host.practice: text(Vector2(size.x-270,87),"能力练习 · 不保存进度",16,WhaleUIStyle.AMBER)
 	if controller.host.room_preview: text(Vector2(size.x-270,110),"房间预览 · 不记录发现",16,WhaleUIStyle.AMBER)
 	if controller.notice_left>0: text(Vector2(35,157),controller.notice_text,17,WhaleUIStyle.AMBER)
+	text(Vector2(35,size.y-83), CampaignGuidance.hint(controller.host), 16, WhaleUIStyle.TEAL)
 	_draw_actions(p)
 	map_button.text = WhaleUIStyle.key("ui_region_map") + "  地图"
 	var prompt: String = controller.data.prompt()

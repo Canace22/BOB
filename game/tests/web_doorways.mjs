@@ -30,7 +30,7 @@ try{
  await page.keyboard.down('d');await room('R1-02');await page.keyboard.up('d');
  check('natural side passage needs movement only',(await state()).room==='R1-02');
  await walkTo(110);await page.waitForTimeout(250);
- check('background arch exposes enter prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.prompt==='进入'));
+ check('background arch exposes enter prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.kind==='door'&&d.prompt.length>0));
  await page.screenshot({path:path.join(out,'door-prompt.png')});
  await page.keyboard.press('e');await room('R1-01');
  check('E returns through arch',true);

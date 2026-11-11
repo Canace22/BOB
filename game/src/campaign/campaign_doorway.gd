@@ -58,7 +58,7 @@ func restriction() -> String:
 			if enemy.boss and enemy.alive: return "先击败负壳守卫"
 	elif not needed.is_empty() and not host.has_ability(needed):
 		return "需要" + WhaleUICampaignData.ability_name(needed)
-	if kind == "sealed": return "另一侧开启"
+	if kind == "sealed": return "后续区域未开放 · 原路返回"
 	return ""
 
 func prompt() -> String:
@@ -66,8 +66,8 @@ func prompt() -> String:
 	var reason: String = restriction()
 	if not reason.is_empty(): return reason
 	if kind == "passage": return ""
-	if kind == "exit": return "抵达出口" if not host.completed else "后续区域未开放"
-	return "进入"
+	if kind == "exit": return CampaignGuidance.door_label(host, data)
+	return CampaignGuidance.door_label(host, data)
 
 func update_entry() -> bool:
 	var p: WhalebellyCampaignPlayer = host.player

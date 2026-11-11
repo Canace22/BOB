@@ -583,7 +583,7 @@ func interact() -> void:
 			abilities.float = true
 			player.soul = player.max_soul
 			record_event("ability_unlocked", {"id":"float"})
-			notify("记忆已收集 · 获得浮游：空中按住 W；生命与蓄振已恢复")
+			notify("获得浮游（空中按住 %s）· 左门返回须筛" % WhaleUIStyle.key("float"))
 		else: notify("收集本房记忆 / 补给，已保存")
 		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
