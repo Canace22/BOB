@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const require = createRequire(import.meta.url);
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const out = path.resolve('game/build/qa/memory-branch', process.env.TEST_LABEL || 'web-local');
+const out = path.resolve(process.env.QA_OUTPUT || 'game/build/qa/memory-branch', process.env.TEST_LABEL || 'web-local');
 fs.mkdirSync(out, {recursive:true});
 const browser = await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=no-user-gesture-required']});
 const context = await browser.newContext({viewport:{width:1440,height:900}});
@@ -71,7 +71,9 @@ try {
   }
   await page.keyboard.down('Space');await page.keyboard.down('d');await pause(450);
   await page.keyboard.up('Space');
-  await until(s=>s.room==='R1-07',12000);await page.keyboard.up('d');
+  await until(s=>s.room==='R1-07'||(s.room==='R1-02'&&s.player.x>1585),12000);await page.keyboard.up('d');
+  if((await state()).room==='R1-02') await page.keyboard.press('e');
+  await until(s=>s.room==='R1-07');await pause(900);
   let s=await state();
   check('real_upper_entry_no_float',s.ui.visited['R1-07']&&!s.abilities.float&&!s.practice,s.player);
   await page.screenshot({path:path.join(out,'memory-entry.png')});
@@ -85,6 +87,15 @@ try {
   await page.keyboard.press('c');await pause(300);
   await page.screenshot({path:path.join(out,'memory-map.png')});
   check('map_memory_discovered',(await state()).ui.map_nodes.some(n=>n.id==='R1-07'&&n.visited));
+  if(process.env.CHECK_GUIDANCE) {
+    s=await state();
+    check('reward_map_points_to_return',s.ui.guidance.includes('左门返回须筛')&&s.ui.map_nodes.some(n=>n.id==='R1-02'&&n.next));
+    check('memory_marked_optional',s.ui.map_nodes.some(n=>n.id==='R1-07'&&n.route_kind==='可选支路'));
+    check('unknown_boss_stays_hidden',!s.ui.map_nodes.some(n=>n.id==='R1-04'));
+    await page.setViewportSize({width:1280,height:720});await pause(500);
+    await page.screenshot({path:path.join(out,'memory-map-1280.png')});
+    await page.setViewportSize({width:1440,height:900});await pause(300);
+  }
   await page.keyboard.press('Escape');await pause(300);
   await page.keyboard.press('F5');await pause(900);
   await page.reload({waitUntil:'domcontentloaded'});
@@ -96,11 +107,25 @@ try {
   check('earned_float_actual_input',!s.player.floor&&s.player.vy<0,s.player);
   await pause(1400);
   await memoryGaps(95,'R1-02');
-  await until(s=>s.room==='R1-02');s=await state();
+  if((await state()).room==='R1-07') await page.keyboard.press('e');
+  await until(s=>s.room==='R1-02');await pause(900);s=await state();
   check('return_on_upper_platform',s.player.y<350,s.player);
   await page.screenshot({path:path.join(out,'upper-return.png')});
   await walk(1230,'R1-02');await pause(1800);s=await state();
   check('safe_drop_to_main_route',s.player.floor&&s.player.y>600&&s.hp>0,s.player);
+  if(process.env.CHECK_GUIDANCE) {
+    check('hub_points_to_main_route',(await state()).ui.guidance.includes('下层右门'));
+    await page.keyboard.press('c');await pause(350);
+    s=await state();
+    check('tongue_is_next_upper_is_optional',s.ui.map_nodes.some(n=>n.id==='R1-03'&&n.next)&&s.ui.map_nodes.some(n=>n.id==='R1-06'&&n.route_kind==='可选支路'&&!n.next));
+    await page.screenshot({path:path.join(out,'hub-next-route.png')});
+    await page.keyboard.press('Escape');await pause(300);
+    await walk(1600,'R1-02','R1-03');
+    if((await state()).room==='R1-02') await page.keyboard.press('e');
+    await until(s=>s.room==='R1-03');await pause(900);
+    check('return_continues_main_route',(await state()).ui.guidance.includes('负壳蟹'));
+    await page.screenshot({path:path.join(out,'main-route-continued.png')});
+  }
   check('no_browser_errors',errors.length===0,errors);
 } finally {
   fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({checks,errors,passed:checks.length>=14&&checks.every(c=>c.pass)&&!errors.length,scope:'Fresh isolated browser, real keys from title to memory reward and back; no preview, F9, position or save injection.'},null,2));

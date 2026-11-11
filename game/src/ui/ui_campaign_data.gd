@@ -23,7 +23,7 @@ func prompt() -> String:
 			var needed: String = door.get("ability", "")
 			if needed == "boss" and not boss().is_empty(): return "先击败负壳守卫"
 			if not needed.is_empty() and needed != "boss" and not host.has_ability(needed): return "需要" + ability_name(needed)
-			return "穿过通道（方向＋交互）"
+			return CampaignGuidance.door_label(host, door)
 	return ""
 
 func boss() -> Dictionary:
@@ -47,7 +47,7 @@ func map_rooms() -> Array[Dictionary]:
 	for i: int in range(host.rooms.size()):
 		if not known.has(i): continue
 		var r: Dictionary = host.rooms[i]
-		result.append({"index":i, "id":str(r.id), "name":str(r.name), "visited":bool(host.visited.get(str(r.id), false)), "current":i == host.room_index, "doors":r.get("doors", []), "camp":r.has("camp") or i in [0,3,4]})
+		result.append({"index":i, "id":str(r.id), "name":str(r.name), "visited":bool(host.visited.get(str(r.id), false)), "current":i == host.room_index, "doors":r.get("doors", []), "camp":r.has("camp") or i in [0,3,4], "route_kind":CampaignGuidance.route_kind(str(r.id)), "next":str(r.id) == CampaignGuidance.next_room(host)})
 	return result
 
 func room_description(index: int) -> String:
@@ -58,13 +58,15 @@ func room_description(index: int) -> String:
 		for source: Dictionary in host.rooms:
 			if not host.visited.get(str(source.id), false): continue
 			for door: Dictionary in source.get("doors", []):
-				if int(door.to) == index and not str(door.get("ability", "")).is_empty(): requirement = "\n通路条件：" + ability_name(str(door.ability))
-		return "已发现相邻通路，内部尚未探索。" + requirement
-	var details: String = "已探索" + (" · 当前位置" if index == host.room_index else "")
+				if int(door.to) == index and not str(door.get("ability", "")).is_empty():
+					var available: bool = host.has_ability(str(door.ability))
+					requirement = ("\n已具备：" if available else "\n需要：") + ability_name(str(door.ability))
+		return CampaignGuidance.description(host, str(r.id)) + "\n已发现，尚未探索。" + requirement
+	var details: String = CampaignGuidance.description(host, str(r.id)) + "\n已探索" + (" · 当前位置" if index == host.room_index else "")
 	if r.has("camp") or index in [0,3,4]: details += "\n壳形营地：恢复生命、记录检查点"
 	if host.collected.get(str(r.id), false):
 		details += "\n本房补给 / 记忆已收集"
 		if str(r.id) == "R1-07":
-			details += "\n已获得浮游：空中按住 W，短暂浮升。\n记忆：水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。"
+			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。" % WhaleUIStyle.key("float")
 	if host.defeated.get(str(r.id)+":0", false): details += "\n守关者已击败"
 	return details
