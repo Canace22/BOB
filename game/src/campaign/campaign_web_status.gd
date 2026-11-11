@@ -28,6 +28,8 @@ func snapshot() -> Dictionary:
 	return {
 		"campaign": "WhalebellyRuins", "room": host.room.id,
 		"hp": host.health, "soul": host.player_soul, "completed": host.completed,
+		"collected": host.collected, "practice": host.practice,
+		"events": host.events.slice(-24),
 		"abilities": host.abilities, "paused": get_tree().paused,
 		"ui": {"page":host.player_ui.page_id,"pending_resume":host.player_ui.pending_resume,
 			"numbers":host.player_ui.preferences.numbers,"contrast":host.player_ui.preferences.contrast,
@@ -40,6 +42,8 @@ func snapshot() -> Dictionary:
 			"offset_x":host.camera.offset.x,"offset_y":host.camera.offset.y,
 			"room_width":host.room.size[0],"room_height":host.room.size[1]},
 		"player": {"x": host.player.position.x, "y": host.player.position.y,
+			"vx":host.player.velocity.x,"vy":host.player.velocity.y,
+			"grappling":host.player.grapple_target!=Vector2.INF,"hanging":host.player.grapple_hanging,"jump_count":host.player.jump_count,
 			"floor": host.player.is_on_floor(), "state": host.player.state,
 			"facing": host.player.facing, "controls_enabled": host.player.controls_enabled,
 			"skill_active":host.player.skill_controller.active,

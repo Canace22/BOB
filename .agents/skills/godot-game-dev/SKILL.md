@@ -141,3 +141,7 @@ E02补充：地面画片在原房交点切换轮廓，不在向房内延伸的�
 默认入口新增unified_world.tscn后，旧房依然拥有物理与机关，但其ReferenceEnvironment/ChapterEnvironment/EnvironmentMotion及旧接头整体隐藏停用。主循环update_parallax不能重新启用旧环境；子件若显式PAUSABLE，父DISABLED也可能不能代表全部子件已停，检查实际活动对象。新QA和Web暂停应读connected_world.unified.time；旧接头兼容节点存在不代表它当前显示。动态JSON必须加入Web include_filter，不能用桌面文件存在替代导出验证。
 
 单源世界母版、手绘纹理网格、凹形rim四边形UV、切块Alpha、原膜下通路可见性及GPU根锚检查见assets/source/xumen-unified-v1。旧接头历史通过不代表用户认可，其整体观感已被用户否定。完整/静态/关绘画/空场景性能分别保留，不根据单次中位数宣称稳定60。路径目标判断需处理读状态越过目标，竖井下穿按实际落台逐次输入，别改物理来迎合固定等待驱动。
+
+### 正常进度的圆环支线
+
+能力门无法通过时，先查正式获取路径，不以F9全解锁路线证明正常可达。须筛→记忆袋现在用基础G牵引（到环停挂、再G接下一环）、空格登台；记忆袋奖励解锁浮游。`tests/whalebelly/memory_branch.gd`从单一房间夹具用真实输入往返，`-- --reload-memory`须顺序验证独立进程读档；`tests/web_memory_branch.mjs`从隔离浏览器新旅途连续走到奖励并返回，不使用预览或存档注入。旧V6迁移测试在`test_memory_progress.gd`，领取、迁移与地图展示共用稳定收集ID。测试断言保存坐标用Vector2比较，JSON数字会反序列化为浮点。
