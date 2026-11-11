@@ -32,12 +32,8 @@ func _ready() -> void:
 	super._ready()
 	floor_max_angle=deg_to_rad(55)
 	floor_snap_length=24
-	var target_height:float=94
-	for actor:Dictionary in host.room.get("actors",[]):
-		if actor.get("name","")=="PlayerArt":
-			var top:float=100000;var bottom:float=-100000
-			for vertex:Array in actor.get("shape",[]):top=minf(top,float(vertex[1]));bottom=maxf(bottom,float(vertex[1]))
-			if bottom>top:target_height=clampf(bottom-top,80,110)
+	# Keep the same world-space size across rooms; painted placeholders vary.
+	var target_height:float=94.0
 	var source_height:float=textures.idle[0].get_image().get_used_rect().size.y
 	visual_scale=target_height/maxf(source_height,1)
 	$Visual.scale=Vector2.ONE*visual_scale
