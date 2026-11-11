@@ -50,3 +50,7 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 模块边界、发布和资源审计见[架构](../docs/architecture.md)，本轮执行结果见[进度](progress.md)。
 
 资源维护：本体和世界FX分别保存帧数，释放/落地从FX自己的 `event_frame` 启动。影潮穿行复用dash本体加冷青色调；深钟复用dive本体和环，升级差异保留在技能逻辑中。资源审计运行 `node game/tools/audit_resources.mjs`；覆盖表用仓库根目录 `python build_asset_coverage.py` 更新，不因此自动认可候选美术。
+
+## 门与通道
+
+外伤坡右侧通道向右走即可穿过；画面中的骨拱门靠近后按 E 进入，提示会跟随改键设置。进入时短暂迈步、淡黑，再从相邻房间对应入口落地。返回门需要先离开门口再进入，避免反复切房。能力不足、Boss 尚存活和远侧闩分别提示条件；首关出口确认后保留原房间，不加载尚未制作的章节。营地与洞门距离很近时，门前进入、稍退回房内歇息。逐门设计、素材与验收入口见[门与通道](../assets/source/doorways-v1/README.md)。

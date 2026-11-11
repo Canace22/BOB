@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="doorway_script"]
 
 [ext_resource type="PackedScene" path="res://content/whalebelly/environment/xumen_reference.tscn" id="1"]
 
@@ -52,3 +54,13 @@ centered = false
 [editable path="ReferenceEnvironment"]
 
 [node name="Continuity_E01" parent="." instance=ExtResource("seam_E01")]
+
+[node name="Doorways" type="Node2D" parent="."]
+
+[node name="Entrance1" type="Node2D" parent="Doorways"]
+script = ExtResource("doorway_script")
+destination_id = "R1-02"
+kind = "passage"
+direction = 1.0
+height = 0.0
+prompt_offset = Vector2(0, -145)
