@@ -411,7 +411,7 @@ func _process(dt: float) -> void:
 	overlay.queue_redraw()
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if quitting: return
+	if quitting or continuity.transition.active: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if event.physical_keycode == KEY_ESCAPE:
 		if is_instance_valid(player):
@@ -596,6 +596,7 @@ func interact() -> void:
 	notify("E 使用灯台 / 拾取；靠近门按 A/D + E 穿行")
 
 func enter_door(door:Dictionary) -> void:
+	if continuity.transition.active or player.health <= 0: return
 	var destination: int = int(door.to)
 	if destination < 0:
 		if destination == -1 and room_index == 4:
@@ -618,8 +619,15 @@ func enter_door(door:Dictionary) -> void:
 				return
 	sfx("save")
 	record_event("door", {"from":room_index,"to":destination})
-	continuity.begin_transition()
+	player.transition_locked = true
+	player.invulnerable = maxf(player.invulnerable, 2.0)
+	await continuity.transition.fade_out()
 	load_room(destination, door.get("spawn", []))
+	player.transition_locked = true
+	player.invulnerable = maxf(player.invulnerable, 0.8)
+	await continuity.transition.fade_in()
+	player.transition_locked = false
+	player_ui.clear_input()
 	notify("已穿过相邻解剖区域通道")
 	return
 
@@ -699,12 +707,22 @@ func on_player_died() -> void:
 		player_ui.open("death",false)
 
 func respawn() -> void:
+	if continuity.transition.active: return
+	player.transition_locked = true
+	player.invulnerable = maxf(player.invulnerable, 2.0)
+	player.skill_controller.cancel()
+	player_ui.clear_input()
+	await continuity.transition.fade_out(0.30, 0.15)
 	sfx("slam")
 	record_event("player_death", {"room":room_index})
 	health = 5
 	player_soul=99
 	load_room(clampi(int(checkpoint.room), 0, rooms.size() - 1), checkpoint.get("pos", []))
+	player.transition_locked = true
 	player.invulnerable = 1.5
+	await continuity.transition.fade_in(0.35)
+	player.transition_locked = false
+	player_ui.clear_input()
 	notify("已返回检查点")
 
 func draw_overlay() -> void:

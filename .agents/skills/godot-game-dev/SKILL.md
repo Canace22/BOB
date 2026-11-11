@@ -70,6 +70,8 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 
 - 基础跳跃表现应按真实运动阶段选择已有位图帧，避免把固定时长的起跳/落地整段直接播放到空中。落地覆盖必须可被移动、跳跃和战斗打断；独立跑步适配器同时核对逻辑动画态与实际显示态。回归入口为game/tests/whalebelly/locomotion_visual.gd，覆盖真实主场景输入、姿态与控制响应。
 
+- 脚底穿进绘画地面时，先区分物理离地、动作pivot与碰撞轮廓。地面像素可能同时位于ROAD和DECOR等静态图层，须对照完整合成画面，不能只沿单张ROAD的Alpha边缘描线。同步场景碰撞、rooms.json资源源文件与运行副本；用旧V6落点验证投影兼容。圆底胶囊在斜坡上的脚底中心与竖直地面采样存在正常间距，结合坡角检查，不能误当悬空。R1-01专项：tests/test_ground_profile.gd、tests/whalebelly/ground_contact.gd、tests/web_ground_contact.mjs；真实键盘往返与截图共同验收。
+
 - 新资源引用要覆盖动态拼接路径；字体必须嵌入并检查中文覆盖。本机正常不证明Web正常。
 - `game/build/` 要有 `.gdignore`，导出排除测试/工具/证据；Git忽略不等于Godot不会打包。
 - Web模板缺失时安装固定版本的官方单线程模板，不降级引擎。Chromium缺失可用 `CHROME_PATH` 或已安装Chrome，不把工具缺失算玩法失败。
@@ -97,6 +99,8 @@ R1后续六房环境使用`game/content/whalebelly/environment/chapter/`，实�
 - Godot Web若在重建房间时出现Sample._duplicateAudioBuffer/createBuffer错误，保留堆栈并在新浏览器上下文复现，不能静音掩盖。24秒环境音本批改用Web专属AudioServer.PLAYBACK_TYPE_STREAM，桌面默认不变；验收同时检查真实切房、后续按键和playing/type/muted，环境音内容与短音效保留。
 
 ## UI 接入已验证方法
+
+- 淡黑换房须在遮罩完全不透明且至少呈现一帧后同步加载，层级覆盖HUD。死亡菜单暂停时仍需运行淡入淡出；返回检查点调用方等待完成后收起菜单，期间拦截重复输入。`tests/whalebelly/screen_fade.gd`覆盖暂停重生与输入恢复，`tests/web_screen_fade.mjs`用隔离浏览器实走过门和自然受伤死亡；不将夹具当自然死亡证据。
 
 - 先比较设计稿与真实数值：当前生命5、蓄振99、常用消耗33。视觉分段须表达实际支付次数并保留精确数字；无共生后端时显示不可用，不将设计稿静态配置复制为状态。
 - UI 根可用 ALWAYS 处理暂停菜单，世界保持暂停；关闭后清除动作/跳跃缓冲，等游戏按键释放再恢复，分别验证按住移动和攻击关闭菜单。模态栈恢复原页面焦点，角色重建解绑旧信号。
