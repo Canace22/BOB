@@ -21,7 +21,7 @@ static func hint(host: Node2D) -> String:
 		"R1-07":
 			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
 		"R1-06":
-			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1"
+			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1，原路返回"
 	if host.completed: return "首关完成 · 后续区域未开放，可回访支路"
 	match str(host.room.id):
 		"R1-01": return "主线 → 沿骨路前往须筛"
