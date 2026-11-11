@@ -19,13 +19,19 @@ func bind(level: Node2D, door: Dictionary) -> void:
 	data = door
 	position = host.point(door.pos)
 	armed = host.player.position.distance_to(position) > radius + 35.0
-	if kind != "door": return
+	if kind not in ["door", "passage"] or height <= 0.0: return
 	inset = Sprite2D.new()
 	inset.texture = load("res://art/doorways/tunnel.png")
 	inset.centered = false
 	var factor: float = height / inset.texture.get_height()
 	inset.scale = Vector2.ONE * factor
-	inset.position = art_offset - Vector2(inset.texture.get_width() * factor * 0.5, height)
+	var placement: Vector2 = art_offset
+	if kind == "passage":
+		# Door graph points can sit above a slope. Put the painted lip on the
+		# surface under the art centre, rather than across the standing actor.
+		var floor_y: float = host.ground_y(position.x + placement.x, position.y)
+		placement.y += floor_y - position.y + 192.0 * factor
+	inset.position = placement - Vector2(inset.texture.get_width() * factor * 0.5, height)
 	inset.z_index = 1
 	add_child(inset)
 	# Reuse the painted threshold as a foreground lip; it can cover entering feet.

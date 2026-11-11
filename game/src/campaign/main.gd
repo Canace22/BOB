@@ -37,6 +37,7 @@ var flash: float = 0.0
 var clock: float = 0.0
 var checkpoint: Dictionary = {"room": 0, "pos": []}
 var collected: Dictionary = {}
+var relics := CampaignRelics.new()
 var defeated: Dictionary = {}
 var abilities: Dictionary = {"dash": false, "float": false, "anchor": true}
 var enemies: Array = []
@@ -442,7 +443,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			update_layers()
 		KEY_F9:
 			if not practice:
-				practice_restore = {"abilities":abilities.duplicate(true),"collected":collected.duplicate(true),"defeated":defeated.duplicate(true),"checkpoint":checkpoint.duplicate(true),"completed":completed,"visited":visited.duplicate(true)}
+				practice_restore = {"abilities":abilities.duplicate(true),"collected":collected.duplicate(true),"defeated":defeated.duplicate(true),"checkpoint":checkpoint.duplicate(true),"completed":completed,"visited":visited.duplicate(true),"shield":relics.charges}
 				practice = true
 			else:
 				practice = false
@@ -452,6 +453,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				checkpoint = practice_restore.checkpoint
 				completed = practice_restore.completed
 				visited = practice_restore.visited
+				relics.charges = int(practice_restore.shield)
 				load_room(room_index, [player.position.x,player.position.y])
 			notify("练习模式：全部动作与技能可用；不写入能力进度" if practice else "已恢复正式能力进度")
 			record_event("practice", {"enabled":practice})
@@ -584,6 +586,9 @@ func interact() -> void:
 			player.soul = player.max_soul
 			record_event("ability_unlocked", {"id":"float"})
 			notify("获得浮游（空中按住 %s）· 左门返回须筛" % WhaleUIStyle.key("float"))
+		elif CampaignRelics.ITEMS.has(str(room.id)):
+			relics.refill(collected)
+			notify("获得%s · 护盾 %d/%d，营地可补满" % [CampaignRelics.reward_name(str(room.id)), relics.charges, CampaignRelics.capacity(collected)])
 		else: notify("收集本房记忆 / 补给，已保存")
 		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
@@ -630,10 +635,11 @@ func try_camp() -> bool:
 		record_event("physical_camp_save", {"room":room_index,"camp":camp,"player":checkpoint.pos})
 		record_event("checkpoint", checkpoint)
 		health = 5
+		relics.refill(collected)
 		player.health = health
 		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
-		notify("存档点已记录，生命恢复" if last_save_ok else "生命恢复，但存档写入失败")
+		notify("存档点已记录，生命与护盾恢复" if last_save_ok else "生命与护盾恢复，但存档写入失败")
 		if not qa or ui_interactive_in_tests: player_ui.open.call_deferred("camp")
 		return true
 	return false
@@ -661,6 +667,7 @@ func load_progress() -> void:
 	room_index = clampi(int(checkpoint.room), 0, rooms.size() - 1)
 	completed = payload.get("completed",false)
 	collected = payload.get("collected", {})
+	relics.refill(collected)
 	defeated = payload.get("defeated", {})
 	if int(payload.get("version",0)) >= 6: abilities = payload.get("abilities", abilities)
 	abilities.anchor = true
@@ -707,6 +714,7 @@ func respawn(retry_boss: bool = false) -> void:
 	record_event("player_death", {"room":room_index})
 	health = 5
 	player_soul=99
+	relics.refill(collected)
 	var retry_here: bool = retry_boss and not player_ui.data.boss().is_empty()
 	load_room(room_index if retry_here else clampi(int(checkpoint.room), 0, rooms.size() - 1), [] if retry_here else checkpoint.get("pos", []))
 	player.transition_locked = true

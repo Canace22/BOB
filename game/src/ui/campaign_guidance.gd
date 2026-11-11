@@ -21,13 +21,13 @@ static func hint(host: Node2D) -> String:
 		"R1-07":
 			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
 		"R1-06":
-			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方补给 · 探索后原路返回"
+			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1"
 	if host.completed: return "首关完成 · 后续区域未开放，可回访支路"
 	match str(host.room.id):
 		"R1-01": return "主线 → 沿骨路前往须筛"
 		"R1-02": return "主线 → 下层右门：舌台"
-		"R1-03": return "主线 → 右侧洞门：负壳蟹"
-		"R1-04": return "主线 → 右门：流膜育窝" if host.defeated.get("R1-04:0", false) else "主线 · 击败负壳守卫，打开右门"
+		"R1-03": return "主线 → 右侧洞门：负壳蟹" if host.collected.get("R1-03", false) else "右上平台：护潮壳 · 护盾 +2，再挑战负壳蟹"
+		"R1-04": return "主线 → 右门：流膜育窝" if host.defeated.get("R1-04:0", false) else ("主线 · 击败负壳守卫，打开右门" if CampaignRelics.capacity(host.collected) > 0 else "打不过可先返回舌台 · 右上平台收集护潮壳")
 		"R1-05": return "主线 → 越过流膜，抵达右侧出口"
 	return ""
 
@@ -40,7 +40,8 @@ static func description(host: Node2D, id: String) -> String:
 			if host.collected.get(id, false):
 				return "支路已完成 · 左门返回须筛，从高台左缘落回下层，再向右去舌台。"
 			return "可选支路 · 取得浮游后原路返回，没有右侧出口。"
-		"R1-06": return "可选补给支路 · 远侧连接后续区域，目前未开放；探索后原路返回须筛。"
+		"R1-03": return "右上平台可取得护潮壳，增加两点护盾；右门通往负壳蟹。"
+		"R1-06": return "可选护盾支路 · 右上方厚壳碎片增加一点护盾；远侧连接后续区域，目前未开放；探索后原路返回须筛。"
 		"R1-05": return "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
 	return "主线通路"
 

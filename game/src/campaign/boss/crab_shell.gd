@@ -1,6 +1,6 @@
 class_name CampaignCrabShell
 extends RefCounted
-## Preserve training damage ratios; campaign base damage 1 maps to training 10.
+## Campaign base damage 1 maps to 10; shell chip keeps basic melee useful.
 var crab: Node2D
 var last_result := ""
 var last_damage := 0
@@ -15,7 +15,8 @@ func counter_window() -> bool:
 func receive(amount: int, heavy: bool, ranged: bool) -> void:
 	var counter := heavy and not ranged and counter_window()
 	var guarded := braced() and not counter
-	last_damage = maxi(1,floori(amount*(0.5 if heavy else 0.25))) if guarded else amount
+	var shell_ratio := 0.25 if ranged else 0.5
+	last_damage = maxi(1,floori(amount*shell_ratio)) if guarded else amount
 	last_damage = mini(int(crab.data.hp),last_damage)
 	last_result = "shell" if guarded else "exposed"
 	feedback_left = 0.6

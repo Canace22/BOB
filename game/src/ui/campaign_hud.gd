@@ -47,6 +47,8 @@ func _draw() -> void:
 		var rect := Rect2(120+i*39,35,30,42)
 		draw_texture_rect(leaf, rect, false, Color(1,1,1,1) if i < p.health else Color(0.23,0.35,0.37,0.9))
 	if prefs.numbers: text(Vector2(120+p.max_health*39+8,64), "%d / %d" % [p.health,p.max_health], 16)
+	var shield_max: int = CampaignRelics.capacity(controller.host.collected)
+	if shield_max > 0: text(Vector2(430,64), "护盾 %d / %d" % [controller.host.relics.charges,shield_max], 18, WhaleUIStyle.TEAL)
 	var count: int = ceili(float(p.max_soul)/maxi(1,p.skill_cost))
 	for i: int in range(count):
 		var rect := Rect2(120+i*57,87,49,9)

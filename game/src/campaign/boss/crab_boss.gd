@@ -53,8 +53,8 @@ func _ready() -> void:
 	add_child(effects)
 	data.actor = self
 	data.visual = self
-	data.hp = 300
-	data.max_hp = 300
+	data.hp = 180
+	data.max_hp = 180
 	receiver = CampaignCrabTarget.new()
 	receiver.boss = self
 	receiver.data = data

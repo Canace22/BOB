@@ -31,7 +31,7 @@ try{
  try{await page.waitForFunction(()=>typeof window.render_game_to_text==='function')}finally{clearInterval(startupProgress)}
  await click('NewGame');await sleep(400);await tap('4');await sleep(500);
  let s=await state();check('Room fixture loads exactly one mother crab',s.room==='R1-04'&&s.enemies.filter(e=>e.boss&&e.alive&&e.combat).length===1);
- check('Dash remains locked before victory',!s.abilities.dash&&s.enemies[0].combat.maximum===300);
+ check('Dash remains locked before victory',!s.abilities.dash&&s.enemies[0].combat.maximum===180);
  await shot('01-arrival');await tap('Escape');await sleep(150);const frozen=await state();await sleep(350);
  check('Pause freezes mother crab state',(await state()).enemies[0].combat.timer===frozen.enemies[0].combat.timer);
  await tap('Escape');await sleep(200);
@@ -41,7 +41,7 @@ try{
  await walk(650);await release();
  await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).ui.page==='death',{},{timeout:75000});
  check('Boss attacks reach real death menu',(await state()).hp===0);await shot('02-death');await tap('r');await sleep(700);
- s=await state();check('Retry restores mother crab and player',s.hp===5&&s.room==='R1-04'&&s.enemies[0].hp===300&&!s.abilities.dash);
+ s=await state();check('Retry restores mother crab and player',s.hp===5&&s.room==='R1-04'&&s.enemies[0].hp===s.enemies[0].combat.maximum&&!s.abilities.dash);
  const seen=new Set();let jumpUntil=0,lastHit=0,lastOrb=0;
  const end=Date.now()+150000;
  while(Date.now()<end){

@@ -17,6 +17,10 @@ func test_visible_first_door_accepts_interaction() -> void:
 	eq(host.room_index, 0, "approaching the visible door stays in the first room")
 	check(host.player.is_on_floor(), "normal walking reaches the door on the road")
 	check(not host.player_ui.data.prompt().is_empty() and host.player_ui.data.prompt_door() != null, "painted door approach offers interaction")
+	var entrance: CampaignDoorway = host.continuity.doorways[0]
+	check(is_instance_valid(entrance.inset) and is_instance_valid(entrance.lip), "passage has a visible painted entrance")
+	var lip_center_x: float = entrance.lip.global_position.x + 512.0 * entrance.lip.scale.x
+	check(absf(entrance.lip.global_position.y - host.ground_y(lip_center_x, entrance.position.y)) < 1.0, "foreground threshold starts at the slope, not the character waist")
 	Input.action_press("tp_interact")
 	await physics_frames(2)
 	Input.action_release("tp_interact")

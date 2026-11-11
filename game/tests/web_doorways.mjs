@@ -30,6 +30,9 @@ try{
  await walkTo(1495);await page.waitForTimeout(250);
  check('visible first doorway exposes E prompt',(await state()).continuity.doorways.some(d=>d.nearby&&d.prompt==='主线 · 须筛'));
  await page.screenshot({path:path.join(out,'first-door-prompt.png')});
+ await walkTo(1560);await page.waitForTimeout(250);
+ check('standing inside first doorway remains grounded',(await state()).room==='R1-01'&&(await state()).player.floor);
+ await page.screenshot({path:path.join(out,'first-door-threshold.png')});
  await page.keyboard.press('e');await room('R1-02');
  check('E enters from visible first doorway',(await state()).room==='R1-02');
  await walkTo(110);await page.waitForTimeout(250);

@@ -95,13 +95,15 @@ node game/tests/web_whalebelly.mjs # 恢复版真实按键/营地/刷新冒烟�
 
 ## 发布
 
+日常开发默认本地运行和验收，使用 `node tools/godot.mjs run` 即可试玩。完成任务不自动更新线上；以下发布流程仅在用户明确要求时执行。
+
 ```sh
 node tools/deploy-pages.mjs
 ```
 
 只更新世界观数据库时运行 `node tools/deploy-pages.mjs --lore-only`，仅发布 `/lore/`，保留所有游戏和美术入口。
 
-导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，同时将根入口跳转到 `godot/`，保留 `mvp-v2/` 等历史版本目录。只修正默认入口时使用 `node tools/deploy-pages.mjs --entry-only`，不重新导出或替换游戏包。流程见 [AGENTS.md 的持续迭代规则](AGENTS.md#持续迭代与边做边玩)。
+导出 Web 版，合并进 `gh-pages` 分支的 `/godot/` 目录并正常推送，同时将根入口跳转到 `godot/`，保留 `mvp-v2/` 等历史版本目录。只修正默认入口时使用 `node tools/deploy-pages.mjs --entry-only`，不重新导出或替换游戏包。流程见 [AGENTS.md 的验证与交付规则](AGENTS.md#验证与交付)。
 
 导出需要安装 Godot 4.7.2 官方模板中的 `web_nothreads_release.zip`。发布脚本在 `.pages-dist-godot/` 保留独立的 Pages 检出；`godot/build.json` 记录源码版本，推送后还需核实 Pages 部署和线上路线。
 

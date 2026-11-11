@@ -507,11 +507,15 @@ func clear_projectiles() -> void:
 	for projectile: Node in get_tree().get_nodes_in_group("tide_player_projectiles"):
 		if projectile.caster==self: projectile.queue_free()
 
+func absorb_damage(amount: int, _force: bool) -> int:
+	return amount
+
 func take_damage(amount: int=15,source: Vector2=Vector2.ZERO,force: bool=false) -> bool:
 	if not force and skill_controller.parry_damage(source): return false
 	if health<=0 or (invulnerable>0 and not force): return false
+	amount = absorb_damage(amount, force)
 	health=maxi(0,health-amount)
-	soul=maxi(0,soul-hurt_soul_loss)
+	if amount > 0: soul=maxi(0,soul-hurt_soul_loss)
 	invulnerable=hurt_invulnerability
 	damage_flash_left=hurt_invulnerability
 	stats_changed.emit(health,soul)

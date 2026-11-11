@@ -1,6 +1,7 @@
 class_name WhaleUICampaignData
 extends RefCounted
 ## Read model for the active campaign. Gameplay and saves remain host-owned.
+const MEMORY_TEXT := "水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。"
 var host: Node2D
 
 func camp_position() -> Array:
@@ -16,7 +17,7 @@ func prompt() -> String:
 	var gate: Node = p.skill_controller.nearby_gate()
 	if is_instance_valid(gate): return "使用通行节点"
 	var reward: Array = host.room.get("reward", [])
-	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return "拾取记忆 / 补给"
+	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return "拾取" + CampaignRelics.reward_name(str(host.room.id))
 	var entrance: CampaignDoorway = prompt_door()
 	if entrance != null: return entrance.prompt()
 	if at_camp(): return "在营地歇息"
@@ -70,7 +71,8 @@ func room_description(index: int) -> String:
 	if r.has("camp") or index in [0,3,4]: details += "\n壳形营地：恢复生命、记录检查点"
 	if host.collected.get(str(r.id), false):
 		details += "\n本房补给 / 记忆已收集"
+		if CampaignRelics.ITEMS.has(str(r.id)): details += "\n已获得：" + CampaignRelics.description(str(r.id))
 		if str(r.id) == "R1-07":
-			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：水流穿过旧须，托起归港人的灯。\n松开攥紧的手，让潮水送你向上。" % WhaleUIStyle.key("float")
+			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：" % WhaleUIStyle.key("float") + MEMORY_TEXT
 	if host.defeated.get(str(r.id)+":0", false): details += "\n守关者已击败"
 	return details

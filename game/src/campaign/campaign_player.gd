@@ -51,7 +51,7 @@ func _ready() -> void:
 	interaction_requested.connect(_interact_campaign)
 	notification.connect(func(text):host.notify(text))
 	hit_confirmed.connect(func():host.camera_feedback=.12)
-	damaged.connect(func():host.sfx("hurt");host.camera_feedback=.18;host.record_event("player_hurt",{"health":health}))
+	damaged.connect(func():grapple_target=Vector2.INF;grapple_hanging=false;host.sfx("hurt");host.camera_feedback=.18;host.record_event("player_hurt",{"health":health}))
 	died.connect(func():host.on_player_died.call_deferred())
 	animation_tag.connect(_campaign_tag)
 	skill_effect.connect(_campaign_skill_effect)
@@ -274,6 +274,13 @@ func stable_floor_point() -> bool:
 				var y: float = lerpf(a.y,b.y,(position.x-a.x)/(b.x-a.x))
 				if absf(position.y-y)<22.0: return true
 	return false
+
+func absorb_damage(amount: int, force: bool) -> int:
+	var remaining: int = host.relics.absorb(amount, force)
+	if remaining < amount:
+		host.record_event("shield_absorbed", {"blocked":amount-remaining,"remaining":host.relics.charges})
+		host.notify("护盾抵挡 · 剩余 %d" % host.relics.charges if host.relics.charges > 0 else "护盾耗尽 · 营地休息可补满")
+	return remaining
 
 func take_damage(amount:int=1,source:Vector2=Vector2.ZERO,force:bool=false) -> bool:
 	var accepted:bool=super.take_damage(amount,source,force)

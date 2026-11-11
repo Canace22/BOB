@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 77,
+  "revision": 78,
   "updatedAt": "2026-11-11",
   "project": "BOB",
   "atlas": {
@@ -33161,6 +33161,38 @@
       "sha256": "4f8a6c616cd5efb54f3c1ac24cf3452edbf7dfb968d12927abc7b23cd3f36bf6",
       "source": "assets/source/doorways-v1/tunnel-original.png",
       "notes": "内置 imagegen 单资产；原件、完整提示词和14门分类见 assets/source/doorways-v1/README.md。按门等比缩放；底部裁片为前景门槛。技术验收与用户审美认可分别记录。"
+    },
+    {
+      "id": "xumen-scale-v1-oral-depth",
+      "name": "须门遗港 · 巨鲸口腔深景",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "2D",
+        "远景",
+        "尺度",
+        "静态"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/xumen-scale-v1/oral-depth.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "1165788d5502ddd149d03c30619e53bb165256fcfc2c6efa1838506392893d39",
+      "source": {
+        "batchId": "xumen-scale-v1",
+        "method": "built-in imagegen",
+        "references": [
+          "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/CLEAN-ENV-UNDERPAINT.png"
+        ],
+        "prompts": [
+          "assets/source/xumen-scale-v1/generation.json"
+        ],
+        "original": "assets/source/xumen-scale-v1/oral-depth-original.png"
+      },
+      "notes": "用于R1-01，巨型颌骨出画框、远处须帘及水雾；原图等比显示，不修改角色与地形。用户审美待反馈。"
     }
   ]
 }

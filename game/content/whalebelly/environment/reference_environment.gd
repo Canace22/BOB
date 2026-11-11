@@ -51,8 +51,8 @@ func update_visuals() -> void:
 			child.update_at(elapsed,pan)
 		elif child is Sprite2D:
 			var amount=0.0
-			# The far underpaint fills exposed edges; holes in the depth matte remain anchored.
-			if str(child.name)=="ENV-UNDERPAINT": amount=0.14
+			# Overscan covers the small drift; immense distant structures move slowly.
+			if str(child.name)=="ENV-UNDERPAINT": amount=0.06
 			if str(child.name).begins_with("MID"): amount=0.045
 			child.position=bases[child.name]+pan*amount
 

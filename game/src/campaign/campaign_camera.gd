@@ -20,7 +20,7 @@ func update_follow(dt:float) -> void:
 	var changed_room: bool = tracked_room != str(host.room.id)
 	var bounds: Rect2
 	if follow:
-		var z:float=1.0/(dash_zoom if host.player.state in ["A1_dash","A5_slit"] else 1.0)
+		var z:float=float(host.room.get("camera_zoom", 1.0))/(dash_zoom if host.player.state in ["A1_dash","A5_slit"] else 1.0)
 		# Zoom-out may not reveal beyond the authored room at either edge.
 		var viewport_size: Vector2 = get_viewport_rect().size
 		z = maxf(z, maxf(viewport_size.x / world_size.x, viewport_size.y / world_size.y))
