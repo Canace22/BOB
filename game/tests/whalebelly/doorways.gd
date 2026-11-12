@@ -28,11 +28,14 @@ func run() -> void:
 	current_scene = host
 	await tick(15)
 	for index: int in host.rooms.size():
+		# The seven first-region rooms; later regions have their own route checks.
+		if CampaignWorld.region(str(host.rooms[index].id)) != "R1": continue
 		var doors: Array = host.rooms[index].doors.duplicate(true)
 		for door_index: int in doors.size():
 			host.load_room(index)
 			var entrance: CampaignDoorway = host.continuity.doorways[door_index]
 			var data: Dictionary = entrance.data
+			var completes: bool = entrance.kind == "exit" # the entrance is freed once its room changes
 			var label: String = str(host.room.id) + "-" + entrance.destination_id
 			count += 1
 			check(label + " authored graph binding", data == doors[door_index])
@@ -70,7 +73,7 @@ func run() -> void:
 				check(label + " safe arrival", host.player.health > 0 and host.player.position.y < float(host.room.size[1]))
 			else:
 				check(label + " terminal stays in room", host.room_index == index and not host.continuity.travelling)
-				if entrance.kind == "exit": check(label + " completes chapter", host.completed)
+			if completes: check(label + " completes chapter", host.completed)
 	check("all 14 configured door endpoints", count == 14)
 	host.qa_full_abilities = false
 	host.abilities.float = false
@@ -78,7 +81,7 @@ func run() -> void:
 	await tick(20)
 	var locked: CampaignDoorway = host.continuity.doorways[2]
 	locked.armed = true
-	check("ability restriction is shown", locked.restriction() == "需要浮游")
+	check("ability restriction is shown", locked.restriction().contains("浮游"))
 	Input.action_press("tp_interact")
 	await tick(2)
 	Input.action_release("tp_interact")

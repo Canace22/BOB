@@ -22,7 +22,8 @@ func bind_room() -> void:
 			for door: Dictionary in host.room.get("doors", []):
 				var target: int = int(door.to)
 				var target_id: String = str(host.rooms[target].id) if target >= 0 else ("chapter-exit" if target == -1 else "far-latch")
-				if entrance.destination_id == target_id:
+				# Later regions name their target directly; the first-region exit keeps its authored node.
+				if entrance.destination_id == target_id or (door.has("to_id") and entrance.destination_id == str(door.to_id)) or (entrance.destination_id == "chapter-exit" and door.get("completes", false)):
 					entrance.bind(host, door)
 					doorways.append(entrance)
 	depth=host.scenery.get_node_or_null("ContinuousOralDepth") as XumenContinuousDepth

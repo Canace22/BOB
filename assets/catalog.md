@@ -263,3 +263,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## E01骨根发光珊瑚
 
 [骨根琥珀灯蕊珊瑚](source/xumen-root-glow-v1/README.md)：用户圈定的低位壳洞改为实心骨根上的发光珊瑚簇，椭圆门框与低位红绳删除；上层圆口、三层平台和角色保留。1新位图、1局部蒙版，静态像素差异仅在指定范围，当前28引用和版本开关通过。无交互功能，未制作引擎发光或接入Godot。
+
+## 2026-11-12 胃枢样板房 · R3 套件首次接入 Godot
+
+V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/world-kit/`，由 `node game/tools/build_world_rooms.mjs` 装配进 `game/content/whalebelly/r3/R3-01.tscn`：`r3-water-base`、`r3-gastric-far-layer`、`r3-bank-platform`、`r3-mesentery-fold`、`r3-foreground-fold`、`shell-camp`、`anchor-pull-gate-closed`、`bone-anchor-ring`，以及程序驱动的 `fx-particle-soft`（漂脂）、`fx-particle-drift`（水流线）、`fx-cold-beam`（透光）。场景件按清单 `max` 缩到运行尺寸，背景层保持原尺寸；摆放读取本台账的包围盒、锚点和世界单位，只做等比缩放、镜像和拼接。此前标为未接入的五件改为本地运行已验证；闸只接了关闭态，没有开合动画。红结闩曾接入，地图精简后移除。验收与限制见[工程进度](../game/progress.md)，用户观感待确认。

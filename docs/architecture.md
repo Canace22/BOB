@@ -19,6 +19,9 @@
 | `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头（前视、上下探看、下落前置）和机关表现 |
 | `src/campaign/campaign_impact.gd` | 命中与受击的全场定格，按物理帧计数并保证恢复时间流速 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
+| `src/campaign/campaign_world.gd` | 后续区域的房间表、按房间 ID 的门目标、能力与进度标记组合条件、地图分页落位 |
+| `content/whalebelly/world/`、`tools/build_world_rooms.mjs` | 套件房配方（单位 U）、跨区链接与生成的运行数据；生成器读取资源台账的包围盒与锚点，输出 `content/whalebelly/<区>/<房间ID>.tscn` |
+| `src/world/scenery/kit/` | 套件房的位图层视差、漂移粒子场（漂脂、水流线）和透光明暗 |
 | `src/campaign/campaign_relics.gd` | 按既有奖励ID计算护盾上限，管理本次旅途剩余护盾；主角在偏转/无敌判定后扣盾，超额伤害沿用原受击流程 |
 | `src/campaign/boss/` | 母蟹三招、阶段连招、护壳/破防和逐帧显示；通过主线敌人字典及 `R1-04:0` 连接奖励与存档 |
 | `src/campaign/enemies/` | 普通尸蟹物理/状态与图集呈现，复用主线伤害和房间生命周期；[接入合同](corpse-crab-integration.md) |
@@ -79,3 +82,12 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 导出后 `tools/prepare-web.mjs` 生成带内容哈希的gzip和 `downloads.json`；`game/web/preload.js` 接管引擎与PCK的下载、浏览器流式解压及独立资源缓存。大包分别拆为64MiB的压缩/原始分片，并检查分片及串接SHA256；缺少解压API的浏览器使用原始分片。导出保留原文件，发布只在完整原始分片覆盖后省略超限单文件。缓存只管理启动资源，不清理存档。导出排除构建证据、测试、工具和制作源；最终线上启动结果另见进度。
 
 中文UI使用[字体子集](../assets/source/noto-sans-sc/README.md)。新增中文后重建并运行字形覆盖测试。发布后核对部署状态、实际 `build.json`、当前入口和线上键盘路线；源码提交、发布提交、测试和限制记录在 [game/progress.md](../game/progress.md)。
+
+## 后续区域与套件房
+
+设计地图为 5 区 36 房（[连续世界设计](鲸腹遗城原画集/连续世界设计/设计说明.md)），实施范围已精简为 19 房。R1 七房仍由 `art/whalebelly/rooms.json` 定义，后续区域追加在其后，序号不变。当前只接入胃枢（R3-01），其余门在目标房间制作前保持关闭。
+
+- 门用 `to_id` 指向房间 ID；`requires` 列出能力和进度标记，`locked` 表示要从对侧开启。标记与能力同存于 V6 的 `abilities` 字典。跨区入口写在配方 `_world.json` 的 `links`，不修改 R1 原始数据。
+- 新房间先写配方，再运行 `node game/tools/build_world_rooms.mjs` 和 `node tools/godot.mjs sync-art`。生成的场景和 `world/rooms.json` 不手工修改；需要调整时改配方或台账后重新生成。
+- 房间名与门提示来自生成数据，字体子集脚本和覆盖测试已包含 `world/rooms.json`。Web 导出的 `include_filter` 已加入该文件。
+- 实机路线用 `tests/whalebelly/world_skeleton.gd`，`-- --reload-world` 验证独立进程读档，`-- --views` 只出定点截图。

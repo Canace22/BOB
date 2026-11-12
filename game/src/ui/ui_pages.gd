@@ -56,7 +56,7 @@ static func _confirm(ui: WhaleCampaignUI) -> void:
 static func _pause(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "潮声暂歇"
 	var column: VBoxContainer = menu(ui)
-	column.add_child(WhaleUIStyle.label("须门遗港 · "+str(ui.host.room.name),18,WhaleUIStyle.MUTED))
+	column.add_child(WhaleUIStyle.label(CampaignWorld.region_name(str(ui.host.room.id))+" · "+str(ui.host.room.name),18,WhaleUIStyle.MUTED))
 	action(column,"Resume","继续旅途",ui.close_all)
 	action(column,"Map","查看地图",func() -> void: ui.open("map"))
 	action(column,"Settings","设置",func() -> void: ui.open("settings"))

@@ -10,18 +10,22 @@ const ANATOMY_POSITIONS: Dictionary = {
 	3:Vector2(.69,.70),4:Vector2(.89,.70),5:Vector2(.62,.10),6:Vector2(.48,.36),
 }
 var anatomy: TextureRect
+var page: String = "R1"
 
 func _ready() -> void:
-	nodes=data.map_rooms()
-	anatomy = TextureRect.new()
-	anatomy.name = "WhaleHeadAnatomy"
-	anatomy.texture = preload("res://art/xumen-continuity/r1-anatomy-overview.png")
-	anatomy.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	anatomy.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	anatomy.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	anatomy.modulate = Color(.62,.71,.77,.38)
-	add_child(anatomy)
-	anatomy.show_behind_parent = true
+	# One page per region: its own rooms plus placed neighbours from linked regions.
+	page = CampaignWorld.region(str(data.host.room.id))
+	nodes=data.map_rooms().filter(func(room: Dictionary) -> bool: return CampaignWorld.on_map_page(page, str(room.id)))
+	if page == "R1":
+		anatomy = TextureRect.new()
+		anatomy.name = "WhaleHeadAnatomy"
+		anatomy.texture = preload("res://art/xumen-continuity/r1-anatomy-overview.png")
+		anatomy.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		anatomy.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		anatomy.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		anatomy.modulate = Color(.62,.71,.77,.38)
+		add_child(anatomy)
+		anatomy.show_behind_parent = true
 	var known: Dictionary={}
 	for room: Dictionary in nodes: known[int(room.index)]=room
 	if not nodes.is_empty():
@@ -66,7 +70,8 @@ func _layout() -> void:
 		var button: Button=buttons[id]
 		button.custom_minimum_size=Vector2(width,48)
 		button.size=Vector2(width,48)
-		var normalized: Vector2=ANATOMY_POSITIONS.get(id,Vector2(.5,.5))
+		var placed: Variant=CampaignWorld.map_position(page,str(room.id))
+		var normalized: Vector2=placed if placed != null else ANATOMY_POSITIONS.get(id,Vector2(.5,.5))
 		button.position=normalized*size-button.size*.5
 		button.position=button.position.clamp(Vector2.ZERO,(size-button.size).max(Vector2.ZERO))
 	queue_redraw()
@@ -90,17 +95,17 @@ func _draw() -> void:
 				if visited:draw_line(route[segment],route[segment+1],WhaleUIStyle.MUTED,1.5,true)
 				else:draw_dashed_line(route[segment],route[segment+1],Color("587a80"),1.5,7,true)
 			# Only reveal requirements authored on an explored side of this passage.
-			var requirement: String = str(door.get("ability","")) if room.visited else ""
-			if requirement.is_empty() and data.host.visited.get(str(data.host.rooms[target].id),false):
+			var needs: Array[String] = CampaignWorld.requirements(door) if room.visited else ([] as Array[String])
+			if needs.is_empty() and data.host.visited.get(str(data.host.rooms[target].id),false):
 				for reverse: Dictionary in data.host.rooms[target].get("doors",[]):
-					if int(reverse.to)==id: requirement=str(reverse.get("ability",""))
-			if not requirement.is_empty():
+					if int(reverse.to)==id: needs=CampaignWorld.requirements(reverse)
+			if not needs.is_empty():
 				var center: Vector2=(begin+end)*0.5
 				if id==1 and target==5:center=Vector2(begin.x*.78,size.y*.35)
 				var diamond: PackedVector2Array=PackedVector2Array([center+Vector2(0,-9),center+Vector2(9,0),center+Vector2(0,9),center+Vector2(-9,0),center+Vector2(0,-9)])
 				draw_colored_polygon(diamond,WhaleUIStyle.INK)
 				draw_polyline(diamond,WhaleUIStyle.AMBER,2,true)
-				var label: String=WhaleUICampaignData.ability_name(requirement)
+				var label: String=CampaignWorld.requirement_label(needs)
 				var width: float=WhaleUIStyle.FONT.get_string_size(label,HORIZONTAL_ALIGNMENT_LEFT,-1,14).x
 				draw_string(WhaleUIStyle.FONT,center+Vector2(-width*0.5,27),label,HORIZONTAL_ALIGNMENT_LEFT,-1,14,WhaleUIStyle.BONE)
 	_draw_recommended_route()

@@ -5,7 +5,12 @@ extends RefCounted
 static func route_kind(id: String) -> String:
 	return "可选支路" if id in ["R1-06", "R1-07"] else "主线"
 
+## True once the first-region exit leads into a built room of the next region.
+static func onward(host: Node2D) -> bool:
+	return host.rooms.any(func(entry: Dictionary) -> bool: return str(entry.id) == "R3-01")
+
 static func next_room(host: Node2D) -> String:
+	if str(host.room.id) == "R1-05" and onward(host): return "R3-01"
 	if host.completed: return ""
 	match str(host.room.id):
 		"R1-01": return "R1-02"
@@ -22,7 +27,10 @@ static func hint(host: Node2D) -> String:
 			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
 		"R1-06":
 			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1，原路返回"
-	if host.completed: return "首关完成 · 后续区域未开放，可回访支路"
+	if str(host.room.id) == "R3-01": return "胃枢 · 壳形营地可歇息；左下返回须门，其余通路尚未开放"
+	if host.completed:
+		if not onward(host): return "首关完成 · 后续区域未开放，可回访支路"
+		return "主线 → 右侧出口：胃枢" if str(host.room.id) == "R1-05" else "须门遗港已贯通 · 流膜育窝右侧出口通往胃枢"
 	match str(host.room.id):
 		"R1-01": return "主线 → 沿骨路前往须筛"
 		"R1-02": return "主线 → 下层右门：舌台"
@@ -45,7 +53,8 @@ static func description(host: Node2D, id: String) -> String:
 			if not host.has_ability("float"):
 				return "可选护盾支路 · 先沿须筛右侧圆环进入鲸须记忆袋，拾取记忆获得浮游。\n右上方厚壳碎片增加一点护盾；远侧区域未开放，探索后原路返回须筛。"
 			return "可选护盾支路 · 从须筛左侧平台逐层上行，右上方厚壳碎片增加一点护盾。\n%s 起跳，空中按住 %s 浮游，松开落台。\n远侧闩尚未开放，探索后沿原路返回须筛。" % [WhaleUIStyle.key("tp_jump"), WhaleUIStyle.key("float")]
-		"R1-05": return "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
+		"R1-05": return "须门遗港终点 · 右侧出口通往胃肠沉城的胃枢。" if onward(host) else "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
+		"R3-01": return "胃肠沉城枢纽 · 壳形营地可歇息。\n左下返回须门遗港；通往肺心与断脊的通路尚未开放。"
 	return "主线通路"
 
 static func door_label(host: Node2D, door: Dictionary) -> String:
@@ -54,7 +63,8 @@ static func door_label(host: Node2D, door: Dictionary) -> String:
 	if target == -1: return "首关终点" if not host.completed else "后续区域未开放"
 	if target < 0 or target >= host.rooms.size(): return ""
 	var id: String = str(host.rooms[target].id)
-	var prefix: String = "返回" if str(host.room.id) in ["R1-06", "R1-07"] else route_kind(id)
+	var back: bool = str(host.room.id) in ["R1-06", "R1-07"] or (target < host.room_index and CampaignWorld.region(id) != CampaignWorld.region(str(host.room.id)))
+	var prefix: String = "返回" if back else route_kind(id)
 	return prefix + " · " + str(host.rooms[target].name)
 
 static func float_prompt(host: Node2D) -> String:

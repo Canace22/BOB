@@ -60,3 +60,9 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 ## 门与通道
 
 外伤坡右侧通道走到可见门前会显示 E 进入，也可继续向右直接穿过；画面中的骨拱门靠近后按 E 进入，提示会跟随改键设置。进入时短暂迈步、淡黑，再从相邻房间对应入口落地。返回门需要先离开门口再进入，避免反复切房。能力不足、Boss 尚存活和远侧闩分别提示条件；首关出口确认后保留原房间，不加载尚未制作的章节。营地与洞门距离很近时，门前进入、稍退回房内歇息。逐门设计、素材与验收入口见[门与通道](../assets/source/doorways-v1/README.md)。
+
+## 胃肠沉城 · 胃枢（样板）
+
+击败负壳蟹后，从流膜育窝右侧出口按 `E` 进入胃枢。这里有壳形营地、通往肺口的五级台阶和通向强流门的四个锚环。通往肺心和断脊的门目前都关着，靠近会提示原因；左下角走出画面即可返回须门遗港。地图按区域分页。
+
+新房间由配方生成：改 `content/whalebelly/world/recipes/` 后运行 `node game/tools/build_world_rooms.mjs` 和 `node tools/godot.mjs sync-art`。路线验收运行 `tests/whalebelly/world_skeleton.gd`。

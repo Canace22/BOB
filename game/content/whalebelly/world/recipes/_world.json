@@ -1,0 +1,20 @@
+{
+  "_doc": "跨区连接与地图落位。links 把已有房间的门接到新区域（spawn 为目标房像素坐标）；map 为各区地图页上的归一化位置，含邻区入口。",
+  "kits": {
+    "R3": {
+      "water": {"art": "r3-water-base", "parallax": 0.1},
+      "far": {"art": "r3-gastric-far-layer", "parallax": 0.25},
+      "platform": {"art": "r3-bank-platform", "surface": 44, "split": 7},
+      "bed": {"art": "r3-mesentery-fold", "surface": 30, "split": 16},
+      "foreground": {"art": "r3-foreground-fold", "parallax": 1.15},
+      "ring": {"art": "bone-anchor-ring", "units": 0.9}
+    }
+  },
+  "links": [
+    {"room": "R1-05", "door": 1, "to_id": "R3-01", "patch": {"to_id": "R3-01", "spawn": [256, 2080], "completes": true}}
+  ],
+  "map": {
+    "R1": {"R3-01": [0.89, 0.36]},
+    "R3": {"R1-05": [0.08, 0.72], "R3-01": [0.3, 0.72]}
+  }
+}

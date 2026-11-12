@@ -1,0 +1,52 @@
+{
+  "id": "R3-01",
+  "name": "胃枢",
+  "kit": "R3",
+  "unit": 80,
+  "size": [48, 30],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R3-01（V5.1 布局，单位 U）。2026-11-12 精简：去掉肠路、母蟹闩、胃顶三个门及浮游竖井，保留肺口、强流门和锚环；底床为失足回收面",
+  "spawn": [12.5, 26],
+  "camp": [14, 26],
+  "platforms": [
+    {"id": "H0", "x": 0, "y": 26, "w": 10},
+    {"id": "H1", "x": 11, "y": 26, "w": 13},
+    {"id": "H2", "x": 25, "y": 26, "w": 11},
+    {"id": "H3", "x": 37, "y": 26, "w": 11},
+    {"id": "L0", "x": 6, "y": 24.5, "w": 4},
+    {"id": "L1", "x": 10, "y": 23, "w": 4},
+    {"id": "L2", "x": 8, "y": 21.5, "w": 4},
+    {"id": "L3", "x": 4, "y": 20, "w": 5},
+    {"id": "L4", "x": 0, "y": 18.5, "w": 6},
+    {"id": "G0", "x": 42, "y": 17, "w": 6}
+  ],
+  "beds": [
+    {"x": 0, "y": 27.8, "w": 48}
+  ],
+  "rings": [[36, 23], [39, 20], [42, 17], [45, 14]],
+  "doors": [
+    {"edge": "E05", "to_id": "R1-05", "at": [1, 26], "kind": "passage", "direction": -1, "spawn": [1450, 563]},
+    {"edge": "E10", "to_id": "R2-01", "at": [1, 18.5], "kind": "passage", "direction": -1},
+    {"edge": "E18", "to_id": "R4-01", "at": [46.4, 17], "kind": "door", "direction": 1, "requires": ["pressure", "anchor"], "art": "anchor-pull-gate-closed"}
+  ],
+  "props": [
+    {"art": "shell-camp", "at": [14, 26], "units": 3.4}
+  ],
+  "foreground": [
+    {"x": 2, "w": 13},
+    {"x": 19, "w": 14},
+    {"x": 36, "w": 12}
+  ],
+  "bubbles": [
+    {"rect": [16, 19, 3, 7], "count": 7},
+    {"rect": [27, 16, 3, 10], "count": 8},
+    {"rect": [41, 20, 2.5, 7.5], "count": 6}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 2, 48, 25.5], "count": 150, "velocity": [5, 9], "sway": 10, "size": [16, 40], "opacity": 0.85, "tint": "e9d9a6"},
+    {"art": "fx-particle-drift", "rect": [35.2, 12, 2.6, 14], "count": 26, "velocity": [0, -150], "sway": 3, "size": [26, 54], "opacity": 0.5, "turn": 90, "tint": "cfe8e0"}
+  ],
+  "beams": [
+    {"at": [8, 15], "size": [10, 23], "opacity": 0.75, "tint": "f3e2b0"},
+    {"at": [29, 14.5], "size": [11, 23], "opacity": 0.65, "tint": "f3e2b0"}
+  ]
+}

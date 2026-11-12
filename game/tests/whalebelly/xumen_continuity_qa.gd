@@ -56,7 +56,7 @@ func run() -> void:
 		host.set_process(true)
 		host.player.set_physics_process(true)
 		await tick(12)
-	check("no_new_room_or_crosschapter_exit",host.rooms.size()==7 and int(host.rooms[4].doors[-1].to)==-1 and int(host.rooms[5].doors[-1].to)==-2)
+	check("first_region_graph_kept",host.rooms.filter(func(entry: Dictionary) -> bool: return str(entry.id).begins_with("R1-")).size()==7 and int(host.rooms[5].doors[-1].to)==-2)
 	host.load_room(1)
 	await tick(10)
 	host.player.set_physics_process(false)

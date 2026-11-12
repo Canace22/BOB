@@ -58,7 +58,7 @@ func _draw() -> void:
 		draw_rect(rect, WhaleUIStyle.MUTED,false,1)
 	text(Vector2(120,121), "蓄振 %d/%d · 单次 %d" % [p.soul,p.max_soul,p.skill_cost], 15, WhaleUIStyle.MUTED)
 	if controller.location_left > 0:
-		var title: String = "须门遗港 · " + str(controller.host.room.name)
+		var title: String = CampaignWorld.region_name(str(controller.host.room.id)) + " · " + str(controller.host.room.name)
 		var width: float = WhaleUIStyle.FONT.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,23).x
 		var title_color: Color = WhaleUIStyle.BONE
 		title_color.a = clampf(controller.location_left,0,1)
@@ -86,7 +86,7 @@ func _draw() -> void:
 		if entrance != null:
 			point = entrance.get_global_transform_with_canvas() * entrance.prompt_offset
 		else: point.y -= 130
-		var show_key: bool = entrance == null or (entrance.restriction().is_empty() and not (entrance.kind == "exit" and controller.host.completed))
+		var show_key: bool = entrance == null or (entrance.restriction().is_empty() and not (entrance.kind == "exit" and controller.host.completed and int(entrance.data.get("to", -1)) < 0))
 		var content: String = ("[" + WhaleUIStyle.key(prompt_key) + "]  " if show_key else "") + prompt
 		var width: float = WhaleUIStyle.FONT.get_string_size(content,HORIZONTAL_ALIGNMENT_LEFT,-1,17).x
 		text(Vector2(clampf(point.x-width*0.5,24,maxf(24,size.x-width-24)),clampf(point.y,150,size.y-100)), content, 17, Color(WhaleUIStyle.BONE, prompt_alpha))

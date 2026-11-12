@@ -58,15 +58,9 @@ func nearby() -> bool:
 	return absf(delta.x) < radius and absf(delta.y) < 58.0
 
 func restriction() -> String:
-	var needed: String = str(data.get("ability", ""))
-	if needed == "boss":
-		for enemy: Dictionary in host.enemies:
-			if enemy.boss and enemy.alive: return "先击败负壳守卫"
-	elif not needed.is_empty() and not host.has_ability(needed):
-		if needed == "float": return "先到鲸须记忆袋获得浮游"
-		return "需要" + WhaleUICampaignData.ability_name(needed)
-	if kind == "sealed": return "后续区域未开放 · 原路返回"
-	return ""
+	var reason: String = CampaignWorld.restriction(host, data)
+	if reason.is_empty() and kind == "sealed": return CampaignWorld.UNBUILT
+	return reason
 
 func prompt() -> String:
 	if not armed: return ""

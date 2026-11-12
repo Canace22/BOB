@@ -108,7 +108,7 @@ func _ready() -> void:
 					if ResourceLoader.exists(variant_path): variants.append(load(variant_path) as AudioStream)
 				sound_variants[sound] = variants
 	var contents: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://art/whalebelly/rooms.json"))
-	rooms = contents if contents is Array else contents.get("rooms", [])
+	rooms = CampaignWorld.load_rooms(contents if contents is Array else contents.get("rooms", []))
 	if rooms.is_empty():
 		push_error("No room data")
 		get_tree().quit(1)
@@ -258,7 +258,7 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
 	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
 	var next_room: Dictionary = rooms[index]
-	var packed: PackedScene = load("res://content/whalebelly/r1/"+str(next_room.id)+".tscn")
+	var packed: PackedScene = load(CampaignWorld.scene_path(str(next_room.id)))
 	if packed == null:
 		push_error("Room resource unavailable: "+str(next_room.id))
 		if qa: get_tree().quit(2)
@@ -604,25 +604,23 @@ func interact() -> void:
 func enter_door(door:Dictionary) -> void:
 	if continuity.travelling or continuity.transition.active or player.health <= 0: return
 	var destination: int = int(door.to)
-	if destination < 0:
-		if destination == -1 and room_index == 4:
-			completed = true
-			record_event("level_complete", {"room":str(room.id)})
-			sfx("collect")
-			save_progress(false)
+	# The first-region exit keeps its milestone whether or not a later region is linked.
+	var milestone: bool = door.get("completes", false) or (destination == -1 and str(room.id) == "R1-05")
+	if destination < 0 and not milestone:
+		notify(door.get("message", "后续区域未包含在首关中；此处保留出口关系") if CampaignWorld.region(str(room.id)) == "R1" else CampaignWorld.restriction(self, door))
+		return
+	var reason: String = CampaignWorld.restriction(self, door)
+	if not reason.is_empty():
+		notify(reason)
+		return
+	if milestone:
+		completed = true
+		record_event("level_complete", {"room":str(room.id)})
+		sfx("collect")
+		save_progress(false)
+		if destination < 0:
 			notify("首关完成 · 已抵达食道出口；后续章节尚未制作，可沿原路继续探索")
 			return
-		notify(door.get("message", "后续区域未包含在首关中；此处保留出口关系"))
-		return
-	var needed: String = door.get("ability", "")
-	if not needed.is_empty() and needed != "boss" and not has_ability(needed):
-		notify("需要能力 " + needed)
-		return
-	if room_index == 3 and destination == 4:
-		for enemy: Dictionary in enemies:
-			if enemy.boss and enemy.alive:
-				notify("先击败负壳守卫")
-				return
 	continuity.travel(door)
 	return
 

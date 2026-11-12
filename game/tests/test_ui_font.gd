@@ -6,6 +6,8 @@ func test_ui_font_covers_current_chinese_text() -> void:
 	var characters: Dictionary[int, bool] = {}
 	for directory: String in ["res://src", "res://content"]:
 		_collect(directory, characters)
+	# Room names and door notices of later regions are shown from generated data.
+	_scan(FileAccess.get_file_as_string("res://content/whalebelly/world/rooms.json"), characters)
 	for code: int in characters:
 		check(font.has_char(code), "UI font missing: " + String.chr(code))
 
@@ -16,8 +18,11 @@ func _collect(directory: String, characters: Dictionary[int, bool]) -> void:
 	for file in DirAccess.get_files_at(directory):
 		if file.get_extension() not in ["gd", "tscn", "tres"]:
 			continue
-		var text := FileAccess.get_file_as_string(directory.path_join(file))
-		for i in text.length():
-			var code := text.unicode_at(i)
-			if code >= 0x3400 and code <= 0x9fff:
-				characters[code] = true
+		_scan(FileAccess.get_file_as_string(directory.path_join(file)), characters)
+
+
+func _scan(text: String, characters: Dictionary[int, bool]) -> void:
+	for i in text.length():
+		var code := text.unicode_at(i)
+		if code >= 0x3400 and code <= 0x9fff:
+			characters[code] = true

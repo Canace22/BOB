@@ -22,6 +22,8 @@ def main():
         for file in sorted(directory.rglob("*")):
             if file.suffix in [".gd", ".tscn", ".tres"]:
                 characters.update(file.read_text(encoding="utf-8"))
+    # Room names and door notices of later regions are shown from generated data.
+    characters.update((ROOT / "game/content/whalebelly/world/rooms.json").read_text(encoding="utf-8"))
     font = TTFont(SOURCE, recalcTimestamp=False)
     available = font.getBestCmap()
     codepoints = sorted(ord(c) for c in characters if ord(c) in available)
