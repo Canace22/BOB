@@ -2,8 +2,8 @@ class_name TideSkillCatalog
 extends RefCounted
 ## Video keys map to gameplay actions, never to the five-second showcase duration.
 const ACTIONS: Dictionary = {
-	"strike2": {"proxy":"strike_01", "duration":0.32, "release":0.11, "damage":1, "shape":"front", "reach":125.0, "gain":true},
-	"upper": {"proxy":"strike_01", "duration":0.34, "release":0.12, "damage":1, "shape":"up", "reach":120.0, "gain":true},
+	"strike2": {"proxy":"strike_01", "duration":0.32, "release":0.06, "damage":1, "shape":"front", "reach":125.0, "gain":true, "motion":"free"},
+	"upper": {"proxy":"strike_01", "duration":0.34, "release":0.06, "damage":1, "shape":"up", "reach":120.0, "gain":true, "motion":"free"},
 	"shadow_dash": {"proxy":"A1_dash", "duration":0.24, "release":0.0, "cooldown":0.85, "unlock":"chapter", "motion":"dash", "speed":850.0, "immune":true},
 	"great_slash": {"proxy":"heavy", "duration":0.50, "release":0.17, "damage":3, "shape":"front", "reach":180.0, "cooldown":0.5, "unlock":"dash", "gain":true},
 	"dash_slash": {"proxy":"strike_01", "duration":0.38, "release":0.16, "damage":2, "shape":"front", "reach":165.0, "cooldown":0.7, "unlock":"dash", "motion":"lunge", "speed":620.0, "gain":true},

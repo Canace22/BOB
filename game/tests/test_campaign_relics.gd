@@ -63,7 +63,7 @@ func test_real_damage_pipeline_and_room_lifecycle() -> void:
 	p.invulnerable = 0
 	p.take_damage(2)
 	eq(p.health, 4, "Only damage overflow reaches life")
-	eq(p.soul, 66, "Overflow retains normal soul loss")
+	eq(p.soul, 99, "Taking damage no longer drains soul")
 	host.load_room(1)
 	eq(host.relics.charges, 0, "Door load does not recharge shield")
 	host.load_room(0, [240,610])

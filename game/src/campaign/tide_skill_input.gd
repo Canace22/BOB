@@ -34,7 +34,12 @@ func read(dt: float) -> void:
 		elif Input.is_action_pressed("tp_up"): action="upper"
 		elif Input.is_action_pressed("tp_down") and not p.is_on_floor(): action="A3_anchor"
 		elif combo_next: action="strike2"
+		# A new swing aims where the stick points at the press, even mid-combo.
+		var previous_facing: float=p.facing
+		var axis: float=p.movement_axis()
+		if absf(axis)>0.1 and action!="dash_slash": p.facing=signf(axis)
 		if not p.request_action(action):
+			p.facing=previous_facing
 			p.pending_action=action;p.pending_left=p.jump_buffer_time
 		combo_next=not combo_next
 		combo_left=0.65

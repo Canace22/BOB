@@ -107,7 +107,7 @@ static func _death(ui: WhaleCampaignUI) -> void:
 static func _help(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "拾潮者 · 操作手记"
 	var column: VBoxContainer = menu(ui,780)
-	var entries: Array[Array] = [["tp_left","tp_right","移动"],["tp_jump","","跳跃 / 二段跳"],["tp_attack","","短击；方向配合上挑 / 下劈"],["tp_dash","","贴流冲（需解锁）"],["tp_orb","","鸣弹；上 / 下配合潮术"],["tp_heavy","","重鸣"],["tp_heal","","调息：落地且生命未满"],["tp_interact","","营地、补给与通行节点"]]
+	var entries: Array[Array] = [["tp_left","tp_right","移动"],["tp_jump","","跳跃 / 二段跳"],["tp_attack","","短击；方向配合上挑 / 下劈"],["tp_dash","","贴流冲（需解锁）"],["tp_orb","","鸣弹；上 / 下配合潮术"],["tp_heavy","","重鸣"],["tp_heal","","调息：按住回 1 生命，松开取消"],["tp_interact","","营地、补给与通行节点"]]
 	for entry: Array in entries:
 		var key_text: String = WhaleUIStyle.key(str(entry[0]))
 		if not str(entry[1]).is_empty(): key_text += " / "+WhaleUIStyle.key(str(entry[1]))

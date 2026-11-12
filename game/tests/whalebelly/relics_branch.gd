@@ -35,7 +35,8 @@ func run() -> void:
 	await host.input_tap("interact")
 	await create_timer(0.7).timeout
 	verify("duplicate pickup leaves capacity unchanged", CampaignRelics.capacity(host.collected) == 3)
-	for target: Vector2 in [Vector2(850,332),Vector2(760,482),Vector2(490,643),Vector2(190,790),Vector2(100,795)]:
+	# Land right of the upper-left ledge first; the faster arc can otherwise clip its edge above the door.
+	for target: Vector2 in [Vector2(850,332),Vector2(760,482),Vector2(490,643),Vector2(330,790),Vector2(190,790),Vector2(100,795)]:
 		await host.drive_to(target,750)
 	await create_timer(0.8).timeout
 	print("INTERACT position=",host.player.position," state=",host.player.state," nearby=",host.player.interaction_nearby())

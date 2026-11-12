@@ -5,7 +5,7 @@
 ## 修改前调查
 
 - 入口 `content/whalebelly/main.tscn`，主线状态归 `src/campaign/main.gd`；旧 HUD 是 `tide_hud.gd`，以底边测试面板和简单暂停文字显示。
-- 主线参数来自 `campaign_profile.gd`：生命 5、资源 99、常用消耗 33，调息恢复 5。实际已有三段资源，保留数值与规则，不采用设计稿四格/两格消耗。HUD 资源数值始终显示，分段表示可支付次数。
+- 主线参数以 `CampaignPlayer.tscn` 为准（`campaign_profile.gd` 是独立参数场的镜像）：生命 5、资源 99、常用消耗 33，调息每次恢复 1。实际已有三段资源，保留数值与规则，不采用设计稿四格/两格消耗。HUD 资源数值始终显示，分段表示可支付次数。
 - 角色 stats_changed/cooldowns_changed/died 等信号、主线 enemies 字典是实际数据源。Boss 当前上限 10；交互读取奖励、营地、门与通行节点。
 - 主线 V6 文件位于 user://whalebelly/；营地恢复生命并记录检查点，原功能不恢复资源。原死亡自动回检查点，新增归潮界面只延迟返回到用户确认，恢复内容仍由原 respawn 执行。
 - 地图发现尚无保存字段，本轮添加兼容的可选 visited 字段；旧档只信任检查点、已收集和已击败房间，不推算所有历史路线。

@@ -145,9 +145,7 @@ func frame_fraction(key: String, spec: Dictionary, dt: float, travelled_x: float
 
 func legacy_trigger() -> float:
 	if actor.state in ["recover", "interact"]: return actor.state_duration
-	var clip: Animation = actor.anim.get_animation("game/"+actor.state)
-	var marker: StringName = &"damage" if actor.state in ["strike_01","A3_anchor"] else &"release"
-	return clip.get_marker_time(marker)*12.0/actor.animation_fps if clip.has_marker(marker) else 2.0/actor.animation_fps
+	return actor.action_trigger_time()
 
 static func align_event(fraction: float, trigger: float, event_phase: float) -> float:
 	fraction=clampf(fraction,0.0,1.0)

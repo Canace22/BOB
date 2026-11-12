@@ -62,6 +62,10 @@ signal skill_effect(key: String, event: String, origin: Vector2, direction: floa
 @export var jump_invulnerability: float = 0.1
 @export var hitstop_duration: float = 3.0 / 60.0
 @export var attack_recovery: float = 0.1
+@export var melee_startup: float = 0.0 # Seconds from press to hit; 0 keeps the clip marker.
+@export var melee_cancel_after: float = -1.0 # Jump/dash lock after the hit; negative keeps the legacy window.
+@export var hit_recoil_speed: float = 0.0 # Attacker push-back after a horizontal melee hit.
+@export var hit_recoil_time: float = 0.08
 @export var collision_size := Vector2(24, 32)
 @export var capsule_collision: bool = false
 @export_flags_2d_physics var world_collision_mask: int = 1
@@ -106,6 +110,10 @@ var short_jump: bool = false
 var apex_left: float = 0.0
 var apex_used: bool = false
 var wall_lock: float = 0.0
+var recoil_left: float = 0.0
+var recoil_direction: float = 0.0
+# True while the heal key has been held since a press this actor saw.
+var focus_input: bool = false
 var event_done: bool = false
 var dead_signal_sent: bool = false
 var controls_enabled: bool = true
@@ -269,6 +277,7 @@ func _physics_process(dt: float) -> void:
 	damage_flash_left = maxf(0,damage_flash_left-dt)
 	armor = maxf(0,armor-dt)
 	wall_lock = maxf(0,wall_lock-dt)
+	recoil_left = maxf(0,recoil_left-dt)
 	jump_buffer = maxf(0,jump_buffer-dt)
 	pending_left = maxf(0,pending_left-dt)
 	if pending_left <= 0: pending_action = ""
@@ -287,13 +296,16 @@ func _physics_process(dt: float) -> void:
 	_update_action_events()
 	var axis := movement_axis()
 	var locked := state in ["recover","interact","hit","defeat"]
-	if absf(axis)>0.1 and state not in ["A1_dash","A5_slit"] and not locked and not skill_controller.active: facing=signf(axis)
+	# A swing keeps the direction it started with; movement stays free.
+	var swinging := state_duration>0.0 and state in ["strike_01","A3_anchor"]
+	if absf(axis)>0.1 and state not in ["A1_dash","A5_slit"] and not locked and not swinging and not skill_controller.active: facing=signf(axis)
 	if state_duration>0.0 and state in ["A1_dash","A5_slit"]:
 		velocity = Vector2(facing*(dash_speed if state=="A1_dash" else slit_speed),0)
 	else:
 		if state != "hit":
 			var control := 1.0 if grounded else air_control
 			if wall_lock <= 0: velocity.x = move_toward(velocity.x,0.0 if locked else axis*max_speed*(0.42 if Input.is_action_pressed("tp_walk") else 1.0),(friction if is_zero_approx(axis) or locked else acceleration)*control*dt)
+			if recoil_left > 0.0: velocity.x = recoil_direction*hit_recoil_speed
 		if not grounded:
 			if short_jump and velocity.y<0:
 				var remaining := maxf(0, short_jump_height-(jump_start_y-position.y))
@@ -338,6 +350,38 @@ func _read_input() -> void:
 			if not request_action(mapping[action]):
 				pending_action=mapping[action]
 				pending_left=jump_buffer_time
+	_track_focus_key()
+
+func _track_focus_key() -> void:
+	# Tracked hold, not the release edge: a short release can fall between physics frames.
+	if Input.is_action_just_pressed("tp_heal"):
+		focus_input=true
+	elif focus_input and not Input.is_action_pressed("tp_heal"):
+		focus_input=false
+		if pending_action=="recover": pending_action=""
+		if state=="recover" and state_duration>0.0: _cancel_focus()
+
+func _cancel_focus() -> void:
+	# Letting go before the heal lands costs nothing.
+	animation_tag.emit("recover:cancel")
+	state_duration=0.0
+	state_time=0.0
+	state=locomotion_animation()
+
+func _focus_continues() -> bool:
+	return focus_input and Input.is_action_pressed("tp_heal") and soul>=skill_cost and health<max_health and is_on_floor() and cooldowns.heal<=0.0
+
+func start_recoil(direction: float) -> void:
+	if hit_recoil_speed<=0.0: return
+	recoil_left=hit_recoil_time
+	recoil_direction=direction
+
+func action_trigger_time() -> float:
+	var melee := state in ["strike_01","A3_anchor"]
+	if melee and melee_startup>0.0: return melee_startup
+	var clip := anim.get_animation("game/"+state)
+	var marker := "damage" if melee else "release"
+	return clip.get_marker_time(marker)*12.0/animation_fps if clip.has_marker(marker) else 2.0/animation_fps
 
 func movement_axis() -> float:
 	return Input.get_axis("tp_left","tp_right")
@@ -355,12 +399,14 @@ func locomotion_animation() -> String:
 
 func _can_jump_cancel() -> bool:
 	if skill_controller.active: return skill_controller.can_cancel("jump")
-	return state_duration<=0 or state=="strike_02" or (state in ["strike_01","A3_anchor"] and state_time>=2.0/animation_fps+1.0/animation_fps+attack_recovery*.5)
+	var lock := melee_cancel_after if melee_cancel_after>=0.0 else 1.0/animation_fps+attack_recovery*.5
+	return state_duration<=0 or state=="strike_02" or (state in ["strike_01","A3_anchor"] and state_time>=action_trigger_time()+lock)
 
 func _try_jump() -> void:
 	var wall := _wall_direction()
 	if (wall==0 or is_on_floor()) and coyote<=0 and jump_count>=2: return
-	if skill_controller.active: skill_controller.cancel()
+	# Free-motion swings keep playing through a ground or wall jump.
+	if skill_controller.active and not skill_controller.free_motion(): skill_controller.cancel()
 	if wall!=0 and not is_on_floor():
 		velocity=Vector2(-wall*wall_jump_x,-sqrt(2*gravity*wall_jump_height))
 		wall_lock=.15
@@ -374,7 +420,7 @@ func _try_jump() -> void:
 		jump_count=2
 		_enter("strike_02",.35)
 	else: return
-	if state!="strike_02":
+	if state!="strike_02" and not (state_duration>0.0 and state=="strike_01"):
 		state="jump_land"
 		state_time=0.0
 		state_duration=0.0
@@ -418,7 +464,8 @@ func request_action(action: String) -> bool:
 	if action=="interact" and not is_instance_valid(interacted_target): return false
 	if action=="A3_anchor" and is_on_floor(): return false
 	var duration: float = {"strike_01":3.0/animation_fps+attack_recovery,"A3_anchor":3.0/animation_fps+attack_recovery,"A1_dash":dash_duration,"A5_slit":slit_duration,"A4_parry":.5,"heavy":.55,"recover":heal_time,"interact":.5}.get(action,.35)
-	if action in ["A4_parry","heavy","recover"]:
+	# Healing is paid when it lands, so an interrupted or released focus is free.
+	if action in ["A4_parry","heavy"]:
 		soul-=skill_cost
 		stats_changed.emit(health,soul)
 	if not key.is_empty(): cooldowns[key]={"dash":dash_cooldown,"slit":slit_cooldown,"orb":orb_cooldown,"heavy":heavy_cooldown,"heal":heal_cooldown}[key]
@@ -449,9 +496,7 @@ func _update_action_events() -> void:
 		return
 	if state_duration<=0: return
 	if state=="defeat" and dead_signal_sent:return
-	var clip := anim.get_animation("game/"+state)
-	var marker := "damage" if state in ["strike_01","A3_anchor"] else "release"
-	var trigger := clip.get_marker_time(marker)*12.0/animation_fps if clip.has_marker(marker) else 2.0/animation_fps
+	var trigger := action_trigger_time()
 	if state in ["strike_01","A3_anchor"] and state_time>=trigger and (not event_done or state_time<trigger+1.0/animation_fps):
 		_melee(state=="A3_anchor")
 	if not event_done and state_time>=trigger:
@@ -465,8 +510,12 @@ func _update_action_events() -> void:
 	if state_time+0.00001>=state_duration:
 		animation_tag.emit(state+":end")
 		if state=="recover":
+			soul=maxi(0,soul-skill_cost)
 			health=mini(max_health,health+heal_amount)
 			stats_changed.emit(health,soul)
+			if _focus_continues():
+				_enter("recover",heal_time)
+				return
 		if state=="interact" and is_instance_valid(interacted_target): interaction_requested.emit(interacted_target)
 		if state=="defeat":
 			if not dead_signal_sent:

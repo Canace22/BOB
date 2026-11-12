@@ -59,7 +59,7 @@ func run_tests() -> void:
 	await reset_at(Vector2(450,850));target.health=100;await tap("tp_heavy");await frames(22);check("heavy_cost_damage",p.soul==66 and target.health==85,{"hp":target.health,"soul":p.soul})
 	await reset_at();p.soul=0;check("insufficient_soul",not p.request_action("A4_parry") and p.soul==0)
 	await reset_at();p.health=10;p.request_action("recover");await frames(95);check("heal_complete",p.health==100 and p.soul==66)
-	await reset_at();p.health=50;p.request_action("recover");await frames(20);p.invulnerable=0;p.take_damage();await frames(100);check("heal_interrupt_no_refund",p.health==35 and p.soul==33,{"hp":p.health,"soul":p.soul})
+	await reset_at();p.health=50;p.request_action("recover");await frames(20);p.invulnerable=0;p.take_damage();await frames(100);check("heal_interrupt_costs_nothing",p.health==35 and p.soul==66,{"hp":p.health,"soul":p.soul})
 	await reset_at();check("hurt_and_soul",p.take_damage() and p.health==85 and p.soul==66);check("hurt_invulnerability",not p.take_damage() and p.health==85)
 	await reset_at(Vector2(490,790));p.jump_count=2;target.health=100;p.cooldowns.dash=.5;p.velocity.y=150;p.request_action("A3_anchor");await frames(22);check("pogo_refills_mobility",target.health==90 and p.velocity.y<0 and p.jump_count==0,{"hp":target.health,"vy":p.velocity.y,"jumps":p.jump_count})
 	await reset_at(Vector2(320,850));await frames(5);await tap("tp_interact");await frames(35);check("interact_signal",demo.interact_count==1)

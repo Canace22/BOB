@@ -100,7 +100,7 @@ func _draw() -> void:
 		draw_rect(Rect2(x-3,size.y-116,width+6,13),WhaleUIStyle.MUTED,false,1)
 		if prefs.numbers: text(Vector2(x+width+14,size.y-106),"%d/%d" % [maxi(0,int(boss.hp)),int(boss.max_hp)],15)
 	if p.state == "recover":
-		text(Vector2(35,189),"调息中 · 已消耗 %d" % p.skill_cost,16,WhaleUIStyle.AMBER)
+		text(Vector2(35,189),"调息中 · 松开取消",16,WhaleUIStyle.AMBER)
 		draw_line(Vector2(35,203),Vector2(35+220*clampf(p.state_time/maxf(p.state_duration,0.01),0,1),203),WhaleUIStyle.AMBER,3)
 	elif p.skill_controller.input.attack_hold>=0.55 or p.skill_controller.input.long_hold>=0.6:
 		text(Vector2(35,189),"蓄力完成 · 松开释放",16,WhaleUIStyle.AMBER)

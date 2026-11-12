@@ -18,7 +18,7 @@ func test_recovered_runtime_dependencies_exist_in_game() -> void:
 		check(str(entry.src).begins_with("assets/"), "Sync uses the active library: " + str(entry.src))
 		check(FileAccess.file_exists("res://../" + str(entry.src)), "Sync source exists: " + str(entry.src))
 	var player := (load("res://content/whalebelly/CampaignPlayer.tscn") as PackedScene).instantiate()
-	eq(player.max_speed, 265.0, "Original movement baseline retained")
+	eq(player.max_speed, 390.0, "Current movement baseline retained")
 	eq(player.max_health, 5, "Original campaign health retained")
 	player.free()
 

@@ -10,10 +10,10 @@ func run() -> void:
 	var scene=load("res://content/whalebelly/test/PlayerTest.tscn").instantiate();scene.show_guide=false;root.add_child(scene);current_scene=scene
 	var p:TidePlayer=scene.player
 	await step(10)
-	check("baseline_265_1050_5hp",p.max_speed==265 and p.gravity==1050 and p.health==5)
+	check("baseline_390_1750_5hp",p.max_speed==390 and p.gravity==1750 and p.health==5)
 	check("capsule_28_65",p.get_node("CollisionShape2D").shape is CapsuleShape2D and p.collision_size==Vector2(28,65))
 	check("spawn_floor",p.is_on_floor())
-	Input.action_press("tp_right");await step(15);Input.action_release("tp_right");check("baseline_speed",absf(p.velocity.x-265)<.1,p.velocity.x)
+	Input.action_press("tp_right");await step(15);Input.action_release("tp_right");check("baseline_speed",absf(p.velocity.x-390)<.1,p.velocity.x)
 	await step(15);check("stop",absf(p.velocity.x)<1)
 	p.position=Vector2(180,850);p.velocity=Vector2.ZERO;await step(5)
 	Input.action_press("tp_jump");var ground:float=p.position.y;var peak:float=ground

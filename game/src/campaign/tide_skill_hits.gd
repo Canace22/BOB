@@ -13,8 +13,9 @@ func area_hit(spec: Dictionary, direction: float) -> void:
 		if not target.has_method("hurt_rect") or not area.intersects(target.hurt_rect()): continue
 		if actor.hit_targets.has(target.get_instance_id()): continue
 		actor._hit(target,int(spec.get("damage",actor.melee_damage)),bool(spec.get("gain",false)))
-		if actor.hit_targets.has(target.get_instance_id()) and target.has_method("apply_knockback"):
-			target.apply_knockback(direction*float(spec.get("knockback",0.0)))
+		if not actor.hit_targets.has(target.get_instance_id()): continue
+		if target.has_method("apply_knockback"): target.apply_knockback(direction*float(spec.get("knockback",0.0)))
+		if shape=="front" and str(spec.get("motion",""))=="free": actor.start_recoil(-direction)
 
 func projectile(damage: int, direction: float, piercing: bool=false) -> void:
 	var orb:=preload("res://src/campaign/tide_orb.gd").new()

@@ -3,8 +3,8 @@ class_name WhalebellyMain
 extends Node2D
 
 @export var player_scene:PackedScene = preload("res://content/whalebelly/CampaignPlayer.tscn")
-@export var camera_lookahead:float=120.0 # New default; Inspector adjustable.
-@export var camera_shake_pixels:float=6.0 # New default; Inspector adjustable.
+@export var camera_lookahead:float=56.0 # Small lead: turning around must not swing the view.
+@export var camera_shake_pixels:float=8.0
 @export var camera_dash_zoom:float=1.05 # New default; Inspector adjustable.
 const PlayerUI = preload("res://content/whalebelly/PlayerUI.tscn")
 const EnemyProxy = preload("res://src/campaign/campaign_enemy_proxy.gd")

@@ -129,6 +129,7 @@ func apply_motion(_dt: float) -> void:
 		"lunge": actor.velocity.x=locked_facing*float(data.speed) if elapsed<float(data.release) else 0.0
 		"dive":
 			actor.velocity=Vector2.ZERO if not released or landed else Vector2(0,900)
+		"free": pass # Light swings leave running, jumping and falling to the player.
 		_:
 			actor.velocity.x=0.0
 			if not actor.is_on_floor(): actor.velocity.y=minf(actor.velocity.y,120.0)
@@ -149,7 +150,11 @@ func after_move() -> void:
 func can_cancel(kind: String) -> bool:
 	if not active: return true
 	if visual_key=="crystal_dash": return kind in ["jump","dash","skill"]
+	if kind=="jump" and free_motion(): return elapsed >= float(data.release)
 	return elapsed >= duration*float(data.get("cancel",0.65))
+
+func free_motion() -> bool:
+	return active and str(data.get("motion",""))=="free"
 
 func cancel() -> void:
 	if active:

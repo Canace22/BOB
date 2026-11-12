@@ -1,18 +1,21 @@
 @warning_ignore_start("untyped_declaration")
 class_name WhalebellyCampaignProfile
 extends RefCounted
-# Active main.gd + legacy player.gd values take priority over standalone demo defaults.
+# Mirrors CampaignPlayer.tscn so the standalone parameter field plays like the campaign.
 static func apply(player:TidePlayer) -> void:
-	player.max_speed=265
-	player.acceleration=1800
-	player.friction=1800
-	player.gravity=1050
-	player.terminal_speed=850
+	player.max_speed=390
+	player.acceleration=9000
+	player.friction=12000
+	player.air_control=1.0
+	player.gravity=1750
+	player.fall_multiplier=1.5
+	player.apex_hold=0.0
+	player.terminal_speed=1000
 	player.jump_height=570.0*570.0/(2*1050)
-	player.short_jump_height=player.jump_height*.65
-	player.double_jump_speed=570*.7
+	player.short_jump_height=40
+	player.double_jump_speed=519
 	player.wall_slide_speed=850.0/4
-	player.wall_jump_x=265*1.2
+	player.wall_jump_x=390
 	player.wall_jump_height=player.jump_height
 	player.dash_speed=800
 	player.dash_duration=.2
@@ -29,7 +32,14 @@ static func apply(player:TidePlayer) -> void:
 	player.melee_damage=1
 	player.orb_damage=2
 	player.heavy_damage=2
-	player.heal_amount=5
+	player.heal_amount=1
+	player.heal_time=.9
+	player.heal_cooldown=0
+	player.hurt_soul_loss=0
+	player.hitstop_duration=0
+	player.melee_startup=.05
+	player.melee_cancel_after=0
+	player.hit_recoil_speed=200
 	player.hurt_invulnerability=1.2
 	player.hurt_stun=.25
 	player.knockback=160
@@ -37,7 +47,7 @@ static func apply(player:TidePlayer) -> void:
 	player.melee_height=125
 	player.downward_reach=65*.5
 	player.heavy_radius=28*2.5
-	player.orb_speed=265*2.2
+	player.orb_speed=583
 	player.pogo_height=player.jump_height
 	player.visual_scale=94.0/280.0
 	player.world_collision_mask=1

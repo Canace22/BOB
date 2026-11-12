@@ -5,6 +5,17 @@ extends "res://src/campaign/tide_player.gd"
 @export var spawn_input_lock:float=0.1 # New default: discard carried input on room load.
 var spawn_lock_left:float=0
 @export var automatic_doors:bool=true # Only authored side passages auto-enter.
+# Float keeps its 240px rise: lift speed x time. The lift must outpull falling gravity.
+@export var float_time:float=1.02
+@export var float_lift_speed:float=235.0
+@export var float_lift_accel:float=4400.0
+@export var melee_knockback:float=160.0
+@export var hit_freeze_ticks:int=3
+@export var hurt_freeze_ticks:int=10
+# Authored distances stay fixed when gravity is retuned.
+const MEMBRANE_REBOUND_HEIGHT:float=213.75
+const MEMBRANE_DIVE_DEPTH:float=106.0
+var impact: CampaignImpact
 var host: Node2D
 var art: Node2D
 var last_safe:=Vector2.ZERO
@@ -42,6 +53,10 @@ func _ready() -> void:
 	world_effects.name="WorldEffects"
 	add_child(world_effects)
 	world_effects.setup(self,target_height)
+	impact=CampaignImpact.new()
+	impact.name="Impact"
+	add_child(impact)
+	float_left=float_time
 	for ray:RayCast2D in [$Foot0,$"Foot-10",$Foot10]:ray.target_position.y=30
 	health=clampi(host.health,0,max_health)
 	soul=host.player_soul
@@ -50,8 +65,8 @@ func _ready() -> void:
 	stats_changed.connect(_sync_stats)
 	interaction_requested.connect(_interact_campaign)
 	notification.connect(func(text):host.notify(text))
-	hit_confirmed.connect(func():host.camera_feedback=.12)
-	damaged.connect(func():grapple_target=Vector2.INF;grapple_hanging=false;host.sfx("hurt");host.camera_feedback=.18;host.record_event("player_hurt",{"health":health}))
+	hit_confirmed.connect(func():host.camera_feedback=.12;impact.freeze(hit_freeze_ticks))
+	damaged.connect(func():grapple_target=Vector2.INF;grapple_hanging=false;host.sfx("hurt");host.camera_feedback=.3;impact.freeze(hurt_freeze_ticks);host.record_event("player_hurt",{"health":health}))
 	died.connect(func():host.on_player_died.call_deferred())
 	animation_tag.connect(_campaign_tag)
 	skill_effect.connect(_campaign_skill_effect)
@@ -89,7 +104,7 @@ func _physics_process(dt:float) -> void:
 		stats_changed.emit(health,soul)
 	spawn_lock_left=maxf(0,spawn_lock_left-dt)
 	drop_timer=maxf(0,drop_timer-dt)
-	if is_on_floor():float_left=1.5;membrane_boost=false
+	if is_on_floor():float_left=float_time;membrane_boost=false
 	var gate: Node=skill_controller.nearby_gate()
 	interacted_target=gate if is_instance_valid(gate) else (host if interaction_nearby() else null)
 	var before_move_x:float=position.x
@@ -125,9 +140,10 @@ func _read_input() -> void:
 	if pressed_jump and Input.is_action_pressed("down") and host.room_index==2 and position.x>700 and position.x<970 and position.y<730 and is_on_floor():
 		var mechanism:Node=host.scenery.get_node_or_null("VisualMechanisms")
 		if mechanism!=null and float(mechanism.membrane_drop)>15:
-			drop_timer=.28;jump_buffer=0;coyote=0;velocity.y=180
+			drop_timer=_fall_time(MEMBRANE_DIVE_DEPTH,180.0);jump_buffer=0;coyote=0;velocity.y=180
 			host.sfx("sweep");host.record_event("membrane_dive",{"position":[position.x,position.y],"drop":mechanism.membrane_drop})
-	if Input.is_action_just_pressed("float") and not host.has_ability("float"):host.notify("浮游尚未解锁；沿须筛右侧圆环进入鲸须记忆袋，拾取记忆")
+	# Float only works airborne; on the ground the same key peeks up or aims an up-slash.
+	if Input.is_action_just_pressed("float") and not host.has_ability("float") and not is_on_floor():host.notify("浮游尚未解锁；沿须筛右侧圆环进入鲸须记忆袋，拾取记忆")
 	if Input.is_action_just_pressed("grapple"):
 		if not host.has_ability("anchor"):host.notify("锚环尚未解锁；F9可进入原有能力练习模式")
 		else:_find_ring()
@@ -143,7 +159,12 @@ func _try_jump() -> void:
 	membrane_boost=rebound
 	super._try_jump()
 	if rebound and velocity.y<0:
-		velocity.y=-670;short_jump=false;host.record_event("membrane_rebound",{"position":[position.x,position.y]})
+		velocity.y=-sqrt(2.0*gravity*MEMBRANE_REBOUND_HEIGHT);short_jump=false;host.record_event("membrane_rebound",{"position":[position.x,position.y]})
+
+func _fall_time(distance:float,speed:float) -> float:
+	# Seconds to fall `distance` from `speed` under falling gravity.
+	var pull:float=gravity*fall_multiplier
+	return (-speed+sqrt(speed*speed+2.0*pull*distance))/pull
 
 func _find_ring() -> void:
 	if state_duration>0:return
@@ -180,11 +201,11 @@ func _before_move(dt:float) -> void:
 		if grapple_hanging or position.distance_to(grapple_target)<24:
 			grapple_hanging=true
 			velocity=Vector2.ZERO
-			float_left=1.5
-	elif Input.is_action_pressed("float") and host.has_ability("float") and not is_on_floor() and float_left>0 and velocity.y>-160 and state_duration<=0:
+			float_left=float_time
+	elif Input.is_action_pressed("float") and host.has_ability("float") and not is_on_floor() and float_left>0 and velocity.y>-float_lift_speed and state_duration<=0:
 		# Floating has its own lift; releasing jump must not cap it at short-jump height.
 		short_jump=false
-		float_left-=dt;velocity.y=move_toward(velocity.y,-160,2200*dt);floating=true
+		float_left-=dt;velocity.y=move_toward(velocity.y,-float_lift_speed,float_lift_accel*dt);floating=true
 
 func locomotion_animation() -> String:
 	if grapple_target!=Vector2.INF:return "A3_anchor"
@@ -220,7 +241,13 @@ func _melee(downward:bool) -> void:
 	for target in get_tree().get_nodes_in_group("tide_targets"):
 		if not target.has_method("is_campaign_enemy"):continue
 		var delta:Vector2=target.global_position-global_position
-		if absf(delta.x)<(180 if target.data.boss else melee_reach) and absf(delta.y)<125 and delta.x*facing>-25:_hit(target,melee_damage,true)
+		if absf(delta.x)>=(180 if target.data.boss else melee_reach) or absf(delta.y)>=125 or delta.x*facing<=-25:continue
+		var fresh:bool=not hit_targets.has(target.get_instance_id())
+		_hit(target,melee_damage,true)
+		if not fresh or not hit_targets.has(target.get_instance_id()):continue
+		# A landed swing shoves the target away and nudges the attacker back.
+		if target.has_method("apply_knockback"):target.apply_knockback(facing*melee_knockback)
+		start_recoil(-facing)
 
 func hurt(amount:int,fall:bool=false) -> void:
 	if health<=0:return

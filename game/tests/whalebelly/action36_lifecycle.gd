@@ -64,7 +64,7 @@ func run() -> void:
 	host.player.take_damage(5,Vector2.ZERO,true)
 	await step(2)
 	check("death_clears_projectiles_immediately",orb_count()==0)
-	await step(205)
+	await step(225) # Defeat, fades and the hurt freeze frame.
 	check("death_respawns_shared_character_and_cleans_owner",not is_instance_valid(old) and host.room_index==0 and host.player.health==5 and host.player.world_effects.particles.is_empty())
 	check("death_keeps_earned_unlocks",host.player.skill_unlocked("dash") and not host.player.skill_unlocked("chapter"))
 	# Restore the pre-test QA fixture for the separately run V6 reload route.

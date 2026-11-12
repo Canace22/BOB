@@ -16,7 +16,8 @@
 | `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
 | `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
 | `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
-| `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头和机关表现 |
+| `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头（前视、上下探看、下落前置）和机关表现 |
+| `src/campaign/campaign_impact.gd` | 命中与受击的全场定格，按物理帧计数并保证恢复时间流速 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/campaign/campaign_relics.gd` | 按既有奖励ID计算护盾上限，管理本次旅途剩余护盾；主角在偏转/无敌判定后扣盾，超额伤害沿用原受击流程 |
 | `src/campaign/boss/` | 母蟹三招、阶段连招、护壳/破防和逐帧显示；通过主线敌人字典及 `R1-04:0` 连接奖励与存档 |

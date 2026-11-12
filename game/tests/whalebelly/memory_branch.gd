@@ -37,8 +37,12 @@ func run() -> void:
 			await tick(40)
 			check("ring_wait_is_stable_"+str(i),host.player.position.distance_to(held)<1)
 			print("RING_END ",i," ",host.player.position)
-		await host.input_tap("jump")
-		await point("top_landing_and_door",Vector2(1610,275),false,6)
+		# Leaving the last ring needs a held jump; a tap is only a short hop.
+		Input.action_press("jump")
+		await tick(20)
+		Input.action_release("jump")
+		# Rings are done; re-grappling from above the deck would only pull into its floor.
+		check("top_landing_and_door",await drive(Vector2(1610,275),false,6,1100,false),{"room":host.room.id,"position":host.player.position})
 		if host.room_index == 1:
 			await interact()
 			await tick(100)
