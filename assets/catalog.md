@@ -267,3 +267,11 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 ## 2026-11-12 胃枢样板房 · R3 套件首次接入 Godot
 
 V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/world-kit/`，由 `node game/tools/build_world_rooms.mjs` 装配进 `game/content/whalebelly/r3/R3-01.tscn`：`r3-water-base`、`r3-gastric-far-layer`、`r3-bank-platform`、`r3-mesentery-fold`、`r3-foreground-fold`、`shell-camp`、`anchor-pull-gate-closed`、`bone-anchor-ring`，以及程序驱动的 `fx-particle-soft`（漂脂）、`fx-particle-drift`（水流线）、`fx-cold-beam`（透光）。场景件按清单 `max` 缩到运行尺寸，背景层保持原尺寸；摆放读取本台账的包围盒、锚点和世界单位，只做等比缩放、镜像和拼接。此前标为未接入的五件改为本地运行已验证；闸只接了关闭态，没有开合动画。红结闩曾接入，地图精简后移除。验收与限制见[工程进度](../game/progress.md)，用户观感待确认。
+
+## 2026-11-12 肺心潮庭三房 · R2 套件接入 Godot
+
+育床、心室观察台、血巢三房由同一生成器装配，接入 `r2-water-base`、`r2-lung-far-layer`、`r2-membrane-platform`、`r2-soft-bed`、`r2-foreground-membrane` 和 `nursery-sac`（育囊，静态，作为授予浮游的交互点），营地、漂脂和透光复用胃枢已接入的位图。`r2-soft-bed` 与 `nursery-sac` 改为本地运行已验证。端足群和血巢潮群的位图尚未接入。
+
+## 2026-11-12 断脊、耳海、归海与程序驱动敌人
+
+由同一生成器接入 R4、R5 头、R5 尾三套场景件，以及 `anchor-pull-gate-open`、`tail-flow-shutter`、`progress-three-slots`、`release-bowl`、`release-sluice-closed`、`release-sluice-open`。敌人与预告按协作规则标为程序驱动：`amphipod-swarm`（端足群流与血巢潮群，后者整体染红）、`resonant-clam`、`spine-resonant-clams`、`ringed-calcium-pearl`、`silent-membrane`，预告使用 `fx-danger-line`、`fx-pearl-rings`、`fx-echo-open-ring`、`fx-silence-ring`。这些都是静态位图加程序运动，不是逐帧动作；`blood-nest-swarm` 与 `blood-nest-core` 未使用。共 24 件由未接入改为本地运行已验证，详见[工程进度](../game/progress.md)。

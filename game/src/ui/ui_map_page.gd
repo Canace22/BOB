@@ -50,7 +50,6 @@ static func short_hint(host: Node2D) -> String:
 		for room: Dictionary in host.rooms:
 			if str(room.id) == target:
 				return ("返回" if str(host.room.id) in ["R1-06","R1-07"] else "前往") + str(room.name)
-	if str(host.room.id) == "R3-01": return "胃枢营地"
 	if host.completed: return "首关完成"
 	match str(host.room.id):
 		"R1-07": return "拾取浮游"

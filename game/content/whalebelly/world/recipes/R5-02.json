@@ -1,0 +1,44 @@
+{
+  "id": "R5-02",
+  "name": "安全池",
+  "kit": "R5",
+  "unit": 80,
+  "size": [32, 21],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-02（V5.1 布局，单位 U）。潜隙授能与记忆侧囊入口不做；右侧出口改为直连缄声覆膜；底床为失足回收面",
+  "hint": "安全池 · 壳形营地可歇息；右侧是缄声覆膜",
+  "about": "耳骨外周的安全池 · 壳形营地可歇息。右侧通往缄声覆膜。",
+  "next": [
+    {"to": "R5-04", "unless": "silence"}
+  ],
+  "spawn": [3.2, 17],
+  "camp": [5, 17],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 17, "w": 9},
+    {"id": "P1", "x": 10, "y": 15.5, "w": 6},
+    {"id": "P2", "x": 17, "y": 17, "w": 6},
+    {"id": "P3", "x": 24, "y": 15.5, "w": 8}
+  ],
+  "beds": [
+    {"x": 0, "y": 18.8, "w": 32}
+  ],
+  "doors": [
+    {"edge": "E26", "to_id": "R5-01", "at": [1, 17], "kind": "door", "direction": -1, "spawn": [2160, 1320]},
+    {"edge": "E27-28", "to_id": "R5-04", "at": [31, 15.5], "kind": "door", "direction": 1, "spawn": [256, 1440]}
+  ],
+  "props": [
+    {"art": "shell-camp", "at": [5, 17], "units": 3.4}
+  ],
+  "foreground": [
+    {"x": 3, "w": 12},
+    {"x": 19, "w": 11}
+  ],
+  "bubbles": [
+    {"rect": [14, 4, 3, 10], "count": 8}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 32, 17], "count": 60, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "cfe3ea"}
+  ],
+  "beams": [
+    {"at": [15, 7], "size": [10, 16], "opacity": 0.7, "tint": "e8f6ff"}
+  ]
+}

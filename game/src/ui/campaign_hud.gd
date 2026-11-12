@@ -94,7 +94,8 @@ func _draw() -> void:
 	if not boss.is_empty():
 		var width: float = minf(620,size.x*0.48)
 		var x: float = (size.x-width)*0.5
-		text(Vector2(size.x*0.5-58,size.y-132),"负壳守卫",23)
+		var boss_name: String = str(boss.get("name","负壳守卫"))
+		text(Vector2(size.x*0.5-WhaleUIStyle.FONT.get_string_size(boss_name,HORIZONTAL_ALIGNMENT_LEFT,-1,23).x*0.5,size.y-132),boss_name,23)
 		draw_rect(Rect2(x,size.y-113,width,7),Color("15262c"))
 		draw_rect(Rect2(x,size.y-113,width*clampf(float(boss.hp)/float(boss.max_hp),0,1),7),WhaleUIStyle.BONE)
 		draw_rect(Rect2(x-3,size.y-116,width+6,13),WhaleUIStyle.MUTED,false,1)

@@ -314,7 +314,17 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 		var alive: bool = not (boss and defeated.get(key, false))
 		if visual != null: visual.visible = alive
 		enemies.append({"type": str(source.get("type","corpse-crab")), "pos": origin, "origin": origin, "visual": visual, "visual_origin": visual.position if visual != null else Vector2.ZERO, "boss": boss, "hp": 10 if boss else 3, "max_hp": 10 if boss else 3, "state": "idle", "timer": 0.0, "alive": alive, "facing": -1.0, "key": key, "hurt": 0.0, "hit_sent": false})
+		for field: String in ["config", "name", "grants", "defeat_notice"]:
+			if source.has(field): enemies[-1][field] = source[field]
 	for enemy:Dictionary in enemies:
+		if enemy.has("config"):
+			# Kit enemies own their bitmaps and pattern; a defeated Boss leaves nothing behind.
+			if enemy.alive:
+				var encounter := KitEncounter.new()
+				encounter.host = self
+				encounter.data = enemy
+				scenery.get_node("World").add_child(encounter)
+			continue
 		if enemy.boss and enemy.alive:
 			if is_instance_valid(enemy.visual): enemy.visual.hide()
 			var crab := MotherCrab.new()
@@ -566,14 +576,21 @@ func damage_enemy(enemy:Dictionary,amount:int) -> void:
 		elif is_instance_valid(enemy.visual): enemy.visual.visible = false
 		if enemy.boss:
 			defeated[enemy.key] = true
-			abilities.dash = true
-			record_event("ability_unlocked", {"id":"dash"})
-			notify("负壳守卫已击败：获得冲刺，通路解除封锁")
+			var boss_grant: String = str(enemy.get("grants", "dash"))
+			abilities[boss_grant] = true
+			record_event("ability_unlocked", {"id":boss_grant})
+			notify(str(enemy.get("defeat_notice", "负壳守卫已击败：获得冲刺，通路解除封锁")))
 			save_progress(false)
 
 func interact() -> void:
 	var reward: Array = room.get("reward", [])
 	if reward.size() == 2 and player.position.distance_to(point(reward)) < 100 and not collected.get(str(room.id), false):
+		var lacking: Array[String] = []
+		for need: Variant in room.get("reward_requires", []):
+			if not has_ability(str(need)): lacking.append(str(need))
+		if not lacking.is_empty():
+			notify(str(room.get("reward_locked", "还缺：")) + CampaignWorld.requirement_label(lacking))
+			return
 		collected[str(room.id)] = true
 		sfx("collect")
 		record_event("reward", {"room":str(room.id)})
@@ -581,11 +598,13 @@ func interact() -> void:
 		if reward_art != null: reward_art.visible = false
 		health = player.max_health
 		player.health = health
-		if str(room.id) == "R1-07":
-			abilities.float = true
+		var grant: String = str(room.get("reward_grants", "float" if str(room.id) == "R1-07" else ""))
+		if not grant.is_empty():
+			abilities[grant] = true
 			player.soul = player.max_soul
-			record_event("ability_unlocked", {"id":"float"})
-			notify("获得浮游（空中按住 %s）· 左门返回须筛" % WhaleUIStyle.key("float"))
+			record_event("ability_unlocked", {"id":grant})
+			notify(str(room.get("reward_notice", "获得浮游（空中按住 %s）· 左门返回须筛" % WhaleUIStyle.key("float"))))
+			if grant == "ending" and (not qa or ui_interactive_in_tests): player_ui.open.call_deferred("ending")
 		elif CampaignRelics.ITEMS.has(str(room.id)):
 			relics.refill(collected)
 			notify("获得%s · 护盾 %d/%d，营地可补满" % [CampaignRelics.reward_name(str(room.id)), relics.charges, CampaignRelics.capacity(collected)])

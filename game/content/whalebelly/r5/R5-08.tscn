@@ -1,0 +1,168 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-water-base.png" id="r2"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-far-layer.png" id="r3"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r4"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_pulse.gd" id="r5"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-cold-beam.png" id="r6"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r7"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r8"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-channel.png" id="r9"]
+[ext_resource type="Texture2D" path="res://art/world-kit/release-sluice-open.png" id="r10"]
+[ext_resource type="Texture2D" path="res://art/world-kit/release-sluice-closed.png" id="r11"]
+[ext_resource type="Texture2D" path="res://art/world-kit/release-bowl.png" id="r12"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-foreground.png" id="r13"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r14"]
+
+[node name="R5-08" type="Node2D"]
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -30
+
+[node name="Water" type="Node2D" parent="Far"]
+script = ExtResource("r1")
+factor = 0.1
+room_center = Vector2(1600, 800)
+
+[node name="Art" type="Sprite2D" parent="Far/Water"]
+position = Vector2(1600, 800)
+scale = Vector2(1.0350, 1.0350)
+texture = ExtResource("r2")
+
+[node name="Organs" type="Node2D" parent="Far"]
+script = ExtResource("r1")
+factor = 0.25
+room_center = Vector2(1600, 800)
+
+[node name="Art" type="Sprite2D" parent="Far/Organs"]
+position = Vector2(1600, 800)
+scale = Vector2(1.1375, 1.1375)
+texture = ExtResource("r3")
+
+[node name="Middle" type="Node2D" parent="."]
+z_index = -15
+
+[node name="Ambient" type="Node2D" parent="Middle"]
+
+[node name="Bubbles0" type="Node2D" parent="Middle/Ambient"]
+script = ExtResource("r4")
+bounds = Rect2(1440, 240, 240, 880)
+population = 8
+seed_id = 1
+size_range = Vector2(4, 9)
+
+[node name="Beam0" type="Sprite2D" parent="Middle/Ambient"]
+script = ExtResource("r5")
+position = Vector2(2640, 480)
+scale = Vector2(3.7500, 5.0000)
+modulate = Color(0.918, 0.973, 1.000, 1)
+base_alpha = 0.8
+phase = 0.0
+texture = ExtResource("r6")
+
+[node name="Drift0" type="Node2D" parent="Middle/Ambient"]
+script = ExtResource("r7")
+texture = ExtResource("r8")
+bounds = Rect2(0, 80, 3200, 1200)
+population = 80
+velocity = Vector2(-4, -6)
+sway = 10
+size_range = Vector2(16, 36)
+opacity = 0.7
+tint = Color(0.839, 0.925, 0.949, 1)
+turn_degrees = 0
+seed_id = 1
+
+[node name="World" type="Node2D" parent="."]
+z_index = 0
+
+[node name="Art" type="Node2D" parent="World"]
+
+[node name="Terrain" type="Node2D" parent="World"]
+
+[node name="P0_0" type="Sprite2D" parent="World/Art"]
+position = Vector2(-26.2, 1180.2)
+scale = Vector2(0.6659, 0.6659)
+centered = false
+texture = ExtResource("r9")
+
+[node name="P0_1" type="Sprite2D" parent="World/Art"]
+position = Vector2(773.8, 1180.2)
+scale = Vector2(0.6659, 0.6659)
+centered = false
+flip_h = true
+texture = ExtResource("r9")
+
+[node name="P0_2" type="Sprite2D" parent="World/Art"]
+position = Vector2(1573.8, 1180.2)
+scale = Vector2(0.6659, 0.6659)
+centered = false
+texture = ExtResource("r9")
+
+[node name="P0_3" type="Sprite2D" parent="World/Art"]
+position = Vector2(2373.8, 1180.2)
+scale = Vector2(0.6659, 0.6659)
+centered = false
+flip_h = true
+texture = ExtResource("r9")
+
+[node name="Surface_P0" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P0"]
+polygon = PackedVector2Array(20, 1280, 3180, 1280, 3180, 1315, 20, 1315)
+
+[node name="Prop0_release-sluice-open" type="Sprite2D" parent="World/Art"]
+position = Vector2(2645.5, 1140.6)
+scale = Vector2(0.4821, 0.4821)
+centered = false
+z_index = 1
+texture = ExtResource("r10")
+
+[node name="RewardArt" type="Node2D" parent="World"]
+
+[node name="Prop1_release-sluice-closed" type="Sprite2D" parent="World/RewardArt"]
+position = Vector2(2645.6, 1140.9)
+scale = Vector2(0.4821, 0.4821)
+centered = false
+z_index = 1
+texture = ExtResource("r11")
+
+[node name="Prop2_release-bowl" type="Sprite2D" parent="World/Art"]
+position = Vector2(2197.6, 1176.9)
+scale = Vector2(0.3826, 0.3826)
+centered = false
+z_index = 1
+texture = ExtResource("r12")
+
+[node name="Foreground" type="Node2D" parent="."]
+z_index = 10
+
+[node name="Folds" type="Node2D" parent="Foreground"]
+script = ExtResource("r1")
+factor = 1.15
+room_center = Vector2(1600, 800)
+vertical = false
+
+[node name="Fold0" type="Sprite2D" parent="Foreground/Folds"]
+position = Vector2(473.2, 1382.9)
+scale = Vector2(0.8232, 0.8232)
+centered = false
+texture = ExtResource("r13")
+
+[node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
+position = Vector2(1913.7, 1392.8)
+scale = Vector2(0.7598, 0.7598)
+centered = false
+flip_h = true
+texture = ExtResource("r13")
+
+[node name="Doorways" type="Node2D" parent="."]
+
+[node name="Entrance1" type="Node2D" parent="Doorways"]
+script = ExtResource("r14")
+destination_id = "R4-06"
+kind = "door"
+direction = -1.0
+height = 155.0
+prompt_offset = Vector2(0, -171)

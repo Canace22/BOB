@@ -1,0 +1,48 @@
+{
+  "id": "R2-01",
+  "name": "育床",
+  "kit": "R2",
+  "unit": 80,
+  "size": [28, 23],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R2-01（V5.1 布局，单位 U）。台阶高差由 3U 调到 3.25U，确保只有浮游能上；右上出口改为直连心室观察台；底床为失足回收面",
+  "hint": "育囊授予浮游 · 起跳后按住浮游键，逐台升到右上出口",
+  "about": "肺心潮庭入口 · 育囊可授予浮游。三级高台只有浮游能上，右上出口通往心室观察台。",
+  "next": [
+    {"to": "R2-03", "unless": "pressure"}
+  ],
+  "spawn": [3.2, 19],
+  "reward": [5.6, 19],
+  "reward_grants": "float",
+  "reward_prompt": "触碰育囊",
+  "reward_notice": "育囊授予浮游 · 起跳后按住浮游键上升，生命已恢复",
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 19, "w": 7},
+    {"id": "P1", "x": 8, "y": 15.75, "w": 6},
+    {"id": "P2", "x": 15, "y": 12.5, "w": 5},
+    {"id": "P3", "x": 21, "y": 9.25, "w": 7}
+  ],
+  "beds": [
+    {"x": 0, "y": 20.8, "w": 28}
+  ],
+  "doors": [
+    {"edge": "E10", "to_id": "R3-01", "at": [1, 19], "kind": "door", "direction": -1, "spawn": [256, 1480]},
+    {"edge": "E06-07", "to_id": "R2-03", "at": [27, 9.25], "kind": "door", "direction": 1, "spawn": [256, 1280]}
+  ],
+  "props": [
+    {"art": "nursery-sac", "at": [5.6, 19], "units": 2.2}
+  ],
+  "foreground": [
+    {"x": 3, "w": 12},
+    {"x": 17, "w": 10}
+  ],
+  "bubbles": [
+    {"rect": [10, 8, 3, 10], "count": 8},
+    {"rect": [18, 4, 3, 12], "count": 8}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 28, 19], "count": 70, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "c9d6ee"}
+  ],
+  "beams": [
+    {"at": [17, 9], "size": [10, 20], "opacity": 0.7, "tint": "d8e6ff"}
+  ]
+}

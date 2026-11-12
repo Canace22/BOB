@@ -1,0 +1,40 @@
+{
+  "id": "R4-01",
+  "name": "组合门",
+  "kit": "R4",
+  "unit": 80,
+  "size": [30, 20],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R4-01（V5.1 布局，单位 U）。右侧出口改为直连上锚路线；底床为失足回收面",
+  "hint": "断脊入口 · 沿骨台向右",
+  "about": "鸣肋断脊入口 · 强流门的另一侧。向右是上锚路线。",
+  "next": [
+    {"to": "R4-03", "unless": "bone"}
+  ],
+  "spawn": [3.2, 16],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 16, "w": 8},
+    {"id": "P1", "x": 9, "y": 14.5, "w": 6},
+    {"id": "P2", "x": 16, "y": 13, "w": 6},
+    {"id": "P3", "x": 23, "y": 14.5, "w": 7}
+  ],
+  "beds": [
+    {"x": 0, "y": 17.8, "w": 30}
+  ],
+  "doors": [
+    {"edge": "E18", "to_id": "R3-01", "at": [1, 16], "kind": "door", "direction": -1, "spawn": [3560, 1360]},
+    {"edge": "E19-20", "to_id": "R4-03", "at": [29, 14.5], "kind": "door", "direction": 1, "spawn": [256, 1440]}
+  ],
+  "foreground": [
+    {"x": 2, "w": 12},
+    {"x": 17, "w": 11}
+  ],
+  "bubbles": [
+    {"rect": [12, 4, 3, 9], "count": 7}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 30, 16], "count": 60, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "e8e2cf"}
+  ],
+  "beams": [
+    {"at": [19, 7], "size": [10, 16], "opacity": 0.7, "tint": "e8f0ff"}
+  ]
+}

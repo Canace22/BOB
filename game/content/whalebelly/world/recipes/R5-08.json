@@ -1,0 +1,42 @@
+{
+  "id": "R5-08",
+  "name": "归海释放槽",
+  "kit": "R5",
+  "kit_variant": "R5-tail",
+  "unit": 80,
+  "size": [40, 20],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-08（V5.1 布局，单位 U）。入口改为直连交通椎；释放需要潮压、骨音、静默；结局文案为占位",
+  "hint": "归海释放槽 · 潮压、骨音、静默齐备后，在导流闸前按交互键",
+  "about": "尾柄侧裂处的释放槽 · 三样齐备才能打开导流闸。",
+  "spawn": [3.2, 16],
+  "reward": [34, 16],
+  "reward_grants": "ending",
+  "reward_requires": ["pressure", "bone", "silence"],
+  "reward_locked": "导流闸不动 · 还缺",
+  "reward_prompt": "推开导流闸",
+  "reward_notice": "导流闸打开 · 潮水流向外海",
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 16, "w": 40, "solid": true}
+  ],
+  "doors": [
+    {"edge": "E31-32", "to_id": "R4-06", "at": [1, 16], "kind": "door", "direction": -1, "spawn": [1080, 1320]}
+  ],
+  "props": [
+    {"art": "release-sluice-open", "at": [35, 16], "units": 3.6},
+    {"art": "release-sluice-closed", "at": [35, 16], "units": 3.6, "node": "RewardArt"},
+    {"art": "release-bowl", "at": [29, 16], "units": 2.2}
+  ],
+  "foreground": [
+    {"x": 6, "w": 13},
+    {"x": 24, "w": 12}
+  ],
+  "bubbles": [
+    {"rect": [18, 3, 3, 11], "count": 8}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 40, 15], "count": 80, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "d6ecf2"}
+  ],
+  "beams": [
+    {"at": [33, 6], "size": [12, 16], "opacity": 0.8, "tint": "eaf8ff"}
+  ]
+}

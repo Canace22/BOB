@@ -12,10 +12,11 @@
 [ext_resource type="Texture2D" path="res://art/world-kit/r3-mesentery-fold.png" id="r10"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r3-bank-platform.png" id="r11"]
 [ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r12"]
-[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-closed.png" id="r13"]
-[ext_resource type="Texture2D" path="res://art/world-kit/bone-anchor-ring.png" id="r14"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r3-foreground-fold.png" id="r15"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r16"]
+[ext_resource type="Texture2D" path="res://art/world-kit/bone-anchor-ring.png" id="r13"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r3-foreground-fold.png" id="r14"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r15"]
+[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-closed.png" id="r16"]
+[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-open.png" id="r17"]
 
 [node name="R3-01" type="Node2D"]
 
@@ -301,40 +302,33 @@ centered = false
 z_index = 1
 texture = ExtResource("r12")
 
-[node name="Latch_E18" type="Sprite2D" parent="World/Art"]
-position = Vector2(3596.9, 1100)
-scale = Vector2(0.5453, 0.5453)
-centered = false
-z_index = 1
-texture = ExtResource("r13")
-
 [node name="Ring0" type="Sprite2D" parent="World/Art"]
 position = Vector2(2819.1, 1800.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r14")
+texture = ExtResource("r13")
 
 [node name="Ring1" type="Sprite2D" parent="World/Art"]
 position = Vector2(3059.1, 1560.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r14")
+texture = ExtResource("r13")
 
 [node name="Ring2" type="Sprite2D" parent="World/Art"]
 position = Vector2(3299.1, 1320.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r14")
+texture = ExtResource("r13")
 
 [node name="Ring3" type="Sprite2D" parent="World/Art"]
 position = Vector2(3539.1, 1080.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r14")
+texture = ExtResource("r13")
 
 [node name="Foreground" type="Node2D" parent="."]
 z_index = 10
@@ -349,43 +343,58 @@ vertical = false
 position = Vector2(148.5, 2095.6)
 scale = Vector2(0.8296, 0.8296)
 centered = false
-texture = ExtResource("r15")
+texture = ExtResource("r14")
 
 [node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(1507.6, 2079)
 scale = Vector2(0.8935, 0.8935)
 centered = false
 flip_h = true
-texture = ExtResource("r15")
+texture = ExtResource("r14")
 
 [node name="Fold2" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(2869.4, 2112.3)
 scale = Vector2(0.7658, 0.7658)
 centered = false
-texture = ExtResource("r15")
+texture = ExtResource("r14")
 
 [node name="Doorways" type="Node2D" parent="."]
 
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r16")
+script = ExtResource("r15")
 destination_id = "R1-05"
-kind = "passage"
+kind = "door"
 direction = -1.0
-height = 0.0
-prompt_offset = Vector2(0, -150)
+height = 155.0
+prompt_offset = Vector2(0, -171)
 
 [node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("r16")
+script = ExtResource("r15")
 destination_id = "R2-01"
-kind = "passage"
+kind = "door"
 direction = -1.0
-height = 0.0
-prompt_offset = Vector2(0, -150)
+height = 155.0
+prompt_offset = Vector2(0, -171)
 
 [node name="Entrance3" type="Node2D" parent="Doorways"]
-script = ExtResource("r16")
+script = ExtResource("r15")
 destination_id = "R4-01"
 kind = "door"
 direction = 1.0
 height = 0.0
-prompt_offset = Vector2(0, -150)
+prompt_offset = Vector2(0, -250)
+
+[node name="Closed" type="Sprite2D" parent="Doorways/Entrance3"]
+position = Vector2(-115.1, -260)
+scale = Vector2(0.5453, 0.5453)
+centered = false
+z_index = 1
+texture = ExtResource("r16")
+
+[node name="Open" type="Sprite2D" parent="Doorways/Entrance3"]
+position = Vector2(-114.1, -260.2)
+scale = Vector2(0.5462, 0.5462)
+centered = false
+z_index = 1
+visible = false
+texture = ExtResource("r17")

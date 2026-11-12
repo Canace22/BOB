@@ -23,6 +23,9 @@ func door_to(room: Dictionary, target: String) -> Dictionary:
 func test_later_region_appends_and_links_the_first_exit() -> void:
 	var rooms := CampaignWorld.load_rooms(base_rooms())
 	for i: int in 7: eq(str(rooms[i].id), "R1-0%d" % (i + 1), "First-region indices never move")
+	var order: Array = []
+	for i: int in range(7, rooms.size()): order.append(str(rooms[i].id))
+	eq(order.slice(0, 4), ["R3-01", "R2-01", "R2-03", "R2-04"], "Later rooms keep their append-only order")
 	eq(str(rooms[7].id), "R3-01", "The hub follows the first region")
 	var exit: Dictionary = rooms[4].doors[1]
 	eq(int(exit.to), 7, "First-region exit resolves to the hub by ID")
@@ -34,8 +37,9 @@ func test_later_region_appends_and_links_the_first_exit() -> void:
 
 func test_unbuilt_targets_stay_closed_and_requirements_combine() -> void:
 	var host := make_host("R3-01")
-	eq(int(door_to(host.room, "R2-01").to), -2, "Unknown target stays unresolved")
-	eq(CampaignWorld.restriction(host, door_to(host.room, "R2-01")), CampaignWorld.UNBUILT, "Unbuilt exit does not promise entry")
+	eq(CampaignWorld.restriction(host, {"to":-2}), CampaignWorld.UNBUILT, "Unknown target stays closed")
+	eq(str(host.rooms[int(door_to(host.room, "R2-01").to)].id), "R2-01", "Built target resolves by ID")
+	eq(CampaignWorld.restriction(host, door_to(host.room, "R2-01")), "", "Lung exit opens once its room exists")
 	eq(CampaignWorld.restriction(host, door_to(host.room, "R1-05")), "", "Return to the first region is open")
 	var gate: Dictionary = door_to(host.room, "R4-01")
 	eq(CampaignWorld.restriction(host, gate), "需要潮压", "Only the missing key is named")
@@ -43,10 +47,16 @@ func test_unbuilt_targets_stay_closed_and_requirements_combine() -> void:
 	eq(CampaignWorld.restriction(host, gate), "需要潮压＋锚定", "Missing keys combine")
 	host.abilities.anchor = true
 	host.abilities["pressure"] = true
-	eq(CampaignWorld.restriction(host, gate), CampaignWorld.UNBUILT, "Met requirements reveal the unbuilt notice")
+	eq(CampaignWorld.restriction(host, gate), "", "The spine gate opens once pressure is earned")
+	eq(CampaignWorld.restriction(host, {"to":-2, "requires":["bone"]}), "需要骨音", "A requirement is named before the unbuilt notice")
 	eq(CampaignWorld.restriction(host, {"to":3, "locked":"far_latch", "locked_message":"从另一侧闩着"}), "从另一侧闩着", "Far-side latch explains itself")
 	check(CampaignWorld.restriction(host, {"to":5, "ability":"float"}).contains("浮游"), "Float gate names its ability")
 	eq(host.room.doors.size(), 3, "The trimmed hub keeps the way back, the lung exit and the spine gate")
+	eq(host.rooms.size(), 19, "The trimmed map is nineteen rooms")
+	for entry: Dictionary in host.rooms:
+		check(ResourceLoader.exists(CampaignWorld.scene_path(str(entry.id))), "Scene exists: " + str(entry.id))
+		for door: Dictionary in entry.doors:
+			if CampaignWorld.region(str(entry.id)) != "R1": check(int(door.to) >= 0, "Every later-region door leads to a built room: %s → %s" % [entry.id, door.get("to_id")])
 	host.free()
 
 func test_saves_stay_valid_across_the_longer_room_list() -> void:
@@ -109,5 +119,24 @@ func test_guidance_and_map_follow_the_link() -> void:
 	host.free()
 	var hub := make_host("R3-01")
 	check(CampaignGuidance.door_label(hub, door_to(hub.room, "R1-05")).begins_with("返回"), "Way back is labelled as a return")
-	check(CampaignGuidance.hint(hub).contains("尚未开放"), "Hub hint is honest about closed routes")
+	check(CampaignGuidance.hint(hub).contains("潮压"), "Hub hint names what the spine gate needs")
+	eq(CampaignGuidance.next_room(hub), "R2-01", "Hub recommends the lung route until pressure is earned")
+	hub.abilities["pressure"] = true
+	eq(CampaignGuidance.next_room(hub), "R4-01", "With pressure the hub recommends the spine")
 	hub.free()
+
+func test_bosses_grant_the_three_marks_and_the_ending_needs_all() -> void:
+	var rooms := CampaignWorld.load_rooms(base_rooms())
+	var grants: Dictionary = {}
+	for entry: Dictionary in rooms:
+		for enemy: Dictionary in entry.get("enemies", []):
+			if enemy.get("boss", false) and enemy.has("grants"): grants[str(enemy.grants)] = str(entry.id)
+	eq(grants, {"pressure":"R2-04", "bone":"R4-05", "silence":"R5-04"}, "Each mark comes from one Boss room")
+	var release: Dictionary = rooms.filter(func(entry: Dictionary) -> bool: return str(entry.id) == "R5-08")[0]
+	eq(release.reward_requires, ["pressure", "bone", "silence"], "The release needs all three marks")
+	eq(str(release.reward_grants), "ending", "The release closes the loop")
+	for entry: Dictionary in rooms:
+		for enemy: Dictionary in entry.get("enemies", []):
+			if not enemy.has("config"): continue
+			for role: String in enemy.config.sprites:
+				check(ResourceLoader.exists(str(enemy.config.sprites[role].path)), "Enemy bitmap is synced: " + str(enemy.config.sprites[role].path))

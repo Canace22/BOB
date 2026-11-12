@@ -1,0 +1,31 @@
+{
+  "id": "R5-04",
+  "name": "缄声覆膜",
+  "kit": "R5",
+  "unit": 80,
+  "size": [40, 22],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-04（V5.1 布局，单位 U）。地面合并为一条实心台；右侧出口不做，本房是尽头；覆膜贴在右侧，回声落在玩家刚才的位置",
+  "hint": "缄声覆膜 · 空心圈会收拢在你刚才站的位置，离开它再回头近身",
+  "about": "覆膜附着的颅底骨面 · 击败缄声覆膜获得静默。",
+  "spawn": [3.2, 18],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 18, "w": 40, "solid": true},
+    {"id": "U0", "x": 9, "y": 15, "w": 6},
+    {"id": "U1", "x": 18, "y": 13.5, "w": 6}
+  ],
+  "doors": [
+    {"edge": "E27-28", "to_id": "R5-02", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2320, 1240]}
+  ],
+  "enemies": [
+    {"kind": "membrane", "boss": true, "name": "缄声覆膜", "grants": "silence", "defeat_notice": "缄声覆膜退去 · 获得静默。回交通椎，从中段下行口去归海释放槽", "at": [27.5, 18], "hits": 28, "rest": 1.5, "tell": 1.0, "radius": 1.5, "recover": 0.4, "offset": [4.6, 0], "hurt": [3.0, 4.2], "engage": 30, "enraged": {"tell": 0.8, "rest": 1.0, "repeat": 1}, "sprites": {"body": {"art": "silent-membrane", "units": 9.2, "max": 1024}, "tell": {"art": "fx-echo-open-ring", "units": 3.2}, "pulse": {"art": "fx-silence-ring", "units": 3.0}}}
+  ],
+  "foreground": [
+    {"x": 4, "w": 13}
+  ],
+  "bubbles": [
+    {"rect": [12, 4, 3, 12], "count": 8}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 40, 18], "count": 80, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "cfe3ea"}
+  ]
+}

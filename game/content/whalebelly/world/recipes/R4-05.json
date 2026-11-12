@@ -1,0 +1,37 @@
+{
+  "id": "R4-05",
+  "name": "悬脊鸣贝",
+  "kit": "R4",
+  "unit": 80,
+  "size": [40, 22],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R4-05（V5.1 布局，单位 U）。地面合并为一条实心台；下路入口不做，出口移到右侧并在击败后开放；悬脊鸣贝落在地面右侧",
+  "hint": "悬脊鸣贝 · 三圈光亮起后成排吐珠，借高台错开弹道再近身",
+  "about": "椎旁宽骨台 · 击败悬脊鸣贝获得骨音，右侧通往交通椎。",
+  "next": [
+    {"to": "R4-06", "unless": "silence"}
+  ],
+  "spawn": [3.2, 18],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 18, "w": 40, "solid": true},
+    {"id": "U0", "x": 9, "y": 15, "w": 6},
+    {"id": "U1", "x": 18, "y": 12, "w": 5},
+    {"id": "U2", "x": 28, "y": 15, "w": 6}
+  ],
+  "doors": [
+    {"edge": "E22", "to_id": "R4-03", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2640, 1440]},
+    {"edge": "E24", "to_id": "R4-06", "at": [39, 18], "kind": "door", "direction": 1, "spawn": [256, 1440], "ability": "boss"}
+  ],
+  "enemies": [
+    {"kind": "clam", "boss": true, "name": "悬脊鸣贝", "grants": "bone", "defeat_notice": "悬脊鸣贝沉寂 · 获得骨音，右侧通往交通椎", "at": [31, 18], "hits": 26, "rest": 1.7, "tell": 0.9, "shots": 3, "spread_deg": 15, "speed": 5.2, "mouth": [-0.6, -1.8], "hurt": [3.2, 3.0], "engage": 30, "enraged": {"shots": 5, "rest": 1.1}, "sprites": {"body": {"art": "spine-resonant-clams", "units": 4.2, "max": 512}, "tell": {"art": "fx-pearl-rings", "units": 2.6}, "shot": {"art": "ringed-calcium-pearl", "units": 0.55}}}
+  ],
+  "foreground": [
+    {"x": 4, "w": 13},
+    {"x": 24, "w": 12}
+  ],
+  "bubbles": [
+    {"rect": [14, 4, 3, 12], "count": 8}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 40, 18], "count": 80, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "e8e2cf"}
+  ]
+}

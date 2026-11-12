@@ -1,0 +1,40 @@
+{
+  "id": "R5-01",
+  "name": "三槽记忆",
+  "kit": "R5",
+  "unit": 80,
+  "size": [30, 22],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-01（V5.1 布局，单位 U）。入域条件在交通椎一侧的门上；三槽装置为静态；底床为失足回收面",
+  "hint": "耳海入口 · 三槽装置记着潮压、骨音与静默",
+  "about": "枕骨侧的入口 · 三槽装置对应潮压、骨音与静默。右侧通往安全池。",
+  "next": [
+    {"to": "R5-02", "unless": "silence"}
+  ],
+  "spawn": [3.2, 18],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 18, "w": 8},
+    {"id": "P1", "x": 9, "y": 16.5, "w": 6},
+    {"id": "P2", "x": 16, "y": 15, "w": 6},
+    {"id": "P3", "x": 23, "y": 16.5, "w": 7}
+  ],
+  "beds": [
+    {"x": 0, "y": 19.8, "w": 30}
+  ],
+  "doors": [
+    {"edge": "E25", "to_id": "R4-06", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2440, 1320]},
+    {"edge": "E26", "to_id": "R5-02", "at": [29, 16.5], "kind": "door", "direction": 1, "spawn": [256, 1360]}
+  ],
+  "props": [
+    {"art": "progress-three-slots", "at": [19, 15], "units": 2.4}
+  ],
+  "foreground": [
+    {"x": 2, "w": 12},
+    {"x": 17, "w": 11}
+  ],
+  "bubbles": [
+    {"rect": [12, 5, 3, 9], "count": 7}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 30, 18], "count": 60, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "cfe3ea"}
+  ]
+}

@@ -17,7 +17,7 @@ func prompt() -> String:
 	var gate: Node = p.skill_controller.nearby_gate()
 	if is_instance_valid(gate): return "使用通行节点"
 	var reward: Array = host.room.get("reward", [])
-	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return "拾取" + CampaignRelics.reward_name(str(host.room.id))
+	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return str(host.room.get("reward_prompt", "拾取" + CampaignRelics.reward_name(str(host.room.id))))
 	var entrance: CampaignDoorway = prompt_door()
 	if entrance != null: return entrance.prompt()
 	if at_camp(): return "在营地歇息"

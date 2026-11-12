@@ -1,0 +1,47 @@
+{
+  "id": "R4-06",
+  "name": "稳定交通椎",
+  "kit": "R4",
+  "unit": 80,
+  "size": [34, 22],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R4-06（V5.1 布局，单位 U）。向尾的出口改为直连归海释放槽；交通节点未做；底床为失足回收面",
+  "hint": "交通椎 · 壳形营地可歇息；右侧去头耳，中段下行口去归海释放槽",
+  "about": "腰尾交界的分流台 · 壳形营地可歇息。右侧通往耳海，中段的下行口通往归海释放槽。",
+  "next": [
+    {"to": "R5-01", "unless": "silence"},
+    {"to": "R5-08", "unless": "ending"}
+  ],
+  "spawn": [3.2, 18],
+  "camp": [5, 18],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 18, "w": 9},
+    {"id": "P1", "x": 10, "y": 16.5, "w": 7},
+    {"id": "P2", "x": 18, "y": 15, "w": 7},
+    {"id": "P3", "x": 26, "y": 16.5, "w": 8}
+  ],
+  "beds": [
+    {"x": 0, "y": 19.8, "w": 34}
+  ],
+  "doors": [
+    {"edge": "E24", "to_id": "R4-05", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2960, 1440]},
+    {"edge": "E31-32", "to_id": "R5-08", "at": [13.5, 16.5], "kind": "door", "direction": 1, "spawn": [256, 1280], "requires": ["bone"]},
+    {"edge": "E25", "to_id": "R5-01", "at": [33, 16.5], "kind": "door", "direction": 1, "spawn": [256, 1440], "requires": ["bone"]}
+  ],
+  "props": [
+    {"art": "shell-camp", "at": [5, 18], "units": 3.4},
+    {"art": "tail-flow-shutter", "at": [13.5, 16.5], "units": 1.6}
+  ],
+  "foreground": [
+    {"x": 3, "w": 12},
+    {"x": 20, "w": 11}
+  ],
+  "bubbles": [
+    {"rect": [22, 5, 3, 9], "count": 7}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 34, 18], "count": 70, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "e8e2cf"}
+  ],
+  "beams": [
+    {"at": [21, 8], "size": [10, 16], "opacity": 0.7, "tint": "e8f0ff"}
+  ]
+}

@@ -57,7 +57,7 @@ static func restriction(host: Node2D, door: Dictionary) -> String:
 	for need: String in requirements(door):
 		if need == "boss":
 			for enemy: Dictionary in host.enemies:
-				if enemy.boss and enemy.alive: return "先击败负壳守卫"
+				if enemy.boss and enemy.alive: return "先击败" + str(enemy.get("name", "负壳守卫"))
 		elif not host.has_ability(need):
 			if need == "float": return "先到鲸须记忆袋获得浮游"
 			missing.append(str(NAMES.get(need, need)))

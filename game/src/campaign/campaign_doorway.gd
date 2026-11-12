@@ -48,6 +48,11 @@ func bind(level: Node2D, door: Dictionary) -> void:
 func _process(_dt: float) -> void:
 	if not is_instance_valid(host): return
 	visible = not host.reference_visible and host.layer_solo < 0 and host.capture_path.is_empty()
+	# Kit gates carry both states; the door graph decides which one shows.
+	if has_node("Closed"):
+		var shut: bool = not restriction().is_empty()
+		get_node("Closed").visible = shut
+		if has_node("Open"): get_node("Open").visible = not shut
 	if is_instance_valid(inset):
 		var open: bool = str(data.get("ability", "")) != "boss" or restriction().is_empty()
 		inset.visible = open

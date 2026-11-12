@@ -1,0 +1,40 @@
+{
+  "id": "R4-03",
+  "name": "上锚路线",
+  "kit": "R4",
+  "unit": 80,
+  "size": [36, 22],
+  "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R4-03（V5.1 布局，单位 U）。原路线依赖迎珠弹升与冲刺，改为普通跳可达的三段骨台；上层奖励台不做；吐珠鸣贝守在中台",
+  "hint": "上锚路线 · 鸣贝张开三圈光后吐珠，看准再靠近",
+  "about": "椎体上外侧的骨台 · 吐珠鸣贝守着中段。右侧通往悬脊鸣贝。",
+  "next": [
+    {"to": "R4-05", "unless": "bone"}
+  ],
+  "spawn": [3.2, 18],
+  "platforms": [
+    {"id": "P0", "x": 0, "y": 18, "w": 7},
+    {"id": "P1", "x": 8, "y": 16.2, "w": 7},
+    {"id": "P2", "x": 17.5, "y": 16.2, "w": 7},
+    {"id": "P3", "x": 28, "y": 18, "w": 8}
+  ],
+  "beds": [
+    {"x": 0, "y": 19.8, "w": 36}
+  ],
+  "doors": [
+    {"edge": "E19-20", "to_id": "R4-01", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2160, 1160]},
+    {"edge": "E22", "to_id": "R4-05", "at": [35, 18], "kind": "door", "direction": 1, "spawn": [256, 1440]}
+  ],
+  "enemies": [
+    {"kind": "clam", "name": "吐珠鸣贝", "at": [22.5, 16.2], "hits": 4, "rest": 2.0, "tell": 0.9, "shots": 1, "speed": 4.6, "mouth": [-0.3, -0.9], "engage": 12, "sprites": {"body": {"art": "resonant-clam"}, "tell": {"art": "fx-pearl-rings", "units": 1.6}, "shot": {"art": "ringed-calcium-pearl", "units": 0.5}}}
+  ],
+  "foreground": [
+    {"x": 3, "w": 12},
+    {"x": 20, "w": 12}
+  ],
+  "bubbles": [
+    {"rect": [14, 5, 3, 10], "count": 7}
+  ],
+  "drift": [
+    {"art": "fx-particle-soft", "rect": [0, 1, 36, 18], "count": 70, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "e8e2cf"}
+  ]
+}

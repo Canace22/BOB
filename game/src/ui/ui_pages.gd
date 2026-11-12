@@ -27,6 +27,7 @@ static func build(ui: WhaleCampaignUI, page: String) -> void:
 		"camp": _camp(ui)
 		"death": _death(ui)
 		"help": _help(ui)
+		"ending": _ending(ui)
 
 static func _title(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "鲸落万物生 · 遗潮回声"
@@ -114,3 +115,14 @@ static func _help(ui: WhaleCampaignUI) -> void:
 		column.add_child(WhaleUIStyle.label(key_text+"    "+str(entry[2]),17))
 	column.add_child(WhaleUIStyle.paragraph("C 地图 · Tab 镜头 · Esc 暂停 · M 静音 · H 帮助\nW 浮游 · G 锚定 · B 迎珠 · T 探潮 · V 蓄力长冲\nF5 存档 · F6 读取 · F9 临时练习 · F10 练习技能组"))
 	action(column,"HelpBack","返回",ui.back)
+
+## Placeholder closing text until the final chapter is written; the loop itself is complete.
+static func _ending(ui: WhaleCampaignUI) -> void:
+	ui.heading.text = "归海"
+	var column: VBoxContainer = menu(ui,660)
+	column.add_child(WhaleUIStyle.label("三道槽依次亮起，导流闸缓缓打开。",22))
+	column.add_child(WhaleUIStyle.paragraph("潮压、骨音与静默在槽中合为一股，\n水穿过整具鲸骨，流向外海。\n\n旅途至此告一段落。进度已保存，仍可回到鲸腹继续探索。"))
+	action(column,"EndingTitle","返回标题",func() -> void:
+		ui.history.clear()
+		ui.open("title",false))
+	action(column,"EndingStay","继续探索",ui.close_all)

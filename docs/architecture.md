@@ -22,6 +22,7 @@
 | `src/campaign/campaign_world.gd` | 后续区域的房间表、按房间 ID 的门目标、能力与进度标记组合条件、地图分页落位 |
 | `content/whalebelly/world/`、`tools/build_world_rooms.mjs` | 套件房配方（单位 U）、跨区链接与生成的运行数据；生成器读取资源台账的包围盒与锚点，输出 `content/whalebelly/<区>/<房间ID>.tscn` |
 | `src/world/scenery/kit/` | 套件房的位图层视差、漂移粒子场（漂脂、水流线）和透光明暗 |
+| `src/campaign/enemies/kit_encounter.gd`、`kit_swarm_visual.gd` | 程序驱动的敌人与 Boss：群体横穿、鸣贝吐珠、覆膜回声；位图来自台账，行为写在房间配方的 `enemies` 中，伤害、血条、击败存档沿用主线 |
 | `src/campaign/campaign_relics.gd` | 按既有奖励ID计算护盾上限，管理本次旅途剩余护盾；主角在偏转/无敌判定后扣盾，超额伤害沿用原受击流程 |
 | `src/campaign/boss/` | 母蟹三招、阶段连招、护壳/破防和逐帧显示；通过主线敌人字典及 `R1-04:0` 连接奖励与存档 |
 | `src/campaign/enemies/` | 普通尸蟹物理/状态与图集呈现，复用主线伤害和房间生命周期；[接入合同](corpse-crab-integration.md) |
@@ -85,7 +86,7 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 
 ## 后续区域与套件房
 
-设计地图为 5 区 36 房（[连续世界设计](鲸腹遗城原画集/连续世界设计/设计说明.md)），实施范围已精简为 19 房。R1 七房仍由 `art/whalebelly/rooms.json` 定义，后续区域追加在其后，序号不变。当前只接入胃枢（R3-01），其余门在目标房间制作前保持关闭。
+设计地图为 5 区 36 房（[连续世界设计](鲸腹遗城原画集/连续世界设计/设计说明.md)），实施范围已精简为 19 房。R1 七房仍由 `art/whalebelly/rooms.json` 定义，后续区域追加在其后，序号不变。精简后的 12 个新房间已全部接入，门都是可见骨拱门并按交互键进入。Boss 击败后的授予（`grants`）和归海释放的条件（`reward_requires`）同样写在配方里。房间在运行表中的顺序由配方 `_world.json` 的 `order` 决定，只能在末尾追加，因为检查点按序号保存。指引、房间说明、推荐下一房和奖励授能都写在配方里。
 
 - 门用 `to_id` 指向房间 ID；`requires` 列出能力和进度标记，`locked` 表示要从对侧开启。标记与能力同存于 V6 的 `abilities` 字典。跨区入口写在配方 `_world.json` 的 `links`，不修改 R1 原始数据。
 - 新房间先写配方，再运行 `node game/tools/build_world_rooms.mjs` 和 `node tools/godot.mjs sync-art`。生成的场景和 `world/rooms.json` 不手工修改；需要调整时改配方或台账后重新生成。

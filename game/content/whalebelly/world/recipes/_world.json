@@ -1,20 +1,270 @@
 {
-  "_doc": "跨区连接与地图落位。links 把已有房间的门接到新区域（spawn 为目标房像素坐标）；map 为各区地图页上的归一化位置，含邻区入口。",
+  "_doc": "跨区连接与地图落位。links 把已有房间的门接到新区域（spawn 为目标房像素坐标）；map 为各区地图页上的归一化位置，含邻区入口。 order 是房间在运行表中的固定顺序：只能在末尾追加，存档检查点按序号记录。",
+  "order": [
+    "R3-01",
+    "R2-01",
+    "R2-03",
+    "R2-04",
+    "R4-01",
+    "R4-03",
+    "R4-05",
+    "R4-06",
+    "R5-01",
+    "R5-02",
+    "R5-04",
+    "R5-08"
+  ],
   "kits": {
     "R3": {
-      "water": {"art": "r3-water-base", "parallax": 0.1},
-      "far": {"art": "r3-gastric-far-layer", "parallax": 0.25},
-      "platform": {"art": "r3-bank-platform", "surface": 44, "split": 7},
-      "bed": {"art": "r3-mesentery-fold", "surface": 30, "split": 16},
-      "foreground": {"art": "r3-foreground-fold", "parallax": 1.15},
-      "ring": {"art": "bone-anchor-ring", "units": 0.9}
+      "water": {
+        "art": "r3-water-base",
+        "parallax": 0.1
+      },
+      "far": {
+        "art": "r3-gastric-far-layer",
+        "parallax": 0.25
+      },
+      "platform": {
+        "art": "r3-bank-platform",
+        "surface": 44,
+        "split": 7
+      },
+      "bed": {
+        "art": "r3-mesentery-fold",
+        "surface": 30,
+        "split": 16
+      },
+      "foreground": {
+        "art": "r3-foreground-fold",
+        "parallax": 1.15
+      },
+      "ring": {
+        "art": "bone-anchor-ring",
+        "units": 0.9
+      }
+    },
+    "R2": {
+      "water": {
+        "art": "r2-water-base",
+        "parallax": 0.1
+      },
+      "far": {
+        "art": "r2-lung-far-layer",
+        "parallax": 0.25
+      },
+      "platform": {
+        "art": "r2-membrane-platform",
+        "surface": 40,
+        "split": 7
+      },
+      "bed": {
+        "art": "r2-soft-bed",
+        "surface": 80,
+        "split": 10
+      },
+      "foreground": {
+        "art": "r2-foreground-membrane",
+        "parallax": 1.15
+      },
+      "ring": {
+        "art": "bone-anchor-ring",
+        "units": 0.9
+      }
+    },
+    "R4": {
+      "water": {
+        "art": "r4-water-base",
+        "parallax": 0.1
+      },
+      "far": {
+        "art": "r4-vertebrae-far-layer",
+        "parallax": 0.25
+      },
+      "platform": {
+        "art": "r4-bone-platform",
+        "surface": 40,
+        "split": 7
+      },
+      "bed": {
+        "art": "r4-fungal-bed",
+        "surface": 60,
+        "split": 10
+      },
+      "foreground": {
+        "art": "r4-foreground-bone",
+        "parallax": 1.15
+      },
+      "ring": {
+        "art": "bone-anchor-ring",
+        "units": 0.9
+      }
+    },
+    "R5": {
+      "water": {
+        "art": "r5-head-water-base",
+        "parallax": 0.1
+      },
+      "far": {
+        "art": "r5-cranial-far-layer",
+        "parallax": 0.25
+      },
+      "platform": {
+        "art": "r5-cranial-platform",
+        "surface": 45,
+        "split": 7
+      },
+      "bed": {
+        "art": "r5-cranial-platform",
+        "surface": 45,
+        "split": 8
+      },
+      "foreground": {
+        "art": "r5-cranial-foreground",
+        "parallax": 1.15
+      },
+      "ring": {
+        "art": "bone-anchor-ring",
+        "units": 0.9
+      }
+    },
+    "R5-tail": {
+      "water": {
+        "art": "r5-tail-water-base",
+        "parallax": 0.1
+      },
+      "far": {
+        "art": "r5-tail-far-layer",
+        "parallax": 0.25
+      },
+      "platform": {
+        "art": "r5-tail-channel",
+        "surface": 40,
+        "split": 9
+      },
+      "bed": {
+        "art": "r5-tail-channel",
+        "surface": 40,
+        "split": 10
+      },
+      "foreground": {
+        "art": "r5-tail-foreground",
+        "parallax": 1.15
+      },
+      "ring": {
+        "art": "bone-anchor-ring",
+        "units": 0.9
+      }
     }
   },
   "links": [
-    {"room": "R1-05", "door": 1, "to_id": "R3-01", "patch": {"to_id": "R3-01", "spawn": [256, 2080], "completes": true}}
+    {
+      "room": "R1-05",
+      "door": 1,
+      "to_id": "R3-01",
+      "patch": {
+        "to_id": "R3-01",
+        "spawn": [
+          256,
+          2080
+        ],
+        "completes": true
+      }
+    }
   ],
   "map": {
-    "R1": {"R3-01": [0.89, 0.36]},
-    "R3": {"R1-05": [0.08, 0.72], "R3-01": [0.3, 0.72]}
+    "R1": {
+      "R3-01": [
+        0.89,
+        0.36
+      ]
+    },
+    "R3": {
+      "R1-05": [
+        0.08,
+        0.72
+      ],
+      "R3-01": [
+        0.3,
+        0.72
+      ],
+      "R2-01": [
+        0.3,
+        0.3
+      ],
+      "R4-01": [
+        0.72,
+        0.3
+      ]
+    },
+    "R2": {
+      "R3-01": [
+        0.88,
+        0.78
+      ],
+      "R2-01": [
+        0.66,
+        0.62
+      ],
+      "R2-03": [
+        0.42,
+        0.46
+      ],
+      "R2-04": [
+        0.18,
+        0.34
+      ]
+    },
+    "R4": {
+      "R3-01": [
+        0.08,
+        0.72
+      ],
+      "R4-01": [
+        0.26,
+        0.6
+      ],
+      "R4-03": [
+        0.44,
+        0.48
+      ],
+      "R4-05": [
+        0.62,
+        0.6
+      ],
+      "R4-06": [
+        0.8,
+        0.48
+      ],
+      "R5-01": [
+        0.92,
+        0.2
+      ],
+      "R5-08": [
+        0.92,
+        0.82
+      ]
+    },
+    "R5": {
+      "R4-06": [
+        0.1,
+        0.6
+      ],
+      "R5-01": [
+        0.3,
+        0.36
+      ],
+      "R5-02": [
+        0.52,
+        0.36
+      ],
+      "R5-04": [
+        0.76,
+        0.36
+      ],
+      "R5-08": [
+        0.4,
+        0.82
+      ]
+    }
   }
 }

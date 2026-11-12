@@ -74,7 +74,7 @@ function parallax(scene, parent, name, artId, factor, size, vertical = true) {
 }
 
 function buildRoom(recipe) {
-  const kit = world.kits[recipe.kit];
+  const kit = world.kits[recipe.kit_variant ?? recipe.kit];
   const unit = recipe.unit;
   const size = recipe.size.map(value => value * unit);
   const px = point => point.map(value => round(value * unit));
@@ -121,17 +121,20 @@ function buildRoom(recipe) {
     strip(scene, 'World/Art', item.id, platform, kit.platform, item.x, item.y, item.w, unit);
     // Rounded rims are not footing: the collider stops short of each visible end.
     const inset = Math.min(0.25, item.w * 0.04);
-    collider(`Surface_${item.id}`, item.x + inset, item.y, item.w - inset * 2, THICKNESS, true);
+    collider(`Surface_${item.id}`, item.x + inset, item.y, item.w - inset * 2, THICKNESS, !item.solid);
   });
-  const anchored = (name, artId, at, units, max) => {
+  const anchored = (parent, name, artId, at, units, max, extra = {}) => {
     const piece = art(artId, max);
     const visible = piece.axis === 'height' ? piece.y1 - piece.y0 : piece.x1 - piece.x0;
     const scale = units * unit / visible;
-    scene.sprite('World/Art', name, artId, {position: vec(at[0] * unit - piece.pivot[0] * scale, at[1] * unit - piece.pivot[1] * scale), scale: ratio(scale), centered: 'false', z_index: 1});
+    scene.sprite(parent, name, artId, {position: vec(at[0] * unit - piece.pivot[0] * scale, at[1] * unit - piece.pivot[1] * scale), scale: ratio(scale), centered: 'false', z_index: 1, ...extra});
   };
-  (recipe.props ?? []).forEach((item, i) => anchored(`Prop${i}_${item.art}`, item.art, item.at, item.units ?? catalog.get(item.art).world.units, 640));
-  recipe.doors.filter(door => door.art).forEach(door => anchored(`Latch_${door.edge}`, door.art, door.at, catalog.get(door.art).world.units, 512));
-  (recipe.rings ?? []).forEach((ring, i) => anchored(`Ring${i}`, kit.ring.art, ring, kit.ring.units, 256));
+  (recipe.props ?? []).forEach((item, i) => {
+    // The host hides World/RewardArt once the room's reward is taken, revealing whatever sits behind it.
+    if (item.node === 'RewardArt') scene.node('RewardArt', 'Node2D', 'World');
+    anchored(item.node === 'RewardArt' ? 'World/RewardArt' : 'World/Art', `Prop${i}_${item.art}`, item.art, item.at, item.units ?? catalog.get(item.art).world.units, 640);
+  });
+  (recipe.rings ?? []).forEach((ring, i) => anchored('World/Art', `Ring${i}`, kit.ring.art, ring, kit.ring.units, 256));
   scene.node('Foreground', 'Node2D', '.', {z_index: 10});
   if (recipe.foreground?.length) {
     const fold = art(kit.foreground.art, 1280);
@@ -144,18 +147,38 @@ function buildRoom(recipe) {
   }
   scene.node('Doorways', 'Node2D', '.');
   const doors = recipe.doors.map((door, i) => {
-    scene.node(`Entrance${i + 1}`, 'Node2D', 'Doorways', {script: scene.ext('Script', 'res://src/campaign/campaign_doorway.gd'), destination_id: `"${door.to_id}"`, kind: `"${door.kind}"`, direction: door.direction.toFixed(1), height: '0.0', prompt_offset: 'Vector2(0, -150)'});
-    const data = {pos: px(door.at), to_id: door.to_id, to: -2, spawn: door.spawn ?? [0, 0], ability: ''};
+    scene.node(`Entrance${i + 1}`, 'Node2D', 'Doorways', {script: scene.ext('Script', 'res://src/campaign/campaign_doorway.gd'), destination_id: `"${door.to_id}"`, kind: `"${door.kind}"`, direction: door.direction.toFixed(1), height: (door.art ? 0 : door.height ?? 155).toFixed(1), prompt_offset: `Vector2(0, ${door.art ? -250 : -171})`});
+    if (door.art) anchored(`Doorways/Entrance${i + 1}`, 'Closed', door.art, [0, 0], catalog.get(door.art).world.units, 512);
+    if (door.art_open) anchored(`Doorways/Entrance${i + 1}`, 'Open', door.art_open, [0, 0], catalog.get(door.art_open).world.units, 512, {visible: 'false'});
+    const data = {pos: px(door.at), to_id: door.to_id, to: -2, spawn: door.spawn ?? [0, 0], ability: door.ability ?? ''};
     for (const key of ['requires', 'locked', 'locked_message']) if (door[key]) data[key] = door[key];
     return data;
   });
   const directory = path.join(game, 'content/whalebelly', recipe.kit.toLowerCase());
   fs.mkdirSync(directory, {recursive: true});
   fs.writeFileSync(path.join(directory, `${recipe.id}.tscn`), scene.text());
-  return {id: recipe.id, name: recipe.name, kit: true, size, spawn: px(recipe.spawn), surfaces, holes: [], enemies: [], rings: (recipe.rings ?? []).map(px), reward: [], ...(recipe.camp ? {camp: px(recipe.camp)} : {}), doors};
+  // Enemy layout is authored in U; sprite scales come from the ledger like every other piece.
+  const lengths = ['lane', 'lanes', 'radius', 'engage', 'speed', 'offset', 'hurt', 'mouth', 'floor'];
+  const scaled = value => Array.isArray(value) ? value.map(item => round(item * unit)) : round(value * unit);
+  const enemies = (recipe.enemies ?? []).map(enemy => {
+    const sprites = Object.fromEntries(Object.entries(enemy.sprites).map(([role, spec]) => {
+      const piece = art(spec.art, spec.max ?? 256);
+      const visible = piece.axis === 'height' ? piece.y1 - piece.y0 : piece.x1 - piece.x0;
+      return [role, {path: `res://art/world-kit/${spec.art}.png`, scale: Number(((spec.units ?? piece.units) * unit / visible).toFixed(4))}];
+    }));
+    const config = Object.fromEntries(Object.entries(enemy).filter(([key]) => !['at', 'boss', 'name', 'grants', 'defeat_notice', 'sprites'].includes(key)).map(([key, value]) => [key, lengths.includes(key) ? scaled(value) : value]));
+    if (config.enraged) config.enraged = Object.fromEntries(Object.entries(config.enraged).map(([key, value]) => [key, lengths.includes(key) ? scaled(value) : value]));
+    return {type: 'kit', pos: px(enemy.at), boss: Boolean(enemy.boss), name: enemy.name, ...(enemy.grants ? {grants: enemy.grants, defeat_notice: enemy.defeat_notice} : {}), config: {...config, sprites}};
+  });
+  const passthrough = Object.fromEntries(['hint', 'about', 'next', 'reward_grants', 'reward_prompt', 'reward_notice', 'reward_requires', 'reward_locked'].filter(key => recipe[key] !== undefined).map(key => [key, recipe[key]]));
+  return {id: recipe.id, name: recipe.name, kit: true, size, spawn: px(recipe.spawn), surfaces, holes: [], enemies, rings: (recipe.rings ?? []).map(px), reward: recipe.reward ? px(recipe.reward) : [], ...(recipe.camp ? {camp: px(recipe.camp)} : {}), ...passthrough, doors};
 }
 
-const rooms = fs.readdirSync(recipes).filter(name => name.endsWith('.json') && !name.startsWith('_')).sort().map(name => buildRoom(readJson(path.join(recipes, name))));
+// Checkpoints store room indices, so the order is explicit and append-only.
+const listed = fs.readdirSync(recipes).filter(name => name.endsWith('.json') && !name.startsWith('_')).map(name => name.replace('.json', ''));
+const unordered = listed.filter(id => !world.order.includes(id));
+if (unordered.length) throw new Error(`Append these rooms to "order" in _world.json: ${unordered.join(', ')}`);
+const rooms = world.order.map(id => buildRoom(readJson(path.join(recipes, `${id}.json`))));
 fs.writeFileSync(path.join(game, 'content/whalebelly/world/rooms.json'), JSON.stringify({rooms, links: world.links, map: world.map}, null, 2) + '\n');
 
 // Runtime copies come from the asset library through the sync manifest.

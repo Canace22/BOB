@@ -11,6 +11,9 @@ static func onward(host: Node2D) -> bool:
 
 static func next_room(host: Node2D) -> String:
 	if str(host.room.id) == "R1-05" and onward(host): return "R3-01"
+	# Later regions list candidates in room data; the first unmet goal with a built room wins.
+	for option: Dictionary in host.room.get("next", []):
+		if not host.has_ability(str(option.get("unless", ""))) and host.rooms.any(func(entry: Dictionary) -> bool: return str(entry.id) == str(option.to)): return str(option.to)
 	if host.completed: return ""
 	match str(host.room.id):
 		"R1-01": return "R1-02"
@@ -27,7 +30,7 @@ static func hint(host: Node2D) -> String:
 			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
 		"R1-06":
 			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1，原路返回"
-	if str(host.room.id) == "R3-01": return "胃枢 · 壳形营地可歇息；左下返回须门，其余通路尚未开放"
+	if host.room.has("hint"): return str(host.room.hint)
 	if host.completed:
 		if not onward(host): return "首关完成 · 后续区域未开放，可回访支路"
 		return "主线 → 右侧出口：胃枢" if str(host.room.id) == "R1-05" else "须门遗港已贯通 · 流膜育窝右侧出口通往胃枢"
@@ -54,7 +57,8 @@ static func description(host: Node2D, id: String) -> String:
 				return "可选护盾支路 · 先沿须筛右侧圆环进入鲸须记忆袋，拾取记忆获得浮游。\n右上方厚壳碎片增加一点护盾；远侧区域未开放，探索后原路返回须筛。"
 			return "可选护盾支路 · 从须筛左侧平台逐层上行，右上方厚壳碎片增加一点护盾。\n%s 起跳，空中按住 %s 浮游，松开落台。\n远侧闩尚未开放，探索后沿原路返回须筛。" % [WhaleUIStyle.key("tp_jump"), WhaleUIStyle.key("float")]
 		"R1-05": return "须门遗港终点 · 右侧出口通往胃肠沉城的胃枢。" if onward(host) else "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
-		"R3-01": return "胃肠沉城枢纽 · 壳形营地可歇息。\n左下返回须门遗港；通往肺心与断脊的通路尚未开放。"
+	for entry: Dictionary in host.rooms:
+		if str(entry.id) == id and entry.has("about"): return str(entry.about)
 	return "主线通路"
 
 static func door_label(host: Node2D, door: Dictionary) -> String:
