@@ -2,7 +2,7 @@
 
 依据现有V5.2的36房39边及当前R1七房工程，衍生6张连接导向概念原画。浏览入口：[连续世界原画册](../../../docs/鲸腹遗城原画集/连续世界设计/原画册.html)。
 
-- `images/`：6张内置image_gen生成的正式概念原图，不直接进入Godot导出。
+- `images/`：6张内置image_gen生成的正式概念原图，不直接进入Godot导出。例外：2026-11-12 用户选定 `01-world.png` 作后四个区域地图页的全鲸底图，同步清单把它等比缩到长边1600像素后导出为 `game/art/world-map/whale-anatomy-overview.png`，原图不改。它在地图上只表示大致部位，节点位置见 `game/content/whalebelly/world/recipes/_world.json` 的 `map`。
 - `prompts.json`：每张完整英文提示词、原参考路径和用途。
 - `generation.json`：生成工具及默认原件位置；工作区内副本为正式交付。
 - `inputs/`：地图拓扑、解剖位置、房级设计、当前工程七房门点快照，哈希在`connections.json`。

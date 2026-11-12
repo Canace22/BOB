@@ -12,7 +12,10 @@ static func build(ui: WhaleCampaignUI) -> void:
 	map.data = ui.data
 	map.custom_minimum_size = Vector2(0,280)
 	map.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	map.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	ui.body.add_child(map)
+	# Opening the map lands on the room the player stands in.
+	ui.focus_history["map"] = "Room_" + str(ui.host.room.id)
 	var detail := WhaleUIStyle.label("",16,WhaleUIStyle.MUTED)
 	detail.name = "MapDetail"
 	ui.body.add_child(detail)

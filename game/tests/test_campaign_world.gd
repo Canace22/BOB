@@ -125,6 +125,31 @@ func test_guidance_and_map_follow_the_link() -> void:
 	eq(CampaignGuidance.next_room(hub), "R4-01", "With pressure the hub recommends the spine")
 	hub.free()
 
+func test_map_pages_place_rooms_on_the_whale_without_overlap() -> void:
+	var spots: Dictionary = {}
+	for id: String in ["R1-01", "R2-01", "R3-01", "R4-01", "R5-01"]:
+		var host := make_host(id)
+		for entry: Dictionary in host.rooms: host.visited[str(entry.id)] = true
+		var map := WhaleUIMap.new()
+		map.data = WhaleUICampaignData.new()
+		map.data.host = host
+		map.theme = WhaleUIStyle.theme()
+		map.size = Vector2(1176, 392)
+		tree.root.add_child(map)
+		check(map.anatomy.texture == (WhaleUIMap.HEAD if map.page == "R1" else WhaleUIMap.WHALE), "%s page shows its whale backdrop" % map.page)
+		var boxes: Array = map.buttons.values()
+		for i: int in boxes.size():
+			var box: Button = boxes[i]
+			check(map.frame().grow(1.0).encloses(box.get_rect()), "%s stays on the %s backdrop" % [box.name, map.page])
+			for j: int in range(i + 1, boxes.size()):
+				check(not box.get_rect().grow(4.0).intersects(boxes[j].get_rect()), "%s and %s do not overlap on %s" % [box.name, boxes[j].name, map.page])
+		for room: Dictionary in map.nodes:
+			if map.page == "R1": continue
+			var spot: Variant = CampaignWorld.map_position(map.page, str(room.id))
+			eq(spots.get_or_add(str(room.id), spot), spot, "%s keeps one place on the whale across pages" % room.id)
+		map.free()
+		host.free()
+
 func test_bosses_grant_the_three_marks_and_the_ending_needs_all() -> void:
 	var rooms := CampaignWorld.load_rooms(base_rooms())
 	var grants: Dictionary = {}

@@ -238,7 +238,8 @@ func views() -> void:
 			host.load_room(index, [float(host.enemies[0].pos.x) - 330.0, float(host.room.spawn[1])])
 			await tick(150)
 			await shot("enemy-" + str(host.rooms[index].id))
-	for page: Array in [[7, "map-r3", "map"], [8, "map-r2", "map"], [11, "map-r4", "map"], [15, "map-r5", "map"], [18, "ending-page", "ending"]]:
+	for entry: Dictionary in host.rooms: host.visited[str(entry.id)] = true
+	for page: Array in [[1, "map-r1", "map"], [7, "map-r3", "map"], [8, "map-r2", "map"], [11, "map-r4", "map"], [15, "map-r5", "map"], [18, "ending-page", "ending"]]:
 		host.load_room(int(page[0]))
 		await tick(30)
 		host.player_ui.open(str(page[2]))

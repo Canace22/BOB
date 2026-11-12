@@ -92,3 +92,4 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 - 新房间先写配方，再运行 `node game/tools/build_world_rooms.mjs` 和 `node tools/godot.mjs sync-art`。生成的场景和 `world/rooms.json` 不手工修改；需要调整时改配方或台账后重新生成。
 - 房间名与门提示来自生成数据，字体子集脚本和覆盖测试已包含 `world/rooms.json`。Web 导出的 `include_filter` 已加入该文件。
 - 实机路线用 `tests/whalebelly/world_skeleton.gd`，`-- --reload-world` 验证独立进程读档，`-- --views` 只出定点截图。
+- 地图每区一页，节点坐标写在配方 `_world.json` 的 `map`，是底图上的比例位置。须门遗港页的底图是鲸头特写，其余各页共用全鲸剖面图，同一房间在这些页上用同一坐标。改坐标后看 `-- --views` 输出的五张地图截图；节点重叠和跨页不一致由 `test_campaign_world.gd` 检查。
