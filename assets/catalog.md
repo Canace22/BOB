@@ -36,6 +36,10 @@
 
 下方按日期保留各批次的制作记录；历史接入结论不能代替当前清单。旧资源链接指向归档分支。
 
+## 须门遗港背景音乐（2026-11-12）
+
+[xumen_music.ogg](runtime/godot-support/whalebelly/runtime/audio/xumen_music.ogg) 来自声间音库登记的 `背景音创作 2-背景音.m4a`（曲目 ID `c4a8440f2b1144b881e25bb18db964de`，音库播放副本 SHA-256 `30080f3b9e0626ba0ac72044a2fecfd021cb5e21d2373174760fa718374e1bc6`）。全长约 4 分 29 秒，转为双声道 Ogg Vorbis 时降低 1 dB、首尾分别淡入 0.25 秒与淡出 0.8 秒。由 [运行素材清单](../game/art/manifest.json) 同步，在正式主场景循环播放。
+
 ## WhalebellyRuins恢复接入（2026-10-31）
 
 原运行素材逐字节恢复至 `game/art/whalebelly/`，由 `game/art/manifest.json` 登记来源与同步路径。未直接引用的历史原图、母版、旧音效和配置已随 `game/production_sources/whalebelly/source-index.json` 归档；全局编辑源仍保留原位。本轮只恢复与接入，没有重新生成美术；[范围与实机验证](../docs/whalebelly-recovery.md)。
