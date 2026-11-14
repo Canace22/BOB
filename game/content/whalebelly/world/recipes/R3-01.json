@@ -3,57 +3,371 @@
   "name": "胃枢",
   "kit": "R3",
   "unit": 80,
-  "size": [48, 30],
+  "size": [
+    48,
+    30
+  ],
   "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R3-01（V5.1 布局，单位 U）。2026-11-12 精简：去掉肠路、母蟹闩、胃顶三个门及浮游竖井，保留肺口、强流门和锚环；底床为失足回收面",
   "hint": "胃枢 · 左上肺口通往肺心潮庭；右侧锚环上的强流门需要潮压，过门去断脊",
   "about": "胃肠沉城枢纽 · 壳形营地可歇息。\n左下返回须门遗港，左上肺口去肺心潮庭，右上强流门通往断脊。",
   "next": [
-    {"to": "R2-01", "unless": "pressure"},
-    {"to": "R4-01", "unless": "bone"},
-    {"to": "R4-01", "unless": "silence"}
+    {
+      "to": "R2-01",
+      "unless": "pressure"
+    },
+    {
+      "to": "R4-01",
+      "unless": "bone"
+    },
+    {
+      "to": "R4-01",
+      "unless": "silence"
+    }
   ],
-  "spawn": [12.5, 26],
-  "camp": [14, 26],
+  "spawn": [
+    12.5,
+    26
+  ],
+  "camp": [
+    14,
+    26
+  ],
   "platforms": [
-    {"id": "H0", "x": 0, "y": 26, "w": 10},
-    {"id": "H1", "x": 11, "y": 26, "w": 13},
-    {"id": "H2", "x": 25, "y": 26, "w": 11},
-    {"id": "H3", "x": 37, "y": 26, "w": 11},
-    {"id": "L0", "x": 6, "y": 24.5, "w": 4},
-    {"id": "L1", "x": 10, "y": 23, "w": 4},
-    {"id": "L2", "x": 8, "y": 21.5, "w": 4},
-    {"id": "L3", "x": 4, "y": 20, "w": 5},
-    {"id": "L4", "x": 0, "y": 18.5, "w": 6},
-    {"id": "G0", "x": 42, "y": 17, "w": 6}
+    {
+      "id": "H0",
+      "x": 0,
+      "y": 26,
+      "w": 10
+    },
+    {
+      "id": "H1",
+      "x": 11,
+      "y": 26,
+      "w": 13
+    },
+    {
+      "id": "H2",
+      "x": 25,
+      "y": 26,
+      "w": 11
+    },
+    {
+      "id": "H3",
+      "x": 37,
+      "y": 26,
+      "w": 11
+    },
+    {
+      "id": "L0",
+      "x": 6,
+      "y": 24.5,
+      "w": 4
+    },
+    {
+      "id": "L1",
+      "x": 10,
+      "y": 23,
+      "w": 4
+    },
+    {
+      "id": "L2",
+      "x": 8,
+      "y": 21.5,
+      "w": 4
+    },
+    {
+      "id": "L3",
+      "x": 4,
+      "y": 20,
+      "w": 5
+    },
+    {
+      "id": "L4",
+      "x": 0,
+      "y": 18.5,
+      "w": 6
+    },
+    {
+      "id": "G0",
+      "x": 42,
+      "y": 17,
+      "w": 6
+    }
   ],
   "beds": [
-    {"x": 0, "y": 27.8, "w": 48}
+    {
+      "x": 0,
+      "y": 27.8,
+      "w": 48
+    }
   ],
-  "rings": [[36, 23], [39, 20], [42, 17], [45, 14]],
+  "rings": [
+    [
+      36,
+      23
+    ],
+    [
+      39,
+      20
+    ],
+    [
+      42,
+      17
+    ],
+    [
+      45,
+      14
+    ]
+  ],
   "doors": [
-    {"edge": "E05", "to_id": "R1-05", "at": [1, 26], "kind": "door", "direction": -1, "spawn": [1450, 563]},
-    {"edge": "E10", "to_id": "R2-01", "at": [1, 18.5], "kind": "door", "direction": -1, "spawn": [256, 1520]},
-    {"edge": "E18", "to_id": "R4-01", "at": [46.4, 17], "kind": "door", "direction": 1, "requires": ["pressure", "anchor"], "art": "anchor-pull-gate-closed", "art_open": "anchor-pull-gate-open", "spawn": [256, 1280]}
+    {
+      "edge": "E05",
+      "to_id": "R1-05",
+      "at": [
+        1,
+        26
+      ],
+      "kind": "door",
+      "direction": -1,
+      "spawn": [
+        1450,
+        563
+      ],
+      "art": "gut-latch-closed",
+      "art_open": "gut-latch-open"
+    },
+    {
+      "edge": "E10",
+      "to_id": "R2-01",
+      "at": [
+        1,
+        18.5
+      ],
+      "kind": "door",
+      "direction": -1,
+      "spawn": [
+        256,
+        1520
+      ],
+      "art": "gut-latch-closed",
+      "art_open": "gut-latch-open"
+    },
+    {
+      "edge": "E18",
+      "to_id": "R4-01",
+      "at": [
+        46.4,
+        17
+      ],
+      "kind": "door",
+      "direction": 1,
+      "requires": [
+        "pressure",
+        "anchor"
+      ],
+      "art": "anchor-pull-gate-closed",
+      "art_open": "anchor-pull-gate-open",
+      "spawn": [
+        256,
+        1280
+      ]
+    }
   ],
   "props": [
-    {"art": "shell-camp", "at": [14, 26], "units": 3.4}
+    {
+      "art": "shell-camp",
+      "at": [
+        14,
+        26
+      ],
+      "units": 3.4
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        23,
+        26
+      ],
+      "units": 3.2
+    }
   ],
   "foreground": [
-    {"x": 2, "w": 13},
-    {"x": 19, "w": 14},
-    {"x": 36, "w": 12}
+    {
+      "x": 2,
+      "w": 13
+    },
+    {
+      "x": 19,
+      "w": 14
+    },
+    {
+      "x": 36,
+      "w": 12
+    }
   ],
   "bubbles": [
-    {"rect": [16, 19, 3, 7], "count": 7},
-    {"rect": [27, 16, 3, 10], "count": 8},
-    {"rect": [41, 20, 2.5, 7.5], "count": 6}
+    {
+      "rect": [
+        16,
+        19,
+        3,
+        7
+      ],
+      "count": 7
+    },
+    {
+      "rect": [
+        27,
+        16,
+        3,
+        10
+      ],
+      "count": 8
+    },
+    {
+      "rect": [
+        41,
+        20,
+        2.5,
+        7.5
+      ],
+      "count": 6
+    }
   ],
   "drift": [
-    {"art": "fx-particle-soft", "rect": [0, 2, 48, 25.5], "count": 150, "velocity": [5, 9], "sway": 10, "size": [16, 40], "opacity": 0.85, "tint": "e9d9a6"},
-    {"art": "fx-particle-drift", "rect": [35.2, 12, 2.6, 14], "count": 26, "velocity": [0, -150], "sway": 3, "size": [26, 54], "opacity": 0.5, "turn": 90, "tint": "cfe8e0"}
+    {
+      "art": "fx-particle-soft",
+      "rect": [
+        0,
+        2,
+        48,
+        25.5
+      ],
+      "count": 150,
+      "velocity": [
+        5,
+        9
+      ],
+      "sway": 10,
+      "size": [
+        16,
+        40
+      ],
+      "opacity": 0.85,
+      "tint": "e9d9a6"
+    },
+    {
+      "art": "fx-particle-drift",
+      "rect": [
+        35.2,
+        12,
+        2.6,
+        14
+      ],
+      "count": 26,
+      "velocity": [
+        0,
+        -150
+      ],
+      "sway": 3,
+      "size": [
+        26,
+        54
+      ],
+      "opacity": 0.5,
+      "turn": 90,
+      "tint": "cfe8e0",
+      "progress_flag": "pressure",
+      "unlocked_velocity": [
+        0,
+        -35
+      ],
+      "unlocked_opacity": 0.22,
+      "transition_seconds": 1.2
+    }
   ],
   "beams": [
-    {"at": [8, 15], "size": [10, 23], "opacity": 0.75, "tint": "f3e2b0"},
-    {"at": [29, 14.5], "size": [11, 23], "opacity": 0.65, "tint": "f3e2b0"}
+    {
+      "at": [
+        8,
+        15
+      ],
+      "size": [
+        10,
+        23
+      ],
+      "opacity": 0.75,
+      "tint": "f3e2b0"
+    },
+    {
+      "at": [
+        29,
+        14.5
+      ],
+      "size": [
+        11,
+        23
+      ],
+      "opacity": 0.65,
+      "tint": "f3e2b0"
+    }
+  ],
+  "landmarks": [
+    {
+      "art": "r3-liver-edge",
+      "at": [
+        30,
+        25
+      ],
+      "units": 17,
+      "opacity": 0.35,
+      "parallax": 0.7
+    },
+    {
+      "art": "r3-shell-nest-before",
+      "at": [
+        20,
+        26
+      ],
+      "units": 4,
+      "opacity": 0.7,
+      "parallax": 0.7
+    }
+  ],
+  "interactables": [
+    {
+      "id": "hub-yusuo",
+      "name": "余索",
+      "title": "余索 · 旧索与通路",
+      "art": "yusuo",
+      "at": [
+        17.4,
+        26
+      ],
+      "units": 1.3,
+      "lines": [
+        "上面的肺口还通着，先去那边看看。",
+        "右侧强流门需要潮压，红索上的固定环会带你过去。"
+      ],
+      "progress_flag": "pressure",
+      "progressed_lines": [
+        "潮压稳住了。沿右侧固定环上去，过门就是断脊。",
+        "回来时认准这处壳营，旧路还在。"
+      ]
+    },
+    {
+      "id": "hub-beituo",
+      "name": "贝驮",
+      "art": "beituo",
+      "at": [
+        21,
+        26
+      ],
+      "units": 1.35,
+      "lines": [
+        "空壳是住处，壳口要留给水流。",
+        "别急着搬，先在安全岸边放稳。"
+      ]
+    }
   ]
 }

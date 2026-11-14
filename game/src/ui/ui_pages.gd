@@ -28,6 +28,16 @@ static func build(ui: WhaleCampaignUI, page: String) -> void:
 		"death": _death(ui)
 		"help": _help(ui)
 		"ending": _ending(ui)
+		"conversation": _conversation(ui)
+
+static func _conversation(ui: WhaleCampaignUI) -> void:
+	ui.heading.text = ui.conversation_title
+	var column: VBoxContainer = menu(ui,780)
+	for line: String in ui.conversation_lines:
+		var paragraph: Label = WhaleUIStyle.paragraph(line,WhaleUIStyle.BONE)
+		paragraph.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		column.add_child(paragraph)
+	action(column,"ConversationClose","返回",ui.back)
 
 static func _title(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "鲸落万物生 · 遗潮回声"

@@ -53,7 +53,7 @@ static func short_hint(host: Node2D) -> String:
 		for room: Dictionary in host.rooms:
 			if str(room.id) == target:
 				return ("返回" if str(host.room.id) in ["R1-06","R1-07"] else "前往") + str(room.name)
-	if host.completed: return "首关完成"
+	if host.completed or CampaignWorld.region(str(host.room.id)) != "R1": return CampaignGuidance.objective(host)
 	match str(host.room.id):
 		"R1-07": return "拾取浮游"
 		"R1-04": return "击败守卫"

@@ -258,6 +258,7 @@ func interaction_nearby() -> bool:
 	if is_instance_valid(skill_controller.nearby_gate()): return true
 	var reward:Array=host.room.get("reward",[])
 	if reward.size()==2 and position.distance_to(host.point(reward))<100 and not host.collected.get(str(host.room.id),false):return true
+	if KitInteractable.nearest(host) != null: return true
 	if host.continuity.nearby_door() != null: return true
 	var camp:Array=host.room.get("camp",{0:[93,550],3:[80,610],4:[110,503]}.get(host.room_index,[]))
 	return camp.size()==2 and position.distance_to(host.point(camp))<180

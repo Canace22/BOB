@@ -11,12 +11,20 @@
 [ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-drift.png" id="r9"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r3-mesentery-fold.png" id="r10"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r3-bank-platform.png" id="r11"]
-[ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r12"]
-[ext_resource type="Texture2D" path="res://art/world-kit/bone-anchor-ring.png" id="r13"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r3-foreground-fold.png" id="r14"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r15"]
-[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-closed.png" id="r16"]
-[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-open.png" id="r17"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r3-liver-edge.png" id="r12"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r3-shell-nest-before.png" id="r13"]
+[ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r14"]
+[ext_resource type="Texture2D" path="res://art/world-kit/habitat-fungus-bed.png" id="r15"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_interactable.gd" id="r16"]
+[ext_resource type="Texture2D" path="res://art/world-kit/yusuo.png" id="r17"]
+[ext_resource type="Texture2D" path="res://art/world-kit/beituo.png" id="r18"]
+[ext_resource type="Texture2D" path="res://art/world-kit/bone-anchor-ring.png" id="r19"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r3-foreground-fold.png" id="r20"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r21"]
+[ext_resource type="Texture2D" path="res://art/world-kit/gut-latch-closed.png" id="r22"]
+[ext_resource type="Texture2D" path="res://art/world-kit/gut-latch-open.png" id="r23"]
+[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-closed.png" id="r24"]
+[ext_resource type="Texture2D" path="res://art/world-kit/anchor-pull-gate-open.png" id="r25"]
 
 [node name="R3-01" type="Node2D"]
 
@@ -112,6 +120,10 @@ opacity = 0.5
 tint = Color(0.812, 0.910, 0.878, 1)
 turn_degrees = 90
 seed_id = 2
+progress_flag = "pressure"
+unlocked_velocity = Vector2(0, -35)
+unlocked_opacity = 0.22
+transition_seconds = 1.2
 
 [node name="World" type="Node2D" parent="."]
 z_index = 0
@@ -295,40 +307,111 @@ polygon = PackedVector2Array(3379.2, 1360, 3820.8, 1360, 3820.8, 1395, 3379.2, 1
 one_way_collision = true
 one_way_collision_margin = 6.0
 
+[node name="Landmark0" type="Node2D" parent="Middle"]
+script = ExtResource("r1")
+factor = 0.7
+room_center = Vector2(1920, 1200)
+
+[node name="Art" type="Sprite2D" parent="Middle/Landmark0"]
+position = Vector2(1683.8, 1519.9)
+scale = Vector2(1.1102, 1.1102)
+centered = false
+z_index = 1
+modulate = Color(1, 1, 1, 0.35)
+texture = ExtResource("r12")
+
+[node name="Landmark1" type="Node2D" parent="Middle"]
+script = ExtResource("r1")
+factor = 0.7
+room_center = Vector2(1920, 1200)
+
+[node name="Art" type="Sprite2D" parent="Middle/Landmark1"]
+position = Vector2(1405.1, 1904.1)
+scale = Vector2(0.3061, 0.3061)
+centered = false
+z_index = 1
+modulate = Color(1, 1, 1, 0.7)
+texture = ExtResource("r13")
+
 [node name="Prop0_shell-camp" type="Sprite2D" parent="World/Art"]
 position = Vector2(964.8, 1870.9)
 scale = Vector2(0.4774, 0.4774)
 centered = false
 z_index = 1
-texture = ExtResource("r12")
+texture = ExtResource("r14")
+
+[node name="Prop1_habitat-fungus-bed" type="Sprite2D" parent="World/Art"]
+position = Vector2(1679.1, 1944.2)
+scale = Vector2(0.5033, 0.5033)
+centered = false
+z_index = 1
+texture = ExtResource("r15")
+
+[node name="Resident0" type="Node2D" parent="World"]
+script = ExtResource("r16")
+position = Vector2(1392, 2080)
+interaction_id = "hub-yusuo"
+display_name = "余索"
+title = "余索 · 旧索与通路"
+lines = PackedStringArray("上面的肺口还通着，先去那边看看。", "右侧强流门需要潮压，红索上的固定环会带你过去。")
+progress_flag = "pressure"
+progressed_lines = PackedStringArray("潮压稳住了。沿右侧固定环上去，过门就是断脊。", "回来时认准这处壳营，旧路还在。")
+required_flags = PackedStringArray()
+locked_lines = PackedStringArray()
+
+[node name="Art" type="Sprite2D" parent="World/Resident0"]
+position = Vector2(-69.5, -118.5)
+scale = Vector2(0.2109, 0.2109)
+centered = false
+z_index = 1
+texture = ExtResource("r17")
+
+[node name="Resident1" type="Node2D" parent="World"]
+script = ExtResource("r16")
+position = Vector2(1680, 2080)
+interaction_id = "hub-beituo"
+display_name = "贝驮"
+title = "贝驮"
+lines = PackedStringArray("空壳是住处，壳口要留给水流。", "别急着搬，先在安全岸边放稳。")
+progress_flag = ""
+progressed_lines = PackedStringArray()
+required_flags = PackedStringArray()
+locked_lines = PackedStringArray()
+
+[node name="Art" type="Sprite2D" parent="World/Resident1"]
+position = Vector2(-67.5, -114.8)
+scale = Vector2(0.1979, 0.1979)
+centered = false
+z_index = 1
+texture = ExtResource("r18")
 
 [node name="Ring0" type="Sprite2D" parent="World/Art"]
 position = Vector2(2819.1, 1800.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r13")
+texture = ExtResource("r19")
 
 [node name="Ring1" type="Sprite2D" parent="World/Art"]
 position = Vector2(3059.1, 1560.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r13")
+texture = ExtResource("r19")
 
 [node name="Ring2" type="Sprite2D" parent="World/Art"]
 position = Vector2(3299.1, 1320.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r13")
+texture = ExtResource("r19")
 
 [node name="Ring3" type="Sprite2D" parent="World/Art"]
 position = Vector2(3539.1, 1080.6)
 scale = Vector2(0.4372, 0.4372)
 centered = false
 z_index = 1
-texture = ExtResource("r13")
+texture = ExtResource("r19")
 
 [node name="Foreground" type="Node2D" parent="."]
 z_index = 10
@@ -343,41 +426,71 @@ vertical = false
 position = Vector2(148.5, 2095.6)
 scale = Vector2(0.8296, 0.8296)
 centered = false
-texture = ExtResource("r14")
+texture = ExtResource("r20")
 
 [node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(1507.6, 2079)
 scale = Vector2(0.8935, 0.8935)
 centered = false
 flip_h = true
-texture = ExtResource("r14")
+texture = ExtResource("r20")
 
 [node name="Fold2" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(2869.4, 2112.3)
 scale = Vector2(0.7658, 0.7658)
 centered = false
-texture = ExtResource("r14")
+texture = ExtResource("r20")
 
 [node name="Doorways" type="Node2D" parent="."]
 
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r15")
+script = ExtResource("r21")
 destination_id = "R1-05"
 kind = "door"
 direction = -1.0
-height = 155.0
-prompt_offset = Vector2(0, -171)
+height = 0.0
+prompt_offset = Vector2(0, -250)
+
+[node name="Closed" type="Sprite2D" parent="Doorways/Entrance1"]
+position = Vector2(-78.8, -215.8)
+scale = Vector2(0.4549, 0.4549)
+centered = false
+z_index = 1
+texture = ExtResource("r22")
+
+[node name="Open" type="Sprite2D" parent="Doorways/Entrance1"]
+position = Vector2(-73.4, -202)
+scale = Vector2(0.4228, 0.4228)
+centered = false
+z_index = 1
+visible = false
+texture = ExtResource("r23")
 
 [node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("r15")
+script = ExtResource("r21")
 destination_id = "R2-01"
 kind = "door"
 direction = -1.0
-height = 155.0
-prompt_offset = Vector2(0, -171)
+height = 0.0
+prompt_offset = Vector2(0, -250)
+
+[node name="Closed" type="Sprite2D" parent="Doorways/Entrance2"]
+position = Vector2(-78.8, -215.8)
+scale = Vector2(0.4549, 0.4549)
+centered = false
+z_index = 1
+texture = ExtResource("r22")
+
+[node name="Open" type="Sprite2D" parent="Doorways/Entrance2"]
+position = Vector2(-73.4, -202)
+scale = Vector2(0.4228, 0.4228)
+centered = false
+z_index = 1
+visible = false
+texture = ExtResource("r23")
 
 [node name="Entrance3" type="Node2D" parent="Doorways"]
-script = ExtResource("r15")
+script = ExtResource("r21")
 destination_id = "R4-01"
 kind = "door"
 direction = 1.0
@@ -389,7 +502,7 @@ position = Vector2(-115.1, -260)
 scale = Vector2(0.5453, 0.5453)
 centered = false
 z_index = 1
-texture = ExtResource("r16")
+texture = ExtResource("r24")
 
 [node name="Open" type="Sprite2D" parent="Doorways/Entrance3"]
 position = Vector2(-114.1, -260.2)
@@ -397,4 +510,4 @@ scale = Vector2(0.5462, 0.5462)
 centered = false
 z_index = 1
 visible = false
-texture = ExtResource("r17")
+texture = ExtResource("r25")

@@ -24,10 +24,15 @@ const used = new Map(); // art id -> max texture side (0 keeps the source size)
 function art(id, max = 0) {
   const asset = catalog.get(id);
   if (!asset) throw new Error(`Unknown catalog asset: ${id}`);
-  used.set(id, Math.max(used.get(id) ?? 0, max));
   const shrink = max > 0 ? Math.min(1, max / Math.max(asset.width, asset.height)) : 1;
+  if (used.has(id)) {
+    const previous = used.get(id);
+    const previousShrink = previous > 0 ? Math.min(1, previous / Math.max(asset.width, asset.height)) : 1;
+    if (Math.abs(previousShrink - shrink) > 0.00001) throw new Error(`Conflicting runtime sizes for ${id}: ${previous} and ${max}`);
+  }
+  used.set(id, max);
   const [x0, y0, x1, y1] = asset.bbox.map(value => value * shrink);
-  return {id, x0, y0, x1, y1, width: asset.width * shrink, pivot: asset.pivot.map(value => value * shrink), shrink, units: asset.world.units, axis: asset.world.axis};
+  return {id, x0, y0, x1, y1, width: asset.width * shrink, pivot: asset.pivot.map(value => value * shrink), shrink, units: asset.world?.units ?? 1, axis: asset.world?.axis ?? 'width'};
 }
 
 // A strip of equal pieces whose visible tops line up on y; alternate pieces are mirrored.
@@ -99,7 +104,8 @@ function buildRoom(recipe) {
   (recipe.drift ?? []).forEach((field, i) => scene.node(`Drift${i}`, 'Node2D', 'Middle/Ambient', {
     script: scene.ext('Script', 'res://src/world/scenery/kit/kit_drift.gd'), texture: scene.ext('Texture2D', `res://art/world-kit/${art(field.art).id}.png`),
     bounds: `Rect2(${px(field.rect).join(', ')})`, population: field.count, velocity: `Vector2(${field.velocity.join(', ')})`, sway: field.sway ?? 8,
-    size_range: `Vector2(${field.size.join(', ')})`, opacity: field.opacity, tint: color(field.tint ?? 'ffffff'), turn_degrees: field.turn ?? 0, seed_id: i + 1}));
+    size_range: `Vector2(${field.size.join(', ')})`, opacity: field.opacity, tint: color(field.tint ?? 'ffffff'), turn_degrees: field.turn ?? 0, seed_id: i + 1,
+    ...(field.progress_flag ? {progress_flag: JSON.stringify(field.progress_flag), unlocked_velocity: vec(...field.unlocked_velocity), unlocked_opacity: field.unlocked_opacity, transition_seconds: field.transition_seconds ?? 0.8} : {})}));
   scene.node('World', 'Node2D', '.', {z_index: 0});
   scene.node('Art', 'Node2D', 'World');
   scene.node('Terrain', 'Node2D', 'World');
@@ -129,10 +135,42 @@ function buildRoom(recipe) {
     const scale = units * unit / visible;
     scene.sprite(parent, name, artId, {position: vec(at[0] * unit - piece.pivot[0] * scale, at[1] * unit - piece.pivot[1] * scale), scale: ratio(scale), centered: 'false', z_index: 1, ...extra});
   };
+  const strings = values => `PackedStringArray(${values.map(value => JSON.stringify(value)).join(', ')})`;
+  // Landmarks remain outside the playable collision layer and use their own art anchors.
+  (recipe.landmarks ?? []).forEach((item, i) => {
+    const parent = `Middle/Landmark${i}`;
+    scene.node(`Landmark${i}`, 'Node2D', 'Middle', {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_parallax.gd'), factor: item.parallax ?? 0.65, room_center: vec(size[0] / 2, size[1] / 2)});
+    anchored(parent, 'Art', item.art, item.at, item.units ?? catalog.get(item.art).world.units, item.max ?? 1280, {modulate: `Color(1, 1, 1, ${item.opacity ?? 0.8})`});
+  });
   (recipe.props ?? []).forEach((item, i) => {
     // The host hides World/RewardArt once the room's reward is taken, revealing whatever sits behind it.
     if (item.node === 'RewardArt') scene.node('RewardArt', 'Node2D', 'World');
     anchored(item.node === 'RewardArt' ? 'World/RewardArt' : 'World/Art', `Prop${i}_${item.art}`, item.art, item.at, item.units ?? catalog.get(item.art).world.units, 640);
+  });
+  (recipe.state_props ?? []).forEach((item, i) => {
+    const parent = `World/State${i}`;
+    scene.node(`State${i}`, 'Node2D', 'World', {position: vec(...px(item.at)), z_index: item.layer ?? -8, script: scene.ext('Script', 'res://src/world/scenery/kit/kit_state_art.gd'), required_flags: strings(item.flags), scan_reveal: item.scan_reveal ? 'true' : undefined});
+    if (item.before) anchored(parent, 'Before', item.before, [0, 0], item.units, item.before_max ?? 640);
+    if (item.after_rotation) {
+      scene.node('After', 'Node2D', parent, {rotation: item.after_rotation});
+      anchored(`${parent}/After`, 'Art', item.after, [0, 0], item.units, 640);
+    } else if (item.after) anchored(parent, 'After', item.after, [0, 0], item.units, 640);
+  });
+  (recipe.progress_slots ?? []).forEach((item, i) => {
+    const parent = `World/ProgressSlot${i}`;
+    scene.node(`ProgressSlot${i}`, 'Node2D', 'World', {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_state_art.gd'), required_flags: strings([item.flag])});
+    const piece = art(item.art, 128);
+    scene.sprite(parent, 'After', item.art, {position: vec(...px(item.at)), scale: ratio(item.pixels / piece.width), z_index: 3});
+  });
+  (recipe.interactables ?? []).forEach((item, i) => {
+    const parent = `World/Resident${i}`;
+    const props = {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_interactable.gd'), position: vec(...px(item.at)), interaction_id: JSON.stringify(item.id), display_name: JSON.stringify(item.name), title: JSON.stringify(item.title ?? item.name), lines: strings(item.lines), progress_flag: JSON.stringify(item.progress_flag ?? ''), progressed_lines: strings(item.progressed_lines ?? []), required_flags: strings(item.required_flags ?? []), locked_lines: strings(item.locked_lines ?? [])};
+    scene.node(`Resident${i}`, 'Node2D', 'World', props);
+    if (item.art) anchored(parent, 'Art', item.art, [0, 0], item.units ?? catalog.get(item.art).world.units, 640);
+  });
+  (recipe.ecology ?? []).forEach((item, i) => {
+    const piece = art(item.art);
+    scene.node(`Ecology${i}`, 'Node2D', 'Middle/Ambient', {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_larva_school.gd'), texture: scene.ext('Texture2D', `res://art/world-kit/${piece.id}.png`), bounds: `Rect2(${px(item.rect).join(', ')})`, population: item.count, body_width: item.width, seed_id: i + 1});
   });
   (recipe.rings ?? []).forEach((ring, i) => anchored('World/Art', `Ring${i}`, kit.ring.art, ring, kit.ring.units, 256));
   scene.node('Foreground', 'Node2D', '.', {z_index: 10});
@@ -164,7 +202,15 @@ function buildRoom(recipe) {
     const sprites = Object.fromEntries(Object.entries(enemy.sprites).map(([role, spec]) => {
       const piece = art(spec.art, spec.max ?? 256);
       const visible = piece.axis === 'height' ? piece.y1 - piece.y0 : piece.x1 - piece.x0;
-      return [role, {path: `res://art/world-kit/${spec.art}.png`, scale: Number(((spec.units ?? piece.units) * unit / visible).toFixed(4))}];
+      const scale = Number(((spec.units ?? piece.units) * unit / (spec.visible_width ?? visible)).toFixed(4));
+      const result = {path: `res://art/world-kit/${spec.art}.png`, scale};
+      if (spec.columns) Object.assign(result, {columns: spec.columns, rows: spec.rows});
+      if (spec.pivot) result.pivot = spec.pivot;
+      if (spec.fallback) {
+        const fallback = art(spec.fallback, spec.fallback_max ?? 512);
+        Object.assign(result, {fallback_path: `res://art/world-kit/${spec.fallback}.png`, fallback_scale: Number(((spec.units ?? piece.units) * unit / (fallback.x1 - fallback.x0)).toFixed(4))});
+      }
+      return [role, result];
     }));
     const config = Object.fromEntries(Object.entries(enemy).filter(([key]) => !['at', 'boss', 'name', 'grants', 'defeat_notice', 'sprites'].includes(key)).map(([key, value]) => [key, lengths.includes(key) ? scaled(value) : value]));
     if (config.enraged) config.enraged = Object.fromEntries(Object.entries(config.enraged).map(([key, value]) => [key, lengths.includes(key) ? scaled(value) : value]));

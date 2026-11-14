@@ -612,6 +612,8 @@ func interact() -> void:
 		player.stats_changed.emit(player.health,player.soul)
 		save_progress(false)
 		return
+	var resident: KitInteractable = KitInteractable.nearest(self)
+	if resident != null and resident.interact(self): return
 	var entrance: CampaignDoorway = continuity.nearby_door()
 	if entrance != null:
 		if not entrance.armed: return

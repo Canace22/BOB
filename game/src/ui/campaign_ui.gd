@@ -25,6 +25,9 @@ var resume_wait: float = 0.0
 var previous_controls: bool = true
 var previous_pause: bool = false
 var busy: bool = false
+var conversation_title: String = ""
+var conversation_lines: PackedStringArray = []
+var conversation_id: String = ""
 
 func _ready() -> void:
 	layer = 100
@@ -100,6 +103,13 @@ func clear_input() -> void:
 	player.pending_action = ""
 	player.pending_left = 0.0
 	player.jump_buffer = 0.0
+
+func open_conversation(title: String, lines: PackedStringArray, id: String = "") -> void:
+	if busy or lines.is_empty(): return
+	conversation_title = title
+	conversation_lines = lines.duplicate()
+	conversation_id = id
+	open("conversation")
 
 func open(page: String, push: bool = true) -> void:
 	if busy: return

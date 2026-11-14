@@ -10,6 +10,7 @@ static func onward(host: Node2D) -> bool:
 	return host.rooms.any(func(entry: Dictionary) -> bool: return str(entry.id) == "R3-01")
 
 static func next_room(host: Node2D) -> String:
+	if host.abilities.get("ending", false): return ""
 	if str(host.room.id) == "R1-05" and onward(host): return "R3-01"
 	# Later regions list candidates in room data; the first unmet goal with a built room wins.
 	for option: Dictionary in host.room.get("next", []):
@@ -24,7 +25,23 @@ static func next_room(host: Node2D) -> String:
 		"R1-07": return "R1-02" if host.collected.get("R1-07", false) else ""
 	return ""
 
+## Fallback for a room whose local next list has no remaining destination.
+## The first-region milestone is not the end of the whole journey.
+static func objective(host: Node2D) -> String:
+	if host.abilities.get("ending", false): return "已归海 · 可继续探索与回访"
+	if not onward(host): return "首关完成" if host.completed else "继续探索"
+	if CampaignWorld.region(str(host.room.id)) == "R1":
+		return "须门遗港已贯通 · 前往胃枢" if host.completed else "继续探索"
+	for entry: Dictionary in host.room.get("enemies", []):
+		if entry.get("boss", false) and not host.defeated.get(str(host.room.id) + ":0", false):
+			return "击败" + str(entry.get("name", "守关者"))
+	if not host.abilities.get("pressure", false): return "前往肺心潮庭 · 取得潮压"
+	if not host.abilities.get("bone", false): return "返回胃枢 · 强流门通往断脊"
+	if not host.abilities.get("silence", false): return "前往耳海 · 取得静默"
+	return "前往归海释放槽 · 推开导流闸"
+
 static func hint(host: Node2D) -> String:
+	if host.abilities.get("ending", false): return objective(host)
 	match str(host.room.id):
 		"R1-07":
 			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"

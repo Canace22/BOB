@@ -18,6 +18,8 @@ func prompt() -> String:
 	if is_instance_valid(gate): return "使用通行节点"
 	var reward: Array = host.room.get("reward", [])
 	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return str(host.room.get("reward_prompt", "拾取" + CampaignRelics.reward_name(str(host.room.id))))
+	var resident: KitInteractable = KitInteractable.nearest(host)
+	if resident != null: return resident.prompt()
 	var entrance: CampaignDoorway = prompt_door()
 	if entrance != null: return entrance.prompt()
 	if at_camp(): return "在营地歇息"
@@ -29,6 +31,7 @@ func prompt_door() -> CampaignDoorway:
 	if is_instance_valid(p.skill_controller.nearby_gate()): return null
 	var reward: Array = host.room.get("reward", [])
 	if reward.size() == 2 and p.position.distance_to(host.point(reward)) < 100 and not host.collected.get(str(host.room.id), false): return null
+	if KitInteractable.nearest(host) != null: return null
 	return host.continuity.nearby_door()
 
 func boss() -> Dictionary:

@@ -4,39 +4,185 @@
   "kit": "R5",
   "kit_variant": "R5-tail",
   "unit": 80,
-  "size": [40, 20],
+  "size": [
+    40,
+    20
+  ],
   "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-08（V5.1 布局，单位 U）。入口改为直连交通椎；释放需要潮压、骨音、静默；结局文案为占位",
   "hint": "归海释放槽 · 潮压、骨音、静默齐备后，在导流闸前按交互键",
   "about": "尾柄侧裂处的释放槽 · 三样齐备才能打开导流闸。",
-  "spawn": [3.2, 16],
-  "reward": [34, 16],
+  "spawn": [
+    3.2,
+    16
+  ],
+  "reward": [
+    34,
+    16
+  ],
   "reward_grants": "ending",
-  "reward_requires": ["pressure", "bone", "silence"],
+  "reward_requires": [
+    "pressure",
+    "bone",
+    "silence"
+  ],
   "reward_locked": "导流闸不动 · 还缺",
   "reward_prompt": "推开导流闸",
   "reward_notice": "导流闸打开 · 潮水流向外海",
   "platforms": [
-    {"id": "P0", "x": 0, "y": 16, "w": 40, "solid": true}
+    {
+      "id": "P0",
+      "x": 0,
+      "y": 16,
+      "w": 40,
+      "solid": true
+    }
   ],
   "doors": [
-    {"edge": "E31-32", "to_id": "R4-06", "at": [1, 16], "kind": "door", "direction": -1, "spawn": [1080, 1320]}
+    {
+      "edge": "E31-32",
+      "to_id": "R4-06",
+      "at": [
+        1,
+        16
+      ],
+      "kind": "door",
+      "direction": -1,
+      "spawn": [
+        1080,
+        1320
+      ],
+      "art": "ear-latch-closed",
+      "art_open": "ear-latch-open"
+    }
   ],
   "props": [
-    {"art": "release-sluice-open", "at": [35, 16], "units": 3.6},
-    {"art": "release-sluice-closed", "at": [35, 16], "units": 3.6, "node": "RewardArt"},
-    {"art": "release-bowl", "at": [29, 16], "units": 2.2}
+    {
+      "art": "release-sluice-open",
+      "at": [
+        35,
+        16
+      ],
+      "units": 3.6
+    },
+    {
+      "art": "release-sluice-closed",
+      "at": [
+        35,
+        16
+      ],
+      "units": 3.6,
+      "node": "RewardArt"
+    },
+    {
+      "art": "release-bowl",
+      "at": [
+        29,
+        16
+      ],
+      "units": 2.2
+    }
   ],
   "foreground": [
-    {"x": 6, "w": 13},
-    {"x": 24, "w": 12}
+    {
+      "x": 6,
+      "w": 13
+    },
+    {
+      "x": 24,
+      "w": 12
+    }
   ],
   "bubbles": [
-    {"rect": [18, 3, 3, 11], "count": 8}
+    {
+      "rect": [
+        18,
+        3,
+        3,
+        11
+      ],
+      "count": 8
+    }
   ],
   "drift": [
-    {"art": "fx-particle-soft", "rect": [0, 1, 40, 15], "count": 80, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "d6ecf2"}
+    {
+      "art": "fx-particle-soft",
+      "rect": [
+        0,
+        1,
+        40,
+        15
+      ],
+      "count": 80,
+      "velocity": [
+        -4,
+        -6
+      ],
+      "sway": 10,
+      "size": [
+        16,
+        36
+      ],
+      "opacity": 0.7,
+      "tint": "d6ecf2"
+    }
   ],
   "beams": [
-    {"at": [33, 6], "size": [12, 16], "opacity": 0.8, "tint": "eaf8ff"}
+    {
+      "at": [
+        33,
+        6
+      ],
+      "size": [
+        12,
+        16
+      ],
+      "opacity": 0.8,
+      "tint": "eaf8ff"
+    }
+  ],
+  "landmarks": [
+    {
+      "art": "r4-tapering-vertebrae",
+      "at": [
+        22,
+        20
+      ],
+      "units": 14,
+      "opacity": 0.3,
+      "parallax": 0.7
+    }
+  ],
+  "ecology": [
+    {
+      "art": "sea-larva-swim-v1",
+      "rect": [
+        24,
+        10,
+        15,
+        5
+      ],
+      "count": 6,
+      "width": 90
+    }
+  ],
+  "interactables": [
+    {
+      "id": "release-record",
+      "name": "导流闸记录",
+      "title": "归海释放槽 · 导流闸",
+      "at": [
+        24,
+        16
+      ],
+      "lines": [
+        "导流闸需要潮压、骨音与静默齐备。",
+        "标记不会被消耗。三样齐备后，到右侧导流闸前按交互键。"
+      ],
+      "progress_flag": "ending",
+      "progressed_lines": [
+        "导流闸已经打开，流向外海的路仍在。",
+        "可以沿左门返回，继续探索鲸体中的旧路。"
+      ]
+    }
   ]
 }

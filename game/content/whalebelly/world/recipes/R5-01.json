@@ -3,38 +3,207 @@
   "name": "三槽记忆",
   "kit": "R5",
   "unit": 80,
-  "size": [30, 22],
+  "size": [
+    30,
+    22
+  ],
   "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-01（V5.1 布局，单位 U）。入域条件在交通椎一侧的门上；三槽装置为静态；底床为失足回收面",
   "hint": "耳海入口 · 三槽装置记着潮压、骨音与静默",
   "about": "枕骨侧的入口 · 三槽装置对应潮压、骨音与静默。右侧通往安全池。",
   "next": [
-    {"to": "R5-02", "unless": "silence"}
+    {
+      "to": "R5-02",
+      "unless": "silence"
+    }
   ],
-  "spawn": [3.2, 18],
+  "spawn": [
+    3.2,
+    18
+  ],
   "platforms": [
-    {"id": "P0", "x": 0, "y": 18, "w": 8},
-    {"id": "P1", "x": 9, "y": 16.5, "w": 6},
-    {"id": "P2", "x": 16, "y": 15, "w": 6},
-    {"id": "P3", "x": 23, "y": 16.5, "w": 7}
+    {
+      "id": "P0",
+      "x": 0,
+      "y": 18,
+      "w": 8
+    },
+    {
+      "id": "P1",
+      "x": 9,
+      "y": 16.5,
+      "w": 6
+    },
+    {
+      "id": "P2",
+      "x": 16,
+      "y": 15,
+      "w": 6
+    },
+    {
+      "id": "P3",
+      "x": 23,
+      "y": 16.5,
+      "w": 7
+    }
   ],
   "beds": [
-    {"x": 0, "y": 19.8, "w": 30}
+    {
+      "x": 0,
+      "y": 19.8,
+      "w": 30
+    }
   ],
   "doors": [
-    {"edge": "E25", "to_id": "R4-06", "at": [1, 18], "kind": "door", "direction": -1, "spawn": [2440, 1320]},
-    {"edge": "E26", "to_id": "R5-02", "at": [29, 16.5], "kind": "door", "direction": 1, "spawn": [256, 1360]}
+    {
+      "edge": "E25",
+      "to_id": "R4-06",
+      "at": [
+        1,
+        18
+      ],
+      "kind": "door",
+      "direction": -1,
+      "spawn": [
+        2440,
+        1320
+      ],
+      "art": "ear-latch-closed",
+      "art_open": "ear-latch-open"
+    },
+    {
+      "edge": "E26",
+      "to_id": "R5-02",
+      "at": [
+        29,
+        16.5
+      ],
+      "kind": "door",
+      "direction": 1,
+      "spawn": [
+        256,
+        1360
+      ],
+      "art": "ear-latch-closed",
+      "art_open": "ear-latch-open"
+    }
   ],
   "props": [
-    {"art": "progress-three-slots", "at": [19, 15], "units": 2.4}
+    {
+      "art": "progress-three-slots",
+      "at": [
+        19,
+        15
+      ],
+      "units": 2.4
+    }
   ],
   "foreground": [
-    {"x": 2, "w": 12},
-    {"x": 17, "w": 11}
+    {
+      "x": 2,
+      "w": 12
+    },
+    {
+      "x": 17,
+      "w": 11
+    }
   ],
   "bubbles": [
-    {"rect": [12, 5, 3, 9], "count": 7}
+    {
+      "rect": [
+        12,
+        5,
+        3,
+        9
+      ],
+      "count": 7
+    }
   ],
   "drift": [
-    {"art": "fx-particle-soft", "rect": [0, 1, 30, 18], "count": 60, "velocity": [-4, -6], "sway": 10, "size": [16, 36], "opacity": 0.7, "tint": "cfe3ea"}
+    {
+      "art": "fx-particle-soft",
+      "rect": [
+        0,
+        1,
+        30,
+        18
+      ],
+      "count": 60,
+      "velocity": [
+        -4,
+        -6
+      ],
+      "sway": 10,
+      "size": [
+        16,
+        36
+      ],
+      "opacity": 0.7,
+      "tint": "cfe3ea"
+    }
+  ],
+  "state_props": [
+    {
+      "before": "r5-echo-wall-covered",
+      "after": "r5-echo-wall-revealed",
+      "before_max": 1280,
+      "at": [
+        19,
+        15
+      ],
+      "units": 6,
+      "flags": [
+        "silence"
+      ],
+      "scan_reveal": true
+    }
+  ],
+  "progress_slots": [
+    {
+      "flag": "pressure",
+      "art": "ui-progress-pressure",
+      "at": [
+        19,
+        12.94
+      ],
+      "pixels": 32
+    },
+    {
+      "flag": "bone",
+      "art": "ui-progress-bone",
+      "at": [
+        19,
+        13.75
+      ],
+      "pixels": 32
+    },
+    {
+      "flag": "silence",
+      "art": "ui-progress-silence",
+      "at": [
+        19,
+        14.5
+      ],
+      "pixels": 32
+    }
+  ],
+  "interactables": [
+    {
+      "id": "ear-three-marks",
+      "name": "三槽与声壁",
+      "title": "三槽记忆 · 骨面回声",
+      "at": [
+        19,
+        15
+      ],
+      "lines": [
+        "三槽分别对应潮压、骨音与静默。",
+        "取得的标记会在骨槽中亮起。先沿右门去安全池，再向覆膜深处。"
+      ],
+      "progress_flag": "silence",
+      "progressed_lines": [
+        "覆膜后的声槽已显露，静默也回到三槽。",
+        "回到交通椎，从中段下行口去释放槽。"
+      ]
+    }
   ]
 }

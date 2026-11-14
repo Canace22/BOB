@@ -3,6 +3,7 @@ extends WhalebellyCampaignEnemyProxy
 ## Pattern-driven enemy built from library bitmaps: lane swarms, pearl clams and
 ## echo membranes. Damage, health bar, defeat and saves stay with the campaign host.
 const DEFAULTS: Dictionary = {"rest":2.0, "tell":0.9, "act":1.3, "recover":0.6, "radius":80.0, "engage":900.0, "speed":360.0, "shots":1, "count":16}
+const Visuals = preload("res://src/campaign/enemies/kit_encounter_visual.gd")
 var config: Dictionary
 var kind: String = "swarm"
 var state: String = "rest"
@@ -17,6 +18,8 @@ var target_point: Vector2
 var hit_sent: bool = false
 var repeats_left: int = 0
 var fading: bool = false
+var core: Sprite2D
+var visual_clock: float = 0.0
 
 func _ready() -> void:
 	config = data.config
@@ -37,14 +40,10 @@ func _ready() -> void:
 		swarm.position.y = -float(value("radius")) * 0.55
 		body = swarm
 	else:
-		var sprite := Sprite2D.new()
-		sprite.texture = load(str(config.sprites.body.path))
-		sprite.scale = Vector2.ONE * float(config.sprites.body.scale)
-		var offset: Array = config.get("offset", [0, 0])
-		sprite.position = Vector2(float(offset[0]), float(offset[1]) - sprite.texture.get_height() * sprite.scale.y * 0.5)
-		body = sprite
+		body = Visuals.single_body(config, kind)
 	body.modulate = Color(str(config.get("tint", "ffffff")))
 	add_child(body)
+	if kind == "swarm": core = Visuals.attach_core(body, config)
 	start = data.pos
 	goal = data.pos
 
@@ -82,6 +81,7 @@ func _physics_process(dt: float) -> void:
 	if fading or not data.alive or not is_instance_valid(host.player) or host.player.health <= 0: return
 	if host.reference_visible or host.layer_solo >= 0 or not host.capture_path.is_empty(): return
 	flash = maxf(0.0, flash - dt)
+	visual_clock += dt
 	var base := Color(str(config.get("tint", "ffffff")))
 	body.modulate = base.lerp(Color(2.2, 2.0, 1.9), clampf(flash / 0.16, 0.0, 1.0)) if state != "tell" else base.lerp(Color(1.5, 1.05, 0.9), 0.5 + 0.5 * sin(timer * 16.0))
 	move_shots(dt)
@@ -96,10 +96,12 @@ func _physics_process(dt: float) -> void:
 		"recover":
 			if kind == "swarm": data.pos = start.lerp(goal, smoothstep(0.0, 1.0, timer / float(value("recover"))))
 			if timer >= float(value("recover")): finish_cycle()
+	Visuals.update(body, core, state, timer, float(value(state)), visual_clock)
 
 func enter(next: String) -> void:
 	state = next
 	timer = 0.0
+	Visuals.update(body, core, state, timer, float(value(state)), visual_clock)
 
 func begin_tell() -> void:
 	hit_sent = false

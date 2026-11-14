@@ -555,7 +555,7 @@
             "hits": 24,
             "count": 44,
             "radius": 88,
-            "tint": "f08a78",
+            "tint": "ffffff",
             "rest": 1.9,
             "tell": 1,
             "act": 1.5,
@@ -578,6 +578,10 @@
               "tell": {
                 "path": "res://art/world-kit/fx-danger-line.png",
                 "scale": 1.4545
+              },
+              "core": {
+                "path": "res://art/world-kit/blood-nest-core.png",
+                "scale": 0.4835
               }
             }
           }
@@ -796,8 +800,16 @@
             "engage": 960,
             "sprites": {
               "body": {
-                "path": "res://art/world-kit/resonant-clam.png",
-                "scale": 0.7258
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
               },
               "tell": {
                 "path": "res://art/world-kit/fx-pearl-rings.png",
@@ -939,8 +951,16 @@
             },
             "sprites": {
               "body": {
-                "path": "res://art/world-kit/spine-resonant-clams.png",
-                "scale": 0.7054
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.9882,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/spine-resonant-clams.png",
+                "fallback_scale": 0.7054
               },
               "tell": {
                 "path": "res://art/world-kit/fx-pearl-rings.png",
