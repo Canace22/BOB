@@ -65,11 +65,11 @@ static func short_detail(host: Node2D, id: String) -> String:
 		var item: Dictionary = CampaignRelics.ITEMS[id]
 		var route := ""
 		if id == "R1-06":
-			route = " · 先去记忆袋获得浮游" if not host.has_ability("float") else " · 左侧浮游上行 · 原路返回"
+			route = " · 先去记忆袋获得浮游" if not host.has_ability("float") else " · 左右交替浮游上行 · 原路返回"
 		return ("已获得：" if host.collected.get(id,false) else "右上方收集：") + str(item.name) + " · 护盾上限 +%d" % int(item.charges) + route
 	match id:
 		"R1-07": return "浮游已获得" if host.collected.get(id,false) else "支路 · 浮游"
-		"R1-06": return "支路 · 先去记忆袋获得浮游" if not host.has_ability("float") else "支路 · 左侧浮游上行 · 原路返回"
+		"R1-06": return "支路 · 先去记忆袋获得浮游" if not host.has_ability("float") else "支路 · 左右交替浮游上行 · 原路返回"
 	return ""
 
 static func snapshot(ui: WhaleCampaignUI) -> Dictionary:

@@ -18,7 +18,8 @@ func test_three_spawns_and_single_target_per_crab() -> void:
 	eq(crab.data.hp,3,"existing ordinary HP preserved")
 	eq(crab.data.key,"R1-02:0","stable spawn ID preserved")
 	check(crab.is_in_group("tide_targets"),"actor is sole damage receiver")
-	check(not host.scenery.get_node("World/EnemyArt0").visible,"old static cutout hidden")
+	var old_cutout := host.scenery.get_node_or_null("World/EnemyArt0") as CanvasItem
+	check(old_cutout == null or not old_cutout.visible,"authored crab has no duplicate static cutout")
 	check(crab.visual.texture != null,"authored atlas is active")
 	host.load_room(2)
 	eq(host.enemies.size(),2,"two authored tongue terrace encounters retained")

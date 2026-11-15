@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "enabled_rooms": ["R1-01", "R1-02", "R1-03", "R1-04", "R1-05", "R1-06", "R1-07"],
+  "fish": {
+    "far": {"count": 18, "widths": [14, 23], "tint": [0.40, 0.65, 0.76, 0.38], "period": 56},
+    "silver": {"count": 14, "widths": [30, 46], "tint": [0.68, 0.84, 0.88, 0.65], "period": 36},
+    "teal": {"count": 10, "widths": [23, 35], "tint": [0.52, 0.78, 0.78, 0.56], "period": 32},
+    "lantern": {"count": 5, "widths": [18, 27], "tint": [0.70, 0.80, 0.74, 0.52], "period": 48}
+  },
+  "bubbles": {"count_per_plume": 12, "near_count": 7},
+  "snow": {"count": 42},
+  "boss_density": 0.6,
+  "background": {
+    "enabled_rooms": ["R1-01", "R1-02", "R1-03", "R1-04", "R1-05", "R1-06", "R1-07"],
+    "water_strength": 0.065,
+    "light_strength": 0.12,
+    "boss_light_strength": 0.08
+  }
+}

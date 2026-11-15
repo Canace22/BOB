@@ -330,6 +330,9 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 			var crab := MotherCrab.new()
 			crab.host = self
 			crab.data = enemy
+			var battle: Dictionary = room.get("layout", {}).get("boss", {})
+			if battle.has("arena_bounds"): crab.arena_bounds = point(battle.arena_bounds)
+			if battle.has("retreat_bounds"): crab.retreat_bounds = point(battle.retreat_bounds)
 			scenery.get_node("World").add_child(crab)
 			continue
 		if not enemy.boss and enemy.type == "corpse-crab":
@@ -367,6 +370,7 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	if ui_session_started and record_discovery and not practice: save_progress(false)
 
 func restored_room_position(value: Vector2) -> Vector2:
+	if room.has("layout"): return CampaignLayout.restore_point(room, value)
 	# R1-01's new road retains the old world width. Existing checkpoints and
 	# incoming door coordinates project to the new ground without save rewrites.
 	if room.get("layered_environment", false):
@@ -784,6 +788,7 @@ func run_qa() -> void:
 	await graceful_quit()
 
 func update_parallax() -> void:
+	if scenery.has_node("LayoutEnvironment"): return
 	var shift: Vector2 = Vector2.ZERO
 	if zoomed and not reference_visible and capture_path.is_empty() and layer_solo < 0:
 		var center: Vector2 = point(room.size) * 0.5

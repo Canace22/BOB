@@ -10,14 +10,17 @@ var membrane_drop: float = 0.0
 var original_polygon: PackedVector2Array
 var contour: CollisionPolygon2D
 var gate: Node2D
+var gate_rest: Vector2 = Vector2.ZERO
 var gate_alpha: float = 1.0
 var reward: Node2D
+var reward_rest: Vector2 = Vector2.ZERO
 var trigger_nodes: Array[Area2D] = []
 var rings_node: Node2D
 var last_ring: Vector2 = Vector2.INF
 var ring_pulse: float = 0.0
 var membrane_events: int = 0
 var last_event_sequence: int = 0
+var membrane_config: Dictionary = {}
 
 func _ready() -> void:
 	name = "VisualMechanisms"
@@ -54,9 +57,12 @@ func _ready() -> void:
 		rings_node.add_child(anchor)
 	gate = host.scenery.get_node_or_null("World/DoorArt")
 	reward = host.scenery.get_node_or_null("World/RewardArt")
-	if host.room_index == 2:
-		contour = host.scenery.get_node("World/Terrain/Surface0/Contour")
-		original_polygon = contour.polygon.duplicate()
+	if gate != null: gate_rest = gate.position
+	if reward != null: reward_rest = reward.position
+	membrane_config = CampaignLayout.membrane(host.room,host.room_index)
+	if not membrane_config.is_empty():
+		contour = host.scenery.get_node_or_null(str(membrane_config.get("contour_path", ""))) as CollisionPolygon2D
+		if contour != null: original_polygon = contour.polygon.duplicate()
 	if gate != null and host.defeated.get("R1-04:0",false):
 		gate_alpha = 0
 		gate.modulate.a = 0
@@ -64,27 +70,23 @@ func _ready() -> void:
 func _physics_process(dt: float) -> void:
 	if host == null or not is_instance_valid(host.player): return
 	if host.reference_visible or host.layer_solo >= 0 or not host.capture_path.is_empty(): return
-	if host.room_index == 2:
+	if not membrane_config.is_empty() and is_instance_valid(contour):
 		var p: Vector2 = host.player.position
-		var loaded: bool = p.x > 700 and p.x < 970 and p.y > 580 and p.y < 720 and host.player.is_on_floor()
+		var loaded: bool = CampaignLayout.membrane_contains(host.room,"load_rect",p,host.room_index) and host.player.is_on_floor()
 		membrane_time = minf(1.3,membrane_time+dt) if loaded else maxf(0,membrane_time-dt*1.5)
-		var target: float = smoothstep(0.25,0.85,membrane_time)*42.0
+		var target: float = smoothstep(0.25,0.85,membrane_time)*float(membrane_config.get("max_drop",42.0))
 		var previous: float = membrane_drop
 		membrane_drop = move_toward(membrane_drop,target,dt*85)
 		if previous < 5 and membrane_drop >= 5:
 			membrane_events += 1
 			host.record_event("membrane_sag",{"drop":membrane_drop})
 			host.sfx("sweep")
-		var changed: PackedVector2Array = original_polygon.duplicate()
-		for i: int in range(changed.size()):
-			var weight: float = sin(clampf((original_polygon[i].x-680.0)/320.0,0,1)*PI)
-			changed[i].y += membrane_drop*weight
-		contour.polygon = changed
-		var world: Sprite2D = host.scenery.get_node("World/WorldOriginalPixels")
-		world.material.set_shader_parameter("membrane_drop", membrane_drop)
-		var chapter_surface: Sprite2D = host.scenery.get_node_or_null("ChapterEnvironment/World/Surface")
-		if chapter_surface != null:
-			chapter_surface.material.set_shader_parameter("membrane_drop",membrane_drop)
+		var to_room: Transform2D = host.scenery.global_transform.affine_inverse() * contour.global_transform
+		contour.polygon = CampaignLayout.bent_polygon(original_polygon,to_room,float(membrane_config.get("bend_from",0.0)),float(membrane_config.get("bend_to",1.0)),membrane_drop)
+		for path: String in membrane_config.get("art_paths",[]):
+			var surface: CanvasItem = host.scenery.get_node_or_null(path) as CanvasItem
+			if surface != null and surface.material is ShaderMaterial:
+				surface.material.set_shader_parameter("membrane_drop",membrane_drop)
 
 func _process(dt: float) -> void:
 	if host == null: return
@@ -97,13 +99,13 @@ func _process(dt: float) -> void:
 			sprite.material.set_shader_parameter("clock", phase)
 			sprite.material.set_shader_parameter("motion", 1.0)
 	if reward != null:
-		reward.position.y = sin(phase*1.9)*2.5
+		reward.position.y = reward_rest.y + sin(phase*1.9)*2.5
 		reward.modulate = Color(1.0+sin(phase*2.1)*0.07,1.0+sin(phase*2.1)*0.07,1.0)
 	if gate != null:
 		var target: float = 0.0 if host.defeated.get("R1-04:0",false) else 1.0
 		gate_alpha = move_toward(gate_alpha,target,dt*0.8)
 		gate.modulate.a = gate_alpha
-		gate.position.y = -18*(1-gate_alpha)
+		gate.position.y = gate_rest.y - 18*(1-gate_alpha)
 		if target == 0 and gate_alpha > 0.98:
 			host.sfx("save")
 			host.record_event("gate_open",{"room":str(host.room.id)})

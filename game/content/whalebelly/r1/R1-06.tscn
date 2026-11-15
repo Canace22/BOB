@@ -1,357 +1,574 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="1"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="2"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/underpaint.png" id="3"]
+[ext_resource type="Script" path="res://src/world/scenery/chapter/pinned_bitmap.gd" id="4"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/painted_layer.gd" id="5"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/painted_edges.gdshader" id="6"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/Middle.png" id="7"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/Far.png" id="8"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/R1-06-VINE-1.png" id="9"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/R1-06-VINE-2.png" id="10"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/R1-06-VINE-3.png" id="11"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/foreground_clearance.gdshader" id="12"]
+[ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-06/Foreground.png" id="13"]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="14"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="15"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/background_current.gd" id="16"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/bitmap_cutout.gdshader" id="17"]
+[ext_resource type="Texture2D" path="res://art/xumen-original-style-v1/original-ledge.png" id="18"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="19"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="20"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/PORTAL.png" id="21"]
+[ext_resource type="Shader" path="res://content/whalebelly/environment/elements/extraction_alpha.gdshader" id="22"]
+[ext_resource type="Texture2D" path="res://art/world-kit/nursery-shell-support.png" id="23"]
+[ext_resource type="Script" path="res://src/world/scenery/chapter/fish_group.gd" id="24"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="25"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="26"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="27"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/layout_environment.gd" id="28"]
+
+[sub_resource type="ShaderMaterial" id="m1"]
+shader = ExtResource("2")
+shader_parameter/recess = 0.18
+shader_parameter/water_strength = 0.065
+shader_parameter/water_phase = 5.46
+
+[sub_resource type="ShaderMaterial" id="m2"]
+shader = ExtResource("6")
+shader_parameter/feather_pixels = 14.0
+shader_parameter/water_strength = 0.065
+shader_parameter/water_phase = 5.46
+
+[sub_resource type="ShaderMaterial" id="m3"]
+shader = ExtResource("6")
+shader_parameter/feather_pixels = 14.0
+shader_parameter/fade_lower = true
+
+[sub_resource type="ShaderMaterial" id="m4"]
+shader = ExtResource("12")
+shader_parameter/zone_count = 14
+shader_parameter/clear_zones = PackedVector4Array(-10,700,410,210,520,580,320,210,180,420,320,210,690,275,330,210,430,125,310,210,1070,20,540,210,810,70,240,210,1120,640,330,210,1310,290,290,210,740,900,330,210,380,900,300,210,340,790,220,210,60,630,180,280,1410,-50,180,280)
+
+[sub_resource type="ShaderMaterial" id="m5"]
+shader = ExtResource("17")
+
+
+[sub_resource type="ShaderMaterial" id="m6"]
+shader = ExtResource("19")
+shader_parameter/bounds = Vector4(38,852,314,162.05506607929516)
+
+[sub_resource type="ShaderMaterial" id="m7"]
+shader = ExtResource("17")
+
+
+[sub_resource type="ShaderMaterial" id="m8"]
+shader = ExtResource("22")
+
+
+[sub_resource type="ShaderMaterial" id="m9"]
+shader = ExtResource("22")
 
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="doorway_script"]
-
-[ext_resource type="PackedScene" path="res://content/whalebelly/environment/chapter/R1-06.tscn" id="chapter"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/reference/r1/R1-06.png" id="1"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-classes.svg" id="2"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-actors.svg" id="3"]
-
-[ext_resource type="Shader" path="res://src/campaign/layer.gdshader" id="4"]
-
-[ext_resource type="Shader" path="res://src/campaign/extract.gdshader" id="5"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-PlayerArt.svg" id="6"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/masks/R1-06-RewardArt.svg" id="7"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/clean/R1-06-far.png" id="10"]
-
-[ext_resource type="Texture2D" path="res://art/whalebelly/clean/R1-06.png" id="11"]
-
-[ext_resource type="PackedScene" path="res://content/whalebelly/environment/continuity/E33_R1-06.tscn" id="seam_E33"]
-
-[ext_resource type="Script" path="res://src/world/scenery/chapter/continuous_depth.gd" id="oral_script"]
-[ext_resource type="Texture2D" path="res://art/xumen-continuity/continuous-oral-depth.png" id="oral_texture"]
-[ext_resource type="Shader" path="res://src/world/scenery/chapter/continuous_depth.gdshader" id="oral_shader"]
-
-[ext_resource type="Texture2D" path="res://art/xumen-continuity/depth-guard-R1-06.png" id="oral_guard"]
-
-[sub_resource type="ShaderMaterial" id="OralWater"]
-shader = ExtResource("oral_shader")
-shader_parameter/guard_mask = ExtResource("oral_guard")
-shader_parameter/room_size = Vector2(1476,1065)
-
-[sub_resource type="ShaderMaterial" id="Layer0"]
-
-shader = ExtResource("4")
-
-shader_parameter/classes = ExtResource("2")
-
-shader_parameter/actor_holes = ExtResource("3")
-
-shader_parameter/layer_id = 0
-
-shader_parameter/source_size = Vector2(1476, 1065)
-
-shader_parameter/patch0 = Vector2(-100, -100)
-
-shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
-
-shader_parameter/patch1 = Vector2(-85, -30)
-
-shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
-
-shader_parameter/patch2 = Vector2(0, 0)
-
-shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/patch3 = Vector2(0, 0)
-
-shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/far_plate = ExtResource("10")
-
-shader_parameter/fallback_reward = -1
-
-[sub_resource type="ShaderMaterial" id="Layer1"]
-
-shader = ExtResource("4")
-
-shader_parameter/classes = ExtResource("2")
-
-shader_parameter/actor_holes = ExtResource("3")
-
-shader_parameter/layer_id = 1
-
-shader_parameter/source_size = Vector2(1476, 1065)
-
-shader_parameter/patch0 = Vector2(-100, -100)
-
-shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
-
-shader_parameter/patch1 = Vector2(-85, -30)
-
-shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
-
-shader_parameter/patch2 = Vector2(0, 0)
-
-shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/patch3 = Vector2(0, 0)
-
-shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/far_plate = ExtResource("10")
-
-shader_parameter/fallback_reward = -1
-
-[sub_resource type="ShaderMaterial" id="Layer2"]
-
-shader = ExtResource("4")
-
-shader_parameter/classes = ExtResource("2")
-
-shader_parameter/actor_holes = ExtResource("3")
-
-shader_parameter/layer_id = 2
-
-shader_parameter/source_size = Vector2(1476, 1065)
-
-shader_parameter/patch0 = Vector2(-100, -100)
-
-shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
-
-shader_parameter/patch1 = Vector2(-85, -30)
-
-shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
-
-shader_parameter/patch2 = Vector2(0, 0)
-
-shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/patch3 = Vector2(0, 0)
-
-shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/far_plate = ExtResource("10")
-
-shader_parameter/fallback_reward = -1
-
-[sub_resource type="ShaderMaterial" id="Layer3"]
-
-shader = ExtResource("4")
-
-shader_parameter/classes = ExtResource("2")
-
-shader_parameter/actor_holes = ExtResource("3")
-
-shader_parameter/layer_id = 3
-
-shader_parameter/source_size = Vector2(1476, 1065)
-
-shader_parameter/patch0 = Vector2(-100, -100)
-
-shader_parameter/remove0 = Vector4(306.0, 534.0, 486.0, 658.0)
-
-shader_parameter/patch1 = Vector2(-85, -30)
-
-shader_parameter/remove1 = Vector4(1127.0, 262.0, 1224.0, 345.0)
-
-shader_parameter/patch2 = Vector2(0, 0)
-
-shader_parameter/remove2 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/patch3 = Vector2(0, 0)
-
-shader_parameter/remove3 = Vector4(-114, -114, -86, -86)
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/far_plate = ExtResource("10")
-
-shader_parameter/fallback_reward = -1
-
-[sub_resource type="ShaderMaterial" id="Actor0"]
-
-shader = ExtResource("5")
-
-shader_parameter/silhouette = ExtResource("6")
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/source_size = Vector2(1476,1065)
-
-shader_parameter/bounds = Vector4(315.0,543.0,477.0,649.0)
-
-shader_parameter/recover_edges = true
-
-[sub_resource type="ShaderMaterial" id="Actor1"]
-
-shader = ExtResource("5")
-
-shader_parameter/silhouette = ExtResource("7")
-
-shader_parameter/clean_plate = ExtResource("11")
-
-shader_parameter/source_size = Vector2(1476,1065)
-
-shader_parameter/bounds = Vector4(1136.0,271.0,1215.0,336.0)
-
-shader_parameter/recover_edges = false
 
 [node name="R1-06" type="Node2D"]
 
+
 [node name="Far" type="Node2D" parent="."]
-
-visible = false
-
 z_index = -30
 
-[node name="OcclusionUnderpaint" type="Sprite2D" parent="Far"]
-
-texture = ExtResource("10")
-
-centered = false
-
-[node name="FarOriginalPixels" type="Sprite2D" parent="Far"]
-
-material = SubResource("Layer0")
-
-texture = ExtResource("1")
-
-centered = false
-
 [node name="Middle" type="Node2D" parent="."]
-
-visible = false
-
 z_index = -15
-
-[node name="MiddleOriginalPixels" type="Sprite2D" parent="Middle"]
-
-material = SubResource("Layer1")
-
-texture = ExtResource("1")
-
-centered = false
+script = ExtResource("5")
+room_center = Vector2(820.0,590.0)
+response = 0.025
+limit = Vector2(8,5)
 
 [node name="World" type="Node2D" parent="."]
-
 z_index = 0
 
-[node name="WorldOriginalPixels" type="Sprite2D" parent="World"]
-
-visible = false
-
-material = SubResource("Layer2")
-
-texture = ExtResource("1")
-
-centered = false
-
 [node name="Foreground" type="Node2D" parent="."]
-
-visible = false
-
 z_index = 10
+script = ExtResource("5")
+room_center = Vector2(820.0,590.0)
+response = -0.04
+limit = Vector2(12,7)
 
-[node name="ForegroundOriginalPixels" type="Sprite2D" parent="Foreground"]
+[node name="Art" type="Node2D" parent="World"]
 
-material = SubResource("Layer3")
-
-texture = ExtResource("1")
-
-centered = false
 
 [node name="Terrain" type="Node2D" parent="World"]
 
+
+[node name="Depth" type="Node2D" parent="Far"]
+script = ExtResource("1")
+factor = 0.14
+room_center = Vector2(820.0,590.0)
+
+[node name="Paint" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("3")
+position = Vector2(-65.6,-54.233)
+scale = Vector2(1.175,1.175)
+centered = false
+z_index = 0
+material = SubResource("m1")
+modulate = Color(0.76,0.84,0.88,1)
+
+[node name="OriginalChamber" type="Sprite2D" parent="Middle"]
+texture = ExtResource("7")
+position = Vector2(-196.572,-81.572)
+scale = Vector2(1.348,1.348)
+centered = false
+z_index = 0
+material = SubResource("m3")
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="OriginalFar" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("8")
+position = Vector2(-65.6,-54.233)
+scale = Vector2(1.175,1.175)
+centered = false
+z_index = 0
+material = SubResource("m2")
+modulate = Color(0.76,0.84,0.88,0.35)
+
+[node name="Fringe0" type="MeshInstance2D" parent="Middle"]
+script = ExtResource("4")
+texture = ExtResource("9")
+position = Vector2(656.0,732)
+scale = Vector2(1.348,1.348)
+root_profile = PackedFloat32Array(0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+amplitude = 2.5
+period = 9.0
+phase = 0.0
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="Fringe1" type="MeshInstance2D" parent="Middle"]
+script = ExtResource("4")
+texture = ExtResource("10")
+position = Vector2(316.0,572)
+scale = Vector2(1.348,1.348)
+root_profile = PackedFloat32Array(0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+amplitude = 2.5
+period = 10.0
+phase = 1.3
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="Fringe2" type="MeshInstance2D" parent="Middle"]
+script = ExtResource("4")
+texture = ExtResource("11")
+position = Vector2(830.0,427)
+scale = Vector2(1.348,1.348)
+root_profile = PackedFloat32Array(0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+amplitude = 2.5
+period = 11.0
+phase = 2.6
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="OriginalNearBone" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("13")
+position = Vector2(-196.572,-202.446)
+scale = Vector2(1.348,1.348)
+centered = false
+z_index = 0
+material = SubResource("m4")
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="WaterLight0" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("15")
+position = Vector2(-200.4,-94.4)
+scale = Vector2(1.936,1.936)
+centered = false
+z_index = 3
+script = ExtResource("14")
+external_clock = true
+intensity = 0.12
+period = 18
+phase = 3.5999999999999996
+
+[node name="WaterLight1" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("15")
+position = Vector2(367.667,-94.4)
+scale = Vector2(1.767,1.767)
+centered = false
+z_index = 3
+script = ExtResource("14")
+external_clock = true
+intensity = 0.0984
+period = 27
+phase = 5.3999999999999995
+
+[node name="WaterLight2" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("15")
+position = Vector2(902.933,-94.4)
+scale = Vector2(1.598,1.598)
+centered = false
+z_index = 3
+script = ExtResource("14")
+external_clock = true
+intensity = 0.0768
+period = 36
+phase = 7.199999999999999
+
+[node name="BackgroundCurrent" type="Node2D" parent="."]
+script = ExtResource("16")
+
+[node name="Surface0_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(10.95,804.059)
+scale = Vector2(0.17,0.17)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
+
 [node name="Surface0" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface0"]
 
-polygon = PackedVector2Array(0.0, 791.0, 100.0, 796.0, 210.0, 792.0, 330.0, 788.0, 475.0, 798.0, 475.0, 833.0, 330.0, 823.0, 210.0, 827.0, 100.0, 831.0, 0.0, 826.0)
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface0"]
+polygon = PackedVector2Array(44,840,73.635,840.0,114.09,839.508,154.545,840.983,195.0,840.0,235.455,840.246,275.91,840.737,316.365,839.754,346,840,346,870,44,870)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="Surface1_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(543.549,693.354)
+scale = Vector2(0.126,0.126)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
 [node name="Surface1" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
 
-polygon = PackedVector2Array(410.0, 650.0, 490.0, 643.0, 590.0, 643.0, 679.0, 650.0, 679.0, 685.0, 590.0, 678.0, 490.0, 678.0, 410.0, 685.0)
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(574,720,590.023,720.0,620.015,719.636,650.008,720.729,680.0,720.0,709.993,720.182,739.985,720.547,769.978,719.818,786,720,786,750,574,750)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface2_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(203.549,533.354)
+scale = Vector2(0.126,0.126)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
 [node name="Surface2" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface2"]
 
-polygon = PackedVector2Array(613.0, 490.0, 700.0, 482.0, 840.0, 482.0, 955.0, 485.0, 1040.0, 489.0, 1040.0, 524.0, 955.0, 520.0, 840.0, 517.0, 700.0, 517.0, 613.0, 525.0)
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface2"]
+polygon = PackedVector2Array(234,560,250.023,560.0,280.015,559.636,310.008,560.729,340.0,560.0,369.993,560.182,399.985,560.547,429.978,559.818,446,560,446,590,234,590)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface3_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(713.26,387.321)
+scale = Vector2(0.131,0.131)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
 [node name="Surface3" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface3"]
 
-polygon = PackedVector2Array(912.0, 343.0, 1050.0, 335.0, 1210.0, 332.0, 1350.0, 335.0, 1476.0, 340.0, 1476.0, 375.0, 1350.0, 370.0, 1210.0, 367.0, 1050.0, 370.0, 912.0, 378.0)
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface3"]
+polygon = PackedVector2Array(744,415,761.535,415.0,792.69,414.621,823.845,415.757,855.0,415.0,886.155,415.189,917.31,415.568,948.465,414.811,966,415,966,445,744,445)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface4_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(453.838,239.387)
+scale = Vector2(0.121,0.121)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
 [node name="Surface4" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface4"]
 
-polygon = PackedVector2Array(0.0, 590.0, 80.0, 581.0, 150.0, 575.0, 205.0, 584.0, 205.0, 619.0, 150.0, 610.0, 80.0, 616.0, 0.0, 625.0)
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface4"]
+polygon = PackedVector2Array(484,265,498.51,265.0,527.34,264.65,556.17,265.701,585.0,265.0,613.83,265.175,642.66,265.525,671.49,264.825,686,265,686,295,484,295)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface5_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(1087.196,110.632)
+scale = Vector2(0.234,0.234)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
 [node name="Surface5" type="StaticBody2D" parent="World/Terrain"]
 
+
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface5"]
+polygon = PackedVector2Array(1124,160,1173.297,160.0,1228.865,159.325,1284.432,161.35,1340.0,160.0,1395.567,160.338,1451.135,161.013,1506.702,159.662,1556,160,1556,190,1124,190)
+one_way_collision = true
+one_way_collision_margin = 6.0
 
-polygon = PackedVector2Array(180.0, 868.0, 280.0, 896.0, 400.0, 916.0, 510.0, 945.0, 620.0, 970.0, 720.0, 986.0, 850.0, 967.0, 960.0, 941.0, 1050.0, 920.0, 1150.0, 870.0, 1250.0, 820.0, 1350.0, 765.0, 1476.0, 730.0, 1476.0, 765.0, 1350.0, 800.0, 1250.0, 855.0, 1150.0, 905.0, 1050.0, 955.0, 960.0, 976.0, 850.0, 1002.0, 720.0, 1021.0, 620.0, 1005.0, 510.0, 980.0, 400.0, 951.0, 280.0, 931.0, 180.0, 903.0)
-
-[node name="PlayerArt" type="Node2D" parent="World"]
-
-z_index = 4
-
-[node name="OriginalSilhouette" type="Sprite2D" parent="World/PlayerArt"]
-
-material = SubResource("Actor0")
-
-texture = ExtResource("1")
-
+[node name="Surface6_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(835.86,191.616)
+scale = Vector2(0.087,0.087)
 centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
-[node name="RewardArt" type="Node2D" parent="World"]
+[node name="Surface6" type="StaticBody2D" parent="World/Terrain"]
 
-z_index = 4
 
-[node name="OriginalSilhouette" type="Sprite2D" parent="World/RewardArt"]
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface6"]
+polygon = PackedVector2Array(864,210,867.922,210.0,888.615,209.749,909.308,210.503,930.0,210.0,950.692,210.126,971.385,210.377,992.077,209.874,996,210,996,240,864,240)
+one_way_collision = true
+one_way_collision_margin = 6.0
 
-material = SubResource("Actor1")
-
-texture = ExtResource("1")
-
+[node name="Surface9_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(1143.26,752.321)
+scale = Vector2(0.131,0.131)
 centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
 
-[node name="ChapterEnvironment" parent="." instance=ExtResource("chapter")]
+[node name="Surface9" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Continuity_E33" parent="." instance=ExtResource("seam_E33")]
 
-[node name="ContinuousOralDepth" type="Sprite2D" parent="."]
-z_index = -29
-position = Vector2(-531.97,-16)
-scale = Vector2(1.5593922651933703,1.5593922651933703)
-texture = ExtResource("oral_texture")
-material = SubResource("OralWater")
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface9"]
+polygon = PackedVector2Array(1174,780,1191.535,780.0,1222.69,779.621,1253.845,780.757,1285.0,780.0,1316.155,780.189,1347.31,780.568,1378.465,779.811,1396,780,1396,810,1174,810)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface10_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(1334.416,406.452)
+scale = Vector2(0.112,0.112)
 centered = false
-script = ExtResource("oral_script")
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface10" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface10"]
+polygon = PackedVector2Array(1364,430,1375.485,430.0,1401.99,429.678,1428.495,430.644,1455.0,430.0,1481.505,430.161,1508.01,430.483,1534.515,429.839,1546,430,1546,460,1364,460)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface11_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(763.26,1012.321)
+scale = Vector2(0.131,0.131)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface11" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface11"]
+polygon = PackedVector2Array(794,1040,811.535,1040.0,842.69,1039.621,873.845,1040.757,905.0,1040.0,936.155,1040.189,967.31,1040.568,998.465,1039.811,1016,1040,1016,1070,794,1070)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface12_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(404.127,1015.419)
+scale = Vector2(0.116,0.116)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface12" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface12"]
+polygon = PackedVector2Array(434,1040,446.998,1040.0,474.665,1039.664,502.332,1040.672,530.0,1040.0,557.668,1040.168,585.335,1040.504,613.003,1039.832,626,1040,626,1070,434,1070)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface13_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(366.437,913.682)
+scale = Vector2(0.077,0.077)
+centered = false
+z_index = 0
+material = SubResource("m5")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface13" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface13"]
+polygon = PackedVector2Array(394,930,394.898,930.0,413.265,929.777,431.633,930.446,450.0,930.0,468.368,930.112,486.735,930.335,505.103,929.888,506,930,506,960,394,960)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface0_NativeMass" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("18")
+position = Vector2(-92.975,795.097)
+scale = Vector2(0.267,0.267)
+centered = false
+z_index = -1
+material = SubResource("m6")
+modulate = Color(0.68,0.76,0.8,1)
 
 [node name="Doorways" type="Node2D" parent="."]
 
+
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("doorway_script")
+script = ExtResource("20")
 destination_id = "R1-02"
 kind = "door"
 direction = -1.0
-height = 160.0
-prompt_offset = Vector2(0, -176)
+height = 170.0
+prompt_offset = Vector2(0,-195)
+tunnel_texture = ExtResource("21")
+threshold_region = Rect2(0,145,130,14)
+texture_bounds = Rect2(0,4,126,155)
+tunnel_material = SubResource("m8")
 
 [node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("doorway_script")
+script = ExtResource("20")
 destination_id = "far-latch"
 kind = "sealed"
 direction = 1.0
-height = 0.0
-prompt_offset = Vector2(0, -145)
+height = 170.0
+prompt_offset = Vector2(0,-195)
+tunnel_texture = ExtResource("21")
+threshold_region = Rect2(0,145,130,14)
+texture_bounds = Rect2(0,4,126,155)
+tunnel_material = SubResource("m9")
+
+[node name="RewardArt" type="Node2D" parent="World"]
+position = Vector2(1260,160)
+
+[node name="Shell" type="Sprite2D" parent="World/RewardArt"]
+texture = ExtResource("23")
+position = Vector2(-38.31,-41.183)
+scale = Vector2(0.12,0.12)
+centered = false
+z_index = 0
+
+[node name="DistantSchool" type="Node2D" parent="Far/Depth"]
+script = ExtResource("24")
+bounds = Rect2(40,165.2,1560,424.8)
+population = 18
+species = 0
+phase = 5.6499999999999995
+fish_widths = Vector2(14,23)
+school_tint = Color(0.4,0.65,0.76,0.38)
+path_seconds = 56
+swim_seconds = 2.8
+migrate = true
+reverse = false
+formation_size = Vector2(430,153.4)
+z_index = 2
+
+[node name="School0" type="Node2D" parent="Middle"]
+script = ExtResource("24")
+bounds = Rect2(60,318.6,1520,306.8)
+population = 14
+species = 0
+phase = 6.85
+fish_widths = Vector2(30,46)
+school_tint = Color(0.68,0.84,0.88,0.65)
+path_seconds = 36
+swim_seconds = 3.05
+migrate = true
+reverse = false
+formation_size = Vector2(430,153.4)
+z_index = 2
+
+[node name="School1" type="Node2D" parent="Middle"]
+script = ExtResource("24")
+bounds = Rect2(787.2,566.4,574.0,259.6)
+population = 10
+species = 1
+phase = 8.049999999999999
+fish_widths = Vector2(23,35)
+school_tint = Color(0.52,0.78,0.78,0.56)
+path_seconds = 32
+swim_seconds = 3.3
+migrate = false
+reverse = false
+formation_size = Vector2(430,153.4)
+z_index = 2
+
+[node name="LanternSchool" type="Node2D" parent="Middle"]
+script = ExtResource("24")
+bounds = Rect2(80,684.4,1480,188.8)
+population = 5
+species = 2
+phase = 9.25
+fish_widths = Vector2(18,27)
+school_tint = Color(0.7,0.8,0.74,0.52)
+path_seconds = 48
+swim_seconds = 3.55
+migrate = true
+reverse = true
+formation_size = Vector2(430,153.4)
+z_index = 2
+
+[node name="Bubbles0" type="Node2D" parent="Middle"]
+script = ExtResource("25")
+bounds = Rect2(426,142,246,944)
+population = 12
+external_clock = true
+seed_id = 95
+size_range = Vector2(3.5,8)
+base_speed = 13
+bubble_opacity = 0.34
+z_index = 1
+
+[node name="Bubbles1" type="Node2D" parent="Middle"]
+script = ExtResource("25")
+bounds = Rect2(1132,142,246,944)
+population = 12
+external_clock = true
+seed_id = 102
+size_range = Vector2(3.5,8)
+base_speed = 16
+bubble_opacity = 0.34
+z_index = 1
+
+[node name="NearBubbles" type="Node2D" parent="World"]
+script = ExtResource("25")
+bounds = Rect2(131,142,1378,944)
+population = 7
+external_clock = true
+seed_id = 109
+size_range = Vector2(8,16)
+base_speed = 19
+bubble_opacity = 0.18
+z_index = 2
+
+[node name="MarineSnow" type="Node2D" parent="Middle"]
+script = ExtResource("26")
+texture = ExtResource("27")
+bounds = Rect2(20,80,1600,1040)
+population = 42
+velocity = Vector2(4.5,6.5)
+sway = 9.0
+size_range = Vector2(2.5,6.0)
+opacity = 0.24
+tint = Color(0.58,0.77,0.80,1)
+seed_id = 175
+external_clock = true
+z_index = 3
+
+[node name="LayoutEnvironment" type="Node2D" parent="."]
+script = ExtResource("28")

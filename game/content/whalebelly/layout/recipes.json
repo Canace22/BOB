@@ -1,0 +1,2191 @@
+{
+  "version": 1,
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "size": [
+        1640,
+        1120
+      ],
+      "spawn": [
+        180,
+        720
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "安全入口",
+          "x": 30,
+          "y": 720,
+          "w": 350,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "第一骨台",
+          "x": 450,
+          "y": 630,
+          "w": 220,
+          "one_way": false
+        },
+        {
+          "id": "Surface2",
+          "name": "颌骨脊",
+          "x": 760,
+          "y": 510,
+          "w": 270,
+          "one_way": false
+        },
+        {
+          "id": "Surface3",
+          "name": "落脚台",
+          "x": 1140,
+          "y": 650,
+          "w": 220,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "出口岸",
+          "x": 1380,
+          "y": 790,
+          "w": 190,
+          "one_way": false
+        },
+        {
+          "id": "Surface7",
+          "name": "失误回收坡",
+          "x": 310,
+          "y": 950,
+          "w": 740,
+          "one_way": false
+        },
+        {
+          "id": "RecoveryStep",
+          "name": "回收返程踏台",
+          "x": 400,
+          "y": 820,
+          "w": 150,
+          "one_way": true
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall5",
+          "name": "上方骨拱",
+          "removed": true,
+          "box": [
+            1090,
+            230,
+            430,
+            180
+          ]
+        },
+        {
+          "id": "Wall6",
+          "name": "拱脚",
+          "removed": true,
+          "box": [
+            1130,
+            300,
+            70,
+            230
+          ]
+        }
+      ],
+      "rings": [],
+      "camp": [
+        150,
+        720
+      ],
+      "reward": [],
+      "doors": [
+        {
+          "pos": [
+            1510,
+            790
+          ],
+          "to": 1,
+          "spawn": [
+            200,
+            700
+          ],
+          "ability": ""
+        }
+      ],
+      "enemies": [],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1671,
+          939.9375
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  320,
+                  720
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  560,
+                  630
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  890,
+                  510
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1250,
+                  650
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1470,
+                  790
+                ],
+                "mode": "drop"
+              },
+              {
+                "mode": "door",
+                "to": "R1-02",
+                "label": "外伤坡出口"
+              }
+            ]
+          },
+          "recovery": {
+            "fixture": {
+              "spawn": [
+                500,
+                950
+              ],
+              "abilities": [
+                "anchor"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  460,
+                  820
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  330,
+                  720
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  150,
+                  720
+                ],
+                "mode": "walk",
+                "expect": {
+                  "health_min": 5
+                }
+              }
+            ]
+          }
+        }
+      },
+      "hint": "沿颌骨台阶登高，再落向右侧出口",
+      "source_review": "xumen-layout-review-v1"
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "size": [
+        1640,
+        1180
+      ],
+      "spawn": [
+        180,
+        700
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "入口岸",
+          "x": 30,
+          "y": 700,
+          "w": 330,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "槽底台",
+          "x": 430,
+          "y": 850,
+          "w": 230,
+          "one_way": false
+        },
+        {
+          "id": "Surface2",
+          "name": "低顶横台",
+          "x": 720,
+          "y": 830,
+          "w": 300,
+          "one_way": false
+        },
+        {
+          "id": "Surface3",
+          "name": "上行中继",
+          "x": 1120,
+          "y": 700,
+          "w": 180,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "出口岸",
+          "x": 1400,
+          "y": 710,
+          "w": 170,
+          "one_way": false
+        },
+        {
+          "id": "Surface7",
+          "name": "浮游一阶",
+          "x": 80,
+          "y": 535,
+          "w": 200,
+          "one_way": true
+        },
+        {
+          "id": "Surface8",
+          "name": "浮游二阶",
+          "x": 100,
+          "y": 360,
+          "w": 200,
+          "one_way": true
+        },
+        {
+          "id": "Surface9",
+          "name": "喷气孔门台",
+          "x": 60,
+          "y": 180,
+          "w": 250,
+          "one_way": true
+        },
+        {
+          "id": "Surface10",
+          "name": "记忆袋门台",
+          "x": 1330,
+          "y": 210,
+          "w": 240,
+          "one_way": true
+        },
+        {
+          "id": "Surface11",
+          "name": "局部回收台",
+          "x": 400,
+          "y": 1050,
+          "w": 650,
+          "one_way": false
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall5",
+          "name": "中央悬垂骨壁",
+          "box": [
+            590,
+            170,
+            220,
+            530
+          ],
+          "removed": true
+        },
+        {
+          "id": "Wall6",
+          "name": "右侧拱肩",
+          "box": [
+            1000,
+            210,
+            130,
+            330
+          ],
+          "removed": true
+        }
+      ],
+      "rings": [
+        [
+          1180,
+          480
+        ],
+        [
+          1280,
+          365
+        ],
+        [
+          1390,
+          255
+        ]
+      ],
+      "camp": [],
+      "reward": [],
+      "doors": [
+        {
+          "pos": [
+            90,
+            700
+          ],
+          "to": 0,
+          "spawn": [
+            1415,
+            790
+          ],
+          "ability": ""
+        },
+        {
+          "pos": [
+            1510,
+            710
+          ],
+          "to": 2,
+          "spawn": [
+            210,
+            510
+          ],
+          "ability": ""
+        },
+        {
+          "pos": [
+            185,
+            180
+          ],
+          "to": 5,
+          "spawn": [
+            260,
+            840
+          ],
+          "ability": "float"
+        },
+        {
+          "pos": [
+            1460,
+            210
+          ],
+          "to": 6,
+          "spawn": [
+            230,
+            750
+          ],
+          "ability": ""
+        }
+      ],
+      "enemies": [
+        {
+          "pos": [
+            910,
+            830
+          ],
+          "boss": false,
+          "type": "corpse-crab"
+        }
+      ],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1672,
+          941
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ],
+              "invulnerable": true
+            },
+            "steps": [
+              {
+                "at": [
+                  330,
+                  700
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  490,
+                  850
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  630,
+                  850
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  810,
+                  830
+                ],
+                "mode": "jump",
+                "launch_x": 640,
+                "jump_hold": 2
+              },
+              {
+                "at": [
+                  970,
+                  830
+                ],
+                "mode": "walk",
+                "attack": true
+              },
+              {
+                "at": [
+                  1200,
+                  700
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1500,
+                  710
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "door",
+                "to": "R1-03"
+              }
+            ]
+          },
+          "memory": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ],
+              "invulnerable": true
+            },
+            "steps": [
+              {
+                "at": [
+                  330,
+                  700
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  490,
+                  850
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  630,
+                  850
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  810,
+                  830
+                ],
+                "mode": "jump",
+                "launch_x": 640,
+                "jump_hold": 2
+              },
+              {
+                "at": [
+                  970,
+                  830
+                ],
+                "mode": "walk",
+                "attack": true
+              },
+              {
+                "at": [
+                  1190,
+                  700
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  1180,
+                  535
+                ]
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  1280,
+                  420
+                ]
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  1390,
+                  310
+                ]
+              },
+              {
+                "at": [
+                  1460,
+                  210
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "door",
+                "to": "R1-07"
+              }
+            ]
+          },
+          "vent": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "float"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  180,
+                  535
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  200,
+                  360
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  185,
+                  180
+                ],
+                "mode": "float"
+              },
+              {
+                "mode": "door",
+                "to": "R1-06"
+              }
+            ]
+          }
+        }
+      },
+      "hint": "落入中央须槽，沿对壁回到主路",
+      "source_review": "xumen-layout-review-v1"
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "size": [
+        1640,
+        1120
+      ],
+      "spawn": [
+        180,
+        510
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "入口舌岸",
+          "x": 30,
+          "y": 510,
+          "w": 330,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "上层舌脊",
+          "x": 450,
+          "y": 440,
+          "w": 280,
+          "one_way": false
+        },
+        {
+          "id": "Surface2",
+          "name": "上层前庭",
+          "x": 820,
+          "y": 410,
+          "w": 220,
+          "one_way": false
+        },
+        {
+          "id": "Surface3",
+          "name": "右侧下降台",
+          "x": 1130,
+          "y": 580,
+          "w": 150,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "折返台",
+          "x": 830,
+          "y": 680,
+          "w": 260,
+          "one_way": false
+        },
+        {
+          "id": "Surface5",
+          "name": "左侧回转台",
+          "x": 390,
+          "y": 800,
+          "w": 310,
+          "one_way": false
+        },
+        {
+          "id": "Surface6",
+          "name": "膜下横廊",
+          "x": 800,
+          "y": 920,
+          "w": 410,
+          "one_way": false
+        },
+        {
+          "id": "Surface7",
+          "name": "右侧回升台",
+          "x": 1300,
+          "y": 770,
+          "w": 180,
+          "one_way": false
+        },
+        {
+          "id": "Surface8",
+          "name": "出口岸",
+          "x": 1410,
+          "y": 580,
+          "w": 160,
+          "one_way": true
+        },
+        {
+          "id": "Surface11",
+          "name": "护盾奖励台",
+          "x": 940,
+          "y": 225,
+          "w": 220,
+          "one_way": true
+        },
+        {
+          "id": "Surface13",
+          "name": "原膜下回弹落台",
+          "x": 720,
+          "y": 845,
+          "w": 170,
+          "one_way": false
+        },
+        {
+          "id": "Membrane",
+          "name": "承重膜",
+          "x": 650,
+          "y": 640,
+          "w": 270,
+          "one_way": true,
+          "membrane": true
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall9",
+          "name": "阻挡直穿的舌根",
+          "box": [
+            1110,
+            130,
+            105,
+            340
+          ],
+          "removed": true
+        },
+        {
+          "id": "Wall10",
+          "name": "折返隔层",
+          "box": [
+            1120,
+            650,
+            45,
+            160
+          ],
+          "removed": true
+        }
+      ],
+      "rings": [],
+      "camp": [],
+      "reward": [
+        1050,
+        201
+      ],
+      "doors": [
+        {
+          "pos": [
+            100,
+            510
+          ],
+          "to": 1,
+          "spawn": [
+            1435,
+            710
+          ],
+          "ability": ""
+        },
+        {
+          "pos": [
+            1500,
+            580
+          ],
+          "to": 3,
+          "spawn": [
+            334.0,
+            760
+          ],
+          "ability": ""
+        }
+      ],
+      "enemies": [
+        {
+          "pos": [
+            600,
+            440
+          ],
+          "boss": false,
+          "type": "corpse-crab"
+        },
+        {
+          "pos": [
+            1040,
+            920
+          ],
+          "boss": false,
+          "type": "corpse-crab"
+        }
+      ],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1672,
+          941
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ],
+              "invulnerable": true
+            },
+            "steps": [
+              {
+                "at": [
+                  300,
+                  510
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  600,
+                  440
+                ],
+                "mode": "jump",
+                "attack": true
+              },
+              {
+                "at": [
+                  940,
+                  410
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1210,
+                  580
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1100,
+                  580
+                ],
+                "mode": "walk",
+                "grounded": false
+              },
+              {
+                "at": [
+                  1030,
+                  680
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  780,
+                  640
+                ],
+                "mode": "jump",
+                "label": "jump onto load-bearing membrane"
+              },
+              {
+                "at": [
+                  570,
+                  800
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  730,
+                  800
+                ],
+                "mode": "walk",
+                "grounded": false
+              },
+              {
+                "at": [
+                  950,
+                  920
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1190,
+                  920
+                ],
+                "mode": "walk",
+                "attack": true
+              },
+              {
+                "at": [
+                  1380,
+                  770
+                ],
+                "mode": "jump",
+                "launch_x": 1195
+              },
+              {
+                "at": [
+                  1490,
+                  580
+                ],
+                "mode": "double"
+              },
+              {
+                "mode": "door",
+                "to": "R1-04"
+              }
+            ]
+          },
+          "reward": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ],
+              "invulnerable": true
+            },
+            "steps": [
+              {
+                "at": [
+                  300,
+                  510
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  600,
+                  440
+                ],
+                "mode": "jump",
+                "attack": true
+              },
+              {
+                "at": [
+                  940,
+                  410
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1050,
+                  225
+                ],
+                "mode": "double"
+              },
+              {
+                "mode": "interact",
+                "expect": {
+                  "collected": [
+                    "R1-03"
+                  ]
+                }
+              }
+            ]
+          },
+          "membrane": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ],
+              "invulnerable": true
+            },
+            "steps": [
+              {
+                "at": [
+                  300,
+                  510
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  600,
+                  440
+                ],
+                "mode": "jump",
+                "attack": true
+              },
+              {
+                "at": [
+                  740,
+                  440
+                ],
+                "mode": "walk",
+                "grounded": false
+              },
+              {
+                "at": [
+                  780,
+                  640
+                ],
+                "mode": "drop"
+              },
+              {
+                "mode": "wait",
+                "frames": 90
+              },
+              {
+                "at": [
+                  790,
+                  845
+                ],
+                "mode": "drop",
+                "through_membrane": true
+              },
+              {
+                "at": [
+                  790,
+                  640
+                ],
+                "mode": "jump",
+                "tolerance_y": 50,
+                "expect": {
+                  "events": [
+                    "membrane_sag",
+                    "membrane_dive",
+                    "membrane_rebound"
+                  ],
+                  "health_min": 5
+                }
+              }
+            ]
+          }
+        },
+        "membrane": {
+          "load_rect": [
+            650,
+            610,
+            270,
+            110
+          ],
+          "dive_rect": [
+            650,
+            -1000,
+            270,
+            1730
+          ],
+          "rebound_rect": [
+            720,
+            815,
+            170,
+            60
+          ],
+          "contour_path": "World/Terrain/Membrane/Contour",
+          "bend_from": 650,
+          "bend_to": 920,
+          "max_drop": 42,
+          "art_paths": [
+            "World/Art/MembraneArt"
+          ]
+        }
+      },
+      "hint": "上路通向护潮壳，膜下通道连接出口",
+      "source_review": "xumen-layout-review-v1"
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "size": [
+        2560,
+        1120
+      ],
+      "spawn": [
+        288.0,
+        760
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "返回 / 营地",
+          "x": 48.0,
+          "y": 760,
+          "w": 384.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "入场骨阶",
+          "x": 560.0,
+          "y": 660,
+          "w": 272.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface2",
+          "name": "下转台",
+          "x": 800.0,
+          "y": 800,
+          "w": 320.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface3",
+          "name": "中央战斗地面",
+          "x": 1088.0,
+          "y": 800,
+          "w": 1280.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "出口岸",
+          "x": 2320.0,
+          "y": 800,
+          "w": 192.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface7",
+          "name": "左侧换位台",
+          "x": 1136.0,
+          "y": 670,
+          "w": 272.0,
+          "one_way": false
+        },
+        {
+          "id": "Surface8",
+          "name": "右侧换位台",
+          "x": 1920.0,
+          "y": 670,
+          "w": 272.0,
+          "one_way": false
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall5",
+          "name": "遮挡骨肋",
+          "removed": true,
+          "box": [
+            448.0,
+            170,
+            104.0,
+            350
+          ]
+        },
+        {
+          "id": "Wall6",
+          "name": "上层入场顶",
+          "removed": true,
+          "box": [
+            624.0,
+            340,
+            384.0,
+            100
+          ]
+        }
+      ],
+      "rings": [],
+      "camp": [
+        340.0,
+        760
+      ],
+      "reward": [],
+      "doors": [
+        {
+          "pos": [
+            224.0,
+            760
+          ],
+          "to": 2,
+          "spawn": [
+            1490,
+            580
+          ],
+          "ability": ""
+        },
+        {
+          "pos": [
+            2416.0,
+            800
+          ],
+          "to": 4,
+          "spawn": [
+            260,
+            700
+          ],
+          "ability": "boss"
+        }
+      ],
+      "enemies": [
+        {
+          "pos": [
+            1680.0,
+            800
+          ],
+          "boss": true
+        }
+      ],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1591,
+          989
+        ],
+        "player_bounds": [
+          18,
+          2542
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "dash"
+              ],
+              "defeated": [
+                "R1-04:0"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  380,
+                  760
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  670,
+                  660
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1000,
+                  800
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1650,
+                  800
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  2390,
+                  800
+                ],
+                "mode": "walk"
+              },
+              {
+                "mode": "door",
+                "to": "R1-05"
+              }
+            ]
+          },
+          "combat": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  380,
+                  760
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  670,
+                  660
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1000,
+                  800
+                ],
+                "mode": "drop"
+              },
+              {
+                "budget": 10000,
+                "mode": "fight"
+              },
+              {
+                "at": [
+                  1650,
+                  800
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  2390,
+                  800
+                ],
+                "mode": "walk"
+              },
+              {
+                "mode": "door",
+                "to": "R1-05"
+              }
+            ]
+          }
+        },
+        "boss": {
+          "arena_bounds": [
+            1180,
+            2120
+          ],
+          "retreat_bounds": [
+            1005,
+            2210
+          ]
+        }
+      },
+      "hint": "曲折骨廊入场，中央展开为战斗空间",
+      "source_review": "xumen-layout-review-v1"
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "size": [
+        1640,
+        1120
+      ],
+      "spawn": [
+        180,
+        700
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "入口 / 营地",
+          "x": 30,
+          "y": 700,
+          "w": 320,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "抬升台",
+          "x": 440,
+          "y": 585,
+          "w": 210,
+          "one_way": false
+        },
+        {
+          "id": "Surface2",
+          "name": "低拱中继",
+          "x": 870,
+          "y": 585,
+          "w": 190,
+          "one_way": false
+        },
+        {
+          "id": "Surface3",
+          "name": "落台调整区",
+          "x": 1100,
+          "y": 735,
+          "w": 220,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "出口岸",
+          "x": 1410,
+          "y": 810,
+          "w": 160,
+          "one_way": false
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall5",
+          "name": "限制大跳的膜顶",
+          "box": [
+            680,
+            270,
+            390,
+            205
+          ],
+          "removed": true
+        },
+        {
+          "id": "Wall6",
+          "name": "出口骨拱",
+          "box": [
+            1350,
+            300,
+            180,
+            260
+          ],
+          "removed": true
+        }
+      ],
+      "rings": [],
+      "camp": [
+        250,
+        700
+      ],
+      "reward": [],
+      "doors": [
+        {
+          "pos": [
+            150,
+            700
+          ],
+          "to": 3,
+          "spawn": [
+            2306.0,
+            800
+          ],
+          "ability": ""
+        },
+        {
+          "pos": [
+            1510,
+            810
+          ],
+          "to": -1,
+          "spawn": [
+            0,
+            0
+          ],
+          "ability": ""
+        }
+      ],
+      "enemies": [],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1612,
+          976
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "dash"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  310,
+                  700
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  570,
+                  585
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  960,
+                  585
+                ],
+                "mode": "jump-dash",
+                "launch_x": 620,
+                "jump_hold": 2,
+                "dash_frame": 8
+              },
+              {
+                "at": [
+                  1010,
+                  585
+                ],
+                "mode": "walk"
+              },
+              {
+                "at": [
+                  1190,
+                  735
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1490,
+                  810
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "door",
+                "to": "R3-01"
+              }
+            ]
+          }
+        }
+      },
+      "hint": "沿错层踏台前进，冲刺后注意调整落点",
+      "source_review": "xumen-layout-review-v1",
+      "soft_beds": [
+        {
+          "from": 0,
+          "to": 650,
+          "y": 880
+        },
+        {
+          "from": 640,
+          "to": 1065,
+          "y": 880
+        },
+        {
+          "from": 1055,
+          "to": 1325,
+          "y": 950
+        },
+        {
+          "from": 1315,
+          "to": 1640,
+          "y": 970
+        }
+      ]
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "size": [
+        1640,
+        1180
+      ],
+      "spawn": [
+        180,
+        840
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "入口底岸",
+          "x": 30,
+          "y": 840,
+          "w": 330,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "右侧一阶",
+          "x": 560,
+          "y": 720,
+          "w": 240,
+          "one_way": true
+        },
+        {
+          "id": "Surface2",
+          "name": "左侧二阶",
+          "x": 220,
+          "y": 560,
+          "w": 240,
+          "one_way": true
+        },
+        {
+          "id": "Surface3",
+          "name": "右侧三阶",
+          "x": 730,
+          "y": 415,
+          "w": 250,
+          "one_way": true
+        },
+        {
+          "id": "Surface4",
+          "name": "左侧四阶",
+          "x": 470,
+          "y": 265,
+          "w": 230,
+          "one_way": true
+        },
+        {
+          "id": "Surface5",
+          "name": "奖励 / 远侧门台",
+          "x": 1110,
+          "y": 160,
+          "w": 460,
+          "one_way": true
+        },
+        {
+          "id": "Surface6",
+          "name": "顶前中继",
+          "x": 850,
+          "y": 210,
+          "w": 160,
+          "one_way": true
+        },
+        {
+          "id": "Surface9",
+          "name": "返程宽台",
+          "x": 1160,
+          "y": 780,
+          "w": 250,
+          "one_way": true
+        },
+        {
+          "id": "Surface10",
+          "name": "返程上接台",
+          "x": 1350,
+          "y": 430,
+          "w": 210,
+          "one_way": true
+        },
+        {
+          "id": "Surface11",
+          "name": "返程底台1",
+          "x": 780,
+          "y": 1040,
+          "w": 250,
+          "one_way": true
+        },
+        {
+          "id": "Surface12",
+          "name": "返程底台2",
+          "x": 420,
+          "y": 1040,
+          "w": 220,
+          "one_way": true
+        },
+        {
+          "id": "Surface13",
+          "name": "返程入口中继",
+          "x": 380,
+          "y": 930,
+          "w": 140,
+          "one_way": true
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall7",
+          "name": "气道上壁",
+          "box": [
+            860,
+            275,
+            120,
+            80
+          ],
+          "removed": true
+        },
+        {
+          "id": "Wall8",
+          "name": "气道下壁",
+          "box": [
+            1040,
+            520,
+            70,
+            160
+          ],
+          "removed": true
+        }
+      ],
+      "rings": [],
+      "camp": [],
+      "reward": [
+        1260,
+        136
+      ],
+      "doors": [
+        {
+          "pos": [
+            150,
+            840
+          ],
+          "to": 1,
+          "spawn": [
+            275,
+            180
+          ],
+          "ability": "float"
+        },
+        {
+          "pos": [
+            1500,
+            160
+          ],
+          "to": -2,
+          "spawn": [
+            0,
+            0
+          ],
+          "ability": "",
+          "message": "R2-05远侧闩只能从另一侧开启；请原路返回须筛。"
+        }
+      ],
+      "enemies": [],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1476,
+          1065
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "float"
+              ]
+            },
+            "steps": [
+              {
+                "at": [
+                  650,
+                  720
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  350,
+                  560
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  850,
+                  415
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  570,
+                  265
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  930,
+                  210
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  1260,
+                  160
+                ],
+                "mode": "float"
+              },
+              {
+                "mode": "interact",
+                "expect": {
+                  "collected": [
+                    "R1-06"
+                  ]
+                }
+              }
+            ]
+          },
+          "return": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "float"
+              ],
+              "spawn": [
+                1260,
+                160
+              ],
+              "collected": {
+                "R1-06": true
+              }
+            },
+            "steps": [
+              {
+                "label": "leave_reward_bank_right_edge",
+                "at": [
+                  1600,
+                  280
+                ],
+                "mode": "drop",
+                "grounded": false,
+                "tolerance_y": 75
+              },
+              {
+                "at": [
+                  1430,
+                  430
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1300,
+                  780
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  900,
+                  1040
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  530,
+                  1040
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  430,
+                  930
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  180,
+                  840
+                ],
+                "mode": "float"
+              },
+              {
+                "mode": "door",
+                "to": "R1-02"
+              }
+            ]
+          },
+          "far_latch": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "float"
+              ],
+              "spawn": [
+                1260,
+                160
+              ],
+              "collected": {
+                "R1-06": true
+              }
+            },
+            "steps": [
+              {
+                "label": "approach_far_latch",
+                "at": [
+                  1500,
+                  160
+                ],
+                "mode": "walk"
+              },
+              {
+                "label": "far_latch_rejects_interaction",
+                "mode": "door",
+                "expect": {
+                  "room": "R1-06",
+                  "restriction_contains": "未开放",
+                  "prompt_contains": "未开放",
+                  "health_min": 5
+                }
+              }
+            ]
+          }
+        }
+      },
+      "hint": "绕中央气道左右交替攀升",
+      "source_review": "xumen-layout-review-v1"
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "size": [
+        1640,
+        1120
+      ],
+      "spawn": [
+        180,
+        750
+      ],
+      "platforms": [
+        {
+          "id": "Surface0",
+          "name": "入口岸",
+          "x": 30,
+          "y": 750,
+          "w": 330,
+          "one_way": false
+        },
+        {
+          "id": "Surface1",
+          "name": "两环后的停顿台",
+          "x": 520,
+          "y": 450,
+          "w": 260,
+          "one_way": true
+        },
+        {
+          "id": "Surface2",
+          "name": "背侧奖励台",
+          "x": 1150,
+          "y": 285,
+          "w": 420,
+          "one_way": true
+        },
+        {
+          "id": "Surface3",
+          "name": "返程一阶",
+          "x": 1220,
+          "y": 590,
+          "w": 350,
+          "one_way": false
+        },
+        {
+          "id": "Surface4",
+          "name": "返程二阶",
+          "x": 730,
+          "y": 820,
+          "w": 310,
+          "one_way": false
+        },
+        {
+          "id": "Surface7",
+          "name": "末环落点",
+          "x": 1040,
+          "y": 345,
+          "w": 160,
+          "one_way": true
+        },
+        {
+          "id": "Surface8",
+          "name": "失误回收台",
+          "x": 380,
+          "y": 1050,
+          "w": 580,
+          "one_way": false
+        },
+        {
+          "id": "Surface9",
+          "name": "返程左台",
+          "x": 390,
+          "y": 900,
+          "w": 250,
+          "one_way": false
+        },
+        {
+          "id": "Surface10",
+          "name": "返程入口中继",
+          "x": 380,
+          "y": 850,
+          "w": 120,
+          "one_way": false
+        }
+      ],
+      "walls": [
+        {
+          "id": "Wall5",
+          "name": "中央骨柱下段",
+          "box": [
+            820,
+            500,
+            180,
+            210
+          ],
+          "removed": true
+        },
+        {
+          "id": "Wall6",
+          "name": "中央骨柱上段",
+          "box": [
+            850,
+            130,
+            150,
+            90
+          ],
+          "removed": true
+        }
+      ],
+      "rings": [
+        [
+          400,
+          585
+        ],
+        [
+          530,
+          490
+        ],
+        [
+          790,
+          325
+        ],
+        [
+          1020,
+          215
+        ]
+      ],
+      "camp": [],
+      "reward": [
+        1350,
+        261
+      ],
+      "doors": [
+        {
+          "pos": [
+            120,
+            750
+          ],
+          "to": 1,
+          "spawn": [
+            1365,
+            210
+          ],
+          "ability": ""
+        }
+      ],
+      "enemies": [],
+      "layout": {
+        "version": 1,
+        "legacy_size": [
+          1572,
+          1001
+        ],
+        "player_bounds": [
+          18,
+          1622
+        ],
+        "checkpoint_lanes": [],
+        "qa_routes": {
+          "main": {
+            "fixture": {
+              "abilities": [
+                "anchor"
+              ]
+            },
+            "steps": [
+              {
+                "mode": "grapple",
+                "at": [
+                  400,
+                  640
+                ]
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  530,
+                  545
+                ]
+              },
+              {
+                "at": [
+                  650,
+                  450
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  790,
+                  380
+                ]
+              },
+              {
+                "mode": "grapple",
+                "at": [
+                  1020,
+                  270
+                ]
+              },
+              {
+                "at": [
+                  1300,
+                  285
+                ],
+                "mode": "jump"
+              },
+              {
+                "mode": "interact",
+                "expect": {
+                  "collected": [
+                    "R1-07"
+                  ],
+                  "abilities": [
+                    "float"
+                  ]
+                }
+              }
+            ]
+          },
+          "return": {
+            "fixture": {
+              "abilities": [
+                "anchor",
+                "float"
+              ],
+              "spawn": [
+                1350,
+                285
+              ],
+              "collected": {
+                "R1-07": true
+              }
+            },
+            "steps": [
+              {
+                "at": [
+                  1610,
+                  370
+                ],
+                "mode": "walk",
+                "grounded": false,
+                "tolerance_x": 6,
+                "tolerance_y": 30
+              },
+              {
+                "at": [
+                  1500,
+                  590
+                ],
+                "mode": "drop"
+              },
+              {
+                "at": [
+                  1000,
+                  820
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  530,
+                  900
+                ],
+                "mode": "float"
+              },
+              {
+                "at": [
+                  430,
+                  850
+                ],
+                "mode": "jump"
+              },
+              {
+                "at": [
+                  150,
+                  750
+                ],
+                "mode": "float"
+              },
+              {
+                "mode": "door",
+                "to": "R1-02"
+              }
+            ]
+          }
+        }
+      },
+      "hint": "借助圆环逐层上行，取得记忆后由下层返回",
+      "source_review": "xumen-layout-review-v1"
+    }
+  ]
+}

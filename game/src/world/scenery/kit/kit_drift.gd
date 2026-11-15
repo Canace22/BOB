@@ -12,6 +12,7 @@ extends Node2D
 @export var tint: Color = Color.WHITE
 @export var turn_degrees: float = 0.0
 @export var seed_id: int = 1
+@export var external_clock: bool = false
 @export var progress_flag: String = ""
 @export var unlocked_velocity: Vector2 = Vector2.ZERO
 @export_range(0.0, 1.0) var unlocked_opacity: float = 0.2
@@ -36,7 +37,7 @@ func _ready() -> void:
 	update_at(0.0)
 
 func _process(delta: float) -> void:
-	update_at(time + delta)
+	if not external_clock: update_at(time + delta)
 
 func update_at(t: float) -> void:
 	var next_time: float = maxf(t, 0.0)

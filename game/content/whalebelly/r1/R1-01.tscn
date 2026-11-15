@@ -1,68 +1,616 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3]
 
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="doorway_script"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="1"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="2"]
+[ext_resource type="Texture2D" path="res://art/xumen-scale-v1/oral-depth.png" id="3"]
+[ext_resource type="Script" path="res://src/world/scenery/chapter/pinned_bitmap.gd" id="4"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/painted_layer.gd" id="5"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/painted_edges.gdshader" id="6"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/foreground_edges/CLEAN-ENV-UNDERPAINT.png" id="7"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-ROOF.png" id="8"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/foreground_edges/CLEAN-WALL-L.png" id="9"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/foreground_edges/CLEAN-WALL-R.png" id="10"]
+[ext_resource type="Shader" path="res://content/whalebelly/environment/elements/extraction_alpha.gdshader" id="11"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png" id="12"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png" id="13"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png" id="14"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png" id="15"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png" id="16"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png" id="17"]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/baleen_frames.gd" id="18"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png" id="19"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/VINE-01.png" id="20"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/VINE-02.png" id="21"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/foreground_clearance.gdshader" id="22"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/foreground_edges/FRONT-BOTTOM-PAD.png" id="23"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/foreground_edges/FRONT-TOP-LEFT.png" id="24"]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="25"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="26"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/background_current.gd" id="27"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/bitmap_cutout.gdshader" id="28"]
+[ext_resource type="Texture2D" path="res://art/xumen-original-style-v1/original-ledge.png" id="29"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="30"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="31"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/PORTAL.png" id="32"]
+[ext_resource type="Script" path="res://src/world/scenery/chapter/fish_group.gd" id="33"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="34"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="35"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="36"]
+[ext_resource type="Script" path="res://src/world/scenery/layout/layout_environment.gd" id="37"]
 
-[ext_resource type="PackedScene" path="res://content/whalebelly/environment/xumen_reference.tscn" id="1"]
+[sub_resource type="ShaderMaterial" id="m1"]
+shader = ExtResource("2")
+shader_parameter/recess = 0.18
+shader_parameter/water_strength = 0.065
+shader_parameter/water_phase = 0.91
 
-[ext_resource type="Texture2D" path="res://art/whalebelly/reference_environment/CHARACTER.png" id="2"]
+[sub_resource type="ShaderMaterial" id="m2"]
+shader = ExtResource("6")
+shader_parameter/feather_pixels = 18.0
+shader_parameter/water_strength = 0.065
+shader_parameter/water_phase = 0.91
 
-[ext_resource type="PackedScene" path="res://content/whalebelly/environment/continuity/E01_R1-01.tscn" id="seam_E01"]
+[sub_resource type="ShaderMaterial" id="m3"]
+shader = ExtResource("6")
+shader_parameter/fade_lower = true
+shader_parameter/fade_from = 0.3
+shader_parameter/fade_to = 0.88
+
+[sub_resource type="ShaderMaterial" id="m4"]
+shader = ExtResource("11")
+shader_parameter/clean_from_y = 115.0
+shader_parameter/cut_after_y = 235.0
+
+[sub_resource type="ShaderMaterial" id="m5"]
+shader = ExtResource("22")
+shader_parameter/zone_count = 8
+shader_parameter/clear_zones = PackedVector4Array(-10,580,430,210,410,490,300,210,720,370,350,210,1100,510,300,210,1340,650,270,210,270,810,820,210,360,680,230,210,1420,580,180,280)
+
+[sub_resource type="ShaderMaterial" id="m6"]
+shader = ExtResource("28")
 
 
+[sub_resource type="ShaderMaterial" id="m7"]
+shader = ExtResource("30")
+shader_parameter/bounds = Vector4(38,732,334,105.0)
+
+[sub_resource type="ShaderMaterial" id="m8"]
+shader = ExtResource("30")
+shader_parameter/bounds = Vector4(1388,802,174,101.78928046989721)
+
+[sub_resource type="ShaderMaterial" id="m9"]
+shader = ExtResource("30")
+shader_parameter/bounds = Vector4(318,962,724,240.0)
+
+[sub_resource type="ShaderMaterial" id="m10"]
+shader = ExtResource("28")
+
+
+[sub_resource type="ShaderMaterial" id="m11"]
+shader = ExtResource("11")
+
+
+[sub_resource type="ShaderMaterial" id="m12"]
+shader = ExtResource("11")
 
 
 [node name="R1-01" type="Node2D"]
 
-[node name="ReferenceEnvironment" parent="." instance=ExtResource("1")]
-
-scale = Vector2(1.30546875, 1.30546875)
-
-level_mode = true
-
-[node name="CHARACTER" parent="ReferenceEnvironment" index="43"]
-
-visible = false
 
 [node name="Far" type="Node2D" parent="."]
+z_index = -30
 
 [node name="Middle" type="Node2D" parent="."]
+z_index = -15
+script = ExtResource("5")
+room_center = Vector2(820.0,560.0)
+response = 0.025
+limit = Vector2(8,5)
 
 [node name="World" type="Node2D" parent="."]
+z_index = 0
 
 [node name="Foreground" type="Node2D" parent="."]
+z_index = 10
+script = ExtResource("5")
+room_center = Vector2(820.0,560.0)
+response = -0.04
+limit = Vector2(12,7)
+
+[node name="Art" type="Node2D" parent="World"]
+
 
 [node name="Terrain" type="Node2D" parent="World"]
 
+
+[node name="Depth" type="Node2D" parent="Far"]
+script = ExtResource("1")
+factor = 0.14
+room_center = Vector2(820.0,560.0)
+
+[node name="Paint" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("3")
+position = Vector2(-254.629,-44.8)
+scale = Vector2(1.285,1.285)
+centered = false
+z_index = 0
+material = SubResource("m1")
+modulate = Color(0.76,0.84,0.88,1)
+
+[node name="OriginalOralFar" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("7")
+position = Vector2(-255.2,-44.8)
+scale = Vector2(1.68,1.68)
+centered = false
+z_index = 0
+material = SubResource("m2")
+modulate = Color(0.76,0.84,0.88,0.84)
+
+[node name="OriginalChamber" type="Sprite2D" parent="Middle"]
+texture = ExtResource("8")
+position = Vector2(-175,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="OriginalWallL" type="Sprite2D" parent="Middle"]
+texture = ExtResource("9")
+position = Vector2(-175.0,-60.0)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+material = SubResource("m3")
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="OriginalWallR" type="Sprite2D" parent="Middle"]
+texture = ExtResource("10")
+position = Vector2(1634.656,-60.0)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+material = SubResource("m3")
+modulate = Color(0.88,0.91,0.94,1)
+
+[node name="Root0" type="Sprite2D" parent="Middle"]
+texture = ExtResource("12")
+position = Vector2(-35.078,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+material = SubResource("m4")
+
+[node name="Root1" type="Sprite2D" parent="Middle"]
+texture = ExtResource("13")
+position = Vector2(221.445,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="Root2" type="Sprite2D" parent="Middle"]
+texture = ExtResource("14")
+position = Vector2(481.078,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="Root3" type="Sprite2D" parent="Middle"]
+texture = ExtResource("15")
+position = Vector2(718.945,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="Root4" type="Sprite2D" parent="Middle"]
+texture = ExtResource("16")
+position = Vector2(947.484,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="Root5" type="Sprite2D" parent="Middle"]
+texture = ExtResource("17")
+position = Vector2(1193.125,-60)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="OriginalBaleen0" type="Sprite2D" parent="Middle"]
+script = ExtResource("18")
+texture = ExtResource("19")
+centered = false
+position = Vector2(160.085,-296.748)
+scale = Vector2(2.009,2.009)
+rotation = 0.001436
+hframes = 8
+vframes = 6
+external_clock = true
+frame_count = 48
+playback_fps = 12.0
+phase_offset_frames = 0
+z_index = -1
+
+[node name="OriginalBaleen1" type="Sprite2D" parent="Middle"]
+script = ExtResource("18")
+texture = ExtResource("19")
+centered = false
+position = Vector2(826.979,-321.491)
+scale = Vector2(1.292,1.292)
+rotation = 0.29594
+hframes = 8
+vframes = 6
+external_clock = true
+frame_count = 48
+playback_fps = 12.0
+phase_offset_frames = 13
+z_index = -1
+
+[node name="OriginalBaleen2" type="Sprite2D" parent="Middle"]
+script = ExtResource("18")
+texture = ExtResource("19")
+centered = false
+position = Vector2(1178.976,-234.022)
+scale = Vector2(1.677,1.677)
+rotation = 0.16903
+hframes = 8
+vframes = 6
+external_clock = true
+frame_count = 48
+playback_fps = 12.0
+phase_offset_frames = 27
+z_index = -1
+
+[node name="Fringe0" type="MeshInstance2D" parent="Middle"]
+script = ExtResource("4")
+texture = ExtResource("20")
+position = Vector2(205.0,738)
+amplitude = 1.8
+period = 9.0
+
+[node name="Fringe1" type="MeshInstance2D" parent="Middle"]
+script = ExtResource("4")
+texture = ExtResource("21")
+position = Vector2(560.0,648)
+amplitude = 1.8
+period = 10.0
+
+[node name="OriginalNearBone" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("23")
+position = Vector2(-224.75,25.875)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+material = SubResource("m5")
+
+[node name="OriginalNearCorner" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("24")
+position = Vector2(-224.75,-109.75)
+scale = Vector2(1.555,1.555)
+centered = false
+z_index = 0
+
+[node name="WaterLight0" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("26")
+position = Vector2(-175.2,-89.6)
+scale = Vector2(1.838,1.838)
+centered = false
+z_index = 3
+script = ExtResource("25")
+external_clock = true
+intensity = 0.12
+period = 18
+phase = 0.6
+
+[node name="WaterLight1" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("26")
+position = Vector2(390.667,-89.6)
+scale = Vector2(1.677,1.677)
+centered = false
+z_index = 3
+script = ExtResource("25")
+external_clock = true
+intensity = 0.0984
+period = 27
+phase = 2.4
+
+[node name="WaterLight2" type="Sprite2D" parent="Far/Depth"]
+texture = ExtResource("26")
+position = Vector2(923.733,-89.6)
+scale = Vector2(1.517,1.517)
+centered = false
+z_index = 3
+script = ExtResource("25")
+external_clock = true
+intensity = 0.0768
+period = 36
+phase = 4.2
+
+[node name="BackgroundCurrent" type="Node2D" parent="."]
+script = ExtResource("27")
+
+[node name="Surface0_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(10.372,681.993)
+scale = Vector2(0.18,0.18)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
 [node name="Surface0" type="StaticBody2D" parent="World/Terrain"]
 
+
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface0"]
+polygon = PackedVector2Array(44,720,76.66,720.0,119.44,719.48,162.22,721.04,205.0,720.0,247.78,720.26,290.56,720.78,333.34,719.74,366,720,366,750,44,750)
+one_way_collision = false
+one_way_collision_margin = 6.0
 
-polygon = PackedVector2Array(0.0, 610.959, 78.328, 612.265, 156.656, 614.876, 234.984, 616.181, 313.312, 613.57, 365.531, 614.876, 404.695, 612.265, 430.805, 596.599, 456.914, 582.239, 483.023, 577.017, 509.133, 577.017, 561.352, 577.017, 613.57, 575.712, 652.734, 571.795, 678.844, 565.268, 704.953, 553.519, 731.062, 536.548, 757.172, 532.631, 783.281, 530.02, 809.391, 526.104, 835.5, 522.188, 861.609, 522.188, 887.719, 526.104, 913.828, 530.02, 939.938, 532.631, 966.047, 535.242, 992.156, 537.853, 1018.266, 541.77, 1044.375, 548.297, 1070.484, 558.741, 1090.066, 575.712, 1109.648, 600.516, 1122.703, 616.181, 1148.812, 617.487, 1174.922, 621.403, 1201.031, 633.152, 1253.25, 651.429, 1305.469, 659.262, 1357.688, 663.178, 1409.906, 664.484, 1462.125, 664.484, 1514.344, 663.178, 1566.562, 659.262, 1592.672, 656.651, 1618.781, 631.847, 1644.891, 600.516, 1671.0, 587.461, 1671.0, 627.461, 1644.891, 640.516, 1618.781, 671.847, 1592.672, 696.651, 1566.562, 699.262, 1514.344, 703.178, 1462.125, 704.484, 1409.906, 704.484, 1357.688, 703.178, 1305.469, 699.262, 1253.25, 691.429, 1201.031, 673.152, 1174.922, 661.403, 1148.812, 657.487, 1122.703, 656.181, 1109.648, 640.516, 1090.066, 615.712, 1070.484, 598.741, 1044.375, 588.297, 1018.266, 581.77, 992.156, 577.853, 966.047, 575.242, 939.938, 572.631, 913.828, 570.02, 887.719, 566.104, 861.609, 562.188, 835.5, 562.188, 809.391, 566.104, 783.281, 570.02, 757.172, 572.631, 731.062, 576.548, 704.953, 593.519, 678.844, 605.268, 652.734, 611.795, 613.57, 615.712, 561.352, 617.017, 509.133, 617.017, 483.023, 617.017, 456.914, 622.239, 430.805, 636.599, 404.695, 652.265, 365.531, 654.876, 313.312, 653.57, 234.984, 656.181, 156.656, 654.876, 78.328, 652.265, 0.0, 650.959)
-
-[node name="PlayerArt" type="Node2D" parent="World"]
-
-[node name="OriginalSilhouette" type="Sprite2D" parent="World/PlayerArt"]
-
-position = Vector2(178.84921875, 514.3546875)
-
-scale = Vector2(1.30546875, 1.30546875)
-
-texture = ExtResource("2")
-
+[node name="Surface1_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(434.127,605.419)
+scale = Vector2(0.116,0.116)
 centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
 
-[editable path="ReferenceEnvironment"]
+[node name="Surface1" type="StaticBody2D" parent="World/Terrain"]
 
-[node name="Continuity_E01" parent="." instance=ExtResource("seam_E01")]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(464,630,476.998,630.0,504.665,629.664,532.332,630.672,560.0,630.0,587.668,630.168,615.335,630.504,643.003,629.832,656,630,656,660,464,660)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="Surface2_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(742.683,480.256)
+scale = Vector2(0.141,0.141)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface2" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface2"]
+polygon = PackedVector2Array(774,510,794.56,510.0,828.04,509.593,861.52,510.814,895.0,510.0,928.48,510.203,961.96,510.61,995.44,509.797,1016,510,1016,540,774,540)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="Surface3_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(1124.127,625.419)
+scale = Vector2(0.116,0.116)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface3" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface3"]
+polygon = PackedVector2Array(1154,650,1166.997,650.0,1194.665,649.664,1222.332,650.672,1250.0,650.0,1277.668,650.168,1305.335,650.504,1333.003,649.832,1346,650,1346,680,1154,680)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="Surface4_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(1364.993,768.518)
+scale = Vector2(0.102,0.102)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface4" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface4"]
+polygon = PackedVector2Array(1394,790,1402.46,790.0,1426.64,789.706,1450.82,790.588,1475.0,790.0,1499.18,790.147,1523.36,790.441,1547.54,789.853,1556,790,1556,820,1394,820)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="Surface7_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(289.795,909.928)
+scale = Vector2(0.19,0.19)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface7_1" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(659.795,909.928)
+scale = Vector2(0.19,0.19)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="Surface7" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface7"]
+polygon = PackedVector2Array(324,950,359.685,950.0,404.79,949.452,449.895,951.096,495.0,950.0,540.105,950.274,585.21,950.822,630.315,949.726,675.42,947.808,684.58,949.452,729.685,950.0,774.79,949.452,819.895,951.096,865.0,950.0,910.105,950.274,955.21,950.822,1000.315,949.726,1036,950,1036,980,324,980)
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="RecoveryStep_0" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(386.148,802.649)
+scale = Vector2(0.082,0.082)
+centered = false
+z_index = 0
+material = SubResource("m6")
+modulate = Color(0.84,0.88,0.91,1)
+
+[node name="RecoveryStep" type="StaticBody2D" parent="World/Terrain"]
+
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/RecoveryStep"]
+polygon = PackedVector2Array(414,820,416.41,820.0,435.94,819.763,455.47,820.475,475.0,820.0,494.53,820.119,514.06,820.356,533.59,819.881,536,820,536,850,414,850)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface0_NativeMass" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(32.688,697.148)
+scale = Vector2(0.159,0.159)
+centered = false
+z_index = -1
+material = SubResource("m7")
+modulate = Color(0.68,0.76,0.8,1)
+
+[node name="Surface4_NativeMass" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(1309.196,768.389)
+scale = Vector2(0.153,0.153)
+centered = false
+z_index = -1
+material = SubResource("m8")
+modulate = Color(0.68,0.76,0.8,1)
+
+[node name="Surface7_NativeMass" type="Sprite2D" parent="World/Art"]
+texture = ExtResource("29")
+position = Vector2(234.015,874.972)
+scale = Vector2(0.413,0.413)
+centered = false
+z_index = -1
+material = SubResource("m9")
+modulate = Color(0.68,0.76,0.8,1)
 
 [node name="Doorways" type="Node2D" parent="."]
 
+
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("doorway_script")
+script = ExtResource("31")
 destination_id = "R1-02"
 kind = "passage"
 direction = 1.0
-height = 200.0
-art_offset = Vector2(-32, 0)
-radius = 120.0
-prompt_offset = Vector2(-32, -216)
+height = 170.0
+prompt_offset = Vector2(0,-195)
+tunnel_texture = ExtResource("32")
+threshold_region = Rect2(0,145,130,14)
+texture_bounds = Rect2(0,4,126,155)
+tunnel_material = SubResource("m11")
+
+[node name="CampArt" type="Sprite2D" parent="World"]
+texture = ExtResource("32")
+position = Vector2(82.5,549.643)
+scale = Vector2(1.071,1.071)
+centered = false
+z_index = 1
+material = SubResource("m12")
+
+[node name="DistantSchool" type="Node2D" parent="Far/Depth"]
+script = ExtResource("33")
+bounds = Rect2(40,156.8,1560,403.2)
+population = 18
+species = 0
+phase = 1.5
+fish_widths = Vector2(14,23)
+school_tint = Color(0.4,0.65,0.76,0.38)
+path_seconds = 56
+swim_seconds = 2.8
+migrate = true
+reverse = false
+formation_size = Vector2(430,145.6)
+z_index = 2
+
+[node name="School0" type="Node2D" parent="Middle"]
+script = ExtResource("33")
+bounds = Rect2(60,302.4,1520,291.2)
+population = 14
+species = 0
+phase = 2.7
+fish_widths = Vector2(30,46)
+school_tint = Color(0.68,0.84,0.88,0.65)
+path_seconds = 36
+swim_seconds = 3.05
+migrate = true
+reverse = false
+formation_size = Vector2(430,145.6)
+z_index = 2
+
+[node name="School1" type="Node2D" parent="Middle"]
+script = ExtResource("33")
+bounds = Rect2(787.2,537.6,574.0,246.4)
+population = 10
+species = 1
+phase = 3.9
+fish_widths = Vector2(23,35)
+school_tint = Color(0.52,0.78,0.78,0.56)
+path_seconds = 32
+swim_seconds = 3.3
+migrate = false
+reverse = false
+formation_size = Vector2(430,145.6)
+z_index = 2
+
+[node name="LanternSchool" type="Node2D" parent="Middle"]
+script = ExtResource("33")
+bounds = Rect2(80,649.6,1480,179.2)
+population = 5
+species = 2
+phase = 5.1
+fish_widths = Vector2(18,27)
+school_tint = Color(0.7,0.8,0.74,0.52)
+path_seconds = 48
+swim_seconds = 3.55
+migrate = true
+reverse = true
+formation_size = Vector2(430,145.6)
+z_index = 2
+
+[node name="Bubbles0" type="Node2D" parent="Middle"]
+script = ExtResource("34")
+bounds = Rect2(426,134,246,896)
+population = 12
+external_clock = true
+seed_id = 0
+size_range = Vector2(3.5,8)
+base_speed = 13
+bubble_opacity = 0.34
+z_index = 1
+
+[node name="Bubbles1" type="Node2D" parent="Middle"]
+script = ExtResource("34")
+bounds = Rect2(1132,134,246,896)
+population = 12
+external_clock = true
+seed_id = 7
+size_range = Vector2(3.5,8)
+base_speed = 16
+bubble_opacity = 0.34
+z_index = 1
+
+[node name="NearBubbles" type="Node2D" parent="World"]
+script = ExtResource("34")
+bounds = Rect2(131,134,1378,896)
+population = 7
+external_clock = true
+seed_id = 14
+size_range = Vector2(8,16)
+base_speed = 19
+bubble_opacity = 0.18
+z_index = 2
+
+[node name="MarineSnow" type="Node2D" parent="Middle"]
+script = ExtResource("35")
+texture = ExtResource("36")
+bounds = Rect2(20,80,1600,980)
+population = 42
+velocity = Vector2(4.5,6.5)
+sway = 9.0
+size_range = Vector2(2.5,6.0)
+opacity = 0.24
+tint = Color(0.58,0.77,0.80,1)
+seed_id = 170
+external_clock = true
+z_index = 3
+
+[node name="LayoutEnvironment" type="Node2D" parent="."]
+script = ExtResource("37")

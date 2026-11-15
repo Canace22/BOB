@@ -8,6 +8,7 @@ func test_ui_font_covers_current_chinese_text() -> void:
 		_collect(directory, characters)
 	# Room names and door notices of later regions are shown from generated data.
 	_scan(FileAccess.get_file_as_string("res://content/whalebelly/world/rooms.json"), characters)
+	_scan(FileAccess.get_file_as_string("res://content/whalebelly/layout/rooms.json"), characters)
 	for code: int in characters:
 		check(font.has_char(code), "UI font missing: " + String.chr(code))
 

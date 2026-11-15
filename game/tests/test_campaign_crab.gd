@@ -19,8 +19,12 @@ func test_real_mother_crab_replaces_only_the_boss() -> void:
 	var crab: CampaignCrabBoss = host.enemies[0].actor
 	eq(crab.data.key,"R1-04:0","existing stable save ID preserved")
 	eq(crab.data.max_hp,180,"first campaign boss health budget")
+	var bounds: Array = host.room.layout.boss.arena_bounds
+	eq(crab.arena_bounds,Vector2(float(bounds[0]),float(bounds[1])),"boss movement uses the authored relocated arena")
+	check(crab.position.x >= crab.arena_bounds.x and crab.position.x <= crab.arena_bounds.y,"boss starts inside the relocated arena")
 	eq(tree.get_nodes_in_group("tide_targets").filter(func(n: Node) -> bool: return n is CampaignCrabTarget).size(),1,"one live mother crab target")
-	check(not host.scenery.get_node("World/EnemyArt0").visible,"old cutout hidden")
+	var old_cutout := host.scenery.get_node_or_null("World/EnemyArt0") as CanvasItem
+	check(old_cutout == null or not old_cutout.visible,"authored boss has no duplicate static cutout")
 	check(crab.visual.texture != null,"real atlas loaded")
 	check(not host.abilities.dash,"boss does not grant an ability on spawn")
 	host.load_room(1)
@@ -91,7 +95,7 @@ func test_attack_bounds_jump_dodge_and_safe_corner_sequence() -> void:
 	crab.facing = 1
 	check(not crab.attack_rect().intersects(ground),"attack cannot hit behind shell")
 	crab.phase = 2
-	crab.target.position.x = 290
+	crab.target.position.x = crab.retreat_bounds.x + 5.0
 	crab.facing = -1
 	crab.sequence = ["sweep","slam"]
 	crab.sequence_index = 0
@@ -114,5 +118,6 @@ func test_defeat_opens_existing_gate_and_survives_room_reload() -> void:
 	host.load_progress()
 	host.load_room(3)
 	check(not host.enemies[0].alive and not host.enemies[0].has("actor"),"defeated mother crab stays removed")
-	check(not host.scenery.get_node("World/EnemyArt0").visible,"old cutout also stays removed")
+	var old_cutout := host.scenery.get_node_or_null("World/EnemyArt0") as CanvasItem
+	check(old_cutout == null or not old_cutout.visible,"static cutout stays absent or hidden after defeat")
 	check(host.abilities.dash,"earned dash survives reload")

@@ -38,7 +38,7 @@ func _ready() -> void:
 	surface.set_shader_parameter("phase",phase)
 	if root_profile.size()!=13:
 		root_profile.resize(13)
-		surface.set_shader_parameter("root_heights",root_profile)
+	surface.set_shader_parameter("root_heights",root_profile)
 	material = surface
 	update_at(0)
 

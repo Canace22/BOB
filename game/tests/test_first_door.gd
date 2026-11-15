@@ -1,5 +1,6 @@
 extends TestSuite
-## Walk to the reported painted doorway using normal input, not a door-position fixture.
+## The complete ascent is covered by xumen_layout_routes.gd; this fixture
+## isolates the final bank, visible threshold, input and transition contract.
 
 func test_visible_first_door_accepts_interaction() -> void:
 	var host: WhalebellyMain = load("res://content/whalebelly/main.tscn").instantiate()
@@ -8,14 +9,20 @@ func test_visible_first_door_accepts_interaction() -> void:
 	host.integration_external_test = true
 	add(host)
 	await physics_frames(30)
+	var door: Dictionary = host.room.doors[0]
+	var lane: Dictionary = host.room.layout.checkpoint_lanes.filter(func(value: Dictionary) -> bool: return float(value.x[0]) < float(door.pos[0]) and float(value.x[1]) > float(door.pos[0]) and absf(float(value.y) - float(door.pos[1])) < 24.0)[0]
+	host.player.position = Vector2(float(lane.x[0]) + 4.0, float(lane.y) - 4.0)
+	host.player.velocity = Vector2.ZERO
+	await physics_frames(15)
+	var approach_x: float = float(door.pos[0]) - 45.0
 	Input.action_press("tp_right")
-	for frame: int in 600:
+	for frame: int in 120:
 		await physics_frames(1)
-		if host.player.position.x >= 1495.0: break
+		if host.player.position.x >= approach_x: break
 	Input.action_release("tp_right")
 	await physics_frames(25)
 	eq(host.room_index, 0, "approaching the visible door stays in the first room")
-	check(host.player.is_on_floor(), "normal walking reaches the door on the road")
+	check(host.player.position.x >= approach_x and host.player.is_on_floor(), "normal input approaches the visible door from its final bank")
 	check(not host.player_ui.data.prompt().is_empty() and host.player_ui.data.prompt_door() != null, "painted door approach offers interaction")
 	var entrance: CampaignDoorway = host.continuity.doorways[0]
 	check(is_instance_valid(entrance.inset) and is_instance_valid(entrance.lip), "passage has a visible painted entrance")

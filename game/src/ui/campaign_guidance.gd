@@ -44,13 +44,13 @@ static func hint(host: Node2D) -> String:
 	if host.abilities.get("ending", false): return objective(host)
 	match str(host.room.id):
 		"R1-07":
-			return "← 左门返回须筛 · 下高台后沿下层向右" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
+			return "奖励台右缘下落 · 沿下层到左门返回须筛" if host.collected.get("R1-07", false) else "可选支路 → 越过断口，拾取记忆与浮游"
 		"R1-06":
 			return "← 沿台阶下行返回须筛 · 远侧通路未开放" if host.collected.get("R1-06", false) else "可选支路 → 右上方厚壳碎片 · 护盾上限 +1，原路返回"
-	if host.room.has("hint"): return str(host.room.hint)
-	if host.completed:
+	if host.completed and CampaignWorld.region(str(host.room.id)) == "R1":
 		if not onward(host): return "首关完成 · 后续区域未开放，可回访支路"
 		return "主线 → 右侧出口：胃枢" if str(host.room.id) == "R1-05" else "须门遗港已贯通 · 流膜育窝右侧出口通往胃枢"
+	if host.room.has("hint"): return str(host.room.hint)
 	match str(host.room.id):
 		"R1-01": return "主线 → 沿骨路前往须筛"
 		"R1-02": return "主线 → 下层右门：舌台"
@@ -66,13 +66,13 @@ static func description(host: Node2D, id: String) -> String:
 			return "主线：下层向右前往舌台。\n" + optional
 		"R1-07":
 			if host.collected.get(id, false):
-				return "支路已完成 · 左门返回须筛，从高台左缘落回下层，再向右去舌台。"
+				return "支路已完成 · 从奖励台右缘下落，沿下层向左返回须筛；回到须筛后，从门台左缘落回主路，向右前往舌台。"
 			return "可选支路 · 取得浮游后原路返回，没有右侧出口。"
 		"R1-03": return "右上平台可取得护潮壳，增加两点护盾；右门通往负壳蟹。"
 		"R1-06":
 			if not host.has_ability("float"):
 				return "可选护盾支路 · 先沿须筛右侧圆环进入鲸须记忆袋，拾取记忆获得浮游。\n右上方厚壳碎片增加一点护盾；远侧区域未开放，探索后原路返回须筛。"
-			return "可选护盾支路 · 从须筛左侧平台逐层上行，右上方厚壳碎片增加一点护盾。\n%s 起跳，空中按住 %s 浮游，松开落台。\n远侧闩尚未开放，探索后沿原路返回须筛。" % [WhaleUIStyle.key("tp_jump"), WhaleUIStyle.key("float")]
+			return "可选护盾支路 · 沿左右交替平台浮游上行，右上方厚壳碎片增加一点护盾。\n%s 起跳，空中按住 %s 浮游，松开落台。\n远侧闩尚未开放，探索后沿原路返回须筛。" % [WhaleUIStyle.key("tp_jump"), WhaleUIStyle.key("float")]
 		"R1-05": return "须门遗港终点 · 右侧出口通往胃肠沉城的胃枢。" if onward(host) else "首关终点 · 抵达右侧出口后完成本关；后续区域尚未开放。"
 	for entry: Dictionary in host.rooms:
 		if str(entry.id) == id and entry.has("about"): return str(entry.about)

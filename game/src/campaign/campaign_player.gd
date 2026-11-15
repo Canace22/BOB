@@ -111,7 +111,8 @@ func _physics_process(dt:float) -> void:
 	super._physics_process(dt)
 	run_visual.update(dt,position.x-before_move_x)
 	_check_door_entry()
-	position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
+	var horizontal_bounds: Vector2 = CampaignLayout.player_bounds(host.room, host.room_index)
+	position.x=clampf(position.x,horizontal_bounds.x,horizontal_bounds.y)
 	if is_on_floor() and position.y<float(host.room.size[1])-65 and stable_floor_point():last_safe=position
 	if health<=0:return
 	for bed:Dictionary in host.room.get("soft_beds",[]):
@@ -137,7 +138,7 @@ func _read_input() -> void:
 		var modern:String={"attack":"tp_attack","dash":"tp_dash","interact":"tp_interact"}[old]
 		if Input.is_action_just_pressed(old) and not Input.is_action_just_pressed(modern):request_action({"attack":"strike_01","dash":"A1_dash","interact":"interact"}[old])
 	var pressed_jump:bool=Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("tp_jump")
-	if pressed_jump and Input.is_action_pressed("down") and host.room_index==2 and position.x>700 and position.x<970 and position.y<730 and is_on_floor():
+	if pressed_jump and Input.is_action_pressed("down") and CampaignLayout.membrane_contains(host.room,"dive_rect",position,host.room_index) and is_on_floor():
 		var mechanism:Node=host.scenery.get_node_or_null("VisualMechanisms")
 		if mechanism!=null and float(mechanism.membrane_drop)>15:
 			drop_timer=_fall_time(MEMBRANE_DIVE_DEPTH,180.0);jump_buffer=0;coyote=0;velocity.y=180
@@ -155,7 +156,7 @@ func _try_jump() -> void:
 		grapple_target = Vector2.INF
 		grapple_hanging = false
 		coyote = coyote_time
-	var rebound:bool=host.room_index==2 and position.x>700 and position.x<970 and position.y>730 and is_on_floor()
+	var rebound:bool=CampaignLayout.membrane_contains(host.room,"rebound_rect",position,host.room_index) and is_on_floor()
 	membrane_boost=rebound
 	super._try_jump()
 	if rebound and velocity.y<0:

@@ -3,6 +3,7 @@ extends RefCounted
 ## Rooms beyond the first region: extra room data, door targets by stable ID,
 ## combined door requirements and per-region map placement.
 const EXTRA := "res://content/whalebelly/world/rooms.json"
+const LAYOUT := "res://content/whalebelly/layout/rooms.json"
 const REGIONS: Dictionary = {"R1":"须门遗港", "R2":"肺心潮庭", "R3":"胃肠沉城", "R4":"鸣肋断脊", "R5":"耳海归墟"}
 const NAMES: Dictionary = {"dash":"贴流冲", "float":"浮游", "anchor":"锚定", "boss":"击败守关者", "parry":"迎珠", "fissure":"潜隙", "pressure":"潮压", "bone":"骨音", "silence":"静默"}
 const UNBUILT := "后续区域未开放 · 原路返回"
@@ -18,6 +19,12 @@ static func extra() -> Dictionary:
 ## so V6 checkpoints stay valid. Unknown targets keep the authored fallback.
 static func load_rooms(base: Array) -> Array:
 	var rooms: Array = base.duplicate(true)
+	if FileAccess.file_exists(LAYOUT):
+		var authored: Variant = JSON.parse_string(FileAccess.get_file_as_string(LAYOUT))
+		if authored is Dictionary:
+			for replacement: Dictionary in authored.get("rooms", []):
+				var at: int = rooms.find_custom(func(item: Dictionary) -> bool: return str(item.id) == str(replacement.id))
+				if at >= 0: rooms[at] = replacement.duplicate(true)
 	rooms.append_array(extra().get("rooms", []).duplicate(true))
 	var index: Dictionary = {}
 	for i: int in rooms.size(): index[str(rooms[i].id)] = i

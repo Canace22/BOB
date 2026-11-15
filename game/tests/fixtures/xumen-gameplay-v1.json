@@ -1,0 +1,1482 @@
+{
+  "player": {
+    "scene": "game/content/whalebelly/CampaignPlayer.tscn",
+    "campaign_scene_overrides": {
+      "max_speed": 390.0,
+      "acceleration": 9000.0,
+      "friction": 12000.0,
+      "gravity": 1750.0,
+      "terminal_speed": 1000.0,
+      "fall_multiplier": 1.5,
+      "air_control": 1.0,
+      "jump_height": 154.71428571428572,
+      "short_jump_height": 40.0,
+      "double_jump_speed": 519.0,
+      "apex_hold": 0.0,
+      "wall_slide_speed": 212.5,
+      "wall_jump_x": 390.0,
+      "wall_jump_height": 154.71428571428572,
+      "dash_speed": 800.0,
+      "dash_duration": 0.2,
+      "dash_cooldown": 0.7,
+      "slit_speed": 1040.0,
+      "slit_duration": 0.3,
+      "slit_cooldown": 2.0,
+      "coyote_time": 0.12,
+      "jump_buffer_time": 0.12,
+      "collision_size": [
+        28.0,
+        65.0
+      ],
+      "capsule_collision": true,
+      "max_health": 5,
+      "contact_damage": 1,
+      "melee_damage": 1,
+      "orb_damage": 2,
+      "heavy_damage": 2,
+      "heal_amount": 1,
+      "heal_time": 0.9,
+      "heal_cooldown": 0.0,
+      "hurt_soul_loss": 0,
+      "hurt_invulnerability": 1.2,
+      "hurt_stun": 0.25,
+      "knockback": 160.0,
+      "hitstop_duration": 0.0,
+      "melee_startup": 0.05,
+      "melee_cancel_after": 0.0,
+      "hit_recoil_speed": 200.0,
+      "hit_recoil_time": 0.08,
+      "melee_reach": 125.0,
+      "melee_height": 125.0,
+      "downward_reach": 32.5,
+      "heavy_radius": 70.0,
+      "orb_speed": 583.0,
+      "pogo_height": 154.71428571428572,
+      "visual_scale": 0.3357142857142857,
+      "world_collision_mask": 5
+    },
+    "base_movement": [
+      "walk/run with Control walking modifier",
+      "full/short jump; always available second jump; wall slide/jump",
+      "anchor acquisition radius390, endpoint at ring+(0,55); anchor travel640; hanging refreshes float",
+      "float uses1.02s, target upward speed235, acceleration4400; floor resets budget"
+    ],
+    "basic_actions": {
+      "strike_01": {
+        "damage": 1,
+        "reach": 125,
+        "height": 125,
+        "soul_gain": 11
+      },
+      "A4_parry": {
+        "actual_use": "base forward ranged shot, not the catalog parry action",
+        "damage": 2,
+        "cost": 33
+      },
+      "heavy": {
+        "damage": 2,
+        "cost": 33
+      },
+      "recover": {
+        "heal": 1,
+        "channel_seconds": 0.9,
+        "cost": 33,
+        "requires": "grounded and not full health"
+      },
+      "A1_dash": {
+        "unlock": "dash",
+        "speed": 800,
+        "seconds": 0.2,
+        "cooldown": 0.7
+      },
+      "A5_slit": {
+        "unlock": "dash",
+        "speed": 1040,
+        "seconds": 0.3,
+        "cooldown": 2.0
+      }
+    },
+    "catalog_actions": {
+      "strike2": {
+        "proxy": "strike_01",
+        "duration": 0.32,
+        "release": 0.06,
+        "damage": 1,
+        "shape": "front",
+        "reach": 125.0,
+        "gain": true,
+        "motion": "free",
+        "cost": 0,
+        "cooldown": 0.0,
+        "unlock": "always",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "strike2",
+        "title": "回拨·斜击",
+        "cooldown_group": "strike2"
+      },
+      "upper": {
+        "proxy": "strike_01",
+        "duration": 0.34,
+        "release": 0.06,
+        "damage": 1,
+        "shape": "up",
+        "reach": 120.0,
+        "gain": true,
+        "motion": "free",
+        "cost": 0,
+        "cooldown": 0.0,
+        "unlock": "always",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "upper",
+        "title": "挑潮·上挑",
+        "cooldown_group": "upper"
+      },
+      "shadow_dash": {
+        "proxy": "A1_dash",
+        "duration": 0.24,
+        "release": 0.0,
+        "cooldown": 0.85,
+        "unlock": "chapter",
+        "motion": "dash",
+        "speed": 850.0,
+        "immune": true,
+        "cost": 0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "shadow_dash",
+        "title": "影潮穿行",
+        "cooldown_group": "dash"
+      },
+      "great_slash": {
+        "proxy": "heavy",
+        "duration": 0.5,
+        "release": 0.17,
+        "damage": 3,
+        "shape": "front",
+        "reach": 180.0,
+        "cooldown": 0.5,
+        "unlock": "dash",
+        "gain": true,
+        "cost": 0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "great_slash",
+        "title": "蓄潮·重劈",
+        "cooldown_group": "great_slash"
+      },
+      "dash_slash": {
+        "proxy": "strike_01",
+        "duration": 0.38,
+        "release": 0.16,
+        "damage": 2,
+        "shape": "front",
+        "reach": 165.0,
+        "cooldown": 0.7,
+        "unlock": "dash",
+        "motion": "lunge",
+        "speed": 620.0,
+        "gain": true,
+        "cost": 0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "dash_slash",
+        "title": "奔潮·冲刺劈砍",
+        "cooldown_group": "dash_slash"
+      },
+      "cyclone": {
+        "proxy": "heavy",
+        "duration": 0.8,
+        "release": 0.12,
+        "damage": 1,
+        "shape": "radial",
+        "reach": 105.0,
+        "pulses": [
+          0.12,
+          0.32,
+          0.52
+        ],
+        "cooldown": 1.0,
+        "unlock": "dash",
+        "gain": true,
+        "cost": 0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "cyclone",
+        "title": "旋潮·回旋斩",
+        "cooldown_group": "cyclone"
+      },
+      "crystal_dash": {
+        "proxy": "A1_dash",
+        "duration": 1.5,
+        "release": 0.0,
+        "damage": 2,
+        "shape": "front",
+        "reach": 60.0,
+        "cooldown": 1.5,
+        "unlock": "dash",
+        "motion": "dash",
+        "speed": 920.0,
+        "cost": 0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "crystal_dash",
+        "title": "凝流·蓄力长冲",
+        "cooldown_group": "crystal_dash"
+      },
+      "up_spell": {
+        "proxy": "heavy",
+        "duration": 0.52,
+        "release": 0.16,
+        "damage": 2,
+        "shape": "up",
+        "reach": 165.0,
+        "cost": 33,
+        "cooldown": 0.7,
+        "unlock": "R1-03",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "up_spell",
+        "title": "潮声·上涌",
+        "cooldown_group": "orb"
+      },
+      "abyss_scream": {
+        "proxy": "heavy",
+        "duration": 0.66,
+        "release": 0.16,
+        "damage": 2,
+        "shape": "up",
+        "reach": 190.0,
+        "pulses": [
+          0.16,
+          0.3,
+          0.44
+        ],
+        "cost": 33,
+        "cooldown": 0.85,
+        "unlock": "chapter",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "abyss_scream",
+        "title": "深潮·共鸣啸",
+        "cooldown_group": "orb"
+      },
+      "shadow_orb": {
+        "proxy": "A4_parry",
+        "duration": 0.42,
+        "release": 0.14,
+        "damage": 3,
+        "cost": 33,
+        "cooldown": 0.8,
+        "unlock": "chapter",
+        "projectile": true,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "shadow_orb",
+        "title": "深鸣·穿潮弹",
+        "cooldown_group": "orb"
+      },
+      "dive": {
+        "proxy": "heavy",
+        "duration": 2.0,
+        "release": 0.14,
+        "damage": 2,
+        "shape": "radial",
+        "reach": 115.0,
+        "cost": 33,
+        "cooldown": 0.9,
+        "air_only": true,
+        "motion": "dive",
+        "unlock": "R1-03",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "dive",
+        "title": "坠潮·沉钟",
+        "cooldown_group": "orb"
+      },
+      "dark_dive": {
+        "proxy": "heavy",
+        "duration": 2.0,
+        "release": 0.14,
+        "damage": 3,
+        "shape": "radial",
+        "reach": 155.0,
+        "cost": 33,
+        "cooldown": 1.1,
+        "air_only": true,
+        "motion": "dive",
+        "unlock": "chapter",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "dark_dive",
+        "title": "坠潮·深钟",
+        "cooldown_group": "orb"
+      },
+      "parry": {
+        "proxy": "A4_parry",
+        "duration": 0.4,
+        "release": 0.06,
+        "cooldown": 0.6,
+        "parry_end": 0.21,
+        "cost": 0,
+        "unlock": "always",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "parry",
+        "title": "迎珠·偏转",
+        "cooldown_group": "parry"
+      },
+      "scan": {
+        "proxy": "interact",
+        "duration": 0.6,
+        "release": 0.22,
+        "cooldown": 1.0,
+        "cost": 0,
+        "unlock": "always",
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "scan",
+        "title": "照见·骨音探潮",
+        "cooldown_group": "scan"
+      },
+      "tram": {
+        "proxy": "interact",
+        "duration": 0.5,
+        "release": 0.3,
+        "unlock": "chapter",
+        "interaction": true,
+        "cost": 0,
+        "cooldown": 0.0,
+        "cancel": 0.65,
+        "lock_facing": true,
+        "knockback": 80.0,
+        "id": "tram",
+        "title": "通行凭证·启门",
+        "cooldown_group": "tram"
+      }
+    },
+    "unlock_rule_meaning": {
+      "always": "available by default",
+      "dash": "abilities.dash",
+      "R1-03": "collected.R1-03",
+      "chapter": "completed (first-region milestone)",
+      "float": "abilities.float"
+    },
+    "visuals": {
+      "body_height_world_px": 94,
+      "primary_controller": "TideActionVisual (action_visual.gd)",
+      "atlas_manifest": "game/art/tide-picker-action36/animations.json",
+      "actions": [
+        "idle",
+        "run",
+        "dash",
+        "strike1",
+        "hurt",
+        "walk",
+        "jump",
+        "double_jump",
+        "wall_slide",
+        "wall_jump",
+        "float",
+        "anchor",
+        "strike2",
+        "upper",
+        "pogo",
+        "orb",
+        "heavy",
+        "dive",
+        "parry",
+        "heal",
+        "scan",
+        "interact",
+        "defeat",
+        "shadow_dash",
+        "great_slash",
+        "dash_slash",
+        "cyclone",
+        "crystal_dash",
+        "up_spell",
+        "abyss_scream",
+        "shadow_orb",
+        "dark_dive",
+        "swim",
+        "tram",
+        "turn",
+        "slit"
+      ],
+      "timing": "Physics/state/skill events select frames; input movement is not baked video translation; per-action animation source is presentation only.",
+      "body_fx_independence": "Preserve body/FX anchors, facing and event/landing/release timing; visual frame count must not rewrite hit windows."
+    },
+    "practice": "F9 temporary practice enables all; exits restore snapshot. F10 toggles upgrades only in practice; neither is progression evidence.",
+    "exported_parameters_before_ready": {
+      "max_speed": 390.0,
+      "acceleration": 9000.0,
+      "friction": 12000.0,
+      "gravity": 1750.0,
+      "terminal_speed": 1000.0,
+      "fall_multiplier": 1.5,
+      "air_control": 1.0,
+      "jump_height": 154.71428571428572,
+      "short_jump_height": 40.0,
+      "double_jump_speed": 519.0,
+      "apex_hold": 0.0,
+      "jump_buffer_time": 0.12,
+      "coyote_time": 0.12,
+      "wall_slide_speed": 212.5,
+      "wall_jump_x": 390.0,
+      "wall_jump_height": 154.71428571428572,
+      "dash_speed": 800.0,
+      "dash_duration": 0.2,
+      "dash_cooldown": 0.7,
+      "slit_speed": 1040.0,
+      "slit_duration": 0.3,
+      "slit_cooldown": 2.0,
+      "orb_speed": 583.0,
+      "orb_lifetime": 1.5,
+      "orb_cooldown": 1.0,
+      "heavy_radius": 70.0,
+      "heavy_cooldown": 2.0,
+      "heal_time": 0.9,
+      "heal_cooldown": 0.0,
+      "heal_amount": 1,
+      "skill_cost": 33,
+      "max_health": 5,
+      "max_soul": 99,
+      "melee_damage": 1,
+      "orb_damage": 2,
+      "heavy_damage": 2,
+      "soul_per_hit": 11,
+      "contact_damage": 1,
+      "hurt_soul_loss": 0,
+      "hurt_invulnerability": 1.2,
+      "hurt_stun": 0.25,
+      "knockback": 160.0,
+      "pogo_height": 154.71428571428572,
+      "jump_invulnerability": 0.1,
+      "hitstop_duration": 0.0,
+      "attack_recovery": 0.1,
+      "melee_startup": 0.05,
+      "melee_cancel_after": 0.0,
+      "hit_recoil_speed": 200.0,
+      "hit_recoil_time": 0.08,
+      "capsule_collision": true,
+      "melee_reach": 125.0,
+      "melee_height": 125.0,
+      "downward_reach": 32.5,
+      "visual_scale": 0.3357142857142857,
+      "animation_fps": 12.0,
+      "run_cycle_distance": 96.0,
+      "preload_actions": true,
+      "atlas_visual_enabled": false,
+      "lower_body_layer_enabled": true,
+      "collision_size": [
+        28.0,
+        65.0
+      ],
+      "world_collision_mask": 5,
+      "spawn_input_lock": 0.1,
+      "automatic_doors": true,
+      "float_time": 1.02,
+      "float_lift_speed": 235.0,
+      "float_lift_accel": 4400.0,
+      "melee_knockback": 160.0,
+      "hit_freeze_ticks": 3,
+      "hurt_freeze_ticks": 10
+    },
+    "runtime_overrides": {
+      "world_bounds": "Rect2(0,0, room.size.x, room.size.y)",
+      "preload_actions": false,
+      "atlas_visual_enabled": true,
+      "floor_max_angle_degrees": 55,
+      "floor_snap_length": 24,
+      "visual_scale": "94 / alpha-used height of idle source; rendered body target remains94 world pixels",
+      "float_left_on_ready": "float_time=1.02",
+      "health_on_ready": "clamp host.health to [0,max_health]",
+      "soul_on_ready": "host.player_soul"
+    },
+    "input_bindings": {
+      "move": "A/D or Left/Right",
+      "jump": "K/Space",
+      "attack": "J/Q",
+      "dash": "L/Shift",
+      "base_orb": "U",
+      "heavy": "I",
+      "heal": "P",
+      "slit": "O",
+      "interact": "E",
+      "retry": "R",
+      "parry": "B",
+      "scan": "T",
+      "charged_long_dash": "V",
+      "walk": "Control",
+      "grapple": "existing grapple action; base ring targeting remains390px",
+      "context_actions": "W+attack upper; S+air attack pogo; U directional spells; hold/release attack for charge; V hold>=0.6s for long dash"
+    }
+  },
+  "source_hashes": [
+    {
+      "path": "game/art/tide-picker-action36/animations.json",
+      "sha256": "a18bd70cbd33d4b1f13319ba25a618f5c3a207e47e9e9963bb6b8c40dc94243f"
+    },
+    {
+      "path": "game/art/whalebelly/rooms.json",
+      "sha256": "2ecd5503534a01c2a7a14a6e251f46b542b9b015499d59d27db2140452cff238"
+    },
+    {
+      "path": "game/content/whalebelly/CampaignPlayer.tscn",
+      "sha256": "ac2e1750f2690a260e560a03d1356bc13ab47c01cd1f78dc58347209261db1e7"
+    },
+    {
+      "path": "game/content/whalebelly/Player.tscn",
+      "sha256": "0c6e0d69336aaf6df13251fbd0616a44ed67f3a6b16a4eaaa281366b6206afca"
+    },
+    {
+      "path": "game/content/whalebelly/layout/recipes.json",
+      "sha256": "77f999ff70bcbdabdba1c94095939e690d5accb61fc19262d4729b6a5b23cd6b"
+    },
+    {
+      "path": "game/content/whalebelly/layout/rooms.json",
+      "sha256": "024057842dca0c663a3e259dbaae05ea397f8bd8fd63ed7598917e473f073661"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-01.tscn",
+      "sha256": "d9d6360fd3201e08485562b2ca7e536a17ee0e34ad067d76ce1c26386910db50"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-02.tscn",
+      "sha256": "fc998c40df1966f7bbabf280411dd2159a94cff11eeabc9263d37fcbaee0fec5"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-03.tscn",
+      "sha256": "258691f13b51248a642c293bd087fc27120c2b5d055e05684044bdc0fa56e090"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-04.tscn",
+      "sha256": "802a826d5d35d87659833c62b134b44cbb6d65df66fe8b7a7f9024973ba50d0e"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-05.tscn",
+      "sha256": "a4e1ac0fee268be7096891e00df09380736db910126c82a138b1630f54ea966b"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-06.tscn",
+      "sha256": "f50f5b03adb1c09b11235f57a5ef3a58408f7dae1a8c3af048e730a9705d8d7a"
+    },
+    {
+      "path": "game/content/whalebelly/r1/R1-07.tscn",
+      "sha256": "68a8245962982bff2bc2c793f4066addd0e77208037ec3b502fad8bd3fb36c2a"
+    },
+    {
+      "path": "game/content/whalebelly/r2/R2-01.tscn",
+      "sha256": "cba852f17562e3ef7a7dfe5be6c0278231fc2353de66a54483cb09ec614767b5"
+    },
+    {
+      "path": "game/content/whalebelly/r2/R2-03.tscn",
+      "sha256": "bf82516e62e14ba64d2be015494bf5eb58585dc21ff0a62550132d5fbc6e5662"
+    },
+    {
+      "path": "game/content/whalebelly/r2/R2-04.tscn",
+      "sha256": "d0ed709a09d1aef151c708231a6656ff7091ddf612e90d69fa61ac3969e963d0"
+    },
+    {
+      "path": "game/content/whalebelly/r3/R3-01.tscn",
+      "sha256": "7edcb5962def6933b0fb10ca65f3c2a7a1e2acb158c9e28fabc077dee23bd40e"
+    },
+    {
+      "path": "game/content/whalebelly/r4/R4-01.tscn",
+      "sha256": "d6e8b61c7860efdd0216257c8d691ce34700b7709f9a76950dde2096d7e289fd"
+    },
+    {
+      "path": "game/content/whalebelly/r4/R4-03.tscn",
+      "sha256": "a84639528e9b597b566fc2a0956b67c66845cb5385e39c2ed6bc193e57ad0386"
+    },
+    {
+      "path": "game/content/whalebelly/r4/R4-05.tscn",
+      "sha256": "59d58f5261e8c0f44fceba836f842bdf7c03391ee4a66f5790e4f14a2ff8f04b"
+    },
+    {
+      "path": "game/content/whalebelly/r4/R4-06.tscn",
+      "sha256": "208ae43712b586fb21e641c03e5a87de27fd5697c42ec523b55456247cc1364a"
+    },
+    {
+      "path": "game/content/whalebelly/r5/R5-01.tscn",
+      "sha256": "6d6f469e75ce89fb30a7811a41e96fb83794951f59b4233f43a3f8da36b00031"
+    },
+    {
+      "path": "game/content/whalebelly/r5/R5-02.tscn",
+      "sha256": "6d919acc85323ef168236385341223a6dd3ab0cd80625b2e459f70ad24126b6b"
+    },
+    {
+      "path": "game/content/whalebelly/r5/R5-04.tscn",
+      "sha256": "265d202651d4d9380af94ecb27c2aa503b98ed5f40b45c67f1666aa6c1d33a3f"
+    },
+    {
+      "path": "game/content/whalebelly/r5/R5-08.tscn",
+      "sha256": "7bd57650cd3c9fab2bb904ed5097e208155987cd520820ccb64ffc29532280cb"
+    },
+    {
+      "path": "game/content/whalebelly/world/rooms.json",
+      "sha256": "1f3706ab0ec03815fe743512e7dd26467b4f097262f4126e10022f7f26bf6d77"
+    },
+    {
+      "path": "game/export_presets.cfg",
+      "sha256": "8fabeea096ea9343b89a22d2f1e93be88ce5f09ff07a0fa9c429643d26241448"
+    },
+    {
+      "path": "game/project.godot",
+      "sha256": "e6d64aae8a9a7f6661488fb9bdff87cde5347b5c24d3a9d06ba7129e0473b97d"
+    },
+    {
+      "path": "game/src/campaign/action_visual.gd",
+      "sha256": "030f83fa5c108e660dcbea24a52b2b11d4e58ad488d9385cdd782d18a65ee5f8"
+    },
+    {
+      "path": "game/src/campaign/boss/crab_boss.gd",
+      "sha256": "ff5c85aeeb8d9cbf5186d6c5a06eaa955b84032319711cc8be93939a77a047ad"
+    },
+    {
+      "path": "game/src/campaign/boss/crab_moves.gd",
+      "sha256": "6522ea204c72e3d9a9da6cedfc3caf40e81443860946c7f7bea8e886c7cdc9ae"
+    },
+    {
+      "path": "game/src/campaign/boss/crab_shell.gd",
+      "sha256": "818232cb85be8d60b1b1c83b8831ec6c9c9c3c53039762356307f2207b0bce70"
+    },
+    {
+      "path": "game/src/campaign/campaign_continuity.gd",
+      "sha256": "f77ffd5d913946c0efc571570a0745d10d0459f79aa7e0542cf056a83b6e3346"
+    },
+    {
+      "path": "game/src/campaign/campaign_doorway.gd",
+      "sha256": "473991aaa0a044ad979fc41a111ddabd246ce4a4220aaa56bc0a7a00e5514274"
+    },
+    {
+      "path": "game/src/campaign/campaign_layout.gd",
+      "sha256": "371f31b4a1a0251e73be6640b94b97afd74f321a9a6c21eb436ac638749e52d1"
+    },
+    {
+      "path": "game/src/campaign/campaign_player.gd",
+      "sha256": "7008d3df41ac74b80b2726f8765df192cae1f9b815dd7ee7a84337581f1f6f6f"
+    },
+    {
+      "path": "game/src/campaign/campaign_relics.gd",
+      "sha256": "fce47706eba592ef162723116d97205767354954bfe00c5cabe9dfb913c7ce25"
+    },
+    {
+      "path": "game/src/campaign/campaign_save_bridge.gd",
+      "sha256": "df3d0be5f044413379f5d6c973516523e10b1af7b33dda913810f840f2debae9"
+    },
+    {
+      "path": "game/src/campaign/campaign_world.gd",
+      "sha256": "bc82b6786fa3c381ab3b3ffdbff2c6e3cb29837b2cf41400685459969c6512af"
+    },
+    {
+      "path": "game/src/campaign/enemies/corpse_crab.gd",
+      "sha256": "3713e229ccc7d312d76faf89c789f7f201f7e1d24713af7e22d5586106c1b1c2"
+    },
+    {
+      "path": "game/src/campaign/enemies/kit_encounter.gd",
+      "sha256": "a0b24e439a71ad612a654ad160987dc7f4373570813fbe7b42aabb5af4ed99e7"
+    },
+    {
+      "path": "game/src/campaign/main.gd",
+      "sha256": "6867ee094efc1e62e1dfb79b0cf1f21bb929b61dfd16de0a7b2f7cc812b89877"
+    },
+    {
+      "path": "game/src/campaign/mechanisms.gd",
+      "sha256": "943f02c211a499926ad70be87732a7cfbc76d61dc0318a485ea7ea64a821b11a"
+    },
+    {
+      "path": "game/src/campaign/tide_input.gd",
+      "sha256": "c6845c9aa2c6c796f71380b281ab28800c1c7f199dafe7934fea4cbd7211eb81"
+    },
+    {
+      "path": "game/src/campaign/tide_player.gd",
+      "sha256": "fc7b744e2d870b0e9849324f58d37100c9f037a0e77e476668d71486e1b9d6ff"
+    },
+    {
+      "path": "game/src/campaign/tide_skill_catalog.gd",
+      "sha256": "4971fb204300d74c95f1052896434c7bfe555e46641d7a3bb1f7a44597a3fe7a"
+    },
+    {
+      "path": "game/src/campaign/tide_skill_controller.gd",
+      "sha256": "3ff8cd0f06ff14e2697cb03cb6be91d32045313c67ce1abbad821bdaa1ea6d5a"
+    },
+    {
+      "path": "game/src/campaign/tide_skill_input.gd",
+      "sha256": "191937f829a4a6c0b09fad3f5897207a3a96285f5b651cd9eee4619034cca6f4"
+    },
+    {
+      "path": "game/src/campaign/tide_world_effects.gd",
+      "sha256": "dad33e610ee7612dc4f4072ce02ba3bab80c1a8383df48255e9397926155c87b"
+    },
+    {
+      "path": "game/src/ui/campaign_guidance.gd",
+      "sha256": "1aabf7215857229f0a88cdd08ef2c290b5a46331f34efe48cb82db20d7ee8467"
+    },
+    {
+      "path": "game/src/ui/continuity_transition.gd",
+      "sha256": "569c39f23cd633b254701191cd787515b3898ef4dcc5bba151369f9e926fa078"
+    },
+    {
+      "path": "game/src/ui/ui_map_page.gd",
+      "sha256": "4358e6a478c31e5cb58b497b4f34bc8b2964a59775355798ab7db7f70eb59796"
+    },
+    {
+      "path": "game/src/ui/ui_save_access.gd",
+      "sha256": "6bb8b7a7451a03727cc385c142d65b5715579cab4f7ff28c2d9f807b212451ee"
+    },
+    {
+      "path": "game/src/world/scenery/kit/kit_drift.gd",
+      "sha256": "492212cf87729527c7ffe526717353ebc4790abca19e52014fcc501ec9e1e97e"
+    },
+    {
+      "path": "game/src/world/scenery/kit/kit_interactable.gd",
+      "sha256": "2488383bf261f68259f97e420ce783945399c0516fa892685c1a17c2a3279e68"
+    },
+    {
+      "path": "game/src/world/scenery/kit/kit_larva_school.gd",
+      "sha256": "9c4af079a3cb7d5e8b418be1aa489a8219bc198a1af06f8e5cebbd37d6f695d8"
+    },
+    {
+      "path": "game/src/world/scenery/kit/kit_state_art.gd",
+      "sha256": "34da533d9d56ccef123b90c2a81564837c87375a25a93de9dbd6a335f4b903d1"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "R1-01",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall5"
+            },
+            "properties": {
+              "polygon": [
+                1102.0,
+                242.0,
+                1508.0,
+                242.0,
+                1508.0,
+                398.0,
+                1102.0,
+                398.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall6"
+            },
+            "properties": {
+              "polygon": [
+                1142.0,
+                312.0,
+                1188.0,
+                312.0,
+                1188.0,
+                518.0,
+                1142.0,
+                518.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-02",
+      "enemies": [
+        {
+          "pos": [
+            910,
+            830
+          ],
+          "boss": false,
+          "type": "corpse-crab",
+          "stable_enemy_key": "R1-02:0",
+          "runtime_adapter": "CampaignCorpseCrab",
+          "runtime_max_hp": 3,
+          "persistent_defeat": false
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall5"
+            },
+            "properties": {
+              "polygon": [
+                602.0,
+                182.0,
+                798.0,
+                182.0,
+                798.0,
+                688.0,
+                602.0,
+                688.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall6"
+            },
+            "properties": {
+              "polygon": [
+                1012.0,
+                222.0,
+                1118.0,
+                222.0,
+                1118.0,
+                528.0,
+                1012.0,
+                528.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-03",
+      "enemies": [
+        {
+          "pos": [
+            600,
+            440
+          ],
+          "boss": false,
+          "type": "corpse-crab",
+          "stable_enemy_key": "R1-03:0",
+          "runtime_adapter": "CampaignCorpseCrab",
+          "runtime_max_hp": 3,
+          "persistent_defeat": false
+        },
+        {
+          "pos": [
+            1040,
+            920
+          ],
+          "boss": false,
+          "type": "corpse-crab",
+          "stable_enemy_key": "R1-03:1",
+          "runtime_adapter": "CampaignCorpseCrab",
+          "runtime_max_hp": 3,
+          "persistent_defeat": false
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall9"
+            },
+            "properties": {
+              "polygon": [
+                1122.0,
+                142.0,
+                1203.0,
+                142.0,
+                1203.0,
+                458.0,
+                1122.0,
+                458.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall10"
+            },
+            "properties": {
+              "polygon": [
+                1132.0,
+                662.0,
+                1153.0,
+                662.0,
+                1153.0,
+                798.0,
+                1132.0,
+                798.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-04",
+      "enemies": [
+        {
+          "pos": [
+            1680.0,
+            800
+          ],
+          "boss": true,
+          "stable_enemy_key": "R1-04:0",
+          "runtime_adapter": "CampaignCrabBoss",
+          "runtime_max_hp": 180,
+          "persistent_defeat": true,
+          "actual_grant": "dash"
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall5"
+            },
+            "properties": {
+              "polygon": [
+                460.0,
+                182.0,
+                540.0,
+                182.0,
+                540.0,
+                508.0,
+                460.0,
+                508.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall6"
+            },
+            "properties": {
+              "polygon": [
+                636.0,
+                352.0,
+                996.0,
+                352.0,
+                996.0,
+                428.0,
+                636.0,
+                428.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-05",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall5"
+            },
+            "properties": {
+              "polygon": [
+                692.0,
+                282.0,
+                1058.0,
+                282.0,
+                1058.0,
+                463.0,
+                692.0,
+                463.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall6"
+            },
+            "properties": {
+              "polygon": [
+                1362.0,
+                312.0,
+                1518.0,
+                312.0,
+                1518.0,
+                548.0,
+                1362.0,
+                548.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-06",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall7"
+            },
+            "properties": {
+              "polygon": [
+                872.0,
+                287.0,
+                968.0,
+                287.0,
+                968.0,
+                343.0,
+                872.0,
+                343.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall8"
+            },
+            "properties": {
+              "polygon": [
+                1052.0,
+                532.0,
+                1098.0,
+                532.0,
+                1098.0,
+                668.0,
+                1052.0,
+                668.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-07",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": [
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall5"
+            },
+            "properties": {
+              "polygon": [
+                832.0,
+                512.0,
+                988.0,
+                512.0,
+                988.0,
+                698.0,
+                832.0,
+                698.0
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Contour",
+              "type": "CollisionPolygon2D",
+              "parent": "World/Terrain/Wall6"
+            },
+            "properties": {
+              "polygon": [
+                862.0,
+                142.0,
+                988.0,
+                142.0,
+                988.0,
+                208.0,
+                862.0,
+                208.0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R3-01",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R2-01",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R2-03",
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            920,
+            1160
+          ],
+          "boss": false,
+          "name": "端足群流",
+          "config": {
+            "kind": "swarm",
+            "lane": [
+              800,
+              2320
+            ],
+            "hits": 4,
+            "count": 16,
+            "radius": 64,
+            "rest": 2.2,
+            "tell": 0.9,
+            "act": 1.3,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/amphipod-swarm.png",
+                "scale": 0.2251
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-danger-line.png",
+                "scale": 1.4545
+              }
+            }
+          },
+          "stable_enemy_key": "R2-03:0",
+          "runtime_adapter": "KitEncounter",
+          "runtime_max_hp": 4,
+          "persistent_defeat": false
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R2-04",
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            2480,
+            1520
+          ],
+          "boss": true,
+          "name": "血巢潮群",
+          "grants": "pressure",
+          "defeat_notice": "血巢潮群散去 · 获得潮压，胃枢的强流门已可通行",
+          "config": {
+            "kind": "swarm",
+            "lane": [
+              240,
+              2640
+            ],
+            "lanes": [
+              1520,
+              1200,
+              960
+            ],
+            "floor": 1520,
+            "hits": 24,
+            "count": 44,
+            "radius": 88,
+            "tint": "ffffff",
+            "rest": 1.9,
+            "tell": 1,
+            "act": 1.5,
+            "recover": 0.7,
+            "engage": 2400,
+            "hurt": [
+              192,
+              144
+            ],
+            "enraged": {
+              "tell": 0.75,
+              "rest": 1.3,
+              "repeat": 1
+            },
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/amphipod-swarm.png",
+                "scale": 0.2813
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-danger-line.png",
+                "scale": 1.4545
+              },
+              "core": {
+                "path": "res://art/world-kit/blood-nest-core.png",
+                "scale": 0.4835
+              }
+            }
+          },
+          "stable_enemy_key": "R2-04:0",
+          "runtime_adapter": "KitEncounter",
+          "runtime_max_hp": 24,
+          "persistent_defeat": true,
+          "actual_grant": "pressure"
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R4-01",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R4-03",
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1800,
+            1296
+          ],
+          "boss": false,
+          "name": "吐珠鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 4,
+            "rest": 2,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 368,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          },
+          "stable_enemy_key": "R4-03:0",
+          "runtime_adapter": "KitEncounter",
+          "runtime_max_hp": 4,
+          "persistent_defeat": false
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R4-05",
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            2480,
+            1440
+          ],
+          "boss": true,
+          "name": "悬脊鸣贝",
+          "grants": "bone",
+          "defeat_notice": "悬脊鸣贝沉寂 · 获得骨音，右侧通往交通椎",
+          "config": {
+            "kind": "clam",
+            "hits": 26,
+            "rest": 1.7,
+            "tell": 0.9,
+            "shots": 3,
+            "spread_deg": 15,
+            "speed": 416,
+            "mouth": [
+              -48,
+              -144
+            ],
+            "hurt": [
+              256,
+              240
+            ],
+            "engage": 2400,
+            "enraged": {
+              "shots": 5,
+              "rest": 1.1
+            },
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.9882,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/spine-resonant-clams.png",
+                "fallback_scale": 0.7054
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 1.0612
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.611
+              }
+            }
+          },
+          "stable_enemy_key": "R4-05:0",
+          "runtime_adapter": "KitEncounter",
+          "runtime_max_hp": 26,
+          "persistent_defeat": true,
+          "actual_grant": "bone"
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R4-06",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R5-01",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R5-02",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R5-04",
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            2200,
+            1440
+          ],
+          "boss": true,
+          "name": "缄声覆膜",
+          "grants": "silence",
+          "defeat_notice": "缄声覆膜退去 · 获得静默。回交通椎，从中段下行口去归海释放槽",
+          "config": {
+            "kind": "membrane",
+            "hits": 28,
+            "rest": 1.5,
+            "tell": 1,
+            "radius": 120,
+            "recover": 0.4,
+            "offset": [
+              368,
+              0
+            ],
+            "hurt": [
+              240,
+              336
+            ],
+            "engage": 2400,
+            "enraged": {
+              "tell": 0.8,
+              "rest": 1,
+              "repeat": 1
+            },
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/silent-membrane.png",
+                "scale": 0.7311
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-echo-open-ring.png",
+                "scale": 1.2488
+              },
+              "pulse": {
+                "path": "res://art/world-kit/fx-silence-ring.png",
+                "scale": 1.2766
+              }
+            }
+          },
+          "stable_enemy_key": "R5-04:0",
+          "runtime_adapter": "KitEncounter",
+          "runtime_max_hp": 28,
+          "persistent_defeat": true,
+          "actual_grant": "silence"
+        }
+      ],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    },
+    {
+      "id": "R5-08",
+      "enemies": [],
+      "frozen_geometry": {
+        "actual_collision_nodes": []
+      }
+    }
+  ]
+}
