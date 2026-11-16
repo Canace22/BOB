@@ -87,16 +87,7 @@
       "art_open": "ear-latch-open"
     }
   ],
-  "props": [
-    {
-      "art": "progress-three-slots",
-      "at": [
-        19,
-        15
-      ],
-      "units": 2.4
-    }
-  ],
+  "props": [],
   "foreground": [
     {
       "x": 2,
@@ -162,28 +153,28 @@
       "flag": "pressure",
       "art": "ui-progress-pressure",
       "at": [
-        19,
-        12.94
+        18.82194,
+        11.6071
       ],
-      "pixels": 32
+      "pixels": 84
     },
     {
       "flag": "bone",
       "art": "ui-progress-bone",
       "at": [
-        19,
-        13.75
+        20.99343,
+        11.62024
       ],
-      "pixels": 32
+      "pixels": 84
     },
     {
       "flag": "silence",
       "art": "ui-progress-silence",
       "at": [
-        19,
-        14.5
+        23.11235,
+        11.60053
       ],
-      "pixels": 32
+      "pixels": 84
     }
   ],
   "interactables": [
@@ -204,6 +195,36 @@
         "覆膜后的声槽已显露，静默也回到三槽。",
         "回到交通椎，从中段下行口去释放槽。"
       ]
+    }
+  ],
+  "retained_art": [
+    {
+      "art": "progress-three-slots",
+      "max": 640
+    }
+  ],
+  "framing": [
+    {
+      "art": "r5-cranial-cavern-frame-alpha-v3",
+      "at": [
+        15.0,
+        -0.4
+      ],
+      "units": 42.24,
+      "max": 0,
+      "z": -13,
+      "opacity": 0.72
+    },
+    {
+      "art": "r5-three-socket-wall-v3",
+      "at": [
+        21,
+        15.5
+      ],
+      "units": 10,
+      "max": 0,
+      "z": -12,
+      "opacity": 0.78
     }
   ]
 }

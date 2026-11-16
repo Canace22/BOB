@@ -105,6 +105,17 @@
         16
       ],
       "units": 3.4
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        6,
+        16
+      ],
+      "units": 1.0,
+      "modulate": "Color(0.72,0.78,0.8,1)",
+      "layer": 0,
+      "max": 0
     }
   ],
   "foreground": [
@@ -202,26 +213,147 @@
       }
     }
   ],
-  "landmarks": [
+  "landmarks": [],
+  "framing": [
     {
-      "art": "r2-heart-rupture",
+      "art": "r2-membrane-cavern-frame-v3",
       "at": [
-        20,
+        15.0,
+        -0.4
+      ],
+      "units": 38.4,
+      "max": 0,
+      "z": -13,
+      "opacity": 0.8
+    },
+    {
+      "art": "r2-foreground-membrane",
+      "at": [
+        4.5,
+        8.4
+      ],
+      "units": 18,
+      "max": 1280,
+      "z": -12,
+      "opacity": 0.65,
+      "motion": "membrane",
+      "amplitude": 7
+    },
+    {
+      "art": "r2-foreground-membrane",
+      "at": [
+        26.0,
+        7.7
+      ],
+      "units": 18,
+      "max": 1280,
+      "z": -12,
+      "opacity": 0.61,
+      "flip_h": true,
+      "motion": "membrane",
+      "amplitude": 7
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        7.15,
         16
       ],
-      "units": 21,
-      "opacity": 0.55,
-      "parallax": 0.65
+      "units": 0.65,
+      "max": 0,
+      "z": -1,
+      "opacity": 0.72,
+      "motion": "glow"
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        12.6,
+        14.5
+      ],
+      "units": 0.8,
+      "max": 0,
+      "z": -1,
+      "opacity": 0.65,
+      "motion": "glow"
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        19.0,
+        13
+      ],
+      "units": 0.7,
+      "max": 0,
+      "z": -1,
+      "opacity": 0.62,
+      "motion": "glow"
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        23.9,
+        11.5
+      ],
+      "units": 0.9,
+      "max": 0,
+      "z": -1,
+      "opacity": 0.68,
+      "motion": "glow"
+    },
+    {
+      "art": "r2-pearl-stalks-v4",
+      "at": [
+        27.0,
+        14.5
+      ],
+      "units": 0.95,
+      "max": 0,
+      "z": -1,
+      "opacity": 0.66,
+      "motion": "glow"
+    }
+  ],
+  "reference_background": {
+    "art": "r2-observation-depth-v4",
+    "source": "assets/source/whalefall-v5-2-complete/references/17_R2-03.png"
+  },
+  "retained_art": [
+    {
+      "art": "r2-heart-rupture",
+      "max": 1280
     },
     {
       "art": "r2-membrane-patch",
-      "at": [
-        7,
-        12
+      "max": 1280
+    }
+  ],
+  "background_schools": [
+    {
+      "art": "r2-pelagic-amphipod-v4",
+      "rect": [
+        2,
+        6.8,
+        26,
+        1.8
       ],
-      "units": 5,
-      "opacity": 0.4,
-      "parallax": 0.7
+      "count": 24,
+      "width": 48,
+      "opacity": 0.5,
+      "speed": 32
+    },
+    {
+      "art": "r2-pelagic-amphipod-v4",
+      "rect": [
+        2,
+        10,
+        26,
+        2.0
+      ],
+      "count": 30,
+      "width": 58,
+      "opacity": 0.58,
+      "speed": 38
     }
   ]
 }

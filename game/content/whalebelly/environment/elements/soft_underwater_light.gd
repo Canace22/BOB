@@ -6,6 +6,7 @@ extends Sprite2D
 @export var period: float = 12.0
 @export var phase: float = 0.0
 @export_range(0.0,1.0) var intensity: float = 0.12
+@export var light_tint: Color = Color.WHITE
 var time: float = 0.0
 func _ready() -> void:
 	var mat=ShaderMaterial.new()
@@ -14,6 +15,7 @@ func _ready() -> void:
 	mat.set_shader_parameter("period",period)
 	mat.set_shader_parameter("phase",phase)
 	mat.set_shader_parameter("strength",intensity)
+	mat.set_shader_parameter("light_tint",light_tint)
 	update_at(0.0)
 func _process(delta: float) -> void:
 	if not external_clock:update_at(time+delta)

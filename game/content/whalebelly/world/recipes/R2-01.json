@@ -110,6 +110,26 @@
         19
       ],
       "units": 2.2
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        12.8,
+        15.75
+      ],
+      "units": 1.0,
+      "modulate": "Color(0.72,0.78,0.8,1)",
+      "layer": 0
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        24.5,
+        9.25
+      ],
+      "units": 1.0,
+      "modulate": "Color(0.72,0.78,0.8,1)",
+      "layer": 0
     }
   ],
   "foreground": [
@@ -220,6 +240,8 @@
   "interactables": [
     {
       "id": "nursery-memory",
+      "art": "bone-sound-node",
+      "units": 1.1,
       "name": "育床旧刻痕",
       "title": "育床 · 留给上行者的刻痕",
       "at": [
@@ -230,6 +252,75 @@
         "先跃离膜床，再张开浮膜。",
         "往右上逐台攀升，门后是心室观察台。"
       ]
+    }
+  ],
+  "framing": [
+    {
+      "art": "r2-membrane-cavern-frame-v3",
+      "at": [
+        14.0,
+        -0.4
+      ],
+      "units": 44.16,
+      "max": 0,
+      "z": -13,
+      "opacity": 0.8
+    },
+    {
+      "art": "r2-foreground-membrane",
+      "at": [
+        4.0,
+        6.5
+      ],
+      "units": 16,
+      "max": 1280,
+      "z": -12,
+      "opacity": 0.66
+    },
+    {
+      "art": "r2-foreground-membrane",
+      "at": [
+        24.0,
+        5.3
+      ],
+      "units": 17,
+      "max": 1280,
+      "z": -12,
+      "opacity": 0.61,
+      "flip_h": true
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        2.4,
+        19
+      ],
+      "units": 0.75,
+      "max": 640,
+      "z": -1,
+      "opacity": 0.72
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        18.7,
+        12.5
+      ],
+      "units": 0.7,
+      "max": 640,
+      "z": -1,
+      "opacity": 0.66
+    },
+    {
+      "art": "habitat-fungus-bed",
+      "at": [
+        10.5,
+        20.8
+      ],
+      "units": 0.95,
+      "max": 640,
+      "z": -1,
+      "opacity": 0.68
     }
   ]
 }

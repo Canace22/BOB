@@ -4,6 +4,7 @@ uniform float clock = 0.0;
 uniform float period = 12.0;
 uniform float phase = 0.0;
 uniform float strength = 0.12;
+uniform vec4 light_tint : source_color = vec4(1.0);
 void fragment() {
 	float t = clock * 6.28318530718 / period + phase;
 	vec2 uv = UV;
@@ -12,5 +13,5 @@ void fragment() {
 	float boundary = smoothstep(0.0, 0.09, UV.x) * smoothstep(0.0, 0.09, 1.0 - UV.x);
 	boundary *= smoothstep(0.0, 0.12, UV.y) * smoothstep(0.0, 0.15, 1.0 - UV.y);
 	float breath = 0.86 + 0.14 * sin(t);
-	COLOR = vec4(ray.rgb, ray.a * boundary * strength * breath);
+	COLOR = vec4(ray.rgb*light_tint.rgb, ray.a * boundary * strength * breath*light_tint.a);
 }

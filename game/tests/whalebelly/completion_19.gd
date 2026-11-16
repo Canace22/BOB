@@ -3,7 +3,7 @@ extends SceneTree
 class CompletionCampaign extends WhalebellyMain:
 	func save_path() -> String:
 		return "user://whalebelly/completion-19-%s.json" % str(ProjectSettings.globalize_path("res://").hash())
-const OUT: String = "res://build/qa/completion-20261114/runtime"
+var OUT: String = "res://build/qa/completion-20261114/runtime"
 var host: WhalebellyMain
 var checks: Array[Dictionary] = []
 
@@ -38,6 +38,7 @@ func motion_clip(label: String, frame_count: int) -> void:
 		root.get_texture().get_image().save_png(folder.path_join("%04d.png" % index))
 
 func run() -> void:
+	if not OS.get_environment("COMPLETION_QA_OUT").is_empty(): OUT=OS.get_environment("COMPLETION_QA_OUT")
 	root.size = Vector2i(1280,720)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
 	host = load("res://content/whalebelly/main.tscn").instantiate()
@@ -49,7 +50,7 @@ func run() -> void:
 	current_scene = host
 	await tick(30)
 	check("all original nineteen room IDs remain",host.rooms.size()==19 and str(host.rooms[18].id)=="R5-08")
-	await room("R3-01",Vector2(1392,2080))
+	await room("R3-01",Vector2(1298,2080))
 	check("two stationary resident identities are in the real hub",host.scenery.get_node("World/Resident0/Art").texture.resource_path.ends_with("yusuo.png") and host.scenery.get_node("World/Resident1/Art").texture.resource_path.ends_with("beituo.png"))
 	check("resident has discoverable real interaction prompt",host.player_ui.data.prompt().contains("余索"))
 	await shot("01-hub-residents")
@@ -60,7 +61,7 @@ func run() -> void:
 	check("water calms smoothly without increasing the pool",flow.progress_mix>0.98 and flow.motes.size()==26)
 	await room("R3-01",Vector2(3580,1360))
 	await shot("02-pressure-open-gate")
-	await room("R2-01",Vector2(448,1520))
+	await room("R2-01",Vector2(548,1520))
 	check("nursery has separate shell support and hinged leaf",host.scenery.has_node("World/State0/After/Art"))
 	await shot("03-nursery")
 	host.abilities.float = true

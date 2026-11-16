@@ -2,21 +2,39 @@
 
 [ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r5-head-water-base.png" id="r2"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-far-layer.png" id="r3"]
-[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r4"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_pulse.gd" id="r5"]
-[ext_resource type="Texture2D" path="res://art/world-kit/fx-cold-beam.png" id="r6"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r7"]
-[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r8"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-platform.png" id="r9"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r5-echo-wall-covered.png" id="r10"]
-[ext_resource type="Texture2D" path="res://art/world-kit/habitat-shade.png" id="r11"]
-[ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r12"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_interactable.gd" id="r13"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-foreground.png" id="r14"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r15"]
-[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-closed.png" id="r16"]
-[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-open.png" id="r17"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="r3"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-depth.png" id="r4"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r5"]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="r6"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="r7"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r8"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r9"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-platform.png" id="r10"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="r11"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-cavern-frame-alpha-v3.png" id="r12"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-echo-wall-covered.png" id="r13"]
+[ext_resource type="Texture2D" path="res://art/world-kit/habitat-shade.png" id="r14"]
+[ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r15"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_interactable.gd" id="r16"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-foreground.png" id="r17"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r18"]
+[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-closed.png" id="r19"]
+[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-open.png" id="r20"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r21"]
+
+[sub_resource type="ShaderMaterial" id="Paint1"]
+shader = ExtResource("r3")
+shader_parameter/recess = 0.06
+shader_parameter/water_strength = 0.04
+shader_parameter/water_phase = 6.3
+
+[sub_resource type="ShaderMaterial" id="Paint2"]
+shader = ExtResource("r11")
+shader_parameter/bounds = Vector4(808,1256,464,154)
+
+[sub_resource type="ShaderMaterial" id="Paint3"]
+shader = ExtResource("r11")
+shader_parameter/bounds = Vector4(1928,1256,624,154)
 
 [node name="R5-02" type="Node2D"]
 
@@ -40,8 +58,9 @@ room_center = Vector2(1280, 840)
 
 [node name="Art" type="Sprite2D" parent="Far/Organs"]
 position = Vector2(1280, 840)
-scale = Vector2(1.1018, 1.1018)
-texture = ExtResource("r3")
+scale = Vector2(1.9282, 1.9282)
+material = SubResource("Paint1")
+texture = ExtResource("r4")
 
 [node name="Middle" type="Node2D" parent="."]
 z_index = -15
@@ -49,24 +68,27 @@ z_index = -15
 [node name="Ambient" type="Node2D" parent="Middle"]
 
 [node name="Bubbles0" type="Node2D" parent="Middle/Ambient"]
-script = ExtResource("r4")
+script = ExtResource("r5")
 bounds = Rect2(1120, 320, 240, 800)
 population = 8
 seed_id = 1
 size_range = Vector2(4, 9)
 
 [node name="Beam0" type="Sprite2D" parent="Middle/Ambient"]
-script = ExtResource("r5")
-position = Vector2(1200, 560)
-scale = Vector2(3.1250, 5.0000)
-modulate = Color(0.910, 0.965, 1.000, 1)
-base_alpha = 0.7
-phase = 0.0
-texture = ExtResource("r6")
+script = ExtResource("r6")
+texture = ExtResource("r7")
+position = Vector2(773.3, 560)
+scale = Vector2(1.6667, 1.6667)
+centered = false
+external_clock = true
+intensity = 0.1
+period = 18
+phase = 0
+light_tint = Color(0.910, 0.965, 1.000, 1)
 
 [node name="Drift0" type="Node2D" parent="Middle/Ambient"]
-script = ExtResource("r7")
-texture = ExtResource("r8")
+script = ExtResource("r8")
+texture = ExtResource("r9")
 bounds = Rect2(0, 80, 2560, 1360)
 population = 60
 velocity = Vector2(-4, -6)
@@ -88,27 +110,27 @@ z_index = 0
 position = Vector2(-26.2, 1413.4)
 scale = Vector2(0.5401, 0.5401)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0_1" type="Sprite2D" parent="World/Art"]
 position = Vector2(614.8, 1413.4)
 scale = Vector2(0.5401, 0.5401)
 centered = false
 flip_h = true
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0_2" type="Sprite2D" parent="World/Art"]
 position = Vector2(1253.8, 1413.4)
 scale = Vector2(0.5401, 0.5401)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0_3" type="Sprite2D" parent="World/Art"]
 position = Vector2(1894.8, 1413.4)
 scale = Vector2(0.5401, 0.5401)
 centered = false
 flip_h = true
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0" type="StaticBody2D" parent="World/Terrain"]
 
@@ -119,7 +141,7 @@ polygon = PackedVector2Array(0, 1504, 2560, 1504, 2560, 1680, 0, 1680)
 position = Vector2(-15.4, 1261.8)
 scale = Vector2(0.5857, 0.5857)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Surface_P0" type="StaticBody2D" parent="World/Terrain"]
 
@@ -132,7 +154,7 @@ one_way_collision_margin = 6.0
 position = Vector2(789.7, 1174.5)
 scale = Vector2(0.3905, 0.3905)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Surface_P1" type="StaticBody2D" parent="World/Terrain"]
 
@@ -145,7 +167,7 @@ one_way_collision_margin = 6.0
 position = Vector2(1349.7, 1294.5)
 scale = Vector2(0.3905, 0.3905)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Surface_P2" type="StaticBody2D" parent="World/Terrain"]
 
@@ -158,7 +180,7 @@ one_way_collision_margin = 6.0
 position = Vector2(1906.3, 1152.7)
 scale = Vector2(0.5206, 0.5206)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Surface_P3" type="StaticBody2D" parent="World/Terrain"]
 
@@ -166,6 +188,36 @@ texture = ExtResource("r9")
 polygon = PackedVector2Array(1940, 1240, 2540, 1240, 2540, 1275, 1940, 1275)
 one_way_collision = true
 one_way_collision_margin = 6.0
+
+[node name="P1_NativeVolume" type="Sprite2D" parent="World/Art"]
+position = Vector2(627.7, 1134.8)
+scale = Vector2(0.6443, 0.6443)
+centered = false
+z_index = -3
+material = SubResource("Paint2")
+modulate = Color(0.68,0.74,0.78,1)
+texture = ExtResource("r10")
+
+[node name="P3_NativeVolume" type="Sprite2D" parent="World/Art"]
+position = Vector2(1690.2, 1099.7)
+scale = Vector2(0.8590, 0.8590)
+centered = false
+z_index = -3
+material = SubResource("Paint3")
+modulate = Color(0.68,0.74,0.78,1)
+texture = ExtResource("r10")
+
+[node name="Framing" type="Node2D" parent="."]
+
+[node name="Piece0" type="Node2D" parent="Framing"]
+z_index = -13
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece0"]
+position = Vector2(-332.8, -32)
+scale = Vector2(2.1000, 2.1000)
+centered = false
+modulate = Color(1,1,1,0.72)
+texture = ExtResource("r12")
 
 [node name="Landmark0" type="Node2D" parent="Middle"]
 script = ExtResource("r1")
@@ -178,24 +230,24 @@ scale = Vector2(0.5213, 0.5213)
 centered = false
 z_index = 1
 modulate = Color(1, 1, 1, 0.2)
-texture = ExtResource("r10")
+texture = ExtResource("r13")
 
 [node name="Prop0_habitat-shade" type="Sprite2D" parent="World/Art"]
 position = Vector2(1570.1, 1230.8)
 scale = Vector2(0.4178, 0.4178)
 centered = false
 z_index = 1
-texture = ExtResource("r11")
+texture = ExtResource("r14")
 
 [node name="Prop1_shell-camp" type="Sprite2D" parent="World/Art"]
 position = Vector2(244.8, 1150.9)
 scale = Vector2(0.4774, 0.4774)
 centered = false
 z_index = 1
-texture = ExtResource("r12")
+texture = ExtResource("r15")
 
 [node name="Resident0" type="Node2D" parent="World"]
-script = ExtResource("r13")
+script = ExtResource("r16")
 position = Vector2(640, 1360)
 interaction_id = "safe-pool-echo"
 display_name = "安全池旧刻痕"
@@ -219,19 +271,19 @@ vertical = false
 position = Vector2(219, 1497.9)
 scale = Vector2(0.7828, 0.7828)
 centered = false
-texture = ExtResource("r14")
+texture = ExtResource("r17")
 
 [node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(1500.7, 1505.8)
 scale = Vector2(0.7176, 0.7176)
 centered = false
 flip_h = true
-texture = ExtResource("r14")
+texture = ExtResource("r17")
 
 [node name="Doorways" type="Node2D" parent="."]
 
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r15")
+script = ExtResource("r18")
 destination_id = "R5-01"
 kind = "door"
 direction = -1.0
@@ -243,7 +295,7 @@ position = Vector2(-102.6, -216.3)
 scale = Vector2(0.4506, 0.4506)
 centered = false
 z_index = 1
-texture = ExtResource("r16")
+texture = ExtResource("r19")
 
 [node name="Open" type="Sprite2D" parent="Doorways/Entrance1"]
 position = Vector2(-96.3, -204.6)
@@ -251,10 +303,10 @@ scale = Vector2(0.4234, 0.4234)
 centered = false
 z_index = 1
 visible = false
-texture = ExtResource("r17")
+texture = ExtResource("r20")
 
 [node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("r15")
+script = ExtResource("r18")
 destination_id = "R5-04"
 kind = "door"
 direction = 1.0
@@ -266,7 +318,7 @@ position = Vector2(-102.6, -216.3)
 scale = Vector2(0.4506, 0.4506)
 centered = false
 z_index = 1
-texture = ExtResource("r16")
+texture = ExtResource("r19")
 
 [node name="Open" type="Sprite2D" parent="Doorways/Entrance2"]
 position = Vector2(-96.3, -204.6)
@@ -274,4 +326,7 @@ scale = Vector2(0.4234, 0.4234)
 centered = false
 z_index = 1
 visible = false
-texture = ExtResource("r17")
+texture = ExtResource("r20")
+
+[node name="PresentationMotion" type="Node2D" parent="."]
+script = ExtResource("r21")

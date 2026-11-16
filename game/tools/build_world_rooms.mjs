@@ -5,6 +5,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {buildBodies} from './build_world_bodies.mjs';
+import {buildFraming} from './build_world_framing.mjs';
 
 const game = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const repo = path.resolve(game, '..');
@@ -51,6 +53,7 @@ function strip(scene, parent, prefix, piece, rule, x, y, w, unit) {
 
 function sceneWriter(id) {
   const resources = [];
+  const materials = [];
   const nodes = [];
   const ext = (type, file) => {
     let entry = resources.find(item => item.file === file);
@@ -63,23 +66,29 @@ function sceneWriter(id) {
   };
   return {
     ext, node,
+    material: (shader, props={}) => {
+      const id=`Paint${materials.length+1}`;
+      materials.push(`[sub_resource type="ShaderMaterial" id="${id}"]\nshader = ${ext('Shader',shader)}\n${Object.entries(props).map(([key,value])=>`shader_parameter/${key} = ${value}`).join('\n')}`);
+      return `SubResource("${id}")`;
+    },
     sprite: (parent, name, artId, props) => node(name, 'Sprite2D', parent, {...props, texture: ext('Texture2D', `res://art/world-kit/${artId}.png`)}),
-    text: () => `[gd_scene format=3]\n\n${resources.map(item => `[ext_resource type="${item.type}" path="${item.file}" id="${item.id}"]`).join('\n')}\n\n${nodes.join('\n\n')}\n`,
+    text: () => `[gd_scene format=3]\n\n${resources.map(item => `[ext_resource type="${item.type}" path="${item.file}" id="${item.id}"]`).join('\n')}\n\n${materials.join('\n\n')}\n\n${nodes.join('\n\n')}\n`,
     id,
   };
 }
 
-function parallax(scene, parent, name, artId, factor, size, vertical = true) {
+function parallax(scene, parent, name, artId, factor, size, vertical = true, options={}) {
   const piece = art(artId);
   const asset = catalog.get(artId);
-  const need = size.map((side, axis) => (VIEW[axis] + Math.abs(factor) * Math.max(0, side - VIEW[axis])) * COVER);
+  const need = size.map((side, axis) => (options.fullFrame ? side : VIEW[axis] + Math.abs(factor) * Math.max(0, side - VIEW[axis])) * COVER);
   const scale = Math.max(need[0] / asset.width, need[1] / asset.height);
   scene.node(name, 'Node2D', parent, {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_parallax.gd'), factor, room_center: vec(size[0] / 2, size[1] / 2), vertical: vertical ? undefined : 'false'});
-  scene.sprite(`${parent}/${name}`, 'Art', piece.id, {position: vec(size[0] / 2, size[1] / 2), scale: ratio(scale)});
+  scene.sprite(`${parent}/${name}`, 'Art', piece.id, {position: vec(size[0] / 2, size[1] / 2), scale: ratio(scale), material:options.material});
 }
 
 function buildRoom(recipe) {
-  const kit = world.kits[recipe.kit_variant ?? recipe.kit];
+  const baseKit = world.kits[recipe.kit_variant ?? recipe.kit];
+  const kit = recipe.reference_background ? {...baseKit,depth:{art:recipe.reference_background.art}} : baseKit;
   const unit = recipe.unit;
   const size = recipe.size.map(value => value * unit);
   const px = point => point.map(value => round(value * unit));
@@ -88,7 +97,10 @@ function buildRoom(recipe) {
   scene.node(recipe.id, 'Node2D', null);
   scene.node('Far', 'Node2D', '.', {z_index: -30});
   parallax(scene, 'Far', 'Water', kit.water.art, kit.water.parallax, size);
-  parallax(scene, 'Far', 'Organs', kit.far.art, kit.far.parallax, size);
+  // Use the complete depth instead of layering a duplicate same-source cutout.
+  if (kit.depth) art(kit.far.art);
+  const depthMaterial=kit.depth?scene.material('res://src/world/scenery/layout/depth_atmosphere.gdshader',{recess:0.06,water_strength:0.04,water_phase:world.order.indexOf(recipe.id)*0.7}):undefined;
+  parallax(scene, 'Far', 'Organs', kit.depth?.art??kit.far.art, kit.far.parallax, size,true,{fullFrame:Boolean(kit.depth),material:depthMaterial});
   scene.node('Middle', 'Node2D', '.', {z_index: -15});
   scene.node('Ambient', 'Node2D', 'Middle');
   (recipe.bubbles ?? []).forEach((zone, i) => scene.node(`Bubbles${i}`, 'Node2D', 'Middle/Ambient', {
@@ -96,10 +108,9 @@ function buildRoom(recipe) {
     bounds: `Rect2(${px(zone.rect).join(', ')})`, population: zone.count, seed_id: i + 1, size_range: 'Vector2(4, 9)'}));
   const color = hex => `Color(${[0, 2, 4].map(i => (parseInt(hex.slice(i, i + 2), 16) / 255).toFixed(3)).join(', ')}, 1)`;
   (recipe.beams ?? []).forEach((beam, i) => {
-    const piece = art(beam.art ?? 'fx-cold-beam');
-    const side = catalog.get(piece.id).width;
-    scene.sprite('Middle/Ambient', `Beam${i}`, piece.id, {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_pulse.gd'), position: vec(beam.at[0] * unit, beam.at[1] * unit),
-      scale: `Vector2(${(beam.size[0] * unit / side).toFixed(4)}, ${(beam.size[1] * unit / side).toFixed(4)})`, modulate: color(beam.tint ?? 'ffffff'), base_alpha: beam.opacity, phase: (i * 1.7).toFixed(1)});
+    art(beam.art ?? 'fx-cold-beam');
+    const scale=beam.size[1]*unit/768;
+    scene.node(`Beam${i}`,'Sprite2D','Middle/Ambient',{script:scene.ext('Script','res://content/whalebelly/environment/elements/soft_underwater_light.gd'),texture:scene.ext('Texture2D','res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png'),position:vec(beam.at[0]*unit-256*scale,beam.at[1]*unit),scale:ratio(scale),centered:'false',external_clock:'true',intensity:Math.min(0.10,beam.opacity*.55),period:18+i*7,phase:i*1.7,light_tint:color(beam.tint??'ffffff')});
   });
   (recipe.drift ?? []).forEach((field, i) => scene.node(`Drift${i}`, 'Node2D', 'Middle/Ambient', {
     script: scene.ext('Script', 'res://src/world/scenery/kit/kit_drift.gd'), texture: scene.ext('Texture2D', `res://art/world-kit/${art(field.art).id}.png`),
@@ -129,6 +140,10 @@ function buildRoom(recipe) {
     const inset = Math.min(0.25, item.w * 0.04);
     collider(`Surface_${item.id}`, item.x + inset, item.y, item.w - inset * 2, THICKNESS, !item.solid);
   });
+  if (kit.depth) buildBodies(scene,recipe,kit,art,catalog,unit,vec,ratio);
+  buildFraming(scene,recipe,art,catalog,unit,vec,ratio);
+  // Keep source audit pieces without re-rendering their superseded appearance.
+  for (const item of recipe.retained_art??[]) art(item.art,item.max??640);
   const anchored = (parent, name, artId, at, units, max, extra = {}) => {
     const piece = art(artId, max);
     const visible = piece.axis === 'height' ? piece.y1 - piece.y0 : piece.x1 - piece.x0;
@@ -145,7 +160,7 @@ function buildRoom(recipe) {
   (recipe.props ?? []).forEach((item, i) => {
     // The host hides World/RewardArt once the room's reward is taken, revealing whatever sits behind it.
     if (item.node === 'RewardArt') scene.node('RewardArt', 'Node2D', 'World');
-    anchored(item.node === 'RewardArt' ? 'World/RewardArt' : 'World/Art', `Prop${i}_${item.art}`, item.art, item.at, item.units ?? catalog.get(item.art).world.units, 640);
+    anchored(item.node === 'RewardArt' ? 'World/RewardArt' : 'World/Art', `Prop${i}_${item.art}`, item.art, item.at, item.units ?? catalog.get(item.art).world.units, item.max??640,{...(item.layer!==undefined?{z_index:item.layer}:{}),...(item.modulate?{modulate:item.modulate}:{}),...(item.rotation?{rotation:item.rotation}:{})});
   });
   (recipe.state_props ?? []).forEach((item, i) => {
     const parent = `World/State${i}`;
@@ -180,7 +195,7 @@ function buildRoom(recipe) {
     recipe.foreground.forEach((item, i) => {
       const scale = item.w * unit / (fold.x1 - fold.x0);
       // Only the top band shows: the fold hangs below the lowest footing.
-      scene.sprite('Foreground/Folds', `Fold${i}`, fold.id, {position: vec(item.x * unit - fold.x0 * scale, (recipe.size[1] - 1.1) * unit - fold.y0 * scale), scale: ratio(scale), centered: 'false', flip_h: i % 2 === 1});
+      scene.sprite('Foreground/Folds', `Fold${i}`, fold.id, {position: vec(item.x * unit - fold.x0 * scale, (recipe.size[1] - 1.1) * unit - fold.y0 * scale), scale: ratio(scale), centered: 'false', flip_h: i % 2 === 1,modulate:recipe.reference_background?'Color(0.22,0.17,0.20,0.9)':undefined});
     });
   }
   scene.node('Doorways', 'Node2D', '.');
@@ -192,6 +207,11 @@ function buildRoom(recipe) {
     for (const key of ['requires', 'locked', 'locked_message']) if (door[key]) data[key] = door[key];
     return data;
   });
+  for (const [i,school] of (recipe.background_schools??[]).entries()) {
+    const piece=art(school.art,school.max??0);
+    scene.node(`BackgroundSchool${i}`,'Node2D','Middle/Ambient',{z_index:-2,script:scene.ext('Script','res://src/world/scenery/kit/kit_amphipod_school.gd'),texture:scene.ext('Texture2D',`res://art/world-kit/${piece.id}.png`),bounds:`Rect2(${px(school.rect).join(', ')})`,population:school.count,body_width:school.width,source_visible_width_ratio:(piece.x1-piece.x0)/piece.width,seed_id:i+47,external_clock:'true',opacity:school.opacity,flow_speed:school.speed,hidden_when_flag:JSON.stringify(school.hide_flag??'')});
+  }
+  if (kit.depth) scene.node('PresentationMotion','Node2D','.',{script:scene.ext('Script','res://src/world/scenery/kit/kit_depth_motion.gd'),unified_ambient:recipe.reference_background?'true':undefined});
   const directory = path.join(game, 'content/whalebelly', recipe.kit.toLowerCase());
   fs.mkdirSync(directory, {recursive: true});
   fs.writeFileSync(path.join(directory, `${recipe.id}.tscn`), scene.text());

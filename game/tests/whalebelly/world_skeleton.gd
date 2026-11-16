@@ -69,6 +69,7 @@ func go(target: Vector2, budget: int = 720, leap: bool = true) -> bool:
 	return host.room_index == start_room and absf(end.x - target.x) < 60.0 and absf(end.y - target.y) < 60.0
 
 func setup() -> void:
+	if not OS.get_environment("WORLD_QA_OUT").is_empty(): output=OS.get_environment("WORLD_QA_OUT")
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
 	host = load("res://content/whalebelly/main.tscn").instantiate()
 	host.set_script(WorldCampaign)

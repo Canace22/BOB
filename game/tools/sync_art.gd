@@ -13,7 +13,16 @@ func _initialize() -> void:
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(MANIFEST))
 	var copied := 0
 	var errors := 0
+	var only: PackedStringArray = []
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--only="): only=argument.trim_prefix("--only=").split(",",false)
+	for destination: String in only:
+		if not manifest.entries.any(func(entry: Dictionary)->bool:return str(entry.dest)==destination):
+			printerr("UNKNOWN DESTINATION ",destination)
+			quit(1)
+			return
 	for entry: Dictionary in manifest["entries"]:
+		if not only.is_empty() and not only.has(str(entry.dest)): continue
 		var pairs := _expand(repo.path_join(entry["src"]), "res://art/".path_join(entry["dest"]))
 		if pairs.is_empty():
 			printerr("MISSING ", entry["src"])

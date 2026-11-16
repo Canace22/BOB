@@ -2,18 +2,40 @@
 
 [ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r4-water-base.png" id="r2"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r4-vertebrae-far-layer.png" id="r3"]
-[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r4"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_pulse.gd" id="r5"]
-[ext_resource type="Texture2D" path="res://art/world-kit/fx-cold-beam.png" id="r6"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r7"]
-[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r8"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r4-fungal-bed.png" id="r9"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r4-bone-platform.png" id="r10"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r4-training-groove.png" id="r11"]
-[ext_resource type="Texture2D" path="res://art/world-kit/anchor-bone-mount.png" id="r12"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r4-foreground-bone.png" id="r13"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r14"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="r3"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-vertebrae-depth.png" id="r4"]
+[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r5"]
+[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="r6"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="r7"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r8"]
+[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r9"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-fungal-bed.png" id="r10"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-bone-platform.png" id="r11"]
+[ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="r12"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-cranial-cavern-frame-alpha-v3.png" id="r13"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-training-groove.png" id="r14"]
+[ext_resource type="Texture2D" path="res://art/world-kit/anchor-bone-mount.png" id="r15"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-foreground-bone.png" id="r16"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r17"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r18"]
+
+[sub_resource type="ShaderMaterial" id="Paint1"]
+shader = ExtResource("r3")
+shader_parameter/recess = 0.06
+shader_parameter/water_strength = 0.04
+shader_parameter/water_phase = 2.8
+
+[sub_resource type="ShaderMaterial" id="Paint2"]
+shader = ExtResource("r12")
+shader_parameter/bounds = Vector4(728,1176,464,154)
+
+[sub_resource type="ShaderMaterial" id="Paint3"]
+shader = ExtResource("r12")
+shader_parameter/bounds = Vector4(1288,1056,464,240)
+
+[sub_resource type="ShaderMaterial" id="Paint4"]
+shader = ExtResource("r12")
+shader_parameter/bounds = Vector4(1848,1176,544,154)
 
 [node name="R4-01" type="Node2D"]
 
@@ -37,8 +59,9 @@ room_center = Vector2(1200, 800)
 
 [node name="Art" type="Sprite2D" parent="Far/Organs"]
 position = Vector2(1200, 800)
-scale = Vector2(1.0789, 1.0789)
-texture = ExtResource("r3")
+scale = Vector2(1.8363, 1.8363)
+material = SubResource("Paint1")
+texture = ExtResource("r4")
 
 [node name="Middle" type="Node2D" parent="."]
 z_index = -15
@@ -46,24 +69,27 @@ z_index = -15
 [node name="Ambient" type="Node2D" parent="Middle"]
 
 [node name="Bubbles0" type="Node2D" parent="Middle/Ambient"]
-script = ExtResource("r4")
+script = ExtResource("r5")
 bounds = Rect2(960, 320, 240, 720)
 population = 7
 seed_id = 1
 size_range = Vector2(4, 9)
 
 [node name="Beam0" type="Sprite2D" parent="Middle/Ambient"]
-script = ExtResource("r5")
-position = Vector2(1520, 560)
-scale = Vector2(3.1250, 5.0000)
-modulate = Color(0.910, 0.941, 1.000, 1)
-base_alpha = 0.7
-phase = 0.0
-texture = ExtResource("r6")
+script = ExtResource("r6")
+texture = ExtResource("r7")
+position = Vector2(1093.3, 560)
+scale = Vector2(1.6667, 1.6667)
+centered = false
+external_clock = true
+intensity = 0.1
+period = 18
+phase = 0
+light_tint = Color(0.910, 0.941, 1.000, 1)
 
 [node name="Drift0" type="Node2D" parent="Middle/Ambient"]
-script = ExtResource("r7")
-texture = ExtResource("r8")
+script = ExtResource("r8")
+texture = ExtResource("r9")
 bounds = Rect2(0, 80, 2400, 1280)
 population = 60
 velocity = Vector2(-4, -6)
@@ -85,20 +111,20 @@ z_index = 0
 position = Vector2(-34.9, 1296)
 scale = Vector2(0.6779, 0.6779)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0_1" type="Sprite2D" parent="World/Art"]
 position = Vector2(767.1, 1296)
 scale = Vector2(0.6779, 0.6779)
 centered = false
 flip_h = true
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0_2" type="Sprite2D" parent="World/Art"]
 position = Vector2(1565.1, 1296)
 scale = Vector2(0.6779, 0.6779)
 centered = false
-texture = ExtResource("r9")
+texture = ExtResource("r10")
 
 [node name="Bed0" type="StaticBody2D" parent="World/Terrain"]
 
@@ -109,7 +135,7 @@ polygon = PackedVector2Array(0, 1424, 2400, 1424, 2400, 1600, 0, 1600)
 position = Vector2(-20.4, 1189.5)
 scale = Vector2(0.5319, 0.5319)
 centered = false
-texture = ExtResource("r10")
+texture = ExtResource("r11")
 
 [node name="Surface_P0" type="StaticBody2D" parent="World/Terrain"]
 
@@ -122,7 +148,7 @@ one_way_collision_margin = 6.0
 position = Vector2(704.7, 1092.1)
 scale = Vector2(0.3990, 0.3990)
 centered = false
-texture = ExtResource("r10")
+texture = ExtResource("r11")
 
 [node name="Surface_P1" type="StaticBody2D" parent="World/Terrain"]
 
@@ -135,7 +161,7 @@ one_way_collision_margin = 6.0
 position = Vector2(1264.7, 972.1)
 scale = Vector2(0.3990, 0.3990)
 centered = false
-texture = ExtResource("r10")
+texture = ExtResource("r11")
 
 [node name="Surface_P2" type="StaticBody2D" parent="World/Terrain"]
 
@@ -148,7 +174,7 @@ one_way_collision_margin = 6.0
 position = Vector2(1822.1, 1080.8)
 scale = Vector2(0.4655, 0.4655)
 centered = false
-texture = ExtResource("r10")
+texture = ExtResource("r11")
 
 [node name="Surface_P3" type="StaticBody2D" parent="World/Terrain"]
 
@@ -156,6 +182,45 @@ texture = ExtResource("r10")
 polygon = PackedVector2Array(1860, 1160, 2380, 1160, 2380, 1195, 1860, 1195)
 one_way_collision = true
 one_way_collision_margin = 6.0
+
+[node name="P1_NativeVolume" type="Sprite2D" parent="World/Art"]
+position = Vector2(543, 1064.6)
+scale = Vector2(0.6516, 0.6516)
+centered = false
+z_index = -3
+material = SubResource("Paint2")
+modulate = Color(0.68,0.74,0.78,1)
+texture = ExtResource("r10")
+
+[node name="P2_NativeVolume" type="Sprite2D" parent="World/Art"]
+position = Vector2(1103, 944.6)
+scale = Vector2(0.6516, 0.6516)
+centered = false
+z_index = -3
+material = SubResource("Paint3")
+modulate = Color(0.68,0.74,0.78,1)
+texture = ExtResource("r10")
+
+[node name="P3_NativeVolume" type="Sprite2D" parent="World/Art"]
+position = Vector2(1633.5, 1048.8)
+scale = Vector2(0.7602, 0.7602)
+centered = false
+z_index = -3
+material = SubResource("Paint4")
+modulate = Color(0.68,0.74,0.78,1)
+texture = ExtResource("r10")
+
+[node name="Framing" type="Node2D" parent="."]
+
+[node name="Piece0" type="Node2D" parent="Framing"]
+z_index = -13
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece0"]
+position = Vector2(-336, -32)
+scale = Vector2(2.0000, 2.0000)
+centered = false
+modulate = Color(1,1,1,0.72)
+texture = ExtResource("r13")
 
 [node name="Landmark0" type="Node2D" parent="Middle"]
 script = ExtResource("r1")
@@ -168,14 +233,14 @@ scale = Vector2(0.6531, 0.6531)
 centered = false
 z_index = 1
 modulate = Color(1, 1, 1, 0.6)
-texture = ExtResource("r11")
+texture = ExtResource("r14")
 
 [node name="Prop0_anchor-bone-mount" type="Sprite2D" parent="World/Art"]
 position = Vector2(1518.6, 1023)
 scale = Vector2(0.2523, 0.2523)
 centered = false
 z_index = 1
-texture = ExtResource("r12")
+texture = ExtResource("r15")
 
 [node name="Foreground" type="Node2D" parent="."]
 z_index = 10
@@ -190,19 +255,19 @@ vertical = false
 position = Vector2(133.8, 1433)
 scale = Vector2(0.7894, 0.7894)
 centered = false
-texture = ExtResource("r13")
+texture = ExtResource("r16")
 
 [node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(1336, 1439.6)
 scale = Vector2(0.7236, 0.7236)
 centered = false
 flip_h = true
-texture = ExtResource("r13")
+texture = ExtResource("r16")
 
 [node name="Doorways" type="Node2D" parent="."]
 
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r14")
+script = ExtResource("r17")
 destination_id = "R3-01"
 kind = "door"
 direction = -1.0
@@ -210,9 +275,12 @@ height = 155.0
 prompt_offset = Vector2(0, -171)
 
 [node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("r14")
+script = ExtResource("r17")
 destination_id = "R4-03"
 kind = "door"
 direction = 1.0
 height = 155.0
 prompt_offset = Vector2(0, -171)
+
+[node name="PresentationMotion" type="Node2D" parent="."]
+script = ExtResource("r18")
