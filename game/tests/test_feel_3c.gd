@@ -162,7 +162,7 @@ func test_focus_heals_one_mask_per_charge_and_release_is_free() -> void:
 	Input.action_release("tp_heal")
 	eq([p.health, p.soul], [3, 33], "a hit interrupts focus without draining soul")
 
-func test_camera_peeks_and_leads_falls() -> void:
+func test_camera_stays_centered_while_looking_and_falling() -> void:
 	var p: TidePlayer = await tuned_player(Vector2(2000,1000))
 	var host := CameraHost.new()
 	host.player = p
@@ -171,17 +171,19 @@ func test_camera_peeks_and_leads_falls() -> void:
 	host.add_child(camera)
 	camera.host = host
 	camera.update_follow(1.0/60.0)
-	var rest: float = camera.position.y
+	var rest: Vector2 = camera.global_position
 	Input.action_press("tp_down")
 	for i: int in 20: camera.update_follow(1.0/60.0)
 	check(is_zero_approx(camera.smoothed_look), "a short press does not move the view")
 	for i: int in 50: camera.update_follow(1.0/60.0)
 	Input.action_release("tp_down")
-	check(camera.smoothed_look > camera.look_distance * 0.5 and camera.position.y > rest + 40.0, "holding down while idle peeks below")
+	eq(camera.global_position, rest, "holding down cannot offset the strict centered view")
 	for i: int in 120: camera.update_follow(1.0/60.0)
-	check(absf(camera.position.y - rest) < 6.0, "the view returns after release")
+	eq(camera.global_position, p.global_position, "release preserves the player center")
 	p.velocity = Vector2(0,900)
-	eq(camera.fall_amount(), 1.0, "a long fall gets the full downward lead")
+	camera.update_follow(1.0/60.0)
+	eq(camera.global_position, p.global_position, "fast falling cannot introduce a downward lead")
+	eq(camera.offset, Vector2.ZERO, "no render offset moves the player away from center")
 
 func test_hurt_freezes_the_world_and_keeps_soul() -> void:
 	var host: WhalebellyMain = (load("res://content/whalebelly/main.tscn") as PackedScene).instantiate()

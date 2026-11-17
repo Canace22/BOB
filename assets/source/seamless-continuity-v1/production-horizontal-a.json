@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-16",
+  "scope": "six assigned horizontal seamless seam repaint edits",
+  "status": "generated_and_copied_visual_reviewed_not_gpu_accepted",
+  "calls": 9,
+  "items": [
+    {
+      "id": "R1-02--R1-03",
+      "original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-bf7b7cd9-2760-4421-ab0b-8ab177172c3a.png",
+      "unresolved": [
+        "No GPU placement acceptance yet; foot-surface at reference y512 requires runtime alignment review."
+      ],
+      "prompt": "Use case: compositing / precise-object-edit. Edit this exact registered 1536x1024 side-view 2D game environment target. Keep canvas dimensions, framing and every outer-room structure at its exact pixel position. Repair only the central missing seam and its immediate blended edges into one coherent uninterrupted whale-bone and pink membrane causeway. The thin GREEN LINE is a technical foot-surface guide, not art: from approximately x538 to x998 at EXACT y512 draw a substantial naturally grown bone/membrane road whose walkable upper rim sits precisely on y512 and joins both existing room floors, with thick porous branching support underneath, no pillars obstructing the route. Remove the green line entirely. Replace the two door-shaped endpoint frames near x500 and x1000 with open continuous bone contours; no destination door icons. Preserve the original left three anchor rings and upper ledge, preserve right room's actual terrain outside the overlap. Reconstruct the central blue blank with shared deep-blue underwater rib/cavern scenery, continuous ceiling and pale hanging baleen in the same hand-painted style; blend matching light and perspective across left and right without rectangular patches. Keep peripheral leftmost and rightmost 250px highly faithful for later overlap. No characters, enemies, fish, UI, lettering, added routes or extra walkable platforms. No narrow orange floating strip. Final output must be exact original 1536x1024 composition, not a redesigned vista.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-02--R1-03.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R1-02--R1-03.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-03.png",
+      "game_file": "game/art/seamless-continuity-v1/R1-02--R1-03.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R1-02--R1-03.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R1-02--R1-03",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "0dbc98cec15e9270fcc8918338302ddd7324b047654425cf40e9a4f4c26a4d6e"
+    },
+    {
+      "id": "R1-03--R1-04",
+      "original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-a144516f-1e44-40b3-a5ff-f2fb6cb118a3.png",
+      "unresolved": [
+        "Original generated central hump was corrected with an additional built-in edit; final GPU foot-plane and feather overlap check remains pending."
+      ],
+      "discarded_original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-7137884a-b92f-4939-b41a-0a6318f2910e.png",
+      "correction_prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-03--R1-04-correction.txt",
+      "prompt": "Use case: compositing / precise-object-edit. Edit this exact registered 1536x1024 side-view 2D game scene without changing canvas, camera, scale, or outer-room registration. Fill the central missing vertical band as a seamless continuous whale interior. The GREEN horizontal guide between approx x538 and x998 at EXACT y512 defines the new walkable floor: paint its upper rim at y512, continuous with both existing lips, using thick pale porous bone transitioning into pink membrane and substantial natural roots below. Keep the original right-hand terrain descending from that entrance after x1040 unchanged; do not flatten the room. Preserve left upper reward ledge, lower recovery road, outer hanging baleen and right big supporting bone beyond the local repair. Remove the endpoint door-like amber frames, making an open organic passage with no obstructing upright wall. Extend the blue far ribs, soft underwater shafts and ceiling across the gap so there is no flat blue strip or visible border. Preserve outermost 250px on each side for overlap. Remove the green line, any character/enemy/fish, UI or text. Do not create new platforms, routes, rewards or buildings. Continuous thick anatomical path, not a thin orange plank. Return exact 1536x1024, same pixel framing.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-03--R1-04.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R1-03--R1-04.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R1-03--R1-04.png",
+      "game_file": "game/art/seamless-continuity-v1/R1-03--R1-04.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R1-03--R1-04.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R1-03--R1-04",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "5d737472184b0dabaf3aebd3a1e1417612bd4ebdcbc6334c500055fdcfe5a5dd"
+    },
+    {
+      "id": "R1-04--R1-05",
+      "original_return_path": "C:/Users/ADMIN/.codex/generated_images/01a1df55-0017-7ed2-a060-2bf8bb0cbc77/exec-767d5e49-f1de-4d3e-a7c3-7e1f7637c92d.png",
+      "unresolved": [
+        "Surgical correction visually checked; exact foot-plane and feather overlap still require GPU placement acceptance."
+      ],
+      "prompt": "Use case: compositing / precise-object-edit. This is the edit target for a registered 1536x1024 2D hand-painted underwater whale-interior game. Preserve original camera, dimensions and outside-room geometry. Join the missing central band into a continuous same-world passage between blue bone chamber left and red membrane nursery right. The GREEN guide x519..1017 at EXACT y512 is the required foot plane: draw a broad thick grown bone-and-membrane road with walkable rim exactly y512, aligned to both old floor lips, carrying porous weight below with natural curved support and the same fleshy painted texture. Keep the far-right existing chasm and soft bed visibly open and unbridged; do not add a shortcut. Remove the door-like closed frames at both endpoints and replace them with open organic wall/arch contours. Blend far rib silhouettes and the red ceiling into shared blue underwater depth across the gap; no pasted rectangles, flat water stripe, empty void or fade-to-nowhere. Match current warm highlights and cold depth, retain outermost 250px left/right with high fidelity for later overlap. Remove all green guide pixels. No people, enemies, fish, UI, text, extra routes or extra landings. No thin orange floating tiles. Exact original 1536x1024 composition.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-04--R1-05.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R1-04--R1-05.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R1-04--R1-05.png",
+      "game_file": "game/art/seamless-continuity-v1/R1-04--R1-05.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R1-04--R1-05.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R1-04--R1-05",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "d8d271c67e9ee463fa88e993c9dd1cee5cbf4ef3f78f50fb6d72d497c727e2a3",
+      "discarded_original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-13cbe2f8-b13a-4ed3-8d74-92969164465a.png",
+      "correction_prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-04--R1-05-correction.txt"
+    },
+    {
+      "id": "R1-05--R3-01",
+      "original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-53ae9da9-a279-42b1-9d43-4208550a9867.png",
+      "unresolved": [
+        "GPU foot-surface and feather overlap acceptance pending."
+      ],
+      "prompt": "Use case: compositing / precise-object-edit. Registered 1536x1024 side-view 2D game scene edit. Keep canvas and all outer left/right terrain and props registered exactly as target. Make the missing central band a coherent anatomical transition from red/purple pharyngeal membrane at left to ochre golden gastric folds at right. Draw a substantial continuous footpath whose top lies at EXACT y512 along the GREEN guide x523..1013, joins both existing lips without gap/step, and has thick layered organic tissue and curved load-bearing roots below, not a thin plank. Preserve left nursery chasm outside the seam and right higher platforms at their actual positions; add no new route. Remove the closed round doorway frame beside the left endpoint, replacing it with an open continuous torn membrane edge, not another door. Fill the blank central depth with shared underwater organ layers gradually changing blue-violet to muted ochre-green, with far folds and compatible lighting; avoid a hard vertical split. Keep outermost 250px on both sides faithful for overlap and do not move room structures. Erase green guide, all characters, enemies, fish, UI and text. No flat color center and no repeated orange tiles. Return exact original 1536x1024 registration.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R1-05--R3-01.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R1-05--R3-01.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R1-05--R3-01.png",
+      "game_file": "game/art/seamless-continuity-v1/R1-05--R3-01.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R1-05--R3-01.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R1-05--R3-01",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "dc01dbc320ce4c1efaecc3bcc5b0fed112dc2fa1a927f7805233df31ffeb94bb"
+    },
+    {
+      "id": "R3-01--R4-01",
+      "original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-b30d7f54-f5e7-4c56-9d4d-b4297f9454d0.png",
+      "unresolved": [
+        "GPU foot-surface and feather overlap acceptance pending."
+      ],
+      "prompt": "Use case: compositing / precise-object-edit. Edit this exact 1536x1024 registered side-view game environment, preserving dimensions, framing, room scale and all outer-room geometry. Repair the central gap into a seamless organic causeway between ochre gastric tissue at left and pale vertebral bone at right. The GREEN line x509..1027 at EXACT y512 is the physical walking surface: paint a thick continuous upper rim exactly y512 joining both existing platforms, broad porous bone/membrane support beneath and coherent roots attached to adjoining structures. Gradually transition ochre folds into grey-violet peeled membrane then pale bone along this causeway; do not use a thin orange strip. Extend shared cool blue/green deep-water organ and vertebra silhouettes through the center, blending both ceiling/root contours instead of leaving a blue blank vertical band. Preserve both left anchor rings, right far vertebral silhouettes, right lower fungal bed and all outer room pieces at existing coordinates. Do not add platforms, alternative routes, door frames, creatures, fish, characters, UI or words. Completely remove green line and any debug artifacts. Outer 250px each side stay highly faithful for blending. Exact 1536x1024 output with unchanged pixel registration.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R3-01--R4-01.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R3-01--R4-01.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R3-01--R4-01.png",
+      "game_file": "game/art/seamless-continuity-v1/R3-01--R4-01.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R3-01--R4-01.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R3-01--R4-01",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "9f8a9d4b4076da80c64bb8b16fce16c532bb45043140b698345ad2a0109e17f3"
+    },
+    {
+      "id": "R2-01--R2-03",
+      "original_return_path": "C:/Users/ADMIN/.codex/generated_images/01a1df55-0017-7ed2-a060-2bf8bb0cbc77/exec-51edf0c0-27f0-47a5-bde9-5412f017dfef.png",
+      "unresolved": [
+        "Surgical correction visually checked; exact foot-plane and feather overlap still require GPU placement acceptance."
+      ],
+      "prompt": "Use case: compositing / precise-object-edit. Edit this registered 1536x1024 side-view 2D whale-lung game environment. Keep exact canvas, camera and outside-room registration. Fill the missing central seam with a coherent continuous lung-membrane path and common background, not a row of modular floating tiles. GREEN technical guide x532..1004 at EXACT y512 gives the top foot surface: paint a thick pink-violet membrane causeway with upper rim precisely on y512, seamlessly joining existing left and right platform lips, porous arched supporting tissue below, all at the same existing scale. Reconnect the large violet membrane ceiling lattice above into one continuous grown structure with cold blue water depth and matching soft light; no rectangular flat-water patch or arbitrary new branch. Keep the shell camp at right in its exact location and retain lower right recovery surface. Preserve peripheral 250px left/right for later feather overlap. No additional walkable ledges or routes, no new rewards. Erase green line completely; no people, enemies, fish, UI, lettering, gates or endpoint door frames. No narrow orange platforms. Return exact original 1536x1024 composition.",
+      "prompt_file": "assets/source/seamless-continuity-v1/prompts/R2-01--R2-03.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "source_file": "assets/source/seamless-continuity-v1/originals/R2-01--R2-03.png",
+      "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/R2-01--R2-03.png",
+      "game_file": "game/art/seamless-continuity-v1/R2-01--R2-03.png",
+      "input_file": "assets/source/seamless-continuity-v1/inputs/R2-01--R2-03.png",
+      "tool": "built-in image_gen",
+      "reference_id": "R2-01--R2-03",
+      "registration": "Exact original canvas 1536x1024; world placement must use game/build/qa/seam-art-references/references.json; generated central rim is visual candidate pending GPU foot-alignment.",
+      "sha256": "eb778c689fc278c4a5da970629c7cfe35e52f8a383367d75062af163bdc9b432",
+      "discarded_original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-674ddbd4-219e-4d54-b053-b75b7c53b68c.png",
+      "correction_prompt_file": "assets/source/seamless-continuity-v1/prompts/R2-01--R2-03-correction.txt"
+    }
+  ]
+}

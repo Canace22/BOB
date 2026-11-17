@@ -74,7 +74,10 @@ func on_defeated() -> void:
 	tween.tween_callback(body.hide)
 
 func player_center() -> Vector2:
-	return host.player.position - Vector2(0, 45)
+	return player_feet() - Vector2(0, 45)
+
+func player_feet() -> Vector2:
+	return get_parent().to_local(host.player.global_position)
 
 func _physics_process(dt: float) -> void:
 	super._physics_process(dt)
@@ -88,7 +91,7 @@ func _physics_process(dt: float) -> void:
 	timer += dt
 	match state:
 		"rest":
-			if timer >= float(value("rest")) and absf(host.player.position.x - data.pos.x) < float(value("engage")): begin_tell()
+			if timer >= float(value("rest")) and absf(player_feet().x - data.pos.x) < float(value("engage")): begin_tell()
 		"tell":
 			update_tell()
 			if timer >= float(value("tell")): begin_act()
@@ -108,8 +111,9 @@ func begin_tell() -> void:
 		var lane: Array = config.lane
 		var lanes: Array = config.get("lanes", [data.pos.y])
 		var lane_y: float = float(lanes[0])
+		var player_y: float = player_feet().y
 		for candidate: Variant in lanes:
-			if absf(float(candidate) - host.player.position.y) < absf(lane_y - host.player.position.y): lane_y = float(candidate)
+			if absf(float(candidate) - player_y) < absf(lane_y - player_y): lane_y = float(candidate)
 		var from_left: bool = absf(data.pos.x - float(lane[0])) < absf(data.pos.x - float(lane[1]))
 		start = Vector2(float(lane[0]) if from_left else float(lane[1]), lane_y)
 		goal = Vector2(float(lane[1]) if from_left else float(lane[0]), lane_y)
@@ -194,7 +198,8 @@ func touch(center: Vector2, reach: float) -> void:
 	var delta: Vector2 = player_center() - center
 	if absf(delta.x) < reach and absf(delta.y) < maxf(70.0, reach * 0.8):
 		hit_sent = true
-		host.player.take_damage(1, center)
+		# 攻击轨迹沿用房内坐标；受击方向和偏转接口约定接收世界坐标。
+		host.player.take_damage(1, get_parent().to_global(center))
 
 func end_act() -> void:
 	clear_marks()
@@ -205,8 +210,9 @@ func end_act() -> void:
 		# A Boss swarm gathers beside the player, so its exposed pause is a real opening.
 		if config.has("floor"):
 			var lane: Array = config.lane
-			var side: float = signf(data.pos.x - host.player.position.x) if not is_equal_approx(data.pos.x, host.player.position.x) else 1.0
-			goal.x = clampf(host.player.position.x + side * 150.0, float(lane[0]), float(lane[1]))
+			var player_x: float = player_feet().x
+			var side: float = signf(data.pos.x - player_x) if not is_equal_approx(data.pos.x, player_x) else 1.0
+			goal.x = clampf(player_x + side * 150.0, float(lane[0]), float(lane[1]))
 	enter("recover")
 
 func finish_cycle() -> void:
@@ -225,7 +231,7 @@ func move_shots(dt: float) -> void:
 		sprite.rotation += dt * 5.0
 		shot.life = float(shot.life) - dt
 		var struck: bool = sprite.position.distance_to(player_center()) < 38.0
-		if struck: host.player.take_damage(1, sprite.position)
+		if struck: host.player.take_damage(1, sprite.global_position)
 		if struck or float(shot.life) <= 0.0:
 			sprite.queue_free()
 			shots.remove_at(i)

@@ -31,23 +31,25 @@ func fixture() -> WhalebellyCampaignCamera:
 	camera.update_follow(1.0/60.0)
 	return camera
 
-func test_dead_zone_and_smooth_reversal() -> void:
+func test_player_stays_centered_during_motion_and_reversal() -> void:
 	var camera: WhalebellyCampaignCamera = fixture()
 	var host: Host = camera.host
-	var initial: Vector2 = camera.position
 	host.player.position += Vector2(10,40)
 	camera.update_follow(1.0/60.0)
-	check(camera.position.distance_to(initial) < .01, "small horizontal/vertical movement stays inside dead zone")
+	eq(camera.global_position, host.player.global_position, "even small movement follows without a dead zone")
 	host.player.facing = -1.0
 	camera.update_follow(1.0/60.0)
-	check(camera.position.distance_to(initial) < 5.0, "facing reversal does not jump the camera")
-	check(camera.smoothed_lookahead > 0.0, "lookahead eases through zero instead of snapping")
+	eq(camera.global_position, host.player.global_position, "facing reversal does not offset the center")
+	eq(camera.smoothed_lookahead, 0.0, "normal gameplay has no lookahead")
 	host.player.position.y += 200
-	var before: float = camera.position.y
 	camera.update_follow(1.0/60.0)
-	check(camera.position.y > before and camera.position.y < before + 30, "large jump follows with vertical lag")
+	eq(camera.global_position, host.player.global_position, "vertical movement follows without lag")
+	host.position = Vector2(-1700,825)
+	camera.update_follow(1.0/60.0)
+	eq(camera.global_position, host.player.global_position, "translated room uses world coordinates")
+	check(camera.get_screen_center_position().is_equal_approx(host.player.global_position), "rendered viewport center matches player after translation")
 
-func test_shake_and_zoom_stay_inside_room() -> void:
+func test_room_edges_and_dash_keep_the_same_center_and_zoom() -> void:
 	var camera: WhalebellyCampaignCamera = fixture()
 	var host: Host = camera.host
 	for corner: Vector2 in [Vector2.ZERO, Vector2(4096,2400)]:
@@ -55,17 +57,19 @@ func test_shake_and_zoom_stay_inside_room() -> void:
 		camera.tracked_room = "reset"
 		host.camera_feedback = 20.0
 		camera.update_follow(.016)
-		var half: Vector2 = camera.get_viewport_rect().size / (2 * camera.zoom)
-		var center: Vector2 = camera.position + camera.offset
-		check(center.x - half.x >= -.01 and center.x + half.x <= 4096.01, "shake respects horizontal room bounds")
-		check(center.y - half.y >= -.01 and center.y + half.y <= 2400.01, "shake respects vertical room bounds")
-		check(camera.offset.length() <= camera.shake_pixels * sqrt(2.0) + .01, "feedback intensity is bounded")
+		eq(camera.global_position, host.player.global_position, "room edge does not push the player off center")
+		eq(camera.offset, Vector2.ZERO, "feedback cannot displace the strict centered camera")
+		check(not camera.limit_enabled and not camera.position_smoothing_enabled, "room limits and camera smoothing are disabled")
+	var before_zoom: Vector2 = camera.zoom
 	host.room = {"id":"small", "size":[1280,720]}
 	host.player.position = Vector2(30,650)
 	host.player.state = "A1_dash"
 	camera.update_follow(.016)
-	check(camera.zoom.x >= 1.0, "dash cannot zoom out beyond a viewport-size room")
-	eq(camera.position, Vector2(640,360), "room change snaps to the new clamped center")
+	eq(camera.zoom, before_zoom, "dash and room change preserve the same gameplay scale")
+	eq(camera.global_position, host.player.global_position, "room change preserves the actual player center")
+	host.zoomed = false
+	camera.update_follow(.016)
+	check(camera.was_following, "legacy Tab panorama flag cannot break normal center-follow")
 
 func test_reference_fit_stays_unchanged_and_shake_free() -> void:
 	var camera: WhalebellyCampaignCamera = fixture()

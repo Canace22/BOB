@@ -111,8 +111,8 @@ func _physics_process(dt:float) -> void:
 	super._physics_process(dt)
 	run_visual.update(dt,position.x-before_move_x)
 	_check_door_entry()
-	position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
-	if is_on_floor() and position.y<float(host.room.size[1])-65 and stable_floor_point():last_safe=position
+	if not host.streaming.enabled: position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
+	if is_on_floor() and (host.streaming.enabled or (position.y<float(host.room.size[1])-65 and stable_floor_point())):last_safe=position
 	if health<=0:return
 	for bed:Dictionary in host.room.get("soft_beds",[]):
 		if position.x>float(bed["from"]) and position.x<float(bed.to) and position.y>float(bed.y):
@@ -279,6 +279,7 @@ func respawn() -> void:
 	if is_instance_valid(host):host.respawn.call_deferred()
 
 func _check_door_entry() -> void:
+	if host.streaming.enabled: return
 	if not automatic_doors or not controls_enabled or health<=0 or transition_locked or state=="interact":return
 	var door: Dictionary = host.continuity.automatic_entry()
 	if not door.is_empty():

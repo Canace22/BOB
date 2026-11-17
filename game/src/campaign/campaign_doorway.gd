@@ -19,6 +19,7 @@ func bind(level: Node2D, door: Dictionary) -> void:
 	data = door
 	position = host.point(door.pos)
 	armed = host.player.position.distance_to(position) > radius + 35.0
+	if is_instance_valid(inset): return
 	if kind not in ["door", "passage"] or height <= 0.0: return
 	inset = Sprite2D.new()
 	inset.texture = load("res://art/doorways/tunnel.png")
@@ -48,6 +49,7 @@ func bind(level: Node2D, door: Dictionary) -> void:
 func _process(_dt: float) -> void:
 	if not is_instance_valid(host): return
 	visible = not host.reference_visible and host.layer_solo < 0 and host.capture_path.is_empty()
+	if host.streaming.enabled and int(data.get("to",-1))>=0 and restriction().is_empty(): visible=false
 	# Kit gates carry both states; the door graph decides which one shows.
 	if has_node("Closed"):
 		var shut: bool = not restriction().is_empty()

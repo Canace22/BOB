@@ -83,6 +83,8 @@ var ui_session_started: bool = false
 var ui_interactive_in_tests: bool = false
 var last_save_ok: bool = true
 var continuity: CampaignContinuity
+var streaming: CampaignRoomStream
+var actor_frame: Node2D
 
 func _ready() -> void:
 	var isolated := qa or not capture_path.is_empty()
@@ -116,6 +118,12 @@ func _ready() -> void:
 	continuity = CampaignContinuity.new()
 	continuity.host = self
 	add_child(continuity)
+	streaming = CampaignRoomStream.new()
+	streaming.host = self
+	add_child(streaming)
+	actor_frame = Node2D.new()
+	actor_frame.name = "ActorFrame"
+	add_child(actor_frame)
 	setup_inputs()
 	overlay = Node2D.new()
 	overlay.z_index = 80
@@ -253,17 +261,19 @@ func setup_inputs() -> void:
 		map_key.physical_keycode = KEY_C
 		InputMap.action_add_event("ui_region_map",map_key)
 
-func load_room(index: int, target_spawn: Array = [], record_discovery: bool = true) -> void:
+func load_room(index: int, target_spawn: Array = [], record_discovery: bool = true, stream_crossing: bool = false) -> void:
 	# The authored starting room is visible in main.tscn and shares the same
 	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
 	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
 	var next_room: Dictionary = rooms[index]
-	var packed: PackedScene = load(CampaignWorld.scene_path(str(next_room.id)))
-	if packed == null:
+	if not stream_crossing: streaming.reset()
+	var incoming: Dictionary = streaming.take(index) if stream_crossing else {}
+	var packed: PackedScene = streaming.explicit_scene(index) if incoming.is_empty() else null
+	if packed == null and incoming.is_empty():
 		push_error("Room resource unavailable: "+str(next_room.id))
 		if qa: get_tree().quit(2)
 		return
-	if is_instance_valid(scenery):
+	if is_instance_valid(scenery) and not stream_crossing:
 		var old_ambience: Node = scenery.get_node_or_null("EnvironmentMotion")
 		if old_ambience != null and old_ambience.has_method("release_ambience"): old_ambience.release_ambience()
 		remove_child(scenery)
@@ -276,26 +286,41 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	room_preview = not record_discovery
 	if record_discovery and not practice:
 		visited[str(room.id)] = true
-	if authored_room != null and index == 0:
+	if not incoming.is_empty():
+		scenery = incoming.scene
+	elif authored_room != null and index == 0:
 		scenery = authored_room
 	else:
 		if authored_room != null:
 			remove_child(authored_room)
 			authored_room.queue_free()
 		scenery = packed.instantiate()
+		CampaignStreamingCorridors.prepare_scene(index,scenery,streaming.layout)
 		add_child(scenery)
+	scenery.position = streaming.origin(index)
 	scenery.process_mode = Node.PROCESS_MODE_PAUSABLE
 	var reference_environment: Node2D = scenery.get_node_or_null("ReferenceEnvironment")
 	if reference_environment != null: reference_environment.level_host = self
 	var default_spawn: Array = room.spawn if not capture_path.is_empty() else room.get("play_spawn", room.spawn)
 	var spawn: Vector2 = restored_room_position(point(default_spawn if target_spawn.is_empty() else target_spawn))
-	player = player_scene.instantiate()
-	player.host = self
-	player.name = "Player"
-	player.position = spawn
+	if stream_crossing:
+		player = streaming.actor
+		var world_position: Vector2 = player.global_position
+		actor_frame.position = scenery.position
+		player.global_position = world_position
+		streaming.transform_actor()
+	else:
+		if is_instance_valid(player):
+			actor_frame.remove_child(player)
+			player.queue_free()
+		actor_frame.position = scenery.position
+		player = player_scene.instantiate()
+		player.host = self
+		player.name = "Player"
+		player.position = spawn
 	player.z_index = 20 if reference_environment != null else 3
 	var cutout: Node2D = scenery.get_node_or_null("World/PlayerArt")
-	if cutout != null:
+	if cutout != null and not stream_crossing:
 		var pivot: Node2D = Node2D.new()
 		pivot.name = "ReferenceArtPivot"
 		player.add_child(pivot)
@@ -303,8 +328,35 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 		cutout.position -= point(room.spawn)
 		if reference_environment != null: cutout.z_index = 0
 		player.art = pivot
-	scenery.get_node("World").add_child(player)
-	enemies.clear()
+	if not stream_crossing: actor_frame.add_child(player)
+	if incoming.get("initialized", false):
+		enemies = incoming.enemies
+	else:
+		_create_room_enemies()
+	bind_player_ui()
+	reference = Sprite2D.new()
+	reference.centered = false
+	var path: String = room.get("reference", "res://art/whalebelly/reference/r1/" + str(room.id) + ".png")
+	if ResourceLoader.exists(path): reference.texture = load(path)
+	if reference_environment != null: reference.scale = reference_environment.scale
+	reference.z_index = 100
+	reference.visible = reference_visible
+	reference.position = scenery.position
+	add_child(reference)
+	var reward_art: Node2D = scenery.get_node_or_null("World/RewardArt")
+	if reward_art != null: reward_art.visible = not collected.get(str(room.id), false)
+	record_event("room_enter", {"room": str(room.id), "spawn": [spawn.x,spawn.y]})
+	if not incoming.get("initialized", false): _create_room_support()
+	CampaignStreamPresentation.apply(scenery,streaming.origin(index),point(room.size))
+	update_layers()
+	continuity.bind_room()
+	streaming.activated(index)
+	overlay.position = scenery.position
+	update_camera()
+	if ui_session_started and record_discovery and not practice: save_progress(false)
+
+func _create_room_enemies() -> void:
+	enemies = []
 	for i: int in range(room.get("enemies", []).size()):
 		var source: Dictionary = room.enemies[i]
 		var origin: Vector2 = point(source.pos)
@@ -341,18 +393,8 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 			continue
 		var proxy=EnemyProxy.new();proxy.host=self;proxy.data=enemy
 		scenery.get_node("World").add_child(proxy)
-	bind_player_ui()
-	reference = Sprite2D.new()
-	reference.centered = false
-	var path: String = room.get("reference", "res://art/whalebelly/reference/r1/" + str(room.id) + ".png")
-	if ResourceLoader.exists(path): reference.texture = load(path)
-	if reference_environment != null: reference.scale = reference_environment.scale
-	reference.z_index = 100
-	reference.visible = reference_visible
-	add_child(reference)
-	var reward_art: Node2D = scenery.get_node_or_null("World/RewardArt")
-	if reward_art != null: reward_art.visible = not collected.get(str(room.id), false)
-	record_event("room_enter", {"room": str(room.id), "spawn": [spawn.x,spawn.y]})
+
+func _create_room_support() -> void:
 	if ResourceLoader.exists("res://src/campaign/environment.gd"):
 		var environment: Node2D = load("res://src/campaign/environment.gd").new()
 		environment.name = "EnvironmentMotion"
@@ -361,10 +403,6 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	var mechanisms: Node2D = load("res://src/campaign/mechanisms.gd").new()
 	mechanisms.host = self
 	scenery.add_child(mechanisms)
-	update_layers()
-	continuity.bind_room()
-	update_camera()
-	if ui_session_started and record_discovery and not practice: save_progress(false)
 
 func restored_room_position(value: Vector2) -> Vector2:
 	# R1-01's new road retains the old world width. Existing checkpoints and
@@ -386,6 +424,7 @@ func bind_player_ui() -> void:
 	player_ui.visible=capture_path.is_empty()
 	status.hide()
 	info.hide()
+	if is_instance_valid(interaction_hint) and interaction_hint.get_parent() == player: return
 	interaction_hint=Label.new();interaction_hint.name="InteractionHint"
 	interaction_hint.add_theme_font_override("font", font)
 	interaction_hint.text="按 E 交互";interaction_hint.position=Vector2(-48,-125)
@@ -413,7 +452,7 @@ func _process(dt: float) -> void:
 	if not reference_visible and layer_solo < 0 and capture_path.is_empty() and player.controls_enabled: update_enemies(dt)
 	info.text = "%s  %s     生命 %s" % [str(room.id), str(room.name), "●".repeat(maxi(health, 0))]
 	var mode: String = "原图对照" if reference_visible else (["远景", "中景", "可玩层", "前景"][layer_solo] if layer_solo >= 0 else "原图分层重建")
-	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · Q 攻击 · W 浮游 · G 锚环 · E 交互 / A或D+E 过门 · 舌膜 S+空格下潜\nTab 镜头 · F2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
+	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · Q 攻击 · W 浮游 · G 锚环 · E 交互 · 沿通路连续通行 · 舌膜 S+空格下潜\nF2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
 	if message_time > 0.0: status.text += "\n" + message
 	if practice: info.text += "  [练习：全部能力，仅会话]"
 	if not capture_path.is_empty():
@@ -618,9 +657,13 @@ func interact() -> void:
 		enter_door(entrance.data)
 		return
 	if try_camp(): return
-	notify("靠近洞门按 E 进入；侧向通道直接穿行")
+	notify("沿连接通路继续前行；E 用于营地和拾取")
 
 func enter_door(door:Dictionary) -> void:
+	if streaming.enabled:
+		var reason: String = CampaignWorld.restriction(self, door)
+		if not reason.is_empty(): notify(reason)
+		return
 	if continuity.travelling or continuity.transition.active or player.health <= 0: return
 	var destination: int = int(door.to)
 	# The first-region exit keeps its milestone whether or not a later region is linked.
@@ -785,7 +828,7 @@ func update_parallax() -> void:
 	var shift: Vector2 = Vector2.ZERO
 	if zoomed and not reference_visible and capture_path.is_empty() and layer_solo < 0:
 		var center: Vector2 = point(room.size) * 0.5
-		shift = (camera.position - center) * 0.009
+		shift = (scenery.to_local(camera.global_position) - center) * 0.009
 		shift.x = clampf(shift.x, -6.0, 6.0)
 		shift.y = clampf(shift.y, -4.0, 4.0)
 	var environment: Node = scenery.get_node_or_null("ReferenceEnvironment")
@@ -798,7 +841,7 @@ func update_parallax() -> void:
 	if environment != null:
 		var offset := Vector2.ZERO
 		if (zoomed or reference_camera_active()) and not reference_visible and layer_solo<0 and capture_path.is_empty():
-			offset=(camera.position-point(room.size)*0.5)/(1671.0/1280.0)
+			offset=(scenery.to_local(camera.global_position)-point(room.size)*0.5)/(1671.0/1280.0)
 		environment.level_camera_offset=Vector2(clampf(offset.x,-128.0,128.0),clampf(offset.y,-18.0,18.0))
 		return
 	scenery.get_node("Far").position = shift
@@ -1193,6 +1236,14 @@ func graceful_quit(code: int = 0) -> void:
 	set_process(false)
 	set_physics_process(false)
 	set_process_unhandled_key_input(false)
+	if is_instance_valid(player_ui):
+		player_ui.process_mode = Node.PROCESS_MODE_DISABLED
+		player_ui.hide()
+	if is_instance_valid(streaming):
+		streaming.set_process(false)
+		streaming.set_physics_process(false)
+		streaming.shutdown()
+	if is_instance_valid(continuity): continuity.set_process(false)
 	for node: Node in get_tree().root.find_children("*","Node",true,false):
 		if node.name=="EnvironmentMotion" or node.name=="VisualMechanisms":
 			node.set_process(false)
@@ -1205,6 +1256,7 @@ func graceful_quit(code: int = 0) -> void:
 		sound.stream = null
 		sound.queue_free()
 	if is_instance_valid(scenery): scenery.queue_free()
+	if is_instance_valid(actor_frame): actor_frame.queue_free()
 	if is_instance_valid(reference): reference.queue_free()
 	enemies.clear()
 	sound_bank.clear()

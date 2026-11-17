@@ -26,9 +26,10 @@ void fragment() {
 	float caustic = 0.98 + 0.02 * sin(clock * 0.43 + UV.x * 9.0 + UV.y * 4.0);
 	pixel.rgb *= caustic;
 	pixel.a *= end_fade * y_fade * open_mask * strength;
-	pixel.a *= smoothstep(0.0,20.0,world_pixel.x) * (1.0-smoothstep(scene_width-20.0,scene_width,world_pixel.x));
+	vec2 scene_pixel=world_pixel-scene_origin;
+	pixel.a *= smoothstep(0.0,20.0,scene_pixel.x) * (1.0-smoothstep(scene_width-20.0,scene_width,scene_pixel.x));
 	// Never paint a second ground plane across the real collision or reward platform.
-	pixel.a *= 1.0-smoothstep(portal_ground-200.0,portal_ground-100.0,world_pixel.y);
+	pixel.a *= 1.0-smoothstep(portal_ground-200.0,portal_ground-100.0,scene_pixel.y);
 	if (water_only > 0.5) pixel.a *= arch;
 	COLOR = pixel;
 }

@@ -8,7 +8,8 @@ extends Node2D
 
 func _process(_dt: float) -> void:
 	var camera: Camera2D = get_viewport().get_camera_2d()
-	if camera != null: position = offset_for(camera.get_screen_center_position())
+	# offset_for 接收房间局部坐标，先移除流式房间根节点的世界平移。
+	if camera != null: position = offset_for(get_parent().to_local(camera.get_screen_center_position()))
 
 func offset_for(view_center: Vector2) -> Vector2:
 	var offset: Vector2 = (view_center - room_center) * (1.0 - factor)

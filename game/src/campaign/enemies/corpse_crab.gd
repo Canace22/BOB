@@ -86,7 +86,7 @@ func _physics_process(dt: float) -> void:
 func _decide(dt: float) -> void:
 	timer += dt
 	turn_wait = maxf(0,turn_wait-dt)
-	var offset := target.position-position
+	var offset := target.global_position-global_position
 	var same_level := absf(offset.y) < 78
 	if same_level and absf(offset.x) < 110:
 		facing = 1 if offset.x >= 0 else -1
@@ -103,7 +103,9 @@ func _decide(dt: float) -> void:
 	velocity.x = facing*(45.0 if same_level and absf(offset.x)<500 else 28.0)
 
 func floor_ahead(x: float) -> bool:
-	var probe := PhysicsRayQueryParameters2D.create(Vector2(x,position.y-30),Vector2(x,position.y+38),1)
+	# 巡逻距离和存档仍用房内坐标，物理空间查询必须转换到世界坐标。
+	var parent: Node2D = get_parent() as Node2D
+	var probe := PhysicsRayQueryParameters2D.create(parent.to_global(Vector2(x,position.y-30)),parent.to_global(Vector2(x,position.y+38)),1)
 	return not get_world_2d().direct_space_state.intersect_ray(probe).is_empty()
 
 func advance_action(dt: float) -> void:

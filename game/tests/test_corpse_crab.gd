@@ -29,10 +29,10 @@ func test_low_sweep_front_back_jump_and_crossed_event() -> void:
 	var crab: CampaignCorpseCrab = host.enemies[0].actor
 	for direction: float in [-1.0,1.0]:
 		crab.facing = direction
-		var front := Rect2(crab.position+Vector2(direction*75-14,-65),Vector2(28,65))
+		var front := Rect2(crab.global_position+Vector2(direction*75-14,-65),Vector2(28,65))
 		check(crab.attack_rect().intersects(front),"front low sweep")
 		check(not crab.attack_rect().intersects(Rect2(front.position-Vector2(0,80),front.size)),"jump clears low attack")
-		check(not crab.attack_rect().intersects(Rect2(crab.position+Vector2(-direction*75-14,-65),front.size)),"no rear attack")
+		check(not crab.attack_rect().intersects(Rect2(crab.global_position+Vector2(-direction*75-14,-65),front.size)),"no rear attack")
 	crab.facing = -1
 	host.player.position = crab.position+Vector2(-75,0)
 	host.player.invulnerable = 0

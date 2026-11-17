@@ -27,7 +27,7 @@ func apply_knockback(impulse: float) -> void:
 	var candidate: Vector2=Vector2(data.pos)+Vector2(step,0)
 	candidate.x=clampf(candidate.x,24.0,float(host.room.size[0])-24.0)
 	var ground: float=host.ground_y(candidate.x,candidate.y)
-	var ray:=PhysicsRayQueryParameters2D.create(global_position+Vector2(0,-25),candidate+Vector2(0,-25),1)
+	var ray:=PhysicsRayQueryParameters2D.create(global_position+Vector2(0,-25),get_parent().to_global(candidate+Vector2(0,-25)),1)
 	if absf(ground-candidate.y)<24 and get_world_2d().direct_space_state.intersect_ray(ray).is_empty():
 		data.pos=Vector2(candidate.x,ground)
 func _physics_process(_dt:float) -> void:
