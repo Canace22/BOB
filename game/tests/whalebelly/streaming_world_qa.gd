@@ -96,7 +96,7 @@ func run() -> void:
 	check("Walk crosses first connection without E",forward and host.room_index==1)
 	check("Same player instance survives crossing",host.player.get_instance_id()==identity)
 	check("No fade or transition lock",not host.continuity.transition.active and not host.player.transition_locked)
-	check("Camera screen center equals actor",host.camera.get_screen_center_position().distance_to(host.player.global_position)<1)
+	check("Camera uses continuous world target",host.camera.get_screen_center_position().distance_to(host.camera.follow_target(host.player.global_position))<1)
 	check("Physical frame displacement stays continuous",worst_step<35)
 	await shot("02-after-crossing")
 	check("Return room remains resident",host.streaming.is_ready(0))

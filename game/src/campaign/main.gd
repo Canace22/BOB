@@ -137,6 +137,7 @@ func _ready() -> void:
 	camera.shake_pixels=camera_shake_pixels
 	camera.dash_zoom=camera_dash_zoom
 	add_child(camera)
+	camera.configure_world(streaming.layout)
 	ui = CanvasLayer.new()
 	add_child(ui)
 	info = Label.new()
