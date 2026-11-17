@@ -43,6 +43,9 @@ static func restore_point(room: Dictionary, value: Vector2) -> Vector2:
 		var span: Array = lane.x
 		if point.x >= float(span[0]) and point.x <= float(span[1]) and absf(point.y - float(lane.y)) <= 24.0:
 			return Vector2(point.x, float(lane.y))
+	# 补绘岸台上的新落点已经在当前世界中，不能再按旧房尺寸缩放回其它平台。
+	var support_y: float=CampaignPaintedSupports.ground_y(room,point.x,point.y,INF,24.0)
+	if is_finite(support_y): return Vector2(point.x,support_y)
 	var legacy: Variant = room.layout.get("legacy_size")
 	if legacy is Array and legacy.size() == 2:
 		point = Vector2(value.x * float(room.size[0]) / maxf(float(legacy[0]),1.0), value.y * float(room.size[1]) / maxf(float(legacy[1]),1.0))

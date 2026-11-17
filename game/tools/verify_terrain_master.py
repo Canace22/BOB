@@ -28,8 +28,9 @@ samples = 0
 layout = json.loads((repo / "assets/source/world-terrain-v2/world-layout.json").read_text(encoding="utf-8"))
 authored = json.loads((repo / "game/content/whalebelly/layout/rooms.json").read_text(encoding="utf-8"))
 membranes = {r["id"]: r.get("layout", {}).get("membrane", {}) for r in authored["rooms"]}
+supports = json.loads((repo / "game/content/whalebelly/layout/painted_supports.json").read_text(encoding="utf-8"))["rooms"]
 for room in layout:
-    for surface in room["surfaces"]:
+    for surface in room["surfaces"] + supports.get(room["id"], []):
         # 只排除实时膜面，不能把整间房的其他静态平台漏验。
         membrane = membranes.get(room["id"], {})
         zone = membrane.get("load_rect", [])

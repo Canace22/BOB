@@ -546,7 +546,7 @@ func ground_y(x: float, near_y: float) -> float:
 				if absf(y - near_y) < distance:
 					best = y
 					distance = absf(y - near_y)
-	return best
+	return CampaignPaintedSupports.ground_y(room,x,near_y,best,distance)
 
 func update_enemies(dt: float) -> void:
 	for enemy: Dictionary in enemies:

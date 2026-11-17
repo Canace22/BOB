@@ -15,6 +15,7 @@ const DEPTH := 18.0
 static func prepare_scene(index: int, scene: Node2D, data: Dictionary) -> void:
 	var rooms: Array = data.get("rooms",[])
 	if index<0 or index>=rooms.size(): return
+	CampaignPaintedSupports.prepare_scene(scene,rooms[index])
 	# 主干原画支撑材质按房内坐标采样；流式房根非零时先明确世界偏移。
 	for sprite: Node in scene.find_children("*","Sprite2D",true,false):
 		if sprite.material is ShaderMaterial and sprite.material.shader.resource_path.ends_with("/native_foundation.gdshader"):

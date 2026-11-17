@@ -35,6 +35,7 @@ static func load_rooms(base: Array) -> Array:
 	for entry: Dictionary in rooms:
 		for door: Dictionary in entry.get("doors", []):
 			if door.has("to_id"): door["to"] = index.get(str(door.to_id), int(door.get("to", -2)))
+	CampaignPaintedSupports.attach_data(rooms)
 	return rooms
 
 static func region(id: String) -> String:
