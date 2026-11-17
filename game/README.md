@@ -1,5 +1,6 @@
 # 鲸腹遗城 · 当前工程
 
+基础攻防实验：独立[后跳白盒](tests/whitebox_combat/README.md)，验证攻击取消、避伤与反击；不替换正式入口，未发布。
 
 已接入[22处接缝结构重绘](../assets/source/world-seam-repaint-v2/README.md)，重新连通岸线与路基形体。当前使用完整世界母版再切片：19房静态道路与连接合成后导出61个流式区块，实体地面不再透明淡出；舌台膜等动态保持实时。背景使用六区完整世界远景和固定视差。需重新启动游戏加载新素材。来源与限制见[连续背景批次](../assets/source/continuous-backdrops-v1/README.md)，路线与玩法不变。
 

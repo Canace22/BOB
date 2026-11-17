@@ -302,3 +302,7 @@ V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/w
 ## 2026-11-16 世界接缝结构补绘V2
 
 用户拒绝旧总览中的矩形路基/裁切边界后，内置ImageGen重绘22张透明地形：14条水平连接与4条竖井两端。新画接管完整交接形体，再进入世界母版切片，原动态膜保留；原件、提示词、参考与哈希见[本批记录](source/world-seam-repaint-v2/README.md)。最终61区块已同步，AI实机复核与用户认可分别记录，未发布。
+
+2026-11-16白盒格挡复用：`parry-body.png`保持抬叉接触帧；`ground-ring-fx.png`第4帧竖置为前方潮环，标记为程序驱动，成功时调色/放大。无新增制作源或位图；仅白盒接入，来源沿用本批动作集。编排与GPU证据见[白盒动画映射](../game/tests/whitebox_combat/ANIMATION-MAPPING.md)。
+
+2026-11-16白盒命中反馈V1复用：action36的`projectile.png`作为命中粒子Alpha、尸蟹life图集hurt帧作为受击动作，标记为程序驱动（池化Sprite、Shader短闪、辅助显示回弹）；声音沿用whalebelly/runtime/audio的strike、hit/hit_2/hit_3、heavy。没有新增位图或动作源，没有接入正式主线。参数、资源路径与GPU验收见[白盒命中反馈](../game/tests/whitebox_combat/HIT-FEEDBACK.md)。
