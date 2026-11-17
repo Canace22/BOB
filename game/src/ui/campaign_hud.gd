@@ -1,6 +1,7 @@
 class_name WhaleCampaignHUD
 extends Control
 
+var combo_hud: WhaleCombatComboHUD
 var controller: WhaleCampaignUI
 var leaf: Texture2D
 var echo: Texture2D
@@ -25,6 +26,9 @@ func _ready() -> void:
 		button.add_theme_font_size_override("font_size", 16)
 		add_child(button)
 	resized.connect(_layout)
+	combo_hud = WhaleCombatComboHUD.new()
+	combo_hud.controller = controller
+	add_child(combo_hud)
 	_layout()
 
 func _process(dt: float) -> void:
@@ -75,6 +79,7 @@ func _draw() -> void:
 	if controller.notice_left>0: text(Vector2(35,157),controller.notice_text,17,WhaleUIStyle.AMBER)
 	text(Vector2(35,size.y-83), CampaignGuidance.hint(controller.host), 16, WhaleUIStyle.TEAL)
 	_draw_actions(p)
+	_draw_combo(p)
 	map_button.text = WhaleUIStyle.key("ui_region_map") + "  地图"
 	var prompt: String = controller.data.prompt()
 	var prompt_key: String = "tp_interact"
@@ -116,14 +121,16 @@ func _draw() -> void:
 		text(Vector2(35,222),"浮膜余压 %.1f 秒" % p.float_left,16)
 
 func _draw_actions(p: TidePlayer) -> void:
+	if p is TideCombatPlayer and p.pad_input.effective_page() != 0: return
+	text(Vector2(35,size.y-65),"Q / E 技能页 · Q + E 辅助页",13,WhaleUIStyle.TEAL)
 	var upgraded: bool = p.skill_unlocked("chapter") and p.skill_controller.use_upgrades
 	var orb: String = "shadow_orb" if upgraded else "A4_parry"
 	var dash: String = "shadow_dash" if upgraded else "A1_dash"
 	var actions: Array[Array] = [
-		["tp_dash",dash,"影潮" if upgraded else "贴流冲","dash",0],
-		["tp_orb",orb,"深鸣" if upgraded else "叉鸣弹","orb",p.skill_cost],
-		["tp_heavy","heavy","重鸣","heavy",p.skill_cost],
-		["tp_heal","recover","调息","heal",p.skill_cost]]
+		["L",dash,"影潮" if upgraded else "贴流冲","dash",0],
+		["E+L",orb,"深鸣" if upgraded else "叉鸣弹","orb",p.skill_cost],
+		["Q+E+I","heavy","重鸣","heavy",p.skill_cost],
+		["E+I","recover","调息","heal",p.skill_cost]]
 	for i: int in range(actions.size()):
 		var a: Array = actions[i]
 		var locked: bool = not p.ability_available(str(a[1]))
@@ -133,5 +140,18 @@ func _draw_actions(p: TidePlayer) -> void:
 			if p.health>=p.max_health: reason="生命已满"
 			elif not p.is_on_floor(): reason="需落地"
 		var x: float = 35+i*145
-		text(Vector2(x,size.y-43), WhaleUIStyle.key(str(a[0]))+"  "+str(a[2]),17,WhaleUIStyle.MUTED if not reason.is_empty() else WhaleUIStyle.BONE)
+		text(Vector2(x,size.y-43), str(a[0])+"  "+str(a[2]),17,WhaleUIStyle.MUTED if not reason.is_empty() else WhaleUIStyle.BONE)
 		text(Vector2(x,size.y-21),reason if not reason.is_empty() else ("消耗 %d"%int(a[4]) if int(a[4])>0 else "可用"),13,WhaleUIStyle.AMBER if locked else WhaleUIStyle.MUTED)
+
+func _draw_combo(p: TidePlayer) -> void:
+	var combat := p.skill_controller as TideCombatSkills
+	if combat == null: return
+	var count: int = combat.combo_hits
+	var x: float = size.x-180.0
+	var y: float = size.y*0.43
+	var color: Color = WhaleUIStyle.AMBER if count > 0 else WhaleUIStyle.MUTED
+	text(Vector2(x,y),str(count),48,color)
+	text(Vector2(x,y+27),"COMBO",18,color)
+	if count > 0:
+		draw_rect(Rect2(x,y+38,120,3),Color("20373c"))
+		draw_rect(Rect2(x,y+38,120*clampf(combat.combo_left,0.0,1.0),3),WhaleUIStyle.TEAL)

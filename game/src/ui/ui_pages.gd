@@ -108,12 +108,7 @@ static func _death(ui: WhaleCampaignUI) -> void:
 static func _help(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "拾潮者 · 操作手记"
 	var column: VBoxContainer = menu(ui,780)
-	var entries: Array[Array] = [["tp_left","tp_right","移动"],["tp_jump","","跳跃 / 二段跳"],["tp_attack","","短击；方向配合上挑 / 下劈"],["tp_dash","","贴流冲（需解锁）"],["tp_orb","","鸣弹；上 / 下配合潮术"],["tp_heavy","","重鸣"],["tp_heal","","调息：按住回 1 生命，松开取消"],["tp_interact","","营地、补给与通行节点"]]
-	for entry: Array in entries:
-		var key_text: String = WhaleUIStyle.key(str(entry[0]))
-		if not str(entry[1]).is_empty(): key_text += " / "+WhaleUIStyle.key(str(entry[1]))
-		column.add_child(WhaleUIStyle.label(key_text+"    "+str(entry[2]),17))
-	column.add_child(WhaleUIStyle.paragraph("C 地图 · Esc 暂停 · M 静音 · H 帮助\nW 浮游 · G 锚定 · B 迎珠 · T 探潮 · V 蓄力长冲\nF5 存档 · F6 读取 · F9 临时练习 · F10 练习技能组"))
+	column.add_child(WhaleUIStyle.paragraph("A/D 移动 · 空格 跳跃 / 二段跳 · J 普攻 · I 格挡\nK 三段斩（每段可用 A/D 换向）· L 冲刺 · A/D+L 撞击\nW+J 上挑 · 地面 S+J 横扫 · 空中 S+J 下刺\nS+L 后跳并打断动作 · 后跳中 J 回斩\n点按 Q / E 后，左上角显示四列组合技；预选保留 0.8 秒\nQ+E 辅助页 · E+I 按住调息 · Q+E+L 按住蓄力\nF 交互 · W 浮游 · G 锚定 · C 地图 · Esc 暂停\nM 静音 · H 帮助 · F5 存档 · F6 读取 · F9 临时练习\n冲刺、回旋和五段连斩需原进度解锁；上涌、下潜需舌台奖励。"))
 	action(column,"HelpBack","返回",ui.back)
 
 ## Placeholder closing text until the final chapter is written; the loop itself is complete.

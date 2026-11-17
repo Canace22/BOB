@@ -26,7 +26,8 @@ func _ready() -> void:
 	data.actor = self
 	super._ready()
 	name = "KitEncounter_" + str(data.key).replace(":", "_")
-	z_index = 3
+	# 和主角共用可玩层，保证营地等中景装饰不会遮住敌人。
+	z_index = host.player.z_index
 	if kind == "swarm":
 		var swarm := KitSwarmVisual.new()
 		swarm.texture = load(str(config.sprites.body.path))
@@ -45,6 +46,9 @@ func _ready() -> void:
 		body = sprite
 	body.modulate = Color(str(config.get("tint", "ffffff")))
 	add_child(body)
+	feedback = TideEnemyFeedback.new()
+	add_child(feedback)
+	feedback.setup(body)
 	start = data.pos
 	goal = data.pos
 
@@ -80,6 +84,7 @@ func player_feet() -> Vector2:
 	return get_parent().to_local(host.player.global_position)
 
 func _physics_process(dt: float) -> void:
+	if feedback != null and feedback.frozen(dt): return
 	super._physics_process(dt)
 	if kind == "swarm": collision_layer = 0 # a drifting cluster is never a wall
 	if fading or not data.alive or not is_instance_valid(host.player) or host.player.health <= 0: return

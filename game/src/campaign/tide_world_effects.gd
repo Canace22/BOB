@@ -101,7 +101,7 @@ func _event(key: String,event: String,origin: Vector2,direction: float) -> void:
 		var fallback: Vector2=origin+Vector2(direction*45,-height*0.65)
 		var guard: Vector2=actor.skill_controller.attacks.socket_world("parry","guard",fallback,direction)
 		_spawn_impact(guard,direction,false,"parry")
-	elif event=="impact":
+	elif event=="impact" and not actor is TideCombatPlayer:
 		# The impact uses a small, authored luminous bitmap; no geometric placeholder.
 		_spawn_impact(origin,direction,key=="shadow_orb")
 	elif event=="cancel":

@@ -11,13 +11,15 @@
 | 路径（相对 game/） | 职责 |
 | --- | --- |
 | `src/campaign/main.gd` | 活动房间上下文、机关、敌人/Boss、能力、营地、HUD、V6进度；显式重生/读档重建场景 |
-| `src/campaign/tide_player.gd`、`campaign_player.gd` | 完整角色动作与技能、主关卡参数适配、动画事件 |
+| `src/campaign/tide_player.gd`、`campaign_player.gd` | 完整角色动作与技能、主关卡参数适配、动画事件；主线继承共用战斗角色 |
+| `src/combat/` | 主线和白盒共用的手柄式键盘输入、剑技、后跳取消、逐帧呈现与局部命中反馈；保留既有 wb_* 稳定技能ID |
+| `src/ui/combat_combo_hud.gd`、`src/combat/combat_hints.gd` | 下方技能栏四列连招提示，直接读取输入页表、方向派生、升级与实际可用性；右侧Combo由正式命中事件累计；敌人使用主角的可玩层，营房中景不会遮挡敌人 |
 | `src/campaign/action_visual.gd`、`tide_world_effects.gd` | 正式主角的可变帧图集、实际状态/阶段映射、世界特效与历史残影；物理由角色控制 |
 | `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
 | `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
 | `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
 | `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 严格主角居中镜头、显式调试全景和机关表现 |
-| `src/campaign/campaign_impact.gd` | 命中与受击的全场定格，按物理帧计数并保证恢复时间流速 |
+| `src/campaign/campaign_impact.gd` | 保留玩家受伤的全场定格；普通命中改由共用战斗反馈局部冻结双方，不改变镜头 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/campaign/campaign_world.gd` | 后续区域的房间表、按房间 ID 的门目标、能力与进度标记组合条件、地图分页落位 |
 | `src/campaign/room_stream.gd` | 邻房后台资源请求、准备与冻结、活动房别名、常驻ActorFrame、跨界状态变换、远房卸载及退出清理；无显示后端按帧串行准备 |

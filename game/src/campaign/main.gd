@@ -427,7 +427,7 @@ func bind_player_ui() -> void:
 	if is_instance_valid(interaction_hint) and interaction_hint.get_parent() == player: return
 	interaction_hint=Label.new();interaction_hint.name="InteractionHint"
 	interaction_hint.add_theme_font_override("font", font)
-	interaction_hint.text="按 E 交互";interaction_hint.position=Vector2(-48,-125)
+	interaction_hint.text="按 F 交互";interaction_hint.position=Vector2(-48,-125)
 	interaction_hint.add_theme_font_size_override("font_size",17)
 	interaction_hint.add_theme_constant_override("outline_size",4)
 	interaction_hint.hide();player.add_child(interaction_hint)
@@ -452,7 +452,7 @@ func _process(dt: float) -> void:
 	if not reference_visible and layer_solo < 0 and capture_path.is_empty() and player.controls_enabled: update_enemies(dt)
 	info.text = "%s  %s     生命 %s" % [str(room.id), str(room.name), "●".repeat(maxi(health, 0))]
 	var mode: String = "原图对照" if reference_visible else (["远景", "中景", "可玩层", "前景"][layer_solo] if layer_solo >= 0 else "原图分层重建")
-	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · Q 攻击 · W 浮游 · G 锚环 · E 交互 · 沿通路连续通行 · 舌膜 S+空格下潜\nF2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
+	status.text = "A/D 移动 · 空格 跳跃 · Shift 冲刺 · J 普攻 · Q/E 技能页 · W 浮游 · G 锚环 · F 交互 · 沿通路连续通行 · 舌膜 S+空格下潜\nF2 原图 · F3 碰撞 · F4 分层 · 1—7 房间预览 · F5 存档 · F6 读取 · F9 练习 · Esc 暂停 · M 静音   | " + mode
 	if message_time > 0.0: status.text += "\n" + message
 	if practice: info.text += "  [练习：全部能力，仅会话]"
 	if not capture_path.is_empty():
@@ -602,7 +602,7 @@ func attack(origin: Vector2, facing: float) -> void:
 func damage_enemy(enemy:Dictionary,amount:int) -> void:
 	if not enemy.alive:return
 	enemy.hp = int(enemy.hp) - amount
-	sfx("hit")
+	if not player is TideCombatPlayer: sfx("hit")
 	record_event("enemy_hit", {"id":enemy.key,"hp":enemy.hp})
 	enemy.hurt = 0.18
 	if int(enemy.hp) > 0 and enemy.has("actor") and enemy.actor.has_method("on_damaged"):
@@ -657,7 +657,7 @@ func interact() -> void:
 		enter_door(entrance.data)
 		return
 	if try_camp(): return
-	notify("沿连接通路继续前行；E 用于营地和拾取")
+	notify("沿连接通路继续前行；F 用于营地和拾取")
 
 func enter_door(door:Dictionary) -> void:
 	if streaming.enabled:

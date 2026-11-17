@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 const TIMES := {"tell":.7,"active":.2,"recover":1.1,"hurt":.22}
 const HIT_TIME := .06
+var feedback: TideEnemyFeedback
+var launch_left: float = 0.0
+var hold_left: float = 0.0
 var host: Node2D
 var data: Dictionary
 var target: WhalebellyCampaignPlayer
@@ -27,7 +30,8 @@ func _ready() -> void:
 	name = "CorpseCrab" + str(data.key).replace(":","_")
 	position = data.pos
 	home_x = position.x
-	z_index = 3
+	# 和主角共用可玩层，保证营地等中景装饰不会遮住敌人。
+	z_index = host.player.z_index
 	collision_layer = 4
 	collision_mask = 1
 	add_to_group("tide_targets")
@@ -45,22 +49,30 @@ func _ready() -> void:
 	visual = CorpseCrabVisual.new()
 	visual.name = "Visual"
 	add_child(visual)
+	feedback = TideEnemyFeedback.new()
+	add_child(feedback)
+	feedback.setup(visual)
 	dust = Sprite2D.new()
 	dust.texture = preload("res://art/enemies/crab_video/impact_dust.png")
 	dust.hframes = 4
 	dust.top_level = true
 	dust.z_as_relative = false
-	dust.z_index = 4
+	dust.z_index = z_index+1
 	dust.hide()
 	add_child(dust)
 	_sync()
 
 func _physics_process(dt: float) -> void:
+	if not is_instance_valid(target): target = host.player
+	if not is_instance_valid(target): return
 	var paused_view: bool = host.reference_visible or host.layer_solo >= 0 or not host.capture_path.is_empty()
 	visual.visible = not paused_view
 	if paused_view or not target.controls_enabled:
 		dust.hide()
 		return
+	if feedback.frozen(dt): return
+	hold_left = maxf(0.0,hold_left-dt)
+	launch_left = maxf(0.0,launch_left-dt)
 	flash = maxf(0,flash-dt)
 	idle_clock += dt
 	dust_age += dt
@@ -74,7 +86,9 @@ func _physics_process(dt: float) -> void:
 		moving = false
 	else:
 		velocity.y = minf(velocity.y + 1000*dt,700)
-		if target.health > 0:
+		if (launch_left > 0.0 and not is_on_floor()) or hold_left > 0.0:
+			change("hurt")
+		elif target.health > 0:
 			if state == "idle": _decide(dt)
 			else: advance_action(dt)
 		if state != "dead": move_and_slide()
@@ -188,3 +202,29 @@ func snapshot() -> Dictionary:
 	return {"type":"corpse-crab","state":state,"timer":timer,"facing":facing,"hp":data.hp,
 		"animation":visual.action_id,"frame":visual.frame_index,"attack_instance":attack_serial,
 		"hit_sent":hit_sent,"moving":moving,"walk_distance":walk_distance,"collidable":collision_layer!=0}
+
+func receive_feedback(seconds: float, toward: float, strength: float) -> void:
+	feedback.receive(seconds,toward,strength)
+
+func clear_feedback() -> void:
+	feedback.clear()
+
+func launch(speed: float) -> void:
+	if not data.alive: return
+	change("hurt")
+	velocity.y = -speed
+	launch_left = 1.5
+
+func knock_down(_strength: float = 0.0) -> void:
+	if not data.alive: return
+	change("hurt")
+	hold_left = 0.5
+	if not is_on_floor(): velocity.y = maxf(velocity.y,500.0)
+
+func pin(seconds: float) -> void:
+	if not data.alive: return
+	hold_left = maxf(hold_left,seconds)
+	change("hurt")
+
+func push_away(source_x: float) -> void:
+	apply_knockback(200.0*signf(global_position.x-source_x))

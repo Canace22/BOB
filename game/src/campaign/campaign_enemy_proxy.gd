@@ -2,9 +2,11 @@
 class_name WhalebellyCampaignEnemyProxy
 extends StaticBody2D
 signal damage_requested(data:Dictionary,amount:int)
+var feedback: TideEnemyFeedback
 var data:Dictionary
 var host:Node2D
 func _ready() -> void:
+	z_index = host.player.z_index
 	add_to_group("tide_targets")
 	collision_layer=4
 	collision_mask=2
@@ -34,3 +36,9 @@ func _physics_process(_dt:float) -> void:
 	position=data.pos
 	$Body.set_deferred("disabled",not data.alive)
 	collision_layer=4 if data.alive else 0
+
+func receive_feedback(seconds: float, toward: float, strength: float) -> void:
+	if feedback != null: feedback.receive(seconds,toward,strength*(0.35 if data.boss else 1.0))
+
+func clear_feedback() -> void:
+	if feedback != null: feedback.clear()

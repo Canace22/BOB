@@ -1,6 +1,6 @@
 @warning_ignore_start("untyped_declaration")
 class_name WhalebellyCampaignPlayer
-extends "res://src/campaign/tide_player.gd"
+extends "res://src/combat/combat_player.gd"
 # Compatibility boundary: authored rooms, enemy dictionaries and V6 saves stay owned by main.gd.
 @export var spawn_input_lock:float=0.1 # New default: discard carried input on room load.
 var spawn_lock_left:float=0
@@ -45,10 +45,7 @@ func _ready() -> void:
 	var source_height:float=textures.idle[0].get_image().get_used_rect().size.y
 	visual_scale=target_height/maxf(source_height,1)
 	$Visual.scale=Vector2.ONE*visual_scale
-	run_visual=load("res://src/campaign/action_visual.gd").new() if ResourceLoader.exists("res://src/campaign/action_visual.gd") else preload("res://src/campaign/campaign_run_visual.gd").new()
-	run_visual.name="RunVisualController"
-	add_child(run_visual)
-	run_visual.setup(self,target_height)
+	run_visual=action_visual
 	world_effects=TideWorldEffects.new()
 	world_effects.name="WorldEffects"
 	add_child(world_effects)
@@ -65,7 +62,7 @@ func _ready() -> void:
 	stats_changed.connect(_sync_stats)
 	interaction_requested.connect(_interact_campaign)
 	notification.connect(func(text):host.notify(text))
-	hit_confirmed.connect(func():host.camera_feedback=.12;impact.freeze(hit_freeze_ticks))
+	hit_confirmed.connect(func():host.camera_feedback=.12)
 	damaged.connect(func():grapple_target=Vector2.INF;grapple_hanging=false;host.sfx("hurt");host.camera_feedback=.3;impact.freeze(hurt_freeze_ticks);host.record_event("player_hurt",{"health":health}))
 	died.connect(func():host.on_player_died.call_deferred())
 	animation_tag.connect(_campaign_tag)
@@ -79,7 +76,7 @@ func _sync_stats(h:int,s:int) -> void:
 func _campaign_tag(tag:String) -> void:
 	if tag=="jump":host.sfx("jump");host.record_event("jump")
 	elif tag=="A1_dash:start":host.sfx("dash");host.record_event("dash")
-	elif tag=="strike_01:start":host.sfx("strike");host.record_event("attack",{"room":host.room_index})
+	elif tag=="strike_01:start":host.record_event("attack",{"room":host.room_index})
 	elif tag=="heavy:release":host.sfx("heavy")
 	elif tag=="recover:end":host.sfx("heal")
 	elif tag.ends_with(":release") and TideSkillCatalog.ACTIONS.has(tag.trim_suffix(":release")):
@@ -97,6 +94,7 @@ func _physics_process(dt:float) -> void:
 	$Visual.visible=not reference_mode
 	if art!=null:art.visible=reference_mode
 	if reference_mode or transition_locked:
+		clear_combat_input()
 		skill_controller.input.clear()
 		return
 	if host.health!=health:
@@ -107,9 +105,7 @@ func _physics_process(dt:float) -> void:
 	if is_on_floor():float_left=float_time;membrane_boost=false
 	var gate: Node=skill_controller.nearby_gate()
 	interacted_target=gate if is_instance_valid(gate) else (host if interaction_nearby() else null)
-	var before_move_x:float=position.x
 	super._physics_process(dt)
-	run_visual.update(dt,position.x-before_move_x)
 	_check_door_entry()
 	if not host.streaming.enabled: position.x=clampf(position.x,18,1460 if host.room_index==6 else float(host.room.size[0])-18)
 	if is_on_floor() and (host.streaming.enabled or (position.y<float(host.room.size[1])-65 and stable_floor_point())):last_safe=position
@@ -224,6 +220,7 @@ func skill_practice_enabled() -> bool:
 	return host.practice or (host.qa and host.qa_full_abilities)
 
 func ability_available(action:String) -> bool:
+	if TideCombatSkills.DEFINITIONS.has(action):return skill_unlocked(TideCombatSkills.unlock_rule(action))
 	if TideSkillCatalog.ACTIONS.has(action): return skill_unlocked(str(TideSkillCatalog.definition(action).unlock))
 	return host.has_ability("dash") if action in ["A1_dash","A5_slit"] else true
 
@@ -247,7 +244,6 @@ func _melee(downward:bool) -> void:
 		if not fresh or not hit_targets.has(target.get_instance_id()):continue
 		# A landed swing shoves the target away and nudges the attacker back.
 		if target.has_method("apply_knockback"):target.apply_knockback(facing*melee_knockback)
-		start_recoil(-facing)
 
 func hurt(amount:int,fall:bool=false) -> void:
 	if health<=0:return
@@ -267,6 +263,7 @@ func _interact_campaign(_target:Node) -> void:
 	_finish_interact.call_deferred()
 
 func _finish_interact() -> void:
+	clear_combat_input()
 	world_effects.clear()
 	clear_projectiles()
 	skill_controller.cancel()
@@ -287,6 +284,7 @@ func _check_door_entry() -> void:
 		_finish_door.call_deferred(door)
 
 func _finish_door(door:Dictionary) -> void:
+	clear_combat_input()
 	world_effects.clear()
 	clear_projectiles()
 	skill_controller.cancel()

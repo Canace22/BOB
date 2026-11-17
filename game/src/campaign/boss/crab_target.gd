@@ -30,3 +30,10 @@ func take_hit(amount: int) -> void:
 	var p: Node2D = boss.target
 	var key: String = p.skill_controller.visual_key if p.skill_controller.active else p.state
 	boss.receive_attack(amount,key in ["heavy","great_slash","dive","dark_dive"],false,p.global_position)
+
+func receive_feedback(seconds: float, toward: float, strength: float) -> void:
+	# 护壳仍走原伤害入口；霸体只给轻微回弹，保留前摇和攻击姿势。
+	boss.feedback.receive(seconds,toward,strength*(0.35 if boss.hurtbox.braced() else 1.0))
+
+func clear_feedback() -> void:
+	boss.feedback.clear()
