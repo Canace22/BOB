@@ -214,6 +214,7 @@ Godot 运行时使用派生的 `runtime/fonts/WhalefallUI.ttf`，由工程文字
 
 保留源运动模糊、离散姿势和半透明反混的限制；技法、输入和取得条件见[36项操作说明](../docs/action36-controls.md)，逐项来源与状态见[覆盖表](../docs/action36-asset-coverage.md)，实测性能和最终发布状态见[工程进度](../game/progress.md)。验收录像/截图与自动报告仅本地保存，已入库正式美术及可复跑脚本不会随测试清理删除。
 
+
 ## 2026-11-04 正式 UI 系统
 
 [UI V1 图标母版](source/whalefall-ui-v1/README.md)保留十份可编辑 SVG，来源为本项目现有 UI V1 原创设计，通过 manifest 同步至 game/art/ui；叶、回声、壳与装饰线实际使用，其余保留图标不表示共生玩法已完成。字体子集使用明确的 Regular 400 字重，并通过中文字形覆盖检查。常规 UI 使用引擎控件、文字和矢量图形，未替换正式角色/场景素材。数据接口、已实现页面及验收范围见 [UI 系统](../docs/ui-system.md)。
@@ -279,3 +280,35 @@ V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/w
 ## 2026-11-12 断脊、耳海、归海与程序驱动敌人
 
 由同一生成器接入 R4、R5 头、R5 尾三套场景件，以及 `anchor-pull-gate-open`、`tail-flow-shutter`、`progress-three-slots`、`release-bowl`、`release-sluice-closed`、`release-sluice-open`。敌人与预告按协作规则标为程序驱动：`amphipod-swarm`（端足群流与血巢潮群，后者整体染红）、`resonant-clam`、`spine-resonant-clams`、`ringed-calcium-pearl`、`silent-membrane`，预告使用 `fx-danger-line`、`fx-pearl-rings`、`fx-echo-open-ring`、`fx-silence-ring`。这些都是静态位图加程序运动，不是逐帧动作；`blood-nest-swarm` 与 `blood-nest-core` 未使用。共 24 件由未接入改为本地运行已验证，详见[工程进度](../game/progress.md)。
+
+## 2026-11-15 连续世界连接段 · 既有位图复用
+
+19房流式连接复用已入库的 `r3-bank-platform` 与 `r3-water-base`：平台等比拼接并绑定单向碰撞，水体用单一绘制面等比镜像重复。它们仍为静态位图；运行定位、重复采样及房间边缘透明度为程序驱动，不登记为新绘或逐帧动作。交通椎P1、底床与前景从原位图运行时裁出竖口，保留源纹理、比例和翻转；没有改制作源或导出图。新消费入口、参数与本地验证见[流式世界说明](../docs/streaming-world.md)。
+
+## 2026-11-16 连续世界18边联合补绘
+
+针对流式连接的背景与路径拼接，新增18张同坐标联合补绘、4张竖井去台深景、2张透明承重台根；另复用1张旧E35台件作注册/对照。来源为实际两房渲染参考，经内置ImageGen参考引导重绘；原房核心仍使用原位图，新增均为静态结构，不登记逐帧动作。世界矩形、实际脚线、原件/提示词/哈希、运行导出和AI复核边界见[补绘批次](source/seamless-continuity-v1/README.md)。25张运行位图与注册JSON已进入manifest，用户整体审美待试玩；未发布。
+
+## 2026-11-16 六区世界远景与背景分层返修
+
+新增6张完整2172×724连续远景、14张连接道路RGBA层、12张须门World/Middle的Alpha遮罩；内置ImageGen参考引导新绘/分层，原件、提示词、失败候选与SHA256见[连续背景批次](source/continuous-backdrops-v1/README.md)。运行按世界固定相位和区域锚点采样，背景不再按房间矩形退出；四条竖井沿用独立台根。新图均为静态2D素材，用户整体审美待确认，未发布。
+
+## 2026-11-16 完整世界地形母版与切片
+
+复用已有位图组成完整世界母版，279个组成件、61张1540×1540运行切片（1536网格＋四边2px采样余量）。实体道路不透明淡出，舌台膜保持实时；新增返程承重根与胃枢实体岸台面来自已入库素材，未新生成图片。制作源、清单、脚线校验与限制见[母版批次](source/world-terrain-v1/README.md)。已登记manifest/catalog，用户整体观感待确认，未发布。
+
+
+
+## 2026-11-16 世界接缝结构补绘V2
+
+用户拒绝旧总览中的矩形路基/裁切边界后，内置ImageGen重绘22张透明地形：14条水平连接与4条竖井两端。新画接管完整交接形体，再进入世界母版切片，原动态膜保留；原件、提示词、参考与哈希见[本批记录](source/world-seam-repaint-v2/README.md)。最终61区块已同步，AI实机复核与用户认可分别记录，未发布。
+
+## 2026-11-17 Version1.0.1新布局母版
+
+采用主干七房新尺寸与十九房当前地形，重新制作[完整母版V2](source/world-terrain-v2/README.md)及[22处结构重绘V3](source/world-seam-repaint-v3/README.md)。ImageGen静态位图，非动画；保留输入、完整提示词、候选、局部返修与SHA256。母版导出62张1540×1540区块，运行加载保持原世界坐标与动态膜独立责任。旧版母版保留历史，当前加载器消费V2/V3；技术验证与用户美术认可分开，未发布Web。
+
+另恢复27条主干已提交运行PNG的清单源，逐字节复制自 `game/art/`，来源见[恢复记录](source/version101-merge/recovered-runtime.json)；仅恢复运行像素，不宣称原始全分辨率制作源。同步清单现包含这些来源。
+
+2026-11-16白盒格挡复用：`parry-body.png`保持抬叉接触帧；`ground-ring-fx.png`第4帧竖置为前方潮环，标记为程序驱动，成功时调色/放大。无新增制作源或位图；仅白盒接入，来源沿用本批动作集。编排与GPU证据见[白盒动画映射](../game/tests/whitebox_combat/ANIMATION-MAPPING.md)。
+
+2026-11-16白盒命中反馈V1复用：action36的`projectile.png`作为命中粒子Alpha、尸蟹life图集hurt帧作为受击动作，标记为程序驱动（池化Sprite、Shader短闪、辅助显示回弹）；声音沿用whalebelly/runtime/audio的strike、hit/hit_2/hit_3、heavy。没有新增位图或动作源，没有接入正式主线。参数、资源路径与GPU验收见[白盒命中反馈](../game/tests/whitebox_combat/HIT-FEEDBACK.md)。

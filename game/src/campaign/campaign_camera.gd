@@ -1,5 +1,7 @@
 class_name WhalebellyCampaignCamera
 extends Camera2D
+@export var gameplay_zoom: float = 1.0
+# 兼容旧场景和设置接口；正常居中模式不再使用前视、探看、震动或冲刺缩放。
 @export var lookahead:float=56.0 # Small lead: turning around must not swing the view.
 @export var shake_pixels:float=8.0
 @export var dash_zoom:float=1.05 # New default; Inspector adjustable.
@@ -24,51 +26,34 @@ var was_following: bool = false
 
 func update_follow(dt:float) -> void:
 	if not is_instance_valid(host.player):return
-	var follow:bool=(host.zoomed or host.reference_camera_active()) and not host.reference_visible and host.capture_path.is_empty() and host.layer_solo < 0
+	var follow:bool=not host.reference_visible and host.capture_path.is_empty() and host.layer_solo < 0
 	var world_size:Vector2=host.point(host.room.size)
-	var changed_room: bool = tracked_room != str(host.room.id)
-	var bounds: Rect2
+	# 正常镜头使用全局坐标；房间父节点移动不能造成视角跳变。
+	position_smoothing_enabled = false
+	rotation_smoothing_enabled = false
+	drag_horizontal_enabled = false
+	drag_vertical_enabled = false
+	limit_enabled = false
+	anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
+	offset = Vector2.ZERO
 	if follow:
-		var z:float=float(host.room.get("camera_zoom", 1.0))/(dash_zoom if host.player.state in ["A1_dash","A5_slit"] else 1.0)
-		# Zoom-out may not reveal beyond the authored room at either edge.
-		var viewport_size: Vector2 = get_viewport_rect().size
-		z = maxf(z, maxf(viewport_size.x / world_size.x, viewport_size.y / world_size.y))
-		zoom=zoom.lerp(Vector2.ONE*z,1-exp(-dt*follow_rate))
-		zoom = zoom.max(Vector2.ONE * maxf(viewport_size.x / world_size.x, viewport_size.y / world_size.y))
-		var half:Vector2=get_viewport_rect().size/(2*zoom)
-		var margin:float=28 if host.room.get("layered_environment",false) else 0
-		var vmargin:float=12 if host.room.get("layered_environment",false) else 0
-		bounds = center_bounds(world_size, half, Vector2(margin, vmargin))
-		var fall: float = fall_amount()
-		if changed_room or not was_following:
-			follow_anchor = host.player.position
-			smoothed_lookahead = host.player.facing * lookahead
-			smoothed_look = 0.0
-			look_hold = 0.0
-		else:
-			follow_anchor = retain_dead_zone(follow_anchor, host.player.position, dead_zone)
-			smoothed_lookahead = lerpf(smoothed_lookahead, host.player.facing * lookahead, 1.0 - exp(-dt * lookahead_rate))
-			update_look(dt)
-		var target: Vector2 = clamp_center(follow_anchor + Vector2(smoothed_lookahead, -170 + smoothed_look + fall * fall_lead), bounds)
-		if changed_room or not was_following:
-			position = target
-		else:
-			position.x = lerpf(position.x, target.x, 1.0 - exp(-dt * follow_rate))
-			position.y = lerpf(position.y, target.y, 1.0 - exp(-dt * lerpf(vertical_follow_rate, fall_follow_rate, fall)))
-		position = clamp_center(position, bounds)
+		global_position = host.player.global_position
+		zoom = Vector2.ONE * maxf(gameplay_zoom, 0.01)
+		follow_anchor = global_position
+		smoothed_lookahead = 0.0
+		smoothed_look = 0.0
+		look_hold = 0.0
 	else:
 		var fit:float=minf(get_viewport_rect().size.x/world_size.x,get_viewport_rect().size.y/world_size.y)
-		zoom=Vector2.ONE*fit;position=world_size*.5
-	# Bounds follow the authored room dimensions; no scenery node is changed.
-	limit_left=0;limit_top=0;limit_right=int(world_size.x);limit_bottom=int(world_size.y)
+		var scenery: Node2D = host.get("scenery") as Node2D
+		var room_origin: Vector2 = scenery.global_position if is_instance_valid(scenery) else host.global_position
+		zoom=Vector2.ONE*fit
+		global_position=room_origin+world_size*.5
 	tracked_room=str(host.room.id)
 	was_following = follow
 	host.camera_feedback=maxf(0,host.camera_feedback-dt)
-	var shake: Vector2 = Vector2.ZERO
-	if follow and host.camera_feedback > 0:
-		shake = Vector2(randf_range(-1,1),randf_range(-1,1)) * maxf(0.0, shake_pixels) * clampf(host.camera_feedback / .18, 0.0, 1.0)
-		shake = clamp_center(position + shake, bounds) - position
-	offset = shake
+	# 节点位置相同并不保证实际画面中心相同，立即提交去除旧限位/平滑残留。
+	force_update_scroll()
 
 func fall_amount() -> float:
 	var actor: CharacterBody2D = host.player as CharacterBody2D

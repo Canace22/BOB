@@ -147,6 +147,8 @@ func test_nineteen_room_order_and_grants_are_the_current_game_not_older_designs(
 func test_frozen_gameplay_script_hashes_allow_independent_art_and_scene_changes() -> void:
 	var hashes: Dictionary = {}
 	for item: Dictionary in object_at(CONTRACT).source_hashes: hashes[str(item.path)] = str(item.sha256)
+	# 流式适配明确修改了世界/房内坐标边界；历史美术冻结合同仍保留，增量只覆盖这三个已复核脚本。
+	for item: Dictionary in object_at("res://tests/fixtures/xumen-streaming-gameplay-v2.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# Deliberately exclude generators, scenes, image files and presentation scripts.
 	for path: String in ["src/campaign/tide_player.gd","src/campaign/campaign_player.gd","src/campaign/tide_skill_catalog.gd","src/campaign/tide_skill_input.gd","src/campaign/tide_skill_controller.gd","src/campaign/tide_input.gd","src/campaign/campaign_relics.gd","src/campaign/campaign_save_bridge.gd","src/campaign/boss/crab_boss.gd","src/campaign/boss/crab_shell.gd","src/campaign/boss/crab_moves.gd","src/campaign/enemies/corpse_crab.gd","src/campaign/enemies/kit_encounter.gd","src/ui/ui_save_access.gd"]:
 		check(hashes.has("game/"+path),"Baseline contains gameplay source: " + path)

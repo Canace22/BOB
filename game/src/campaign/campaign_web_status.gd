@@ -26,6 +26,7 @@ func snapshot() -> Dictionary:
 		enemies.append({"x": enemy.pos.x, "y": enemy.pos.y, "boss": enemy.boss, "hp": enemy.hp, "alive": enemy.alive})
 		if enemy.has("actor"): enemies[-1].combat = enemy.actor.snapshot()
 	return {
+		"streaming": host.streaming.snapshot(),
 		"campaign": "WhalebellyRuins", "room": host.room.id,
 		"hp": host.health, "soul": host.player_soul, "completed": host.completed,
 		"shield": {"charges":host.relics.charges,"maximum":CampaignRelics.capacity(host.collected)},
@@ -44,7 +45,7 @@ func snapshot() -> Dictionary:
 			"zoom":host.camera.zoom.x,"following":host.camera.was_following,
 			"offset_x":host.camera.offset.x,"offset_y":host.camera.offset.y,
 			"room_width":host.room.size[0],"room_height":host.room.size[1]},
-		"player": {"x": host.player.position.x, "y": host.player.position.y,
+		"player": {"x": host.player.position.x, "y": host.player.position.y,"world_x":host.player.global_position.x,"world_y":host.player.global_position.y,
 			"vx":host.player.velocity.x,"vy":host.player.velocity.y,
 			"grappling":host.player.grapple_target!=Vector2.INF,"hanging":host.player.grapple_hanging,"jump_count":host.player.jump_count,
 			"floor": host.player.is_on_floor(), "state": host.player.state,

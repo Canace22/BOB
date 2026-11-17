@@ -20,7 +20,7 @@ def main():
     characters = set(chr(n) for n in range(0x20, 0x100))
     for directory in [ROOT / "game/src", ROOT / "game/content"]:
         for file in sorted(directory.rglob("*")):
-            if file.suffix in [".gd", ".tscn", ".tres"]:
+            if file.suffix in [".gd", ".tscn", ".tres", ".json"]:
                 characters.update(file.read_text(encoding="utf-8"))
     # Room names and door notices of later regions are shown from generated data.
     characters.update((ROOT / "game/content/whalebelly/world/rooms.json").read_text(encoding="utf-8"))

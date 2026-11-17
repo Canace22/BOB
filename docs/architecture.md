@@ -1,25 +1,30 @@
 # 鲸落 Godot 架构
 
-正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 七房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
+正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 五区19房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
 
-七房默认使用角色跟随镜头，Tab统一切换跟随/全景；原图对照、截图和分层查看保留全景行为。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
+正常游玩相机严格居中主角全局坐标，缩放固定 1.0，不使用死区、前视、探看、下落偏移、震屏和房间限位；Tab不再退出正常居中。原图对照、截图和分层查看保留全景行为。当前本地版为19房连续世界，邻房提前准备并可见，普通跨房不淡黑、不重建主角；运行约定与证据统一见[流式世界](streaming-world.md)。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
 
-当前正式入口按房间加载，使用[须门遗港场景衔接](../assets/source/xumen-continuity-v1/README.md)的共用远景、连接动件和过门混合。后续[实际连通场景](../assets/source/xumen-connected-v2/README.md)及[统一母版](../assets/source/xumen-unified-v1/README.md)的制作源仍保留在资源库。
+当前正式入口按邻房驻留窗口流式准备场景，普通跨界保留同一主角，使用[须门遗港场景衔接](../assets/source/xumen-continuity-v1/README.md)的共用远景与连接动件，以及新增的位图连接平台。后续[实际连通场景](../assets/source/xumen-connected-v2/README.md)及[统一母版](../assets/source/xumen-unified-v1/README.md)的制作源仍保留在资源库。
 
 ## 代码与内容
 
 | 路径（相对 game/） | 职责 |
 | --- | --- |
-| `src/campaign/main.gd` | 七房切换、机关、敌人/Boss、能力、营地、HUD、V6进度 |
+| `src/campaign/main.gd` | 活动房间上下文、机关、敌人/Boss、能力、营地、HUD、V6进度；显式重生/读档重建场景 |
 | `src/campaign/tide_player.gd`、`campaign_player.gd` | 完整角色动作与技能、主关卡参数适配、动画事件 |
 | `src/campaign/action_visual.gd`、`tide_world_effects.gd` | 正式主角的可变帧图集、实际状态/阶段映射、世界特效与历史残影；物理由角色控制 |
 | `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
 | `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
 | `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
-| `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 镜头（前视、上下探看、下落前置）和机关表现 |
+| `src/campaign/campaign_camera.gd`、`mechanisms.gd` | 严格主角居中镜头、显式调试全景和机关表现 |
 | `src/campaign/campaign_impact.gd` | 命中与受击的全场定格，按物理帧计数并保证恢复时间流速 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/campaign/campaign_world.gd` | 后续区域的房间表、按房间 ID 的门目标、能力与进度标记组合条件、地图分页落位 |
+| `src/campaign/room_stream.gd` | 邻房后台资源请求、准备与冻结、活动房别名、常驻ActorFrame、跨界状态变换、远房卸载及退出清理；无显示后端按帧串行准备 |
+| `src/campaign/streaming_layout.gd`、`streaming_corridors.gd`、`streaming_gates.gd` | 19房世界原点、18条连接、位图平台/水体、尾槽真实竖口与条件实体门；原房配方不改，流式差异是运行时覆盖 |
+| `src/campaign/world_terrain.gd`、`tools/build_terrain_master.gd` | 完整世界静态地形母版、1536网格切片与提前驻留；动态舌台膜独立实时，不烘焙 |
+| `src/campaign/stream_presentation.gd`、`stream_room_edges.gdshader` | 隐藏由母版接管的静态地形；其它层保留Shader、树结构和Z，实时承重膜禁用接缝淡出 |
+| `src/campaign/seam_art.gd`、`seam_art.gdshader` | 按实际世界矩形接入18边联合补绘，接管边界重叠区并保护其它房间核心；原层按相同所有权退出，避免双重轮廓 |
 | `content/whalebelly/world/`、`tools/build_world_rooms.mjs` | 套件房配方（单位 U）、跨区链接与生成的运行数据；生成器读取资源台账的包围盒与锚点，输出 `content/whalebelly/<区>/<房间ID>.tscn` |
 | `src/world/scenery/kit/` | 套件房的位图层视差、漂移粒子场（漂脂、水流线）和透光明暗 |
 | `src/campaign/enemies/kit_encounter.gd`、`kit_swarm_visual.gd` | 程序驱动的敌人与 Boss：群体横穿、鸣贝吐珠、覆膜回声；位图来自台账，行为写在房间配方的 `enemies` 中，伤害、血条、击败存档沿用主线 |
@@ -28,6 +33,7 @@
 | `src/campaign/enemies/` | 普通尸蟹物理/状态与图集呈现，复用主线伤害和房间生命周期；[接入合同](corpse-crab-integration.md) |
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
 | `src/ui/` | 正式标题、HUD、模态页面与设置；注入主线宿主，只读实际状态并请求主线操作。旧 tide_hud 保留给独立角色参数场 |
+| `src/ui/campaign_minimap.gd` | HUD 右上角房间拓扑图，复用 `WhaleUICampaignData.map_rooms()` 的发现规则；按稳定房间 ID 固定布局，读取门条件、所属房间 Boss 击败状态和营地，不写进度 |
 | `content/whalebelly/r1/` | 七个房间场景、道路碰撞、分层贴图和节点 |
 | `content/whalebelly/environment/` | 当前环境场景、各动件脚本/Shader；保留恢复阶段的组织方式 |
 | `content/whalebelly/Player.tscn`、`CampaignPlayer.tscn` | 角色动作与主线参数 |

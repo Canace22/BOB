@@ -123,7 +123,7 @@ static func _help(ui: WhaleCampaignUI) -> void:
 		var key_text: String = WhaleUIStyle.key(str(entry[0]))
 		if not str(entry[1]).is_empty(): key_text += " / "+WhaleUIStyle.key(str(entry[1]))
 		column.add_child(WhaleUIStyle.label(key_text+"    "+str(entry[2]),17))
-	column.add_child(WhaleUIStyle.paragraph("C 地图 · Tab 镜头 · Esc 暂停 · M 静音 · H 帮助\nW 浮游 · G 锚定 · B 迎珠 · T 探潮 · V 蓄力长冲\nF5 存档 · F6 读取 · F9 临时练习 · F10 练习技能组"))
+	column.add_child(WhaleUIStyle.paragraph("C 地图 · Esc 暂停 · M 静音 · H 帮助\nW 浮游 · G 锚定 · B 迎珠 · T 探潮 · V 蓄力长冲\nF5 存档 · F6 读取 · F9 临时练习 · F10 练习技能组"))
 	action(column,"HelpBack","返回",ui.back)
 
 ## Placeholder closing text until the final chapter is written; the loop itself is complete.

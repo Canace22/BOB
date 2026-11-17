@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-16",
+  "tool": "built-in image_gen",
+  "calls": 2,
+  "status": "visual_and_alpha_inspected_not_gpu_accepted",
+  "original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-4ee0c71c-868c-424e-b9b0-acede4773cbb.png",
+  "discarded_original_return_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1df55-0017-7ed2-a060-2bf8bb0cbc77\\exec-52251b93-617b-4779-8213-33c97b02c3d3.png",
+  "source_file": "assets\\source\\seamless-continuity-v1\\originals\\ledge-oral-root.png",
+  "runtime_file": "assets/runtime/sprites/seamless-continuity-v1/ledge-oral-root.png",
+  "game_file": "game/art/seamless-continuity-v1/ledge-oral-root.png",
+  "prompt_file": "assets/source/seamless-continuity-v1/prompts/ledge-oral-root.txt",
+  "correction_prompt_file": "assets/source/seamless-continuity-v1/prompts/ledge-oral-root-correction.txt",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alpha_range": [
+    0,
+    254
+  ],
+  "alpha_bbox_raw": [
+    31,
+    23,
+    1496,
+    1024
+  ],
+  "alpha_bbox_threshold8": [
+    96,
+    257,
+    1424,
+    956
+  ],
+  "top_edge_anchor": [
+    350,
+    267
+  ],
+  "flat_contact_span": [
+    110,
+    267,
+    690,
+    267
+  ],
+  "flat_contact_width": 580,
+  "scale_for_140px_contact": 0.2413793103448276,
+  "estimated_root_visible_width_after_scale": 320.55172413793105,
+  "notes": [
+    "Raw tool bytes retained without edits. RGB haze in transparent pixels is invisible; sparse alpha1..7 specks extend raw bbox. If applying established alpha<8 cleanup, preserve this original and register a separate runtime derivative.",
+    "Root meaningful-alpha silhouette fits within canvas; flat contact rim measured at y267, not requested nominal y256. Use measured anchor.",
+    "Do not treat diagonal root branches as additional collision.",
+    "Independent sprite integration still needs GPU check."
+  ],
+  "sha256": "d34b39d794056ff65f9e26b53be6e09fcfd9a956f077701eb6e11000b81407ce",
+  "copies_byte_identical": true
+}

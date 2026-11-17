@@ -6,6 +6,7 @@ class DoorPlayer extends WhalebellyCampaignPlayer:
 	func _physics_process(_dt: float) -> void: pass
 
 class DoorHost extends Node2D:
+	var streaming: Dictionary = {"enabled":false}
 	var player: WhalebellyCampaignPlayer
 	var enemies: Array = []
 	var abilities: Dictionary = {}

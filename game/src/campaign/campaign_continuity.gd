@@ -41,6 +41,8 @@ func begin_transition() -> void:
 	transition.begin()
 
 func nearby_door() -> CampaignDoorway:
+	if host.quitting: return null
+	if host.streaming.enabled: return null
 	if travelling: return null
 	var closest: CampaignDoorway
 	var distance: float = INF
@@ -52,6 +54,7 @@ func nearby_door() -> CampaignDoorway:
 	return closest
 
 func automatic_entry() -> Dictionary:
+	if host.quitting: return {}
 	if travelling: return {}
 	for entrance: CampaignDoorway in doorways:
 		if entrance.update_entry():
@@ -97,12 +100,13 @@ func travel(door: Dictionary) -> void:
 	travelling = false
 
 func _process(_dt: float) -> void:
+	if host.quitting or not is_instance_valid(host.scenery): return
 	if is_instance_valid(host.player):
 		for entrance: CampaignDoorway in doorways:
 			if is_instance_valid(entrance) and host.player.position.distance_to(entrance.position) > entrance.radius + 35.0:
 				entrance.armed = true
 	if not is_instance_valid(host.camera): return
-	var shift: Vector2 = (host.camera.position - host.point(host.room.size)*0.5)*0.009
+	var shift: Vector2 = (host.scenery.to_local(host.camera.global_position) - host.point(host.room.size)*0.5)*0.009
 	for portal: XumenContinuityPortal in portals:
 		if is_instance_valid(portal): portal.set_camera_offset(shift)
 

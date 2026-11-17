@@ -87,7 +87,7 @@ func test_attack_bounds_jump_dodge_and_safe_corner_sequence() -> void:
 	var crab: CampaignCrabBoss = host.enemies[0].actor
 	crab.kind = "sweep"
 	crab.facing = -1
-	var ground := Rect2(crab.position+Vector2(-230,-65),Vector2(28,65))
+	var ground := Rect2(crab.global_position+Vector2(-230,-65),Vector2(28,65))
 	check(crab.attack_rect().intersects(ground),"low sweep covers the front feet")
 	check(not crab.attack_rect().intersects(Rect2(ground.position-Vector2(0,110),ground.size)),"jump clears low sweep")
 	crab.kind = "slam"

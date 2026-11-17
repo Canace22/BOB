@@ -1,5 +1,5 @@
 extends SceneTree
-## Shared main scene and isolated save. Checks camera modes, limits and room changes.
+## Shared main scene and isolated save. Checks strict centering and explicit debug modes.
 var host: Node2D
 var checks: Array[Dictionary] = []
 func _initialize() -> void: run.call_deferred()
@@ -15,6 +15,7 @@ func tab() -> void:
 		Input.parse_input_event(event);Input.flush_buffered_events()
 		await tick(2)
 func run() -> void:
+	DirAccess.make_dir_recursive_absolute("res://build/qa/action36")
 	host=load("res://content/whalebelly/main.tscn").instantiate()
 	host.qa=true;host.integration_external_test=true
 	root.add_child(host);current_scene=host
@@ -30,12 +31,11 @@ func run() -> void:
 		for corner: Vector2 in [Vector2.ZERO,world]:
 			host.player.position=corner;host.camera.tracked_room="fixture-reset"
 			host.camera_feedback=.18;host.camera.update_follow(1.0/60.0)
-			var half: Vector2=host.camera.get_viewport_rect().size/(2*host.camera.zoom)
-			var center: Vector2=host.camera.position+host.camera.offset
-			check(id+"_bounded_"+str(corner),center.x-half.x>=-.01 and center.y-half.y>=-.01 and center.x+half.x<=world.x+.01 and center.y+half.y<=world.y+.01)
+			var center: Vector2=host.camera.get_screen_center_position()
+			check(id+"_centered_"+str(corner),center.is_equal_approx(host.player.global_position) and host.camera.offset==Vector2.ZERO)
 		host.player.position=host.point(host.room.get("play_spawn",host.room.spawn))
 		await tab()
-		check(id+"_tab_panorama",not host.camera.was_following)
+		check(id+"_tab_keeps_center",host.camera.was_following and host.camera.global_position.is_equal_approx(host.player.global_position))
 		await tab();await tick(60)
 		check(id+"_tab_restores_follow",host.camera.was_following and host.camera.zoom.x>=.95)
 		for mode: String in ["reference","capture","layer"]:
@@ -46,5 +46,11 @@ func run() -> void:
 			check(id+"_"+mode+"_fit",not host.camera.was_following and host.camera.offset==Vector2.ZERO)
 			host.capture_path="";host.layer_solo=-1;host.reference_visible=false
 	var failed: int=checks.filter(func(row: Dictionary) -> bool:return not row.pass).size()
-	FileAccess.open("res://build/qa/action36/camera-main.json",FileAccess.WRITE).store_string(JSON.stringify({"checks":checks,"failed":failed},"\t"))
+	var report := FileAccess.open("res://build/qa/action36/camera-main.json",FileAccess.WRITE)
+	if report == null:
+		push_error("Camera QA report could not be written")
+		await host.graceful_quit(2)
+		return
+	report.store_string(JSON.stringify({"checks":checks,"failed":failed},"\t"))
+	report.close()
 	await host.graceful_quit(1 if failed else 0)

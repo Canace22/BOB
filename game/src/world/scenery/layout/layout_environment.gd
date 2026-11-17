@@ -9,7 +9,7 @@ func _ready() -> void:
 	host = get_parent()
 	while host != null and not "abilities" in host: host = host.get_parent() as Node2D
 	if host == null: return
-	for node: Node in host.find_children("*","Node",true,false):
+	for node: Node in get_parent().find_children("*","Node",true,false):
 		if node != self and (node is ChapterPinnedBitmap or node is ChapterFishGroup or node is EnvironmentBubbleEmitter or node is WhalebellyBaleenFrames or node is KitDriftField or node is WhalebellySoftUnderwaterLight or node is XumenBackgroundCurrent):
 			animated.append(node)
 

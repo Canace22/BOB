@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 79,
-  "updatedAt": "2026-11-12",
+  "revision": 84,
+  "updatedAt": "2026-11-16",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -33193,6 +33193,1473 @@
         "original": "assets/source/xumen-scale-v1/oral-depth-original.png"
       },
       "notes": "用于R1-01，巨型颌骨出画框、远处须帘及水雾；原图等比显示，不修改角色与地形。用户审美待反馈。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-01--r1-02",
+      "name": "连续世界接缝 · R1-01--R1-02",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-01--R1-02.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0abf96d015e16381a49cfedab5c4cce44afa86897a572e3297dcab2c47ac8eb8",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-01--R1-02.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-01--R1-02.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-01--R1-02.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-02--r1-03",
+      "name": "连续世界接缝 · R1-02--R1-03",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-03.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0dbc98cec15e9270fcc8918338302ddd7324b047654425cf40e9a4f4c26a4d6e",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-02--R1-03.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-02--R1-03.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-02--R1-03.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-02--r1-06",
+      "name": "连续世界接缝 · R1-02--R1-06",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-06.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1ce66e505bfd2538e7216a7645bfdca9de74a8c1f93e46a6b0723379a9b15583",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-02--R1-06.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-02--R1-06.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-02--R1-06.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-02--r1-07",
+      "name": "连续世界接缝 · R1-02--R1-07",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-07.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "e42fafe08cc1717ce044b3b186f7d4960180540d1cfc57bbf7c7f1c41c05f235",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-02--R1-07.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-02--R1-07.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-02--R1-07.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-03--r1-04",
+      "name": "连续世界接缝 · R1-03--R1-04",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-03--R1-04.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5d737472184b0dabaf3aebd3a1e1417612bd4ebdcbc6334c500055fdcfe5a5dd",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-03--R1-04.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-03--R1-04.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-03--R1-04.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-04--r1-05",
+      "name": "连续世界接缝 · R1-04--R1-05",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-04--R1-05.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d8d271c67e9ee463fa88e993c9dd1cee5cbf4ef3f78f50fb6d72d497c727e2a3",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-04--R1-05.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-04--R1-05.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-04--R1-05.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-05--r3-01",
+      "name": "连续世界接缝 · R1-05--R3-01",
+      "kind": "environment",
+      "region": "R1",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-05--R3-01.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "dc01dbc320ce4c1efaecc3bcc5b0fed112dc2fa1a927f7805233df31ffeb94bb",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R1-05--R3-01.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-05--R3-01.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R1-05--R3-01.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r3-01--r2-01",
+      "name": "连续世界接缝 · R3-01--R2-01",
+      "kind": "environment",
+      "region": "R3",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R3-01--R2-01.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f1ad6dec6bf8a990ee823533295b6bb471228a9a3b00a3c9e945e509c56d2c08",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R3-01--R2-01.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R3-01--R2-01.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R3-01--R2-01.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r3-01--r4-01",
+      "name": "连续世界接缝 · R3-01--R4-01",
+      "kind": "environment",
+      "region": "R3",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R3-01--R4-01.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "9f8a9d4b4076da80c64bb8b16fce16c532bb45043140b698345ad2a0109e17f3",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R3-01--R4-01.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R3-01--R4-01.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R3-01--R4-01.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r2-01--r2-03",
+      "name": "连续世界接缝 · R2-01--R2-03",
+      "kind": "environment",
+      "region": "R2",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R2-01--R2-03.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "eb778c689fc278c4a5da970629c7cfe35e52f8a383367d75062af163bdc9b432",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R2-01--R2-03.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R2-01--R2-03.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R2-01--R2-03.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r2-03--r2-04",
+      "name": "连续世界接缝 · R2-03--R2-04",
+      "kind": "environment",
+      "region": "R2",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R2-03--R2-04.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "53beb6467450c649cbec377752d4d139d422d52627af60700df3aa3f2a8108db",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R2-03--R2-04.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R2-03--R2-04.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R2-03--R2-04.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-01--r4-03",
+      "name": "连续世界接缝 · R4-01--R4-03",
+      "kind": "environment",
+      "region": "R4",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-01--R4-03.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "05d5c1899858e221aaa9b34815a3123185a01597ee5839a08318e25c4df5de72",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R4-01--R4-03.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-01--R4-03.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R4-01--R4-03.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-03--r4-05",
+      "name": "连续世界接缝 · R4-03--R4-05",
+      "kind": "environment",
+      "region": "R4",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-03--R4-05.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "61f9f40db7cfaca2307c8919c9c2767a11dd97ad5361c79bf11fc7511eb70f70",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R4-03--R4-05.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-03--R4-05.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R4-03--R4-05.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-05--r4-06",
+      "name": "连续世界接缝 · R4-05--R4-06",
+      "kind": "environment",
+      "region": "R4",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-05--R4-06.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6e406f1b59929914261eb9927bf87e29f54c27f97c983e178e3739f8add02c9b",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R4-05--R4-06.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-05--R4-06.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R4-05--R4-06.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-06--r5-08",
+      "name": "连续世界接缝 · R4-06--R5-08",
+      "kind": "environment",
+      "region": "R4",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-06--R5-08.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f51efdda4c4c948687335898e6ca0735151487ddfe0f45ff7a731efaaccee310",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R4-06--R5-08.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-06--R5-08.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R4-06--R5-08.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-06--r5-01",
+      "name": "连续世界接缝 · R4-06--R5-01",
+      "kind": "environment",
+      "region": "R4",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-06--R5-01.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a922d7925008563fdd0a693f8e4c89ae0c36140b2b2e53c68f7aac43d34554d7",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R4-06--R5-01.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-06--R5-01.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R4-06--R5-01.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r5-01--r5-02",
+      "name": "连续世界接缝 · R5-01--R5-02",
+      "kind": "environment",
+      "region": "R5",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R5-01--R5-02.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "60d25ee1eec8faf9ffbabf13c61eef323adb634a83509214e6397872496ad6b0",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R5-01--R5-02.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R5-01--R5-02.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R5-01--R5-02.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r5-02--r5-04",
+      "name": "连续世界接缝 · R5-02--R5-04",
+      "kind": "environment",
+      "region": "R5",
+      "tags": [
+        "2D",
+        "连续补绘",
+        "静态",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R5-02--R5-04.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ac691ed0b8daf37b29c402f9b1759fede98058014eaabb9f56ff8515cee41699",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / reference-guided redraw",
+        "references": [
+          "assets/source/seamless-continuity-v1/inputs/R5-02--R5-04.png"
+        ],
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R5-02--R5-04.txt"
+        ],
+        "original": "assets/source/seamless-continuity-v1/originals/R5-02--R5-04.png"
+      },
+      "notes": "按实机世界矩形联合补绘；静态背景/路基，非逐帧动画；引擎取边界区并保留原房核心，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-ledge-lung-root",
+      "name": "连续接缝分层 · ledge-lung-root.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/ledge-lung-root.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a9046d06d10ebe188068d45b8a69870e898a54afb70277ccd0e6ca08af704052",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/ledge-lung-root.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/ledge-lung-root.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-ledge-oral-root",
+      "name": "连续接缝分层 · ledge-oral-root.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/ledge-oral-root.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d34b39d794056ff65f9e26b53be6e09fcfd9a956f077701eb6e11000b81407ce",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/ledge-oral-root.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/ledge-oral-root.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-ledges-r1",
+      "name": "连续接缝分层 · ledges/r1.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/ledges/r1.png",
+      "width": 210,
+      "height": 31,
+      "sha256": "41d52dea548a2784b360d45e5f7818da111334a36b5baea9459d94e2b9c47eac",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "reuse original registered 2D ledge",
+        "original": "assets/runtime/scenes/xumen-vertical-v1/E35-ledge-1.png",
+        "prompts": []
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-02--r1-06-depth",
+      "name": "连续接缝分层 · R1-02--R1-06-depth.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-06-depth.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "fe3ba578d0d6f3ea73fb9f3a593f5a792deb2eba11da5409d77ddedad70ae633",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/R1-02--R1-06-depth.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-02--R1-06-depth.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r1-02--r1-07-depth",
+      "name": "连续接缝分层 · R1-02--R1-07-depth.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R1-02--R1-07-depth.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "429b11ff80c523c0cba5b0e2321b8fa923a34f27398080b0473daea2345c4934",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/R1-02--R1-07-depth.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R1-02--R1-07-depth.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r3-01--r2-01-depth",
+      "name": "连续接缝分层 · R3-01--R2-01-depth.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R3-01--R2-01-depth.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "8328359196c518412b62c7a51894bbd368cd9cfa76ddbf53b4d5d90acd5d0b8a",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/R3-01--R2-01-depth.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R3-01--R2-01-depth.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "seamless-continuity-v1-r4-06--r5-08-depth",
+      "name": "连续接缝分层 · R4-06--R5-08-depth.png",
+      "kind": "environment",
+      "region": "全局",
+      "tags": [
+        "2D",
+        "静态",
+        "分层",
+        "接缝"
+      ],
+      "target": "2d",
+      "status": "needs-review",
+      "integrationStatus": "integrated",
+      "userArtApproval": false,
+      "file": "assets/runtime/sprites/seamless-continuity-v1/R4-06--R5-08-depth.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5f14e63a2a75ff4fd05486ac57b6a8f5a1c0d3f701d715433299f88e7bbd93ae",
+      "source": {
+        "batchId": "seamless-continuity-v1",
+        "method": "built-in imagegen / clean depth or isolated support redraw",
+        "original": "assets/source/seamless-continuity-v1/originals/R4-06--R5-08-depth.png",
+        "prompts": [
+          "assets/source/seamless-continuity-v1/prompts/R4-06--R5-08-depth.txt"
+        ]
+      },
+      "notes": "静态位图；背景不再烘焙新跳台，独立台面按实际碰撞对齐；原生成母版保留，用户整体审美待验收。"
+    },
+    {
+      "id": "continuous-background-mouth-v1",
+      "name": "连续远景 · mouth",
+      "kind": "background",
+      "region": "mouth",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/mouth.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/mouth.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-background-lung-v1",
+      "name": "连续远景 · lung",
+      "kind": "background",
+      "region": "lung",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/lung.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/lung.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-background-gastric-v1",
+      "name": "连续远景 · gastric",
+      "kind": "background",
+      "region": "gastric",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/gastric.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/gastric.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-background-spine-v1",
+      "name": "连续远景 · spine",
+      "kind": "background",
+      "region": "spine",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/spine.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/spine.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-background-cranial-v1",
+      "name": "连续远景 · cranial",
+      "kind": "background",
+      "region": "cranial",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/cranial.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/cranial.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-background-tail-v1",
+      "name": "连续远景 · tail",
+      "kind": "background",
+      "region": "tail",
+      "tags": [
+        "连续世界",
+        "2D位图",
+        "静态远景"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/tail.png",
+      "source": "assets/source/continuous-backdrops-v1/originals/tail.png",
+      "sourceType": "imagegen-reference-guided",
+      "integrationStatus": "integrated-local",
+      "notes": "内置ImageGen参考引导新绘；固定世界视差，静态器官与水体完整画面，技术验收待本轮完成，用户整体审美未确认。",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "continuous-terrain-R1-01--R1-02-v1",
+      "name": "连续背景分层道路 R1-01--R1-02",
+      "kind": "terrain",
+      "region": "R1-01--R1-02",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R1-01--R1-02.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R1-01--R1-02.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R1-02--R1-03-v1",
+      "name": "连续背景分层道路 R1-02--R1-03",
+      "kind": "terrain",
+      "region": "R1-02--R1-03",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R1-02--R1-03.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R1-02--R1-03.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R1-03--R1-04-v1",
+      "name": "连续背景分层道路 R1-03--R1-04",
+      "kind": "terrain",
+      "region": "R1-03--R1-04",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R1-03--R1-04.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R1-03--R1-04.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R1-04--R1-05-v1",
+      "name": "连续背景分层道路 R1-04--R1-05",
+      "kind": "terrain",
+      "region": "R1-04--R1-05",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R1-04--R1-05.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R1-04--R1-05.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R1-05--R3-01-v1",
+      "name": "连续背景分层道路 R1-05--R3-01",
+      "kind": "terrain",
+      "region": "R1-05--R3-01",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R1-05--R3-01.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R1-05--R3-01.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R3-01--R4-01-v1",
+      "name": "连续背景分层道路 R3-01--R4-01",
+      "kind": "terrain",
+      "region": "R3-01--R4-01",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R3-01--R4-01.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R3-01--R4-01.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R2-03--R2-04-v1",
+      "name": "连续背景分层道路 R2-03--R2-04",
+      "kind": "terrain",
+      "region": "R2-03--R2-04",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R2-03--R2-04.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R2-03--R2-04.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R4-01--R4-03-v1",
+      "name": "连续背景分层道路 R4-01--R4-03",
+      "kind": "terrain",
+      "region": "R4-01--R4-03",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R4-01--R4-03.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R4-01--R4-03.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R4-03--R4-05-v1",
+      "name": "连续背景分层道路 R4-03--R4-05",
+      "kind": "terrain",
+      "region": "R4-03--R4-05",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R4-03--R4-05.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R4-03--R4-05.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R4-05--R4-06-v1",
+      "name": "连续背景分层道路 R4-05--R4-06",
+      "kind": "terrain",
+      "region": "R4-05--R4-06",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R4-05--R4-06.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R4-05--R4-06.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R4-06--R5-01-v1",
+      "name": "连续背景分层道路 R4-06--R5-01",
+      "kind": "terrain",
+      "region": "R4-06--R5-01",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R4-06--R5-01.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R4-06--R5-01.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R5-01--R5-02-v1",
+      "name": "连续背景分层道路 R5-01--R5-02",
+      "kind": "terrain",
+      "region": "R5-01--R5-02",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R5-01--R5-02.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R5-01--R5-02.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R5-02--R5-04-v1",
+      "name": "连续背景分层道路 R5-02--R5-04",
+      "kind": "terrain",
+      "region": "R5-02--R5-04",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R5-02--R5-04.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R5-02--R5-04.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-terrain-R2-01--R2-03-v1",
+      "name": "连续背景分层道路 R2-01--R2-03",
+      "kind": "terrain",
+      "region": "R2-01--R2-03",
+      "tags": [
+        "2D位图",
+        "静态",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/terrain/R2-01--R2-03.png",
+      "source": "assets/source/continuous-backdrops-v1/terrain/R2-01--R2-03.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "由原连接图参考引导分层重绘，真实Alpha保留；几何/碰撞不变，实际配准待本轮复核。"
+    },
+    {
+      "id": "continuous-mask-R1-02-World",
+      "name": "原房背景分离遮罩 R1-02-World",
+      "kind": "mask",
+      "region": "R1-02",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-02-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-02-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-02-Middle",
+      "name": "原房背景分离遮罩 R1-02-Middle",
+      "kind": "mask",
+      "region": "R1-02",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-02-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-02-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-03-World",
+      "name": "原房背景分离遮罩 R1-03-World",
+      "kind": "mask",
+      "region": "R1-03",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-03-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-03-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-03-Middle",
+      "name": "原房背景分离遮罩 R1-03-Middle",
+      "kind": "mask",
+      "region": "R1-03",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-03-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-03-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-04-World",
+      "name": "原房背景分离遮罩 R1-04-World",
+      "kind": "mask",
+      "region": "R1-04",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-04-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-04-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-04-Middle",
+      "name": "原房背景分离遮罩 R1-04-Middle",
+      "kind": "mask",
+      "region": "R1-04",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-04-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-04-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-05-World",
+      "name": "原房背景分离遮罩 R1-05-World",
+      "kind": "mask",
+      "region": "R1-05",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-05-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-05-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-05-Middle",
+      "name": "原房背景分离遮罩 R1-05-Middle",
+      "kind": "mask",
+      "region": "R1-05",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-05-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-05-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-06-World",
+      "name": "原房背景分离遮罩 R1-06-World",
+      "kind": "mask",
+      "region": "R1-06",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-06-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-06-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-06-Middle",
+      "name": "原房背景分离遮罩 R1-06-Middle",
+      "kind": "mask",
+      "region": "R1-06",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-06-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-06-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-07-World",
+      "name": "原房背景分离遮罩 R1-07-World",
+      "kind": "mask",
+      "region": "R1-07",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-07-World.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-07-World.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "continuous-mask-R1-07-Middle",
+      "name": "原房背景分离遮罩 R1-07-Middle",
+      "kind": "mask",
+      "region": "R1-07",
+      "tags": [
+        "2D位图",
+        "Alpha遮罩",
+        "背景分离"
+      ],
+      "status": "review",
+      "file": "assets/runtime/sprites/continuous-backdrops-v1/chapter/R1-07-Middle.png",
+      "source": "assets/source/continuous-backdrops-v1/chapter/R1-07-Middle.png",
+      "sourceType": "imagegen-reference-guided-redraw",
+      "integrationStatus": "integrated-local",
+      "notes": "只消费新图Alpha，原房RGB、尺寸、动件、碰撞与位置保留。"
+    },
+    {
+      "id": "world-terrain-master-v1",
+      "name": "全世界分层母版与地形切片",
+      "kind": "terrain-atlas",
+      "status": "review",
+      "file": "assets/source/world-terrain-v1/overview.png",
+      "source": "assets/source/world-terrain-v1/master.tscn",
+      "runtime": "assets/runtime/sprites/world-terrain-v1/chunks.json",
+      "runtimeFiles": [
+        "assets/runtime/sprites/world-terrain-v1/chunks.json",
+        "assets/runtime/sprites/world-terrain-v1/tile_11_-4.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_7_-3.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_8_-3.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_9_-3.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_10_-3.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_11_-3.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_2_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_3_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_6_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_7_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_8_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_9_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_10_-2.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_-1_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_0_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_1_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_2_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_3_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_6_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_8_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_9_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_10_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_11_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_12_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_13_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_14_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_15_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_16_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_17_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_18_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_19_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_20_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_21_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_22_-1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_-1_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_0_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_1_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_2_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_3_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_4_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_5_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_6_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_7_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_8_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_9_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_10_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_11_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_12_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_13_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_14_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_15_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_16_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_17_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_18_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_19_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_20_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_21_0.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_14_1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_15_1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_16_1.png",
+        "assets/runtime/sprites/world-terrain-v1/tile_17_1.png"
+      ],
+      "sourceType": "deterministic-existing-bitmap-composition",
+      "integrationStatus": "integrated-local",
+      "notes": "先组装同一世界母版，再按1536px网格切片；2px取样余量，不做实体地形透明淡边。"
+    },
+    {
+      "id": "world-seam-repaint-v2",
+      "name": "世界接缝结构补绘V2",
+      "kind": "scene",
+      "status": "review",
+      "file": "assets/source/world-seam-repaint-v2/candidates/E01-terrain-v2.png",
+      "source": "assets/source/world-seam-repaint-v2",
+      "runtimeFiles": [
+        "assets/runtime/sprites/world-seam-repaint-v2/E01-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/E01.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-03-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-03.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-06--end-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-06--end.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-06--start-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-06--start.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-07--end-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-07--end.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-07--start-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-02--R1-07--start.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-03--R1-04-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-03--R1-04.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-04--R1-05-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-04--R1-05.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-05--R3-01-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R1-05--R3-01.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R2-01--R2-03-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R2-01--R2-03.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R2-03--R2-04-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R2-03--R2-04.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R2-01--end-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R2-01--end.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R2-01--start-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R2-01--start.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R4-01-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R3-01--R4-01.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-01--R4-03-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-01--R4-03.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-03--R4-05-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-03--R4-05.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-05--R4-06-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-05--R4-06.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-01-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-01.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-08--end-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-08--end.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-08--start-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R4-06--R5-08--start.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R5-01--R5-02-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R5-01--R5-02.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R5-02--R5-04-basis.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/R5-02--R5-04.png",
+        "assets/runtime/sprites/world-seam-repaint-v2/registration.json"
+      ],
+      "sourceType": "imagegen-reference-redraw",
+      "integrationStatus": "integrated-local-review",
+      "notes": "22张结构重绘接入61块世界母版；GPU复核完成，用户审美未确认。提示词/来源/哈希见source目录，未发布。"
     }
   ]
 }

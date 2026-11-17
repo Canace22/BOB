@@ -8,11 +8,16 @@ var map_button: Button
 var pause_button: Button
 var prompt_alpha: float = 0.0
 var last_prompt: String = ""
+var minimap: WhaleCampaignMinimap
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	leaf = load("res://art/ui/leaf.svg") as Texture2D
 	echo = load("res://art/ui/echo.svg") as Texture2D
+	minimap = WhaleCampaignMinimap.new()
+	minimap.name = "Minimap"
+	minimap.data = controller.data
+	add_child(minimap)
 	map_button = WhaleUIStyle.button("", func() -> void: controller.open("map"))
 	pause_button = WhaleUIStyle.button("Esc  暂停", func() -> void: controller.open("pause"))
 	for button: Button in [map_button, pause_button]:
@@ -29,6 +34,8 @@ func _process(dt: float) -> void:
 	prompt_alpha = move_toward(prompt_alpha, 1.0, dt * 7.0)
 
 func _layout() -> void:
+	minimap.position = Vector2(size.x-284,24)
+	minimap.size = Vector2(260,154)
 	map_button.position = Vector2(size.x-282, size.y-61)
 	pause_button.position = Vector2(size.x-151, size.y-61)
 
@@ -62,9 +69,9 @@ func _draw() -> void:
 		var width: float = WhaleUIStyle.FONT.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,23).x
 		var title_color: Color = WhaleUIStyle.BONE
 		title_color.a = clampf(controller.location_left,0,1)
-		text(Vector2(size.x-36-width,57),title,23,title_color)
-	if controller.host.practice: text(Vector2(size.x-270,87),"能力练习 · 不保存进度",16,WhaleUIStyle.AMBER)
-	if controller.host.room_preview: text(Vector2(size.x-270,110),"房间预览 · 不记录发现",16,WhaleUIStyle.AMBER)
+		text(Vector2(size.x-36-width,207),title,23,title_color)
+	if controller.host.practice: text(Vector2(size.x-270,233),"能力练习 · 不保存进度",16,WhaleUIStyle.AMBER)
+	if controller.host.room_preview: text(Vector2(size.x-270,256),"房间预览 · 不记录发现",16,WhaleUIStyle.AMBER)
 	if controller.notice_left>0: text(Vector2(35,157),controller.notice_text,17,WhaleUIStyle.AMBER)
 	text(Vector2(35,size.y-83), CampaignGuidance.hint(controller.host), 16, WhaleUIStyle.TEAL)
 	_draw_actions(p)

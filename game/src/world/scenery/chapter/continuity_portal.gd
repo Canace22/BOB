@@ -26,6 +26,8 @@ func _ready() -> void:
 
 func bind_level(level: Node2D) -> void:
 	host = level
+	for plate: Sprite2D in plates:
+		(plate.material as ShaderMaterial).set_shader_parameter("scene_origin",host.scenery.global_position)
 
 func _process(dt: float) -> void:
 	if is_instance_valid(host):
