@@ -149,6 +149,8 @@ var lower_frame: int = 0:
 @onready var tree: AnimationTree = $AnimationTree
 var locomotion_visual := TideLocomotionVisual.new()
 var playback: AnimationNodeStateMachinePlayback
+signal hit_resolved(target: Node, area: Rect2, key: String, direction: float)
+
 var skill_controller := TideSkillController.new()
 
 func _ready() -> void:
@@ -541,7 +543,9 @@ func _hit(enemy: Node,amount: int,gain_soul: bool) -> void:
 	if enemy.has_method("can_receive_hit") and not enemy.can_receive_hit():return
 	if hit_targets.has(enemy.get_instance_id()): return
 	hit_targets[enemy.get_instance_id()]=true
+	var contact_area: Rect2 = enemy.hurt_rect() if enemy.has_method("hurt_rect") else Rect2(enemy.global_position,Vector2.ONE)
 	enemy.take_hit(amount)
+	hit_resolved.emit(enemy,contact_area,skill_controller.visual_key if skill_controller.active else state,facing)
 	var impact: Vector2=enemy.hurt_rect().get_center() if enemy.has_method("hurt_rect") else enemy.global_position
 	skill_effect.emit(skill_controller.visual_key if skill_controller.active else state,"impact",impact,facing)
 	if gain_soul: soul=mini(max_soul,soul+soul_per_hit)

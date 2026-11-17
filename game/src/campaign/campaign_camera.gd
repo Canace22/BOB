@@ -1,7 +1,8 @@
 class_name WhalebellyCampaignCamera
 extends Camera2D
 @export var gameplay_zoom: float = 1.0
-# 兼容旧场景和设置接口；正常居中模式不再使用前视、探看、震动或冲刺缩放。
+@export var edge_softness: float = 120.0
+# 兼容旧场景和设置接口；内部居中、世界外缘软限位，不使用前视、探看或冲刺缩放。
 @export var lookahead:float=56.0 # Small lead: turning around must not swing the view.
 @export var shake_pixels:float=8.0
 @export var dash_zoom:float=1.05 # New default; Inspector adjustable.
@@ -23,6 +24,10 @@ var smoothed_lookahead: float = 0.0
 var smoothed_look: float = 0.0
 var look_hold: float = 0.0
 var was_following: bool = false
+var world_edges := CampaignCameraWorldBounds.new()
+
+func configure_world(layout: Dictionary) -> void:
+	world_edges.configure(layout)
 
 func update_follow(dt:float) -> void:
 	if not is_instance_valid(host.player):return
@@ -37,8 +42,9 @@ func update_follow(dt:float) -> void:
 	anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
 	offset = Vector2.ZERO
 	if follow:
-		global_position = host.player.global_position
 		zoom = Vector2.ONE * maxf(gameplay_zoom, 0.01)
+		# 用完整世界轮廓限制视口；跨房不重新初始化镜头，不按当前房矩形夹住。
+		global_position = follow_target(host.player.global_position)
 		follow_anchor = global_position
 		smoothed_lookahead = 0.0
 		smoothed_look = 0.0
@@ -54,6 +60,9 @@ func update_follow(dt:float) -> void:
 	host.camera_feedback=maxf(0,host.camera_feedback-dt)
 	# 节点位置相同并不保证实际画面中心相同，立即提交去除旧限位/平滑残留。
 	force_update_scroll()
+
+func follow_target(actor: Vector2) -> Vector2:
+	return world_edges.target(actor,get_viewport_rect().size/(Vector2.ONE*maxf(gameplay_zoom,0.01))*0.5,edge_softness)
 
 func fall_amount() -> float:
 	var actor: CharacterBody2D = host.player as CharacterBody2D

@@ -2,6 +2,7 @@ class_name CampaignCrabBoss
 extends CharacterBody2D
 ## Mother crab from the training battle, bound to campaign enemies and V6 progress.
 
+var feedback: TideEnemyFeedback
 var host: Node2D
 var data: Dictionary
 var target: WhalebellyCampaignPlayer
@@ -35,7 +36,8 @@ func _ready() -> void:
 	collision_layer = 4
 	collision_mask = 2
 	position = data.pos
-	z_index = 3
+	# 和主角共用可玩层，保证营地等中景装饰不会遮住敌人。
+	z_index = host.player.z_index
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	target = host.player
 	hurtbox.crab = self
@@ -49,6 +51,9 @@ func _ready() -> void:
 	visual = CampaignCrabVisual.new()
 	visual.name = "Visual"
 	add_child(visual)
+	feedback = TideEnemyFeedback.new()
+	add_child(feedback)
+	feedback.setup(visual)
 	effects = CampaignCrabEffects.new()
 	add_child(effects)
 	data.actor = self
@@ -64,6 +69,7 @@ func _ready() -> void:
 func _physics_process(dt: float) -> void:
 	visual.visible = not (host.reference_visible or host.layer_solo >= 0 or not host.capture_path.is_empty())
 	if not visual.visible or not target.controls_enabled: return
+	if feedback.frozen(dt): return
 	flash = maxf(0, flash - dt)
 	hurtbox.feedback_left = maxf(0, hurtbox.feedback_left - dt)
 	velocity.x = 0

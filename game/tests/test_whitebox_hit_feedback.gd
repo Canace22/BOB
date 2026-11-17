@@ -13,7 +13,7 @@ func wait_hit(arena: Node2D, before: int = 0) -> bool:
 		await physics_frames(1)
 	return false
 
-func visible_particles(feedback: CombatWhiteboxHitFeedback) -> int:
+func visible_particles(feedback: TideCombatFeedback) -> int:
 	var count: int = 0
 	for item: Dictionary in feedback.particles:
 		if (item.node as Sprite2D).visible: count += 1

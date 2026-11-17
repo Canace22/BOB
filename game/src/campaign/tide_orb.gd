@@ -44,8 +44,10 @@ func _physics_process(dt:float) -> void:
 		if target.has_method("can_receive_hit") and not target.can_receive_hit(): continue
 		if swept.intersects(target.hurt_rect()):
 			hit_ids[target.get_instance_id()]=true
+			var contact_area: Rect2 = target.hurt_rect()
 			target.take_hit(damage)
 			if is_instance_valid(caster):
+				caster.hit_resolved.emit(target,contact_area,"shadow_orb" if piercing else "orb",direction)
 				caster.skill_effect.emit("shadow_orb" if piercing else "orb","impact",target.hurt_rect().get_center(),direction)
 				caster.hitstop=caster.hitstop_duration
 				caster.hit_confirmed.emit()

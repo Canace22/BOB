@@ -1,17 +1,25 @@
 {
-  "reason": "Version1.0.1 integration: preserve authored layout; convert player bounds, enemy probes and hit sources between room and world coordinates. Behavioral coverage: test_streamed_room_coordinates and test_streaming_lifecycle.",
+  "reason": "Version1.0.1 integration: preserve authored layout and streaming coordinates; merge committed main combat, enemy feedback and playable-layer changes from bad8fe36. Behavioral coverage: test_streamed_room_coordinates, test_streaming_lifecycle, combat_main_qa and streaming_world_qa.",
   "source_hashes": [
     {
       "path": "game/src/campaign/campaign_player.gd",
-      "sha256": "54d652a7664c41033ea4b1017e63a4f699e07f4269b31d53c6f9e188c2abe0be"
+      "sha256": "e6f08a98959b6a0ca51bf539d1b4f0eae2b58729c196ca7ff5062b38109ccd48"
     },
     {
       "path": "game/src/campaign/enemies/corpse_crab.gd",
-      "sha256": "6a8bc6ae7071c36d0b5447fb61cfcec91c0da49fa26873c0704f5c241df3c775"
+      "sha256": "3c30e5c6ed130ea6e355a361225656905368c545324aac6a4943c786b33fe3c4"
     },
     {
       "path": "game/src/campaign/enemies/kit_encounter.gd",
-      "sha256": "1dd4ab38215ee279ff5d4f498136a6b857a7df59f3fd995d9fd9895cff602f3f"
+      "sha256": "0f8f6bcb151cf5f6c5d895fba3cf8e9c641923125e5b0f1a95cc42966322fc1b"
+    },
+    {
+      "path": "game/src/campaign/tide_player.gd",
+      "sha256": "89dbe64a89b48344dc8d79a877ada95ffe5826352c7428111cbba94194c8f6e5"
+    },
+    {
+      "path": "game/src/campaign/boss/crab_boss.gd",
+      "sha256": "1a6d5d4f7769c8d8af1951aaa8f2039e093aab725e513adf8889cef7f1e8b09b"
     }
   ]
 }

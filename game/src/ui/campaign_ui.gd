@@ -99,6 +99,7 @@ func show_notice(text: String) -> void:
 
 func clear_input() -> void:
 	if not is_instance_valid(player): return
+	if player.has_method("clear_combat_input"): player.clear_combat_input()
 	player.skill_controller.input.clear()
 	player.pending_action = ""
 	player.pending_left = 0.0
