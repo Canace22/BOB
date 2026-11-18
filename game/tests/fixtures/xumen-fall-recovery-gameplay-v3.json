@@ -1,0 +1,13 @@
+{
+  "reason": "User-requested local fall recovery: the campaign returns to last_safe with one life lost instead of lethal void damage. Standalone practice retains void death. Original v1/v2 baselines stay intact. Behavior: tests/whalebelly/fall_recovery.gd and test_movement_feedback.gd. Hashes use UTF-8 with LF line endings.",
+  "source_hashes": [
+    {
+      "path": "game/src/campaign/tide_player.gd",
+      "sha256": "6ab6cb55cb83bf569b5ac4ea65f75688ae7128806abd6bd0dd28a7afc9ac5b0d"
+    },
+    {
+      "path": "game/src/campaign/campaign_player.gd",
+      "sha256": "c02e804d729309de18a14d983fd9d8e2404f0a6f9f130b84fd68ee1e158990dd"
+    }
+  ]
+}

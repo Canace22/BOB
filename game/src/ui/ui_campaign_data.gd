@@ -75,8 +75,10 @@ func room_description(index: int) -> String:
 	if r.has("camp") or index in [0,3,4]: details += "\n壳形营地：恢复生命、记录检查点"
 	if host.collected.get(str(r.id), false):
 		details += "\n本房补给 / 记忆已收集"
-		if CampaignRelics.ITEMS.has(str(r.id)): details += "\n已获得：" + CampaignRelics.description(str(r.id))
 		if str(r.id) == "R1-07":
 			details += "\n已获得浮游：空中按住 %s，短暂浮升。\n记忆：" % WhaleUIStyle.key("float") + MEMORY_TEXT
+	for id: String in CampaignRelics.ITEMS:
+		if id.get_slice(":",0) == str(r.id) and host.collected.get(id, false):
+			details += "\n已获得：" + CampaignRelics.description(id)
 	if host.defeated.get(str(r.id)+":0", false): details += "\n守关者已击败"
 	return details

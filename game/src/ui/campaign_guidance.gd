@@ -96,3 +96,14 @@ static func float_prompt(host: Node2D) -> String:
 	if not host.has_ability("float"): return ""
 	if p.is_on_floor(): return "%s 起跳后按住浮游 · 松开落台" % WhaleUIStyle.key("tp_jump")
 	return "按住浮游 · 松开落台" if p.float_left > 0 else "浮游已用完 · 落台恢复"
+
+static func requirement_hint(host: Node2D, door: Dictionary) -> String:
+	for need: String in CampaignWorld.requirements(door):
+		if need == "boss" or host.has_ability(need): continue
+		if need == "float": return "先到鲸须记忆袋获得浮游"
+		if need == "dash": return "击败负壳守卫，获得贴流冲"
+		for room: Dictionary in host.rooms:
+			for enemy: Dictionary in room.get("enemies", []):
+				if str(enemy.get("grants", "")) == need:
+					return "前往%s · 击败%s" % [CampaignWorld.region_name(str(room.id)), str(enemy.get("name", room.name))]
+	return ""

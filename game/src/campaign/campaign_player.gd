@@ -247,10 +247,25 @@ func _melee(downward:bool) -> void:
 		# A landed swing shoves the target away and nudges the attacker back.
 		if target.has_method("apply_knockback"):target.apply_knockback(facing*melee_knockback)
 
+func _fall_out_of_world() -> void:
+	host.record_event("fall_recover",{"position":[position.x,position.y],"return":[last_safe.x,last_safe.y]})
+	hurt(1,true)
+
 func hurt(amount:int,fall:bool=false) -> void:
 	if health<=0:return
+	if fall:
+		skill_controller.cancel()
+		skill_controller.input.clear()
+		clear_combat_input()
+		world_effects.clear()
 	take_damage(amount,Vector2.ZERO,fall)
-	if fall:position=last_safe;velocity=Vector2.ZERO;grapple_target=Vector2.INF
+	if fall:
+		position=last_safe
+		velocity=Vector2.ZERO
+		grapple_target=Vector2.INF
+		drop_timer=0
+		wall_lock=0
+		recoil_left=0
 
 func interaction_nearby() -> bool:
 	if is_instance_valid(skill_controller.nearby_gate()): return true

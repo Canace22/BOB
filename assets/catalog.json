@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 84,
-  "updatedAt": "2026-11-16",
+  "revision": 86,
+  "updatedAt": "2026-11-18",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -13971,7 +13971,15 @@
           "coordinateSpace": "original-canvas-pixels"
         }
       },
-      "familyId": "release-sluice"
+      "familyId": "release-sluice",
+      "runtimeUses": [
+        {
+          "room": "R5-08",
+          "purpose": "藏珠贝匣固定外壳",
+          "evidence": "game/progress.md",
+          "method": "复用静态入库位图，未新增动作动画"
+        }
+      ]
     },
     {
       "id": "release-sluice-closed",
@@ -14564,7 +14572,15 @@
         "ringed-calcium-pearl"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/ringed-calcium-pearl-007b0db10099.png",
-      "familyId": "ringed-calcium-pearl"
+      "familyId": "ringed-calcium-pearl",
+      "runtimeUses": [
+        {
+          "room": "R5-08",
+          "purpose": "一次性探索奖励归潮珠，拾取后隐藏",
+          "evidence": "game/progress.md",
+          "method": "复用静态入库位图，未新增动作动画"
+        }
+      ]
     },
     {
       "id": "safe-pearl-emitter",
@@ -34660,6 +34676,105 @@
       "sourceType": "imagegen-reference-redraw",
       "integrationStatus": "integrated-local-review",
       "notes": "22张结构重绘接入61块世界母版；GPU复核完成，用户审美未确认。提示词/来源/哈希见source目录，未发布。"
+    },
+    {
+      "id": "r1-02-curtain-cleanup-v1",
+      "name": "须筛垂须透明修复",
+      "kind": "environment",
+      "region": "R1-02",
+      "status": "review",
+      "file": "assets/runtime/sprites/r1-02-curtain-cleanup-v1/R1-02-BALEEN-1.png",
+      "source": "assets/source/r1-02-curtain-cleanup-v1/README.md",
+      "runtimeFiles": [
+        "assets/runtime/sprites/r1-02-curtain-cleanup-v1/R1-02-BALEEN-1.png",
+        "assets/runtime/sprites/r1-02-curtain-cleanup-v1/Middle.png"
+      ],
+      "tags": [
+        "须筛",
+        "垂须",
+        "透明修复",
+        "程序驱动"
+      ],
+      "notes": "内置ImageGen基于旧分件修复完整细丝；Godot原生导出等比缩放并移除静态重复层。复用固定端网格微摆，非逐帧动作。用户审美待确认。 本地14项GPU/真实键盘专项通过，未发布。",
+      "integrationStatus": "integrated",
+      "integratedIn": [
+        "game/content/whalebelly/r1/R1-02.tscn"
+      ],
+      "animations": []
+    },
+    {
+      "id": "r5-tail-window-frame-v3",
+      "name": "尾海窗框",
+      "kind": "scenery",
+      "region": "R5",
+      "tags": [
+        "既有运行资源补登记"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r5-tail-window-frame-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1534,
+        1024
+      ],
+      "pivot": [
+        768,
+        0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1
+      },
+      "sha256": "f5ebb6386946365123209b9bf7ee53a43e4e0e6a80e6990e0829672e1652cb12",
+      "spriteType": "static",
+      "source": {
+        "method": "从已提交运行副本恢复；非新增绘制，不代表原始全分辨率",
+        "recoveryManifest": "assets/source/version101-merge/recovered-runtime.json",
+        "metrics": "alpha>=32可见范围，顶中锚点沿用现有场景"
+      },
+      "integrationStatus": "integrated",
+      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。"
+    },
+    {
+      "id": "sea-larva-swim-v1",
+      "name": "归海幼体八帧游动",
+      "kind": "creature",
+      "region": "R5",
+      "tags": [
+        "既有运行资源补登记"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/runtime/sprites/completion-19-v1/sea-larva-swim-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        21,
+        134,
+        1520,
+        869
+      ],
+      "pivot": [
+        768,
+        512
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1
+      },
+      "sha256": "60a4a580334f22c2b75c2b84e64f09b685cec94a3042c959b1e22a6f26df6eaf",
+      "spriteType": "animation-atlas",
+      "source": {
+        "method": "从已提交运行副本恢复；非新增绘制，不代表原始全分辨率",
+        "recoveryManifest": "assets/source/version101-merge/recovered-runtime.json",
+        "metrics": "alpha>=8整图范围，用作8帧图集，不作为单体尺寸"
+      },
+      "integrationStatus": "integrated",
+      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。"
     }
   ]
 }

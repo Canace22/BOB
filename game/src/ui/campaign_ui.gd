@@ -12,6 +12,8 @@ var modal: Control
 var body: VBoxContainer
 var heading: Label
 var footer: Label
+var margin: MarginContainer
+var ornament: TextureRect
 var page_id: String = ""
 var history: Array[String] = []
 var focus_history: Dictionary = {}
@@ -52,17 +54,16 @@ func _ready() -> void:
 	shade.color = Color(0.018, 0.055, 0.075, 0.96)
 	modal.add_child(shade)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	var margin := MarginContainer.new()
+	margin = MarginContainer.new()
 	modal.add_child(margin)
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	for side: String in ["left", "right"]: margin.add_theme_constant_override("margin_"+side, 52)
-	for side: String in ["top", "bottom"]: margin.add_theme_constant_override("margin_"+side, 25)
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation", 12)
 	margin.add_child(column)
 	heading = WhaleUIStyle.label("", 36)
 	column.add_child(heading)
-	column.add_child(WhaleUIStyle.icon("ornament", Vector2(300, 33)))
+	ornament = WhaleUIStyle.icon("ornament", Vector2(300, 33))
+	column.add_child(ornament)
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -75,6 +76,7 @@ func _ready() -> void:
 	scroll.add_child(body)
 	footer = WhaleUIStyle.label("", 15, WhaleUIStyle.MUTED)
 	column.add_child(footer)
+	panel.resized.connect(func() -> void: WhaleUIPages.layout(self))
 	modal.hide()
 	bind_player(host.player)
 
@@ -111,9 +113,9 @@ func open_conversation(title: String, lines: PackedStringArray, id: String = "")
 	conversation_lines = lines.duplicate()
 	conversation_id = id
 	open("conversation")
-
 func open(page: String, push: bool = true) -> void:
 	if busy: return
+	if page == "camp" and page_id.is_empty(): focus_history["camp"] = "LeaveCamp"
 	if page_id.is_empty() and not pending_resume:
 		previous_controls = player.controls_enabled
 		previous_pause = get_tree().paused
@@ -129,10 +131,10 @@ func open(page: String, push: bool = true) -> void:
 	for child: Node in body.get_children():
 		body.remove_child(child)
 		child.queue_free()
-	shade.color = Color.BLACK if page == "death" else Color(0.018, 0.055, 0.075, 0.96)
 	modal.show()
-	hud.hide()
+	hud.visible = page == "conversation"
 	WhaleUIPages.build(self, page)
+	WhaleUIPages.layout(self)
 	_focus_page.call_deferred()
 	host.record_event("ui_open", {"page":page})
 
@@ -164,6 +166,7 @@ func close_all() -> void:
 
 func start_game(fresh: bool) -> void:
 	if busy: return
+	hud.unlock_banner.clear()
 	busy = true
 	if not host.start_ui_session(fresh):
 		busy = false

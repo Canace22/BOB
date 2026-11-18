@@ -9,6 +9,9 @@ func test_ownership_stacks_in_either_order() -> void:
 	eq(CampaignRelics.capacity({"R1-06":true}), 1, "Optional fragment works before shell")
 	eq(CampaignRelics.capacity({"R1-03":true}), 2, "Main route shell gives two points")
 	eq(CampaignRelics.capacity({"R1-03":true,"R1-06":true,"R1-07":true}), 3, "Both relics stack, memory does not add shield")
+	eq(CampaignRelics.capacity({"R5-08":true}), 0, "Ending does not implicitly grant the optional pearl")
+	eq(CampaignRelics.capacity({"R5-08:tidal-pearl":true}), 1, "Pearl works independently of ending and earlier relics")
+	eq(CampaignRelics.capacity({"R1-03":true,"R1-06":true,"R5-08:tidal-pearl":true}), 4, "All three relics stack")
 
 func test_damage_overflow_and_falls() -> void:
 	var relics := CampaignRelics.new()

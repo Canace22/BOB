@@ -3,7 +3,6 @@ extends Node2D
 ## 连接段的实体门：条件和目标房就绪状态都满足后才开放。
 var stream: CampaignRoomStream
 var entries: Array[Dictionary] = []
-var notice_left: float = 0.0
 const DOOR := preload("res://art/doorways/tunnel.png")
 
 func _ready() -> void:
@@ -60,8 +59,24 @@ func reason(source: int, target: int, door: Dictionary) -> String:
 	if not stream.is_ready(target): return "正在准备相邻房间"
 	return ""
 
-func _process(dt: float) -> void:
-	notice_left = maxf(0.0,notice_left-dt)
+func nearby_prompt() -> Dictionary:
+	if not stream.enabled or stream.host.quitting or not is_instance_valid(stream.host.player): return {}
+	var result: Dictionary = {}
+	var nearest: float = 150.0
+	for entry: Dictionary in entries:
+		if entry.source != stream.active: continue
+		var message: String = reason(entry.source, entry.target, entry.door)
+		if message.is_empty(): continue
+		var shape: CollisionShape2D = entry.shape
+		var half: Vector2 = (shape.shape as RectangleShape2D).size * 0.5
+		var local: Vector2 = shape.to_local(stream.host.player.global_position)
+		var distance: float = local.distance_to(local.clamp(-half, half))
+		if distance >= nearest: continue
+		nearest = distance
+		result = {"message":message, "detail":CampaignGuidance.requirement_hint(stream.host, entry.door)}
+	return result
+
+func _process(_dt: float) -> void:
 	if stream.host.quitting: return
 	for entry: Dictionary in entries:
 		var message: String = reason(entry.source,entry.target,entry.door)
@@ -71,8 +86,3 @@ func _process(dt: float) -> void:
 			entry.blocked = blocked
 			entry.shape.set_deferred("disabled",not blocked)
 		entry.art.visible = blocked
-		# 只解释玩家所在房的出口，避免相邻房加载提示干扰当前操作。
-		if blocked and entry.source == stream.active and notice_left <= 0 and is_instance_valid(stream.host.player):
-			if stream.host.player.global_position.distance_to(entry.body.global_position) < 115:
-				stream.host.notify(message)
-				notice_left = 2.0

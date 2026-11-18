@@ -1,0 +1,15 @@
+{
+  "scope": "User-requested optional reward in R5-08; preserve original room reward and all previous gameplay contracts.",
+  "request": "这里下来什么都没有，可以给个宝箱之类",
+  "source_hashes": [
+    {
+      "path": "game/src/campaign/campaign_relics.gd",
+      "sha256": "e4840304c8129a7aa8e6d5f70b368def82117ad5e4e7fdbcd0b21892f29f58ba"
+    }
+  ],
+  "authorized_delta": "Add R5-08:tidal-pearl as a one-charge permanent relic; existing R1-03 and R1-06 values and damage absorption stay unchanged.",
+  "validation": [
+    "game/tests/test_campaign_relics.gd",
+    "game/tests/whalebelly/treasure_qa.gd"
+  ]
+}

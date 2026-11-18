@@ -10,7 +10,7 @@
   ],
   "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R5-08（V5.1 布局，单位 U）。入口改为直连交通椎；释放需要潮压、骨音、静默；结局文案为占位",
   "hint": "归海释放槽 · 潮压、骨音、静默齐备后，在导流闸前按交互键",
-  "about": "尾柄侧裂处的释放槽 · 三样齐备才能打开导流闸。",
+  "about": "尾柄侧裂处的释放槽 · 贝匣中藏有归潮珠，护盾上限 +1；潮压、骨音、静默齐备后可打开导流闸。",
   "spawn": [
     3.2,
     16
@@ -80,6 +80,17 @@
         16
       ],
       "units": 2.2
+    }
+  ],
+  "treasures": [
+    {
+      "id": "R5-08:tidal-pearl",
+      "name": "藏珠贝匣",
+      "prompt": "拾取归潮珠 · 护盾上限 +1",
+      "at": [29, 16],
+      "loot": "ringed-calcium-pearl",
+      "loot_offset": [0, -0.52],
+      "loot_units": 0.6
     }
   ],
   "foreground": [

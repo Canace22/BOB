@@ -1,0 +1,27 @@
+[
+  {
+    "pass": 1,
+    "tool": "image_gen.imagegen",
+    "transparent_background": true,
+    "references": [
+      "curtain-original.png",
+      "reference-gameplay.png"
+    ],
+    "output": "curtain-candidate-01.png",
+    "selected": false,
+    "reason": "The upper right strand roots were still incomplete in the actual scene.",
+    "prompt": "Edit the FIRST image into a clean transparent reusable 2D game environment sprite. The first image is the actual R1-02 hanging baleen curtain asset, an extremely wide crop approximately 814x399; the second image is supporting in-game style and placement reference only. Deliver ONLY the isolated curtain on a truly transparent background, no screenshot, no labels, no UI. Preserve the exact overall left-to-right descending diagonal silhouette and footprint: attached along the top, short strands on the left, progressively longer strands toward lower right, delicate irregular ends. REPAIR the incomplete extraction: reconstruct each thin strand continuously up to its top attachment instead of leaving disconnected cream tips. Preserve the finely painted watery fiber texture of the reference. Use subdued grey teal and muted aged ivory, with soft midtone shading, very restrained warm highlights, NOT bright gold or luminous wheat. Remove ALL baked-in blue water, rectangular dark matte, broad flat navy plates, streaky color-key residue, detached specks, and background haze. Alpha must reveal clear gaps between individual strands, including the upper portion; any dark shading must belong to an actual strand, not an opaque curtain-shaped patch of scenery. Entire curtain should read as one delicate naturally hanging cluster of sparse fibrous bristles with visible soft painted shading; no smooth plastic ribbons, no thick roots, no added rocks or architecture. Keep the top root position, shape proportions, left/right orientation, and the same approximately 2.04:1 canvas ratio. Keep transparent margin on left/right/bottom, top attachments close to the upper border. This is an art cleanup of the existing game asset, not a redesign. No scene background whatsoever."
+  },
+  {
+    "pass": 2,
+    "tool": "image_gen.imagegen",
+    "transparent_background": true,
+    "references": [
+      "curtain-candidate-01.png",
+      "reference-gameplay.png"
+    ],
+    "output": "curtain-generated.png",
+    "selected": true,
+    "prompt": "Refine the FIRST transparent cutout for a hand-painted underwater 2D game; second image is in-scene style only. Preserve canvas width:height ~2.044:1 and the existing diagonal LOWER silhouette (short strands on left, longest strands at right). CRITICAL GEOMETRY FIX: this is a CURTAIN hanging from an almost HORIZONTAL line at the VERY TOP of the image, across the ENTIRE width. Every strand, including those at the far right, must visibly continue all the way UP to the top attachment line. Do NOT leave a floating narrow diagonal strip of tips. Reconstruct the missing UPPER strand lengths above that strip, so long strands on the right run continuously from y=0 near the top down to their existing lower tip, with clear long narrow transparent spaces between them. The top root line stays within the top 0-5 percent of the canvas across its full width, no upward triangles or descending top border. Natural irregular soft hand-painted bristles, not thick ribbons, wood slats, stiff wires or smooth hair. Reduce highlights: the main fibers should be DARK desaturated grey teal / deep grey green with subtle muted old ivory light near the lower tips, subdued and integrated into a distant underwater environment. No shiny white or gold. Dark paint is allowed only ON individual narrow fibers. Absolutely NO opaque or semitransparent blue background or grey matte sheet between fibers; cutout must have real transparent holes from top to bottom. Remove all stray colored edge noise, floating isolated specks and artifacts. Keep the recognizable broad descending lower outline and same overall dimensions. Output ONLY one complete transparent hanging curtain sprite, no UI, text, rocks, ceiling, scenery, checkerboard image, or backdrop."
+  }
+]

@@ -87,7 +87,7 @@ var streaming: CampaignRoomStream
 var actor_frame: Node2D
 
 func _ready() -> void:
-	var isolated := qa or not capture_path.is_empty()
+	var isolated := qa or integration_external_test or not capture_path.is_empty()
 	for argument: String in OS.get_cmdline_user_args():
 		isolated = isolated or argument.begins_with("--qa") or argument.begins_with("--capture")
 	CampaignSaveBridge.prepare(not isolated)
@@ -410,6 +410,8 @@ func _create_room_support() -> void:
 
 func restored_room_position(value: Vector2) -> Vector2:
 	if room.has("layout"): return CampaignLayout.restore_point(room, value)
+	# Measured kit beds can rise above an old horizontal V6 checkpoint.
+	if room.get("profiled_ground",false): return Vector2(value.x,ground_y(value.x,value.y))
 	# R1-01's new road retains the old world width. Existing checkpoints and
 	# incoming door coordinates project to the new ground without save rewrites.
 	if room.get("layered_environment", false):
@@ -741,7 +743,7 @@ func load_progress() -> void:
 	if collected.get("R1-07",false): abilities.float = true
 	visited = payload.get("visited",{}).duplicate(true)
 	visited[str(rooms[room_index].id)] = true
-	for known: String in collected: visited[known] = true
+	for known: String in collected: visited[known.get_slice(":",0)] = true
 	for known: String in defeated: visited[known.get_slice(":",0)] = true
 	notify("已读取保存进度")
 

@@ -17,13 +17,15 @@
 [ext_resource type="Texture2D" path="res://art/world-kit/release-sluice-closed.png" id="r15"]
 [ext_resource type="Texture2D" path="res://art/world-kit/release-bowl.png" id="r16"]
 [ext_resource type="Script" path="res://src/world/scenery/kit/kit_interactable.gd" id="r17"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_larva_school.gd" id="r18"]
-[ext_resource type="Texture2D" path="res://art/world-kit/sea-larva-swim-v1.png" id="r19"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-foreground.png" id="r20"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r21"]
-[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-closed.png" id="r22"]
-[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-open.png" id="r23"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r24"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_treasure.gd" id="r18"]
+[ext_resource type="Texture2D" path="res://art/world-kit/ringed-calcium-pearl.png" id="r19"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_larva_school.gd" id="r20"]
+[ext_resource type="Texture2D" path="res://art/world-kit/sea-larva-swim-v1.png" id="r21"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-foreground.png" id="r22"]
+[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r23"]
+[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-closed.png" id="r24"]
+[ext_resource type="Texture2D" path="res://art/world-kit/ear-latch-open.png" id="r25"]
+[ext_resource type="Script" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r26"]
 
 [sub_resource type="ShaderMaterial" id="Paint1"]
 shader = ExtResource("r3")
@@ -205,9 +207,23 @@ progressed_lines = PackedStringArray("导流闸已经打开，流向外海的路
 required_flags = PackedStringArray()
 locked_lines = PackedStringArray()
 
-[node name="Ecology0" type="Node2D" parent="Middle/Ambient"]
+[node name="Treasure0" type="Node2D" parent="World"]
 script = ExtResource("r18")
+position = Vector2(2320, 1280)
+interaction_id = "R5-08:tidal-pearl"
+display_name = "藏珠贝匣"
+prompt_text = "拾取归潮珠 · 护盾上限 +1"
+
+[node name="Loot" type="Sprite2D" parent="World/Treasure0"]
+position = Vector2(-85.4, -120)
+scale = Vector2(0.6666, 0.6666)
+centered = false
+z_index = 2
 texture = ExtResource("r19")
+
+[node name="Ecology0" type="Node2D" parent="Middle/Ambient"]
+script = ExtResource("r20")
+texture = ExtResource("r21")
 bounds = Rect2(1920, 800, 1200, 400)
 population = 6
 body_width = 90
@@ -226,19 +242,19 @@ vertical = false
 position = Vector2(473.2, 1382.9)
 scale = Vector2(0.8232, 0.8232)
 centered = false
-texture = ExtResource("r20")
+texture = ExtResource("r22")
 
 [node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
 position = Vector2(1913.7, 1392.8)
 scale = Vector2(0.7598, 0.7598)
 centered = false
 flip_h = true
-texture = ExtResource("r20")
+texture = ExtResource("r22")
 
 [node name="Doorways" type="Node2D" parent="."]
 
 [node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r21")
+script = ExtResource("r23")
 destination_id = "R4-06"
 kind = "door"
 direction = -1.0
@@ -250,7 +266,7 @@ position = Vector2(-102.6, -216.3)
 scale = Vector2(0.4506, 0.4506)
 centered = false
 z_index = 1
-texture = ExtResource("r22")
+texture = ExtResource("r24")
 
 [node name="Open" type="Sprite2D" parent="Doorways/Entrance1"]
 position = Vector2(-96.3, -204.6)
@@ -258,7 +274,7 @@ scale = Vector2(0.4234, 0.4234)
 centered = false
 z_index = 1
 visible = false
-texture = ExtResource("r23")
+texture = ExtResource("r25")
 
 [node name="PresentationMotion" type="Node2D" parent="."]
-script = ExtResource("r24")
+script = ExtResource("r26")

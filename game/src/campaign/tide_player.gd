@@ -324,7 +324,7 @@ func _physics_process(dt: float) -> void:
 	_before_move(dt)
 	move_and_slide()
 	skill_controller.after_move()
-	if position.y > world_bounds.end.y+100: take_damage(max_health,Vector2.ZERO,true)
+	if position.y > world_bounds.end.y+100: _fall_out_of_world()
 	$Visual.scale.x = visual_scale*facing
 	body.material.set_shader_parameter("flash",1.0 if damage_flash_left>0 and int(damage_flash_left*30)%2==0 else 0.0)
 	if state_duration <= 0:state=locomotion_animation()
@@ -341,6 +341,9 @@ func _physics_process(dt: float) -> void:
 	locomotion_visual.update(self, dt)
 	cooldowns_changed.emit(cooldowns.duplicate())
 	availability_changed.emit(jump_count<2,cooldowns.dash<=0 and ability_available("A1_dash"))
+
+func _fall_out_of_world() -> void:
+	take_damage(max_health,Vector2.ZERO,true)
 
 func _read_input() -> void:
 	if Input.is_action_just_pressed("tp_jump"): jump_buffer=jump_buffer_time

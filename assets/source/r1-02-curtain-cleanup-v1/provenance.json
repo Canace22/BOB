@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "date": "2026-11-18",
+  "generator": "built-in image_gen; model identifier not exposed",
+  "prompts": "prompts.json",
+  "source_relationships": {
+    "Middle-original.png": "game/art/r1-chapter-scenes/R1-02/Middle.png before this task; manifest source framecraft-runtime-batches/2026-11-04",
+    "curtain-original.png": "game/art/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png before this task; same Framecraft batch",
+    "reference-gameplay.png": "user attachment provided in this task"
+  },
+  "export_script": "game/tools/export_curtain_cleanup.gd",
+  "runtime_targets": [
+    "game/art/r1-chapter-scenes/R1-02/Middle.png",
+    "game/art/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png"
+  ],
+  "motion": "existing pinned mesh, program driven; no frame animation authored",
+  "status": {
+    "pilot": "native GPU reviewed",
+    "integration": "local, 14 native checks pass",
+    "user_aesthetic_approval": "pending"
+  },
+  "files": [
+    {
+      "path": "assets/source/r1-02-curtain-cleanup-v1/curtain-candidate-01.png",
+      "sha256": "b4422e3aa008e2b05e3e9d1c255b33818c79cdcd9523f86a9925224b390e04ad",
+      "size": [
+        1793,
+        877
+      ]
+    },
+    {
+      "path": "assets/source/r1-02-curtain-cleanup-v1/curtain-generated.png",
+      "sha256": "6aa33da652157c9b0bb28e4a35cf00e2d883cb7063cbef90a8b0de76441fabec",
+      "size": [
+        1794,
+        877
+      ]
+    },
+    {
+      "path": "assets/source/r1-02-curtain-cleanup-v1/curtain-original.png",
+      "sha256": "96641baf669b2642a36c2ad18b3547c9a1844ff9c1b5552242324aa3cdd78d38",
+      "size": [
+        814,
+        399
+      ]
+    },
+    {
+      "path": "assets/source/r1-02-curtain-cleanup-v1/Middle-original.png",
+      "sha256": "d9a45e55f2918efe8df5fa75591c902dc4222c656450356db8eb090d4932092f",
+      "size": [
+        1704,
+        973
+      ]
+    },
+    {
+      "path": "assets/source/r1-02-curtain-cleanup-v1/reference-gameplay.png",
+      "sha256": "35d6f1cdc8cf3c1a982c2c598e3e18fab02b2415d2253b646ab6f820ff5653a2",
+      "size": [
+        1500,
+        829
+      ]
+    },
+    {
+      "path": "assets/runtime/sprites/r1-02-curtain-cleanup-v1/Middle.png",
+      "sha256": "e5f7938af3193ee6792be53d2ffd9da78a4a0bc15f08684414eead237938a9f4",
+      "size": [
+        1704,
+        973
+      ]
+    },
+    {
+      "path": "assets/runtime/sprites/r1-02-curtain-cleanup-v1/R1-02-BALEEN-1.png",
+      "sha256": "49036f265e5bf4e2f5b356b531a69b3c84ab21e93197d681a8f9174b30015c7e",
+      "size": [
+        814,
+        399
+      ]
+    }
+  ]
+}

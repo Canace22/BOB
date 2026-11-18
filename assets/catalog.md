@@ -1,5 +1,9 @@
 # 美术资源台账
 
+## 2026-11-18 · 归海释放槽藏珠贝匣
+
+复用已入库的`release-bowl`固定贝壳和`ringed-calcium-pearl`静态珍珠，贝壳位置与比例保持，珍珠等比缩放置于壳内；领取后只隐藏珍珠。没有新增绘图或动作动画，未改已有幼体游动、平台与碰撞。本房重建补登记`r5-tail-window-frame-v3`、`sea-larva-swim-v1`的既有恢复副本尺寸和来源，沿用[恢复台账](source/version101-merge/recovered-runtime.json)，不将恢复文件称作原始母版。实际接入、截图检查与状态验证见[游戏进度](../game/progress.md)；用户整体审美待试玩。
+
 ## 2026-11-12 · 全鲸地图底图
 
 肺心潮庭、胃肠沉城、鸣肋断脊、耳海归墟四个地图页改用[连续世界原画](source/world-continuity-v1/README.md)的 `01-world.png` 作底图，等比缩到长边1600像素后同步为 `game/art/world-map/whale-anatomy-overview.png`；须门遗港页仍用鲸头特写。没有新绘素材。用户选定该图用于地图，整体审美待看实机后反馈。
@@ -127,6 +131,8 @@
 ### 独立水下柔光与背景接缝修复
 
 BEAM-01/02/03已替换为不含场景纹理的独立柔光贴图和12秒Shader动画；旧多边形裁片退役，被挖背景合回ENV-DEPTH-RESTORED。母版、原件、来源与参数见[水下柔光说明](source/xumen-soft-light/README.md)。
+
+2026-11-18追加复用及返修：`UNDERWATER-SOFT-LIGHT.png`与`fx-particle-soft`用于正式玩家随身光束、补光及68个有界悬浮/柔散射粒子，由`game/src/campaign/player_light.gd`程序驱动（`CPUParticles2D`＋位图明暗Shader）。保留现有源文件/运行副本和等比；光束跟随玩家全局坐标，颗粒在世界空间模拟，光束/颗粒在实体地形后，补光在角色上。不是新增位图或动作素材。实际接入与验收见[流式世界](../docs/streaming-world.md#玩家镜头与随身光2026-11-18当前本地)和[进度](../game/progress.md)。
 
 ## 拾潮者视频动作 V02
 
@@ -312,3 +318,8 @@ V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/w
 2026-11-16白盒格挡复用：`parry-body.png`保持抬叉接触帧；`ground-ring-fx.png`第4帧竖置为前方潮环，标记为程序驱动，成功时调色/放大。无新增制作源或位图；仅白盒接入，来源沿用本批动作集。编排与GPU证据见[白盒动画映射](../game/tests/whitebox_combat/ANIMATION-MAPPING.md)。
 
 2026-11-16白盒命中反馈V1复用：action36的`projectile.png`作为命中粒子Alpha、尸蟹life图集hurt帧作为受击动作，标记为程序驱动（池化Sprite、Shader短闪、辅助显示回弹）；声音沿用whalebelly/runtime/audio的strike、hit/hit_2/hit_3、heavy。没有新增位图或动作源，没有接入正式主线。参数、资源路径与GPU验收见[白盒命中反馈](../game/tests/whitebox_combat/HIT-FEEDBACK.md)。
+
+
+## 2026-11-18 须筛垂须透明修复
+
+[修复批次](source/r1-02-curtain-cleanup-v1/README.md)保留用户参考、两张旧PNG、两次内置ImageGen输出、完整提示词与来源哈希。新透明须帘补齐根部，静态中景清除同簇深蓝重复像素；两张运行PNG替换原清单来源，旧原件保留。固定端网格微摆标记程序驱动，非新增逐帧动画；14项本地GPU/真实键盘检查通过，用户整体审美待试玩，未发布。

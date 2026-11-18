@@ -14,6 +14,8 @@ const recipes = path.join(game, 'content/whalebelly/world/recipes');
 const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const catalog = new Map(readJson(path.join(repo, 'assets/catalog.json')).assets.map(asset => [asset.id, asset]));
 const world = readJson(path.join(recipes, '_world.json'));
+const onlyRoom = process.argv.find(arg => arg.startsWith('--room='))?.slice(7);
+if (onlyRoom && !world.order.includes(onlyRoom)) throw new Error(`Unknown room: ${onlyRoom}`);
 const VIEW = [1280, 720];
 const COVER = 1.08; // dash zoom-out and shake stay inside parallax layers
 const THICKNESS = 35;
@@ -120,18 +122,20 @@ function buildRoom(recipe) {
   scene.node('World', 'Node2D', '.', {z_index: 0});
   scene.node('Art', 'Node2D', 'World');
   scene.node('Terrain', 'Node2D', 'World');
-  const collider = (name, x, y, w, depth, oneWay) => {
+  const collider = (name, x, y, w, depth, oneWay, profile) => {
     const [x0, x1, top] = [x * unit, (x + w) * unit, y * unit];
+    // Optional measured room-space top in U; bitmap placement stays authored.
+    const points = profile ? profile.map(px) : [[round(x0), round(top)], [round(x1), round(top)]];
     scene.node(name, 'StaticBody2D', 'World/Terrain');
     scene.node('Contour', 'CollisionPolygon2D', `World/Terrain/${name}`, {
-      polygon: `PackedVector2Array(${[x0, top, x1, top, x1, top + depth, x0, top + depth].map(round).join(', ')})`,
+      polygon: `PackedVector2Array(${[...points.flat(), x1, top + depth, x0, top + depth].map(round).join(', ')})`,
       one_way_collision: oneWay ? 'true' : false, one_way_collision_margin: oneWay ? '6.0' : false});
-    surfaces.push([[round(x0), round(top)], [round(x1), round(top)]]);
+    surfaces.push(points);
   };
   const bed = art(kit.bed.art, 1280);
   (recipe.beds ?? []).forEach((item, i) => {
     strip(scene, 'World/Art', `Bed${i}`, bed, kit.bed, item.x, item.y, item.w, unit);
-    collider(`Bed${i}`, item.x, item.y, item.w, (recipe.size[1] - item.y) * unit, false);
+    collider(`Bed${i}`, item.x, item.y, item.w, (recipe.size[1] - item.y) * unit, false, item.profile);
   });
   const platform = art(kit.platform.art, 1280);
   recipe.platforms.forEach(item => {
@@ -182,6 +186,16 @@ function buildRoom(recipe) {
     const props = {script: scene.ext('Script', 'res://src/world/scenery/kit/kit_interactable.gd'), position: vec(...px(item.at)), interaction_id: JSON.stringify(item.id), display_name: JSON.stringify(item.name), title: JSON.stringify(item.title ?? item.name), lines: strings(item.lines), progress_flag: JSON.stringify(item.progress_flag ?? ''), progressed_lines: strings(item.progressed_lines ?? []), required_flags: strings(item.required_flags ?? []), locked_lines: strings(item.locked_lines ?? [])};
     scene.node(`Resident${i}`, 'Node2D', 'World', props);
     if (item.art) anchored(parent, 'Art', item.art, [0, 0], item.units ?? catalog.get(item.art).world.units, 640);
+  });
+  (recipe.treasures ?? []).forEach((item, i) => {
+    const parent = `World/Treasure${i}`;
+    scene.node(`Treasure${i}`, 'Node2D', 'World', {
+      script: scene.ext('Script', 'res://src/world/scenery/kit/kit_treasure.gd'),
+      position: vec(...px(item.at)), interaction_id: JSON.stringify(item.id),
+      display_name: JSON.stringify(item.name), prompt_text: JSON.stringify(item.prompt),
+    });
+    // Keep the existing shell prop in place; only the contents disappear on pickup.
+    anchored(parent, 'Loot', item.loot, item.loot_offset, item.loot_units, item.loot_max ?? 256, {z_index: 2});
   });
   (recipe.ecology ?? []).forEach((item, i) => {
     const piece = art(item.art);
@@ -237,14 +251,17 @@ function buildRoom(recipe) {
     return {type: 'kit', pos: px(enemy.at), boss: Boolean(enemy.boss), name: enemy.name, ...(enemy.grants ? {grants: enemy.grants, defeat_notice: enemy.defeat_notice} : {}), config: {...config, sprites}};
   });
   const passthrough = Object.fromEntries(['hint', 'about', 'next', 'reward_grants', 'reward_prompt', 'reward_notice', 'reward_requires', 'reward_locked'].filter(key => recipe[key] !== undefined).map(key => [key, recipe[key]]));
-  return {id: recipe.id, name: recipe.name, kit: true, size, spawn: px(recipe.spawn), surfaces, holes: [], enemies, rings: (recipe.rings ?? []).map(px), reward: recipe.reward ? px(recipe.reward) : [], ...(recipe.camp ? {camp: px(recipe.camp)} : {}), ...passthrough, doors};
+  return {id: recipe.id, name: recipe.name, kit: true, size, spawn: px(recipe.spawn), surfaces, ...((recipe.beds ?? []).some(item => item.profile) ? {profiled_ground: true} : {}), holes: [], enemies, rings: (recipe.rings ?? []).map(px), reward: recipe.reward ? px(recipe.reward) : [], ...(recipe.camp ? {camp: px(recipe.camp)} : {}), ...passthrough, doors};
 }
 
 // Checkpoints store room indices, so the order is explicit and append-only.
 const listed = fs.readdirSync(recipes).filter(name => name.endsWith('.json') && !name.startsWith('_')).map(name => name.replace('.json', ''));
 const unordered = listed.filter(id => !world.order.includes(id));
 if (unordered.length) throw new Error(`Append these rooms to "order" in _world.json: ${unordered.join(', ')}`);
-const rooms = world.order.map(id => buildRoom(readJson(path.join(recipes, `${id}.json`))));
+const built = world.order.filter(id => !onlyRoom || id === onlyRoom).map(id => buildRoom(readJson(path.join(recipes, `${id}.json`))));
+const rooms = onlyRoom
+  ? readJson(path.join(game, 'content/whalebelly/world/rooms.json')).rooms.map(room => room.id === onlyRoom ? built[0] : room)
+  : built;
 fs.writeFileSync(path.join(game, 'content/whalebelly/world/rooms.json'), JSON.stringify({rooms, links: world.links, map: world.map}, null, 2) + '\n');
 
 // Runtime copies come from the asset library through the sync manifest.
@@ -252,7 +269,7 @@ const manifestPath = path.join(game, 'art/manifest.json');
 const manifest = readJson(manifestPath);
 let added = 0;
 // Entries of pieces no room uses any more are dropped together with their runtime copy.
-const stale = manifest.entries.filter(item => item.dest.startsWith('world-kit/') && !used.has(path.basename(item.dest, '.png')));
+const stale = onlyRoom ? [] : manifest.entries.filter(item => item.dest.startsWith('world-kit/') && !used.has(path.basename(item.dest, '.png')));
 for (const item of stale) for (const suffix of ['', '.import']) fs.rmSync(path.join(game, 'art', item.dest + suffix), {force: true});
 manifest.entries = manifest.entries.filter(item => !stale.includes(item));
 added += stale.length;

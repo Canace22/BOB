@@ -20,6 +20,7 @@ func _ready() -> void:
 	resized.connect(queue_redraw)
 
 func _process(dt: float) -> void:
+	_update_clearance(dt)
 	refresh_left -= dt
 	if refresh_left > 0.0 or data == null or data.host.room.is_empty(): return
 	refresh_left = 0.2
@@ -28,6 +29,15 @@ func _process(dt: float) -> void:
 	if next_signature == signature: return
 	signature = next_signature
 	refresh()
+
+func _update_clearance(dt: float) -> void:
+	var alpha: float = 1.0
+	if data != null and is_instance_valid(data.host.player):
+		var actor: Node2D = data.host.player
+		var feet: Vector2 = get_global_transform_with_canvas().affine_inverse() * actor.get_global_transform_with_canvas().origin
+		var silhouette := Rect2(feet-Vector2(54,138),Vector2(108,156))
+		if Rect2(Vector2.ZERO,size).grow(24).intersects(silhouette): alpha = 0.08
+	modulate.a = move_toward(modulate.a,alpha,dt*8.0)
 
 func refresh() -> void:
 	page = CampaignWorld.region(str(data.host.room.id))

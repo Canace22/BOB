@@ -52,6 +52,7 @@ func test_player_stays_centered_during_motion_and_reversal() -> void:
 func test_room_edges_and_dash_keep_the_same_center_and_zoom() -> void:
 	var camera: WhalebellyCampaignCamera = fixture()
 	var host: Host = camera.host
+	camera.configure_world({"room_bounds":{"fixture":Rect2(Vector2.ZERO,Vector2(4096,2400))},"links":[]})
 	for corner: Vector2 in [Vector2.ZERO, Vector2(4096,2400)]:
 		host.player.position = corner
 		camera.tracked_room = "reset"
@@ -89,3 +90,17 @@ func test_reference_fit_stays_unchanged_and_shake_free() -> void:
 	host.layer_solo = 0
 	camera.update_follow(.016)
 	check(not camera.was_following, "layer inspection stays in full-room view despite default follow")
+
+func test_corner_hud_cannot_capture_player_at_configured_world_edges() -> void:
+	var camera: WhalebellyCampaignCamera = fixture()
+	var host: Host = camera.host
+	camera.configure_world({"room_bounds":{"upper":Rect2(Vector2(-600,-1800),Vector2(2200,1000))},"links":[]})
+	for corner: Vector2 in [Vector2(-570,-1770),Vector2(1570,-1770),Vector2(1570,-830)]:
+		host.player.global_position = corner
+		camera.update_follow(1.0/60.0)
+		check(camera.get_screen_center_position().distance_to(corner)<0.01,"configured outer edge preserves actual screen center")
+		eq(camera.player_light.global_position,corner,"light follows translated world position")
+		check(camera.player_light.visible,"light is enabled in gameplay")
+	host.reference_visible = true
+	camera.update_follow(1.0/60.0)
+	check(not camera.player_light.visible,"reference inspection excludes the player light")

@@ -2,7 +2,7 @@
 
 正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 五区19房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
 
-正常游玩相机在世界内部居中主角全局坐标，接近世界外边缘时平滑停止向外移动，允许主角走向屏幕边缘；缩放固定 1.0，不使用前视、探看、下落偏移或震屏。边界来自完整世界房间与通道，普通跨房不重新限位；开放连接台和竖井保持居中，窄区域不强求容纳整个视口。Tab不改变正常跟随，原图对照、截图和分层查看保留全景行为。当前本地版为19房连续世界，邻房提前准备并可见，普通跨房不淡黑、不重建主角；运行约定与证据统一见[流式世界](streaming-world.md)。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
+正常游玩相机持续居中主角全局坐标，包括世界外缘和支路上端；缩放固定 1.0，不使用前视、探看、下落偏移或震屏。2026-11-18按用户反馈取消外缘软限位，避免角色走到角落HUD下面。随身光束与补光复用入库位图；小地图接近角色轮廓时淡出。Tab不改变正常跟随，原图对照、截图和分层查看保留全景行为并隐藏随身光。当前本地版为19房连续世界，邻房提前准备并可见，普通跨房不淡黑、不重建主角；运行约定与证据统一见[流式世界](streaming-world.md)。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
 
 当前正式入口按邻房驻留窗口流式准备场景，普通跨界保留同一主角，使用[须门遗港场景衔接](../assets/source/xumen-continuity-v1/README.md)的共用远景与连接动件，以及新增的位图连接平台。后续[实际连通场景](../assets/source/xumen-connected-v2/README.md)及[统一母版](../assets/source/xumen-unified-v1/README.md)的制作源仍保留在资源库。
 
@@ -18,7 +18,7 @@
 | `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
 | `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
 | `src/campaign/campaign_run_visual.gd` | 保留旧跑步适配器供兼容；正式主角只实例化新视觉桥，避免双重显示 |
-| `src/campaign/campaign_camera.gd`、`camera_world_bounds.gd`、`mechanisms.gd` | 世界内部居中、外缘软限位镜头、显式调试全景和机关表现 |
+| `src/campaign/campaign_camera.gd`、`player_light.gd`、`mechanisms.gd` | 持续居中跟随、位图随身光与68个世界空间悬浮/散射粒子、显式调试全景和机关表现；`camera_world_bounds.gd`保留旧限位算法供历史回归，不参与正常跟随 |
 | `src/campaign/campaign_impact.gd` | 保留玩家受伤的全场定格；普通命中改由共用战斗反馈局部冻结双方，不改变镜头 |
 | `src/campaign/campaign_save_bridge.gd` | V6用户目录隔离及有效旧档首次复制 |
 | `src/campaign/campaign_world.gd` | 后续区域的房间表、按房间 ID 的门目标、能力与进度标记组合条件、地图分页落位 |
@@ -57,6 +57,8 @@
 `recovery-manifest.json` 保留2026-10-31恢复时的1914项历史来源，不再充当当前文件必须全部存在的清单。未使用的旧合成帧、旧动画预览、重复环境与旧模块资源已归档；可复用原画库和未来区域素材仍保留。
 
 ## 存档
+
+独立探索奖励使用`collected["房间ID:物品ID"]`，与本房的主奖励分开。例如`R5-08:tidal-pearl`只记录归潮珠，`R5-08`继续表示导流闸奖励；旧V6无需迁移或补发，回访可领取。`KitTreasure`复用`KitInteractable`的当前房范围和F交互优先级，只隐藏`Loot`子节点。遗物容量由`CampaignRelics`统一计算，地图、H手记、营地与解锁条读同一ID；奖励事件的`id`可区分同房多件，缺少时兼容原`room`字段。读档时收集ID按冒号前缀恢复房间发现，避免将物品ID当作地图房间。
 
 正式主线使用 `user://whalebelly/artmatch_save.json`（V6）。桌面首次启动仅在目标不存在时复制原 `WhalefallArtmatchV05` 的有效存档，保留原件；已有目标不覆盖。浏览器使用自身站点存储。保留的兼容存档服务有独立的 `user://save.json`，不能混作主线V6进度。
 

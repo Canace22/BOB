@@ -1,6 +1,6 @@
 extends SceneTree
 ## Explicit isolated room fixtures; physical-key InputEvents drive conversations.
-const OUT: String = "res://build/qa/completion-20261114/conversations"
+const OUT: String = "res://build/qa/npc-dialog"
 const TestHost: GDScript = preload("res://tests/whalebelly/doorway_test_host.gd")
 var host: WhalebellyMain
 var ui: WhaleCampaignUI
@@ -56,10 +56,10 @@ func await_conversation(id: String) -> bool:
 		if ui.page_id == "conversation": return ui.conversation_id == id
 	return false
 
-func open_with_e(id: String) -> bool:
-	await tap(KEY_E)
+func open_with_f(id: String) -> bool:
+	await tap(KEY_F)
 	var opened: bool = await await_conversation(id)
-	check(id+" physical E opens authored conversation",opened)
+	check(id+" physical F opens authored conversation",opened)
 	if opened: await tick(8)
 	return opened
 
@@ -91,7 +91,7 @@ func run() -> void:
 	check("both authored resident bitmaps exist",yusuo != null and beituo != null and yusuo.get_child_count() > 0 and beituo.get_child_count() > 0)
 	check("Yusuo nearest and prompt matches",KitInteractable.nearest(host) == yusuo and ui.data.prompt() == yusuo.prompt())
 	await shot("00-yusuo-in-room")
-	if await open_with_e("hub-yusuo"):
+	if await open_with_f("hub-yusuo"):
 		check("default authored guidance is displayed",ui.conversation_lines == yusuo.lines and ui.heading.text == yusuo.title)
 		await shot("01-yusuo-conversation")
 		var before: Vector2 = host.player.position
@@ -105,8 +105,13 @@ func run() -> void:
 		key(KEY_D,false)
 		await tick(24)
 		check("release restores gameplay",not paused and host.player.controls_enabled and ui.page_id.is_empty())
+	await tap(KEY_ESCAPE)
+	check("Pause restores full screen layout after conversation",ui.page_id == "pause" and ui.shade.get_rect() == Rect2(Vector2.ZERO,ui.panel.size) and ui.ornament.visible and not ui.hud.visible)
+	await shot("06-pause-after-conversation")
+	await tap(KEY_ESCAPE)
+	await tick(24)
 	for repeat: int in 3:
-		if await open_with_e("hub-yusuo"): await close_with_enter()
+		if await open_with_f("hub-yusuo"): await close_with_enter()
 	# Walk along H1 between the residents; do not rewrite the player position.
 	key(KEY_D)
 	for frame: int in 100:
@@ -116,9 +121,14 @@ func run() -> void:
 	await tick(20)
 	check("walking reaches Beituo",str(host.room.id) == "R3-01" and KitInteractable.nearest(host) == beituo and host.player.is_on_floor())
 	await shot("02-beituo-in-room")
-	if await open_with_e("hub-beituo"):
+	if await open_with_f("hub-beituo"):
 		check("Beituo remains friendly resident",ui.conversation_lines == beituo.lines and host.enemies.is_empty())
 		await shot("03-beituo-conversation")
+		root.size = Vector2i(960,540)
+		await tick(10)
+		await shot("07-small-conversation")
+		root.size = Vector2i(1280,720)
+		await tick(10)
 		await close_with_enter()
 	# Second room fixture; the campaign is never granted bone or other progression.
 	var old_yusuo: WeakRef = weakref(yusuo)
@@ -126,9 +136,9 @@ func run() -> void:
 	host.load_room(room_index("R4-06"),[595,1440],false)
 	await tick(35)
 	var node: KitInteractable = current_resident("transit-bone-node")
-	check("old residents leave group",old_yusuo.get_ref() == null and old_beituo.get_ref() == null and get_nodes_in_group("kit_interactables").size() == 1)
+	check("Inactive streamed residents cannot interact across rooms",(old_yusuo.get_ref() == null or not old_yusuo.get_ref().nearby(host)) and (old_beituo.get_ref() == null or not old_beituo.get_ref().nearby(host)) and KitInteractable.nearest(host) == node)
 	check("bone remains locked",not host.has_ability("bone"))
-	if await open_with_e("transit-bone-node"):
+	if await open_with_f("transit-bone-node"):
 		check("node reads locked authored text",ui.conversation_lines == node.locked_lines)
 		await shot("04-bone-node-locked")
 		await close_with_enter()
@@ -144,6 +154,6 @@ func run() -> void:
 	await close_with_enter()
 	read_model.free()
 	check("reading grants no campaign flags",host.abilities == original and not host.has_ability("bone"))
-	var result: Dictionary = {"checks":checks,"failures":failures,"save":host.save_path(),"method":"Native GPU main scene; R3-01/R4-06 room/spawn fixtures; physical InputEventKey E/Escape/Return and walking between residents. Bone-unlocked text uses a read-only model/layout fixture, no reward grants or natural-unlock/full-playthrough claim."}
+	var result: Dictionary = {"checks":checks,"failures":failures,"save":host.save_path(),"method":"Native GPU main scene; R3-01/R4-06 room/spawn fixtures; physical InputEventKey F/Escape/Return and walking between residents. Bone-unlocked text uses a read-only model/layout fixture, no reward grants or natural-unlock/full-playthrough claim."}
 	FileAccess.open(OUT.path_join("checks.json"),FileAccess.WRITE).store_string(JSON.stringify(result,"\t"))
 	await host.graceful_quit(1 if failures > 0 else 0)

@@ -4,6 +4,7 @@ extends RefCounted
 const ITEMS := {
 	"R1-03": {"name":"护潮壳", "charges":2},
 	"R1-06": {"name":"厚壳碎片", "charges":1},
+	"R5-08:tidal-pearl": {"name":"归潮珠", "charges":1},
 }
 var charges: int = 0
 

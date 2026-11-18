@@ -11,7 +11,6 @@ const PLATFORM: Texture2D = preload("res://art/world-kit/r3-bank-platform.png")
 const WATER: Texture2D = preload("res://art/world-kit/r3-water-base.png")
 const WIDTH := 140.0
 const DEPTH := 18.0
-
 static func prepare_scene(index: int, scene: Node2D, data: Dictionary) -> void:
 	var rooms: Array = data.get("rooms",[])
 	if index<0 or index>=rooms.size(): return
@@ -119,7 +118,14 @@ func build() -> void:
 		var group := Node2D.new()
 		group.name = "Connection_%d_%d" % [int(link.a),int(link.b)]
 		add_child(group)
+		var measured: Dictionary=CampaignPaintedSupports.corridor_data(layout,link)
+		var origin: Vector2=layout.origins[int(link.a)]
+		var tops: Array=measured.get("tops",[])
+		for profile: int in tops.size():
+			CampaignPaintedSupports.add_body(group,tops[profile],origin,"PaintedCorridor"+str(profile))
+			platform_count+=1
 		for point: Vector2 in PackedVector2Array(link.path):
+			if CampaignPaintedSupports.replaces(measured,point-origin): continue
 			if not _existing_surface(point):
 				_platform(group,point,false)
 				# 竖井包含首尾水平接段，同样必须补本区台根，不能留下不可见台或异区金色台面。
@@ -228,7 +234,6 @@ func _existing_surface(point: Vector2) -> bool:
 				var y: float = lerpf(a.y,b.y,(local.x-a.x)/(b.x-a.x))
 				if absf(local.y-y)<28.0: return true
 	return false
-
 func corridor_segment_near(world: Vector2) -> Dictionary:
 	var nearest: Dictionary = {}
 	var distance: float = 260.0

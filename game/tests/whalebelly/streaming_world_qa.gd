@@ -84,10 +84,14 @@ func run() -> void:
 		await all_connections()
 		await finish()
 		return
+	host.load_room(0)
+	await tick(15)
 	check("Neighbour is ready before crossing",await wait_ready(1))
 	var identity: int = host.player.get_instance_id()
+	var light_identity: int = host.camera.player_light.get_instance_id()
 	var link: Dictionary = host.streaming.layout.links.filter(func(edge: Dictionary) -> bool: return edge.a==0 and edge.b==1)[0]
-	host.player.global_position = link.from-Vector2(180,10)
+	# The exit bank starts only 116px before this door; -180 starts below a gap.
+	host.player.global_position = link.from-Vector2(60,8)
 	host.player.invulnerable = 100
 	await tick(25)
 	await shot("01-before-crossing")
@@ -97,12 +101,14 @@ func run() -> void:
 	check("Same player instance survives crossing",host.player.get_instance_id()==identity)
 	check("No fade or transition lock",not host.continuity.transition.active and not host.player.transition_locked)
 	check("Camera uses continuous world target",host.camera.get_screen_center_position().distance_to(host.camera.follow_target(host.player.global_position))<1)
+	check("Light follows across room coordinates",host.camera.player_light.global_position.distance_to(host.player.global_position)<1 and host.camera.player_light.get_instance_id()==light_identity)
 	check("Physical frame displacement stays continuous",worst_step<35)
 	await shot("02-after-crossing")
 	check("Return room remains resident",host.streaming.is_ready(0))
 	var back: bool = await walk(link.from-Vector2(110,0),1000)
 	await tick(20)
 	check("Walk back preserves actor",back and host.room_index==0 and host.player.get_instance_id()==identity)
+	check("Return preserves light and world position",host.camera.player_light.global_position.distance_to(host.player.global_position)<1 and host.camera.player_light.get_instance_id()==light_identity)
 	await shot("03-return")
 	await finish()
 
@@ -115,6 +121,7 @@ func all_connections() -> void:
 	for link: Dictionary in host.streaming.layout.links:
 		var filters: PackedStringArray = OS.get_cmdline_user_args()
 		if "--branch" in filters and not (link.a==1 and link.b==5): continue
+		if "--memory" in filters and not (link.a==1 and link.b==6): continue
 		if "--tail" in filters and not (link.a==14 and link.b==18): continue
 		host.load_room(int(link.a))
 		await tick(15)
@@ -124,7 +131,13 @@ func all_connections() -> void:
 		host.player.invulnerable=1000
 		host.player.velocity=Vector2.ZERO
 		await tick(20)
-		var path: PackedVector2Array = link.path
+		var path: PackedVector2Array = PackedVector2Array(link.path).duplicate()
+		var measured: Dictionary=CampaignPaintedSupports.corridor_data(host.streaming.layout,link)
+		var origin: Vector2=host.streaming.origin(int(link.a))
+		for i: int in path.size():
+			var local: Vector2=path[i]-origin
+			if CampaignPaintedSupports.replaces(measured,local):
+				path[i].y=origin.y+CampaignPaintedSupports.ground_y({"painted_corridors":measured.tops},local.x,local.y,local.y,150)
 		var forward: bool = true
 		for point: Vector2 in path:
 			drop_direction=0

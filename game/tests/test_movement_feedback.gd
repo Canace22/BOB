@@ -1,5 +1,17 @@
 extends TestSuite
 
+func test_standalone_player_keeps_void_death() -> void:
+	var player := load("res://content/whalebelly/Player.tscn").instantiate() as TidePlayer
+	player.preload_actions = false
+	add(player)
+	player.set_physics_process(false)
+	player.world_bounds = Rect2(0,0,1000,100)
+	player.position = Vector2(500,250)
+	player.invulnerable = 10.0
+	player._physics_process(1.0/60.0)
+	eq(player.health,0,"Standalone practice keeps its existing void death rule")
+	eq(player.state,"defeat","Default fall still enters normal defeat")
+
 func test_movement_immunity_does_not_flash() -> void:
 	var player := load("res://content/whalebelly/Player.tscn").instantiate() as TidePlayer
 	player.preload_actions = false
