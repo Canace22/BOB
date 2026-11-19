@@ -11,10 +11,10 @@ var power: float = 0.0
 var materials: Array[ShaderMaterial] = []
 var sprites: Array[Sprite2D] = []
 
-func setup(view: Node2D) -> void:
+func setup(view: Node2D, install_flash: bool = true) -> void:
 	visual = view
 	base_position = view.position
-	_install(view)
+	if install_flash: _install(view)
 
 func _install(node: Node) -> void:
 	if node is Sprite2D:

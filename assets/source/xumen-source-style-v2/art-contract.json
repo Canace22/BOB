@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-15",
+  "user_reconfirmed": "保留已确认的19房规则，继续修正原画样式",
+  "gameplay_policy": "current nineteen-room rules and frozen physics; originals guide visual style",
+  "assets": [
+    {
+      "runtime": "game/art/whalebelly/motion_elements/PORTAL.png",
+      "manifest_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/motion_elements/PORTAL.png",
+      "role": "原参考场景的贝壳/红绳/暖灯门与营地",
+      "runtime_sha256": "f71101c3596320aeae85751d9bb348e4e42855946d4146cf75713edffe1d0c2a",
+      "source_sha256": "f71101c3596320aeae85751d9bb348e4e42855946d4146cf75713edffe1d0c2a",
+      "byte_equal": true
+    },
+    {
+      "runtime": "game/art/whalebelly/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
+      "manifest_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/CLEAN-ENV-UNDERPAINT.png",
+      "role": "首房既有清理补底中的颌骨拱架与远柱",
+      "runtime_sha256": "64ec2da092881d3f135fca6c68ae449d56d0341b7361dacaa021c690d08dd740",
+      "source_sha256": "64ec2da092881d3f135fca6c68ae449d56d0341b7361dacaa021c690d08dd740",
+      "byte_equal": true
+    },
+    {
+      "runtime": "game/art/xumen-original-style-v1/original-ledge.png",
+      "manifest_source": "assets/runtime/scenes/xumen-original-style-v1/original-ledge.png",
+      "role": "逐房原画的红褐组织与多孔断面，包含育窝和鼻道台面",
+      "runtime_sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+      "source_sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+      "byte_equal": true
+    }
+  ],
+  "changes": [
+    "R1-01 reintroduces its cleaned jaw/arch underpaint",
+    "R1-05 and R1-06 use the original red-brown native tissue ledge, with space-aware lower mass",
+    "R1 door/camp artwork uses the source portal bitmap, measured alpha and source-sized threshold; nearby camp shares the door visual",
+    "Original scene water-matte cleanup only on static portal/camp pixels"
+  ],
+  "rejected_probe": "R1-05 isolated rectangular tissue cladding looked like cut cloth rectangles. Probe removed; existing wall assembly remains.",
+  "pending": "Broader obstacle silhouette and wall/ceiling artwork fidelity remain aesthetic review items; no claim of full pixel reconstruction."
+}

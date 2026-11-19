@@ -21,9 +21,88 @@
 
 五首 Wesnoth 原版 OGG 来自 [1.18.5 发布版](https://github.com/wesnoth/wesnoth/tree/1.18.5/data/core/music)。[逐曲作者和 GNU GPL v2 或更高版本声明](https://github.com/wesnoth/wesnoth/blob/1.18.5/copyrights.csv)，[随音频分发的许可证](runtime/godot-support/whalebelly/runtime/audio/score/COPYING.txt)。
 
+## 2026-11-19 · 动作关卡配乐修订
+
+以下三首使用作者发布的原始 Ogg 文件。游戏控制播放音量、循环和切换，设置中的「声音来源」提供曲名、作者和许可。
+
+- 须门探索 · The Deep Below，Technodono。[作品页](https://opengameart.org/content/the-deep-below) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- 母蟹巢穴与断脊 · RPG Exploration (The Black Temple)，HitCtrl。[作品页](https://opengameart.org/content/rpg-exploration-the-black-temple) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+- 首领交锋 · Frenzied Swimming，Some Weirdo。[作品页](https://opengameart.org/content/frenzied-swimming) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+## 2026-11-19 · 鲸腹遗城场景配乐
+
+六首完整曲目采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)，运行 Ogg 由美术同步清单复制到游戏。
+
+- 常态探索 · Underwater Theme II，Cleyton Kauffman。[作者发布页](https://opengameart.org/content/underwater-theme-ii)
+- 浮游上升 · Exploration Theme，Cleyton Kauffman。[作者发布页](https://opengameart.org/content/exploration-theme)
+- 首领交锋 · Epic Boss Battle，Juhani Junkala / SubspaceAudio。[作者发布页](https://opengameart.org/content/boss-battle-music)
+- 断脊探索 · Forbidden Space · Loop，SkyleTheFrench。[作者发布页](https://opengameart.org/content/forbidden-space)
+- 记忆与歇息 · Iridescent Deep · Alternate Loop，Tsorthan Grove。[作者发布页](https://opengameart.org/content/iridescent-deep)
+- 归海开闸 · First Light Particles，Yoiyami。[作者发布页](https://opengameart.org/node/182244)
+
 ## 2026-11-18 · 归海释放槽藏珠贝匣
 
 复用已入库的`release-bowl`固定贝壳和`ringed-calcium-pearl`静态珍珠，贝壳位置与比例保持，珍珠等比缩放置于壳内；领取后只隐藏珍珠。没有新增绘图或动作动画，未改已有幼体游动、平台与碰撞。本房重建补登记`r5-tail-window-frame-v3`、`sea-larva-swim-v1`的既有恢复副本尺寸和来源，沿用[恢复台账](source/version101-merge/recovered-runtime.json)，不将恢复文件称作原始母版。实际接入、截图检查与状态验证见[游戏进度](../game/progress.md)；用户整体审美待试玩。
+
+## 2026-11-17 · 血巢战斗动态V6
+
+复用血巢V5玻璃虾／水丝及库内soft-particle／bubble，不新增位图。44群体、局部6只受击、6条水丝、2条短接触弧和8光屑均为程序驱动；原材质来源保持。[实机接入和23项专项](source/bloodnest-combat-v6/README.md)通过，观感待审阅；前轮AI视频继续为参考，未作为MP4贴到游戏画面中。
+
+## 2026-11-16 · 血巢攻击与受击视频参考
+
+两份动作设计／提示词、两段Wan 3.0原视频和无声审阅副本存[本批source](source/bloodnest-combat-video-v1/README.md)。视频属于reference candidate，不加入运行位图JSON清单或Godot manifest。两片10秒720P／30fps、300帧及去音轨保持原视频流已验证；受击片镜头／人物和局部反馈未达设计要求，不能登记为已接入或美术通过。
+
+## 2026-11-16 · 血巢玻璃虾与卷潮V5
+
+新增`bloodnest-glass-shrimp-v5`短圆玻璃虾、`bloodnest-water-filament-v5`水丝，两件内置imagegen透明参考补绘原件，当前仅R2-04使用。源图／SHA／完整提示词与选型见[制作记录](source/bloodnest-animation-v5/README.md)；运行副本最大512，mipmap采样。44个体、同族中心个体、6位图流线及复用微泡／光屑为程序驱动，非逐帧动画，candidate审美状态保留。单测137及实机专项17通过；没有把技术通过登记成用户美术认可。
+
+## 2026-11-16 · 肺心原画背景与独立动态V4
+
+[四件位图／原始输出／完整提示词与SHA](source/r2-reference-motion-v4/README.md)：17／18分别清底重建红褐器官背景，另制细长粉色端足和珍珠菌芽。新背景中无烘焙群体／泡／玩家／地台；旧U形断壁退出R2-03/04可见层。群体、悬膜与菌光为已入库位图程序驱动，原图保留；四件源／库／game字节相同。两房46GPU、来源22与原玩法回归通过，审美仍为候选供用户审阅。
+
+## 2026-11-16 · 原画建筑补全V3
+
+[本批六件新素材、提示词与SHA](source/reference-architecture-v3/README.md)：原画引导补绘红膜／赭褶／骨白洞框、低壳营、横三孔骨壁与尾腱海窗；原尺寸1536×1024 RGBA，不更改原参考图片。两件失败骨框候选留源，无运行节点。六件选用图技术接入十二房通过，保持候选审美状态；36个分层实例不含碰撞，17簇原生菌芽和6处原生悬膜为复用。三槽显示坐标改变、flag含义保持。266GPU与路线通过，整体审美供审阅。
+
+## 2026-11-16 · 后续十二房原画深度与工作位
+
+[本批制作与验收](source/remaining-19-v2/README.md)：复用五张1672×941区域depth取代同源far，新增运行同步，不新生成原画；原中景／前景独立保留。原生bed位图补33处低矮台腹；三簇菌芽／育床骨刻板／红索／空杯壳工作位均来自已有库件。红索与空壳最大边640，五背景副本SHA与原件一致。水色／纯光由程序驱动，居民静态驻留，八帧鸣贝／幼体是前批成果。60来源／物理、168GPU及路线／状态检查通过；整体审美供审阅。
+
+## 2026-11-15 · 动态水光与最后柱块移除
+
+[本批记录](source/xumen-background-current-v1/README.md)：母蟹房补删最后两块，旧柱体位图已无七房引用，原件仅保留来源。复用已有纯光RGBA做低强度背景流动与呼吸，未新生成图像；库／game副本SHA一致。背景技术接入通过，整体审美供审阅。
+
+
+## 2026-11-15 · 须门深海氛围
+
+[本批记录](source/xumen-deepsea-atmosphere-v1/README.md)：复用已认可的银鳍／青背／微光鱼32相位图集、气泡与软粒子位图。无新增图像资产；七房分层生态、近泡、微粒与共享时钟已接入。5张运行副本SHA与库源相等，原平台和玩法保持；本批整体审美待用户反馈。
+
+
+## 2026-11-15 · 圈选柱体移除
+
+用户否定上一批柱体造型，五房10处已从场景与碰撞移除；原件保留，不新增美术。红褶tissue-ridge已无当前引用，标记为候选；外伤坡本轮也已删除，骨图目前仅母蟹房使用。[记录](../docs/鲸腹遗城原画集/须门遗港地图布局/柱体移除.md)。
+
+
+## 2026-11-15 · 柱体重设计
+
+[本批记录](source/xumen-structure-redesign-v1/README.md)：新骨裂壁、断颌低拱、育窝厚红褶已替换七房14处旧装配；软组织横拱仅入库候选。四件原件／库／game副本SHA、尺寸、Alpha及实心core校验通过。旧大帽／尖柱相关家族保留原件并标记换出。三件实际在用与用户审美未签收分开记录，整体造型供审阅。
+
+
+## 2026-11-15 · 原画样式V2（保留19房规则）
+
+[本批记录](source/xumen-source-style-v2/README.md)：首房原颌骨补底重新入景；育窝／鼻道踏台采用R1红褐组织岸；原参考场景PORTAL复用于门及营地，按可见Alpha和原生门槛配准，邻近时避免重叠营地画面。没有新增位图；素材原件与运行来源字节核对见[art-contract](source/xumen-source-style-v2/art-contract.json)。当前规则与路线保持，整体美术待用户审阅。
+
+## 2026-11-15 · outputs原设定与原画样式校正
+
+按[原设定保留合同](source/xumen-outputs-preservation-v1/source-contract.json)复核须门；复用已有舌台／骨台位图补足24处台体，不新增位图，不更改原画和玩法。原三层继续使用，整体观感待用户审阅。[本批记录](source/xumen-outputs-preservation-v1/README.md)区分文档冲突、实际运行和原生GPU证据。
+
+## 2026-11-15 · 须门遗港原画三层复用
+
+七房恢复既有Far／Middle／Foreground及原鲸须、垂藤根线；首房使用原鲸口环境。未生成新位图，57条逐房现用引用、库源与SHA256见[三层接入合同](source/xumen-original-layers-v1/layer-contract.json)。复杂地形与玩法冻结，GPU分层／遮挡／镜头70项通过；整体美术待用户审阅。[制作与证据](source/xumen-original-layers-v1/README.md)。
+
+## 2026-11-14 · 当前19房内容补齐
+
+[制作与逐房范围](source/completion-19-v1/README.md)：复用原画地标、余索/贝驮、区域闩、三槽标记等；另制作鸣贝开合与幼体尾膜游动两张八帧图集，原件和生成提示保留。接入后续十二房，R1七房保留。状态、水流、交谈与结局生态已经本地实机验证；新图集仍为候选美术，用户审美未签收。动作/路径分别驱动，不将静态驻留说成行走动画。本轮无发布。
 
 ## 2026-11-12 · 全鲸地图底图
 
@@ -344,3 +423,11 @@ V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/w
 ## 2026-11-18 须筛垂须透明修复
 
 [修复批次](source/r1-02-curtain-cleanup-v1/README.md)保留用户参考、两张旧PNG、两次内置ImageGen输出、完整提示词与来源哈希。新透明须帘补齐根部，静态中景清除同簇深蓝重复像素；两张运行PNG替换原清单来源，旧原件保留。固定端网格微摆标记程序驱动，非新增逐帧动画；14项本地GPU/真实键盘检查通过，用户整体审美待试玩，未发布。
+
+## 2026-11-15 须门遗港地图结构位图
+
+新增 `xumen-layout-bone-wall-v1`、`xumen-layout-thick-platform-v1`、`xumen-layout-low-roof-v1` 三件透明实体结构位图，原件、参考来源、生成意图与实际坐标见[本批记录](source/xumen-layout-integration-v1/README.md)。入库后定向同步九件资源至 `game/art/xumen-layout-v1/`；复用原生中空支架、圆环和记忆位图，盾奖励复用既有碎壳。新增位图按原生方向等比摆放，实机已检查加载、比例、遮挡和碰撞。骨膜的形变标为程序驱动，沿用既有机关逻辑。三件 `integrationStatus=integrated`，审美状态仍为 `candidate`，未声称用户已签收整套美术。
+
+## 2026-11-15 须门遗港恢复outputs原画样式 · 结构资源
+
+按原outputs参考修正两件结构位图，最终选用v4多孔竖壁与厚骨顶；旧深凹顶与中间修正版只留source。最初大叉肩wall额外定向复制为`anatomy-fracture.png`，仅低对比非碰撞背景附着，严禁当实体墙。另复用舌台、承重膜两态、鼻腔横骨、软膜台五件，保留原字节，复制到`assets/runtime/scenes/xumen-original-style-v1/`与`game/art/xumen-original-style-v1/`。八件已登记manifest，未全局sync。完整提示词、edit链、生成ID、上游旧素材提示词和三份副本SHA256见[制作与实心核心记录](source/xumen-original-style-v1/production-assets.json)及[接入说明](source/xumen-original-style-v1/asset-delivery.md)。`candidate`与`not-integrated`表示场景接地/碰撞覆盖和用户美术签收仍由主任务验收，不能按透明总bbox替代连续实心核心。

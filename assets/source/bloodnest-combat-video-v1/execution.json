@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-16",
+  "scope": "虾群攻击与受击动作设计和AI参考视频；本轮不改游戏代码",
+  "tool": "chaos_canvas_skill/scripts/skills_v2.py",
+  "model": "wan30",
+  "model_contract": "wan3.0-video",
+  "approved": {
+    "model": true,
+    "new_canvas": true,
+    "parameters": true,
+    "clips": 2,
+    "duration_per_clip": 10,
+    "resolution": "720P",
+    "generation_type": "reference",
+    "aspect_ratio": "16:9",
+    "aspect_source": "原画场景为图片1，约16:9横版",
+    "audio": false,
+    "camera": "固定"
+  },
+  "app_id": 200001704,
+  "app_name": "游戏技术研发",
+  "workflow_id": "7f8dfa79-08ac-4cbd-a970-42d51883b2b7",
+  "canvas_name": "血巢虾群攻击与受击",
+  "canvas_url": "https://tech.seasungame.com/gaiclient/renderer/#/drawing",
+  "canvas_link_hint": "在画布列表中找到“血巢虾群攻击与受击”并点击进入",
+  "inputs": {
+    "scene_image": "skills_img_ef07abf0be",
+    "shrimp_image": "skills_img_485e1552ab",
+    "full_design_text": "skills_t_379918d632"
+  },
+  "clips": [
+    {
+      "id": "attack",
+      "prompt_file": "attack-video-prompt.txt",
+      "source_text_node": "skills_t_e52a68523f",
+      "video_node": "skills_v_ec7b046a07",
+      "task_id": "vj_006906d5-e643-40bf-9716-c85342837289",
+      "status": "completed",
+      "previous_attempt": {
+        "model": "MiniMax-H3",
+        "task_id": "vj_94b71361-1528-4ed8-ba3e-956d19b1c523",
+        "status": "failed",
+        "error_code": "vendor_unavailable",
+        "error_message": "MiniMax厂商账户余额不足"
+      },
+      "review": "candidate_with_deviations",
+      "original_file": "assets/source/bloodnest-combat-video-v1/videos/attack-wan-v1-original.mp4",
+      "silent_file": "assets/source/bloodnest-combat-video-v1/videos/attack-wan-v1.mp4",
+      "output_url": "https://xsj-ai-orange.seasungame.com/prod/video/20261116/ec8108c4-9389-41e1-b21e-2d8fa8d6ffc9.mp4",
+      "sha256": "6f76401908c845e129942b19a446768ccf87b604c7d65f0ac3715732d0173222",
+      "review_notes": "原画风格、双向群游与水丝可作参考；未精确还原既有AI的每段时间，不能直接作游戏动作。"
+    },
+    {
+      "id": "hurt",
+      "prompt_file": "hurt-video-prompt.txt",
+      "source_text_node": "skills_t_96986d2459",
+      "video_node": "skills_v_53a95f726c",
+      "task_id": "vj_f3a47991-2af7-45a0-8695-14c949a6a837",
+      "status": "completed",
+      "previous_attempt": {
+        "model": "MiniMax-H3",
+        "task_id": "vj_6a437c47-415a-48ee-a8cb-5360cb95de72",
+        "status": "failed",
+        "error_code": "vendor_unavailable",
+        "error_message": "MiniMax厂商账户余额不足"
+      },
+      "review": "candidate_with_deviations",
+      "original_file": "assets/source/bloodnest-combat-video-v1/videos/hurt-wan-v1-original.mp4",
+      "silent_file": "assets/source/bloodnest-combat-video-v1/videos/hurt-wan-v1.mp4",
+      "output_url": "https://xsj-ai-orange.seasungame.com/prod/video/20261116/ca3078d9-5930-42cb-b332-740fc5764e1c.mp4",
+      "sha256": "81afe70a6f213e746b8de3b633ebb98fbb08723869e1254e347b9d2745a9289c",
+      "review_notes": "原画人物仍出现；约5秒后镜头跟随／场景变化；受击波纹偏大，局部破群／补位不够清楚。未通过固定镜头与局部反馈验收。"
+    }
+  ]
+}

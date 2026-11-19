@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-15",
+  "request_reference": {
+    "copy": "user-removed-boss-block.png",
+    "sha256": "a18000c33ecca071c3e4dfa99cc7d3c1e47ceca5c16d5723f2bce615aa4eabe4"
+  },
+  "removed": [
+    "R1-04/Wall5",
+    "R1-04/Wall6"
+  ],
+  "all_fourteen_structures_removed": true,
+  "runtime_rooms_sha256": "a7fe621519340f4deb625bbd79fd7b49b586c33477fa747012e6e1d709acf44a",
+  "before_rooms_sha256": "a7fe621519340f4deb625bbd79fd7b49b586c33477fa747012e6e1d709acf44a",
+  "light_bitmap": {
+    "library": "assets/runtime/sprites/framecraft-runtime/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png",
+    "runtime": "game/art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png",
+    "sha256": "8d3face73d0cd059896211048f10c5538af77d7d2e175b66625f73b39a662aa3",
+    "dimensions": [
+      512,
+      768
+    ],
+    "source_record": "assets/source/xumen-soft-light/README.md",
+    "new_bitmap": false
+  },
+  "water": "Only RGB of existing distant blue painting is modulated; no UV displacement of bones/actors/terrain and no screen sampler."
+}

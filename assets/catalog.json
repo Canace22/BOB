@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 86,
+  "revision": 87,
   "updatedAt": "2026-11-18",
   "project": "BOB",
   "atlas": {
@@ -1019,7 +1019,13 @@
         "scope": "静态外观；保留 V2 机关与存档，坡面碰撞按地形同步；非逐帧动画",
         "sourceAdaptation": "保留来源比例、锚点；平台独立对齐碰撞顶边",
         "runtimeFile": "assets/runtime/sprites/whalefall-v2-optimized/r1-tongue-ledge.webp",
-        "archiveBranch": "codex/archive-legacy-20261103"
+        "archiveBranch": "codex/archive-legacy-20261103",
+        "currentGame": {
+          "date": "2026-11-15",
+          "scope": "R1 source-style-v2 presentation; tissue terraces or source shell/red-rope/lamp doorway and camp bitmap; current 19-room rules retained",
+          "evidence": "assets/source/xumen-source-style-v2/README.md",
+          "visualApproval": "pending user review"
+        }
       }
     },
     {
@@ -3795,7 +3801,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth",
@@ -3812,7 +3818,12 @@
       "layer": "merged-L0-L1-fallback",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r2-lung-depth-0b206ae1155e.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-lung-depth.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅"
+      }
     },
     {
       "id": "r3-gastric-depth",
@@ -3921,7 +3932,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth",
@@ -3940,7 +3951,12 @@
       "layer": "merged-L0-L1-fallback",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-gastric-depth-d31fe19293f0.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r3-gastric-depth.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅"
+      }
     },
     {
       "id": "r4-vertebrae-depth",
@@ -4049,7 +4065,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth",
@@ -4067,7 +4083,12 @@
       "layer": "merged-L0-L1-fallback",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r4-vertebrae-depth-40177e25ccf1.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r4-vertebrae-depth.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅"
+      }
     },
     {
       "id": "r5-cranial-depth",
@@ -4177,7 +4198,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth",
@@ -4194,7 +4215,12 @@
       "layer": "merged-L0-L1-fallback",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-cranial-depth-941c38d5c641.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r5-cranial-depth.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅"
+      }
     },
     {
       "id": "r5-tail-depth",
@@ -4304,7 +4330,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "background",
       "coversRequirementIds": [
         "scene-water-depth",
@@ -4317,7 +4343,12 @@
       "layer": "merged-L0-L1-fallback",
       "atlasEligible": false,
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r5-tail-depth-2ad5d38bae53.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r5-tail-depth.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅"
+      }
     },
     {
       "id": "r1-wound-section",
@@ -4686,7 +4717,16 @@
         "R1-06"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r1-nasal-wall-eefa026219e5.png",
-      "state": "base"
+      "state": "base",
+      "integration": {
+        "previousGameArtBinding": {
+          "date": "2026-11-15",
+          "scope": "Native bitmap reuse below frozen Xumen walking tops; no new collision or ability changes",
+          "evidence": "assets/source/xumen-outputs-preservation-v1/README.md",
+          "visualApproval": "pending user review",
+          "supersededBy": "assets/source/xumen-source-style-v2/README.md; original paintings show red tissue tops in R1-06"
+        }
+      }
     },
     {
       "id": "r1-baleen-shadow",
@@ -6519,7 +6559,7 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "r3-shell-nests-traces"
@@ -6535,7 +6575,13 @@
         "R3-08"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/r3-shell-nest-before-7050f3d5ada0.png",
-      "state": "before"
+      "state": "before",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r3-shell-nest-before.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅",
+        "maxTextureSide": 640
+      }
     },
     {
       "id": "r3-foreground-fold",
@@ -9867,13 +9913,19 @@
           "静态技术与视觉检查通过；用户美术确认、动作动画和游戏内接入未完成。"
         ]
       },
-      "integrationStatus": "not-integrated",
+      "integrationStatus": "integrated",
       "spriteType": "static",
       "coversRequirementIds": [
         "red-tether"
       ],
       "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/red-tether-segment-6c96c369a3e0.png",
-      "familyId": "red-tether"
+      "familyId": "red-tether",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/red-tether-segment.png",
+        "evidence": "assets/source/remaining-19-v2/README.md",
+        "scope": "当前19房后续区；完整depth替换同源far，或R3居民静态工作位；整体审美待审阅",
+        "maxTextureSide": 640
+      }
     },
     {
       "id": "migration-memory",
@@ -19916,7 +19968,21 @@
       "coversRequirementIds": [
         "fx-underwater-atmosphere"
       ],
-      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-particle-soft-16d7a9d8278b.png"
+      "thumbnail": "assets/source/whalefall-v5-2-complete/thumbnails/fx-particle-soft-16d7a9d8278b.png",
+      "xumenAtmosphereV1": {
+        "rooms": [
+          "R1-01",
+          "R1-02",
+          "R1-03",
+          "R1-04",
+          "R1-05",
+          "R1-06",
+          "R1-07"
+        ],
+        "evidence": "assets/source/xumen-deepsea-atmosphere-v1/README.md",
+        "driver": "campaign shared clock; bitmap instances",
+        "sceneAestheticApproval": false
+      }
     },
     {
       "id": "fx-particle-drift",
@@ -23278,7 +23344,16 @@
       "usedBy": [
         "godot/WhalebellyRuins/scenes/environment/xumen_reference.tscn",
         "godot/WhalebellyRuins/scenes/r1/R1-01.tscn"
-      ]
+      ],
+      "integrationStatus": "integrated",
+      "integration": {
+        "currentGame": {
+          "date": "2026-11-15",
+          "scope": "R1 source-style-v2 presentation; tissue terraces or source shell/red-rope/lamp doorway and camp bitmap; current 19-room rules retained",
+          "evidence": "assets/source/xumen-source-style-v2/README.md",
+          "visualApproval": "pending user review"
+        }
+      }
     },
     {
       "id": "xumen-reference-environment/LAMP",
@@ -24604,7 +24679,21 @@
       "usedBy": [
         "godot/WhalebellyRuins/scenes/environment/xumen_reference.tscn",
         "godot/WhalebellyRuins/scenes/r1/R1-01.tscn"
-      ]
+      ],
+      "xumenAtmosphereV1": {
+        "rooms": [
+          "R1-01",
+          "R1-02",
+          "R1-03",
+          "R1-04",
+          "R1-05",
+          "R1-06",
+          "R1-07"
+        ],
+        "evidence": "assets/source/xumen-deepsea-atmosphere-v1/README.md",
+        "driver": "campaign shared clock; bitmap instances",
+        "sceneAestheticApproval": false
+      }
     },
     {
       "id": "tide-picker-v24-godot-3c",
@@ -24810,7 +24899,21 @@
         "rows": 4,
         "schoolCount": 28
       },
-      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json",
+      "xumenAtmosphereV1": {
+        "rooms": [
+          "R1-01",
+          "R1-02",
+          "R1-03",
+          "R1-04",
+          "R1-05",
+          "R1-06",
+          "R1-07"
+        ],
+        "evidence": "assets/source/xumen-deepsea-atmosphere-v1/README.md",
+        "driver": "campaign shared clock; bitmap instances",
+        "sceneAestheticApproval": false
+      }
     },
     {
       "id": "ambient-tealback-school-v01",
@@ -24846,7 +24949,21 @@
         "rows": 4,
         "schoolCount": 14
       },
-      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json",
+      "xumenAtmosphereV1": {
+        "rooms": [
+          "R1-01",
+          "R1-02",
+          "R1-03",
+          "R1-04",
+          "R1-05",
+          "R1-06",
+          "R1-07"
+        ],
+        "evidence": "assets/source/xumen-deepsea-atmosphere-v1/README.md",
+        "driver": "campaign shared clock; bitmap instances",
+        "sceneAestheticApproval": false
+      }
     },
     {
       "id": "ambient-lantern-school-v01",
@@ -24882,7 +24999,21 @@
         "rows": 4,
         "schoolCount": 20
       },
-      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json"
+      "integrationEvidence": "assets/source/fish-schools-v01/integration/result.json",
+      "xumenAtmosphereV1": {
+        "rooms": [
+          "R1-01",
+          "R1-02",
+          "R1-03",
+          "R1-04",
+          "R1-05",
+          "R1-06",
+          "R1-07"
+        ],
+        "evidence": "assets/source/xumen-deepsea-atmosphere-v1/README.md",
+        "driver": "campaign shared clock; bitmap instances",
+        "sceneAestheticApproval": false
+      }
     },
     {
       "id": "tide-combat-orb-mini-video-v01",
@@ -34727,7 +34858,8 @@
       ],
       "world": {
         "axis": "width",
-        "units": 1
+        "units": 1,
+        "space": "canvas"
       },
       "sha256": "f5ebb6386946365123209b9bf7ee53a43e4e0e6a80e6990e0829672e1652cb12",
       "spriteType": "static",
@@ -34737,7 +34869,12 @@
         "metrics": "alpha>=32可见范围，顶中锚点沿用现有场景"
       },
       "integrationStatus": "integrated",
-      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。"
+      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r5-tail-window-frame-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
     },
     {
       "id": "sea-larva-swim-v1",
@@ -34764,17 +34901,1623 @@
       ],
       "world": {
         "axis": "width",
-        "units": 1
+        "units": 1,
+        "basis": "图集按单格和可见轮廓换算，整图不是单个精灵"
       },
       "sha256": "60a4a580334f22c2b75c2b84e64f09b685cec94a3042c959b1e22a6f26df6eaf",
       "spriteType": "animation-atlas",
       "source": {
         "method": "从已提交运行副本恢复；非新增绘制，不代表原始全分辨率",
         "recoveryManifest": "assets/source/version101-merge/recovered-runtime.json",
-        "metrics": "alpha>=8整图范围，用作8帧图集，不作为单体尺寸"
+        "metrics": "alpha>=8整图范围，用作8帧图集，不作为单体尺寸",
+        "referenceId": "sea-larva",
+        "batchId": "completion-19-v1",
+        "prompts": [
+          "assets/source/completion-19-v1/prompts.md"
+        ]
       },
       "integrationStatus": "integrated",
-      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。"
+      "notes": "补齐本房配方重建所需元数据；既有运行外观保持。",
+      "frameCount": 8,
+      "animation": {
+        "columns": 4,
+        "rows": 2,
+        "cell": [
+          384,
+          512
+        ],
+        "order": "row-major",
+        "loop": true,
+        "nominalFps": 8
+      },
+      "qa": {
+        "scope": "atlas bounds/alpha and native-engine scene/motion; not artistic approval",
+        "passed": true,
+        "validatedAt": "2026-11-14",
+        "sourceReport": "assets/source/completion-19-v1/README.md",
+        "localEvidence": [
+          "game/build/qa/completion-20261114/runtime/checks.json",
+          "game/build/qa/completion-20261114/runtime/motion/clips.json"
+        ],
+        "limitations": [
+          "无用户美术签收",
+          "幼体外缘仍有轻微柔光，90px运行尺度已复核"
+        ]
+      }
+    },
+    {
+      "id": "clam-spit-cycle-v1",
+      "name": "鸣贝 · 开合吐珠八帧",
+      "kind": "enemy",
+      "region": "鸣肋断脊",
+      "tags": [
+        "19房补齐",
+        "逐帧",
+        "原画衍生"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/completion-19-v1/clam-spit-cycle-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "pivot": [
+        192,
+        393
+      ],
+      "world": {
+        "axis": "width",
+        "units": 4.2,
+        "basis": "图集按单格和可见轮廓换算，整图不是单个精灵"
+      },
+      "sha256": "9a1ff362421530e4eb6da8d1d8e577722dad24cc357f6b60f5997131cc73f70e",
+      "spriteType": "animated",
+      "frameCount": 8,
+      "animation": {
+        "columns": 4,
+        "rows": 2,
+        "cell": [
+          384,
+          512
+        ],
+        "order": "row-major",
+        "loop": false,
+        "nominalFps": 8
+      },
+      "source": {
+        "method": "built-in image_gen; reference-guided authored pose atlas",
+        "referenceId": "spine-resonant-clams",
+        "batchId": "completion-19-v1",
+        "prompts": [
+          "assets/source/completion-19-v1/prompts.md"
+        ]
+      },
+      "integrationStatus": "integrated",
+      "notes": "原件保留；身体帧与运行逻辑分离。2026-11-14真实场景/连续帧技术复核通过，美术仍为candidate。",
+      "qa": {
+        "scope": "atlas bounds/alpha and native-engine scene/motion; not artistic approval",
+        "passed": true,
+        "validatedAt": "2026-11-14",
+        "sourceReport": "assets/source/completion-19-v1/README.md",
+        "localEvidence": [
+          "game/build/qa/completion-20261114/runtime/checks.json",
+          "game/build/qa/completion-20261114/runtime/motion/clips.json"
+        ],
+        "limitations": [
+          "无用户美术签收",
+          "路线测试不证明Boss最终难度"
+        ]
+      }
+    },
+    {
+      "id": "xumen-layout-bone-wall-v1",
+      "name": "实体竖骨壁",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "房内布局重排",
+        "实体结构",
+        "程序摆放"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-layout-v1/bone-wall.png",
+      "width": 1024,
+      "height": 1536,
+      "bbox": [
+        321,
+        45,
+        664,
+        1492
+      ],
+      "pivot": [
+        492.5,
+        45
+      ],
+      "world": {
+        "axis": "height",
+        "units": 4,
+        "basis": "实际地形等比摆放；alpha32轮廓与碰撞保守配准"
+      },
+      "sha256": "80c409e6a79a2ee54e3af06c751e2a7392825e2801aa2099fe497b4f60c3e4f5",
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "method": "built-in image_gen",
+        "batchId": "xumen-layout-integration-v1",
+        "reference": [
+          "assets/source/xumen-layout-review-v1/inputs/overview-R1-02.png",
+          "assets/runtime/scenes/xumen-vertical-v1/E35-spine.png"
+        ]
+      },
+      "notes": "本轮七房GPU实机已加载并检查比例/遮挡；技术接入通过，status仍为candidate，未获用户整套美术签收。等比摆放；低alpha柔光由cutout shader处理。 原画保留版已从当前七房呈现中换出，保留历史制作与验收记录。"
+    },
+    {
+      "id": "xumen-layout-thick-platform-v1",
+      "name": "厚骨膜台",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "房内布局重排",
+        "实体结构",
+        "程序摆放"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-layout-v1/thick-platform.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        62,
+        430,
+        1478,
+        726
+      ],
+      "pivot": [
+        770,
+        430
+      ],
+      "world": {
+        "axis": "width",
+        "units": 4,
+        "basis": "实际地形等比摆放；alpha32轮廓与碰撞保守配准"
+      },
+      "sha256": "dfdaa5b5d67c08b23ec046955e3d536afae0c8506bbdfec657f636896d20cd45",
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "method": "built-in image_gen",
+        "batchId": "xumen-layout-integration-v1",
+        "reference": [
+          "assets/source/xumen-layout-review-v1/inputs/overview-R1-02.png",
+          "assets/runtime/sprites/r4-bone-platform/base.png"
+        ]
+      },
+      "notes": "本轮七房GPU实机已加载并检查比例/遮挡；技术接入通过，status仍为candidate，未获用户整套美术签收。等比摆放；低alpha柔光由cutout shader处理。 原画保留版已从当前七房呈现中换出，保留历史制作与验收记录。"
+    },
+    {
+      "id": "xumen-layout-low-roof-v1",
+      "name": "厚骨膜低顶",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "房内布局重排",
+        "实体结构",
+        "程序摆放"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-layout-v1/low-roof.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        19,
+        305,
+        1518,
+        663
+      ],
+      "pivot": [
+        768.5,
+        305
+      ],
+      "world": {
+        "axis": "width",
+        "units": 4,
+        "basis": "实际地形等比摆放；alpha32轮廓与碰撞保守配准"
+      },
+      "sha256": "c8e8701092ea6e4cfd9d2819d7b6033f046f44edbcc2767fa5f5a2ff9a9f99fd",
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "method": "built-in image_gen",
+        "batchId": "xumen-layout-integration-v1",
+        "reference": [
+          "assets/source/xumen-layout-review-v1/inputs/overview-R1-02.png",
+          "assets/runtime/sprites/r4-bone-platform/base.png"
+        ]
+      },
+      "notes": "本轮七房GPU实机已加载并检查比例/遮挡；技术接入通过，status仍为candidate，未获用户整套美术签收。等比摆放；低alpha柔光由cutout shader处理。 原画保留版已从当前七房呈现中换出，保留历史制作与验收记录。"
+    },
+    {
+      "id": "xumen-original-style-porous-wall-v1",
+      "name": "原画风实体竖骨壁",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/porous-wall.png",
+      "width": 1088,
+      "height": 1445,
+      "bbox": [
+        364,
+        83,
+        723,
+        1389
+      ],
+      "pivot": [
+        546.5,
+        148
+      ],
+      "sha256": "9e40241ec5bc14cfdbeea132b8a6f67a151ec81f27296df7c1bc363cea0c5c78",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          19,
+          1076,
+          1419
+        ],
+        "8": [
+          363,
+          81,
+          724,
+          1391
+        ],
+        "32": [
+          364,
+          83,
+          723,
+          1389
+        ],
+        "128": [
+          364,
+          84,
+          723,
+          1388
+        ],
+        "250": [
+          366,
+          85,
+          722,
+          1387
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "built-in image_gen edit, original bytes preserved",
+        "sourceFiles": [
+          "assets/source/xumen-original-style-v1/images/porous-wall-revised-v4.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "generationId": "exec-468ea6da-9513-4732-8046-cbf2dc775c37",
+        "prompt": "Edit image 1 with ONE final precise proportion correction: narrow the VISIBLE WALL OBJECT to 80% of its CURRENT visible width, while keeping its CURRENT visible height unchanged. Currently visible ratio is 1:2.77; desired visible object ratio is 1:3.4. Keep the side outlines almost parallel and keep a continuously opaque core at least 92% of maximum visible width by 90% of visible height. Retain the level chipped ends and organically painted pit sizes through natural redrawing, not image squeezing. The wall must remain one solid narrow upright slab, not a tree or repeated pillar stack. Image 2 is the original game style reference ONLY. Preserve the target's matte chalky gray-ivory pitted bone, dark purple tissue creases, few subtle olive barnacles, whole transparent background and natural chipped silhouette. No alpha holes, forks, protruding shoulders, long vegetation, text, creatures, background, floor or shadows. Do not change the reference image. Do not add blank padding as a substitute for changing the object proportions.",
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts.json"
+        ],
+        "references": [
+          "G:/鲸落万物生/outputs/须门遗港_参考图环境场景/reference.png",
+          "G:/鲸落万物生/outputs/鲸落万物生_V5.2_简明设计文档/images/08_R1-02.png"
+        ],
+        "selectedRevision": 4
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。 2026-11-15用户否定蘑菇帽/直柱造型，本批已从须门七房换出，保留历史来源。",
+      "structuralCore": {
+        "bbox": [
+          383,
+          148,
+          710,
+          1324
+        ],
+        "size": [
+          327,
+          1176
+        ],
+        "minimum_alpha": 250,
+        "visible_width_height_fraction": [
+          0.9108635097493036,
+          0.900459418070444
+        ]
+      },
+      "integration": {
+        "supersededBy": "assets/source/xumen-structure-redesign-v1/README.md"
+      }
+    },
+    {
+      "id": "xumen-original-style-cavity-roof-v1",
+      "name": "原画风厚实骨顶",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/cavity-roof.png",
+      "width": 1774,
+      "height": 887,
+      "bbox": [
+        334,
+        184,
+        1436,
+        683
+      ],
+      "pivot": [
+        885,
+        202
+      ],
+      "sha256": "1d6e6f18bc7c719b1f8e0b4c37a04315d3479b6c588e4e7b6882d3174dc5e534",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          152,
+          29,
+          1577,
+          855
+        ],
+        "8": [
+          334,
+          184,
+          1436,
+          683
+        ],
+        "32": [
+          334,
+          184,
+          1436,
+          683
+        ],
+        "128": [
+          335,
+          185,
+          1435,
+          682
+        ],
+        "250": [
+          336,
+          186,
+          1434,
+          681
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "built-in image_gen edit, original bytes preserved",
+        "sourceFiles": [
+          "assets/source/xumen-original-style-v1/images/cavity-roof-revised-v4.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "generationId": "exec-5e62d5bd-64c4-4e6c-a665-0044032c3a63",
+        "prompt": "Edit image 1 with ONE final precise proportion correction: narrow the VISIBLE ROOF OBJECT to 80% of its CURRENT visible width, while keeping its CURRENT visible thickness unchanged. Currently visible ratio is 2.47:1; desired visible object ratio is 2.0:1. Keep the continuously filled thick single block and opaque rectangular core of at least 80% visible width by 80% visible height. Preserve nearly level upper and lower edges, no scooped arch and no stacked sandwiches. Recompose pit details at their natural size rather than squeezing an image. Image 2 is the original game style reference ONLY. Preserve the target's matte chalky gray-ivory pitted bone, dark purple tissue creases, few subtle olive barnacles, whole transparent background and natural chipped silhouette. No alpha holes, forks, protruding shoulders, long vegetation, text, creatures, background, floor or shadows. Do not change the reference image. Do not add blank padding as a substitute for changing the object proportions.",
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts.json"
+        ],
+        "references": [
+          "G:/鲸落万物生/outputs/须门遗港_参考图环境场景/reference.png",
+          "G:/鲸落万物生/outputs/鲸落万物生_V5.2_简明设计文档/images/08_R1-02.png"
+        ],
+        "selectedRevision": 4
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。 2026-11-15用户否定蘑菇帽/直柱造型，本批已从须门七房换出，保留历史来源。",
+      "structuralCore": {
+        "bbox": [
+          444,
+          202,
+          1326,
+          662
+        ],
+        "size": [
+          882,
+          460
+        ],
+        "minimum_alpha": 250,
+        "visible_width_height_fraction": [
+          0.8003629764065335,
+          0.9218436873747495
+        ]
+      },
+      "integration": {
+        "supersededBy": "assets/source/xumen-structure-redesign-v1/README.md"
+      }
+    },
+    {
+      "id": "xumen-original-style-original-ledge-v1",
+      "name": "original-ledge",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/original-ledge.png",
+      "width": 2162,
+      "height": 727,
+      "bbox": [
+        59,
+        132,
+        2102,
+        665
+      ],
+      "pivot": [
+        1081,
+        194
+      ],
+      "sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          0,
+          2158,
+          727
+        ],
+        "8": [
+          59,
+          132,
+          2102,
+          665
+        ],
+        "32": [
+          59,
+          132,
+          2102,
+          665
+        ],
+        "128": [
+          60,
+          133,
+          2101,
+          664
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "integrated",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "unchanged native bitmap copy",
+        "sourceFiles": [
+          "assets/runtime/sprites/r1-tongue-ledge/base.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "upstreamAssetId": "r1-tongue-ledge",
+        "upstreamSource": {
+          "batchId": "whalefall-v5-2-static-01",
+          "method": "内置 imagegen；按用户指定设计参考重绘",
+          "references": [
+            "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"
+          ],
+          "prompts": [
+            "assets/source/r1-tongue-ledge/r1-tongue-ledge_v01.txt"
+          ],
+          "designUrls": [
+            "http://10.11.140.20:8765/simple/",
+            "http://10.11.140.20:8765/full/"
+          ],
+          "originalId": "r1-tongue-ledge_v01",
+          "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+        },
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts-upstream/r1-tongue-ledge-01.txt"
+        ]
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。"
+    },
+    {
+      "id": "xumen-original-style-original-membrane-v1",
+      "name": "original-membrane",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/original-membrane.png",
+      "width": 2162,
+      "height": 727,
+      "bbox": [
+        54,
+        169,
+        2110,
+        576
+      ],
+      "pivot": [
+        1082.5,
+        576
+      ],
+      "sha256": "6dcde8238744601dc4c0827926b3a6289df44e8b21edde51b33bbb7878eb208f",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          51,
+          11,
+          2116,
+          727
+        ],
+        "8": [
+          54,
+          169,
+          2111,
+          576
+        ],
+        "32": [
+          54,
+          169,
+          2110,
+          576
+        ],
+        "128": [
+          54,
+          170,
+          2109,
+          575
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "integrated",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "unchanged native bitmap copy",
+        "sourceFiles": [
+          "assets/runtime/sprites/r1-weight-membrane/base.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "upstreamAssetId": "r1-weight-membrane",
+        "upstreamSource": {
+          "batchId": "whalefall-v5-2-complete",
+          "method": "内置imagegen；按指定设计参考重绘",
+          "references": [
+            "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+          ],
+          "prompts": [
+            "assets/source/r1-weight-membrane/r1-weight-membrane.txt"
+          ],
+          "sourceFiles": [],
+          "designUrls": [
+            "http://10.11.140.20:8765/simple/",
+            "http://10.11.140.20:8765/full/"
+          ],
+          "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+        },
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts-upstream/r1-weight-membrane-01.txt"
+        ]
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。"
+    },
+    {
+      "id": "xumen-original-style-original-membrane-pressed-v1",
+      "name": "original-membrane-pressed",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/original-membrane-pressed.png",
+      "width": 2162,
+      "height": 727,
+      "bbox": [
+        54,
+        165,
+        2092,
+        593
+      ],
+      "pivot": [
+        1072.5,
+        593
+      ],
+      "sha256": "8a3714f8f11e6bf2335d9beedc9c6912dd385e29a86c6fca29f006c2831d1d86",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          49,
+          104,
+          2096,
+          598
+        ],
+        "8": [
+          53,
+          165,
+          2092,
+          593
+        ],
+        "32": [
+          54,
+          165,
+          2092,
+          593
+        ],
+        "128": [
+          54,
+          166,
+          2091,
+          592
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "not-integrated",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "unchanged native bitmap copy",
+        "sourceFiles": [
+          "assets/runtime/sprites/r1-weight-membrane-pressed/base.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "upstreamAssetId": "r1-weight-membrane-pressed",
+        "upstreamSource": {
+          "batchId": "whalefall-v5-2-complete",
+          "method": "内置imagegen；按指定设计参考重绘",
+          "references": [
+            "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+          ],
+          "prompts": [
+            "assets/source/r1-weight-membrane-pressed/r1-weight-membrane-pressed.txt"
+          ],
+          "sourceFiles": [],
+          "designUrls": [
+            "http://10.11.140.20:8765/simple/",
+            "http://10.11.140.20:8765/full/"
+          ],
+          "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+        },
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts-upstream/r1-weight-membrane-pressed-01.txt"
+        ]
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。"
+    },
+    {
+      "id": "xumen-original-style-original-bone-ledge-v1",
+      "name": "original-bone-ledge",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/original-bone-ledge.png",
+      "width": 2060,
+      "height": 763,
+      "bbox": [
+        61,
+        72,
+        1998,
+        716
+      ],
+      "pivot": [
+        1028.5,
+        716
+      ],
+      "sha256": "eefa026219e502c00196eb9cbb09bc65d6c31f7e7b2f6efa612c37efe23e840a",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          49,
+          7,
+          2024,
+          727
+        ],
+        "8": [
+          59,
+          72,
+          1998,
+          716
+        ],
+        "32": [
+          61,
+          72,
+          1998,
+          716
+        ],
+        "128": [
+          61,
+          73,
+          1997,
+          715
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "not-integrated",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "unchanged native bitmap copy",
+        "sourceFiles": [
+          "assets/runtime/sprites/r1-nasal-wall/base.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "upstreamAssetId": "r1-nasal-wall",
+        "upstreamSource": {
+          "batchId": "whalefall-v5-2-complete",
+          "method": "内置imagegen；按指定设计参考重绘",
+          "references": [
+            "assets/source/whalefall-v5-2-complete/references/12_R1-06.png"
+          ],
+          "prompts": [
+            "assets/source/r1-nasal-wall/r1-nasal-wall.txt"
+          ],
+          "sourceFiles": [],
+          "designUrls": [
+            "http://10.11.140.20:8765/simple/",
+            "http://10.11.140.20:8765/full/"
+          ],
+          "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+        },
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts-upstream/r1-nasal-wall-01.txt"
+        ]
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。"
+    },
+    {
+      "id": "xumen-original-style-original-soft-ledge-v1",
+      "name": "original-soft-ledge",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "2D位图",
+        "定向复制"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/original-soft-ledge.png",
+      "width": 2162,
+      "height": 727,
+      "bbox": [
+        60,
+        193,
+        2102,
+        592
+      ],
+      "pivot": [
+        1081,
+        592
+      ],
+      "sha256": "153d9ed57a55d3dc4c997b5f62079a9f726b286bf0af72789bb564562d27ba96",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          58,
+          37,
+          2144,
+          596
+        ],
+        "8": [
+          60,
+          192,
+          2102,
+          592
+        ],
+        "32": [
+          60,
+          193,
+          2102,
+          592
+        ],
+        "128": [
+          61,
+          193,
+          2102,
+          591
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "integrated",
+      "source": {
+        "batchId": "xumen-original-style-v1",
+        "method": "unchanged native bitmap copy",
+        "sourceFiles": [
+          "assets/runtime/sprites/r2-membrane-platform/base.png"
+        ],
+        "provenance": "assets/source/xumen-original-style-v1/production-assets.json",
+        "upstreamAssetId": "r2-membrane-platform",
+        "upstreamSource": {
+          "batchId": "whalefall-v5-2-complete",
+          "method": "内置imagegen；按指定设计参考重绘",
+          "references": [
+            "assets/source/whalefall-v5-2-complete/references/15_R2-01.png",
+            "assets/source/whalefall-v5-2-complete/references/16_R2-02.png"
+          ],
+          "prompts": [
+            "assets/source/r2-membrane-platform/r2-membrane-platform.txt"
+          ],
+          "sourceFiles": [],
+          "designUrls": [
+            "http://10.11.140.20:8765/simple/",
+            "http://10.11.140.20:8765/full/"
+          ],
+          "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+        },
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts-upstream/r2-membrane-platform-01.txt"
+        ]
+      },
+      "notes": "已定向复制到game/art并核验原字节，场景摆放/足底/碰撞覆盖由主任务实机验收；candidate不等于用户美术批准。原承重膜复用既有程序驱动，不登记新增动作。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。"
+    },
+    {
+      "id": "xumen-original-style-anatomy-fracture-v1",
+      "name": "原画风分叉骨架附着 · 非碰撞背景",
+      "kind": "environment",
+      "region": "须门遗港",
+      "tags": [
+        "原画样式恢复",
+        "非碰撞背景",
+        "低对比附着"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/xumen-original-style-v1/anatomy-fracture.png",
+      "width": 1159,
+      "height": 1358,
+      "bbox": [
+        125,
+        17,
+        947,
+        1340
+      ],
+      "pivot": [
+        536,
+        1340
+      ],
+      "sha256": "fac9eb8489a2630426ff11abef47e67f667d9df00e5ec9cc3385d65417e6908d",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBboxes": {
+        "1": [
+          0,
+          9,
+          1149,
+          1358
+        ],
+        "8": [
+          125,
+          17,
+          947,
+          1340
+        ],
+        "32": [
+          125,
+          17,
+          947,
+          1340
+        ],
+        "128": [
+          126,
+          17,
+          946,
+          1340
+        ],
+        "250": [
+          128,
+          19,
+          945,
+          1336
+        ]
+      },
+      "spriteType": "static",
+      "integrationStatus": "candidate",
+      "source": {
+        "method": "unchanged copy of initial generated wall candidate",
+        "batchId": "xumen-original-style-v1",
+        "sourceFiles": [
+          "assets/source/xumen-original-style-v1/images/porous-wall.png"
+        ],
+        "generationId": "exec-ba09a2c7-240b-4db8-8b5a-0e90322feb4d",
+        "prompt": "Create ONE transparent 2D side-view game environment asset for the existing underwater whale-interior game. Reference 1 (outputs reference.png) is the AUTHORITATIVE painting, palette, ecological density and light direction. Reference 2 (08_R1-02.png) is authoritative for porous bone anatomy and natural wall growth, not a map to reproduce. Deliver only an independent narrow vertical section of solid eroded whale bone, aspect ratio about 1:3.4, 360px wide by 1200px high within a padded transparent canvas. Organic broad branching shoulder at the upper end and broken root-like lower end; the central ~280px wide load-bearing body MUST be continuously opaque, pitted cavities are shallow dark depressions rather than see-through holes. Materials are muted ivory gray bone with dark dusty mauve membrane in recesses, sparse olive-gray barnacles and hanging brown-green filaments on side edges. Broad painterly brush grouping and matte chalky shapes EXACTLY like the reference, top-left dim warm rim lighting against deep cool blue occlusion. Make it feel like a fractured portion of an enormous jaw wall anchored to the scene, not a freestanding decorative post. Avoid braided rope, woven bark, identical ribs, bright pink plastic, photoreal PBR, flat rectangular silhouettes, clean science-fiction shapes, UI, arrows, characters, crabs, doors and text. Keep thin epiphytes to the outer 8% edges. No background, no ground plane, no drop shadow halo. This is a new reusable asset guided by the references; do not alter the original reference images.",
+        "prompts": [
+          "assets/source/xumen-original-style-v1/prompts.json"
+        ],
+        "references": [
+          "G:/鲸落万物生/outputs/须门遗港_参考图环境场景/reference.png",
+          "G:/鲸落万物生/outputs/鲸落万物生_V5.2_简明设计文档/images/08_R1-02.png"
+        ]
+      },
+      "notes": "仅低对比非碰撞背景骨架/洞顶/台端附着。大叉肩、破口和总bbox不等于实心核心，严禁当实体墙或新增任何碰撞。原字节复制，不编辑；正式porous-wall/cavity-roof v4不变。 本轮七房GPU接入及接地/遮挡已复核，玩法冻结测试通过；美术仍为candidate，用户未逐件签收。 2026-11-15用户否定蘑菇帽/直柱造型，本批已从须门七房换出，保留历史来源。",
+      "integration": {
+        "supersededBy": "assets/source/xumen-structure-redesign-v1/README.md"
+      }
+    },
+    {
+      "id": "xumen-structure-redesign-bone-ridge-v1",
+      "name": "颌骨层状裂壁",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "柱体重设计",
+        "2D位图",
+        "静态"
+      ],
+      "status": "candidate",
+      "integrationStatus": "candidate",
+      "target": "2d",
+      "spriteType": "static",
+      "file": "assets/runtime/scenes/xumen-structure-redesign-v1/bone-ridge.png",
+      "width": 984,
+      "height": 1598,
+      "bbox": [
+        250,
+        143,
+        712,
+        1488
+      ],
+      "pivot": [
+        480.5,
+        1451
+      ],
+      "sha256": "14fe390e84d48647a6739b24d49b316cbfa2355c91bb844aee12b302ec46ae17",
+      "notes": "原画参考重绘；取消大帽和长尖。实心范围按Alpha>=240测量。用户未审美签收。 用户要求母蟹房也移除，当前七房无此柱体引用；禁止作为背景补强重新放回。",
+      "provenance": {
+        "method": "built-in imagegen; reference-guided redraw",
+        "records": "assets/source/xumen-structure-redesign-v1/bone/",
+        "selectedSource": "assets/source/xumen-structure-redesign-v1/bone/bone-ridge-v3.png"
+      },
+      "integration": {
+        "version": "game",
+        "date": "2026-11-15",
+        "sourceAdaptation": "等比定位/必要的90度旋转；按opaque core覆盖冻结碰撞，不改地形数据",
+        "opaqueCore": [
+          277,
+          180,
+          684,
+          1451
+        ],
+        "runtimeFile": "game/art/xumen-structure-redesign-v1/bone-ridge.png",
+        "evidence": "assets/source/xumen-structure-redesign-v1/README.md",
+        "scope": "技术接入"
+      }
+    },
+    {
+      "id": "xumen-structure-redesign-bone-vault-v1",
+      "name": "断颌低拱",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "柱体重设计",
+        "2D位图",
+        "静态"
+      ],
+      "status": "candidate",
+      "integrationStatus": "candidate",
+      "target": "2d",
+      "spriteType": "static",
+      "file": "assets/runtime/scenes/xumen-structure-redesign-v1/bone-vault.png",
+      "width": 1774,
+      "height": 887,
+      "bbox": [
+        62,
+        105,
+        1715,
+        793
+      ],
+      "pivot": [
+        815,
+        702
+      ],
+      "sha256": "a80c2452639f3a5d4ec09b51bd90c98285fa62c9011b976fca6dec2166e13813",
+      "notes": "原画参考重绘；取消大帽和长尖。实心范围按Alpha>=240测量。用户未审美签收。 用户要求母蟹房也移除，当前七房无此柱体引用；禁止作为背景补强重新放回。",
+      "provenance": {
+        "method": "built-in imagegen; reference-guided redraw",
+        "records": "assets/source/xumen-structure-redesign-v1/bone/",
+        "selectedSource": "assets/source/xumen-structure-redesign-v1/bone/bone-vault-v2.png"
+      },
+      "integration": {
+        "version": "game",
+        "date": "2026-11-15",
+        "sourceAdaptation": "等比定位/必要的90度旋转；按opaque core覆盖冻结碰撞，不改地形数据",
+        "opaqueCore": [
+          227,
+          241,
+          1403,
+          702
+        ],
+        "runtimeFile": "game/art/xumen-structure-redesign-v1/bone-vault.png",
+        "evidence": "assets/source/xumen-structure-redesign-v1/README.md",
+        "scope": "技术接入"
+      }
+    },
+    {
+      "id": "xumen-structure-redesign-tissue-ridge-v1",
+      "name": "食管厚褶壁",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "柱体重设计",
+        "2D位图",
+        "静态"
+      ],
+      "status": "candidate",
+      "integrationStatus": "candidate",
+      "target": "2d",
+      "spriteType": "static",
+      "file": "assets/runtime/scenes/xumen-structure-redesign-v1/tissue-ridge.png",
+      "width": 946,
+      "height": 1663,
+      "bbox": [
+        93,
+        151,
+        848,
+        1502
+      ],
+      "pivot": [
+        467,
+        1449
+      ],
+      "sha256": "81c311df7d83181ed7457db936f4029f67a5a233a0cd96594ec2e91a1270f1dc",
+      "notes": "原画参考重绘；取消大帽和长尖。实心范围按Alpha>=240测量。用户已否定此柱体并要求删除，当前场景无引用；原件保留。",
+      "provenance": {
+        "method": "built-in imagegen; reference-guided redraw",
+        "records": "assets/source/xumen-structure-redesign-v1/soft/generation-record.json",
+        "selectedSource": "assets/source/xumen-structure-redesign-v1/soft/tissue-ridge.png"
+      },
+      "integration": {
+        "version": "game",
+        "date": "2026-11-15",
+        "sourceAdaptation": "等比定位/必要的90度旋转；按opaque core覆盖冻结碰撞，不改地形数据",
+        "opaqueCore": [
+          121,
+          192,
+          813,
+          1449
+        ],
+        "runtimeFile": "game/art/xumen-structure-redesign-v1/tissue-ridge.png",
+        "evidence": "assets/source/xumen-structure-redesign-v1/README.md",
+        "scope": "技术接入"
+      }
+    },
+    {
+      "id": "xumen-structure-redesign-tissue-vault-v1",
+      "name": "宽幅软组织顶（候选）",
+      "kind": "scenery",
+      "region": "R1",
+      "tags": [
+        "R1",
+        "柱体重设计",
+        "2D位图",
+        "静态"
+      ],
+      "status": "candidate",
+      "integrationStatus": "candidate",
+      "target": "2d",
+      "spriteType": "static",
+      "file": "assets/runtime/scenes/xumen-structure-redesign-v1/tissue-vault.png",
+      "width": 1774,
+      "height": 887,
+      "bbox": [
+        139,
+        164,
+        1635,
+        678
+      ],
+      "pivot": [
+        887,
+        659
+      ],
+      "sha256": "5410691e0ca0cc6817119c9c32bbec1e18306065b65a77091998ed56008d0eda",
+      "notes": "原画参考重绘；取消大帽和长尖。实心范围按Alpha>=240测量。用户未审美签收。",
+      "provenance": {
+        "method": "built-in imagegen; reference-guided redraw",
+        "records": "assets/source/xumen-structure-redesign-v1/soft/generation-record.json",
+        "selectedSource": "assets/source/xumen-structure-redesign-v1/soft/tissue-vault.png"
+      },
+      "integration": {
+        "version": "game",
+        "date": "2026-11-15",
+        "sourceAdaptation": "等比定位/必要的90度旋转；按opaque core覆盖冻结碰撞，不改地形数据",
+        "opaqueCore": [
+          257,
+          185,
+          1517,
+          659
+        ],
+        "runtimeFile": "game/art/xumen-structure-redesign-v1/tissue-vault.png",
+        "evidence": "assets/source/xumen-structure-redesign-v1/README.md",
+        "scope": "仅素材候选，未在当前场景使用"
+      }
+    },
+    {
+      "id": "xumen-soft-underwater-light-v1",
+      "name": "深海独立柔光纹理（复用）",
+      "kind": "effect",
+      "region": "R1",
+      "tags": [
+        "2D位图",
+        "背景动态",
+        "程序驱动"
+      ],
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "spriteType": "static",
+      "file": "assets/runtime/sprites/framecraft-runtime/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png",
+      "width": 512,
+      "height": 768,
+      "sha256": "8d3face73d0cd059896211048f10c5538af77d7d2e175b66625f73b39a662aa3",
+      "source": "assets/source/xumen-soft-light/README.md",
+      "notes": "既有纯光RGBA，不是旧BEAM环境裁片。当前七房通过Shader做内部流动与低频呼吸；外观素材与程序驱动分开记录，整体审美待反馈。",
+      "integration": {
+        "runtimeFile": "game/art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png",
+        "evidence": "assets/source/xumen-background-current-v1/README.md",
+        "scope": "21个Far层光效实例，主线时钟驱动",
+        "additionalScope": "assets/source/remaining-19-v2/README.md：后续十二房纯光实例，独立房间时钟、原色tint；程序驱动"
+      }
+    },
+    {
+      "id": "r2-membrane-cavern-frame-v3",
+      "name": "r2-membrane-cavern-frame-v3",
+      "kind": "scenery",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r2-membrane-cavern-frame-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1536,
+        805
+      ],
+      "pivot": [
+        768,
+        0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "0826ea44dbd7f13c98c5f2664d2b12bbdb13ae2e94ac390d501bc9b4b847f93a",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "参考原画引导补绘，内置image_gen；原图未修改，非原像素分离。建筑静态／无碰撞，技术与整体审美分别验收。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-membrane-cavern-frame-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r3-gastric-cavern-frame-v3",
+      "name": "r3-gastric-cavern-frame-v3",
+      "kind": "scenery",
+      "region": "R3",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r3-gastric-cavern-frame-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1536,
+        827
+      ],
+      "pivot": [
+        768,
+        0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "69acbbb8b9f7188501dc8b7850c291599d98b729793d9d663f31a1fae45b564f",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "参考原画引导补绘，内置image_gen；原图未修改，非原像素分离。建筑静态／无碰撞，技术与整体审美分别验收。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r3-gastric-cavern-frame-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r5-cranial-cavern-frame-clean-v3",
+      "name": "r5-cranial-cavern-frame-clean-v3",
+      "kind": "scenery",
+      "region": "R4/R5",
+      "status": "candidate",
+      "integrationStatus": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-clean-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1536,
+        639
+      ],
+      "pivot": [
+        768,
+        0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "82f2a41144afb0c0e3f35576a7c8889ed5ddcddbd289a0224ca0de133167d6fc",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "未选用候选：误生锚环或透明残雾；原件保留，不在当前场景渲染。"
+    },
+    {
+      "id": "r5-three-socket-wall-v3",
+      "name": "r5-three-socket-wall-v3",
+      "kind": "prop",
+      "region": "R4/R5",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r5-three-socket-wall-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        8,
+        7,
+        1530,
+        989
+      ],
+      "pivot": [
+        769,
+        989
+      ],
+      "world": {
+        "axis": "width",
+        "units": 10,
+        "space": "canvas"
+      },
+      "sha256": "9e0cfde8cbfa6fd27b2248104b3379680764d9701e59ba9d30e27666bf88eaaa",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "参考原画引导补绘，内置image_gen；原图未修改，非原像素分离。建筑静态／无碰撞，技术与整体审美分别验收。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r5-three-socket-wall-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r3-low-shell-camp-v3",
+      "name": "r3-low-shell-camp-v3",
+      "kind": "prop",
+      "region": "R3",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r3-low-shell-camp-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        88,
+        231,
+        1448,
+        802
+      ],
+      "pivot": [
+        768,
+        802
+      ],
+      "world": {
+        "axis": "width",
+        "units": 10,
+        "space": "canvas"
+      },
+      "sha256": "53941a28497ab2308d46930fa90cd3c7f140c7d01e8a07e7eedbb1da163921a6",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "参考原画引导补绘，内置image_gen；原图未修改，非原像素分离。建筑静态／无碰撞，技术与整体审美分别验收。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r3-low-shell-camp-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r5-cranial-cavern-frame-alpha-v3",
+      "name": "r5-cranial-cavern-frame-alpha-v3",
+      "kind": "scenery",
+      "region": "R4/R5",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        0,
+        0,
+        1536,
+        635
+      ],
+      "pivot": [
+        768,
+        0
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "7f2d655135372c7381580e42e71b1cb43175c00b82afa61ce8b3790088d1557e",
+      "source": "assets/source/reference-architecture-v3/generation.json",
+      "notes": "参考原画引导补绘，内置image_gen；原图未修改，非原像素分离。建筑静态／无碰撞，技术与整体审美分别验收。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+        "evidence": "assets/source/reference-architecture-v3/README.md",
+        "scope": "十二房原画建筑／胃枢壳营／R5横三孔，静态无新增碰撞；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r2-observation-depth-v4",
+      "name": "r2-observation-depth-v4",
+      "kind": "background",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "file": "assets/runtime/scenes/r2-reference-motion-v4/r2-observation-depth-v4.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "pivot": [
+        836,
+        941
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "ebbf4634a40020da6cd3ec814454c22f647489447e5cfbf005ea9d5fb5aacb8b",
+      "source": "assets/source/r2-reference-motion-v4/generation.json",
+      "notes": "原画参考引导补绘/隐藏面补全；背景已清除群体、气泡、演员和游戏几何；动态与静态所有权分开。整体审美待审阅。",
+      "target": "2d",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-observation-depth-v4.png",
+        "evidence": "assets/source/r2-reference-motion-v4/README.md",
+        "scope": "R2-03/04参考背景与无伤害生态／菌光，原尺寸同步；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r2-bloodnest-depth-v4",
+      "name": "r2-bloodnest-depth-v4",
+      "kind": "background",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "file": "assets/runtime/scenes/r2-reference-motion-v4/r2-bloodnest-depth-v4.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "pivot": [
+        836,
+        941
+      ],
+      "world": {
+        "axis": "width",
+        "units": 30,
+        "space": "canvas"
+      },
+      "sha256": "a17ac77b7705acd7af9092f0f3974ed8ad6feb6f883dd223715dbf2c095a2729",
+      "source": "assets/source/r2-reference-motion-v4/generation.json",
+      "notes": "原画参考引导补绘/隐藏面补全；背景已清除群体、气泡、演员和游戏几何；动态与静态所有权分开。整体审美待审阅。",
+      "target": "2d",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-bloodnest-depth-v4.png",
+        "evidence": "assets/source/r2-reference-motion-v4/README.md",
+        "scope": "R2-03/04参考背景与无伤害生态／菌光，原尺寸同步；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r2-pelagic-amphipod-v4",
+      "name": "r2-pelagic-amphipod-v4",
+      "kind": "creature",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "file": "assets/runtime/scenes/r2-reference-motion-v4/r2-pelagic-amphipod-v4.png",
+      "width": 2172,
+      "height": 724,
+      "bbox": [
+        83,
+        164,
+        2052,
+        546
+      ],
+      "pivot": [
+        1067.5,
+        546
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1,
+        "space": "canvas"
+      },
+      "sha256": "81b71b745c6f5bd780e4e76ebb6e4a53a80b1ce2401b73f9e60797c561a9657c",
+      "source": "assets/source/r2-reference-motion-v4/generation.json",
+      "notes": "原画参考引导补绘/隐藏面补全；背景已清除群体、气泡、演员和游戏几何；动态与静态所有权分开。整体审美待审阅。",
+      "target": "2d",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-pelagic-amphipod-v4.png",
+        "evidence": "assets/source/r2-reference-motion-v4/README.md",
+        "scope": "R2-03/04参考背景与无伤害生态／菌光，原尺寸同步；整体审美待审阅"
+      }
+    },
+    {
+      "id": "r2-pearl-stalks-v4",
+      "name": "r2-pearl-stalks-v4",
+      "kind": "prop",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "file": "assets/runtime/scenes/r2-reference-motion-v4/r2-pearl-stalks-v4.png",
+      "width": 1774,
+      "height": 887,
+      "bbox": [
+        336,
+        201,
+        1421,
+        693
+      ],
+      "pivot": [
+        878.5,
+        693
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1,
+        "space": "canvas"
+      },
+      "sha256": "0dfa06f2015a716713dfadbde1744c091417c39331046b24062bc80ecdee6ee0",
+      "source": "assets/source/r2-reference-motion-v4/generation.json",
+      "notes": "原画参考引导补绘/隐藏面补全；背景已清除群体、气泡、演员和游戏几何；动态与静态所有权分开。整体审美待审阅。",
+      "target": "2d",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/r2-pearl-stalks-v4.png",
+        "evidence": "assets/source/r2-reference-motion-v4/README.md",
+        "scope": "R2-03/04参考背景与无伤害生态／菌光，原尺寸同步；整体审美待审阅"
+      }
+    },
+    {
+      "id": "bloodnest-glass-shrimp-v5",
+      "name": "血巢玻璃虾 V5",
+      "kind": "creature",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/sprites/bloodnest-animation-v5/glass-shrimp.png",
+      "width": 2061,
+      "height": 763,
+      "bbox": [
+        0,
+        9,
+        2041,
+        763
+      ],
+      "pivot": [
+        1020.5,
+        386
+      ],
+      "world": {
+        "axis": "width",
+        "units": 0.7,
+        "space": "canvas"
+      },
+      "sha256": "d69216a276d87d9636b880728027b1b507e0bbc49c5a4f3de65949a1d803cfb5",
+      "source": "assets/source/bloodnest-animation-v5/README.md",
+      "notes": "内置imagegen参考补绘；透明原件未覆盖。程序驱动群体/局部Shader或水丝路径；非逐帧动画。审美待用户审阅。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/bloodnest-glass-shrimp-v5.png",
+        "evidence": "assets/source/bloodnest-animation-v5/README.md",
+        "scope": "R2-04 Boss视觉专用；生成器按max=512同步，不改变战斗。"
+      }
+    },
+    {
+      "id": "bloodnest-water-filament-v5",
+      "name": "血巢水丝 V5",
+      "kind": "effect",
+      "region": "R2",
+      "status": "candidate",
+      "integrationStatus": "integrated",
+      "target": "2d",
+      "file": "assets/runtime/sprites/bloodnest-animation-v5/water-filament.png",
+      "width": 2172,
+      "height": 724,
+      "bbox": [
+        31,
+        95,
+        2152,
+        652
+      ],
+      "pivot": [
+        1091.5,
+        373.5
+      ],
+      "world": {
+        "axis": "width",
+        "units": 1,
+        "space": "canvas"
+      },
+      "sha256": "ce5aa414569c0cf0c2070217d29c571e2a54c756cee215e2ea9ad1234853295f",
+      "source": "assets/source/bloodnest-animation-v5/README.md",
+      "notes": "内置imagegen参考补绘；透明原件未覆盖。程序驱动群体/局部Shader或水丝路径；非逐帧动画。审美待用户审阅。",
+      "integration": {
+        "runtimeFile": "game/art/world-kit/bloodnest-water-filament-v5.png",
+        "evidence": "assets/source/bloodnest-animation-v5/README.md",
+        "scope": "R2-04 Boss视觉专用；生成器按max=512同步，不改变战斗。"
+      }
     }
   ]
 }

@@ -22,6 +22,7 @@ var barrier: Sprite2D
 func bind(level: Node2D, door: Dictionary) -> void:
 	host = level
 	data = door
+	update_visibility()
 	position = host.point(door.pos)
 	armed = host.player.position.distance_to(position) > radius + 35.0
 	if is_instance_valid(inset): return
@@ -76,9 +77,14 @@ func build_barrier() -> void:
 
 func _process(_dt: float) -> void:
 	if not is_instance_valid(host): return
-	visible = not host.reference_visible and host.layer_solo < 0 and host.capture_path.is_empty()
-	if host.streaming.enabled and int(data.get("to",-1))>=0 and restriction().is_empty(): visible=false
+	update_visibility()
 	update_art()
+
+func update_visibility() -> void:
+	visible = not host.reference_visible and host.layer_solo < 0 and host.capture_path.is_empty()
+	# Streaming gates own both locked and open connections. The old room-local
+	# frame must not reappear when an ability is missing or on the bind frame.
+	if host.streaming.enabled and int(data.get("to",-1))>=0: hide()
 
 func update_art() -> void:
 	var shut: bool = not restriction().is_empty()

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bloodnest-glass-shrimp-v5",
+    "name": "血巢玻璃虾 V5",
+    "kind": "creature",
+    "region": "R2",
+    "status": "candidate",
+    "integrationStatus": "integrated",
+    "target": "2d",
+    "file": "assets/runtime/sprites/bloodnest-animation-v5/glass-shrimp.png",
+    "width": 2061,
+    "height": 763,
+    "bbox": [
+      0,
+      9,
+      2041,
+      763
+    ],
+    "pivot": [
+      1020.5,
+      386.0
+    ],
+    "world": {
+      "axis": "width",
+      "units": 0.7,
+      "space": "canvas"
+    },
+    "sha256": "d69216a276d87d9636b880728027b1b507e0bbc49c5a4f3de65949a1d803cfb5",
+    "source": "assets/source/bloodnest-animation-v5/README.md",
+    "notes": "内置imagegen参考补绘；透明原件未覆盖。程序驱动群体/局部Shader或水丝路径；非逐帧动画。审美待用户审阅。",
+    "integration": {
+      "runtimeFile": "game/art/world-kit/bloodnest-glass-shrimp-v5.png",
+      "evidence": "assets/source/bloodnest-animation-v5/README.md",
+      "scope": "R2-04 Boss视觉专用；生成器按max=512同步，不改变战斗。"
+    }
+  },
+  {
+    "id": "bloodnest-water-filament-v5",
+    "name": "血巢水丝 V5",
+    "kind": "effect",
+    "region": "R2",
+    "status": "candidate",
+    "integrationStatus": "integrated",
+    "target": "2d",
+    "file": "assets/runtime/sprites/bloodnest-animation-v5/water-filament.png",
+    "width": 2172,
+    "height": 724,
+    "bbox": [
+      31,
+      95,
+      2152,
+      652
+    ],
+    "pivot": [
+      1091.5,
+      373.5
+    ],
+    "world": {
+      "axis": "width",
+      "units": 1,
+      "space": "canvas"
+    },
+    "sha256": "ce5aa414569c0cf0c2070217d29c571e2a54c756cee215e2ea9ad1234853295f",
+    "source": "assets/source/bloodnest-animation-v5/README.md",
+    "notes": "内置imagegen参考补绘；透明原件未覆盖。程序驱动群体/局部Shader或水丝路径；非逐帧动画。审美待用户审阅。",
+    "integration": {
+      "runtimeFile": "game/art/world-kit/bloodnest-water-filament-v5.png",
+      "evidence": "assets/source/bloodnest-animation-v5/README.md",
+      "scope": "R2-04 Boss视觉专用；生成器按max=512同步，不改变战斗。"
+    }
+  }
+]

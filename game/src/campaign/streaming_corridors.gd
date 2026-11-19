@@ -15,6 +15,11 @@ static func prepare_scene(index: int, scene: Node2D, data: Dictionary) -> void:
 	var rooms: Array = data.get("rooms",[])
 	if index<0 or index>=rooms.size(): return
 	CampaignPaintedSupports.prepare_scene(scene,rooms[index])
+	# Dormant neighbors are frozen before their first bind/process. Suppress
+	# legacy frames before they can render; external gates keep the conditions.
+	var room_ids: Array = rooms.map(func(room: Dictionary) -> String: return str(room.id))
+	for entrance: Node in scene.find_children("*","Node2D",true,false):
+		if entrance is CampaignDoorway and entrance.destination_id in room_ids: entrance.hide()
 	# 主干原画支撑材质按房内坐标采样；流式房根非零时先明确世界偏移。
 	for sprite: Node in scene.find_children("*","Sprite2D",true,false):
 		if sprite.material is ShaderMaterial and sprite.material.shader.resource_path.ends_with("/native_foundation.gdshader"):

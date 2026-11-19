@@ -875,6 +875,7 @@
             "floor": 1520,
             "hits": 24,
             "count": 44,
+            "swarm_visual": "bloodnest_vortex",
             "radius": 88,
             "tint": "ffffff",
             "rest": 1.9,
@@ -893,16 +894,20 @@
             },
             "sprites": {
               "body": {
-                "path": "res://art/world-kit/amphipod-swarm.png",
-                "scale": 0.2813
+                "path": "res://art/world-kit/bloodnest-glass-shrimp-v5.png",
+                "scale": 0.1104
               },
               "tell": {
                 "path": "res://art/world-kit/fx-danger-line.png",
                 "scale": 1.4545
               },
+              "trail": {
+                "path": "res://art/world-kit/bloodnest-water-filament-v5.png",
+                "scale": 0.16
+              },
               "core": {
-                "path": "res://art/world-kit/blood-nest-core.png",
-                "scale": 0.4835
+                "path": "res://art/world-kit/bloodnest-glass-shrimp-v5.png",
+                "scale": 0.0868
               }
             }
           }
