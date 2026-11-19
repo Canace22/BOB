@@ -36,6 +36,7 @@ static func build(ui: WhaleCampaignUI) -> void:
 		number.text="%d%%"%value
 		ui.preferences.volume=value/100
 		ui.save_preferences())
+	WhaleUIPages.action(column, "MusicCredits", "声音来源", func() -> void: _music_credits(ui))
 	WhaleUIPages.action(column,"SettingsBack","返回",ui.back)
 
 static func _toggle(parent: Node, id: String, title: String, description: String, checked: bool, changed: Callable) -> void:
@@ -59,3 +60,27 @@ static func _toggle(parent: Node, id: String, title: String, description: String
 	toggle.toggled.connect(func(value: bool) -> void:
 		toggle.text="开启" if value else "关闭"
 		changed.call(value))
+
+static func _music_credits(ui: WhaleCampaignUI) -> void:
+	var dialog := AcceptDialog.new()
+	dialog.title = "声音来源"
+	dialog.dialog_hide_on_ok = true
+	var credits := RichTextLabel.new()
+	credits.bbcode_enabled = true
+	credits.custom_minimum_size = Vector2(520, 250)
+	credits.text = "\n".join([
+		"[url=https://opengameart.org/content/rpg-music-the-lost-town]The Lost Town[/url] / [url=https://opengameart.org/content/rpg-exploration-the-black-temple]The Black Temple[/url] — HitCtrl · [url=https://creativecommons.org/licenses/by/3.0/]CC BY 3.0[/url]",
+		"First Light Particles — Yoiyami · CC0",
+		"",
+		"[url=https://github.com/wesnoth/wesnoth/tree/1.18.5/data/core/music]The Battle for Wesnoth[/url] · [url=https://www.gnu.org/licenses/old-licenses/gpl-2.0.html]GNU GPL v2 or later[/url]",
+		"Journey's End / Breaking the Chains — Mattias Westlund",
+		"Love Theme — Ryan Reilly",
+		"Into the Shadows — Tyler Johnson",
+		"Elvish Theme — Doug Kaufman",
+	])
+	credits.meta_clicked.connect(func(url: Variant) -> void: OS.shell_open(str(url)))
+	dialog.add_child(credits)
+	dialog.confirmed.connect(dialog.queue_free)
+	dialog.canceled.connect(dialog.queue_free)
+	ui.add_child(dialog)
+	dialog.popup_centered()

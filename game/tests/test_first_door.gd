@@ -29,6 +29,7 @@ func test_visible_first_door_crosses_by_walking() -> void:
 	check(is_instance_valid(entrance.inset) and is_instance_valid(entrance.lip), "passage has a visible painted entrance")
 	var lip_center_x: float = entrance.lip.global_position.x + 512.0 * entrance.lip.scale.x
 	check(absf(entrance.lip.global_position.y - host.ground_y(lip_center_x, entrance.position.y)) < 1.0, "foreground threshold starts at the slope, not the character waist")
+	var score_playback := host.music.get_stream_playback()
 	var identity: int = host.player.get_instance_id()
 	Input.action_press("tp_right")
 	for frame: int in 500:
@@ -37,6 +38,7 @@ func test_visible_first_door_crosses_by_walking() -> void:
 	Input.action_release("tp_right")
 	await physics_frames(10)
 	eq(host.room_index, 1, "walking through the connection reaches the next room without E")
+	check(host.music.playing and host.music.get_stream_playback() == score_playback, "walking between harbor rooms preserves the active music playback")
 	eq(host.player.get_instance_id(),identity,"normal travel preserves the player")
 	check(not host.continuity.travelling and not host.player.transition_locked, "transition releases controls")
 	host.process_mode = Node.PROCESS_MODE_DISABLED

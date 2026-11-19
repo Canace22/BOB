@@ -128,6 +128,7 @@ func open(page: String, push: bool = true) -> void:
 	player.controls_enabled = false
 	get_tree().paused = true
 	page_id = page
+	host.music.set_resting(page in ["camp", "camp_details"])
 	for child: Node in body.get_children():
 		body.remove_child(child)
 		child.queue_free()
@@ -155,6 +156,7 @@ func back() -> void:
 	elif page_id not in ["title", "death"]: close_all()
 
 func close_all() -> void:
+	host.music.set_resting(false)
 	page_id = ""
 	history.clear()
 	modal.hide()

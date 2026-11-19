@@ -1,5 +1,26 @@
 # 美术资源台账
 
+## 2026-11-19 · 角色动作与状态乐句
+
+十段本项目原创的短乐句。以轻拨弦、柔和持续音和短立体声回响区分移动、战斗与生命变化。音符、包络、渲染方法见[制作源](source/player-music/render.py)，游戏副本由资源清单同步。
+
+## 2026-11-19 · 鲸腹抒情版配乐
+
+游戏内八首完整 OGG 由资源清单从音频库同步。前两首采用已试听版本，其余按动作和环境配平。原文件保留，播放时间和增益由 Godot 控制。
+
+| 实际使用位置 | 曲目 | 作者与来源 |
+| --- | --- | --- |
+| 须门探索 | The Lost Town | HitCtrl · [作品与 CC BY 3.0 许可](https://opengameart.org/content/rpg-music-the-lost-town) |
+| 营地休息、鲸须记忆袋、安全池 | Journey’s End | Mattias Westlund · Wesnoth |
+| 肺心潮庭 | Love Theme | Ryan Reilly · Wesnoth |
+| 胃枢 | Into the Shadows | Tyler Johnson · Wesnoth |
+| 断脊、未清除的母蟹巢穴 | The Black Temple | HitCtrl · [作品与 CC BY 3.0 许可](https://opengameart.org/content/rpg-exploration-the-black-temple) |
+| 耳海与开闸前 | Elvish Theme | Doug Kaufman · Wesnoth |
+| 首领正式交锋 | Breaking the Chains，从 1:18 处进入 | Mattias Westlund · Wesnoth |
+| 开闸后 | First Light Particles，单次 | Yoiyami · [作品与 CC0 许可](https://opengameart.org/node/182244) |
+
+五首 Wesnoth 原版 OGG 来自 [1.18.5 发布版](https://github.com/wesnoth/wesnoth/tree/1.18.5/data/core/music)。[逐曲作者和 GNU GPL v2 或更高版本声明](https://github.com/wesnoth/wesnoth/blob/1.18.5/copyrights.csv)，[随音频分发的许可证](runtime/godot-support/whalebelly/runtime/audio/score/COPYING.txt)。
+
 ## 2026-11-18 · 归海释放槽藏珠贝匣
 
 复用已入库的`release-bowl`固定贝壳和`ringed-calcium-pearl`静态珍珠，贝壳位置与比例保持，珍珠等比缩放置于壳内；领取后只隐藏珍珠。没有新增绘图或动作动画，未改已有幼体游动、平台与碰撞。本房重建补登记`r5-tail-window-frame-v3`、`sea-larva-swim-v1`的既有恢复副本尺寸和来源，沿用[恢复台账](source/version101-merge/recovered-runtime.json)，不将恢复文件称作原始母版。实际接入、截图检查与状态验证见[游戏进度](../game/progress.md)；用户整体审美待试玩。
