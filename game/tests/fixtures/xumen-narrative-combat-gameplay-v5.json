@@ -1,0 +1,39 @@
+{
+  "scope": "Integrate user-approved narrative and Chapter One combat from 8d086a7c into Vesion/V1.0.1; preserve original v1-v4 contracts and target gameplay.",
+  "source_commit": "8d086a7caafb31415fef0c3fa24ebce0baace845",
+  "target_base": "410da249",
+  "source_hashes": [
+    {
+      "path": "game/src/campaign/tide_player.gd",
+      "sha256": "9fc518be6fda07a98a17bbde3cb5f056ff0ecf9e1459c0281290735e72daaaf8",
+      "authorized_delta": "Stop this physics frame when dialogue gives control to a modal.",
+      "behavior_test": "game/tests/whalebelly/dialogue_qa.gd"
+    },
+    {
+      "path": "game/src/campaign/campaign_player.gd",
+      "sha256": "ef94272d74df6cd86bfd0aa49b6dc9b9c8320421be26bc9e9bef98f815242295",
+      "authorized_delta": "Route F interaction and interaction availability through narrative triggers; retain target fall recovery and movement.",
+      "behavior_test": "game/tests/whalebelly/dialogue_qa.gd"
+    },
+    {
+      "path": "game/src/campaign/enemies/corpse_crab.gd",
+      "sha256": "ac352063bba7b29f4d23453af17098ad6bab938730738a66a135e14e34d037d0",
+      "authorized_delta": "Add overridable visual construction for the Chapter One forager; ordinary crab keeps the default visual.",
+      "behavior_test": "game/tests/test_corpse_crab.gd"
+    },
+    {
+      "path": "game/src/ui/ui_save_access.gd",
+      "sha256": "198d009b118d7af84f4167dd22050e23daacef7df6a48774cbea227ed2f4c838",
+      "authorized_delta": "Validate optional narrative seen/objective fields while accepting existing V6 saves.",
+      "behavior_test": "game/tests/test_dialogue_state.gd"
+    }
+  ],
+  "validation": [
+    "game/tests/test_combat_backstep_chord.gd",
+    "game/tests/test_chapter_loop.gd",
+    "game/tests/test_dialogue_state.gd",
+    "game/tests/test_corpse_crab.gd",
+    "game/tests/whalebelly/combat_main_qa.gd",
+    "game/tests/whalebelly/dialogue_qa.gd"
+  ]
+}

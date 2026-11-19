@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="36"]
 [ext_resource type="Script" path="res://src/world/scenery/layout/layout_environment.gd" id="37"]
 
+[ext_resource type="PackedScene" path="res://content/whalebelly/narrative/opening.tscn" id="opening_story"]
+
 [sub_resource type="ShaderMaterial" id="m1"]
 shader = ExtResource("2")
 shader_parameter/recess = 0.18
@@ -614,3 +616,5 @@ z_index = 3
 
 [node name="LayoutEnvironment" type="Node2D" parent="."]
 script = ExtResource("37")
+
+[node name="OpeningNarrative" parent="." instance=ExtResource("opening_story")]

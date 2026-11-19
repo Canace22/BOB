@@ -159,7 +159,7 @@ func test_guard_cancels_melee_recovery_before_old_gate_and_clears_queue() -> voi
 	p.pending_action = "strike2"
 	p.pending_left = 0.12
 	Input.action_press("tp_parry")
-	await physics_frames(2)
+	await physics_frames(7)
 	Input.action_release("tp_parry")
 	eq(p.skill_controller.visual_key,"parry","guard actually starts")
 	eq(p.pending_action,"","cancel clears queued attack")

@@ -22,7 +22,7 @@ func test_running_basic_attack_stops_until_end_and_movement_resumes() -> void:
 	p.animation_tag.connect(func(tag: String) -> void:
 		if tag == "strike_01:start": entry["x"] = p.position.x)
 	Input.action_press("tp_attack")
-	await physics_frames(2)
+	await physics_frames(7)
 	Input.action_release("tp_attack")
 	check(entry.has("x"),"first swing emitted real start event")
 	var start: float = float(entry.get("x",p.position.x))

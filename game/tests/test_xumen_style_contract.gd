@@ -153,6 +153,8 @@ func test_frozen_gameplay_script_hashes_allow_independent_art_and_scene_changes(
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-fall-recovery-gameplay-v3.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# The requested optional treasure adds one relic; earlier behavior remains covered separately.
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-treasure-gameplay-v4.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
+	# The authorized Chapter One merge changes exactly four sources, with existing behavior tests retained.
+	for item: Dictionary in object_at("res://tests/fixtures/xumen-narrative-combat-gameplay-v5.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# Deliberately exclude generators, scenes, image files and presentation scripts.
 	for path: String in ["src/campaign/tide_player.gd","src/campaign/campaign_player.gd","src/campaign/tide_skill_catalog.gd","src/campaign/tide_skill_input.gd","src/campaign/tide_skill_controller.gd","src/campaign/tide_input.gd","src/campaign/campaign_relics.gd","src/campaign/campaign_save_bridge.gd","src/campaign/boss/crab_boss.gd","src/campaign/boss/crab_shell.gd","src/campaign/boss/crab_moves.gd","src/campaign/enemies/corpse_crab.gd","src/campaign/enemies/kit_encounter.gd","src/ui/ui_save_access.gd"]:
 		check(hashes.has("game/"+path),"Baseline contains gameplay source: " + path)

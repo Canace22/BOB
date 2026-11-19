@@ -46,7 +46,7 @@ func _ready() -> void:
 	add_child(body)
 	data.actor = self
 	data.visual = self
-	visual = CorpseCrabVisual.new()
+	visual = create_visual()
 	visual.name = "Visual"
 	add_child(visual)
 	feedback = TideEnemyFeedback.new()
@@ -61,6 +61,9 @@ func _ready() -> void:
 	dust.hide()
 	add_child(dust)
 	_sync()
+
+func create_visual() -> CorpseCrabVisual:
+	return CorpseCrabVisual.new()
 
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(target): target = host.player

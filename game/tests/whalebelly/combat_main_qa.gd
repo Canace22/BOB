@@ -98,6 +98,8 @@ func run() -> void:
 	await tick(4)
 	press(KEY_D,true)
 	await tap(KEY_J)
+	await tick(4)
+	check("basic attack starts after chord window",p._offense_active())
 	var start: float = p.position.x
 	await tick(6)
 	check("ground basic attack remains planted",absf(p.position.x-start)<1.0)
@@ -118,6 +120,8 @@ func run() -> void:
 	crab.position = p.position+Vector2(70,0)
 	crab.data.pos = crab.position
 	crab.set_physics_process(true)
+	# 该单靶夹具只验证玩家命中与真实物理，敌人AI攻击由独立威胁路线验收。
+	crab.hold_left = 60.0
 	p.facing = 1.0
 	var count: int = p.hit_feedback.event_count
 	p.request_action("strike_01")
@@ -185,8 +189,9 @@ func run() -> void:
 	await tick(4)
 	var hp: int = int(boss.data.hp)
 	var boss_y: float = boss.position.y
-	p.request_action("wb_rise")
+	var accepted: bool=p.request_action("wb_rise")
 	await tick(12)
+	check("Boss skill starts through normal request",accepted)
 	check("Boss damage still follows original shell reduction",int(boss.data.hp)==hp-5)
 	check("Boss armor keeps tell pose and cannot be launched",boss.state=="tell" and is_equal_approx(boss.position.y,boss_y) and boss.feedback.power<6.0)
 	await shot("07-boss-feedback")
