@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/narrative/dialogue_trigger.gd" id="1"]
+
+[node name="OpeningNarrative" type="Node2D"]
+
+[node name="Arrival" type="Node2D" parent="."]
+script = ExtResource("1")
+dialogue_id = "opening.arrival"
+room_id = "R1-01"
+area = Rect2(0, 380, 390, 360)
+priority = 10
+speakers = PackedStringArray("旁白", "拾潮者")
+lines = PackedStringArray("拾潮者穿过巡视缝。鲸歌忽然断了，骨路旁却亮着一盏菌灯。", "那里有人留下的痕迹……先到灯旁看看。")
+objective_id = "opening.inspect_lamp"
+objective_text = "前往左侧菌灯旁 · 按 F 查看刻痕"
+
+[node name="LampInscription" type="Node2D" parent="."]
+script = ExtResource("1")
+dialogue_id = "opening.lamp"
+activation = 1
+room_id = "R1-01"
+area = Rect2(20, 430, 225, 250)
+required_seen = PackedStringArray("opening.arrival")
+speakers = PackedStringArray("灯旁刻痕", "拾潮者")
+lines = PackedStringArray("沿骨路向内走。聚食的甲壳靠近时，留意它扑空后的空隙。", "须板后面还有灯。这里仍有生命生活着。")
+prompt = "查看灯旁刻痕"
+objective_id = "opening.follow_road"
+objective_text = "沿右侧骨路前进 · 寻找更多灯光"
+
+[node name="DistantSong" type="Node2D" parent="."]
+script = ExtResource("1")
+dialogue_id = "opening.distant_song"
+activation = 2
+room_id = "R1-01"
+area = Rect2(460, 350, 420, 370)
+required_seen = PackedStringArray("opening.arrival")
+speakers = PackedStringArray("拾潮者")
+lines = PackedStringArray("低鸣又从骨路深处传来。拾潮者握住骨鸣器，循声向前。")
+objective_id = "opening.follow_song"
+objective_text = "沿右侧骨路追寻低鸣 · 前往须筛"
+subtitle_seconds = 5.0

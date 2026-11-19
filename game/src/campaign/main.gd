@@ -84,6 +84,7 @@ var ui_interactive_in_tests: bool = false
 var last_save_ok: bool = true
 var continuity: CampaignContinuity
 var streaming: CampaignRoomStream
+var dialogue: WhaleCampaignDialogue
 var actor_frame: Node2D
 
 func _ready() -> void:
@@ -115,6 +116,7 @@ func _ready() -> void:
 		push_error("No room data")
 		get_tree().quit(1)
 		return
+	ensure_dialogue()
 	continuity = CampaignContinuity.new()
 	continuity.host = self
 	add_child(continuity)
@@ -214,6 +216,8 @@ func _ready() -> void:
 			qa = true
 			qa_flow = true
 		if arg.begins_with("--qa-output="): qa_output = arg.trim_prefix("--qa-output=")
+	# 旧QA路线不被新增自动对话暂停；叙事专项与隔离试玩显式开启。
+	dialogue.enabled = not qa
 	if capture_path.is_empty() and not qa: load_progress()
 	else: room_index = capture_room
 	load_room(room_index)
@@ -710,12 +714,20 @@ func notify(text: String) -> void:
 	message_time = 4.0
 	if is_instance_valid(player_ui):player_ui.show_notice(text)
 
+func ensure_dialogue() -> void:
+	# 旧档迁移也会在宿主入树前调用load_progress；叙事状态仍由同一子节点持有。
+	if is_instance_valid(dialogue): return
+	dialogue = WhaleCampaignDialogue.new()
+	dialogue.host = self
+	add_child(dialogue)
+
 func save_progress(show_message: bool = true) -> void:
+	ensure_dialogue()
 	if practice and not qa:
 		last_save_ok = false
 		notify("练习状态不写入正式存档")
 		return
-	var payload: Dictionary = {"version": 6, "checkpoint": checkpoint, "collected": collected, "defeated": defeated, "abilities": abilities, "completed":completed,"visited":visited}
+	var payload: Dictionary = {"version": 6, "checkpoint": checkpoint, "collected": collected, "defeated": defeated, "abilities": abilities, "completed":completed,"visited":visited,"narrative":dialogue.to_save()}
 	last_save_ok = WhaleUISaveAccess.write(save_path(),payload) == OK
 	persist_events()
 	if not last_save_ok: notify("存档写入失败，请检查存储空间")
@@ -724,6 +736,8 @@ func save_progress(show_message: bool = true) -> void:
 func load_progress() -> void:
 	var payload: Dictionary = WhaleUISaveAccess.read(save_path(),rooms)
 	if payload.is_empty(): return
+	ensure_dialogue()
+	dialogue.restore(payload.get("narrative",{}))
 	checkpoint = payload.get("checkpoint", checkpoint)
 	room_index = clampi(int(checkpoint.room), 0, rooms.size() - 1)
 	completed = payload.get("completed",false)

@@ -1,0 +1,214 @@
+[
+  {
+    "id": "mouth-seam",
+    "label": "巡视缝入口",
+    "skin": 0,
+    "hint": "从鲸须外缘进入，沿菌灯照亮的须根向内探索。",
+    "doors": [
+      {
+        "to": "nest-court",
+        "label": "补巢者住巢庭",
+        "direction": "right",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "nest-court",
+    "label": "补巢者住巢庭",
+    "skin": 1,
+    "hint": "上层住巢共用道路，中央维护门通向旧巢修补台。",
+    "doors": [
+      {
+        "to": "mouth-seam",
+        "label": "巡视缝入口",
+        "direction": "left",
+        "shortcut": false
+      },
+      {
+        "to": "song-ledge",
+        "label": "低鸣须根台",
+        "direction": "right",
+        "shortcut": false
+      },
+      {
+        "to": "lower-nest",
+        "label": "旧巢修补台",
+        "direction": "down",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "song-ledge",
+    "label": "低鸣须根台",
+    "skin": 2,
+    "hint": "右侧通往滤缝支路，下行维护门通往松须窄廊。",
+    "doors": [
+      {
+        "to": "nest-court",
+        "label": "补巢者住巢庭",
+        "direction": "left",
+        "shortcut": false
+      },
+      {
+        "to": "loose-whisker",
+        "label": "松须窄廊",
+        "direction": "down",
+        "shortcut": false
+      },
+      {
+        "to": "filter-lookout",
+        "label": "滤缝观察窝",
+        "direction": "right",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "filter-lookout",
+    "label": "滤缝观察窝",
+    "skin": 1,
+    "hint": "滤缝深处的尽头，可以原路回到低鸣须根台。",
+    "doors": [
+      {
+        "to": "song-ledge",
+        "label": "低鸣须根台",
+        "direction": "left",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "loose-whisker",
+    "label": "松须窄廊",
+    "skin": 1,
+    "hint": "下层通路向左右分岔，上行门可以返回须根台。",
+    "doors": [
+      {
+        "to": "song-ledge",
+        "label": "低鸣须根台",
+        "direction": "up",
+        "shortcut": false
+      },
+      {
+        "to": "gate-watch",
+        "label": "守口前观察台",
+        "direction": "right",
+        "shortcut": false
+      },
+      {
+        "to": "lower-nest",
+        "label": "旧巢修补台",
+        "direction": "left",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "lower-nest",
+    "label": "旧巢修补台",
+    "skin": 2,
+    "hint": "旧巢外缘的修补道，上行运巢篮接回住巢庭。",
+    "doors": [
+      {
+        "to": "loose-whisker",
+        "label": "松须窄廊",
+        "direction": "right",
+        "shortcut": false
+      },
+      {
+        "to": "nest-court",
+        "label": "补巢者住巢庭",
+        "direction": "up",
+        "shortcut": false
+      },
+      {
+        "to": "supply-return",
+        "label": "战后运巢栈道",
+        "direction": "down",
+        "shortcut": true
+      }
+    ]
+  },
+  {
+    "id": "gate-watch",
+    "label": "守口前观察台",
+    "skin": 0,
+    "hint": "守口场上方的观察台，下行门通往宽底场地。",
+    "doors": [
+      {
+        "to": "loose-whisker",
+        "label": "松须窄廊",
+        "direction": "left",
+        "shortcut": false
+      },
+      {
+        "to": "jaw-arena",
+        "label": "夹须甲魁守口场",
+        "direction": "down",
+        "shortcut": false
+      }
+    ]
+  },
+  {
+    "id": "jaw-arena",
+    "label": "夹须甲魁守口场",
+    "skin": 3,
+    "hint": "本次只预览空间；到达后开放折井出口与回程栈道。",
+    "doors": [
+      {
+        "to": "gate-watch",
+        "label": "守口前观察台",
+        "direction": "up",
+        "shortcut": false
+      },
+      {
+        "to": "foldwell-mouth",
+        "label": "折井下行口",
+        "direction": "down",
+        "shortcut": false
+      },
+      {
+        "to": "supply-return",
+        "label": "战后运巢栈道",
+        "direction": "left",
+        "shortcut": true
+      }
+    ]
+  },
+  {
+    "id": "supply-return",
+    "label": "战后运巢栈道",
+    "skin": 2,
+    "hint": "从守口场接通的返程路，上行篮接回旧巢。",
+    "doors": [
+      {
+        "to": "jaw-arena",
+        "label": "夹须甲魁守口场",
+        "direction": "right",
+        "shortcut": true
+      },
+      {
+        "to": "lower-nest",
+        "label": "旧巢修补台",
+        "direction": "up",
+        "shortcut": true
+      }
+    ]
+  },
+  {
+    "id": "foldwell-mouth",
+    "label": "折井下行口",
+    "skin": 0,
+    "hint": "已到第一章出口；本示例到此为止，仍可原路返回探索。",
+    "doors": [
+      {
+        "to": "jaw-arena",
+        "label": "夹须甲魁守口场",
+        "direction": "up",
+        "shortcut": false
+      }
+    ]
+  }
+]

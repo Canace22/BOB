@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="doorway_script"]
 
@@ -10,6 +10,8 @@
 
 
 
+
+[ext_resource type="PackedScene" path="res://content/whalebelly/narrative/opening.tscn" id="opening_story"]
 
 [node name="R1-01" type="Node2D"]
 
@@ -66,3 +68,5 @@ height = 200.0
 art_offset = Vector2(-32, 0)
 radius = 120.0
 prompt_offset = Vector2(-32, -216)
+
+[node name="OpeningNarrative" parent="." instance=ExtResource("opening_story")]

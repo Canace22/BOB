@@ -17,6 +17,14 @@ static func read(path: String, rooms: Array) -> Dictionary:
 		if not (coordinate is int or coordinate is float) or not is_finite(float(coordinate)): return {}
 	for field: String in ["abilities", "collected", "defeated", "visited"]:
 		if value.has(field) and not value[field] is Dictionary: return {}
+	if value.has("narrative"):
+		var story: Variant = value.narrative
+		if not story is Dictionary: return {}
+		if not story.get("seen",{}) is Dictionary or not story.get("objective",{}) is Dictionary: return {}
+		for key: Variant in story.get("seen",{}):
+			if not key is String or not story.seen[key] is bool: return {}
+		for key: String in ["id","text","room"]:
+			if not story.get("objective",{}).get(key,"") is String: return {}
 	return value
 
 static func write(path: String, payload: Dictionary) -> Error:

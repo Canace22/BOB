@@ -9,6 +9,11 @@ const LT: Array[String] = ["wb_rise","wb_drive","wb_draw","wb_charge"]
 const RT: Array[String] = ["wb_flurry","cyclone","recover","A4_parry"]
 const BOTH: Array[String] = ["scan","A5_slit","heavy","crystal_dash"]
 const SELECT_WINDOW: float = 0.8
+const CHORD_WINDOW: float = 0.06
+const ACTION_BUFFER: float = 0.2
+var waiting_face: int = -1
+var face_age: float = 0.0
+var ready_face: int = -1
 var actor: TideCombatPlayer
 var saved: Dictionary = {}
 var suppress_modifiers: bool = false
@@ -21,6 +26,9 @@ var select_left: float = 0.0
 var chain_owned: bool = false
 
 func tick(dt: float) -> void:
+	# 在角色的命中停顿之前采样，避免停顿期间的点按丢失。
+	ready_face = -1
+	if waiting_face >= 0: face_age += dt
 	if suppress_modifiers:
 		if Input.is_action_pressed("wb_lt") or Input.is_action_pressed("wb_rt"): return
 		suppress_modifiers = false
@@ -32,6 +40,12 @@ func tick(dt: float) -> void:
 		select_left = SELECT_WINDOW
 		actor.skill_controller.input.clear()
 	if Input.is_action_just_pressed("ui_cancel"): consume_page()
+	for i: int in FACES.size():
+		if Input.is_action_just_pressed("wb_face_l" if i==3 else FACES[i]):
+			waiting_face = i
+			face_age = 0.0
+			actor.pending_action = ""
+			actor.pending_left = 0.0
 	var c := actor.skill_controller as TideCombatSkills
 	if c.drive_window <= 0.0 and actor.pending_action != "wb_drive": chain_owned = false
 
@@ -72,12 +86,19 @@ func modified() -> bool:
 	return effective_page() != 0
 
 func backstep_pressed() -> bool:
-	return not modified() and Input.is_action_pressed("tp_down") and Input.is_action_just_pressed("tp_dash")
+	if modified() or not Input.is_action_pressed("tp_down"): return false
+	# 在命中停顿前读取等待中的L，允许L→S；窗口过期后不重写已发出的位移。
+	var chord: bool = waiting_face == 3 and face_age <= CHORD_WINDOW
+	var shift: bool = Input.is_action_just_pressed("tp_dash") and not Input.is_action_just_pressed("wb_face_l")
+	return chord or shift
 
 func heal_held() -> bool:
 	return focus_owned and Input.is_action_pressed("tp_parry")
 
 func clear() -> void:
+	waiting_face = -1
+	ready_face = -1
+	face_age = 0.0
 	consume_page()
 	chain_owned = false
 	long_owned = false
@@ -90,6 +111,19 @@ func clear() -> void:
 	focus_owned = false
 
 func read(dt: float) -> bool:
+	if Input.is_action_just_pressed("tp_dash") and not Input.is_action_just_pressed("wb_face_l"):
+		_issue("A1_dash")
+		return true
+	if waiting_face >= 0:
+		# A/D+L仍可能补成更高优先级的后跳，不能因正在移动就提前结算撞击。
+		var direction: bool = (waiting_face==0 and (Input.is_action_pressed("tp_up") or Input.is_action_pressed("tp_down"))) or (waiting_face==1 and not is_zero_approx(actor.movement_axis()))
+		if backstep_pressed():
+			waiting_face = -1
+			actor.try_backstep()
+			return true
+		if effective_page() == 0 and not direction and face_age < CHORD_WINDOW: return true
+		ready_face = waiting_face
+		waiting_face = -1
 	var selection: int = effective_page()
 	var modifier: bool = selection != 0
 	if focus_owned and not heal_held():
@@ -103,27 +137,41 @@ func read(dt: float) -> bool:
 	if focus_owned or long_owned: return true
 	if not modifier:
 		# K专职三段，空格独立跳跃；方向由每次按K时的A/D决定。
-		if Input.is_action_just_pressed("wb_face_k"):
+		if ready_face == 1:
 			_issue("wb_drive")
 			return true
 		if backstep_pressed(): return true
 		# S+L后跳优先；只有真实L面键触发移动撞击，Shift仍可单独作基础冲刺。
-		if Input.is_action_just_pressed("wb_face_l") and not is_zero_approx(actor.movement_axis()):
+		if ready_face == 3 and not is_zero_approx(actor.movement_axis()):
 			_issue("wb_charge")
 			return true
 		# 方向派生在按下J时采样；空中下刺和冲刺接斩继续交给原输入内核。
-		if Input.is_action_just_pressed("tp_attack") and actor.state not in ["A1_dash","A5_slit"]:
+		if ready_face == 0 and actor.state not in ["A1_dash","A5_slit"]:
 			var upper: bool = Input.is_action_pressed("tp_up")
 			var sweep: bool = Input.is_action_pressed("tp_down") and actor.is_on_floor()
 			if upper or sweep:
 				actor.skill_controller.input.clear()
 				_issue("wb_rise" if upper else "wb_draw")
 				return true
+		if ready_face == 0:
+			var kernel: TideSkillInput = actor.skill_controller.input
+			var action: String="strike2" if kernel.combo_next else "strike_01"
+			if Input.is_action_pressed("tp_down") and not actor.is_on_floor(): action="A3_anchor"
+			if actor.state in ["A1_dash","A5_slit"]: action="dash_slash"
+			_issue(action)
+			kernel.combo_next = not kernel.combo_next
+			kernel.combo_left = 0.65
+			kernel.attack_tracking = true
+			kernel.attack_hold = 0.0
+			return true
+		if ready_face == 2 or ready_face == 3:
+			_issue("parry" if ready_face == 2 else "A1_dash")
+			return true
 		return backstep_pressed()
 	var page: Array[String] = BOTH if selection == 3 else (LT if selection == 1 else RT)
 	for i: int in FACES.size():
 		# 扳机先按或与面键同帧按均生效；保持面键不因切页再出第二招。
-		if not Input.is_action_just_pressed(FACES[i]): continue
+		if ready_face != i: continue
 		var action: String = resolve_action(page[i])
 		consume_page()
 		if action == "crystal_dash":
@@ -142,13 +190,15 @@ func _issue(action: String) -> void:
 	# 同帧方向与面键按下时，也按方向起手；失败不改掉当前动作的面向。
 	if not is_zero_approx(axis): actor.facing = signf(axis)
 	if actor.request_action(action):
+		actor.pending_action = ""
+		actor.pending_left = 0.0
 		if action == "wb_drive": chain_owned = true
 		return
 	actor.facing = previous_facing
 	# 复用角色的短输入缓存；冷却、资源和取消条件仍由request_action逐帧校验。
-	if actor._offense_active() and action != "recover":
+	if actor.state not in ["hit","defeat","recover","interact"] and action != "recover":
 		actor.pending_action = action
-		actor.pending_left = actor.jump_buffer_time
+		actor.pending_left = ACTION_BUFFER
 		if action == "wb_drive": chain_owned = true
 
 func _update_long(dt: float, held: bool) -> void:

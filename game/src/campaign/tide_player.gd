@@ -292,6 +292,8 @@ func _physics_process(dt: float) -> void:
 	was_grounded = grounded
 	if health > 0:
 		_read_input()
+		# 输入可能开启模态对话并交出控制，本物理帧也要停止，避免多走一步或补发动作。
+		if not controls_enabled: return
 		if not pending_action.is_empty() and request_action(pending_action): pending_action = ""
 		if jump_buffer > 0 and _can_jump_cancel(): _try_jump()
 	state_time += dt
