@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/narrative/chapter_one/loop.gd" id="loop"]
+[ext_resource type="Script" path="res://src/narrative/dialogue_trigger.gd" id="trigger"]
+[ext_resource type="Texture2D" path="res://art/world-kit/r4-bone-platform.png" id="bone"]
+[ext_resource type="Texture2D" path="res://art/whalebelly/runtime/v02/lamp.png" id="lamp"]
+
+[node name="ChapterLoop" type="Node2D"]
+script = ExtResource("loop")
+process_mode = 1
+
+[node name="Arrival" type="Node2D" parent="."]
+script = ExtResource("trigger")
+dialogue_id = "loop.arrival"
+room_id = "R1-01"
+area = Rect2(0, 380, 350, 360)
+speakers = PackedStringArray("旁白", "拾潮者")
+lines = PackedStringArray("拾潮者挤过巡视缝。鲸歌忽然断了，须板间却有灯光在动。", "有人在这里生活……先沿骨路去问问。")
+objective_id = "loop.find_resident"
+objective_text = "沿骨路向右 · 接近前方菌灯"
+
+[node name="FirstLamp" type="Sprite2D" parent="."]
+position = Vector2(440, 570)
+texture = ExtResource("lamp")
+scale = Vector2(0.23, 0.23)
+z_index = 21
+
+[node name="Warning" type="Node2D" parent="."]
+script = ExtResource("trigger")
+dialogue_id = "loop.warning"
+room_id = "R1-01"
+area = Rect2(360, 370, 270, 330)
+required_seen = PackedStringArray("loop.arrival")
+speakers = PackedStringArray("补巢者", "拾潮者", "补巢者")
+lines = PackedStringArray("你从外面来？前面两只甲壳守着菌膜。靠近它们就会扑过来，别让它们从两边夹住。", "低鸣是从那边传来的。我想进去看看。", "上面的骨台能看清它们。也可以从下路靠近，等它扑空，再过去。越过聚食区，我会从安全处叫住你。")
+objective_id = "loop.cross_feeding"
+objective_text = "穿过聚食区 · 抓扑空的机会压退或绕过甲壳"
+
+[node name="Observation" type="StaticBody2D" parent="."]
+position = Vector2(675, 435)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionPolygon2D" parent="Observation"]
+polygon = PackedVector2Array(-102, 0, 102, 0, 102, 12, -102, 12)
+one_way_collision = true
+
+[node name="Bone" type="Sprite2D" parent="Observation"]
+texture = ExtResource("bone")
+centered = false
+offset = Vector2(-640, -145)
+scale = Vector2(0.18, 0.18)
+z_index = 17
+
+[node name="InnerStep" type="StaticBody2D" parent="."]
+position = Vector2(965, 435)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Collision" type="CollisionPolygon2D" parent="InnerStep"]
+polygon = PackedVector2Array(-102, 0, 102, 0, 102, 12, -102, 12)
+one_way_collision = true
+
+[node name="Bone" type="Sprite2D" parent="InnerStep"]
+texture = ExtResource("bone")
+centered = false
+offset = Vector2(-640, -145)
+scale = Vector2(0.18, 0.18)
+z_index = 17
+
+[node name="SafeLamp" type="Sprite2D" parent="."]
+position = Vector2(1400, 648)
+texture = ExtResource("lamp")
+scale = Vector2(0.32, 0.32)
+z_index = 21
+
+[node name="Aftermath" type="Node2D" parent="."]
+script = ExtResource("trigger")
+dialogue_id = "loop.aftermath"
+room_id = "R1-01"
+area = Rect2(1280, -1000, 800, 3000)
+required_seen = PackedStringArray("loop.passage")
+speakers = PackedStringArray("补巢者", "拾潮者", "补巢者", "拾潮者")
+lines = PackedStringArray("你过来了。离开那片菌膜，它们就不再追了。", "低鸣又从脚下传来，像是隔着下面的空腔。这里有通往下层的路吗？", "前面那座骨拱就是下行通道，通向折井。守卫把更深处封了，你可以先去问路。", "那就从骨拱下去。我想找到这声音的源头，也想问问为什么要封路。")
+objective_id = "loop.go_foldwell"
+objective_text = "向右进入前方骨拱 · 通道向下通往折井"

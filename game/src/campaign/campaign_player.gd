@@ -128,6 +128,7 @@ func movement_collision_mask() -> int:
 
 func _read_input() -> void:
 	if spawn_lock_left>0:return
+	if Input.is_action_just_pressed("tp_interact") and host.dialogue.try_interact(): return
 	super._read_input()
 	if Input.is_action_just_pressed("jump") and not Input.is_action_just_pressed("tp_jump"):jump_buffer=jump_buffer_time
 	if Input.is_action_just_released("jump"):short_jump=true
@@ -268,6 +269,7 @@ func hurt(amount:int,fall:bool=false) -> void:
 		recoil_left=0
 
 func interaction_nearby() -> bool:
+	if host.dialogue.nearby()!=null: return true
 	if is_instance_valid(skill_controller.nearby_gate()): return true
 	var reward:Array=host.room.get("reward",[])
 	if reward.size()==2 and position.distance_to(host.point(reward))<100 and not host.collected.get(str(host.room.id),false):return true

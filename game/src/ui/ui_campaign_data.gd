@@ -14,6 +14,8 @@ func at_camp() -> bool:
 func prompt() -> String:
 	var p: Node2D = host.player
 	if not is_instance_valid(p) or p.health <= 0 or host.continuity.travelling: return ""
+	var speaker: WhaleDialogueTrigger = host.dialogue.nearby()
+	if speaker!=null: return speaker.prompt
 	var gate: Node = p.skill_controller.nearby_gate()
 	if is_instance_valid(gate): return "使用通行节点"
 	var reward: Array = host.room.get("reward", [])

@@ -1,6 +1,8 @@
 class_name WhaleCampaignUI
 extends CanvasLayer
 
+var dialogue_view: WhaleDialoguePanel
+var subtitle_label: Label
 var host: Node2D
 var player: TidePlayer
 var data := WhaleUICampaignData.new()
@@ -78,11 +80,15 @@ func _ready() -> void:
 	column.add_child(footer)
 	panel.resized.connect(func() -> void: WhaleUIPages.layout(self))
 	modal.hide()
+	WhaleDialoguePanel.install(self)
 	bind_player(host.player)
 
 func bind_player(next: TidePlayer) -> void:
+	var replaced: bool = is_instance_valid(player) and player!=next
 	if is_instance_valid(player) and player.stats_changed.is_connected(_stats): player.stats_changed.disconnect(_stats)
 	player = next
+	# 旧角色已退出树，先绑定新角色，再收回未完成对话，避免清理已销毁的战斗输入。
+	if replaced: host.dialogue.cancel()
 	player.stats_changed.connect(_stats)
 	_stats(player.health, player.soul)
 	location_left = 4.0
@@ -91,6 +97,7 @@ func bind_player(next: TidePlayer) -> void:
 		else: close_all()
 
 func _stats(hp: int, soul: int) -> void:
+	if hp<=0: host.dialogue.cancel()
 	health_value = hp
 	soul_value = soul
 
@@ -114,7 +121,7 @@ func open_conversation(title: String, lines: PackedStringArray, id: String = "")
 	conversation_id = id
 	open("conversation")
 func open(page: String, push: bool = true) -> void:
-	if busy: return
+	if busy or (not host.dialogue.active.is_empty() and page != "dialogue"): return
 	if page == "camp" and page_id.is_empty(): focus_history["camp"] = "LeaveCamp"
 	if page_id.is_empty() and not pending_resume:
 		previous_controls = player.controls_enabled
@@ -133,9 +140,14 @@ func open(page: String, push: bool = true) -> void:
 		body.remove_child(child)
 		child.queue_free()
 	modal.show()
+	subtitle_label.hide()
 	hud.visible = page == "conversation"
-	WhaleUIPages.build(self, page)
-	WhaleUIPages.layout(self)
+	if page=="dialogue":
+		modal.hide()
+		dialogue_view.show()
+	else:
+		WhaleUIPages.build(self, page)
+		WhaleUIPages.layout(self)
 	_focus_page.call_deferred()
 	host.record_event("ui_open", {"page":page})
 
@@ -160,6 +172,8 @@ func close_all() -> void:
 	page_id = ""
 	history.clear()
 	modal.hide()
+	dialogue_view.hide()
+	subtitle_label.show()
 	hud.show()
 	clear_input()
 	get_viewport().gui_release_focus()
@@ -196,6 +210,7 @@ func save_preferences() -> void:
 func _input(event: InputEvent) -> void:
 	if host.continuity.travelling or host.continuity.transition.active: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
+	if WhaleDialoguePanel.handle_key(self,event): return
 	if event.physical_keycode == KEY_ESCAPE:
 		if page_id.is_empty(): open("pause")
 		else: back()
@@ -228,9 +243,11 @@ func _process(dt: float) -> void:
 		resume_wait -= dt
 		var held: bool = false
 		for action: StringName in InputMap.get_actions():
-			if str(action).begins_with("tp_") or action in [&"left", &"right", &"jump", &"attack", &"interact", &"float", &"grapple"]:
+			if str(action).begins_with("tp_") or str(action).begins_with("wb_") or action in [&"left", &"right", &"jump", &"attack", &"interact", &"float", &"grapple"]:
 				held = held or Input.is_action_pressed(action)
+		if resume_wait<=0 and held: show_notice("松开移动或技能按键，恢复操作")
 		if resume_wait <= 0 and not held:
+			if notice_text=="松开移动或技能按键，恢复操作": notice_left=0.0
 			clear_input()
 			player.controls_enabled = previous_controls
 			get_tree().paused = previous_pause

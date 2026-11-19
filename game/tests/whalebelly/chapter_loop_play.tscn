@@ -1,0 +1,6 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://tests/fixtures/chapter_loop/R1-01.tscn" id="1"]
+[ext_resource type="Script" path="res://tests/whalebelly/chapter_loop_play.gd" id="2"]
+[node name="ChapterLoopPlay" type="Node2D"]
+script = ExtResource("2")
+[node name="LevelMap" parent="." instance=ExtResource("1")]
