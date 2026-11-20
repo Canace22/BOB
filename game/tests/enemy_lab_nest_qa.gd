@@ -1,0 +1,121 @@
+extends "res://tests/enemy_lab_eel_qa.gd"
+## 潜地路线和完整布卵连咬用真实输入应对；单卵站位明确为测试夹具。
+func plant(e: EnemyLabEel, x: float) -> EnemyLabNestEgg:
+	e.nest.locked_x=x
+	e.nest._spit(1)
+	var egg: EnemyLabNestEgg=e.nest.eggs.back().get_ref() as EnemyLabNestEgg
+	egg.landed=true
+	egg.global_position=Vector2(x,506)
+	egg.velocity=Vector2.ZERO
+	return egg
+
+func run() -> void:
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
+	lab=load("res://content/prototypes/enemy_lab/main.tscn").instantiate()
+	lab.profile_index=4
+	lab.auto_attack=false
+	lab.ranges=false
+	root.add_child(lab)
+	current_scene=lab
+	await tick(14)
+	check("menu exposes bite tail burrow and brood",lab.hud.move_menu.item_count==5)
+	var e: EnemyLabEel=await setup_eel()
+	e.begin_attack("eel_burrow")
+	await tick(35)
+	check("burrow begins with authored head-down pose",e.visual.texture==EnemyLabVisual.EEL_NEST and e.visual.pose_id==0)
+	await shot("eel-nest-dive-windup")
+	await tick(33)
+	check("underground travel shows soil instead of invisible active damage",e.state=="tunnel" and e.visual.pose_id==3 and not e.can_receive_hit())
+	await shot("eel-nest-tunnel")
+	var locked: float=e.nest.target_root
+	key(KEY_D,true)
+	await tick(45)
+	key(KEY_D,false)
+	check("actual movement cannot redirect locked emergence",e.nest.target_root==locked)
+	await tick(130)
+	check("actual late movement avoids burrow ambush",lab.player.health==5 and e.hit_count==0)
+	check("burrow finishes with visible damageable body",e.state=="idle" and e.can_receive_hit())
+	e=await setup_eel()
+	e.begin_attack("eel_burrow")
+	for i: int in 150:
+		await tick(1)
+		if e.state=="emerge": break
+	lab.player.facing=-e.facing
+	check("emergence offers visible anticipation before contact",e.state=="emerge" and e.visual.pose_id==4 and lab.player.health==5)
+	key(KEY_I,true)
+	await shot("eel-nest-emerge-warning")
+	# 等实际接触结果，不把固定观察帧当成伤害/格挡处理完成。
+	for frame: int in 90:
+		await tick(1)
+		if e.parry_count>0 or lab.player.health<5: break
+	key(KEY_I,false)
+	check("real I blocks committed emergence and opens counter",lab.player.health==5 and e.parry_count==1 and e.state=="recover")
+	await shot("eel-nest-emerge-block")
+	e=await setup_eel()
+	e.begin_attack("eel_brood")
+	await tick(48)
+	check("brood has separate inflated throat pose",e.visual.pose_id==9 and e.visual.texture==EnemyLabVisual.EEL_NEST)
+	await shot("eel-nest-throat")
+	await tick(41)
+	check("complete throat sequence throws exactly three sacs",e.nest.eggs_spawned==3 and e.nest.live_eggs==3)
+	await shot("eel-nest-three-eggs")
+	await tick(12)
+	key(KEY_S,true)
+	key(KEY_J,true)
+	await tick(24)
+	key(KEY_J,false)
+	key(KEY_S,false)
+	check("actual S+J clears planted brood before it bursts",e.nest.eggs_broken==3 and e.nest.eggs_burst==0)
+	await shot("eel-nest-cleared-lane")
+	await tick(25)
+	key(KEY_I,true)
+	await tick(38)
+	key(KEY_I,false)
+	check("actual guard interrupts first bite of full brood combo",e.parry_count==1 and e.state=="recover" and e.nest.bites==0)
+	check("clearing brood and guarding prevents health loss",lab.player.health==5)
+	await shot("eel-nest-combo-broken")
+	e=await setup_eel()
+	lab.player.position=Vector2(540,520)
+	var egg: EnemyLabNestEgg=plant(e,600)
+	key(KEY_J,true)
+	await tick(14)
+	key(KEY_J,false)
+	check("actual basic J breaks individual egg through shared hit path",e.nest.eggs_broken==1 and not is_instance_valid(egg))
+	e=await setup_eel()
+	lab.player.position=Vector2(630,520)
+	lab.player.facing=-1.0
+	plant(e,600)
+	key(KEY_I,true)
+	await tick(80)
+	key(KEY_I,false)
+	check("egg burst uses ordinary front guard and stance",lab.player.health==5 and e.nest.egg_blocks==1)
+	await shot("eel-nest-egg-block")
+	e=await setup_eel()
+	lab.player.position=Vector2(600,520)
+	plant(e,600)
+	await tick(45)
+	await shot("eel-nest-swelling-egg")
+	key(KEY_SPACE,true)
+	await tick(30)
+	key(KEY_SPACE,false)
+	await tick(10)
+	check("actual jump clears timed egg burst",lab.player.health==5 and e.nest.eggs_burst==1 and e.nest.egg_hits==0)
+	await shot("eel-nest-egg-jump")
+	e=await setup_eel()
+	lab.player.position=Vector2(600,520)
+	plant(e,600)
+	await tick(82)
+	check("ignored swelling sac actually damages once",lab.player.health==4 and e.nest.egg_hits==1)
+	e=await setup_eel()
+	e.begin_attack("eel_brood")
+	await tick(92)
+	key(KEY_R,true)
+	await tick(2)
+	key(KEY_R,false)
+	await tick(14)
+	check("actual R removes brood sacs and queued melee followups",not is_instance_valid(e) and get_nodes_in_group("enemy_lab_nest_eggs").is_empty())
+	print("ENEMY_LAB_NEST failures=",failures)
+	lab.queue_free()
+	lab=null
+	await tick(6)
+	quit(1 if failures else 0)

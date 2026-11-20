@@ -104,3 +104,57 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 - 房间名与门提示来自生成数据，字体子集脚本和覆盖测试已包含 `world/rooms.json`。Web 导出的 `include_filter` 已加入该文件。
 - 实机路线用 `tests/whalebelly/world_skeleton.gd`，`-- --reload-world` 验证独立进程读档，`-- --views` 只出定点截图。
 - 地图每区一页，节点坐标写在配方 `_world.json` 的 `map`，是底图上的比例位置。须门遗港页的底图是鲸头特写，其余各页共用全鲸剖面图，同一房间在这些页上用同一坐标。改坐标后看 `-- --views` 输出的五张地图截图；节点重叠和跨页不一致由 `test_campaign_world.gd` 检查。
+
+## 统一敌人试验场
+
+独立入口`game/content/prototypes/enemy_lab/main.tscn`，实现位于`game/src/prototypes/enemy_lab/`。`EnemyLab`拥有配置与整轮重建，`EnemyLabEnemy`拥有试验AI/碰撞/攻击阶段，`EnemyLabReactions`拥有敌人侧结算与控制，`EnemyLabDebug`只读适配实际窗口，`EnemyLabHUD`只发调试请求；玩家继承既有`CombatWhiteboxPlayer`，没有第二份技能/输入执行器。该实现只用于参数验证，不替换主线敌人，也不改主线奖励或存档。资源与实际操作见[试验场说明](../game/content/prototypes/enemy_lab/README.md)。
+
+敌人试验场的`EnemyLabSkills`只继承共用控制器调整持盾、迎击奖励与取消，不回写主线参数；`EnemyLabGuardFeedback`订阅格挡成功事件驱动已有位图/声音。三套新图集区域与pivot在`art/enemy-lab-readability-v1/atlas.json`，仅由试验场视觉器消费。
+
+试验场`EnemyLabAttackEffects`归单敌所有，监听阶段事件并复用已入库位图固定池；自身不执行伤害。`EnemyLabSkills`统一持有架势/恢复/破防，`update_combo`在非技能状态也推进恢复；攻击的压力/不可挡属性只在一次伤害分派期间注入并随即清理，主线控制器参数保持原值。
+
+试验场不可格挡前摇红光由EnemyLabVisual更新独立enemy_warning材质的danger参数，EnemyLabEnemy状态切换时即时清理，避免受击停顿导致残留。材质同时保留共用flash参数，普通攻击不启用danger；不绘地面或文字预警。
+
+`EnemyLabPredator`继承共用敌人命中/格挡/结算协议，独立拥有挂膜、锁定目标、物理飞行、落地后计时、受控后重建与回挂路线。主敌工厂按稳定ID对应的配置选择执行器；HUD与F1使用目录实际数量，不扩第二套玩家控制器。新场地的顶盖是实际碰撞，遮蔽状态限该场地，普通平地不提供隐藏避战区。
+
+捕食者的受压预算与逃离阶段由EnemyLabPredator独占，EnemyLabReactions通过control_window_open虚入口询问控制窗口，避免通用结算硬编码敌种。EnemyLabWaterOrb仅用于本次敌方水弹，复用玩家take_damage/格挡协议，以固定速度及连续线段碰撞推进；弱引用施放者，归整轮world销毁，不复制玩家弹体技能执行器。
+
+试验场`EnemyLabEel`独占长体头尾位置、端点选招与固定反击预算，继承原伤害/格挡/结束协议。整条身体只有一个`tide_targets`节点和一份生命，沿用玩家hit_targets实例去重；不生成多个会重复扣血的身体代理。头尾攻击矩形分别从稳定朝向派生，切换招式不瞬间镜像身体；起手覆盖通用面向玩家的朝向修改。收招预算跨hurt递减，control_window_open只在剩余预算内开放；不使用捕食者飞行/回挂流程。HUD敌人和招式菜单从目录派生，兼容两招与三招敌人。独立图集与统一缩放保留在enemy-lab-eel-v1，头抬高时同步扩大受击区域，普通前摇仍不用红光。
+
+
+缠巢扩招由`EnemyLabEelNestCycle`持有潜地路线、锁定落点、吐卵/两次扑咬衔接及专属时间轴，Eel继续唯一持有伤害/受控预算。潜行是根位置连续推进，土脊来自专用位图；朝向只在地下切换，出土前给完整露头准备。`EnemyLabNestEgg`是整轮world的独立可击碎目标，弱引用施放者，一枚一个目标ID，沿用玩家真实命中/反馈/格挡协议；投射阶段负责布巢，不隐含触碰伤害。一次胀裂先退目标/威胁组，再显示短暂碎膜，不能同一帧多次结算。NestCycle记录有界活卵计数并清理死亡/重置，旧卵不能漂进新一轮。HUD读取实际阶段与分段pulse，连咬被挡后从时间轴移除取消部分，不复制玩家控制器或主线剧情系统。
+
+
+Eel的中段连续命中反制归其take_hit入口，先执行原伤害/死亡结算，再在自动交战、中心80px内累计两次实际命中时取消旧动作并启动潜地准备。新动作清旧控制预算但不清伤害、不刷新后续受击的准备时钟；已有卵囊仍按原寿命处理。多端长体的验证必须覆盖身体中段原地真实J连打，不能只测两端单招；证据入口enemy_lab_eel_center_qa.gd。
+
+
+`EnemyLabWarden`持有执卫三招/二刺衔接、有限收招预算与出口检测；EnemyLabEnemy保留唯一伤害/架势结算，guard_reaction虚入口决定成功格挡后的阶段。默认实现保持原敌人立即收招，执卫首刺普通格挡只短停、保留后段，完美格挡才取消，不回滚伪造的收招状态。位图/时间轴读取实际pulse。执卫越过安全线时先自行非致死收束，再发reached_exit，由EnemyLab统一结束本轮其余敌人；route_passed在整轮重建处唯一重置。安全线结束优先于局部冻结与后段释放，不写主线进度或剧情。
+
+
+关卡压力样板由`EnemyLabPumpCourt`持有蓄压/泵送/泄压、反抽与F交互，仅terrain4显式创建。场景在角色前发布pump_drift，角色既有move_and_slide执行并归还基础速度；EnemyLabPumpVisual只读状态。该设施不驱动默认Boss技能，旧导压角色动作仅作历史制作资料保留。暂停/结束/R仍统一管理危险水路生命周期。
+
+按用户明确的模块边界，`EnemyLabWardenWater`是Boss自身能力所有者，持有三连射/龙卷/水遁、准备弱点和水体WeakRef；`EnemyLabWardenShot`负责有限寿命与贴地惯性追击，伤害/格挡仍走玩家共用入口。`weak_window`同时驱动黄色囊体Shader和背侧失压判定，Warden唯一hurt_rect在窗口中覆盖实际压囊，避免高亮部件不可打或多部件重复计伤。原捕食者水弹与新水体的线段检测集中在EnemyLabWaterTrace，伤害规则各自保留。
+
+默认选执卫进入平地，court为空、exit_enabled为false；手选窄道/膜泵样板才启退出线，terrain4才创建EnemyLabPumpCourt。关卡压力从自己的请求/交互推进，不再作为Boss水术释放器。Boss水术不读F，也不查询固定进水口/场景压力。先前场景交互接口仅在显式关卡样板中使用。
+
+
+`EnemyLabBeamGuard`独占封梁卫后撤、真实受击架叉/反推与有限破绽。`EnemyLabEnemy.armor_active`提供状态防护查询，`EnemyLabReactions`继续唯一持有半伤小数、伤害及死亡结算；旧甲/壳规则保持原值。封梁take_hit先调用共用结算，再检查真实received增量和存活，决定前侧启动新tell或背侧拆架，不读输入、不另建伤害控制器。HUD/Debug只读其pose/segments/snapshot；守势与反推前摇分开，已取消的反推从时间轴移除。整轮world持有生命周期，死亡与R清除旧队列，无出口胜利特判。
+
+封梁卫交战时，唯一玩家实例的world_collision_mask在原值上加入敌人层，阻挡正常步行穿胸；原phase_collision_mask不改，基础冲刺仍可穿过，跳跃可越背。只在创建封梁卫的独立整轮中启用，换敌/R销毁玩家后恢复原配置。追击漏洞取证必须记录实际根位置与碰撞mask，不用扩大背后伤害框代替方向判断。
+
+
+封梁卫主动格挡由`EnemyLabBeamDefense`持有短时防守、实际挡中确认、破防条件、单次回刃与独立金属碰撞反馈。BeamGuard的take_hit先请求此拦截器：成功格挡只登记真实接触/零伤害，不进入HP结算；非防守、重击、绕背、连续破防或已获反击奖励统一回到原Reactions伤害入口。破防先取消防御，再由原入口扣血/消费奖励/判断死亡，避免复制第二份HP与小数结算。防反只由实际命中触发，不读玩家输入；guard_contact保留一次计时，结束后进入独立0.55s tell，回斩为可格挡普通攻击。金属环归同一敌人节点所有，破防/死亡立即隐藏，R统一销毁。Debug与HUD只读实际阶段和计数，不用逻辑上的active阶段冒充防御持续时间。
+
+
+`EnemyLabElder`持有老守护者站稳/不稳护甲、四招选取、两次换握、有限收招预算与固定非致死结局。`EnemyLabElderCycle`只持有撑跃物理速度、实际落地后的新前摇、收柄回稳路线和回稳受压记录，不结算生命或复制玩家输入。护甲查询复用armor_active，半伤小数/奖励/死亡仍唯一由EnemyLabReactions处理；Elder.finish暂时屏蔽调试击杀选项，使解除武装仍存活。撑跃沿原move_and_slide推进，不改全局物理、不隐藏目标、不在空中无敌，也不在落地时补无前摇伤害。回稳受压只在实际received增加后处理，不能用J按键猜测。站位支撑来自自身长柄和回稳动作，固定柱/主闸机关保留给后续关卡接入。HUD/Debug只读cycle和实际pulse，不另外推进阶段。
+
+
+老守护者`EnemyLabElderMimic`是敌方能力适配器：订阅真实玩家skill_effect的release/land，以及旧orb/heavy的已确认animation_tag release；读取当前已执行技能数据快照，普通J和非攻击事件不学习。pending memory与当前copied数据分开，每次复制消费一份记录，后续释放不能改写正在施法的快照。复用玩家技能表的范围/脉冲/位移和已加载图集，敌方范围伤害唯一走EnemyLabEnemy.strike；没有第二份玩家输入/技能控制器，也不生成可战斗的克隆角色。EnemyLabElderEchoView只负责既有位图姿势提示和特效，不判定命中；MimicOrb以施法者WeakRef和连续WaterTrace检测执行有限射弹，复制者拥有有界弱引用列表，取消/格挡/结束/R统一清理。浮空只在共用strike确认实际伤害后应用，不穿过格挡和无敌。多段时间轴仍按真实active时钟推进，HUD读取源释放点画标记，不自己计时或发技能。
+
+
+当前最终Boss增量：EnemyLabElderRepertoire负责28个战斗/辅助执行入口的适配和本轮持久招式库，观测仍从实际执行事件进入，旧辅助动作分别依据即时位移start、后跳事件、治疗完成end；不将未释放的攻击start当作学习。选招按距离、上次复制与生命/治疗额度过滤，普通J不覆盖待复现特殊技；ElderMimic继续持有不可变当前复制快照和统一区域伤害。防御、移动免疫、有限治疗和探潮追赶增益由敌方适配器实现，既有Reactions唯一结算非格挡伤害。复制格挡只拦截轻击并记录接触，重/背击先取消防守再回原全额结算；免疫移动仅改本敌碰撞层，分离后恢复，不改玩家全局掩码。每三招一次有限回稳、最多两招的短收招衔接与0.16s待机归Elder，所有玩家已认可输入保持原值。
+
+EnemyLabPlayer新增all_skill_practice默认false的只限练习权限开关，由EnemyLab拥有并通过F7显式切换/跨R保留；默认super.skill_unlocked与主线存档保持原规则，不为Boss复制验证暗中解锁。全技能矩阵实际执行28个入口，不以枚举数量/数据构造冒充实测；对比频率的静止无敌夹具与可受伤自然交战必须分开报告。
+
+
+ElderEchoView补充action_echo实际身体层，原memory_pose只作蓄势提示。body_key/body_frame按复制源定义与技能分段计算，复用TideActionVisual.align_event和玩家离线foot_metadata，地面脚底与原角色一致，不新增GPU采样。动作/FX/伤害共用敌人根变换，EchoView不拥有物理/伤害；视觉上淡显施法者、前置显示青色主角幻影，结束clear统一隐藏各层并恢复caster Alpha。身体播放在无FX的技能也独立生效，不因frames.fx为空而跳过动作。完整动作资源原位复用，无第二玩家/目标或重复命中。

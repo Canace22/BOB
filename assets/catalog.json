@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 86,
-  "updatedAt": "2026-11-18",
+  "revision": 90,
+  "updatedAt": "2026-11-19",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -34775,6 +34775,322 @@
       },
       "integrationStatus": "integrated",
       "notes": "补齐本房配方重建所需元数据；既有运行外观保持。"
+    },
+    {
+      "id": "enemy-lab-readability-v1-forager",
+      "name": "食腐甲 · 试验场动作样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "动作样板",
+        "16帧",
+        "未美术验收"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-readability-v1/forager.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "036a4e6a852ba87fa9139fa661194ace028693c3aacb2c7e1b21b3d9460240ac",
+      "source": "assets/source/enemy-lab-readability-v1/forager.png",
+      "notes": "内置image_gen参考尸蟹材质重新绘制。4步行走+3套4关键帧；裁片与pivot见atlas.json，当前仅独立试验场。守卫经生成式清底，非像素保真。",
+      "animation": {
+        "columns": 4,
+        "rows": 4,
+        "frameCount": 16,
+        "metadata": "assets/runtime/sprites/enemy-lab-readability-v1/atlas.json"
+      },
+      "runtimeFile": "game/art/enemy-lab-readability-v1/forager.png"
+    },
+    {
+      "id": "enemy-lab-readability-v1-mudback",
+      "name": "栖污大甲 · 试验场动作样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "动作样板",
+        "16帧",
+        "未美术验收"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-readability-v1/mudback.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "58185ec3905d32d35b31664fc482c394a2beee1abc17879080f0dd4d47da7cfd",
+      "source": "assets/source/enemy-lab-readability-v1/mudback.png",
+      "notes": "内置image_gen参考尸蟹材质重新绘制。4步行走+3套4关键帧；裁片与pivot见atlas.json，当前仅独立试验场。守卫经生成式清底，非像素保真。",
+      "animation": {
+        "columns": 4,
+        "rows": 4,
+        "frameCount": 16,
+        "metadata": "assets/runtime/sprites/enemy-lab-readability-v1/atlas.json"
+      },
+      "runtimeFile": "game/art/enemy-lab-readability-v1/mudback.png"
+    },
+    {
+      "id": "enemy-lab-readability-v1-shell_guard",
+      "name": "负壳守卫 · 试验场动作样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "动作样板",
+        "16帧",
+        "未美术验收"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-readability-v1/shell_guard.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "76a9668a0cbfb373940d5ab7ee903311f9de7bfa7d9ab4b3d402a9df197472d3",
+      "source": "assets/source/enemy-lab-readability-v1/shell_guard.png",
+      "notes": "内置image_gen参考尸蟹材质重新绘制。4步行走+3套4关键帧；裁片与pivot见atlas.json，当前仅独立试验场。守卫经生成式清底，非像素保真。",
+      "animation": {
+        "columns": 4,
+        "rows": 4,
+        "frameCount": 16,
+        "metadata": "assets/runtime/sprites/enemy-lab-readability-v1/atlas.json"
+      },
+      "runtimeFile": "game/art/enemy-lab-readability-v1/shell_guard.png"
+    },
+    {
+      "id": "enemy-lab-predator-v1",
+      "name": "膜上捕食者 · 挂膜扑击样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "动作样板",
+        "16关键姿势",
+        "未美术验收"
+      ],
+      "status": "needs-work",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-readability-v1/membrane_hunter.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "71cb6defdd76073a1e1999c8974824230327821b55693ce95b6b9de27d2fdbbb",
+      "source": "assets/source/enemy-lab-predator-v1/membrane_hunter.png",
+      "runtimeFile": "game/art/enemy-lab-readability-v1/membrane_hunter.png",
+      "notes": "用户否定虫状形象，现由乌贼/水母融合版本替代；仅保留历史来源，不再作为当前捕食者形象。",
+      "animation": {
+        "frameCount": 16,
+        "columns": 4,
+        "rows": 4,
+        "metadata": "assets/runtime/sprites/enemy-lab-readability-v1/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-predator-squid-jelly-concept-v1",
+      "name": "膜上捕食者 · 乌贼水母融合概念",
+      "kind": "concept",
+      "region": "试验场",
+      "tags": [
+        "乌贼",
+        "水母",
+        "三姿态候选",
+        "非动画"
+      ],
+      "status": "accepted",
+      "target": "2d",
+      "file": "assets/source/enemy-lab-predator-squid-jelly-v1/concept-poses.png",
+      "source": "assets/source/enemy-lab-predator-squid-jelly-v1/concept-poses.png",
+      "sha256": "3e42da31f6e4e86cd86c7fa072be264143edc8c56c5bb56fd0ea7d97591bbd5b",
+      "notes": "用户已确认乌贼/水母融合形象。三姿态概念不作为逐帧；派生运行图集另见enemy-lab-predator-squid-jelly-runtime-v1。"
+    },
+    {
+      "id": "enemy-lab-predator-squid-jelly-runtime-v1",
+      "name": "膜上捕食者 · 乌贼水母动作图集",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "已确认形象",
+        "16关键姿势",
+        "动画待试玩"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-predator-squid-jelly-v1/membrane_hunter.png",
+      "source": "assets/source/enemy-lab-predator-squid-jelly-v1/membrane_hunter.png",
+      "runtimeFile": "game/art/enemy-lab-predator-squid-jelly-v1/membrane_hunter.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "8e9afd7288958370830e596055099573b822075c2e95537dd8ec7438c6fb7824",
+      "notes": "沿已确认概念生成的悬挂/斜扑/掠过/重坠四行姿势。统一比例和逐帧pivot，不改战斗参数；当前仍为动作样板，待实机认可。",
+      "animation": {
+        "frameCount": 16,
+        "columns": 4,
+        "rows": 4,
+        "metadata": "assets/runtime/sprites/enemy-lab-predator-squid-jelly-v1/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-eel-v1",
+      "name": "缠巢鳗 · 头尾动作样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "12关键姿势",
+        "头尾双端",
+        "待试玩"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-eel-v1/nest_eel.png",
+      "source": "assets/source/enemy-lab-eel-v1/nest_eel.png",
+      "runtimeFile": "game/art/enemy-lab-eel-v1/nest_eel.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "03bbacc782174cb9af17ad4cd08c1da95f0873f6bc3f782ae80ff1513a30e844",
+      "notes": "参考既有blind-eel重绘；三行分别为游动、颚部扑咬、回身扫尾。四关键帧动作样板，非完整逐帧动画，尚待用户形象与手感验收。",
+      "animation": {
+        "frameCount": 12,
+        "columns": 4,
+        "rows": 3,
+        "metadata": "assets/runtime/sprites/enemy-lab-eel-v1/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-eel-nest-v2",
+      "name": "缠巢鳗 · 潜地与布卵动作",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "潜地突击",
+        "吐卵围猎",
+        "动作样板"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-eel-nest-v2/nest_actions.png",
+      "source": "assets/source/enemy-lab-eel-nest-v2/nest_actions.png",
+      "runtimeFile": "game/art/enemy-lab-eel-nest-v2/nest_actions.png",
+      "sha256": "0e1380269d40ba6d6b17af4ed01aa3e402c6e5547fd5b8698a517c68bb7ba8a4",
+      "width": 1536,
+      "height": 1024,
+      "notes": "参考初版鳗图集重绘12关键姿势及4独立卵/土脊素材，补充潜地、出土、鼓喉；卵与土脊由程序驱动，未获用户审美验收。",
+      "animation": {
+        "frameCount": 12,
+        "columns": 4,
+        "rows": 3,
+        "metadata": "assets/runtime/sprites/enemy-lab-eel-nest-v2/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-warden-v1",
+      "name": "泵庭执卫 · 长柄动作候选",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "16关键姿势",
+        "非致死撤离",
+        "候选族形"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-warden-v1/pump_warden.png",
+      "source": "assets/source/enemy-lab-warden-v1/pump_warden.png",
+      "runtimeFile": "game/art/enemy-lab-warden-v1/pump_warden.png",
+      "sha256": "db6423c7dac1fe489fc77d54ea68a2440a23a7029bf628b129a409e5f9175c26",
+      "width": 1536,
+      "height": 1024,
+      "notes": "窄直立长柄守卫动作样板，参考已有素材材质独立生成；两栖外形为白盒候选，不固定正式族群。16姿势不等于完整高帧动画。",
+      "animation": {
+        "frameCount": 16,
+        "columns": 4,
+        "rows": 4,
+        "metadata": "assets/runtime/sprites/enemy-lab-warden-v1/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-pump-court-v2",
+      "name": "泵庭 · 膜泵关卡交互样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "8导压关键姿势",
+        "膜泵4状态",
+        "泄压瓣",
+        "程序驱动水流",
+        "关卡样板"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-pump-court-v2/pump_actions.png",
+      "source": "assets/source/enemy-lab-pump-court-v2/pump_actions.png",
+      "runtimeFile": "game/art/enemy-lab-pump-court-v2/pump_actions.png",
+      "sha256": "749c255a7bcb0749c09854d23f26d86c93a19dd3b3073ffba16168b4c3f71563",
+      "width": 1536,
+      "height": 1024,
+      "notes": "当前仅用于手选关卡样板，非默认Boss基础技能。含8个历史导压动作与8个独立泵/瓣/水流状态素材；原图保留，设施程序驱动，未获用户审美认可。",
+      "animation": {
+        "frameCount": 8,
+        "columns": 4,
+        "rows": 2,
+        "metadata": "assets/runtime/sprites/enemy-lab-pump-court-v2/atlas.json"
+      }
+    },
+    {
+      "id": "enemy-lab-warden-water-v3",
+      "name": "泵庭执卫 · 随身压囊水术",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "12水术关键姿势",
+        "水弹",
+        "水龙卷",
+        "水遁"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-warden-water-v3/water_actions.png",
+      "source": "assets/source/enemy-lab-warden-water-v3/water_actions.png",
+      "runtimeFile": "game/art/enemy-lab-warden-water-v3/water_actions.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "fe738ad39f3bbb38b2459bc399f392c51c31a9f7ed7e951b05efd342451f0a31",
+      "notes": "随身压囊三招各4关键姿势及4独立水术道具，图集不含场景膜泵/泄压瓣；仍为待试玩动作样板。"
+    },
+    {
+      "id": "enemy-lab-beam-guard-v1",
+      "name": "封梁卫 · 弧刃反追击动作样板",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "16关键姿势",
+        "架叉反推",
+        "退步回刃"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-beam-guard-v1/beam_guard.png",
+      "source": "assets/source/enemy-lab-beam-guard-v1/beam_guard.png",
+      "runtimeFile": "game/art/enemy-lab-beam-guard-v1/beam_guard.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5169dd1d3716e8aa4778554fea82ea0b6137097d2d44937f5a327a6b1264ae1e",
+      "notes": "独立低重心弧刃候选，16关键姿势，非高帧完整动作；主动格挡/防反复用既有架刃、受压、抬刃/斜斩姿势，碰撞环复用入库位图并程序驱动，尚待用户形象与手感认可。"
+    },
+    {
+      "id": "enemy-lab-elder-v1",
+      "name": "老守护者 · 撑柄控距动作候选",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "24关键姿势",
+        "换握反压",
+        "撑杆越身",
+        "非致死收束"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-elder-v1/elder_guardian.png",
+      "source": "assets/source/enemy-lab-elder-v1/elder_guardian.png",
+      "runtimeFile": "game/art/enemy-lab-elder-v1/elder_guardian.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1350d85e0830c8def819f4357e867588b30b7decb58cfa50bdb5068eaff7dd7b",
+      "notes": "独立高宽壳披轮廓，24关键姿势，含撑跃/回稳候选，非高帧动作；观招复现组合旧姿势与已入库玩家特效，程序驱动，族群和形象待用户认可。"
     }
   ]
 }
