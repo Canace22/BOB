@@ -12,6 +12,7 @@ const SHEETS: Dictionary={
 	"membrane_hunter":preload("res://art/enemy-lab-predator-squid-jelly-v1/membrane_hunter.png")}
 const EEL_NEST: Texture2D=preload("res://art/enemy-lab-eel-nest-v2/nest_actions.png")
 const WARDEN_WATER: Texture2D=preload("res://art/enemy-lab-warden-water-v3/water_actions.png")
+const ELDER_IDLE_FIXED: Texture2D=preload("res://art/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png")
 var metadata: Dictionary={}
 var pose_id: int=0
 
@@ -70,6 +71,10 @@ func present(enemy: EnemyLabEnemy) -> void:
 	var cell: Dictionary=meta.regions[pose_id]
 	var r: Array=cell.rect
 	region_rect=Rect2(r[0],r[1],r[2],r[3])
+	if id=="elder_guardian" and pose_id==22:
+		# 仅替换多画竖杆的立稳姿势，独立裁片保留原pivot和比例，其余动作仍用原图。
+		texture=ELDER_IDLE_FIXED
+		region_rect.position=Vector2.ZERO
 	var pivot: Array=cell.pivot
 	offset=Vector2(-float(pivot[0]),-float(pivot[1]))
 	modulate=Color("a2b1b7") if enemy.state=="ended" else Color.WHITE

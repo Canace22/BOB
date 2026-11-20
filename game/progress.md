@@ -2322,3 +2322,11 @@ F7全技能练习是新显式局部开关，默认false保持原chapter锁，开
 同轮并发主干补充：首次普通push在LFS上传13对象/26MB完成后被远端非快进拒绝，未强推。再次fetch发现634fc2de（19房生态/须门门框），已正常合并到当前结果，manifest/进度两处冲突保留双方；1508资源目标复核覆盖前次合并和最新生态。36个新增资源副本定向fetch并按SHA恢复，无剩余指针，字体重建为1238字/318572字节，覆盖双方新文本。前次d8d9b135仍在祖先链，新合并保留最新远端，原有其他工作树WIP未改。
 
 最终合并复跑入口：enemy-main-final-{check,tests}.log，check 0 error(s)，全量413 passed / 0 failed；最终原生34项通过，enemy-main-final-native.log，以上最终三份日志无SCRIPT ERROR/ERROR/FAIL/退出泄漏。前次407项和34原生均已通过但不代替最新状态。生态新增资源的CRLF按主干原格式保留，使用core.whitespace=cr-at-eol检查实际尾空白；本批新敌文本已统一LF。仅源代码推送，不执行Pages发布。
+
+## 2026-11-20 · 老守护者待机重复叉杆修复
+
+用户截图指出静止待机多出竖杆，定位为原图集pose22绘制问题。内置image_gen定向修正后，仅提取该帧270×203透明裁片，待机静止与回稳立稳共用，沿用pivot [192,201]和参考高度190；其他23帧、动作时序、输入和AI保持原样。来源、提示词、完整编辑原件和提取SHA记录在 assets/source/enemy-lab-elder-idle-fix-v1/，同步资源JSON/Markdown台账与manifest。未新增动画，未改Skill（单帧美术错误，无新增通用流程）。
+
+验证：check_project 0 error(s)；全量413 passed / 0 failed；原生GPU专项6项通过，左右朝向、原支点及裁片范围、回稳共用修正图、出招恢复原atlas。截图已人工检查两朝向无重复杆，主叉、透明边缘和接地正常。三份裁片SHA一致，原图集SHA未变。日志 elder-idle-fix-{check,tests,native}.log 无SCRIPT ERROR/ERROR/FAIL/退出泄漏；截图位于 build/qa/enemy-lab/elder-idle-fixed-*.png。音频沿用Dummy，本次未验声音。未提交、推送或发布。
+
+本轮用户授权提交合并与推送：fetch后目标origin/Vesion/V1.0.1与当前基线f50a448a一致，无新增主干差异需要合并；仅提交上述立稳帧修复与资源来源/台账。沿用同一代码与素材已完成的413项及6项原生验证，不发布Web。

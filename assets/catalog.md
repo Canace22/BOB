@@ -524,3 +524,7 @@ CampaignRoomEcology按19房配方提供固定根菌群、窄域逸泡、微粒�
 ## 2026-11-20 · 须门黑门视觉清除
 
 须门七房的 `PORTAL.png` 门体只承担视觉，不再在当前场景中引用或生成；入口逻辑和世界连接保留。R1-01～R1-07 场景的入口高度设为0，避免 `CampaignDoorway` 创建 inset/lip；不删除源素材文件。技术回归与截图见 `game/build/qa/ecology-in-scene-v2/`。
+
+## 2026-11-20 · 老守护者立稳帧修正
+
+[制作源与提取记录](source/enemy-lab-elder-idle-fix-v1/README.md)：内置image_gen删除pose22多画的竖直杆，仅提取独立透明裁片；待机静止和回稳立稳使用新裁片，保留原pivot与比例，其余23帧不变。已登记manifest和JSON台账；单帧修正，不记为新增动画。

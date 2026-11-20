@@ -36834,6 +36834,26 @@
       "height": 1254,
       "sha256": "1350d85e0830c8def819f4357e867588b30b7decb58cfa50bdb5068eaff7dd7b",
       "notes": "独立高宽壳披轮廓，24关键姿势，含撑跃/回稳候选，非高帧动作；观招复现组合旧姿势与已入库玩家特效，程序驱动，族群和形象待用户认可。"
+    },
+    {
+      "id": "enemy-lab-elder-idle-fix-v1",
+      "name": "老守护者立稳待机 · 删除重复竖杆",
+      "kind": "enemy",
+      "region": "试验场",
+      "tags": [
+        "单帧修正",
+        "待机",
+        "回稳"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png",
+      "source": "assets/source/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png",
+      "runtimeFile": "game/art/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png",
+      "width": 270,
+      "height": 203,
+      "sha256": "c75a136b604b3b713310f4dc12cef5848b3cea52a9e364298d5af9047fd6ab94",
+      "notes": "内置image_gen修正第22姿势多余竖杆，仅提取该帧替换，原图集/其余23姿势不变；同pivot和等比缩放。"
     }
   ]
 }
