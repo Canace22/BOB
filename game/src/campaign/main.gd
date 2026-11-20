@@ -84,10 +84,14 @@ var ui_interactive_in_tests: bool = false
 var last_save_ok: bool = true
 var continuity: CampaignContinuity
 var streaming: CampaignRoomStream
+var music: CampaignMusic
 var dialogue: WhaleCampaignDialogue
 var actor_frame: Node2D
 
 func _ready() -> void:
+	music = CampaignMusic.new()
+	music.name = "BackgroundMusic"
+	add_child(music)
 	var isolated := qa or integration_external_test or not capture_path.is_empty()
 	for argument: String in OS.get_cmdline_user_args():
 		isolated = isolated or argument.begins_with("--qa") or argument.begins_with("--capture")
@@ -341,6 +345,7 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 		enemies = incoming.enemies
 	else:
 		_create_room_enemies()
+	music.set_room(str(room.id), enemies)
 	bind_player_ui()
 	reference = Sprite2D.new()
 	reference.centered = false
@@ -629,6 +634,7 @@ func damage_enemy(enemy:Dictionary,amount:int) -> void:
 		elif is_instance_valid(enemy.visual): enemy.visual.visible = false
 		if enemy.boss:
 			defeated[enemy.key] = true
+			music.set_room(str(room.id), enemies)
 			var boss_grant: String = str(enemy.get("grants", "dash"))
 			abilities[boss_grant] = true
 			record_event("ability_unlocked", {"id":boss_grant})
@@ -657,7 +663,9 @@ func interact() -> void:
 			player.soul = player.max_soul
 			record_event("ability_unlocked", {"id":grant})
 			notify(str(room.get("reward_notice", "获得浮游（空中按住 %s）· 左门返回须筛" % WhaleUIStyle.key("float"))))
-			if grant == "ending" and (not qa or ui_interactive_in_tests): player_ui.open.call_deferred("ending")
+			if grant == "ending":
+				music.play_ending()
+				if not qa or ui_interactive_in_tests: player_ui.open.call_deferred("ending")
 		elif CampaignRelics.ITEMS.has(str(room.id)):
 			relics.refill(collected)
 			notify("获得%s · 护盾 %d/%d，营地可补满" % [CampaignRelics.reward_name(str(room.id)), relics.charges, CampaignRelics.capacity(collected)])

@@ -1,0 +1,88 @@
+{
+  "family": "soft-tissue",
+  "asset_only": true,
+  "tool_mode": "built-in",
+  "date": "2026-11-15",
+  "generator_model": "not exposed by built-in tool",
+  "references": [
+    {
+      "path": "G:/鲸落万物生/outputs/鲸落万物生_V5.2_简明设计文档/images/11_R1-05.png",
+      "role": "viewed style/material reference; new generation used contextual prompt, no referenced_image_paths parameter"
+    },
+    {
+      "path": "G:/鲸落万物生/BOB/game/build/qa/xumen-source-style-v2/visual-R1-05-overview.png",
+      "role": "viewed negative structural reference; retain existing gameplay and collider arrangement"
+    }
+  ],
+  "generations": [
+    {
+      "id": "tissue-ridge-v01",
+      "prompt_file": "tissue-ridge.prompt.txt",
+      "result_key": "ridge_result",
+      "file": "tissue-ridge-v01.png",
+      "operation": "generate",
+      "reference_parameter": null,
+      "review": "rejected-padding",
+      "reason": "alpha32 visible margin below ~6%; kept for provenance",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b as C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b\\exec-711337f1-1209-436c-8176-b5417cd07819.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "tissue-ridge",
+      "prompt_file": "tissue-ridge-v02.prompt.txt",
+      "result_key": "ridge_revision_result",
+      "file": "tissue-ridge.png",
+      "operation": "edit",
+      "reference_parameter": [
+        "G:/鲸落万物生/BOB/assets/source/xumen-structure-redesign-v1/soft/tissue-ridge-v01.png"
+      ],
+      "review": "candidate",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b as C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b\\exec-542bfe30-a597-4d36-8f04-eb2769a0cc70.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "tissue-vault-v01",
+      "prompt_file": "tissue-vault.prompt.txt",
+      "result_key": "vault_result",
+      "file": "tissue-vault-v01.png",
+      "operation": "generate",
+      "reference_parameter": null,
+      "review": "rejected-padding",
+      "reason": "left/right visible margin insufficient",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b as C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b\\exec-7376da1f-d8b9-47b7-951e-9998ec811bf6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "tissue-vault-v02",
+      "prompt_file": "tissue-vault-v02.prompt.txt",
+      "result_key": "vault_revision_result",
+      "file": "tissue-vault-v02.png",
+      "operation": "edit",
+      "reference_parameter": [
+        "G:/鲸落万物生/BOB/assets/source/xumen-structure-redesign-v1/soft/tissue-vault-v01.png"
+      ],
+      "review": "rejected-core",
+      "reason": "700 alpha<32 pixels in visible-bbox central70% by80%; shallow upper edge valleys",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b as C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b\\exec-8574d72d-db04-4b47-9ebd-fd4ef7e583d1.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "tissue-vault",
+      "prompt_file": "tissue-vault-v03.prompt.txt",
+      "result_key": "vault_core_result",
+      "file": "tissue-vault.png",
+      "operation": "edit",
+      "reference_parameter": [
+        "G:/鲸落万物生/BOB/assets/source/xumen-structure-redesign-v1/soft/tissue-vault-v02.png"
+      ],
+      "review": "candidate",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b as C:\\Users\\Kingsoft\\.codex\\generated_images\\01a1ded9-4f7b-76b0-8edb-b0488586487b\\exec-7501dd23-6a79-490e-ba42-dccd7178e544.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

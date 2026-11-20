@@ -1,0 +1,358 @@
+[
+  {
+    "name": "original-ledge",
+    "upstream_catalog_id": "r1-tongue-ledge",
+    "source": "assets/runtime/sprites/r1-tongue-ledge/base.png",
+    "runtime": "assets\\runtime\\scenes\\xumen-original-style-v1\\original-ledge.png",
+    "game": "game\\art\\xumen-original-style-v1\\original-ledge.png",
+    "size": [
+      2162,
+      727
+    ],
+    "sha256": "09251b78a011f862dbb0ef9adb26f828fa5e382643cb018d03f83bbe6493cc54",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "alpha_bboxes": {
+      "1": [
+        0,
+        0,
+        2158,
+        727
+      ],
+      "8": [
+        59,
+        132,
+        2102,
+        665
+      ],
+      "32": [
+        59,
+        132,
+        2102,
+        665
+      ],
+      "128": [
+        60,
+        133,
+        2101,
+        664
+      ]
+    },
+    "upstream_source": {
+      "batchId": "whalefall-v5-2-static-01",
+      "method": "内置 imagegen；按用户指定设计参考重绘",
+      "references": [
+        "assets/source/whalefall-v5-2-static-01/references/08_R1-02.png"
+      ],
+      "prompts": [
+        "assets/source/r1-tongue-ledge/r1-tongue-ledge_v01.txt"
+      ],
+      "designUrls": [
+        "http://10.11.140.20:8765/simple/",
+        "http://10.11.140.20:8765/full/"
+      ],
+      "originalId": "r1-tongue-ledge_v01",
+      "rights": "用户指定设计并要求用于 BOB；未附独立第三方授权文件"
+    },
+    "upstream_prompts": [
+      {
+        "source": "assets/source/r1-tongue-ledge/r1-tongue-ledge_v01.txt",
+        "local_copy": "assets\\source\\xumen-original-style-v1\\prompts-upstream\\r1-tongue-ledge-01.txt",
+        "text": "Use case: stylized-concept. Asset type: ONE isolated modular 2D side-view PLAYABLE PLATFORM from reference R1 whale-mouth scene. Create a single elongated horizontal thick organic tongue ledge, width about 5 times thickness, useful for game assembly. Match reference's muted coral/mauve inert tongue surface over aged porous ivory shell-like tissue underside, dark indigo ink edges, sparse small attached colony tubes ONLY on sides/underside. Dominant TOP CONTACT EDGE is almost straight and horizontal, clean and continuously softly lit; not a jagged cliff top, not a staircase, no plants on standing area. Left and right ends taper naturally but keep broad central flat playable top. Camera flat side view with only slight top lip visibility as in reference. Entire object within transparent canvas with 8% margins, no crop. Reference is style/material, do not copy its whole layout. Hand-painted matte gouache and clear ink silhouettes; cool light upper left, restrained warm bone rim. Do not include hero, enemies, camp, red rope, background water, cast shadow, floor patch, labels, text or effects. True transparent background.\n",
+        "sha256": "8fbd0f9d338ee5739ed9b34a426e232ad9e7e158f265e5133d1c14be6d5fc179"
+      }
+    ],
+    "pivot": [
+      1081,
+      194
+    ],
+    "copied_without_pixel_edits": true
+  },
+  {
+    "name": "original-membrane",
+    "upstream_catalog_id": "r1-weight-membrane",
+    "source": "assets/runtime/sprites/r1-weight-membrane/base.png",
+    "runtime": "assets\\runtime\\scenes\\xumen-original-style-v1\\original-membrane.png",
+    "game": "game\\art\\xumen-original-style-v1\\original-membrane.png",
+    "size": [
+      2162,
+      727
+    ],
+    "sha256": "6dcde8238744601dc4c0827926b3a6289df44e8b21edde51b33bbb7878eb208f",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "alpha_bboxes": {
+      "1": [
+        51,
+        11,
+        2116,
+        727
+      ],
+      "8": [
+        54,
+        169,
+        2111,
+        576
+      ],
+      "32": [
+        54,
+        169,
+        2110,
+        576
+      ],
+      "128": [
+        54,
+        170,
+        2109,
+        575
+      ]
+    },
+    "upstream_source": {
+      "batchId": "whalefall-v5-2-complete",
+      "method": "内置imagegen；按指定设计参考重绘",
+      "references": [
+        "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+      ],
+      "prompts": [
+        "assets/source/r1-weight-membrane/r1-weight-membrane.txt"
+      ],
+      "sourceFiles": [],
+      "designUrls": [
+        "http://10.11.140.20:8765/simple/",
+        "http://10.11.140.20:8765/full/"
+      ],
+      "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+    },
+    "upstream_prompts": [
+      {
+        "source": "assets/source/r1-weight-membrane/r1-weight-membrane.txt",
+        "local_copy": "assets\\source\\xumen-original-style-v1\\prompts-upstream\\r1-weight-membrane-01.txt",
+        "text": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals. Subject: ONE small suspended load-bearing tongue membrane tile, stable UNLOADED state. A horizontally stretched muted rose-pink fleshy membrane connects two rough ivory tissue tabs at the far left and far right; nearly level slightly bowed upper surface, thin tendon fibers beneath, small organic wrinkles. Two support tabs and the bridge between form one joined object, no columns down to ground, no ropes, no organisms. Keep silhouette a broad low horizontal platform, about 5U wide; top center initially level and clearly walkable. It will later have a pressed-state variant. Full transparent padding all sides.\n",
+        "sha256": "78042f9598cd0adf3a1c1cf22692cd6d0599498be8e610d5de97959a0068caca"
+      }
+    ],
+    "pivot": [
+      1082.5,
+      576
+    ],
+    "copied_without_pixel_edits": true
+  },
+  {
+    "name": "original-membrane-pressed",
+    "upstream_catalog_id": "r1-weight-membrane-pressed",
+    "source": "assets/runtime/sprites/r1-weight-membrane-pressed/base.png",
+    "runtime": "assets\\runtime\\scenes\\xumen-original-style-v1\\original-membrane-pressed.png",
+    "game": "game\\art\\xumen-original-style-v1\\original-membrane-pressed.png",
+    "size": [
+      2162,
+      727
+    ],
+    "sha256": "8a3714f8f11e6bf2335d9beedc9c6912dd385e29a86c6fca29f006c2831d1d86",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "alpha_bboxes": {
+      "1": [
+        49,
+        104,
+        2096,
+        598
+      ],
+      "8": [
+        53,
+        165,
+        2092,
+        593
+      ],
+      "32": [
+        54,
+        165,
+        2092,
+        593
+      ],
+      "128": [
+        54,
+        166,
+        2091,
+        592
+      ]
+    },
+    "upstream_source": {
+      "batchId": "whalefall-v5-2-complete",
+      "method": "内置imagegen；按指定设计参考重绘",
+      "references": [
+        "assets/source/whalefall-v5-2-complete/references/09_R1-03.png"
+      ],
+      "prompts": [
+        "assets/source/r1-weight-membrane-pressed/r1-weight-membrane-pressed.txt"
+      ],
+      "sourceFiles": [],
+      "designUrls": [
+        "http://10.11.140.20:8765/simple/",
+        "http://10.11.140.20:8765/full/"
+      ],
+      "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+    },
+    "upstream_prompts": [
+      {
+        "source": "assets/source/r1-weight-membrane-pressed/r1-weight-membrane-pressed.txt",
+        "local_copy": "assets\\source\\xumen-original-style-v1\\prompts-upstream\\r1-weight-membrane-pressed-01.txt",
+        "text": "Precise state variant of the provided isolated load-bearing membrane sprite. Keep exactly the same canvas, width, camera, side support tabs, material palette, ink texture and transparent background. Change ONLY the central soft bridge: bow it downward distinctly as under weight, a deep smooth U curve between the unchanged fixed ends, about 0.8U below its unloaded level across a 5U width. Stretch the central rose tissue and pale connecting fibers naturally; no tearing and no added object, no character weight drawn. Keep both end tabs at exactly their previous heights and horizontal positions. Everything else is preserved. One complete static PRESSED state, not a sequence or multi-panel image. Genuine transparency.\n",
+        "sha256": "bf980a61b4ac6c8b8f480fe8930f8c962213bb6ae19f485ac4ebb2c06166789b"
+      }
+    ],
+    "pivot": [
+      1072.5,
+      593
+    ],
+    "copied_without_pixel_edits": true
+  },
+  {
+    "name": "original-bone-ledge",
+    "upstream_catalog_id": "r1-nasal-wall",
+    "source": "assets/runtime/sprites/r1-nasal-wall/base.png",
+    "runtime": "assets\\runtime\\scenes\\xumen-original-style-v1\\original-bone-ledge.png",
+    "game": "game\\art\\xumen-original-style-v1\\original-bone-ledge.png",
+    "size": [
+      2060,
+      763
+    ],
+    "sha256": "eefa026219e502c00196eb9cbb09bc65d6c31f7e7b2f6efa612c37efe23e840a",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "alpha_bboxes": {
+      "1": [
+        49,
+        7,
+        2024,
+        727
+      ],
+      "8": [
+        59,
+        72,
+        1998,
+        716
+      ],
+      "32": [
+        61,
+        72,
+        1998,
+        716
+      ],
+      "128": [
+        61,
+        73,
+        1997,
+        715
+      ]
+    },
+    "upstream_source": {
+      "batchId": "whalefall-v5-2-complete",
+      "method": "内置imagegen；按指定设计参考重绘",
+      "references": [
+        "assets/source/whalefall-v5-2-complete/references/12_R1-06.png"
+      ],
+      "prompts": [
+        "assets/source/r1-nasal-wall/r1-nasal-wall.txt"
+      ],
+      "sourceFiles": [],
+      "designUrls": [
+        "http://10.11.140.20:8765/simple/",
+        "http://10.11.140.20:8765/full/"
+      ],
+      "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+    },
+    "upstream_prompts": [
+      {
+        "source": "assets/source/r1-nasal-wall/r1-nasal-wall.txt",
+        "local_copy": "assets\\source\\xumen-original-style-v1\\prompts-upstream\\r1-nasal-wall-01.txt",
+        "text": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals. Subject: one broad asymmetrical curved slab of solid pale silver-ivory cranial bone and attached bluish-lilac nasal lining, with a clearly thick CLOSED septum ridge dividing two shallow surface grooves, not holes. This is an exterior wall / septum landmark for the dead whale's upper nasal tract, not a doorway. Subtle weathered cracks and rough torn membrane margin, no ornamental giant holes, no teeth, no baleen and no air spout. Keep all portions within transparent padding, one joined wall component.\n",
+        "sha256": "cd7b9795fc17f4d0abc8d7f9412620da0e4abd2094074a83b145e351ae5cdac8"
+      }
+    ],
+    "pivot": [
+      1028.5,
+      716
+    ],
+    "copied_without_pixel_edits": true
+  },
+  {
+    "name": "original-soft-ledge",
+    "upstream_catalog_id": "r2-membrane-platform",
+    "source": "assets/runtime/sprites/r2-membrane-platform/base.png",
+    "runtime": "assets\\runtime\\scenes\\xumen-original-style-v1\\original-soft-ledge.png",
+    "game": "game\\art\\xumen-original-style-v1\\original-soft-ledge.png",
+    "size": [
+      2162,
+      727
+    ],
+    "sha256": "153d9ed57a55d3dc4c997b5f62079a9f726b286bf0af72789bb564562d27ba96",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "alpha_bboxes": {
+      "1": [
+        58,
+        37,
+        2144,
+        596
+      ],
+      "8": [
+        60,
+        192,
+        2102,
+        592
+      ],
+      "32": [
+        60,
+        193,
+        2102,
+        592
+      ],
+      "128": [
+        61,
+        193,
+        2102,
+        591
+      ]
+    },
+    "upstream_source": {
+      "batchId": "whalefall-v5-2-complete",
+      "method": "内置imagegen；按指定设计参考重绘",
+      "references": [
+        "assets/source/whalefall-v5-2-complete/references/15_R2-01.png",
+        "assets/source/whalefall-v5-2-complete/references/16_R2-02.png"
+      ],
+      "prompts": [
+        "assets/source/r2-membrane-platform/r2-membrane-platform.txt"
+      ],
+      "sourceFiles": [],
+      "designUrls": [
+        "http://10.11.140.20:8765/simple/",
+        "http://10.11.140.20:8765/full/"
+      ],
+      "rights": "用户指定设计并要求用于BOB；原文未明确的造型适配另行注明。"
+    },
+    "upstream_prompts": [
+      {
+        "source": "assets/source/r2-membrane-platform/r2-membrane-platform.txt",
+        "local_copy": "assets\\source\\xumen-original-style-v1\\prompts-upstream\\r2-membrane-platform-01.txt",
+        "text": "Use case: stylized-concept. Asset type: ONE isolated 2D game environment sprite on genuinely TRANSPARENT background, reference-guided redraw. Image1 supplies intended organ material and shape language; Image2 is the established delivered asset's matte gouache, clean dark ink contours, fine hand-painted texture and side-view only, do not copy its anatomy. Side-scrolling camera, very slight top-face visibility only where appropriate. Draw one complete coherent object with about 8% clear transparent padding, no scene, no floating multiple objects, no contact shadow or colored haze outside the silhouette. Full object uncropped. No characters, creatures, shelters, lamps, red ropes, rewards, symbols, labels, UI, ground patch, water or backdrop. No human stonework or invented portals. Subject: ONE reusable stable pulmonary-membrane ledge, 8U wide, long low horizontal span. Dusty mauve and muted pale-rose soft tissue rim gives a continuous nearly level illuminated contact edge; below it hang a few thin triangular blue-gray translucent pleural webs joined organically, not bone or stone. Low vertical thickness (about quarter of width), broad quiet standing area, no plants, crystal, light source or rope. All dangling web tips within transparent padding. Same 2D side-view material fidelity as Image1, clean silhouette.\n",
+        "sha256": "67ad761908faba785140234b346e74774fd2b36bed2137d2bd60fa94dee11572"
+      }
+    ],
+    "pivot": [
+      1081,
+      592
+    ],
+    "copied_without_pixel_edits": true
+  }
+]

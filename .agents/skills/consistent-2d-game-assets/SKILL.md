@@ -5,6 +5,16 @@ description: Generate, extract, validate, and deliver consistent 2D game assets 
 
 # Consistent 2D Game Assets
 
+AI视频参考与游戏动作验收分开：实际解码时长／帧数／音轨，保留平台原件；若只需无声副本，可copy视频流去音轨并比较压缩视频流哈希，不必重编码画面。逐时刻检查身份、镜头、接触点与局部反馈，成功返回URL不代表服从设计。原图带人物而模型未遵守排除提示、受击片后段追镜等偏差必须如实保留，不能据此声称已能接入。两片原件／提示词／同节点换模型记录与验证脚本见[血巢视频V1](../../../assets/source/bloodnest-combat-video-v1/README.md)。
+
+群体小生物须先以真实游戏尺寸核对头胸／腹节／触须比例，再设计群体。高分辨率长触须图直接线性缩小会出现细线和采样闪烁；优先修形体色块、缩短画布占比，再用等比导出与mipmap，不能用堆数量补救。参考补绘原件、两个生成提示词、512运行副本和实机证据见[血巢V5](../../../assets/source/bloodnest-animation-v5/README.md)；程序群体与逐帧动作分别登记。
+
+背景复刻先对器官大形／色块／光向，再清理烘焙动态对象并独立接回。长触须生物的整体Alpha宽不等于躯干宽，要在真实镜头复核；背景群游的身体局部动作与整体路径分别测。原17／18重建、四件源及最终GPU证据见[肺心V4](../../../assets/source/r2-reference-motion-v4/README.md)。
+
+原画引导透明分件不能只检查Alpha通道存在：在目标深色背景上看白雾／残底，并按实际空洞采样；静态装饰误生锚环会暗示玩法，应去掉。洞框若在全景露出外裁线，先核对实际视域长宽比并等比覆盖，不拉伸源图。六件新图、失败候选及266项实机证据见[建筑V3](../../../assets/source/reference-architecture-v3/README.md)。
+
+后续区域恢复原画时，同源完整depth与透明far应二选一渲染；全景按整房覆盖，另查跟随四边。等比缩小的工作位导出不能记录为与原件字节相同；保留原件SHA、声明max尺寸，并检查实际导出。居民截图将玩家放在交互半径内的侧方，避免两者站在同一点遮住身份。BOB已验证实例见[后续十二房](../../../assets/source/remaining-19-v2/README.md)。
+
 Produce reusable 2D game assets that still look native after deterministic placement in the target game scene.
 
 ## BOB project routing
@@ -93,4 +103,15 @@ For reference-video refinements, keep static placement invariant and change loca
 
 ## Scene and environment production routing
 
+Compare each object with its reference, rather than selecting materials from a room name: a grey nasal wall can surround red tissue ledges; a soft-organ room can contain thick living terraces. When replacing a doorway with a source crop, record visible alpha bounds and its own threshold region. Reuse a nearby camp/door visual when both occupy the same source alcove, retaining their original logic; do not duplicate two unrelated lit props. Scoped BOB evidence: `assets/source/xumen-source-style-v2/`.
+
+When preserving an original design on a redesigned level, compare visual mass as well as source texture names. A native wide ledge shrunk onto a narrow landing may become a thin shelf. A larger uniformly scaled native plate cropped below the frozen walking top can restore organ volume, provided its bright duplicate top edge is hidden and real routes remain clear. Verify actual framebuffer contribution and body/landing occlusion; record source rules versus explicit user overrides. See the scoped BOB evidence in `assets/source/xumen-outputs-preservation-v1/`.
+
+For original-style restoration on a redesigned map, preserve the user's chosen live rules and assign references explicit roles. An older art document may carry a different ability chain. Prefer source-native organ pieces over tinting one generic platform across every room; verify opaque structural cores independently of total alpha bounds. A broad decorative shoulder or translucent fringe cannot fill a solid collider just because the bitmap bbox fits. Use transparent, clean pieces for new framing rather than crops containing baked water; retain originals and rejected candidates. The BOB `xumen-original-style-v1` batch records source-byte checks, exact geometry preservation, composite painted-core checks and actual renderer views. These establish technical integration, not user art approval.
+
 For scene construction, reference-scene reconstruction or an environmental motion element, apply [scene-environment-motion](../scene-environment-motion/SKILL.md) for proactive identification, method selection, production and evidence-backed learning. Retain this skill's asset/style consistency checks without starting a competing pipeline.
+
+
+### 柱体重设计的实心范围与接缝验证
+
+装饰帽不能代替实体障碍的自然轮廓；冻结碰撞后，应为主体制作足够实心的位图，按可见core等比配准。像素覆盖检查要逆完整父链变换，并计入旋转、offset和region，不能只减位置除scale。高位结构反复叠片会形成横线，能用一张完整位图延续到洞顶时优先整体；必要的连接留在后层并验证透明接边。静帧、真实输入路线和用户审美分别记录。BOB柱体重设计批次已有134项单测、GPU镜头与牵引／低顶路线证据；新轮廓尚待用户审阅，详见assets/source/xumen-structure-redesign-v1/。

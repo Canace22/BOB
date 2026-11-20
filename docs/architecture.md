@@ -2,9 +2,17 @@
 
 正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 五区19房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
 
+R2-03/04以配方`reference_background`选择单房清底图、`background_schools`配置无伤害生态池，`framing.motion`选择固定根膜片或RGB菌光。KitDepthMotion的`unified_ambient`默认关闭，仅这两房登记新动件和原气泡／微粒，关闭子件自播；KitAmphipodSchool可只读flag淡出，不能发伤害／奖励。其它十房204项兼容检查通过。[原画背景与动态V4](../assets/source/r2-reference-motion-v4/README.md)。
+
+原画建筑V3新增`build_world_framing.mjs`，生成配方`framing`中的独立RGBA分件：catalog pivot／axis等比配准，按每项Z／opacity／可选parallax绘制，无物理节点。三槽的位置与图标尺寸是视觉数据，三个flag含义和门条件独立保持。完整洞框需覆盖全景实际长宽比造成的房外视域；[当前来源与验证](../assets/source/reference-architecture-v3/README.md)。
+
+后续十二房以`content/whalebelly/world/recipes/`及`tools/build_world_rooms.mjs`生成。原画depth在Far替换同源透明层，中景地标／生态、World台面／台腹／居民、Foreground分别绘制；台腹辅助生成器`build_world_bodies.mjs`只产美术节点，不改碰撞。`KitDepthMotion`负责新水光／柔光的房间内可暂停时钟，原`KitDriftField`仍负责潮压缓流。来源及本轮168项GPU／67项后区Input验收见[十二房原画接入](../assets/source/remaining-19-v2/README.md)。
+
 正常游玩相机持续居中主角全局坐标，包括世界外缘和支路上端；缩放固定 1.0，不使用前视、探看、下落偏移或震屏。2026-11-18按用户反馈取消外缘软限位，避免角色走到角落HUD下面。随身光束与补光复用入库位图；小地图接近角色轮廓时淡出。Tab不改变正常跟随，原图对照、截图和分层查看保留全景行为并隐藏随身光。当前本地版为19房连续世界，邻房提前准备并可见，普通跨房不淡黑、不重建主角；运行约定与证据统一见[流式世界](streaming-world.md)。F9为会话临时练习，退出恢复正式进度快照；F10仅在练习中切换基础/升级技能组，不改正式取得条件。
 
 当前正式入口按邻房驻留窗口流式准备场景，普通跨界保留同一主角，使用[须门遗港场景衔接](../assets/source/xumen-continuity-v1/README.md)的共用远景与连接动件，以及新增的位图连接平台。后续[实际连通场景](../assets/source/xumen-connected-v2/README.md)及[统一母版](../assets/source/xumen-unified-v1/README.md)的制作源仍保留在资源库。
+
+七房早期素材来源采用[原画保留版](../assets/source/xumen-original-style-v1/implementation.md)，依据outputs的器官、材质和笔触复用/补绘位图。用户明确保持19房获取链；`layout/physics-v1.json`固定已验证地面和安全落点，生成器验证配方几何签名后才换图，不因新贴图重采高。`tests/fixtures/xumen-*.json`保留精简独立玩法快照，测试不依赖外部制作目录。
 
 ## 代码与内容
 
@@ -27,6 +35,9 @@
 | `src/campaign/world_terrain.gd`、`tools/build_terrain_master.gd` | 完整世界静态地形母版、1536网格切片与提前驻留；动态舌台膜独立实时，不烘焙 |
 | `src/campaign/stream_presentation.gd`、`stream_room_edges.gdshader` | 隐藏由母版接管的静态地形；其它层保留Shader、树结构和Z，实时承重膜禁用接缝淡出 |
 | `src/campaign/seam_art.gd`、`seam_art.gdshader` | 按实际世界矩形接入18边联合补绘，接管边界重叠区并保护其它房间核心；原层按相同所有权退出，避免双重轮廓 |
+
+| `content/whalebelly/layout/`、`tools/build_xumen_layout.py` | 须门遗港实际坐标配方、七房生成场景与运行表；按稳定 ID 覆盖原表，不移动旧存档房间索引 |
+| `src/campaign/campaign_layout.gd`、`src/world/scenery/layout/` | 新布局的安全落点投影、膜区域与固定端碰撞形变，以及位图裁边、膜网格和共享环境时钟 |
 | `content/whalebelly/world/`、`tools/build_world_rooms.mjs` | 套件房配方（单位 U）、跨区链接与生成的运行数据；生成器读取资源台账的包围盒与锚点，输出 `content/whalebelly/<区>/<房间ID>.tscn` |
 | `src/world/scenery/kit/` | 套件房的位图层视差、漂移粒子场（漂脂、水流线）和透光明暗 |
 | `src/campaign/enemies/kit_encounter.gd`、`kit_swarm_visual.gd` | 程序驱动的敌人与 Boss：群体横穿、鸣贝吐珠、覆膜回声；位图来自台账，行为写在房间配方的 `enemies` 中，伤害、血条、击败存档沿用主线 |
@@ -158,3 +169,15 @@ EnemyLabPlayer新增all_skill_practice默认false的只限练习权限开关，�
 
 
 ElderEchoView补充action_echo实际身体层，原memory_pose只作蓄势提示。body_key/body_frame按复制源定义与技能分段计算，复用TideActionVisual.align_event和玩家离线foot_metadata，地面脚底与原角色一致，不新增GPU采样。动作/FX/伤害共用敌人根变换，EchoView不拥有物理/伤害；视觉上淡显施法者、前置显示青色主角幻影，结束clear统一隐藏各层并恢复caster Alpha。身体播放在无FX的技能也独立生效，不因frames.fx为空而跳过动作。完整动作资源原位复用，无第二玩家/目标或重复命中。
+
+### 19房内容补齐（2026-11-14）
+
+制作源和逐房范围见[completion-19-v1](../assets/source/completion-19-v1/README.md)。保留既有19房图、碰撞和奖励，只扩展配方描述及其生成器：`landmarks`是有锚点的视差位图；`state_props`是同锚点的前后态；`progress_slots`复用前后态；`interactables`生成驻留居民或刻痕；`ecology`生成有界幼体群。生成文件不手改。
+
+- `KitStateArt`只读宿主永久`abilities`，驱动前后态渐变；可扫描的声壁暂时揭示4秒，不发放标记。状态画片默认位于平台后方，不能盖住可行走顶面。
+- `KitInteractable`只管理范围、文字和只读分支。`CampaignPlayer.interaction_nearby()`、主线`interact()`及UI提示共同支持新对象；优先级为既有专用机关、奖励、居民/刻痕、门、营地。交谈复用`WhaleCampaignUI`模态暂停与松键恢复，不增加任务/奖励存档。
+- `KitDriftField`对随永久潮压变化的速度做连续积分，固定实例数量；F9临时练习不改变环境进度。
+- `KitEncounterVisual`按既有AI计时选择`KitClamVisual`图集帧，独立显示血巢核心，不驱动伤害或Boss授能。图集和静态故障回退各自保存缩放参数；图集不缩小，旧回退保持原尺寸配置。
+- `KitLarvaSchool`以六个实例分别运行身体八帧与路径。永久`ending`使现有个体平滑向外海移动、边缘淡出循环；它是环境生态，没有战斗、碰撞或新增奖励。
+
+单元测试覆盖水流、敌人帧、生态池、交互范围；`completion_19.gd`验证真实场景的状态、资源和帧，`kit_conversation_qa.gd`用物理E/Esc/Enter检查交谈及恢复，`world_skeleton.gd -- --endgame`沿原输入验证后段流程。场景/进度夹具与自然路线分开记录，不把图集技术通过当作用户审美签收。

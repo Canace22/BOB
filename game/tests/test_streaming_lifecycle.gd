@@ -54,6 +54,34 @@ func test_conditions_and_loading_are_physical_gate_inputs() -> void:
 	host.streaming.failed[18]=ERR_FILE_NOT_FOUND
 	check(gates.reason(0,18,{}).contains("失败"),"Failed request is explained")
 
+func test_streamed_branch_does_not_show_legacy_door_on_bind_or_wake() -> void:
+	var host: WhalebellyMain = await world()
+	host.qa_full_abilities=false
+	host.abilities.float=false
+	var neighbor: CampaignDoorway = host.streaming.cached[1].scene.get_node("Doorways/Entrance3")
+	check(not neighbor.visible,"Prepared branch doorway is hidden before its first active frame")
+	host.streaming._cross(1)
+	var entrance: CampaignDoorway = host.scenery.get_node("Doorways/Entrance3")
+	host.player.position=Vector2(300,700)
+	check(not entrance.visible,"Binding cannot flash the old frame at the bone stair")
+	await physics_frames(12)
+	check(not entrance.visible,"A missing ability cannot restore the duplicate frame")
+	check(host.streaming.crossing_reason(5).contains("浮"),"The real branch gate still requires float")
+	host.abilities.float=true
+	for i: int in 300:
+		if host.streaming.is_ready(5): break
+		await tree.process_frame
+	await physics_frames(2)
+	check(not entrance.visible,"Unlocking float keeps the old frame hidden")
+	eq(host.streaming.crossing_reason(5),"","The ready branch opens normally after float")
+	host.streaming._cross(0)
+	host.streaming._cross(1)
+	check(not entrance.visible,"Returning from a sleeping room cannot flash the frame")
+	# Isolated legacy-room previews still own their authored entrance art.
+	host.streaming.enabled=false
+	entrance.bind(host,entrance.data)
+	check(entrance.visible,"Non-streaming entrance art remains available")
+
 func test_remote_scenes_evict_and_explicit_reload_rebuilds_actor() -> void:
 	var host: WhalebellyMain = await world()
 	var old: int = host.player.get_instance_id()

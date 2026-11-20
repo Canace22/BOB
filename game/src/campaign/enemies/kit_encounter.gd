@@ -32,14 +32,7 @@ func _ready() -> void:
 	# 和主角共用可玩层，保证营地等中景装饰不会遮住敌人。
 	z_index = host.player.z_index
 	if kind == "swarm":
-		var swarm := KitSwarmVisual.new()
-		swarm.texture = load(str(config.sprites.body.path))
-		swarm.member_scale = float(config.sprites.body.scale)
-		swarm.count = int(value("count"))
-		swarm.spread = Vector2(float(value("radius")), float(value("radius")) * 0.55)
-		swarm.build(int(str(data.key).hash() % 997))
-		swarm.position.y = -float(value("radius")) * 0.55
-		body = swarm
+		body = Visuals.swarm_body(config, int(str(data.key).hash() % 997))
 	else:
 		body = Visuals.single_body(config, kind)
 	body.modulate = Color(str(config.get("tint", "ffffff")))
@@ -48,7 +41,7 @@ func _ready() -> void:
 
 	feedback = TideEnemyFeedback.new()
 	add_child(feedback)
-	feedback.setup(body)
+	feedback.setup(body, not body is KitBloodnestVisual)
 	start = data.pos
 	goal = data.pos
 
@@ -67,6 +60,7 @@ func apply_knockback(_impulse: float) -> void:
 
 func on_damaged() -> void:
 	flash = 0.16
+	Visuals.hit(body, player_center()-position)
 
 func on_defeated() -> void:
 	fading = true

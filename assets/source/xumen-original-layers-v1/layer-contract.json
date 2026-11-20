@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "date": "2026-11-15",
+  "authority": {
+    "gameplay": "current 19-room progression; physics-v1 frozen",
+    "style": "outputs originals and existing r1-chapter-scenes editable layers"
+  },
+  "layers": [
+    {
+      "id": "Far",
+      "z": -30,
+      "motion": "bounded camera response inherited from depth layer; original underpaint plus Far cutout; no old road"
+    },
+    {
+      "id": "Middle",
+      "z": -15,
+      "motion": "static original chamber/roof plus root-pinned flexible pieces; camera offset <=8x5"
+    },
+    {
+      "id": "World",
+      "z": 0,
+      "motion": "current authored complex layout, frozen physics"
+    },
+    {
+      "id": "Foreground",
+      "z": 10,
+      "motion": "native original near bone/tissue; camera offset <=12x7; feathered landing clearance"
+    }
+  ],
+  "scan": [
+    {
+      "family": "water/deep bones",
+      "decision": "static",
+      "basis": "existing painted underpaint and Far"
+    },
+    {
+      "family": "roof and side shell",
+      "decision": "static",
+      "basis": "rigid native Middle; no full-screen warp"
+    },
+    {
+      "family": "baleen/vines",
+      "decision": "motion",
+      "basis": "existing authored atlas or pinned bitmap; source roots retained"
+    },
+    {
+      "family": "foreground bone/soft tissue",
+      "decision": "static",
+      "basis": "near frame; camera response only, no claimed animation"
+    },
+    {
+      "family": "fish/bubbles",
+      "decision": "motion",
+      "basis": "existing source sprites/frame animation; shared campaign clock"
+    }
+  ],
+  "resources": [
+    {
+      "room": "R1-01",
+      "runtime": "game/art/xumen-scale-v1/oral-depth.png",
+      "library_source": "assets/runtime/sprites/xumen-scale-v1/oral-depth.png",
+      "sha256": "1165788d5502ddd149d03c30619e53bb165256fcfc2c6efa1838506392893d39"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-ROOF.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-ROOF.png",
+      "sha256": "30987922aa5c34998a9cb39f8f8a4827003b324f43bf114be0d3764af38ea1a8"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/foreground_edges/CLEAN-WALL-L.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/CLEAN-WALL-L.png",
+      "sha256": "73cfec887cd549e80feeef44c17a7bc368bf9d44910595faee1a6466ffa490b9"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/foreground_edges/CLEAN-WALL-R.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/CLEAN-WALL-R.png",
+      "sha256": "b279f35ac7cc8c01d63769c62fb208d09ffc1a98d20f7c975c3806199bb4422e"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-01-ROOT.png",
+      "sha256": "590dcbd8acfd0543f45dee6fa3924d27ab31d0e8937a3d751dc4d5ef90336efa"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-02-ROOT.png",
+      "sha256": "f0952507aa9cc453ca52c87cab22becb48c4a30b2a863b9df2046f6aba236b4c"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-03-ROOT.png",
+      "sha256": "5ece3172091ded07de4a0f2e3c0d2ad449c685958191349fa2be81f8cc3477d5"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-04-ROOT.png",
+      "sha256": "ed1a0e095ebd7e99b27f10e5b5ea5f37599fa3283a91454162dcd48a6b564d0d"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-05-ROOT.png",
+      "sha256": "903a41e1b202689ea8b8e573fdea4b09c668978ec37238a28bed8aa8d2f0b3ea"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/CLEAN-BALEEN-06-ROOT.png",
+      "sha256": "10205fb014e617c72828d1239704239eaef55fa7dbfcc127e4675905ddbc0d24"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/baleen_loop_v3/baleen-sway-atlas.png",
+      "sha256": "aea53641e37ff0ddf924cd477de75d053bf2e9e6a61466375066fbc7102dc367"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/motion_elements/VINE-01.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/motion_elements/VINE-01.png",
+      "sha256": "2b433e53720ad222f71f438391e74dcd21b9f37ea524e24c9acd966ab8e71afc"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/motion_elements/VINE-02.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/motion_elements/VINE-02.png",
+      "sha256": "f10f2ca0f1fceb5991b8f0b1f3f25f430cca63c836701c1de1d018218e83ab43"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/foreground_edges/FRONT-BOTTOM-PAD.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/FRONT-BOTTOM-PAD.png",
+      "sha256": "f526961182725875002362bd48d13e73c84471d1a8972199fdd1d8d4576783dc"
+    },
+    {
+      "room": "R1-01",
+      "runtime": "game/art/whalebelly/foreground_edges/FRONT-TOP-LEFT.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime/whalebelly/foreground_edges/FRONT-TOP-LEFT.png",
+      "sha256": "b9999397c3be83a8de2de82eaa919a3c7426ae732b5ac00e2d1522e970a48bc8"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/underpaint.png",
+      "sha256": "010a2ad659e1fb47405347e03b20cff173100625372e8fe0d79199253bd4dd3b"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/Middle.png",
+      "sha256": "d9a45e55f2918efe8df5fa75591c902dc4222c656450356db8eb090d4932092f"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/Far.png",
+      "sha256": "51acfa845b630b5fae90bea53355e52d88103da9bcc7a4c1690b8e3c19312664"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png",
+      "sha256": "96641baf669b2642a36c2ad18b3547c9a1844ff9c1b5552242324aa3cdd78d38"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/R1-02-VINE-1.png",
+      "sha256": "0babd3d09012ab04d92ec53ccad2e17e50336b6c76237d7cac9431b2d258ee7e"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/R1-02-VINE-2.png",
+      "sha256": "a376903c2b34afc24708ef6670da97953127988655dbcf6c1674f0387199e884"
+    },
+    {
+      "room": "R1-02",
+      "runtime": "game/art/r1-chapter-scenes/R1-02/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-02/Foreground.png",
+      "sha256": "d5702daa11f575c95160bc7189c12cda459f8eaf167a1b385b0048c2e442b309"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/underpaint.png",
+      "sha256": "b8ac464ceb02ca1f3e5a8a5ef7865e46d0c56a768c141ccabe77fc3df44d5e97"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/Middle.png",
+      "sha256": "e313f7917a570334b64387275ec7a8c02960160410a1d0c012877e3566819473"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/Far.png",
+      "sha256": "924e292b0f6fb5403032c8b18a465654783753af2960851afe14b7b88f2e7c05"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+      "sha256": "b7b1462bf3c69c926a7e5461fff5889b9a5b73d519b4ce36ed5b9c011b8526e2"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+      "sha256": "e7b31403f850f1d6f5a7e60484de08e32cfaae76ce7d19d70069c81f18bfb734"
+    },
+    {
+      "room": "R1-03",
+      "runtime": "game/art/r1-chapter-scenes/R1-03/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-03/Foreground.png",
+      "sha256": "e690eee0dde89a44d0d18a12928edb751c59f0742f82a3159ec99922cd98ebaa"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/underpaint.png",
+      "sha256": "5535ffaea363d7fa93eabdbc0d7ae067dcec59a8a604bf38b9d7ce8d63318e5e"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/Middle.png",
+      "sha256": "82ef0bac1b11fcae44be4898a76e6f304cf4742862e186beaf5c48935ab561a0"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/Far.png",
+      "sha256": "1dde2e3a54365d14b6b6ea8cd45ed7c56775a207121991ff5ecc5fefd1be3c00"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/R1-04-BALEEN-1.png",
+      "sha256": "9be181e278ba5910d6faacd6cfb26e9afdd8ccd0c01fb60fa367b328621f88ed"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/R1-04-BALEEN-2.png",
+      "sha256": "b0586bcdcef68bdbaf77290cf225427e9a2e585996e714baa7edbc156995a019"
+    },
+    {
+      "room": "R1-04",
+      "runtime": "game/art/r1-chapter-scenes/R1-04/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-04/Foreground.png",
+      "sha256": "d227ff39a0150da3664638ddc51fad134ebc5085b4641a4553673b70413c4ee0"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/underpaint.png",
+      "sha256": "e0a6e19059e091a8832ef4bccfd17fbfe5eb77d909886a9cf5e3e7aa55a0b21f"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/Middle.png",
+      "sha256": "9013d484312dbe019029b8cb3091337e0f132227bbe87991271e7d4937480b9d"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/Far.png",
+      "sha256": "5067807dc1dfe0cebd0b79a6c24eb6b7f50f2ef082c35978fea2b9397ddeae66"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/R1-05-VINE-1.png",
+      "sha256": "11487373cc3e1daf29be24fef893e0b9dead4d16c57df9ff12599d67dae79620"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/R1-05-VINE-2.png",
+      "sha256": "a6385f255dd4330c3e42479b661b1254696f0ddeaa6b65714ecc44941d7d44ce"
+    },
+    {
+      "room": "R1-05",
+      "runtime": "game/art/r1-chapter-scenes/R1-05/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-05/Foreground.png",
+      "sha256": "eb1e7750912ff5ce9f44073c723f4ae3ed65562d7456dd4224aee116b150154f"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/underpaint.png",
+      "sha256": "c6681c5b700a06ef3ce6f9d29ff610865de5f1b9e3dbfc72e73fe445305430fa"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/Middle.png",
+      "sha256": "a0a92a621f871f3bf82d1000e2ba8441ccde7f3efdec9da40003aa57de9534d5"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/Far.png",
+      "sha256": "21bcc03bff060b48dfd1aab6aaaaab99f77a871179688cb9210abbc12111c254"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
+      "sha256": "cdc8955bba3293d6f729a77eccc4943ffd5f451eabb499e78bacdb1ed1141286"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
+      "sha256": "e082038e995cf85681dd0bfeb2bc20ec8dcbd87f72600ee8d3994f18e661c6ea"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
+      "sha256": "bfc6b98bf5f317389e90e1232aa36f9ce7ad7cbdc60c12b644dbbec0f489836c"
+    },
+    {
+      "room": "R1-06",
+      "runtime": "game/art/r1-chapter-scenes/R1-06/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-06/Foreground.png",
+      "sha256": "cacef0fad89a4fb56f8a2457c0b9eaac77f6a1498a0f66222ce595ede434a149"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/underpaint.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/underpaint.png",
+      "sha256": "5ecfd2aea1b82bd0234c47b4527b43206760e68c43559308bd8965b217a39c6b"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/Middle.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/Middle.png",
+      "sha256": "019f1786a57f1c9b30d5c57a1ce594f9dd8803e7082b66e595d1756f7f5daef2"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/Far.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/Far.png",
+      "sha256": "e753a6cc07d546079a301c1604dcad3ddcefc86fb192a30c095b1b172eb7d1f2"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
+      "sha256": "819c14559a286a32dbc2b9d5dd9546d1dd5683b1ee57662fa064dca67b0c6e79"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
+      "sha256": "135e1635a5a0eaa21832dd32941087e99eaeb8b73fb37f993af85c57ad673e79"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
+      "sha256": "d10778966577057901624751eeeb3febe35d95b183611d43ff3adc3ad25417bf"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
+      "sha256": "40cffc22f76de4292909220dcb051093826330a31376c20983e49c2c0c82eb9d"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
+      "sha256": "e4700a67f5e0dca89e5fac4727ac6e23d15cf73e3fc2cd4c4ad8523b88fa72a6"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
+      "sha256": "e1ccf67cab403e91a98c68b9c2c35c49b28cbdb6a392c5585a983ebf75879057"
+    },
+    {
+      "room": "R1-07",
+      "runtime": "game/art/r1-chapter-scenes/R1-07/Foreground.png",
+      "library_source": "assets/runtime/sprites/framecraft-runtime-batches/2026-11-04/r1-chapter-scenes/R1-07/Foreground.png",
+      "sha256": "60a44cbfa459ef406aae78d18ad08f35b2bcf6b2ec4dee6748b2fd250820e95d"
+    }
+  ],
+  "editable_sources": [
+    "assets/source/r1-chapter-scenes/master/<room>/*-mask.svg",
+    "assets/source/r1-chapter-scenes/master/<room>/*-layers.ora",
+    "assets/source/xumen-reference-environment/layer-layout.json"
+  ],
+  "registration": "game/content/whalebelly/layout/painted-layers-v1.json",
+  "generator": [
+    "game/tools/build_xumen_layout.py",
+    "game/tools/build_xumen_layers.py"
+  ],
+  "acceptance": {
+    "artwork": "pending user review",
+    "integration": "see README for current executable checks"
+  }
+}
