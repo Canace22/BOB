@@ -411,6 +411,11 @@ func _create_room_enemies() -> void:
 		scenery.get_node("World").add_child(proxy)
 
 func _create_room_support() -> void:
+	if not scenery.has_node("RoomEcology"):
+		var ecology := CampaignRoomEcology.new()
+		ecology.name = "RoomEcology"
+		ecology.configure(room)
+		scenery.add_child(ecology)
 	if ResourceLoader.exists("res://src/campaign/environment.gd"):
 		var environment: Node2D = load("res://src/campaign/environment.gd").new()
 		environment.name = "EnvironmentMotion"

@@ -1,0 +1,166 @@
+{
+  "schema": "xumen-structure-redesign-v1.soft.qa.v1",
+  "items": [
+    {
+      "id": "tissue-ridge",
+      "path": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-structure-redesign-v1\\soft\\tissue-ridge.png",
+      "size": [
+        946,
+        1663
+      ],
+      "sha256": "81c311df7d83181ed7457db936f4029f67a5a233a0cd96594ec2e91a1270f1dc",
+      "alpha_bounds": {
+        "1": [
+          0,
+          47,
+          908,
+          1663
+        ],
+        "8": [
+          93,
+          149,
+          848,
+          1502
+        ],
+        "32": [
+          93,
+          151,
+          848,
+          1502
+        ],
+        "240": [
+          95,
+          153,
+          846,
+          1500
+        ],
+        "250": [
+          95,
+          153,
+          846,
+          1500
+        ]
+      },
+      "padding_percent": [
+        9.831,
+        9.08,
+        10.359,
+        9.681
+      ],
+      "core_definition": "central 70% width / 80% height of alpha>=32 visible bbox",
+      "core_rect": [
+        206,
+        286,
+        735,
+        1367
+      ],
+      "core_alpha_extrema": [
+        252,
+        254
+      ],
+      "core_pixels_below_240": 0,
+      "core_pixels_below_32": 0,
+      "canvas_center_rect": [
+        142,
+        166,
+        804,
+        1497
+      ],
+      "canvas_center_alpha_extrema": [
+        0,
+        255
+      ],
+      "pivot": "center of visible bbox",
+      "review_status": "candidate; visual and alpha reviewed; no runtime or user approval"
+    },
+    {
+      "id": "tissue-vault",
+      "path": "G:\\鲸落万物生\\BOB\\assets\\source\\xumen-structure-redesign-v1\\soft\\tissue-vault.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "5410691e0ca0cc6817119c9c32bbec1e18306065b65a77091998ed56008d0eda",
+      "alpha_bounds": {
+        "1": [
+          0,
+          0,
+          1773,
+          883
+        ],
+        "8": [
+          139,
+          163,
+          1636,
+          678
+        ],
+        "32": [
+          139,
+          164,
+          1635,
+          678
+        ],
+        "240": [
+          142,
+          166,
+          1632,
+          676
+        ],
+        "250": [
+          144,
+          166,
+          1632,
+          676
+        ]
+      },
+      "padding_percent": [
+        7.835,
+        18.489,
+        7.835,
+        23.563
+      ],
+      "core_definition": "central 70% width / 80% height of alpha>=32 visible bbox",
+      "core_rect": [
+        363,
+        215,
+        1411,
+        627
+      ],
+      "core_alpha_extrema": [
+        252,
+        254
+      ],
+      "core_pixels_below_240": 0,
+      "core_pixels_below_32": 0,
+      "canvas_center_rect": [
+        266,
+        89,
+        1508,
+        798
+      ],
+      "canvas_center_alpha_extrema": [
+        0,
+        255
+      ],
+      "pivot": "center of visible bbox",
+      "review_status": "candidate; visual and alpha reviewed; no runtime or user approval"
+    }
+  ],
+  "references": [
+    {
+      "path": "G:\\鲸落万物生\\outputs\\鲸落万物生_V5.2_简明设计文档\\images\\11_R1-05.png",
+      "sha256": "5db2a0320f78cc58131c29aa8f45164c3948ba40d4ca00e6377ddea6b4223ef9",
+      "role": "material/style reference"
+    },
+    {
+      "path": "G:\\鲸落万物生\\BOB\\game\\build\\qa\\xumen-source-style-v2\\visual-R1-05-overview.png",
+      "sha256": "347b5392b8d2e189a6574d2a9a929d6335c45ab0266441036d0631d3c3b17670",
+      "role": "negative structure reference; existing placement only"
+    }
+  ],
+  "limitations": [
+    "Generated interiors are near opaque alpha252..254 rather than strictly255. No holes in recorded usable cores.",
+    "Do not fit whole padded canvas directly to collider; use opaque-core mapping with uniform scaling.",
+    "No engine placement, collision coverage, route or user-art approval has been performed by this asset-only worker."
+  ]
+}

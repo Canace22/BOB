@@ -1,5 +1,8 @@
 [gd_scene format=3]
 
+[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/PORTAL.png" id="24"]
+
+[ext_resource type="Script" path="res://src/world/scenery/kit/room_ecology.gd" id="ecology_room"]
 [ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="1"]
 [ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="2"]
 [ext_resource type="Texture2D" path="res://art/r1-chapter-scenes/R1-07/underpaint.png" id="3"]
@@ -23,7 +26,6 @@
 [ext_resource type="Texture2D" path="res://art/xumen-original-style-v1/original-ledge.png" id="21"]
 [ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="22"]
 [ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="23"]
-[ext_resource type="Texture2D" path="res://art/whalebelly/motion_elements/PORTAL.png" id="24"]
 [ext_resource type="Shader" path="res://content/whalebelly/environment/elements/extraction_alpha.gdshader" id="25"]
 [ext_resource type="Texture2D" path="res://art/xumen-layout-v1/memory.png" id="26"]
 [ext_resource type="Texture2D" path="res://art/xumen-layout-v1/ring.png" id="27"]
@@ -455,9 +457,8 @@ script = ExtResource("23")
 destination_id = "R1-02"
 kind = "door"
 direction = -1.0
-height = 170.0
+height = 0.0
 prompt_offset = Vector2(0,-195)
-tunnel_texture = ExtResource("24")
 threshold_region = Rect2(0,145,130,14)
 texture_bounds = Rect2(0,4,126,155)
 tunnel_material = SubResource("m11")
@@ -609,3 +610,7 @@ z_index = 3
 
 [node name="LayoutEnvironment" type="Node2D" parent="."]
 script = ExtResource("32")
+
+[node name="RoomEcology" type="Node2D" parent="."]
+script = ExtResource("ecology_room")
+room_id = "R1-07"

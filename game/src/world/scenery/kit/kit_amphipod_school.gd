@@ -69,7 +69,8 @@ func update_at(time: float) -> void:
 		sprite.rotation = float(result.angle)
 		sprite.scale = Vector2(float(member.scale) * float(result.turn), float(member.scale))
 		sprite.modulate = Color(tint.r, tint.g, tint.b, tint.a * opacity * float(result.alpha))
-		var material: ShaderMaterial = member.material
+		# The stream fade wrapper replaces the original material on preparation.
+		var material: ShaderMaterial = sprite.material
 		material.set_shader_parameter("clock", elapsed)
 		material.set_shader_parameter("motion_strength", body_motion_strength)
 
