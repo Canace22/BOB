@@ -226,6 +226,7 @@ function buildRoom(recipe) {
     scene.node(`BackgroundSchool${i}`,'Node2D','Middle/Ambient',{z_index:-2,script:scene.ext('Script','res://src/world/scenery/kit/kit_amphipod_school.gd'),texture:scene.ext('Texture2D',`res://art/world-kit/${piece.id}.png`),bounds:`Rect2(${px(school.rect).join(', ')})`,population:school.count,body_width:school.width,source_visible_width_ratio:(piece.x1-piece.x0)/piece.width,seed_id:i+47,external_clock:'true',opacity:school.opacity,flow_speed:school.speed,hidden_when_flag:JSON.stringify(school.hide_flag??'')});
   }
   if (kit.depth) scene.node('PresentationMotion','Node2D','.',{script:scene.ext('Script','res://src/world/scenery/kit/kit_depth_motion.gd'),unified_ambient:recipe.reference_background?'true':undefined});
+  scene.node('RoomEcology','Node2D','.',{script:scene.ext('Script','res://src/world/scenery/kit/room_ecology.gd'),room_id:JSON.stringify(recipe.id)});
   const directory = path.join(game, 'content/whalebelly', recipe.kit.toLowerCase());
   fs.mkdirSync(directory, {recursive: true});
   fs.writeFileSync(path.join(directory, `${recipe.id}.tscn`), scene.text());

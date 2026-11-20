@@ -502,3 +502,25 @@ V5.2 静态套件中的 11 件经 `game/art/manifest.json` 同步到 `game/art/w
 ## 2026-11-15 须门遗港恢复outputs原画样式 · 结构资源
 
 按原outputs参考修正两件结构位图，最终选用v4多孔竖壁与厚骨顶；旧深凹顶与中间修正版只留source。最初大叉肩wall额外定向复制为`anatomy-fracture.png`，仅低对比非碰撞背景附着，严禁当实体墙。另复用舌台、承重膜两态、鼻腔横骨、软膜台五件，保留原字节，复制到`assets/runtime/scenes/xumen-original-style-v1/`与`game/art/xumen-original-style-v1/`。八件已登记manifest，未全局sync。完整提示词、edit链、生成ID、上游旧素材提示词和三份副本SHA256见[制作与实心核心记录](source/xumen-original-style-v1/production-assets.json)及[接入说明](source/xumen-original-style-v1/asset-delivery.md)。`candidate`与`not-integrated`表示场景接地/碰撞覆盖和用户美术签收仍由主任务验收，不能按透明总bbox替代连续实心核心。
+## 2026-11-19 · 心室观察台生态动态层次概念稿
+
+新增[设计源与说明](source/r2-ecology-layer-design-v1/README.md)，1536×1024设计板以原17_R2-03及当前R2-03全景为参考，展示远景群游、中景群流、两处膜边附着微动及侧缘逸泡。由内置image_gen参考补绘，完整提示词、生成来源和SHA保存在同目录。此为待审阅概念图，非逐像素关卡图、透明素材或已实现动画；未加入运行清单，未改变平台/碰撞/玩法，未获用户美术验收。
+
+## 2026-11-19 · 19房生态动态与设计图 V1
+
+[逐房图集与制作来源](source/ecology-19-v1/README.md)：19张1536×1024设计板（18新生成+心室前稿复用），内置image_gen逐房原画/实机参考，完整提示词与SHA索引同目录。概念图不进入runtime/manifest。实际生态复用已入库habitat-fungus-bed、r2-pearl-stalks-v4、bubble、fx-particle-soft、三种32帧小鱼图集及r2-pelagic-amphipod-v4，标为“位图/逐帧素材＋程序驱动”；不记成全套新生物动作或付费视频生成。
+
+CampaignRoomEcology按19房配方提供固定根菌群、窄域逸泡、微粒、后区开放迁移及育床端足群，保留现有虾群、膜与归海幼体。GPU逐房接入和时钟验证191项通过，人工审美待用户反馈；实例、幅度与源/运行关系见本批README。无新运行贴图，不更改原资产来源或许可。
+
+## 2026-11-19 · 当前场景环境适配生态 V2
+
+新增两件环境专用透明候选：断脊暗红骨孔附生穗、耳海灰白管状骨壁小群落。源图、提示词、尺寸、透明Alpha诊断和运行副本见[source/ecology-19-v2](source/ecology-19-v2/README.md)。实际当前场景均新增 `RoomEcology` 节点；配方按须门、肺心、胃枢、断脊、耳海、归海的材质与安静程度选择生态，不把概念板中的额外生物直接当运行内容。两件新图由内置 image_gen 生成并标为 candidate；接入技术通过，用户审美待签收。
+## 2026-11-19 · 须门珊瑚配色与黑门视觉修正
+
+须门 R1-01～R1-07 改用冷色附生群落，去掉暖橙 `habitat-fungus-bed` 在蓝色口腔环境中的突兀感；胃枢暖色菌群保留。R1-04 的 `PORTAL.png` 仅为黑色入口视觉，已从场景引用移除，门逻辑仍由 `CampaignDoorway` 和世界连接负责。运行截图和回归记录在 `game/build/qa/ecology-in-scene-v2/`。
+## 2026-11-19 · 19房完整生态组合设计
+
+每房的鱼类/端足、浮游微粒、气泡和附生物组合已按远景、中景、前景登记，见 `assets/source/ecology-19-v2/ecology-design.json`。运行配方支持每房独立的鱼群色调、气泡数量/尺寸/速度、微粒颜色/密度和安静区间；不重复接管R1已有场景鱼群，不改变战斗、通路或碰撞。
+## 2026-11-20 · 须门黑门视觉清除
+
+须门七房的 `PORTAL.png` 门体只承担视觉，不再在当前场景中引用或生成；入口逻辑和世界连接保留。R1-01～R1-07 场景的入口高度设为0，避免 `CampaignDoorway` 创建 inset/lip；不删除源素材文件。技术回归与截图见 `game/build/qa/ecology-in-scene-v2/`。

@@ -1,0 +1,310 @@
+{
+  "date": "2026-11-19",
+  "scope": "19房生态动态和逐房概念设计图",
+  "constraints": [
+    "保留19房规则及全部平台/碰撞/连接",
+    "不新增柱块或玩法",
+    "鲸体骨架器官静止",
+    "保留现有虾群战斗与归海幼体"
+  ],
+  "tools": {
+    "engine": "Godot 4.7.2 CLI",
+    "images": "built-in image_gen",
+    "motion": "registered painted bitmaps + bounded pools + pausable clock"
+  },
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "reference": "07_R1-01.png",
+      "size": [
+        1640,
+        1120
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "远处斜向银鱼流，台腹附生穗微摆，两侧裂隙逸泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-01"
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "reference": "08_R1-02.png",
+      "size": [
+        1640,
+        1180
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "远景鱼流穿筛，薄穗末端错相，侧边微泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-02"
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "reference": "09_R1-03.png",
+      "size": [
+        1640,
+        1120
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "膜下微粒，边缘菌光，气泡避开下潜线",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-03"
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "reference": "10_R1-04.png",
+      "size": [
+        2560,
+        1120
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "战场外围鱼影，低密度逸泡，台腹附生穗",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-04"
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "reference": "11_R1-05.png",
+      "size": [
+        1640,
+        1120
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "育窝周边暖微粒，侧壁逸泡，膜穗末梢",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-05"
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "reference": "12_R1-06.png",
+      "size": [
+        1640,
+        1180
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "窄束上行气泡，斜向水尘，静止骨顶",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-06"
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "reference": "13_R1-07.png",
+      "size": [
+        1640,
+        1120
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "记忆袋暖粒，须幕后鱼流，边缘穗摆",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R1-07"
+    },
+    {
+      "id": "R3-01",
+      "name": "胃枢",
+      "reference": "22_R3-01.png",
+      "size": [
+        3840,
+        2400
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "营地暖孢，营养缓流，附着菌光",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R3-01"
+    },
+    {
+      "id": "R2-01",
+      "name": "育床",
+      "reference": "15_R2-01.png",
+      "size": [
+        2240,
+        1840
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "育床低密度端足群，珠菌局部微光，膜缝逸泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R2-01"
+    },
+    {
+      "id": "R2-03",
+      "name": "心室观察台",
+      "reference": "17_R2-03.png",
+      "size": [
+        2400,
+        1600
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "保留两层端足群与根膜，补充侧缝逸泡和稀疏水尘",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R2-03"
+    },
+    {
+      "id": "R2-04",
+      "name": "血巢潮群",
+      "reference": "18_R2-04.png",
+      "size": [
+        2880,
+        1840
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "保留44虾战斗，外围远群退让，侧缝微泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R2-04"
+    },
+    {
+      "id": "R4-01",
+      "name": "组合门",
+      "reference": "31_R4-01.png",
+      "size": [
+        2400,
+        1600
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "骨孔后远鱼，附生微光，稀薄沉屑",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R4-01"
+    },
+    {
+      "id": "R4-03",
+      "name": "上锚路线",
+      "reference": "33_R4-03.png",
+      "size": [
+        2880,
+        1760
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "纵深稀鱼，骨沿附生穗，逆向沉屑",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R4-03"
+    },
+    {
+      "id": "R4-05",
+      "name": "悬脊鸣贝",
+      "reference": "35_R4-05.png",
+      "size": [
+        3200,
+        1760
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "鸣贝附近微屑，骨底附生群，后方弱鱼流",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R4-05"
+    },
+    {
+      "id": "R4-06",
+      "name": "稳定交通椎",
+      "reference": "36_R4-06.png",
+      "size": [
+        2720,
+        1760
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "通路后缓慢群游，营地稀孢，边缘微泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R4-06"
+    },
+    {
+      "id": "R5-01",
+      "name": "三槽记忆",
+      "reference": "40_R5-01.png",
+      "size": [
+        2400,
+        1760
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "槽壁菌光，缓降微尘，远处稀鱼",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R5-01"
+    },
+    {
+      "id": "R5-02",
+      "name": "安全池",
+      "reference": "41_R5-02.png",
+      "size": [
+        2560,
+        1680
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "池后低速鱼影，营地暖粒，近壁细泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R5-02"
+    },
+    {
+      "id": "R5-04",
+      "name": "缄声覆膜",
+      "reference": "43_R5-04.png",
+      "size": [
+        3200,
+        1760
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "低速沉屑，自由膜梢，弱附生光",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R5-04"
+    },
+    {
+      "id": "R5-08",
+      "name": "归海释放槽",
+      "reference": "47_R5-08.png",
+      "size": [
+        3200,
+        1600
+      ],
+      "observed": "当前全景、原画及现有代码；大结构static，已有鱼泡保留",
+      "proposed": "保留归海幼体，外海远鱼，顺流微尘与微泡",
+      "design": "generated",
+      "implementation": "integrated",
+      "verification": "native_checked",
+      "runtime_config": "game/content/whalebelly/environment/ecology-19.json#R5-08"
+    }
+  ],
+  "acceptance": {
+    "automated": 287,
+    "native": 191,
+    "native_failures": 0,
+    "input": "18 edges both ways, passed; start-position fixtures then actual InputEventKey",
+    "art": "AI still review, user approval pending",
+    "evidence": "game/build/qa/ecology-19-v1/"
+  }
+}

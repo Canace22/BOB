@@ -1,5 +1,7 @@
 # 鲸落 Godot 架构
 
+当前19房场景均自带`RoomEcology`节点及导出`room_id`，单独加载房间即可解析现有房间数据和`content/whalebelly/environment/ecology-19.json`，构造可暂停时钟与有界生态池。主控support仅为旧测试夹具补缺，不重复创建。生态贴图按口腔/肺心/胃枢/断脊/颅腔/尾槽的实际材质选择，根部按曲面插值配准，`colony`可指定贴图可见宽度、根点和幅度；不接管战斗或原有归海幼体。非资源JSON在导出include_filter中；当前接入与实机证据见[生态V2](../assets/source/ecology-19-v2/README.md)，[V1设计图](../assets/source/ecology-19-v1/README.md)保留为概念参考。
+
 正式工程位于 `game/`，固定 Godot 4.7.2、GL Compatibility、Web 单线程。F5 默认进入 `content/whalebelly/main.tscn`，运行 WhalebellyRuins 五区19房、CampaignPlayer、角色技能和环境动态。旧模块化五房及完整旧目录已移到[归档分支](legacy-archive.md)。
 
 R2-03/04以配方`reference_background`选择单房清底图、`background_schools`配置无伤害生态池，`framing.motion`选择固定根膜片或RGB菌光。KitDepthMotion的`unified_ambient`默认关闭，仅这两房登记新动件和原气泡／微粒，关闭子件自播；KitAmphipodSchool可只读flag淡出，不能发伤害／奖励。其它十房204项兼容检查通过。[原画背景与动态V4](../assets/source/r2-reference-motion-v4/README.md)。

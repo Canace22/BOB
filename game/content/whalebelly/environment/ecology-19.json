@@ -1,0 +1,1666 @@
+{
+  "version": 1,
+  "rooms": {
+    "R1-01": {
+      "name": "外伤坡",
+      "theme": "远处斜向银鱼流，台腹附生穗微摆，两侧裂隙逸泡",
+      "patches": [
+        [
+          0.18,
+          0.46
+        ],
+        [
+          0.72,
+          0.68
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.12,
+          0.55,
+          0.04,
+          0.26
+        ],
+        [
+          0.9,
+          0.4,
+          0.035,
+          0.25
+        ]
+      ],
+      "snow": [
+        0.15,
+        0.37,
+        0.66,
+        0.36,
+        10,
+        3,
+        -5
+      ],
+      "seed": 101,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "口腔裂隙",
+        "life": "silverfin far school / tealback existing middle school",
+        "summary": "远景银鱼斜向迁移；台腹冷白珠菌；两侧裂隙气泡；蓝灰营养微粒",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.68,
+        0.84,
+        0.94,
+        0.35
+      ],
+      "bubble_tint": [
+        0.78,
+        0.88,
+        1,
+        1
+      ],
+      "bubble_size": [
+        4,
+        8
+      ],
+      "bubble_population": 6,
+      "bubble_opacity": 0.3,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R1-02": {
+      "name": "须筛",
+      "theme": "远景鱼流穿筛，薄穗末端错相，侧边微泡",
+      "patches": [
+        [
+          0.3,
+          0.8
+        ],
+        [
+          0.85,
+          0.48
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.91,
+          0.48,
+          0.035,
+          0.28
+        ]
+      ],
+      "snow": [
+        0.34,
+        0.24,
+        0.3,
+        0.4,
+        8,
+        5,
+        2
+      ],
+      "seed": 138,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "鲸须过滤带",
+        "life": "silverfin behind baleen / tealback existing mid school",
+        "summary": "鱼群穿过须筛间隙；气泡被须片分流；细小过滤颗粒",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.62,
+        0.8,
+        0.92,
+        0.32
+      ],
+      "bubble_tint": [
+        0.74,
+        0.86,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        7
+      ],
+      "bubble_population": 5,
+      "bubble_opacity": 0.27,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R1-03": {
+      "name": "舌台",
+      "theme": "膜下微粒，边缘菌光，气泡避开下潜线",
+      "patches": [
+        [
+          0.11,
+          0.57
+        ],
+        [
+          0.85,
+          0.45
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.06,
+          0.57,
+          0.03,
+          0.2
+        ],
+        [
+          0.94,
+          0.38,
+          0.03,
+          0.2
+        ]
+      ],
+      "snow": [
+        0.3,
+        0.63,
+        0.4,
+        0.25,
+        12,
+        4,
+        4
+      ],
+      "seed": 175,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "舌膜潮面",
+        "life": "tealback edge school / lantern motes",
+        "summary": "膜边小鱼绕行；下潜线两侧气泡；薄膜下青蓝微粒",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.54,
+        0.84,
+        0.92,
+        0.3
+      ],
+      "bubble_tint": [
+        0.68,
+        0.9,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 5,
+      "bubble_opacity": 0.26,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R1-04": {
+      "name": "负壳蟹",
+      "theme": "战场外围鱼影，低密度逸泡，台腹附生穗",
+      "patches": [
+        [
+          0.12,
+          0.78
+        ],
+        [
+          0.89,
+          0.78
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.08,
+          0.4,
+          0.025,
+          0.26
+        ],
+        [
+          0.93,
+          0.43,
+          0.025,
+          0.27
+        ]
+      ],
+      "snow": [
+        0.06,
+        0.3,
+        0.18,
+        0.36,
+        6,
+        2,
+        -4
+      ],
+      "seed": 212,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "负壳蟹战场",
+        "life": "far silverfin only",
+        "summary": "战斗中央留空；外围远鱼、边缘气泡和稀薄沉屑",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.48,
+        0.7,
+        0.84,
+        0.18
+      ],
+      "bubble_tint": [
+        0.72,
+        0.86,
+        0.95,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 3,
+      "bubble_opacity": 0.2,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R1-05": {
+      "name": "流膜育窝",
+      "theme": "育窝周边暖微粒，侧壁逸泡，膜穗末梢",
+      "patches": [
+        [
+          0.15,
+          0.6
+        ],
+        [
+          0.83,
+          0.48
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.1,
+          0.58,
+          0.035,
+          0.25
+        ],
+        [
+          0.89,
+          0.4,
+          0.03,
+          0.27
+        ]
+      ],
+      "snow": [
+        0.12,
+        0.4,
+        0.65,
+        0.37,
+        12,
+        3,
+        -3
+      ],
+      "seed": 249,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "流膜育窝",
+        "life": "tealback nursery fish / warm plankton",
+        "summary": "育窝外圈小鱼慢游；膜缝气泡；营养微粒聚在侧翼",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.86,
+        0.76,
+        0.54,
+        0.42
+      ],
+      "bubble_tint": [
+        1,
+        0.82,
+        0.58,
+        1
+      ],
+      "bubble_size": [
+        4,
+        8
+      ],
+      "bubble_population": 6,
+      "bubble_opacity": 0.3,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R1-06": {
+      "name": "喷气孔上层",
+      "theme": "窄束上行气泡，斜向水尘，静止骨顶",
+      "patches": [
+        [
+          0.24,
+          0.75
+        ],
+        [
+          0.83,
+          0.3
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.18,
+          0.34,
+          0.035,
+          0.48
+        ],
+        [
+          0.87,
+          0.2,
+          0.03,
+          0.5
+        ]
+      ],
+      "snow": [
+        0.24,
+        0.22,
+        0.48,
+        0.56,
+        12,
+        3,
+        -10
+      ],
+      "seed": 286,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "喷气孔水柱",
+        "life": "lantern fish outside plume",
+        "summary": "上行气泡为主；鱼群避开喷流；斜向水尘",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.58,
+        0.84,
+        0.96,
+        0.34
+      ],
+      "bubble_tint": [
+        0.78,
+        0.94,
+        1,
+        1
+      ],
+      "bubble_size": [
+        4,
+        10
+      ],
+      "bubble_population": 7,
+      "bubble_opacity": 0.34,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R1-07": {
+      "name": "鲸须记忆袋",
+      "theme": "记忆袋暖粒，须幕后鱼流，边缘穗摆",
+      "patches": [
+        [
+          0.22,
+          0.72
+        ],
+        [
+          0.81,
+          0.35
+        ],
+        [
+          0.43,
+          0.71
+        ],
+        [
+          0.64,
+          0.52
+        ]
+      ],
+      "vents": [
+        [
+          0.08,
+          0.49,
+          0.03,
+          0.29
+        ]
+      ],
+      "snow": [
+        0.58,
+        0.24,
+        0.28,
+        0.36,
+        8,
+        2,
+        -2
+      ],
+      "seed": 323,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "鲸须记忆袋",
+        "life": "lantern fish behind baleen",
+        "summary": "记忆袋后方极少鱼影；暖微粒与侧缘气泡；安静留白",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.74,
+        0.82,
+        0.92,
+        0.28
+      ],
+      "bubble_tint": [
+        0.82,
+        0.94,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.25,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_scene_schools"
+    },
+    "R3-01": {
+      "name": "胃枢",
+      "theme": "营地暖孢，营养缓流，附着菌光",
+      "patches": [
+        [
+          0.28,
+          0.86
+        ],
+        [
+          0.79,
+          0.86
+        ]
+      ],
+      "vents": [
+        [
+          0.12,
+          0.5,
+          0.024,
+          0.3
+        ],
+        [
+          0.9,
+          0.5,
+          0.024,
+          0.28
+        ]
+      ],
+      "snow": [
+        0.22,
+        0.7,
+        0.6,
+        0.2,
+        16,
+        5,
+        -2
+      ],
+      "fish": [
+        0.12,
+        0.73,
+        0.76,
+        0.1,
+        14,
+        0,
+        54,
+        21
+      ],
+      "seed": 360,
+      "quiet": false,
+      "warm": true,
+      "near_school": [
+        0.18,
+        0.72,
+        0.62,
+        0.18,
+        8,
+        0,
+        50,
+        28
+      ],
+      "ecology_design": {
+        "habitat": "胃枢营地",
+        "life": "silverfin detritivore school / middle school",
+        "summary": "胃枢暖色菌群、营养微粒、慢鱼和壳巢周边微泡",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        1,
+        0.7,
+        0.32,
+        0.44
+      ],
+      "bubble_tint": [
+        1,
+        0.78,
+        0.48,
+        1
+      ],
+      "bubble_size": [
+        4,
+        9
+      ],
+      "bubble_population": 7,
+      "bubble_opacity": 0.34,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R2-01": {
+      "name": "育床",
+      "theme": "育床低密度端足群，珠菌局部微光，膜缝逸泡",
+      "patches": [
+        [
+          0.22,
+          0.86
+        ],
+        [
+          0.88,
+          0.47
+        ]
+      ],
+      "vents": [
+        [
+          0.11,
+          0.5,
+          0.03,
+          0.3
+        ],
+        [
+          0.89,
+          0.3,
+          0.025,
+          0.3
+        ]
+      ],
+      "snow": [
+        0.15,
+        0.5,
+        0.7,
+        0.3,
+        10,
+        -3,
+        2
+      ],
+      "amphipods": [
+        0.17,
+        0.73,
+        0.66,
+        0.12,
+        12,
+        18
+      ],
+      "seed": 397,
+      "quiet": false,
+      "warm": false,
+      "rose": true,
+      "ecology_design": {
+        "habitat": "肺心育床",
+        "life": "amphipod nursery / pearl bubbles",
+        "summary": "两层端足群、珠菌、膜缝气泡；不加大型鱼群",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.58,
+        0.76,
+        0.96,
+        0.26
+      ],
+      "bubble_tint": [
+        0.72,
+        0.92,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        7
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.25,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "amphipod_only"
+    },
+    "R2-03": {
+      "name": "心室观察台",
+      "theme": "保留两层端足群与根膜，补充侧缝逸泡和稀疏水尘",
+      "patches": [
+        [
+          0.47,
+          0.84
+        ],
+        [
+          0.7,
+          0.74
+        ]
+      ],
+      "vents": [
+        [
+          0.09,
+          0.51,
+          0.025,
+          0.26
+        ],
+        [
+          0.9,
+          0.43,
+          0.025,
+          0.27
+        ]
+      ],
+      "snow": [
+        0.3,
+        0.65,
+        0.45,
+        0.23,
+        10,
+        3,
+        -2
+      ],
+      "seed": 434,
+      "quiet": false,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "心室观察台",
+        "life": "existing amphipod bands / side bubbles",
+        "summary": "保留原有端足群；侧缝逸泡、根膜和稀疏水尘",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.58,
+        0.8,
+        0.94,
+        0.25
+      ],
+      "bubble_tint": [
+        0.7,
+        0.9,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        7
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.25,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "authored_reference_schools"
+    },
+    "R2-04": {
+      "name": "血巢潮群",
+      "theme": "保留44虾战斗，外围远群退让，侧缝微泡",
+      "patches": [
+        [
+          0.08,
+          0.85
+        ],
+        [
+          0.93,
+          0.85
+        ],
+        [
+          0.42,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.07,
+          0.51,
+          0.02,
+          0.25
+        ],
+        [
+          0.94,
+          0.5,
+          0.02,
+          0.27
+        ]
+      ],
+      "snow": [
+        0.26,
+        0.6,
+        0.48,
+        0.22,
+        8,
+        2,
+        2
+      ],
+      "seed": 471,
+      "quiet": true,
+      "warm": false,
+      "ecology_design": {
+        "habitat": "血巢潮群",
+        "life": "shrimp combat / edge plankton",
+        "summary": "战斗虾群为主；外围微粒和侧泡，中央不放鱼",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.5,
+        0.68,
+        0.82,
+        0.16
+      ],
+      "bubble_tint": [
+        0.7,
+        0.86,
+        0.96,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 3,
+      "bubble_opacity": 0.18,
+      "plankton_size": [
+        3,
+        7
+      ],
+      "plankton_opacity": 0.14,
+      "fish_ecology": "shrimp_boss_only"
+    },
+    "R4-01": {
+      "name": "组合门",
+      "theme": "骨孔后远鱼，附生微光，稀薄沉屑",
+      "patches": [
+        [
+          0.17,
+          0.83
+        ],
+        [
+          0.85,
+          0.69
+        ],
+        [
+          0.55,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.1,
+          0.48,
+          0.025,
+          0.26
+        ]
+      ],
+      "snow": [
+        0.12,
+        0.5,
+        0.7,
+        0.3,
+        9,
+        2,
+        4
+      ],
+      "fish": [
+        0.1,
+        0.68,
+        0.8,
+        0.09,
+        12,
+        0,
+        56,
+        21
+      ],
+      "seed": 508,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.73,
+        0.76,
+        0.12,
+        8,
+        0,
+        58,
+        26
+      ],
+      "colony": {
+        "sway_pixels": 1.0,
+        "texture": "res://art/ecology-19-v2/r4-attached-colony.png",
+        "width": 120,
+        "root_x": 765,
+        "visible_width": 884,
+        "root_y": 803,
+        "glow": 0.0
+      },
+      "ecology_design": {
+        "habitat": "断脊组合门",
+        "life": "silverfin through bone pores / red hydroid",
+        "summary": "骨孔远鱼、暗红附生穗、稀薄沉屑和窄泡",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.42,
+        0.6,
+        0.7,
+        0.24
+      ],
+      "bubble_tint": [
+        0.68,
+        0.84,
+        0.92,
+        1
+      ],
+      "bubble_size": [
+        2,
+        5
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.22,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R4-03": {
+      "name": "上锚路线",
+      "theme": "纵深稀鱼，骨沿附生穗，逆向沉屑",
+      "patches": [
+        [
+          0.27,
+          0.74
+        ],
+        [
+          0.81,
+          0.74
+        ],
+        [
+          0.55,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.91,
+          0.45,
+          0.02,
+          0.3
+        ]
+      ],
+      "snow": [
+        0.18,
+        0.4,
+        0.64,
+        0.37,
+        10,
+        -3,
+        5
+      ],
+      "fish": [
+        0.08,
+        0.62,
+        0.84,
+        0.14,
+        10,
+        0,
+        62,
+        21
+      ],
+      "seed": 545,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.76,
+        0.76,
+        0.08,
+        8,
+        0,
+        60,
+        26
+      ],
+      "colony": {
+        "sway_pixels": 1.0,
+        "texture": "res://art/ecology-19-v2/r4-attached-colony.png",
+        "width": 120,
+        "root_x": 765,
+        "visible_width": 884,
+        "root_y": 803,
+        "glow": 0.0
+      },
+      "ecology_design": {
+        "habitat": "断脊上锚路线",
+        "life": "silverfin diagonal / marine snow",
+        "summary": "锚路线后方银鱼带；骨沿附生穗；沉屑逆流",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.38,
+        0.58,
+        0.7,
+        0.22
+      ],
+      "bubble_tint": [
+        0.66,
+        0.82,
+        0.92,
+        1
+      ],
+      "bubble_size": [
+        2,
+        5
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.21,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R4-05": {
+      "name": "悬脊鸣贝",
+      "theme": "鸣贝附近微屑，骨底附生群，后方弱鱼流",
+      "patches": [
+        [
+          0.16,
+          0.81
+        ],
+        [
+          0.86,
+          0.81
+        ],
+        [
+          0.55,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.08,
+          0.46,
+          0.02,
+          0.26
+        ]
+      ],
+      "snow": [
+        0.3,
+        0.6,
+        0.46,
+        0.2,
+        8,
+        1,
+        3
+      ],
+      "fish": [
+        0.12,
+        0.62,
+        0.76,
+        0.1,
+        9,
+        2,
+        64,
+        21
+      ],
+      "seed": 582,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.7,
+        0.76,
+        0.12,
+        7,
+        0,
+        64,
+        26
+      ],
+      "colony": {
+        "sway_pixels": 1.0,
+        "texture": "res://art/ecology-19-v2/r4-attached-colony.png",
+        "width": 120,
+        "root_x": 765,
+        "visible_width": 884,
+        "root_y": 803,
+        "glow": 0.0
+      },
+      "ecology_design": {
+        "habitat": "悬脊鸣贝",
+        "life": "lantern fish behind shell / shell dust",
+        "summary": "鸣贝周边微屑、小鱼远游；贝床和骨孔附生穗",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.46,
+        0.6,
+        0.72,
+        0.2
+      ],
+      "bubble_tint": [
+        0.7,
+        0.86,
+        0.94,
+        1
+      ],
+      "bubble_size": [
+        2,
+        5
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.2,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R4-06": {
+      "name": "稳定交通椎",
+      "theme": "通路后缓慢群游，营地稀孢，边缘微泡",
+      "patches": [
+        [
+          0.23,
+          0.81
+        ],
+        [
+          0.86,
+          0.67
+        ],
+        [
+          0.55,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.9,
+          0.45,
+          0.02,
+          0.3
+        ]
+      ],
+      "snow": [
+        0.12,
+        0.56,
+        0.4,
+        0.23,
+        8,
+        2,
+        -2
+      ],
+      "fish": [
+        0.1,
+        0.61,
+        0.8,
+        0.1,
+        12,
+        0,
+        60,
+        21
+      ],
+      "seed": 619,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.61,
+        0.76,
+        0.12,
+        8,
+        0,
+        58,
+        26
+      ],
+      "colony": {
+        "sway_pixels": 1.0,
+        "texture": "res://art/ecology-19-v2/r4-attached-colony.png",
+        "width": 120,
+        "root_x": 765,
+        "visible_width": 884,
+        "root_y": 803,
+        "glow": 0.0
+      },
+      "ecology_design": {
+        "habitat": "稳定交通椎",
+        "life": "slow silverfin transit school / camp spores",
+        "summary": "通路后缓鱼、营地孢尘、边缘气泡；保持休息感",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.46,
+        0.64,
+        0.74,
+        0.26
+      ],
+      "bubble_tint": [
+        0.74,
+        0.88,
+        0.94,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 5,
+      "bubble_opacity": 0.24,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R5-01": {
+      "name": "三槽记忆",
+      "theme": "槽壁菌光，缓降微尘，远处稀鱼",
+      "patches": [
+        [
+          0.12,
+          0.8
+        ],
+        [
+          0.88,
+          0.8
+        ],
+        [
+          0.57,
+          0.84
+        ]
+      ],
+      "vents": [
+        [
+          0.93,
+          0.49,
+          0.02,
+          0.25
+        ]
+      ],
+      "snow": [
+        0.22,
+        0.5,
+        0.56,
+        0.25,
+        7,
+        1,
+        2
+      ],
+      "seed": 656,
+      "quiet": false,
+      "warm": false,
+      "colony": {
+        "sway_pixels": 0.6,
+        "texture": "res://art/ecology-19-v2/r5-attached-colony.png",
+        "width": 110,
+        "root_x": 792,
+        "visible_width": 1208,
+        "root_y": 849,
+        "glow": 0.02
+      },
+      "ecology_design": {
+        "habitat": "三槽记忆",
+        "life": "no fish / pearl dust",
+        "summary": "三槽记忆室只保留珠尘、灰白骨壁群落和微泡",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.42,
+        0.6,
+        0.74,
+        0.16
+      ],
+      "bubble_tint": [
+        0.7,
+        0.86,
+        0.96,
+        1
+      ],
+      "bubble_size": [
+        2,
+        4
+      ],
+      "bubble_population": 2,
+      "bubble_opacity": 0.16,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R5-02": {
+      "name": "安全池",
+      "theme": "池后低速鱼影，营地暖粒，近壁细泡",
+      "patches": [
+        [
+          0.18,
+          0.79
+        ],
+        [
+          0.78,
+          0.79
+        ],
+        [
+          0.5,
+          0.79
+        ]
+      ],
+      "vents": [
+        [
+          0.09,
+          0.5,
+          0.02,
+          0.25
+        ]
+      ],
+      "snow": [
+        0.12,
+        0.6,
+        0.52,
+        0.2,
+        8,
+        1,
+        -1
+      ],
+      "seed": 693,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.7,
+        0.76,
+        0.1,
+        5,
+        0,
+        72,
+        23
+      ],
+      "colony": {
+        "sway_pixels": 0.6,
+        "texture": "res://art/ecology-19-v2/r5-attached-colony.png",
+        "width": 110,
+        "root_x": 792,
+        "visible_width": 1208,
+        "root_y": 849,
+        "glow": 0.02
+      },
+      "ecology_design": {
+        "habitat": "安全池",
+        "life": "small slow silverfin / camp motes",
+        "summary": "安全池少量慢鱼、近壁气泡、营地暖微粒",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.64,
+        0.74,
+        0.82,
+        0.24
+      ],
+      "bubble_tint": [
+        0.8,
+        0.92,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        6
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.22,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    },
+    "R5-04": {
+      "name": "缄声覆膜",
+      "theme": "低速沉屑，自由膜梢，弱附生光",
+      "patches": [
+        [
+          0.13,
+          0.83
+        ],
+        [
+          0.91,
+          0.83
+        ],
+        [
+          0.58,
+          0.83
+        ]
+      ],
+      "vents": [
+        [
+          0.94,
+          0.49,
+          0.018,
+          0.24
+        ]
+      ],
+      "snow": [
+        0.27,
+        0.68,
+        0.46,
+        0.19,
+        8,
+        0.7,
+        1.5
+      ],
+      "seed": 730,
+      "quiet": true,
+      "warm": false,
+      "colony": {
+        "sway_pixels": 0.6,
+        "texture": "res://art/ecology-19-v2/r5-attached-colony.png",
+        "width": 110,
+        "root_x": 792,
+        "visible_width": 1208,
+        "root_y": 849,
+        "glow": 0.02
+      },
+      "ecology_design": {
+        "habitat": "缄声覆膜",
+        "life": "no fish / membrane dust",
+        "summary": "覆膜自由梢、低速沉屑和极少气泡；中央留空",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.34,
+        0.52,
+        0.7,
+        0.13
+      ],
+      "bubble_tint": [
+        0.66,
+        0.8,
+        0.92,
+        1
+      ],
+      "bubble_size": [
+        2,
+        4
+      ],
+      "bubble_population": 2,
+      "bubble_opacity": 0.14,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.16,
+      "fish_ecology": "ecology_pool"
+    },
+    "R5-08": {
+      "name": "归海释放槽",
+      "theme": "保留归海幼体，外海远鱼，顺流微尘与微泡",
+      "patches": [
+        [
+          0.08,
+          0.79
+        ],
+        [
+          0.85,
+          0.79
+        ]
+      ],
+      "vents": [
+        [
+          0.08,
+          0.5,
+          0.02,
+          0.25
+        ],
+        [
+          0.93,
+          0.48,
+          0.02,
+          0.28
+        ]
+      ],
+      "snow": [
+        0.15,
+        0.57,
+        0.7,
+        0.2,
+        10,
+        9,
+        -1
+      ],
+      "fish": [
+        0.1,
+        0.6,
+        0.8,
+        0.08,
+        8,
+        0,
+        62,
+        21
+      ],
+      "seed": 767,
+      "quiet": false,
+      "warm": false,
+      "near_school": [
+        0.12,
+        0.65,
+        0.76,
+        0.13,
+        6,
+        0,
+        60,
+        25
+      ],
+      "ecology_design": {
+        "habitat": "归海释放槽",
+        "life": "larvae + far silverfin",
+        "summary": "幼体向外海迁游；远鱼、顺流微粒和两侧微泡",
+        "layers": [
+          "far",
+          "middle",
+          "foreground"
+        ],
+        "gameplay_clearance": "keep player route and combat telegraphs clear"
+      },
+      "plankton_tint": [
+        0.42,
+        0.72,
+        0.9,
+        0.24
+      ],
+      "bubble_tint": [
+        0.74,
+        0.92,
+        1,
+        1
+      ],
+      "bubble_size": [
+        3,
+        7
+      ],
+      "bubble_population": 4,
+      "bubble_opacity": 0.22,
+      "plankton_size": [
+        2,
+        5
+      ],
+      "plankton_opacity": 0.3,
+      "fish_ecology": "ecology_pool"
+    }
+  }
+}

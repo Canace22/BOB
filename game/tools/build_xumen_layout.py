@@ -195,6 +195,7 @@ for recipe in recipes:
         sc.sprite('Ring'+str(n),'World/Art','res://art/xumen-layout-v1/ring.png',[p[0]-142*k,p[1]-215.5*k],k,2)
     build_ambience(sc,recipe,GAME,v)
     sc.node('LayoutEnvironment','Node2D','.',script=sc.ext('Script','res://src/world/scenery/layout/layout_environment.gd'))
+    sc.node('RoomEcology','Node2D','.',script=sc.ext('Script','res://src/world/scenery/kit/room_ecology.gd'),room_id=json.dumps(rid))
     r['layered_environment']=True;r['camera_zoom']=1.0
     r['reference']='res://art/whalebelly/reference/r1/'+rid+'.png'
     r['layout']['source_recipe']='res://content/whalebelly/layout/recipes.json'

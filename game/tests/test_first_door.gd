@@ -26,9 +26,7 @@ func test_visible_first_door_crosses_by_walking() -> void:
 	check(host.player_ui.data.prompt_door() == null, "open streaming passage does not offer teleport interaction")
 
 	var entrance: CampaignDoorway = host.continuity.doorways[0]
-	check(is_instance_valid(entrance.inset) and is_instance_valid(entrance.lip), "passage has a visible painted entrance")
-	var lip_center_x: float = entrance.lip.global_position.x + 512.0 * entrance.lip.scale.x
-	check(absf(entrance.lip.global_position.y - host.ground_y(lip_center_x, entrance.position.y)) < 1.0, "foreground threshold starts at the slope, not the character waist")
+	check(not is_instance_valid(entrance.inset) and not is_instance_valid(entrance.lip), "black passage art is removed")
 	var score_playback := host.music.get_stream_playback()
 	var identity: int = host.player.get_instance_id()
 	Input.action_press("tp_right")

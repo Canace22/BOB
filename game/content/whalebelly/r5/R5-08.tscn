@@ -1,5 +1,6 @@
 [gd_scene format=3]
 
+[ext_resource type="Script" path="res://src/world/scenery/kit/room_ecology.gd" id="ecology_room"]
 [ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
 [ext_resource type="Texture2D" path="res://art/world-kit/r5-tail-water-base.png" id="r2"]
 [ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="r3"]
@@ -278,3 +279,7 @@ texture = ExtResource("r25")
 
 [node name="PresentationMotion" type="Node2D" parent="."]
 script = ExtResource("r26")
+
+[node name="RoomEcology" type="Node2D" parent="."]
+script = ExtResource("ecology_room")
+room_id = "R5-08"
