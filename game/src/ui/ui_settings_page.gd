@@ -4,7 +4,7 @@ extends RefCounted
 static func build(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "界面与声音"
 	var column: VBoxContainer = WhaleUIPages.menu(ui,720)
-	_toggle(column, "Numbers", "数值辅助", "生命与 Boss 耐受显示准确数值；资源始终保留数值。",ui.preferences.numbers,func(value: bool) -> void:
+	_toggle(column, "Numbers", "数值辅助", "显示生命、蓄振与 Boss 的准确数值；关闭后蓄振显示可释放次数。",ui.preferences.numbers,func(value: bool) -> void:
 		ui.preferences.numbers=value
 		ui.save_preferences())
 	_toggle(column, "Contrast", "增强对比", "加深 HUD 底色，增强控件边框。",ui.preferences.contrast,func(value: bool) -> void:

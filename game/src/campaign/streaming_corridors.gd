@@ -239,10 +239,11 @@ func _existing_surface(point: Vector2) -> bool:
 				var y: float = lerpf(a.y,b.y,(local.x-a.x)/(b.x-a.x))
 				if absf(local.y-y)<28.0: return true
 	return false
-func corridor_segment_near(world: Vector2) -> Dictionary:
+func corridor_segment_near(world: Vector2, room_index: int = -1, reach: float = 260.0) -> Dictionary:
 	var nearest: Dictionary = {}
-	var distance: float = 260.0
+	var distance: float = reach
 	for link: Dictionary in links:
+		if room_index >= 0 and room_index != int(link.a) and room_index != int(link.b): continue
 		var path: PackedVector2Array = link.path
 		for i: int in range(1,path.size()):
 			var point: Vector2 = Geometry2D.get_closest_point_to_segment(world,path[i-1],path[i])

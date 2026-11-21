@@ -101,6 +101,30 @@ func test_jump_keeps_height_and_span_with_shorter_airtime() -> void:
 	Input.action_release("tp_right")
 	check(running.span >= 285.0, "running jump still clears the original 289px gap budget, got %s" % running.span)
 
+func test_double_jump_hint_tracks_one_air_jump_per_landing() -> void:
+	var p: TidePlayer = await tuned_player()
+	eq(CampaignGuidance.jump_hint(p), "空格 起跳 · 再按二段跳", "The ground hint teaches both presses")
+	Input.action_press("tp_jump")
+	await physics_frames(25)
+	eq(p.jump_count, 1, "Holding jump only triggers takeoff")
+	eq(CampaignGuidance.jump_hint(p), "空格 二段跳", "Show the available air jump")
+	Input.action_release("tp_jump")
+	await physics_frames(2)
+	Input.action_press("tp_jump")
+	await physics_frames(6)
+	check(p.jump_count == 2 and p.velocity.y < 0, "A fresh press lifts the player again")
+	eq(CampaignGuidance.jump_hint(p), "二段跳已用", "Consumed air jump is visible")
+	Input.action_release("tp_jump")
+	await physics_frames(3)
+	var speed_before: float = p.velocity.y
+	Input.action_press("tp_jump")
+	await physics_frames(2)
+	check(p.velocity.y >= speed_before, "Third press gives no upward impulse")
+	Input.action_release("tp_jump")
+	await physics_frames(75)
+	check(p.is_on_floor() and p.jump_count == 0, "Landing restores the jump allowance")
+	eq(CampaignGuidance.jump_hint(p), "空格 起跳 · 再按二段跳", "Ground hint returns on landing")
+
 func test_swing_hits_fast_and_keeps_its_direction() -> void:
 	var p: TidePlayer = await tuned_player()
 	var victim := Target.new()

@@ -9,41 +9,62 @@ var next_button: Button
 var skip_button: Button
 var reveal: float = 0.0
 var input_lock: float = 0.0
+var skip_pending: bool = false
+var panel: PanelContainer
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter=Control.MOUSE_FILTER_STOP
-	var panel := PanelContainer.new()
-	panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
-	panel.offset_left=40
-	panel.offset_right=-40
-	panel.offset_top=-215
-	panel.offset_bottom=-24
-	panel.add_theme_stylebox_override("panel",WhaleUIStyle.box(Color(0.02,0.06,0.08,0.96),WhaleUIStyle.MUTED))
+	panel = PanelContainer.new()
 	add_child(panel)
+	resized.connect(_layout)
+	_layout()
+	apply_style(false)
 	var column := VBoxContainer.new()
-	column.add_theme_constant_override("separation",10)
+	column.add_theme_constant_override("separation",6)
 	panel.add_child(column)
-	speaker_label=WhaleUIStyle.label("",19,WhaleUIStyle.AMBER)
+	speaker_label=WhaleUIStyle.label("",22,WhaleUIStyle.BONE)
 	speaker_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
 	column.add_child(speaker_label)
 	text_label=RichTextLabel.new()
 	text_label.bbcode_enabled=false
-	text_label.custom_minimum_size=Vector2(0,88)
+	text_label.custom_minimum_size=Vector2(0,24)
 	text_label.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	text_label.add_theme_font_size_override("normal_font_size",22)
-	text_label.scroll_active=false
-	text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	text_label.add_theme_font_size_override("normal_font_size",20)
+	text_label.scroll_active=true
+	text_label.mouse_filter=Control.MOUSE_FILTER_PASS
 	column.add_child(text_label)
 	var buttons := HBoxContainer.new()
+	buttons.alignment=BoxContainer.ALIGNMENT_END
 	column.add_child(buttons)
 	next_button=WhaleUIStyle.button("F / 空格 / Enter 继续",advance)
-	skip_button=WhaleUIStyle.button("Esc 跳过本段",func() -> void: skip_requested.emit())
+	skip_button=WhaleUIStyle.button("Esc 跳过本段",request_skip)
 	for button: Button in [next_button,skip_button]:
-		button.custom_minimum_size=Vector2(230,34)
-		button.focus_mode=Control.FOCUS_NONE
+		button.focus_mode=Control.FOCUS_ALL
 		buttons.add_child(button)
+		WhaleUIStyle.compact_button(button)
 	hide()
+
+func _layout() -> void:
+	var value: String = text_label.text if is_instance_valid(text_label) else ""
+	var bounds: Rect2 = WhaleUIStyle.dialogue_rect(size,value)
+	panel.position = bounds.position
+	panel.size = bounds.size
+
+func apply_style(high_contrast: bool) -> void:
+	var style := WhaleUIStyle.surface(high_contrast)
+	style.content_margin_top=12
+	style.content_margin_bottom=12
+	panel.add_theme_stylebox_override("panel",style)
+
+func request_skip() -> void:
+	if input_lock>0.0: return
+	if skip_pending:
+		skip_requested.emit()
+	else:
+		skip_pending = true
+		skip_button.text = "再次确认跳过 · Esc / Enter"
+		skip_button.grab_focus()
 
 func present(speaker: String, value: String) -> void:
 	speaker_label.text=speaker
@@ -51,9 +72,16 @@ func present(speaker: String, value: String) -> void:
 	reveal=0.0
 	text_label.visible_characters=0
 	input_lock=0.15
+	skip_pending=false
+	skip_button.text="Esc 跳过本段"
+	text_label.scroll_to_line(0)
+	_layout.call_deferred()
 
 func advance() -> void:
 	if input_lock>0.0: return
+	skip_pending=false
+	skip_button.text="Esc 跳过本段"
+	next_button.grab_focus()
 	if text_label.visible_characters<text_label.get_total_character_count():
 		reveal=float(text_label.get_total_character_count())
 		text_label.visible_characters=int(reveal)
@@ -91,7 +119,11 @@ static func install(ui: WhaleCampaignUI) -> void:
 static func handle_key(ui: WhaleCampaignUI, event: InputEventKey) -> bool:
 	if ui.page_id!="dialogue": return false
 	var code: int = event.physical_keycode if event.physical_keycode else event.keycode
-	if code in [KEY_F,KEY_SPACE,KEY_ENTER]: ui.dialogue_view.advance()
-	elif code==KEY_ESCAPE: ui.host.dialogue.finish(true)
+	if code in [KEY_F,KEY_SPACE]: ui.dialogue_view.advance()
+	elif code==KEY_ENTER:
+		if ui.dialogue_view.skip_button.has_focus(): ui.dialogue_view.request_skip()
+		else: ui.dialogue_view.advance()
+	elif code==KEY_ESCAPE: ui.dialogue_view.request_skip()
+	else: return false
 	ui.get_viewport().set_input_as_handled()
 	return true

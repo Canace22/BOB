@@ -5,7 +5,10 @@ const MEMORY_TEXT := "水流穿过旧须，托起归港人的灯。\n松开攥�
 var host: Node2D
 
 func camp_position() -> Array:
-	return host.room.get("camp", {0:[93,550],3:[80,610],4:[110,503]}.get(host.room_index, []))
+	return _room_camp(host.room)
+
+static func _room_camp(room: Dictionary) -> Array:
+	return room.get("camp", {"R1-01":[93,550],"R1-04":[80,610],"R1-05":[110,503]}.get(room.get("id",""), []))
 
 func at_camp() -> bool:
 	var camp: Array = camp_position()
@@ -45,20 +48,36 @@ static func ability_name(id: String) -> String:
 	return str(CampaignWorld.NAMES.get(id, id))
 
 func map_rooms() -> Array[Dictionary]:
-	var known: Dictionary = {}
-	for i: int in range(host.rooms.size()):
-		var r: Dictionary = host.rooms[i]
-		if host.visited.get(str(r.id), false):
-			known[i] = true
-			for door: Dictionary in r.get("doors", []):
-				var target: int = int(door.to)
-				if target >= 0 and target < host.rooms.size(): known[target] = true
+	var next: String = CampaignGuidance.next_room(host)
 	var result: Array[Dictionary] = []
 	for i: int in range(host.rooms.size()):
-		if not known.has(i): continue
 		var r: Dictionary = host.rooms[i]
-		result.append({"index":i, "id":str(r.id), "name":str(r.name), "visited":bool(host.visited.get(str(r.id), false)), "current":i == host.room_index, "doors":r.get("doors", []), "camp":r.has("camp") or i in [0,3,4], "route_kind":CampaignGuidance.route_kind(str(r.id)), "next":str(r.id) == CampaignGuidance.next_room(host)})
+		result.append({"index":i, "id":str(r.id), "name":str(r.name), "visited":bool(host.visited.get(str(r.id), false)),
+			"current":i == host.room_index, "doors":r.get("doors", []), "camp":_room_camp(r).size() == 2,
+			"route_kind":CampaignGuidance.route_kind(str(r.id)), "next":str(r.id) == next, "objectives":map_objectives(i)})
 	return result
+
+static func visit_label(room: Dictionary) -> String:
+	if room.current: return "当前位置"
+	return "已到达" if room.visited else "未到达"
+
+func map_objectives(index: int) -> Dictionary[String, String]:
+	var room: Dictionary = host.rooms[index]
+	var id := str(room.id)
+	var details: Dictionary[String, String] = {}
+	for i: int in room.get("enemies", []).size():
+		if room.enemies[i].get("boss", false):
+			details["守关者"] = "已击败" if host.defeated.get("%s:%d" % [id, i], false) else "待击败"
+	if room.get("reward_grants", "") == "ending":
+		details["导流闸"] = "已打开" if host.collected.get(id, false) else "待开启"
+	elif not room.get("reward", []).is_empty() and not CampaignRelics.ITEMS.has(id):
+		var grant := str(room.get("reward_grants","float" if id == "R1-07" else ""))
+		var title := str(CampaignWorld.NAMES.get(grant, "奖励"))
+		details[title] = "已领取" if host.collected.get(id, false) else "待领取"
+	for key: String in CampaignRelics.ITEMS:
+		if key.get_slice(":", 0) == id:
+			details[str(CampaignRelics.ITEMS[key].name)] = "已收集" if host.collected.get(key, false) else "待收集"
+	return details
 
 func room_description(index: int) -> String:
 	var r: Dictionary = host.rooms[index]
@@ -72,9 +91,9 @@ func room_description(index: int) -> String:
 				if int(door.to) == index and not needs.is_empty():
 					var available: bool = needs.all(func(need: String) -> bool: return bool(host.defeated.get(str(source.id) + ":0", false)) if need == "boss" else host.has_ability(need))
 					requirement = ("\n已具备：" if available else "\n需要：") + CampaignWorld.requirement_label(needs)
-		return CampaignGuidance.description(host, str(r.id)) + "\n已发现，尚未探索。" + requirement
+		return CampaignGuidance.description(host, str(r.id)) + "\n未到达" + requirement
 	var details: String = CampaignGuidance.description(host, str(r.id)) + "\n已探索" + (" · 当前位置" if index == host.room_index else "")
-	if r.has("camp") or index in [0,3,4]: details += "\n壳形营地：恢复生命、记录检查点"
+	if _room_camp(r).size() == 2: details += "\n壳形营地：恢复生命、记录检查点"
 	if host.collected.get(str(r.id), false):
 		details += "\n本房补给 / 记忆已收集"
 		if str(r.id) == "R1-07":

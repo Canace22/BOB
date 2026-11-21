@@ -89,7 +89,7 @@ func run() -> void:
 	await tap(KEY_ESCAPE)
 	await step(25)
 	await tap(KEY_C)
-	check("Map known rooms only",ui.page_id=="map" and ui.data.map_rooms().size()==2)
+	check("Map includes every room",ui.page_id=="map" and ui.data.map_rooms().size()==host.rooms.size())
 	await screenshot("04-map")
 	await tap(KEY_ESCAPE)
 	await step(25)

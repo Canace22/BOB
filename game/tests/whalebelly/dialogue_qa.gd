@@ -20,10 +20,15 @@ func tap(code: Key) -> void:
 	await frames(2)
 	key(code,false)
 	await frames(2)
+func skip_dialogue() -> void:
+	await frames(12)
+	await tap(KEY_ESCAPE)
+	check("first Escape preserves unread dialogue",host.player_ui.page_id=="dialogue" and host.player_ui.dialogue_view.skip_pending)
+	await tap(KEY_ESCAPE)
 func shot(name: String) -> void:
 	if DisplayServer.get_name()=="headless": return
 	await process_frame
-	await RenderingServer.frame_post_draw
+	RenderingServer.force_draw(false)
 	root.get_texture().get_image().save_png(OUT.path_join(name+".png"))
 func wait_modal() -> bool:
 	for i: int in 120:
@@ -68,6 +73,9 @@ func run() -> void:
 	await frames(10)
 	check("movement cannot advance behind modal",is_equal_approx(host.player.position.x,before))
 	key(KEY_D,false)
+	# 明确布置尚未显示完的正文，避免慢设备截图耗时让逐字自然播完。
+	ui.dialogue_view.reveal=0.0
+	ui.dialogue_view.text_label.visible_characters=0
 	await tap(KEY_ENTER)
 	check("first confirm reveals current line",story.cursor==0 and ui.dialogue_view.text_label.visible_characters==ui.dialogue_view.text_label.get_total_character_count())
 	await shot("01b-arrival-full")
@@ -80,6 +88,18 @@ func run() -> void:
 	await frames(2)
 	check("space reveals without jumping",host.player.jump_buffer==0.0)
 	await tap(KEY_ENTER)
+	check("opening teaches the equipped weapon and attack key",story.cursor==2 and str(story.active.lines[2]).contains("按 J 攻击"))
+	check("opening teaches how to trigger the second jump",ui.dialogue_view.text_label.text.contains("空中松开空格，再按一次就能二段跳"))
+	await frames(12)
+	await tap(KEY_ENTER)
+	await shot("01c-combat-controls")
+	await tap(KEY_ENTER)
+	await await_resume()
+	# 开场可增补操作教学；逐句确认实际剩余内容，不假定永远只有两句。
+	for remaining: int in 10:
+		if story.active.is_empty(): break
+		await frames(12)
+		await tap(KEY_ENTER)
 	await await_resume()
 	check("normal completion restores control",not paused and host.player.controls_enabled and story.active.is_empty())
 	check("completion records stable ID and objective",story.seen.get("opening.arrival",false) and story.objective.id=="opening.inspect_lamp")
@@ -96,7 +116,7 @@ func run() -> void:
 	await frames(15)
 	await shot("03-inscription")
 	key(KEY_D,true)
-	await tap(KEY_ESCAPE)
+	await skip_dialogue()
 	await frames(20)
 	check("skip commits record but waits for movement release",story.seen.get("opening.lamp",false) and ui.pending_resume and not host.player.controls_enabled)
 	key(KEY_D,false)
@@ -108,7 +128,7 @@ func run() -> void:
 	await tap(KEY_F)
 	check("repeatable inscription can be read again",story.active.get("id","")=="opening.lamp")
 	key(KEY_Q,true)
-	await tap(KEY_ESCAPE)
+	await skip_dialogue()
 	await frames(20)
 	check("resume waits for combat page modifier release",ui.pending_resume and not host.player.controls_enabled)
 	key(KEY_Q,false)
@@ -116,8 +136,12 @@ func run() -> void:
 	check("resume does not reopen held combo page",host.player.pad_input.effective_page()==0)
 	# 真实按键走入字幕触发范围，不写玩家位置。
 	key(KEY_D,true)
+	var jumped: bool=false
 	for i: int in 150:
 		if story.seen.get("opening.distant_song",false): break
+		if not jumped and host.player.position.x>260 and host.player.is_on_floor():
+			jumped=true
+			await tap(KEY_SPACE)
 		await frames(1)
 	key(KEY_D,false)
 	check("walking into trigger starts nonmodal subtitle",story.subtitle_left>0.0 and not paused and host.player.controls_enabled)
@@ -143,7 +167,7 @@ func run() -> void:
 	check("hurt defers automatic dialogue without consuming it",story.active.is_empty() and not story.seen.has("qa.deferred"))
 	check("deferred dialogue starts after hurt ends",await wait_modal())
 	check("deferred trigger keeps its identity",story.active.get("id","")=="qa.deferred")
-	await tap(KEY_ESCAPE)
+	await skip_dialogue()
 	await await_resume()
 	queued.queue_free()
 	await frames(4)
@@ -179,7 +203,7 @@ func reload_save() -> void:
 	check("new journey can start from saved story",host.start_ui_session(true))
 	check("new journey clears previous records and objective",story.seen.is_empty() and story.objective.is_empty())
 	check("new journey plays opening again",await wait_modal())
-	await tap(KEY_ESCAPE)
+	await skip_dialogue()
 	await await_resume()
 	check("skipping arrival still establishes its goal",story.objective.get("id","")=="opening.inspect_lamp")
 	print("DIALOGUE_RELOAD_QA failures=",failures)

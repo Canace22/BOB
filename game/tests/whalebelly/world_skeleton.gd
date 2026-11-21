@@ -244,6 +244,12 @@ func views() -> void:
 		host.load_room(int(page[0]))
 		await tick(30)
 		host.player_ui.open(str(page[2]))
+		if page[2] == "map":
+			var map: WhaleUIMap = host.player_ui.body.find_child("RouteMap", true, false)
+			var tab: Button = host.player_ui.body.find_child("Map_" + CampaignWorld.region(str(host.room.id)), true, false)
+			assert(map.page == "world")
+			tab.button_pressed = true
+			tab.pressed.emit()
 		await tick(20)
 		await shot("view-" + str(page[1]))
 		host.player_ui.close_all()

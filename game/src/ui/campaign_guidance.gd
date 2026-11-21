@@ -78,6 +78,20 @@ static func description(host: Node2D, id: String) -> String:
 		if str(entry.id) == id and entry.has("about"): return str(entry.about)
 	return "主线通路"
 
+## 只读当前母蟹的动作，不改变战斗或解锁状态。
+static func combat_hint(host: Node2D) -> String:
+	if str(host.room.id) != "R1-04": return ""
+	for enemy: Dictionary in host.enemies:
+		var crab := enemy.get("actor") as CampaignCrabBoss
+		if not enemy.get("alive",false) or not is_instance_valid(crab): continue
+		if not crab.running: return "骨鸣器开局即可使用 · 靠近后按 J 攻击"
+		if crab.state in ["recover","stagger"]: return "收钳破绽 · 靠近按 J 攻击，伤害更高"
+		if crab.state in ["tell","active"]:
+			if crab.kind in ["sweep","second"]: return "低扫 · 按空格跳起躲开，等收钳后按 J 反击"
+			return "下砸 · 后退躲开，等收钳后按 J 反击" if crab.kind == "slam" else "冲撞 · 拉开距离，等整套连招结束再按 J 反击"
+		return "护壳中 · J 仍可削血，等收钳后反击伤害更高"
+	return ""
+
 static func door_label(host: Node2D, door: Dictionary) -> String:
 	var target: int = int(door.to)
 	if target == -2: return "后续区域未开放 · 原路返回"
@@ -87,6 +101,15 @@ static func door_label(host: Node2D, door: Dictionary) -> String:
 	var back: bool = str(host.room.id) in ["R1-06", "R1-07"] or (target < host.room_index and CampaignWorld.region(id) != CampaignWorld.region(str(host.room.id)))
 	var prefix: String = "返回" if back else route_kind(id)
 	return prefix + " · " + str(host.rooms[target].name)
+
+static func jump_hint(p: TidePlayer) -> String:
+	if p.is_on_floor(): return "空格 起跳 · 再按二段跳"
+	if p.coyote > 0 or p._wall_direction() != 0:
+		return "空格 跳跃"
+	if p is WhalebellyCampaignPlayer and p.grapple_target != Vector2.INF:
+		return "空格 跳跃"
+	if p.jump_count >= 2: return "二段跳已用"
+	return "空格 二段跳" if p._can_jump_cancel() else "空格 跳跃"
 
 static func float_prompt(host: Node2D) -> String:
 	var p: Node2D = host.player

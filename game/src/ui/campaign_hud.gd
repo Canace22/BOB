@@ -41,7 +41,9 @@ func _ready() -> void:
 	_layout()
 
 func _process(_dt: float) -> void:
-	for control: Control in [map_button, pause_button, combo_hud]: control.visible = controller.page_id.is_empty()
+	for control: Control in [map_button, pause_button]: control.visible = controller.page_id.is_empty() and controller.data.boss().is_empty()
+	minimap.high_contrast = controller.preferences.contrast
+	minimap.visible = controller.page_id.is_empty()
 	_update_prompt()
 
 func _update_prompt() -> void:
@@ -74,8 +76,8 @@ func _update_prompt() -> void:
 	interaction_prompt.present(prompt, "" if blocked else WhaleUIStyle.key(prompt_key), blocked, detail)
 
 func _layout() -> void:
-	minimap.position = Vector2(size.x-284,24)
-	minimap.size = Vector2(260,154)
+	minimap.position = Vector2(size.x-316,24)
+	minimap.size = Vector2(292,204)
 	map_button.position = Vector2(size.x-282, size.y-61)
 	pause_button.position = Vector2(size.x-151, size.y-61)
 
@@ -87,7 +89,7 @@ func _draw() -> void:
 	if not is_instance_valid(controller.player): return
 	var p: TidePlayer = controller.player
 	var prefs: WhaleUIPreferences = controller.preferences
-	if prefs.contrast: draw_style_box(WhaleUIStyle.box(WhaleUIStyle.INK), Rect2(21,20,388,133))
+	if prefs.contrast: draw_style_box(WhaleUIStyle.surface(true), Rect2(21,20,388,133))
 	draw_arc(Vector2(65,72), 37, 0, TAU, 64, WhaleUIStyle.MUTED, 1.0, true)
 	draw_texture_rect(echo, Rect2(39,42,52,57), false)
 	for i: int in range(p.max_health):
@@ -103,18 +105,15 @@ func _draw() -> void:
 		var amount: float = clampf(float(p.soul-i*p.skill_cost)/p.skill_cost,0,1)
 		draw_rect(Rect2(rect.position,Vector2(rect.size.x*amount,rect.size.y)), WhaleUIStyle.TEAL)
 		draw_rect(rect, WhaleUIStyle.MUTED,false,1)
-	text(Vector2(120,121), "蓄振 %d/%d · 单次 %d" % [p.soul,p.max_soul,p.skill_cost], 15, WhaleUIStyle.MUTED)
-	if controller.location_left > 0:
-		var title: String = CampaignWorld.region_name(str(controller.host.room.id)) + " · " + str(controller.host.room.name)
-		var width: float = WhaleUIStyle.FONT.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,23).x
-		var title_color: Color = WhaleUIStyle.BONE
-		title_color.a = clampf(controller.location_left,0,1)
-		text(Vector2(size.x-36-width,207),title,23,title_color)
+	var resource: String = "蓄振 · 可释放 %d 次" % (p.soul/maxi(1,p.skill_cost))
+	if prefs.numbers: resource += " · %d/%d" % [p.soul,p.max_soul]
+	text(Vector2(120,121),resource,16,WhaleUIStyle.MUTED)
 	if controller.host.practice: text(Vector2(size.x-270,233),"能力练习 · 不保存进度",16,WhaleUIStyle.AMBER)
 	if controller.host.room_preview: text(Vector2(size.x-270,256),"房间预览 · 不记录发现",16,WhaleUIStyle.AMBER)
 	if controller.notice_left>0: text(Vector2(35,157),controller.notice_text,17,WhaleUIStyle.AMBER)
-	if controller.page_id == "conversation": return
-	text(Vector2(35,size.y-83), controller.host.dialogue.objective_hint() if not controller.host.dialogue.objective_hint().is_empty() else CampaignGuidance.hint(controller.host), 16, WhaleUIStyle.TEAL)
+	if controller.page_id in ["conversation","dialogue"]: return
+	if controller.location_left>0 and controller.data.boss().is_empty() and not interaction_prompt.visible:
+		text(Vector2(35,size.y-105), controller.host.dialogue.objective_hint() if not controller.host.dialogue.objective_hint().is_empty() else CampaignGuidance.hint(controller.host), 17, WhaleUIStyle.TEAL)
 	_draw_actions(p)
 	_draw_combo(p)
 	map_button.text = WhaleUIStyle.key("ui_region_map") + "  地图"
@@ -128,6 +127,10 @@ func _draw() -> void:
 		draw_rect(Rect2(x,size.y-113,width*clampf(float(boss.hp)/float(boss.max_hp),0,1),7),WhaleUIStyle.BONE)
 		draw_rect(Rect2(x-3,size.y-116,width+6,13),WhaleUIStyle.MUTED,false,1)
 		if prefs.numbers: text(Vector2(x+width+14,size.y-106),"%d/%d" % [maxi(0,int(boss.hp)),int(boss.max_hp)],15)
+		var advice: String = CampaignGuidance.combat_hint(controller.host)
+		if not advice.is_empty():
+			var advice_width: float = WhaleUIStyle.FONT.get_string_size(advice,HORIZONTAL_ALIGNMENT_LEFT,-1,17).x
+			text(Vector2((size.x-advice_width)*0.5,size.y-88),advice,17,WhaleUIStyle.TEAL)
 	if p.state == "recover":
 		text(Vector2(35,189),"调息中 · 松开取消",16,WhaleUIStyle.AMBER)
 		draw_line(Vector2(35,203),Vector2(35+220*clampf(p.state_time/maxf(p.state_duration,0.01),0,1),203),WhaleUIStyle.AMBER,3)
@@ -138,7 +141,7 @@ func _draw() -> void:
 
 func _draw_actions(p: TidePlayer) -> void:
 	if p is TideCombatPlayer and p.pad_input.effective_page() != 0: return
-	text(Vector2(35,size.y-65),"Q / E 技能页 · Q + E 辅助页",13,WhaleUIStyle.TEAL)
+	text(Vector2(35,size.y-66),"J 普攻 · I 格挡 · %s · Q / E 技能 · H 操作手记" % CampaignGuidance.jump_hint(p),16)
 	var upgraded: bool = p.skill_unlocked("chapter") and p.skill_controller.use_upgrades
 	var orb: String = "shadow_orb" if upgraded else "A4_parry"
 	var dash: String = "shadow_dash" if upgraded else "A1_dash"
@@ -147,22 +150,21 @@ func _draw_actions(p: TidePlayer) -> void:
 		["E+L",orb,"深鸣" if upgraded else "叉鸣弹","orb",p.skill_cost],
 		["Q+E+I","heavy","重鸣","heavy",p.skill_cost],
 		["E+I","recover","调息","heal",p.skill_cost]]
-	for i: int in range(actions.size()):
-		var a: Array = actions[i]
-		var locked: bool = not p.ability_available(str(a[1]))
+	var column: int = 0
+	for a: Array in actions:
+		if not p.ability_available(str(a[1])): continue
 		var cd: float = float(p.cooldowns.get(str(a[3]),0))
-		var reason: String = "未解锁" if locked else ("%.1fs"%cd if cd>0 else ("蓄振不足" if p.soul<int(a[4]) else ""))
-		if str(a[1])=="recover" and reason.is_empty():
-			if p.health>=p.max_health: reason="生命已满"
-			elif not p.is_on_floor(): reason="需落地"
-		var x: float = 35+i*145
-		text(Vector2(x,size.y-43), str(a[0])+"  "+str(a[2]),17,WhaleUIStyle.MUTED if not reason.is_empty() else WhaleUIStyle.BONE)
-		text(Vector2(x,size.y-21),reason if not reason.is_empty() else ("消耗 %d"%int(a[4]) if int(a[4])>0 else "可用"),13,WhaleUIStyle.AMBER if locked else WhaleUIStyle.MUTED)
+		var ready: bool = cd<=0 and p.soul>=int(a[4])
+		var x: float = 35+column*154
+		text(Vector2(x,size.y-39),str(a[0])+" "+str(a[2]),17,WhaleUIStyle.BONE if ready else WhaleUIStyle.MUTED)
+		if cd>0: text(Vector2(x,size.y-17),"%.1fs"%cd,15,WhaleUIStyle.MUTED)
+		column += 1
 
 func _draw_combo(p: TidePlayer) -> void:
 	var combat := p.skill_controller as TideCombatSkills
 	if combat == null: return
 	var count: int = combat.combo_hits
+	if count<=0: return
 	var x: float = size.x-180.0
 	var y: float = size.y*0.43
 	var color: Color = WhaleUIStyle.AMBER if count > 0 else WhaleUIStyle.MUTED

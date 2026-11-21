@@ -127,14 +127,15 @@ func test_guidance_and_map_follow_the_link() -> void:
 
 func test_map_pages_place_rooms_on_the_whale_without_overlap() -> void:
 	var spots: Dictionary = {}
-	for id: String in ["R1-01", "R2-01", "R3-01", "R4-01", "R5-01"]:
-		var host := make_host(id)
+	for page: String in ["world", "R1", "R2", "R3", "R4", "R5"]:
+		var host := make_host("R4-01")
 		for entry: Dictionary in host.rooms: host.visited[str(entry.id)] = true
 		var map := WhaleUIMap.new()
 		map.data = WhaleUICampaignData.new()
 		map.data.host = host
 		map.theme = WhaleUIStyle.theme()
-		map.size = Vector2(1176, 392)
+		map.size = Vector2(1176, 346)
+		map.page = page
 		tree.root.add_child(map)
 		check(map.anatomy.texture == (WhaleUIMap.HEAD if map.page == "R1" else WhaleUIMap.WHALE), "%s page shows its whale backdrop" % map.page)
 		var boxes: Array = map.buttons.values()
@@ -149,6 +150,43 @@ func test_map_pages_place_rooms_on_the_whale_without_overlap() -> void:
 			eq(spots.get_or_add(str(room.id), spot), spot, "%s keeps one place on the whale across pages" % room.id)
 		map.free()
 		host.free()
+
+func test_overview_at_combination_gate_distinguishes_visits_boss_and_rewards() -> void:
+	var host := make_host("R4-01")
+	host.visited = {"R4-01":true, "R3-01":true, "R2-04":true}
+	host.collected["R5-08:tidal-pearl"] = true
+	var map := WhaleUIMap.new()
+	map.data = WhaleUICampaignData.new()
+	map.data.host = host
+	map.theme = WhaleUIStyle.theme()
+	map.size = Vector2(1176, 392)
+	tree.root.add_child(map)
+	eq(map.buttons.size(), host.rooms.size(), "C map includes every region before discovery")
+	var route := map.recommended_route()
+	check(route.size() == 2 and not Rect2(route[0], Vector2.ZERO).expand(route[1]).grow(6).intersects(map.caption.get_rect()), "Combination gate caption leaves the gold arrow visible")
+	for room: Dictionary in map.nodes:
+		var button := map.buttons[int(room.index)]
+		var expected := WhaleMapMarker.Kind.CURRENT if room.current else (WhaleMapMarker.Kind.VISITED if room.visited else WhaleMapMarker.Kind.UNKNOWN)
+		eq(button.kind, expected, "Room symbol follows current position and saved visits")
+		check(button.text.is_empty() and button.get_child_count() == 0, "Map markers do not repeat room names or status labels")
+		check(button.accessibility_name.contains(room.name) and button.accessibility_name.contains(WhaleUICampaignData.visit_label(room)), "Every marker has a spoken name and status")
+		check(map.frame().grow(1).encloses(button.get_rect()), "Node fits on the full map")
+		for other: int in map.buttons:
+			if other > int(room.index): check(not button.get_rect().grow(3).intersects(map.buttons[other].get_rect()), "Overview nodes stay separate")
+	var boss: int = host.rooms.find_custom(func(r: Dictionary) -> bool: return r.id == "R2-04")
+	eq(map.data.map_objectives(boss).get("守关者"), "待击败", "Visiting a boss room never counts as a kill")
+	host.defeated["R2-04:0"] = true
+	eq(map.data.map_objectives(boss).get("守关者"), "已击败", "Permanent defeat appears on revisit")
+	var release: int = host.rooms.find_custom(func(r: Dictionary) -> bool: return r.id == "R5-08")
+	eq(map.data.map_objectives(release), {"导流闸":"待开启", "归潮珠":"已收集"}, "Side treasure is independent of opening the release gate")
+	map.select_room(release)
+	eq(map.caption.text, str(host.rooms[release].name), "Inspection reveals the selected room name")
+	check(WhaleUIMapPage.room_detail(map,release).contains("归潮珠已收集"), "Inspector includes the selected room’s reward progress")
+	map.show_page("R5")
+	eq(host.visited.size(), 3, "Inspecting another region never discovers its rooms")
+	eq(str(host.room.id), "R4-01", "Inspecting never moves the player")
+	map.free()
+	host.free()
 
 func test_bosses_grant_the_three_marks_and_the_ending_needs_all() -> void:
 	var rooms := CampaignWorld.load_rooms(base_rooms())

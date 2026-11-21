@@ -19,7 +19,7 @@ func test_vent_map_guides_normal_unlock_and_return() -> void:
 	check(not data.room_description(2).contains("逐层上行"),"Unrelated rooms have no vent route text")
 	host.free()
 
-func test_only_optional_upper_banks_allow_upward_passage() -> void:
+func test_optional_upper_banks_and_recovery_landing_allow_upward_passage() -> void:
 	var scene: Node = load("res://content/whalebelly/r1/R1-02.tscn").instantiate()
 	var recipes: Array = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/layout/recipes.json")).rooms
 	var recipe: Dictionary = recipes.filter(func(value: Dictionary) -> bool: return str(value.id) == "R1-02")[0]
@@ -28,7 +28,7 @@ func test_only_optional_upper_banks_allow_upward_passage() -> void:
 		var shape: CollisionPolygon2D = scene.get_node("World/Terrain/%s/Contour" % platform.id)
 		eq(shape.one_way_collision, bool(platform.get("one_way", false)), "Authored upward passage: " + str(platform.id))
 		if shape.one_way_collision: passable.append(str(platform.id))
-	eq(passable, ["Surface7", "Surface8", "Surface9", "Surface10"], "Three float steps and the anchor-route memory bank pass upward; main trench banks stay solid")
+	eq(passable, ["Surface1", "Surface7", "Surface8", "Surface9", "Surface10"], "Recovery landing, three float steps and memory bank pass upward; the crab's low ceiling stays solid")
 	for wall: Dictionary in recipe.walls:
 		var shape: CollisionPolygon2D = scene.get_node_or_null("World/Terrain/%s/Contour" % wall.id)
 		if wall.get("removed",false):

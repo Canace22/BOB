@@ -2,7 +2,7 @@ class_name WhaleUIPreferences
 extends RefCounted
 
 var path: String = "user://whalebelly/ui_settings.cfg"
-var numbers: bool = true
+var numbers: bool = false
 var contrast: bool = false
 var reduce_motion: bool = false
 var volume: float = 0.8
@@ -11,7 +11,7 @@ var muted: bool = false
 func read() -> void:
 	var config := ConfigFile.new()
 	if config.load(path) != OK: return
-	numbers = bool(config.get_value("ui", "numbers", true))
+	numbers = bool(config.get_value("ui", "numbers", false))
 	contrast = bool(config.get_value("ui", "contrast", false))
 	reduce_motion = bool(config.get_value("ui", "reduce_motion", false))
 	volume = clampf(float(config.get_value("audio", "volume", 0.8)), 0.0, 1.0)

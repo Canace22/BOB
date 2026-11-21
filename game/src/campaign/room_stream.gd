@@ -11,11 +11,12 @@ var active: int = -1
 var changing: bool = false
 var actor: WhalebellyCampaignPlayer
 var previous_origin: Vector2
-var corridors: Node2D
+var corridors: CampaignStreamingCorridors
 var gates: Node2D
 var max_instantiate_us: int = 0
 var max_resident: int = 0
 var threaded_loading: bool = DisplayServer.get_name() != "headless"
+const FALL_MARGIN := 140.0
 
 func _ready() -> void:
 	layout = CampaignStreamingLayout.build(host.rooms)
@@ -85,8 +86,6 @@ func _process(_dt: float) -> void:
 		host.record_event("stream_ready", {"room":index,"instantiate_us":elapsed})
 		break
 	for index: int in cached: _preview(cached[index], index)
-	if is_instance_valid(host.player):
-		host.player.world_bounds.end.y = fall_limit(host.player.global_position) - origin(active).y
 
 func _prepare_room(index: int, scene: Node2D) -> Dictionary:
 	# 准备阶段不跨帧：房内构造沿用原接口，恢复活动别名后邻房全部冻结。
@@ -108,6 +107,7 @@ func _prepare_room(index: int, scene: Node2D) -> Dictionary:
 func _physics_process(_dt: float) -> void:
 	if not enabled or changing or active < 0 or not is_instance_valid(host.player): return
 	if host.quitting or get_tree().paused or not host.player.controls_enabled or host.player.health <= 0: return
+	host.player.world_bounds.end.y = fall_limit(host.player.global_position) - origin(active).y
 	for index: int in neighbors(active):
 		if not is_ready(index): continue
 		var rect := Rect2(origin(index),host.point(host.rooms[index].size)).grow(-10)
@@ -251,14 +251,16 @@ func _preview(entry: Dictionary, index: int) -> void:
 		environment.update_visuals()
 
 func fall_limit(world: Vector2) -> float:
-	var limit: float = origin(active).y + float(host.rooms[active].size[1]) + 140.0 if active >= 0 else 10000.0
-	var closest: float = INF
-	for link: Dictionary in layout.get("links", []):
-		for point: Vector2 in link.path:
-			var distance: float = world.distance_to(point)
-			if distance < closest and distance < 500:
-				closest = distance
-				limit = point.y + 500
+	if active < 0: return 10000.0
+	var room_bounds: Rect2 = layout.room_bounds[active]
+	var limit: float = room_bounds.end.y + FALL_MARGIN
+	if world.y <= limit: return limit
+	# 竖井可向下延伸。离开台边仍给一次落差余量，远处经过的其它房间不能接管跌落。
+	var safe: Vector2 = host.actor_frame.to_global(host.player.last_safe)
+	if safe.y > room_bounds.end.y and not corridors.corridor_segment_near(safe,active,CampaignStreamingCorridors.WIDTH).is_empty():
+		limit = maxf(limit,safe.y + FALL_MARGIN)
+	var passage: Dictionary = corridors.corridor_segment_near(world,active,CampaignStreamingCorridors.WIDTH)
+	if not passage.is_empty(): limit = maxf(limit,passage.point.y + FALL_MARGIN)
 	return limit
 
 func snapshot() -> Dictionary:

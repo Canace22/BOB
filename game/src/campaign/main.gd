@@ -773,8 +773,9 @@ func load_progress() -> void:
 	if collected.get("R1-07",false): abilities.float = true
 	visited = payload.get("visited",{}).duplicate(true)
 	visited[str(rooms[room_index].id)] = true
-	for known: String in collected: visited[known.get_slice(":",0)] = true
-	for known: String in defeated: visited[known.get_slice(":",0)] = true
+	for evidence: Dictionary in [collected, defeated]:
+		for known: String in evidence:
+			if evidence[known]: visited[known.get_slice(":",0)] = true
 	notify("已读取保存进度")
 
 func save_path() -> String:
