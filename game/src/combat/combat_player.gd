@@ -129,7 +129,7 @@ func try_backstep() -> bool:
 	return true
 
 func request_action(action: String) -> bool:
-	# 成功格挡允许立即反击，未成功的持盾仍遵守原取消窗口。
+	# 成功格挡允许立即反击，未成功的持盾仍沿用原取消窗口。
 	var guard := skill_controller as TideCombatGuardSkills
 	if guard != null and guard.active and guard.visual_key == "parry" and guard.parried:
 		if action in ["strike_01","strike2"] and controls_enabled and health > 0: guard.cancel()

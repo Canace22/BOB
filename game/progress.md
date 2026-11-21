@@ -2491,3 +2491,5 @@ F7全技能练习是新显式局部开关，默认false保持原chapter锁，开
 - 将 448 份重复纹理指向已有的相同字节，保留全部访问路径。PCK 从 200,087,308 降至 190,961,036 字节。两次均使用 ZIP Deflate 9，最终 ZIP 为 197,722,729 字节，节省 1,522,973 字节（0.76%）。
 - 最终 ZIP 的 9 个文件通过 CRC，首页登记的 PCK 和 WASM 大小正确。解压后逐路径对照，3,188 项资源内容一致。Godot 实例化全部 19 房，检查开场提示、地图和许可文件通过。
 - Chrome 在本地横屏 iframe 里验证新档、开场对白、移动、跳跃、地图和刷新续玩，未出现控制台或 HTTP 错误。此次按键路线覆盖开场。包在本机 `build/wanxiang-web/游戏试玩包-去重版.zip`，大小与 SHA-256 见 `build/qa/wanxiang-web-dedup/proof.json`。原投稿包单独保留。
+
+合并后验证：临时集成目录以113db6a5为最新主干，运行资源按LFS SHA恢复并核对。check 0 error(s)；完整427项通过，唯一字体检查因三处新注释含未收录字形失败，改用已有字形后test_ui_font 1 passed / 0 failed，合计428项均通过。仅注释改变，无逻辑改动。原生正式主流程实际按键10项通过：持续格挡、完美反击、Q+J上挑、D+K三段、L→S后跳取消、破防和松开恢复。日志combat-merge-{check,tests,font,native}.log位于原工作区game/build/qa。相对主干game/src/ui、字体及docs/ui-system完全无差异。UI调整在原分支工作区及stash 34d4ce06双重保留，不进入本批提交。不发布Web。
