@@ -23,7 +23,7 @@ R2-03/04以配方`reference_background`选择单房清底图、`background_schoo
 | `src/campaign/main.gd` | 活动房间上下文、机关、敌人/Boss、能力、营地、HUD、V6进度；显式重生/读档重建场景 |
 | `src/campaign/tide_player.gd`、`campaign_player.gd` | 完整角色动作与技能、主关卡参数适配、动画事件；主线继承共用战斗角色 |
 | `src/combat/` | 主线和白盒共用的手柄式键盘输入、剑技、后跳取消、逐帧呈现与局部命中反馈；保留既有 wb_* 稳定技能ID |
-| `src/ui/combat_combo_hud.gd`、`src/combat/combat_hints.gd` | 下方技能栏四列连招提示，直接读取输入页表、方向派生、升级与实际可用性；右侧Combo由正式命中事件累计；敌人使用主角的可玩层，营房中景不会遮挡敌人 |
+| `src/ui/combat_combo_hud.gd`、`src/combat/combat_hints.gd` | 右下图标技能页与方向派生提示，直接读取输入页表、方向派生、升级与实际可用性；右侧Combo由正式命中事件累计；敌人使用主角的可玩层，营房中景不会遮挡敌人 |
 | `src/campaign/action_visual.gd`、`tide_world_effects.gd` | 正式主角的可变帧图集、实际状态/阶段映射、世界特效与历史残影；物理由角色控制 |
 | `src/campaign/tide_action_phases.gd` | 晶长冲蓄力/飞行/退出的呈现阶段，退出尾帧不延长控制锁定 |
 | `src/campaign/tide_skill_catalog.gd`、`tide_skill_controller.gd` | 增量技能参数、解锁与时间轴，复用旧角色/房间/进度接口 |
@@ -49,7 +49,8 @@ R2-03/04以配方`reference_background`选择单房清底图、`background_schoo
 | `src/core/`、`content/data/world_graph.gd` | 保留的兼容状态/存档校验，不再包含旧版关卡场景加载入口 |
 | `src/narrative/`、`src/ui/dialogue_panel.gd` | 位置/按键/行进字幕触发、条件、完成记录和目标；对话复用UI暂停与输入恢复，V6追加可选narrative，见[对话系统](dialogue-system.md) |
 | `src/ui/` | 正式标题、HUD、模态页面与设置；注入主线宿主，只读实际状态并请求主线操作。旧 tide_hud 保留给独立角色参数场 |
-| `src/ui/campaign_minimap.gd` | HUD 右上角房间拓扑图，复用 `WhaleUICampaignData.map_rooms()` 的发现规则；按稳定房间 ID 固定布局，读取门条件、所属房间 Boss 击败状态和营地，不写进度 |
+| `src/ui/campaign_route_hud.gd`、`action_hud_style.gd` | 当前房间多出口的只读边缘投影与避让、共用位图图集及紧凑排版；不持有任务或输入状态 |
+| `src/ui/campaign_minimap.gd` | HUD 左下角紧凑房间拓扑图，复用 `WhaleUICampaignData.map_rooms()` 的发现规则；按稳定房间 ID 固定布局，读取门条件、所属房间 Boss 击败状态和营地，不写进度 |
 | `content/whalebelly/r1/` | 七个房间场景、道路碰撞、分层贴图和节点 |
 | `content/whalebelly/environment/` | 当前环境场景、各动件脚本/Shader；保留恢复阶段的组织方式 |
 | `content/whalebelly/Player.tscn`、`CampaignPlayer.tscn` | 角色动作与主线参数 |
@@ -122,9 +123,9 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 
 独立入口`game/content/prototypes/enemy_lab/main.tscn`，实现位于`game/src/prototypes/enemy_lab/`。`EnemyLab`拥有配置与整轮重建，`EnemyLabEnemy`拥有试验AI/碰撞/攻击阶段，`EnemyLabReactions`拥有敌人侧结算与控制，`EnemyLabDebug`只读适配实际窗口，`EnemyLabHUD`只发调试请求；玩家继承既有`CombatWhiteboxPlayer`，没有第二份技能/输入执行器。该实现只用于参数验证，不替换主线敌人，也不改主线奖励或存档。资源与实际操作见[试验场说明](../game/content/prototypes/enemy_lab/README.md)。
 
-敌人试验场的`EnemyLabSkills`只继承共用控制器调整持盾、迎击奖励与取消，不回写主线参数；`EnemyLabGuardFeedback`订阅格挡成功事件驱动已有位图/声音。三套新图集区域与pivot在`art/enemy-lab-readability-v1/atlas.json`，仅由试验场视觉器消费。
+主线与敌人试验场统一使用`TideCombatGuardSkills`管理持盾、迎击奖励、架势恢复与破防；`EnemyLabSkills`仅保留兼容类型。`TideCombatGuardFeedback`由共用角色创建一次，订阅格挡成功与破防事件驱动已有位图/声音。三套新图集区域与pivot在`art/enemy-lab-readability-v1/atlas.json`，仅由试验场视觉器消费。
 
-试验场`EnemyLabAttackEffects`归单敌所有，监听阶段事件并复用已入库位图固定池；自身不执行伤害。`EnemyLabSkills`统一持有架势/恢复/破防，`update_combo`在非技能状态也推进恢复；攻击的压力/不可挡属性只在一次伤害分派期间注入并随即清理，主线控制器参数保持原值。
+试验场`EnemyLabAttackEffects`归单敌所有，监听阶段事件并复用已入库位图固定池；自身不执行伤害。`TideCombatGuardSkills`统一持有架势/恢复/破防，`update_combo`在非技能状态也推进恢复；试验场攻击的压力/不可挡属性只在一次伤害分派期间注入并随即清理；主线现有攻击沿用默认压力。主线近战在共用角色命中入口消费一次反击奖励，试验场仍在护壳结算中消费；两条路径互斥。主线HUD从同一控制器读取架势、破防和反击倒计时。
 
 试验场不可格挡前摇红光由EnemyLabVisual更新独立enemy_warning材质的danger参数，EnemyLabEnemy状态切换时即时清理，避免受击停顿导致残留。材质同时保留共用flash参数，普通攻击不启用danger；不绘地面或文字预警。
 

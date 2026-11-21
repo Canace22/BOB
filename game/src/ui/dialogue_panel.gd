@@ -84,8 +84,8 @@ static func install(ui: WhaleCampaignUI) -> void:
 	ui.subtitle_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 	ui.subtitle_label.offset_left=-420
 	ui.subtitle_label.offset_right=420
-	ui.subtitle_label.offset_top=-170
-	ui.subtitle_label.offset_bottom=-100
+	ui.subtitle_label.offset_top=-270
+	ui.subtitle_label.offset_bottom=-200
 	ui.host.dialogue.subtitle_changed.connect(func(value: String) -> void: ui.subtitle_label.text=value)
 
 static func handle_key(ui: WhaleCampaignUI, event: InputEventKey) -> bool:

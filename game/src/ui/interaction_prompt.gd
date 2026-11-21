@@ -2,7 +2,7 @@ class_name WhaleInteractionPrompt
 extends Control
 ## Screen-space prompt shared by interactions and nearby traversal actions.
 
-const FONT_SIZE := 20
+const FONT_SIZE := 14
 var message: String = ""
 var action_key: String = ""
 var blocked: bool = false
@@ -23,10 +23,10 @@ func _ready() -> void:
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	caption.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(caption)
-	detail = WhaleUIStyle.label("", 18)
+	detail = WhaleUIStyle.label("", 13)
 	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(detail)
-	key_label = WhaleUIStyle.label("", 23, WhaleUIStyle.INK)
+	key_label = WhaleUIStyle.label("", 16, WhaleUIStyle.INK)
 	key_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	add_child(key_label)
 	for style: StyleBoxFlat in [card_style, key_style]:
@@ -45,7 +45,7 @@ func present(value: String, key: String, unavailable: bool, guidance: String = "
 	visible = not message.is_empty()
 	caption.text = message
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER if blocked else HORIZONTAL_ALIGNMENT_LEFT
-	caption.add_theme_font_size_override("font_size", 23 if blocked else FONT_SIZE)
+	caption.add_theme_font_size_override("font_size", 16 if blocked else FONT_SIZE)
 	caption.add_theme_color_override("font_color", WhaleUIStyle.AMBER if blocked else WhaleUIStyle.BONE)
 	detail.text = explanation
 	detail.visible = not explanation.is_empty()
@@ -58,7 +58,7 @@ func _process(dt: float) -> void:
 	var appear: float = 1.0 if reduce_motion else clampf(age / 0.18, 0.0, 1.0)
 	modulate.a = appear
 	var pulse: float = 0.0 if reduce_motion else maxf(0.0, 1.0 - age / 0.7)
-	var accent: Color = WhaleUIStyle.AMBER if blocked else WhaleUIStyle.TEAL
+	var accent: Color = WhaleUIStyle.AMBER
 	card_style.bg_color = Color(WhaleUIStyle.INK, 1.0 if high_contrast else (0.94 if blocked else 0.88))
 	card_style.set_border_width_all(2 if blocked else 1)
 	card_style.border_color = accent.lerp(WhaleUIStyle.BONE, 0.15 + pulse * 0.35)
@@ -69,22 +69,21 @@ func _process(dt: float) -> void:
 	queue_redraw()
 
 func _layout(appear: float) -> void:
-	var key_width: float = maxf(36.0, WhaleUIStyle.FONT.get_string_size(action_key, HORIZONTAL_ALIGNMENT_LEFT, -1, 23).x + 14.0) if key_label.visible else 0.0
-	var inset: float = 32.0 + (key_width + 12.0 if key_label.visible else 0.0)
-	var available: float = maxf(120.0, minf(520.0, size.x - 64.0) - inset)
-	var content_width: float = maxf(WhaleUIStyle.FONT.get_string_size(message, HORIZONTAL_ALIGNMENT_LEFT, -1, 23 if blocked else FONT_SIZE).x, WhaleUIStyle.FONT.get_string_size(explanation, HORIZONTAL_ALIGNMENT_LEFT, -1, 18).x)
-	var text_width: float = minf(available, maxf(152.0, content_width))
-	caption.size = Vector2(text_width, 0)
-	detail.size = Vector2(text_width, 0)
-	var content_height: float = caption.get_minimum_size().y + (detail.get_minimum_size().y + 10.0 if detail.visible else 0.0)
-	var height: float = maxf(50.0, content_height + 20.0)
-	var width: float = text_width + inset
-	var lift: float = 0.0 if reduce_motion else 4.0 * pow(1.0 - appear, 2.0)
-	card_rect = Rect2(Vector2((size.x - width) * 0.5, size.y - 174.0 - height + lift), Vector2(width, height))
-	key_label.position = card_rect.position + Vector2(12, (height - 34.0) * 0.5)
-	key_label.size = Vector2(key_width, 34)
-	caption.position = card_rect.position + Vector2(inset - 16.0, (height - content_height) * 0.5)
-	detail.position = caption.position + Vector2(0, caption.size.y + 10.0)
+	var dock: Rect2 = WhaleActionHUDStyle.dock_rect(size)
+	var key_width: float = maxf(24.0, WhaleUIStyle.FONT.get_string_size(action_key,HORIZONTAL_ALIGNMENT_LEFT,-1,16).x+10) if key_label.visible else 0.0
+	var inset: float = 20+(key_width+8 if key_label.visible else 0)
+	var content_width: float = maxf(WhaleUIStyle.FONT.get_string_size(message,HORIZONTAL_ALIGNMENT_LEFT,-1,16 if blocked else FONT_SIZE).x,WhaleUIStyle.FONT.get_string_size(explanation,HORIZONTAL_ALIGNMENT_LEFT,-1,13).x)
+	var text_width: float = minf(dock.size.x-inset,maxf(28,content_width))
+	caption.size = Vector2(text_width,0)
+	detail.size = Vector2(text_width,0)
+	var content_height: float = caption.get_minimum_size().y+(detail.get_minimum_size().y+4 if detail.visible else 0)
+	var height: float = maxf(30,content_height+12)
+	var lift: float = 0 if reduce_motion else 3*pow(1-appear,2)
+	card_rect = Rect2(Vector2(dock.end.x-text_width-inset,dock.position.y-height-8+lift),Vector2(text_width+inset,height))
+	key_label.position = card_rect.position+Vector2(7,(height-22)*0.5)
+	key_label.size = Vector2(key_width,22)
+	caption.position = card_rect.position+Vector2(inset-10,(height-content_height)*0.5)
+	detail.position = caption.position+Vector2(0,caption.size.y+4)
 
 func _draw() -> void:
 	if message.is_empty(): return

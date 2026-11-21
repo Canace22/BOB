@@ -47,17 +47,18 @@ func refresh() -> void:
 	# 区域布局固定，发现新房间时已有格子不会跳位。
 	var extent := Vector2.ONE
 	for cell: Vector2 in cells.values(): extent = extent.max(cell + Vector2.ONE)
-	var spacing := Vector2(minf(35.0, 228.0 / extent.x), minf(32.0, 84.0 / extent.y))
-	var origin := Vector2(130, 83) - (extent - Vector2.ONE) * spacing * 0.5
+	var spacing := Vector2(minf(22.0, 110.0 / extent.x), minf(22.0, 66.0 / extent.y))
+	var origin := Vector2(66, 66) - (extent - Vector2.ONE) * spacing * 0.5
 	for room: Dictionary in rooms:
 		positions[int(room.index)] = origin + Vector2(cells[str(room.id)]) * spacing
 	queue_redraw()
 
 func _draw() -> void:
 	if rooms.is_empty(): return
-	draw_style_box(WhaleUIStyle.box(Color(0.02,0.05,0.08,0.78), Color(0.4,0.55,0.6,0.45)), Rect2(Vector2.ZERO,size))
-	_label(Vector2(12,23), CampaignWorld.region_name(str(data.host.room.id)), 15, WhaleUIStyle.BONE)
-	_label(Vector2(210,23), WhaleUIStyle.key("ui_region_map"), 14, WhaleUIStyle.AMBER)
+	# 圆形罗盘承载原房间拓扑，不伪造尚未实现的地形雷达。
+	draw_circle(Vector2(66,66),62,Color(0.02,0.05,0.07,0.82))
+	draw_arc(Vector2(66,66),62,0,TAU,96,Color(0.72,0.68,0.52,0.8),2.0,true)
+	draw_arc(Vector2(66,66),59,0,TAU,96,Color(0.38,0.52,0.54,0.35),1.0,true)
 	for room: Dictionary in rooms:
 		for door: Dictionary in room.doors:
 			var target: int = int(door.to)
@@ -73,7 +74,7 @@ func _draw() -> void:
 			if blocked: draw_rect(Rect2((a+b)*0.5-Vector2(2,3),Vector2(4,6)),WhaleUIStyle.AMBER)
 	for room: Dictionary in rooms:
 		var center: Vector2 = positions[int(room.index)]
-		var rect := Rect2(center-Vector2(12,8),Vector2(24,16))
+		var rect := Rect2(center-Vector2(8,5),Vector2(16,10))
 		var color := Color("365564") if room.visited else Color("172934")
 		if room.current: color = WhaleUIStyle.AMBER
 		draw_rect(rect,color)
@@ -84,7 +85,6 @@ func _draw() -> void:
 			draw_circle(center,2.5,WhaleUIStyle.TEAL)
 		elif _is_boss(str(room.id)):
 			_label(center+Vector2(-4,5),"B",12,WhaleUIStyle.AMBER)
-	_label(Vector2(12,size.y-12),str(data.host.room.name),14,WhaleUIStyle.MUTED)
 
 func _is_boss(id: String) -> bool:
 	return id in ["R1-04","R2-04","R4-05","R5-04"] and not data.host.defeated.get(id+":0",false)
