@@ -57,6 +57,7 @@ func spawn(optional: bool) -> void:
 	profile.ending=str(config.get("ending",profile.ending))
 	for key: String in ["hp","height","radius","speed","title"]:
 		if config.has(key): profile[key]=config[key]
+	profile=ChapterCombatPressure.apply(profile)
 	match str(profile.id):
 		"membrane_hunter": enemy=EnemyLabPredator.new()
 		"nest_eel": enemy=EnemyLabEel.new()

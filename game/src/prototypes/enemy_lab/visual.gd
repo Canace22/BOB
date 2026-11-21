@@ -94,5 +94,8 @@ func update_warning(enemy: EnemyLabEnemy) -> void:
 		var progress: float=clampf(enemy.timer/maxf(0.001,enemy.phase_duration()),0.0,1.0)
 		intensity=0.45+0.35*progress+0.10*sin(enemy.timer*16.0)
 	mat.set_shader_parameter("danger",intensity)
+	# 短收招的琥珀轮廓明确表示还会接招；命中此窗口会真正取消续段。
+	var linking: bool=enemy.pressure.enabled() and not enemy.pressure.queued.is_empty() and enemy.state=="recover" and enemy.outcome.is_empty()
+	mat.set_shader_parameter("link_glow",0.35+0.12*sin(enemy.timer*20.0) if linking else 0.0)
 	var weak: bool=enemy is EnemyLabWarden and enemy.water!=null and enemy.water.weak_window()
 	mat.set_shader_parameter("weak_glow",0.75+0.20*sin(enemy.timer*12.0) if weak else 0.0)

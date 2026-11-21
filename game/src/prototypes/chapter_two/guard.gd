@@ -5,6 +5,10 @@ signal blockade_removed
 var awake: bool = false
 var lane := Vector2(1040,1770)
 
+func _ready() -> void:
+	profile=ChapterCombatPressure.apply(profile)
+	super._ready()
+
 func can_receive_hit() -> bool:
 	return awake and super.can_receive_hit()
 
@@ -20,6 +24,7 @@ func finish() -> void:
 	blockade_removed.emit()
 
 func reset_encounter() -> void:
+	pressure.reset()
 	health = maximum
 	position = home
 	velocity = Vector2.ZERO

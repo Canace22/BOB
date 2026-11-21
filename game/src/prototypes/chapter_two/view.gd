@@ -14,10 +14,13 @@ func _ready() -> void:
 	elder = Sprite2D.new()
 	elder.centered = false
 	elder.region_enabled = true
-	elder.z_index = 5
+	# 参考标签可置顶，角色仍保持原本的世界层级。
+	elder.z_as_relative = false
+	elder.z_index = 3
 	add_child(elder)
 
 func _process(_dt: float) -> void:
+	z_index=20 if host.using_reference() else -2
 	if not is_instance_valid(host.flow): return
 	var stage: String = host.flow.stage
 	elder.visible = stage in ["rescue","rescued","permitted","complete"]
@@ -41,6 +44,9 @@ func text(at: Vector2, value: String, font_size: int = 17, color: Color = WhaleU
 	WhaleActionHUDStyle.text(self,at,value,font_size,color)
 
 func _draw() -> void:
+	if host.using_reference():
+		_draw_reference_labels()
+		return
 	draw_rect(Rect2(-500,-600,4000,1800),Color("102833"))
 	for i: int in 12:
 		draw_line(Vector2(i*270,-180),Vector2(i*270-150,1050),Color("193a46"),60,true)
@@ -67,6 +73,12 @@ func _draw() -> void:
 	draw_rect(Rect2(2740,490,30,160),Color("5f8c88"))
 	if is_instance_valid(host.guard):
 		text(host.guard.position+Vector2(-65,-125),"负壳守卫" if host.guard.outcome.is_empty() else "守卫撑着断壳",16,WhaleUIStyle.AMBER)
+
+func _draw_reference_labels() -> void:
+	text(Vector2(1150,565),"警戒线 / 交锋位置",16,WhaleUIStyle.AMBER)
+	text(Vector2(2135,390),"住巢与救援（状态参照）",16)
+	text(Vector2(2330,695),"居民安全台",16)
+	text(Vector2(2610,585),"胃室入口 →",22,WhaleUIStyle.AMBER)
 
 func _draw_blockade() -> void:
 	var open: bool = bool(host.facts.get("guard_defeated",false))

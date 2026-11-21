@@ -6,6 +6,7 @@ var guard: ChapterTwoGuard
 var world: Node2D
 var camera: Camera2D
 var view: ChapterTwoView
+var reference: ChapterReferencePresentation
 var hud: ChapterTwoHUD
 var flow: ChapterTwoFlow
 var blockade: CollisionShape2D
@@ -74,7 +75,19 @@ func _ready() -> void:
 	add_child(flow)
 	guard.blockade_removed.connect(flow.defeated)
 	flow.restore()
+	install_reference(2,PLATFORMS)
 	record("ready",{"restored":facts.duplicate()})
+
+func install_reference(id: int, floors: Array[Rect2], origin: Vector2=Vector2.ZERO) -> void:
+	reference=ChapterReferencePresentation.new()
+	world.add_child(reference)
+	reference.install(id,floors,origin,reference_state)
+	view.queue_redraw()
+
+func reference_state() -> Dictionary:
+	return {"flags":facts,"stage":flow.stage,"time":elapsed,"phase":flow.rescue_time}
+
+func using_reference() -> bool: return is_instance_valid(reference) and reference.active
 
 func _body(rect: Rect2, is_blockade: bool = false) -> void:
 	var body := StaticBody2D.new()

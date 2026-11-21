@@ -1,0 +1,2165 @@
+{
+  "version": 1,
+  "chapters": {
+    "2": {
+      "width": 2850,
+      "background": "r4-vertebrae-depth",
+      "platform": "r4-bone-platform",
+      "zones": [
+        {
+          "id": "upper_watch",
+          "label": "折井上沿／观察与下降",
+          "rect": [
+            50,
+            180,
+            420,
+            120
+          ]
+        },
+        {
+          "id": "descent",
+          "label": "旧路逐级下降",
+          "rect": [
+            470,
+            310,
+            480,
+            210
+          ]
+        },
+        {
+          "id": "guard_lane",
+          "label": "守卫封路／交锋净空",
+          "rect": [
+            1000,
+            410,
+            820,
+            110
+          ]
+        },
+        {
+          "id": "rescue",
+          "label": "下层住巢／断架与救援",
+          "rect": [
+            2040,
+            390,
+            600,
+            260
+          ]
+        },
+        {
+          "id": "safe_bank",
+          "label": "居民安全侧台／下方通路保留",
+          "rect": [
+            2420,
+            500,
+            310,
+            150
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch02_upper_branch",
+          "rect": [
+            60,
+            240,
+            220,
+            18
+          ],
+          "role": "上沿可站观察支台"
+        },
+        {
+          "id": "ch02_safe_branch",
+          "rect": [
+            2400,
+            590,
+            340,
+            18
+          ],
+          "role": "救援区旁可站安全台，底路仍连通"
+        }
+      ],
+      "objects": [
+        {
+          "id": "entry_arch",
+          "art": "arch",
+          "at": [
+            230,
+            335
+          ],
+          "width": 330,
+          "z": 6
+        },
+        {
+          "id": "upper_camp",
+          "art": "r3-shell-nest-before",
+          "at": [
+            300,
+            300
+          ],
+          "width": 220
+        },
+        {
+          "id": "blockade",
+          "art": "anchor-pull-gate-closed",
+          "at": [
+            1830,
+            520
+          ],
+          "width": 250,
+          "hide_if": "guard_defeated"
+        },
+        {
+          "id": "fallen_shell",
+          "art": "nursery-shell-support",
+          "at": [
+            1900,
+            650
+          ],
+          "width": 210,
+          "show_if": "guard_defeated"
+        },
+        {
+          "id": "nest_before",
+          "art": "r3-shell-nest-before",
+          "at": [
+            2220,
+            500
+          ],
+          "width": 230,
+          "hide_if": "rescue_done"
+        },
+        {
+          "id": "nest_saved",
+          "art": "r3-shell-nest-before",
+          "at": [
+            2510,
+            590
+          ],
+          "width": 240,
+          "show_if": "rescue_done"
+        },
+        {
+          "id": "rescue_support",
+          "art": "support",
+          "at": [
+            2230,
+            690
+          ],
+          "width": 250,
+          "z": 6
+        },
+        {
+          "id": "safe_support",
+          "art": "support",
+          "at": [
+            2560,
+            810
+          ],
+          "width": 220,
+          "z": 6
+        },
+        {
+          "id": "tether_left",
+          "art": "red-tether-segment",
+          "at": [
+            2180,
+            416
+          ],
+          "width": 220,
+          "z": 7
+        },
+        {
+          "id": "tether_right",
+          "art": "red-tether-segment",
+          "at": [
+            2310,
+            416
+          ],
+          "width": 220,
+          "z": 7
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            2040,
+            690,
+            660,
+            80
+          ],
+          "speed": 6
+        }
+      ],
+      "bubbles": [
+        [
+          2070,
+          200,
+          450,
+          380
+        ]
+      ]
+    },
+    "3": {
+      "width": 3550,
+      "background": "r3-gastric-depth",
+      "platform": "r3-bank-platform",
+      "zones": [
+        {
+          "id": "residence",
+          "label": "居住高岸／菌床与巢底",
+          "rect": [
+            480,
+            360,
+            600,
+            160
+          ]
+        },
+        {
+          "id": "combat",
+          "label": "废弃低坑／交锋净空",
+          "rect": [
+            1150,
+            570,
+            1100,
+            80
+          ]
+        },
+        {
+          "id": "outlet",
+          "label": "旧瓣／下游排水口",
+          "rect": [
+            2010,
+            420,
+            240,
+            230
+          ]
+        },
+        {
+          "id": "exit",
+          "label": "修复后通往脂库",
+          "rect": [
+            3090,
+            390,
+            400,
+            130
+          ]
+        }
+      ],
+      "side_platforms": [],
+      "objects": [
+        {
+          "id": "camp",
+          "art": "r3-low-shell-camp-v3",
+          "at": [
+            760,
+            520
+          ],
+          "width": 340
+        },
+        {
+          "id": "bed_base",
+          "art": "nursery-shell-support",
+          "at": [
+            730,
+            520
+          ],
+          "width": 290
+        },
+        {
+          "id": "bed_alive",
+          "art": "habitat-fungus-bed",
+          "at": [
+            730,
+            510
+          ],
+          "width": 270,
+          "hide_if": "valve_opened"
+        },
+        {
+          "id": "valve",
+          "art": "nursery-valve-leaf",
+          "at": [
+            2130,
+            660
+          ],
+          "width": 75
+        },
+        {
+          "id": "channel",
+          "art": "r5-tail-channel",
+          "at": [
+            1730,
+            780
+          ],
+          "width": 1050,
+          "z": 5
+        },
+        {
+          "id": "right_pier",
+          "art": "support",
+          "at": [
+            2410,
+            660
+          ],
+          "width": 190,
+          "z": 6
+        },
+        {
+          "id": "safe_shell",
+          "art": "nursery-shell-support",
+          "at": [
+            900,
+            520
+          ],
+          "width": 190,
+          "show_if": "valve_opened"
+        },
+        {
+          "id": "recovered_shell",
+          "art": "nursery-shell-support",
+          "at": [
+            480,
+            520
+          ],
+          "width": 75,
+          "hide_if": "salvage"
+        },
+        {
+          "id": "settlement_exit_barrier",
+          "art": "anchor-pull-gate-closed",
+          "at": [
+            3268,
+            520
+          ],
+          "width": 220,
+          "hide_if": "repaired"
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            1090,
+            580,
+            1140,
+            55
+          ],
+          "speed": 15
+        }
+      ],
+      "bubbles": [
+        [
+          1220,
+          230,
+          420,
+          360
+        ]
+      ]
+    },
+    "4": {
+      "width": 3800,
+      "background": "r3-gastric-depth",
+      "platform": "r3-bank-platform",
+      "zones": [
+        {
+          "id": "gathering",
+          "label": "采集沟／旧组织与菌膜",
+          "rect": [
+            410,
+            420,
+            320,
+            100
+          ]
+        },
+        {
+          "id": "low_observation",
+          "label": "底层旁通／安全观察路",
+          "rect": [
+            650,
+            390,
+            170,
+            130
+          ]
+        },
+        {
+          "id": "upper_wild",
+          "label": "上层废采沟／可选遭遇",
+          "rect": [
+            1180,
+            180,
+            350,
+            130
+          ]
+        },
+        {
+          "id": "refuge",
+          "label": "水线住巢／可达避流架",
+          "rect": [
+            1690,
+            340,
+            350,
+            180
+          ]
+        },
+        {
+          "id": "sluice",
+          "label": "窄口压壳／上下游水路",
+          "rect": [
+            2110,
+            360,
+            240,
+            160
+          ]
+        },
+        {
+          "id": "sampling",
+          "label": "试流水位／壳样记录",
+          "rect": [
+            2580,
+            360,
+            500,
+            160
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch04_refuge_ledge",
+          "rect": [
+            1740,
+            450,
+            250,
+            18
+          ],
+          "role": "抬巢后的避流架；底层仍可穿行"
+        }
+      ],
+      "objects": [
+        {
+          "id": "record",
+          "art": "record-stand",
+          "at": [
+            540,
+            520
+          ],
+          "width": 210
+        },
+        {
+          "id": "empty_growth",
+          "art": "r3-liver-edge",
+          "at": [
+            640,
+            560
+          ],
+          "width": 340,
+          "z": 6
+        },
+        {
+          "id": "upper_support",
+          "art": "support",
+          "at": [
+            1320,
+            570
+          ],
+          "width": 260,
+          "z": 6
+        },
+        {
+          "id": "refuge_support",
+          "art": "support",
+          "at": [
+            1850,
+            670
+          ],
+          "width": 260,
+          "z": 6
+        },
+        {
+          "id": "nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            1840,
+            520
+          ],
+          "width": 230,
+          "raise_if": "ch04_homes_above_water",
+          "raised_at": [
+            1840,
+            450
+          ]
+        },
+        {
+          "id": "limiter",
+          "art": "nursery-shell-support",
+          "at": [
+            2200,
+            520
+          ],
+          "width": 150
+        },
+        {
+          "id": "water_channel",
+          "art": "r5-tail-channel",
+          "at": [
+            2420,
+            640
+          ],
+          "width": 650,
+          "z": 5
+        },
+        {
+          "id": "sample_table",
+          "art": "record-stand",
+          "at": [
+            2700,
+            520
+          ],
+          "width": 210
+        },
+        {
+          "id": "record_out",
+          "art": "record-stand",
+          "at": [
+            3290,
+            520
+          ],
+          "width": 180
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            1900,
+            530,
+            830,
+            70
+          ],
+          "speed": -8
+        }
+      ],
+      "bubbles": [
+        [
+          2150,
+          250,
+          320,
+          260
+        ]
+      ]
+    },
+    "5": {
+      "width": 4000,
+      "background": "r3-gastric-depth",
+      "platform": "r3-bank-platform",
+      "zones": [
+        {
+          "id": "attached_base",
+          "label": "幼体附着巢基／居民区",
+          "rect": [
+            650,
+            360,
+            380,
+            160
+          ]
+        },
+        {
+          "id": "covered_refuge",
+          "label": "厚壳遮护侧台／居民退后",
+          "rect": [
+            1040,
+            350,
+            260,
+            170
+          ]
+        },
+        {
+          "id": "eel_lane",
+          "label": "空置窄槽／鳗战区保持平整",
+          "rect": [
+            1410,
+            400,
+            1110,
+            120
+          ]
+        },
+        {
+          "id": "carry_route",
+          "label": "可走搬巢支路／下方留居通路",
+          "rect": [
+            2650,
+            340,
+            940,
+            180
+          ]
+        },
+        {
+          "id": "stay",
+          "label": "留下者缓流住巢／保留系绳",
+          "rect": [
+            3020,
+            345,
+            210,
+            175
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch05_refuge",
+          "rect": [
+            1040,
+            460,
+            240,
+            18
+          ],
+          "role": "厚壳后的可达避险侧台"
+        },
+        {
+          "id": "ch05_carry_a",
+          "rect": [
+            2660,
+            460,
+            300,
+            18
+          ],
+          "role": "战后搬运路起点"
+        },
+        {
+          "id": "ch05_stay_branch",
+          "rect": [
+            3000,
+            460,
+            210,
+            18
+          ],
+          "role": "留居住巢侧台；不拆底路"
+        },
+        {
+          "id": "ch05_carry_b",
+          "rect": [
+            3310,
+            460,
+            290,
+            18
+          ],
+          "role": "轻巢接力台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "base",
+          "art": "nursery-shell-support",
+          "at": [
+            850,
+            520
+          ],
+          "width": 260
+        },
+        {
+          "id": "refuge_shell",
+          "art": "r3-shell-nest-before",
+          "at": [
+            1160,
+            460
+          ],
+          "width": 240
+        },
+        {
+          "id": "refuge_pier",
+          "art": "support",
+          "at": [
+            1160,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "inner_arch",
+          "art": "arch",
+          "at": [
+            1950,
+            650
+          ],
+          "width": 820,
+          "z": 2
+        },
+        {
+          "id": "carry_base",
+          "art": "nursery-shell-support",
+          "at": [
+            2780,
+            460
+          ],
+          "width": 250
+        },
+        {
+          "id": "carry_pier",
+          "art": "support",
+          "at": [
+            2790,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "stay_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            3110,
+            460
+          ],
+          "width": 190
+        },
+        {
+          "id": "stay_tether",
+          "art": "red-tether-segment",
+          "at": [
+            3150,
+            430
+          ],
+          "width": 160,
+          "z": 7
+        },
+        {
+          "id": "handover",
+          "art": "nursery-shell-support",
+          "at": [
+            3460,
+            460
+          ],
+          "width": 230
+        },
+        {
+          "id": "carry_tether",
+          "art": "red-tether-segment",
+          "at": [
+            2920,
+            420
+          ],
+          "width": 300,
+          "z": 7
+        },
+        {
+          "id": "carry_tether_b",
+          "art": "red-tether-segment",
+          "at": [
+            3320,
+            420
+          ],
+          "width": 300,
+          "z": 7
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            1590,
+            610,
+            800,
+            65
+          ],
+          "speed": 5
+        }
+      ],
+      "bubbles": [
+        [
+          1850,
+          150,
+          400,
+          340
+        ]
+      ]
+    },
+    "6": {
+      "width": 4200,
+      "background": "r2-lung-depth",
+      "platform": "r2-membrane-platform",
+      "zones": [
+        {
+          "id": "sheltered",
+          "label": "下方残壁窗／安全观察路",
+          "rect": [
+            640,
+            350,
+            215,
+            170
+          ]
+        },
+        {
+          "id": "exposed",
+          "label": "上层暴露台／可选捕食者",
+          "rect": [
+            1180,
+            170,
+            380,
+            140
+          ]
+        },
+        {
+          "id": "samples",
+          "label": "强流口／避流口／内水对照槽",
+          "rect": [
+            2060,
+            360,
+            480,
+            160
+          ]
+        },
+        {
+          "id": "protected_membranes",
+          "label": "两片脆膜／保留封片",
+          "rect": [
+            2950,
+            320,
+            430,
+            200
+          ]
+        },
+        {
+          "id": "candidate_inlet",
+          "label": "完整支撑避流台／候选引水位",
+          "rect": [
+            3410,
+            340,
+            250,
+            180
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch06_inlet_branch",
+          "rect": [
+            3410,
+            460,
+            260,
+            18
+          ],
+          "role": "可以站稳查看完整支撑的避流侧台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "sheltered_roof",
+          "art": "arch",
+          "at": [
+            744,
+            430
+          ],
+          "width": 240,
+          "z": 4
+        },
+        {
+          "id": "upper_pier",
+          "art": "support",
+          "at": [
+            1360,
+            570
+          ],
+          "width": 260,
+          "z": 4
+        },
+        {
+          "id": "old_marks",
+          "art": "record-stand",
+          "at": [
+            1780,
+            520
+          ],
+          "width": 200
+        },
+        {
+          "id": "fast_sample",
+          "art": "nursery-shell-support",
+          "at": [
+            2130,
+            520
+          ],
+          "width": 110
+        },
+        {
+          "id": "shelter_sample",
+          "art": "nursery-shell-support",
+          "at": [
+            2300,
+            520
+          ],
+          "width": 110
+        },
+        {
+          "id": "inner_sample",
+          "art": "nursery-shell-support",
+          "at": [
+            2470,
+            520
+          ],
+          "width": 110
+        },
+        {
+          "id": "sample_table",
+          "art": "record-stand",
+          "at": [
+            2740,
+            520
+          ],
+          "width": 240
+        },
+        {
+          "id": "weak_membrane_a",
+          "art": "r2-membrane-patch",
+          "at": [
+            3050,
+            510
+          ],
+          "width": 190
+        },
+        {
+          "id": "weak_membrane_b",
+          "art": "r2-membrane-patch",
+          "at": [
+            3260,
+            510
+          ],
+          "width": 190
+        },
+        {
+          "id": "red_mark_a",
+          "art": "red-tether-segment",
+          "at": [
+            3050,
+            440
+          ],
+          "width": 100,
+          "show_if": "ch06_protect_membrane_a"
+        },
+        {
+          "id": "red_mark_b",
+          "art": "red-tether-segment",
+          "at": [
+            3260,
+            440
+          ],
+          "width": 100,
+          "show_if": "ch06_protect_membrane_b"
+        },
+        {
+          "id": "inlet_support",
+          "art": "support",
+          "at": [
+            3530,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "inlet_map",
+          "art": "record-stand",
+          "at": [
+            3530,
+            460
+          ],
+          "width": 200
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            1990,
+            560,
+            300,
+            100
+          ],
+          "speed": 20
+        },
+        {
+          "rect": [
+            2300,
+            560,
+            220,
+            100
+          ],
+          "speed": 5
+        }
+      ],
+      "bubbles": [
+        [
+          1220,
+          20,
+          330,
+          280
+        ]
+      ]
+    },
+    "7": {
+      "width": 3600,
+      "background": "r2-lung-depth",
+      "platform": "r4-bone-platform",
+      "zones": [
+        {
+          "id": "evidence_forecourt",
+          "label": "供养记录前庭／可站副台",
+          "rect": [
+            750,
+            340,
+            660,
+            180
+          ]
+        },
+        {
+          "id": "narrow_exit",
+          "label": "向左撤离窄道／不改原战场",
+          "rect": [
+            1480,
+            380,
+            320,
+            140
+          ]
+        },
+        {
+          "id": "pump_lane",
+          "label": "泵庭交锋区／平整退路",
+          "rect": [
+            1525,
+            400,
+            1140,
+            120
+          ]
+        },
+        {
+          "id": "maintenance",
+          "label": "维护裂隙／返回出口",
+          "rect": [
+            80,
+            370,
+            400,
+            150
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch07_evidence_branch",
+          "rect": [
+            790,
+            460,
+            260,
+            18
+          ],
+          "role": "记录前庭的可站工作副台；远离水系执卫战区"
+        },
+        {
+          "id": "ch07_record_branch",
+          "rect": [
+            1120,
+            460,
+            250,
+            18
+          ],
+          "role": "供养记录支台；底层留退路"
+        }
+      ],
+      "objects": [
+        {
+          "id": "samples",
+          "art": "record-stand",
+          "at": [
+            970,
+            460
+          ],
+          "width": 220
+        },
+        {
+          "id": "records",
+          "art": "record-stand",
+          "at": [
+            1270,
+            460
+          ],
+          "width": 220
+        },
+        {
+          "id": "record_support",
+          "art": "support",
+          "at": [
+            1100,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "copy_stand",
+          "art": "record-stand",
+          "at": [
+            1810,
+            520
+          ],
+          "width": 200
+        },
+        {
+          "id": "narrow_frame",
+          "art": "arch",
+          "at": [
+            1660,
+            560
+          ],
+          "width": 260,
+          "z": 3
+        },
+        {
+          "id": "pump_membrane",
+          "art": "r2-membrane-patch",
+          "at": [
+            2500,
+            520
+          ],
+          "width": 300,
+          "z": 3
+        },
+        {
+          "id": "exit_arch",
+          "art": "arch",
+          "at": [
+            220,
+            540
+          ],
+          "width": 320,
+          "z": 3
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            2120,
+            610,
+            600,
+            65
+          ],
+          "speed": 9
+        }
+      ],
+      "bubbles": [
+        [
+          2260,
+          130,
+          350,
+          370
+        ]
+      ]
+    },
+    "8": {
+      "width": 3600,
+      "background": "r4-vertebrae-depth",
+      "platform": "r4-bone-platform",
+      "zones": [
+        {
+          "id": "waiting",
+          "label": "滞留住巢／内侧缓流",
+          "rect": [
+            360,
+            340,
+            650,
+            180
+          ]
+        },
+        {
+          "id": "beam_lane",
+          "label": "中央承重骨梁／交锋净空",
+          "rect": [
+            1380,
+            350,
+            1110,
+            170
+          ]
+        },
+        {
+          "id": "rope_anchor",
+          "label": "战后通行索桩／可走支台",
+          "rect": [
+            2730,
+            340,
+            340,
+            180
+          ]
+        },
+        {
+          "id": "settle",
+          "label": "内侧安置骨台／继续搬巢",
+          "rect": [
+            3140,
+            340,
+            380,
+            180
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch08_waiting_branch",
+          "rect": [
+            660,
+            460,
+            300,
+            18
+          ],
+          "role": "住巢检查侧台；不在骨卫战区"
+        },
+        {
+          "id": "ch08_rope_branch",
+          "rect": [
+            2740,
+            460,
+            340,
+            18
+          ],
+          "role": "通行索桩工作台"
+        },
+        {
+          "id": "ch08_safe_branch",
+          "rect": [
+            3160,
+            460,
+            340,
+            18
+          ],
+          "role": "安置住巢的内侧稳台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "waiting_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            500,
+            520
+          ],
+          "width": 240
+        },
+        {
+          "id": "attached_nest",
+          "art": "nursery-shell-support",
+          "at": [
+            900,
+            460
+          ],
+          "width": 220
+        },
+        {
+          "id": "water_marks",
+          "art": "record-stand",
+          "at": [
+            1240,
+            520
+          ],
+          "width": 190
+        },
+        {
+          "id": "beam_arch",
+          "art": "arch",
+          "at": [
+            1940,
+            680
+          ],
+          "width": 1040,
+          "z": 2
+        },
+        {
+          "id": "rope_mount",
+          "art": "bone-anchor-ring",
+          "at": [
+            2820,
+            460
+          ],
+          "width": 80
+        },
+        {
+          "id": "rope_pier",
+          "art": "support",
+          "at": [
+            2900,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "rope_span",
+          "art": "red-tether-segment",
+          "at": [
+            3050,
+            425
+          ],
+          "width": 360,
+          "show_if": "ch08_restore_rope",
+          "z": 7
+        },
+        {
+          "id": "inside_pier",
+          "art": "support",
+          "at": [
+            3310,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "inside_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            3290,
+            460
+          ],
+          "width": 240
+        },
+        {
+          "id": "name_record",
+          "art": "record-stand",
+          "at": [
+            2970,
+            520
+          ],
+          "width": 170
+        },
+        {
+          "id": "name_shell",
+          "art": "name-shell",
+          "at": [
+            2960,
+            416
+          ],
+          "width": 42,
+          "show_if": "ch08_shell_held_by_guard",
+          "caption": "负壳守卫持有的刻名薄壳（静态参照）"
+        }
+      ],
+      "water": [],
+      "bubbles": [
+        [
+          1560,
+          80,
+          480,
+          300
+        ]
+      ]
+    },
+    "9": {
+      "width": 3600,
+      "background": "r4-vertebrae-depth",
+      "platform": "r4-bone-platform",
+      "zones": [
+        {
+          "id": "route_map",
+          "label": "骨壁道路／搬运前庭",
+          "rect": [
+            400,
+            330,
+            600,
+            190
+          ]
+        },
+        {
+          "id": "wild_lane",
+          "label": "外侧骨台／野生遭遇净空",
+          "rect": [
+            1020,
+            390,
+            900,
+            130
+          ]
+        },
+        {
+          "id": "success",
+          "label": "稳定菌床／内水侧台",
+          "rect": [
+            2010,
+            340,
+            370,
+            180
+          ]
+        },
+        {
+          "id": "failure",
+          "label": "失败新巢／待封外水口",
+          "rect": [
+            2480,
+            360,
+            400,
+            160
+          ]
+        },
+        {
+          "id": "inner_safe",
+          "label": "内侧临时安置／回流核对",
+          "rect": [
+            2890,
+            335,
+            540,
+            185
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch09_growth_branch",
+          "rect": [
+            2010,
+            460,
+            340,
+            18
+          ],
+          "role": "稳定菌床观察支台"
+        },
+        {
+          "id": "ch09_inner_branch",
+          "rect": [
+            2900,
+            460,
+            430,
+            18
+          ],
+          "role": "失败住巢移入后的内侧稳台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "road_record",
+          "art": "record-stand",
+          "at": [
+            550,
+            520
+          ],
+          "width": 220
+        },
+        {
+          "id": "waiting_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            900,
+            520
+          ],
+          "width": 200
+        },
+        {
+          "id": "carry_rope",
+          "art": "red-tether-segment",
+          "at": [
+            1580,
+            480
+          ],
+          "width": 330,
+          "z": 7
+        },
+        {
+          "id": "success_bed",
+          "art": "habitat-fungus-bed",
+          "at": [
+            2140,
+            460
+          ],
+          "width": 260
+        },
+        {
+          "id": "old_camp",
+          "art": "r3-shell-nest-before",
+          "at": [
+            2340,
+            520
+          ],
+          "width": 200
+        },
+        {
+          "id": "failed_base",
+          "art": "nursery-shell-support",
+          "at": [
+            2570,
+            520
+          ],
+          "width": 230
+        },
+        {
+          "id": "failed_inlet",
+          "art": "tail-flow-shutter",
+          "at": [
+            2800,
+            520
+          ],
+          "width": 150
+        },
+        {
+          "id": "inside_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            3060,
+            460
+          ],
+          "width": 250
+        },
+        {
+          "id": "inner_pier",
+          "art": "support",
+          "at": [
+            3100,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "comparison",
+          "art": "record-stand",
+          "at": [
+            3320,
+            520
+          ],
+          "width": 190
+        },
+        {
+          "id": "name_shell",
+          "art": "name-shell",
+          "at": [
+            3310,
+            404
+          ],
+          "width": 42,
+          "hide_completed": "ch09_receive_name_shell",
+          "caption": "负壳守卫持有的刻名薄壳（静态参照）"
+        },
+        {
+          "id": "carried_name_shell",
+          "art": "name-shell",
+          "at": [
+            0,
+            0
+          ],
+          "width": 42,
+          "show_completed": "ch09_receive_name_shell",
+          "follow_player": true,
+          "player_offset": [
+            -20,
+            -60
+          ]
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            2510,
+            575,
+            350,
+            80
+          ],
+          "speed": -12
+        }
+      ],
+      "bubbles": [
+        [
+          2100,
+          160,
+          300,
+          300
+        ]
+      ]
+    },
+    "10": {
+      "width": 3600,
+      "background": "r5-cranial-depth",
+      "platform": "r5-cranial-platform",
+      "zones": [
+        {
+          "id": "archive",
+          "label": "旧歌腔档案／低骨台支路",
+          "rect": [
+            570,
+            310,
+            360,
+            210
+          ]
+        },
+        {
+          "id": "shell_slot",
+          "label": "刻名薄壳槽／保留返回路线",
+          "rect": [
+            1180,
+            320,
+            330,
+            200
+          ]
+        },
+        {
+          "id": "memory",
+          "label": "无刻写骨面／回声净空",
+          "rect": [
+            1810,
+            160,
+            660,
+            360
+          ]
+        },
+        {
+          "id": "copy_names",
+          "label": "名录拓印台／返回取壳",
+          "rect": [
+            2680,
+            320,
+            400,
+            200
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch10_archive_branch",
+          "rect": [
+            590,
+            460,
+            300,
+            18
+          ],
+          "role": "可站阅档低台"
+        },
+        {
+          "id": "ch10_shell_branch",
+          "rect": [
+            1200,
+            460,
+            290,
+            18
+          ],
+          "role": "放回并取走薄壳的可达侧台"
+        },
+        {
+          "id": "ch10_names_branch",
+          "rect": [
+            2690,
+            460,
+            340,
+            18
+          ],
+          "role": "拓印记录与补录姓名的工作支台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "archive",
+          "art": "record-stand",
+          "at": [
+            720,
+            460
+          ],
+          "width": 250
+        },
+        {
+          "id": "shell_slot",
+          "art": "nursery-shell-support",
+          "at": [
+            1340,
+            460
+          ],
+          "width": 160
+        },
+        {
+          "id": "name_shell",
+          "art": "name-shell",
+          "at": [
+            1340,
+            440
+          ],
+          "width": 42,
+          "show_if": "ch10_set_shell",
+          "hide_if": "ch10_take_shell"
+        },
+        {
+          "id": "echo_bone",
+          "art": "bone-wall",
+          "at": [
+            2150,
+            520
+          ],
+          "width": 500,
+          "z": 2
+        },
+        {
+          "id": "copy_table",
+          "art": "record-stand",
+          "at": [
+            2850,
+            460
+          ],
+          "width": 240
+        },
+        {
+          "id": "archive_pier",
+          "art": "support",
+          "at": [
+            735,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "names_pier",
+          "art": "support",
+          "at": [
+            2860,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        }
+      ],
+      "water": [],
+      "bubbles": [
+        [
+          1780,
+          40,
+          580,
+          420
+        ]
+      ]
+    },
+    "11": {
+      "width": 4000,
+      "background": "r5-cranial-depth",
+      "platform": "r5-cranial-platform",
+      "zones": [
+        {
+          "id": "lung_contact",
+          "label": "肺缘方向／可站触点",
+          "rect": [
+            490,
+            310,
+            280,
+            210
+          ]
+        },
+        {
+          "id": "pump_contact",
+          "label": "泵庭方向／可站触点",
+          "rect": [
+            1040,
+            310,
+            280,
+            210
+          ]
+        },
+        {
+          "id": "tail_contact",
+          "label": "尾根方向／可站触点",
+          "rect": [
+            1590,
+            310,
+            280,
+            210
+          ]
+        },
+        {
+          "id": "evidence",
+          "label": "回水与供养记录台",
+          "rect": [
+            2100,
+            335,
+            420,
+            185
+          ]
+        },
+        {
+          "id": "plan",
+          "label": "分流图工作面／住巢保护",
+          "rect": [
+            2670,
+            300,
+            480,
+            220
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch11_lung_branch",
+          "rect": [
+            490,
+            460,
+            260,
+            18
+          ],
+          "role": "肺缘触点支台"
+        },
+        {
+          "id": "ch11_pump_branch",
+          "rect": [
+            1040,
+            460,
+            260,
+            18
+          ],
+          "role": "泵庭触点支台"
+        },
+        {
+          "id": "ch11_tail_branch",
+          "rect": [
+            1590,
+            460,
+            280,
+            18
+          ],
+          "role": "尾根触点支台"
+        },
+        {
+          "id": "ch11_evidence_branch",
+          "rect": [
+            2110,
+            460,
+            350,
+            18
+          ],
+          "role": "双记录比对工作台"
+        },
+        {
+          "id": "ch11_map_branch",
+          "rect": [
+            2700,
+            460,
+            430,
+            18
+          ],
+          "role": "分流图宽工作台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "lung_node",
+          "art": "bone-sound-node",
+          "at": [
+            620,
+            460
+          ],
+          "width": 85
+        },
+        {
+          "id": "pump_node",
+          "art": "bone-sound-node",
+          "at": [
+            1170,
+            460
+          ],
+          "width": 85
+        },
+        {
+          "id": "tail_node",
+          "art": "bone-sound-node",
+          "at": [
+            1730,
+            460
+          ],
+          "width": 85
+        },
+        {
+          "id": "lung_bearing",
+          "art": "support",
+          "at": [
+            620,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "pump_bearing",
+          "art": "support",
+          "at": [
+            1170,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "tail_bearing",
+          "art": "support",
+          "at": [
+            1730,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "evidence",
+          "art": "record-stand",
+          "at": [
+            2270,
+            460
+          ],
+          "width": 250
+        },
+        {
+          "id": "map_table",
+          "art": "record-stand",
+          "at": [
+            2880,
+            460
+          ],
+          "width": 290
+        },
+        {
+          "id": "map_bearing",
+          "art": "support",
+          "at": [
+            2890,
+            720
+          ],
+          "width": 260,
+          "z": 6
+        }
+      ],
+      "water": [],
+      "bubbles": [
+        [
+          600,
+          120,
+          1000,
+          280
+        ]
+      ]
+    },
+    "12": {
+      "width": 4700,
+      "background": "r5-tail-depth",
+      "platform": "r4-bone-platform",
+      "zones": [
+        {
+          "id": "return_shell",
+          "label": "交还刻名薄壳／记录台",
+          "rect": [
+            450,
+            330,
+            330,
+            190
+          ]
+        },
+        {
+          "id": "inner_residents",
+          "label": "内侧住巢侧台／避开决斗",
+          "rect": [
+            870,
+            320,
+            350,
+            200
+          ]
+        },
+        {
+          "id": "duel",
+          "label": "主闸前对抗区／保留原平整站位",
+          "rect": [
+            1330,
+            350,
+            1120,
+            170
+          ]
+        },
+        {
+          "id": "safe_brace",
+          "label": "伤者稳台／旧撑与锚",
+          "rect": [
+            2650,
+            330,
+            550,
+            190
+          ]
+        },
+        {
+          "id": "tail_channel",
+          "label": "行走面下方退流槽／有限外排",
+          "rect": [
+            2850,
+            565,
+            870,
+            180
+          ]
+        },
+        {
+          "id": "recovery",
+          "label": "闸后通路／恢复期消息",
+          "rect": [
+            3770,
+            330,
+            800,
+            190
+          ]
+        }
+      ],
+      "side_platforms": [
+        {
+          "id": "ch12_resident_branch",
+          "rect": [
+            870,
+            460,
+            330,
+            18
+          ],
+          "role": "决斗区之前的内侧住巢台"
+        },
+        {
+          "id": "ch12_safe_branch",
+          "rect": [
+            2670,
+            460,
+            460,
+            18
+          ],
+          "role": "战后伤者与稳闸作业支台"
+        },
+        {
+          "id": "ch12_recovery_branch",
+          "rect": [
+            3760,
+            460,
+            400,
+            18
+          ],
+          "role": "闸后恢复段稳台"
+        }
+      ],
+      "objects": [
+        {
+          "id": "return_table",
+          "art": "record-stand",
+          "at": [
+            600,
+            520
+          ],
+          "width": 250
+        },
+        {
+          "id": "returned_shell",
+          "art": "name-shell",
+          "at": [
+            600,
+            390
+          ],
+          "width": 42,
+          "hide_completed": "ch12_return_name",
+          "caption": "交还刻名薄壳（静态位置参照）"
+        },
+        {
+          "id": "resident_nest",
+          "art": "r3-shell-nest-before",
+          "at": [
+            1030,
+            460
+          ],
+          "width": 250
+        },
+        {
+          "id": "resident_bearing",
+          "art": "support",
+          "at": [
+            1030,
+            700
+          ],
+          "width": 240,
+          "z": 6
+        },
+        {
+          "id": "gate_closed",
+          "art": "release-sluice-closed",
+          "at": [
+            2880,
+            535
+          ],
+          "width": 480,
+          "hide_if": "ch12_shift_narrow_cover"
+        },
+        {
+          "id": "gate_open",
+          "art": "release-sluice-open",
+          "at": [
+            2880,
+            535
+          ],
+          "width": 480,
+          "show_if": "ch12_shift_narrow_cover"
+        },
+        {
+          "id": "old_brace",
+          "art": "support",
+          "at": [
+            2910,
+            720
+          ],
+          "width": 260,
+          "z": 6
+        },
+        {
+          "id": "old_anchor",
+          "art": "bone-anchor-ring",
+          "at": [
+            3020,
+            460
+          ],
+          "width": 80
+        },
+        {
+          "id": "retreat_channel",
+          "art": "r5-tail-channel",
+          "at": [
+            3340,
+            760
+          ],
+          "width": 850,
+          "z": 4
+        },
+        {
+          "id": "safe_shell",
+          "art": "nursery-shell-support",
+          "at": [
+            2755,
+            460
+          ],
+          "width": 210
+        },
+        {
+          "id": "life_camp",
+          "art": "r3-shell-nest-before",
+          "at": [
+            3920,
+            460
+          ],
+          "width": 270
+        },
+        {
+          "id": "life_growth",
+          "art": "habitat-fungus-bed",
+          "at": [
+            4130,
+            520
+          ],
+          "width": 230
+        }
+      ],
+      "water": [
+        {
+          "rect": [
+            3030,
+            570,
+            830,
+            105
+          ],
+          "speed": 0
+        }
+      ],
+      "bubbles": [
+        [
+          3320,
+          150,
+          520,
+          360
+        ]
+      ]
+    }
+  }
+}

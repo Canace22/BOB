@@ -31,9 +31,9 @@ func duration() -> float:
 	match enemy.state:
 		"dive": return 0.32
 		"tunnel": return tunnel_duration
-		"emerge": return 0.65
-		"link": return 0.55
-		"coil": return 0.50 if bites==0 else 0.42
+		"emerge": return enemy.pressure.seconds(0.65,0.55)
+		"link": return enemy.pressure.seconds(0.55,0.42)
+		"coil": return enemy.pressure.seconds(0.50,0.40) if bites==0 else enemy.pressure.seconds(0.42,0.34)
 		"active": return 0.24 if stage=="bites" else float(enemy.spec.active)
 	return float(enemy.spec.get(enemy.state,0.0))
 
@@ -126,10 +126,10 @@ func clear_eggs() -> void:
 func segments() -> Array[Dictionary]:
 	var plan: Array[Array]=[]
 	if enemy.move_key=="eel_burrow":
-		plan=[["tell",0.75,1],["dive",0.32,1],["tunnel",tunnel_duration,1],["emerge",0.65,1],["active",0.28,1]]
+		plan=[["tell",float(enemy.spec.tell),1],["dive",0.32,1],["tunnel",tunnel_duration,1],["emerge",enemy.pressure.seconds(0.65,0.55),1],["active",float(enemy.spec.active),1]]
 	else:
-		plan=[["tell",0.90,1],["active",0.65,1],["link",0.55,1],["coil",0.50,2],["active",0.24,2]]
-		if not enemy.followup_cancelled or bites>0: plan.append_array([["coil",0.42,3],["active",0.24,3]])
+		plan=[["tell",float(enemy.spec.tell),1],["active",float(enemy.spec.active),1],["link",enemy.pressure.seconds(0.55,0.42),1],["coil",enemy.pressure.seconds(0.50,0.40),2],["active",0.24,2]]
+		if not enemy.followup_cancelled or bites>0: plan.append_array([["coil",enemy.pressure.seconds(0.42,0.34),3],["active",0.24,3]])
 	plan.append(["recover",float(enemy.spec.recover),enemy.pulse])
 	var result: Array[Dictionary]=[]
 	var cursor: float=0.0

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "revision": 87,
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-22",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -36875,6 +36875,48 @@
       "height": 1024,
       "sha256": "dfbe2f1ff48e49d9aa8c167281f365fe421327d8d262b30d819d7c77e891589a",
       "notes": "基于认可HUD稿内置image_gen重绘透明图标与斜体数字。24图标及12字形静态裁片；程序只读真实状态切页、调亮、缩放，非动作动画。接入验收见game/progress.md。 目标标记追加参考原画重绘的暖红斜面位图objective.png，替代扁平几何菱形；来源和SHA见objective-extraction.json。"
+    },
+    {
+      "id": "chapter-reference-v1-record-stand",
+      "name": "章节地编参考·刻线记录台",
+      "kind": "prop",
+      "region": "章节白盒",
+      "tags": [
+        "2D",
+        "静态",
+        "地编参照",
+        "骨壳"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/chapter-reference-v1/record-stand.png",
+      "source": "assets/source/chapter-reference-v1/record-stand-master.png",
+      "runtimeFile": "game/art/chapter-reference-v1/record-stand.png",
+      "width": 512,
+      "height": 478,
+      "sha256": "319ea6294f6269465e8508fa940469c70f33bc4a927f4b3068de4b5366656ffd",
+      "notes": "image_gen补绘，参考现有骨壳风格；原图、等比导出、Alpha/foot锚点见assets/source/chapter-reference-v1/assets.json。用于章节白盒参照，未替换正式19房；不是新增动作动画，整体验收待用户试玩。"
+    },
+    {
+      "id": "chapter-reference-v1-name-shell",
+      "name": "章节地编参考·刻名薄壳",
+      "kind": "prop",
+      "region": "章节白盒",
+      "tags": [
+        "2D",
+        "静态",
+        "地编参照",
+        "骨壳"
+      ],
+      "status": "candidate",
+      "target": "2d",
+      "file": "assets/runtime/sprites/chapter-reference-v1/name-shell.png",
+      "source": "assets/source/chapter-reference-v1/name-shell-master.png",
+      "runtimeFile": "game/art/chapter-reference-v1/name-shell.png",
+      "width": 256,
+      "height": 236,
+      "sha256": "f22453013743d19e576d3fcd57112b70e4422092f723af2686fa02d6b83d952d",
+      "notes": "image_gen补绘，参考现有骨壳风格；原图、等比导出、Alpha/foot锚点见assets/source/chapter-reference-v1/assets.json。用于章节白盒参照，未替换正式19房；不是新增动作动画，整体验收待用户试玩。"
     }
   ]
 }
