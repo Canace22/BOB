@@ -273,8 +273,43 @@ modulate = Color(0.84,0.88,0.91,1)
 
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
-polygon = PackedVector2Array(444,850,458.51,850.0,487.34,849.65,516.17,850.701,545.0,850.0,573.83,850.175,602.66,850.525,631.49,849.825,646,850,646,880,444,880)
-one_way_collision = false
+polygon = PackedVector2Array(444,850,458.51,850.0,458.51,852.0,444,852)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour1" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(458.51,850.0,487.34,849.65,487.34,851.65,458.51,852.0)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour2" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(487.34,849.65,516.17,850.701,516.17,852.701,487.34,851.65)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour3" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(516.17,850.701,545.0,850.0,545.0,852.0,516.17,852.701)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour4" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(545.0,850.0,573.83,850.175,573.83,852.175,545.0,852.0)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour5" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(573.83,850.175,602.66,850.525,602.66,852.525,573.83,852.175)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour6" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(602.66,850.525,631.49,849.825,631.49,851.825,602.66,852.525)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Contour7" type="CollisionPolygon2D" parent="World/Terrain/Surface1"]
+polygon = PackedVector2Array(631.49,849.825,646,850,646,852,631.49,851.825)
+one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Surface2_0" type="Sprite2D" parent="World/Art"]

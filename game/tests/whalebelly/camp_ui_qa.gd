@@ -147,7 +147,8 @@ func run() -> void:
 	ui.preferences.reduce_motion = true
 	ui.open("camp", false)
 	await tick(10)
-	check("High contrast keeps opaque local panel and actions visible", ui.shade.color.a == 1.0 and fits())
+	var surface := ui.frame.get_theme_stylebox("panel") as StyleBoxFlat
+	check("High contrast keeps opaque local panel and actions visible", ui.frame.visible and surface.bg_color.a == 1.0 and fits())
 	await shot("06-high-contrast")
 	await tap(KEY_ESCAPE)
 	await tick(25)

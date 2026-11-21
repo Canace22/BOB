@@ -10,8 +10,8 @@ dialogue_id = "opening.arrival"
 room_id = "R1-01"
 area = Rect2(0, 380, 390, 360)
 priority = 10
-speakers = PackedStringArray("旁白", "拾潮者")
-lines = PackedStringArray("拾潮者穿过巡视缝。鲸歌忽然断了，骨路旁却亮着一盏菌灯。", "那里有人留下的痕迹……先到灯旁看看。")
+speakers = PackedStringArray("旁白", "拾潮者", "操作提示")
+lines = PackedStringArray("拾潮者穿过巡视缝。鲸歌忽然断了，骨路旁却亮着一盏菌灯。", "那里有人留下的痕迹……先到灯旁看看。", "按空格起跳。空中松开空格，再按一次就能二段跳。\n骨鸣器开局即可使用。靠近敌人按 J 攻击，按 I 格挡，跳起可躲开低扫。")
 objective_id = "opening.inspect_lamp"
 objective_text = "前往左侧菌灯旁 · 按 F 查看刻痕"
 

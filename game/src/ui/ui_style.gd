@@ -16,6 +16,29 @@ static func box(color: Color, border: Color = Color.TRANSPARENT) -> StyleBoxFlat
 	result.set_content_margin_all(12)
 	return result
 
+static func surface(high_contrast: bool) -> StyleBoxFlat:
+	var result := box(Color(INK,1.0 if high_contrast else 0.94),Color(TEAL,0.45))
+	result.set_corner_radius_all(10)
+	result.set_content_margin_all(20)
+	result.border_width_top = 2
+	return result
+
+static func dialogue_rect(viewport: Vector2, text: String = "", extra_height: float = 104.0) -> Rect2:
+	var width: float = minf(760,viewport.x-48)
+	var text_height: float = FONT.get_multiline_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,width-48,20).y
+	var height: float = clampf(text_height+extra_height,144,minf(224,viewport.y*0.4))
+	var dimensions := Vector2(width,height)
+	return Rect2(Vector2((viewport.x-dimensions.x)*0.5,viewport.y-dimensions.y-24),dimensions)
+
+static func compact_button(button: Button) -> void:
+	button.custom_minimum_size = Vector2(210,34)
+	for state: String in ["normal","hover","pressed","focus","disabled"]:
+		button.remove_theme_stylebox_override(state)
+		var style := button.get_theme_stylebox(state).duplicate() as StyleBoxFlat
+		style.content_margin_top = 5
+		style.content_margin_bottom = 5
+		button.add_theme_stylebox_override(state,style)
+
 static func theme(high_contrast: bool = false) -> Theme:
 	var result := Theme.new()
 	result.default_font = FONT
@@ -30,8 +53,11 @@ static func theme(high_contrast: bool = false) -> Theme:
 	result.set_stylebox("pressed", "Button", box(Color("29423f"), AMBER))
 	result.set_stylebox("focus", "Button", box(Color.TRANSPARENT, AMBER))
 	result.set_stylebox("disabled", "Button", box(Color(0.03, 0.08, 0.1, 0.7)))
-	if high_contrast:
-		result.set_stylebox("normal", "Button", box(INK, TEAL))
+	if high_contrast: result.set_stylebox("normal", "Button", box(INK, TEAL))
+	for state: String in ["normal","hover","pressed","focus","disabled"]:
+		var style := result.get_stylebox(state,"Button") as StyleBoxFlat
+		style.set_corner_radius_all(7)
+		if state == "focus": style.border_width_left = 4
 	return result
 
 static func label(text: String, font_size: int = 18, color: Color = BONE) -> Label:

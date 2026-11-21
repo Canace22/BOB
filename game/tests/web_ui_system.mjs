@@ -37,7 +37,7 @@ try{
  check('Closing menu waits for held attack release',(await state()).ui.pending_resume&&(await state()).paused);
  await page.keyboard.up('j');await gameplay();await sleep(300);
  check('No queued attack on resume',!(await state()).player.skill_active&&!(await state()).player.state.startsWith('strike'));
- await page.keyboard.press('c');await sleep(150);check('Map shows only known rooms',(await state()).ui.page==='map'&&(await state()).ui.map_nodes.length===2);
+ await page.keyboard.press('c');await sleep(150);check('Map shows all rooms with one visited',(await state()).ui.page==='map'&&(await state()).ui.map_nodes.length===19&&(await state()).ui.map_nodes.filter(n=>n.visited).length===1);
  await click('Room_R1-02');check('Map inspection does not teleport',(await state()).room==='R1-01');await shot('05-map');await click('Back');await gameplay();
  for(let i=0;i<30;i++){if((await state()).player.x<150)break;await hold('a',100)}
  await sleep(250);await page.keyboard.press('e');await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).ui.page==='camp');
@@ -53,7 +53,7 @@ try{
  await page.keyboard.down('d');for(let i=0;i<28;i++){await sleep(350);if((await state()).room!=='R1-01')break}await page.keyboard.up('d');await sleep(250);
  check('Authored doorway still changes room',(await state()).room==='R1-02');
  check('Room discovery follows real traversal',(await state()).ui.visited['R1-02']===true);
- await page.keyboard.press('c');await sleep(160);check('Map expands from visited room',(await state()).ui.map_nodes.length>2);await shot('08-expanded-map');await click('Back');await gameplay();
+ await page.keyboard.press('c');await sleep(160);check('Map updates visited rooms',(await state()).ui.map_nodes.filter(n=>n.visited).length>1);await shot('08-expanded-map');await click('Back');await gameplay();
  await page.keyboard.press('Escape');await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).ui.page==='pause');await click('Settings');
  for(const size of [{width:1920,height:1080},{width:1280,height:720},{width:2560,height:1080}]){
    await page.setViewportSize(size);await sleep(700);const s=await state();

@@ -28,13 +28,14 @@ func test_new_ability_is_optional_not_a_main_route_gate() -> void:
 	check(CampaignGuidance.description(host,"R1-02").contains("喷气孔"), "After unlock reveals optional use")
 	host.free()
 
-func test_map_marks_only_known_rooms_and_keeps_unopened_exit_honest() -> void:
+func test_map_shows_unvisited_rooms_and_keeps_unopened_exit_honest() -> void:
 	var host := make_host("R1-02")
 	host.visited = {"R1-01":true,"R1-02":true}
 	var data := WhaleUICampaignData.new()
 	data.host = host
 	var nodes := data.map_rooms()
-	check(not nodes.any(func(n: Dictionary) -> bool: return n.id == "R1-04"), "Unseen Boss room stays hidden")
+	eq(nodes.size(), host.rooms.size(), "Entire playable graph is visible")
+	check(nodes.any(func(n: Dictionary) -> bool: return n.id == "R1-04" and not n.visited), "Unseen Boss room is visible as unvisited")
 	check(nodes.any(func(n: Dictionary) -> bool: return n.id == "R1-03" and n.next), "Known main doorway is recommended")
 	check(data.room_description(5).contains("未开放"), "Upper branch announces its dead end before entry")
 	eq(CampaignGuidance.door_label(host, {"to":-2}), "后续区域未开放 · 原路返回", "Sealed exit does not promise entry")

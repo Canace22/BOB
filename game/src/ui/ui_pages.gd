@@ -43,26 +43,40 @@ static func layout(ui: WhaleCampaignUI) -> void:
 			var height: float = minf(500.0, ui.panel.size.y - 48.0) if resting else minf(260.0, ui.panel.size.y * 0.4)
 			control.offset_top = (ui.panel.size.y - height) * 0.5 if resting else ui.panel.size.y - height - 24.0
 			control.offset_bottom = -control.offset_top if resting else -24.0
+			if talking:
+				var bounds: Rect2 = WhaleUIStyle.dialogue_rect(ui.panel.size,"\n".join(ui.conversation_lines),120)
+				control.position = bounds.position
+				control.size = bounds.size
 	for side: String in ["left", "right"]: ui.margin.add_theme_constant_override("margin_"+side, 28 if resting else (24 if talking else 52))
-	for side: String in ["top", "bottom"]: ui.margin.add_theme_constant_override("margin_"+side, 20 if resting else (16 if talking else 25))
+	for side: String in ["top", "bottom"]: ui.margin.add_theme_constant_override("margin_"+side, 20 if resting else (12 if talking else 25))
+	(ui.heading.get_parent() as VBoxContainer).add_theme_constant_override("separation",6 if talking else 12)
 	ui.shade.color = Color.BLACK if ui.page_id == "death" else Color(0.018, 0.055, 0.075, 0.92 if talking and not ui.preferences.contrast else 0.96)
 	if (talking or resting) and ui.preferences.contrast: ui.shade.color.a = 1.0
-	ui.ornament.visible = not talking and not resting
+	ui.frame.visible = talking or resting
+	ui.frame.position = ui.shade.position
+	ui.frame.size = ui.shade.size
+	ui.frame.add_theme_stylebox_override("panel",WhaleUIStyle.surface(ui.preferences.contrast))
+	if talking or resting: ui.shade.color.a = 0.0
+	ui.ornament.visible = not talking and not resting and ui.page_id != "map"
+	ui.heading.visible = ui.page_id != "map"
+	ui.footer.visible = not talking and ui.page_id != "map"
 	ui.heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT if talking else HORIZONTAL_ALIGNMENT_CENTER
-	ui.heading.add_theme_font_size_override("font_size", 30 if resting else (24 if talking else 36))
+	ui.heading.add_theme_font_size_override("font_size", 30 if resting else (22 if talking else 36))
 	ui.body.alignment = BoxContainer.ALIGNMENT_BEGIN if talking else BoxContainer.ALIGNMENT_CENTER
-	ui.body.add_theme_constant_override("separation", 8 if talking else 15)
+	ui.body.add_theme_constant_override("separation", 6 if talking else 15)
 
 static func _conversation(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = ui.conversation_title
 	for line: String in ui.conversation_lines:
 		var paragraph: Label = WhaleUIStyle.paragraph(line,WhaleUIStyle.BONE)
+		paragraph.add_theme_font_size_override("font_size",20)
 		paragraph.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		ui.body.add_child(paragraph)
-	var close: Button = action(ui.body,"ConversationClose","返回",ui.back)
-	close.custom_minimum_size = Vector2(140,36)
+	var close: Button = action(ui.body,"ConversationClose","F / Enter / Esc 返回",ui.back)
+	WhaleUIStyle.compact_button(close)
+	close.custom_minimum_size.x=120
 	close.size_flags_horizontal = Control.SIZE_SHRINK_END
-	ui.footer.text = "Enter 确认 · Esc 返回"
+	ui.footer.text = "F / 空格 / Enter 返回 · Esc 返回"
 
 static func _title(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "鲸落万物生 · 遗潮回声"
@@ -125,6 +139,8 @@ static func _death(ui: WhaleCampaignUI) -> void:
 static func _help(ui: WhaleCampaignUI) -> void:
 	ui.heading.text = "拾潮者 · 操作手记"
 	var column: VBoxContainer = menu(ui,780)
+	column.add_child(WhaleUIStyle.label("骨鸣器 · 开局即可攻击",22,WhaleUIStyle.AMBER))
+	column.add_child(WhaleUIStyle.paragraph("空格起跳，空中松开再按一次可二段跳，落地后恢复。\n靠近敌人按 J 普攻，不消耗蓄振。\n负壳蟹：空格跳过低扫，下砸时后退；等整套连招结束、收钳后靠近按 J 反击。护壳时普攻仍可削血。"))
 	var unlocked_ids: Array = ["dash", "float", "pressure", "bone", "silence"] + CampaignRelics.ITEMS.keys()
 	for id: String in unlocked_ids:
 		var relic: bool = CampaignRelics.ITEMS.has(id)
@@ -132,7 +148,7 @@ static func _help(ui: WhaleCampaignUI) -> void:
 		var card: Dictionary = WhaleUnlockBanner.relic_card(id) if relic else WhaleUnlockBanner.ability_card(id)
 		column.add_child(WhaleUIStyle.label(str(card.title), 22, WhaleUIStyle.AMBER))
 		column.add_child(WhaleUIStyle.paragraph(str(card.detail)))
-	column.add_child(WhaleUIStyle.paragraph("A/D 移动 · 空格 跳跃 / 二段跳 · J 普攻 · I 格挡\nK 三段斩（每段可用 A/D 换向）· L 冲刺 · A/D+L 撞击\nW+J 上挑 · 地面 S+J 横扫 · 空中 S+J 下刺\nS+L 后跳并打断动作 · 后跳中 J 回斩\n点按 Q / E 后，左上角显示四列组合技；预选保留 0.8 秒\nQ+E 辅助页 · E+I 按住调息 · Q+E+L 按住蓄力\nF 交互 · W 浮游 · G 锚定 · C 地图 · Esc 暂停\nM 静音 · H 帮助 · F5 存档 · F6 读取 · F9 临时练习\n冲刺、回旋和五段连斩需原进度解锁；上涌、下潜需舌台奖励。"))
+	column.add_child(WhaleUIStyle.paragraph("A/D 移动 · J 普攻 · I 格挡\nK 三段斩（每段可用 A/D 换向）· L 冲刺 · A/D+L 撞击\nW+J 上挑 · 地面 S+J 横扫 · 空中 S+J 下刺\nS+L 后跳并打断动作 · 后跳中 J 回斩\n点按 Q / E 后，下方展开四列组合技；预选保留 0.8 秒\nQ+E 辅助页 · E+I 按住调息 · Q+E+L 按住蓄力\nF 交互 · W 浮游 · G 锚定 · C 地图 · Esc 暂停\nM 静音 · H 帮助 · F5 存档 · F6 读取 · F9 临时练习\n小地图：白色为自己，编号对应出口，× 表示受阻。\n剧情对话：F / 空格继续，Tab选择按钮，Enter确认；跳过需再次确认。\n冲刺、回旋和五段连斩需原进度解锁；上涌、下潜需舌台奖励。"))
 	action(column,"HelpBack","返回",ui.back)
 
 ## Placeholder closing text until the final chapter is written; the loop itself is complete.

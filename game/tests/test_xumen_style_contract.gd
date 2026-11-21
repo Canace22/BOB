@@ -24,8 +24,8 @@ func room_polygon(scene: Node2D, shape: CollisionPolygon2D) -> PackedVector2Arra
 		node = node.get_parent() as Node2D
 	return transform * shape.polygon
 
-func check_polygon(scene: Node2D, id: String, expected: PackedVector2Array, one_way: bool) -> void:
-	var path := "World/Terrain/%s/Contour" % id
+func check_polygon(scene: Node2D, id: String, expected: PackedVector2Array, one_way: bool, contour_name: String = "Contour") -> void:
+	var path := "World/Terrain/%s/%s" % [id,contour_name]
 	var shape := scene.get_node_or_null(path) as CollisionPolygon2D
 	check(shape != null, "Frozen collider exists: %s/%s" % [scene.name,id])
 	if shape == null: return
@@ -67,6 +67,15 @@ func test_generated_surfaces_and_retained_walls_preserve_physics_and_removed_wal
 			var surface: Array = frozen[index].surfaces[at]
 			var polygon := PackedVector2Array()
 			for coordinate: Array in surface: polygon.append(point(coordinate))
+			if recipe.id == "R1-02" and spec.id == "Surface1":
+				var landing: Node = scene.get_node("World/Terrain/Surface1")
+				eq(landing.get_child_count(), polygon.size()-1, "Each top edge has exactly one strip and no filled interior")
+				for edge: int in range(polygon.size()-1):
+					var a := polygon[edge]
+					var b := polygon[edge+1]
+					var strip := PackedVector2Array([a,b,b+Vector2.DOWN*2,a+Vector2.DOWN*2])
+					check_polygon(scene,spec.id,strip,true,"Contour" if edge == 0 else "Contour%d" % edge)
+				continue
 			var depth: float = 100.0 if spec.get("membrane",false) else 30.0
 			polygon.append(Vector2(float(spec.x)+float(spec.w)-14.0,float(spec.y)+depth))
 			polygon.append(Vector2(float(spec.x)+14.0,float(spec.y)+depth))
@@ -90,6 +99,16 @@ func test_generated_surfaces_and_retained_walls_preserve_physics_and_removed_wal
 				for coordinate: int in range(0,coordinates.size(),2): original.append(Vector2(float(coordinates[coordinate]),float(coordinates[coordinate+1])))
 				check_polygon(scene,str(wall.id),original,false)
 		scene.free()
+
+func test_sieve_recovery_landing_accepts_upward_jumps_without_opening_the_crab_ceiling() -> void:
+	var room: Node2D = load(CampaignWorld.scene_path("R1-02")).instantiate()
+	var landing: CollisionPolygon2D = room.get_node("World/Terrain/Surface1/Contour")
+	check(landing.one_way_collision,"The lower left landing accepts a double jump from underneath")
+	eq(landing.one_way_collision_margin,6.0,"Landing keeps the existing downward contact margin")
+	for id: String in ["Surface2","Surface11"]:
+		var shape: CollisionPolygon2D = room.get_node("World/Terrain/"+id+"/Contour")
+		check(not shape.one_way_collision,"Crab ceiling and recovery floor remain solid: "+id)
+	room.free()
 
 func test_character_parameters_and_skill_unlock_rules_keep_the_current_contract() -> void:
 	var contract: Dictionary = object_at(CONTRACT)
@@ -155,6 +174,8 @@ func test_frozen_gameplay_script_hashes_allow_independent_art_and_scene_changes(
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-treasure-gameplay-v4.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# The authorized Chapter One merge changes exactly four sources, with existing behavior tests retained.
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-narrative-combat-gameplay-v5.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
+	# Recovery landing fix ignores one-way platforms in the shared wall-jump probes.
+	for item: Dictionary in object_at("res://tests/fixtures/xumen-sieve-recovery-gameplay-v6.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# Deliberately exclude generators, scenes, image files and presentation scripts.
 	for path: String in ["src/campaign/tide_player.gd","src/campaign/campaign_player.gd","src/campaign/tide_skill_catalog.gd","src/campaign/tide_skill_input.gd","src/campaign/tide_skill_controller.gd","src/campaign/tide_input.gd","src/campaign/campaign_relics.gd","src/campaign/campaign_save_bridge.gd","src/campaign/boss/crab_boss.gd","src/campaign/boss/crab_shell.gd","src/campaign/boss/crab_moves.gd","src/campaign/enemies/corpse_crab.gd","src/campaign/enemies/kit_encounter.gd","src/ui/ui_save_access.gd"]:
 		check(hashes.has("game/"+path),"Baseline contains gameplay source: " + path)

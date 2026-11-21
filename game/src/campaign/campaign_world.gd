@@ -75,8 +75,10 @@ static func restriction(host: Node2D, door: Dictionary) -> String:
 
 ## Normalized map position of a room on a region page, or null when unplaced.
 static func map_position(page: String, id: String) -> Variant:
-	var spot: Variant = extra().get("map", {}).get(page, {}).get(id)
+	if not on_map_page(page, id): return null
+	var sheet: String = "R1" if page == "R1" else "world"
+	var spot: Variant = extra().get("map", {}).get(sheet, {}).get(id)
 	return Vector2(float(spot[0]), float(spot[1])) if spot is Array and spot.size() == 2 else null
 
 static func on_map_page(page: String, id: String) -> bool:
-	return region(id) == page or map_position(page, id) != null
+	return page == "world" or region(id) == page or extra().get("map", {}).get(page, {}).has(id)

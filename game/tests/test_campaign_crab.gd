@@ -82,6 +82,25 @@ func test_basic_melee_makes_progress_through_shell_and_can_finish() -> void:
 	check(not crab.data.alive and crab.state == "dead","final shell hit defeats boss")
 	check(host.defeated.get("R1-04:0",false) and host.abilities.dash,"normal hit path grants victory")
 
+func test_combat_guidance_uses_live_moves_and_clears_after_victory() -> void:
+	var host := campaign()
+	var crab: CampaignCrabBoss = host.enemies[0].actor
+	check(CampaignGuidance.combat_hint(host).contains("开局即可使用"),"arrival explains that the weapon is already available")
+	crab.running = true
+	crab.kind = "sweep"
+	crab.change("tell")
+	check(CampaignGuidance.combat_hint(host).contains("空格"),"low sweep teaches an available jump")
+	crab.kind = "slam"
+	check(CampaignGuidance.combat_hint(host).contains("后退"),"slam does not require the locked dash")
+	crab.change("recover")
+	check(CampaignGuidance.combat_hint(host).contains("按 J 攻击"),"recovery names the actual attack key")
+	eq(crab.data.hp,180,"reading advice never damages the boss")
+	check(not host.abilities.dash,"reading advice never unlocks dash")
+	host.damage_enemy(crab.data,180)
+	eq(CampaignGuidance.combat_hint(host),"","defeated boss leaves no stale combat advice")
+	host.load_room(1)
+	eq(CampaignGuidance.combat_hint(host),"","ordinary rooms do not show boss advice")
+
 func test_attack_bounds_jump_dodge_and_safe_corner_sequence() -> void:
 	var host := campaign()
 	var crab: CampaignCrabBoss = host.enemies[0].actor

@@ -80,7 +80,7 @@ R2-03/04以配方`reference_background`选择单房清底图、`background_schoo
 
 牵引圆环是基础探索操作；读取旧V6时将`abilities.anchor`归一为true。`collected["R1-07"]`表示记忆袋奖励，领取时解锁浮游、恢复生命与蓄振；旧档已收集该奖励时补齐浮游，不重置检查点或其它能力。地图详情按同一收集ID显示可重读记忆。
 
-UI新版保留V6结构并增加可选`visited`房间ID字典。发现定义为正式进入房间，同时在地图显示其配置的相邻出口；房间预览不登记、练习不保存。旧档至少恢复检查点及明确获得奖励/击败Boss的房间，不猜测其余历史路线。原子写入保留`.bak`，确认新旅途另保留`.before-new`；标题与加载共用V6校验。UI设置独立存于`ui_settings.cfg`，不混入玩法状态；QA使用`ui_qa_settings.cfg`。
+UI新版保留V6结构并增加可选`visited`房间ID字典。正式进入房间登记到访。地图展示整个已实现房间表，计数与颜色读取到访记录，浏览区域或房间预览不登记，练习不保存。旧档至少恢复检查点及明确获得奖励/击败Boss的房间，不猜测其余历史路线。原子写入保留`.bak`，确认新旅途另保留`.before-new`；标题与加载共用V6校验。UI设置独立存于`ui_settings.cfg`，不混入玩法状态；QA使用`ui_qa_settings.cfg`。
 
 ## 命令与验证
 
@@ -116,7 +116,7 @@ Pages检出使用 `blob:none` 和稀疏工作目录，只展开Godot、根入口
 - 新房间先写配方，再运行 `node game/tools/build_world_rooms.mjs` 和 `node tools/godot.mjs sync-art`。生成的场景和 `world/rooms.json` 不手工修改；需要调整时改配方或台账后重新生成。
 - 房间名与门提示来自生成数据，字体子集脚本和覆盖测试已包含 `world/rooms.json`。Web 导出的 `include_filter` 已加入该文件。
 - 实机路线用 `tests/whalebelly/world_skeleton.gd`，`-- --reload-world` 验证独立进程读档，`-- --views` 只出定点截图。
-- 地图每区一页，节点坐标写在配方 `_world.json` 的 `map`，是底图上的比例位置。须门遗港页的底图是鲸头特写，其余各页共用全鲸剖面图，同一房间在这些页上用同一坐标。改坐标后看 `-- --views` 输出的五张地图截图；节点重叠和跨页不一致由 `test_campaign_world.gd` 检查。
+- 地图默认显示全图，五区可单独查看。`_world.json` 的 `map.world` 定义 19 房在全鲸底图上的比例坐标，`map.R1` 是鲸头特写。其余区域按所属房间 ID 和配方中列出的邻区入口筛选，直接复用全图坐标。改动后用 `test_campaign_world.gd` 检查范围、重叠和跨页坐标，用 `minimap_qa.gd` 查看完整地图及五张区域截图。
 
 ## 统一敌人试验场
 

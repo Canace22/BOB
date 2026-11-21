@@ -91,6 +91,20 @@ func test_remote_scenes_evict_and_explicit_reload_rebuilds_actor() -> void:
 	check(not host.streaming.cached.has(0),"Old remote scene window is cleared")
 	check(host.actor_frame.position==host.streaming.origin(18),"Actor frame uses checkpoint room origin")
 
+func test_memory_pit_does_not_follow_the_shaft_into_the_tongue_room() -> void:
+	var host: WhalebellyMain = await world()
+	host.load_room(6,[460,1050])
+	var stream: CampaignRoomStream = host.streaming
+	var origin: Vector2 = stream.origin(6)
+	var room_limit: float = origin.y + host.room.size[1] + CampaignRoomStream.FALL_MARGIN
+	eq(stream.fall_limit(origin+Vector2(205,1365)),room_limit,"A miss beside the shaft uses the memory room floor limit")
+	var tongue_ledge: Vector2 = stream.origin(2) + Vector2(130,510)
+	eq(stream.fall_limit(tongue_ledge),room_limit,"The unrelated main-route entrance cannot extend the fall")
+	var shaft_step: Vector2 = stream.origin(1) + Vector2(1895,116)
+	check(stream.fall_limit(shaft_step)>shaft_step.y,"A traveller can descend the connected shaft below the memory room")
+	host.player.last_safe = shaft_step-origin
+	check(stream.fall_limit(shaft_step+Vector2(220,30))>shaft_step.y+30,"Leaving a shaft ledge allows room to steer back")
+
 func test_prepared_neighbor_owns_frozen_enemies_without_changing_active_state() -> void:
 	var host: WhalebellyMain = await world()
 	var entry: Dictionary = host.streaming.cached[1]

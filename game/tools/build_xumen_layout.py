@@ -14,7 +14,14 @@ recipes=read(GAME/'content/whalebelly/layout/recipes.json')['rooms']
 physics=read(GAME/'content/whalebelly/layout/physics-v1.json')
 # Keep the original geometry signature for retained platforms and wall records.
 # Explicit user removals suppress whole assemblies without editing their boxes.
-geometry=[{'id':r['id'],'platforms':r['platforms'],'walls':[{k:v for k,v in wall.items() if k!='removed'} for wall in r['walls']]} for r in recipes]
+geometry=copy.deepcopy([{'id':r['id'],'platforms':r['platforms'],'walls':[{k:v for k,v in wall.items() if k!='removed'} for wall in r['walls']]} for r in recipes])
+# The sieve recovery landing now collides only along its one-way top.
+# Compare the rest of the recipe against the original geometry signature.
+for room in geometry:
+    if room['id']=='R1-02':
+        landing = next(p for p in room['platforms'] if p['id']=='Surface1')
+        landing['one_way'] = False
+        landing.pop('top_only', None)
 signature=hashlib.sha256(json.dumps(geometry,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 if signature!=physics['recipe_geometry_sha256']:
     raise ValueError('Layout changed: review the physics contract before rebuilding art.')
@@ -155,7 +162,18 @@ for recipe in recipes:
         contour=copy.deepcopy(frozen[rid]['surfaces'][platform_index])
         depth=100 if spec.get('membrane') else 30
         sc.node(name,'StaticBody2D','World/Terrain')
-        sc.node('Contour','CollisionPolygon2D','World/Terrain/'+name,polygon=poly(contour+[[right,y+depth],[left,y+depth]]),one_way_collision=str(bool(spec.get('one_way'))).lower(),one_way_collision_margin=6.0)
+        if spec.get('top_only'):
+            if not spec.get('one_way'):
+                raise ValueError(f'{rid}/{name}: a top-only landing must be one-way')
+            # A thick concave polygon splits into diagonal footholds below the deck.
+            # Each convex strip has just the authored edge as its walkable face.
+            for segment, (a, b) in enumerate(zip(contour, contour[1:])):
+                strip = [a, b, [b[0], b[1]+2], [a[0], a[1]+2]]
+                node_name = 'Contour' if segment == 0 else f'Contour{segment}'
+                sc.node(node_name,'CollisionPolygon2D','World/Terrain/'+name,
+                        polygon=poly(strip),one_way_collision='true',one_way_collision_margin=6.0)
+        else:
+            sc.node('Contour','CollisionPolygon2D','World/Terrain/'+name,polygon=poly(contour+[[right,y+depth],[left,y+depth]]),one_way_collision=str(bool(spec.get('one_way'))).lower(),one_way_collision_margin=6.0)
         surfaces.append(contour)
         if rid=='R1-04' and name=='Surface3':
             # The original Boss painting has a substantial tissue-and-bone

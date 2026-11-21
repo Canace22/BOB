@@ -16,6 +16,7 @@ func key(code: Key, down: bool) -> void:
 	event.keycode = code
 	event.pressed = down
 	Input.parse_input_event(event)
+	Input.flush_buffered_events()
 
 func check(label: String, passed: bool) -> void:
 	checks.append({"name":label,"pass":passed})
@@ -25,7 +26,7 @@ func check(label: String, passed: bool) -> void:
 func shot(label: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await process_frame
-	await RenderingServer.frame_post_draw
+	RenderingServer.force_draw(false)
 	root.get_texture().get_image().save_png(OUTPUT.path_join(label+".png"))
 
 func place(index: int, start: Array) -> void:
@@ -40,6 +41,69 @@ func wait_ready(index: int) -> bool:
 		await tick(1)
 	return false
 
+func memory_return() -> void:
+	await place(6,[460,1050])
+	var actor: int = host.player.get_instance_id()
+	key(KEY_A,true)
+	for frame: int in 150:
+		await tick(1)
+		if host.player.position.x<145 or host.health<5: break
+	key(KEY_A,false)
+	await tick(130)
+	check("Missing the memory recovery ledge returns to that ledge exactly once",
+		host.health==4 and host.room.id=="R1-07" and host.player.get_instance_id()==actor
+		and host.player.is_on_floor() and absf(host.player.position.y-1050)<4)
+	check("The lower tongue room is still undiscovered",not host.visited.has("R1-03"))
+	await shot("04-memory-recovery")
+	await tick(2)
+
+	# Return trip after collecting float. Steer into the gap beside the recovery ledge.
+	host.abilities.float = true
+	key(KEY_SPACE,true)
+	key(KEY_A,true)
+	await tick(3)
+	key(KEY_A,false)
+	await tick(10)
+	key(KEY_W,true)
+	key(KEY_SPACE,false)
+	for frame: int in 80:
+		await tick(1)
+		if host.player.position.y<738: break
+	key(KEY_A,true)
+	for frame: int in 30:
+		await tick(1)
+		if host.player.position.x<280: break
+	key(KEY_A,false)
+	key(KEY_W,false)
+	await tick(45)
+	check("Float out from the recovered foothold onto the memory entrance bank",
+		host.player.is_on_floor() and absf(host.player.position.y-750)<3 and host.health==4)
+	host.abilities.float = false
+
+func tongue_jump() -> void:
+	await place(1,[1500,710])
+	check("Tongue is prepared at the main-route exit",await wait_ready(2))
+	var actor: int = host.player.get_instance_id()
+	key(KEY_D,true)
+	for frame: int in 240:
+		await tick(1)
+		if host.room.id=="R1-03" and host.player.position.x>=312: break
+	check("Walking from the sieve activates the tongue entrance before takeoff",
+		host.room.id=="R1-03" and host.player.get_instance_id()==actor and host.player.is_on_floor()
+		and host.player.position.x>=312 and host.player.position.x<346)
+	key(KEY_SPACE,true)
+	for frame: int in 45:
+		await tick(1)
+		if host.player.position.x>=500: break
+	key(KEY_D,false)
+	await tick(20)
+	key(KEY_SPACE,false)
+	await tick(12)
+	check("One ordinary jump lands on the live crab platform",
+		host.room.id=="R1-03" and host.player.is_on_floor() and host.player.position.x>465
+		and host.player.position.x<716 and absf(host.player.position.y-440)<3 and host.health==5)
+	await shot("06-tongue-landing")
+
 func run() -> void:
 	root.size = Vector2i(1280,720)
 	DirAccess.make_dir_recursive_absolute(OUTPUT)
@@ -53,6 +117,8 @@ func run() -> void:
 	root.add_child(host)
 	current_scene = host
 	await tick(35)
+	await memory_return()
+	await tongue_jump()
 	host.checkpoint = {"room":0,"pos":[180,720]}
 	host.save_progress(false)
 	var saved: String = FileAccess.get_file_as_string(host.save_path())

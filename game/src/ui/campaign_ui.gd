@@ -10,6 +10,7 @@ var preferences := WhaleUIPreferences.new()
 var panel: Control
 var hud: WhaleCampaignHUD
 var shade: ColorRect
+var frame: Panel
 var modal: Control
 var body: VBoxContainer
 var heading: Label
@@ -56,6 +57,9 @@ func _ready() -> void:
 	shade.color = Color(0.018, 0.055, 0.075, 0.96)
 	modal.add_child(shade)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	frame = Panel.new()
+	frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	modal.add_child(frame)
 	margin = MarginContainer.new()
 	modal.add_child(margin)
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -141,9 +145,10 @@ func open(page: String, push: bool = true) -> void:
 		child.queue_free()
 	modal.show()
 	subtitle_label.hide()
-	hud.visible = page == "conversation"
+	hud.visible = page in ["conversation","dialogue"]
 	if page=="dialogue":
 		modal.hide()
+		dialogue_view.apply_style(preferences.contrast)
 		dialogue_view.show()
 	else:
 		WhaleUIPages.build(self, page)
@@ -152,6 +157,9 @@ func open(page: String, push: bool = true) -> void:
 	host.record_event("ui_open", {"page":page})
 
 func _focus_page() -> void:
+	if page_id == "dialogue":
+		dialogue_view.next_button.grab_focus()
+		return
 	var candidates: Array[Node] = body.find_children("*", "Control", true, false)
 	var first: Control
 	for node: Control in candidates:
@@ -211,6 +219,10 @@ func _input(event: InputEvent) -> void:
 	if host.continuity.travelling or host.continuity.transition.active: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if WhaleDialoguePanel.handle_key(self,event): return
+	if page_id == "conversation" and event.physical_keycode in [KEY_F,KEY_SPACE]:
+		back()
+		get_viewport().set_input_as_handled()
+		return
 	if event.physical_keycode == KEY_ESCAPE:
 		if page_id.is_empty(): open("pause")
 		else: back()

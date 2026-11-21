@@ -103,7 +103,7 @@ try {
     s=await state();
     check('reward_map_points_to_return',s.ui.guidance.includes('左门返回须筛')&&s.ui.map_nodes.some(n=>n.id==='R1-02'&&n.next));
     check('memory_marked_optional',s.ui.map_nodes.some(n=>n.id==='R1-07'&&n.route_kind==='可选支路'));
-    check('unknown_boss_stays_hidden',!s.ui.map_nodes.some(n=>n.id==='R1-04'));
+    check('distant_boss_is_unvisited',s.ui.map_nodes.some(n=>n.id==='R1-04'&&!n.visited));
     await page.setViewportSize({width:1280,height:720});await pause(500);
     await page.screenshot({path:path.join(out,'memory-map-1280.png')});
     if(process.env.CHECK_VISUAL_MAP) {

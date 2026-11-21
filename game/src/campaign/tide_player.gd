@@ -443,9 +443,20 @@ func _try_jump() -> void:
 	animation_tag.emit("jump")
 
 func _wall_direction() -> float:
-	if $WallLeft.is_colliding(): return -1.0
-	if $WallRight.is_colliding(): return 1.0
+	if _wall_probe_hits_solid($WallLeft): return -1.0
+	if _wall_probe_hits_solid($WallRight): return 1.0
 	return 0.0
+
+func _wall_probe_hits_solid(ray: RayCast2D) -> bool:
+	if not ray.is_colliding(): return false
+	var collider := ray.get_collider() as CollisionObject2D
+	if collider == null: return true
+	var owner: int = collider.shape_find_owner(ray.get_collider_shape())
+	var shape: Object = collider.shape_owner_get_owner(owner)
+	# Rays still detect a one-way deck while the body is passing through it.
+	if shape is CollisionPolygon2D or shape is CollisionShape2D:
+		return not shape.one_way_collision
+	return true
 
 func ability_available(_action:String) -> bool:return true
 
