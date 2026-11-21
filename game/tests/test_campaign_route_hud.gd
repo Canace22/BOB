@@ -46,3 +46,29 @@ func test_projection_and_same_edge_spacing_preserve_every_marker() -> void:
 		check(boundary.grow(0.01).has_point(hud.markers[i].at),"Every exit remains in bounds")
 		if i>0: check(hud.markers[i].at.distance_to(hud.markers[i-1].at)>=63,"Same-edge labels are separated")
 	hud.free()
+
+func test_prompt_clearance_cannot_reverse_exit_direction() -> void:
+	# 长交互提示压低HUD安全区底线，主角仍在画面中心；不能用负交点把左门显示到右侧。
+	var center := Vector2(640,360)
+	var boundary := Rect2(24,108,1232,192)
+	for ray: Vector2 in [Vector2(-500,60),Vector2(500,60),Vector2(-500,-60),Vector2(500,-60)]:
+		var at: Vector2 = WhaleCampaignRouteHUD.edge_point(center,ray,boundary)
+		check(boundary.grow(0.01).has_point(at),"Long-prompt marker remains on safe boundary")
+		check((at.x-center.x)*ray.x>=0,"Projection never reverses the real horizontal direction")
+	var straight_left: Vector2 = WhaleCampaignRouteHUD.edge_point(center,Vector2.LEFT,boundary)
+	eq(straight_left.x,boundary.position.x,"A left exit stays on the left even if origin lies below safe area")
+
+func test_streaming_room_switch_uses_destination_connection_end() -> void:
+	var host := make_host("R1-02")
+	var stream := CampaignRoomStream.new()
+	stream.host = host
+	stream.layout = CampaignStreamingLayout.build(host.rooms)
+	host.streaming = stream
+	var back: Dictionary = WhaleCampaignRouteHUD.destinations(host).filter(func(route: Dictionary) -> bool: return route.id=="R1-01")[0]
+	var origin: Vector2 = stream.origin(host.room_index)
+	var at_entry: Vector2 = origin+Vector2(12,700)
+	check(origin.x+Vector2(back.point).x>at_entry.x,"Old room-local doorway lies ahead just after ownership switches")
+	var target: Vector2 = WhaleCampaignRouteHUD.route_world_point(host,back)
+	check(target.x<at_entry.x,"Return marker points toward the actual left room at seam entry")
+	stream.free()
+	host.free()

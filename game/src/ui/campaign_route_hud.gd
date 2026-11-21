@@ -29,6 +29,16 @@ static func destinations(host: Node2D) -> Array[Dictionary]:
 		result.append({"target":target,"id":str(room.id),"name":str(room.name),"point":host.point(door.pos),"main":main,"blocked":not missing.is_empty(),"detail":"需"+" / ".join(missing) if not missing.is_empty() else "","kind":"前往" if main else ("返回" if visited else "可前往")})
 	return result
 
+static func route_world_point(host: Node2D, route: Dictionary) -> Vector2:
+	var stream := host.streaming as CampaignRoomStream
+	if is_instance_valid(stream) and stream.enabled:
+		for link: Dictionary in stream.layout.get("links",[]):
+			# 无缝交界先切换房间归属，旧房内门点可能还在主角前方。
+			# 指向目的房一侧的真实连接端，避免返回左房的箭头在入房前段反指右边。
+			if int(link.a)==host.room_index and int(link.b)==int(route.target): return Vector2(link.to)
+			if int(link.b)==host.room_index and int(link.a)==int(route.target): return Vector2(link.from)
+	return host.scenery.to_global(Vector2(route.point))
+
 func _process(dt: float) -> void:
 	var host: Node2D = controller.host
 	visible = controller.page_id.is_empty() and is_instance_valid(controller.player) and controller.player.health>0 and controller.player.controls_enabled and not host.continuity.travelling
@@ -45,22 +55,31 @@ func _process(dt: float) -> void:
 	var prompt: WhaleInteractionPrompt = controller.hud.interaction_prompt
 	if prompt.visible and prompt.card_rect.size.y>0: bottom = minf(bottom,prompt.card_rect.position.y-50)
 	var boundary := Rect2(Vector2(24,108),Vector2(viewport.x-48,maxf(100,bottom-108)))
+	# 门点和主角先统一到HUD坐标，避免相机跟随缓动或窗口缩放改变相对方向。
+	var canvas_to_hud: Transform2D = get_global_transform_with_canvas().affine_inverse()
+	var player_point: Vector2 = canvas_to_hud*controller.player.get_global_transform_with_canvas().origin
 	for route: Dictionary in routes:
-		var screen_point: Vector2 = host.scenery.get_global_transform_with_canvas()*Vector2(route.point)
-		var ray: Vector2 = screen_point-viewport*0.5
-		if ray.length_squared()<1: ray = Vector2.RIGHT
+		var world_point: Vector2 = route_world_point(host,route)
+		var screen_point: Vector2 = canvas_to_hud*host.get_canvas_transform()*world_point
+		var ray: Vector2 = screen_point-player_point
+		if ray.length_squared()<1: continue
 		var marker: Dictionary = route.duplicate()
+		marker.world_point = world_point
 		marker.direction = ray.normalized()
-		marker.at = edge_point(viewport*0.5,ray,boundary)
+		marker.at = edge_point(player_point,ray,boundary)
 		marker.side = "left" if is_equal_approx(marker.at.x,boundary.position.x) else ("right" if is_equal_approx(marker.at.x,boundary.end.x) else ("top" if is_equal_approx(marker.at.y,boundary.position.y) else "bottom"))
 		markers.append(marker)
 	_separate(boundary)
 	queue_redraw()
 
 static func edge_point(center: Vector2, ray: Vector2, boundary: Rect2) -> Vector2:
-	var tx: float = INF if is_zero_approx(ray.x) else ((boundary.end.x if ray.x>0 else boundary.position.x)-center.x)/ray.x
-	var ty: float = INF if is_zero_approx(ray.y) else ((boundary.end.y if ray.y>0 else boundary.position.y)-center.y)/ray.y
-	return center+ray*minf(tx,ty)
+	# 提示避让后主角可能位于安全区外；只移动方向显示起点，保留出口相对主角的方向。
+	# 起点在矩形外会得到负交距，使左门反投到右侧；不能直接取原来的最小交距。
+	var origin: Vector2 = center if boundary.has_point(center) else boundary.get_center()
+	if ray.length_squared()<0.0001: return origin
+	var tx: float = INF if is_zero_approx(ray.x) else ((boundary.end.x if ray.x>0 else boundary.position.x)-origin.x)/ray.x
+	var ty: float = INF if is_zero_approx(ray.y) else ((boundary.end.y if ray.y>0 else boundary.position.y)-origin.y)/ray.y
+	return origin+ray*minf(tx,ty)
 
 func _separate(boundary: Rect2) -> void:
 	# 同边多个出口沿边排列，保留全部目的地；不把重叠标签叠成一团。
