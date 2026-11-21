@@ -4,16 +4,24 @@ extends RefCounted
 ## combined door requirements and per-region map placement.
 const EXTRA := "res://content/whalebelly/world/rooms.json"
 const LAYOUT := "res://content/whalebelly/layout/rooms.json"
+const CHAPTER_MAP := "res://content/whalebelly/world/chapter_map.json"
 const REGIONS: Dictionary = {"R1":"须门遗港", "R2":"肺心潮庭", "R3":"胃肠沉城", "R4":"鸣肋断脊", "R5":"耳海归墟"}
 const NAMES: Dictionary = {"dash":"贴流冲", "float":"浮游", "anchor":"锚定", "boss":"击败守关者", "parry":"迎珠", "fissure":"潜隙", "pressure":"潮压", "bone":"骨音", "silence":"静默"}
 const UNBUILT := "后续区域未开放 · 原路返回"
 static var extra_cache: Dictionary = {}
+static var chapter_cache: Dictionary = {}
 
 static func extra() -> Dictionary:
 	if extra_cache.is_empty() and FileAccess.file_exists(EXTRA):
 		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(EXTRA))
 		if parsed is Dictionary: extra_cache = parsed
 	return extra_cache
+
+static func chapter_map() -> Dictionary:
+	if chapter_cache.is_empty() and FileAccess.file_exists(CHAPTER_MAP):
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(CHAPTER_MAP))
+		if parsed is Dictionary: chapter_cache = parsed
+	return chapter_cache
 
 ## Appends later regions to the first-region list. Existing indices never move,
 ## so V6 checkpoints stay valid. Unknown targets keep the authored fallback.
@@ -35,8 +43,28 @@ static func load_rooms(base: Array) -> Array:
 	for entry: Dictionary in rooms:
 		for door: Dictionary in entry.get("doors", []):
 			if door.has("to_id"): door["to"] = index.get(str(door.to_id), int(door.get("to", -2)))
+	_apply_chapter_metadata(rooms)
 	CampaignPaintedSupports.attach_data(rooms)
 	return rooms
+
+static func _apply_chapter_metadata(rooms: Array) -> void:
+	var by_room: Dictionary = {}
+	for chapter: Dictionary in chapter_map().get("chapters", []):
+		for room_id: Variant in chapter.get("rooms", []):
+			by_room[str(room_id)] = chapter
+	for entry: Dictionary in rooms:
+		var chapter: Dictionary = by_room.get(str(entry.id), {})
+		if chapter.is_empty(): continue
+		entry["chapter_id"] = str(chapter.get("id", ""))
+		entry["chapter_index"] = int(chapter.get("index", 0))
+		entry["chapter_name"] = str(chapter.get("name", ""))
+		entry["anatomy_anchor"] = str(chapter.get("anatomy", ""))
+		entry["space_role"] = str(chapter.get("role", ""))
+
+static func chapter_for_room(id: String) -> Dictionary:
+	for chapter: Dictionary in chapter_map().get("chapters", []):
+		if str(id) in chapter.get("rooms", []): return chapter.duplicate(true)
+	return {}
 
 static func region(id: String) -> String:
 	return id.get_slice("-", 0)

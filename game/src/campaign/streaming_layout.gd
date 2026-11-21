@@ -64,7 +64,11 @@ static func build(rooms: Array) -> Dictionary:
 			var to: Vector2 = Vector2(origins[b]) + _point(reverse.pos)
 			var path: PackedVector2Array = _stairs(_route(rooms,origins,a,b,from,to))
 			links.append({"a":a,"b":b,"from":from,"to":to,"path":path,"door_a":door,"door_b":reverse,"gate_a":_outside_gate(path,rooms,origins,a,false),"gate_b":_outside_gate(path,rooms,origins,b,true)})
-	return {"origins":origins,"links":links,"rooms":rooms,"room_bounds":bounds,"bounds":world_bounds}
+	var chapter_by_room: Dictionary = {}
+	for entry: Dictionary in rooms:
+		var chapter: Dictionary = CampaignWorld.chapter_for_room(str(entry.id))
+		if not chapter.is_empty(): chapter_by_room[str(entry.id)] = chapter
+	return {"origins":origins,"links":links,"rooms":rooms,"room_bounds":bounds,"bounds":world_bounds,"chapter_by_room":chapter_by_room}
 
 static func _right_origin(rooms: Array, origins: Dictionary, a: int, b: int) -> Vector2:
 	var door_a: Dictionary = _door(rooms[a],b)

@@ -1,0 +1,3235 @@
+{
+  "version": 1,
+  "status": "formal-19-room-mapping",
+  "designVersion": "V5.2",
+  "runtimeRoomCount": 19,
+  "referenceRoomCount": 36,
+  "rule": "保留19个正式room ID；未进入工程的17个V5房间仅作为嵌入式空间、层级或连接语义，不新增可玩房间。",
+  "sources": {
+    "roomLayout": "data/房间布局.json",
+    "topology": "data/地图拓扑.json",
+    "worldLocator": "maps/总地图_鲸体落位.svg",
+    "worldStructure": "maps/世界结构.svg",
+    "runtimeGuide": "BOB/docs/正式地图章节编排指南.md"
+  },
+  "rooms": [
+    {
+      "id": "R1-01",
+      "name": "外伤坡",
+      "region": "R1",
+      "kind": "main_structure",
+      "original": {
+        "width": 30,
+        "height": 18,
+        "anatomy": {
+          "id": "R1-01",
+          "name": "外伤坡",
+          "part": "口角外侧／下颌前段",
+          "position": "鼻端2.5–8.3%（约3–10m）；靠海床腹外侧",
+          "rangePercent": [
+            2.5,
+            8.3
+          ],
+          "rangeM": [
+            3,
+            10
+          ],
+          "side": "靠海床腹外侧",
+          "routeReason": "口角旧撕裂，位于鲸体外缘而非正常嘴缝凭空破墙",
+          "landmark": "皮肤-脂层-肌层断面和远处上颚须列",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 14,
+            "w": 8,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 9,
+            "y": 13,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 15,
+            "y": 12,
+            "w": 4,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 20,
+            "y": 13,
+            "w": 4,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P4",
+            "x": 25,
+            "y": 14,
+            "w": 5,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E01",
+            "to": "R1-02",
+            "x": 1,
+            "y": 14,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "从受光坡学会走、短跳和辨认可走面。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E01→R1-02；横向出入口"
+        ]
+      },
+      "organLayer": "口腔腹侧/外缘",
+      "previewY": 0.48,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R1-01.png",
+        "layoutReference": "references/layout/R1-01.png",
+        "roomStructure": "maps/rooms/R1-01.svg",
+        "whaleLocator": "maps/room-locator-R1-01.svg"
+      }
+    },
+    {
+      "id": "R1-02",
+      "name": "须筛",
+      "region": "R1",
+      "kind": "main_structure",
+      "original": {
+        "width": 38,
+        "height": 21,
+        "anatomy": {
+          "id": "R1-02",
+          "name": "须筛",
+          "part": "口腔侧壁／上颚鲸须下缘",
+          "position": "鼻端6.7–15%（约8–18m）；口腔中层",
+          "rangePercent": [
+            6.7,
+            15
+          ],
+          "rangeM": [
+            8,
+            18
+          ],
+          "side": "口腔中层",
+          "routeReason": "真正口腔腔隙；鲸须只从上颚垂下",
+          "landmark": "成排垂须向深处缩小，不画成全身吊须",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 17,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 8,
+            "y": 16,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 15,
+            "y": 15,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 21,
+            "y": 16,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P4",
+            "x": 28,
+            "y": 17,
+            "w": 10,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "FLOAT0",
+            "x": 3,
+            "y": 13.5,
+            "w": 4,
+            "kind": "A2浮升补压台"
+          },
+          {
+            "id": "FLOAT1",
+            "x": 3,
+            "y": 10,
+            "w": 4,
+            "kind": "A2浮升补压台"
+          },
+          {
+            "id": "FLOAT2",
+            "x": 3,
+            "y": 6.5,
+            "w": 4,
+            "kind": "A2浮升补压台"
+          },
+          {
+            "id": "ANCHOR_GATE",
+            "x": 29,
+            "y": 10,
+            "w": 6,
+            "kind": "A3固定环隐藏岸"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E01",
+            "to": "R1-01",
+            "x": 1,
+            "y": 17,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E02",
+            "to": "R1-03",
+            "x": 37,
+            "y": 17,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P4",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E33",
+            "to": "R1-06",
+            "x": 5,
+            "y": 6.5,
+            "side": "top",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A2"
+              ],
+              "requiresAll": [
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "FLOAT2",
+            "description": "须根流膜竖井，三段3.5U升高不能普通跳；顶孔通喷气孔。"
+          },
+          {
+            "id": "E35",
+            "to": "R1-07",
+            "x": 33,
+            "y": 10,
+            "side": "upper",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A3"
+              ],
+              "requiresAll": [
+                "A3"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "ANCHOR_GATE",
+            "description": "红绳断端与透光提示高岸；挂固定环攀移后拉环开须帘，不能只按E。"
+          }
+        ],
+        "routes": [
+          "用单蟹学习步退反击，并记住两种未开旧门。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E01→R1-01；横向出入口",
+          "同台走到E02→R1-03；横向出入口",
+          "E33→R1-06：须根流膜竖井，三段3.5U升高不能普通跳；顶孔通喷气孔。",
+          "E35→R1-07：红绳断端与透光提示高岸；挂固定环攀移后拉环开须帘，不能只按E。"
+        ]
+      },
+      "organLayer": "口腔中层/鲸须下缘",
+      "previewY": 0.37,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R1-02.png",
+        "layoutReference": "references/layout/R1-02.png",
+        "roomStructure": "maps/rooms/R1-02.svg",
+        "whaleLocator": "maps/room-locator-R1-02.svg"
+      }
+    },
+    {
+      "id": "R1-03",
+      "name": "舌台",
+      "region": "R1",
+      "kind": "main_structure",
+      "original": {
+        "width": 36,
+        "height": 18,
+        "anatomy": {
+          "id": "R1-03",
+          "name": "舌台",
+          "part": "舌体背面",
+          "position": "鼻端10–19.2%（约12–23m）；口腔腹侧",
+          "rangePercent": [
+            10,
+            19.2
+          ],
+          "rangeM": [
+            12,
+            23
+          ],
+          "side": "口腔腹侧",
+          "routeReason": "舌面与口底之间可见起伏台面",
+          "landmark": "跨数屏的大舌脊，远处须筛仍可辨",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 14,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 8,
+            "y": 13,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 15,
+            "y": 14,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 22,
+            "y": 12.8,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P4",
+            "x": 29,
+            "y": 14,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 23,
+            "y": 11.3,
+            "w": 3,
+            "kind": "奖励落台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E02",
+            "to": "R1-02",
+            "x": 1,
+            "y": 14,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E03",
+            "to": "R1-04",
+            "x": 35,
+            "y": 14,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P4",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "在错拍双敌之间选择战斗顺序并取首枚固定碎片。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P3到U0：普通跳；该台承载奖励，失足回最近稳定台。",
+          "同台走到E02→R1-02；横向出入口",
+          "同台走到E03→R1-04；横向出入口"
+        ]
+      },
+      "organLayer": "舌体腹侧",
+      "previewY": 0.53,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R1-03.png",
+        "layoutReference": "references/layout/R1-03.png",
+        "roomStructure": "maps/rooms/R1-03.svg",
+        "whaleLocator": "maps/room-locator-R1-03.svg"
+      }
+    },
+    {
+      "id": "R1-04",
+      "name": "负壳蟹",
+      "region": "R1",
+      "kind": "main_structure",
+      "original": {
+        "width": 36,
+        "height": 18,
+        "anatomy": {
+          "id": "R1-04",
+          "name": "负壳蟹",
+          "part": "舌根后方／口咽入口",
+          "position": "鼻端16.7–24.2%（约20–29m）；头部后腹侧",
+          "rangePercent": [
+            16.7,
+            24.2
+          ],
+          "rangeM": [
+            20,
+            29
+          ],
+          "side": "头部后腹侧",
+          "routeReason": "负壳蟹占据咽前宽平台，首领不是长在食管壁里",
+          "landmark": "头顶软腭与后方收窄咽口",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 14,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 6,
+            "y": 14,
+            "w": 30,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 10,
+            "y": 12.5,
+            "w": 4,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U1",
+            "x": 25,
+            "y": 12.5,
+            "w": 4,
+            "kind": "战斗避险/动作训练台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E03",
+            "to": "R1-03",
+            "x": 1,
+            "y": 14,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E04",
+            "to": "R1-05",
+            "x": 35,
+            "y": 14,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [
+                "BOSS_R1"
+              ],
+              "requiresCompletion": "BOSS_R1胜利后开放出口",
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "首Boss仅用走跳与短击即可完成；战后获得A1。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P1到U0：普通跳；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U1：普通跳；该台用于观察/避险，失足回最近稳定台。",
+          "同台走到E03→R1-03；横向出入口",
+          "同台走到E04→R1-05；横向出入口"
+        ]
+      },
+      "organLayer": "口咽入口/舌根后侧",
+      "previewY": 0.57,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R1-04.png",
+        "layoutReference": "references/layout/R1-04.png",
+        "roomStructure": "maps/rooms/R1-04.svg",
+        "whaleLocator": "maps/room-locator-R1-04.svg"
+      }
+    },
+    {
+      "id": "R1-05",
+      "name": "流膜育窝",
+      "region": "R1",
+      "kind": "main_structure",
+      "original": {
+        "width": 38,
+        "height": 18,
+        "anatomy": {
+          "id": "R1-05",
+          "name": "流膜育窝",
+          "part": "咽后段至食管前段",
+          "position": "鼻端22.5–26.7%（约27–32m）；颈胸交界内侧",
+          "rangePercent": [
+            22.5,
+            26.7
+          ],
+          "rangeM": [
+            27,
+            32
+          ],
+          "side": "颈胸交界内侧",
+          "routeReason": "塌陷食管纵裂边缘与共生育窝；不是健康食管张成洞穴",
+          "landmark": "纵向肌纹与向尾侧收束的食管壁",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 14,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 10,
+            "y": 14,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 19,
+            "y": 13.5,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 28,
+            "y": 14,
+            "w": 10,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E04",
+            "to": "R1-04",
+            "x": 1,
+            "y": 14,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [
+                "BOSS_R1"
+              ],
+              "requiresCompletion": "BOSS_R1胜利后开放出口",
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E05",
+            "to": "R3-01",
+            "x": 37,
+            "y": 14,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "A1"
+              ],
+              "requiresAll": [
+                "A1"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "三段独立短冲练习；每段落地刷新一次空冲。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E04→R1-04；横向出入口",
+          "同台走到E05→R3-01；横向出入口"
+        ]
+      },
+      "organLayer": "咽后段/食管前段",
+      "previewY": 0.45,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R1-05.png",
+        "layoutReference": "references/layout/R1-05.png",
+        "roomStructure": "maps/rooms/R1-05.svg",
+        "whaleLocator": "maps/room-locator-R1-05.svg"
+      }
+    },
+    {
+      "id": "R1-06",
+      "name": "喷气孔上层",
+      "region": "R1",
+      "kind": "optional",
+      "original": {
+        "width": 24,
+        "height": 24,
+        "anatomy": {
+          "id": "R1-06",
+          "name": "喷气孔上层",
+          "part": "头顶喷气孔内缘／鼻道上段",
+          "position": "鼻端17.5–24.2%（约21–29m）；头部背侧",
+          "rangePercent": [
+            17.5,
+            24.2
+          ],
+          "rangeM": [
+            21,
+            29
+          ],
+          "side": "头部背侧",
+          "routeReason": "鼻孔遗迹被聚落回流闩改造成维修口；不再呼吸",
+          "landmark": "双喷气孔隔壁、向体表透入的冷海光",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 20,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 7,
+            "y": 17,
+            "w": 4,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 12,
+            "y": 14,
+            "w": 4,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 17,
+            "y": 11,
+            "w": 7,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E33",
+            "to": "R1-02",
+            "x": 1,
+            "y": 20,
+            "side": "left",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A2"
+              ],
+              "requiresAll": [
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E34",
+            "to": "R2-05",
+            "x": 23,
+            "y": 11,
+            "side": "right",
+            "kind": "shortcut",
+            "condition": {
+              "requires": [
+                "A2"
+              ],
+              "requiresAll": [
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": "BOSS_R2且从R2-05完成开闩",
+              "unlock": {
+                "flag": "SC_BLOWHOLE",
+                "from": "R2-05",
+                "requiresAll": [
+                  "A2"
+                ],
+                "completionFlags": [
+                  "BOSS_R2"
+                ],
+                "action": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。",
+                "persistent": true
+              },
+              "note": "血巢胜后沿回流到肺心远侧，E旋开孔瓣；须门一侧无把手。首次打开后永久双向；局部水压/死亡不复锁。"
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "A2回访竖井与肺心远端捷径汇合。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E33→R1-02；横向出入口",
+          "同台走到E34→R2-05；横向出入口"
+        ]
+      },
+      "organLayer": "头背侧/喷气孔内缘",
+      "previewY": 0.18,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R1-06.png",
+        "layoutReference": "references/layout/R1-06.png",
+        "roomStructure": "maps/rooms/R1-06.svg",
+        "whaleLocator": "maps/room-locator-R1-06.svg"
+      }
+    },
+    {
+      "id": "R1-07",
+      "name": "鲸须记忆袋",
+      "region": "R1",
+      "kind": "optional",
+      "original": {
+        "width": 28,
+        "height": 19,
+        "anatomy": {
+          "id": "R1-07",
+          "name": "鲸须记忆袋",
+          "part": "上颚须根附着面附近",
+          "position": "鼻端10–17.5%（约12–21m）；口腔高侧层",
+          "rangePercent": [
+            10,
+            17.5
+          ],
+          "rangeM": [
+            12,
+            21
+          ],
+          "side": "口腔高侧层",
+          "routeReason": "须板脱落与衬组织剥离形成的小口袋",
+          "landmark": "须根排列、修索红结；没有牙列",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 15,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 11,
+            "y": 15,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 21,
+            "y": 15,
+            "w": 7,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E35",
+            "to": "R1-02",
+            "x": 1,
+            "y": 15,
+            "side": "left",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A3"
+              ],
+              "requiresAll": [
+                "A3"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "A3串接固定锚环，取可选碎片与鲸须记忆。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E35→R1-02；横向出入口"
+        ]
+      },
+      "organLayer": "口腔高侧/须根袋",
+      "previewY": 0.29,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R1-07.png",
+        "layoutReference": "references/layout/R1-07.png",
+        "roomStructure": "maps/rooms/R1-07.svg",
+        "whaleLocator": "maps/room-locator-R1-07.svg"
+      }
+    },
+    {
+      "id": "R2-01",
+      "name": "育床",
+      "region": "R2",
+      "kind": "main_structure",
+      "original": {
+        "width": 28,
+        "height": 23,
+        "anatomy": {
+          "id": "R2-01",
+          "name": "育床",
+          "part": "横膈前侧／肺后缘胸膜面",
+          "position": "鼻端37.8–45.8%（约45.3–55m）；胸腔后背侧",
+          "rangePercent": [
+            37.8,
+            45.8
+          ],
+          "rangeM": [
+            45.3,
+            55
+          ],
+          "side": "胸腔后背侧",
+          "routeReason": "肺组织外缘的胸膜剥离空间；育床是后来生物",
+          "landmark": "横膈破口在身后、肺叶表面在身前",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 19,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 8,
+            "y": 16,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 15,
+            "y": 13,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 21,
+            "y": 10,
+            "w": 7,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E06",
+            "to": "R2-02",
+            "x": 27,
+            "y": 10,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "A2"
+              ],
+              "requiresAll": [
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "三个3U升高与独立补压台，授能后浮升至肺膜高口；底床无旁路出口。"
+          },
+          {
+            "id": "E10",
+            "to": "R3-01",
+            "x": 1,
+            "y": 19,
+            "side": "left",
+            "kind": "branch",
+            "condition": {
+              "requires": [
+                "A1"
+              ],
+              "requiresAll": [
+                "A1"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "胃枢来路接低位育床，先安全取得A2。"
+          }
+        ],
+        "routes": [
+          "安全授予A2，拆成浮升、落台补压、缓降三步。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "E10→R3-01：胃枢来路接低位育床，先安全取得A2。",
+          "E06→R2-02：三个3U升高与独立补压台，授能后浮升至肺膜高口；底床无旁路出口。"
+        ]
+      },
+      "organLayer": "胸腔背侧/肺后缘",
+      "previewY": 0.28,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R2-01.png",
+        "layoutReference": "references/layout/R2-01.png",
+        "roomStructure": "maps/rooms/R2-01.svg",
+        "whaleLocator": "maps/room-locator-R2-01.svg"
+      }
+    },
+    {
+      "id": "R2-03",
+      "name": "心室观察台",
+      "region": "R2",
+      "kind": "main_structure",
+      "original": {
+        "width": 30,
+        "height": 20,
+        "anatomy": {
+          "id": "R2-03",
+          "name": "心室观察台",
+          "part": "心包外缘观察台",
+          "position": "鼻端30.7–38.8%（约36.8–46.5m）；胸腔前腹侧",
+          "rangePercent": [
+            30.7,
+            38.8
+          ],
+          "rangeM": [
+            36.8,
+            46.5
+          ],
+          "side": "胸腔前腹侧",
+          "routeReason": "从胸膜破口降到纵隔，再沿心包外侧接近",
+          "landmark": "上方肺轮廓、下方已死心肌与心包缺口",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 16,
+            "w": 8,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 9,
+            "y": 14.5,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 15,
+            "y": 13,
+            "w": 5,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 21,
+            "y": 14.5,
+            "w": 9,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 22,
+            "y": 11.5,
+            "w": 5,
+            "kind": "奖励落台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E07",
+            "to": "R2-02",
+            "x": 1,
+            "y": 16,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E08",
+            "to": "R2-04",
+            "x": 29,
+            "y": 14.5,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "先观察群流节拍，再在宽台营地收束。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P3到U0：A2；该台承载奖励，失足回最近稳定台。",
+          "同台走到E07→R2-02；横向出入口",
+          "同台走到E08→R2-04；横向出入口"
+        ]
+      },
+      "organLayer": "胸腔前腹侧/心包外缘",
+      "previewY": 0.47,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R2-03.png",
+        "layoutReference": "references/layout/R2-03.png",
+        "roomStructure": "maps/rooms/R2-03.svg",
+        "whaleLocator": "maps/room-locator-R2-03.svg"
+      }
+    },
+    {
+      "id": "R2-04",
+      "name": "血巢潮群",
+      "region": "R2",
+      "kind": "main_structure",
+      "original": {
+        "width": 36,
+        "height": 23,
+        "anatomy": {
+          "id": "R2-04",
+          "name": "血巢潮群",
+          "part": "破裂心包及心室断壁旁",
+          "position": "鼻端28.7–37.8%（约34.4–45.3m）；胸腔前腹侧",
+          "rangePercent": [
+            28.7,
+            37.8
+          ],
+          "rangeM": [
+            34.4,
+            45.3
+          ],
+          "side": "胸腔前腹侧",
+          "routeReason": "群体生物利用静止心室残壁筑巢；心脏不跳动",
+          "landmark": "厚心肌断面、断裂腱索与血巢生物群",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 19,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 6,
+            "y": 19,
+            "w": 30,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 8,
+            "y": 15,
+            "w": 5,
+            "kind": "浮膜补压/换层台"
+          },
+          {
+            "id": "U1",
+            "x": 16,
+            "y": 12,
+            "w": 5,
+            "kind": "浮膜补压/换层台"
+          },
+          {
+            "id": "U2",
+            "x": 25,
+            "y": 15,
+            "w": 5,
+            "kind": "浮膜补压/换层台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E08",
+            "to": "R2-03",
+            "x": 1,
+            "y": 19,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E09",
+            "to": "R2-05",
+            "x": 35,
+            "y": 19,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [
+                "BOSS_R2"
+              ],
+              "requiresCompletion": "BOSS_R2胜利后开放出口",
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "血巢群体一条耐受；利用高度避线并在外露窗口输出。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P0到U0：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U1：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U2：A2；该台用于观察/避险，失足回最近稳定台。",
+          "同台走到E08→R2-03；横向出入口",
+          "同台走到E09→R2-05；横向出入口"
+        ]
+      },
+      "organLayer": "胸腔前腹侧/破裂心包",
+      "previewY": 0.59,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R2-04.png",
+        "layoutReference": "references/layout/R2-04.png",
+        "roomStructure": "maps/rooms/R2-04.svg",
+        "whaleLocator": "maps/room-locator-R2-04.svg"
+      }
+    },
+    {
+      "id": "R3-01",
+      "name": "胃枢",
+      "region": "R3",
+      "kind": "main_structure",
+      "original": {
+        "width": 48,
+        "height": 30,
+        "anatomy": {
+          "id": "R3-01",
+          "name": "胃枢",
+          "part": "食管末端／前胃及胃周空间",
+          "position": "鼻端45–53.2%（约54–63.8m）；横膈后方的前腹腔",
+          "rangePercent": [
+            45,
+            53.2
+          ],
+          "rangeM": [
+            54,
+            63.8
+          ],
+          "side": "横膈后方的前腹腔",
+          "routeReason": "胃枢坐落在前胃纵裂边缘，部分路线沿胃壁外侧",
+          "landmark": "头向食管束、前方横膈轮廓、向尾的胃褶",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "H0",
+            "x": 0,
+            "y": 26,
+            "w": 10,
+            "kind": "入鲸宽岸"
+          },
+          {
+            "id": "H1",
+            "x": 11,
+            "y": 26,
+            "w": 13,
+            "kind": "营地与菌圃"
+          },
+          {
+            "id": "H2",
+            "x": 25,
+            "y": 26,
+            "w": 11,
+            "kind": "肠路宽台"
+          },
+          {
+            "id": "H3",
+            "x": 37,
+            "y": 26,
+            "w": 11,
+            "kind": "肠口岸"
+          },
+          {
+            "id": "L0",
+            "x": 6,
+            "y": 24.5,
+            "w": 4,
+            "kind": "普通跳肺口阶台"
+          },
+          {
+            "id": "L1",
+            "x": 10,
+            "y": 23,
+            "w": 4,
+            "kind": "普通跳肺口阶台"
+          },
+          {
+            "id": "L2",
+            "x": 8,
+            "y": 21.5,
+            "w": 4,
+            "kind": "普通跳肺口阶台"
+          },
+          {
+            "id": "L3",
+            "x": 4,
+            "y": 20,
+            "w": 5,
+            "kind": "普通跳肺口阶台"
+          },
+          {
+            "id": "L4",
+            "x": 0,
+            "y": 18.5,
+            "w": 6,
+            "kind": "普通跳肺口阶台"
+          },
+          {
+            "id": "M0",
+            "x": 0,
+            "y": 23,
+            "w": 5,
+            "kind": "独立食道闩返台"
+          },
+          {
+            "id": "A2H0",
+            "x": 23,
+            "y": 22.5,
+            "w": 4,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "A2H1",
+            "x": 25,
+            "y": 19,
+            "w": 4,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "A2H2",
+            "x": 23,
+            "y": 15.5,
+            "w": 4,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "A2H3",
+            "x": 25,
+            "y": 12,
+            "w": 4,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "A2H4",
+            "x": 23,
+            "y": 8.5,
+            "w": 4,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "A2H5",
+            "x": 24,
+            "y": 5,
+            "w": 5,
+            "kind": "A2浮升补压台，非普通阶梯"
+          },
+          {
+            "id": "G0",
+            "x": 42,
+            "y": 17,
+            "w": 6,
+            "kind": "P＋A3强流门独立岸"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E05",
+            "to": "R1-05",
+            "x": 1,
+            "y": 26,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "A1"
+              ],
+              "requiresAll": [
+                "A1"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "H0",
+            "description": "左下通须门，保持稳定返程。"
+          },
+          {
+            "id": "E10",
+            "to": "R2-01",
+            "x": 1,
+            "y": 18.5,
+            "side": "left",
+            "kind": "branch",
+            "condition": {
+              "requires": [
+                "A1"
+              ],
+              "requiresAll": [
+                "A1"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "L4",
+            "description": "左上肺口；各阶升高1.5U，无需先有A2。"
+          },
+          {
+            "id": "E11",
+            "to": "R3-02",
+            "x": 47,
+            "y": 26,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "H3",
+            "description": "低位肠路，未获得A2也能往返。"
+          },
+          {
+            "id": "E17",
+            "to": "R3-07",
+            "x": 1,
+            "y": 23,
+            "side": "left",
+            "kind": "shortcut",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": "BOSS_R3且从R3-07完成开闩",
+              "unlock": {
+                "flag": "SC_ESOPHAGUS",
+                "from": "R3-07",
+                "requiresAll": [],
+                "completionFlags": [
+                  "BOSS_R3"
+                ],
+                "action": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。",
+                "persistent": true
+              },
+              "note": "母蟹胜后，从竞技场后侧登宽坡，E拉红结闩；胃枢侧只能看见闩背。首次打开后永久双向；局部水压/死亡不复锁。"
+            },
+            "platform": "M0",
+            "description": "左中独立食道闩，未胜母蟹时仅见背面，不能提前穿行。"
+          },
+          {
+            "id": "E18",
+            "to": "R4-01",
+            "x": 47,
+            "y": 17,
+            "side": "right",
+            "kind": "gate",
+            "condition": {
+              "requires": [
+                "P",
+                "A3"
+              ],
+              "requiresAll": [
+                "P",
+                "A3"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "G0",
+            "description": "右侧强流降速后挂固定环登独立岸，再拉锚闸；不与胃顶门共用门位。"
+          },
+          {
+            "id": "E37",
+            "to": "R3-08",
+            "x": 26,
+            "y": 5,
+            "side": "top",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A2"
+              ],
+              "requiresAll": [
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "A2H5",
+            "description": "胃顶独立竖井，每台间升高3.5U，普通跳无法逐阶爬到；每台免费补压。"
+          }
+        ],
+        "routes": [
+          "低位主路连接入鲸、营地和肠路，三个1U缝。",
+          "E05→R1-05：左下通须门，保持稳定返程。",
+          "E10→R2-01：左上肺口；各阶升高1.5U，无需先有A2。",
+          "E11→R3-02：低位肠路，未获得A2也能往返。",
+          "E17→R3-07：左中独立食道闩，未胜母蟹时仅见背面，不能提前穿行。",
+          "E37→R3-08：胃顶独立竖井，每台间升高3.5U，普通跳无法逐阶爬到；每台免费补压。",
+          "E18→R4-01：右侧强流降速后挂固定环登独立岸，再拉锚闸；不与胃顶门共用门位。"
+        ]
+      },
+      "organLayer": "前腹腔/前胃枢纽",
+      "previewY": 0.58,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-01.png",
+        "layoutReference": "references/layout/R3-01.png",
+        "roomStructure": "maps/rooms/R3-01.svg",
+        "whaleLocator": "maps/room-locator-R3-01.svg"
+      }
+    },
+    {
+      "id": "R4-01",
+      "name": "组合门",
+      "region": "R4",
+      "kind": "main_structure",
+      "original": {
+        "width": 30,
+        "height": 20,
+        "anatomy": {
+          "id": "R4-01",
+          "name": "组合门",
+          "part": "腹腔背壁／横膈背外侧缺口",
+          "position": "鼻端40–48.3%（约48–58m）；身体背侧内缘",
+          "rangePercent": [
+            40,
+            48.3
+          ],
+          "rangeM": [
+            48,
+            58
+          ],
+          "side": "身体背侧内缘",
+          "routeReason": "从胃外侧撕裂上到椎旁软组织剥离廊；不是胃通骨髓",
+          "landmark": "腹腔软组织在下，胸腰椎外侧在上",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 16,
+            "w": 8,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 9,
+            "y": 14.5,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 16,
+            "y": 13,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 23,
+            "y": 14.5,
+            "w": 7,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E18",
+            "to": "R3-01",
+            "x": 1,
+            "y": 16,
+            "side": "left",
+            "kind": "gate",
+            "condition": {
+              "requires": [
+                "P",
+                "A3"
+              ],
+              "requiresAll": [
+                "P",
+                "A3"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E19",
+            "to": "R4-02",
+            "x": 29,
+            "y": 14.5,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "P降强流、A3拉固定闸，两种已学能力组合开域。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E18→R3-01；横向出入口",
+          "同台走到E19→R4-02；横向出入口"
+        ]
+      },
+      "organLayer": "腹腔背壁/横膈缺口",
+      "previewY": 0.25,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-01.png",
+        "layoutReference": "references/layout/R4-01.png",
+        "roomStructure": "maps/rooms/R4-01.svg",
+        "whaleLocator": "maps/room-locator-R4-01.svg"
+      }
+    },
+    {
+      "id": "R4-03",
+      "name": "上锚路线",
+      "region": "R4",
+      "kind": "main_structure",
+      "original": {
+        "width": 36,
+        "height": 22,
+        "anatomy": {
+          "id": "R4-03",
+          "name": "上锚路线",
+          "part": "腰椎侧上缘／棘突外侧",
+          "position": "鼻端52.5–65%（约63–78m）；椎旁高路线",
+          "rangePercent": [
+            52.5,
+            65
+          ],
+          "rangeM": [
+            63,
+            78
+          ],
+          "side": "椎旁高路线",
+          "routeReason": "上路借外侧骨缘和预置锚件，始终不进入椎管",
+          "landmark": "向尾缩小的椎列与下方可见的并行低路",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 18,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 11,
+            "y": 15,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 21,
+            "y": 15,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 29,
+            "y": 18,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 14,
+            "y": 12,
+            "w": 5,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U1",
+            "x": 25,
+            "y": 12,
+            "w": 5,
+            "kind": "奖励落台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E20",
+            "to": "R4-02",
+            "x": 1,
+            "y": 18,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "A4"
+              ],
+              "requiresAll": [
+                "A4"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E22",
+            "to": "R4-05",
+            "x": 35,
+            "y": 18,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "上路迎珠后仅一次空冲，取主路结构碎片。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P1到U0：A4；该台用于观察/避险，失足回最近稳定台。",
+          "从P2到U1：A4；该台承载奖励，失足回最近稳定台。",
+          "同台走到E20→R4-02；横向出入口",
+          "同台走到E22→R4-05；横向出入口"
+        ]
+      },
+      "organLayer": "椎旁高路线/骨梁外侧",
+      "previewY": 0.15,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-03.png",
+        "layoutReference": "references/layout/R4-03.png",
+        "roomStructure": "maps/rooms/R4-03.svg",
+        "whaleLocator": "maps/room-locator-R4-03.svg"
+      }
+    },
+    {
+      "id": "R4-05",
+      "name": "悬脊鸣贝",
+      "region": "R4",
+      "kind": "main_structure",
+      "original": {
+        "width": 40,
+        "height": 22,
+        "anatomy": {
+          "id": "R4-05",
+          "name": "悬脊鸣贝",
+          "part": "后腰椎外侧断裂平台",
+          "position": "鼻端61.7–71.7%（约74–86m）；椎旁中层",
+          "rangePercent": [
+            61.7,
+            71.7
+          ],
+          "rangeM": [
+            74,
+            86
+          ],
+          "side": "椎旁中层",
+          "routeReason": "上下路线在同一椎旁宽平台汇合，双贝附着骨面",
+          "landmark": "共享大椎体及长尺度外伤窗",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 18,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 6,
+            "y": 18,
+            "w": 34,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 9,
+            "y": 15,
+            "w": 6,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U1",
+            "x": 18,
+            "y": 12,
+            "w": 5,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U2",
+            "x": 28,
+            "y": 15,
+            "w": 6,
+            "kind": "战斗避险/动作训练台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E22",
+            "to": "R4-03",
+            "x": 1,
+            "y": 18,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E23",
+            "to": "R4-04",
+            "x": 39,
+            "y": 18,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E24",
+            "to": "R4-06",
+            "x": 23,
+            "y": 18,
+            "side": "back",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "B"
+              ],
+              "requiresAll": [
+                "B"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "可玩层背壁可交互洞口，E转房；并非传送点，所需条件照门表"
+          }
+        ],
+        "routes": [
+          "共享耐受双鸣贝，近击与迎珠都能通关。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P0到U0：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U1：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U2：A2；该台用于观察/避险，失足回最近稳定台。",
+          "同台走到E22→R4-03；横向出入口",
+          "同台走到E23→R4-04；横向出入口",
+          "同台走到E24→R4-06；可玩层背壁可交互洞口，E转房；并非传送点，所需条件照门表"
+        ]
+      },
+      "organLayer": "断脊中层/外露平台",
+      "previewY": 0.25,
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-05.png",
+        "layoutReference": "references/layout/R4-05.png",
+        "roomStructure": "maps/rooms/R4-05.svg",
+        "whaleLocator": "maps/room-locator-R4-05.svg"
+      }
+    },
+    {
+      "id": "R4-06",
+      "name": "稳定交通椎",
+      "region": "R4",
+      "kind": "main_structure",
+      "original": {
+        "width": 34,
+        "height": 22,
+        "anatomy": {
+          "id": "R4-06",
+          "name": "稳定交通椎",
+          "part": "腰尾交界外侧分流台",
+          "position": "鼻端69.2–78.3%（约83–94m）；椎旁背侧",
+          "rangePercent": [
+            69.2,
+            78.3
+          ],
+          "rangeM": [
+            83,
+            94
+          ],
+          "side": "椎旁背侧",
+          "routeReason": "此处有向头长距离修索回廊和向尾的短廊，都是椎骨外侧",
+          "landmark": "朝头方向完整椎列消失点与朝尾方向渐细椎列",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 18,
+            "w": 9,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 10,
+            "y": 16.5,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 18,
+            "y": 15,
+            "w": 7,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 26,
+            "y": 16.5,
+            "w": 8,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E24",
+            "to": "R4-05",
+            "x": 1,
+            "y": 18,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "B"
+              ],
+              "requiresAll": [
+                "B"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E25",
+            "to": "R5-01",
+            "x": 33,
+            "y": 16.5,
+            "side": "right",
+            "kind": "gate",
+            "condition": {
+              "requires": [
+                "B",
+                "A4",
+                "A2"
+              ],
+              "requiresAll": [
+                "B",
+                "A4",
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E31",
+            "to": "R5-07",
+            "x": 13.5,
+            "y": 16.5,
+            "side": "back",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "B"
+              ],
+              "requiresAll": [
+                "B"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "可玩层背壁可交互洞口，E转房；并非传送点，所需条件照门表"
+          }
+        ],
+        "routes": [
+          "交通枢展示头耳与远尾分离，阻止地理误读。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E24→R4-05；横向出入口",
+          "同台走到E25→R5-01；横向出入口",
+          "同台走到E31→R5-07；可玩层背壁可交互洞口，E转房；并非传送点，所需条件照门表"
+        ]
+      },
+      "organLayer": "腰尾交界/分流台",
+      "previewY": 0.33,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R4-06.png",
+        "layoutReference": "references/layout/R4-06.png",
+        "roomStructure": "maps/rooms/R4-06.svg",
+        "whaleLocator": "maps/room-locator-R4-06.svg"
+      }
+    },
+    {
+      "id": "R5-01",
+      "name": "三槽记忆",
+      "region": "R5",
+      "kind": "main_structure",
+      "original": {
+        "width": 30,
+        "height": 22,
+        "anatomy": {
+          "id": "R5-01",
+          "name": "三槽记忆",
+          "part": "后颅底外侧／枕区到耳区的边缘",
+          "position": "鼻端20–25.8%（约24–31m）；头部后侧",
+          "rangePercent": [
+            20,
+            25.8
+          ],
+          "rangeM": [
+            24,
+            31
+          ],
+          "side": "头部后侧",
+          "routeReason": "长回廊尽头沿颈椎外缘到枕骨侧面，再进入创伤开口",
+          "landmark": "枕部大曲面与耳骨方位提示；不是内耳管入口",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 18,
+            "w": 8,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 9,
+            "y": 16.5,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 16,
+            "y": 15,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 23,
+            "y": 16.5,
+            "w": 7,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E25",
+            "to": "R4-06",
+            "x": 1,
+            "y": 18,
+            "side": "left",
+            "kind": "gate",
+            "condition": {
+              "requires": [
+                "B",
+                "A4",
+                "A2"
+              ],
+              "requiresAll": [
+                "B",
+                "A4",
+                "A2"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E26",
+            "to": "R5-02",
+            "x": 29,
+            "y": 16.5,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "以三槽预览终局所需P/B/S，不额外创建收集谜题。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E25→R4-06；横向出入口",
+          "同台走到E26→R5-02；横向出入口"
+        ]
+      },
+      "organLayer": "后颅底外侧/枕耳边缘",
+      "previewY": 0.34,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-01.png",
+        "layoutReference": "references/layout/R5-01.png",
+        "roomStructure": "maps/rooms/R5-01.svg",
+        "whaleLocator": "maps/room-locator-R5-01.svg"
+      }
+    },
+    {
+      "id": "R5-02",
+      "name": "安全池",
+      "region": "R5",
+      "kind": "main_structure",
+      "original": {
+        "width": 32,
+        "height": 21,
+        "anatomy": {
+          "id": "R5-02",
+          "name": "安全池",
+          "part": "耳骨周围软组织剥离腔",
+          "position": "鼻端19.2–25%（约23–30m）；头部后下外侧",
+          "rangePercent": [
+            19.2,
+            25
+          ],
+          "rangeM": [
+            23,
+            30
+          ],
+          "side": "头部后下外侧",
+          "routeReason": "安全池来自颅底损伤后的积水凹部，A5共生物后生",
+          "landmark": "完整耳骨轮廓作为远地标，游玩在其外周",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 17,
+            "w": 9,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 10,
+            "y": 15.5,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 17,
+            "y": 17,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 24,
+            "y": 15.5,
+            "w": 8,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "MEMORY_GATE",
+            "x": 24,
+            "y": 11,
+            "w": 6,
+            "kind": "A5侧囊门前台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E26",
+            "to": "R5-01",
+            "x": 1,
+            "y": 17,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E27",
+            "to": "R5-03",
+            "x": 31,
+            "y": 15.5,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [
+                "A5"
+              ],
+              "requiresAll": [
+                "A5"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P3",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E39",
+            "to": "R5-06",
+            "x": 29,
+            "y": 11,
+            "side": "upper",
+            "kind": "optional",
+            "condition": {
+              "requires": [
+                "A5"
+              ],
+              "requiresAll": [
+                "A5"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "MEMORY_GATE",
+            "description": "先用已掌握浮膜到侧台，再潜入侧口1.2U柔膜缝；入口有穿膜漂粒与对侧微光。"
+          }
+        ],
+        "routes": [
+          "安全授A5，只穿≤1.5U短软缝；侧囊可选。主路实线为推荐路线，房门顺序以连接条件为准。 P2墙段使用A5，明线只显示几何，不代表普通跳。",
+          "同台走到E26→R5-01；横向出入口",
+          "同台走到E27→R5-03；横向出入口",
+          "A5主路穿缝段：先落至P2稳定台→收膜至缝中线→穿1.2U→出缝展开；不能用普通跳穿封顶硬墙。",
+          "E39→R5-06：先用已掌握浮膜到侧台，再潜入侧口1.2U柔膜缝；入口有穿膜漂粒与对侧微光。"
+        ]
+      },
+      "organLayer": "耳骨外周/安全池",
+      "previewY": 0.45,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-02.png",
+        "layoutReference": "references/layout/R5-02.png",
+        "roomStructure": "maps/rooms/R5-02.svg",
+        "whaleLocator": "maps/room-locator-R5-02.svg"
+      }
+    },
+    {
+      "id": "R5-04",
+      "name": "缄声覆膜",
+      "region": "R5",
+      "kind": "main_structure",
+      "original": {
+        "width": 40,
+        "height": 22,
+        "anatomy": {
+          "id": "R5-04",
+          "name": "缄声覆膜",
+          "part": "耳骨旁暴露的颅底骨面",
+          "position": "鼻端18.3–25.8%（约22–31m）；头部侧腹层",
+          "rangePercent": [
+            18.3,
+            25.8
+          ],
+          "rangeM": [
+            22,
+            31
+          ],
+          "side": "头部侧腹层",
+          "routeReason": "覆膜Boss附着在骨面与软组织缺损边；不住在放大的耳蜗里",
+          "landmark": "致密耳骨与宽颅底为巨物地标，战斗台在外面",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 18,
+            "w": 6,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 6,
+            "y": 18,
+            "w": 34,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "U0",
+            "x": 9,
+            "y": 15,
+            "w": 6,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U1",
+            "x": 18,
+            "y": 13.5,
+            "w": 6,
+            "kind": "战斗避险/动作训练台"
+          },
+          {
+            "id": "U2",
+            "x": 29,
+            "y": 15,
+            "w": 6,
+            "kind": "战斗避险/动作训练台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E28",
+            "to": "R5-03",
+            "x": 1,
+            "y": 18,
+            "side": "left",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          },
+          {
+            "id": "E29",
+            "to": "R5-05",
+            "x": 39,
+            "y": 18,
+            "side": "right",
+            "kind": "main",
+            "condition": {
+              "requires": [],
+              "requiresAll": [],
+              "completionFlags": [
+                "BOSS_R5"
+              ],
+              "requiresCompletion": "BOSS_R5胜利后开放出口",
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P1",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "读旧位置延迟危险，换边输出；胜后安全静默得S。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "从P0到U0：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U1：A2；该台用于观察/避险，失足回最近稳定台。",
+          "从P1到U2：A2；该台用于观察/避险，失足回最近稳定台。",
+          "同台走到E28→R5-03；横向出入口",
+          "同台走到E29→R5-05；横向出入口"
+        ]
+      },
+      "organLayer": "耳骨旁/暴露颅底",
+      "previewY": 0.57,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-04.png",
+        "layoutReference": "references/layout/R5-04.png",
+        "roomStructure": "maps/rooms/R5-04.svg",
+        "whaleLocator": "maps/room-locator-R5-04.svg"
+      }
+    },
+    {
+      "id": "R5-08",
+      "name": "归海释放槽",
+      "region": "R5",
+      "kind": "main_structure",
+      "original": {
+        "width": 40,
+        "height": 20,
+        "anatomy": {
+          "id": "R5-08",
+          "name": "归海释放槽",
+          "part": "尾柄末端至尾鳍裂缘",
+          "position": "鼻端91.7–100%（约110–120m）；尾端体表与外海交界",
+          "rangePercent": [
+            91.7,
+            100
+          ],
+          "rangeM": [
+            110,
+            120
+          ],
+          "side": "尾端体表与外海交界",
+          "routeReason": "释放槽是纤维组织裂谷与聚落导流口，向外海开口",
+          "landmark": "远海、尾鳍轮廓、密实纤维层；尾鳍瓣内不长骨架",
+          "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+        },
+        "platforms": [
+          {
+            "id": "P0",
+            "x": 0,
+            "y": 16,
+            "w": 10,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P1",
+            "x": 10,
+            "y": 16,
+            "w": 10,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P2",
+            "x": 20,
+            "y": 16,
+            "w": 10,
+            "kind": "主路稳定台"
+          },
+          {
+            "id": "P3",
+            "x": 30,
+            "y": 16,
+            "w": 10,
+            "kind": "主路稳定台"
+          }
+        ],
+        "doors": [
+          {
+            "id": "E32",
+            "to": "R5-07",
+            "x": 1,
+            "y": 16,
+            "side": "left",
+            "kind": "gate",
+            "condition": {
+              "requires": [
+                "P",
+                "B",
+                "S"
+              ],
+              "requiresAll": [
+                "P",
+                "B",
+                "S"
+              ],
+              "completionFlags": [],
+              "requiresCompletion": null,
+              "unlock": null,
+              "note": ""
+            },
+            "platform": "P0",
+            "description": "横向出入口"
+          }
+        ],
+        "routes": [
+          "P/B/S同步后释放新生命，完成无战斗尾声。主路实线为推荐路线，房门顺序以连接条件为准。",
+          "同台走到E32→R5-07；横向出入口"
+        ]
+      },
+      "organLayer": "尾柄末端/尾鳍裂缘",
+      "previewY": 0.51,
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-08.png",
+        "layoutReference": "references/layout/R5-08.png",
+        "roomStructure": "maps/rooms/R5-08.svg",
+        "whaleLocator": "maps/room-locator-R5-08.svg"
+      }
+    }
+  ],
+  "embeddedDesignRooms": [
+    {
+      "id": "R2-02",
+      "name": "双层肺膜",
+      "region": "R2",
+      "originalAnatomy": {
+        "id": "R2-02",
+        "name": "双层肺膜",
+        "part": "肺叶表面与剥离胸膜之间",
+        "position": "鼻端33.8–45.8%（约40.5–55m）；胸腔背外侧",
+        "rangePercent": [
+          33.8,
+          45.8
+        ],
+        "rangeM": [
+          40.5,
+          55
+        ],
+        "side": "胸腔背外侧",
+        "routeReason": "两个层面是折叠肺缘与脱层胸膜，不是两间肺泡",
+        "landmark": "巨大肺表面曲率与远处肋影",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R2-01→R2-03",
+      "disposition": "embedded_subspace",
+      "role": "肺膜双层过渡，压缩为肺心场景的上/下层",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R2-02.png",
+        "layoutReference": "references/layout/R2-02.png",
+        "roomStructure": "maps/rooms/R2-02.svg",
+        "whaleLocator": "maps/room-locator-R2-02.svg"
+      }
+    },
+    {
+      "id": "R2-05",
+      "name": "回流出口",
+      "region": "R2",
+      "originalAnatomy": {
+        "id": "R2-05",
+        "name": "回流出口",
+        "part": "前纵隔／气管旁回流廊",
+        "position": "鼻端26.7–37.8%（约32–45.3m）；胸腔前背侧至颈后",
+        "rangePercent": [
+          26.7,
+          37.8
+        ],
+        "rangeM": [
+          32,
+          45.3
+        ],
+        "side": "胸腔前背侧至颈后",
+        "routeReason": "从心包侧裂口离开心区，沿气管外缘上行至鼻道破口",
+        "landmark": "已死气管环与头向上行地标；不是心室直插喷气孔",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R2-04末端",
+      "disposition": "embedded_subspace",
+      "role": "胸腔回流出口，保留为远侧出口/长廊",
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R2-05.png",
+        "layoutReference": "references/layout/R2-05.png",
+        "roomStructure": "maps/rooms/R2-05.svg",
+        "whaleLocator": "maps/room-locator-R2-05.svg"
+      }
+    },
+    {
+      "id": "R2-06",
+      "name": "最后呼吸囊",
+      "region": "R2",
+      "originalAnatomy": {
+        "id": "R2-06",
+        "name": "最后呼吸囊",
+        "part": "肺边缘密闭褶袋的破口",
+        "position": "鼻端37.8–45.8%（约45.3–55m）；胸腔后背侧高层",
+        "rangePercent": [
+          37.8,
+          45.8
+        ],
+        "rangeM": [
+          45.3,
+          55
+        ],
+        "side": "胸腔后背侧高层",
+        "routeReason": "失气的残肺褶与胸膜剥离形成选修空间；名字是旧称",
+        "landmark": "多级膜台与同一肺叶远景，不新增会呼吸的囊",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R2-01/R2-03上层",
+      "disposition": "embedded_subspace",
+      "role": "最后呼吸囊，保留为肺心高层支路",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R2-06.png",
+        "layoutReference": "references/layout/R2-06.png",
+        "roomStructure": "maps/rooms/R2-06.svg",
+        "whaleLocator": "maps/room-locator-R2-06.svg"
+      }
+    },
+    {
+      "id": "R3-02",
+      "name": "漂台阀",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-02",
+        "name": "漂台阀",
+        "part": "前胃至后胃区的壁褶边缘",
+        "position": "鼻端48.8–55.8%（约58.5–66.9m）；腹腔中层",
+        "rangePercent": [
+          48.8,
+          55.8
+        ],
+        "rangeM": [
+          58.5,
+          66.9
+        ],
+        "side": "腹腔中层",
+        "routeReason": "局部破损胃壁与聚落阀导流，不是活胃分泌",
+        "landmark": "厚软褶、固定两岸与机关壳片",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "漂台阀，嵌入胃枢中层漂台",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-02.png",
+        "layoutReference": "references/layout/R3-02.png",
+        "roomStructure": "maps/rooms/R3-02.svg",
+        "whaleLocator": "maps/room-locator-R3-02.svg"
+      }
+    },
+    {
+      "id": "R3-03",
+      "name": "肝叶灯罩",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-03",
+        "name": "肝叶灯罩",
+        "part": "肝叶外缘／胃腹侧间隙",
+        "position": "鼻端47.5–54.5%（约57–65.4m）；前腹腔腹侧",
+        "rangePercent": [
+          47.5,
+          54.5
+        ],
+        "rangeM": [
+          57,
+          65.4
+        ],
+        "side": "前腹腔腹侧",
+        "routeReason": "穿出胃壁旧裂缝，走肝叶表面邻近空间；不可画肝内空洞",
+        "landmark": "连续实心肝叶在背景，游玩台在外表面",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "肝叶灯罩，嵌入胃枢腹侧肝缘",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-03.png",
+        "layoutReference": "references/layout/R3-03.png",
+        "roomStructure": "maps/rooms/R3-03.svg",
+        "whaleLocator": "maps/room-locator-R3-03.svg"
+      }
+    },
+    {
+      "id": "R3-04",
+      "name": "脂槽刹车",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-04",
+        "name": "脂槽刹车",
+        "part": "肠系膜及脂肪沉积槽",
+        "position": "鼻端51.3–58.9%（约61.6–70.7m）；腹腔腹外侧",
+        "rangePercent": [
+          51.3,
+          58.9
+        ],
+        "rangeM": [
+          61.6,
+          70.7
+        ],
+        "side": "腹腔腹外侧",
+        "routeReason": "沿结缔组织膜与营养沉积移动，不穿完整肝脏",
+        "landmark": "脂层断面、壳掩体及外露膜索",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "脂槽刹车，嵌入胃枢腹外侧限流段",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-04.png",
+        "layoutReference": "references/layout/R3-04.png",
+        "roomStructure": "maps/rooms/R3-04.svg",
+        "whaleLocator": "maps/room-locator-R3-04.svg"
+      }
+    },
+    {
+      "id": "R3-05",
+      "name": "肠入口",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-05",
+        "name": "肠入口",
+        "part": "胃出口附近的肠段破口",
+        "position": "鼻端54.5–61.4%（约65.4–73.7m）；腹腔中后段",
+        "rangePercent": [
+          54.5,
+          61.4
+        ],
+        "rangeM": [
+          65.4,
+          73.7
+        ],
+        "side": "腹腔中后段",
+        "routeReason": "先沿胃外缘到肠的纵裂口，再在入口取得锚定",
+        "landmark": "卷曲肠管外形与纵裂边，不把肠画成无端的大门",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "肠入口，嵌入胃枢后侧肠裂入口",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-05.png",
+        "layoutReference": "references/layout/R3-05.png",
+        "roomStructure": "maps/rooms/R3-05.svg",
+        "whaleLocator": "maps/room-locator-R3-05.svg"
+      }
+    },
+    {
+      "id": "R3-06",
+      "name": "迁居搬盘",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-06",
+        "name": "迁居搬盘",
+        "part": "回折肠袢／系膜层间",
+        "position": "鼻端57–65.8%（约68.4–79m）；腹腔后半腹侧",
+        "rangePercent": [
+          57,
+          65.8
+        ],
+        "rangeM": [
+          68.4,
+          79
+        ],
+        "side": "腹腔后半腹侧",
+        "routeReason": "沿同一回折肠袢和系膜上的搬盘路线",
+        "landmark": "前后两层肠袢、膜桥、海水侵入的酸性微环境槽",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "迁居搬盘，嵌入胃枢后半腹侧搬运台",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-06.png",
+        "layoutReference": "references/layout/R3-06.png",
+        "roomStructure": "maps/rooms/R3-06.svg",
+        "whaleLocator": "maps/room-locator-R3-06.svg"
+      }
+    },
+    {
+      "id": "R3-07",
+      "name": "搬壳母蟹",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-07",
+        "name": "搬壳母蟹",
+        "part": "向头回折的肠袢与前胃外侧邻接处",
+        "position": "鼻端53.2–61.4%（约63.8–73.7m）；腹腔侧层",
+        "rangePercent": [
+          53.2,
+          61.4
+        ],
+        "rangeM": [
+          63.8,
+          73.7
+        ],
+        "side": "腹腔侧层",
+        "routeReason": "肠袢向头回折，母蟹筑巢靠近胃外壁；两者靠近不等于天然相通",
+        "landmark": "身后肠袢回弯、头侧胃壁大曲率，展示可开旧破口",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "搬壳母蟹，嵌入胃枢侧层竞技腔",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-07.png",
+        "layoutReference": "references/layout/R3-07.png",
+        "roomStructure": "maps/rooms/R3-07.svg",
+        "whaleLocator": "maps/room-locator-R3-07.svg"
+      }
+    },
+    {
+      "id": "R3-08",
+      "name": "胃顶沉积袋",
+      "region": "R3",
+      "originalAnatomy": {
+        "id": "R3-08",
+        "name": "胃顶沉积袋",
+        "part": "前胃穹顶的沉积褶袋",
+        "position": "鼻端46.3–53.2%（约55.5–63.8m）；前腹腔高层",
+        "rangePercent": [
+          46.3,
+          53.2
+        ],
+        "rangeM": [
+          55.5,
+          63.8
+        ],
+        "side": "前腹腔高层",
+        "routeReason": "前胃同器官壁的高褶与破损衬层，不是新器官",
+        "landmark": "向下可见胃枢的同一大壁褶",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R3-01",
+      "disposition": "embedded_subspace",
+      "role": "胃顶沉积袋，嵌入胃枢高褶可选袋",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R3-08.png",
+        "layoutReference": "references/layout/R3-08.png",
+        "roomStructure": "maps/rooms/R3-08.svg",
+        "whaleLocator": "maps/room-locator-R3-08.svg"
+      }
+    },
+    {
+      "id": "R4-02",
+      "name": "低骨训练",
+      "region": "R4",
+      "originalAnatomy": {
+        "id": "R4-02",
+        "name": "低骨训练",
+        "part": "胸腰交界椎体外侧",
+        "position": "鼻端45.8–55.8%（约55–67m）；椎旁背外侧",
+        "rangePercent": [
+          45.8,
+          55.8
+        ],
+        "rangeM": [
+          55,
+          67
+        ],
+        "side": "椎旁背外侧",
+        "routeReason": "沿显露椎体与肋根外侧自然相邻地面",
+        "landmark": "巨大椎体凸缘、近大远小椎列",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R4-01→R4-03",
+      "disposition": "embedded_subspace",
+      "role": "低骨训练，嵌入椎旁过渡",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-02.png",
+        "layoutReference": "references/layout/R4-02.png",
+        "roomStructure": "maps/rooms/R4-02.svg",
+        "whaleLocator": "maps/room-locator-R4-02.svg"
+      }
+    },
+    {
+      "id": "R4-04",
+      "name": "下菌毯路线",
+      "region": "R4",
+      "originalAnatomy": {
+        "id": "R4-04",
+        "name": "下菌毯路线",
+        "part": "椎体下外侧／退化肌膜沟",
+        "position": "鼻端52.5–65%（约63–78m）；椎旁低路线",
+        "rangePercent": [
+          52.5,
+          65
+        ],
+        "rangeM": [
+          63,
+          78
+        ],
+        "side": "椎旁低路线",
+        "routeReason": "与上路隔高度而不隔一整器官，低路由外露肌腱面通行",
+        "landmark": "腰椎底缘、菌毯、无新肋骨的后躯",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R4-03→R4-05",
+      "disposition": "embedded_subspace",
+      "role": "下菌毯路线，嵌入断脊下层分支",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-04.png",
+        "layoutReference": "references/layout/R4-04.png",
+        "roomStructure": "maps/rooms/R4-04.svg",
+        "whaleLocator": "maps/room-locator-R4-04.svg"
+      }
+    },
+    {
+      "id": "R4-07",
+      "name": "修索小室",
+      "region": "R4",
+      "originalAnatomy": {
+        "id": "R4-07",
+        "name": "修索小室",
+        "part": "胸腰椎旁的旧肌腱褶室",
+        "position": "鼻端48.3–56.7%（约58–68m）；椎旁侧袋",
+        "rangePercent": [
+          48.3,
+          56.7
+        ],
+        "rangeM": [
+          58,
+          68
+        ],
+        "side": "椎旁侧袋",
+        "routeReason": "训练房附近外侧肌腱剥离袋，固定环由聚落安装",
+        "landmark": "断绳透光孔、同一椎体背面；不是骨内部的城",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R4-02",
+      "disposition": "embedded_subspace",
+      "role": "修索小室，嵌入组合门/低骨训练侧袋",
+      "sourceFiles": {
+        "roomArt": "images/rooms/R4-07.png",
+        "layoutReference": "references/layout/R4-07.png",
+        "roomStructure": "maps/rooms/R4-07.svg",
+        "whaleLocator": "maps/room-locator-R4-07.svg"
+      }
+    },
+    {
+      "id": "R5-03",
+      "name": "薄缝训练",
+      "region": "R5",
+      "originalAnatomy": {
+        "id": "R5-03",
+        "name": "薄缝训练",
+        "part": "耳骨外周结缔膜褶",
+        "position": "鼻端18.3–25%（约22–30m）；头部侧腹层",
+        "rangePercent": [
+          18.3,
+          25
+        ],
+        "rangeM": [
+          22,
+          30
+        ],
+        "side": "头部侧腹层",
+        "routeReason": "穿局部新生共生膜短缝；不是穿透硬颅骨",
+        "landmark": "膜缝长≤1.5U，厚骨在旁但不可穿",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R5-02→R5-04",
+      "disposition": "embedded_subspace",
+      "role": "薄缝训练，嵌入安全池至覆膜短柔膜段",
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-03.png",
+        "layoutReference": "references/layout/R5-03.png",
+        "roomStructure": "maps/rooms/R5-03.svg",
+        "whaleLocator": "maps/room-locator-R5-03.svg"
+      }
+    },
+    {
+      "id": "R5-05",
+      "name": "最后静默",
+      "region": "R5",
+      "originalAnatomy": {
+        "id": "R5-05",
+        "name": "最后静默",
+        "part": "耳区创伤腔的后侧声槽台",
+        "position": "鼻端19.2–25.8%（约23–31m）；头部后侧",
+        "rangePercent": [
+          19.2,
+          25.8
+        ],
+        "rangeM": [
+          23,
+          31
+        ],
+        "side": "头部后侧",
+        "routeReason": "Boss后方沿同一外周腔隙回到短缝侧，只是邻接绕行",
+        "landmark": "同一耳骨远景换角度，声纹由聚落刻/生物附着",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R5-04",
+      "disposition": "embedded_subspace",
+      "role": "最后静默，嵌入覆膜战后侧腔",
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-05.png",
+        "layoutReference": "references/layout/R5-05.png",
+        "roomStructure": "maps/rooms/R5-05.svg",
+        "whaleLocator": "maps/room-locator-R5-05.svg"
+      }
+    },
+    {
+      "id": "R5-06",
+      "name": "记忆侧囊",
+      "region": "R5",
+      "originalAnatomy": {
+        "id": "R5-06",
+        "name": "记忆侧囊",
+        "part": "耳区软膜侧袋",
+        "position": "鼻端19.2–25%（约23–30m）；头部侧层",
+        "rangePercent": [
+          19.2,
+          25
+        ],
+        "rangeM": [
+          23,
+          30
+        ],
+        "side": "头部侧层",
+        "routeReason": "主腔旁的剥离膜袋藏收集品，不把耳蜗当第二洞城",
+        "landmark": "带记忆沉积的软膜盲端及对侧微光",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R5-02",
+      "disposition": "embedded_subspace",
+      "role": "记忆侧囊，嵌入安全池耳周侧袋",
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-06.png",
+        "layoutReference": "references/layout/R5-06.png",
+        "roomStructure": "maps/rooms/R5-06.svg",
+        "whaleLocator": "maps/room-locator-R5-06.svg"
+      }
+    },
+    {
+      "id": "R5-07",
+      "name": "尾根观察",
+      "region": "R5",
+      "originalAnatomy": {
+        "id": "R5-07",
+        "name": "尾根观察",
+        "part": "尾柄外侧／尾椎渐细段",
+        "position": "鼻端83.3–91.7%（约100–110m）；后躯靠海床侧",
+        "rangePercent": [
+          83.3,
+          91.7
+        ],
+        "rangeM": [
+          100,
+          110
+        ],
+        "side": "后躯靠海床侧",
+        "routeReason": "由腰尾外廊沿渐细尾椎到幼体避流窝",
+        "landmark": "细尾椎在近端，向尾鳍逐渐转为纤维组织",
+        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
+      },
+      "representedBy": "R4-06→R5-08",
+      "disposition": "embedded_subspace",
+      "role": "尾根观察，嵌入稳定交通椎至尾端长廊",
+      "sourceFiles": {
+        "roomArt": "images/anatomy/rooms/R5-07.png",
+        "layoutReference": "references/layout/R5-07.png",
+        "roomStructure": "maps/rooms/R5-07.svg",
+        "whaleLocator": "maps/room-locator-R5-07.svg"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "R1-01",
+      "to": "R1-02",
+      "designEdges": [
+        "E01"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-03",
+      "designEdges": [
+        "E02"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-03",
+      "to": "R1-04",
+      "designEdges": [
+        "E03"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-04",
+      "to": "R1-05",
+      "designEdges": [
+        "E04"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-05",
+      "to": "R3-01",
+      "designEdges": [
+        "E05"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-06",
+      "designEdges": [
+        "E33"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R1-02",
+      "to": "R1-07",
+      "designEdges": [
+        "E35"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R3-01",
+      "to": "R2-01",
+      "designEdges": [
+        "E10"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R2-01",
+      "to": "R2-03",
+      "designEdges": [
+        "E06",
+        "E07"
+      ],
+      "relationship": "compressed_design_path"
+    },
+    {
+      "from": "R2-03",
+      "to": "R2-04",
+      "designEdges": [
+        "E08"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R3-01",
+      "to": "R4-01",
+      "designEdges": [
+        "E18"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R4-01",
+      "to": "R4-03",
+      "designEdges": [
+        "E19",
+        "E20"
+      ],
+      "relationship": "compressed_design_path"
+    },
+    {
+      "from": "R4-03",
+      "to": "R4-05",
+      "designEdges": [
+        "E22"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R4-05",
+      "to": "R4-06",
+      "designEdges": [
+        "E24"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-01",
+      "designEdges": [
+        "E25"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R5-01",
+      "to": "R5-02",
+      "designEdges": [
+        "E26"
+      ],
+      "relationship": "direct_design_edge"
+    },
+    {
+      "from": "R5-02",
+      "to": "R5-04",
+      "designEdges": [
+        "E27",
+        "E28"
+      ],
+      "relationship": "compressed_design_path"
+    },
+    {
+      "from": "R4-06",
+      "to": "R5-08",
+      "designEdges": [
+        "E31",
+        "E32"
+      ],
+      "relationship": "compressed_design_path"
+    }
+  ]
+}

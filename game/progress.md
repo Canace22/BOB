@@ -2705,3 +2705,35 @@ check 0 error(s)，全量418 passed / 0 failed；原生主场景实际显示用�
 在本次主干检出重新执行：check 0 error(s)，全量443 passed / 0 failed；第4–12章连续实际按键87项通过（含最终第9章两战），恢复17项通过。均没有SCRIPT ERROR/ERROR/FAIL或退出泄漏。日志chapters-main-{check,tests,route,recovery}.log留在本地ignored qa目录，历史433项不再冒充此次主干数字。新编排文档的相对链接和全部61个stage/51个task索引核对通过。
 
 LFS检出使用本地缓存，运行依赖已加载并完成上述测试；5个未缓存的历史世界地图制作源/投稿包未额外下载，不属于当前运行依赖。合并期的index-needs-merge提示已随冲突解决并提交结束。未改正式关卡几何、碰撞、入口或V6，也未执行Web发布。用户已经明确地图重构由另一工作项负责，本工作只提供已入库的白盒依据与编排文档。接下来正常推送并核对远端SHA。
+
+## 2026-11-21 · V4/V5正式章节与19房场景绑定
+
+按`docs/正式地图章节编排指南.md`和V4/V5地图设计新增`content/whalebelly/world/chapter_map.json`，将当前19个正式房间唯一映射到12个章节，并为运行时房间数据和流式布局补充章节ID、章节名、鲸体解剖锚点和空间职责。章节编排只作为现有流式场景的稳定地图元数据，不新增、删除或合并关卡，不修改角色、敌人、Boss、碰撞和流式加载逻辑。
+
+验证：仓库根目录`node tools/godot.mjs check`为0 error(s)；`node tools/godot.mjs test`为444 passed / 0 failed。新增测试覆盖章节顺序连续、19房间全部且唯一归属、解剖锚点存在和房间数量保持不变。未执行Web发布，未修改真实存档。
+
+## 2026-11-22 · R1须门遗港分层场景接入
+
+按V5.2房间元素清单复核R1-01至R1-07。R1-01沿用已认可的正式2D场景；R1-02至R1-07使用现有已生成原画、去演员图、Far/Middle/World/Foreground分层、柔性裁片、灯、水域蒙版、气泡和鱼群配置，完成六房母版、透明运行素材与Godot章节环境场景接入。保留原房间地形、门、演员、能力门槛和奖励配置，新增ChapterEnvironment实例只负责视觉层与环境动态。
+
+执行：assemble-r1-chapter-scenes.mjs（R1-02至R1-07）、godot.mjs sync-art、r1-scene-evidence.mjs。结果：章节环境实例已写入六个正式R1房间，64个PNG运行导出、95个元素ID、六房本地验收页生成；Godot check 0 error(s)。
+
+限制：自动化test启动后无输出持续等待，本轮停止该进程，未将其记为通过；当前R1审计仍报告历史房间门/碰撞基线漂移及既有输入文件变更，未用重置覆盖用户已有修改。R1-01和六房实际画面审美、连续路线仍需在运行窗口中复核。
+
+## 2026-11-22 · 全19房原画素材登记与场景补全
+
+按最新项目Skill与当前正式19房入口复核全部关卡。R1七房保留已接入分层场景；R2/R3/R4/R5的12房重新运行 `game/tools/build_world_rooms.mjs`，按当前房间配方生成正式TSCN并完成 `node tools/godot.mjs sync-art`。生成器保留门、碰撞、机关、奖励、敌人和状态ID，场景表现使用现有原画深度层、平台/床体、器官墙、前景、生态和特效单体PNG。
+
+新增 `assets/source/all-level-asset-split-v1/`：登记19房共149个独立PNG/房间分层资产，按建筑/地形背景、植被生态、装饰道具/机关、特效粒子分类；逐文件检查存在、RGBA/Alpha与目录引用，缺失0、非背景无Alpha0。`motion-coverage.json`确认19房均含环境动态或状态/交互脚本。
+
+验证：`node tools/godot.mjs check` 0 error(s)；自动化 `test` 启动后持续无输出，运行30秒后停止，未记为通过。未执行Web发布、提交或推送。
+
+## 2026-11-22 · 美术监管复核
+
+基于全19房实机拼板和原画/配方对照，新增 `docs/鲸腹遗城原画集/须门遗港地图布局/美术监管问题清单.md`。已区分观察到的问题、状态截图无法证明的项目和下一轮拟制作项：重点为R4/R5房间辨识度、动态Boss/群流专用验收帧、重复前景台腹、HUD干扰和R5-08高饱和前景。未根据静态截图擅自新增玩法、门或能力。
+
+## 2026-11-22 · 全19房原画坐标与素材合同补全
+
+针对全景预览中房间沿流式链平铺、无法直接核对原画位置的问题，新增 `game/content/whalebelly/world/scene_asset_coordinate_contract.json` 与可复跑生成器 `game/tools/build_scene_asset_contract.mjs`。合同把 V5 原画范围、鲸体归一化坐标、正式游戏世界原点、流式局部尺寸/门点、149 个独立2D资产和19房动态覆盖统一绑定；不新增房间，不替换流式加载，不改变角色、Boss、碰撞或存档。
+
+新增 `test_scene_asset_coordinate_contract_covers_all_formal_rooms`，验证19房、149项独立资产、19房动态覆盖、原画/鲸体/游戏/局部坐标关系及场景引用均存在。最终 `node tools/godot.mjs test` 为 **446 passed / 0 failed**；`check_project` 为0 error(s)。Godot导入产生的无关PNG/TSCN/manifest回写已清理，未执行Web发布或提交推送。

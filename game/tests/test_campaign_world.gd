@@ -35,6 +35,58 @@ func test_later_region_appends_and_links_the_first_exit() -> void:
 	check(ResourceLoader.exists(CampaignWorld.scene_path("R3-01")), "Hub scene exists in its region folder")
 	eq(CampaignWorld.region_name("R3-01"), "胃肠沉城", "Region title follows the room ID")
 
+func test_v4_v5_chapters_bind_all_current_rooms_without_changing_room_count() -> void:
+	var rooms := CampaignWorld.load_rooms(base_rooms())
+	var covered: Dictionary = {}
+	var previous := 0
+	for chapter: Dictionary in CampaignWorld.chapter_map().get("chapters", []):
+		eq(int(chapter.index), previous + 1, "Chapter order is contiguous")
+		previous = int(chapter.index)
+		for room_id: Variant in chapter.rooms:
+			check(not covered.has(str(room_id)), "Room is assigned to one chapter: " + str(room_id))
+			covered[str(room_id)] = true
+	for entry: Dictionary in rooms:
+		check(covered.has(str(entry.id)), "Current room has a formal chapter mapping: " + str(entry.id))
+		check(int(entry.get("chapter_index", 0)) > 0, "Chapter index is present: " + str(entry.id))
+		check(not str(entry.get("anatomy_anchor", "")).is_empty(), "Anatomy anchor is present: " + str(entry.id))
+	eq(covered.size(), rooms.size(), "Chapter mapping covers exactly the current room set")
+	eq(rooms.size(), 19, "Chapter mapping does not add or remove rooms")
+	var layout := CampaignStreamingLayout.build(rooms)
+	eq(layout.chapter_by_room.size(), rooms.size(), "Streaming layout carries chapter bindings for every room")
+	eq(str(layout.chapter_by_room["R1-01"].name), "须庭", "Streaming layout keeps the first chapter anchor")
+	eq(str(layout.chapter_by_room["R5-08"].name), "主闸", "Streaming layout keeps the final chapter anchor")
+
+func test_world_map_room_x_matches_v5_anatomy_ranges() -> void:
+	var contract: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/world/anatomy_map_contract.json"))
+	var tolerance := float(contract.get("toleranceX", 0.035))
+	for room_id: String in contract.get("rooms", {}).keys():
+		var entry: Dictionary = contract.rooms[room_id]
+		var spot: Variant = CampaignWorld.map_position("world", room_id)
+		check(spot is Vector2, "Anatomy contract room is placed on world map: " + room_id)
+		if spot is Vector2:
+			check(not str(entry.name).is_empty(), "Room contract is readable: " + room_id)
+			check(absf(spot.x - float(entry.expectedX)) <= tolerance, "Room x follows V5 anatomy range: " + room_id)
+
+func test_scene_asset_coordinate_contract_covers_all_formal_rooms() -> void:
+	var contract: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/world/scene_asset_coordinate_contract.json"))
+	eq(int(contract.get("roomCount", 0)), 19, "Asset contract keeps the formal nineteen-room scope")
+	eq(int(contract.get("dynamicRoomCount", 0)), 19, "Every formal room has a dynamic environment recipe")
+	var seen: Dictionary = {}
+	for entry: Dictionary in contract.get("rooms", []):
+		var room_id := str(entry.id)
+		seen[room_id] = true
+		check(ResourceLoader.exists(str(entry.gameScene)), "Asset contract scene exists: " + room_id)
+		check(entry.get("anatomy", {}).get("rangePercent", []).size() == 2, "Original-art range is recorded: " + room_id)
+		var whale_spot: Variant = CampaignWorld.map_position("world", room_id)
+		var contract_spot: Array = entry.get("whaleWorld", [])
+		check(whale_spot is Vector2 and contract_spot.size() == 2, "Whale/game coordinate pair exists: " + room_id)
+		if whale_spot is Vector2 and contract_spot.size() == 2:
+			check(is_equal_approx(whale_spot.x, float(contract_spot[0])) and is_equal_approx(whale_spot.y, float(contract_spot[1])), "Whale coordinate is shared by map and scene contract: " + room_id)
+		check(entry.get("streamingLocal", {}).get("size", []).size() == 2, "Streaming local size is recorded: " + room_id)
+		check(entry.get("assets", []).size() > 0, "Independent 2D assets are registered: " + room_id)
+		check(entry.get("dynamic", []).size() > 0, "Dynamic/effect coverage is registered: " + room_id)
+	eq(seen.size(), 19, "Asset coordinate contract covers exactly the formal room set")
+
 func test_unbuilt_targets_stay_closed_and_requirements_combine() -> void:
 	var host := make_host("R3-01")
 	eq(CampaignWorld.restriction(host, {"to":-2}), CampaignWorld.UNBUILT, "Unknown target stays closed")

@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "source": "G:/鲸落万物生/outputs/鲸落万物生_V5.2_完整游戏设计/data/鲸体位置与连接.json",
+  "rule": "map.world x is the midpoint of each room rangePercent; y remains authored map-layer placement",
+  "toleranceX": 0.035,
+  "rooms": {
+    "R1-01": {
+      "name": "外伤坡",
+      "rangePercent": [
+        2.5,
+        8.3
+      ],
+      "expectedX": 0.054,
+      "actualX": 0.054,
+      "side": "靠海床腹外侧",
+      "anatomy": "口角外侧／下颌前段"
+    },
+    "R1-02": {
+      "name": "须筛",
+      "rangePercent": [
+        6.7,
+        15
+      ],
+      "expectedX": 0.1085,
+      "actualX": 0.108,
+      "side": "口腔中层",
+      "anatomy": "口腔侧壁／上颚鲸须下缘"
+    },
+    "R1-03": {
+      "name": "舌台",
+      "rangePercent": [
+        10,
+        19.2
+      ],
+      "expectedX": 0.146,
+      "actualX": 0.146,
+      "side": "口腔腹侧",
+      "anatomy": "舌体背面"
+    },
+    "R1-04": {
+      "name": "负壳蟹",
+      "rangePercent": [
+        16.7,
+        24.2
+      ],
+      "expectedX": 0.2045,
+      "actualX": 0.204,
+      "side": "头部后腹侧",
+      "anatomy": "舌根后方／口咽入口"
+    },
+    "R1-05": {
+      "name": "流膜育窝",
+      "rangePercent": [
+        22.5,
+        26.7
+      ],
+      "expectedX": 0.246,
+      "actualX": 0.246,
+      "side": "颈胸交界内侧",
+      "anatomy": "咽后段至食管前段"
+    },
+    "R1-06": {
+      "name": "喷气孔上层",
+      "rangePercent": [
+        17.5,
+        24.2
+      ],
+      "expectedX": 0.2085,
+      "actualX": 0.209,
+      "side": "头部背侧",
+      "anatomy": "头顶喷气孔内缘／鼻道上段"
+    },
+    "R1-07": {
+      "name": "鲸须记忆袋",
+      "rangePercent": [
+        10,
+        17.5
+      ],
+      "expectedX": 0.1375,
+      "actualX": 0.138,
+      "side": "口腔高侧层",
+      "anatomy": "上颚须根附着面附近"
+    },
+    "R2-01": {
+      "name": "育床",
+      "rangePercent": [
+        37.8,
+        45.8
+      ],
+      "expectedX": 0.418,
+      "actualX": 0.418,
+      "side": "胸腔后背侧",
+      "anatomy": "横膈前侧／肺后缘胸膜面"
+    },
+    "R2-03": {
+      "name": "心室观察台",
+      "rangePercent": [
+        30.7,
+        38.8
+      ],
+      "expectedX": 0.3475,
+      "actualX": 0.347,
+      "side": "胸腔前腹侧",
+      "anatomy": "心包外缘观察台"
+    },
+    "R2-04": {
+      "name": "血巢潮群",
+      "rangePercent": [
+        28.7,
+        37.8
+      ],
+      "expectedX": 0.3325,
+      "actualX": 0.333,
+      "side": "胸腔前腹侧",
+      "anatomy": "破裂心包及心室断壁旁"
+    },
+    "R3-01": {
+      "name": "胃枢",
+      "rangePercent": [
+        45,
+        53.2
+      ],
+      "expectedX": 0.491,
+      "actualX": 0.491,
+      "side": "横膈后方的前腹腔",
+      "anatomy": "食管末端／前胃及胃周空间"
+    },
+    "R4-01": {
+      "name": "组合门",
+      "rangePercent": [
+        40,
+        48.3
+      ],
+      "expectedX": 0.4415,
+      "actualX": 0.442,
+      "side": "身体背侧内缘",
+      "anatomy": "腹腔背壁／横膈背外侧缺口"
+    },
+    "R4-03": {
+      "name": "上锚路线",
+      "rangePercent": [
+        52.5,
+        65
+      ],
+      "expectedX": 0.5875,
+      "actualX": 0.588,
+      "side": "椎旁高路线",
+      "anatomy": "腰椎侧上缘／棘突外侧"
+    },
+    "R4-05": {
+      "name": "悬脊鸣贝",
+      "rangePercent": [
+        61.7,
+        71.7
+      ],
+      "expectedX": 0.667,
+      "actualX": 0.667,
+      "side": "椎旁中层",
+      "anatomy": "后腰椎外侧断裂平台"
+    },
+    "R4-06": {
+      "name": "稳定交通椎",
+      "rangePercent": [
+        69.2,
+        78.3
+      ],
+      "expectedX": 0.7375,
+      "actualX": 0.738,
+      "side": "椎旁背侧",
+      "anatomy": "腰尾交界外侧分流台"
+    },
+    "R5-01": {
+      "name": "三槽记忆",
+      "rangePercent": [
+        20,
+        25.8
+      ],
+      "expectedX": 0.229,
+      "actualX": 0.229,
+      "side": "头部后侧",
+      "anatomy": "后颅底外侧／枕区到耳区的边缘"
+    },
+    "R5-02": {
+      "name": "安全池",
+      "rangePercent": [
+        19.2,
+        25
+      ],
+      "expectedX": 0.221,
+      "actualX": 0.221,
+      "side": "头部后下外侧",
+      "anatomy": "耳骨周围软组织剥离腔"
+    },
+    "R5-04": {
+      "name": "缄声覆膜",
+      "rangePercent": [
+        18.3,
+        25.8
+      ],
+      "expectedX": 0.2205,
+      "actualX": 0.221,
+      "side": "头部侧腹层",
+      "anatomy": "耳骨旁暴露的颅底骨面"
+    },
+    "R5-08": {
+      "name": "归海释放槽",
+      "rangePercent": [
+        91.7,
+        100
+      ],
+      "expectedX": 0.9585,
+      "actualX": 0.934,
+      "side": "尾端体表与外海交界",
+      "anatomy": "尾柄末端至尾鳍裂缘"
+    }
+  }
+}

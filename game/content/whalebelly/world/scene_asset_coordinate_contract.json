@@ -1,0 +1,3036 @@
+{
+  "version": 1,
+  "design": "V4/V5",
+  "sourceDesign": "G:/鲸落万物生/outputs/鲸落万物生_V5.2_完整游戏设计",
+  "sourceInventory": "assets/source/all-level-asset-split-v1/asset-inventory.json",
+  "guide": "docs/正式地图章节编排指南.md",
+  "roomCount": 19,
+  "coordinateContract": {
+    "originalArt": "anatomy_map_contract.rooms[*].rangePercent / expectedX",
+    "whaleWorld": "recipes/_world.json.map.world normalized [0..1]",
+    "gameWorld": "CampaignStreamingLayout.build(rooms).origins",
+    "streamingLocal": "content/whalebelly/world/rooms.json rooms[*].size/spawn/doors",
+    "note": "原画范围约束横向器官带；局部房间尺寸、碰撞和门点以正式运行数据为准。"
+  },
+  "dynamicRoomCount": 19,
+  "rooms": [
+    {
+      "id": "R1-01",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          2.5,
+          8.3
+        ],
+        "expectedX": 0.054,
+        "anchor": "口角外侧／下颌前段"
+      },
+      "whaleWorld": [
+        0.054,
+        0.42
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-01.tscn",
+      "streamingLocal": {
+        "size": [
+          1671,
+          939.9375
+        ],
+        "spawn": [
+          240.206,
+          613.57
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1600,
+              637.338
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-02",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          6.7,
+          15
+        ],
+        "expectedX": 0.1085,
+        "anchor": "口腔侧壁／上颚鲸须下缘"
+      },
+      "whaleWorld": [
+        0.108,
+        0.65
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-02.tscn",
+      "streamingLocal": {
+        "size": [
+          1672,
+          941
+        ],
+        "spawn": [
+          194,
+          715
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              75,
+              715
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1600,
+              713
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              170,
+              190
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1610,
+              275
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-02/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-02/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-02/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-02/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/R1-02-BALEEN-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-BALEEN-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/R1-02-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/R1-02-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/R1-02-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-02/R1-02-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/R1-02-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-02/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-02/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-02/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-02/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-03",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          10,
+          19.2
+        ],
+        "expectedX": 0.146,
+        "anchor": "舌体背面"
+      },
+      "whaleWorld": [
+        0.146,
+        0.15
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-03.tscn",
+      "streamingLocal": {
+        "size": [
+          1672,
+          941
+        ],
+        "spawn": [
+          258,
+          581
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              75,
+              578
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1605,
+              612
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "nursery-shell-support",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/nursery-shell-support/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-03/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-03/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-03/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-03/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-BALEEN-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-BALEEN-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-BALEEN-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-LAMP-1.png",
+          "category": "装饰道具/机关",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-LAMP-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-LAMP-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-LAMP-2.png",
+          "category": "装饰道具/机关",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-LAMP-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-LAMP-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/R1-03-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-03/R1-03-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/R1-03-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-03/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-03/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-03/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-03/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-04",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          16.7,
+          24.2
+        ],
+        "expectedX": 0.2045,
+        "anchor": "舌根后方／口咽入口"
+      },
+      "whaleWorld": [
+        0.204,
+        0.05
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-04.tscn",
+      "streamingLocal": {
+        "size": [
+          1591,
+          989
+        ],
+        "spawn": [
+          381,
+          709
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              80,
+              645
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1505,
+              710
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-04/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-04/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-04/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-04/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-BALEEN-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-BALEEN-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-BALEEN-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-LAMP-1.png",
+          "category": "装饰道具/机关",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-LAMP-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-LAMP-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/R1-04-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-04/R1-04-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/R1-04-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-04/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-04/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-04/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-04/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-06",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          17.5,
+          24.2
+        ],
+        "expectedX": 0.2085,
+        "anchor": "头顶喷气孔内缘／鼻道上段"
+      },
+      "whaleWorld": [
+        0.209,
+        0.2
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-06.tscn",
+      "streamingLocal": {
+        "size": [
+          1476,
+          1065
+        ],
+        "spawn": [
+          425,
+          643
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              100,
+              795
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1380,
+              335
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "nursery-shell-support",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/nursery-shell-support/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-06/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-06/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-06/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-06/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/R1-06-LAMP-1.png",
+          "category": "装饰道具/机关",
+          "source": "game/art/r1-chapter-scenes/R1-06/R1-06-LAMP-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-LAMP-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/R1-06-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/R1-06-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/R1-06-VINE-3.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-VINE-3.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/R1-06-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-06/R1-06-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/R1-06-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-06/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-06/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-06/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-06/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-07",
+      "chapter": {
+        "id": "ch01_xuting",
+        "index": 1,
+        "name": "须庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          10,
+          17.5
+        ],
+        "expectedX": 0.1375,
+        "anchor": "上颚须根附着面附近"
+      },
+      "whaleWorld": [
+        0.138,
+        0.3
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-07.tscn",
+      "streamingLocal": {
+        "size": [
+          1572,
+          1001
+        ],
+        "spawn": [
+          452,
+          546
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              95,
+              568
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-07/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-07/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-07/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-07/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-BALEEN-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-BALEEN-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-BALEEN-3.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-3.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-BALEEN-4.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-4.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-BALEEN-4.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-LAMP-1.png",
+          "category": "装饰道具/机关",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-LAMP-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-LAMP-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-VINE-3.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-VINE-3.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/R1-07-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-07/R1-07-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/R1-07-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-07/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-07/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-07/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-07/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R1-05",
+      "chapter": {
+        "id": "ch02_zhejing",
+        "index": 2,
+        "name": "折井"
+      },
+      "anatomy": {
+        "rangePercent": [
+          22.5,
+          26.7
+        ],
+        "expectedX": 0.246,
+        "anchor": "咽后段至食管前段"
+      },
+      "whaleWorld": [
+        0.246,
+        0.8
+      ],
+      "gameScene": "res://content/whalebelly/r1/R1-05.tscn",
+      "streamingLocal": {
+        "size": [
+          1612,
+          976
+        ],
+        "spawn": [
+          565,
+          573
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              100,
+              552
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "",
+            "pos": [
+              1515,
+              560
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "R1-05/Far.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-05/Far.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/Far.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/Foreground.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-05/Foreground.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/Foreground.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/Middle.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-05/Middle.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/Middle.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/R1-05-VINE-1.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-1.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-1.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/R1-05-VINE-2.png",
+          "category": "植被/生态",
+          "source": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-2.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/R1-05-VINE-2.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/R1-05-WATER-LIGHT.png",
+          "category": "特效/粒子",
+          "source": "game/art/r1-chapter-scenes/R1-05/R1-05-WATER-LIGHT.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/R1-05-WATER-LIGHT.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/underpaint.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-05/underpaint.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/underpaint.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        },
+        {
+          "id": "R1-05/World.png",
+          "category": "建筑/地形/背景",
+          "source": "game/art/r1-chapter-scenes/R1-05/World.png",
+          "runtime": "game/art/r1-chapter-scenes/R1-05/World.png",
+          "alpha": true,
+          "status": "accepted-runtime"
+        }
+      ],
+      "dynamic": [
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "fish_group",
+        "pinned_bitmap"
+      ]
+    },
+    {
+      "id": "R3-01",
+      "chapter": {
+        "id": "ch03_weishi",
+        "index": 3,
+        "name": "胃室"
+      },
+      "anatomy": {
+        "rangePercent": [
+          45,
+          53.2
+        ],
+        "expectedX": 0.491,
+        "anchor": "食管末端／前胃及胃周空间"
+      },
+      "whaleWorld": [
+        0.491,
+        0.58
+      ],
+      "gameScene": "res://content/whalebelly/r3/R3-01.tscn",
+      "streamingLocal": {
+        "size": [
+          3840,
+          2400
+        ],
+        "spawn": [
+          1000,
+          2080
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R1-05",
+            "pos": [
+              80,
+              2080
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R2-01",
+            "pos": [
+              80,
+              1480
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R4-01",
+            "pos": [
+              3712,
+              1360
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "anchor-pull-gate-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/anchor-pull-gate-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "anchor-pull-gate-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/anchor-pull-gate-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "beituo",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/beituo/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "bone-anchor-ring",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/bone-anchor-ring/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/bone-anchor-ring.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-drift",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-drift/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "gut-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/gut-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "gut-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/gut-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "habitat-fungus-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/habitat-fungus-bed/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/habitat-fungus-bed.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-bank-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r3-bank-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r3-bank-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-foreground-fold",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r3-foreground-fold/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r3-foreground-fold.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-gastric-cavern-frame-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r3-gastric-cavern-frame-v3.png",
+          "runtime": "game/art/world-kit/r3-gastric-cavern-frame-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r3-gastric-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r3-gastric-depth/background.png",
+          "runtime": "game/art/world-kit/r3-gastric-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-liver-edge",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r3-liver-edge/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-low-shell-camp-v3",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r3-low-shell-camp-v3.png",
+          "runtime": "game/art/world-kit/r3-low-shell-camp-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r3-mesentery-fold",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r3-mesentery-fold/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-shell-nest-before",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/r3-shell-nest-before/base.png",
+          "runtime": "game/art/world-kit/r3-shell-nest-before.png",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r3-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r3-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r3-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "red-tether-segment",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/red-tether-segment/base.png",
+          "runtime": "game/art/world-kit/red-tether-segment.png",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "yusuo",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/yusuo/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_interactable"
+      ]
+    },
+    {
+      "id": "R2-01",
+      "chapter": {
+        "id": "ch04_zhiku",
+        "index": 4,
+        "name": "脂库"
+      },
+      "anatomy": {
+        "rangePercent": [
+          37.8,
+          45.8
+        ],
+        "expectedX": 0.418,
+        "anchor": "横膈前侧／肺后缘胸膜面"
+      },
+      "whaleWorld": [
+        0.418,
+        0.32
+      ],
+      "gameScene": "res://content/whalebelly/r2/R2-01.tscn",
+      "streamingLocal": {
+        "size": [
+          2240,
+          1840
+        ],
+        "spawn": [
+          256,
+          1520
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R3-01",
+            "pos": [
+              80,
+              1520
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R2-03",
+            "pos": [
+              2160,
+              740
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "blowhole-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "blowhole-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "bone-sound-node",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/bone-sound-node/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "habitat-fungus-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/habitat-fungus-bed/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/habitat-fungus-bed.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "nursery-sac",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/nursery-sac/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "nursery-shell-support",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/nursery-shell-support/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "nursery-valve-leaf",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/nursery-valve-leaf/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-foreground-membrane",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-foreground-membrane/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-foreground-membrane.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-lung-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-lung-depth/background.png",
+          "runtime": "game/art/world-kit/r2-lung-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-cavern-frame-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r2-membrane-cavern-frame-v3.png",
+          "runtime": "game/art/world-kit/r2-membrane-cavern-frame-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-membrane-patch",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r2-membrane-patch/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-membrane-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-membrane-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-soft-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-soft-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-trachea-wall",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-trachea-wall/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_state_art",
+        "kit_interactable"
+      ]
+    },
+    {
+      "id": "R2-03",
+      "chapter": {
+        "id": "ch05_huanju",
+        "index": 5,
+        "name": "环居腔"
+      },
+      "anatomy": {
+        "rangePercent": [
+          30.7,
+          38.8
+        ],
+        "expectedX": 0.3475,
+        "anchor": "心包外缘观察台"
+      },
+      "whaleWorld": [
+        0.347,
+        0.68
+      ],
+      "gameScene": "res://content/whalebelly/r2/R2-03.tscn",
+      "streamingLocal": {
+        "size": [
+          2400,
+          1600
+        ],
+        "spawn": [
+          256,
+          1280
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R2-01",
+            "pos": [
+              80,
+              1280
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R2-04",
+            "pos": [
+              2320,
+              1160
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "amphipod-swarm",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/amphipod-swarm/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "blowhole-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "blowhole-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-danger-line",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-danger-line/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-foreground-membrane",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-foreground-membrane/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-foreground-membrane.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-heart-rupture",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r2-heart-rupture/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-cavern-frame-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r2-membrane-cavern-frame-v3.png",
+          "runtime": "game/art/world-kit/r2-membrane-cavern-frame-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-membrane-patch",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r2-membrane-patch/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-membrane-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-membrane-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-observation-depth-v4",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-observation-depth-v4.png",
+          "runtime": "game/art/world-kit/r2-observation-depth-v4.png",
+          "alpha": false,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-pearl-stalks-v4",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-pearl-stalks-v4.png",
+          "runtime": "game/art/world-kit/r2-pearl-stalks-v4.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-pelagic-amphipod-v4",
+          "category": "植被/生态",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-pelagic-amphipod-v4.png",
+          "runtime": "game/art/world-kit/r2-pelagic-amphipod-v4.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-soft-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-soft-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "shell-camp",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/shell-camp/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/shell-camp.webp",
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_amphipod_school"
+      ]
+    },
+    {
+      "id": "R2-04",
+      "chapter": {
+        "id": "ch06_feiyuan",
+        "index": 6,
+        "name": "肺缘"
+      },
+      "anatomy": {
+        "rangePercent": [
+          28.7,
+          37.8
+        ],
+        "expectedX": 0.3325,
+        "anchor": "破裂心包及心室断壁旁"
+      },
+      "whaleWorld": [
+        0.333,
+        0.86
+      ],
+      "gameScene": "res://content/whalebelly/r2/R2-04.tscn",
+      "streamingLocal": {
+        "size": [
+          2880,
+          1840
+        ],
+        "spawn": [
+          256,
+          1520
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R2-03",
+            "pos": [
+              80,
+              1520
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "bloodnest-glass-shrimp-v5",
+          "category": "其他",
+          "source": "assets/runtime/sprites/bloodnest-animation-v5/glass-shrimp.png",
+          "runtime": "game/art/world-kit/bloodnest-glass-shrimp-v5.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "bloodnest-water-filament-v5",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/bloodnest-animation-v5/water-filament.png",
+          "runtime": "game/art/world-kit/bloodnest-water-filament-v5.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "blowhole-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "blowhole-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/blowhole-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-danger-line",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-danger-line/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-bloodnest-depth-v4",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-bloodnest-depth-v4.png",
+          "runtime": "game/art/world-kit/r2-bloodnest-depth-v4.png",
+          "alpha": false,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-foreground-membrane",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-foreground-membrane/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-foreground-membrane.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-heart-rupture",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r2-heart-rupture/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-cavern-frame-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r2-membrane-cavern-frame-v3.png",
+          "runtime": "game/art/world-kit/r2-membrane-cavern-frame-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-membrane-patch",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r2-membrane-patch/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-membrane-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-membrane-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-membrane-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-pearl-stalks-v4",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-pearl-stalks-v4.png",
+          "runtime": "game/art/world-kit/r2-pearl-stalks-v4.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-pelagic-amphipod-v4",
+          "category": "植被/生态",
+          "source": "assets/runtime/scenes/r2-reference-motion-v4/r2-pelagic-amphipod-v4.png",
+          "runtime": "game/art/world-kit/r2-pelagic-amphipod-v4.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r2-soft-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-soft-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r2-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r2-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r2-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "kit_amphipod_school"
+      ]
+    },
+    {
+      "id": "R4-01",
+      "chapter": {
+        "id": "ch07_bengting",
+        "index": 7,
+        "name": "泵庭"
+      },
+      "anatomy": {
+        "rangePercent": [
+          40,
+          48.3
+        ],
+        "expectedX": 0.4415,
+        "anchor": "腹腔背壁／横膈背外侧缺口"
+      },
+      "whaleWorld": [
+        0.442,
+        0.16
+      ],
+      "gameScene": "res://content/whalebelly/r4/R4-01.tscn",
+      "streamingLocal": {
+        "size": [
+          2400,
+          1600
+        ],
+        "spawn": [
+          256,
+          1280
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R3-01",
+            "pos": [
+              80,
+              1280
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R4-03",
+            "pos": [
+              2320,
+              1160
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "anchor-bone-mount",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/anchor-bone-mount/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-bone-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-bone-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-foreground-bone",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-foreground-bone/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-foreground-bone.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-fungal-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-fungal-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-training-groove",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r4-training-groove/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-vertebrae-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-vertebrae-depth/background.png",
+          "runtime": "game/art/world-kit/r4-vertebrae-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light"
+      ]
+    },
+    {
+      "id": "R4-03",
+      "chapter": {
+        "id": "ch08_gongqiong",
+        "index": 8,
+        "name": "骨穹腔"
+      },
+      "anatomy": {
+        "rangePercent": [
+          52.5,
+          65
+        ],
+        "expectedX": 0.5875,
+        "anchor": "腰椎侧上缘／棘突外侧"
+      },
+      "whaleWorld": [
+        0.588,
+        0.26
+      ],
+      "gameScene": "res://content/whalebelly/r4/R4-03.tscn",
+      "streamingLocal": {
+        "size": [
+          2880,
+          1760
+        ],
+        "spawn": [
+          256,
+          1440
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R4-01",
+            "pos": [
+              80,
+              1440
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R4-05",
+            "pos": [
+              2800,
+              1440
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "anchor-bone-mount",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/anchor-bone-mount/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "clam-spit-cycle-v1",
+          "category": "其他",
+          "source": "assets/runtime/sprites/completion-19-v1/clam-spit-cycle-v1.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-pearl-rings",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-pearl-rings/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-bone-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-bone-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-foreground-bone",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-foreground-bone/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-foreground-bone.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-fungal-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-fungal-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-training-groove",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r4-training-groove/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-vertebrae-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-vertebrae-depth/background.png",
+          "runtime": "game/art/world-kit/r4-vertebrae-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "resonant-clam",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/resonant-clam/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ringed-calcium-pearl",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ringed-calcium-pearl/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift"
+      ]
+    },
+    {
+      "id": "R4-05",
+      "chapter": {
+        "id": "ch09_huiliu",
+        "index": 9,
+        "name": "回流长腔"
+      },
+      "anatomy": {
+        "rangePercent": [
+          61.7,
+          71.7
+        ],
+        "expectedX": 0.667,
+        "anchor": "后腰椎外侧断裂平台"
+      },
+      "whaleWorld": [
+        0.667,
+        0.38
+      ],
+      "gameScene": "res://content/whalebelly/r4/R4-05.tscn",
+      "streamingLocal": {
+        "size": [
+          3200,
+          1760
+        ],
+        "spawn": [
+          256,
+          1440
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R4-03",
+            "pos": [
+              80,
+              1440
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R4-06",
+            "pos": [
+              3120,
+              1440
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "clam-spit-cycle-v1",
+          "category": "其他",
+          "source": "assets/runtime/sprites/completion-19-v1/clam-spit-cycle-v1.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-pearl-rings",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-pearl-rings/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-bone-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-bone-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-foreground-bone",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-foreground-bone/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-foreground-bone.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-fungal-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-fungal-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-tapering-vertebrae",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/r4-tapering-vertebrae/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-vertebrae-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-vertebrae-depth/background.png",
+          "runtime": "game/art/world-kit/r4-vertebrae-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "ringed-calcium-pearl",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ringed-calcium-pearl/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "spine-resonant-clams",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/spine-resonant-clams/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift"
+      ]
+    },
+    {
+      "id": "R4-06",
+      "chapter": {
+        "id": "ch10_jiuge",
+        "index": 10,
+        "name": "旧歌腔"
+      },
+      "anatomy": {
+        "rangePercent": [
+          69.2,
+          78.3
+        ],
+        "expectedX": 0.7375,
+        "anchor": "腰尾交界外侧分流台"
+      },
+      "whaleWorld": [
+        0.738,
+        0.5
+      ],
+      "gameScene": "res://content/whalebelly/r4/R4-06.tscn",
+      "streamingLocal": {
+        "size": [
+          2720,
+          1760
+        ],
+        "spawn": [
+          256,
+          1440
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R4-05",
+            "pos": [
+              80,
+              1440
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R5-08",
+            "pos": [
+              1080,
+              1320
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R5-01",
+            "pos": [
+              2640,
+              1320
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "bone-sound-node",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/bone-sound-node/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-bone-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-bone-platform/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-bone-platform.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-foreground-bone",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-foreground-bone/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-foreground-bone.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-fungal-bed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-fungal-bed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-tapering-vertebrae",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/r4-tapering-vertebrae/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-vertebrae-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-vertebrae-depth/background.png",
+          "runtime": "game/art/world-kit/r4-vertebrae-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r4-water-base/background.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/r4-water-base.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "shell-camp",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/shell-camp/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/shell-camp.webp",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "tail-flow-shutter",
+          "category": "其他",
+          "source": "assets/runtime/sprites/tail-flow-shutter/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_interactable"
+      ]
+    },
+    {
+      "id": "R5-01",
+      "chapter": {
+        "id": "ch11_huisheng",
+        "index": 11,
+        "name": "回声室"
+      },
+      "anatomy": {
+        "rangePercent": [
+          20,
+          25.8
+        ],
+        "expectedX": 0.229,
+        "anchor": "后颅底外侧／枕区到耳区的边缘"
+      },
+      "whaleWorld": [
+        0.229,
+        0.5
+      ],
+      "gameScene": "res://content/whalebelly/r5/R5-01.tscn",
+      "streamingLocal": {
+        "size": [
+          2400,
+          1760
+        ],
+        "spawn": [
+          256,
+          1440
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R4-06",
+            "pos": [
+              80,
+              1440
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R5-02",
+            "pos": [
+              2320,
+              1320
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "ear-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "progress-three-slots",
+          "category": "其他",
+          "source": "assets/runtime/sprites/progress-three-slots/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r5-cranial-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-depth/background.png",
+          "runtime": "game/art/world-kit/r5-cranial-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-foreground",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-foreground/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-platform/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-echo-wall-covered",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-echo-wall-covered/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-echo-wall-revealed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-echo-wall-revealed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-head-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-head-water-base/background.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-three-socket-wall-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-three-socket-wall-v3.png",
+          "runtime": "game/art/world-kit/r5-three-socket-wall-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "ui-progress-bone",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ui-progress-bone/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ui-progress-pressure",
+          "category": "其他",
+          "source": "assets/runtime/sprites/ui-progress-pressure/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ui-progress-silence",
+          "category": "其他",
+          "source": "assets/runtime/sprites/ui-progress-silence/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "kit_state_art",
+        "kit_interactable"
+      ]
+    },
+    {
+      "id": "R5-02",
+      "chapter": {
+        "id": "ch11_huisheng",
+        "index": 11,
+        "name": "回声室"
+      },
+      "anatomy": {
+        "rangePercent": [
+          19.2,
+          25
+        ],
+        "expectedX": 0.221,
+        "anchor": "耳骨周围软组织剥离腔"
+      },
+      "whaleWorld": [
+        0.221,
+        0.35
+      ],
+      "gameScene": "res://content/whalebelly/r5/R5-02.tscn",
+      "streamingLocal": {
+        "size": [
+          2560,
+          1680
+        ],
+        "spawn": [
+          256,
+          1360
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R5-01",
+            "pos": [
+              80,
+              1360
+            ]
+          },
+          {
+            "id": "",
+            "to_id": "R5-04",
+            "pos": [
+              2480,
+              1240
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "ear-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "habitat-shade",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/habitat-shade/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r5-cranial-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-depth/background.png",
+          "runtime": "game/art/world-kit/r5-cranial-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-foreground",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-foreground/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-platform/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-echo-wall-covered",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-echo-wall-covered/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-head-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-head-water-base/background.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "shell-camp",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/shell-camp/base.png",
+          "runtime": "assets/runtime/sprites/whalefall-v2-optimized/shell-camp.webp",
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_interactable"
+      ]
+    },
+    {
+      "id": "R5-04",
+      "chapter": {
+        "id": "ch11_huisheng",
+        "index": 11,
+        "name": "回声室"
+      },
+      "anatomy": {
+        "rangePercent": [
+          18.3,
+          25.8
+        ],
+        "expectedX": 0.2205,
+        "anchor": "耳骨旁暴露的颅底骨面"
+      },
+      "whaleWorld": [
+        0.221,
+        0.65
+      ],
+      "gameScene": "res://content/whalebelly/r5/R5-04.tscn",
+      "streamingLocal": {
+        "size": [
+          3200,
+          1760
+        ],
+        "spawn": [
+          256,
+          1440
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R5-02",
+            "pos": [
+              80,
+              1440
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "ear-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-echo-open-ring",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-echo-open-ring/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-silence-ring",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-silence-ring/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-cavern-frame-alpha-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-cranial-cavern-frame-alpha-v3.png",
+          "runtime": "game/art/world-kit/r5-cranial-cavern-frame-alpha-v3.png",
+          "alpha": true,
+          "status": "candidate"
+        },
+        {
+          "id": "r5-cranial-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-depth/background.png",
+          "runtime": "game/art/world-kit/r5-cranial-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-foreground",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-foreground/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-cranial-platform",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-cranial-platform/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-echo-wall-covered",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-echo-wall-covered/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-echo-wall-revealed",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-echo-wall-revealed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-head-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-head-water-base/background.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "silent-membrane",
+          "category": "其他",
+          "source": "assets/runtime/sprites/silent-membrane/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "kit_state_art"
+      ]
+    },
+    {
+      "id": "R5-08",
+      "chapter": {
+        "id": "ch12_zhazha",
+        "index": 12,
+        "name": "主闸"
+      },
+      "anatomy": {
+        "rangePercent": [
+          91.7,
+          100
+        ],
+        "expectedX": 0.9585,
+        "anchor": "尾柄末端至尾鳍裂缘"
+      },
+      "whaleWorld": [
+        0.934,
+        0.33
+      ],
+      "gameScene": "res://content/whalebelly/r5/R5-08.tscn",
+      "streamingLocal": {
+        "size": [
+          3200,
+          1600
+        ],
+        "spawn": [
+          256,
+          1280
+        ],
+        "doors": [
+          {
+            "id": "",
+            "to_id": "R4-06",
+            "pos": [
+              80,
+              1280
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "id": "ear-latch-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ear-latch-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ear-latch-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "fx-particle-soft",
+          "category": "特效/粒子",
+          "source": "assets/runtime/sprites/fx-particle-soft/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r4-tapering-vertebrae",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/r4-tapering-vertebrae/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-tail-channel",
+          "category": "其他",
+          "source": "assets/runtime/sprites/r5-tail-channel/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-tail-depth",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-tail-depth/background.png",
+          "runtime": "game/art/world-kit/r5-tail-depth.png",
+          "alpha": false,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-tail-foreground",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-tail-foreground/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-tail-water-base",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/sprites/r5-tail-water-base/background.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "r5-tail-window-frame-v3",
+          "category": "建筑/地形/背景",
+          "source": "assets/runtime/scenes/reference-architecture-v3/r5-tail-window-frame-v3.png",
+          "runtime": "game/art/world-kit/r5-tail-window-frame-v3.png",
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "release-bowl",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/release-bowl/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "release-sluice-closed",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/release-sluice-closed/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "release-sluice-open",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/release-sluice-open/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "ringed-calcium-pearl",
+          "category": "装饰道具/机关",
+          "source": "assets/runtime/sprites/ringed-calcium-pearl/base.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        },
+        {
+          "id": "sea-larva-swim-v1",
+          "category": "植被/生态",
+          "source": "assets/runtime/sprites/completion-19-v1/sea-larva-swim-v1.png",
+          "runtime": null,
+          "alpha": true,
+          "status": "accepted"
+        }
+      ],
+      "dynamic": [
+        "kit_depth_motion",
+        "bubble_emitter",
+        "kit_drift",
+        "soft_underwater_light",
+        "kit_larva_school",
+        "kit_interactable",
+        "kit_treasure"
+      ]
+    }
+  ]
+}
