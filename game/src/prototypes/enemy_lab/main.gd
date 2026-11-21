@@ -69,10 +69,6 @@ func _rebuild() -> void:
 	player.collision_mask=5
 	player.show_debug=ranges
 	player.invincible=invincible
-	var guard_view := EnemyLabGuardFeedback.new()
-	guard_view.player=player
-	guard_view.z_index=9
-	player.add_child(guard_view)
 	player.damaged.connect(func() -> void: record("玩家受击"))
 	player.backstep_started.connect(func() -> void: record("后跳：取消当前动作"))
 	_spawn(profile_index,855.0)

@@ -176,8 +176,12 @@ func change(next: String) -> void:
 func _contact() -> void:
 	if hit_sent or target.health <= 0: return
 	var player_rect := Rect2(target.global_position-Vector2(14,65),Vector2(28,65))
-	if attack_rect().intersects(player_rect) and target.take_damage(1,global_position):
-		hit_sent = true
+	if not attack_rect().intersects(player_rect): return
+	var guard := target.skill_controller as TideCombatGuardSkills
+	var guarded: int=guard.guard_count if guard!=null else 0
+	var damaged: bool=target.take_damage(1,global_position)
+	# 成功格挡也消费本招接触，不能逐帧重复扣架势或发放迎击奖励。
+	if damaged or (guard!=null and guard.guard_count>guarded): hit_sent = true
 
 func attack_rect() -> Rect2:
 	var area := CampaignCrabMoves.attack_rect(kind, facing)

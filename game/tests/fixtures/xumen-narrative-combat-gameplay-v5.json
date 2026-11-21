@@ -5,8 +5,8 @@
   "source_hashes": [
     {
       "path": "game/src/campaign/tide_player.gd",
-      "sha256": "9fc518be6fda07a98a17bbde3cb5f056ff0ecf9e1459c0281290735e72daaaf8",
-      "authorized_delta": "Stop this physics frame when dialogue gives control to a modal.",
+      "sha256": "27e54162900c3bdc47657149c0464d3d5d02b06fab5e9ca263a37e090fbebcab",
+      "authorized_delta": "Stop this physics frame when dialogue gives control to a modal. User-authorized smooth jump release: bounded upward deceleration instead of instant velocity cut; full jump tuning unchanged.",
       "behavior_test": "game/tests/whalebelly/dialogue_qa.gd"
     },
     {
@@ -26,6 +26,12 @@
       "sha256": "198d009b118d7af84f4167dd22050e23daacef7df6a48774cbea227ed2f4c838",
       "authorized_delta": "Validate optional narrative seen/objective fields while accepting existing V6 saves.",
       "behavior_test": "game/tests/test_dialogue_state.gd"
+    },
+    {
+      "path": "game/src/campaign/boss/crab_boss.gd",
+      "sha256": "064606dbde80f6546c3e8cc0dadc72e285e11b888a54a3ead8f5920a4486bb68",
+      "authorized_delta": "Consume one boss contact after a successful shared stance guard, preventing repeated per-frame guard charges and rewards.",
+      "behavior_test": "game/tests/test_campaign_guard.gd"
     }
   ],
   "validation": [

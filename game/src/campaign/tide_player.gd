@@ -313,7 +313,9 @@ func _physics_process(dt: float) -> void:
 		if not grounded:
 			if short_jump and velocity.y<0:
 				var remaining := maxf(0, short_jump_height-(jump_start_y-position.y))
-				velocity.y = maxf(velocity.y,-sqrt(2*gravity*remaining))
+				# 松键只增加有界减速，保留向上惯性；禁止在已超过小跳高度时直接截成零速度。
+				var release_target: float=-sqrt(2*gravity*remaining)
+				if velocity.y<release_target: velocity.y=move_toward(velocity.y,release_target,gravity*3.0*dt)
 			if velocity.y>=0 and not apex_used:
 				apex_left=apex_hold
 				apex_used=true

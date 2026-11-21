@@ -52,7 +52,8 @@ func test_real_damage_pipeline_and_room_lifecycle() -> void:
 	host.relics.refill(host.collected)
 	var p: WhalebellyCampaignPlayer = host.player
 	check(p.skill_controller.request("parry"), "Existing parry remains available")
-	p.skill_controller.elapsed = float(p.skill_controller.data.release)
+	# 走实际物理帧进入格挡窗口，架势控制器与动作使用同一状态时钟。
+	await physics_frames(3)
 	check(not p.take_damage(1), "Successful parry rejects hit before shield")
 	eq(host.relics.charges, 2, "Parry does not consume shield")
 	p.skill_controller.cancel()

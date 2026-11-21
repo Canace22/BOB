@@ -1,8 +1,6 @@
 class_name EnemyLabPlayer
 extends CombatWhiteboxPlayer
-## 试验场持续格挡通过局部控制器注入；主线默认参数不变。
-signal guard_success(perfect: bool)
-signal guard_broken
+## 试验场只扩展无敌练习和水流；格挡与主线共用。
 var all_skill_practice: bool=false
 var invincible: bool = false
 var pump_drift: float=0.0
@@ -13,14 +11,6 @@ func skill_unlocked(rule: String) -> bool:
 
 func create_skill_controller() -> TideCombatSkills:
 	return EnemyLabSkills.new()
-
-func request_action(action: String) -> bool:
-	var c: EnemyLabSkills=skill_controller as EnemyLabSkills
-	if c.active and c.visual_key=="parry" and c.parried and action!="parry":
-		# 仅成功格挡可立即反击；先由共用入口校验，失败不吞原防御。
-		if action in ["strike_01","strike2"] and controls_enabled and health>0:
-			c.cancel()
-	return super.request_action(action)
 
 func take_damage(amount: int=1, source: Vector2=Vector2.ZERO, force: bool=false) -> bool:
 	if invincible and not force:

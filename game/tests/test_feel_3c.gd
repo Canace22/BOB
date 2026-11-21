@@ -205,3 +205,16 @@ func test_hurt_freezes_the_world_and_keeps_soul() -> void:
 	eq(Engine.time_scale, 1.0, "rebuilding the room cannot leave the world frozen")
 	for suffix: String in ["", ".bak", ".tmp"]:
 		if FileAccess.file_exists(host.save_path() + suffix): DirAccess.remove_absolute(host.save_path() + suffix)
+
+func test_release_after_short_hop_height_keeps_upward_inertia() -> void:
+	var p: TidePlayer = await tuned_player()
+	var start: float=p.position.y
+	Input.action_press("tp_jump")
+	await physics_frames(10)
+	check(start-p.position.y>p.short_jump_height,"release happens above minimum hop height")
+	var before: float=p.velocity.y
+	Input.action_release("tp_jump")
+	await physics_frames(2)
+	check(p.velocity.y<0.0,"release keeps rising instead of snapping to descent")
+	check(p.velocity.y>before,"release starts slowing upward motion")
+	check(p.velocity.y-before<=p.gravity*8.1/60.0,"release deceleration is bounded per physics frame")

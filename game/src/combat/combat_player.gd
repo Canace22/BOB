@@ -2,6 +2,8 @@ class_name TideCombatPlayer
 extends TidePlayer
 ## 正式主线与试验场共用的输入、取消、后跳及动作呈现。
 
+signal guard_success(perfect: bool)
+signal guard_broken
 signal backstep_started
 var retreating: bool = false
 var retreat_time: float = 0.0
@@ -46,6 +48,11 @@ func _ready() -> void:
 	hit_feedback = create_hit_feedback()
 	add_child(hit_feedback)
 	hit_feedback.setup(self)
+	if skill_controller is TideCombatGuardSkills:
+		var guard_view := TideCombatGuardFeedback.new()
+		guard_view.player = self
+		guard_view.z_index = 9
+		add_child(guard_view)
 
 func _exit_tree() -> void:
 	if pad_input != null: pad_input.dispose()
@@ -122,6 +129,10 @@ func try_backstep() -> bool:
 	return true
 
 func request_action(action: String) -> bool:
+	# 成功格挡允许立即反击，未成功的持盾仍遵守原取消窗口。
+	var guard := skill_controller as TideCombatGuardSkills
+	if guard != null and guard.active and guard.visual_key == "parry" and guard.parried:
+		if action in ["strike_01","strike2"] and controls_enabled and health > 0: guard.cancel()
 	if TideCombatSkills.DEFINITIONS.has(action): return skill_controller.request(action)
 	if retreating: return false
 	if action in ["A1_dash","parry"] and _offense_active():
@@ -209,7 +220,7 @@ func ability_available(action: String) -> bool:
 	return super.ability_available(action)
 
 func create_skill_controller() -> TideCombatSkills:
-	return TideCombatSkills.new()
+	return TideCombatGuardSkills.new()
 
 func create_action_visual() -> TideCombatVisual:
 	return TideCombatVisual.new()
@@ -222,3 +233,10 @@ func create_pad_input() -> TideCombatInput:
 
 func create_hit_feedback() -> TideCombatFeedback:
 	return TideCombatFeedback.new()
+
+func _hit(enemy: Node, amount: int, gain_soul: bool) -> void:
+	# 仅主线适配目标在此消费奖励；试验场在护壳结算中消费，避免重复发放。
+	var guard := skill_controller as TideCombatGuardSkills
+	if guard != null and enemy.has_method("is_campaign_enemy") and not hit_targets.has(enemy.get_instance_id()):
+		if not enemy.has_method("can_receive_hit") or enemy.can_receive_hit(): amount += guard.consume_counter()
+	super._hit(enemy,amount,gain_soul)
