@@ -181,3 +181,15 @@ Web验证先运行 `node tools/godot.mjs export-web`，再在独立终端运行 
 HUD细节校正：状态与技能使用中心均匀压暗、48px柔边的深蓝底；目标使用暖红斜面位图。边缘指引以更亮的金色目的地和较大箭头显示，多方向同时保留。
 
 连续地图边缘指引采用目的房连接端定位，跨进须筛后“返回外伤坡”保持朝左；长交互提示避让也不会翻转指引方向。
+
+### 第二章独立白盒
+
+[折井白盒](content/prototypes/chapter_two/README.md)串起下降、守卫警告、非致死交锋、老守护者救援、疏散后重开通路与胃室入口。入口为`res://content/prototypes/chapter_two/main.tscn`，使用独立进度；`R`检查点重试，`F6`重开。默认正式主线入口不变，场地/住巢是明确的白盒代理，救援不是完整正式动画。
+
+第二章独立白盒已重编战后对白：守卫封路保护撤离住户，通路随疏散结束重开；鲸歌不再成为通行许可。入口与重玩操作见[折井白盒](content/prototypes/chapter_two/README.md)。
+
+第三章胃室独立白盒：第二章结束后F继续，或直接启动 `content/prototypes/chapter_three/main.tscn`。查看回水、迎战栖污大甲、主动开瓣、事故后取壳固定，再去脂库入口。详见[第三章说明](content/prototypes/chapter_three/README.md)；几何演出代理，不代表正式19房接入。
+
+第四至十二章连续白盒已增加：`content/prototypes/chapters/main.tscn` 默认第四章，第三章结尾F也能进入。各章出口F继续，R检查点、F6本章重开、F7/F8切章验收；每章独立存档，不改正式19房入口。[章节与边界](content/prototypes/chapters/README.md)。
+
+正式地图重构工作请参照[正式地图章节编排指南](../docs/正式地图章节编排指南.md)：12章空间职责、阶段ID/依赖、触发/存档边界与验收路线。本指南不自动修改正式地图。
