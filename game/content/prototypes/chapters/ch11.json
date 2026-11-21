@@ -1,0 +1,56 @@
+{
+  "id": 11,
+  "title": "听见停顿的地方",
+  "location": "听骨·回声室（白盒）",
+  "summary": "从本章开始：拾潮者带着壳样、各区供养与迁居记录、旧歌腔撤离线及封梁卫刻名薄壳来到听骨。他要把各方向的震动同已经查见的回水核对，再带一份有限外排方案去尾根。几何接触片和图台均为白盒代理。",
+  "width": 4000,
+  "spawn": [160,480],
+  "platforms": [[0,520,4000,100]],
+  "props": [
+    {"id":"ch11_lung_prop","label":"肺缘触点｜白盒代理","rect":[530,350,180,170],"color":"658480"},
+    {"id":"ch11_pump_prop","label":"泵庭触点｜白盒代理","rect":[1080,350,180,170],"color":"718078"},
+    {"id":"ch11_tail_prop","label":"尾根触点｜白盒代理","rect":[1640,350,180,170],"color":"807a69"},
+    {"id":"ch11_evidence_prop","label":"回水与供养记录台｜白盒代理","rect":[2160,400,220,120],"color":"7b7867"},
+    {"id":"ch11_map_prop","label":"分流图与住巢位置｜白盒代理","rect":[2750,345,260,175],"color":"727c68"},
+    {"id":"ch11_reply_prop","label":"听骨回应处｜白盒代理","rect":[3240,340,160,180],"color":"617e89"},
+    {"id":"ch11_exit_prop","label":"返程维护道→尾根主闸","rect":[3710,370,160,150],"color":"4f7777"}
+  ],
+  "stages": [
+    {
+      "id":"ch11_check_contacts","kind":"explore","objective":"分别到肺缘、泵庭、尾根三个触点按F，记录震动。","checkpoint":[160,480],"at":[620,480],
+      "tasks":[
+        {"id":"ch11_contact_lung","label":"按F核对肺缘触点","at":[620,480],"requires":[],"grant":["ch11_lung_steady"],"lines":[["记录","肺缘方向的震动细而连续，同前一次观察到的稳定侧流相符。"],["拾潮者","先把这一处的节律记下来。"]]},
+        {"id":"ch11_contact_pump","label":"按F核对泵庭触点","at":[1170,480],"requires":[],"grant":["ch11_pump_heavy"],"lines":[["记录","泵庭触点传来沉重的节律，间隔还算整齐。"],["拾潮者","这里仍在送水。尾根收到之后，又把多少水推了回来？"]]},
+        {"id":"ch11_contact_tail","label":"按F核对尾根触点","at":[1730,480],"requires":[],"grant":["ch11_tail_delay"],"lines":[["记录","尾根方向迟滞了一次，随后传来向回挤压的杂响。"],["拾潮者","回流长腔也有这种回挤。记录在后面的台上，我把这个间隔带过去比一遍。"]]}
+      ],
+      "required":["ch11_contact_lung","ch11_contact_pump","ch11_contact_tail"]
+    },
+    {
+      "id":"ch11_match_return","kind":"explore","objective":"到记录台按F，核对回水路线和壳样。","checkpoint":[1960,480],"at":[2270,480],
+      "tasks":[
+        {"id":"ch11_compare_return","label":"按F把停顿与回水记录对照","at":[2200,480],"requires":["ch11_contact_lung","ch11_contact_pump","ch11_contact_tail"],"grant":["ch11_return_confirmed"],"lines":[["记录","回流长腔刻图上的几条外排线，在尾根折回内圈。停顿之后的回挤方向与这几条线一致。"],["拾潮者","新水进来了，主闸还把它压回旧路。闷响和这里的回压对得上。"]]},
+        {"id":"ch11_compare_supply","label":"按F核对新丝、旧壳与供养记录","at":[2370,480],"requires":["ch11_compare_return"],"grant":["ch11_supply_not_restored"],"lines":[["记录","壳样的新丝已经附着，旧部分仍然变薄。供养记录没有随新丝长出而好转，迁居图上也还有未安稳的住巢。"],["拾潮者","不能把所有口子一起打开。这几处还接不住更急的流。"]]}
+      ],
+      "required":["ch11_compare_return","ch11_compare_supply"]
+    },
+    {
+      "id":"ch11_listen_pause","kind":"observe","objective":"回到尾根触点按F，核对一次停顿；再按F可结束观看。","checkpoint":[2000,480],"at":[1730,480],"duration":4,
+      "captions":["肺缘细震与泵庭重拍继续传来。尾根触点先停顿，再传回压杂响。","鲸歌里的闷响又出现了，与这次回压重合。","叉柄传来的闷震逐渐散去。拾潮者松开手，把刚记下的间隔描在回水刻线旁。"],
+      "grant":["ch11_pause_matched"]
+    },
+    {
+      "id":"ch11_mark_plan","kind":"explore","objective":"到分流图按F，先圈出保留区域，再标一道有限外排口。","checkpoint":[2530,480],"at":[2880,480],
+      "tasks":[
+        {"id":"ch11_protect_nests","label":"按F圈出未安顿的住巢与保留支路","at":[2790,480],"requires":["ch11_compare_supply"],"grant":["ch11_nests_protected"],"lines":[["记录","拾潮者圈起未附稳的巢基，把通水刻线绕向较稳的骨台。两条没有查清的支路留白。"],["拾潮者","这两条先不动。水要经过的骨台，还要让当地的人看一遍。"]]},
+        {"id":"ch11_mark_narrow_outlet","label":"按F标注窄出口与暂停条件","at":[2970,480],"requires":["ch11_protect_nests","ch11_compare_return"],"grant":["ch11_limited_plan"],"lines":[["记录","尾根主闸旁添上一道窄出口。旧撑与退流槽保留，图上注明观察一轮潮，外排过强或支撑偏移就暂停。"],["拾潮者","先把这里画窄一点。旧撑留着，水太强就停；旁边这几处住巢还不能再挪。"]]}
+      ],
+      "required":["ch11_protect_nests","ch11_mark_narrow_outlet"]
+    },
+    {
+      "id":"ch11_reply_and_pack","kind":"dialogue","objective":"到听骨回应处按F，收好图与刻名薄壳。","checkpoint":[3090,480],"at":[3320,480],
+      "lines":[["拾潮者","我还在这里。尾根的水正在往回挤，我会去看看。"],["记录","叉柄传来低鸣，像有一小段侧流掠过身体，很快便散去了。没有更多回答。"],["拾潮者","他还在尾根等补片。我带着这片壳回去，他一定会问骨梁上发生了什么。"],["记录","拾潮者把薄壳系牢，卷起图，沿已经走过的维护道折返。"]]
+    },
+    {"id":"ch11_exit","kind":"exit","objective":"到返程维护道按F结束本章，再按F前往尾根主闸。","checkpoint":[3510,480],"at":[3790,480]}
+  ],
+  "next":12
+}

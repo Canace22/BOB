@@ -1,0 +1,85 @@
+{
+  "id": 9,
+  "title": "回来的水",
+  "location": "脊椎·回流长腔（白盒）",
+  "summary": "从本章开始：骨穹腔的两户住巢已接回，封梁卫在冲突中死亡，刻名薄壳由负壳守卫保管。拾潮者来到回流长腔，一边接应迁居，一边核对新水路带来的实际结果。",
+  "width": 3600,
+  "spawn": [180, 520],
+  "platforms": [[0, 520, 3600, 100]],
+  "props": [
+    {"id": "ch09_map", "label": "骨壁道路刻图（白盒）", "rect": [380, 300, 350, 220], "color": "868774"},
+    {"id": "ch09_wait", "label": "避流台·居民等候（白盒）", "rect": [800, 430, 220, 90], "color": "7c8c81"},
+    {"id": "ch09_rope", "label": "食腐甲占据的搬运索（白盒）", "rect": [1300, 480, 500, 40], "color": "7a7763"},
+    {"id": "ch09_success", "label": "已稳定的小菌床（白盒）", "rect": [2050, 440, 160, 80], "color": "7a9b83"},
+    {"id": "ch09_old_shell", "label": "补巢者新居·旧壳仍在（白盒）", "rect": [2260, 360, 160, 160], "color": "8b8b77"},
+    {"id": "ch09_failed", "label": "待拆的新巢（白盒）", "rect": [2490, 430, 160, 90], "color": "8c796c"},
+    {"id": "ch09_close", "label": "需重新封住的小口（白盒）", "rect": [2740, 440, 110, 80], "color": "647d85"},
+    {"id": "ch09_inner", "label": "内侧临时安置位（白盒）", "rect": [2870, 430, 160, 90], "color": "758a80"},
+    {"id": "ch09_routes", "label": "外排折返线·供养记录（白盒）", "rect": [3060, 350, 150, 170], "color": "85876d"},
+    {"id": "ch09_guard", "label": "负壳守卫·刻名薄壳（白盒）", "rect": [3260, 380, 100, 140], "color": "7d857b"}
+  ],
+  "stages": [
+    {
+      "id": "ch09_find_routes", "kind": "explore",
+      "objective": "到骨壁刻图与避流台分别按F，核对道路并询问搬运受阻的位置",
+      "checkpoint": [180, 520], "at": [550, 520],
+      "tasks": [
+        {"id": "ch09_read_map", "label": "按F将行记对上骨壁道路", "at": [550, 520], "requires": [], "grant": ["ch09_head_route_known"], "lines": [["叙述", "刻图上，头向维护道通往保存封城记录的颅腔，尾向外排线却在旧伤旁折回内圈。拾潮者将经过的水口逐一对上位置。"]]},
+        {"id": "ch09_ask_carriers", "label": "按F查看居民停下的搬运索", "at": [900, 520], "requires": [], "grant": ["ch09_blocked_rope_seen"], "lines": [["搬运居民", "巢底过弯时掉了几片菌膜，食腐甲就跟过来了。外面那只挡着路，大的压住了索，我们拉不动。"], ["拾潮者", "先留在避流台。我从空台那边过去，先把外面的引开，再去松索。"]]}
+      ],
+      "required": ["ch09_read_map", "ch09_ask_carriers"]
+    },
+    {
+      "id": "ch09_clear_outer", "kind": "battle",
+      "objective": "到右侧空台，换位逼退外围食腐甲，再靠近搬运索",
+      "checkpoint": [1010, 520], "at": [1120, 520],
+      "enemy": {"profile": 0, "at": [1400, 520], "lane": [1050, 1540], "ending": "retreat"}
+    },
+    {
+      "id": "ch09_clear_rope", "kind": "battle",
+      "objective": "继续向右到搬运索路，逼退压索食腐甲，清出接巢通路",
+      "checkpoint": [1510, 520], "at": [1550, 520],
+      "enemy": {"profile": 0, "at": [1780, 520], "lane": [1500, 1990], "ending": "retreat", "hp": 8, "height": 90, "radius": 30, "title": "压索食腐甲"}
+    },
+    {
+      "id": "ch09_check_outcomes", "kind": "explore",
+      "objective": "按F核对稳定菌床与失败新巢，再封小口、移到内侧安置",
+      "checkpoint": [1960, 520], "at": [2130, 520],
+      "tasks": [
+        {"id": "ch09_stable_bed", "label": "按F查看胃室送来的小菌床", "at": [2130, 520], "requires": [], "grant": ["ch09_growth_confirmed"], "lines": [["叙述", "居民拉回搬运索，把巢基接上骨台。新送来的小菌床边缘展开，细丝没有像先前那样卷回去。"], ["搬运居民", "这一块在胃室放稳了，才送过来。够这户先用，旁边那几块还不能动。"]]},
+        {"id": "ch09_failed_nest", "label": "按F查看无法附着的新巢", "at": [2570, 520], "requires": [], "grant": ["ch09_failed_flow_seen"], "lines": [["迁居居民", "我们挂上去以后，底下的幼体一直被水掀起来。新丝长不住，只能拆下来。"], ["拾潮者", "先挪到里面。我把这处小口挡回去，图上也改掉。"]]},
+        {"id": "ch09_seal_opening", "label": "按F重新挡住失败支流的小口", "at": [2800, 520], "requires": ["ch09_failed_nest"], "grant": ["ch09_unsafe_opening_closed"], "lines": [["叙述", "拾潮者把封片重新嵌回小口，在原先准备开放的标记上补了一道横痕。这里仍要封护。"]]},
+        {"id": "ch09_move_inside", "label": "按F帮失败住巢移到内侧骨台", "at": [2950, 520], "requires": ["ch09_seal_opening"], "grant": ["ch09_failed_nest_relocated"], "lines": [["迁居居民", "巢底先别松，内侧还要添一根系索。"], ["叙述", "拾潮者托着住巢，等居民系牢才抽回手。这户暂时停稳，原来那条支流仍不能住。"]]}
+      ],
+      "required": ["ch09_stable_bed", "ch09_failed_nest", "ch09_seal_opening", "ch09_move_inside"]
+    },
+    {
+      "id": "ch09_record_old_loss", "kind": "observe",
+      "objective": "回到补巢者新居旁按F，在旧壳旁补记胃室开瓣的损失",
+      "checkpoint": [2390, 520], "at": [2340, 520], "duration": 4,
+      "captions": ["补巢者的新居入口仍挂着那片旧壳。原来记潮汐的刻痕已经磨尽。", "旁边新添的图记着破开的浅槽，以及许多触肢一起托住的巢。", "拾潮者在空处补下自己开瓣、冲坏菌床的经过。补巢者继续缀着巢壁，没有拦他。"],
+      "grant": ["ch09_gastric_loss_recorded"]
+    },
+    {
+      "id": "ch09_compare_return", "kind": "explore",
+      "objective": "到右侧外排刻线旁按F，将壳样、供养记录和折返水线一起核对",
+      "checkpoint": [2400, 520], "at": [3130, 520],
+      "tasks": [
+        {"id": "ch09_trace_return", "label": "按F核对新丝与仍在下降的旧供养", "at": [3130, 520], "requires": ["ch09_stable_bed", "ch09_move_inside"], "grant": ["ch09_tail_return_confirmed"], "lines": [["叙述", "脂库壳样的新丝沿边缘延伸，旧部分却更薄了。新送来的供养记录也没有回升。拾潮者顺着刻图上的几条外排线，追到尾根同一个折返点。"], ["拾潮者", "新水已经进来，旧闸还把它推回内圈。得先把头向的旧道路核对完，再去尾根看主闸。"]]}
+      ],
+      "required": ["ch09_trace_return"]
+    },
+    {
+      "id": "ch09_receive_name_shell", "kind": "dialogue",
+      "objective": "到负壳守卫身边按F，接过刻名薄壳并确认去向",
+      "checkpoint": [3120, 520], "at": [3310, 520],
+      "lines": [["负壳守卫", "系索扣修好了，我给搬巢的人送来。老守护者去了尾根，主闸那里还要加撑，我也得过去。"], ["叙述", "他把一片刻名薄壳递到拾潮者手里。薄壳的系绳已经重新接好。"], ["负壳守卫", "这是封梁卫的。你到尾根以后，把它交给老守护者。梁上发生的事，也由你告诉他。"], ["拾潮者", "我会告诉他。我先去颅腔核对封城记录，再走耳侧维护道。"], ["叙述", "拾潮者把薄壳系到行记旁。负壳守卫转身去接下一段系索，没有再停留。"]]
+    },
+    {
+      "id": "ch09_exit", "kind": "exit",
+      "objective": "向右到头向维护道口按F，携薄壳前往颅内旧歌腔",
+      "checkpoint": [3320, 520], "at": [3500, 520]
+    }
+  ],
+  "next": 10
+}

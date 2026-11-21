@@ -1,0 +1,48 @@
+{
+  "id": 10,
+  "title": "海面曾经很亮",
+  "location": "颅内·旧歌腔（白盒）",
+  "summary": "从本章开始：回流长腔的迁居有成有败，主闸仍把新水压回内圈。负壳守卫托拾潮者把封梁卫的刻名薄壳交给老守护者。去尾根以前，他先来到保存封城记录的旧歌腔。这里的几何和文字仅为白盒代理。",
+  "width": 3600,
+  "spawn": [160, 480],
+  "platforms": [[0, 520, 3600, 100]],
+  "props": [
+    {"id":"ch10_entry","label":"旧歌腔入口｜白盒","rect":[80,400,170,120],"color":"485d66"},
+    {"id":"ch10_archive","label":"封城记忆片｜白盒代理","rect":[620,325,200,195],"color":"6a776f"},
+    {"id":"ch10_shell_slot","label":"薄壳槽与撤离刻线｜白盒代理","rect":[1230,430,220,90],"color":"8e846e"},
+    {"id":"ch10_whale_bone","label":"未刻写的骨面｜回声代理","rect":[2020,290,260,230],"color":"677a83"},
+    {"id":"ch10_names","label":"居民名录与拓线台｜白盒代理","rect":[2740,395,230,125],"color":"7a776a"},
+    {"id":"ch10_exit_prop","label":"耳侧维护口→第十一章","rect":[3300,370,160,150],"color":"4f7777"}
+  ],
+  "stages": [
+    {
+      "id":"ch10_find_archive","kind":"explore","objective":"到封城记忆片前按F，核对当年封堵的记录。","checkpoint":[160,480],"at":[720,480],
+      "tasks":[{"id":"ch10_read_archive","label":"按F查看封城记录","at":[720,480],"requires":[],"grant":["ch10_sealing_history"],"lines":[["记忆片旁的刻字","这些共鸣由撤回内侧的居民留下。缺口处没有补写。"],["封城回声","裂口又进水了。先把小巢送进去，外侧的人跟我回来。"],["记录","年轻的守护者往返运送居民，带人封住裂口。末尾是敲击声，旁边列着没有返回者的名字。"],["拾潮者","这条线一直通到内侧。他那时就是从这里把人送出去的。"]]}],
+      "required":["ch10_read_archive"]
+    },
+    {
+      "id":"ch10_place_shell","kind":"explore","objective":"到薄壳槽按F，放下封梁卫的刻名薄壳。","checkpoint":[1020,480],"at":[1340,480],
+      "tasks":[{"id":"ch10_set_shell","label":"按F将刻名薄壳放入槽内","at":[1340,480],"requires":["ch10_read_archive"],"grant":["ch10_shell_placed"],"lines":[["记录","刻名薄壳靠在旧记录下，壳缘的缺口还很新。它后面的撤离刻线已经磨浅。"],["拾潮者","薄壳先在这里放一会儿。负壳守卫还等着我把它交到他手里。"]]}],
+      "required":["ch10_set_shell"]
+    },
+    {
+      "id":"ch10_whale_memory","kind":"observe","objective":"到深处骨面按F听回声；再按F可结束观看。","checkpoint":[1810,480],"at":[2150,480],"duration":6,
+      "captions":["骨鸣器贴上未刻写的骨面。菌灯照着的残壁逐渐淡去。","明亮海水从巨大的身体下掠过。同伴的声音隔着长流传来。","身侧的温度渐渐离去，回声里仍有继续游动的感觉。","菌灯又照见持柄的手。拾潮者把掌心贴在骨面上，等最后一点震动过去。"],
+      "grant":["ch10_living_whale_echo"]
+    },
+    {
+      "id":"ch10_leave_record","kind":"explore","objective":"到居民名录按F补记姓名，再回薄壳槽按F收回薄壳。","checkpoint":[2470,480],"at":[2850,480],
+      "tasks":[
+        {"id":"ch10_copy_names","label":"按F拓下撤离线并补记封梁卫姓名","at":[2850,480],"requires":["ch10_set_shell"],"grant":["ch10_evacuation_copy"],"lines":[["记录","拾潮者拓下尚能辨认的撤离线，在居民记录的空处补上封梁卫的姓名。"],["记录","写到最后一笔时，他停下来，对照薄壳上的刻痕重新描了一次。"]]},
+        {"id":"ch10_take_shell","label":"按F收回刻名薄壳","at":[1340,480],"requires":["ch10_copy_names"],"grant":["ch10_shell_recovered"],"lines":[["记录","拾潮者取出薄壳，检查系绳，把它系回身侧。槽内留下了一份姓名拓片。"]]}
+      ],
+      "required":["ch10_copy_names","ch10_take_shell"]
+    },
+    {
+      "id":"ch10_departure","kind":"dialogue","objective":"到耳侧维护口按F，整理带往听骨的记录。","checkpoint":[3020,480],"at":[3180,480],
+      "lines":[["拾潮者","这里的撤离线有一段已经看不清了。我把能拓下来的带去，和听骨那边的分流图比一比。"],["记录","耳侧维护口仍然通行。拾潮者沿着支架前往回声室。"]]
+    },
+    {"id":"ch10_exit","kind":"exit","objective":"到维护口按F结束本章，再按F进入第十一章。","checkpoint":[3180,480],"at":[3390,480]}
+  ],
+  "next": 11
+}
