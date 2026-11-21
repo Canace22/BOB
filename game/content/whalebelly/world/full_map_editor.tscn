@@ -1,6 +1,120 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dd86f2qq0gwxh"]
 
-[ext_resource type="Script" path="res://content/whalebelly/world/full_map_editor.gd" id="1_full_map"]
+[ext_resource type="Script" uid="uid://bhyw6bd2rjqd" path="res://content/whalebelly/world/full_map_editor.gd" id="1_full_map"]
+[ext_resource type="PackedScene" uid="uid://c0j5gajsycyma" path="res://content/whalebelly/r1/R1-01.tscn" id="2_ymy87"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-02.tscn" id="3_bsckh"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-03.tscn" id="4_6b68j"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-04.tscn" id="5_8ulxk"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-05.tscn" id="6_lxrw1"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-06.tscn" id="7_3rmt4"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r1/R1-07.tscn" id="8_we1o1"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r3/R3-01.tscn" id="9_gb4rm"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r2/R2-01.tscn" id="10_wes51"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r2/R2-03.tscn" id="11_aei5y"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r2/R2-04.tscn" id="12_ujcqr"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r4/R4-01.tscn" id="13_31u6c"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r4/R4-03.tscn" id="14_tkw80"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r4/R4-05.tscn" id="15_blpqn"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r4/R4-06.tscn" id="16_ba7xs"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r5/R5-01.tscn" id="17_qrdg0"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r5/R5-02.tscn" id="18_7rikp"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r5/R5-04.tscn" id="19_4oelg"]
+[ext_resource type="PackedScene" path="res://content/whalebelly/r5/R5-08.tscn" id="20_62th4"]
 
-[node name="FullMapEditor" type="Node2D"]
+[node name="FullMapEditor" type="Node2D" unique_id=1895984548]
 script = ExtResource("1_full_map")
+
+[node name="Preview_R1-01" type="Node2D" parent="." unique_id=1192662507 instance=ExtResource("2_ymy87")]
+position = Vector2(97.66, 320.68)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-01.tscn"
+
+[node name="Preview_R1-02" type="Node2D" parent="." unique_id=441156191 instance=ExtResource("3_bsckh")]
+position = Vector2(224.02, 225.51001)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-02.tscn"
+
+[node name="Preview_R1-03" type="Node2D" parent="." unique_id=1763935214 instance=ExtResource("4_6b68j")]
+position = Vector2(312.94, 356.88)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-03.tscn"
+
+[node name="Preview_R1-04" type="Node2D" parent="." unique_id=1913693436 instance=ExtResource("5_8ulxk")]
+position = Vector2(432.56, 400.32)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-04.tscn"
+
+[node name="Preview_R1-05" type="Node2D" parent="." unique_id=217935181 instance=ExtResource("6_lxrw1")]
+position = Vector2(546.94, 306.19998)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-05.tscn"
+
+[node name="Preview_R1-06" type="Node2D" parent="." unique_id=1434433384 instance=ExtResource("7_3rmt4")]
+position = Vector2(460.36, 95.189995)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-06.tscn"
+
+[node name="Preview_R1-07" type="Node2D" parent="." unique_id=574432992 instance=ExtResource("8_we1o1")]
+position = Vector2(294.22, 183.12)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r1/R1-07.tscn"
+
+[node name="Preview_R3-01" type="Node2D" parent="." unique_id=912487607 instance=ExtResource("9_gb4rm")]
+position = Vector2(1081.74, 363.44)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r3/R3-01.tscn"
+
+[node name="Preview_R2-01" type="Node2D" parent="." unique_id=1745231625 instance=ExtResource("10_wes51")]
+position = Vector2(938.92, 156.04001)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r2/R2-01.tscn"
+
+[node name="Preview_R2-03" type="Node2D" parent="." unique_id=1490290645 instance=ExtResource("11_aei5y")]
+position = Vector2(769.98, 305.04)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r2/R2-03.tscn"
+
+[node name="Preview_R2-04" type="Node2D" parent="." unique_id=915460865 instance=ExtResource("12_ujcqr")]
+position = Vector2(728.81995, 380.47998)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r2/R2-04.tscn"
+
+[node name="Preview_R4-01" type="Node2D" parent="." unique_id=1237513589 instance=ExtResource("13_31u6c")]
+position = Vector2(992.28, 145.76)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r4/R4-01.tscn"
+
+[node name="Preview_R4-03" type="Node2D" parent="." unique_id=691079483 instance=ExtResource("14_tkw80")]
+position = Vector2(1325.52, 70.56)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r4/R4-03.tscn"
+
+[node name="Preview_R4-05" type="Node2D" parent="." unique_id=164963224 instance=ExtResource("15_blpqn")]
+position = Vector2(1504.78, 128.48)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r4/R4-05.tscn"
+
+[node name="Preview_R4-06" type="Node2D" parent="." unique_id=306331795 instance=ExtResource("16_ba7xs")]
+position = Vector2(1679.3201, 186.4)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r4/R4-06.tscn"
+
+[node name="Preview_R5-01" type="Node2D" parent="." unique_id=2105920248 instance=ExtResource("17_qrdg0")]
+position = Vector2(493.86, 200.87999)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r5/R5-01.tscn"
+
+[node name="Preview_R5-02" type="Node2D" parent="." unique_id=1543629780 instance=ExtResource("18_7rikp")]
+position = Vector2(472.34003, 281.92)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r5/R5-02.tscn"
+
+[node name="Preview_R5-04" type="Node2D" parent="." unique_id=91220010 instance=ExtResource("19_4oelg")]
+position = Vector2(461.14, 360.16)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r5/R5-04.tscn"
+
+[node name="Preview_R5-08" type="Node2D" parent="." unique_id=1143557420 instance=ExtResource("20_62th4")]
+position = Vector2(2129.56, 319.52)
+scale = Vector2(0.035, 0.035)
+metadata/runtime_source_scene = "res://content/whalebelly/r5/R5-08.tscn"

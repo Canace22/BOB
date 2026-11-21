@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "status": "formal-19-room-mapping",
-  "designVersion": "V5.2",
+  "status": "formal-19-room-design",
+  "designVersion": "V5.2-consolidated-19",
   "runtimeRoomCount": 19,
-  "referenceRoomCount": 36,
-  "rule": "保留19个正式room ID；未进入工程的17个V5房间仅作为嵌入式空间、层级或连接语义，不新增可玩房间。",
+  "referenceRoomCount": 19,
+  "rule": "正式地图固定19个房间；原36房只提供器官位置、平台功能和连接语义，未单独保留的空间并入对应正式房间的内部层、支路或长廊。",
   "sources": {
     "roomLayout": "data/房间布局.json",
     "topology": "data/地图拓扑.json",
@@ -108,7 +108,10 @@
         "layoutReference": "references/layout/R1-01.png",
         "roomStructure": "maps/rooms/R1-01.svg",
         "whaleLocator": "maps/room-locator-R1-01.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-02",
@@ -298,7 +301,10 @@
         "layoutReference": "references/layout/R1-02.png",
         "roomStructure": "maps/rooms/R1-02.svg",
         "whaleLocator": "maps/room-locator-R1-02.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-03",
@@ -422,7 +428,10 @@
         "layoutReference": "references/layout/R1-03.png",
         "roomStructure": "maps/rooms/R1-03.svg",
         "whaleLocator": "maps/room-locator-R1-03.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-04",
@@ -535,7 +544,10 @@
         "layoutReference": "references/layout/R1-04.png",
         "roomStructure": "maps/rooms/R1-04.svg",
         "whaleLocator": "maps/room-locator-R1-04.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-05",
@@ -650,7 +662,10 @@
         "layoutReference": "references/layout/R1-05.png",
         "roomStructure": "maps/rooms/R1-05.svg",
         "whaleLocator": "maps/room-locator-R1-05.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-06",
@@ -778,7 +793,10 @@
         "layoutReference": "references/layout/R1-06.png",
         "roomStructure": "maps/rooms/R1-06.svg",
         "whaleLocator": "maps/room-locator-R1-06.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R1-07",
@@ -865,7 +883,10 @@
         "layoutReference": "references/layout/R1-07.png",
         "roomStructure": "maps/rooms/R1-07.svg",
         "whaleLocator": "maps/room-locator-R1-07.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R2-01",
@@ -982,7 +1003,12 @@
         "layoutReference": "references/layout/R2-01.png",
         "roomStructure": "maps/rooms/R2-01.svg",
         "whaleLocator": "maps/room-locator-R2-01.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R2-02"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R2-03",
@@ -1099,7 +1125,10 @@
         "layoutReference": "references/layout/R2-03.png",
         "roomStructure": "maps/rooms/R2-03.svg",
         "whaleLocator": "maps/room-locator-R2-03.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R2-04",
@@ -1220,7 +1249,13 @@
         "layoutReference": "references/layout/R2-04.png",
         "roomStructure": "maps/rooms/R2-04.svg",
         "whaleLocator": "maps/room-locator-R2-04.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R2-05",
+        "R2-06"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R3-01",
@@ -1523,7 +1558,18 @@
         "layoutReference": "references/layout/R3-01.png",
         "roomStructure": "maps/rooms/R3-01.svg",
         "whaleLocator": "maps/room-locator-R3-01.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R3-02",
+        "R3-03",
+        "R3-04",
+        "R3-05",
+        "R3-06",
+        "R3-07",
+        "R3-08"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R4-01",
@@ -1638,7 +1684,13 @@
         "layoutReference": "references/layout/R4-01.png",
         "roomStructure": "maps/rooms/R4-01.svg",
         "whaleLocator": "maps/room-locator-R4-01.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R4-02",
+        "R4-07"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R4-03",
@@ -1767,7 +1819,12 @@
         "layoutReference": "references/layout/R4-03.png",
         "roomStructure": "maps/rooms/R4-03.svg",
         "whaleLocator": "maps/room-locator-R4-03.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R4-04"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R4-05",
@@ -1909,7 +1966,10 @@
         "layoutReference": "references/layout/R4-05.png",
         "roomStructure": "maps/rooms/R4-05.svg",
         "whaleLocator": "maps/room-locator-R4-05.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R4-06",
@@ -2053,7 +2113,10 @@
         "layoutReference": "references/layout/R4-06.png",
         "roomStructure": "maps/rooms/R4-06.svg",
         "whaleLocator": "maps/room-locator-R4-06.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R5-01",
@@ -2170,7 +2233,10 @@
         "layoutReference": "references/layout/R5-01.png",
         "roomStructure": "maps/rooms/R5-01.svg",
         "whaleLocator": "maps/room-locator-R5-01.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [],
+      "functionalZones": []
     },
     {
       "id": "R5-02",
@@ -2314,7 +2380,13 @@
         "layoutReference": "references/layout/R5-02.png",
         "roomStructure": "maps/rooms/R5-02.svg",
         "whaleLocator": "maps/room-locator-R5-02.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R5-03",
+        "R5-06"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R5-04",
@@ -2435,7 +2507,12 @@
         "layoutReference": "references/layout/R5-04.png",
         "roomStructure": "maps/rooms/R5-04.svg",
         "whaleLocator": "maps/room-locator-R5-04.svg"
-      }
+      },
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R5-05"
+      ],
+      "functionalZones": []
     },
     {
       "id": "R5-08",
@@ -2533,553 +2610,12 @@
         "layoutReference": "references/layout/R5-08.png",
         "roomStructure": "maps/rooms/R5-08.svg",
         "whaleLocator": "maps/room-locator-R5-08.svg"
-      }
-    }
-  ],
-  "embeddedDesignRooms": [
-    {
-      "id": "R2-02",
-      "name": "双层肺膜",
-      "region": "R2",
-      "originalAnatomy": {
-        "id": "R2-02",
-        "name": "双层肺膜",
-        "part": "肺叶表面与剥离胸膜之间",
-        "position": "鼻端33.8–45.8%（约40.5–55m）；胸腔背外侧",
-        "rangePercent": [
-          33.8,
-          45.8
-        ],
-        "rangeM": [
-          40.5,
-          55
-        ],
-        "side": "胸腔背外侧",
-        "routeReason": "两个层面是折叠肺缘与脱层胸膜，不是两间肺泡",
-        "landmark": "巨大肺表面曲率与远处肋影",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
       },
-      "representedBy": "R2-01→R2-03",
-      "disposition": "embedded_subspace",
-      "role": "肺膜双层过渡，压缩为肺心场景的上/下层",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R2-02.png",
-        "layoutReference": "references/layout/R2-02.png",
-        "roomStructure": "maps/rooms/R2-02.svg",
-        "whaleLocator": "maps/room-locator-R2-02.svg"
-      }
-    },
-    {
-      "id": "R2-05",
-      "name": "回流出口",
-      "region": "R2",
-      "originalAnatomy": {
-        "id": "R2-05",
-        "name": "回流出口",
-        "part": "前纵隔／气管旁回流廊",
-        "position": "鼻端26.7–37.8%（约32–45.3m）；胸腔前背侧至颈后",
-        "rangePercent": [
-          26.7,
-          37.8
-        ],
-        "rangeM": [
-          32,
-          45.3
-        ],
-        "side": "胸腔前背侧至颈后",
-        "routeReason": "从心包侧裂口离开心区，沿气管外缘上行至鼻道破口",
-        "landmark": "已死气管环与头向上行地标；不是心室直插喷气孔",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R2-04末端",
-      "disposition": "embedded_subspace",
-      "role": "胸腔回流出口，保留为远侧出口/长廊",
-      "sourceFiles": {
-        "roomArt": "images/anatomy/rooms/R2-05.png",
-        "layoutReference": "references/layout/R2-05.png",
-        "roomStructure": "maps/rooms/R2-05.svg",
-        "whaleLocator": "maps/room-locator-R2-05.svg"
-      }
-    },
-    {
-      "id": "R2-06",
-      "name": "最后呼吸囊",
-      "region": "R2",
-      "originalAnatomy": {
-        "id": "R2-06",
-        "name": "最后呼吸囊",
-        "part": "肺边缘密闭褶袋的破口",
-        "position": "鼻端37.8–45.8%（约45.3–55m）；胸腔后背侧高层",
-        "rangePercent": [
-          37.8,
-          45.8
-        ],
-        "rangeM": [
-          45.3,
-          55
-        ],
-        "side": "胸腔后背侧高层",
-        "routeReason": "失气的残肺褶与胸膜剥离形成选修空间；名字是旧称",
-        "landmark": "多级膜台与同一肺叶远景，不新增会呼吸的囊",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R2-01/R2-03上层",
-      "disposition": "embedded_subspace",
-      "role": "最后呼吸囊，保留为肺心高层支路",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R2-06.png",
-        "layoutReference": "references/layout/R2-06.png",
-        "roomStructure": "maps/rooms/R2-06.svg",
-        "whaleLocator": "maps/room-locator-R2-06.svg"
-      }
-    },
-    {
-      "id": "R3-02",
-      "name": "漂台阀",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-02",
-        "name": "漂台阀",
-        "part": "前胃至后胃区的壁褶边缘",
-        "position": "鼻端48.8–55.8%（约58.5–66.9m）；腹腔中层",
-        "rangePercent": [
-          48.8,
-          55.8
-        ],
-        "rangeM": [
-          58.5,
-          66.9
-        ],
-        "side": "腹腔中层",
-        "routeReason": "局部破损胃壁与聚落阀导流，不是活胃分泌",
-        "landmark": "厚软褶、固定两岸与机关壳片",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "漂台阀，嵌入胃枢中层漂台",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-02.png",
-        "layoutReference": "references/layout/R3-02.png",
-        "roomStructure": "maps/rooms/R3-02.svg",
-        "whaleLocator": "maps/room-locator-R3-02.svg"
-      }
-    },
-    {
-      "id": "R3-03",
-      "name": "肝叶灯罩",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-03",
-        "name": "肝叶灯罩",
-        "part": "肝叶外缘／胃腹侧间隙",
-        "position": "鼻端47.5–54.5%（约57–65.4m）；前腹腔腹侧",
-        "rangePercent": [
-          47.5,
-          54.5
-        ],
-        "rangeM": [
-          57,
-          65.4
-        ],
-        "side": "前腹腔腹侧",
-        "routeReason": "穿出胃壁旧裂缝，走肝叶表面邻近空间；不可画肝内空洞",
-        "landmark": "连续实心肝叶在背景，游玩台在外表面",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "肝叶灯罩，嵌入胃枢腹侧肝缘",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-03.png",
-        "layoutReference": "references/layout/R3-03.png",
-        "roomStructure": "maps/rooms/R3-03.svg",
-        "whaleLocator": "maps/room-locator-R3-03.svg"
-      }
-    },
-    {
-      "id": "R3-04",
-      "name": "脂槽刹车",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-04",
-        "name": "脂槽刹车",
-        "part": "肠系膜及脂肪沉积槽",
-        "position": "鼻端51.3–58.9%（约61.6–70.7m）；腹腔腹外侧",
-        "rangePercent": [
-          51.3,
-          58.9
-        ],
-        "rangeM": [
-          61.6,
-          70.7
-        ],
-        "side": "腹腔腹外侧",
-        "routeReason": "沿结缔组织膜与营养沉积移动，不穿完整肝脏",
-        "landmark": "脂层断面、壳掩体及外露膜索",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "脂槽刹车，嵌入胃枢腹外侧限流段",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-04.png",
-        "layoutReference": "references/layout/R3-04.png",
-        "roomStructure": "maps/rooms/R3-04.svg",
-        "whaleLocator": "maps/room-locator-R3-04.svg"
-      }
-    },
-    {
-      "id": "R3-05",
-      "name": "肠入口",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-05",
-        "name": "肠入口",
-        "part": "胃出口附近的肠段破口",
-        "position": "鼻端54.5–61.4%（约65.4–73.7m）；腹腔中后段",
-        "rangePercent": [
-          54.5,
-          61.4
-        ],
-        "rangeM": [
-          65.4,
-          73.7
-        ],
-        "side": "腹腔中后段",
-        "routeReason": "先沿胃外缘到肠的纵裂口，再在入口取得锚定",
-        "landmark": "卷曲肠管外形与纵裂边，不把肠画成无端的大门",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "肠入口，嵌入胃枢后侧肠裂入口",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-05.png",
-        "layoutReference": "references/layout/R3-05.png",
-        "roomStructure": "maps/rooms/R3-05.svg",
-        "whaleLocator": "maps/room-locator-R3-05.svg"
-      }
-    },
-    {
-      "id": "R3-06",
-      "name": "迁居搬盘",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-06",
-        "name": "迁居搬盘",
-        "part": "回折肠袢／系膜层间",
-        "position": "鼻端57–65.8%（约68.4–79m）；腹腔后半腹侧",
-        "rangePercent": [
-          57,
-          65.8
-        ],
-        "rangeM": [
-          68.4,
-          79
-        ],
-        "side": "腹腔后半腹侧",
-        "routeReason": "沿同一回折肠袢和系膜上的搬盘路线",
-        "landmark": "前后两层肠袢、膜桥、海水侵入的酸性微环境槽",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "迁居搬盘，嵌入胃枢后半腹侧搬运台",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-06.png",
-        "layoutReference": "references/layout/R3-06.png",
-        "roomStructure": "maps/rooms/R3-06.svg",
-        "whaleLocator": "maps/room-locator-R3-06.svg"
-      }
-    },
-    {
-      "id": "R3-07",
-      "name": "搬壳母蟹",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-07",
-        "name": "搬壳母蟹",
-        "part": "向头回折的肠袢与前胃外侧邻接处",
-        "position": "鼻端53.2–61.4%（约63.8–73.7m）；腹腔侧层",
-        "rangePercent": [
-          53.2,
-          61.4
-        ],
-        "rangeM": [
-          63.8,
-          73.7
-        ],
-        "side": "腹腔侧层",
-        "routeReason": "肠袢向头回折，母蟹筑巢靠近胃外壁；两者靠近不等于天然相通",
-        "landmark": "身后肠袢回弯、头侧胃壁大曲率，展示可开旧破口",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "搬壳母蟹，嵌入胃枢侧层竞技腔",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-07.png",
-        "layoutReference": "references/layout/R3-07.png",
-        "roomStructure": "maps/rooms/R3-07.svg",
-        "whaleLocator": "maps/room-locator-R3-07.svg"
-      }
-    },
-    {
-      "id": "R3-08",
-      "name": "胃顶沉积袋",
-      "region": "R3",
-      "originalAnatomy": {
-        "id": "R3-08",
-        "name": "胃顶沉积袋",
-        "part": "前胃穹顶的沉积褶袋",
-        "position": "鼻端46.3–53.2%（约55.5–63.8m）；前腹腔高层",
-        "rangePercent": [
-          46.3,
-          53.2
-        ],
-        "rangeM": [
-          55.5,
-          63.8
-        ],
-        "side": "前腹腔高层",
-        "routeReason": "前胃同器官壁的高褶与破损衬层，不是新器官",
-        "landmark": "向下可见胃枢的同一大壁褶",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R3-01",
-      "disposition": "embedded_subspace",
-      "role": "胃顶沉积袋，嵌入胃枢高褶可选袋",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R3-08.png",
-        "layoutReference": "references/layout/R3-08.png",
-        "roomStructure": "maps/rooms/R3-08.svg",
-        "whaleLocator": "maps/room-locator-R3-08.svg"
-      }
-    },
-    {
-      "id": "R4-02",
-      "name": "低骨训练",
-      "region": "R4",
-      "originalAnatomy": {
-        "id": "R4-02",
-        "name": "低骨训练",
-        "part": "胸腰交界椎体外侧",
-        "position": "鼻端45.8–55.8%（约55–67m）；椎旁背外侧",
-        "rangePercent": [
-          45.8,
-          55.8
-        ],
-        "rangeM": [
-          55,
-          67
-        ],
-        "side": "椎旁背外侧",
-        "routeReason": "沿显露椎体与肋根外侧自然相邻地面",
-        "landmark": "巨大椎体凸缘、近大远小椎列",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R4-01→R4-03",
-      "disposition": "embedded_subspace",
-      "role": "低骨训练，嵌入椎旁过渡",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R4-02.png",
-        "layoutReference": "references/layout/R4-02.png",
-        "roomStructure": "maps/rooms/R4-02.svg",
-        "whaleLocator": "maps/room-locator-R4-02.svg"
-      }
-    },
-    {
-      "id": "R4-04",
-      "name": "下菌毯路线",
-      "region": "R4",
-      "originalAnatomy": {
-        "id": "R4-04",
-        "name": "下菌毯路线",
-        "part": "椎体下外侧／退化肌膜沟",
-        "position": "鼻端52.5–65%（约63–78m）；椎旁低路线",
-        "rangePercent": [
-          52.5,
-          65
-        ],
-        "rangeM": [
-          63,
-          78
-        ],
-        "side": "椎旁低路线",
-        "routeReason": "与上路隔高度而不隔一整器官，低路由外露肌腱面通行",
-        "landmark": "腰椎底缘、菌毯、无新肋骨的后躯",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R4-03→R4-05",
-      "disposition": "embedded_subspace",
-      "role": "下菌毯路线，嵌入断脊下层分支",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R4-04.png",
-        "layoutReference": "references/layout/R4-04.png",
-        "roomStructure": "maps/rooms/R4-04.svg",
-        "whaleLocator": "maps/room-locator-R4-04.svg"
-      }
-    },
-    {
-      "id": "R4-07",
-      "name": "修索小室",
-      "region": "R4",
-      "originalAnatomy": {
-        "id": "R4-07",
-        "name": "修索小室",
-        "part": "胸腰椎旁的旧肌腱褶室",
-        "position": "鼻端48.3–56.7%（约58–68m）；椎旁侧袋",
-        "rangePercent": [
-          48.3,
-          56.7
-        ],
-        "rangeM": [
-          58,
-          68
-        ],
-        "side": "椎旁侧袋",
-        "routeReason": "训练房附近外侧肌腱剥离袋，固定环由聚落安装",
-        "landmark": "断绳透光孔、同一椎体背面；不是骨内部的城",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R4-02",
-      "disposition": "embedded_subspace",
-      "role": "修索小室，嵌入组合门/低骨训练侧袋",
-      "sourceFiles": {
-        "roomArt": "images/rooms/R4-07.png",
-        "layoutReference": "references/layout/R4-07.png",
-        "roomStructure": "maps/rooms/R4-07.svg",
-        "whaleLocator": "maps/room-locator-R4-07.svg"
-      }
-    },
-    {
-      "id": "R5-03",
-      "name": "薄缝训练",
-      "region": "R5",
-      "originalAnatomy": {
-        "id": "R5-03",
-        "name": "薄缝训练",
-        "part": "耳骨外周结缔膜褶",
-        "position": "鼻端18.3–25%（约22–30m）；头部侧腹层",
-        "rangePercent": [
-          18.3,
-          25
-        ],
-        "rangeM": [
-          22,
-          30
-        ],
-        "side": "头部侧腹层",
-        "routeReason": "穿局部新生共生膜短缝；不是穿透硬颅骨",
-        "landmark": "膜缝长≤1.5U，厚骨在旁但不可穿",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R5-02→R5-04",
-      "disposition": "embedded_subspace",
-      "role": "薄缝训练，嵌入安全池至覆膜短柔膜段",
-      "sourceFiles": {
-        "roomArt": "images/anatomy/rooms/R5-03.png",
-        "layoutReference": "references/layout/R5-03.png",
-        "roomStructure": "maps/rooms/R5-03.svg",
-        "whaleLocator": "maps/room-locator-R5-03.svg"
-      }
-    },
-    {
-      "id": "R5-05",
-      "name": "最后静默",
-      "region": "R5",
-      "originalAnatomy": {
-        "id": "R5-05",
-        "name": "最后静默",
-        "part": "耳区创伤腔的后侧声槽台",
-        "position": "鼻端19.2–25.8%（约23–31m）；头部后侧",
-        "rangePercent": [
-          19.2,
-          25.8
-        ],
-        "rangeM": [
-          23,
-          31
-        ],
-        "side": "头部后侧",
-        "routeReason": "Boss后方沿同一外周腔隙回到短缝侧，只是邻接绕行",
-        "landmark": "同一耳骨远景换角度，声纹由聚落刻/生物附着",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R5-04",
-      "disposition": "embedded_subspace",
-      "role": "最后静默，嵌入覆膜战后侧腔",
-      "sourceFiles": {
-        "roomArt": "images/anatomy/rooms/R5-05.png",
-        "layoutReference": "references/layout/R5-05.png",
-        "roomStructure": "maps/rooms/R5-05.svg",
-        "whaleLocator": "maps/room-locator-R5-05.svg"
-      }
-    },
-    {
-      "id": "R5-06",
-      "name": "记忆侧囊",
-      "region": "R5",
-      "originalAnatomy": {
-        "id": "R5-06",
-        "name": "记忆侧囊",
-        "part": "耳区软膜侧袋",
-        "position": "鼻端19.2–25%（约23–30m）；头部侧层",
-        "rangePercent": [
-          19.2,
-          25
-        ],
-        "rangeM": [
-          23,
-          30
-        ],
-        "side": "头部侧层",
-        "routeReason": "主腔旁的剥离膜袋藏收集品，不把耳蜗当第二洞城",
-        "landmark": "带记忆沉积的软膜盲端及对侧微光",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R5-02",
-      "disposition": "embedded_subspace",
-      "role": "记忆侧囊，嵌入安全池耳周侧袋",
-      "sourceFiles": {
-        "roomArt": "images/anatomy/rooms/R5-06.png",
-        "layoutReference": "references/layout/R5-06.png",
-        "roomStructure": "maps/rooms/R5-06.svg",
-        "whaleLocator": "maps/room-locator-R5-06.svg"
-      }
-    },
-    {
-      "id": "R5-07",
-      "name": "尾根观察",
-      "region": "R5",
-      "originalAnatomy": {
-        "id": "R5-07",
-        "name": "尾根观察",
-        "part": "尾柄外侧／尾椎渐细段",
-        "position": "鼻端83.3–91.7%（约100–110m）；后躯靠海床侧",
-        "rangePercent": [
-          83.3,
-          91.7
-        ],
-        "rangeM": [
-          100,
-          110
-        ],
-        "side": "后躯靠海床侧",
-        "routeReason": "由腰尾外廊沿渐细尾椎到幼体避流窝",
-        "landmark": "细尾椎在近端，向尾鳍逐渐转为纤维组织",
-        "coordinateNote": "轴向落位带，不是局部房间碰撞包围盒；局部画面可沿前后、左右及褶层转向。"
-      },
-      "representedBy": "R4-06→R5-08",
-      "disposition": "embedded_subspace",
-      "role": "尾根观察，嵌入稳定交通椎至尾端长廊",
-      "sourceFiles": {
-        "roomArt": "images/anatomy/rooms/R5-07.png",
-        "layoutReference": "references/layout/R5-07.png",
-        "roomStructure": "maps/rooms/R5-07.svg",
-        "whaleLocator": "maps/room-locator-R5-07.svg"
-      }
+      "formalRoom": true,
+      "absorbedDesignRooms": [
+        "R5-07"
+      ],
+      "functionalZones": []
     }
   ],
   "connections": [
@@ -3231,5 +2767,13 @@
       ],
       "relationship": "compressed_design_path"
     }
-  ]
+  ],
+  "sourceReferenceRoomCount": 36,
+  "consolidationPolicy": {
+    "R1": "7个房间完整保留，包含口腔主路、喷气孔支路和须根记忆袋",
+    "R2": "3个房间：育床吸收双层肺膜，血巢潮群吸收回流出口/最后呼吸囊",
+    "R3": "1个胃枢房间吸收胃肠沉城的7个内部功能区",
+    "R4": "4个房间：组合门吸收低骨训练/修索小室，上锚路线吸收下菌毯路线",
+    "R5": "4个房间：安全池吸收薄缝训练/记忆侧囊，缄声覆膜吸收最后静默，归海释放槽吸收尾根观察"
+  }
 }

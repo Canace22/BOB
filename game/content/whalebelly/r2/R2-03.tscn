@@ -1,110 +1,100 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bv5m3c3wfvoup"]
 
-[ext_resource type="Script" path="res://src/world/scenery/kit/room_ecology.gd" id="ecology_room"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-water-base.png" id="r2"]
-[ext_resource type="Shader" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="r3"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-observation-depth-v4.png" id="r4"]
-[ext_resource type="Script" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r5"]
-[ext_resource type="Script" path="res://content/whalebelly/environment/elements/soft_underwater_light.gd" id="r6"]
-[ext_resource type="Texture2D" path="res://art/whalebelly/soft_light/UNDERWATER-SOFT-LIGHT.png" id="r7"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_drift.gd" id="r8"]
-[ext_resource type="Texture2D" path="res://art/world-kit/fx-particle-soft.png" id="r9"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-soft-bed.png" id="r10"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-membrane-platform.png" id="r11"]
-[ext_resource type="Shader" path="res://src/world/scenery/layout/native_foundation.gdshader" id="r12"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-membrane-cavern-frame-v3.png" id="r13"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_reference_motion_sprite.gd" id="r14"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-foreground-membrane.png" id="r15"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-pearl-stalks-v4.png" id="r16"]
-[ext_resource type="Texture2D" path="res://art/world-kit/shell-camp.png" id="r17"]
-[ext_resource type="Script" path="res://src/campaign/campaign_doorway.gd" id="r18"]
-[ext_resource type="Texture2D" path="res://art/world-kit/blowhole-latch-closed.png" id="r19"]
-[ext_resource type="Texture2D" path="res://art/world-kit/blowhole-latch-open.png" id="r20"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_amphipod_school.gd" id="r21"]
-[ext_resource type="Texture2D" path="res://art/world-kit/r2-pelagic-amphipod-v4.png" id="r22"]
-[ext_resource type="Script" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r23"]
+[ext_resource type="Script" uid="uid://t7d4la2pobiy" path="res://src/world/scenery/kit/room_ecology.gd" id="ecology_room"]
+[ext_resource type="Script" uid="uid://f5l6bli17b17" path="res://src/world/scenery/kit/kit_parallax.gd" id="r1"]
+[ext_resource type="Texture2D" uid="uid://v5vu8wv50di1" path="res://art/world-kit/r2-water-base.png" id="r2"]
+[ext_resource type="Shader" uid="uid://cdc43elooj3ui" path="res://src/world/scenery/layout/depth_atmosphere.gdshader" id="r3"]
+[ext_resource type="Texture2D" uid="uid://ccq03uhh4x2ni" path="res://art/world-kit/r2-observation-depth-v4.png" id="r4"]
+[ext_resource type="Script" uid="uid://dyle13lry5alr" path="res://src/world/scenery/local_environment/elements/bubble_emitter.gd" id="r5"]
+[ext_resource type="Script" uid="uid://bl2jfth2xasy3" path="res://src/world/scenery/kit/kit_drift.gd" id="r8"]
+[ext_resource type="Texture2D" uid="uid://dlc1ro0n6vls0" path="res://art/world-kit/fx-particle-soft.png" id="r9"]
+[ext_resource type="Texture2D" uid="uid://c4r4jnvtinw11" path="res://art/world-kit/r2-soft-bed.png" id="r10"]
+[ext_resource type="Texture2D" uid="uid://bxkgsilam5thd" path="res://art/world-kit/r2-membrane-platform.png" id="r11"]
+[ext_resource type="Shader" uid="uid://cyw6dy6gcofe5" path="res://src/world/scenery/layout/native_foundation.gdshader" id="r12"]
+[ext_resource type="Texture2D" uid="uid://qq78bcsgw46l" path="res://art/world-kit/r2-membrane-cavern-frame-v3.png" id="r13"]
+[ext_resource type="Script" uid="uid://m7aunt07sr70" path="res://src/world/scenery/kit/kit_reference_motion_sprite.gd" id="r14"]
+[ext_resource type="Texture2D" uid="uid://dwejp4a8fvhog" path="res://art/world-kit/r2-foreground-membrane.png" id="r15"]
+[ext_resource type="Texture2D" uid="uid://d3ncbmonpl01r" path="res://art/world-kit/r2-pearl-stalks-v4.png" id="r16"]
+[ext_resource type="Texture2D" uid="uid://mwro2rx3rqem" path="res://art/world-kit/shell-camp.png" id="r17"]
+[ext_resource type="Script" uid="uid://ck3t8o6f5ebv" path="res://src/campaign/campaign_doorway.gd" id="r18"]
+[ext_resource type="Texture2D" uid="uid://crjwjixpwl20p" path="res://art/world-kit/blowhole-latch-closed.png" id="r19"]
+[ext_resource type="Texture2D" uid="uid://dsaui2pgf3iyj" path="res://art/world-kit/blowhole-latch-open.png" id="r20"]
+[ext_resource type="Script" uid="uid://bnr55dd8b4vir" path="res://src/world/scenery/kit/kit_amphipod_school.gd" id="r21"]
+[ext_resource type="Texture2D" uid="uid://cids04yk3avkj" path="res://art/world-kit/r2-pelagic-amphipod-v4.png" id="r22"]
+[ext_resource type="Script" uid="uid://dfjjy61dlpllk" path="res://src/world/scenery/kit/kit_depth_motion.gd" id="r23"]
 
 [sub_resource type="ShaderMaterial" id="Paint1"]
 shader = ExtResource("r3")
-shader_parameter/recess = 0.06
+shader_parameter/clock = 0.0
 shader_parameter/water_strength = 0.04
 shader_parameter/water_phase = 1.4
+shader_parameter/recess = 0.06
 
 [sub_resource type="ShaderMaterial" id="Paint2"]
 shader = ExtResource("r12")
-shader_parameter/bounds = Vector4(728,1176,384,154)
+shader_parameter/bounds = Vector4(728, 1176, 384, 154)
+shader_parameter/stream_room_offset = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="Paint3"]
 shader = ExtResource("r12")
-shader_parameter/bounds = Vector4(1208,1056,384,240)
+shader_parameter/bounds = Vector4(1208, 1056, 384, 240)
+shader_parameter/stream_room_offset = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="Paint4"]
 shader = ExtResource("r12")
-shader_parameter/bounds = Vector4(1688,1176,704,154)
+shader_parameter/bounds = Vector4(1688, 1176, 704, 154)
+shader_parameter/stream_room_offset = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="Paint5"]
 shader = ExtResource("r12")
-shader_parameter/bounds = Vector4(1768,936,384,130)
+shader_parameter/bounds = Vector4(1768, 936, 384, 130)
+shader_parameter/stream_room_offset = Vector2(0, 0)
 
-[node name="R2-03" type="Node2D"]
+[node name="R2-03" type="Node2D" unique_id=639963990]
 
-[node name="Far" type="Node2D" parent="."]
+[node name="Far" type="Node2D" parent="." unique_id=203490573]
 z_index = -30
 
-[node name="Water" type="Node2D" parent="Far"]
+[node name="Water" type="Node2D" parent="Far" unique_id=749081869]
 script = ExtResource("r1")
-factor = 0.1
 room_center = Vector2(1200, 800)
 
-[node name="Art" type="Sprite2D" parent="Far/Water"]
+[node name="Art" type="Sprite2D" parent="Far/Water" unique_id=1297759876]
 position = Vector2(1200, 800)
-scale = Vector2(1.0100, 1.0100)
+scale = Vector2(1.01, 1.01)
 texture = ExtResource("r2")
 
-[node name="Organs" type="Node2D" parent="Far"]
+[node name="Organs" type="Node2D" parent="Far" unique_id=1279781436]
 script = ExtResource("r1")
 factor = 0.25
 room_center = Vector2(1200, 800)
 
-[node name="Art" type="Sprite2D" parent="Far/Organs"]
+[node name="Art" type="Sprite2D" parent="Far/Organs" unique_id=702237492]
+material = SubResource("Paint1")
 position = Vector2(1200, 800)
 scale = Vector2(1.8363, 1.8363)
-material = SubResource("Paint1")
 texture = ExtResource("r4")
 
-[node name="Middle" type="Node2D" parent="."]
+[node name="Middle" type="Node2D" parent="." unique_id=1158768438]
 z_index = -15
 
-[node name="Ambient" type="Node2D" parent="Middle"]
+[node name="Ambient" type="Node2D" parent="Middle" unique_id=760971977]
 
-[node name="Bubbles0" type="Node2D" parent="Middle/Ambient"]
+[node name="Bubbles0" type="Node2D" parent="Middle/Ambient" unique_id=915492933]
 script = ExtResource("r5")
 bounds = Rect2(960, 400, 240, 720)
 population = 7
 seed_id = 1
 size_range = Vector2(4, 9)
 
-[node name="Bubbles1" type="Node2D" parent="Middle/Ambient"]
+[node name="Bubbles1" type="Node2D" parent="Middle/Ambient" unique_id=1998038623]
 script = ExtResource("r5")
 bounds = Rect2(1920, 240, 240, 640)
 population = 6
 seed_id = 2
 size_range = Vector2(4, 9)
 
-[node name="Beam0" type="Sprite2D" parent="Middle/Ambient"]
-script = ExtResource("r6")
-texture = ExtResource("r7")
-position = Vector2(613.3, 560)
-scale = Vector2(1.6667, 1.6667)
-centered = false
-external_clock = true
-intensity = 0.1
-period = 18
-phase = 0
-light_tint = Color(0.847, 0.902, 1.000, 1)
-
-[node name="Drift0" type="Node2D" parent="Middle/Ambient"]
+[node name="Drift0" type="Node2D" parent="Middle/Ambient" unique_id=729784255]
 script = ExtResource("r8")
 texture = ExtResource("r9")
 bounds = Rect2(0, 80, 2400, 1280)
@@ -114,378 +104,353 @@ sway = 10
 size_range = Vector2(16, 36)
 opacity = 0.7
 tint = Color(0.788, 0.839, 0.933, 1)
-turn_degrees = 0
-seed_id = 1
 
-[node name="World" type="Node2D" parent="."]
-z_index = 0
-
-[node name="Art" type="Node2D" parent="World"]
-
-[node name="Terrain" type="Node2D" parent="World"]
-
-[node name="Bed0_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(-34, 1309.5)
-scale = Vector2(0.6778, 0.6778)
-centered = false
-texture = ExtResource("r10")
-
-[node name="Bed0_1" type="Sprite2D" parent="World/Art"]
-position = Vector2(766.4, 1309.5)
-scale = Vector2(0.6778, 0.6778)
-centered = false
-flip_h = true
-texture = ExtResource("r10")
-
-[node name="Bed0_2" type="Sprite2D" parent="World/Art"]
-position = Vector2(1566, 1309.5)
-scale = Vector2(0.6778, 0.6778)
-centered = false
-texture = ExtResource("r10")
-
-[node name="Bed0" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Bed0"]
-polygon = PackedVector2Array(0, 1417, 8, 1410, 24, 1405, 36, 1398, 68, 1393, 88, 1396, 116, 1407, 144, 1406, 184, 1421, 220, 1419, 268, 1424, 292, 1430, 336, 1426, 356, 1429, 388, 1427, 408, 1430, 480, 1433, 564, 1428, 596, 1424, 616, 1419, 632, 1419, 648, 1415, 680, 1415, 704, 1401, 728, 1394, 748, 1394, 764, 1398, 796, 1413, 804, 1413, 836, 1398, 852, 1394, 872, 1394, 896, 1401, 920, 1415, 952, 1415, 968, 1419, 984, 1419, 1004, 1424, 1048, 1429, 1144, 1433, 1212, 1427, 1244, 1429, 1264, 1426, 1308, 1430, 1320, 1426, 1356, 1421, 1380, 1419, 1416, 1421, 1456, 1406, 1484, 1407, 1512, 1396, 1532, 1393, 1564, 1398, 1596, 1413, 1604, 1413, 1636, 1398, 1668, 1393, 1688, 1396, 1716, 1407, 1744, 1406, 1784, 1421, 1820, 1419, 1868, 1424, 1892, 1430, 1908, 1430, 1924, 1426, 1956, 1429, 1988, 1427, 2056, 1433, 2152, 1429, 2196, 1424, 2216, 1419, 2232, 1419, 2248, 1415, 2280, 1415, 2304, 1401, 2328, 1394, 2348, 1394, 2364, 1398, 2376, 1405, 2392, 1410, 2400, 1418, 2400, 1600, 0, 1600)
-
-[node name="P0_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(-18.8, 1207.3)
-scale = Vector2(0.5294, 0.5294)
-centered = false
-texture = ExtResource("r11")
-
-[node name="Surface_P0" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P0"]
-polygon = PackedVector2Array(20, 1280, 620, 1280, 620, 1315, 20, 1315)
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="P1_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(708.2, 1114.6)
-scale = Vector2(0.3309, 0.3309)
-centered = false
-texture = ExtResource("r11")
-
-[node name="Surface_P1" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P1"]
-polygon = PackedVector2Array(736, 1160, 1104, 1160, 1104, 1195, 736, 1195)
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="P2_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(1188.2, 994.6)
-scale = Vector2(0.3309, 0.3309)
-centered = false
-texture = ExtResource("r11")
-
-[node name="Surface_P2" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P2"]
-polygon = PackedVector2Array(1216, 1040, 1584, 1040, 1584, 1075, 1216, 1075)
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="P3_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(1658.8, 1078.2)
-scale = Vector2(0.5956, 0.5956)
-centered = false
-texture = ExtResource("r11")
-
-[node name="Surface_P3" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P3"]
-polygon = PackedVector2Array(1700, 1160, 2380, 1160, 2380, 1195, 1700, 1195)
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="U0_0" type="Sprite2D" parent="World/Art"]
-position = Vector2(1748.2, 874.6)
-scale = Vector2(0.3309, 0.3309)
-centered = false
-texture = ExtResource("r11")
-
-[node name="Surface_U0" type="StaticBody2D" parent="World/Terrain"]
-
-[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_U0"]
-polygon = PackedVector2Array(1776, 920, 2144, 920, 2144, 955, 1776, 955)
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="P1_NativeVolume" type="Sprite2D" parent="World/Art"]
-position = Vector2(572.6, 1075.1)
-scale = Vector2(0.5429, 0.5429)
-centered = false
-z_index = -3
-material = SubResource("Paint2")
-modulate = Color(0.68,0.74,0.78,1)
-texture = ExtResource("r10")
-
-[node name="P2_NativeVolume" type="Sprite2D" parent="World/Art"]
-position = Vector2(1052.6, 955.1)
-scale = Vector2(0.5429, 0.5429)
-centered = false
-z_index = -3
-material = SubResource("Paint3")
-modulate = Color(0.68,0.74,0.78,1)
-texture = ExtResource("r10")
-
-[node name="P3_NativeVolume" type="Sprite2D" parent="World/Art"]
-position = Vector2(1414.6, 1007.1)
-scale = Vector2(0.9772, 0.9772)
-centered = false
-z_index = -3
-material = SubResource("Paint4")
-modulate = Color(0.68,0.74,0.78,1)
-texture = ExtResource("r10")
-
-[node name="U0_NativeVolume" type="Sprite2D" parent="World/Art"]
-position = Vector2(1612.6, 835.1)
-scale = Vector2(0.5429, 0.5429)
-centered = false
-z_index = -3
-material = SubResource("Paint5")
-modulate = Color(0.68,0.74,0.78,1)
-texture = ExtResource("r10")
-
-[node name="Framing" type="Node2D" parent="."]
-
-[node name="Piece0" type="Node2D" parent="Framing"]
-z_index = -13
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece0"]
-position = Vector2(-336, -32)
-scale = Vector2(2.0000, 2.0000)
-centered = false
-modulate = Color(1,1,1,0.8)
-texture = ExtResource("r13")
-
-[node name="Piece1" type="Node2D" parent="Framing"]
-z_index = -12
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece1"]
-position = Vector2(-389.1, 204.2)
-scale = Vector2(1.1705, 1.1705)
-centered = false
-modulate = Color(1,1,1,0.65)
-script = ExtResource("r14")
-motion_kind = "membrane"
-phase = 0.83
-amplitude_pixels = 7
-external_clock = true
-texture = ExtResource("r15")
-
-[node name="Piece2" type="Node2D" parent="Framing"]
-z_index = -12
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece2"]
-position = Vector2(1330.9, 148.2)
-scale = Vector2(1.1705, 1.1705)
-centered = false
-flip_h = true
-modulate = Color(1,1,1,0.61)
-script = ExtResource("r14")
-motion_kind = "membrane"
-phase = 1.66
-amplitude_pixels = 7
-external_clock = true
-texture = ExtResource("r15")
-
-[node name="Piece3" type="Node2D" parent="Framing"]
-z_index = -1
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece3"]
-position = Vector2(529.9, 1246.8)
-scale = Vector2(0.0479, 0.0479)
-centered = false
-modulate = Color(1,1,1,0.72)
-script = ExtResource("r14")
-motion_kind = "glow"
-phase = 2.4899999999999998
-amplitude_pixels = 4
-external_clock = true
-texture = ExtResource("r16")
-
-[node name="Piece4" type="Node2D" parent="Framing"]
-z_index = -1
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece4"]
-position = Vector2(956.2, 1119.1)
-scale = Vector2(0.0590, 0.0590)
-centered = false
-modulate = Color(1,1,1,0.65)
-script = ExtResource("r14")
-motion_kind = "glow"
-phase = 3.32
-amplitude_pixels = 4
-external_clock = true
-texture = ExtResource("r16")
-
-[node name="Piece5" type="Node2D" parent="Framing"]
-z_index = -1
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece5"]
-position = Vector2(1474.7, 1004.2)
-scale = Vector2(0.0516, 0.0516)
-centered = false
-modulate = Color(1,1,1,0.62)
-script = ExtResource("r14")
-motion_kind = "glow"
-phase = 4.1499999999999995
-amplitude_pixels = 4
-external_clock = true
-texture = ExtResource("r16")
-
-[node name="Piece6" type="Node2D" parent="Framing"]
-z_index = -1
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece6"]
-position = Vector2(1853.7, 874)
-scale = Vector2(0.0664, 0.0664)
-centered = false
-modulate = Color(1,1,1,0.68)
-script = ExtResource("r14")
-motion_kind = "glow"
-phase = 4.9799999999999995
-amplitude_pixels = 4
-external_clock = true
-texture = ExtResource("r16")
-
-[node name="Piece7" type="Node2D" parent="Framing"]
-z_index = -1
-
-[node name="Art" type="Sprite2D" parent="Framing/Piece7"]
-position = Vector2(2098.5, 1111.5)
-scale = Vector2(0.0700, 0.0700)
-centered = false
-modulate = Color(1,1,1,0.66)
-script = ExtResource("r14")
-motion_kind = "glow"
-phase = 5.81
-amplitude_pixels = 4
-external_clock = true
-texture = ExtResource("r16")
-
-[node name="Prop0_shell-camp" type="Sprite2D" parent="World/Art"]
-position = Vector2(204.8, 1070.9)
-scale = Vector2(0.4774, 0.4774)
-centered = false
-z_index = 1
-texture = ExtResource("r17")
-
-[node name="Prop1_r2-pearl-stalks-v4" type="Sprite2D" parent="World/Art"]
-position = Vector2(415.2, 1228.9)
-scale = Vector2(0.0737, 0.0737)
-centered = false
-z_index = 0
-modulate = Color(0.72,0.78,0.8,1)
-texture = ExtResource("r16")
-
-[node name="Foreground" type="Node2D" parent="."]
-z_index = 10
-
-[node name="Folds" type="Node2D" parent="Foreground"]
-script = ExtResource("r1")
-factor = 1.15
-room_center = Vector2(1200, 800)
-vertical = false
-
-[node name="Fold0" type="Sprite2D" parent="Foreground/Folds"]
-position = Vector2(140.6, 1482.4)
-scale = Vector2(0.7803, 0.7803)
-centered = false
-modulate = Color(0.22,0.17,0.20,0.9)
-texture = ExtResource("r15")
-
-[node name="Fold1" type="Sprite2D" parent="Foreground/Folds"]
-position = Vector2(1422.2, 1484.9)
-scale = Vector2(0.7153, 0.7153)
-centered = false
-flip_h = true
-modulate = Color(0.22,0.17,0.20,0.9)
-texture = ExtResource("r15")
-
-[node name="Doorways" type="Node2D" parent="."]
-
-[node name="Entrance1" type="Node2D" parent="Doorways"]
-script = ExtResource("r18")
-destination_id = "R2-01"
-kind = "door"
-direction = -1.0
-height = 0.0
-prompt_offset = Vector2(0, -250)
-
-[node name="Closed" type="Sprite2D" parent="Doorways/Entrance1"]
-position = Vector2(-70.7, -206.1)
-scale = Vector2(0.4147, 0.4147)
-centered = false
-z_index = 1
-texture = ExtResource("r19")
-
-[node name="Open" type="Sprite2D" parent="Doorways/Entrance1"]
-position = Vector2(-71.7, -204.9)
-scale = Vector2(0.4184, 0.4184)
-centered = false
-z_index = 1
-visible = false
-texture = ExtResource("r20")
-
-[node name="Entrance2" type="Node2D" parent="Doorways"]
-script = ExtResource("r18")
-destination_id = "R2-04"
-kind = "door"
-direction = 1.0
-height = 0.0
-prompt_offset = Vector2(0, -250)
-
-[node name="Closed" type="Sprite2D" parent="Doorways/Entrance2"]
-position = Vector2(-70.7, -206.1)
-scale = Vector2(0.4147, 0.4147)
-centered = false
-z_index = 1
-texture = ExtResource("r19")
-
-[node name="Open" type="Sprite2D" parent="Doorways/Entrance2"]
-position = Vector2(-71.7, -204.9)
-scale = Vector2(0.4184, 0.4184)
-centered = false
-z_index = 1
-visible = false
-texture = ExtResource("r20")
-
-[node name="BackgroundSchool0" type="Node2D" parent="Middle/Ambient"]
+[node name="BackgroundSchool0" type="Node2D" parent="Middle/Ambient" unique_id=1530558919]
 z_index = -2
 script = ExtResource("r21")
 texture = ExtResource("r22")
 bounds = Rect2(160, 544, 2080, 144)
 population = 24
 body_width = 48
-source_visible_width_ratio = 0.9065377532228361
+source_visible_width_ratio = 0.906537753222836
 seed_id = 47
-external_clock = true
-opacity = 0.5
 flow_speed = 32
-hidden_when_flag = ""
+opacity = 0.5
 
-[node name="BackgroundSchool1" type="Node2D" parent="Middle/Ambient"]
+[node name="BackgroundSchool1" type="Node2D" parent="Middle/Ambient" unique_id=880242682]
 z_index = -2
 script = ExtResource("r21")
 texture = ExtResource("r22")
 bounds = Rect2(160, 800, 2080, 160)
 population = 30
 body_width = 58
-source_visible_width_ratio = 0.9065377532228361
+source_visible_width_ratio = 0.906537753222836
 seed_id = 48
-external_clock = true
-opacity = 0.58
 flow_speed = 38
-hidden_when_flag = ""
+opacity = 0.58
 
-[node name="PresentationMotion" type="Node2D" parent="."]
+[node name="World" type="Node2D" parent="." unique_id=918276039]
+
+[node name="Art" type="Node2D" parent="World" unique_id=250450664]
+
+[node name="Bed0_0" type="Sprite2D" parent="World/Art" unique_id=267419654]
+position = Vector2(-34, 1309.5)
+scale = Vector2(0.6778, 0.6778)
+texture = ExtResource("r10")
+centered = false
+
+[node name="Bed0_1" type="Sprite2D" parent="World/Art" unique_id=1800660809]
+position = Vector2(766.4, 1309.5)
+scale = Vector2(0.6778, 0.6778)
+texture = ExtResource("r10")
+centered = false
+flip_h = true
+
+[node name="Bed0_2" type="Sprite2D" parent="World/Art" unique_id=1465152934]
+position = Vector2(1566, 1309.5)
+scale = Vector2(0.6778, 0.6778)
+texture = ExtResource("r10")
+centered = false
+
+[node name="P0_0" type="Sprite2D" parent="World/Art" unique_id=1695629250]
+position = Vector2(-18.8, 1207.3)
+scale = Vector2(0.5294, 0.5294)
+texture = ExtResource("r11")
+centered = false
+
+[node name="P1_0" type="Sprite2D" parent="World/Art" unique_id=278970475]
+position = Vector2(708.2, 1114.6)
+scale = Vector2(0.3309, 0.3309)
+texture = ExtResource("r11")
+centered = false
+
+[node name="P2_0" type="Sprite2D" parent="World/Art" unique_id=1288727467]
+position = Vector2(1188.2, 994.6)
+scale = Vector2(0.3309, 0.3309)
+texture = ExtResource("r11")
+centered = false
+
+[node name="P3_0" type="Sprite2D" parent="World/Art" unique_id=1860672075]
+position = Vector2(1658.8, 1078.2)
+scale = Vector2(0.5956, 0.5956)
+texture = ExtResource("r11")
+centered = false
+
+[node name="U0_0" type="Sprite2D" parent="World/Art" unique_id=76715358]
+position = Vector2(1748.2, 874.6)
+scale = Vector2(0.3309, 0.3309)
+texture = ExtResource("r11")
+centered = false
+
+[node name="P1_NativeVolume" type="Sprite2D" parent="World/Art" unique_id=1031246239]
+modulate = Color(0.68, 0.74, 0.78, 1)
+z_index = -3
+material = SubResource("Paint2")
+position = Vector2(572.6, 1075.1)
+scale = Vector2(0.5429, 0.5429)
+texture = ExtResource("r10")
+centered = false
+
+[node name="P2_NativeVolume" type="Sprite2D" parent="World/Art" unique_id=234784452]
+modulate = Color(0.68, 0.74, 0.78, 1)
+z_index = -3
+material = SubResource("Paint3")
+position = Vector2(1052.6, 955.1)
+scale = Vector2(0.5429, 0.5429)
+texture = ExtResource("r10")
+centered = false
+
+[node name="P3_NativeVolume" type="Sprite2D" parent="World/Art" unique_id=1317769622]
+modulate = Color(0.68, 0.74, 0.78, 1)
+z_index = -3
+material = SubResource("Paint4")
+position = Vector2(1414.6, 1007.1)
+scale = Vector2(0.9772, 0.9772)
+texture = ExtResource("r10")
+centered = false
+
+[node name="U0_NativeVolume" type="Sprite2D" parent="World/Art" unique_id=1612184646]
+modulate = Color(0.68, 0.74, 0.78, 1)
+z_index = -3
+material = SubResource("Paint5")
+position = Vector2(1612.6, 835.1)
+scale = Vector2(0.5429, 0.5429)
+texture = ExtResource("r10")
+centered = false
+
+[node name="Prop0_shell-camp" type="Sprite2D" parent="World/Art" unique_id=1983525139]
+z_index = 1
+position = Vector2(204.8, 1070.9)
+scale = Vector2(0.4774, 0.4774)
+texture = ExtResource("r17")
+centered = false
+
+[node name="Prop1_r2-pearl-stalks-v4" type="Sprite2D" parent="World/Art" unique_id=1021144522]
+modulate = Color(0.72, 0.78, 0.8, 1)
+position = Vector2(415.2, 1228.9)
+scale = Vector2(0.0737, 0.0737)
+texture = ExtResource("r16")
+centered = false
+
+[node name="Terrain" type="Node2D" parent="World" unique_id=880765887]
+
+[node name="Bed0" type="StaticBody2D" parent="World/Terrain" unique_id=824934999]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Bed0" unique_id=958295212]
+polygon = PackedVector2Array(0, 1417, 8, 1410, 24, 1405, 36, 1398, 68, 1393, 88, 1396, 116, 1407, 144, 1406, 184, 1421, 220, 1419, 268, 1424, 292, 1430, 336, 1426, 356, 1429, 388, 1427, 408, 1430, 480, 1433, 564, 1428, 596, 1424, 616, 1419, 632, 1419, 648, 1415, 680, 1415, 704, 1401, 728, 1394, 748, 1394, 764, 1398, 796, 1413, 804, 1413, 836, 1398, 852, 1394, 872, 1394, 896, 1401, 920, 1415, 952, 1415, 968, 1419, 984, 1419, 1004, 1424, 1048, 1429, 1144, 1433, 1212, 1427, 1244, 1429, 1264, 1426, 1308, 1430, 1320, 1426, 1356, 1421, 1380, 1419, 1416, 1421, 1456, 1406, 1484, 1407, 1512, 1396, 1532, 1393, 1564, 1398, 1596, 1413, 1604, 1413, 1636, 1398, 1668, 1393, 1688, 1396, 1716, 1407, 1744, 1406, 1784, 1421, 1820, 1419, 1868, 1424, 1892, 1430, 1908, 1430, 1924, 1426, 1956, 1429, 1988, 1427, 2056, 1433, 2152, 1429, 2196, 1424, 2216, 1419, 2232, 1419, 2248, 1415, 2280, 1415, 2304, 1401, 2328, 1394, 2348, 1394, 2364, 1398, 2376, 1405, 2392, 1410, 2400, 1418, 2400, 1600, 0, 1600)
+
+[node name="Surface_P0" type="StaticBody2D" parent="World/Terrain" unique_id=1678864408]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P0" unique_id=182101484]
+polygon = PackedVector2Array(20, 1280, 620, 1280, 620, 1315, 20, 1315)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface_P1" type="StaticBody2D" parent="World/Terrain" unique_id=1441717056]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P1" unique_id=478465306]
+polygon = PackedVector2Array(736, 1160, 1104, 1160, 1104, 1195, 736, 1195)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface_P2" type="StaticBody2D" parent="World/Terrain" unique_id=87945449]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P2" unique_id=581521952]
+polygon = PackedVector2Array(1216, 1040, 1584, 1040, 1584, 1075, 1216, 1075)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface_P3" type="StaticBody2D" parent="World/Terrain" unique_id=1036769807]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_P3" unique_id=677886097]
+polygon = PackedVector2Array(1700, 1160, 2380, 1160, 2380, 1195, 1700, 1195)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Surface_U0" type="StaticBody2D" parent="World/Terrain" unique_id=105361804]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface_U0" unique_id=1040450793]
+polygon = PackedVector2Array(1776, 920, 2144, 920, 2144, 955, 1776, 955)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Framing" type="Node2D" parent="." unique_id=283978435]
+
+[node name="Piece0" type="Node2D" parent="Framing" unique_id=1270870227]
+z_index = -13
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece0" unique_id=544501906]
+modulate = Color(1, 1, 1, 0.8)
+position = Vector2(-336, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("r13")
+centered = false
+
+[node name="Piece1" type="Node2D" parent="Framing" unique_id=1019009039]
+z_index = -12
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece1" unique_id=678160585]
+modulate = Color(1, 1, 1, 0.65)
+position = Vector2(-389.1, 204.2)
+scale = Vector2(1.1705, 1.1705)
+texture = ExtResource("r15")
+centered = false
+script = ExtResource("r14")
+phase = 0.83
+amplitude_pixels = 7
+
+[node name="Piece2" type="Node2D" parent="Framing" unique_id=1229027551]
+z_index = -12
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece2" unique_id=1204731880]
+modulate = Color(1, 1, 1, 0.61)
+position = Vector2(1330.9, 148.2)
+scale = Vector2(1.1705, 1.1705)
+texture = ExtResource("r15")
+centered = false
+flip_h = true
+script = ExtResource("r14")
+phase = 1.66
+amplitude_pixels = 7
+
+[node name="Piece3" type="Node2D" parent="Framing" unique_id=455496436]
+z_index = -1
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece3" unique_id=1543501076]
+modulate = Color(1, 1, 1, 0.72)
+position = Vector2(529.9, 1246.8)
+scale = Vector2(0.0479, 0.0479)
+texture = ExtResource("r16")
+centered = false
+script = ExtResource("r14")
+motion_kind = "glow"
+phase = 2.49
+
+[node name="Piece4" type="Node2D" parent="Framing" unique_id=2066939971]
+z_index = -1
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece4" unique_id=1722455596]
+modulate = Color(1, 1, 1, 0.65)
+position = Vector2(956.2, 1119.1)
+scale = Vector2(0.059, 0.059)
+texture = ExtResource("r16")
+centered = false
+script = ExtResource("r14")
+motion_kind = "glow"
+phase = 3.32
+
+[node name="Piece5" type="Node2D" parent="Framing" unique_id=592268772]
+z_index = -1
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece5" unique_id=747908766]
+modulate = Color(1, 1, 1, 0.62)
+position = Vector2(1474.7, 1004.2)
+scale = Vector2(0.0516, 0.0516)
+texture = ExtResource("r16")
+centered = false
+script = ExtResource("r14")
+motion_kind = "glow"
+phase = 4.1499999999999995
+
+[node name="Piece6" type="Node2D" parent="Framing" unique_id=1761678279]
+z_index = -1
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece6" unique_id=143347138]
+modulate = Color(1, 1, 1, 0.68)
+position = Vector2(1853.7, 874)
+scale = Vector2(0.0664, 0.0664)
+texture = ExtResource("r16")
+centered = false
+script = ExtResource("r14")
+motion_kind = "glow"
+phase = 4.9799999999999995
+
+[node name="Piece7" type="Node2D" parent="Framing" unique_id=1080728918]
+z_index = -1
+
+[node name="Art" type="Sprite2D" parent="Framing/Piece7" unique_id=1888556301]
+modulate = Color(1, 1, 1, 0.66)
+position = Vector2(2098.5, 1111.5)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("r16")
+centered = false
+script = ExtResource("r14")
+motion_kind = "glow"
+phase = 5.81
+
+[node name="Foreground" type="Node2D" parent="." unique_id=1852243283]
+z_index = 10
+
+[node name="Folds" type="Node2D" parent="Foreground" unique_id=368417309]
+script = ExtResource("r1")
+factor = 1.15
+room_center = Vector2(1200, 800)
+vertical = false
+
+[node name="Fold0" type="Sprite2D" parent="Foreground/Folds" unique_id=2000541881]
+modulate = Color(0.22, 0.17, 0.2, 0.9)
+position = Vector2(140.6, 1482.4)
+scale = Vector2(0.7803, 0.7803)
+texture = ExtResource("r15")
+centered = false
+
+[node name="Fold1" type="Sprite2D" parent="Foreground/Folds" unique_id=1749637704]
+modulate = Color(0.22, 0.17, 0.2, 0.9)
+position = Vector2(1422.2, 1484.9)
+scale = Vector2(0.7153, 0.7153)
+texture = ExtResource("r15")
+centered = false
+flip_h = true
+
+[node name="Doorways" type="Node2D" parent="." unique_id=1627195496]
+
+[node name="Entrance1" type="Node2D" parent="Doorways" unique_id=938131213]
+script = ExtResource("r18")
+destination_id = "R2-01"
+direction = -1.0
+height = 0.0
+prompt_offset = Vector2(0, -250)
+
+[node name="Closed" type="Sprite2D" parent="Doorways/Entrance1" unique_id=1780503391]
+z_index = 1
+position = Vector2(-70.7, -206.1)
+scale = Vector2(0.4147, 0.4147)
+texture = ExtResource("r19")
+centered = false
+
+[node name="Open" type="Sprite2D" parent="Doorways/Entrance1" unique_id=1333086587]
+visible = false
+z_index = 1
+position = Vector2(-71.7, -204.9)
+scale = Vector2(0.4184, 0.4184)
+texture = ExtResource("r20")
+centered = false
+
+[node name="Entrance2" type="Node2D" parent="Doorways" unique_id=1270793318]
+script = ExtResource("r18")
+destination_id = "R2-04"
+height = 0.0
+prompt_offset = Vector2(0, -250)
+
+[node name="Closed" type="Sprite2D" parent="Doorways/Entrance2" unique_id=22072147]
+z_index = 1
+position = Vector2(-70.7, -206.1)
+scale = Vector2(0.4147, 0.4147)
+texture = ExtResource("r19")
+centered = false
+
+[node name="Open" type="Sprite2D" parent="Doorways/Entrance2" unique_id=2058090270]
+visible = false
+z_index = 1
+position = Vector2(-71.7, -204.9)
+scale = Vector2(0.4184, 0.4184)
+texture = ExtResource("r20")
+centered = false
+
+[node name="PresentationMotion" type="Node2D" parent="." unique_id=411591947]
 script = ExtResource("r23")
 unified_ambient = true
 
-[node name="RoomEcology" type="Node2D" parent="."]
+[node name="RoomEcology" type="Node2D" parent="." unique_id=570093354]
 script = ExtResource("ecology_room")
 room_id = "R2-03"
