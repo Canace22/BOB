@@ -37,7 +37,7 @@ func shot(label: String) -> void:
 
 func fits(prompt: WhaleInteractionPrompt) -> bool:
 	var label_rect := Rect2(prompt.caption.position, prompt.caption.size)
-	return prompt.card_rect.encloses(label_rect) and prompt.card_rect.position.x >= 24 and prompt.card_rect.end.x <= ui.hud.size.x - 24 and prompt.card_rect.end.y < ui.hud.size.y - 150
+	return prompt.card_rect.encloses(label_rect) and prompt.card_rect.position.x >= 24 and prompt.card_rect.end.x <= WhaleActionHUDStyle.dock_rect(ui.hud.size).end.x and prompt.card_rect.end.y < WhaleActionHUDStyle.dock_rect(ui.hud.size).position.y - 4
 
 func run() -> void:
 	root.size = Vector2i(1280,720)
@@ -57,7 +57,7 @@ func run() -> void:
 	ui.preferences.contrast = false
 	await step(80)
 	var prompt: WhaleInteractionPrompt = ui.hud.interaction_prompt
-	check("Production camp shows centered large F prompt",host.streaming.enabled and prompt.visible and prompt.message == "在营地歇息" and prompt.action_key == "F" and absf(prompt.card_rect.get_center().x - ui.hud.size.x * 0.5) < 1 and fits(prompt))
+	check("Production camp shows compact F above the dock",host.streaming.enabled and prompt.visible and prompt.message == "歇息" and prompt.action_key == "F" and absf(prompt.card_rect.end.x - (WhaleActionHUDStyle.dock_rect(ui.hud.size).end.x)) < 1 and fits(prompt))
 	check("Stable target finishes entrance without restarting",prompt.age > 0.4 and is_equal_approx(prompt.modulate.a,1.0))
 	await shot("01-camp")
 	await tap(KEY_F)
@@ -79,7 +79,7 @@ func run() -> void:
 		await step(1)
 	key(KEY_A, false)
 	await step(20)
-	check("Walking back restores readable prompt",prompt.visible and prompt.message == "在营地歇息" and fits(prompt))
+	check("Walking back restores readable prompt",prompt.visible and prompt.message == "歇息" and fits(prompt))
 	await tap(KEY_ESCAPE)
 	check("Pause hides interaction overlay",ui.page_id == "pause" and not prompt.is_visible_in_tree())
 	await tap(KEY_ESCAPE)

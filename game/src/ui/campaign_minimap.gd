@@ -1,102 +1,110 @@
 class_name WhaleCampaignMinimap
 extends Control
-## 当前房间的等比路线图；直接投影运行中的平台、玩家与出口，不使用拓扑格子。
+## 只读主线发现状态；格子表达房间拓扑，不代表房间内的物理比例。
+const CELLS: Dictionary = {
+	"R1": {"R1-01":Vector2(0,2),"R1-02":Vector2(1,2),"R1-03":Vector2(2,2),"R1-04":Vector2(3,2),"R1-05":Vector2(4,2),"R1-06":Vector2(1,0),"R1-07":Vector2(2,1),"R3-01":Vector2(5,2)},
+	"R2": {"R3-01":Vector2(0,1),"R2-01":Vector2(1,1),"R2-03":Vector2(2,1),"R2-04":Vector2(2,0)},
+	"R3": {"R1-05":Vector2(0,1),"R3-01":Vector2(1,1),"R2-01":Vector2(1,0),"R4-01":Vector2(2,1)},
+	"R4": {"R3-01":Vector2(0,0),"R4-01":Vector2(1,0),"R4-03":Vector2(2,0),"R4-05":Vector2(3,0),"R4-06":Vector2(4,0),"R5-01":Vector2(5,0),"R5-08":Vector2(4,1)},
+	"R5": {"R4-06":Vector2(0,1),"R5-01":Vector2(1,1),"R5-02":Vector2(2,1),"R5-04":Vector2(3,1),"R5-08":Vector2(0,2)},
+}
 var data: WhaleUICampaignData
-var exits: Array[Dictionary] = []
-var room_size := Vector2.ONE
-var plot := Rect2()
-var scale_factor: float = 1.0
+var rooms: Array[Dictionary] = []
+var positions: Dictionary = {}
+var page: String = ""
 var signature: int = 0
 var refresh_left: float = 0.0
-var shell: Texture2D
-var high_contrast: bool = false
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	shell = load("res://art/ui/shell.svg") as Texture2D
-	resized.connect(refresh)
+	resized.connect(queue_redraw)
 
 func _process(dt: float) -> void:
-	if data == null or data.host.room.is_empty(): return
 	_update_clearance(dt)
 	refresh_left -= dt
-	if refresh_left <= 0.0:
-		refresh_left = 0.2
-		var next_signature: int = hash([data.host.room.id, data.host.abilities, data.host.defeated])
-		if next_signature != signature:
-			signature = next_signature
-			refresh()
-	queue_redraw()
+	if refresh_left > 0.0 or data == null or data.host.room.is_empty(): return
+	refresh_left = 0.2
+	# 房间、发现、授能和击败均会改变显示，避免每帧重建布局。
+	var next_signature: int = hash([data.host.room.id, data.host.visited, data.host.abilities, data.host.defeated])
+	if next_signature == signature: return
+	signature = next_signature
+	refresh()
 
 func _update_clearance(dt: float) -> void:
 	var alpha: float = 1.0
-	if is_instance_valid(data.host.player):
-		var feet: Vector2 = get_global_transform_with_canvas().affine_inverse() * data.host.player.get_global_transform_with_canvas().origin
+	if data != null and is_instance_valid(data.host.player):
+		var actor: Node2D = data.host.player
+		var feet: Vector2 = get_global_transform_with_canvas().affine_inverse() * actor.get_global_transform_with_canvas().origin
 		var silhouette := Rect2(feet-Vector2(54,138),Vector2(108,156))
 		if Rect2(Vector2.ZERO,size).grow(24).intersects(silhouette): alpha = 0.08
 	modulate.a = move_toward(modulate.a,alpha,dt*8.0)
 
 func refresh() -> void:
-	if data == null or data.host.room.is_empty(): return
-	room_size = data.host.point(data.host.room.size).max(Vector2.ONE)
-	var available := Vector2(maxf(1,size.x-32),100)
-	scale_factor = minf(available.x/room_size.x,available.y/room_size.y)
-	plot = Rect2(Vector2((size.x-room_size.x*scale_factor)*0.5,42),room_size*scale_factor)
-	exits.clear()
-	for door: Dictionary in data.host.room.get("doors", []):
-		var target: int = int(door.to)
-		var label: String = str(data.host.rooms[target].name) if target >= 0 and target < data.host.rooms.size() else ("归海" if target == -1 else "未开放")
-		exits.append({"number":exits.size()+1,"point":data.host.point(door.pos),"label":label,
-			"blocked":_blocked(str(data.host.room.id),door),"target":target})
+	page = CampaignWorld.region(str(data.host.room.id))
+	var cells: Dictionary = CELLS.get(page, {})
+	# 完整地图展示全图，小缩略图独立保留仅已探索房间及邻房的范围。
+	var known: Dictionary = {}
+	for i: int in data.host.rooms.size():
+		var entry: Dictionary = data.host.rooms[i]
+		if not data.host.visited.get(str(entry.id),false): continue
+		known[i] = true
+		for door: Dictionary in entry.get("doors",[]):
+			var target: int = int(door.to)
+			if target>=0 and target<data.host.rooms.size(): known[target] = true
+	rooms = data.map_rooms().filter(func(room: Dictionary) -> bool: return cells.has(str(room.id)) and known.has(int(room.index)))
+	positions.clear()
+	# 区域布局固定，发现新房间时已有格子不会跳位。
+	var extent := Vector2.ONE
+	for cell: Vector2 in cells.values(): extent = extent.max(cell + Vector2.ONE)
+	var spacing := Vector2(minf(22.0, 110.0 / extent.x), minf(22.0, 66.0 / extent.y))
+	var origin := Vector2(66, 66) - (extent - Vector2.ONE) * spacing * 0.5
+	for room: Dictionary in rooms:
+		positions[int(room.index)] = origin + Vector2(cells[str(room.id)]) * spacing
 	queue_redraw()
 
-func project(point: Vector2) -> Vector2:
-	return plot.position + point * scale_factor
-
-func player_point() -> Vector2:
-	# 跨房时转换到当前场景坐标，连接段上的位置在绘制时收在图边。
-	return data.host.scenery.to_local(data.host.player.global_position)
-
 func _draw() -> void:
-	if data == null or data.host.room.is_empty(): return
-	draw_style_box(WhaleUIStyle.surface(high_contrast),Rect2(Vector2.ZERO,size))
-	_label(Vector2(14,25),str(data.host.room.name),17,WhaleUIStyle.BONE)
-	_label(Vector2(size.x-73,25),WhaleUIStyle.key("ui_region_map")+" 地图",15,WhaleUIStyle.MUTED)
-	draw_rect(plot,Color(0.1,0.2,0.23,0.25))
-	for surface: Array in data.host.room.get("surfaces", []):
-		var points := PackedVector2Array()
-		for point: Array in surface: points.append(project(data.host.point(point)))
-		if points.size()>1: draw_polyline(points,Color("78918f"),1.2,true)
-	var camp: Array = data.camp_position()
-	if camp.size()==2 and shell != null:
-		draw_texture_rect(shell,Rect2(project(data.host.point(camp))-Vector2(6,10),Vector2(12,12)),false,WhaleUIStyle.TEAL)
-	for exit: Dictionary in exits: _draw_exit(exit)
-	if is_instance_valid(data.host.player):
-		var point: Vector2 = project(player_point().clamp(Vector2.ZERO,room_size))
-		draw_circle(point,5.5,WhaleUIStyle.INK)
-		draw_colored_polygon(PackedVector2Array([point+Vector2(0,-5),point+Vector2(4,0),point+Vector2(0,5),point+Vector2(-4,0)]),WhaleUIStyle.BONE)
+	if rooms.is_empty(): return
+	# 圆形罗盘承载原房间拓扑，不伪造尚未实现的地形雷达。
+	draw_circle(Vector2(66,66),62,Color(0.02,0.05,0.07,0.82))
+	draw_arc(Vector2(66,66),62,0,TAU,96,Color(0.72,0.68,0.52,0.8),2.0,true)
+	draw_arc(Vector2(66,66),59,0,TAU,96,Color(0.38,0.52,0.54,0.35),1.0,true)
+	for room: Dictionary in rooms:
+		for door: Dictionary in room.doors:
+			var target: int = int(door.to)
+			if not positions.has(target) or target < int(room.index): continue
+			# 未走过的一侧不泄露机关条件；反向已探索门也参与判定。
+			var blocked: bool = room.visited and _blocked(str(room.id), door)
+			if data.host.visited.get(str(data.host.rooms[target].id), false):
+				for reverse: Dictionary in data.host.rooms[target].get("doors", []):
+					if int(reverse.to) == int(room.index): blocked = blocked or _blocked(str(data.host.rooms[target].id), reverse)
+			var a: Vector2 = positions[int(room.index)]
+			var b: Vector2 = positions[target]
+			draw_line(a,b,Color("a67c53") if blocked else Color("577b89"),2.0,true)
+			if blocked: draw_rect(Rect2((a+b)*0.5-Vector2(2,3),Vector2(4,6)),WhaleUIStyle.AMBER)
+	for room: Dictionary in rooms:
+		var center: Vector2 = positions[int(room.index)]
+		var rect := Rect2(center-Vector2(8,5),Vector2(16,10))
+		var color := Color("365564") if room.visited else Color("172934")
+		if room.current: color = WhaleUIStyle.AMBER
+		draw_rect(rect,color)
+		draw_rect(rect,WhaleUIStyle.AMBER if room.current else Color("6d909e"),false,1.0)
+		if room.current:
+			draw_circle(center,2.5,WhaleUIStyle.INK)
+		elif room.camp and room.visited:
+			draw_circle(center,2.5,WhaleUIStyle.TEAL)
+		elif _is_boss(str(room.id)):
+			_label(center+Vector2(-4,5),"B",12,WhaleUIStyle.AMBER)
 
-func _draw_exit(exit: Dictionary) -> void:
-	var color: Color = WhaleUIStyle.AMBER if exit.blocked else WhaleUIStyle.TEAL
-	var at: Vector2 = project(exit.point)
-	draw_circle(at,8,WhaleUIStyle.INK)
-	draw_arc(at,8,0,TAU,20,color,1.5,true)
-	_label(at+Vector2(-4,5),str(exit.number),13,color)
-	var column: int = (int(exit.number)-1)%2
-	var row: int = (int(exit.number)-1)/2
-	var label: String = "%d %s%s" % [exit.number,exit.label," ×" if exit.blocked else ""]
-	_label(Vector2(14+column*(size.x-24)*0.5,168+row*22),label,14,color)
-	if exit.blocked:
-		draw_line(at+Vector2(8,-7),at+Vector2(12,-3),color,2,true)
-		draw_line(at+Vector2(8,-3),at+Vector2(12,-7),color,2,true)
+func _is_boss(id: String) -> bool:
+	return id in ["R1-04","R2-04","R4-05","R5-04"] and not data.host.defeated.get(id+":0",false)
 
 func _blocked(source_id: String, door: Dictionary) -> bool:
+	# 远处门的 Boss 状态必须查所属房间，不能误用当前房间的敌人列表。
 	for need: String in CampaignWorld.requirements(door):
 		if need == "boss":
 			if not data.host.defeated.get(source_id+":0",false): return true
 		elif not data.host.has_ability(need): return true
-	return int(door.get("to",-2)) == -2 or (door.has("locked") and not data.host.has_ability(str(door.locked)))
+	return door.has("locked") and not data.host.has_ability(str(door.locked))
 
 func _label(at: Vector2, value: String, font_size: int, color: Color) -> void:
-	draw_string_outline(WhaleUIStyle.FONT,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size,3,WhaleUIStyle.INK)
 	draw_string(WhaleUIStyle.FONT,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size,color)

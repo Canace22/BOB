@@ -37,7 +37,7 @@ func shot(label: String) -> void:
 	root.get_texture().get_image().save_png(OUTPUT.path_join(label + ".png"))
 
 func fits(prompt: WhaleInteractionPrompt) -> bool:
-	return prompt.card_rect.encloses(Rect2(prompt.caption.position,prompt.caption.size)) and (not prompt.detail.visible or prompt.card_rect.encloses(Rect2(prompt.detail.position,prompt.detail.size))) and prompt.card_rect.position.x >= 24 and prompt.card_rect.end.x <= ui.hud.size.x - 24 and prompt.card_rect.end.y <= ui.hud.size.y - 170
+	return prompt.card_rect.encloses(Rect2(prompt.caption.position,prompt.caption.size)) and (not prompt.detail.visible or prompt.card_rect.encloses(Rect2(prompt.detail.position,prompt.detail.size))) and prompt.card_rect.position.x >= 24 and prompt.card_rect.end.x <= WhaleActionHUDStyle.dock_rect(ui.hud.size).end.x and prompt.card_rect.end.y <= WhaleActionHUDStyle.dock_rect(ui.hud.size).position.y - 4
 
 func run() -> void:
 	root.size = Vector2i(1280,720)
@@ -70,7 +70,7 @@ func run() -> void:
 	await step(85)
 	key(KEY_D,false)
 	await step(20)
-	check("Walking into actual gate explains pressure at center",host.player.global_position.x < foot.x and prompt.visible and prompt.blocked and prompt.message == "需要潮压" and absf(prompt.card_rect.get_center().x-ui.hud.size.x*0.5)<1 and fits(prompt))
+	check("Walking into actual gate explains pressure at right",host.player.global_position.x < foot.x and prompt.visible and prompt.blocked and prompt.message == "需要潮压" and absf(prompt.card_rect.end.x-(WhaleActionHUDStyle.dock_rect(ui.hud.size).end.x))<1 and fits(prompt))
 	check("Guidance points to authored pressure boss without a false action key",prompt.explanation == "前往肺心潮庭 · 击败血巢潮群" and not prompt.key_label.visible and prompt.caption.get_theme_font_size("font_size")>WhaleInteractionPrompt.FONT_SIZE)
 	await shot("01-pressure-gate")
 	var age: float = prompt.age

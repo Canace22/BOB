@@ -536,3 +536,7 @@ CampaignRoomEcology按19房配方提供固定根菌群、窄域逸泡、微粒�
 ## 2026-11-20 · 老守护者立稳帧修正
 
 [制作源与提取记录](source/enemy-lab-elder-idle-fix-v1/README.md)：内置image_gen删除pose22多画的竖直杆，仅提取独立透明裁片；待机静止和回稳立稳使用新裁片，保留原pivot与比例，其余23帧不变。已登记manifest和JSON台账；单帧修正，不记为新增动画。
+
+## 紧凑动作 HUD V1（2026-11-21）
+
+[制作源与来源链](source/action-hud-v1/README.md)：24枚静态技能/状态图标、12枚连击字形；运行明暗、切页和连击缩放由正式UI状态驱动。运行验收见游戏进度。

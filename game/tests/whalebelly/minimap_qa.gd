@@ -48,7 +48,7 @@ func run() -> void:
 	await tick(40)
 	var ui: WhaleCampaignUI = host.player_ui
 	var map: WhaleCampaignMinimap = ui.hud.minimap
-	check("HUD minimap visible at top right",map.is_visible_in_tree() and map.position.x>800 and map.position.y==24)
+	check("HUD minimap visible at lower left",map.is_visible_in_tree() and map.position.x<100 and map.size.x<=140)
 	await shot("01-start")
 	# 末段平台为显式起点；连接段通过D连续步行，不使用旧E传送驱动。
 	for frame: int in 900:
@@ -65,12 +65,12 @@ func run() -> void:
 		if host.room_index==1: break
 	key(KEY_D,false)
 	await tick(25)
-	check("Keyboard doorway updates current room",host.room_index==1 and map.exits.size()==4)
-	if host.room_index!=1 or map.exits.size()!=4:
+	check("Keyboard doorway updates current room",host.room_index==1 and ui.hud.route_hud.routes.size()==4)
+	if host.room_index!=1 or ui.hud.route_hud.routes.size()!=4:
 		print("Doorway fixture stopped: ",host.room.id," ",host.player.position," ",ui.page_id," ",host.streaming.snapshot())
 		await host.graceful_quit(1)
 		return
-	check("Junction shows its two upper branch exits",map.exits[2].point.y<map.exits[0].point.y and map.exits[3].point.y<map.exits[1].point.y)
+	check("Junction shows its two upper branch exits",ui.hud.route_hud.routes[2].point.y<ui.hud.route_hud.routes[0].point.y and ui.hud.route_hud.routes[3].point.y<ui.hud.route_hud.routes[1].point.y)
 	await shot("02-junction")
 	await tap(KEY_C)
 	check("C still opens full map",ui.page_id=="map" and not ui.hud.visible)

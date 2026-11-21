@@ -55,7 +55,7 @@ func run() -> void:
 	check("Q selects page without old attack",p.pad_input.effective_page()==1 and p.state_duration<=0)
 	var rows: Array[Dictionary] = TideCombatHints.rows(p)
 	check("Q HUD four columns follow real bindings",rows.size()==4 and rows[0].action=="wb_rise" and rows[3].action=="wb_charge")
-	check("combo page reuses bottom skill bar",host.player_ui.hud.combo_hud.position.y>=root.size.y-80)
+	check("combo page reuses bottom skill bar",host.player_ui.hud.combo_hud.position.y>=root.size.y-200)
 	await shot("01-q-page")
 	await tap(KEY_J)
 	check("Q then J starts uppercut",p.skill_controller.visual_key=="wb_rise")
