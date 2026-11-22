@@ -207,7 +207,7 @@
     {
       "art": "r5-cranial-cavern-frame-alpha-v3",
       "at": [
-        15.0,
+        15,
         -0.4
       ],
       "units": 42.24,
@@ -225,6 +225,50 @@
       "max": 0,
       "z": -12,
       "opacity": 0.78
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "clam",
+      "name": "耳区鸣贝",
+      "at": [
+        20,
+        16
+      ],
+      "hits": 3,
+      "rest": 2.4,
+      "tell": 0.9,
+      "shots": 1,
+      "speed": 4.2,
+      "mouth": [
+        -0.3,
+        -0.9
+      ],
+      "engage": 12,
+      "sprites": {
+        "body": {
+          "art": "clam-spit-cycle-v1",
+          "units": 2.15,
+          "max": 0,
+          "visible_width": 340,
+          "columns": 4,
+          "rows": 2,
+          "pivot": [
+            192,
+            393
+          ],
+          "fallback": "resonant-clam",
+          "fallback_max": 256
+        },
+        "tell": {
+          "art": "fx-pearl-rings",
+          "units": 1.6
+        },
+        "shot": {
+          "art": "ringed-calcium-pearl",
+          "units": 0.5
+        }
+      }
     }
   ]
 }

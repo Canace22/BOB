@@ -17,6 +17,8 @@ var heading: Label
 var footer: Label
 var margin: MarginContainer
 var ornament: TextureRect
+var title_background: TextureRect
+var title_background_fx: Control
 var page_id: String = ""
 var history: Array[String] = []
 var focus_history: Dictionary = {}
@@ -46,6 +48,18 @@ func _ready() -> void:
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	panel.theme = WhaleUIStyle.theme(preferences.contrast)
 	add_child(panel)
+	title_background = TextureRect.new()
+	title_background.texture = load("res://art/ui/title-background-v1.png")
+	title_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	title_background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	title_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_background.modulate = Color(1.18, 1.28, 1.32, 0.92)
+	title_background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.add_child(title_background)
+	title_background_fx = load("res://src/ui/title_background_fx.gd").new()
+	title_background_fx.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_background_fx.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.add_child(title_background_fx)
 	hud = WhaleCampaignHUD.new()
 	hud.controller = self
 	panel.add_child(hud)
@@ -84,6 +98,7 @@ func _ready() -> void:
 	column.add_child(footer)
 	panel.resized.connect(func() -> void: WhaleUIPages.layout(self))
 	modal.hide()
+	_sync_title_background()
 	WhaleDialoguePanel.install(self)
 	bind_player(host.player)
 
@@ -139,6 +154,7 @@ func open(page: String, push: bool = true) -> void:
 	player.controls_enabled = false
 	get_tree().paused = true
 	page_id = page
+	_sync_title_background()
 	host.music.set_resting(page in ["camp", "camp_details"])
 	for child: Node in body.get_children():
 		body.remove_child(child)
@@ -178,6 +194,7 @@ func back() -> void:
 func close_all() -> void:
 	host.music.set_resting(false)
 	page_id = ""
+	_sync_title_background()
 	history.clear()
 	modal.hide()
 	dialogue_view.hide()
@@ -214,6 +231,11 @@ func save_preferences() -> void:
 	preferences.apply(host)
 	panel.theme = WhaleUIStyle.theme(preferences.contrast)
 	footer.text = "设置已保存 · Esc 返回" if preferences.write() == OK else "设置已生效，但写入失败；本次会话有效。"
+
+func _sync_title_background() -> void:
+	var visible_title := page_id == "title"
+	if is_instance_valid(title_background): title_background.visible = visible_title
+	if is_instance_valid(title_background_fx): title_background_fx.visible = visible_title
 
 func _input(event: InputEvent) -> void:
 	if host.continuity.travelling or host.continuity.transition.active: return

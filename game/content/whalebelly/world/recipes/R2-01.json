@@ -117,7 +117,7 @@
         12.8,
         15.75
       ],
-      "units": 1.0,
+      "units": 1,
       "modulate": "Color(0.72,0.78,0.8,1)",
       "layer": 0
     },
@@ -127,7 +127,7 @@
         24.5,
         9.25
       ],
-      "units": 1.0,
+      "units": 1,
       "modulate": "Color(0.72,0.78,0.8,1)",
       "layer": 0
     }
@@ -258,7 +258,7 @@
     {
       "art": "r2-membrane-cavern-frame-v3",
       "at": [
-        14.0,
+        14,
         -0.4
       ],
       "units": 44.16,
@@ -269,7 +269,7 @@
     {
       "art": "r2-foreground-membrane",
       "at": [
-        4.0,
+        4,
         6.5
       ],
       "units": 16,
@@ -280,7 +280,7 @@
     {
       "art": "r2-foreground-membrane",
       "at": [
-        24.0,
+        24,
         5.3
       ],
       "units": 17,
@@ -321,6 +321,51 @@
       "max": 640,
       "z": -1,
       "opacity": 0.68
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "clam",
+      "name": "肺膜鸣贝",
+      "at": [
+        20.5,
+        16.2
+      ],
+      "hits": 3,
+      "rest": 2.4,
+      "tell": 0.9,
+      "shots": 1,
+      "speed": 4.2,
+      "mouth": [
+        -0.3,
+        -0.9
+      ],
+      "engage": 12,
+      "sprites": {
+        "body": {
+          "art": "clam-spit-cycle-v1",
+          "units": 2.15,
+          "max": 0,
+          "visible_width": 340,
+          "columns": 4,
+          "rows": 2,
+          "pivot": [
+            192,
+            393
+          ],
+          "fallback": "resonant-clam",
+          "fallback_max": 256
+        },
+        "tell": {
+          "art": "fx-pearl-rings",
+          "units": 1.6
+        },
+        "shot": {
+          "art": "ringed-calcium-pearl",
+          "units": 0.5
+        }
+      },
+      "boss": false
     }
   ]
 }

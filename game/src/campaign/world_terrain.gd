@@ -36,7 +36,9 @@ func _ready() -> void:
 
 func _process(dt: float) -> void:
 	if not is_instance_valid(host) or host.quitting: return
-	visible=not host.reference_visible and host.layer_solo<0 and host.capture_path.is_empty()
+	# Capture mode must retain the runtime terrain; otherwise the capture only
+	# shows the water layers and dynamic decoration after authored art is hidden.
+	visible=not host.reference_visible and host.layer_solo<0
 	elapsed+=dt
 	if elapsed>=0.15:
 		elapsed=0.0
@@ -55,7 +57,10 @@ func update_window() -> void:
 		if view.intersects(rect):
 			if resident.has(key): continue
 			var tile:=Sprite2D.new()
-			tile.texture=load("res://art/world-terrain-v2/"+key)
+			var texture_path := "res://art/world-terrain-v2/" + key
+			if key == "tile_1_0.png" and str(host.room.get("id", "")) == "R1-02":
+				texture_path = "res://art/world-terrain-v2/tile_1_0_r1_02_moved.png"
+			tile.texture=load(texture_path)
 			tile.centered=false
 			tile.region_enabled=true
 			tile.region_rect=Rect2(2,2,rect.size.x,rect.size.y)

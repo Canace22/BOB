@@ -288,7 +288,7 @@ centered = false
 [node name="Surface1_0" type="Sprite2D" parent="World/Art" unique_id=824312046]
 modulate = Color(0.84, 0.88, 0.91, 1)
 material = SubResource("m5")
-position = Vector2(361, 889.00006)
+position = Vector2(261, 979.00006)
 scale = Vector2(0.121, 0.121)
 texture = ExtResource("18")
 centered = false
@@ -296,7 +296,7 @@ centered = false
 [node name="Surface2_0" type="Sprite2D" parent="World/Art" unique_id=1769561733]
 modulate = Color(0.84, 0.88, 0.91, 1)
 material = SubResource("m5")
-position = Vector2(701.816, 797.157)
+position = Vector2(701.816, 860)
 scale = Vector2(0.156, 0.156)
 texture = ExtResource("18")
 centered = false
@@ -378,7 +378,7 @@ centered = false
 modulate = Color(0.68, 0.76, 0.8, 1)
 z_index = -1
 material = SubResource("m8")
-position = Vector2(717.96, 811.013)
+position = Vector2(717.96, 860)
 scale = Vector2(0.141, 0.141)
 texture = ExtResource("18")
 centered = false
@@ -407,6 +407,16 @@ z_index = -1
 material = SubResource("m11")
 position = Vector2(299.287, 978.837)
 scale = Vector2(0.394, 0.394)
+texture = ExtResource("18")
+centered = false
+
+[node name="DesignedArt" type="Node2D" parent="World"]
+
+[node name="UpperStandArt" type="Sprite2D" parent="World/DesignedArt"]
+modulate = Color(0.84, 0.88, 0.91, 1)
+material = SubResource("m5")
+position = Vector2(537, 757)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("18")
 centered = false
 
@@ -440,6 +450,7 @@ polygon = PackedVector2Array(44, 700, 73.635, 700, 114.09, 699.508, 154.545, 700
 one_way_collision_margin = 6.0
 
 [node name="Surface1" type="StaticBody2D" parent="World/Terrain" unique_id=1689640541]
+position = Vector2(-100, 90)
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=2123095164]
 position = Vector2(-64.647, 58.26526)
@@ -539,6 +550,13 @@ one_way_collision_margin = 6.0
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface11" unique_id=33719850]
 polygon = PackedVector2Array(414, 1050, 442.879, 1050, 482.753, 1049.516, 522.626, 1050.969, 562.5, 1050, 602.374, 1050.242, 642.247, 1050.727, 682.121, 1049.758, 721.995, 1048.062, 728.005, 1049.516, 767.879, 1050, 807.753, 1049.516, 847.626, 1050.969, 887.5, 1050, 927.374, 1050.242, 967.247, 1050.727, 1007.121, 1049.758, 1036, 1050, 1036, 1080, 414, 1080)
+one_way_collision_margin = 6.0
+
+[node name="UpperStand" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/UpperStand"]
+polygon = PackedVector2Array(530, 777, 734, 777, 734, 807, 530, 807)
+one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="NearBubbles" type="Node2D" parent="World" unique_id=1563451998]

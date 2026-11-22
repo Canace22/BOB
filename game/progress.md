@@ -2732,8 +2732,40 @@ LFS检出使用本地缓存，运行依赖已加载并完成上述测试；5个�
 
 基于全19房实机拼板和原画/配方对照，新增 `docs/鲸腹遗城原画集/须门遗港地图布局/美术监管问题清单.md`。已区分观察到的问题、状态截图无法证明的项目和下一轮拟制作项：重点为R4/R5房间辨识度、动态Boss/群流专用验收帧、重复前景台腹、HUD干扰和R5-08高饱和前景。未根据静态截图擅自新增玩法、门或能力。
 
+## 2026-11-22 · V6十重点房间与全房敌人覆盖
+
+V6重新收敛为R1–R5五个解剖区域，每区两个重点空间，共10个重点空间；19个正式房间继续保留为流式过渡、支路、回访和维护空间。设计图与标注稿保存在 `G:/鲸落万物生/outputs/AI开发任务/2026-11-22/v6-map-design/`，包括无标注原画底图、10房总地图和V6规格JSON。
+
+工程层面为原本无敌人的正式房间补充了低强度敌人或敌对生态，并为R3胃肠区新增回折肠守护体Boss；当前19房均有敌人，R1–R5各有Boss配置。`check_project`为0 error(s)；敌人覆盖脚本核对19房、5个Boss区域通过。完整回归仍需在导入稳定后复跑，避免把Godot资源导入产生的顶点基线回写误记为玩法失败。
+
+Boss房规则修订：V6重点房间不全部设为Boss房；每个R区域只保留一个Boss房，当前映射为R1-04、R2-04、R3-01、R4-05、R5-04。其它正式房间保持敌人/敌对生态，但承担普通遭遇、过渡、支路、回访或维护职责。
+
 ## 2026-11-22 · 全19房原画坐标与素材合同补全
 
 针对全景预览中房间沿流式链平铺、无法直接核对原画位置的问题，新增 `game/content/whalebelly/world/scene_asset_coordinate_contract.json` 与可复跑生成器 `game/tools/build_scene_asset_contract.mjs`。合同把 V5 原画范围、鲸体归一化坐标、正式游戏世界原点、流式局部尺寸/门点、149 个独立2D资产和19房动态覆盖统一绑定；不新增房间，不替换流式加载，不改变角色、Boss、碰撞或存档。
 
 新增 `test_scene_asset_coordinate_contract_covers_all_formal_rooms`，验证19房、149项独立资产、19房动态覆盖、原画/鲸体/游戏/局部坐标关系及场景引用均存在。最终 `node tools/godot.mjs test` 为 **446 passed / 0 failed**；`check_project` 为0 error(s)。Godot导入产生的无关PNG/TSCN/manifest回写已清理，未执行Web发布或提交推送。
+
+## 2026-11-22 · R1-02中央台阶接地修正
+
+用户指出实机截图中红框中央台阶高于角色脚底。切回 `Vesion/V1.0.1` 后，仅调整 `R1-02.tscn` 的 `Surface2_0` 与 `Surface2_NativeMass` 视觉位置，使其下移到碰撞顶面 `y=830`；未改 `Surface2` 碰撞、多房门、角色出生点或路线。`node tools/godot.mjs check` 为0 error(s)。
+
+## 2026-11-22 · R1-02主路台阶精确对齐
+
+复查截图与 `R1-02.tscn` 后确认红框台阶对应 `Surface3`，不是 `Surface2`。将 `Surface3_0`、`Surface3_NativeMass` 对齐到碰撞顶面 `y=700`，并同步右邻 `Surface4_0`、`Surface4_NativeMass` 到 `y=710`；未改碰撞、门点和角色路线。Godot check 0 error(s)。
+
+## 2026-11-22 · R1-02 Surface2画面位置修正
+
+根据用户最新实机反馈，上一版把贴图和碰撞一起移动，角色与镜头跟随碰撞面后画面位置没有变化。本次仅将 `Surface2_0`、`Surface2_NativeMass` 下移到 `y=860`，保留 `Surface2` 碰撞顶面 `y=830`、底边 `y=860`，让运行时画面能直接体现贴图相对可走面的调整；未改Surface3/Surface4、门点和路线。Godot check 0 error(s)。
+
+## 2026-11-22 · 实机捕获地形显示修正
+
+实机捕获图出现“空场景”是捕获模式把 `CampaignWorldTerrain` 设置为不可见，正式游戏运行并未丢失地形。已移除 `capture_path` 对运行地形可见性的限制；重新捕获 R1-02 后，地形平台、角色、鱼群、气泡和锚环均正常显示。`node tools/godot.mjs check` 为0 error(s)。
+
+## 2026-11-22 · 黑门清理与R1-02站立平台
+
+按用户限定范围，仅处理两项：流式门系统保留通行阻挡与条件判断，但不再生成 `tunnel.png` 黑门；正式门脚本在未配置替代贴图时仅保留功能，删除黑门运行副本、导入文件、清单和台账记录。R1-02新增 `World/DesignedArt/UpperStandArt` 与 `World/Terrain/UpperStand` 单向碰撞，位置对应用户红框。实机捕获确认黑门消失、新平台显示。`node tools/godot.mjs check` 为0 error(s)；直接 headless 测试4项通过。
+
+## 2026-11-22 · R1-02平台位置与站立高度复核
+
+按用户箭头图调整新增平台到中间偏右目标位置；贴图可见顶边与 `UpperStand` 碰撞顶面统一为 `y=777`。玩家碰撞体底边以角色位置为脚底，站立时应落在同一高度。实机捕获显示新增平台与原有平台层级分离，未改变旧台阶路线；Godot check 0 error(s)。

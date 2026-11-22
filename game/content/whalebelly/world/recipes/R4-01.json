@@ -167,13 +167,58 @@
     {
       "art": "r5-cranial-cavern-frame-alpha-v3",
       "at": [
-        15.0,
+        15,
         -0.4
       ],
       "units": 38.4,
       "max": 0,
       "z": -13,
       "opacity": 0.72
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "clam",
+      "name": "泵庭鸣贝",
+      "at": [
+        21,
+        15.5
+      ],
+      "hits": 3,
+      "rest": 2.4,
+      "tell": 0.9,
+      "shots": 1,
+      "speed": 4.2,
+      "mouth": [
+        -0.3,
+        -0.9
+      ],
+      "engage": 12,
+      "sprites": {
+        "body": {
+          "art": "clam-spit-cycle-v1",
+          "units": 2.15,
+          "max": 0,
+          "visible_width": 340,
+          "columns": 4,
+          "rows": 2,
+          "pivot": [
+            192,
+            393
+          ],
+          "fallback": "resonant-clam",
+          "fallback_max": 256
+        },
+        "tell": {
+          "art": "fx-pearl-rings",
+          "units": 1.6
+        },
+        "shot": {
+          "art": "ringed-calcium-pearl",
+          "units": 0.5
+        }
+      },
+      "boss": false
     }
   ]
 }

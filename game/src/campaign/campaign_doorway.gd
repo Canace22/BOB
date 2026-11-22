@@ -28,9 +28,10 @@ func bind(level: Node2D, door: Dictionary) -> void:
 	if is_instance_valid(inset): return
 	var built_exit: bool = kind == "exit" and int(data.get("to", -1)) >= 0
 	if (kind not in ["door", "passage", "sealed"] and not built_exit) or height <= 0.0: return
+	if tunnel_texture == null: return
 
 	inset = Sprite2D.new()
-	inset.texture = tunnel_texture if tunnel_texture != null else load("res://art/doorways/tunnel.png")
+	inset.texture = tunnel_texture
 	inset.centered = false
 	inset.material = tunnel_material
 	var bounds := texture_bounds if texture_bounds.has_area() else Rect2(Vector2.ZERO,inset.texture.get_size())

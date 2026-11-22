@@ -2,7 +2,6 @@ class_name Chapter01RoomView
 extends Node2D
 ## 同一套原口腔位图和地形轮廓配对复用；碰撞不随视差移动。
 
-const GATE: Texture2D = preload("res://art/doorways/tunnel.png")
 const FONT: Font = preload("res://art/fonts/WhalefallUI.ttf")
 var data: Dictionary
 var environment: Node
@@ -50,15 +49,6 @@ func _add_door(door: Dictionary) -> void:
 	anchor.position = door.position
 	anchor.z_index = 3
 	add_child(anchor)
-	if door.direction in ["up", "down"]:
-		var sprite := Sprite2D.new()
-		sprite.texture = GATE
-		sprite.centered = false
-		# 当前通道图为竖幅；以高度等比缩放并将脚线放在门节点，避免沿用旧图宽度。
-		var factor: float = 150.0 / GATE.get_height()
-		sprite.position = Vector2(-GATE.get_width()*factor*0.5, -150)
-		sprite.scale = Vector2.ONE * factor
-		anchor.add_child(sprite)
 	var label := Label.new()
 	label.position = Vector2(-140, -190)
 	label.size = Vector2(280, 44)
