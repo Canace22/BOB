@@ -216,6 +216,11 @@ func _sleep(entry: Dictionary) -> void:
 func _wake(entry: Dictionary) -> void:
 	for node: Node in entry.get("modes", {}):
 		if is_instance_valid(node): node.process_mode = entry.modes[node]
+	# Enemy bodies are created while the neighbor is dormant. Restore their
+	# visibility on wake so a stream crossing cannot leave the crab invisible.
+	for node: Node in entry.scene.find_children("*", "Node2D", true, false):
+		if str(node.name).begins_with("CorpseCrab") or str(node.name).begins_with("MotherCrab"):
+			node.show()
 	for node: CollisionObject2D in entry.get("collisions", {}):
 		if is_instance_valid(node):
 			node.collision_layer = entry.collisions[node][0]

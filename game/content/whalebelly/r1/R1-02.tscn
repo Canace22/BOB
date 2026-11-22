@@ -288,7 +288,7 @@ centered = false
 [node name="Surface1_0" type="Sprite2D" parent="World/Art" unique_id=824312046]
 modulate = Color(0.84, 0.88, 0.91, 1)
 material = SubResource("m5")
-position = Vector2(261, 979.00006)
+position = Vector2(289, 923)
 scale = Vector2(0.121, 0.121)
 texture = ExtResource("18")
 centered = false
@@ -296,7 +296,7 @@ centered = false
 [node name="Surface2_0" type="Sprite2D" parent="World/Art" unique_id=1769561733]
 modulate = Color(0.84, 0.88, 0.91, 1)
 material = SubResource("m5")
-position = Vector2(621.816, 940)
+position = Vector2(634, 898.00006)
 scale = Vector2(0.156, 0.156)
 texture = ExtResource("18")
 centered = false
@@ -420,6 +420,14 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("18")
 centered = false
 
+[node name="StreamStepArt" type="Sprite2D" parent="World/DesignedArt"]
+modulate = Color(0.84, 0.88, 0.91, 1)
+material = SubResource("m5")
+position = Vector2(811, 681)
+scale = Vector2(0.10025, 0.10025)
+texture = ExtResource("18")
+centered = false
+
 [node name="Ring0" type="Sprite2D" parent="World/Art" unique_id=1756400437]
 z_index = 2
 position = Vector2(1154.538, 441.359)
@@ -450,52 +458,52 @@ polygon = PackedVector2Array(44, 700, 73.635, 700, 114.09, 699.508, 154.545, 700
 one_way_collision_margin = 6.0
 
 [node name="Surface1" type="StaticBody2D" parent="World/Terrain" unique_id=1689640541]
-position = Vector2(-100, 90)
+position = Vector2(-35.353, 31.735)
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=2123095164]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(444, 850, 458.51, 850, 458.51, 852, 444, 852)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour1" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=604813340]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(458.51, 850, 487.34, 849.65, 487.34, 851.65, 458.51, 852)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour2" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=1036493186]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(487.34, 849.65, 516.17, 850.701, 516.17, 852.701, 487.34, 851.65)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour3" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=677224973]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(516.17, 850.701, 545, 850, 545, 852, 516.17, 852.701)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour4" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=1650165896]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(545, 850, 573.83, 850.175, 573.83, 852.175, 545, 852)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour5" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=2057340192]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(573.83, 850.175, 602.66, 850.525, 602.66, 852.525, 573.83, 852.175)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour6" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=332978997]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(602.66, 850.525, 631.49, 849.825, 631.49, 851.825, 602.66, 852.525)
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Contour7" type="CollisionPolygon2D" parent="World/Terrain/Surface1" unique_id=1626655688]
-position = Vector2(-64.647, 58.26526)
+position = Vector2(-87.29401, 61.530273)
 polygon = PackedVector2Array(631.49, 849.825, 646, 850, 646, 852, 631.49, 851.825)
 one_way_collision = true
 one_way_collision_margin = 6.0
@@ -557,6 +565,13 @@ one_way_collision_margin = 6.0
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/UpperStand"]
 polygon = PackedVector2Array(530, 777, 734, 777, 734, 807, 530, 807)
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="StreamStep" type="StaticBody2D" parent="World/Terrain"]
+
+[node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/StreamStep"]
+polygon = PackedVector2Array(820, 700, 1020, 700, 1020, 730, 820, 730)
 one_way_collision = true
 one_way_collision_margin = 6.0
 

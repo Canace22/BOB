@@ -44,6 +44,12 @@ func _process(dt: float) -> void:
 		elapsed=0.0
 		update_window()
 
+func _texture_path(key: String) -> String:
+	var texture_path := "res://art/world-terrain-v2/" + key
+	if key == "tile_1_0.png" and is_instance_valid(host) and str(host.room.get("id", "")) == "R1-02":
+		return "res://art/world-terrain-v2/tile_1_0_r1_02_moved.png"
+	return texture_path
+
 func update_window() -> void:
 	if not is_instance_valid(host) or not is_instance_valid(host.player): return
 	var camera: Camera2D=host.get_viewport().get_camera_2d()
@@ -55,12 +61,18 @@ func update_window() -> void:
 		var key: String=str(record.file)
 		var rect:=Rect2(float(record.x),float(record.y),float(record.width),float(record.height))
 		if view.intersects(rect):
-			if resident.has(key): continue
+			var texture_path := _texture_path(key)
+			if resident.has(key):
+				var current: Sprite2D = resident[key]
+				if str(current.get_meta("stream_texture_path", "")) == texture_path: continue
+				# The same world tile can span two streamed rooms. Update the resident
+				# sprite in place so the platform never flashes out during a crossing.
+				current.texture=load(texture_path)
+				current.set_meta("stream_texture_path", texture_path)
+				continue
 			var tile:=Sprite2D.new()
-			var texture_path := "res://art/world-terrain-v2/" + key
-			if key == "tile_1_0.png" and str(host.room.get("id", "")) == "R1-02":
-				texture_path = "res://art/world-terrain-v2/tile_1_0_r1_02_moved.png"
 			tile.texture=load(texture_path)
+			tile.set_meta("stream_texture_path", texture_path)
 			tile.centered=false
 			tile.region_enabled=true
 			tile.region_rect=Rect2(2,2,rect.size.x,rect.size.y)

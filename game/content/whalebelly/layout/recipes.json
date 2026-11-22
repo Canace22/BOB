@@ -242,7 +242,7 @@
           "id": "Surface1",
           "name": "槽底台",
           "x": 430,
-          "y": 850,
+          "y": 940,
           "w": 230,
           "one_way": true,
           "top_only": true
@@ -251,9 +251,17 @@
           "id": "Surface2",
           "name": "低顶横台",
           "x": 720,
-          "y": 830,
+          "y": 910,
           "w": 300,
           "one_way": false
+        },
+        {
+          "id": "StreamStep",
+          "name": "新增过渡踏台",
+          "x": 820,
+          "y": 700,
+          "w": 200,
+          "one_way": true
         },
         {
           "id": "Surface3",
@@ -406,7 +414,7 @@
         {
           "pos": [
             910,
-            830
+            910
           ],
           "boss": false,
           "type": "corpse-crab"
@@ -442,30 +450,30 @@
               {
                 "at": [
                   490,
-                  850
+                  940
                 ],
                 "mode": "drop"
               },
               {
                 "at": [
-                  630,
-                  850
+                  520,
+                  940
                 ],
                 "mode": "walk"
               },
               {
                 "at": [
                   810,
-                  830
+                  910
                 ],
                 "mode": "jump",
-                "launch_x": 640,
-                "jump_hold": 2
+                "launch_x": 520,
+                "jump_hold": 35
               },
               {
                 "at": [
-                  970,
-                  830
+                  900,
+                  910
                 ],
                 "mode": "walk",
                 "attack": true
@@ -508,30 +516,30 @@
               {
                 "at": [
                   490,
-                  850
+                  940
                 ],
                 "mode": "drop"
               },
               {
                 "at": [
-                  630,
-                  850
+                  520,
+                  940
                 ],
                 "mode": "walk"
               },
               {
                 "at": [
                   810,
-                  830
+                  910
                 ],
                 "mode": "jump",
-                "launch_x": 640,
-                "jump_hold": 2
+                "launch_x": 520,
+                "jump_hold": 35
               },
               {
                 "at": [
-                  970,
-                  830
+                  900,
+                  910
                 ],
                 "mode": "walk",
                 "attack": true
