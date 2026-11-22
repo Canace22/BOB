@@ -63,6 +63,7 @@ func _process(_dt: float) -> void:
 	map_button.text = WhaleUIStyle.key("ui_region_map")
 	for control: Control in [map_button, combo_hud]: control.visible = controller.page_id.is_empty()
 	var objective: String=controller.host.dialogue.objective_hint()
+	if is_instance_valid(controller.host.get("story")) and controller.host.story.running(): objective=CampaignStoryRoutes.objective(controller.host.story)
 	if objective.is_empty(): objective=CampaignGuidance.hint(controller.host)
 	objective_hud.present(objective,310.0)
 	objective_hud.visible=objective_hud.visible and controller.page_id.is_empty() and is_instance_valid(controller.player) and controller.player.health>0

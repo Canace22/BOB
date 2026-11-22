@@ -12,7 +12,7 @@ func fixture() -> EnemyLab:
 
 func test_actual_copy_uses_shared_new_body_phase_without_moving_combat_time() -> void:
 	var lab := await fixture()
-	for item: Array in [["strike_01","strike1",0.10],["wb_rise","upper",0.07],["heavy","heavy",0.25]]:
+	for item: Array in [["strike1","strike1",0.10],["wb_rise","upper",0.07],["heavy","heavy",0.25]]:
 		lab.reset_round()
 		await physics_frames(14)
 		var e: EnemyLabElder=lab.enemies[0] as EnemyLabElder

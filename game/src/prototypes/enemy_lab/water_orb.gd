@@ -2,7 +2,7 @@ class_name EnemyLabWaterOrb
 extends Node2D
 ## 脱身时发出的一次性水弹；不追踪，使用已有玩家受伤/格挡协议。
 var source: WeakRef
-var player: EnemyLabPlayer
+var player: TideCombatPlayer
 var velocity: Vector2
 var life: float=1.8
 var spent: bool=false
@@ -33,7 +33,7 @@ func _physics_process(dt: float) -> void:
 	var body := Rect2(player.global_position-Vector2(14,65),Vector2(28,65)).grow(RADIUS)
 	if _crosses(start,end,body):
 		spent=true
-		var guard: EnemyLabSkills=player.skill_controller as EnemyLabSkills
+		var guard: TideCombatGuardSkills=player.skill_controller as TideCombatGuardSkills
 		var before: int=guard.guard_count
 		if player.take_damage(1,start):
 			enemy.water_hits+=1

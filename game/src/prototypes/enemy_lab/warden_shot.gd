@@ -2,7 +2,7 @@ class_name EnemyLabWardenShot
 extends Node2D
 ## 压囊水弹/水龙卷仅归施放者所有，沿用玩家真实伤害/格挡入口。
 var source: WeakRef
-var player: EnemyLabPlayer
+var player: TideCombatPlayer
 var kind: String="bullet"
 var velocity: Vector2
 var life: float=1.5
@@ -53,7 +53,7 @@ func _physics_process(dt: float) -> void:
 	var half := Vector2(35,60) if kind=="vortex" else Vector2(11,11)
 	var body := Rect2(player.global_position-Vector2(14,65)-half,Vector2(28,65)+half*2.0)
 	if EnemyLabWaterTrace.crosses(start,end,body):
-		var guard: EnemyLabSkills=player.skill_controller as EnemyLabSkills
+		var guard: TideCombatGuardSkills=player.skill_controller as TideCombatGuardSkills
 		var before: int=guard.guard_count
 		guard.incoming_pressure=35.0 if kind=="vortex" else 24.0
 		var damaged: bool=player.take_damage(1,start)

@@ -117,9 +117,13 @@ func test_character_parameters_and_skill_unlock_rules_keep_the_current_contract(
 	for key: String in ["max_speed","acceleration","friction","gravity","terminal_speed","fall_multiplier","air_control","jump_height","short_jump_height","double_jump_speed","wall_slide_speed","wall_jump_x","wall_jump_height","dash_speed","dash_duration","dash_cooldown","max_health","max_soul","melee_damage","orb_damage","heavy_damage","heal_amount","float_time","float_lift_speed","float_lift_accel"]:
 		eq(actor.get(key),parameters[key],"Current movement/combat parameter is frozen: " + key)
 	eq(actor.collision_size,point(parameters.collision_size),"Physical player envelope is frozen")
-	eq(TideSkillCatalog.ACTIONS.size(),contract.player.catalog_actions.size(),"Style work adds no new gameplay action")
-	for key: String in contract.player.catalog_actions:
-		var expected: Dictionary = contract.player.catalog_actions[key].duplicate(true)
+	# 普攻反馈明确授权两段时序/范围调整，其余技能仍逐字段比对原冻结合同。
+	var basics: Dictionary=object_at("res://tests/fixtures/xumen-basic-attack-gameplay-v8.json")
+	var actions: Dictionary=contract.player.catalog_actions.duplicate(true)
+	actions.merge(basics.catalog_actions,true)
+	eq(TideSkillCatalog.ACTIONS.size(),contract.player.catalog_actions.size()+basics.added_actions.size(),"Only explicitly authorized basic action is added")
+	for key: String in actions:
+		var expected: Dictionary = actions[key].duplicate(true)
 		expected.erase("title")
 		# JSON numbers are floats; normalize the native integer fields likewise.
 		var actual: Dictionary = JSON.parse_string(JSON.stringify(TideSkillCatalog.definition(key)))
@@ -176,6 +180,9 @@ func test_frozen_gameplay_script_hashes_allow_independent_art_and_scene_changes(
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-narrative-combat-gameplay-v5.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# Recovery landing fix ignores one-way platforms in the shared wall-jump probes.
 	for item: Dictionary in object_at("res://tests/fixtures/xumen-sieve-recovery-gameplay-v6.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
+	# 用户要求正式十二章接入，显式允许新敌人命中入口和可选V6叙事扩展；其余冻结项保留。
+	for item: Dictionary in object_at("res://tests/fixtures/xumen-formal-story-gameplay-v7.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
+	for item: Dictionary in object_at("res://tests/fixtures/xumen-basic-attack-gameplay-v8.json").source_hashes: hashes[str(item.path)] = str(item.sha256)
 	# Deliberately exclude generators, scenes, image files and presentation scripts.
 	for path: String in ["src/campaign/tide_player.gd","src/campaign/campaign_player.gd","src/campaign/tide_skill_catalog.gd","src/campaign/tide_skill_input.gd","src/campaign/tide_skill_controller.gd","src/campaign/tide_input.gd","src/campaign/campaign_relics.gd","src/campaign/campaign_save_bridge.gd","src/campaign/boss/crab_boss.gd","src/campaign/boss/crab_shell.gd","src/campaign/boss/crab_moves.gd","src/campaign/enemies/corpse_crab.gd","src/campaign/enemies/kit_encounter.gd","src/ui/ui_save_access.gd"]:
 		check(hashes.has("game/"+path),"Baseline contains gameplay source: " + path)

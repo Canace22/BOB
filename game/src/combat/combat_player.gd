@@ -132,7 +132,15 @@ func request_action(action: String) -> bool:
 	# 成功格挡允许立即反击，未成功的持盾仍沿用原取消窗口。
 	var guard := skill_controller as TideCombatGuardSkills
 	if guard != null and guard.active and guard.visual_key == "parry" and guard.parried:
-		if action in ["strike_01","strike2"] and controls_enabled and health > 0: guard.cancel()
+		if action in ["strike_01","strike1","strike2"] and controls_enabled and health > 0: guard.cancel()
+	if action in ["strike_01","strike1","strike2"]:
+		# 兼容旧普攻ID，但两段均走共用执行器，避开主线旧Boss的中心距离特判。
+		var key: String="strike2" if action=="strike2" else "strike1"
+		if retreating or not skill_controller.request(key): return false
+		# 只有真正起手才推进连段；按键过密、缓存被覆盖不能跳段或重复第一段。
+		skill_controller.input.combo_next=key=="strike1"
+		skill_controller.input.combo_left=0.65
+		return true
 	if TideCombatSkills.DEFINITIONS.has(action): return skill_controller.request(action)
 	if retreating: return false
 	if action in ["A1_dash","parry"] and _offense_active():
@@ -165,7 +173,7 @@ func _before_move(dt: float) -> void:
 	super._before_move(dt)
 	# 只约束地面普攻两段；同为strike_01代理的位移技不能被误锁。
 	if not is_on_floor() or velocity.y < 0.0 or state_duration <= 0.0: return
-	var basic: bool = skill_controller.visual_key == "strike2" if skill_controller.active else state == "strike_01"
+	var basic: bool = skill_controller.visual_key in ["strike1","strike2"] if skill_controller.active else state == "strike_01"
 	if basic: velocity.x = 0.0
 
 func _focus_continues() -> bool:
@@ -182,6 +190,8 @@ func _offense_active() -> bool:
 func _offense_released() -> bool:
 	if skill_controller.active:
 		if not skill_controller.released: return false
+		# 第一段沿用原挥击尾窗，避免命中定格尚未结束就被判为防御后摇。
+		if skill_controller.visual_key=="strike1" and skill_controller.elapsed<float(skill_controller.data.release)+1.0/animation_fps: return false
 		var pulses: Array = skill_controller.data.get("pulses",[])
 		# 多段技能最后一段释放后才算后摇；不让冲刺/格挡顶替后跳的强制取消。
 		if skill_controller.pulse_index < pulses.size(): return false

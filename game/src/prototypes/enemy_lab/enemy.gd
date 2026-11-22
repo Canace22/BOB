@@ -3,7 +3,7 @@ extends CharacterBody2D
 ## 白盒敌人适配器：复用玩家命中协议与反馈，不接主线宿主或进度。
 signal changed(message: String)
 signal phase_started(phase: String)
-var player: EnemyLabPlayer
+var player: TideCombatPlayer
 var profile: Dictionary
 var data: Dictionary = {"alive":true}
 var spec: Dictionary = {}
@@ -35,6 +35,7 @@ var feedback: TideEnemyFeedback
 var reactions: EnemyLabReactions
 var effects: EnemyLabAttackEffects
 var pressure: ChapterCombatPressure=ChapterCombatPressure.new()
+var combat_space: EnemyLabCombatSpace=EnemyLabCombatSpace.new()
 
 func _ready() -> void:
 	pressure.enemy=self
@@ -178,7 +179,7 @@ func strike() -> void:
 	var ray := PhysicsRayQueryParameters2D.create(global_position+Vector2(0,-30),player.global_position+Vector2(0,-30),1)
 	if not get_world_2d().direct_space_state.intersect_ray(ray).is_empty(): return
 	hit_sent=true
-	var guard: EnemyLabSkills=player.skill_controller as EnemyLabSkills
+	var guard: TideCombatGuardSkills=player.skill_controller as TideCombatGuardSkills
 	var before: int=guard.guard_count
 	# 本次攻击的防御属性只在伤害调用期间生效，不能污染后续伤害来源。
 	guard.incoming_pressure=float(spec.get("guard_pressure",28.0))
@@ -233,7 +234,7 @@ func action_spec(key: String) -> Dictionary: return pressure.action(key)
 
 func finish() -> void:
 	outcome="kill" if kill_comparison else str(profile.ending)
-	retreat_goal=clampf(position.x+150.0*signf(position.x-player.position.x),70.0,1210.0)
+	retreat_goal=combat_space.clamp_x(position.x+150.0*signf(position.x-player.position.x),70.0,1210.0)
 	data.alive=outcome!="kill"
 	set_state("ended")
 	velocity=Vector2.ZERO

@@ -138,7 +138,7 @@ func _action_tick(dt: float) -> void:
 			if not is_zero_approx(axis): facing=signf(axis)
 		if move_key=="beam_return" and retreat_distance<100.0:
 			velocity.x=-facing*145.0
-			if position.x<90.0 and velocity.x<0.0 or position.x>1190.0 and velocity.x>0.0: velocity.x=0.0
+			if position.x<combat_space.x(90.0) and velocity.x<0.0 or position.x>combat_space.x(1190.0) and velocity.x>0.0: velocity.x=0.0
 	elif state=="active": velocity.x=facing*float(spec.speed)
 	timer+=dt
 	if state=="active" and timer>=0.04: strike()

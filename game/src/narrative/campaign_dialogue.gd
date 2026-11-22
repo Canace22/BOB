@@ -5,6 +5,7 @@ signal started(spec: Dictionary)
 signal line_changed(speaker: String, text: String)
 signal ended
 signal subtitle_changed(text: String)
+signal committed(id: String)
 var host: Node2D
 var enabled: bool = true
 var seen: Dictionary = {}
@@ -40,6 +41,7 @@ func safe_to_talk() -> bool:
 
 func triggers() -> Array[WhaleDialogueTrigger]:
 	var result: Array[WhaleDialogueTrigger] = []
+	if is_instance_valid(host.get("story")) and host.story.running(): return result
 	for node: Node in get_tree().get_nodes_in_group("campaign_dialogue_triggers"):
 		if node is WhaleDialogueTrigger and node.eligible(host,seen): result.append(node)
 	result.sort_custom(func(a: WhaleDialogueTrigger,b: WhaleDialogueTrigger) -> bool: return a.priority>b.priority)
@@ -98,6 +100,21 @@ func _emit_line() -> void:
 	var speakers: PackedStringArray = active.speakers
 	line_changed.emit(speakers[mini(cursor,speakers.size()-1)] if not speakers.is_empty() else "",active.lines[cursor])
 
+func play_script(id: String, lines: Array) -> bool:
+	if lines.is_empty() or not available() or not safe_to_talk() or not active.is_empty() or not host.player.is_on_floor(): return false
+	var speakers: PackedStringArray=[]
+	var texts: PackedStringArray=[]
+	for line: Array in lines:
+		if line.size()!=2: return false
+		speakers.append(str(line[0]))
+		texts.append(str(line[1]))
+	active={"id":id,"room":str(host.room.id),"lines":texts,"speakers":speakers,"objective_id":"","objective":""}
+	cursor=0
+	started.emit(active)
+	_emit_line()
+	host.record_event("dialogue_started",{"id":id})
+	return true
+
 func advance() -> void:
 	if active.is_empty(): return
 	cursor+=1
@@ -117,6 +134,7 @@ func _commit(spec: Dictionary, skipped: bool) -> void:
 	# 重读旧内容不回退已经推进的目标。
 	if first_completion and not str(spec.objective_id).is_empty(): objective={"id":spec.objective_id,"text":spec.objective,"room":spec.room}
 	host.record_event("dialogue_finished",{"id":spec.id,"skipped":skipped})
+	committed.emit(str(spec.id))
 	host.save_progress(false)
 
 func objective_hint() -> String:

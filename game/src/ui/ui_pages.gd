@@ -154,6 +154,15 @@ static func _help(ui: WhaleCampaignUI) -> void:
 
 ## Placeholder closing text until the final chapter is written; the loop itself is complete.
 static func _ending(ui: WhaleCampaignUI) -> void:
+	if is_instance_valid(ui.host.get("story")) and ui.host.story.running():
+		ui.heading.text="潮退以后"
+		var ending_column: VBoxContainer=menu(ui,660)
+		ending_column.add_child(WhaleUIStyle.paragraph("旧撑与退流槽还在。拾潮者和老守护者一起守住窄口，让回水慢慢排出去。\n\n有人搬进了新巢，也有人留下来修补旧居。封梁卫的名字已经刻下，未能安顿的住巢仍留在水路图上。\n\n鲸声再次传来时，拾潮者停下笔，听完了那一段低鸣。"))
+		action(ending_column,"EndingTitle","返回首页",func() -> void:
+			ui.history.clear()
+			ui.open("title",false))
+		action(ending_column,"EndingStay","回访遗城",ui.close_all)
+		return
 	ui.heading.text = "归海"
 	var column: VBoxContainer = menu(ui,660)
 	column.add_child(WhaleUIStyle.label("三道槽依次亮起，导流闸缓缓打开。",22))

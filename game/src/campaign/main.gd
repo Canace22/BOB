@@ -86,6 +86,7 @@ var continuity: CampaignContinuity
 var streaming: CampaignRoomStream
 var music: CampaignMusic
 var dialogue: WhaleCampaignDialogue
+var story: CampaignStory
 var actor_frame: Node2D
 
 func _ready() -> void:
@@ -222,6 +223,7 @@ func _ready() -> void:
 		if arg.begins_with("--qa-output="): qa_output = arg.trim_prefix("--qa-output=")
 	# 旧QA路线不被新增自动对话暂停；叙事专项与隔离试玩显式开启。
 	dialogue.enabled = not qa
+	ensure_story()
 	if capture_path.is_empty() and not qa: load_progress()
 	else: room_index = capture_room
 	load_room(room_index)
@@ -274,6 +276,7 @@ func create_room_stream() -> CampaignRoomStream:
 	return CampaignRoomStream.new()
 
 func load_room(index: int, target_spawn: Array = [], record_discovery: bool = true, stream_crossing: bool = false) -> void:
+	if is_instance_valid(story): story.leave_room()
 	# The authored starting room is visible in main.tscn and shares the same
 	# PackedScene as runtime. Reuse it once; saved later rooms discard it.
 	var authored_room: Node2D = get_node_or_null("LevelMap") if not is_instance_valid(scenery) else null
@@ -366,10 +369,16 @@ func load_room(index: int, target_spawn: Array = [], record_discovery: bool = tr
 	streaming.activated(index)
 	overlay.position = scenery.position
 	update_camera()
+	if is_instance_valid(story): story.enter_room()
 	if ui_session_started and record_discovery and not practice: save_progress(false)
 
 func _create_room_enemies() -> void:
 	enemies = []
+	if is_instance_valid(story) and story.running():
+		# 正式章节独占战斗身体，邻房准备也不得复生旧Boss或重复发技能奖励。
+		for child: Node in scenery.get_node("World").get_children():
+			if str(child.name).begins_with("EnemyArt") and child is CanvasItem: child.hide()
+		return
 	for i: int in range(room.get("enemies", []).size()):
 		var source: Dictionary = room.enemies[i]
 		var origin: Vector2 = point(source.pos)
@@ -516,6 +525,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			update_layers()
 		KEY_F9:
 			if not practice:
+				if is_instance_valid(story) and story.running(): story.leave_room()
 				practice_restore = {"abilities":abilities.duplicate(true),"collected":collected.duplicate(true),"defeated":defeated.duplicate(true),"checkpoint":checkpoint.duplicate(true),"completed":completed,"visited":visited.duplicate(true),"shield":relics.charges}
 				practice = true
 			else:
@@ -647,6 +657,11 @@ func damage_enemy(enemy:Dictionary,amount:int) -> void:
 			save_progress(false)
 
 func interact() -> void:
+	if is_instance_valid(story) and story.running():
+		if story.interact(): return
+		if str(room.get("reward_grants",""))=="ending" and not story.stage().is_empty():
+			notify("先完成主闸的救援与稳闸，再进行外排")
+			return
 	var reward: Array = room.get("reward", [])
 	if reward.size() == 2 and player.position.distance_to(point(reward)) < 100 and not collected.get(str(room.id), false):
 		var lacking: Array[String] = []
@@ -745,6 +760,12 @@ func ensure_dialogue() -> void:
 	dialogue.host = self
 	add_child(dialogue)
 
+func ensure_story() -> void:
+	if not is_instance_valid(story):
+		story=CampaignStory.new()
+		add_child(story)
+	story.setup(self)
+
 func save_progress(show_message: bool = true) -> void:
 	ensure_dialogue()
 	if practice and not qa:
@@ -752,6 +773,7 @@ func save_progress(show_message: bool = true) -> void:
 		notify("练习状态不写入正式存档")
 		return
 	var payload: Dictionary = {"version": 6, "checkpoint": checkpoint, "collected": collected, "defeated": defeated, "abilities": abilities, "completed":completed,"visited":visited,"narrative":dialogue.to_save()}
+	if is_instance_valid(story): payload["chapter_story"]=story.to_save()
 	last_save_ok = WhaleUISaveAccess.write(save_path(),payload) == OK
 	persist_events()
 	if not last_save_ok: notify("存档写入失败，请检查存储空间")
@@ -762,6 +784,8 @@ func load_progress() -> void:
 	if payload.is_empty(): return
 	ensure_dialogue()
 	dialogue.restore(payload.get("narrative",{}))
+	ensure_story()
+	story.restore(payload.get("chapter_story",{}))
 	checkpoint = payload.get("checkpoint", checkpoint)
 	room_index = clampi(int(checkpoint.room), 0, rooms.size() - 1)
 	completed = payload.get("completed",false)

@@ -89,6 +89,10 @@ static func requirement_label(needs: Array[String]) -> String:
 ## Empty when the door can be used now. Requirements are reported before the
 ## unbuilt notice so a locked gate still teaches what it will ask for.
 static func restriction(host: Node2D, door: Dictionary) -> String:
+	if is_instance_valid(host.get("story")) and host.story.running():
+		var target: int=int(door.get("to",-1))
+		if target<0: return UNBUILT
+		return CampaignStoryRoutes.gate_reason(host.story,str(host.room.id),str(host.rooms[target].id))
 	var missing: PackedStringArray = []
 	for need: String in requirements(door):
 		if need == "boss":

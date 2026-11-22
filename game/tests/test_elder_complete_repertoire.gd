@@ -18,7 +18,7 @@ func perform(lab: EnemyLab, key: String) -> String:
 	if key in ["wb_backcut","backstep"]:
 		check(p.try_backstep(),"actual backstep starts")
 	if key!="backstep": check(p.request_action(key),"actual execution accepts "+key)
-	var expected: String="orb" if key=="A4_parry" else key
+	var expected: String={"A4_parry":"orb","strike_01":"strike1"}.get(key,key)
 	var e: EnemyLabElder=lab.enemies[0] as EnemyLabElder
 	for frame: int in 180:
 		await physics_frames(1)

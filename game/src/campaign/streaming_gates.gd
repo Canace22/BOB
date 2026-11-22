@@ -40,6 +40,11 @@ func _add(link: Dictionary, forward: bool) -> void:
 func reason(source: int, target: int, door: Dictionary) -> String:
 	var host: Node2D = stream.host
 	if target < 0: return CampaignWorld.UNBUILT
+	if is_instance_valid(host.get("story")) and host.story.running():
+		var blocked: String=CampaignStoryRoutes.gate_reason(host.story,str(host.rooms[source].id),str(host.rooms[target].id))
+		if not blocked.is_empty(): return blocked
+		if stream.failed.has(target): return "邻房加载失败，请返回标题后重试"
+		return "" if stream.is_ready(target) else "正在准备相邻房间"
 	for need: String in CampaignWorld.requirements(door):
 		if need == "boss":
 			if not host.defeated.get(str(host.rooms[source].id)+":0",false): return "先击败守关者"

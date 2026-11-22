@@ -7,7 +7,7 @@ var vaults: int=0
 var replant_interrupts: int=0
 
 func launch() -> void:
-	var destination: float=clampf(enemy.player.position.x+enemy.facing*135.0,110.0,1170.0)
+	var destination: float=enemy.combat_space.clamp_x(enemy.player.position.x+enemy.facing*135.0,110.0,1170.0)
 	flight_speed=clampf((destination-enemy.position.x)/0.72,-430.0,430.0)
 	enemy.stable=false
 	enemy.velocity.y=-620.0

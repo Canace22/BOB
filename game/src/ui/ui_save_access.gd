@@ -25,6 +25,12 @@ static func read(path: String, rooms: Array) -> Dictionary:
 			if not key is String or not story.seen[key] is bool: return {}
 		for key: String in ["id","text","room"]:
 			if not story.get("objective",{}).get(key,"") is String: return {}
+	if value.has("chapter_story"):
+		var chapter: Variant=value.chapter_story
+		if not chapter is Dictionary or int(chapter.get("version",0))!=1: return {}
+		if not chapter.get("completed",[]) is Array or not chapter.get("facts",{}) is Dictionary: return {}
+		for id: Variant in chapter.get("completed",[]):
+			if not id is String: return {}
 	return value
 
 static func write(path: String, payload: Dictionary) -> Error:

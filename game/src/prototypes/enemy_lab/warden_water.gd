@@ -31,8 +31,9 @@ func begin() -> void:
 		var direction: float=signf(enemy.position.x-enemy.player.position.x)
 		if is_zero_approx(direction): direction=-enemy.facing
 		var target: float=enemy.player.position.x+direction*180.0
-		if target<350.0 or target>1030.0: target=enemy.player.position.x-direction*180.0
-		wash_goal=Vector2(clampf(target,350,1030),520)
+		if target<enemy.combat_space.x(350.0) or target>enemy.combat_space.x(1030.0): target=enemy.player.position.x-direction*180.0
+		var landing_x: float=enemy.combat_space.clamp_x(target,350,1030)
+		wash_goal=Vector2(landing_x,enemy.combat_space.ground_at(enemy,landing_x))
 
 func duration() -> float:
 	if enemy.state=="wash": return 0.40
@@ -62,7 +63,7 @@ func tick(dt: float) -> void:
 				enemy.set_state("wash")
 			else: enemy.set_state("active")
 		"wash":
-			enemy.facing=signf(aim.x-enemy.position.x)
+			enemy.facing=signf(aim.x-enemy.global_position.x)
 			if is_zero_approx(enemy.facing): enemy.facing=1.0
 			enemy.set_state("reform")
 		"reform": enemy.set_state("active")

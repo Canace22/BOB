@@ -10,6 +10,7 @@ static func onward(host: Node2D) -> bool:
 	return host.rooms.any(func(entry: Dictionary) -> bool: return str(entry.id) == "R3-01")
 
 static func next_room(host: Node2D) -> String:
+	if is_instance_valid(host.get("story")) and host.story.running(): return CampaignStoryRoutes.next_room(host.story)
 	if host.abilities.get("ending", false): return ""
 	if str(host.room.id) == "R1-05" and onward(host): return "R3-01"
 	# Later regions list candidates in room data; the first unmet goal with a built room wins.
@@ -41,6 +42,7 @@ static func objective(host: Node2D) -> String:
 	return "前往归海释放槽 · 推开导流闸"
 
 static func hint(host: Node2D) -> String:
+	if is_instance_valid(host.get("story")) and host.story.running(): return CampaignStoryRoutes.objective(host.story)
 	if host.abilities.get("ending", false): return objective(host)
 	match str(host.room.id):
 		"R1-07":

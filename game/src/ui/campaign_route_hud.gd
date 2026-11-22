@@ -25,11 +25,31 @@ static func destinations(host: Node2D) -> Array[Dictionary]:
 			if not satisfied: missing.append(str(CampaignWorld.NAMES.get(need,need)))
 		if door.has("locked") and not host.has_ability(str(door.locked)): missing.append("另一侧开启")
 		var main: bool = str(room.id)==next
+		if is_instance_valid(host.get("story")) and host.story.running():
+			var reason: String=CampaignStoryRoutes.gate_reason(host.story,str(host.room.id),str(room.id))
+			missing=PackedStringArray([reason]) if not reason.is_empty() else PackedStringArray()
 		var visited: bool = bool(host.visited.get(str(room.id),false))
 		result.append({"target":target,"id":str(room.id),"name":str(room.name),"point":host.point(door.pos),"main":main,"blocked":not missing.is_empty(),"detail":"需"+" / ".join(missing) if not missing.is_empty() else "","kind":"前往" if main else ("返回" if visited else "可前往")})
+	if is_instance_valid(host.get("story")) and host.story.running() and host.story.current_room():
+		var stage: Dictionary=host.story.stage()
+		var targets: Array[Dictionary]=[]
+		if stage.kind=="explore": targets=host.story.active_tasks()
+		else: targets.append(stage)
+		for target: Dictionary in targets:
+			if str(target.get("room_id",stage.room_id))!=str(host.room.id): continue
+			var point: Vector2=host.point(target.at)
+			var label: String=str(target.get("label","当前目标")).trim_prefix("F ")
+			if stage.kind=="battle" and is_instance_valid(host.story.encounter.enemy):
+				point=host.story.encounter.enemy.position
+				label=str(host.story.encounter.enemy.profile.title)
+			elif stage.kind=="escape":
+				point=host.point(stage.goal)
+				label="撤回安全处"
+			result.append({"target":host.room_index,"id":str(target.id),"name":label,"point":point,"main":true,"blocked":false,"detail":"","kind":"当前章节","story_target":true})
 	return result
 
 static func route_world_point(host: Node2D, route: Dictionary) -> Vector2:
+	if route.get("story_target",false): return host.actor_frame.to_global(Vector2(route.point))
 	var stream := host.streaming as CampaignRoomStream
 	if is_instance_valid(stream) and stream.enabled:
 		for link: Dictionary in stream.layout.get("links",[]):
@@ -61,6 +81,7 @@ func _process(dt: float) -> void:
 	for route: Dictionary in routes:
 		var world_point: Vector2 = route_world_point(host,route)
 		var screen_point: Vector2 = canvas_to_hud*host.get_canvas_transform()*world_point
+		if route.get("story_target",false) and Rect2(Vector2.ZERO,viewport).grow(-36).has_point(screen_point): continue
 		var ray: Vector2 = screen_point-player_point
 		if ray.length_squared()<1: continue
 		var marker: Dictionary = route.duplicate()

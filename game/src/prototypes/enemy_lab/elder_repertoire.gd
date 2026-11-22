@@ -10,7 +10,7 @@ var scans: int=0
 var blocked_feedback: bool=false
 
 func legacy(tag: String) -> void:
-	var p: EnemyLabPlayer=mimic.enemy.player
+	var p: TideCombatPlayer=mimic.enemy.player
 	if p.skill_controller.active: return
 	if tag==p.state+":start" and p.state in ["A1_dash","A5_slit"]:
 		remember(p.state,{"duration":p.state_duration,"release":0.0,"motion":"dash","speed":p.dash_speed,"immune":true,"utility":"move"})

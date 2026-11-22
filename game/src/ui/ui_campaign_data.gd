@@ -17,6 +17,9 @@ func at_camp() -> bool:
 func prompt() -> String:
 	var p: Node2D = host.player
 	if not is_instance_valid(p) or p.health <= 0 or host.continuity.travelling: return ""
+	if is_instance_valid(host.get("story")) and host.story.running():
+		var story_prompt: String=host.story.prompt()
+		if not story_prompt.is_empty(): return story_prompt
 	var speaker: WhaleDialogueTrigger = host.dialogue.nearby()
 	if speaker!=null: return speaker.prompt
 	var gate: Node = p.skill_controller.nearby_gate()
@@ -40,6 +43,10 @@ func prompt_door() -> CampaignDoorway:
 	return host.continuity.nearby_door()
 
 func boss() -> Dictionary:
+	if is_instance_valid(host.get("story")) and host.story.running():
+		var enemy: EnemyLabEnemy=host.story.encounter.enemy
+		if is_instance_valid(enemy) and enemy.outcome.is_empty():
+			return {"name":enemy.profile.title,"hp":enemy.health,"max_hp":enemy.maximum}
 	for enemy: Dictionary in host.enemies:
 		if enemy.boss and enemy.alive: return enemy
 	return {}
@@ -65,6 +72,12 @@ func map_objectives(index: int) -> Dictionary[String, String]:
 	var room: Dictionary = host.rooms[index]
 	var id := str(room.id)
 	var details: Dictionary[String, String] = {}
+	if is_instance_valid(host.get("story")) and host.story.running():
+		for chapter: Dictionary in host.story.catalog.chapters:
+			for stage: Dictionary in chapter.stages:
+				if str(stage.room_id)==id:
+					details["第%d章 · %s" % [int(chapter.id),str(chapter.title)]]="已完成" if str(stage.id) in host.story.completed else "进行中 / 待到访"
+		return details
 	for i: int in room.get("enemies", []).size():
 		if room.enemies[i].get("boss", false):
 			details["守关者"] = "已击败" if host.defeated.get("%s:%d" % [id, i], false) else "待击败"

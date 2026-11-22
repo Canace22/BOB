@@ -159,8 +159,6 @@ func read(dt: float) -> bool:
 			if Input.is_action_pressed("tp_down") and not actor.is_on_floor(): action="A3_anchor"
 			if actor.state in ["A1_dash","A5_slit"]: action="dash_slash"
 			_issue(action)
-			kernel.combo_next = not kernel.combo_next
-			kernel.combo_left = 0.65
 			kernel.attack_tracking = true
 			kernel.attack_hold = 0.0
 			return true

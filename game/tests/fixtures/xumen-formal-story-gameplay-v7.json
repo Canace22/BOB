@@ -1,0 +1,19 @@
+{
+  "revision": "formal-story-v7",
+  "authorization": "User requested the existing formal map to host all chapters, full Boss/NPC/story and dialogue portraits",
+  "scope": "Only these two frozen gameplay sources; no collision/room contract relaxed",
+  "source_hashes": [
+    {
+      "path": "game/src/campaign/campaign_player.gd",
+      "previous_sha256": "ef94272d74df6cd86bfd0aa49b6dc9b9c8320421be26bc9e9bef98f815242295",
+      "sha256": "2377168f24c7b1619060bd92a7ae06f01cb1dc0fb345279caa8dfc6934d04b62",
+      "reason": "Explicit formal chapter integration: unique shared-enemy melee + story interaction/guidance"
+    },
+    {
+      "path": "game/src/ui/ui_save_access.gd",
+      "previous_sha256": "198d009b118d7af84f4167dd22050e23daacef7df6a48774cbea227ed2f4c838",
+      "sha256": "ce15381c572aef4b5e0840365aa53da3d2c5c65bfc84212e15b245d2bf7ac206",
+      "reason": "Optional versioned chapter_story extension, existing V6 room/checkpoint validation retained"
+    }
+  ]
+}
