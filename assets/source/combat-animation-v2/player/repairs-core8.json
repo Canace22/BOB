@@ -1,0 +1,30 @@
+{
+  "generator": "built-in image_gen",
+  "repairs": [
+    {
+      "id": "upper",
+      "issue": "半透明白底，alpha最小值153",
+      "prompt": "Edit the provided uppercut animation sheet ONLY to remove its pale white/gray backdrop and all ground shadows. Preserve exactly the same sixteen drawings, character anatomy, proportions, grid, scale, frame order, weapon grip, colors and strokes. Do not redraw or move any character. The entire backdrop BETWEEN and AROUND the sprites must be alpha=0 actual transparency. No white rectangle, no checkerboard painted into the image, no floor patch, no shadow. Preserve semitransparent antialiased character edges. Output only the transparent sprite sheet. This is transparent background removal, not recoloring the characters.",
+      "rejected": "upper/rejected-white.png",
+      "selected": "upper/original.png",
+      "attempts": 1
+    },
+    {
+      "id": "heavy",
+      "issue": "部分过渡重复空手手套，疑似第三手",
+      "prompt": "Repair ONLY the arm anatomy in the provided 16-frame heavy downward-strike sprite sheet. Frames 3 and 4 (top row third and fourth cells) currently have an extra dangling glove at the lantern while another free hand is already held forward. The character must have exactly TWO ARMS and TWO HANDS in every frame: anatomical RIGHT hand grips the fork continuously, anatomical LEFT hand balances forward or near the chest. When the left hand moves forward, remove its obsolete resting glove/forearm near the hip/lantern; do NOT erase the lantern, cloak, red rope or right weapon arm. Trace the two arms consistently across all sixteen frames, with no third hand. Preserve the sixteen existing poses, temporal order, identity, exact grid, palette, scale, helmet, feet, fork and all other artwork. Preserve genuine alpha=0 transparent background and no shadows. Do not invent effects or change the action.",
+      "rejected": "heavy/rejected-extra-hand.png",
+      "selected": "heavy/original.png",
+      "attempts": 1
+    },
+    {
+      "id": "cyclone",
+      "issue": "回收第14帧出现两把叉",
+      "prompt": "Repair ONLY frame 14 (bottom row, second column) of this sixteen-frame spinning fork animation sheet. That cell has a DUPLICATED fork: one obsolete fork in the near LEFT free hand across the left shoulder, and the correct upright fork held by the RIGHT hand on the right side. KEEP the correct upright fork and right hand exactly where they are. REMOVE the obsolete left-side fork/shaft and replace the left hand with one relaxed EMPTY gloved free hand consistent with adjacent recovery frames. Exactly one two-prong fork, exactly two hands. Preserve the other FIFTEEN cells unchanged, exact identity, costume, lantern, rope, view, scale, grid and frame order. Preserve genuine transparency. No other edits.",
+      "rejected": "cyclone/rejected-duplicate-fork.png",
+      "selected": "cyclone/original.png",
+      "attempts": 1
+    }
+  ],
+  "review_status": "selected_static_candidates_pending_native_playback"
+}

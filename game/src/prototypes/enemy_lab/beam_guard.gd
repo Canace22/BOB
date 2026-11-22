@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func choose_move() -> String:
 	if not forced_move.is_empty(): return forced_move
+	if not pressure.queued.is_empty(): return pressure.queued
 	return ["beam_guard","beam_press","beam_return","beam_brace"][attack_serial%4]
 
 func begin_attack(key: String="") -> bool:
@@ -57,7 +58,7 @@ func take_hit(amount: int) -> void:
 	if front:
 		followup_cancelled=false
 		counters+=1
-		spec=EnemyLabCatalog.action("beam_brace")
+		spec=action_spec("beam_brace")
 		set_state("tell")
 		last_result="架叉受击 · 红光反推准备"
 	else:
@@ -74,6 +75,7 @@ func _open(seconds: float, message: String) -> void:
 	last_result=message
 
 func guard_reaction(perfect: bool) -> void:
+	pressure.cancel("perfect_guard" if perfect else "guard")
 	_open(1.35 if perfect else 0.65,"完美格挡 · 刃架失衡" if perfect else "格挡停刃 · 短反击")
 	feedback.receive(0.10 if perfect else 0.06,-facing,15.0 if perfect else 8.0)
 
@@ -91,6 +93,7 @@ func attack_rect() -> Rect2:
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	velocity.y=minf(velocity.y+1750.0*dt,800.0)
 	velocity.x=0.0
 	if not outcome.is_empty(): timer+=dt
@@ -125,7 +128,7 @@ func _idle_tick(dt: float) -> void:
 	if not is_zero_approx(gap.x): facing=signf(gap.x)
 	if absf(gap.x)>900.0:
 		velocity.x=signf(home.x-position.x)*float(profile.speed)
-	elif timer>0.50 and absf(gap.x)<210.0 and absf(gap.y)<125.0: begin_attack()
+	elif timer>pressure.idle(0.50) and absf(gap.x)<210.0 and absf(gap.y)<125.0: begin_attack()
 	elif absf(gap.x)>120.0: velocity.x=facing*float(profile.speed)
 
 func _action_tick(dt: float) -> void:

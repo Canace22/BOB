@@ -10,7 +10,7 @@ func _ready() -> void:
 	trigger.room_id="R1-02"
 	trigger.area=Rect2(-1000,-1000,5000,5000)
 	trigger.speakers=PackedStringArray(["旁白","拾潮者"])
-	trigger.lines=PackedStringArray(["穿过骨拱，拾潮者来到下层的折井入口。低鸣沿更深的井壁传来，旧封闭刻痕刻在前路旁。","补巢者指的路没有错。接下来，要找到守着这条路的人。"])
+	trigger.lines=PackedStringArray(["拾潮者穿过骨拱，来到折井入口。先前的低鸣正从更深处传来。","补巢者说折井有守卫。我先去问问，下面能不能通行。"])
 	trigger.objective_id="loop.arrived"
 	trigger.objective_text="已抵达折井入口 · 本次循环验证完成"
 	host.dialogue.ended.connect(_dialogue_finished)
@@ -30,7 +30,7 @@ func show_result() -> void:
 	ui.open("chapter_result",false)
 	ui.heading.text="已抵达折井入口"
 	var column: VBoxContainer=WhaleUIPages.menu(ui,650)
-	column.add_child(WhaleUIStyle.paragraph("你已穿过聚食区，并循着下层低鸣来到折井。\n本次循环验证到此完成。第二章主体尚未接入。",WhaleUIStyle.BONE))
+	column.add_child(WhaleUIStyle.paragraph("你已穿过聚食区，并循着下层低鸣来到折井。\n本次循环验证到此完成。折井的后续流程在第二章独立白盒中继续。",WhaleUIStyle.BONE))
 	WhaleUIPages.action(column,"RestartLoop","重新试玩",host.restart_loop)
 	WhaleUIPages.action(column,"ReturnPassage","返回须庭查看结果",host.return_to_passage)
 	ui.footer.text="选择重新试玩或返回须庭 · Esc 可留在折井入口活动"

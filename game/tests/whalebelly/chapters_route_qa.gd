@@ -2,6 +2,7 @@ extends SceneTree
 ## 默认全程真实输入；显式战斗夹具只检查战后与跨章接线，不能证明战斗通关。
 const OUTPUT: String="res://build/qa/chapters-route"
 const FRAME_LIMIT: int=10000
+const COMBAT_FRAME_LIMIT: int=12000
 const KEYS: Array[Key]=[KEY_A,KEY_D,KEY_I,KEY_J,KEY_K,KEY_SPACE,KEY_F]
 var host: ChapterRun
 var held: Dictionary={}
@@ -130,8 +131,10 @@ func play_chapter() -> bool:
 			release()
 			print("ROUTE_STAGE ch=",host.chapter_id," stage=",current_stage," position=",host.player.position)
 			await shot("ch%02d-%s" % [host.chapter_id,current_stage])
-		if frames-stage_start>=FRAME_LIMIT:
-			check("stage timeout after 10000 frames: "+current_stage,false)
+		# 当前最慢防守样本为鳗约67秒；200秒预算还包含场地接近和正常换位。
+		var frame_budget: int=COMBAT_FRAME_LIMIT if str(stage.kind)=="battle" else FRAME_LIMIT
+		if frames-stage_start>=frame_budget:
+			check("stage timeout after %d frames: %s" % [frame_budget,current_stage],false)
 			diagnose("stage timeout")
 			return false
 		if host.hud.dialogue.visible:
@@ -227,15 +230,7 @@ func move_to(point: Vector2, frame: int) -> void:
 func combat_input(frame: int) -> void:
 	var enemy: EnemyLabEnemy=host.encounter.enemy
 	target=enemy.position
-	var gap: float=enemy.position.x-host.player.position.x
-	var danger: bool=enemy.state in ["tell","active"]
-	var heavy: bool=bool(enemy.spec.get("unblockable",false))
-	var opening: bool=enemy.state in ["idle","recover","hurt"]
-	var approach: bool=opening and absf(gap)>95
-	key(KEY_A,approach and gap<0)
-	key(KEY_D,approach and gap>0)
-	key(KEY_I,danger and not heavy and (enemy.state=="active" or enemy.timer>enemy.phase_duration()-0.25))
-	key(KEY_SPACE,danger and heavy and enemy.state=="tell" and enemy.timer>enemy.phase_duration()-0.30)
-	key(KEY_J,opening and absf(gap)<155 and frame%18<2)
+	var buttons: Dictionary=ChapterPressureInputPolicy.decide(enemy,host.player,frame)
+	for code: Key in [KEY_A,KEY_D,KEY_I,KEY_J,KEY_SPACE]: key(code,bool(buttons.get(code,false)))
 	if frame%600==0:
-		print("ROUTE_COMBAT hp=",host.player.health," enemy_hp=",enemy.health," state=",enemy.state," move=",enemy.move_key," position=",host.player.position)
+		print("ROUTE_COMBAT hp=",host.player.health," enemy_hp=",enemy.health," state=",enemy.state," move=",enemy.move_key," position=",host.player.position," attacks=",enemy.attack_serial," links=",enemy.pressure.chains," blocks=",enemy.parry_count," received_hits=",enemy.reactions.received)

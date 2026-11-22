@@ -20,6 +20,7 @@ func end_position(tail: bool=false) -> Vector2:
 
 func choose_move() -> String:
 	if not forced_move.is_empty(): return forced_move
+	if not pressure.queued.is_empty(): return pressure.queued
 	if tail_dwell>=0.35 and attack_serial%3!=1: return "eel_tail"
 	if attack_serial%3==0:
 		return "eel_burrow" if (player.global_position.x-end_position().x)*facing<0.0 else "eel_brood"
@@ -77,9 +78,11 @@ func take_hit(amount: int) -> void:
 	control_left=0.0
 	velocity=Vector2.ZERO
 	move_key="eel_burrow"
-	spec=EnemyLabCatalog.action(move_key)
+	pressure.cancel("center_reposition")
+	spec=action_spec(move_key)
 	endpoint="head"
 	attack_serial+=1
+	pressure.started(move_key)
 	pulse=1
 	followup_cancelled=true
 	nest.begin()
@@ -88,6 +91,7 @@ func take_hit(amount: int) -> void:
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	velocity.y=minf(velocity.y+1750.0*dt,800.0)
 	velocity.x=move_toward(velocity.x,0.0,1800.0*dt)
 	if not outcome.is_empty(): timer+=dt
@@ -127,7 +131,7 @@ func _idle_tick(dt: float) -> void:
 	var goal: Vector2=end_position(tail)
 	var distance: float=absf(player.global_position.x-goal.x)
 	var reach: float=620.0 if choose_move() in ["eel_brood","eel_burrow"] else 170.0
-	if timer>0.60 and distance<reach and absf(player.position.y-position.y)<95.0:
+	if timer>pressure.idle(0.60) and distance<reach and absf(player.position.y-position.y)<95.0:
 		begin_attack()
 	elif distance>135.0:
 		velocity.x=signf(player.global_position.x-goal.x)*float(profile.speed)

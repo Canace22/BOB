@@ -1,0 +1,632 @@
+[
+  {
+    "id": "membrane_hunter--hunter_pounce",
+    "profile": "membrane_hunter",
+    "action": "hunter_pounce",
+    "references": [
+      "assets/source/combat-animation-v2/references/membrane_hunter-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The translucent pale grey-lilac squid/jellyfish fusion in the reference: one soft bell mantle with ivory vein edges, a small amber visceral sac, two dark small eyes and a consistent set of curling tentacles. No crab limbs or skeleton. Keep anatomical tentacle roots stable.\nACTION: The character anticipates a diagonal jet pounce: bell opens slightly, tentacles tuck behind the head one by one, mantle compresses and torso tilts toward LEFT; thrust releases with a streamlined body and curling trailing tentacles; recover by opening the bell and regaining a poised hover.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "membrane_hunter--hunter_glide",
+    "profile": "membrane_hunter",
+    "action": "hunter_glide",
+    "references": [
+      "assets/source/combat-animation-v2/references/membrane_hunter-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The translucent pale grey-lilac squid/jellyfish fusion in the reference: one soft bell mantle with ivory vein edges, a small amber visceral sac, two dark small eyes and a consistent set of curling tentacles. No crab limbs or skeleton. Keep anatomical tentacle roots stable.\nACTION: The character anticipates a horizontal membrane glide: tentacles gather to the underside, mantle edge folds backward and body coils softly; then flatten the bell into a streamlined leftward glide with living tentacle motion; unfold and return to the same hover.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "membrane_hunter--hunter_drop",
+    "profile": "membrane_hunter",
+    "action": "hunter_drop",
+    "references": [
+      "assets/source/combat-animation-v2/references/membrane_hunter-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The translucent pale grey-lilac squid/jellyfish fusion in the reference: one soft bell mantle with ivory vein edges, a small amber visceral sac, two dark small eyes and a consistent set of curling tentacles. No crab limbs or skeleton. Keep anatomical tentacle roots stable.\nACTION: The character anticipates an overhead heavy plunge: raise the mantle and spread tentacles wide, then slowly draw them into a tight downward spear bundle under the sac; plunge posture extends downward; absorb the landing with a compressed bell and splayed tentacles, then reopen. NO terrain or impact ring.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "membrane_hunter--hunter_escape",
+    "profile": "membrane_hunter",
+    "action": "hunter_escape",
+    "references": [
+      "assets/source/combat-animation-v2/references/membrane_hunter-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The translucent pale grey-lilac squid/jellyfish fusion in the reference: one soft bell mantle with ivory vein edges, a small amber visceral sac, two dark small eyes and a consistent set of curling tentacles. No crab limbs or skeleton. Keep anatomical tentacle roots stable.\nACTION: The character anticipates a sideways water-jet evasion: mantle squeezes and curls the body laterally, tentacles brace and gather, the mouth aims diagonally backward; body flexes through a sharp sideways jet kick, then relaxes into a controlled hover. No projectile or waterFX baked into the body.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "nest_eel--eel_bite",
+    "profile": "nest_eel",
+    "action": "eel_bite",
+    "references": [
+      "assets/source/combat-animation-v2/references/nest_eel-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The long low nest eel in the reference: a dark plum mottled golden-spotted body, fleshy pink circular throat, ivory hooked radial teeth, tiny black eye, no legs or human arms. The head faces LEFT, tail extends RIGHT. Keep continuous neck and body mass.\nACTION: The character anticipates a neck-driven snapping bite: lower head, retract it toward the belly, form a deeper S in the neck, progressively open the radial jaw; lunge LEFT with an open mouth and then close the jaw; recoil and unwind the neck into low neutral posture.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "nest_eel--eel_tail",
+    "profile": "nest_eel",
+    "action": "eel_tail",
+    "references": [
+      "assets/source/combat-animation-v2/references/nest_eel-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The long low nest eel in the reference: a dark plum mottled golden-spotted body, fleshy pink circular throat, ivory hooked radial teeth, tiny black eye, no legs or human arms. The head faces LEFT, tail extends RIGHT. Keep continuous neck and body mass.\nACTION: The character anticipates a turning tail whip: head braces low, ribs and belly curve into a tight C, tail rises and wraps forward while preserving one continuous body; whip the tail across the body toward the LEFT; follow through and uncurl into the low stance.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "nest_eel--eel_burrow",
+    "profile": "nest_eel",
+    "action": "eel_burrow",
+    "references": [
+      "assets/source/combat-animation-v2/references/nest_eel-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The long low nest eel in the reference: a dark plum mottled golden-spotted body, fleshy pink circular throat, ivory hooked radial teeth, tiny black eye, no legs or human arms. The head faces LEFT, tail extends RIGHT. Keep continuous neck and body mass.\nACTION: The character anticipates a burrowing ambush: lower the head, coil shoulders and compress the belly into an S as if loading an upward/forward spring; flex through a head-first dive posture and then rear the open jaws upward-left for the ambush; settle and straighten. The complete creature must remain visible, no ground/soil/missing tail/occlusion, no teleporting or global cell translation.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "nest_eel--eel_brood",
+    "profile": "nest_eel",
+    "action": "eel_brood",
+    "references": [
+      "assets/source/combat-animation-v2/references/nest_eel-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The long low nest eel in the reference: a dark plum mottled golden-spotted body, fleshy pink circular throat, ivory hooked radial teeth, tiny black eye, no legs or human arms. The head faces LEFT, tail extends RIGHT. Keep continuous neck and body mass.\nACTION: The character anticipates egg-spitting: throat slowly bulges, neck arches backward in three clear steps, jaw opens with a loaded muscular sac; spit by compressing the throat and thrusting the jaw LEFT through three distinct recoil pulses; deflate the throat and lower the head. No detached eggs or effects in the body sheet.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_barrage",
+    "profile": "pump_warden",
+    "action": "warden_barrage",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates a triple water shot: plant webbed feet, bring the spear across the waist, free the FRONT hand and rotate its open palm LEFT, compress the rear water bladder via the spear-holding elbow; release three hand/throat thrust pulses, keeping one hand on the spear; return the free hand to the same shaft grip.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_vortex",
+    "profile": "pump_warden",
+    "action": "warden_vortex",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates casting a water tornado: spread stance, lower the spear tip, rotate both wrists and raise the spear in a controlled diagonal circle, rear bladder stays attached on the RIGHT; make a broad deliberate casting turn and spear point release; unwind and lower the spear to guarded rest. NO drawn tornado or world FX.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_waterstep",
+    "profile": "pump_warden",
+    "action": "warden_waterstep",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates water escape and return stab: crouch while holding the spear close, turn the tube-head slightly down, tuck the elbows, coil legs into a low ready stance; stretch through a leftward sliding stab and then a stable forward extension; gather legs and recover. Preserve complete body, spear, feet, and cyan rear bladder in EVERY frame; do not dissolve the sprite.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_thrust",
+    "profile": "pump_warden",
+    "action": "warden_thrust",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates a long spear thrust: feet plant, spear retracts toward the rear hip, front elbow opens, weight loads on the rear leg; snap the SAME spear LEFT with a full forward weight transfer; bend the elbow and draw it back, then reset stance.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_push",
+    "profile": "pump_warden",
+    "action": "warden_push",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates a heavy shaft push: grip the spear with both hands far apart, raise the shaft horizontally across the chest, sink the shoulders and squat; shove the shaft bodily LEFT with bent knees then extend the arms; let the elbows fold and reset the guarded stance.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "pump_warden--warden_double",
+    "profile": "pump_warden",
+    "action": "warden_double",
+    "references": [
+      "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+      "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates a two-stab followup: narrow stance, spear held close to the chin then pulled back; make a short first LEFT thrust, a visible compact recoil, then a longer second LEFT thrust while advancing weight, then retract and brace. Keep the rear bladder attached to the same spear end.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "beam_guard--beam_press",
+    "profile": "beam_guard",
+    "action": "beam_press",
+    "references": [
+      "assets/source/combat-animation-v2/references/beam_guard-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The stocky armored amphibious beam guard in the reference: low skull-like ivory head crest, amber eye, layered dark slate shoulder plates, broad clawed feet, muted purple waist cloth and a broad CURVED CRESCENT bone blade on a short wooden haft. Keep two arms and two legs and the same hand grips. Do not substitute a straight spear.\nACTION: The character anticipates an overhead crescent cleave: rear leg braces, lift the crescent blade slowly above the back shoulder with both arms, hunch the plate armor and load the hips; swing the curved blade down-forward LEFT with full follow-through; then lift it off the low position and recover.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "beam_guard--beam_return",
+    "profile": "beam_guard",
+    "action": "beam_return",
+    "references": [
+      "assets/source/combat-animation-v2/references/beam_guard-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The stocky armored amphibious beam guard in the reference: low skull-like ivory head crest, amber eye, layered dark slate shoulder plates, broad clawed feet, muted purple waist cloth and a broad CURVED CRESCENT bone blade on a short wooden haft. Keep two arms and two legs and the same hand grips. Do not substitute a straight spear.\nACTION: The character anticipates a low returning backhand: lower the blade near the rear knee, twist the torso away while keeping the head on the target, bend knees; sweep the crescent forward across the low LEFT side then recoil; return the weapon to the guarded waist. No glowing sweep arc.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "beam_guard--beam_brace",
+    "profile": "beam_guard",
+    "action": "beam_brace",
+    "references": [
+      "assets/source/combat-animation-v2/references/beam_guard-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The stocky armored amphibious beam guard in the reference: low skull-like ivory head crest, amber eye, layered dark slate shoulder plates, broad clawed feet, muted purple waist cloth and a broad CURVED CRESCENT bone blade on a short wooden haft. Keep two arms and two legs and the same hand grips. Do not substitute a straight spear.\nACTION: The character anticipates a defensive heavy shove: bring the crescent and shaft across the chest, place the free hand against the haft, lower the head behind the armored shoulder and widen the stance; snap a powerful braced LEFT shove; absorb the force in the knees and recover behind the blade.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "beam_guard--beam_guard",
+    "profile": "beam_guard",
+    "action": "beam_guard",
+    "references": [
+      "assets/source/combat-animation-v2/references/beam_guard-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The stocky armored amphibious beam guard in the reference: low skull-like ivory head crest, amber eye, layered dark slate shoulder plates, broad clawed feet, muted purple waist cloth and a broad CURVED CRESCENT bone blade on a short wooden haft. Keep two arms and two legs and the same hand grips. Do not substitute a straight spear.\nACTION: The character performs one guarded stance cycle: raise the crescent diagonally in front of the face, tuck the chin and angle the shoulder armor, settle weight behind the haft; hold a living defensive posture with subtle breathing and minute wrist/shoulder shifts, then lower to ready stance. No attack, shield or extra weapon.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "beam_guard--beam_riposte",
+    "profile": "beam_guard",
+    "action": "beam_riposte",
+    "references": [
+      "assets/source/combat-animation-v2/references/beam_guard-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The stocky armored amphibious beam guard in the reference: low skull-like ivory head crest, amber eye, layered dark slate shoulder plates, broad clawed feet, muted purple waist cloth and a broad CURVED CRESCENT bone blade on a short wooden haft. Keep two arms and two legs and the same hand grips. Do not substitute a straight spear.\nACTION: The character anticipates a defense counter slash: brace the crescent against an imagined hit, compress the shoulder and wrist while the feet stay planted, rotate the weapon grip; snap a short fierce LEFT returning crescent strike; follow through and recover behind the raised blade.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "elder_guardian--elder_sweep",
+    "profile": "elder_guardian",
+    "action": "elder_sweep",
+    "references": [
+      "assets/source/combat-animation-v2/references/elder_guardian-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The elderly tall hooded guardian in the reference: layered ivory shoulder-shell armor, deep desaturated teal ragged cloak, long pale chin tendrils, amber eye hidden under brow, a LONG DOUBLE-PRONGED bone staff with one green inlay near its fork. Exactly one continuous staff shaft, exactly two arms and two legs. No duplicate shaft or disconnected rod. Preserve the fork silhouette and robe thickness.\nACTION: The character anticipates a long staff sweep: widen the stance under the cloak, shift hands apart on ONE staff shaft, retract the fork behind the shoulder and coil the torso; swing the long fork in a broad low LEFT horizontal motion with cloth following the body; decelerate, draw the shaft back and stand ready.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "elder_guardian--elder_thrust",
+    "profile": "elder_guardian",
+    "action": "elder_thrust",
+    "references": [
+      "assets/source/combat-animation-v2/references/elder_guardian-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The elderly tall hooded guardian in the reference: layered ivory shoulder-shell armor, deep desaturated teal ragged cloak, long pale chin tendrils, amber eye hidden under brow, a LONG DOUBLE-PRONGED bone staff with one green inlay near its fork. Exactly one continuous staff shaft, exactly two arms and two legs. No duplicate shaft or disconnected rod. Preserve the fork silhouette and robe thickness.\nACTION: The character anticipates a forceful long fork thrust: plant rear foot, pull the fork backward, bow the upper body and lower the point to target height; drive the entire SAME fork straight LEFT with a clear weight shift; knees absorb the followthrough and arms withdraw the point.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "elder_guardian--elder_grip",
+    "profile": "elder_guardian",
+    "action": "elder_grip",
+    "references": [
+      "assets/source/combat-animation-v2/references/elder_guardian-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The elderly tall hooded guardian in the reference: layered ivory shoulder-shell armor, deep desaturated teal ragged cloak, long pale chin tendrils, amber eye hidden under brow, a LONG DOUBLE-PRONGED bone staff with one green inlay near its fork. Exactly one continuous staff shaft, exactly two arms and two legs. No duplicate shaft or disconnected rod. Preserve the fork silhouette and robe thickness.\nACTION: The character anticipates a two-handed regrip counter: keep the fork in one hand while the other slides along the shaft, briefly cross the elbows with a precise wrist adjustment, shift weight low; make a short LEFT counter-press, recoil visibly, then a second more committed press; unwind the elbows and return to the original grip.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "elder_guardian--elder_vault",
+    "profile": "elder_guardian",
+    "action": "elder_vault",
+    "references": [
+      "assets/source/combat-animation-v2/references/elder_guardian-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The elderly tall hooded guardian in the reference: layered ivory shoulder-shell armor, deep desaturated teal ragged cloak, long pale chin tendrils, amber eye hidden under brow, a LONG DOUBLE-PRONGED bone staff with one green inlay near its fork. Exactly one continuous staff shaft, exactly two arms and two legs. No duplicate shaft or disconnected rod. Preserve the fork silhouette and robe thickness.\nACTION: The character anticipates a staff-assisted vault: tilt the single fork shaft down so its butt is under the body, bend knees and shoulders around the planted staff, gather the cloak; lift knees and arch the body through an airborne vault with the staff in both hands; land with bent knees and let the cloak settle. Keep whole staff/feet visible; no ground patch.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  },
+  {
+    "id": "elder_guardian--elder_mimic",
+    "profile": "elder_guardian",
+    "action": "elder_mimic",
+    "references": [
+      "assets/source/combat-animation-v2/references/elder_guardian-idle.png"
+    ],
+    "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The elderly tall hooded guardian in the reference: layered ivory shoulder-shell armor, deep desaturated teal ragged cloak, long pale chin tendrils, amber eye hidden under brow, a LONG DOUBLE-PRONGED bone staff with one green inlay near its fork. Exactly one continuous staff shaft, exactly two arms and two legs. No duplicate shaft or disconnected rod. Preserve the fork silhouette and robe thickness.\nACTION: The character performs a watch-and-reproduce casting preparation: hold ONE forked staff firmly with the rear hand, raise the free FRONT hand slowly from chest to eye height with fingers spread, lower the hooded head in focused observation; turn the open palm toward LEFT and extend it in a decisive spell-release gesture; lower that SAME free hand back and regrip the staff. Exactly TWO hands throughout, no phantom/duplicate person or projected FX in the body atlas.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+    "columns": 4,
+    "rows": 4,
+    "phases": {
+      "tell": [
+        0,
+        5
+      ],
+      "active": [
+        6,
+        9
+      ],
+      "recover": [
+        10,
+        15
+      ]
+    },
+    "status": "requested"
+  }
+]

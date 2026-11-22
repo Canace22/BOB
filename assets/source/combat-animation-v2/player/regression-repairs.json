@@ -1,0 +1,30 @@
+{
+  "original_log": "game/build/qa/animation-v2-tests.log",
+  "original_log_sha256": "dc9a3674c7b7a9b6e57218a5e6124f631103d4cec7eeff89e905f30a03c378f3",
+  "original_result": "471 passed, 8 failed + test-side out of bounds",
+  "fixed_cases": [
+    "crystal_charge_flight_wall_exit_right",
+    "crystal_charge_flight_wall_exit_left",
+    "echo_animates_full_combo_on_real_origin_and_clears_on_end",
+    "swing_hits_fast_and_keeps_its_direction",
+    "jump_is_free_right_after_the_hit",
+    "precomputed_feet_match_current_source_atlases",
+    "rooted_swing_can_still_cancel_into_defenses"
+  ],
+  "production_change": "restore unpainted crystal phase contract only; existing production authored_pivot skip kept",
+  "upstream_unchanged": "R1-02 Surface1 frozen collision vertices",
+  "rerun": {
+    "executor": "parent",
+    "reported_result": "479 passed, 1 failed",
+    "script_errors": 0,
+    "other_errors": 0,
+    "remaining_failure": "existing R1-02 Surface1 collision contract",
+    "player_ghost_repairs": "passed",
+    "final_native_14case_rerun": "parent in progress"
+  },
+  "native_manual_fixture_verified_from_json": {
+    "cases": 14,
+    "failures": 0,
+    "scope": "body-only metadata fixture, not production feet/real input acceptance"
+  }
+}

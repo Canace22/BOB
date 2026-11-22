@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>主角连续帧候选审阅</title>
+<style>body{background:#13232b;color:#dbe5e9;font:16px system-ui;margin:24px}main{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}article{background:#50646f;padding:12px;border-radius:8px}img{display:block;width:256px;max-width:100%}.small{width:150px;background:#182a31}label{display:block;margin-top:8px}p{color:#b2cbd5}</style>
+<h1>主角连续帧候选</h1><p>上：85ms/帧慢放；下：同一原画在接近94px角色高度。仅素材审阅，未代表Godot实机通过或用户美术认可。</p>
+<main id="clips"></main>
+<script>
+for(const [key,title] of [['strike2','回拨 · 16帧'],['abyss_scream','深啸 · 16帧'],['interact','交互 · 16帧'],['parry','格挡 · 8帧'],['strike1','横击 · 16帧'],['upper','上挑 · 16帧'],['heavy','重击 · 16帧'],['orb','潮弹 · 16帧'],['up_spell','上涌 · 16帧'],['great_slash','重劈 · 16帧'],['cyclone','旋斩 · 16帧'],['dive','坠潮 · 16帧']]){
+ const panel=document.createElement('article');panel.innerHTML=`<h2>${title}</h2><img src="${key}/preview.gif"><label>接近实际角色高度</label><img class="small" src="${key}/preview.gif">`;document.querySelector('main').append(panel);
+}
+</script></html>

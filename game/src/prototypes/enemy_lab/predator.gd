@@ -82,6 +82,7 @@ func sheltered_player() -> bool:
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	# 受压时钟跨受击/浮空/回挂持续，命中不能把反击窗口无限重开。
 	if pressure_hits>0 and not escape_return and outcome.is_empty() and state in ["hurt","recover","return"]:
 		pressure_time+=dt
@@ -98,7 +99,7 @@ func _physics_process(dt: float) -> void:
 	elif state=="idle":
 		velocity=Vector2.ZERO
 		timer+=dt
-		if auto_attack and player.health>0 and timer>0.85 and not sheltered_player(): begin_attack()
+		if auto_attack and player.health>0 and timer>pressure.idle(0.85) and not sheltered_player(): begin_attack()
 	elif state=="tell":
 		if timer<float(spec.lock):
 			if sheltered_player(): set_state("return")

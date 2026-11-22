@@ -90,7 +90,8 @@ func _physics_process(_dt: float) -> void:
 		duration=TideCombatVisual.FLURRY_EDGES[segment+1]-TideCombatVisual.FLURRY_EDGES[segment]
 		release=TideCombatVisual.FLURRY_HITS[segment]-TideCombatVisual.FLURRY_EDGES[segment]
 	fraction=TideActionVisual.align_event(clampf(time/maxf(duration,0.01),0.0,1.0),release/maxf(duration,0.01),float(spec.get("event_phase",0.5)))
-	var index: int=int(fraction*count)
+	if bool(spec.get("authored_pivot",false)) and time<release: return
+	var index: int=int(fraction*int(spec.get("fx_frame_count",count)))
 	# 稀疏源FX的接触亮帧短保持，避免加速后只闪一帧；不延后或重复判定。
 	var impacts: Dictionary={"strike1":4,"upper":4,"great_slash":8,"heavy":4,"up_spell":3,"dive":4,"dark_dive":4}
 	if mimic.last_release>=0.0 and enemy.timer-mimic.last_release<0.08:
@@ -123,9 +124,17 @@ func _show_body(clip: String, frames: Dictionary, spec: Dictionary) -> void:
 		fraction=minf(0.44,enemy.timer*0.8) if mimic.emitted==0 else lerpf(0.5,0.99,clampf((enemy.timer-mimic.last_release)/0.24,0.0,1.0))
 	body_key=clip
 	body_frame=clampi(int(fraction*int(spec.frame_count)),0,int(spec.frame_count)-1)
+	if bool(spec.get("authored_pivot",false)):
+		# 仅新本体共用phase解析；旧片段/无独立图的技能保持原来的映射与选帧。
+		var landed: bool=str(mimic.copied.get("motion",""))=="dive" and mimic.emitted>0
+		var context: Dictionary={"active":true,"visual_key":mimic.source_key,"clock":enemy.timer,
+			"elapsed":time,"duration":span,"release":release,"landed":landed,
+			"landed_at":mimic.last_release,"parry_end":float(mimic.copied.get("parry_end",0.42))}
+		if landed: context.duration=mimic.last_release+0.24
+		body_frame=enemy.player.action_visual.phase_map.index_from_context(clip,spec,fraction,context)
 	action_echo.visible=true
 	_layer(action_echo,frames.body,spec.body,body_frame,94.0/float(spec.reference_height),enemy.facing)
-	if enemy.is_on_floor():
+	if enemy.is_on_floor() and not bool(spec.get("authored_pivot",false)):
 		var bottoms: Array=enemy.player.action_visual.foot_metadata.get(clip,{}).get("bottom",[])
 		if not bottoms.is_empty(): action_echo.offset.y=-float(bottoms[mini(body_frame,bottoms.size()-1)])
 	# 同一物理/攻击原点保证幻影动作与判定一致，施法者淡显以免挡住动作。

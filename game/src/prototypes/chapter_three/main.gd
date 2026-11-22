@@ -56,6 +56,7 @@ func _ready() -> void:
 	add_child(flow)
 	guard.blockade_removed.connect(flow.defeated)
 	flow.restore()
+	install_reference(3,FLOORS)
 	record("ready",{"restored":facts.duplicate()})
 
 func checkpoint() -> Vector2:

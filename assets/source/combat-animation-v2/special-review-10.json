@@ -1,0 +1,2752 @@
+[
+  {
+    "id": "beam_guard--beam_press",
+    "source": "assets/source/combat-animation-v2/masters/beam_guard--beam_press.png",
+    "sha256": "861329220c0f05044fe4686c3a0d923ff0e40d1f479a43854112c0c407729ad8",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 878452,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          69,
+          83,
+          274,
+          260
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          60,
+          81,
+          271,
+          259
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          46,
+          78,
+          258,
+          259
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          69,
+          250,
+          257
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          77,
+          70,
+          275,
+          255
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          105,
+          26,
+          270,
+          256
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          59,
+          52,
+          271,
+          256
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          21,
+          78,
+          276,
+          256
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          36,
+          66,
+          291,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          40,
+          69,
+          280,
+          242
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          73,
+          277,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          31,
+          67,
+          270,
+          240
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          63,
+          70,
+          280,
+          252
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          55,
+          68,
+          278,
+          248
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          69,
+          272,
+          248
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          50,
+          72,
+          257,
+          248
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "beam_guard--beam_return",
+    "source": "assets/source/combat-animation-v2/masters/beam_guard--beam_return.png",
+    "sha256": "ecb9598a46fe8820cc5860138b15fd9bd6957ed87b11fa4e5f48c35b92af1892",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 1038252,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          64,
+          91,
+          263,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          62,
+          94,
+          260,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          65,
+          97,
+          254,
+          255
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          74,
+          100,
+          249,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          88,
+          89,
+          265,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          78,
+          90,
+          259,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          70,
+          86,
+          246,
+          240
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          41,
+          84,
+          248,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          45,
+          65,
+          263,
+          228
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          42,
+          64,
+          259,
+          228
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          62,
+          253,
+          228
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          41,
+          62,
+          255,
+          228
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          61,
+          53,
+          258,
+          216
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          63,
+          52,
+          257,
+          216
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          53,
+          52,
+          250,
+          216
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          52,
+          249,
+          216
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "beam_guard--beam_brace",
+    "source": "assets/source/combat-animation-v2/masters/beam_guard--beam_brace.png",
+    "sha256": "da22aecbad717a24154d2f1bda21a326d9bb4960ab8aafec12280ba7d29bc8c3",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 1064876,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          65,
+          95,
+          263,
+          257
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          59,
+          97,
+          259,
+          257
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          104,
+          255,
+          257
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          49,
+          105,
+          252,
+          257
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          74,
+          104,
+          265,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          62,
+          110,
+          261,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          47,
+          104,
+          257,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          35,
+          105,
+          262,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          47,
+          83,
+          280,
+          224
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          41,
+          82,
+          280,
+          224
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          32,
+          82,
+          271,
+          223
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          36,
+          79,
+          264,
+          223
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          61,
+          73,
+          268,
+          229
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          58,
+          70,
+          262,
+          229
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          53,
+          69,
+          256,
+          230
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          51,
+          65,
+          253,
+          229
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "beam_guard--beam_guard",
+    "source": "assets/source/combat-animation-v2/masters/beam_guard--beam_guard.png",
+    "sha256": "437c91ee0d263ef97eed8f1d46b54e088a8aa4f5a66659993208054da4e4c2aa",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 991135,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          69,
+          81,
+          273,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          77,
+          264,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          44,
+          74,
+          255,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          42,
+          72,
+          247,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          81,
+          63,
+          273,
+          247
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          70,
+          63,
+          265,
+          247
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          58,
+          62,
+          256,
+          247
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          45,
+          60,
+          249,
+          247
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          64,
+          52,
+          273,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          53,
+          52,
+          266,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          52,
+          260,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          36,
+          52,
+          251,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          61,
+          46,
+          271,
+          232
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          57,
+          47,
+          266,
+          232
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          48,
+          260,
+          232
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          47,
+          50,
+          252,
+          232
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "beam_guard--beam_riposte",
+    "source": "assets/source/combat-animation-v2/masters/beam_guard--beam_riposte.png",
+    "sha256": "fcf664cda28838d24bc9570adb99196d62bc48f47d3271614f00485623a4948b",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 844354,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          57,
+          67,
+          258,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          55,
+          68,
+          255,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          49,
+          68,
+          254,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          74,
+          251,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          61,
+          70,
+          261,
+          245
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          58,
+          71,
+          257,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          70,
+          258,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          25,
+          70,
+          252,
+          246
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          24,
+          66,
+          261,
+          242
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          33,
+          61,
+          258,
+          242
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          56,
+          256,
+          242
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          38,
+          51,
+          250,
+          242
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          48,
+          52,
+          257,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          52,
+          53,
+          256,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          49,
+          53,
+          253,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          49,
+          53,
+          250,
+          240
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "elder_guardian--elder_sweep",
+    "source": "assets/source/combat-animation-v2/masters/elder_guardian--elder_sweep.png",
+    "sha256": "1ca460e558bb28631aaf678f5eaee4052087548284f6f7035f7f08bba4704ac1",
+    "size": [
+      1263,
+      1246
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 916685,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          316,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          48,
+          81,
+          269,
+          265
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          316,
+          0,
+          632,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          85,
+          269,
+          264
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          632,
+          0,
+          947,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          34,
+          87,
+          276,
+          264
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          947,
+          0,
+          1263,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          51,
+          78,
+          276,
+          264
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          316,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          70,
+          59,
+          289,
+          253
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          316,
+          312,
+          632,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          85,
+          53,
+          282,
+          252
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          632,
+          312,
+          947,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          14,
+          85,
+          273,
+          253
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          947,
+          312,
+          1263,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          5,
+          91,
+          285,
+          252
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          623,
+          316,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          10,
+          81,
+          302,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          316,
+          623,
+          632,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          13,
+          78,
+          285,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          632,
+          623,
+          947,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          7,
+          73,
+          301,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          947,
+          623,
+          1263,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          9,
+          68,
+          295,
+          241
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          934,
+          316,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          23,
+          60,
+          293,
+          235
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          316,
+          934,
+          632,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          30,
+          60,
+          279,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          632,
+          934,
+          947,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          29,
+          59,
+          276,
+          236
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          947,
+          934,
+          1263,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          28,
+          61,
+          272,
+          236
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "elder_guardian--elder_thrust",
+    "source": "assets/source/combat-animation-v2/masters/elder_guardian--elder_thrust.png",
+    "sha256": "e605623616714bd3906567f157f64e196277510c0c155c009e74e7f7f0bb1a81",
+    "size": [
+      1263,
+      1246
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 779379,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          316,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          51,
+          71,
+          281,
+          263
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          316,
+          0,
+          632,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          78,
+          282,
+          264
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          632,
+          0,
+          947,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          30,
+          90,
+          284,
+          263
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          947,
+          0,
+          1263,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          24,
+          100,
+          294,
+          264
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          316,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          34,
+          94,
+          299,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          316,
+          312,
+          632,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          44,
+          101,
+          293,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          632,
+          312,
+          947,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          14,
+          95,
+          298,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          947,
+          312,
+          1263,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          2,
+          91,
+          295,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          623,
+          316,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          8,
+          77,
+          302,
+          237
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          316,
+          623,
+          632,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          6,
+          75,
+          303,
+          237
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          632,
+          623,
+          947,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          12,
+          73,
+          302,
+          237
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          947,
+          623,
+          1263,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          14,
+          68,
+          297,
+          237
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          934,
+          316,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          24,
+          59,
+          296,
+          230
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          316,
+          934,
+          632,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          36,
+          55,
+          287,
+          231
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          632,
+          934,
+          947,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          35,
+          50,
+          282,
+          230
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          947,
+          934,
+          1263,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          46,
+          275,
+          231
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "elder_guardian--elder_grip",
+    "source": "assets/source/combat-animation-v2/masters/elder_guardian--elder_grip.png",
+    "sha256": "6e4d25c3f73d6e43ee897fce4d7e7e5647a048686b572e7ab1efc6a4b20f0900",
+    "size": [
+      1263,
+      1246
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 805901,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          316,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          47,
+          73,
+          287,
+          273
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          316,
+          0,
+          632,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          74,
+          279,
+          271
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          632,
+          0,
+          947,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          35,
+          73,
+          278,
+          270
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          947,
+          0,
+          1263,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          36,
+          78,
+          274,
+          271
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          316,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          49,
+          65,
+          291,
+          252
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          316,
+          312,
+          632,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          40,
+          74,
+          289,
+          251
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          632,
+          312,
+          947,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          18,
+          69,
+          285,
+          248
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          947,
+          312,
+          1263,
+          623
+        ],
+        "alpha_gt32_bbox": [
+          3,
+          66,
+          285,
+          247
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          623,
+          316,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          18,
+          44,
+          308,
+          225
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          316,
+          623,
+          632,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          14,
+          45,
+          306,
+          226
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          632,
+          623,
+          947,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          11,
+          45,
+          297,
+          226
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          947,
+          623,
+          1263,
+          934
+        ],
+        "alpha_gt32_bbox": [
+          12,
+          43,
+          286,
+          227
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          934,
+          316,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          30,
+          22,
+          296,
+          208
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          316,
+          934,
+          632,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          29,
+          20,
+          286,
+          208
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          632,
+          934,
+          947,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          21,
+          18,
+          279,
+          209
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          947,
+          934,
+          1263,
+          1246
+        ],
+        "alpha_gt32_bbox": [
+          16,
+          16,
+          269,
+          209
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "elder_guardian--elder_vault",
+    "source": "assets/source/combat-animation-v2/masters/elder_guardian--elder_vault.png",
+    "sha256": "80b49a99cb3808acf54a78e87a1d40df514b4f4c49635378485f9968d1d6406f",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 984434,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          48,
+          78,
+          260,
+          261
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          45,
+          89,
+          265,
+          261
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          42,
+          95,
+          272,
+          261
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          105,
+          272,
+          260
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          46,
+          104,
+          275,
+          266
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          50,
+          118,
+          287,
+          266
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          82,
+          288,
+          266
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          38,
+          57,
+          273,
+          237
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          45,
+          279,
+          208
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          59,
+          281,
+          230
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          87,
+          281,
+          253
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          111,
+          287,
+          262
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          37,
+          105,
+          291,
+          254
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          45,
+          95,
+          285,
+          255
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          47,
+          87,
+          270,
+          256
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          48,
+          77,
+          265,
+          255
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  },
+  {
+    "id": "elder_guardian--elder_mimic",
+    "source": "assets/source/combat-animation-v2/masters/elder_guardian--elder_mimic.png",
+    "sha256": "86382bc549f9226fd81c761cd0edd94ea079fc4ffef6fd143dbe0dfc700a8dd9",
+    "size": [
+      1261,
+      1247
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 854587,
+    "unique_visible_rgba": 16,
+    "cells": [
+      {
+        "index": 0,
+        "source_rect_xyxy": [
+          0,
+          0,
+          315,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          46,
+          67,
+          286,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 1,
+        "source_rect_xyxy": [
+          315,
+          0,
+          630,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          40,
+          67,
+          279,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 2,
+        "source_rect_xyxy": [
+          630,
+          0,
+          946,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          34,
+          67,
+          274,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 3,
+        "source_rect_xyxy": [
+          946,
+          0,
+          1261,
+          312
+        ],
+        "alpha_gt32_bbox": [
+          26,
+          72,
+          264,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 4,
+        "source_rect_xyxy": [
+          0,
+          312,
+          315,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          42,
+          75,
+          283,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 5,
+        "source_rect_xyxy": [
+          315,
+          312,
+          630,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          35,
+          75,
+          274,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 6,
+        "source_rect_xyxy": [
+          630,
+          312,
+          946,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          26,
+          74,
+          275,
+          268
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 7,
+        "source_rect_xyxy": [
+          946,
+          312,
+          1261,
+          624
+        ],
+        "alpha_gt32_bbox": [
+          21,
+          72,
+          273,
+          268
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 8,
+        "source_rect_xyxy": [
+          0,
+          624,
+          315,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          38,
+          73,
+          296,
+          268
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 9,
+        "source_rect_xyxy": [
+          315,
+          624,
+          630,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          32,
+          76,
+          289,
+          268
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 10,
+        "source_rect_xyxy": [
+          630,
+          624,
+          946,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          30,
+          78,
+          278,
+          268
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 11,
+        "source_rect_xyxy": [
+          946,
+          624,
+          1261,
+          935
+        ],
+        "alpha_gt32_bbox": [
+          24,
+          75,
+          267,
+          269
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 12,
+        "source_rect_xyxy": [
+          0,
+          935,
+          315,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          43,
+          75,
+          281,
+          272
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 13,
+        "source_rect_xyxy": [
+          315,
+          935,
+          630,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          39,
+          71,
+          279,
+          273
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 14,
+        "source_rect_xyxy": [
+          630,
+          935,
+          946,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          33,
+          71,
+          276,
+          273
+        ],
+        "edge_contact_gt32": false
+      },
+      {
+        "index": 15,
+        "source_rect_xyxy": [
+          946,
+          935,
+          1261,
+          1247
+        ],
+        "alpha_gt32_bbox": [
+          28,
+          70,
+          271,
+          273
+        ],
+        "edge_contact_gt32": false
+      }
+    ],
+    "static_review": "all16 poses inspected for single held weapon, two hands, complete feet and persistent identity; alpha-composite reviewed separately",
+    "runtime_review": "delegated to parent; not user accepted"
+  }
+]

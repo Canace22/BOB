@@ -35,7 +35,7 @@ func guarding() -> bool:
 	return enemy.outcome.is_empty() and enemy.state in ["guarding","guard_contact"]
 
 func begin() -> void:
-	capacity=2
+	capacity=3 if enemy.pressure.enabled() else 2
 	blocked_feedback=false
 
 func intercept(amount: int) -> bool:
@@ -46,6 +46,7 @@ func intercept(amount: int) -> bool:
 	var counter_reward: bool=guard.counter_left>0.0 and guard.counter_bonus>0
 	# 重击和玩家赢得的迎击奖励可以破架，不能被新防御吞掉。
 	if not front or amount>=3 or counter_reward or capacity<=1:
+		enemy.pressure.cancel("beam_defense_broken")
 		breaks+=1
 		impact_age=1.0
 		ring.hide()
@@ -76,7 +77,7 @@ func tick(dt: float) -> void:
 		"guard_contact":
 			ripostes+=1
 			enemy.move_key="beam_riposte"
-			enemy.spec=EnemyLabCatalog.action("beam_riposte")
+			enemy.spec=enemy.action_spec("beam_riposte")
 			enemy.set_state("tell")
 			enemy.changed.emit("防御反击 · 回刃准备")
 
@@ -90,11 +91,14 @@ func pose() -> int:
 
 func segments() -> Array[Dictionary]:
 	if enemy.move_key=="beam_riposte":
-		return [{"phase":"tell","pulse":1,"start":0.0,"end":0.55},{"phase":"active","pulse":1,"start":0.55,"end":0.75},{"phase":"recover","pulse":1,"start":0.75,"end":0.75+float(enemy.spec.recover)}]
+		var tell: float=float(enemy.spec.tell)
+		var active: float=float(enemy.spec.active)
+		return [{"phase":"tell","pulse":1,"start":0.0,"end":tell},{"phase":"active","pulse":1,"start":tell,"end":tell+active},{"phase":"recover","pulse":1,"start":tell+active,"end":tell+active+float(enemy.spec.recover)}]
 	if enemy.state in ["recover","hurt"]:
 		return [{"phase":"recover","pulse":1,"start":0.0,"end":float(enemy.spec.recover)}]
 	if enemy.state=="guard_contact": return [{"phase":"guard_contact","pulse":1,"start":0.0,"end":0.22}]
-	return [{"phase":"tell","pulse":1,"start":0.0,"end":0.22},{"phase":"guarding","pulse":1,"start":0.22,"end":0.97}]
+	var tell: float=float(enemy.spec.tell)
+	return [{"phase":"tell","pulse":1,"start":0.0,"end":tell},{"phase":"guarding","pulse":1,"start":tell,"end":tell+0.75}]
 
 func _physics_process(dt: float) -> void:
 	impact_age+=dt

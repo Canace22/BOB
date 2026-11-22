@@ -20,7 +20,9 @@ func _ready() -> void:
 
 func choose_move() -> String:
 	if not forced_move.is_empty(): return forced_move
+	if not pressure.queued.is_empty(): return pressure.queued
 	var gap: float=absf(player.position.x-position.x)
+	if pressure.enabled() and gap<240.0 and attack_serial%3==2: return "warden_double"
 	if gap<95.0: return "warden_waterstep"
 	return "warden_barrage" if gap>330.0 or attack_serial%2==0 else "warden_vortex"
 
@@ -32,7 +34,8 @@ func begin_attack(key: String="") -> bool:
 
 func release_pressure() -> void:
 	if not outcome.is_empty(): return
-	if spec.is_empty(): spec=EnemyLabCatalog.action("warden_barrage")
+	pressure.cancel("court_overload")
+	if spec.is_empty(): spec=action_spec("warden_barrage")
 	spec=spec.duplicate(true)
 	spec.recover=1.35
 	followup_cancelled=true
@@ -67,6 +70,7 @@ func _physics_process(dt: float) -> void:
 		reached_exit.emit()
 		changed.emit("安全线抵达 · 执卫停手")
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	velocity.y=minf(velocity.y+1750.0*dt,800.0)
 	velocity.x=move_toward(velocity.x,0.0,2000.0*dt)
 	if not outcome.is_empty(): timer+=dt
@@ -105,7 +109,7 @@ func _idle_tick(dt: float) -> void:
 	var gap: float=player.position.x-position.x
 	if not is_zero_approx(gap): facing=signf(gap)
 	var reach: float=700.0 if choose_move() in EnemyLabWardenWater.KEYS else 240.0
-	if timer>0.50 and absf(gap)<reach and absf(player.position.y-position.y)<120.0:
+	if timer>pressure.idle(0.50) and absf(gap)<reach and absf(player.position.y-position.y)<120.0:
 		begin_attack()
 	else:
 		# 守在玩家与出口之间；被绕过后正常追赶，不瞬移封死安全线。
@@ -188,16 +192,18 @@ func hurt_rect() -> Rect2:
 
 func start_waterstep() -> void:
 	if not outcome.is_empty(): return
+	pressure.cancel("close_waterstep")
 	water.cancel()
 	var axis: float=player.global_position.x-global_position.x
 	if not is_zero_approx(axis): facing=signf(axis)
 	move_key="warden_waterstep"
-	spec=EnemyLabCatalog.action(move_key)
+	spec=action_spec(move_key)
 	control_left=0.0
 	opening_left=0.0
 	flinch_left=0.0
 	velocity=Vector2.ZERO
 	attack_serial+=1
+	pressure.started(move_key)
 	pulse=1
 	water.begin()
 	set_state("tell")

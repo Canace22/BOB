@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func choose_move() -> String:
 	if not forced_move.is_empty(): return forced_move
+	if not pressure.queued.is_empty(): return pressure.queued
 	if attack_serial==0: return "elder_sweep"
 	if attack_serial==1: return "elder_thrust"
 	if mimic.ready_to_cast() and last_move!="elder_mimic" and absf(player.position.x-position.x)<=mimic.reach(): return "elder_mimic"
@@ -70,6 +71,7 @@ func phase_duration() -> float:
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	mimic.cooldown=maxf(0.0,mimic.cooldown-dt)
 	boosted_chase=maxf(0.0,boosted_chase-dt)
 	velocity.y=minf(velocity.y+1750.0*dt,800.0)
@@ -116,9 +118,9 @@ func _idle_tick(dt: float) -> void:
 	var reach: float=270.0 if choose_move()=="elder_thrust" else 210.0
 	if choose_move()=="elder_mimic": reach=mimic.reach()
 	if absf(gap.x)>1100.0: velocity.x=signf(home.x-position.x)*float(profile.speed)
-	elif timer>0.16 and absf(gap.x)<reach and absf(gap.y)<135.0: begin_attack()
+	elif timer>pressure.idle(0.16) and absf(gap.x)<reach and absf(gap.y)<135.0: begin_attack()
 	elif absf(gap.x)>120.0:
-		velocity.x=facing*(210.0 if boosted_chase<=0.0 else 270.0)
+		velocity.x=facing*((230.0 if pressure.enabled() else 210.0) if boosted_chase<=0.0 else 270.0)
 		if absf(position.x-home.x)>26.0: stable=false
 
 func advance_action(dt: float) -> void:
@@ -148,12 +150,14 @@ func advance_action(dt: float) -> void:
 func guard_reaction(perfect: bool) -> void:
 	pressure_chain=0
 	if move_key=="elder_mimic": mimic.cancel()
-	if move_key=="elder_grip" and pulse==1:
+	if move_key=="elder_grip" and pulse==1 and not (pressure.enabled() and perfect):
 		last_result="挡住回拨 · 仍有换握反压"
 		feedback.receive(0.05,-facing,6.0)
 		return
+	pressure.cancel("perfect_guard" if perfect else "guard")
 	stable=false
 	force_unstable=true
+	if pressure.enabled(): followup_cancelled=true
 	spec=spec.duplicate(true)
 	spec.recover=1.55 if perfect else 0.65
 	set_state("recover")

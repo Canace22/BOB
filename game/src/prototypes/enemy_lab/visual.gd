@@ -15,12 +15,18 @@ const WARDEN_WATER: Texture2D=preload("res://art/enemy-lab-warden-water-v3/water
 const ELDER_IDLE_FIXED: Texture2D=preload("res://art/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png")
 var metadata: Dictionary={}
 var pose_id: int=0
+var animation_override: EnemyLabAnimationOverride=EnemyLabAnimationOverride.new()
+var windup_view: EnemyLabWindupView
 
 func _ready() -> void:
 	centered=false
 	region_enabled=true
 	region_filter_clip_enabled=true
 	metadata=JSON.parse_string(FileAccess.get_file_as_string("res://art/enemy-lab-readability-v1/atlas.json"))
+	animation_override.warmup(str(get_parent().profile.id))
+	windup_view=EnemyLabWindupView.new()
+	add_child(windup_view)
+	windup_view.z_index=1
 
 func present(enemy: EnemyLabEnemy) -> void:
 	update_warning(enemy)
@@ -84,6 +90,12 @@ func present(enemy: EnemyLabEnemy) -> void:
 		var mat: ShaderMaterial=material as ShaderMaterial
 		mat.set_shader_parameter("weak_center",(region_rect.position+anchor)/texture.get_size())
 		mat.set_shader_parameter("weak_radius",Vector2(28,25)/texture.get_size())
+	var replacement: Dictionary=animation_override.sample(id,enemy.move_key,enemy.state,enemy.pulse,progress,"clips",duration)
+	if not replacement.is_empty(): animation_override.apply_body(self,replacement,enemy.facing,float(enemy.profile.height))
+	var windup: Dictionary={}
+	if enemy.show_art and enemy.outcome.is_empty():
+		windup=animation_override.sample(id,enemy.move_key,enemy.state,enemy.pulse,progress,"windups",duration)
+	windup_view.present(windup,enemy.global_position,enemy.facing)
 
 func update_warning(enemy: EnemyLabEnemy) -> void:
 	var mat := material as ShaderMaterial
@@ -94,5 +106,8 @@ func update_warning(enemy: EnemyLabEnemy) -> void:
 		var progress: float=clampf(enemy.timer/maxf(0.001,enemy.phase_duration()),0.0,1.0)
 		intensity=0.45+0.35*progress+0.10*sin(enemy.timer*16.0)
 	mat.set_shader_parameter("danger",intensity)
+	# 短收招的琥珀轮廓明确表示还会接招；命中此窗口会真正取消续段。
+	var linking: bool=enemy.pressure.enabled() and not enemy.pressure.queued.is_empty() and enemy.state=="recover" and enemy.outcome.is_empty()
+	mat.set_shader_parameter("link_glow",0.35+0.12*sin(enemy.timer*20.0) if linking else 0.0)
 	var weak: bool=enemy is EnemyLabWarden and enemy.water!=null and enemy.water.weak_window()
 	mat.set_shader_parameter("weak_glow",0.75+0.20*sin(enemy.timer*12.0) if weak else 0.0)

@@ -3,6 +3,7 @@ render_mode unshaded;
 uniform float flash : hint_range(0.0, 1.0) = 0.0;
 uniform float danger : hint_range(0.0, 1.0) = 0.0;
 uniform float weak_glow : hint_range(0.0, 1.0) = 0.0;
+uniform float link_glow : hint_range(0.0, 1.0) = 0.0;
 uniform vec2 weak_center=vec2(0.0);
 uniform vec2 weak_radius=vec2(0.01);
 void fragment() {
@@ -16,6 +17,7 @@ void fragment() {
 		texture(TEXTURE, UV - vec2(0.0, TEXTURE_PIXEL_SIZE.y * 2.0)).a));
 	float rim = max(0.0, neighbor - source.a) * danger * 0.65;
 	vec3 color = mix(warning, vec3(1.0, 0.25, 0.08), rim);
+	color=mix(color,vec3(1.0,0.70,0.22),link_glow*0.55*(1.0-danger));
 	// 弱点只染压囊的既有像素，保持原Alpha，不将整只敌人染黄。
 	float weak_mask=1.0-smoothstep(0.72,1.0,length((UV-weak_center)/weak_radius));
 	float weak=weak_glow*weak_mask*step(0.03,source.a);

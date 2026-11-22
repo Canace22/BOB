@@ -51,13 +51,19 @@ func run() -> void:
 	e._physics_process(0.0)
 	await shot("forager-guard-opening")
 	await tick(40)
-	# 主角已结束格挡，保留敌人的破绽夹具以明确验证J的实际命中链路。
+	# 保留敌人破绽；J可经预输入接上反击，等待真实命中而不是固定渲染帧。
 	e.change("recover")
 	e.timer=0.10
+	var guard: TideCombatGuardSkills=p.skill_controller as TideCombatGuardSkills
+	check("perfect guard keeps its pending counter reward",guard.perfect and guard.counter_bonus==2 and guard.counter_left>0.0)
+	var expected_pressure: int=e.pressure+p.melee_damage+guard.counter_bonus+2
 	key(KEY_J,true)
-	await tick(14)
+	for frame: int in 30:
+		await physics_frame
+		if e.counter_hits>0: break
 	key(KEY_J,false)
-	check("actual J counter earns extra pressure",e.counter_hits==1 and e.pressure==3)
+	check("actual J counter earns damage plus one opening reward",e.counter_hits==1 and e.pressure==expected_pressure)
+	check("counter bonus is consumed once",guard.counter_bonus==0 and guard.counter_left==0.0)
 	check("counter remains nonlethal",e.data.alive and not e.withdrawing)
 	print("FORAGER_READABILITY_NATIVE failures=",failures)
 	await host.graceful_quit(0 if failures==0 else 1)

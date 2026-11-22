@@ -1,0 +1,24 @@
+{
+  "id": "forager-sweep",
+  "tool": "image_gen",
+  "reference": "assets/source/combat-animation-v2/references/forager-idle.png",
+  "prompt": "Create ONE transparent 2D game sprite ANIMATION ATLAS, exactly 16 sequential frames in a precise 4-column by 4-row uniform grid. ONE action only: the reference scavenger crab performs a low horizontal claw sweep. Read left-to-right then top-to-bottom. This is production game artwork, not a storyboard illustration. Keep the exact same brown-red low flat crab, long heavy front LEFTWARD claw, amber eye stalks, ivory barnacles and small red/ochre coral on its back from the reference. Preserve the same hand-painted textured dark-fairytale marine style and fixed side view facing LEFT. No redesign, no extra limbs, no camera changes, no body scale pumping. The main shell and stance root remain in the same place relative to each equal cell. The claw remains attached to the same shoulder throughout.\nFrames 1–6 PREPARATION: 1 neutral wide-foot stance; 2 front feet plant wider and body lowers; 3 claw elbow folds back a little; 4 claw retracts across the front of the shell; 5 a stronger rearward windup and loaded joint; 6 holds the maximally loaded claw low and ready, clearly different from idle. Frames 7–10 STRIKE: 7 claw starts a fast horizontal sweep toward the left, 8 halfway sweep, 9 full low-left extension, 10 end of swing with body weight forward. Frames 11–16 RECOVERY: claw follows through, elbow begins bending, body recenters, claw returns midway, feet reset, neutral stance smoothly regained. The 16 poses must form one continuous sensible weight shift with UNIQUE intermediate silhouettes. Keep shell volume stable; coral only follows the shell. No glowing arcs, no VFX, no dust, no ground, no shadows, no labels, no panels or grid lines. All feet, eye stalks, claw tips and coral fit wholly inside each cell with padding. GENUINE ALPHA transparent background. Fixed drawing scale throughout the atlas. Four by four equal cells, one complete crab in every cell. Intended in-game height 72 pixels; prioritize readable claw/leg shapes at that scale.",
+  "columns": 4,
+  "rows": 4,
+  "phases": {
+    "tell": [
+      0,
+      5
+    ],
+    "active": [
+      6,
+      9
+    ],
+    "recover": [
+      10,
+      15
+    ]
+  },
+  "status": "candidate-needs-padding-review",
+  "output": "assets/source/combat-animation-v2/masters/forager-sweep-v1.png"
+}

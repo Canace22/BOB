@@ -30,14 +30,13 @@ var detach_left: float = 0.0
 var wall_jump_span: float = 0.15
 var frame_index: int = 0
 var action_phases := TideActionPhases.new()
+var phase_map := TideVisualPhaseMap.new()
 
 func setup(player: TidePlayer, height: float) -> void:
 	actor = player
 	actor.animation_tag.connect(action_phases.on_animation_tag)
 	target_height = height
-	if FileAccess.file_exists(ROOT+"animations.json"):
-		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(ROOT+"animations.json"))
-		if parsed is Dictionary: manifest = parsed.get("actions", {})
+	manifest = phase_map.load_manifest(ROOT)
 	for key: String in manifest:
 		var spec: Dictionary = manifest[key]
 		available[key] = spec.has("body") and ResourceLoader.exists(str(spec.body.get("texture", "")))
@@ -74,6 +73,7 @@ func update(dt: float, travelled_x: float) -> void:
 	actor.get_node("Visual/Effect").hide()
 	if current_key != key:
 		current_key = key
+		phase_map.reset()
 		elapsed = 0.0
 		phase = 0.0
 		locked_elapsed = actor.state_time
@@ -81,14 +81,16 @@ func update(dt: float, travelled_x: float) -> void:
 	effect.material=additive_material if spec.get("fx_blend","")=="additive" else null
 	var count: int = int(spec.frame_count)
 	var fraction: float = frame_fraction(key, spec, dt, travelled_x)
-	var index: int = clampi(int(fraction*count),0,count-1)
+	var index: int = phase_map.body_index(key,spec,fraction,actor,dt)
 	frame_index=index
 	var frames: Dictionary = load_clip(key)
 	apply_layer(sprite, frames.body, spec.body, index, float(spec.reference_height))
 	sprite.modulate = Color(0.58, 0.78, 0.83, 0.92) if key == "shadow_dash" else Color.WHITE
 	if key == "turn": sprite.scale.x *= -1.0
-	if spec.get("fx") != null and key not in ["dive", "dark_dive", "orb", "shadow_orb", "anchor", "dash", "shadow_dash", "crystal_dash", "slit", "heavy", "scan"]:
-		apply_layer(effect, frames.fx, spec.fx, index, float(spec.reference_height))
+	if spec.get("fx") != null and key not in ["dive", "dark_dive", "orb", "shadow_orb", "anchor", "dash", "shadow_dash", "crystal_dash", "slit", "heavy", "scan"] and TideVisualPhaseMap.attack_fx_visible(actor,key):
+		# 本体新增帧不改变旧FX的槽位数和事件时钟。
+		var fx_index: int = clampi(int(fraction*int(spec.get("fx_frame_count",count))),0,frames.fx.size()-1)
+		apply_layer(effect, frames.fx, spec.fx, fx_index, float(spec.reference_height))
 		effect.visible = true
 	sprite.material.set_shader_parameter("flash", actor.body.material.get_shader_parameter("flash"))
 

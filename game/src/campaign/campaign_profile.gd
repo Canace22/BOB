@@ -37,7 +37,7 @@ static func apply(player:TidePlayer) -> void:
 	player.heal_cooldown=0
 	player.hurt_soul_loss=0
 	player.hitstop_duration=0
-	player.melee_startup=.05
+	player.melee_startup=.10
 	player.melee_cancel_after=0
 	player.hit_recoil_speed=200
 	player.hurt_invulnerability=1.2

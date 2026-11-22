@@ -1,0 +1,10 @@
+{
+  "id": "forager-sweep-padding",
+  "tool": "image_gen",
+  "references": [
+    "assets/source/combat-animation-v2/masters/forager-sweep-v1.png",
+    "assets/source/combat-animation-v2/references/forager-idle.png"
+  ],
+  "prompt": "Repair the FIRST reference sprite animation atlas, preserving the exact same crab identity, rendering, 16 ordered low-claw-sweep action poses and 4 by 4 layout. The second image is the unchanged crab identity master. Fix ONE production defect: each entire crab must fit inside its own equal cell with at least 12% empty transparent padding on every side, including extended claw and rearmost foot. In the first atlas frame 9 at row3 column1 clips its extended left claw at the canvas edge, frame8 is close to the right edge. Reconstruct complete claw tips/feet where cropped. Use the SAME GLOBAL DRAWING SCALE for all 16 crabs, reduced enough to fit maximum extension; do not resize individual pose bounding boxes to match. Keep the shell, eyes and coral size and anatomy identical through all frames; stable stance root and ground line in each row. Frames1–6 wind up the claw progressively, 7–10 sweep low to the left, 11–16 recover smoothly. Genuine ALPHA transparency. No ground shadows, no glowing trails, no grid lines, no text, no added limbs. Four equal columns and four equal rows, one complete crab per cell, preserve phase order and all 16 genuinely different intermediate poses.",
+  "status": "requested"
+}

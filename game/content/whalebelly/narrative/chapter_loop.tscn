@@ -15,7 +15,7 @@ dialogue_id = "loop.arrival"
 room_id = "R1-01"
 area = Rect2(0, 380, 350, 360)
 speakers = PackedStringArray("旁白", "拾潮者")
-lines = PackedStringArray("拾潮者挤过巡视缝。鲸歌忽然断了，须板间却有灯光在动。", "有人在这里生活……先沿骨路去问问。")
+lines = PackedStringArray("拾潮者挤过巡视缝。鲸歌忽然断了，须板间却有灯光在动。", "请问，有人在吗？")
 objective_id = "loop.find_resident"
 objective_text = "沿骨路向右 · 接近前方菌灯"
 
@@ -32,7 +32,7 @@ room_id = "R1-01"
 area = Rect2(360, 370, 270, 330)
 required_seen = PackedStringArray("loop.arrival")
 speakers = PackedStringArray("补巢者", "拾潮者", "补巢者")
-lines = PackedStringArray("你从外面来？前面两只甲壳守着菌膜。靠近它们就会扑过来，别让它们从两边夹住。", "低鸣是从那边传来的。我想进去看看。", "上面的骨台能看清它们。也可以从下路靠近，等它扑空，再过去。越过聚食区，我会从安全处叫住你。")
+lines = PackedStringArray("你先停一下。前面两只食腐甲正在吃菌膜，你再往前走，它们会以为你来抢食，从两边一起扑过来。", "我从外海追着一阵低鸣来到这里，声音像是从你身后的通道传来的。我想过去找一找。", "食腐甲只护着那片菌膜，不会一直追人。你可以先上前面较高的骨台看看，等食腐甲扑空，再从它旁边过去。")
 objective_id = "loop.cross_feeding"
 objective_text = "穿过聚食区 · 抓扑空的机会压退或绕过甲壳"
 
@@ -81,6 +81,6 @@ room_id = "R1-01"
 area = Rect2(1280, -1000, 800, 3000)
 required_seen = PackedStringArray("loop.passage")
 speakers = PackedStringArray("补巢者", "拾潮者", "补巢者", "拾潮者")
-lines = PackedStringArray("你过来了。离开那片菌膜，它们就不再追了。", "低鸣又从脚下传来，像是隔着下面的空腔。这里有通往下层的路吗？", "前面那座骨拱就是下行通道，通向折井。守卫把更深处封了，你可以先去问路。", "那就从骨拱下去。我想找到这声音的源头，也想问问为什么要封路。")
+lines = PackedStringArray("站到菌灯旁边来。食腐甲只护着菌膜，离那片菌膜远一点，它们就不会再扑你。", "那阵低鸣又响了，像是从脚下传来的。这里有通往下层的路吗？", "前面的骨拱通往折井，沿折井可以去更深的地方。不过守卫把路封住了，你要先问他们，别自己闯下去。", "谢谢你。我去找折井的守卫问路。")
 objective_id = "loop.go_foldwell"
 objective_text = "向右进入前方骨拱 · 通道向下通往折井"

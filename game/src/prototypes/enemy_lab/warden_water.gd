@@ -103,6 +103,7 @@ func take_hit(amount: int=1) -> void:
 
 func overload() -> void:
 	if not enemy.outcome.is_empty(): return
+	enemy.pressure.cancel("yellow_weakpoint")
 	overloads+=1
 	cancel()
 	enemy.control_left=0.0

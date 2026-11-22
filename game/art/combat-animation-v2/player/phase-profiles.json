@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "profiles": {
+    "strike1": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "upper": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "heavy": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "strike2": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "release": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "abyss_scream": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "release": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "interact": {
+      "mode": "full_timeline"
+    },
+    "parry": {
+      "mode": "guard",
+      "prepare": [
+        0,
+        1
+      ],
+      "hold_loop": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "recover": [
+        6,
+        7
+      ],
+      "loop_fps": 8
+    },
+    "great_slash": {
+      "charge_loop": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "loop_fps": 7,
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "cyclone": {
+      "charge_loop": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "loop_fps": 7,
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "dash_slash": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "release": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "up_spell": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "orb": {
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "release": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "pogo": {
+      "prepare": [
+        0,
+        1,
+        2
+      ],
+      "release": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "dive": {
+      "mode": "dive",
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "air_loop": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "recover": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "loop_fps": 10
+    },
+    "dark_dive": {
+      "mode": "dive",
+      "prepare": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "air_loop": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "recover": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "loop_fps": 10
+    }
+  },
+  "skill_families": {
+    "strike_01": "light",
+    "strike2": "light",
+    "upper": "light",
+    "A3_anchor": "light",
+    "wb_rise": "light",
+    "wb_drive": "light",
+    "wb_backcut": "light",
+    "heavy": "heavy",
+    "great_slash": "heavy",
+    "dash_slash": "heavy",
+    "cyclone": "heavy",
+    "wb_draw": "heavy",
+    "wb_charge": "heavy",
+    "wb_flurry": "heavy",
+    "A4_parry": "spell",
+    "shadow_orb": "spell",
+    "up_spell": "spell",
+    "abyss_scream": "spell",
+    "dive": "spell",
+    "dark_dive": "spell",
+    "A1_dash": "move",
+    "A5_slit": "move",
+    "shadow_dash": "move",
+    "crystal_dash": "move",
+    "parry": "guard",
+    "recover": "heal",
+    "scan": "interact",
+    "tram": "interact",
+    "interact": "interact"
+  },
+  "notes": "Only presentation. Timings read from live actors; no gameplay parameter writes."
+}

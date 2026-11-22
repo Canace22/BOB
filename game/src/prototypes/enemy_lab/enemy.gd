@@ -34,8 +34,11 @@ var visual: EnemyLabVisual
 var feedback: TideEnemyFeedback
 var reactions: EnemyLabReactions
 var effects: EnemyLabAttackEffects
+var pressure: ChapterCombatPressure=ChapterCombatPressure.new()
 
 func _ready() -> void:
+	pressure.enemy=self
+	pressure.settings=profile.get("chapter_pressure",{}).duplicate(true)
 	maximum=int(profile.hp)
 	health=maximum
 	home=position
@@ -63,6 +66,7 @@ func _ready() -> void:
 	add_to_group("tide_targets")
 
 func set_state(next: String) -> void:
+	pressure.entering(state,next)
 	state=next
 	timer=0.0
 	if next=="active": hit_sent=false
@@ -74,7 +78,8 @@ func begin_attack(key: String="") -> bool:
 	if not can_begin_attack(): return false
 	move_key=key if not key.is_empty() else choose_move()
 	if not profile.moves.has(move_key): return false
-	spec=EnemyLabCatalog.action(move_key)
+	spec=action_spec(move_key)
+	pressure.started(move_key)
 	facing=signf(player.global_position.x-global_position.x) if not is_zero_approx(player.global_position.x-global_position.x) else facing
 	attack_serial+=1
 	pulse=1
@@ -88,6 +93,7 @@ func can_begin_attack() -> bool:
 
 func choose_move() -> String:
 	if not forced_move.is_empty(): return forced_move
+	if not pressure.queued.is_empty(): return pressure.queued
 	var gap: float=absf(player.global_position.x-global_position.x)
 	match str(profile.id):
 		"forager": return "rush" if gap>175.0 else ("double" if attack_serial%2==1 else "sweep")
@@ -120,6 +126,7 @@ func advance_action(dt: float) -> void:
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
+	pressure.tick(dt)
 	velocity.y=minf(velocity.y+1750.0*dt,800.0)
 	velocity.x=move_toward(velocity.x,0.0,2000.0*dt)
 	if not outcome.is_empty():
@@ -132,9 +139,14 @@ func _physics_process(dt: float) -> void:
 		return
 	if control_left>0.0 or state=="hurt":
 		control_left=maxf(0.0,control_left-dt)
-		if control_left<=0.0 and is_on_floor():
+		if (control_left<=0.0 or pressure.enabled() and pressure.recovery_left<=0.0) and is_on_floor():
 			air_lifts=0
-			set_state("idle")
+			if pressure.enabled() and pressure.recovery_left>0.0:
+				set_state("recover")
+				timer=float(spec.get("recover",0.90))-pressure.recovery_left
+			else:
+				set_state("idle")
+				if pressure.enabled(): timer=pressure.idle(0.55)
 	elif player.health>0:
 		if state=="idle":
 			timer+=dt
@@ -143,9 +155,9 @@ func _physics_process(dt: float) -> void:
 				last_result="脱战返回"
 				velocity.x=signf(home.x-position.x)*float(profile.speed)
 			elif auto_attack and absf(gap.y)<110.0:
-				var candidate: Dictionary=EnemyLabCatalog.action(choose_move())
+				var candidate: Dictionary=action_spec(choose_move())
 				var reach: float=float(candidate.width)+float(profile.radius)*0.5+maxf(0.0,float(candidate.speed))*float(candidate.active)-10.0
-				if timer>0.55 and absf(gap.x)<minf(330.0,reach): begin_attack()
+				if timer>pressure.idle(0.55) and absf(gap.x)<minf(330.0,reach): begin_attack()
 				elif absf(gap.x)>float(profile.radius)+30.0:
 					facing=signf(gap.x)
 					velocity.x=facing*float(profile.speed)
@@ -185,7 +197,9 @@ func strike() -> void:
 	changed.emit(last_result)
 
 func guard_reaction(perfect: bool) -> void:
+	pressure.cancel("perfect_guard" if perfect else "guard")
 	followup_cancelled=move_key=="double" and pulse==1
+	if pressure.enabled(): followup_cancelled=true
 	spec=spec.duplicate(true)
 	spec.recover=maxf(float(spec.recover),1.1 if perfect else 0.65)
 	set_state("recover")
@@ -215,6 +229,8 @@ func receive_feedback(seconds: float, direction: float, power: float) -> void:
 	feedback.receive(seconds,direction,power)
 func clear_feedback() -> void: feedback.clear()
 
+func action_spec(key: String) -> Dictionary: return pressure.action(key)
+
 func finish() -> void:
 	outcome="kill" if kill_comparison else str(profile.ending)
 	retreat_goal=clampf(position.x+150.0*signf(position.x-player.position.x),70.0,1210.0)
@@ -229,7 +245,7 @@ func finish() -> void:
 	changed.emit("结束："+outcome)
 
 func snapshot() -> Dictionary:
-	return {"enemy":profile.title,"move":spec.get("title","待机"),"key":move_key,"phase":state,"time":timer,"duration":phase_duration(),"serial":attack_serial,"pulse":pulse,"locked":state=="active" or (state=="tell" and timer>=float(spec.get("lock",0.0))),"controllable":reactions.controllable(),"heavy_window":reactions.heavy_window(),"health":health,"maximum":maximum,"shell":reactions.sheltered(),"side":"正面" if (player.global_position.x-global_position.x)*facing>=0.0 else "侧后","fraction":reactions.damage_remainder,"result":last_result,"ending":outcome,"hit":hit_sent,"received":reactions.received}
+	return {"enemy":profile.title,"move":spec.get("title","待机"),"key":move_key,"phase":state,"time":timer,"duration":phase_duration(),"serial":attack_serial,"pulse":pulse,"locked":state=="active" or (state=="tell" and timer>=float(spec.get("lock",0.0))),"controllable":reactions.controllable(),"heavy_window":reactions.heavy_window(),"health":health,"maximum":maximum,"shell":reactions.sheltered(),"side":"正面" if (player.global_position.x-global_position.x)*facing>=0.0 else "侧后","fraction":reactions.damage_remainder,"result":last_result,"ending":outcome,"hit":hit_sent,"received":reactions.received,"chapter_pressure":pressure.snapshot()}
 
 func _draw() -> void:
 	if not show_ranges: return

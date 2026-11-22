@@ -130,12 +130,32 @@ func test_precomputed_feet_match_current_source_atlases() -> void:
 	var arena := await fixture()
 	var view: CombatWhiteboxActionVisual = arena.player.action_visual
 	for key: String in view.WARM_KEYS:
-		var item: Dictionary = view.foot_metadata[key]
-		var body: Dictionary = view.manifest[key].body
-		eq(item.frames,body.frames,"foot registration frame layout is current: "+key)
-		eq(item.sha256,FileAccess.get_sha256(str(body.texture)),"foot registration source hash is current: "+key)
-		eq(item.bottom.size(),body.frames.size(),"all frames have foot data: "+key)
+		var spec: Dictionary=view.manifest[key]
+		var body: Dictionary = spec.body
+		if bool(spec.get("authored_pivot",false)):
+			eq(body.pivot,[128.0,224.0],"authored atlas keeps common root pivot: "+key)
+			eq(str(body.get("sha256","")),FileAccess.get_sha256(str(body.texture)),"authored atlas hash matches its own exported metadata: "+key)
+			eq(body.frames.size(),int(spec.frame_count),"authored atlas has complete frame rectangles: "+key)
+		else:
+			var item: Dictionary = view.foot_metadata[key]
+			eq(item.frames,body.frames,"legacy foot registration layout remains current: "+key)
+			eq(item.sha256,FileAccess.get_sha256(str(body.texture)),"legacy foot registration hash remains current: "+key)
+			eq(item.bottom.size(),body.frames.size(),"all legacy frames keep foot data: "+key)
 		check(view.pinned_clips.has(key),"combat atlas warmed before input: "+key)
+
+func test_real_combat_renderer_retains_authored_pivot_through_late_frames() -> void:
+	var arena := await fixture()
+	arena.enemy.auto_attack=false
+	var p: CombatWhiteboxPlayer=arena.player
+	check(p.request_action("strike_01"),"real sixteen-frame swing begins")
+	var seen_late: bool=false
+	for i: int in 32:
+		await physics_frames(1)
+		var view: CombatWhiteboxActionVisual=p.action_visual
+		if view.current_key!="strike1": continue
+		eq(view.sprite.offset,Vector2(-128,-224),"production apply_layer bypasses obsolete twelve-slot feet")
+		if view.frame_index>=12: seen_late=true
+	check(seen_late,"production actually draws frames beyond the old twelve-slot table")
 
 func test_backstep_white_afterimage_stays_at_cancel_point_and_expires() -> void:
 	var arena := await fixture()

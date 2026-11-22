@@ -15,6 +15,7 @@ var camera: Camera2D
 var flow: ChapterRunFlow
 var encounter: ChapterRunEncounter
 var view: ChapterRunView
+var reference: ChapterReferencePresentation
 var hud: ChapterRunHUD
 var resume_wait: float=0
 var paused_by_user: bool=false
@@ -84,7 +85,20 @@ func _ready() -> void:
 	add_child(flow)
 	flow.restore()
 	encounter.restore_completed_bodies()
+	reference=ChapterReferencePresentation.new()
+	world.add_child(reference)
+	var reference_floors: Array[Rect2]=[]
+	for raw: Array in data.platforms: reference_floors.append(ChapterReferenceLayout.rect(raw))
+	reference.install(chapter_id,reference_floors,offset,reference_state)
 	record("ready",{"chapter":chapter_id,"stage":flow.stage().get("id","finished")})
+
+func reference_state() -> Dictionary:
+	var gate_points: Array=[]
+	for gate: StaticBody2D in encounter.gates:
+		if is_instance_valid(gate): gate_points.append(gate.position+offset+Vector2(0,220))
+	return {"flags":flags,"completed":completed,"stage":str(flow.stage().get("id","finished")),"time":elapsed,"gates":gate_points,"player":player.position+offset}
+
+func using_reference() -> bool: return is_instance_valid(reference) and reference.active
 
 func point(value: Array) -> Vector2: return ChapterRunCatalog.point(value)-offset
 
