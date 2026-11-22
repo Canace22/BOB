@@ -296,7 +296,7 @@ centered = false
 [node name="Surface2_0" type="Sprite2D" parent="World/Art" unique_id=1769561733]
 modulate = Color(0.84, 0.88, 0.91, 1)
 material = SubResource("m5")
-position = Vector2(701.816, 860)
+position = Vector2(621.816, 940)
 scale = Vector2(0.156, 0.156)
 texture = ExtResource("18")
 centered = false
@@ -378,7 +378,7 @@ centered = false
 modulate = Color(0.68, 0.76, 0.8, 1)
 z_index = -1
 material = SubResource("m8")
-position = Vector2(717.96, 860)
+position = Vector2(637.96, 940)
 scale = Vector2(0.141, 0.141)
 texture = ExtResource("18")
 centered = false
@@ -501,6 +501,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Surface2" type="StaticBody2D" parent="World/Terrain" unique_id=917941137]
+position = Vector2(-80, 80)
 
 [node name="Contour" type="CollisionPolygon2D" parent="World/Terrain/Surface2" unique_id=894212967]
 polygon = PackedVector2Array(734, 830, 759.097, 830, 796.065, 829.551, 833.033, 830.898, 870, 830, 906.967, 830.225, 943.935, 830.674, 980.903, 829.775, 1006, 830, 1006, 860, 734, 860)

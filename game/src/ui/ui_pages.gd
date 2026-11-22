@@ -50,7 +50,7 @@ static func layout(ui: WhaleCampaignUI) -> void:
 	for side: String in ["left", "right"]: ui.margin.add_theme_constant_override("margin_"+side, 28 if resting else (24 if talking else 52))
 	for side: String in ["top", "bottom"]: ui.margin.add_theme_constant_override("margin_"+side, 20 if resting else (12 if talking else 25))
 	(ui.heading.get_parent() as VBoxContainer).add_theme_constant_override("separation",6 if talking else 12)
-	var shade_alpha: float = 0.56 if ui.page_id == "title" else (0.92 if talking and not ui.preferences.contrast else 0.96)
+	var shade_alpha: float = 0.56 if ui.page_id == "title" else (0.68 if ui.page_id == "pause" else (0.92 if talking and not ui.preferences.contrast else 0.96))
 	ui.shade.color = Color.BLACK if ui.page_id == "death" else Color(0.018, 0.055, 0.075, shade_alpha)
 	if (talking or resting) and ui.preferences.contrast: ui.shade.color.a = 1.0
 	ui.frame.visible = talking or resting

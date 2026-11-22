@@ -18,6 +18,7 @@ var footer: Label
 var margin: MarginContainer
 var ornament: TextureRect
 var title_background: TextureRect
+var pause_background: TextureRect
 var title_background_fx: Control
 var page_id: String = ""
 var history: Array[String] = []
@@ -56,6 +57,14 @@ func _ready() -> void:
 	title_background.modulate = Color(1.18, 1.28, 1.32, 0.92)
 	title_background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	panel.add_child(title_background)
+	pause_background = TextureRect.new()
+	pause_background.texture = load("res://art/ui/pause-background-v1.png")
+	pause_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pause_background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	pause_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pause_background.modulate = Color(0.9, 1.0, 1.0, 0.86)
+	pause_background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.add_child(pause_background)
 	title_background_fx = load("res://src/ui/title_background_fx.gd").new()
 	title_background_fx.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	title_background_fx.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -234,8 +243,10 @@ func save_preferences() -> void:
 
 func _sync_title_background() -> void:
 	var visible_title := page_id == "title"
+	var visible_pause := page_id == "pause"
 	if is_instance_valid(title_background): title_background.visible = visible_title
-	if is_instance_valid(title_background_fx): title_background_fx.visible = visible_title
+	if is_instance_valid(pause_background): pause_background.visible = visible_pause
+	if is_instance_valid(title_background_fx): title_background_fx.visible = visible_title or visible_pause
 
 func _input(event: InputEvent) -> void:
 	if host.continuity.travelling or host.continuity.transition.active: return
