@@ -16,7 +16,7 @@ func take_hit(amount: int) -> void:
 	received+=1
 	var front: bool=(enemy.player.global_position.x-enemy.global_position.x)*enemy.facing>=0.0
 	var ratio: float=0.5 if sheltered() and front else 1.0
-	var guard: EnemyLabSkills=enemy.player.skill_controller as EnemyLabSkills
+	var guard: TideCombatGuardSkills=enemy.player.skill_controller as TideCombatGuardSkills
 	var bonus: int=guard.consume_counter()
 	if bonus>0: ratio=1.0
 	var exposed: bool=enemy.state=="recover"

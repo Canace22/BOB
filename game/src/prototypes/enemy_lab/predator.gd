@@ -23,7 +23,7 @@ var return_goal: Vector2
 
 func _ready() -> void:
 	super._ready()
-	position=PERCHES[0] if position.x<910 else PERCHES[1]
+	position=combat_space.perch(0 if position.x<combat_space.x(910) else 1)
 	home=position
 	collision_mask=1
 
@@ -43,9 +43,9 @@ func begin_attack(key: String="") -> bool:
 
 func _update_target() -> void:
 	if move_key=="hunter_glide":
-		target_point=Vector2(1060 if position.x<910 else 760,260)
-	elif move_key=="hunter_drop": target_point=Vector2(position.x,520)
-	else: target_point=Vector2(clampf(player.global_position.x,340,1170),520)
+		target_point=combat_space.perch(1 if position.x<combat_space.x(910) else 0)
+	elif move_key=="hunter_drop": target_point=Vector2(position.x,combat_space.ground_at(self,position.x))
+	else: target_point=Vector2(combat_space.clamp_x(player.position.x,340,1170),combat_space.ground_at(self,combat_space.clamp_x(player.position.x,340,1170)))
 	if not is_zero_approx(target_point.x-position.x): facing=signf(target_point.x-position.x)
 
 func set_state(next: String) -> void:
@@ -60,13 +60,13 @@ func set_state(next: String) -> void:
 		velocity=Vector2(evade_direction*380.0,-420.0)
 		_fire_water()
 	if next=="active":
-		flight_velocity=(target_point-global_position)/float(spec.active)
+		flight_velocity=(target_point-position)/float(spec.active)
 		landing_pending=move_key=="hunter_drop"
 	elif next=="return":
-		return_goal=PERCHES[0] if absf(position.x-760)<absf(position.x-1060) else PERCHES[1]
+		return_goal=combat_space.perch(0 if position.distance_to(combat_space.perch(0))<position.distance_to(combat_space.perch(1)) else 1)
 		return_duration=position.distance_to(return_goal)/300.0
-		if position.x<300 and position.y>360:
-			var outside := Vector2(340,position.y)
+		if position.x<combat_space.x(300) and position.y>combat_space.floor_y-160:
+			var outside := Vector2(combat_space.x(340),position.y)
 			return_duration=(position.distance_to(outside)+outside.distance_to(return_goal))/300.0
 
 	if is_instance_valid(visual): visual.present(self)
@@ -78,7 +78,7 @@ func phase_duration() -> float:
 	return super.phase_duration()
 
 func sheltered_player() -> bool:
-	return shelter_enabled and player.position.x>=0 and player.position.x<=215 and player.position.y>450
+	return shelter_enabled and combat_space.shelter.has_point(player.position)
 
 func _physics_process(dt: float) -> void:
 	if feedback.frozen(dt): return
@@ -140,7 +140,7 @@ func _fall(dt: float) -> void:
 func _return_tick(dt: float) -> void:
 	timer+=dt
 	# 被打到遮蔽下方时先沿地面出去，不穿过顶盖回挂。
-	var goal: Vector2=Vector2(340,position.y) if position.x<300 and position.y>360 else return_goal
+	var goal: Vector2=Vector2(combat_space.x(340),position.y) if position.x<combat_space.x(300) and position.y>combat_space.floor_y-160 else return_goal
 	var delta: Vector2=goal-position
 	if delta.length()<6.0 and goal==return_goal:
 		position=return_goal
@@ -174,8 +174,8 @@ func _prepare_escape() -> void:
 	velocity=Vector2.ZERO
 	evade_direction=signf(position.x-player.position.x)
 	if is_zero_approx(evade_direction): evade_direction=-facing
-	if position.x>1130: evade_direction=-1.0
-	elif position.x<340: evade_direction=1.0
+	if position.x>combat_space.x(1130): evade_direction=-1.0
+	elif position.x<combat_space.x(340): evade_direction=1.0
 	facing=-evade_direction
 	escape_aim=player.global_position-Vector2(0,35)
 	set_state("escape_tell")

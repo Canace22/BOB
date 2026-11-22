@@ -6,7 +6,9 @@ func area_hit(spec: Dictionary, direction: float) -> void:
 	var reach: float=float(spec.get("reach",100.0))
 	var origin: Vector2=actor.global_position
 	var shape: String=str(spec.get("shape","front"))
-	var area:=Rect2(origin+Vector2(0 if direction>0 else -reach,-110),Vector2(reach,110))
+	var height: float=float(spec.get("height",110.0))
+	var bottom: float=float(spec.get("bottom",0.0))
+	var area:=Rect2(origin+Vector2(0 if direction>0 else -reach,bottom-height),Vector2(reach,height))
 	if shape=="up": area=Rect2(origin+Vector2(-70,-reach-50),Vector2(140,reach))
 	elif shape=="radial": area=Rect2(origin-Vector2(reach,reach),Vector2.ONE*reach*2.0)
 	for target: Node in actor.get_tree().get_nodes_in_group("tide_targets"):

@@ -112,8 +112,8 @@ func _physics_process(dt: float) -> void:
 			advance_action(dt)
 			if state=="active" and move_key=="eel_bite": velocity.x=facing*float(spec.speed)
 	# 两端都留在场内；只限制物理移动，不在换招时翻转整条身体。
-	if position.x<155.0 and velocity.x<0.0: velocity.x=0.0
-	if position.x>1125.0 and velocity.x>0.0: velocity.x=0.0
+	if position.x<combat_space.x(155.0) and velocity.x<0.0: velocity.x=0.0
+	if position.x>combat_space.x(1125.0) and velocity.x>0.0: velocity.x=0.0
 	move_and_slide()
 	# 出土与玩家重叠时先保持可穿行，分离后再恢复身体阻挡，避免挤墙。
 	if collision_layer==0 and outcome.is_empty() and not nest.hidden() and state!="emerge":

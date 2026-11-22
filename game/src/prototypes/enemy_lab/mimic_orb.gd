@@ -2,7 +2,7 @@ class_name EnemyLabMimicOrb
 extends Node2D
 ## 复现远程技能的有限射弹，复用连续检测与玩家伤害/格挡入口。
 var source: WeakRef
-var player: EnemyLabPlayer
+var player: TideCombatPlayer
 var velocity: Vector2
 var life: float=1.8
 var spent: bool=false
@@ -32,7 +32,7 @@ func _physics_process(dt: float) -> void:
 	global_position=end
 	var area := Rect2(player.global_position-Vector2(14,65),Vector2(28,65)).grow(12)
 	if EnemyLabWaterTrace.crosses(start,end,area):
-		var guard: EnemyLabSkills=player.skill_controller as EnemyLabSkills
+		var guard: TideCombatGuardSkills=player.skill_controller as TideCombatGuardSkills
 		var before: int=guard.guard_count
 		guard.incoming_pressure=28.0
 		guard.incoming_unblockable=false

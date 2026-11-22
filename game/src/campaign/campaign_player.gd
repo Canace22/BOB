@@ -142,7 +142,8 @@ func _read_input() -> void:
 			drop_timer=_fall_time(MEMBRANE_DIVE_DEPTH,180.0);jump_buffer=0;coyote=0;velocity.y=180
 			host.sfx("sweep");host.record_event("membrane_dive",{"position":[position.x,position.y],"drop":mechanism.membrane_drop})
 	# Float only works airborne; on the ground the same key peeks up or aims an up-slash.
-	if Input.is_action_just_pressed("float") and not host.has_ability("float") and not is_on_floor():host.notify("浮游尚未解锁；沿须筛右侧圆环进入鲸须记忆袋，拾取记忆")
+	if Input.is_action_just_pressed("float") and not host.has_ability("float") and not is_on_floor():
+		host.notify("浮游尚未解锁；先到须筛右侧查看路线标记" if is_instance_valid(host.story) and host.story.running() else "浮游尚未解锁；沿须筛右侧圆环进入鲸须记忆袋，拾取记忆")
 	if Input.is_action_just_pressed("grapple"):
 		if not host.has_ability("anchor"):host.notify("锚环尚未解锁；F9可进入原有能力练习模式")
 		else:_find_ring()
@@ -229,7 +230,7 @@ func ability_available(action:String) -> bool:
 
 func request_action(action:String) -> bool:
 	if action in ["A1_dash","A5_slit"] and not host.has_ability("dash"):
-		host.notify("冲刺尚未解锁：击败负壳守卫获得；F9可临时练习")
+		host.notify("冲刺尚未解锁：先解决须庭聚食区，再与补巢者交谈" if is_instance_valid(host.story) and host.story.running() else "冲刺尚未解锁：击败负壳守卫获得；F9可临时练习")
 		return false
 	var accepted:bool=super.request_action(action)
 	if accepted:grapple_target=Vector2.INF;grapple_hanging=false
@@ -237,15 +238,17 @@ func request_action(action:String) -> bool:
 
 func _melee(downward:bool) -> void:
 	if downward:super._melee(true);return
-	# Preserve the existing boss and regular enemy reach instead of shrinking it to demo dimensions.
+	var area:=Rect2(global_position+Vector2(collision_size.x*.5 if facing>0 else -collision_size.x*.5-melee_reach,-melee_height),Vector2(melee_reach,melee_height))
 	for target in get_tree().get_nodes_in_group("tide_targets"):
-		if not target.has_method("is_campaign_enemy"):continue
-		var delta:Vector2=target.global_position-global_position
-		if absf(delta.x)>=(180 if target.data.boss else melee_reach) or absf(delta.y)>=125 or delta.x*facing<=-25:continue
+		if target.has_method("is_campaign_enemy"):
+			# 保留旧正式敌人的接触距离；新章节执行器按共用真实受击矩形处理。
+			var delta:Vector2=target.global_position-global_position
+			if absf(delta.x)>=(180 if target.data.boss else melee_reach) or absf(delta.y)>=125 or delta.x*facing<=-25:continue
+		elif not target.has_method("hurt_rect") or not area.intersects(target.hurt_rect()):
+			continue
 		var fresh:bool=not hit_targets.has(target.get_instance_id())
 		_hit(target,melee_damage,true)
 		if not fresh or not hit_targets.has(target.get_instance_id()):continue
-		# A landed swing shoves the target away and nudges the attacker back.
 		if target.has_method("apply_knockback"):target.apply_knockback(facing*melee_knockback)
 
 func _fall_out_of_world() -> void:
@@ -269,6 +272,7 @@ func hurt(amount:int,fall:bool=false) -> void:
 		recoil_left=0
 
 func interaction_nearby() -> bool:
+	if is_instance_valid(host.story) and host.story.running() and not host.story.prompt().is_empty(): return true
 	if host.dialogue.nearby()!=null: return true
 	if is_instance_valid(skill_controller.nearby_gate()): return true
 	var reward:Array=host.room.get("reward",[])

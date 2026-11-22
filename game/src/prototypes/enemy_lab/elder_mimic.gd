@@ -39,12 +39,12 @@ func _observe(key: String, event: String, _origin: Vector2, _direction: float) -
 func _remember(key: String, data: Dictionary, steps: int) -> void:
 	if not enemy.outcome.is_empty() or enemy.player.health<=0: return
 	if enemy.position.distance_to(enemy.player.position)>700.0: return
-	var ray := PhysicsRayQueryParameters2D.create(enemy.position+Vector2(0,-45),enemy.player.position+Vector2(0,-45),1)
+	var ray := PhysicsRayQueryParameters2D.create(enemy.global_position+Vector2(0,-45),enemy.player.global_position+Vector2(0,-45),1)
 	if not get_world_2d().direct_space_state.intersect_ray(ray).is_empty(): return
 	var adapted: Dictionary=repertoire.adapt(key,data)
 	var observation: Dictionary={"key":key,"data":adapted,"steps":steps}
 	repertoire.store(key,observation)
-	if key not in ["strike_01","strike2"] or memory.is_empty(): memory=observation
+	if key not in ["strike_01","strike1","strike2"] or memory.is_empty(): memory=observation
 	view.prepare(key)
 	enemy.changed.emit("观招记下："+title(key))
 
@@ -140,7 +140,7 @@ func _pulse() -> void:
 		orb.player=enemy.player
 		orb.velocity=Vector2(enemy.facing*enemy.player.orb_speed,0)
 		enemy.get_parent().add_child(orb)
-		orb.global_position=enemy.position+Vector2(enemy.facing*60.0,-52)
+		orb.global_position=enemy.global_position+Vector2(enemy.facing*60.0,-52)
 		orb_refs.append(weakref(orb))
 	else:
 		var before: int=enemy.hit_count

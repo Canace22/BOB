@@ -2,7 +2,7 @@ class_name EnemyLabNestEgg
 extends Node2D
 ## 布巢卵囊可被真实攻击拆除；落地胀裂前有明确等待，不靠触碰持续扣血。
 var source: WeakRef
-var player: EnemyLabPlayer
+var player: TideCombatPlayer
 var velocity: Vector2
 var age: float=0.0
 var flight_age: float=0.0
@@ -78,7 +78,7 @@ func _burst(enemy: EnemyLabEel) -> void:
 	var area := Rect2(global_position+Vector2(-48,-26),Vector2(96,40))
 	var body := Rect2(player.global_position-Vector2(14,65),Vector2(28,65))
 	if area.intersects(body):
-		var guard: EnemyLabSkills=player.skill_controller as EnemyLabSkills
+		var guard: TideCombatGuardSkills=player.skill_controller as TideCombatGuardSkills
 		var before: int=guard.guard_count
 		if player.take_damage(1,global_position): enemy.nest.egg_hits+=1
 		elif guard.guard_count>before: enemy.nest.egg_blocks+=1

@@ -69,6 +69,12 @@ func _start_encounter() -> void:
 func play_ending() -> void:
 	_set_world_cue(RELEASE)
 
+func set_story_encounter(active: bool) -> void:
+	# 新章节使用完整执行器，不伪装成旧母蟹字典；混音仍由本播放器唯一拥有。
+	waiting_for={}
+	set_process(false)
+	_set_world_cue(BATTLE if active else room_score)
+
 func _on_finished() -> void:
 	if stream == RELEASE and requested == RELEASE:
 		_set_world_cue(room_score)

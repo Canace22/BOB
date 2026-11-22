@@ -1,0 +1,1948 @@
+{
+  "schema_version": 1,
+  "method": "room-local segment starts; every subsequent waypoint must use actual input, no transforms",
+  "routes": [
+    {
+      "id": "ch01.warning-to-feeding",
+      "room_id": "R1-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            320,
+            720
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            650,
+            950
+          ],
+          "mode": "drop",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/narrative/campaign_story.json:loop.warning/loop.passage"
+      ],
+      "start_at": [
+        320,
+        720
+      ],
+      "goal_ref": "loop.passage"
+    },
+    {
+      "id": "ch01.feeding-to-aftermath",
+      "room_id": "R1-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            500,
+            950
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            460,
+            820
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            330,
+            720
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            560,
+            630
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            890,
+            510
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1250,
+            650
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1475,
+            790
+          ],
+          "mode": "drop",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/layout/rooms.json:R1-01/layout/qa_routes/recovery",
+        "game/content/whalebelly/layout/rooms.json:R1-01/layout/qa_routes/main"
+      ],
+      "start_at": [
+        650,
+        950
+      ],
+      "goal_ref": "loop.aftermath",
+      "note": "Must recover to entry bank first; direct x1475 movement from lower feeding floor cannot climb to the exit."
+    },
+    {
+      "id": "ch01.sifting-current-collision-candidate",
+      "room_id": "R1-02",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            330,
+            700
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            600,
+            777
+          ],
+          "mode": "jump",
+          "grounded": true,
+          "launch_x": 330,
+          "jump_hold": 30
+        },
+        {
+          "at": [
+            700,
+            777
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1200,
+            700
+          ],
+          "mode": "jump-dash",
+          "grounded": true,
+          "launch_x": 720,
+          "dash_frame": 22,
+          "jump_hold": 30
+        },
+        {
+          "at": [
+            1490,
+            710
+          ],
+          "mode": "jump",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "dash"
+      ],
+      "evidence": "Merged 81dba038 mainline platform coordinates; actual-input revalidation recorded in game/progress.md",
+      "source_refs": [
+        "game/content/whalebelly/r1/R1-02.tscn:World/Terrain/Surface1",
+        "game/content/whalebelly/layout/rooms.json:R1-02/layout/qa_routes/main"
+      ],
+      "start_at": [
+        200,
+        700
+      ],
+      "goal_ref": "ch01_sifting_route",
+      "critical_risk": "Mainline 241450b1 adds UpperStand at x530..734/y777. Use that actual support and the already-earned dash to reach Surface3; do not target the old Surface2 coordinates or change map/player physics."
+    },
+    {
+      "id": "ch02.guard-platform-to-exit",
+      "room_id": "R1-04",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            1650,
+            800
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2200,
+            800
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2390,
+            800
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R1-05",
+          "label": "折井下层"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "dash"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/layout/rooms.json:R1-04/layout/qa_routes/main"
+      ],
+      "start_at": [
+        1750,
+        800
+      ],
+      "goal_ref": "ch02_rescue"
+    },
+    {
+      "id": "ch02.rescue-platforms-to-stomach",
+      "room_id": "R1-05",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            280,
+            700
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            570,
+            585
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            960,
+            585
+          ],
+          "mode": "jump-dash",
+          "grounded": true,
+          "launch_x": 620,
+          "jump_hold": 2,
+          "dash_frame": 8
+        },
+        {
+          "at": [
+            1010,
+            585
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1190,
+            735
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1490,
+            810
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R3-01",
+          "label": "胃室入口"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "dash"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/layout/rooms.json:R1-05/layout/qa_routes/main"
+      ],
+      "start_at": [
+        260,
+        700
+      ],
+      "goal_refs": [
+        "ch02_rescue",
+        "ch02_permit",
+        "ch02_complete",
+        "ch02_exit"
+      ],
+      "note": "R1-05 old world_skeleton throat coordinates600,577/1450,563 predate layout and are not current feet. Prefer current585/735/810."
+    },
+    {
+      "id": "ch03.stomach-low-bank-forward",
+      "room_id": "R3-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            620,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1000,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1350,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1810,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2230,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2590,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            3120,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "dash",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:explore_hub/cross_the_seams"
+      ],
+      "start_at": [
+        256,
+        2080
+      ],
+      "goal_refs": [
+        "ch03_meet",
+        "ch03_mudback",
+        "ch03_valve"
+      ],
+      "note": "For new story encounter at2230/2590 stop advance and perform combat; this is navigation only."
+    },
+    {
+      "id": "ch03.stomach-return-and-salvage",
+      "room_id": "R3-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2700,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2300,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1810,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1350,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            950,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            620,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1000,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1350,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "dash",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leave_hub/explore_hub"
+      ],
+      "start_at": [
+        3120,
+        2080
+      ],
+      "goal_refs": [
+        "ch03_after",
+        "ch03_shell_recovered",
+        "ch03_fixed"
+      ]
+    },
+    {
+      "id": "stomach.camp-to-fat-store-door",
+      "room_id": "R3-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            960,
+            2080
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            640,
+            1960
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            960,
+            1840
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            800,
+            1720
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            520,
+            1600
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            240,
+            1480
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            100,
+            1480
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R2-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:explore_hub/lung_route"
+      ],
+      "start_at": [
+        1350,
+        2080
+      ],
+      "goal_ref": "ch03_exit"
+    },
+    {
+      "id": "fat-store.stair-up",
+      "room_id": "R2-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            400,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            880,
+            1260
+          ],
+          "mode": "jump-float",
+          "grounded": true
+        },
+        {
+          "at": [
+            1400,
+            1000
+          ],
+          "mode": "jump-float",
+          "grounded": true
+        },
+        {
+          "at": [
+            1960,
+            740
+          ],
+          "mode": "jump-float",
+          "grounded": true
+        },
+        {
+          "at": [
+            2160,
+            740
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R2-03"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:lung_route"
+      ],
+      "start_at": [
+        256,
+        1520
+      ],
+      "goal_refs": [
+        "ch04_01_arrival",
+        "ch04_02_survey",
+        "ch04_03_agreement",
+        "ch04_04_limited_flow",
+        "ch04_05_tides",
+        "ch04_06_keep_limit",
+        "ch04_07_exit"
+      ],
+      "note": "Rises are260. Must activate float after release/apex; ordinary jump154.7 cannot clear them. Story grants float earlier at R1-02."
+    },
+    {
+      "id": "ring-nest.deck-forward",
+      "room_id": "R2-03",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            430,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            900,
+            1160
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1400,
+            1040
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1960,
+            920
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2240,
+            1160
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2320,
+            1160
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R2-04"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:lung_route/leg_lung"
+      ],
+      "start_at": [
+        256,
+        1280
+      ],
+      "goal_refs": [
+        "ch05_01_find_family",
+        "ch05_03_eel",
+        "ch05_04_after_battle",
+        "ch05_05_carry_base",
+        "ch05_06_exit"
+      ],
+      "note": "Upper ledge intersects the flight arc from middle deck. Use1960,920 then drop2240,1160; direct1400,1040→2090,1160 can land on920 and miss interaction feet."
+    },
+    {
+      "id": "lung.lower-floor-and-return",
+      "room_id": "R2-04",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            700,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1100,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1400,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1800,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2200,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2790,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R2-03"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:lung_route/leg_lung"
+      ],
+      "start_at": [
+        256,
+        1520
+      ],
+      "goal_ref": "ch06_07_exit",
+      "note": "Optional exposed view at1480,960 requires the separate upper route; safe route stays at1520."
+    },
+    {
+      "id": "lung.optional-exposed-upper",
+      "room_id": "R2-04",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            840,
+            1200
+          ],
+          "mode": "jump-float",
+          "grounded": true
+        },
+        {
+          "at": [
+            1480,
+            960
+          ],
+          "mode": "jump-float",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/world/rooms.json:R2-04/surfaces/1,2"
+      ],
+      "start_at": [
+        720,
+        1520
+      ],
+      "goal_ref": "ch06_exposed_view",
+      "critical_risk": "Offline only; first rise320 and gap632 from platform840→1480 need float+possible dash. Not needed for mandatory safe observation."
+    },
+    {
+      "id": "ring-nest.deck-return",
+      "room_id": "R2-03",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2000,
+            1160
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1400,
+            1040
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            900,
+            1160
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1280
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R2-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:lung_route/leg_lung"
+      ],
+      "start_at": [
+        2176,
+        1160
+      ],
+      "goal_ref": "ch07_transition"
+    },
+    {
+      "id": "fat-store.stair-down",
+      "room_id": "R2-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            1960,
+            740
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1400,
+            1000
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            880,
+            1260
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1520
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1520
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R3-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:lung_route/leg_lung"
+      ],
+      "start_at": [
+        1984,
+        740
+      ],
+      "goal_ref": "ch07_transition"
+    },
+    {
+      "id": "stomach.upper-return-to-low",
+      "room_id": "R3-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            520,
+            1600
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            800,
+            1720
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1040,
+            1840
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1300,
+            2080
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2820,
+            2080
+          ],
+          "mode": "jump",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_hub"
+      ],
+      "start_at": [
+        256,
+        1480
+      ],
+      "goal_ref": "ch07_transition"
+    },
+    {
+      "id": "stomach.rings-to-pump",
+      "room_id": "R3-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "mode": "grapple",
+          "ring_index": 0,
+          "ring_at": [
+            2880,
+            1840
+          ],
+          "expected_hanging_at": [
+            2880,
+            1895
+          ],
+          "at": [
+            2880,
+            1895
+          ],
+          "budget": 120,
+          "facing": "right"
+        },
+        {
+          "mode": "grapple",
+          "ring_index": 1,
+          "ring_at": [
+            3120,
+            1600
+          ],
+          "expected_hanging_at": [
+            3120,
+            1655
+          ],
+          "at": [
+            3120,
+            1655
+          ],
+          "budget": 120,
+          "facing": "right"
+        },
+        {
+          "mode": "grapple",
+          "ring_index": 2,
+          "ring_at": [
+            3360,
+            1360
+          ],
+          "expected_hanging_at": [
+            3360,
+            1415
+          ],
+          "at": [
+            3360,
+            1415
+          ],
+          "budget": 120,
+          "facing": "right"
+        },
+        {
+          "mode": "grapple",
+          "ring_index": 3,
+          "ring_at": [
+            3600,
+            1120
+          ],
+          "expected_hanging_at": [
+            3600,
+            1175
+          ],
+          "at": [
+            3600,
+            1175
+          ],
+          "budget": 120,
+          "facing": "right"
+        },
+        {
+          "mode": "jump_release_from_grapple",
+          "hold_frames": 2,
+          "wait_frames": 90
+        },
+        {
+          "at": [
+            3690,
+            1360
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R4-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "pressure"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:explore_hub/leg_hub"
+      ],
+      "start_at": [
+        2820,
+        2080
+      ],
+      "goal_ref": "ch07_evidence",
+      "critical_risk": "No surface staircase leads from east bank2080 to gate1360; use four real ring hooks. Direct go(gate) will fail. Runtime grapple selection and streaming coordinates require actual verification."
+    },
+    {
+      "id": "pump.forward-through-spine-door",
+      "room_id": "R4-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            900,
+            1160
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1500,
+            1040
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2100,
+            1160
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2320,
+            1160
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R4-03"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_spine"
+      ],
+      "start_at": [
+        256,
+        1280
+      ],
+      "goal_ref": "ch07_exit",
+      "note": "For stagech07_leave_pump first go down to lower floor1424 and retreat950,1424; do not apply forward path until escape completed."
+    },
+    {
+      "id": "pump.lower-arena-to-upper-stair",
+      "room_id": "R4-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            450,
+            1424
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            450,
+            1280
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            900,
+            1160
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1500,
+            1040
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2100,
+            1160
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2320,
+            1160
+          ],
+          "mode": "walk",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/world/rooms.json:R4-01/surfaces"
+      ],
+      "start_at": [
+        950,
+        1424
+      ],
+      "goal_ref": "ch07_exit",
+      "note": "Lower bed to first bank rise144; no need to jump directly384 to central upper platform."
+    },
+    {
+      "id": "bone-vault.entry-to-battle",
+      "room_id": "R4-03",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            470,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            960,
+            1296
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1240,
+            1584
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1500,
+            1584
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1850,
+            1584
+          ],
+          "mode": "walk",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_spine",
+        "game/content/narrative/campaign_story.json:ch08_beam_fight"
+      ],
+      "start_at": [
+        256,
+        1440
+      ],
+      "goal_ref": "ch08_beam_fight"
+    },
+    {
+      "id": "bone-vault.battle-to-nests",
+      "room_id": "R4-03",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2060,
+            1584
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2350,
+            1440
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2650,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2800,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R4-05"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/whalebelly/world/rooms.json:R4-03/surfaces"
+      ],
+      "start_at": [
+        1900,
+        1584
+      ],
+      "goal_refs": [
+        "ch08_restore_rope",
+        "ch08_bring_nests",
+        "ch08_exit"
+      ],
+      "note": "Rise144 from lower bed to right bank; launch near lower edge toward platform2260..2860."
+    },
+    {
+      "id": "return-lane.flat-to-old-song",
+      "room_id": "R4-05",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            450,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            950,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1460,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1980,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2700,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            3120,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R4-06"
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_spine"
+      ],
+      "start_at": [
+        256,
+        1440
+      ],
+      "goal_ref": "ch09_exit",
+      "note": "Gate boss requirement must be story bridge; there is no old clam boss in story mode."
+    },
+    {
+      "id": "old-song.forward-to-ear",
+      "room_id": "R4-06",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            500,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1030,
+            1320
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1700,
+            1200
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2440,
+            1320
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2640,
+            1320
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float",
+        "bone"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_spine"
+      ],
+      "start_at": [
+        256,
+        1440
+      ],
+      "goal_ref": "ch10_exit"
+    },
+    {
+      "id": "ear.contacts-forward",
+      "room_id": "R5-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            960,
+            1320
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1500,
+            1200
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2100,
+            1320
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2320,
+            1320
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-02"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float",
+        "bone"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_ear"
+      ],
+      "start_at": [
+        256,
+        1440
+      ],
+      "goal_ref": "ch11_contact_lung"
+    },
+    {
+      "id": "safe-pool.forward",
+      "room_id": "R5-02",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            1040,
+            1240
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1600,
+            1360
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            2200,
+            1240
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            2480,
+            1240
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-04"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float",
+        "bone"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_ear"
+      ],
+      "start_at": [
+        256,
+        1360
+      ],
+      "goal_ref": "ch11_contact_pump"
+    },
+    {
+      "id": "echo-room.left-return",
+      "room_id": "R5-04",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            1000,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-02"
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_ear"
+      ],
+      "start_at": [
+        2700,
+        1440
+      ],
+      "goal_ref": "ch11_exit"
+    },
+    {
+      "id": "safe-pool.return",
+      "room_id": "R5-02",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2200,
+            1240
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1600,
+            1360
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            1000,
+            1240
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1360
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1360
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-01"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_ear"
+      ],
+      "start_at": [
+        2320,
+        1240
+      ],
+      "goal_ref": "ch12_transition"
+    },
+    {
+      "id": "ear.return",
+      "room_id": "R5-01",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2100,
+            1320
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1500,
+            1200
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            900,
+            1320
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            300,
+            1440
+          ],
+          "mode": "drop",
+          "grounded": true
+        },
+        {
+          "at": [
+            80,
+            1440
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R4-06"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_ear"
+      ],
+      "start_at": [
+        2160,
+        1320
+      ],
+      "goal_ref": "ch12_transition"
+    },
+    {
+      "id": "old-song.return-to-main-gate",
+      "room_id": "R4-06",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            2300,
+            1320
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1700,
+            1200
+          ],
+          "mode": "jump",
+          "grounded": true
+        },
+        {
+          "at": [
+            1160,
+            1320
+          ],
+          "mode": "drop",
+          "grounded": false,
+          "allow_pass_through": true
+        },
+        {
+          "at": [
+            1080,
+            1320
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "mode": "door",
+          "to": "R5-08"
+        }
+      ],
+      "required_abilities": [
+        "anchor",
+        "float",
+        "bone"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/tests/whalebelly/world_skeleton.gd:leg_release"
+      ],
+      "start_at": [
+        2440,
+        1320
+      ],
+      "goal_ref": "ch12_return_name"
+    },
+    {
+      "id": "main-gate.final-flat",
+      "room_id": "R5-08",
+      "coordinate_space": "room-local",
+      "steps": [
+        {
+          "at": [
+            480,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            950,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            1280,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2210,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2600,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            2850,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        },
+        {
+          "at": [
+            3070,
+            1280
+          ],
+          "mode": "walk",
+          "grounded": true
+        }
+      ],
+      "required_abilities": [
+        "anchor"
+      ],
+      "evidence": "source fixture reviewed; this exact candidate not executed in current turn",
+      "source_refs": [
+        "game/content/narrative/campaign_story.json:ch12"
+      ],
+      "start_at": [
+        256,
+        1280
+      ],
+      "goal_ref": "ch12_exit"
+    }
+  ]
+}

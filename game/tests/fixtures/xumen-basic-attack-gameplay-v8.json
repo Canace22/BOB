@@ -1,0 +1,13 @@
+{
+  "revision": "basic-attack-v8",
+  "authorization": "User reported truncated normal attack chains and mismatched visual and damage range",
+  "scope": "Only two basic attacks; movement, room geometry, rewards and every other skill remain frozen",
+  "added_actions": ["strike1"],
+  "catalog_actions": {
+    "strike1": {"proxy":"strike_01","duration":0.35,"release":0.1,"damage":1,"shape":"front","reach":118.0,"height":70.0,"bottom":-15.0,"gain":true,"motion":"free","cancel":0.9,"id":"strike1","cost":0,"cooldown":0.0,"unlock":"always","lock_facing":true,"knockback":80.0,"cooldown_group":"strike1"},
+    "strike2": {"proxy":"strike_01","duration":0.36,"release":0.12,"damage":1,"shape":"front","reach":72.0,"height":74.0,"bottom":-28.0,"gain":true,"motion":"free","cancel":0.9,"id":"strike2","cost":0,"cooldown":0.0,"unlock":"always","lock_facing":true,"knockback":80.0,"cooldown_group":"strike2"}
+  },
+  "source_hashes": [
+    {"path":"game/src/campaign/tide_skill_catalog.gd","previous_sha256":"4971fb204300d74c95f1052896434c7bfe555e46641d7a3bb1f7a44597a3fe7a","sha256":"1860de8f2b258e00146b29886840af1ce3e71b09ed99195c3ebda20aa0a4b4ee","reason":"Explicitly requested shared normal-chain timeline and visible contact envelope"}
+  ]
+}

@@ -105,7 +105,7 @@ func _physics_process(dt: float) -> void:
 	if mimic.evade_active(): collision_layer=0
 	move_and_slide()
 	if collision_layer==0 and outcome.is_empty() and not mimic.evade_active():
-		var body := Rect2(player.position-Vector2(14,65),Vector2(28,65))
+		var body := Rect2(player.global_position-Vector2(14,65),Vector2(28,65))
 		if not hurt_rect().intersects(body): collision_layer=4
 	visual.present(self)
 	queue_redraw()

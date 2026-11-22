@@ -135,6 +135,10 @@ func frame_fraction(key: String, spec: Dictionary, dt: float, travel: float) -> 
 	return super.frame_fraction(key,spec,dt,travel)
 
 func apply_layer(layer: Sprite2D, frames: Array[Texture2D], spec: Dictionary, index: int, height: float) -> void:
+	var c: TideSkillController=actor.skill_controller
+	if layer==effect and c.active and c.visual_key=="strike1":
+		# 原弧光第4帧是接触峰值；独立从释放计时，避免整体进度映射在60Hz跳过峰值。
+		index=4+int(maxf(0.0,c.elapsed-float(c.data.release))*24.0)
 	super.apply_layer(layer,frames,spec,index,height)
 	if layer != sprite or layer.texture == null or not actor.is_on_floor(): return
 	if bool(manifest.get(current_key,{}).get("authored_pivot",false)): return

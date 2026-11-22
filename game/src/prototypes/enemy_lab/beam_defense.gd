@@ -42,7 +42,7 @@ func intercept(amount: int) -> bool:
 	blocked_feedback=false
 	if amount<=0 or not guarding(): return false
 	var front: bool=(enemy.player.global_position.x-enemy.global_position.x)*enemy.facing>=0.0
-	var guard: EnemyLabSkills=enemy.player.skill_controller as EnemyLabSkills
+	var guard: TideCombatGuardSkills=enemy.player.skill_controller as TideCombatGuardSkills
 	var counter_reward: bool=guard.counter_left>0.0 and guard.counter_bonus>0
 	# 重击和玩家赢得的迎击奖励可以破架，不能被新防御吞掉。
 	if not front or amount>=3 or counter_reward or capacity<=1:

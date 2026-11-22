@@ -64,7 +64,7 @@ func phase_duration() -> float:
 
 func _physics_process(dt: float) -> void:
 	# 安全线的结束优先于局部停顿与有效段，越线后不补发旧攻击。
-	if exit_enabled and not passed and player.health>0 and player.global_position.x>=EXIT_X:
+	if exit_enabled and not passed and player.health>0 and player.position.x>=combat_space.exit_x:
 		passed=true
 		if outcome.is_empty(): finish()
 		reached_exit.emit()
@@ -94,8 +94,8 @@ func _physics_process(dt: float) -> void:
 	if flinch_left>0.0 and state!="active":
 		flinch_left=maxf(0.0,flinch_left-dt)
 		velocity.x=flinch_axis*80.0
-	if position.x<320 and velocity.x<0: velocity.x=0.0
-	if position.x>1030 and velocity.x>0: velocity.x=0.0
+	if position.x<combat_space.x(320) and velocity.x<0: velocity.x=0.0
+	if position.x>combat_space.x(1030) and velocity.x>0: velocity.x=0.0
 	move_and_slide()
 	if collision_layer==0 and outcome.is_empty() and state not in ["wash","reform"]:
 		var body := Rect2(player.global_position-Vector2(14,65),Vector2(28,65))
@@ -113,7 +113,7 @@ func _idle_tick(dt: float) -> void:
 		begin_attack()
 	else:
 		# 守在玩家与出口之间；被绕过后正常追赶，不瞬移封死安全线。
-		var goal: float=clampf(player.position.x+170.0,500.0,1005.0)
+		var goal: float=combat_space.clamp_x(player.position.x+170.0,500.0,1005.0)
 		if absf(goal-position.x)>12.0: velocity.x=signf(goal-position.x)*float(profile.speed)
 
 func advance_action(dt: float) -> void:

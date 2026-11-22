@@ -11,6 +11,9 @@ var reveal: float = 0.0
 var input_lock: float = 0.0
 var skip_pending: bool = false
 var panel: PanelContainer
+var portrait_frame: PanelContainer
+var portrait_view: TextureRect
+var portraits:=WhaleDialoguePortraits.new()
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -23,9 +26,28 @@ func _ready() -> void:
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation",6)
 	panel.add_child(column)
+	var content:=HBoxContainer.new()
+	content.add_theme_constant_override("separation",16)
+	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	column.add_child(content)
+	portrait_frame=PanelContainer.new()
+	portrait_frame.name="SpeakerPortrait"
+	portrait_frame.add_theme_stylebox_override("panel",WhaleUIStyle.box(Color("101f29"),Color(WhaleUIStyle.TEAL,0.25)))
+	portrait_frame.size_flags_vertical=Control.SIZE_SHRINK_CENTER
+	content.add_child(portrait_frame)
+	portrait_view=TextureRect.new()
+	portrait_view.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+	portrait_view.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	portrait_view.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	portrait_frame.add_child(portrait_view)
+	portrait_frame.hide()
+	var words:=VBoxContainer.new()
+	words.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	words.add_theme_constant_override("separation",6)
+	content.add_child(words)
 	speaker_label=WhaleUIStyle.label("",22,WhaleUIStyle.BONE)
 	speaker_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
-	column.add_child(speaker_label)
+	words.add_child(speaker_label)
 	text_label=RichTextLabel.new()
 	text_label.bbcode_enabled=false
 	text_label.custom_minimum_size=Vector2(0,24)
@@ -33,7 +55,7 @@ func _ready() -> void:
 	text_label.add_theme_font_size_override("normal_font_size",20)
 	text_label.scroll_active=true
 	text_label.mouse_filter=Control.MOUSE_FILTER_PASS
-	column.add_child(text_label)
+	words.add_child(text_label)
 	var buttons := HBoxContainer.new()
 	buttons.alignment=BoxContainer.ALIGNMENT_END
 	column.add_child(buttons)
@@ -48,6 +70,23 @@ func _ready() -> void:
 func _layout() -> void:
 	var value: String = text_label.text if is_instance_valid(text_label) else ""
 	var bounds: Rect2 = WhaleUIStyle.dialogue_rect(size,value)
+	if is_instance_valid(portrait_frame):
+		var portrait_size: float=clampf(bounds.size.x*0.15,64,112)
+		portrait_frame.custom_minimum_size=Vector2(portrait_size,portrait_size)
+		var text_width: float=bounds.size.x-40.0
+		if portrait_frame.visible: text_width-=portrait_size+16.0
+		# 按头像占用后的正文宽度算高度，不能沿用全宽文字行数造成正文被截断。
+		var text_height: float=WhaleUIStyle.FONT.get_multiline_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,maxf(60,text_width),20).y
+		var minimum: float=portrait_size+70.0 if portrait_frame.visible else 144.0
+		var maximum: float=minf(280,size.y*0.48) if portrait_frame.visible else minf(224,size.y*0.4)
+		bounds.size.y=clampf(maxf(text_height+104.0,minimum),144,maximum)
+		bounds.position.y=size.y-bounds.size.y-24
+		var compact: bool=bounds.size.x<560
+		if is_instance_valid(next_button):
+			for button: Button in [next_button,skip_button]:
+				button.custom_minimum_size.x=minf(210,(bounds.size.x-52.0)*0.5)
+			next_button.text="继续 · F / Enter" if compact else "F / 空格 / Enter 继续"
+			if not skip_pending: skip_button.text="跳过 · Esc" if compact else "Esc 跳过本段"
 	panel.position = bounds.position
 	panel.size = bounds.size
 
@@ -63,24 +102,27 @@ func request_skip() -> void:
 		skip_requested.emit()
 	else:
 		skip_pending = true
-		skip_button.text = "再次确认跳过 · Esc / Enter"
+		skip_button.text = "确认跳过 · Esc" if panel.size.x<560 else "再次确认跳过 · Esc / Enter"
 		skip_button.grab_focus()
 
 func present(speaker: String, value: String) -> void:
 	speaker_label.text=speaker
+	portrait_view.texture=portraits.texture_for(speaker)
+	portrait_frame.visible=portrait_view.texture!=null
+	portrait_view.set_meta("speaker_id",WhaleDialoguePortraits.identity(speaker))
 	text_label.text=value
 	reveal=0.0
 	text_label.visible_characters=0
 	input_lock=0.15
 	skip_pending=false
-	skip_button.text="Esc 跳过本段"
+	skip_button.text="跳过 · Esc" if panel.size.x<560 else "Esc 跳过本段"
 	text_label.scroll_to_line(0)
 	_layout.call_deferred()
 
 func advance() -> void:
 	if input_lock>0.0: return
 	skip_pending=false
-	skip_button.text="Esc 跳过本段"
+	skip_button.text="跳过 · Esc" if panel.size.x<560 else "Esc 跳过本段"
 	next_button.grab_focus()
 	if text_label.visible_characters<text_label.get_total_character_count():
 		reveal=float(text_label.get_total_character_count())

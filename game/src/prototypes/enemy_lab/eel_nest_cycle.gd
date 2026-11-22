@@ -25,7 +25,7 @@ func begin() -> void:
 	stage="burrow" if enemy.move_key=="eel_burrow" else "spit"
 	bites=0
 	emitted=0
-	locked_x=enemy.player.global_position.x
+	locked_x=enemy.player.position.x
 
 func duration() -> float:
 	match enemy.state:
@@ -43,7 +43,7 @@ func hidden() -> bool:
 func tick(dt: float) -> void:
 	enemy.timer+=dt
 	if enemy.state in ["link","coil"]:
-		var root: float=clampf(locked_x-enemy.facing*180.0,155.0,1125.0)
+		var root: float=enemy.combat_space.clamp_x(locked_x-enemy.facing*180.0,155.0,1125.0)
 		enemy.velocity.x=clampf((root-enemy.position.x)/dt,-200.0,200.0)
 	if enemy.state=="tunnel":
 		var fraction: float=clampf(enemy.timer/tunnel_duration,0.0,1.0)
@@ -64,13 +64,13 @@ func _advance_burrow() -> void:
 	match enemy.state:
 		"tell":
 			# 入地时锁定，后续不读取玩家坐标；可骗落点而非地下追踪。
-			locked_x=enemy.player.global_position.x
+			locked_x=enemy.player.position.x
 			exit_facing=1.0 if enemy.position.x>locked_x else -1.0
 			target_root=locked_x-exit_facing*180.0
-			if target_root<155.0 or target_root>1125.0:
+			if target_root<enemy.combat_space.x(155.0) or target_root>enemy.combat_space.x(1125.0):
 				exit_facing=-exit_facing
 				target_root=locked_x-exit_facing*180.0
-			target_root=clampf(target_root,155.0,1125.0)
+			target_root=enemy.combat_space.clamp_x(target_root,155.0,1125.0)
 			tunnel_start=enemy.position.x
 			tunnel_duration=maxf(0.45,absf(target_root-tunnel_start)/720.0)
 			enemy.collision_layer=0
@@ -107,7 +107,9 @@ func _spit(index: int) -> void:
 	egg.source=weakref(enemy)
 	egg.player=enemy.player
 	var mouth: Vector2=enemy.end_position()+Vector2(enemy.facing*12.0,-30.0)
-	var destination := Vector2(clampf(locked_x+float(index-1)*85.0,50.0,1230.0),506.0)
+	var landing_x: float=enemy.combat_space.clamp_x(locked_x+float(index-1)*85.0,50.0,1230.0)
+	var landing_y: float=enemy.combat_space.ground_at(enemy,landing_x)-14.0
+	var destination: Vector2=(enemy.get_parent() as Node2D).to_global(Vector2(landing_x,landing_y))
 	var flight: float=clampf(absf(destination.x-mouth.x)/340.0,0.50,0.85)
 	egg.velocity=Vector2((destination.x-mouth.x)/flight,(destination.y-mouth.y-425.0*flight*flight)/flight)
 	enemy.get_parent().add_child(egg)

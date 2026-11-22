@@ -2,7 +2,9 @@ class_name TideSkillCatalog
 extends RefCounted
 ## Video keys map to gameplay actions, never to the five-second showcase duration.
 const ACTIONS: Dictionary = {
-	"strike2": {"proxy":"strike_01", "duration":0.32, "release":0.06, "damage":1, "shape":"front", "reach":125.0, "gain":true, "motion":"free"},
+	# 普攻共用完整起手/挥击/收叉时钟；范围按94px角色的武器与有效弧光标定。
+	"strike1": {"proxy":"strike_01", "duration":0.35, "release":0.10, "damage":1, "shape":"front", "reach":118.0, "height":70.0, "bottom":-15.0, "gain":true, "motion":"free", "cancel":0.90},
+	"strike2": {"proxy":"strike_01", "duration":0.36, "release":0.12, "damage":1, "shape":"front", "reach":72.0, "height":74.0, "bottom":-28.0, "gain":true, "motion":"free", "cancel":0.90},
 	"upper": {"proxy":"strike_01", "duration":0.34, "release":0.06, "damage":1, "shape":"up", "reach":120.0, "gain":true, "motion":"free"},
 	"shadow_dash": {"proxy":"A1_dash", "duration":0.24, "release":0.0, "cooldown":0.85, "unlock":"chapter", "motion":"dash", "speed":850.0, "immune":true},
 	"great_slash": {"proxy":"heavy", "duration":0.50, "release":0.17, "damage":3, "shape":"front", "reach":180.0, "cooldown":0.5, "unlock":"dash", "gain":true},
@@ -19,7 +21,7 @@ const ACTIONS: Dictionary = {
 	"tram": {"proxy":"interact", "duration":0.5, "release":0.3, "unlock":"chapter", "interaction":true}
 }
 const TITLES: Dictionary = {
-	"strike2":"回拨·斜击", "upper":"挑潮·上挑", "shadow_dash":"影潮穿行",
+	"strike1":"扣潮·横击", "strike2":"回拨·斜击", "upper":"挑潮·上挑", "shadow_dash":"影潮穿行",
 	"great_slash":"蓄潮·重劈", "dash_slash":"奔潮·冲刺劈砍", "cyclone":"旋潮·回旋斩",
 	"crystal_dash":"凝流·蓄力长冲", "up_spell":"潮声·上涌", "abyss_scream":"深潮·共鸣啸",
 	"shadow_orb":"深鸣·穿潮弹", "dive":"坠潮·沉钟", "dark_dive":"坠潮·深钟",

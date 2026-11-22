@@ -28,6 +28,7 @@ func nearby(level: Node2D) -> bool:
 
 static func nearest(level: Node2D) -> KitInteractable:
 	if not level.is_inside_tree(): return null
+	if is_instance_valid(level.get("story")) and level.story.running(): return null
 	var actor: Node2D = level.get("player") as Node2D
 	if not is_instance_valid(actor): return null
 	var closest: KitInteractable

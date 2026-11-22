@@ -1,0 +1,6622 @@
+{
+  "schema_version": 1,
+  "mode": "existing-formal-map-fallback",
+  "source": "docs/现有地图章节保底接入.md",
+  "room_geometry_changed": false,
+  "chapter_count": 12,
+  "chapters": [
+    {
+      "id": 1,
+      "chapter_id": "ch01_xuting",
+      "title": "须庭里的低鸣",
+      "room_id": "R1-01",
+      "stages": [
+        {
+          "id": "loop.arrival",
+          "kind": "dialogue",
+          "objective": "沿骨路接近前方补巢者",
+          "radius": 155,
+          "checkpoint": [
+            230,
+            720.152
+          ],
+          "room_id": "R1-01",
+          "at": [
+            230,
+            720.152
+          ],
+          "support": {
+            "room_id": "R1-01",
+            "surface": 0,
+            "x": 230
+          },
+          "lines": [
+            [
+              "旁白",
+              "拾潮者挤过巡视缝。鲸歌忽然断了，须板间却有灯光在动。"
+            ],
+            [
+              "拾潮者",
+              "请问，有人在吗？"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R1-01",
+              "at": [
+                320,
+                720.064
+              ],
+              "support": {
+                "room_id": "R1-01",
+                "surface": 0,
+                "x": 320
+              }
+            }
+          ]
+        },
+        {
+          "id": "loop.warning",
+          "kind": "dialogue",
+          "objective": "先询问补巢者，辨认聚食区的危险",
+          "radius": 155,
+          "checkpoint": [
+            320,
+            720.064
+          ],
+          "room_id": "R1-01",
+          "at": [
+            320,
+            720.064
+          ],
+          "support": {
+            "room_id": "R1-01",
+            "surface": 0,
+            "x": 320
+          },
+          "lines": [
+            [
+              "补巢者",
+              "你先停一下。前面那只食腐甲正在吃菌膜，你再往前走，它会以为你来抢食，迎面扑过来。"
+            ],
+            [
+              "拾潮者",
+              "我从外海追着一阵低鸣来到这里，声音像是从你身后的通道传来的。我想过去找一找。"
+            ],
+            [
+              "补巢者",
+              "食腐甲只护着那片菌膜，不会一直追人。你可以先上前面较高的骨台看看，等食腐甲扑空，再从它旁边过去。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R1-01",
+              "at": [
+                230,
+                720.152
+              ],
+              "support": {
+                "room_id": "R1-01",
+                "surface": 0,
+                "x": 230
+              }
+            }
+          ]
+        },
+        {
+          "id": "loop.passage",
+          "kind": "battle",
+          "objective": "到下方宽骨台压退护食甲，再沿骨台向出口前进",
+          "radius": 115,
+          "checkpoint": [
+            650,
+            948.889
+          ],
+          "room_id": "R1-01",
+          "at": [
+            650,
+            948.889
+          ],
+          "support": {
+            "room_id": "R1-01",
+            "surface": 5,
+            "x": 650
+          },
+          "enemy": {
+            "profile": 0,
+            "at": [
+              860,
+              950.121
+            ],
+            "room_id": "R1-01",
+            "lane": [
+              400,
+              1000
+            ],
+            "arena": [
+              380,
+              430,
+              650,
+              520
+            ],
+            "floor_y": 950,
+            "ending": "retreat",
+            "hp": 10
+          },
+          "actors": []
+        },
+        {
+          "id": "loop.aftermath",
+          "kind": "dialogue",
+          "objective": "到出口菌灯旁，向补巢者询问下层入口",
+          "radius": 155,
+          "checkpoint": [
+            1475,
+            790.0
+          ],
+          "room_id": "R1-01",
+          "at": [
+            1475,
+            790.0
+          ],
+          "support": {
+            "room_id": "R1-01",
+            "surface": 4,
+            "x": 1475
+          },
+          "lines": [
+            [
+              "补巢者",
+              "站到菌灯旁边来。食腐甲只护着菌膜，离那片菌膜远一点，它就不会再扑你。"
+            ],
+            [
+              "拾潮者",
+              "那阵低鸣又响了，像是从脚下传来的。这里有通往下层的路吗？"
+            ],
+            [
+              "补巢者",
+              "前面的骨拱通往折井，沿折井可以去更深的地方。不过守卫把路封住了，你要先问他们，别自己闯下去。"
+            ],
+            [
+              "拾潮者",
+              "谢谢你。我去找折井的守卫问路。"
+            ]
+          ],
+          "reward_abilities": [
+            "dash"
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R1-01",
+              "at": [
+                1434,
+                789.974
+              ],
+              "support": {
+                "room_id": "R1-01",
+                "surface": 4,
+                "x": 1434
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch01_sifting_route",
+          "kind": "explore",
+          "objective": "沿须筛的真实台阶前进，到右侧通道前查看标记",
+          "radius": 115,
+          "checkpoint": [
+            1490,
+            710.03
+          ],
+          "room_id": "R1-02",
+          "at": [
+            1490,
+            710.03
+          ],
+          "support": {
+            "room_id": "R1-02",
+            "surface": 4,
+            "x": 1490
+          },
+          "tasks": [
+            {
+              "id": "ch01_route_seen",
+              "label": "F 查看下行路线标记",
+              "at": [
+                1490,
+                710.03
+              ],
+              "room_id": "R1-02",
+              "requires": [],
+              "grant": [],
+              "lines": [],
+              "support": {
+                "room_id": "R1-02",
+                "surface": 4,
+                "x": 1490
+              }
+            }
+          ],
+          "required": [
+            "ch01_route_seen"
+          ],
+          "reward_abilities": [
+            "float"
+          ],
+          "actors": []
+        },
+        {
+          "id": "ch01_foldwell_entry",
+          "kind": "exit",
+          "objective": "沿舌台上方的通路向右进入折井上沿",
+          "radius": 115,
+          "checkpoint": [
+            1500,
+            580.061
+          ],
+          "room_id": "R1-03",
+          "at": [
+            1500,
+            580.061
+          ],
+          "support": {
+            "room_id": "R1-03",
+            "surface": 8,
+            "x": 1500
+          },
+          "actors": []
+        }
+      ],
+      "next": 2,
+      "transition_route": [
+        "R1-01",
+        "R1-02",
+        "R1-03",
+        "R1-04"
+      ],
+      "route_hint": "R1-01 → R1-02 → R1-03 → R1-04",
+      "actors": []
+    },
+    {
+      "id": 2,
+      "chapter_id": "ch02_zhejing",
+      "title": "折井的封路旧壳",
+      "room_id": "R1-04",
+      "stages": [
+        {
+          "id": "ch02_arrival",
+          "kind": "dialogue",
+          "objective": "到折井上沿，询问正在封路的守卫",
+          "radius": 155,
+          "checkpoint": [
+            330,
+            760.81
+          ],
+          "room_id": "R1-04",
+          "at": [
+            330,
+            760.81
+          ],
+          "support": {
+            "room_id": "R1-04",
+            "surface": 0,
+            "x": 330
+          },
+          "lines": [
+            [
+              "旁白",
+              "折井下方传来拖拽声。负壳守卫把一具旧壳拖到路中央，挡住了下行的通道。"
+            ],
+            [
+              "拾潮者",
+              "我在须庭听到的低鸣，刚才还从井底传上来，怎么现在又听不见了？"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R1-04",
+              "at": [
+                1750,
+                800.134
+              ],
+              "support": {
+                "room_id": "R1-04",
+                "surface": 3,
+                "x": 1750
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_refusal",
+          "kind": "dialogue",
+          "objective": "接近警戒线，听清守卫封路的原因",
+          "radius": 155,
+          "checkpoint": [
+            970,
+            800.061
+          ],
+          "room_id": "R1-04",
+          "at": [
+            970,
+            800.061
+          ],
+          "support": {
+            "room_id": "R1-04",
+            "surface": 2,
+            "x": 970
+          },
+          "lines": [
+            [
+              "负壳守卫",
+              "下面正在撤人，你先退回上面的平台，不要往前走。"
+            ],
+            [
+              "拾潮者",
+              "下面出了什么事？为什么要撤人？"
+            ],
+            [
+              "负壳守卫",
+              "支撑住巢的一根梁歪了，住户还没撤完。我们得先把他们接上来，这段路现在不能走。"
+            ],
+            [
+              "拾潮者",
+              "我从外海追着一阵低鸣来到这里，声音好像就在井底。我想下去找一找。"
+            ],
+            [
+              "负壳守卫",
+              "我们在下面拖壳、敲梁，什么声音都有。你等住户都撤上来，再下去找。"
+            ],
+            [
+              "拾潮者",
+              "住户大概要多久才能撤完？"
+            ],
+            [
+              "负壳守卫",
+              "最里面还有人没出来，我现在说不准。等最后一户上来，我会叫你。"
+            ],
+            [
+              "拾潮者",
+              "我担心那阵低鸣再停下来，就找不到声音的来处了。我能沿路边绕过去吗？我不会靠近那根歪梁。"
+            ],
+            [
+              "负壳守卫",
+              "路边也要留给撤离的人走。你现在过去会挡住他们，先回上面的平台等。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R1-04",
+              "at": [
+                880,
+                799.54
+              ],
+              "support": {
+                "room_id": "R1-04",
+                "surface": 2,
+                "x": 880
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_guard_conflict",
+          "kind": "battle",
+          "objective": "守卫已举壳警告；读招、绕侧反击，解除封锁",
+          "radius": 115,
+          "checkpoint": [
+            1310,
+            800.053
+          ],
+          "room_id": "R1-04",
+          "at": [
+            1310,
+            800.053
+          ],
+          "support": {
+            "room_id": "R1-04",
+            "surface": 3,
+            "x": 1310
+          },
+          "enemy": {
+            "profile": 2,
+            "at": [
+              1750,
+              800.134
+            ],
+            "room_id": "R1-04",
+            "lane": [
+              1130,
+              2300
+            ],
+            "arena": [
+              1120,
+              280,
+              1220,
+              520
+            ],
+            "floor_y": 800,
+            "ending": "surrender",
+            "hp": 18
+          },
+          "actors": []
+        },
+        {
+          "id": "ch02_aftermath",
+          "kind": "dialogue",
+          "objective": "先停手，查看守卫仍在保护的下层住户",
+          "radius": 155,
+          "checkpoint": [
+            1950,
+            799.397
+          ],
+          "room_id": "R1-04",
+          "at": [
+            1950,
+            799.397
+          ],
+          "support": {
+            "room_id": "R1-04",
+            "surface": 3,
+            "x": 1950
+          },
+          "lines": [
+            [
+              "旁白",
+              "负壳守卫伏在脱落的旧壳旁。他还活着，钳尖仍朝着下层住巢的方向。"
+            ],
+            [
+              "负壳守卫",
+              "下面还有住户没撤上来！你别再往下走了！"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R1-04",
+              "at": [
+                1860,
+                800.247
+              ],
+              "support": {
+                "room_id": "R1-04",
+                "surface": 3,
+                "x": 1860
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_rescue",
+          "kind": "observe",
+          "objective": "到折井下层观察住户撤离，F可结束这一段演出",
+          "radius": 115,
+          "checkpoint": [
+            280,
+            700.439
+          ],
+          "room_id": "R1-05",
+          "at": [
+            280,
+            700.439
+          ],
+          "support": {
+            "room_id": "R1-05",
+            "surface": 0,
+            "x": 280
+          },
+          "duration": 8,
+          "captions": [
+            "守卫已停止交锋。住户沿断口内侧的支撑，一户接一户撤到安全平台。",
+            "老守护者带人接住最后一户住巢，催还留在断口上的住户往内侧走。"
+          ],
+          "grant": [
+            "ch02_rescue_done"
+          ],
+          "actors": [
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R1-05",
+              "at": [
+                150,
+                700.929
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 0,
+                "x": 150
+              }
+            },
+            {
+              "id": "resident_migrant",
+              "key": "resident_migrant",
+              "height": 90,
+              "room_id": "R1-05",
+              "at": [
+                260,
+                700.612
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 0,
+                "x": 260
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_permit",
+          "kind": "dialogue",
+          "objective": "居民撤离结束后，与老守护者交谈",
+          "radius": 155,
+          "checkpoint": [
+            545,
+            585.0
+          ],
+          "room_id": "R1-05",
+          "at": [
+            545,
+            585.0
+          ],
+          "support": {
+            "room_id": "R1-05",
+            "surface": 1,
+            "x": 545
+          },
+          "lines": [
+            [
+              "老守护者",
+              "折井下面还有住户没上来吗？"
+            ],
+            [
+              "住户",
+              "住户都在这儿了，最里面那一家也出来了。"
+            ],
+            [
+              "老守护者",
+              "你们先去胃室安顿，别挤在这处断口上。"
+            ],
+            [
+              "老守护者",
+              "你的旧壳怎么拖在地上？扣带怎么断了？"
+            ],
+            [
+              "负壳守卫（上层）",
+              "他非要往下走。我拦住他，我们打了起来，扣带也打断了。"
+            ],
+            [
+              "拾潮者",
+              "是我不肯退回去，越过了警戒线。后来我们打了起来，守卫也受了伤。"
+            ],
+            [
+              "老守护者",
+              "守卫跟你说过，下面还有住户没有撤完吗？"
+            ],
+            [
+              "拾潮者",
+              "他说过下面还有住户，我还是想从旁边绕过去。"
+            ],
+            [
+              "旁白",
+              "老守护者没有接话，转身看了看等在断口旁的住户。"
+            ],
+            [
+              "拾潮者",
+              "我当时只顾着找井底的声音，怕声音停了就再也找不到了。"
+            ],
+            [
+              "老守护者",
+              "这几户住户还要去胃室。你先让开通道，让他们过去。"
+            ],
+            [
+              "负壳守卫",
+              "住户都撤上来了，这段路还要封着吗？"
+            ],
+            [
+              "老守护者",
+              "不用再拦着了。你先歇着，等修梁的人下来。"
+            ],
+            [
+              "拾潮者",
+              "我能沿右边的路去胃室吗？"
+            ],
+            [
+              "老守护者",
+              "可以。这几户住户也要去胃室，你跟着他们走。"
+            ]
+          ],
+          "reward_abilities": [
+            "fissure"
+          ],
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R1-05",
+              "at": [
+                600,
+                585.435
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 1,
+                "x": 600
+              }
+            },
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R1-05",
+              "at": [
+                230,
+                700.247
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 0,
+                "x": 230
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R1-05",
+              "at": [
+                965,
+                585.0
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 2,
+                "x": 965
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_complete",
+          "kind": "dialogue",
+          "objective": "跟随撤出的住户，前往胃室",
+          "radius": 155,
+          "checkpoint": [
+            1220,
+            735.061
+          ],
+          "room_id": "R1-05",
+          "at": [
+            1220,
+            735.061
+          ],
+          "support": {
+            "room_id": "R1-05",
+            "surface": 3,
+            "x": 1220
+          },
+          "lines": [
+            [
+              "住户",
+              "我们沿前面这条路去胃室，你跟我们一起走吧。"
+            ],
+            [
+              "旁白",
+              "住户沿台面向胃室走去，拾潮者跟在后面，离开了折井的断口。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R1-05",
+              "at": [
+                1154,
+                734.672
+              ],
+              "support": {
+                "room_id": "R1-05",
+                "surface": 3,
+                "x": 1154
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch02_exit",
+          "kind": "exit",
+          "objective": "沿右侧已有通路前往胃室",
+          "radius": 115,
+          "checkpoint": [
+            1510,
+            810.121
+          ],
+          "room_id": "R1-05",
+          "at": [
+            1510,
+            810.121
+          ],
+          "support": {
+            "room_id": "R1-05",
+            "surface": 4,
+            "x": 1510
+          },
+          "actors": []
+        }
+      ],
+      "next": 3,
+      "transition_route": [
+        "R1-04",
+        "R1-05",
+        "R3-01"
+      ],
+      "route_hint": "R1-04 → R1-05 → R3-01",
+      "actors": []
+    },
+    {
+      "id": 3,
+      "chapter_id": "ch03_weishi",
+      "title": "胃室的回水",
+      "room_id": "R3-01",
+      "stages": [
+        {
+          "id": "ch03_arrival",
+          "kind": "dialogue",
+          "objective": "进入胃室，跟住户找补巢者",
+          "radius": 155,
+          "checkpoint": [
+            1050,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            1050,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 2,
+            "x": 1050
+          },
+          "lines": [
+            [
+              "住户",
+              "这里就是胃室。补巢者的亲族住在前面的菌床旁边，我们先去他们那里安顿。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R3-01",
+              "at": [
+                960,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 960
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch03_meet",
+          "kind": "dialogue",
+          "objective": "到菌床旁询问脏水的来源",
+          "radius": 155,
+          "checkpoint": [
+            1350,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            1350,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 2,
+            "x": 1350
+          },
+          "lines": [
+            [
+              "补巢者",
+              "你们从折井上来了？先到住巢前的平台歇一歇。"
+            ],
+            [
+              "拾潮者",
+              "折井的住户都撤出来了，我跟他们过来的。你身后那片发灰的东西，是你们种的菌床吗？"
+            ],
+            [
+              "补巢者",
+              "是菌床，我们靠它长出的菌丝吃饭。最近新长的菌丝一碰回水就卷起来，换了两回菌种也没有用。"
+            ],
+            [
+              "拾潮者",
+              "水槽里的水看起来很脏。你们试过把菌床旁边的脏水排走吗？"
+            ],
+            [
+              "补巢者",
+              "我们沿水槽去看过，脏水一直从里面流回来。排水口附近有一只栖污大甲，它占住了槽口，谁靠近它就扑谁，我们没法过去查看排水口。"
+            ],
+            [
+              "拾潮者",
+              "我去把栖污大甲赶离槽口，再看看脏水为什么会流回来。你们带着折井的住户留在高台上，不要靠近水槽。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R3-01",
+              "at": [
+                1260,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1260
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch03_mudback",
+          "kind": "battle",
+          "objective": "大甲占住排水口；赶开大甲后再查看旧瓣",
+          "radius": 115,
+          "checkpoint": [
+            2230,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            2230,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 3,
+            "x": 2230
+          },
+          "enemy": {
+            "profile": 1,
+            "at": [
+              2590,
+              2080.0
+            ],
+            "room_id": "R3-01",
+            "lane": [
+              2050,
+              2830
+            ],
+            "arena": [
+              2040,
+              1560,
+              800,
+              520
+            ],
+            "floor_y": 2080,
+            "ending": "retreat",
+            "hp": 18
+          },
+          "optional_observations": [
+            {
+              "id": "ch03_basin",
+              "label": "F 查看回水（可选）",
+              "lines": [
+                [
+                  "旁白",
+                  "水槽里的碎屑漂过菌床旁边，绕了一圈，又随回水贴回菌床边缘。"
+                ],
+                [
+                  "拾潮者",
+                  "这些碎屑排不出去，一直在菌床旁边打转。我去水槽里面看看，排水口是不是堵住了。"
+                ]
+              ],
+              "room_id": "R3-01",
+              "at": [
+                1810,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1810
+              }
+            }
+          ],
+          "actors": []
+        },
+        {
+          "id": "ch03_valve",
+          "kind": "dialogue",
+          "objective": "大甲退走后，到右侧排水口查看旧瓣",
+          "radius": 155,
+          "checkpoint": [
+            3120,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            3120,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 4,
+            "x": 3120
+          },
+          "lines": [
+            [
+              "旁白",
+              "一扇旧瓣挡在排水口，像一道封住水路的门。旧瓣边缘已经裂开，脏水正从裂缝漏出去，近处水槽里的碎屑少了。"
+            ],
+            [
+              "拾潮者",
+              "这里只漏出去一点水。我把旧瓣撬开一些，看看菌床旁边的积水能不能退下去。"
+            ]
+          ],
+          "actors": []
+        },
+        {
+          "id": "ch03_open_valve",
+          "kind": "explore",
+          "objective": "确认旧瓣后，再按一次F主动撬开旧瓣",
+          "radius": 115,
+          "checkpoint": [
+            3120,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            3120,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 4,
+            "x": 3120
+          },
+          "tasks": [
+            {
+              "id": "ch03_valve_opened",
+              "label": "F 撬开旧瓣，尝试排走积水",
+              "requires": [],
+              "grant": [
+                "ch03_valve_opened"
+              ],
+              "lines": [],
+              "room_id": "R3-01",
+              "at": [
+                3120,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 4,
+                "x": 3120
+              },
+              "requires_fresh_press": true
+            }
+          ],
+          "required": [
+            "ch03_valve_opened"
+          ],
+          "actors": []
+        },
+        {
+          "id": "ch03_flood",
+          "kind": "observe",
+          "objective": "回水冲向菌床；观察事故后沿原路返回住巢",
+          "radius": 115,
+          "checkpoint": [
+            3120,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            3120,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 4,
+            "x": 3120
+          },
+          "duration": 8,
+          "captions": [
+            "旧瓣刚被撬开，近处积水退下去。远侧槽口随即翻起浑水，回水绕过水道冲向菌床。",
+            "老守护者带守卫压住旧瓣，把住户接回高台。菌床上的细丝被冲散，巢片滑离原位。"
+          ],
+          "grant": [
+            "ch03_flood_settled"
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R3-01",
+              "at": [
+                1350,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1350
+              }
+            },
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R3-01",
+              "at": [
+                1500,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1500
+              }
+            }
+          ],
+          "props": [
+            {
+              "id": "ch03_fungus",
+              "asset": "fungus-bed",
+              "height": 90,
+              "room_id": "R3-01",
+              "at": [
+                1550,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1550
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch03_after",
+          "kind": "dialogue",
+          "objective": "沿已走过的骨台返回菌床，帮补巢者安置住户",
+          "radius": 155,
+          "checkpoint": [
+            1350,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            1350,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 2,
+            "x": 1350
+          },
+          "lines": [
+            [
+              "旁白",
+              "老守护者带着守卫赶到胃室，重新压住旧瓣，救出了住户。拾潮者回到高台时，补巢者还在扶着滑落的巢片。"
+            ],
+            [
+              "补巢者",
+              "你回来了。住户都已经上了高台，巢片却从原来的位置滑下来了。请帮我托住巢片，别让巢片掉进水槽。"
+            ],
+            [
+              "拾潮者",
+              "我来托住巢片。刚才那股水是从哪里冲过来的？"
+            ],
+            [
+              "老守护者",
+              "水从旧瓣另一头的水道绕回来了。守卫已经把旧瓣重新压住，住户暂时安全。刚才是谁撬开了旧瓣？"
+            ],
+            [
+              "拾潮者",
+              "是我。我看到裂缝在排水，以为把旧瓣撬大一点，就能排走菌床旁边的脏水。"
+            ],
+            [
+              "老守护者",
+              "你查看过旧瓣另一头的水道吗？那边的水还会从旁边的槽口转回来。"
+            ],
+            [
+              "拾潮者",
+              "我只看了眼前的排水口，没有去看水流到了哪里。"
+            ],
+            [
+              "旁白",
+              "旧瓣已经合拢，回水渐渐缓下来。菌床上只剩下几缕断丝，住户挤在高台内侧。"
+            ],
+            [
+              "补巢者",
+              "巢片先交给我扶着。左边浅滩上有一片掉下来的旧壳，还能补住巢的缺口。请你把旧壳捡回来。"
+            ]
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R3-01",
+              "at": [
+                1260,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1260
+              }
+            },
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R3-01",
+              "at": [
+                1440,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1440
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch03_salvage",
+          "kind": "explore",
+          "objective": "到左侧浅滩捡回旧壳，再回菌床固定巢片",
+          "radius": 115,
+          "checkpoint": [
+            620,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            620,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 1,
+            "x": 620
+          },
+          "tasks": [
+            {
+              "id": "ch03_shell_recovered",
+              "label": "F 捡回浅滩旧壳",
+              "requires": [],
+              "grant": [],
+              "lines": [],
+              "room_id": "R3-01",
+              "at": [
+                620,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 1,
+                "x": 620
+              }
+            }
+          ],
+          "required": [
+            "ch03_shell_recovered"
+          ],
+          "actors": []
+        },
+        {
+          "id": "ch03_fixed",
+          "kind": "dialogue",
+          "objective": "把旧壳带回住巢，和补巢者一起固定",
+          "radius": 155,
+          "checkpoint": [
+            1350,
+            2080.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            1350,
+            2080.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 2,
+            "x": 1350
+          },
+          "lines": [
+            [
+              "补巢者",
+              "请把旧壳托到住巢的缺口上，再往上抬一点，我把系绳绕过去。"
+            ],
+            [
+              "拾潮者",
+              "旧壳已经托稳了。菌床是我撬开旧瓣后冲坏的，对不起。"
+            ],
+            [
+              "补巢者",
+              "这片旧壳以前是巢壁。我在上面刻着住在这里的日子，现在那些刻痕已经看不清了。"
+            ],
+            [
+              "补巢者",
+              "请再把旧壳右边的系绳勒紧。下一次涨水的时候，住巢还会晃。"
+            ],
+            [
+              "拾潮者",
+              "被冲散的菌床还能重新种起来吗？"
+            ],
+            [
+              "补巢者",
+              "我不知道菌床还能不能恢复。先把住巢补好吧，折井来的住户还没地方休息。"
+            ],
+            [
+              "拾潮者",
+              "胃室的水是从哪里来的？我想先去上游问清楚，不能再让脏水冲坏菌床。"
+            ],
+            [
+              "补巢者",
+              "胃室的水从上方脂库的水槽流下来。右边的台阶通向脂库，你去问看守吧，他熟悉那里的水闩。请先跟他商量，别自己再开水道。"
+            ]
+          ],
+          "reward_abilities": [
+            "pressure"
+          ],
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R3-01",
+              "at": [
+                1260,
+                2080.0
+              ],
+              "support": {
+                "room_id": "R3-01",
+                "surface": 2,
+                "x": 1260
+              }
+            }
+          ]
+        },
+        {
+          "id": "ch03_exit",
+          "kind": "exit",
+          "objective": "沿左侧上行骨台前往脂库",
+          "radius": 115,
+          "checkpoint": [
+            100,
+            1480.0
+          ],
+          "room_id": "R3-01",
+          "at": [
+            100,
+            1480.0
+          ],
+          "support": {
+            "room_id": "R3-01",
+            "surface": 9,
+            "x": 100
+          },
+          "actors": []
+        }
+      ],
+      "next": 4,
+      "transition_route": [
+        "R3-01",
+        "R2-01"
+      ],
+      "route_hint": "R3-01 → R2-01",
+      "actors": []
+    },
+    {
+      "id": 4,
+      "chapter_id": "ch04_zhiku",
+      "title": "空下去的脂库",
+      "summary": "从本章开始：拾潮者在胃室打开排水瓣后，回水冲坏了居民种菌的菌床。他来到上游脂库查回水，发现居民采食的菌膜正在枯竭。看守担心放水带走养分，负壳守卫奉命监看调查；试流之前，必须先把水线上的住巢抬到避流架。",
+      "room_id": "R2-01",
+      "source_file": "game/content/prototypes/chapters/ch04.json",
+      "source_sha256": "7a5438bd2209c3b4b7b98af73d362832108e0685bdb6899cf7eac592b992e614",
+      "next": 5,
+      "stages": [
+        {
+          "id": "ch04_01_arrival",
+          "kind": "dialogue",
+          "objective": "向右走到供养牌，与脂库看守交谈",
+          "checkpoint": [
+            350,
+            1520.0
+          ],
+          "at": [
+            350,
+            1520.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "这里是脂库吗？补巢者给我指了路，我想找这里的看守，问问胃室的来水。"
+            ],
+            [
+              "脂库看守",
+              "这里就是脂库，我是看守。胃室的水出了什么问题？"
+            ],
+            [
+              "拾潮者",
+              "胃室的菌床一直泡在回水里，我撬开旧瓣想排水，反而冲坏了菌床。补巢者说水从脂库流下来，我想先查清上游的水路。"
+            ],
+            [
+              "脂库看守",
+              "我用水闩把这段水道收窄了，想让水里的养分多留一会儿，菌膜却还是长不起来。"
+            ],
+            [
+              "拾潮者",
+              "你说的菌膜，是这里居民的食物吗？水闩挡着水，为什么不能先把水闩打开？"
+            ],
+            [
+              "脂库看守",
+              "是，我们靠旧组织上长出的菌膜充饥。附近沟底的菌膜快被刮光了，采集的人只能越走越远。我怕直接开闩会把剩下的养分也冲走，居民就更采不到吃的了。"
+            ],
+            [
+              "拾潮者",
+              "我先从窄口旁边看水流。要不要改动水闩，等看清楚了再和你商量。"
+            ]
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 1,
+            "x": 350
+          },
+          "source_at": [
+            440,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "fat_store_keeper",
+              "key": "fat_store_keeper",
+              "height": 120,
+              "room_id": "R2-01",
+              "at": [
+                260,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 1,
+                "x": 260
+              }
+            }
+          ],
+          "source_objective": "向右走到供养牌，与脂库看守交谈"
+        },
+        {
+          "id": "ch04_02_survey",
+          "kind": "explore",
+          "objective": "在供养牌按F拓印采集刻线；从底层观察槽或上层废采沟选一处按F查看回流",
+          "checkpoint": [
+            450,
+            1520.0
+          ],
+          "at": [
+            450,
+            1520.0
+          ],
+          "enemy": {
+            "profile": 0,
+            "at": [
+              1100,
+              1664.0
+            ],
+            "lane": [
+              850,
+              1500
+            ],
+            "ending": "kill",
+            "optional": true,
+            "source_at": [
+              1380,
+              270
+            ],
+            "source_lane": [
+              1170,
+              1530
+            ],
+            "room_id": "R2-01",
+            "support": {
+              "room_id": "R2-01",
+              "surface": 0,
+              "x": 1100
+            },
+            "arena": [
+              850,
+              1144,
+              650,
+              520
+            ],
+            "floor_y": 1664.0
+          },
+          "tasks": [
+            {
+              "id": "ch04_supply_rubbing",
+              "label": "供养牌：按F拓印不断加长的采集刻线",
+              "at": [
+                370,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch04_depletion_record"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "这块供养牌上的刻线记的是什么？一条比一条长。"
+                ],
+                [
+                  "脂库看守",
+                  "刻线记着我们去哪里采菌膜。近处采不到了，后来补的线就一直往脂库外面延。"
+                ],
+                [
+                  "拾潮者",
+                  "我想把这些采集刻线拓印一份，带去和下游的供养情况对照。供养牌还能留在这里。"
+                ],
+                [
+                  "脂库看守",
+                  "你拓印吧。供养牌留给我，我还要核对这些采集位置。"
+                ]
+              ],
+              "source_at": [
+                540,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 1,
+                "x": 370
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch04_safe_flow",
+              "label": "底层旁通槽：按F观察水中碎屑回转；无需上台打怪",
+              "at": [
+                480,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch04_return_flow"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "水中的碎屑在窄口前打转，又沿底沟退向胃室。水闩收窄以后，碎屑没有从这里排出去。"
+                ],
+                [
+                  "脂库看守",
+                  "我只想着留住养分，没想到碎屑也堵在窄口。你在这个观察槽就能看清，不用再去有野物聚食的上层废沟。"
+                ]
+              ],
+              "source_at": [
+                730,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 1,
+                "x": 480
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch04_exposed_flow",
+              "label": "可选上层废采沟：沿三级台阶上行，按F近看回水",
+              "at": [
+                950,
+                1260.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch04_return_flow"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "窄口前的碎屑排不出去，沿底沟退向胃室。我从这处废采沟也看清了回水方向，可以回去找看守商量水闩了。"
+                ]
+              ],
+              "source_at": [
+                1470,
+                270
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 950
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch04_supply_rubbing"
+          ],
+          "any": [
+            "ch04_safe_flow",
+            "ch04_exposed_flow"
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 1,
+            "x": 450
+          },
+          "source_at": [
+            730,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "fat_store_keeper",
+              "key": "fat_store_keeper",
+              "height": 120,
+              "room_id": "R2-01",
+              "at": [
+                360,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 1,
+                "x": 360
+              }
+            }
+          ],
+          "source_objective": "在供养牌按F拓印采集刻线；从底层观察槽或上层废采沟选一处按F查看回流"
+        },
+        {
+          "id": "ch04_03_agreement",
+          "kind": "dialogue",
+          "objective": "向右到水线住巢旁，与负壳守卫商量试流范围",
+          "checkpoint": [
+            1050,
+            1260.0
+          ],
+          "at": [
+            1050,
+            1260.0
+          ],
+          "lines": [
+            [
+              "负壳守卫",
+              "我来帮看守盯住水口。下面还住着人，水闩不能一下打开。你刚才查到了什么？"
+            ],
+            [
+              "拾潮者",
+              "供养牌记着采集菌膜的位置，越新的位置越远。窄口的碎屑又在往胃室退。我想把窄口放宽一点，让碎屑排过去。"
+            ],
+            [
+              "负壳守卫",
+              "水闩先别开。水口边上压着的壳片可以挪开一点，再用我的旧壳卡住那条小缝；水太急，我还能把旧壳压回去。"
+            ],
+            [
+              "脂库看守",
+              "窄口旁的三处住巢还在水线边。先把住巢抬到避流架上。刻尺的第二条线是我们收口的位置，水涨到那里，就把旧壳压回去。"
+            ],
+            [
+              "拾潮者",
+              "我去帮居民抬住巢。等住巢在架上系牢了，我们再动压壳。"
+            ]
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 2,
+            "x": 1050
+          },
+          "source_at": [
+            1770,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R2-01",
+              "at": [
+                960,
+                1260.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 960
+              }
+            },
+            {
+              "id": "fat_store_keeper",
+              "key": "fat_store_keeper",
+              "height": 120,
+              "room_id": "R2-01",
+              "at": [
+                1060.8,
+                1260.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 1060.8
+              }
+            }
+          ],
+          "source_objective": "向右到水线住巢旁，与负壳守卫商量试流范围"
+        },
+        {
+          "id": "ch04_04_limited_flow",
+          "kind": "explore",
+          "objective": "在避流架按F协助抬巢，再到旧壳限流闩按F留出一线水",
+          "checkpoint": [
+            960,
+            1260.0
+          ],
+          "at": [
+            960,
+            1260.0
+          ],
+          "tasks": [
+            {
+              "id": "ch04_lift_homes",
+              "label": "避流架：按F与居民一起抬高水线住巢",
+              "at": [
+                880,
+                1260.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch04_homes_above_water"
+              ],
+              "lines": [
+                [
+                  "住巢居民",
+                  "请托住住巢底下这片旧壳，不要拉巢壁。我把系巢的绳子绑到避流架上，咱们再慢慢松手。"
+                ],
+                [
+                  "拾潮者",
+                  "我托着这片旧壳。你先把住巢的系绳绑牢，别急着松开。"
+                ]
+              ],
+              "source_at": [
+                1840,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 880
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch04_open_slit",
+              "label": "旧壳限流闩：按F协同卡住小缝，不开主闩",
+              "at": [
+                1030,
+                1260.0
+              ],
+              "requires": [
+                "ch04_lift_homes"
+              ],
+              "grant": [
+                "ch04_limited_flow_open"
+              ],
+              "lines": [
+                [
+                  "负壳守卫",
+                  "住巢已经系到架上了。你把边上的压壳松开一点，我用旧壳卡住小缝。别抬水闩。"
+                ],
+                [
+                  "脂库看守",
+                  "水开始从小缝过去了，刻尺上的水位还在第一条线以下。旧壳先停在这个位置，别再扩大开口。"
+                ]
+              ],
+              "source_at": [
+                2200,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 1030
+              },
+              "radius": 100,
+              "requires_fresh_press": true
+            }
+          ],
+          "required": [
+            "ch04_lift_homes",
+            "ch04_open_slit"
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 2,
+            "x": 960
+          },
+          "source_at": [
+            1850,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R2-01",
+              "at": [
+                870,
+                1260.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 870
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R2-01",
+              "at": [
+                1050,
+                1260.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 1050
+              }
+            },
+            {
+              "id": "fat_store_keeper",
+              "key": "fat_store_keeper",
+              "height": 120,
+              "room_id": "R2-01",
+              "at": [
+                745,
+                1260.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 2,
+                "x": 745
+              }
+            }
+          ],
+          "source_objective": "在避流架按F协助抬巢，再到旧壳限流闩按F留出一线水"
+        },
+        {
+          "id": "ch04_05_tides",
+          "kind": "observe",
+          "objective": "走到试流刻尺按F，观察几次潮汐的压缩结果；F可跳至同一结果",
+          "checkpoint": [
+            1350,
+            1000.0
+          ],
+          "at": [
+            1350,
+            1000.0
+          ],
+          "duration": 5,
+          "captions": [
+            "第一潮，水从旧壳控制的小缝流过。刻尺上的水位没有超过第一条线，避流架上的住巢没有浸水，窄口的碎屑开始减少。",
+            "又经过几次潮汐，槽边刮痕上有稀疏的新菌丝附着；原来采集菌膜的大片沟底仍然空着。",
+            "胃室传来回信：居民在高台新放下的小菌床，表层没有再被回水卷起。",
+            "看守把供养牌放到空沟旁，核对采集刻线。槽边的新附着还很少，不能供整片聚落的居民采食。"
+          ],
+          "grant": [
+            "ch04_trial_result",
+            "ch04_stomach_reply"
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 3,
+            "x": 1350
+          },
+          "source_at": [
+            2700,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "走到试流刻尺按F，观察几次潮汐的压缩结果；F可跳至同一结果"
+        },
+        {
+          "id": "ch04_06_keep_limit",
+          "kind": "explore",
+          "objective": "到回收台按F收回部分压壳，再按F带走壳样与获准拓印的记录",
+          "checkpoint": [
+            1450,
+            1000.0
+          ],
+          "at": [
+            1450,
+            1000.0
+          ],
+          "tasks": [
+            {
+              "id": "ch04_reduce_opening",
+              "label": "回收压壳：按F压回限流旧壳，收窄开口",
+              "at": [
+                1400,
+                1000.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch04_opening_limited"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "槽边开始长新的菌膜了。要是再放宽一点开口，会不会有更多养分进来？"
+                ],
+                [
+                  "脂库看守",
+                  "槽边这点菌膜还不够居民吃，原来的采集沟仍然空着。再放更多水去下游，肠环的住巢承不承受得住，你问过那里的居民吗？"
+                ],
+                [
+                  "拾潮者",
+                  "我还没去过肠环。那就先把这片旧壳压回一点，别再扩大开口。我去看看下游的住巢。"
+                ],
+                [
+                  "负壳守卫",
+                  "我扶住限流的旧壳，你把旧壳的边角压稳。"
+                ]
+              ],
+              "source_at": [
+                3100,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 3,
+                "x": 1400
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch04_take_record",
+              "label": "试流记录：按F带走壳样和刻线拓片",
+              "at": [
+                1530,
+                1000.0
+              ],
+              "requires": [
+                "ch04_reduce_opening"
+              ],
+              "grant": [
+                "ch04_sample_and_record"
+              ],
+              "lines": [
+                [
+                  "脂库看守",
+                  "槽边这些壳样上有新长的菌丝，你带一些去。供养牌留在脂库，采集刻线和这次水位的记录，你可以拓印一份一起带走。"
+                ],
+                [
+                  "拾潮者",
+                  "下游传来一阵阵撞击声。通往肠环的排流槽在哪里？我先去看看居民出了什么事。"
+                ],
+                [
+                  "负壳守卫",
+                  "右边出口就是通往肠环的旧排流槽。沿槽壁的刻线走，你能到住巢那一带。"
+                ]
+              ],
+              "source_at": [
+                3310,
+                480
+              ],
+              "room_id": "R2-01",
+              "support": {
+                "room_id": "R2-01",
+                "surface": 3,
+                "x": 1530
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch04_reduce_opening",
+            "ch04_take_record"
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 3,
+            "x": 1450
+          },
+          "source_at": [
+            3100,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "fat_store_keeper",
+              "key": "fat_store_keeper",
+              "height": 120,
+              "room_id": "R2-01",
+              "at": [
+                1360,
+                1000.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 3,
+                "x": 1360
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R2-01",
+              "at": [
+                1540,
+                1000.0
+              ],
+              "support": {
+                "room_id": "R2-01",
+                "surface": 3,
+                "x": 1540
+              }
+            }
+          ],
+          "source_objective": "到回收台按F收回部分压壳，再按F带走壳样与获准拓印的记录"
+        },
+        {
+          "id": "ch04_07_exit",
+          "kind": "exit",
+          "objective": "到右端排流槽出口按F，前往第五章环居腔",
+          "checkpoint": [
+            2160,
+            740.0
+          ],
+          "at": [
+            2160,
+            740.0
+          ],
+          "room_id": "R2-01",
+          "support": {
+            "room_id": "R2-01",
+            "surface": 4,
+            "x": 2160
+          },
+          "source_at": [
+            3610,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到右端排流槽出口按F，前往第五章环居腔",
+          "route_hint": "沿上层骨台右侧通路，进入环居腔。"
+        }
+      ],
+      "transition_route": [
+        "R2-01",
+        "R2-03"
+      ],
+      "route_hint": "R2-01 → R2-03",
+      "actors": []
+    },
+    {
+      "id": 5,
+      "chapter_id": "ch05_huanju",
+      "title": "搬不走的巢",
+      "summary": "从本章开始：拾潮者沿脂库排流槽来到肠环，带着有限试流的记录。缠巢鳗反复袭扰住巢，补巢者的亲族因幼体附在旧巢基上，尚未离开。",
+      "room_id": "R2-03",
+      "source_file": "game/content/prototypes/chapters/ch05.json",
+      "source_sha256": "091d61d93c62ec9bc6085de7f2f7fae51e7a4f476dee576d00ee947e284c745d",
+      "next": 6,
+      "stages": [
+        {
+          "id": "ch05_01_find_family",
+          "kind": "dialogue",
+          "objective": "向右到贝壳地标，与补巢者交谈",
+          "checkpoint": [
+            430,
+            1280.0
+          ],
+          "at": [
+            430,
+            1280.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "我从脂库过来，想看看肠环的住巢有没有受回水影响。你怎么也在这里？"
+            ],
+            [
+              "补巢者",
+              "我来帮肠环的亲族搬家。胃室的住巢已经修稳，可被冲坏的菌床还没恢复。这边的食物也越来越少，亲族想搬去肋间。"
+            ],
+            [
+              "拾潮者",
+              "那他们现在遇到什么难处了？"
+            ],
+            [
+              "补巢者",
+              "这排幼体还附在旧巢底的组织上，不能剥下来。还有一条缠巢鳗，总绕回来扑住巢，搬运的人不敢过去。"
+            ],
+            [
+              "拾潮者",
+              "我先看看幼体附着的地方。要是拆不了幼体，咱们就看看能不能连着巢底一起搬。"
+            ],
+            [
+              "补巢者",
+              "幼体就在前面那片巢底上。你沿右边这条路过去，先看幼体连着的旧组织，不要单独把幼体扯下来。"
+            ]
+          ],
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 1,
+            "x": 430
+          },
+          "source_at": [
+            420,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R2-03",
+              "at": [
+                340,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 1,
+                "x": 340
+              }
+            }
+          ],
+          "source_objective": "向右到贝壳地标，与补巢者交谈"
+        },
+        {
+          "id": "ch05_02_prepare_refuge",
+          "kind": "explore",
+          "objective": "到旧巢基按F确认附着处，再到右侧避流区按F带居民退后",
+          "checkpoint": [
+            500,
+            1280.0
+          ],
+          "at": [
+            500,
+            1280.0
+          ],
+          "tasks": [
+            {
+              "id": "ch05_inspect_attached",
+              "label": "巢基：按F托起边缘，确认幼体不能单独拆下",
+              "at": [
+                400,
+                1280.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch05_whole_base_needed"
+              ],
+              "lines": [
+                [
+                  "补巢者",
+                  "这些细丝把幼体连在巢底的旧组织上。硬剥会撕裂附着处，幼体不能单独搬走。"
+                ],
+                [
+                  "拾潮者",
+                  "那就把幼体连着的这段旧组织一起托起来，别拆幼体。可搬到半路，缠巢鳗再绕回来怎么办？"
+                ],
+                [
+                  "补巢者",
+                  "我们已经把缠巢鳗驱开过，它还是循着巢里的气味回来。只把鳗赶开一会儿，我们来不及搬完。"
+                ]
+              ],
+              "source_at": [
+                850,
+                480
+              ],
+              "room_id": "R2-03",
+              "support": {
+                "room_id": "R2-03",
+                "surface": 1,
+                "x": 400
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch05_move_residents",
+              "label": "避流区：按F让居民退到厚壳后，护住幼体所在的巢基",
+              "at": [
+                570,
+                1280.0
+              ],
+              "requires": [
+                "ch05_inspect_attached"
+              ],
+              "grant": [
+                "ch05_residents_sheltered"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "你们退到这片厚壳后面，护住幼体附着的巢底。先别搬那段旧组织，我去右边空置的窄槽拦住缠巢鳗。"
+                ],
+                [
+                  "补巢者",
+                  "右边窄槽里没有住巢，你在那里交手不会撞到住户。我和亲族留在厚壳后照看幼体。"
+                ]
+              ],
+              "source_at": [
+                1200,
+                480
+              ],
+              "room_id": "R2-03",
+              "support": {
+                "room_id": "R2-03",
+                "surface": 1,
+                "x": 570
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch05_inspect_attached",
+            "ch05_move_residents"
+          ],
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 1,
+            "x": 500
+          },
+          "source_at": [
+            840,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R2-03",
+              "at": [
+                410,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 1,
+                "x": 410
+              }
+            }
+          ],
+          "source_objective": "到旧巢基按F确认附着处，再到右侧避流区按F带居民退后"
+        },
+        {
+          "id": "ch05_03_eel",
+          "kind": "battle",
+          "objective": "进入右侧空置窄槽，击败缠巢鳗；避开扑咬、拖行与扫尾后近身反击",
+          "checkpoint": [
+            1790,
+            1160.0
+          ],
+          "at": [
+            1790,
+            1160.0
+          ],
+          "enemy": {
+            "profile": 4,
+            "at": [
+              2090,
+              1160.0
+            ],
+            "lane": [
+              1720,
+              2340
+            ],
+            "ending": "kill",
+            "source_at": [
+              2180,
+              480
+            ],
+            "source_lane": [
+              1680,
+              2460
+            ],
+            "room_id": "R2-03",
+            "support": {
+              "room_id": "R2-03",
+              "surface": 4,
+              "x": 2090
+            },
+            "arena": [
+              1720,
+              640,
+              620,
+              520
+            ],
+            "floor_y": 1160.0
+          },
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 4,
+            "x": 1790
+          },
+          "source_at": [
+            1800,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "进入右侧空置窄槽，击败缠巢鳗；避开扑咬、拖行与扫尾后近身反击"
+        },
+        {
+          "id": "ch05_04_after_battle",
+          "kind": "dialogue",
+          "objective": "离开空槽，到右侧搬运点与补巢者会合",
+          "checkpoint": [
+            2220,
+            1160.0
+          ],
+          "at": [
+            2220,
+            1160.0
+          ],
+          "lines": [
+            [
+              "补巢者",
+              "缠巢鳗死了，搬运的路总算空了。你先歇一会儿，别急着抬巢底。"
+            ],
+            [
+              "拾潮者",
+              "我缓一会儿就好。厚壳后面的居民和幼体都还好吗？"
+            ],
+            [
+              "补巢者",
+              "居民和幼体都没事。我拆下自己巢底最厚的一片，围护幼体连着的旧组织。等你缓过来，我们一起抬整段巢基。"
+            ],
+            [
+              "环居看守",
+              "准备迁居的人可以从维护裂隙去肋间。谁还要留在环居腔？我得给留下的住户划出缓流区，让住巢能继续系在那里。"
+            ],
+            [
+              "留居居民",
+              "我留下等还没回来的亲族。缓流区里的那根拴绳系着我的住巢，请别拆去搬别人的巢。"
+            ],
+            [
+              "迁居居民",
+              "我带这些幼体和连着的巢基去肋间。搬运的路能走了，我们先把幼体安顿下来。"
+            ]
+          ],
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 4,
+            "x": 2220
+          },
+          "source_at": [
+            2700,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R2-03",
+              "at": [
+                2130,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2130
+              }
+            },
+            {
+              "id": "ring_keeper",
+              "key": "ring_keeper",
+              "height": 74,
+              "room_id": "R2-03",
+              "at": [
+                2310,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2310
+              }
+            },
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R2-03",
+              "at": [
+                2005,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2005
+              }
+            },
+            {
+              "id": "resident_migrant",
+              "key": "resident_migrant",
+              "height": 102,
+              "room_id": "R2-03",
+              "at": [
+                2340,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2340
+              }
+            }
+          ],
+          "source_objective": "离开空槽，到右侧搬运点与补巢者会合"
+        },
+        {
+          "id": "ch05_05_carry_base",
+          "kind": "explore",
+          "objective": "在搬运点按F抬巢基；沿右侧缓流区稳住留居拴绳，再把巢交到轻巢通道",
+          "checkpoint": [
+            2180,
+            1160.0
+          ],
+          "at": [
+            2180,
+            1160.0
+          ],
+          "tasks": [
+            {
+              "id": "ch05_lift_whole_base",
+              "label": "搬运点：按F托住整段旧组织，与补巢者抬巢",
+              "at": [
+                2220,
+                1160.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch05_base_lifted"
+              ],
+              "lines": [
+                [
+                  "补巢者",
+                  "你托住幼体连着的旧组织这一端，我托另一端。咱们把整段巢基抬稳，别扯幼体的细丝。"
+                ],
+                [
+                  "拾潮者",
+                  "前面去肋间的维护裂隙那么窄，这段巢基也能搬过去吗？"
+                ],
+                [
+                  "补巢者",
+                  "把这段巢基侧过来就能通过。更重的住巢暂时过不去，我们先搬幼体附着的这一段。"
+                ]
+              ],
+              "source_at": [
+                2780,
+                480
+              ],
+              "room_id": "R2-03",
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2220
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch05_keep_mooring",
+              "label": "留居缓流区：按F托高巢基，绕开留居住户的拴绳",
+              "at": [
+                1880,
+                1160.0
+              ],
+              "requires": [
+                "ch05_lift_whole_base"
+              ],
+              "grant": [
+                "ch05_stayers_mooring_kept"
+              ],
+              "lines": [
+                [
+                  "留居居民",
+                  "先停一下，你们抬的巢基下面是我家的拴绳。巢基压上去，会把我的住巢带歪。"
+                ],
+                [
+                  "拾潮者",
+                  "你先扶住拴绳固定的地方。我把抬着的巢基托高一点，从拴绳上面绕过去。"
+                ],
+                [
+                  "环居看守",
+                  "这片缓流区还住着留下的居民，搬走的巢基不要停在这里。沿右边继续搬，到接力架再放下。"
+                ]
+              ],
+              "source_at": [
+                3120,
+                480
+              ],
+              "room_id": "R2-03",
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 1880
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch05_handover_base",
+              "label": "轻巢通道：按F把巢基稳放到迁居者的接力架上",
+              "at": [
+                2310,
+                1160.0
+              ],
+              "requires": [
+                "ch05_keep_mooring"
+              ],
+              "grant": [
+                "ch05_base_handed_over"
+              ],
+              "lines": [
+                [
+                  "补巢者",
+                  "接力架已经托住整段巢基了，你可以慢慢松手。后面这段路，由我们接着搬。"
+                ],
+                [
+                  "迁居居民",
+                  "我们能搬过去，可食物还在减少。肋间安顿好以后，外海的水能不能带进新的养分？"
+                ],
+                [
+                  "拾潮者",
+                  "我也还不知道。我想去肺缘的巡视口看看外海水流，从这里怎么走？"
+                ],
+                [
+                  "迁居居民",
+                  "右边上方的维护裂隙通往肺缘巡视口。去肋间的轻巢走另一条维护裂隙，你别跟着搬巢队走错了。"
+                ]
+              ],
+              "source_at": [
+                3460,
+                480
+              ],
+              "room_id": "R2-03",
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2310
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch05_lift_whole_base",
+            "ch05_keep_mooring",
+            "ch05_handover_base"
+          ],
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 4,
+            "x": 2180
+          },
+          "source_at": [
+            2780,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R2-03",
+              "at": [
+                2090,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2090
+              }
+            },
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R2-03",
+              "at": [
+                2270,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2270
+              }
+            },
+            {
+              "id": "ring_keeper",
+              "key": "ring_keeper",
+              "height": 74,
+              "room_id": "R2-03",
+              "at": [
+                1965,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 1965
+              }
+            },
+            {
+              "id": "resident_migrant",
+              "key": "resident_migrant",
+              "height": 102,
+              "room_id": "R2-03",
+              "at": [
+                2340,
+                1160.0
+              ],
+              "support": {
+                "room_id": "R2-03",
+                "surface": 4,
+                "x": 2340
+              }
+            }
+          ],
+          "source_objective": "在搬运点按F抬巢基；沿右侧缓流区稳住留居拴绳，再把巢交到轻巢通道"
+        },
+        {
+          "id": "ch05_06_exit",
+          "kind": "exit",
+          "objective": "向右到上行维护裂隙按F，前往第六章肺缘",
+          "checkpoint": [
+            2320,
+            1160.0
+          ],
+          "at": [
+            2320,
+            1160.0
+          ],
+          "room_id": "R2-03",
+          "support": {
+            "room_id": "R2-03",
+            "surface": 4,
+            "x": 2320
+          },
+          "source_at": [
+            3820,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向右到上行维护裂隙按F，前往第六章肺缘"
+        }
+      ],
+      "transition_route": [
+        "R2-03",
+        "R2-04"
+      ],
+      "route_hint": "R2-03 → R2-04",
+      "actors": []
+    },
+    {
+      "id": 6,
+      "chapter_id": "ch06_feiyuan",
+      "title": "外海仍在流动",
+      "summary": "从本章开始：缠巢鳗已死，补巢者带幼体搬向肋间，也有居民选择留下。拾潮者带着脂库试流记录来到巡视口，核查外海水况与旧膜承受能力。",
+      "room_id": "R2-04",
+      "source_file": "game/content/prototypes/chapters/ch06.json",
+      "source_sha256": "db33be93210b45e73d94b538a1c15a4ad36f6c80a44c3e90092df88058c490b9",
+      "next": 7,
+      "stages": [
+        {
+          "id": "ch06_01_patrol",
+          "kind": "dialogue",
+          "objective": "向右到低灯巡视点，与看守交谈",
+          "checkpoint": [
+            380,
+            1520.0
+          ],
+          "at": [
+            380,
+            1520.0
+          ],
+          "lines": [
+            [
+              "肺缘看守",
+              "请把菌灯罩低。上层暴露台有捕食者，它会循着亮光扑过来；下面残壁后面的观察位有遮挡，可以避开它。"
+            ],
+            [
+              "拾潮者",
+              "我从肠环来，迁居的居民还缺食物。脂库只留了一道小水缝，槽边就有新菌丝附着；我带着壳样和记录，想看看肺缘的外海水能不能进来。"
+            ],
+            [
+              "肺缘看守",
+              "肺缘的封片挡着外海水，后面有些支膜已经变脆了。脂库能留缝，不代表这里也能开。我只熟悉检查封片，外海现在的水况，我没有近年的记录。"
+            ],
+            [
+              "拾潮者",
+              "那就先不拆封片。我想看一看不同潮位的水流，再把同样大小的壳片放到几处水路里，看看各处能留下什么。"
+            ],
+            [
+              "肺缘看守",
+              "你先从下方残壁后的窄窗看。右边已有三处采样位置：强流口、支撑背面的避流口，还有不通外海的内水槽，采样的壳片放在那些位置旁。我们可以一起比较。"
+            ]
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 380
+          },
+          "source_at": [
+            430,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "lung_keeper",
+              "key": "lung_keeper",
+              "height": 120,
+              "room_id": "R2-04",
+              "at": [
+                290,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 290
+              }
+            }
+          ],
+          "source_objective": "向右到低灯巡视点，与看守交谈"
+        },
+        {
+          "id": "ch06_02_outside",
+          "kind": "explore",
+          "objective": "在底层遮蔽位按F看外海；也可选择登上暴露台遭遇捕食者。随后向右核对旧刻痕",
+          "checkpoint": [
+            700,
+            1520.0
+          ],
+          "at": [
+            700,
+            1520.0
+          ],
+          "enemy": {
+            "profile": 3,
+            "at": [
+              1540,
+              960.0
+            ],
+            "lane": [
+              1300,
+              1640
+            ],
+            "ending": "retreat",
+            "optional": true,
+            "source_at": [
+              1400,
+              270
+            ],
+            "source_lane": [
+              1180,
+              1550
+            ],
+            "room_id": "R2-04",
+            "support": {
+              "room_id": "R2-04",
+              "surface": 2,
+              "x": 1540
+            },
+            "arena": [
+              1300,
+              440,
+              340,
+              520
+            ],
+            "floor_y": 960.0,
+            "shelter": [
+              480,
+              1520
+            ],
+            "shelter_radius": 170
+          },
+          "tasks": [
+            {
+              "id": "ch06_sheltered_view",
+              "label": "遮蔽位：按F透过残壁窄缝观察外海，无需击败捕食者",
+              "at": [
+                720,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_outside_seen"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "窄窗外的沉积坡上长着许多附着生物。远处水流很急，支撑背面却有一条比较缓的水带。"
+                ],
+                [
+                  "肺缘看守",
+                  "支撑把那条水带和外侧的急流隔开了。你站在残壁后就能看清水带，不用走上有捕食者的暴露台。"
+                ]
+              ],
+              "source_at": [
+                730,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 720
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_exposed_view",
+              "label": "可选暴露台：沿三级台阶上行，按F观察外海；可撤回底层",
+              "at": [
+                1480,
+                960.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_outside_seen"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "暴露台外的水流很急，支撑背面有一条较缓的水带。这里没有残壁遮挡，我还是回下方观察位查看水带，避开捕食者。"
+                ]
+              ],
+              "source_at": [
+                1510,
+                270
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 2,
+                "x": 1480
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_compare_marks",
+              "label": "旧刻痕：按F把当年浊流方向、封片厚度与脂库拓片并排核对",
+              "at": [
+                1100,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_patrol_record_gap"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "封片上有新补的刻号，窄窗旁记录外海流向的刻痕却磨得快看不清了。你们一直只检查封片吗？"
+                ],
+                [
+                  "肺缘看守",
+                  "我平时只检查封片是否完整，外海流向的旧记录一直没有补。这次我和你一起重新记。"
+                ],
+                [
+                  "拾潮者",
+                  "我把窄窗和三处采样位置画在一张引水位置图上。我们查到的水况和不能开的地方，也都记在图上，免得来商量引水的人认错水口。"
+                ]
+              ],
+              "source_at": [
+                1790,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 1100
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch06_compare_marks"
+          ],
+          "any": [
+            "ch06_sheltered_view",
+            "ch06_exposed_view"
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 700
+          },
+          "source_at": [
+            730,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "lung_keeper",
+              "key": "lung_keeper",
+              "height": 120,
+              "room_id": "R2-04",
+              "at": [
+                610,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 610
+              }
+            }
+          ],
+          "source_objective": "在底层遮蔽位按F看外海；也可选择登上暴露台遭遇捕食者。随后向右核对旧刻痕"
+        },
+        {
+          "id": "ch06_03_place_samples",
+          "kind": "explore",
+          "objective": "沿底层向右，在甲、乙、丙三个标记处分别按F放入等大的壳样",
+          "checkpoint": [
+            1400,
+            1520.0
+          ],
+          "at": [
+            1400,
+            1520.0
+          ],
+          "tasks": [
+            {
+              "id": "ch06_place_fast",
+              "label": "甲强流口：按F用短绳固定第一片壳样",
+              "at": [
+                1300,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_fast_sample_placed"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "这片壳片放在强流口，记作甲片。我把固定壳片的短绳系牢，免得壳片被水冲走，收不回来比较。"
+                ]
+              ],
+              "source_at": [
+                2130,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 1300
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_place_shelter",
+              "label": "乙避流口：按F在稳撑背面固定第二片等大壳样",
+              "at": [
+                1560,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_shelter_sample_placed"
+              ],
+              "lines": [
+                [
+                  "肺缘看守",
+                  "支撑背面的避流口用这片壳片，记作乙片。固定壳片的短绳别放太长，壳片不能碰到底泥。"
+                ]
+              ],
+              "source_at": [
+                2300,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 1560
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_place_control",
+              "label": "丙封闭槽：按F留置第三片壳样作内水对照",
+              "at": [
+                1820,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_control_sample_placed"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "这片壳片留在不通外海的内水槽，记作丙片。等收回样本，我们把丙片和外海强流口的甲片、避流口的乙片一起比较。"
+                ]
+              ],
+              "source_at": [
+                2470,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 1820
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch06_place_fast",
+            "ch06_place_shelter",
+            "ch06_place_control"
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 1400
+          },
+          "source_at": [
+            2130,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "lung_keeper",
+              "key": "lung_keeper",
+              "height": 120,
+              "room_id": "R2-04",
+              "at": [
+                1310,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 1310
+              }
+            }
+          ],
+          "source_objective": "沿底层向右，在甲、乙、丙三个标记处分别按F放入等大的壳样"
+        },
+        {
+          "id": "ch06_04_tides",
+          "kind": "observe",
+          "objective": "到三格比对架按F，记录不同潮位并收回三片样片；F可跳至同一结果",
+          "checkpoint": [
+            2050,
+            1520.0
+          ],
+          "at": [
+            2050,
+            1520.0
+          ],
+          "duration": 5,
+          "captions": [
+            "低潮时，强流口的甲片周围水流很急，避流口的乙片处在支撑背面的缓水带，丙片留在不通外海的内水槽。",
+            "涨潮后，外侧急流增强，支撑背面的水流仍然较缓。附近两片旧支膜随水压鼓起，封片还在挡着外海水。",
+            "经过几次潮汐，拾潮者和看守沿固定壳片的短绳收回三片样本，把样本按甲、乙、丙的刻号放到比对架上。",
+            "强流口的甲片没有附着物；避流口的乙片边缘长了菌丝，还附着透明小生物；内水槽的丙片覆着碎屑。"
+          ],
+          "grant": [
+            "ch06_samples_retrieved",
+            "ch06_tides_recorded"
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 2050
+          },
+          "source_at": [
+            2740,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到三格比对架按F，记录不同潮位并收回三片样片；F可跳至同一结果"
+        },
+        {
+          "id": "ch06_05_mark_limits",
+          "kind": "explore",
+          "objective": "在比对架按F记录差异；逐处标记两片脆膜需封护，最后清出并标记缓引水位",
+          "checkpoint": [
+            2150,
+            1520.0
+          ],
+          "at": [
+            2150,
+            1520.0
+          ],
+          "tasks": [
+            {
+              "id": "ch06_compare_samples",
+              "label": "比对架：按F分别记录甲无附着、乙有新生物、丙有碎屑",
+              "at": [
+                2150,
+                1520.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch06_sample_comparison"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "避流口的乙片长了菌丝，还附着一只须庭也有的透明小生物。强流口的甲片没有附着，内水槽的丙片裹着碎屑。同样的壳片，放的位置不同，结果差这么多。"
+                ],
+                [
+                  "肺缘看守",
+                  "把这三片样本一起带给迁居的居民看。他们得分清哪一处水路有新附着，哪一处仍然是急流或污水，才能选挂巢的位置。"
+                ]
+              ],
+              "source_at": [
+                2820,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2150
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_protect_membrane_a",
+              "label": "脆膜甲：按F系红绳，标记继续封护，禁止作为入水口",
+              "at": [
+                2400,
+                1520.0
+              ],
+              "requires": [
+                "ch06_compare_samples"
+              ],
+              "grant": [
+                "ch06_membrane_a_protected"
+              ],
+              "lines": [
+                [
+                  "肺缘看守",
+                  "这片支膜的边缘一鼓起来就发白，已经脆化了。即使外海的水合适，也不能拆掉这里的封片，让水直接冲进来。"
+                ],
+                [
+                  "拾潮者",
+                  "我把红绳系在这片支膜旁，提醒来查看水口的居民：这里的封片必须保留。这处脆膜也记到引水位置图上。"
+                ]
+              ],
+              "source_at": [
+                3050,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2400
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_protect_membrane_b",
+              "label": "脆膜乙：按F系红绳，标记断撑下方同样不得开口",
+              "at": [
+                2630,
+                1520.0
+              ],
+              "requires": [
+                "ch06_compare_samples"
+              ],
+              "grant": [
+                "ch06_membrane_b_protected"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "这片支膜下面的支撑断了，涨潮时支膜抖得很厉害。这里的封片也得保留，我用红绳标出这个位置。"
+                ],
+                [
+                  "肺缘看守",
+                  "请把支撑断裂的位置画到引水图里。以后负责开水口的人要知道，这片支膜下面没有完整的支撑。"
+                ]
+              ],
+              "source_at": [
+                3260,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2630
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch06_clear_slow_inlet",
+              "label": "稳撑避流台：按F挪开杂物并画窄线，仅标记缓引位置，不拆主封片",
+              "at": [
+                2790,
+                1520.0
+              ],
+              "requires": [
+                "ch06_protect_membrane_a",
+                "ch06_protect_membrane_b"
+              ],
+              "grant": [
+                "ch06_slow_inlet_marked"
+              ],
+              "lines": [
+                [
+                  "肺缘看守",
+                  "这座避流台的支撑还完整，外面的水在支撑背后也较缓。要标一个慢慢引水的位置，可以选台边；先把台上的碎壳挪开。"
+                ],
+                [
+                  "拾潮者",
+                  "我在台边画一道窄线，标明可以从这里少量引水。图上还要保留那两处脆膜的位置，免得看图的人只看到这个可开的水口。"
+                ]
+              ],
+              "source_at": [
+                3530,
+                480
+              ],
+              "room_id": "R2-04",
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2790
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch06_compare_samples",
+            "ch06_protect_membrane_a",
+            "ch06_protect_membrane_b",
+            "ch06_clear_slow_inlet"
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 2150
+          },
+          "source_at": [
+            2820,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "lung_keeper",
+              "key": "lung_keeper",
+              "height": 120,
+              "room_id": "R2-04",
+              "at": [
+                2060,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2060
+              }
+            }
+          ],
+          "source_objective": "在比对架按F记录差异；逐处标记两片脆膜需封护，最后清出并标记缓引水位"
+        },
+        {
+          "id": "ch06_06_echo",
+          "kind": "dialogue",
+          "objective": "向右到回声处，与看守核实记录并收好样片",
+          "checkpoint": [
+            2500,
+            1520.0
+          ],
+          "at": [
+            2500,
+            1520.0
+          ],
+          "lines": [
+            [
+              "鲸的残留回声",
+              "一片亮水从巨鲸的身体下方托起。远处，传来另一声鲸的回应。"
+            ],
+            [
+              "拾潮者",
+              "刚才我眼前的残壁像是消失了，下面全是亮水。那不像现在的肺缘，也许是巨鲸留下的一段回声。"
+            ],
+            [
+              "肺缘看守",
+              "我没有看到亮水，只听见支膜在响。你现在能看清路吗？"
+            ],
+            [
+              "拾潮者",
+              "现在能看清路了。我们有三处水路的样本，也画了引水位置图。这里该找谁商量引水的事，也照应迁居居民的供养？"
+            ],
+            [
+              "肺缘看守",
+              "下方维护裂隙通往心外泵庭，守护者在那里维护供养水路。你可以找他们商量怎样引水，才不会影响迁居居民的供养。"
+            ],
+            [
+              "拾潮者",
+              "那我带着三处水路的样本和引水位置图，去心外泵庭找守护者。你也一起去吗？"
+            ],
+            [
+              "肺缘看守",
+              "我留在肺缘继续查看潮位。水况是我们一起看的，你把我的观察也记进去。"
+            ],
+            [
+              "拾潮者",
+              "你的观察和两处脆膜都在这张图上。泵庭的守护者要核对情况，可以来肺缘找你。"
+            ]
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 2500
+          },
+          "source_at": [
+            3740,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "lung_keeper",
+              "key": "lung_keeper",
+              "height": 120,
+              "room_id": "R2-04",
+              "at": [
+                2410,
+                1520.0
+              ],
+              "support": {
+                "room_id": "R2-04",
+                "surface": 0,
+                "x": 2410
+              }
+            }
+          ],
+          "source_objective": "向右到回声处，与看守核实记录并收好样片"
+        },
+        {
+          "id": "ch06_07_exit",
+          "kind": "exit",
+          "objective": "返回左侧入口，沿环居腔、脂库和胃室原路返程，再从胃室右上方通道去泵庭",
+          "checkpoint": [
+            80,
+            1520.0
+          ],
+          "at": [
+            80,
+            1520.0
+          ],
+          "room_id": "R2-04",
+          "support": {
+            "room_id": "R2-04",
+            "surface": 0,
+            "x": 80
+          },
+          "source_at": [
+            4000,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向右到下行维护裂隙按F，带三片壳样与限制图前往第七章泵庭",
+          "reward_abilities": [
+            "anchor"
+          ]
+        }
+      ],
+      "transition_route": [
+        "R2-04",
+        "R2-03",
+        "R2-01",
+        "R3-01",
+        "R4-01"
+      ],
+      "route_hint": "R2-04 → R2-03 → R2-01 → R3-01 → R4-01",
+      "actors": []
+    },
+    {
+      "id": 7,
+      "chapter_id": "ch07_bengting",
+      "title": "泵庭里的旧办法",
+      "summary": "从本章开始：拾潮者在脂库见到食物采集减少，有限试流后只有少量新菌附着。肠环的部分居民正向骨穹腔搬巢，他又和肺缘看守核对了外海水况。他带着壳样、自己的沿途记录、肺缘图和迁居名单来到泵庭。第四章的供养牌原件仍留在脂库；第二章的折井已在住户撤完后重开。",
+      "room_id": "R4-01",
+      "source_file": "game/content/prototypes/chapters/ch07.json",
+      "source_sha256": "2ef78e5dff65cf776f550a84e60528f27f21834e0e18459efa3cc3f4c0f2dbd2",
+      "next": 8,
+      "stages": [
+        {
+          "id": "ch07_evidence",
+          "kind": "explore",
+          "objective": "到壳样台和采集记录旁，分别按F核对证据",
+          "checkpoint": [
+            460,
+            1280.0
+          ],
+          "at": [
+            460,
+            1280.0
+          ],
+          "tasks": [
+            {
+              "id": "ch07_compare_samples",
+              "label": "按F铺开壳样与肺缘图",
+              "at": [
+                400,
+                1280.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch07_samples_shown"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者展开自己的试流记录、肺缘观察图和迁居名单，旁边放着从脂库带来的壳样。"
+                ],
+                [
+                  "拾潮者",
+                  "脂库试流后，壳样上长出了新菌。肺缘也找到一处水较缓的地方，我想让肠环搬出来的居民先在骨穹腔住下。"
+                ],
+                [
+                  "老守护者",
+                  "这些新菌够迁居的居民吃吗？"
+                ],
+                [
+                  "拾潮者",
+                  "还不够养活整片聚落。脂库只有槽边长出一点新菌，大片沟底还是空的。我带名单来，是想和你商量已经离巢的居民怎么办。"
+                ]
+              ],
+              "source_at": [
+                970,
+                520
+              ],
+              "room_id": "R4-01",
+              "support": {
+                "room_id": "R4-01",
+                "surface": 1,
+                "x": 400
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch07_read_decline",
+              "label": "按F对照全城采集记录",
+              "at": [
+                950,
+                1160.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch07_decline_seen"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "老守护者正在按住膜泵的漏水接缝，身旁放着全城采集记录。各区采回食物的刻线都在减少。"
+                ],
+                [
+                  "拾潮者",
+                  "原来不只是胃室和脂库缺食物。旧菌床越来越养不活人，光修泵膜，恐怕补不上这些损失。"
+                ],
+                [
+                  "老守护者",
+                  "采集减少的事，我早就知道了。可这些泵还得把水送到各区；泵一停，住户连现有的供养也保不住。我只能一边修，一边安置居民。"
+                ]
+              ],
+              "source_at": [
+                1310,
+                520
+              ],
+              "room_id": "R4-01",
+              "support": {
+                "room_id": "R4-01",
+                "surface": 2,
+                "x": 950
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch07_compare_samples",
+            "ch07_read_decline"
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 1,
+            "x": 460
+          },
+          "source_at": [
+            970,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R4-01",
+              "at": [
+                370,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R4-01",
+                "surface": 1,
+                "x": 370
+              }
+            }
+          ],
+          "source_objective": "到壳样台和采集记录旁，分别按F核对证据"
+        },
+        {
+          "id": "ch07_dispute",
+          "kind": "dialogue",
+          "objective": "靠近修补接缝，与老守护者交谈",
+          "checkpoint": [
+            1200,
+            1424.0
+          ],
+          "at": [
+            1200,
+            1424.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "你也看过肺缘的图和新菌了。为什么不让居民试着换个地方，还要继续封着水道？"
+            ],
+            [
+              "老守护者",
+              "当年浊流冲进来，外壁的住巢一片片掉下去。我先封住裂口，才把剩下的居民接回来。"
+            ],
+            [
+              "叙述",
+              "老守护者主动传来当年救援的共鸣：浊流撞上支柱，住巢碎裂，居民的求救声重叠在一起。"
+            ],
+            [
+              "老守护者",
+              "肺缘找到一处缓流，不代表骨穹腔的支撑就能承受强水。万一住巢被冲垮，居民又得等着救援；膜泵再坏掉，别处的供养也会断。"
+            ],
+            [
+              "老守护者",
+              "试流和迁居都先停下。调查交给守卫，你也先别继续往深处查了。我得先保住还在运转的膜泵。"
+            ],
+            [
+              "拾潮者",
+              "可已经离巢的居民还停在迁居路上，住巢也拆下来了。先让他们安顿下来吧。我的观察记录可以拓印一份给你，原件让我带去和居民核对。"
+            ]
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 0,
+            "x": 1200
+          },
+          "source_at": [
+            1510,
+            520
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R4-01",
+              "at": [
+                1110,
+                1424.0
+              ],
+              "support": {
+                "room_id": "R4-01",
+                "surface": 0,
+                "x": 1110
+              }
+            }
+          ],
+          "source_objective": "靠近修补接缝，与老守护者交谈"
+        },
+        {
+          "id": "ch07_make_copy",
+          "kind": "explore",
+          "objective": "到右侧拓片台按F，留下可复核的记录副本",
+          "checkpoint": [
+            1450,
+            1424.0
+          ],
+          "at": [
+            1450,
+            1424.0
+          ],
+          "tasks": [
+            {
+              "id": "ch07_copy_records",
+              "label": "按F拓印潮向、试流与住巢名单",
+              "at": [
+                1450,
+                1424.0
+              ],
+              "requires": [
+                "ch07_compare_samples",
+                "ch07_read_decline"
+              ],
+              "grant": [
+                "ch07_copy_ready"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者把自己记录的脂库试流经过、肺缘水向和迁居名单拓印一份，将副本留在拓片台上。原记录和壳样仍由拾潮者带着。"
+                ],
+                [
+                  "泵庭执卫",
+                  "原记录和壳样也交给我。既然调查交给守卫，这些原件也要留下。"
+                ],
+                [
+                  "拾潮者",
+                  "迁居的居民还没看过我带回的原记录。我得让他们对照壳样，把住巢的位置核对清楚。你们留下拓本，原记录让我带走。"
+                ]
+              ],
+              "source_at": [
+                1810,
+                520
+              ],
+              "room_id": "R4-01",
+              "support": {
+                "room_id": "R4-01",
+                "surface": 0,
+                "x": 1450
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch07_copy_records"
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 0,
+            "x": 1450
+          },
+          "source_at": [
+            1810,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "pump_warden",
+              "key": "pump_warden",
+              "height": 108,
+              "room_id": "R4-01",
+              "at": [
+                1360,
+                1424.0
+              ],
+              "support": {
+                "room_id": "R4-01",
+                "surface": 0,
+                "x": 1360
+              }
+            }
+          ],
+          "source_objective": "到右侧拓片台按F，留下可复核的记录副本"
+        },
+        {
+          "id": "ch07_blocked",
+          "kind": "dialogue",
+          "objective": "到泵台内侧按F，说明要携原件离开",
+          "checkpoint": [
+            1710,
+            1424.0
+          ],
+          "at": [
+            1710,
+            1424.0
+          ],
+          "radius": 155,
+          "lines": [
+            [
+              "泵庭执卫",
+              "你把原记录和壳样留下，我才让你离开泵台。"
+            ],
+            [
+              "拾潮者",
+              "拓本已经留在台上了。我得带原记录去骨穹腔，那里还有住户没安顿好。请你让开窄道。"
+            ],
+            [
+              "叙述",
+              "泵庭执卫横过长柄，挡住返回窄道的退路。拾潮者护住随身的原记录，举起骨鸣器。"
+            ]
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 0,
+            "x": 1710
+          },
+          "source_at": [
+            2050,
+            520
+          ],
+          "actors": [
+            {
+              "id": "pump_warden",
+              "key": "pump_warden",
+              "height": 108,
+              "room_id": "R4-01",
+              "at": [
+                1620,
+                1424.0
+              ],
+              "support": {
+                "room_id": "R4-01",
+                "surface": 0,
+                "x": 1620
+              }
+            }
+          ],
+          "source_objective": "到泵台内侧按F，说明要携原件离开"
+        },
+        {
+          "id": "ch07_leave_pump",
+          "kind": "escape",
+          "objective": "避开执卫的水系压迫，向左退到窄道口；无需击倒对方",
+          "checkpoint": [
+            1730,
+            1424.0
+          ],
+          "at": [
+            1730,
+            1424.0
+          ],
+          "radius": 115,
+          "enemy": {
+            "profile": 5,
+            "at": [
+              2060,
+              1424.0
+            ],
+            "lane": [
+              900,
+              2250
+            ],
+            "ending": "surrender",
+            "source_at": [
+              2310,
+              520
+            ],
+            "source_lane": [
+              1580,
+              2700
+            ],
+            "room_id": "R4-01",
+            "support": {
+              "room_id": "R4-01",
+              "surface": 0,
+              "x": 2060
+            },
+            "arena": [
+              900,
+              904,
+              1350,
+              520
+            ],
+            "floor_y": 1424.0
+          },
+          "goal": [
+            950,
+            1424.0
+          ],
+          "min_seconds": 1.0,
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 0,
+            "x": 1730
+          },
+          "source_at": [
+            2070,
+            520
+          ],
+          "source_goal": [
+            1660,
+            520
+          ],
+          "goal_radius": 110,
+          "actors": [],
+          "source_objective": "避开执卫的水系压迫，向左退到窄道口；无需击倒对方"
+        },
+        {
+          "id": "ch07_called_off",
+          "kind": "dialogue",
+          "objective": "在窄道口按F，听老守护者喝止冲突",
+          "checkpoint": [
+            950,
+            1424.0
+          ],
+          "at": [
+            950,
+            1424.0
+          ],
+          "lines": [
+            [
+              "老守护者",
+              "执卫，停手！让拾潮者带原记录和壳样离开。拓本已经留下，先按拓本复查。"
+            ],
+            [
+              "叙述",
+              "泵庭执卫收住长柄，水势散开。拾潮者停在窄道口，没有再向执卫逼近。"
+            ],
+            [
+              "拾潮者",
+              "我会把停迁的消息带到骨穹腔。可已经离巢的居民还得安顿，我先去见他们。"
+            ],
+            [
+              "老守护者",
+              "停迁的命令没有变。骨穹腔的系索和巢基还没经过强流；再引水进去，住巢可能被掀下来。别再开那里的水口。"
+            ],
+            [
+              "叙述",
+              "原记录和壳样仍在拾潮者身上，供泵庭复查的拓本留在台上。"
+            ]
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 0,
+            "x": 950
+          },
+          "source_at": [
+            1660,
+            520
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R4-01",
+              "at": [
+                860,
+                1424.0
+              ],
+              "support": {
+                "room_id": "R4-01",
+                "surface": 0,
+                "x": 860
+              }
+            }
+          ],
+          "source_objective": "在窄道口按F，听老守护者喝止冲突"
+        },
+        {
+          "id": "ch07_exit",
+          "kind": "exit",
+          "objective": "执卫已收手；沿右侧已有骨台进入骨穹腔",
+          "checkpoint": [
+            2320,
+            1160.0
+          ],
+          "at": [
+            2320,
+            1160.0
+          ],
+          "room_id": "R4-01",
+          "support": {
+            "room_id": "R4-01",
+            "surface": 4,
+            "x": 2320
+          },
+          "source_at": [
+            220,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向左回到维护道口按F，赶往即将停迁的骨穹腔"
+        }
+      ],
+      "transition_route": [
+        "R4-01",
+        "R4-03"
+      ],
+      "route_hint": "R4-01 → R4-03",
+      "actors": []
+    },
+    {
+      "id": 8,
+      "chapter_id": "ch08_gongqiong",
+      "title": "骨梁下的名字",
+      "summary": "从本章开始：老守护者在泵庭要求暂停试流与迁居，留下观察记录的拓本供守卫复查。拾潮者仍带着自己的试流和肺缘观察原记录来到骨穹腔，接应已经离开旧居的住户。封梁卫正在收起搬巢的通行索，两户住户带着住巢停在骨梁外面。",
+      "room_id": "R4-03",
+      "source_file": "game/content/prototypes/chapters/ch08.json",
+      "source_sha256": "181557552203e7016754e4165ac52b825a776aa3f705454bae26ecc0868c1fa4",
+      "next": 9,
+      "stages": [
+        {
+          "id": "ch08_arrival",
+          "kind": "dialogue",
+          "objective": "到滞留住巢旁按F，询问收索的情况",
+          "checkpoint": [
+            410,
+            1440.0
+          ],
+          "at": [
+            410,
+            1440.0
+          ],
+          "lines": [
+            [
+              "补巢者",
+              "封梁卫把搬巢用的通行索收了。还有两户住户带着拆下来的住巢，停在骨梁外面，进不了骨台。"
+            ],
+            [
+              "封梁卫",
+              "泵庭传来停迁的命令。骨穹腔的新支撑没经过强流，住巢接上去以后如果被冲垮，我来不及把住户救下来。"
+            ],
+            [
+              "拾潮者",
+              "我刚从泵庭过来，知道他们要停迁。可这两户已经拆下住巢了。你先和我看看内侧固定好的巢基，再决定要不要把他们退回去。"
+            ]
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 1,
+            "x": 410
+          },
+          "source_at": [
+            440,
+            520
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R4-03",
+              "at": [
+                320,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 1,
+                "x": 320
+              }
+            },
+            {
+              "id": "beam_guard",
+              "key": "beam_guard",
+              "height": 102,
+              "room_id": "R4-03",
+              "at": [
+                500,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 1,
+                "x": 500
+              }
+            }
+          ],
+          "source_objective": "到滞留住巢旁按F，询问收索的情况"
+        },
+        {
+          "id": "ch08_check_support",
+          "kind": "explore",
+          "objective": "分别到巢基与引水标记旁按F，说明可安置与仍须等待的位置",
+          "checkpoint": [
+            850,
+            1296.0
+          ],
+          "at": [
+            850,
+            1296.0
+          ],
+          "tasks": [
+            {
+              "id": "ch08_show_base",
+              "label": "按F检查巢基与系索",
+              "at": [
+                850,
+                1296.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch08_fixed_base_seen"
+              ],
+              "lines": [
+                [
+                  "拾潮者",
+                  "内侧骨台的这几处巢基已经用系索固定，巢底也开始附着在骨上。我想先把骨梁外的两户接到这些位置。"
+                ],
+                [
+                  "封梁卫",
+                  "巢底才刚长出附着的细丝，急水一来，巢底可能整块脱开。系索固定了，不等于巢里的住户就安全。"
+                ]
+              ],
+              "source_at": [
+                900,
+                520
+              ],
+              "room_id": "R4-03",
+              "support": {
+                "room_id": "R4-03",
+                "surface": 2,
+                "x": 850
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch08_show_water",
+              "label": "按F对照肺缘引水位置",
+              "at": [
+                1100,
+                1296.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch08_risk_marked"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者展开从肺缘带来的观察图。图上标着内侧缓流带，以及仍须封护的两处薄弱支膜。"
+                ],
+                [
+                  "拾潮者",
+                  "我和肺缘看守查过，能试着引水的是内侧缓流带。外侧这两处支膜已经脆了，大股水冲进来可能把支膜冲裂，所以还得封着。"
+                ],
+                [
+                  "封梁卫",
+                  "你在肺缘看过水，我知道。可骨穹腔的临时支撑还没受过强流，肺缘的图不能替这些住巢保证安全。通行索我不能放。"
+                ]
+              ],
+              "source_at": [
+                1240,
+                520
+              ],
+              "room_id": "R4-03",
+              "support": {
+                "room_id": "R4-03",
+                "surface": 2,
+                "x": 1100
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch08_show_base",
+            "ch08_show_water"
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 2,
+            "x": 850
+          },
+          "source_at": [
+            900,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "beam_guard",
+              "key": "beam_guard",
+              "height": 102,
+              "room_id": "R4-03",
+              "at": [
+                760,
+                1296.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 2,
+                "x": 760
+              }
+            }
+          ],
+          "source_objective": "分别到巢基与引水标记旁按F，说明可安置与仍须等待的位置"
+        },
+        {
+          "id": "ch08_refusal",
+          "kind": "dialogue",
+          "objective": "到骨梁入口按F，再向封梁卫请求接回两户住巢",
+          "checkpoint": [
+            1240,
+            1584.0
+          ],
+          "at": [
+            1240,
+            1584.0
+          ],
+          "lines": [
+            [
+              "叙述",
+              "补巢者把残缺的巢片放在封梁卫面前。"
+            ],
+            [
+              "补巢者",
+              "旧居的菌床已经没了，搬回去的住户也没有食物。我们带出来的是这些残巢片。先把骨梁外的两户接进来吧，其他住巢先按你说的等着。"
+            ],
+            [
+              "封梁卫",
+              "先把住巢退到避流台，不要继续往骨梁上搬。通道空出来，免得住巢挤在梁上，出了事连救人的路都堵住。"
+            ],
+            [
+              "拾潮者",
+              "两户住户已经离开旧居，退回去也找不到能供养他们的菌床。把通行索给我，我要先把这两户接进骨台。"
+            ],
+            [
+              "叙述",
+              "封梁卫收起最后一根通行索，拒绝继续接收共鸣，举起弧刃清退通道。拾潮者越过收索处，站上骨梁。"
+            ]
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 0,
+            "x": 1240
+          },
+          "source_at": [
+            1510,
+            520
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R4-03",
+              "at": [
+                1150,
+                1584.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 0,
+                "x": 1150
+              }
+            },
+            {
+              "id": "beam_guard",
+              "key": "beam_guard",
+              "height": 102,
+              "room_id": "R4-03",
+              "at": [
+                1330,
+                1584.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 0,
+                "x": 1330
+              }
+            }
+          ],
+          "source_objective": "到骨梁入口按F，再向封梁卫请求接回两户住巢"
+        },
+        {
+          "id": "ch08_beam_fight",
+          "kind": "battle",
+          "objective": "向右进入中央骨梁，击败封梁卫以解除封路",
+          "checkpoint": [
+            1500,
+            1584.0
+          ],
+          "at": [
+            1500,
+            1584.0
+          ],
+          "enemy": {
+            "profile": 6,
+            "at": [
+              1850,
+              1584.0
+            ],
+            "lane": [
+              1190,
+              2210
+            ],
+            "ending": "kill",
+            "source_at": [
+              2140,
+              520
+            ],
+            "source_lane": [
+              1560,
+              2620
+            ],
+            "room_id": "R4-03",
+            "support": {
+              "room_id": "R4-03",
+              "surface": 0,
+              "x": 1850
+            },
+            "arena": [
+              1190,
+              1064,
+              1020,
+              520
+            ],
+            "floor_y": 1584.0
+          },
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 0,
+            "x": 1500
+          },
+          "source_at": [
+            1780,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向右进入中央骨梁，击败封梁卫以解除封路"
+        },
+        {
+          "id": "ch08_no_reply",
+          "kind": "observe",
+          "objective": "到封梁卫倒下的位置按F，确认回应并等负壳守卫赶到",
+          "checkpoint": [
+            1900,
+            1584.0
+          ],
+          "at": [
+            1900,
+            1584.0
+          ],
+          "duration": 5,
+          "captions": [
+            "拾潮者收住骨鸣器，向倒在骨梁上的封梁卫发出停止交战的共鸣。封梁卫没有回应。",
+            "拾潮者在封梁卫身旁等待，封梁卫始终没有再动。",
+            "负壳守卫赶到，推开拾潮者，伏在封梁卫身旁，从封梁卫颈侧解下刻着姓名的薄壳。",
+            "拾潮者退到一旁，等负壳守卫站起，才去放回被封梁卫收走的通行索。"
+          ],
+          "grant": [
+            "ch08_beam_guard_dead",
+            "ch08_shell_held_by_guard"
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 0,
+            "x": 1900
+          },
+          "source_at": [
+            2270,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R4-03",
+              "at": [
+                2040,
+                1584.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 0,
+                "x": 2040
+              }
+            },
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R4-03",
+              "at": [
+                1700,
+                1584.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 0,
+                "x": 1700
+              }
+            }
+          ],
+          "source_objective": "到封梁卫倒下的位置按F，确认回应并等负壳守卫赶到"
+        },
+        {
+          "id": "ch08_receive_nests",
+          "kind": "explore",
+          "objective": "到索桩按F放回通行索，再去内侧骨台接巢并记下姓名",
+          "checkpoint": [
+            2390,
+            1440.0
+          ],
+          "at": [
+            2390,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch08_restore_rope",
+              "label": "按F将通行索挂回索桩",
+              "at": [
+                2350,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch08_rope_restored"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者把封梁卫收走的通行索挂回骨台索桩。负壳守卫收着同伴的刻名薄壳，走到索的另一端检查扣结，没有同拾潮者交谈。"
+                ]
+              ],
+              "source_at": [
+                2820,
+                520
+              ],
+              "room_id": "R4-03",
+              "support": {
+                "room_id": "R4-03",
+                "surface": 4,
+                "x": 2350
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch08_bring_nests",
+              "label": "按F接稳滞留的两户住巢",
+              "at": [
+                2650,
+                1440.0
+              ],
+              "requires": [
+                "ch08_restore_rope"
+              ],
+              "grant": [
+                "ch08_nests_received"
+              ],
+              "lines": [
+                [
+                  "补巢者",
+                  "请你托住这户住巢的底部，等住户把内侧的系索系牢。另一户还有一段巢基没过梁，咱们接完这户再接。"
+                ],
+                [
+                  "叙述",
+                  "两户住巢被接到内侧骨台。负壳守卫扶住系索，直到巢底落稳才松手。"
+                ]
+              ],
+              "source_at": [
+                3200,
+                520
+              ],
+              "room_id": "R4-03",
+              "support": {
+                "room_id": "R4-03",
+                "surface": 4,
+                "x": 2650
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch08_note_name",
+              "label": "按F照薄壳记下封梁卫的姓名",
+              "at": [
+                2490,
+                1440.0
+              ],
+              "requires": [
+                "ch08_bring_nests"
+              ],
+              "grant": [
+                "ch08_name_recorded"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者照着负壳守卫收下的刻名薄壳，把封梁卫的姓名记进行记。薄壳仍由负壳守卫带着。"
+                ],
+                [
+                  "补巢者",
+                  "内侧骨台还缺一段巢基，帮我把剩下那段搬过去吧。"
+                ],
+                [
+                  "叙述",
+                  "拾潮者合起行记，和补巢者搬起剩下的一段巢基。"
+                ]
+              ],
+              "source_at": [
+                2970,
+                520
+              ],
+              "room_id": "R4-03",
+              "support": {
+                "room_id": "R4-03",
+                "surface": 4,
+                "x": 2490
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch08_restore_rope",
+            "ch08_bring_nests",
+            "ch08_note_name"
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 4,
+            "x": 2390
+          },
+          "source_at": [
+            2820,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R4-03",
+              "at": [
+                2300,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-03",
+                "surface": 4,
+                "x": 2300
+              }
+            }
+          ],
+          "source_objective": "到索桩按F放回通行索，再去内侧骨台接巢并记下姓名"
+        },
+        {
+          "id": "ch08_exit",
+          "kind": "exit",
+          "objective": "向右到维护道口按F，去回流长腔接应下一批迁居",
+          "checkpoint": [
+            2800,
+            1440.0
+          ],
+          "at": [
+            2800,
+            1440.0
+          ],
+          "room_id": "R4-03",
+          "support": {
+            "room_id": "R4-03",
+            "surface": 4,
+            "x": 2800
+          },
+          "source_at": [
+            3490,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向右到维护道口按F，去回流长腔接应下一批迁居"
+        }
+      ],
+      "transition_route": [
+        "R4-03",
+        "R4-05"
+      ],
+      "route_hint": "R4-03 → R4-05",
+      "actors": []
+    },
+    {
+      "id": 9,
+      "chapter_id": "ch09_huiliu",
+      "title": "回来的水",
+      "summary": "从本章开始：两户住巢已接进骨穹腔，封梁卫死在了与拾潮者的交锋中。负壳守卫收下封梁卫的刻名薄壳，尚未交给拾潮者。回流长腔正在接应迁居，拾潮者来到骨壁刻图前，核对沿途水口和各处迁居的结果。",
+      "room_id": "R4-05",
+      "source_file": "game/content/prototypes/chapters/ch09.json",
+      "source_sha256": "91bcb423c24a3ab9e5a36863a6be8a849d81e0856b6f287414f9c48dbea33931",
+      "next": 10,
+      "stages": [
+        {
+          "id": "ch09_find_routes",
+          "kind": "explore",
+          "objective": "到骨壁刻图与避流台分别按F，核对道路并询问搬运受阻的位置",
+          "checkpoint": [
+            450,
+            1440.0
+          ],
+          "at": [
+            450,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch09_read_map",
+              "label": "按F将行记对上骨壁道路",
+              "at": [
+                400,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch09_head_route_known"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "骨壁刻图把头向维护道画在上方，通往保存封城记录的颅腔；尾向外排线则通往尾根旧伤。拾潮者将沿途经过的水口对到刻图上。"
+                ]
+              ],
+              "source_at": [
+                550,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 400
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch09_ask_carriers",
+              "label": "按F查看居民停下的搬运索",
+              "at": [
+                680,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch09_blocked_rope_seen"
+              ],
+              "lines": [
+                [
+                  "搬运居民",
+                  "我们搬住巢过弯时，巢基掉了几片菌膜，食腐甲循着气味就来了。外围那只挡住窄道，大个体压着搬运索，我们拉不回巢基。"
+                ],
+                [
+                  "拾潮者",
+                  "你们先留在避流台，别去拉食腐甲身下的搬运索。我从空台绕过去，把挡路的食腐甲赶开。"
+                ]
+              ],
+              "source_at": [
+                900,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 680
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch09_read_map",
+            "ch09_ask_carriers"
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 450
+          },
+          "source_at": [
+            550,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "resident_carrier",
+              "key": "resident_carrier",
+              "height": 65,
+              "room_id": "R4-05",
+              "at": [
+                360,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 360
+              }
+            }
+          ],
+          "source_objective": "到骨壁刻图与避流台分别按F，核对道路并询问搬运受阻的位置"
+        },
+        {
+          "id": "ch09_clear_outer",
+          "kind": "battle",
+          "objective": "到右侧空台，换位逼退外围食腐甲，再靠近搬运索",
+          "checkpoint": [
+            950,
+            1440.0
+          ],
+          "at": [
+            950,
+            1440.0
+          ],
+          "enemy": {
+            "profile": 0,
+            "at": [
+              1210,
+              1440.0
+            ],
+            "lane": [
+              850,
+              1500
+            ],
+            "ending": "retreat",
+            "source_at": [
+              1400,
+              520
+            ],
+            "source_lane": [
+              1050,
+              1540
+            ],
+            "room_id": "R4-05",
+            "support": {
+              "room_id": "R4-05",
+              "surface": 0,
+              "x": 1210
+            },
+            "arena": [
+              850,
+              920,
+              650,
+              520
+            ],
+            "floor_y": 1440.0
+          },
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 950
+          },
+          "source_at": [
+            1120,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到右侧空台，换位逼退外围食腐甲，再靠近搬运索"
+        },
+        {
+          "id": "ch09_clear_rope",
+          "kind": "battle",
+          "objective": "继续向右到搬运索路，逼退压索食腐甲，清出接巢通路",
+          "checkpoint": [
+            1460,
+            1440.0
+          ],
+          "at": [
+            1460,
+            1440.0
+          ],
+          "enemy": {
+            "profile": 0,
+            "at": [
+              1730,
+              1440.0
+            ],
+            "lane": [
+              1370,
+              2020
+            ],
+            "ending": "retreat",
+            "hp": 8,
+            "height": 90,
+            "radius": 30,
+            "title": "压索食腐甲",
+            "source_at": [
+              1780,
+              520
+            ],
+            "source_lane": [
+              1500,
+              1990
+            ],
+            "room_id": "R4-05",
+            "support": {
+              "room_id": "R4-05",
+              "surface": 0,
+              "x": 1730
+            },
+            "arena": [
+              1370,
+              920,
+              650,
+              520
+            ],
+            "floor_y": 1440.0
+          },
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 1460
+          },
+          "source_at": [
+            1550,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "继续向右到搬运索路，逼退压索食腐甲，清出接巢通路"
+        },
+        {
+          "id": "ch09_check_outcomes",
+          "kind": "explore",
+          "objective": "按F核对稳定菌床与失败新巢，再封小口、移到内侧安置",
+          "checkpoint": [
+            1980,
+            1440.0
+          ],
+          "at": [
+            1980,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch09_stable_bed",
+              "label": "按F查看胃室送来的小菌床",
+              "at": [
+                1980,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch09_growth_confirmed"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "搬运索路已经清开，居民能把巢基接上骨台。旁边有一块从胃室带来的小菌床，边缘展开，没有再卷回去。"
+                ],
+                [
+                  "搬运居民",
+                  "胃室重新种的这块菌床总算长稳了，搬来的住户能吃到这些菌。我们才敢把菌床一起带过来。"
+                ]
+              ],
+              "source_at": [
+                2130,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 1980
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch09_failed_nest",
+              "label": "按F查看无法附着的新巢",
+              "at": [
+                2290,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch09_failed_flow_seen"
+              ],
+              "lines": [
+                [
+                  "迁居居民",
+                  "我们刚把新巢挂到这条支流，急水就把巢底的幼体掀起来。幼体没法附着，我们只好把新巢拆下来。"
+                ],
+                [
+                  "拾潮者",
+                  "继续从这条支流的小口引水，幼体还是附不住。我把小口挡回去，咱们把新巢搬到内侧骨台。"
+                ]
+              ],
+              "source_at": [
+                2570,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2290
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch09_seal_opening",
+              "label": "按F重新挡住失败支流的小口",
+              "at": [
+                2500,
+                1440.0
+              ],
+              "requires": [
+                "ch09_failed_nest"
+              ],
+              "grant": [
+                "ch09_unsafe_opening_closed"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者把封片嵌回这条急流支路的小口，并在原先准备开放的水口标记上补了一道横痕。"
+                ]
+              ],
+              "source_at": [
+                2800,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2500
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch09_move_inside",
+              "label": "按F帮失败住巢移到内侧骨台",
+              "at": [
+                2700,
+                1440.0
+              ],
+              "requires": [
+                "ch09_seal_opening"
+              ],
+              "grant": [
+                "ch09_failed_nest_relocated"
+              ],
+              "lines": [
+                [
+                  "迁居居民",
+                  "请你先托住这户住巢的巢底，等我们把内侧骨台的系索系牢，再松手。"
+                ],
+                [
+                  "叙述",
+                  "拾潮者托住新巢，等居民把住巢系牢在内侧骨台后，才抽回手。"
+                ]
+              ],
+              "source_at": [
+                2950,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2700
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch09_stable_bed",
+            "ch09_failed_nest",
+            "ch09_seal_opening",
+            "ch09_move_inside"
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 1980
+          },
+          "source_at": [
+            2130,
+            520
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "resident_carrier",
+              "key": "resident_carrier",
+              "height": 65,
+              "room_id": "R4-05",
+              "at": [
+                1890,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 1890
+              }
+            },
+            {
+              "id": "resident_migrant",
+              "key": "resident_migrant",
+              "height": 102,
+              "room_id": "R4-05",
+              "at": [
+                2070,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2070
+              }
+            }
+          ],
+          "source_objective": "按F核对稳定菌床与失败新巢，再封小口、移到内侧安置"
+        },
+        {
+          "id": "ch09_record_old_loss",
+          "kind": "observe",
+          "objective": "回到补巢者新居旁按F，在旧壳旁补记胃室开瓣的损失",
+          "checkpoint": [
+            2160,
+            1440.0
+          ],
+          "at": [
+            2160,
+            1440.0
+          ],
+          "duration": 4,
+          "captions": [
+            "补巢者的新居入口挂着从胃室捡回的旧壳。旧壳上原来记录居住潮汐的刻痕已经磨尽。",
+            "旧壳旁的刻图画着胃室受损的浅槽，以及居民用触肢一起托住的住巢。",
+            "拾潮者在刻图空处补下自己撬开胃室旧瓣、回水冲坏菌床的经过。补巢者继续缀巢壁，没有阻止拾潮者刻写。"
+          ],
+          "grant": [
+            "ch09_gastric_loss_recorded"
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 2160
+          },
+          "source_at": [
+            2340,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "回到补巢者新居旁按F，在旧壳旁补记胃室开瓣的损失"
+        },
+        {
+          "id": "ch09_compare_return",
+          "kind": "explore",
+          "objective": "到右侧外排刻线旁按F，将壳样、供养记录和折返水线一起核对",
+          "checkpoint": [
+            2890,
+            1440.0
+          ],
+          "at": [
+            2890,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch09_trace_return",
+              "label": "按F核对新丝与仍在下降的旧供养",
+              "at": [
+                2890,
+                1440.0
+              ],
+              "requires": [
+                "ch09_stable_bed",
+                "ch09_move_inside"
+              ],
+              "grant": [
+                "ch09_tail_return_confirmed"
+              ],
+              "lines": [
+                [
+                  "叙述",
+                  "拾潮者带着脂库壳样，对照骨台收到的各区供养记录。壳样边缘长了新菌，壳样上原有的菌膜却仍在变薄。"
+                ],
+                [
+                  "叙述",
+                  "供养记录里的采集量没有回升。拾潮者顺着骨壁刻图查看外排线，发现几条水路都在尾根被旧闸折回内圈。"
+                ],
+                [
+                  "拾潮者",
+                  "新菌长出来了，采集却没有好转，水又被旧闸送回内圈。我还没弄清封城以前的外排道怎么走，得去颅腔查原来的道路记录。"
+                ]
+              ],
+              "source_at": [
+                3130,
+                520
+              ],
+              "room_id": "R4-05",
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2890
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch09_trace_return"
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 2890
+          },
+          "source_at": [
+            3130,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到右侧外排刻线旁按F，将壳样、供养记录和折返水线一起核对"
+        },
+        {
+          "id": "ch09_receive_name_shell",
+          "kind": "dialogue",
+          "objective": "到负壳守卫身边按F，接过刻名薄壳并确认去向",
+          "checkpoint": [
+            3000,
+            1440.0
+          ],
+          "at": [
+            3000,
+            1440.0
+          ],
+          "lines": [
+            [
+              "负壳守卫",
+              "老守护者已经去尾根加固主闸了，我也要去帮忙。"
+            ],
+            [
+              "叙述",
+              "负壳守卫把封梁卫的刻名薄壳交到拾潮者手里。"
+            ],
+            [
+              "负壳守卫",
+              "把封梁卫的刻名薄壳带给老守护者。骨梁上发生了什么，你自己告诉他。"
+            ],
+            [
+              "拾潮者",
+              "我会把刻名薄壳带去，也会当面告诉老守护者，封梁卫死在了和我的交锋里。"
+            ],
+            [
+              "叙述",
+              "拾潮者把封梁卫的刻名薄壳系到行记旁。负壳守卫没有再接话。"
+            ]
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 3000
+          },
+          "source_at": [
+            3310,
+            520
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R4-05",
+              "at": [
+                2910,
+                1440.0
+              ],
+              "support": {
+                "room_id": "R4-05",
+                "surface": 0,
+                "x": 2910
+              }
+            }
+          ],
+          "source_objective": "到负壳守卫身边按F，接过刻名薄壳并确认去向"
+        },
+        {
+          "id": "ch09_exit",
+          "kind": "exit",
+          "objective": "向右到头向维护道口按F，携薄壳前往颅内旧歌腔",
+          "checkpoint": [
+            3120,
+            1440.0
+          ],
+          "at": [
+            3120,
+            1440.0
+          ],
+          "room_id": "R4-05",
+          "support": {
+            "room_id": "R4-05",
+            "surface": 0,
+            "x": 3120
+          },
+          "source_at": [
+            3500,
+            520
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "向右到头向维护道口按F，携薄壳前往颅内旧歌腔",
+          "reward_abilities": [
+            "bone"
+          ]
+        }
+      ],
+      "transition_route": [
+        "R4-05",
+        "R4-06"
+      ],
+      "route_hint": "R4-05 → R4-06",
+      "actors": []
+    },
+    {
+      "id": 10,
+      "chapter_id": "ch10_jiuge",
+      "title": "海面曾经很亮",
+      "summary": "从本章开始：回流长腔有住巢安稳下来，也有新巢被急流冲松。主闸仍把新水压回内圈。负壳守卫托拾潮者将封梁卫的刻名薄壳交给老守护者；去尾根前，他先到旧歌腔查看封城记录。场景和交互物均为白盒代理。",
+      "room_id": "R4-06",
+      "source_file": "game/content/prototypes/chapters/ch10.json",
+      "source_sha256": "dbe3932fbc677cbe253d5165fcf6c1932d27aec2fa993780ddbe747e85a16bb9",
+      "next": 11,
+      "stages": [
+        {
+          "id": "ch10_find_archive",
+          "kind": "explore",
+          "objective": "到封城记忆片前按F，核对当年封堵的记录。",
+          "checkpoint": [
+            500,
+            1440.0
+          ],
+          "at": [
+            500,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch10_read_archive",
+              "label": "按F查看封城记录",
+              "at": [
+                500,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch10_sealing_history"
+              ],
+              "lines": [
+                [
+                  "记忆片旁的刻字",
+                  "封城时撤回内侧的居民，将当年的共鸣保存在这里。"
+                ],
+                [
+                  "封城回声",
+                  "裂口又进水了。先把居民送到内侧，外侧的人跟我回去封住裂口。"
+                ],
+                [
+                  "记录",
+                  "回声中的年轻守护者往返运送居民，随后带人封住裂口。回声末尾只剩敲击声，记忆片旁刻着没有返回者的名字。"
+                ],
+                [
+                  "拾潮者",
+                  "这段撤离刻线还在。老守护者当年把居民送回内侧，走的就是这条路。"
+                ]
+              ],
+              "source_at": [
+                720,
+                480
+              ],
+              "room_id": "R4-06",
+              "support": {
+                "room_id": "R4-06",
+                "surface": 1,
+                "x": 500
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch10_read_archive"
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 1,
+            "x": 500
+          },
+          "source_at": [
+            720,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到封城记忆片前按F，核对当年封堵的记录。"
+        },
+        {
+          "id": "ch10_place_shell",
+          "kind": "explore",
+          "objective": "到薄壳槽按F，放下封梁卫的刻名薄壳。",
+          "checkpoint": [
+            1030,
+            1320.0
+          ],
+          "at": [
+            1030,
+            1320.0
+          ],
+          "tasks": [
+            {
+              "id": "ch10_set_shell",
+              "label": "按F将刻名薄壳放入槽内",
+              "at": [
+                1030,
+                1320.0
+              ],
+              "requires": [
+                "ch10_read_archive"
+              ],
+              "grant": [
+                "ch10_shell_placed"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者从身侧解下封梁卫的刻名薄壳，放进旧记录下方的骨槽。薄壳壳缘的缺口还很新，后方壁面上的撤离刻线已经磨浅。"
+                ],
+                [
+                  "拾潮者",
+                  "负壳守卫让我亲口说清骨梁上的事。我答应了，可见到老守护者时，我该从哪里说起？"
+                ]
+              ],
+              "source_at": [
+                1340,
+                480
+              ],
+              "room_id": "R4-06",
+              "support": {
+                "room_id": "R4-06",
+                "surface": 2,
+                "x": 1030
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch10_set_shell"
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 2,
+            "x": 1030
+          },
+          "source_at": [
+            1340,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到薄壳槽按F，放下封梁卫的刻名薄壳。"
+        },
+        {
+          "id": "ch10_whale_memory",
+          "kind": "observe",
+          "objective": "到深处骨面按F听回声；F可结束观察。观看。",
+          "checkpoint": [
+            1700,
+            1200.0
+          ],
+          "at": [
+            1700,
+            1200.0
+          ],
+          "duration": 6,
+          "captions": [
+            "拾潮者把骨鸣器贴上未刻写的骨面。回声中，菌灯照着的残壁逐渐退远。",
+            "回声中的明亮海水从巨鲸身体下掠过，同伴的声音隔着长流传来。",
+            "另一段回声里，贴在巨鲸身侧的温度渐渐离去，巨鲸仍在向前游动。",
+            "回声淡去，菌灯重新照见拾潮者持着骨鸣器的手。拾潮者把掌心贴在骨面上，等最后一点震动过去。"
+          ],
+          "grant": [
+            "ch10_living_whale_echo"
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 3,
+            "x": 1700
+          },
+          "source_at": [
+            2150,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到深处骨面按F听回声；再按F可结束观看。"
+        },
+        {
+          "id": "ch10_leave_record",
+          "kind": "explore",
+          "objective": "到居民名录按F补记姓名，再回薄壳槽按F收回薄壳。",
+          "checkpoint": [
+            1850,
+            1200.0
+          ],
+          "at": [
+            1850,
+            1200.0
+          ],
+          "tasks": [
+            {
+              "id": "ch10_copy_names",
+              "label": "按F拓印撤离线并补记封梁卫姓名",
+              "at": [
+                1850,
+                1200.0
+              ],
+              "requires": [
+                "ch10_set_shell"
+              ],
+              "grant": [
+                "ch10_evacuation_copy"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者在拓印台前拓印居民记录中仍可辨认的撤离刻线，再把封梁卫的姓名补进居民名录。"
+                ],
+                [
+                  "记录",
+                  "写完姓名后，拾潮者对照随身行记里的姓名重新核了一遍。封梁卫的刻名薄壳仍留在骨槽内。"
+                ]
+              ],
+              "source_at": [
+                2850,
+                480
+              ],
+              "room_id": "R4-06",
+              "support": {
+                "room_id": "R4-06",
+                "surface": 3,
+                "x": 1850
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch10_take_shell",
+              "label": "按F收回刻名薄壳",
+              "at": [
+                1030,
+                1320.0
+              ],
+              "requires": [
+                "ch10_copy_names"
+              ],
+              "grant": [
+                "ch10_shell_recovered"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者从骨槽中取回封梁卫的刻名薄壳，把薄壳重新系到行记旁。撤离线拓片也随行记一并收好。"
+                ]
+              ],
+              "source_at": [
+                1340,
+                480
+              ],
+              "room_id": "R4-06",
+              "support": {
+                "room_id": "R4-06",
+                "surface": 2,
+                "x": 1030
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch10_copy_names",
+            "ch10_take_shell"
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 3,
+            "x": 1850
+          },
+          "source_at": [
+            2850,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到居民名录按F补记姓名，再回薄壳槽按F收回薄壳。"
+        },
+        {
+          "id": "ch10_departure",
+          "kind": "dialogue",
+          "objective": "到耳侧维护口按F，整理带往听骨的记录。",
+          "checkpoint": [
+            2440,
+            1320.0
+          ],
+          "at": [
+            2440,
+            1320.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "听骨就在前面。我已经在回流长腔查到尾根的回水，还想听清那里的震动，看看能不能和图上的水路对上。"
+            ],
+            [
+              "记录",
+              "拾潮者带着撤离线拓片、行记和刻名薄壳，沿耳侧维护口的支架前往回声室。"
+            ]
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 4,
+            "x": 2440
+          },
+          "source_at": [
+            3180,
+            480
+          ],
+          "radius": 155,
+          "actors": [],
+          "source_objective": "到耳侧维护口按F，整理带往听骨的记录。"
+        },
+        {
+          "id": "ch10_exit",
+          "kind": "exit",
+          "objective": "到维护口按F结束本章，再按F进入第十一章。",
+          "checkpoint": [
+            2640,
+            1320.0
+          ],
+          "at": [
+            2640,
+            1320.0
+          ],
+          "room_id": "R4-06",
+          "support": {
+            "room_id": "R4-06",
+            "surface": 4,
+            "x": 2640
+          },
+          "source_at": [
+            3390,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到维护口按F结束本章，再按F进入第十一章。"
+        }
+      ],
+      "transition_route": [
+        "R4-06",
+        "R5-01"
+      ],
+      "route_hint": "R4-06 → R5-01",
+      "actors": []
+    },
+    {
+      "id": 11,
+      "chapter_id": "ch11_huisheng",
+      "title": "听见停顿的地方",
+      "summary": "从本章开始：拾潮者带着壳样、供养与迁居记录、撤离线和刻名薄壳来到听骨。尾根的回水尚未解决，图上还有没有安顿的住巢。他要逐处核对震动与记录，再决定带什么方案去主闸。接触片和图台均为白盒代理。",
+      "room_id": "R5-01",
+      "source_file": "game/content/prototypes/chapters/ch11.json",
+      "source_sha256": "8c93674dd07af46cd4b41a1ec7eaaa39711920dfa559146bafc52840f9f7d8e8",
+      "next": 12,
+      "stages": [
+        {
+          "id": "ch11_check_contacts",
+          "kind": "explore",
+          "objective": "分别到肺缘、泵庭、尾根三个触点按F，记录震动。",
+          "checkpoint": [
+            960,
+            1320.0
+          ],
+          "at": [
+            960,
+            1320.0
+          ],
+          "tasks": [
+            {
+              "id": "ch11_contact_lung",
+              "label": "按F核对肺缘触点",
+              "at": [
+                960,
+                1320.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch11_lung_steady"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者将骨鸣器贴上肺缘触点。肺缘方向传来的震动细而连续。"
+                ],
+                [
+                  "拾潮者",
+                  "肺缘传来的震动没有乱。听见这阵细震，我才稍微放心一些。"
+                ]
+              ],
+              "source_at": [
+                620,
+                480
+              ],
+              "room_id": "R5-01",
+              "support": {
+                "room_id": "R5-01",
+                "surface": 2,
+                "x": 960
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch11_contact_pump",
+              "label": "按F核对泵庭触点",
+              "at": [
+                1040,
+                1240.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch11_pump_heavy"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者将骨鸣器贴上泵庭触点。泵庭方向传来沉重的节律，间隔仍然整齐。"
+                ],
+                [
+                  "拾潮者",
+                  "泵庭的人还得撑着那些膜瓣，送出来的水却被尾根主闸压回内圈，排不出去。"
+                ]
+              ],
+              "source_at": [
+                1170,
+                480
+              ],
+              "room_id": "R5-02",
+              "support": {
+                "room_id": "R5-02",
+                "surface": 2,
+                "x": 1040
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch11_contact_tail",
+              "label": "按F核对尾根触点",
+              "at": [
+                1000,
+                1440.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch11_tail_delay"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者将骨鸣器贴上尾根触点。尾根方向的震动先停顿一次，随后传回向内挤压的杂响。"
+                ],
+                [
+                  "拾潮者",
+                  "尾根传来的挤压声，和我在回流长腔查到的回水方向相符。"
+                ]
+              ],
+              "source_at": [
+                1730,
+                480
+              ],
+              "room_id": "R5-04",
+              "support": {
+                "room_id": "R5-04",
+                "surface": 0,
+                "x": 1000
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch11_contact_lung",
+            "ch11_contact_pump",
+            "ch11_contact_tail"
+          ],
+          "room_id": "R5-01",
+          "support": {
+            "room_id": "R5-01",
+            "surface": 2,
+            "x": 960
+          },
+          "source_at": [
+            620,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "分别到肺缘、泵庭、尾根三个触点按F，记录震动。"
+        },
+        {
+          "id": "ch11_match_return",
+          "kind": "explore",
+          "objective": "到记录台按F，核对回水路线和壳样。",
+          "checkpoint": [
+            1600,
+            1440.0
+          ],
+          "at": [
+            1600,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch11_compare_return",
+              "label": "按F把停顿与回水记录对照",
+              "at": [
+                1500,
+                1440.0
+              ],
+              "requires": [
+                "ch11_contact_lung",
+                "ch11_contact_pump",
+                "ch11_contact_tail"
+              ],
+              "grant": [
+                "ch11_return_confirmed"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者展开从回流长腔带来的水路记录。图上的几条外排线在尾根折回内圈，尾根触点传回的挤压方向与记录相符。"
+                ],
+                [
+                  "拾潮者",
+                  "尾根的回水方向对上了。我一路听见的鲸歌闷响，会不会也和尾根的回压有关？"
+                ]
+              ],
+              "source_at": [
+                2200,
+                480
+              ],
+              "room_id": "R5-04",
+              "support": {
+                "room_id": "R5-04",
+                "surface": 0,
+                "x": 1500
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch11_compare_supply",
+              "label": "按F核对新丝、旧壳与供养记录",
+              "at": [
+                1740,
+                1440.0
+              ],
+              "requires": [
+                "ch11_compare_return"
+              ],
+              "grant": [
+                "ch11_supply_not_restored"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "脂库壳样长出新菌丝，壳样上原有的菌膜却仍在变薄，供养记录也没有好转。迁居记录还记着另一件事：回流长腔的支流太急，居民拆下新巢，把附着不住的幼体一同移到内侧。"
+                ],
+                [
+                  "拾潮者",
+                  "脂库的新菌还不够居民吃，回流长腔又有幼体附不住。居民好不容易搬来住巢，却又得把住巢拆下去……"
+                ]
+              ],
+              "source_at": [
+                2370,
+                480
+              ],
+              "room_id": "R5-04",
+              "support": {
+                "room_id": "R5-04",
+                "surface": 0,
+                "x": 1740
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch11_compare_return",
+            "ch11_compare_supply"
+          ],
+          "room_id": "R5-04",
+          "support": {
+            "room_id": "R5-04",
+            "surface": 0,
+            "x": 1600
+          },
+          "source_at": [
+            2270,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到记录台按F，核对回水路线和壳样。"
+        },
+        {
+          "id": "ch11_listen_pause",
+          "kind": "observe",
+          "objective": "回到尾根触点按F，核对一次停顿；F可结束观察。观看。",
+          "checkpoint": [
+            1000,
+            1440.0
+          ],
+          "at": [
+            1000,
+            1440.0
+          ],
+          "duration": 4,
+          "captions": [
+            "拾潮者再次贴住尾根触点。肺缘细震与泵庭重拍仍在传来，尾根震动先停顿，再传回压杂响。",
+            "鲸歌中的闷响再次出现，时间恰与尾根的回压重合。",
+            "骨鸣器叉柄传来的闷震渐渐散去。拾潮者在随身水路记录的回压位置旁，补记了这次停顿。"
+          ],
+          "grant": [
+            "ch11_pause_matched"
+          ],
+          "room_id": "R5-04",
+          "support": {
+            "room_id": "R5-04",
+            "surface": 0,
+            "x": 1000
+          },
+          "source_at": [
+            1730,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "回到尾根触点按F，核对一次停顿；再按F可结束观看。"
+        },
+        {
+          "id": "ch11_mark_plan",
+          "kind": "explore",
+          "objective": "到分流图按F，先圈出保留区域，再标一道有限外排口。",
+          "checkpoint": [
+            2300,
+            1440.0
+          ],
+          "at": [
+            2300,
+            1440.0
+          ],
+          "tasks": [
+            {
+              "id": "ch11_protect_nests",
+              "label": "按F圈出未安顿的住巢与保留支路",
+              "at": [
+                2200,
+                1440.0
+              ],
+              "requires": [
+                "ch11_compare_supply"
+              ],
+              "grant": [
+                "ch11_nests_protected"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "图台上的分流图标着尾根主闸两侧的旧撑和退流槽：旧撑承住闸门，退流槽让回水退开。拾潮者对照图台，在随身图上圈起未安顿的住巢，绕开这些住巢拟出通水路线。两条尚未查清的支路继续留白。"
+                ],
+                [
+                  "拾潮者",
+                  "回流长腔的居民已经拆下过刚挂好的住巢。我不想再让这些居民因为水太急，带着幼体搬一次家。"
+                ]
+              ],
+              "source_at": [
+                2790,
+                480
+              ],
+              "room_id": "R5-04",
+              "support": {
+                "room_id": "R5-04",
+                "surface": 0,
+                "x": 2200
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch11_mark_narrow_outlet",
+              "label": "按F标注窄出口与暂停条件",
+              "at": [
+                2400,
+                1440.0
+              ],
+              "requires": [
+                "ch11_protect_nests",
+                "ch11_compare_return"
+              ],
+              "grant": [
+                "ch11_limited_plan"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者在分流图的尾根主闸旁标出一道窄出口，保留旧撑和退流槽，并写明观察一轮潮；水流过强或支撑偏移，就停止扩大开口。"
+                ],
+                [
+                  "拾潮者",
+                  "尾根若能排走一部分回水，骨台的水势也许会缓下来。可主闸一旦被扯开，我未必还能像在脂库那样把开口压回去。"
+                ]
+              ],
+              "source_at": [
+                2970,
+                480
+              ],
+              "room_id": "R5-04",
+              "support": {
+                "room_id": "R5-04",
+                "surface": 0,
+                "x": 2400
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch11_protect_nests",
+            "ch11_mark_narrow_outlet"
+          ],
+          "room_id": "R5-04",
+          "support": {
+            "room_id": "R5-04",
+            "surface": 0,
+            "x": 2300
+          },
+          "source_at": [
+            2880,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到分流图按F，先圈出保留区域，再标一道有限外排口。"
+        },
+        {
+          "id": "ch11_reply_and_pack",
+          "kind": "dialogue",
+          "objective": "到听骨回应处按F，收好图与刻名薄壳。",
+          "checkpoint": [
+            2700,
+            1440.0
+          ],
+          "at": [
+            2700,
+            1440.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "我还在这里。我会沿维护道去尾根，看看能不能让主闸排走那些回水。"
+            ],
+            [
+              "记录",
+              "古鲸的低鸣经过骨鸣器叉柄，传来一小段侧流掠过身体的感觉，随后散去，没有更完整的回答。"
+            ],
+            [
+              "拾潮者",
+              "到了尾根，我要把封梁卫的薄壳交给老守护者。封梁卫是我杀死的，骨梁上交战的经过，我也要亲口告诉老守护者。"
+            ],
+            [
+              "记录",
+              "拾潮者收好分流图、壳样和行记，把刻名薄壳系牢，沿已通行的脊椎维护道折返，前往尾根主闸。"
+            ]
+          ],
+          "room_id": "R5-04",
+          "support": {
+            "room_id": "R5-04",
+            "surface": 0,
+            "x": 2700
+          },
+          "source_at": [
+            3320,
+            480
+          ],
+          "radius": 155,
+          "actors": [],
+          "source_objective": "到听骨回应处按F，收好图与刻名薄壳。"
+        },
+        {
+          "id": "ch11_exit",
+          "kind": "exit",
+          "objective": "从左侧回到旧歌腔，沿维护路前往尾根主闸",
+          "checkpoint": [
+            80,
+            1440.0
+          ],
+          "at": [
+            80,
+            1440.0
+          ],
+          "room_id": "R5-04",
+          "support": {
+            "room_id": "R5-04",
+            "surface": 0,
+            "x": 80
+          },
+          "source_at": [
+            3790,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到返程维护道按F结束本章，再按F前往尾根主闸。",
+          "reward_abilities": [
+            "silence"
+          ]
+        }
+      ],
+      "transition_route": [
+        "R5-04",
+        "R5-02",
+        "R5-01",
+        "R4-06",
+        "R5-08"
+      ],
+      "route_hint": "R5-04 → R5-02 → R5-01 → R4-06 → R5-08",
+      "actors": []
+    },
+    {
+      "id": 12,
+      "chapter_id": "ch12_zhazha",
+      "title": "闸后有路",
+      "summary": "从本章开始：老守护者仍在加固主闸，回水正退向新迁的骨台。拾潮者带来有限外排的图，也带着封梁卫的刻名薄壳。他必须先亲口说明骨梁上发生的事，再请求暂停封闸。决斗后老守护者存活，众人共同稳闸，后续跨过恢复期。居民、闸撑与水线均为白盒代理，居民不参加敌对。",
+      "room_id": "R5-08",
+      "source_file": "game/content/prototypes/chapters/ch12.json",
+      "source_sha256": "b20ff8b6adca3b0aaba3989d99b954883c0a1747ffb17ba9c1f4b14875b8d649",
+      "next": 0,
+      "stages": [
+        {
+          "id": "ch12_return_name",
+          "kind": "dialogue",
+          "objective": "到记录台按F，交还刻名薄壳并说出死亡和证据。",
+          "checkpoint": [
+            480,
+            1280.0
+          ],
+          "at": [
+            480,
+            1280.0
+          ],
+          "lines": [
+            [
+              "记录",
+              "拾潮者在记录台旁解下封梁卫的刻名薄壳，交到老守护者手里。"
+            ],
+            [
+              "拾潮者",
+              "这是封梁卫的刻名薄壳。是我杀了他。负壳守卫让我把这片薄壳交给你，也让我亲口告诉你，骨梁上发生了什么。"
+            ],
+            [
+              "记录",
+              "老守护者的手指停在薄壳上的姓名处，沿着刻痕慢慢摸过。"
+            ],
+            [
+              "老守护者",
+              "封梁卫死前还守着骨梁的通行索？"
+            ],
+            [
+              "拾潮者",
+              "是。他收走了通行索，让已经拆下巢底的两户居民退回去。我越过收索的位置，和他动了手。我打伤了他，他倒下以后就没有再回应。"
+            ],
+            [
+              "记录",
+              "老守护者没有再问，把封梁卫的薄壳收在身侧。拾潮者等老守护者重新抬起头，才在记录台上展开水路和迁居记录。"
+            ],
+            [
+              "拾潮者",
+              "胃室的旧瓣是我挑开的，我没有查清另一头的水路，回水冲坏了居民的菌床。后来脂库长了新菌，但还养不活整片聚落。图上这些搬巢失败的位置，水也太急，幼体附不住。"
+            ],
+            [
+              "老守护者",
+              "新菌养不活整片聚落，我在泵庭就问过你。你现在带着回水图来，是要我停下加固主闸？"
+            ],
+            [
+              "拾潮者",
+              "是。回流长腔的外排线在尾根折回内圈，听骨传来的回挤方向也和记录相符。新水进来以后，还被主闸压回旧路。请先别加补片，我想让主闸排走一部分回水。"
+            ],
+            [
+              "老守护者",
+              "你标出的回水，我看见了。可你要我松开主闸，主闸如果裂开，你能把内侧住巢里的居民都接走吗？"
+            ]
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 480
+          },
+          "source_at": [
+            600,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R5-08",
+              "at": [
+                390,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 390
+              }
+            }
+          ],
+          "source_objective": "到记录台按F，交还刻名薄壳并说出死亡和证据。"
+        },
+        {
+          "id": "ch12_dispute_patch",
+          "kind": "dialogue",
+          "objective": "到退流槽旁按F，说明有限方案并面对封闸决定。",
+          "checkpoint": [
+            950,
+            1280.0
+          ],
+          "at": [
+            950,
+            1280.0
+          ],
+          "lines": [
+            [
+              "拾潮者",
+              "我不能保证把所有居民都接走。我不是要把整道主闸掀开。你熟悉旧撑和退流槽，能不能和我一起守住一个窄口，让回水先排出去一点？"
+            ],
+            [
+              "老守护者",
+              "胃室的旧瓣一松，回水就冲坏了菌床。主闸比那道旧瓣大得多，窄口若被水扯开，我也未必能封回去。"
+            ],
+            [
+              "负壳守卫",
+              "补片送来了。通向内侧骨台的水槽又涨水了，刚迁来的住巢还在骨台上。"
+            ],
+            [
+              "拾潮者",
+              "请先别把这块补片送到主闸。水槽里的回水正在逼近新迁的住巢，居民才搬过来，住巢里还有幼体。"
+            ],
+            [
+              "记录",
+              "拾潮者伸手拦住运往主闸的补片。老守护者抽出长柄，挡住拾潮者的去路。负壳守卫让搬运者和居民退到内侧稳台。"
+            ],
+            [
+              "老守护者",
+              "让开。如果主闸撑不住，内侧的住巢也保不住。我不能让你动封护。"
+            ]
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 950
+          },
+          "source_at": [
+            1130,
+            480
+          ],
+          "radius": 155,
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R5-08",
+              "at": [
+                860,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 860
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R5-08",
+              "at": [
+                1040,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 1040
+              }
+            }
+          ],
+          "source_objective": "到退流槽旁按F，说明有限方案并面对封闸决定。"
+        },
+        {
+          "id": "ch12_elder_duel",
+          "kind": "battle",
+          "objective": "靠近主闸前迎战老守护者，使他停止拦闸；胜后保留其生命。",
+          "checkpoint": [
+            1280,
+            1280.0
+          ],
+          "at": [
+            1280,
+            1280.0
+          ],
+          "radius": 115,
+          "enemy": {
+            "profile": 7,
+            "at": [
+              1650,
+              1280.0
+            ],
+            "lane": [
+              1020,
+              2200
+            ],
+            "ending": "surrender",
+            "source_at": [
+              2100,
+              480
+            ],
+            "source_lane": [
+              1450,
+              2500
+            ],
+            "room_id": "R5-08",
+            "support": {
+              "room_id": "R5-08",
+              "surface": 0,
+              "x": 1650
+            },
+            "arena": [
+              1020,
+              760,
+              1180,
+              520
+            ],
+            "floor_y": 1280.0
+          },
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 1280
+          },
+          "source_at": [
+            1750,
+            480
+          ],
+          "actors": [],
+          "source_objective": "靠近主闸前迎战老守护者，使他停止拦闸；胜后保留其生命。"
+        },
+        {
+          "id": "ch12_rescue_and_brace",
+          "kind": "explore",
+          "objective": "胜后到稳台按F救人，再到窄封护和旧锚按F共同稳闸。",
+          "checkpoint": [
+            2210,
+            1280.0
+          ],
+          "at": [
+            2210,
+            1280.0
+          ],
+          "tasks": [
+            {
+              "id": "ch12_move_elder_safe",
+              "label": "按F在稳台边接应伤者",
+              "at": [
+                2210,
+                1280.0
+              ],
+              "requires": [],
+              "grant": [
+                "ch12_elder_safe"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "战败的老守护者靠在稳台边，受伤的一侧还撑不住身体。拾潮者收起骨鸣器，与负壳守卫一起把老守护者扶稳。"
+                ],
+                [
+                  "拾潮者",
+                  "你先靠着稳台，不要起身。我去帮负壳守卫挪最窄的那片封护。"
+                ],
+                [
+                  "老守护者",
+                  "拾潮者，主闸右侧的旧撑还连着下面的旧锚。挪封护时，别拆掉那根旧撑。"
+                ]
+              ],
+              "source_at": [
+                2755,
+                480
+              ],
+              "room_id": "R5-08",
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2210
+              },
+              "radius": 100
+            },
+            {
+              "id": "ch12_shift_narrow_cover",
+              "label": "按F移动最窄封护，保留旧撑",
+              "at": [
+                2410,
+                1280.0
+              ],
+              "requires": [
+                "ch12_move_elder_safe"
+              ],
+              "grant": [
+                "ch12_narrow_opening"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者移开最窄封护的一小段，厚重碎屑随水涌向闸外。旧撑向外偏，拾潮者立即扶住撑柱。"
+                ],
+                [
+                  "负壳守卫",
+                  "拾潮者，撑柱在往外偏。我先顶着另一边，你别再往外挪封护。"
+                ],
+                [
+                  "老守护者",
+                  "负壳守卫，旧锚还能承力。把我的长柄送到旧锚，和拾潮者一起嵌稳；这根旧撑先由我扶住。"
+                ]
+              ],
+              "source_at": [
+                2880,
+                480
+              ],
+              "room_id": "R5-08",
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2410
+              },
+              "radius": 100,
+              "requires_fresh_press": true
+            },
+            {
+              "id": "ch12_set_old_anchor",
+              "label": "按F按老守护者指示扣住旧锚",
+              "at": [
+                2600,
+                1280.0
+              ],
+              "requires": [
+                "ch12_shift_narrow_cover"
+              ],
+              "grant": [
+                "ch12_three_hold_gate"
+              ],
+              "lines": [
+                [
+                  "记录",
+                  "拾潮者在旧锚前扶正长柄，负壳守卫把长柄嵌进旧锚。老守护者靠着稳台扶住旧撑，闸撑的偏移渐渐止住。"
+                ],
+                [
+                  "老守护者",
+                  "旧撑没有再往外偏了。先让我喘口气，别急着再动封护。"
+                ],
+                [
+                  "拾潮者",
+                  "长柄已经嵌稳了。负壳守卫，你先别松撑柱，我要看清旧撑还会不会动。"
+                ]
+              ],
+              "source_at": [
+                3020,
+                480
+              ],
+              "room_id": "R5-08",
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2600
+              },
+              "radius": 100
+            }
+          ],
+          "required": [
+            "ch12_move_elder_safe",
+            "ch12_shift_narrow_cover",
+            "ch12_set_old_anchor"
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 2210
+          },
+          "source_at": [
+            2755,
+            480
+          ],
+          "radius": 115,
+          "source_actor_at": [
+            2755,
+            520
+          ],
+          "actors": [
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R5-08",
+              "at": [
+                2120,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2120
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R5-08",
+              "at": [
+                2300,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2300
+              }
+            }
+          ],
+          "source_objective": "胜后到稳台按F救人，再到窄封护和旧锚按F共同稳闸。"
+        },
+        {
+          "id": "ch12_limited_outflow",
+          "kind": "observe",
+          "objective": "到窄封护按F观察一轮潮的潮汐变化；F可结束观察。",
+          "checkpoint": [
+            2410,
+            1280.0
+          ],
+          "at": [
+            2410,
+            1280.0
+          ],
+          "duration": 6,
+          "captions": [
+            "这一轮潮里，外排几次变强。老守护者要求暂停，拾潮者和负壳守卫把封护稳在原位。",
+            "回压下降后，拾潮者和负壳守卫才继续挪动封护，老守护者扶着旧撑。",
+            "浑水沿窄口外排。旧撑和退流槽仍然保留，通向未安顿住巢的支路没有打开，主闸开口也没有继续扩大。"
+          ],
+          "grant": [
+            "ch12_outflow_watched"
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 2410
+          },
+          "source_at": [
+            2880,
+            480
+          ],
+          "radius": 115,
+          "actors": [],
+          "source_objective": "到窄封护按F观察一轮潮的白盒压缩过程；再按F可结束。"
+        },
+        {
+          "id": "ch12_recovery_life",
+          "kind": "observe",
+          "objective": "到消息台按F查看多次潮汐后的恢复期；F可结束观察。",
+          "checkpoint": [
+            2850,
+            1280.0
+          ],
+          "at": [
+            2850,
+            1280.0
+          ],
+          "duration": 6,
+          "captions": [
+            "此后的许多潮汐里，拾潮者留在主闸腔。居民陆续送来消息：有巢基附稳了，也有通道仍须挡住。",
+            "负壳守卫带居民调整支撑。老守护者的伤口渐渐愈合，后来开始询问下一处迁居何时接应，手边的分流图反复改过。",
+            "补巢者把新菌床脱下的小壳放在灯旁，小壳上附满细丝。新居还挂着旧巢片，补巢者已经接着补刻磨掉的记号。",
+            "主闸外的水流渐稳。拾潮者听见古鲸一声平缓的低鸣，此后许久再无回应。老守护者在教居民辨认新水线。",
+            "拾潮者翻开行记，记下主闸现在的开口和水线。菌灯照着新生触丝，细丝离开旧骨，伸向外流。"
+          ],
+          "grant": [
+            "ch12_recovery_seen",
+            "ch12_whale_resting"
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 2850
+          },
+          "source_at": [
+            3890,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R5-08",
+              "at": [
+                2740,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2740
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R5-08",
+              "at": [
+                2510,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2510
+              }
+            },
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R5-08",
+              "at": [
+                2960,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2960
+              }
+            },
+            {
+              "id": "resident_settled",
+              "key": "resident_settled",
+              "height": 88,
+              "room_id": "R5-08",
+              "at": [
+                3100,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 3100
+              }
+            }
+          ],
+          "source_objective": "到消息台按F查看多次潮汐后的恢复期；再按F可结束。"
+        },
+        {
+          "id": "ch12_exit",
+          "kind": "exit",
+          "objective": "到新水线旁按F结束本次旅途；之后可回访，不再交战。",
+          "checkpoint": [
+            3070,
+            1280.0
+          ],
+          "at": [
+            3070,
+            1280.0
+          ],
+          "room_id": "R5-08",
+          "support": {
+            "room_id": "R5-08",
+            "surface": 0,
+            "x": 3070
+          },
+          "source_at": [
+            4445,
+            480
+          ],
+          "radius": 115,
+          "actors": [
+            {
+              "id": "nest_mender",
+              "key": "nest_mender",
+              "height": 104,
+              "room_id": "R5-08",
+              "at": [
+                2740,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2740
+              }
+            },
+            {
+              "id": "shell_guard",
+              "key": "shell_guard",
+              "height": 100,
+              "room_id": "R5-08",
+              "at": [
+                2510,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2510
+              }
+            },
+            {
+              "id": "elder_guardian",
+              "key": "elder_guardian",
+              "height": 135,
+              "room_id": "R5-08",
+              "at": [
+                2960,
+                1280.0
+              ],
+              "support": {
+                "room_id": "R5-08",
+                "surface": 0,
+                "x": 2960
+              }
+            }
+          ],
+          "source_objective": "到新水线旁按F结束全线白盒。R可回访结尾，不再开战。"
+        }
+      ],
+      "transition_route": [
+        "R5-08"
+      ],
+      "route_hint": "R5-08",
+      "actors": []
+    }
+  ]
+}
