@@ -2,8 +2,15 @@ class_name ChapterRunView
 extends Node2D
 ## 仅白盒空间和状态代理；所有正式角色与敌人仍来自现有位图。
 var host: ChapterRun
-func _ready() -> void: z_index=-2
-func _process(_dt: float) -> void: z_index=20 if host.using_reference() else -2
+var characters: ChapterCharacterPresentation
+func _ready() -> void:
+	z_index=-2
+	characters=ChapterCharacterPresentation.new()
+	characters.install(host.chapter_id)
+	add_child(characters)
+func _process(_dt: float) -> void:
+	z_index=20 if host.using_reference() else -2
+	characters.update_run(host)
 func text(at: Vector2,value: String,font_size: int=17,color: Color=WhaleUIStyle.BONE) -> void:
 	WhaleActionHUDStyle.text(self,at,value,font_size,color)
 func _draw() -> void:

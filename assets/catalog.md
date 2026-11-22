@@ -1,5 +1,11 @@
 # 美术资源台账
 
+## 2026-11-22 · 连续战斗动作与章节人物 V2
+
+敌人[补查返修](source/combat-animation-v2/followup/README.md)另外补绘64帧：捕食者回挂/老守护者回稳两段，以及替换大甲压砸/负壳顶壳两套弱准备动作。新增与替换分开计数，旧原件保留，全部仍为candidate。
+
+新增主角12套身体动作184帧、章节敌人33套528帧与独立6帧起手FX，修正事件前后分段和复制幻影的共用读取。补齐7个静态章节角色形象。来源、精确生成请求、失败返修、固定尺度/根与验收边界见[动作批次](source/combat-animation-v2/README.md)和[人物批次](source/chapter-characters-v1/README.md)。新图均为candidate，动态与用户审美分别验收，不把静态人物算作救援动画。
+
 ## 2026-11-22 · 章节白盒地编参照
 
 新增骨壳记录台、刻名薄壳两件静态道具，复用已有骨路、阀闸、菌床及巢架。制作来源、锚点和导出哈希见[批次说明](source/chapter-reference-v1/README.md)与[资产数据](source/chapter-reference-v1/assets.json)。新素材为candidate，供章节白盒和后续地编参照，不代表正式19房地图重构或用户美术验收完成。

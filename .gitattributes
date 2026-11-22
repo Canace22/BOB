@@ -127,3 +127,9 @@ assets/source/world-map-tail-v2/*.png filter=lfs diff=lfs merge=lfs -text
 # Chapter whitebox reference props and their source originals.
 assets/source/chapter-reference-v1/*.png filter=lfs diff=lfs merge=lfs -text
 assets/runtime/sprites/chapter-reference-v1/*.png filter=lfs diff=lfs merge=lfs -text
+
+# Authored combat animation and chapter character batches.
+assets/source/combat-animation-v2/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/runtime/sprites/combat-animation-v2/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/source/chapter-characters-v1/*.png filter=lfs diff=lfs merge=lfs -text
+assets/runtime/sprites/chapter-characters-v1/*.png filter=lfs diff=lfs merge=lfs -text

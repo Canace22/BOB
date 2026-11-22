@@ -1,0 +1,3865 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "e8053a8b",
+  "scope": "主角36动作的像素帧与当前播放逻辑审计；不改变输入、伤害、命中、冷却、位移或AI。",
+  "evidence": {
+    "pixel_method": "直接解码RGBA8 PNG的所有filter，按manifest的body/fx.frames逐区域裁片；统计原RGBA和alpha=0处RGB归零后的SHA256唯一数。唯一像素不等同于连续动作或美术通过。",
+    "runtime_status": "未运行Godot；播放覆盖为源码公式离线预测。",
+    "sample_model": {
+      "hz": 60,
+      "start_included": true,
+      "end_excluded": true,
+      "description": "从动作t=0开始每1/60秒按源码分段公式求floor(fraction*frame_count)。不含hitstop、取消、渲染/物理相位差；不是实机录像，真实首帧可能从第一个physics tick开始。",
+      "hold_resolution_seconds": 0.016666666666666666
+    },
+    "identity_reference": "assets/source/tide-picker-action36/inputs/character-reference.png",
+    "visually_inspected": [
+      "character-reference.png",
+      "parry-body.png",
+      "strike2-body.png",
+      "strike1-body.png",
+      "upper-body.png",
+      "heavy-body.png",
+      "abyss_scream-body.png",
+      "interact-body.png"
+    ],
+    "call_paths": {
+      "campaign": [
+        {
+          "file": "game/src/campaign/campaign_player.gd",
+          "line": 3
+        },
+        {
+          "file": "game/src/combat/combat_player.gd",
+          "line": 26
+        },
+        {
+          "file": "game/src/combat/combat_player.gd",
+          "line": 225
+        },
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 85
+        },
+        {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 59
+        }
+      ],
+      "enemy_lab": [
+        {
+          "file": "game/src/prototypes/enemy_lab/player.gd",
+          "line": 2
+        },
+        {
+          "file": "game/tests/whitebox_combat/player.gd",
+          "line": 2
+        },
+        {
+          "file": "game/tests/whitebox_combat/player.gd",
+          "line": 59
+        },
+        {
+          "file": "game/tests/whitebox_combat/action_visual.gd",
+          "line": 2
+        },
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 85
+        }
+      ],
+      "world_fx": [
+        {
+          "file": "game/src/campaign/campaign_player.gd",
+          "line": 49
+        },
+        {
+          "file": "game/src/campaign/tide_world_effects.gd",
+          "line": 22
+        },
+        {
+          "file": "game/src/campaign/tide_world_effects.gd",
+          "line": 95
+        }
+      ],
+      "backstep": [
+        {
+          "file": "game/src/combat/combat_player.gd",
+          "line": 109
+        },
+        {
+          "file": "game/src/combat/afterimage.gd",
+          "line": 18
+        },
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 102
+        }
+      ]
+    }
+  },
+  "shared_body_textures": [
+    [
+      "dash",
+      "shadow_dash"
+    ],
+    [
+      "dive",
+      "dark_dive"
+    ]
+  ],
+  "actions": [
+    {
+      "key": "idle",
+      "title": "待机",
+      "frame_count": 36,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/idle-body.png",
+        "atlas_size": [
+          1896,
+          522
+        ],
+        "frame_slots": 36,
+        "unique_rgba_frames": 36,
+        "unique_visible_frames": 36,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "60b7cc46d1c394548fe1a832766062e2cf85b5ed6ab8a95db88ba89880300aee",
+          "ff23b1a3af4477e4cf6a85fd8466bab3da9b3d3fc64bc2038569526960b20a05",
+          "ff2b751eb9513b7cd957d676542df7dc7558e0a38e298668a666f439471ba764",
+          "d6e085fb9c48b52d704fb68659eb5d0c813095abe953fabd4f3e5f75bb93eccf",
+          "27fdf2d2acb7f885eddf2e3c7ffe4c42bdbd5399bcd9d3e99acd8e90f5e3bde0",
+          "c83366b1ca10cbd4502b852f5d6630b02fa3541de4e66f571c310f65babef645",
+          "3a27b54c6792d273ec8a4434f9f86e4cb7fbc4b994a24510018e7f49399c1eee",
+          "0973af82b2e01f685173a5cdc489272345b773550c219b9f13bbb187d38fd811",
+          "a963a585690e0eb88d9b7429436ccf981bffc8d36bbde582cf8db5a2a679db24",
+          "e24d89041ce8a406101df2f7989015b410ed7e66b867d50c154e938df0c85ce2",
+          "d98e3f2678758a298ddd81c87bae4866328f553a9d786cded7f4189279c4f60c",
+          "e966e77993fe83da21a2360ab371668f2d6f9b291cfff2ac7a642164fd68ef5b",
+          "3aa75a780c3bbd15a4ab5154c7ad8224c3b2ae71697719245e2abad4ed67524c",
+          "3100b53b7d222cd5136f919f31d85caa026f1256d535c6e459e539066232fc91",
+          "7c93266eff1c8e81e3f62598b602de46424866c32af93a06171ffe5915845d67",
+          "575e03fe7b2f3dc0ae51cbe3aff71d541cde8262bcbe8edc73b4e53a9a9adb03",
+          "cb41ba0376eb4df76e11e65125132d0a83b4ce4b2e50c48a42c5fe8d1c8a1345",
+          "a8e863ffefa457dcaeab9c8170b1d03dc76b502087f10f8e107ad4402ff56b1d",
+          "5ae2a24669ad06ca60aef296aa7d1183661d548c1749c8438d3763127e7b3c0c",
+          "168399176b3766b6482d641edca419993ad7ad5f46a0d7309068411033dd2f1c",
+          "a85b638c8fce51655634663f2e6a9ae23ea208ff695ccd9c5f21313b013e889b",
+          "4db57c08fcc06bcf02f581784a25c581fd4c29a124550e7dafbe5ad4de881452",
+          "cd409186520bcdf3c91a7e5c79a54f0b77e7e5c92118da3cf5917d6b95c0838c",
+          "bfda373ac2c8ca28577cdde3d933dc72bfb87a661fdfe14ad939a2f7875d018c",
+          "2d7951281ac1f7220706d0097384df09a78292612c3a7792e3a50475b61043e6",
+          "349a6ec36e6f55bdfa93a2c64c6ab8138d2970fa3c7da54d5a331371c9374dad",
+          "dacaf93642344c0919388526dec20cffb83e7b274bba40459a536e8a4fbc4f9f",
+          "e6700e4f7b88085638d8b4fa30ff5ca39a7a89388efadd27892df0a62617fcdc",
+          "1224fee7223250e766c74ea4dfb21c38ce68e32610cf87f2e98a488146191fa9",
+          "62a2b6785f0865e1c49e66f33be1255220b01099c415d7c2af528c327815b590",
+          "1e5f8124399bb529df867303c50cf47d5c7e3c95f39aeffc286b14ff3e5e2dba",
+          "d7f0d45ae05b776fa46a6e404d43aab8abd36ddcfe3a959bfd5750dc48fbf40d",
+          "d3de14f2ab8aa4d2b104fb605ea0f109c32d0e904ab134e7a3269e0a8f23e58e",
+          "d09d1e6318b0354f2a48987a59332f3e69d330b58960dc787fd38c929cddd4ee",
+          "4f732d24b627006ef923ba6ff0032c5c63053793b888c2082e7fd90621a8f1b1",
+          "71ea36a5f6c0503fd6f9b3df016643980b21d08d2b8c209f0937237c56090912"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 36
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "按时间循环已有逐帧，不是技能前摇"
+      }
+    },
+    {
+      "key": "run",
+      "title": "跑步",
+      "frame_count": 8,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/run-body.png",
+        "atlas_size": [
+          1256,
+          172
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "10e95257970808c2cff9cc65b7bdb1d03e8dba32a7da1538653c54c9b9d9e7da",
+          "e14b02e2d5b295f5d189f7dbfdabe9cf764421f1764a2a73d5dcf8aaf7dce60b",
+          "b006f8e4d1153bec66d9a53c8be38cbda640b3cae6d5fccefc8e6ebebe349811",
+          "b43932e2e36ad95b8477b097b178d2ea1286ec195f1fa42d79a5f2e6f4bf161b",
+          "2217442cfa0b2d7d1c62403f13c506570582e6348dbe64deee7568970de10d44",
+          "2468c1168bb5721ffd869045f794cab59da4397575f9c13b023ba537a09c796d",
+          "0ebecbeba32171ed6488f7d5d8eb959eaebedfd5ac74d4ab2cb86be30a443695",
+          "7344383a948a491876d0b95bd623734c9de51454311ad12a89f7e7d65d402615"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "实际水平位移驱动步态；撞墙停止步态是现有设计，不是缺帧"
+      }
+    },
+    {
+      "key": "dash",
+      "title": "贴流冲",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/dash-body.png",
+        "atlas_size": [
+          1880,
+          360
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "bfa0e6933ecf1ffd9accc4465cc69e28ed0d47a6c432da9f8b952f08ffcab623",
+          "b57d815a048f3bbc085c473c57909f580170e501388edbd25f45bcd9666cc57c",
+          "8a11688eb3b509ca20cbc558a627f540bc88f7a215dc2f5d0bf201808053580a",
+          "2f16d28fca1f849d655e91dba63e142995b3cd6fb36c8a20cd7e6bcdb3e36f4d",
+          "3279e7ce315b78f5262ceb0ecbd17ce66f1d32a910aa3ff65afdb57a4eba8735",
+          "b1f8bbb5e3fda2cd4803c2d5e41b69edb7bab7f81e88eb54263d98bef3f3c1e6",
+          "b192d16d2cd9b01ab3b72752497980dcee5e9b474e83982d0e49d0152b2fe817",
+          "92868a85f392afd98418f4d50626c9846d45a8363cf7e80b79983a5ab73a6933",
+          "689a5b28f6db390be7e0cf0f02d3f4e03e56cc6c711756a5dea4f36bd58c2241",
+          "0d1bc3fda899833a9268e85b2ac03351b557f668c4ba94589df9c8fdffdcf96b",
+          "7a7b0d57aef9ad69cb7db33219a476bc53ec976af2f5028ac8f2d7fc818ec0e3",
+          "cb5d3dd91d7b845f96e120172d197fb88b70f316eb9c43f86d8800de3e57b2bb"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "strike1",
+      "title": "扣潮·横击",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.39534883720930236,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/strike1-body.png",
+        "atlas_size": [
+          2023,
+          408
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "ccc97659d447f85eb0255e8da083e9ab6e4ab5816cf068a94cd2fdf16683e0c9",
+          "d557a784f8a67709013316e49526b419d139764fcb186b7ce524ea4e09990056",
+          "1d30bcc9c5fbe8aec21a1e3a16c3abf09d7da5427b43c97709c13d3dbbb77cc6",
+          "72982a1401885576a1b6b144bf2f34649810201f2ab6a4364bdb90b10f90c15c",
+          "09a3a8d7951d30ea9e6b08d3bbbeb6f7a13eb4fc3955f0b616ce0471d240346c",
+          "1ad00715a023eadef96ad96a3ab199eb3a00a39bf9a83a6ef59fa587e3afcbb4",
+          "e56efc25f2fdcda8c74329dae5c18e4c99d7eb948b3fd0971413a4fc11b606ad",
+          "4bc82da8020af71761c1cbe3a56fa0cfd792082d5703dd408ebbd4a3ac6606a2",
+          "66a0ecd258021cbbc4d34860d581a1d33ade8f0d18c16d19b9d3d20100930ada",
+          "4ab67a69e4478abb87c4829c5d32f63db40fc0d287958ffa063a04d8c1d27737",
+          "2f0a42dcd93e20b669d4013db4e121aa92d8845b9f3cec56878f48d783ac4b56",
+          "c29e79644220198e8fa32c2c63b5fd833f5993a85ac0c0ce88daf0915568d0c1"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/strike1-fx.png",
+        "atlas_size": [
+          1960,
+          260
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 6,
+        "unique_visible_frames": 6,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            2,
+            8,
+            9,
+            10,
+            11
+          ]
+        ],
+        "visible_sha256": [
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "ae5f0996f614745ecc7dcb04cba2de922f4829dd5c5cd040d14c0deac5cd900c",
+          "8b0f2845f717d1fd8065684217fe22f51498b1f47ba3cae1709f6f35c1c5fbe1",
+          "806642a572a4dc00f95411754ce779863ec3c0fc72725087de9355df99dd8f0a",
+          "414b2db91f02204ab5925087a292aab267302606513d61b445520bc48fffac8d",
+          "b0aedd18d624ac05830ca30420b5e6bf9c37317ce5b4c8695aa16c279011cd60",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81",
+          "c9b1f2acb3ab69fb551ee58707625c6b5451a2296e23e74f93039240ad0b0a81"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          2,
+          8,
+          9,
+          10,
+          11
+        ],
+        "unique_nonempty_visible_frames": 5
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "hurt",
+      "title": "受击与踉跄",
+      "frame_count": 10,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/hurt-body.png",
+        "atlas_size": [
+          1960,
+          434
+        ],
+        "frame_slots": 10,
+        "unique_rgba_frames": 10,
+        "unique_visible_frames": 10,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "fd6bd33ed87eece7a2f93602282ba1f8e717932b4b6fa44ccd0d8e05d7cb3ca7",
+          "1f9d9542cf245d7cd28d6c04d8f034830f2aa0902fb1641169f9525e55032b44",
+          "96c29667665a7ad27eaba670145cf145e8778f1f3d1f62421b789b22262cdbd4",
+          "93a185ff622d2a46dfe47dd173187049ab37831b7ac66a133308bb06a70cfd24",
+          "f10870ca1bf6770bd9c8debcb141d3b4dd80d682e69dc3885429b05e817dc00e",
+          "1fbccefdaefa4466bc78bcf455aa61eeefdbd44cb69d891c3b66c53c907e9606",
+          "ab952efc2d8701dedb2c742c5643e2b7c99260d04f51b45681a7009375515331",
+          "a33fd6088c610c7ff01f725fbce275f2ec99b236d907015e114058d1aec3a880",
+          "5607efa9c7628135a033c30a74a02dfe3853b3a888f7422f2e9684d71fcf1c2a",
+          "b92e44eb2d83ff2a50f62c19339a1615b1d60c1dc550ff7a08a959bdf4a0b6de"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 10
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "walk",
+      "title": "行走",
+      "frame_count": 24,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/walk-body.png",
+        "atlas_size": [
+          1914,
+          549
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "07fd180bec1aef10cc7ae2f82c2ff206976a5229d1e1ebc4b5a412578763c4c6",
+          "f0bee410251dee0adce02ec66ba84efe5afa2462fba204d48ce13988d9274e08",
+          "70ba4761e3fa2de749f580c5276119ae4a0bc8e552178fd4a4ab6c64ef68c4ff",
+          "4d0ca4dffca45ea8073418351d71676d5a70cd623dad74fb8f17a2852dfe6ae4",
+          "8dfe4afba5d03f44148504b97f7180bab1e7022206c45e615b3a502206609980",
+          "7b4e1cc01533670305b039fd104c81f3237feed4532d8e69b22cc4ba4c1524c3",
+          "45efb068a6d4d1d3d08b4901546e2a5f4e03fddaa241f2117c5a89cca11fb421",
+          "408b240f5658134e4a7cc238bfbb03e77bc1102429efbd920ca6106170c2f3cc",
+          "7127b7332bf4291350508744f91473370b83bacbabcde150c684cf6d6b1037aa",
+          "d665ab56f96d6cde8a8657b13abb5e83f1d68f63eb4371c02a70547679a62ef8",
+          "33bcd6807108e987c53bd83151b22b0367ae7522bd5ae7c6d177cb4eb6507c56",
+          "f0ef4786d281bee82589f427926ec2c33a2cf4550be770858c2dea1b04dd14a3",
+          "5b9326ad57689e752d8f08f47fbc4b2b42b4c6a9c71ad7ea3337d50f67cc5d68",
+          "bb323cfa36894ced43fa4aab7bf169ac659dc84b5d2ee216df9ecc2a007af8f9",
+          "798916ea860abad03fbb63ec2e61fd8979f818ccb85b3f4e3337f2f7e38b111f",
+          "e815f3ff3b336769db768b4462613e73c83fd9bf6f557bc0ffd89e789fb605d2",
+          "77ea0616bf760feaf9a4a154738434fabf9de374ac3d8c249e42183cc40f9df9",
+          "1e33d3d6f455a529840903ff8e82ca857395a99934d5b49e1bf3a0ec42f7b76a",
+          "1270734d4a6835cdeefc8af7b8c06f2e2644d664aeb9bf1fc68e5728b4f9b693",
+          "ee71a6b707bc10123ee13660e89615a9a420e7125f10e8ba66cab3f62c20457a",
+          "47a1a4e30dbf68b1055690e2a7e2f7d178a9ce1dc792d81cc2536fee0a71551a",
+          "0c3cefe9e8e05cd85762e067c3e0a4d0386903312170310b21653150ee7dce1a",
+          "6eca0e9c52e30d07d6e6bafed56e5dbb007ed611682d483ffa8c999e337bd432",
+          "df32184dd278b5ef3d0010a4eeebc33d772347ebe558b2f1ff09ce6e9b9cb73e"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "实际水平位移驱动步态；撞墙停止步态是现有设计，不是缺帧"
+      }
+    },
+    {
+      "key": "jump",
+      "title": "跳跃与落地",
+      "frame_count": 18,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": {
+        "rise": [
+          0.16666666666666666,
+          0.3333333333333333
+        ],
+        "apex": [
+          0.3333333333333333,
+          0.4444444444444444
+        ],
+        "fall": [
+          0.4444444444444444,
+          0.6111111111111112
+        ],
+        "land": [
+          0.6111111111111112,
+          0.8333333333333334
+        ]
+      },
+      "body": {
+        "texture": "game/art/tide-picker-action36/jump-body.png",
+        "atlas_size": [
+          2028,
+          404
+        ],
+        "frame_slots": 18,
+        "unique_rgba_frames": 18,
+        "unique_visible_frames": 18,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "b60191b4b79f12947bcc12331498f8293a9e90ded9ff646656f1eed6a9744045",
+          "57e8a7e06ab75ab699482d489315e14bebbb93d94999a34b75efcd31c0dc08ff",
+          "0b31245c6e7699084f3b92956190cd485b4e3d595f336394bb2dd84dc342c9ca",
+          "f0600af3967929986efe0c134914f1116eb2f87e88729cfb3607dca54aa434d2",
+          "91828944bb25fd47e807d83196120841f1cccda05e4eaafb3e46f46e786a1e33",
+          "208db9e8c50d99b6c9945e516e30d6a9da99c27193835d22f3dd4f2dec9b8e74",
+          "5bbe0f914c67840a7429b384bf02cd65d51245156f45d2356fc60c3117c63d32",
+          "215d28d022a900d0e68cffba91f3de584043673d410b250633db0bfd4d4f91ae",
+          "13798261514717eac172933727f0de31b1fe3edb1ee2fbe125330725d779cdee",
+          "a1b8f7b50129fe6838bd8e2b5223343a766af2256dd5a4d2529945a97488773a",
+          "ae30f8ca71b3abd43b5d1f47c501dc2bd6ecf29ca2726e84fa616c323a3adf25",
+          "fa7a290c7d4aa0c98d1238fcbbe9f01b2d79b3fee70f51183bc6c6bff18eb25a",
+          "a316a3cd921a81d6427e2a7750421743a0dab7efe25c3e5b65fc48c48e96d714",
+          "b32677bf2b68fdae8378d553af2ce0910b90641217e96a9036ec25cce5d26998",
+          "7973191cf356cc0cec05251dd44a9942b77ede24a09f676a25c2415d70d75a31",
+          "baceb29e640bcb75474011855e1e5a2dd9e63cb34e4e7f73a4a48a37c3a62730",
+          "6dd6b398badc6086b9abec1bbdb43c260d1b9ca1c44c28b60e3186c2b004a3a2",
+          "209f289765ac6f3caabab4551faa2f782d83579a6573cabd5c24b33eaf3edc0c"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 18
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "rise/apex/fall/land各自取相位区间；常规跳跃连续区间覆盖索引3..15，0..2、16..17不进入这些区间；后跳另以jump全段/.30播放，不能称为独立后跳新图"
+      }
+    },
+    {
+      "key": "double_jump",
+      "title": "空中二段跃",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/double_jump-body.png",
+        "atlas_size": [
+          2002,
+          424
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "b8edab4057de59bf99c51207beb155a08888e7c5c695c71ee4adc4c2e26e2e5d",
+          "59646c65a6f0ed893644584c7e0e9675456e84444f8e7db132eab77df0f73379",
+          "fc917b5bb2d225e52a09fd4bcd09b700c67faf65b16d57837cb998eb66328474",
+          "ca652b7a57cee6a0c6d39fd6bf9bb842bb725401c60c35bd6b39ef6574efdfd4",
+          "3597754d101fc27600906dc6fa8ffda0e3331b6ab989e0b7543f49ae7645b989",
+          "1c2c59418bfd541ac7a618492b904535339247bae66229f59c5967179e96a78e",
+          "bad1a6879a1faf7ed34bf265ce491d382480e9e79d12946bad6aa1166afe6101",
+          "af5bcf41c45d37b5c769f35a6054e07111fb1202077da5a46defb444c75ef132",
+          "9a9f4907c672bdb7a328dd091050ea86cfa5181cdf289c65a8dcd9c92eb5e3ed",
+          "304270fad2c4c4afac6ef57f573959650b3604c45356510dc852fc7388ae681b",
+          "3da13010b4b29ef4d2c6b414d2ccd9d9b0854168a701c03acb3ee9ce107e21e7",
+          "e2dcf776ead3117fd726c5adc8fdf0a731f602069b18e3378e119b2296f58063",
+          "c7b292d80215254f670423c9c10a508e485e6d9282ea3c8cbe4fba7931eb616e",
+          "8814d60e1ecb12d006a1df72d091d9e523ba069919028dcf907cbf8790d200ef",
+          "92c85604d3a04cd3254a302e08a45d0298228b5639627f666db8ef8f9b57fb0c",
+          "656ebbfc6d4af45132827675bbef09f84a8a1eeafeb70ae9df0f6df25ebdde17"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/double_jump-fx.png",
+        "atlas_size": [
+          1584,
+          34
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 5,
+        "unique_visible_frames": 5,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            14,
+            15
+          ]
+        ],
+        "visible_sha256": [
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "a33b81f04dc68d45da5436b4479a887e0bd8577f1f6304424a8ca9315728f63c",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "142a03fb4c7799fd42f0ec8150fea72a481fcdf495aa85d41ffbca4ddf334026",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "2513c48a966131fde50b12cbb187aab2916dce7ba406becdf0139f90eb21ff50",
+          "59eb3555a12328f62de806e480de1ecb0956adc2c9888ea11df020df9a1955e8",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad",
+          "059676fef577eb67fe4784573d53dc6ce3f835509a3fbc424e321e25f8b53aad"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15
+        ],
+        "unique_nonempty_visible_frames": 4
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "wall_slide",
+      "title": "贴壁缓降",
+      "frame_count": 20,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/wall_slide-body.png",
+        "atlas_size": [
+          1924,
+          382
+        ],
+        "frame_slots": 20,
+        "unique_rgba_frames": 20,
+        "unique_visible_frames": 20,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "d2915e8bf3c4ddbed4e02618027ac987e7dd8ee84aa41b858d7fd2eca8c0bf98",
+          "37a7ca30ae2385f5c7fa3e272d1976a7f6df8176115eda23042bf1eb8456e716",
+          "874ea8f966528c5b50d7341c751b5a0e7a0561de404421e1bb686ef4a38d979b",
+          "13854710dcf6d5266ccbd7ca722ecf3669fea8eca7d2330d9cbfb507d14c2f84",
+          "6418d4d44c80d3820409d5ea33aeb487a07429d509b3358c5c2cc1b2f888f464",
+          "b4c1a5907112cfa7f9427f88ffbe55e9acbf06b88fc52e9e524b7993e9bfc5ed",
+          "8390ba92078e80050745c5b15d8e8b820cca8d386eb26958810ed62bb3248d5a",
+          "59c34286a9563510aba5e81e0072583bfdf1b246cd5f573e0fe59750c56af6bd",
+          "7405ee6c3785b86c97730ee63093c26434ceefac7bdb2f10242e1313db7ff19d",
+          "00955bc114c54f92282dcdd2ca105173bc077161c8fc35cc2617b7f71ed2ab5a",
+          "abe3c69c5c0d6a5a59a38f4ef08af67eee4ad6d148ce7ad00746bb1161a0a4eb",
+          "b64df4191a406e794cdd6b522cd8afdaf621dd3b9b52436fe1c19e794f9ceeca",
+          "fed0dc0a02dc1149f50b8a4fb5c121fdff010421d2291cb4854fc8edf78bca90",
+          "a0b72d384d3c126ebeef399061fb49842f0a9eae74c19e4e93764e95af3b24b0",
+          "92d441d29a0fd29ecbef8d5e0320ec44b168c527174a69016c52acf3b803fac7",
+          "1abe6281d5439868a77afdcb4b36349505ffc50116e1863dd229f61552562510",
+          "2b6056eac8dd2292f3774e69fdfa8a301626fb1a138db9606b233f6f8449ea21",
+          "3c92ea6c73fcb0ea93e52819331f0017b3ab413f23e9b5b6d3effdd16249dd12",
+          "cc7153cc4eb33e6ca750b715d00e5f3a7a43e5eb8b005357f59a08e1bb05f5f0",
+          "b412b0cd8a777c182cfe2aecf2f943c42950c0f3e403727d75ead1553a6dc2c5"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 20
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "按时间循环已有逐帧，不是技能前摇"
+      }
+    },
+    {
+      "key": "wall_jump",
+      "title": "蹬壁反跳",
+      "frame_count": 8,
+      "fps": 20,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/wall_jump-body.png",
+        "atlas_size": [
+          1328,
+          172
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "b3aa44142995f7c986ca9e644781e8ce2b1c1ac02c2cc42ad39cc89f0a0aa58d",
+          "8b0aae0127ad4de4ebd11493596b7b7fba832e062b7a05cbc4506bc93bc6e4a6",
+          "eafac446fd1f6433e9fe1d78a9c9fcde3073f4a3422c083969abd4895a476f4d",
+          "a62830fc436be213eabe0261bdeb794a2829241d1747f2dee003bd360c0f2d3c",
+          "c5594c3bb6c2fdaacb707658bb2e8d09fbe6fc8d9fdb9e0f26122f6630a470cd",
+          "ba2e58ab398e501d1ebb5f31d03198a7970dc5126e5797e8cc89a6fcad50b0c7",
+          "516f5e0acf1f32e43862ca28eb015ab2b664235a6d87e269b12c5daf29d8d190",
+          "c5c18877bb0aa4391dc3db795f5e96ad64e6d754fe43c9657370fc1262ee7356"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "float",
+      "title": "浮膜滑翔",
+      "frame_count": 24,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/float-body.png",
+        "atlas_size": [
+          1820,
+          712
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "16bfc97dcd296aa3699cc22b0678e15fac3effacb4e4bf762de3cd0b88a68b71",
+          "79623a2899b1e09670ff1748f37d43f9210841899c51320325ea705e2081228b",
+          "f2a83a3f255e70a97402eff981053690e740ba6df510bbc03586978038d66039",
+          "265a320dcb93231f6d7a19bc3d60c4ecf80b6e3633892e92b60f4c145a49280a",
+          "76424d9e99e2ca98abf93cafb97b57b69495df4ad8fa209d4016cbd8ad744aaa",
+          "b7eceb6b905765e9a19bd9d0864295f84f1d807d6db6c62be5432e9c3678921e",
+          "176ae86fd835563dac62d72e0f60f272a6fda80ac0618e353ab202e2c6b879d5",
+          "be6a959794a7d386ccea907f6e0ddef665105f34609eb1550503d42ad906e9f2",
+          "f5bd6e49ff5a31599284603ce05f03a4f13ce0e2607142b298e0788f6b089647",
+          "9671b575e273fba4c1c607004b4ad4e0d13397850ce8ac0521613576674f1cb5",
+          "156869146619848636c7a59a92a9e619e9075b16ba98b2bba1f3e4795c63d9dd",
+          "ca5f509b9d81b62d30ee5a58f17811828555cacb7ac41e93f38974867e34072b",
+          "b08dc2cb1cee435df1fda73086859b7d5c956b24cf60ecd18c15f953ab7e668e",
+          "729e7d12e2f112cdf69dc1f344ed3500f94e029c36703a3c141273cd97a07d23",
+          "a176992b14d7a8006b8e329b9e0b145d723d780e431148bdba3a13a598e79a29",
+          "071b5ed64728bd95f3e172d5c5c9cef0798b53f98928a251bcc2ce33812fd7b9",
+          "7966ab9e821ab08bd8df60345d3a2cec8cb625b9fb3f9c0d6f41631a756b5434",
+          "5ed71778a3e22f1c978782630086fdec9e46fce6f4b29dfb554e2ab96c472c4f",
+          "29cc5e1a67e619a3ec5f9b343e934a23c79b7f4dd28bc3fcc15607fa36e31650",
+          "e47a2a55af4d403f0068ecacc9a4ab31cc347b0fac709fa65253ffbc5791cff3",
+          "5aab11c3310b976caeb4a0941751214e4065a970111069155bd57c86c167c660",
+          "64dcd61cc7ef12521a0a58ff9d10cc28626467a05bc6d42cdeee2265a948e2cd",
+          "1477456176606f061465215def7d9740033b3ff3b44522983b57c58592f5332a",
+          "3c72f7f09492c45a5568404a0e2c4bb10d9f3b4a24253575792d5d6d88e5ec00"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "按时间循环已有逐帧，不是技能前摇"
+      }
+    },
+    {
+      "key": "anchor",
+      "title": "红索锚定与脱环",
+      "frame_count": 20,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.98,
+      "phases": {
+        "hang": [
+          0.17,
+          0.8
+        ],
+        "detach": [
+          0.8,
+          1
+        ]
+      },
+      "body": {
+        "texture": "game/art/tide-picker-action36/anchor-body.png",
+        "atlas_size": [
+          2025,
+          810
+        ],
+        "frame_slots": 20,
+        "unique_rgba_frames": 20,
+        "unique_visible_frames": 20,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "f007860a2d299dfdd7aac07a562baeeed9fee53e27fca44fa1c94db1ee08fdf5",
+          "27299e8a3dc53262e3f5bf05103aed43881dc57a9a801184e91c3548438588e0",
+          "59874e74cbe5d1af3b5244bbe6c9c4114d369688c0343df6dfce5c818977aa21",
+          "d9ab27c4c0a3d2095e11c4b18e2ea0879a3cdc5a3fe7e3cccd87cc24a147ea19",
+          "f235e8f3c6a09c6fc89b40652a94be2c59f8d9a69f82d6e998b0219d9dcfeb26",
+          "caccc478b9e4af4a98ae826df14f199b586277b63c1ba358b77a3d2db6808070",
+          "5fdd12b8660d38c33cfaa89870251de996464a9b0900b765c37e473bf20c3177",
+          "b0f97171c1358935d7257f8889e2a4b08f07e41d74f56d12f6c6dff802088c9e",
+          "88629a9f86654a6762013c1b3bfc8a5bc52b1815d5e27196d2ff40a44c38c961",
+          "b9767c3eb1c83fab6218706200ffafd8ad83047efa528711e5c07ac88fa30acf",
+          "7eee5890b4d609acc542e4caa5606a03d12b531aafe13d4e9a4ff3d872c5c2ba",
+          "c405d95dbc4b0f4473836183264b7a2a36dae79a8228c9b805bcfff388d6e6eb",
+          "244c4fbe9bfa792d52baf941bc3163890ac0ead20c0a8deafa2da2cb44e2d2aa",
+          "39570bf96131d483cec448dec2635cc8e0c8d5d0a00912b56d96931660299f77",
+          "66ad5bce147d6058e75bfa7ccfece2661645d981d723c1258246e53c26942d0a",
+          "17812d54dd937308bdc8289267cb4ada53f76bc4f05f8d6ddda6b8e0d58f7540",
+          "602008657b1ad275a0ae12fdb338fd99b8a25ad8f1fb94c251437e23b90a1436",
+          "6bf90e26926f1240b1311fffeb334ef0954d4ae64cb03f17878836e548e3bb1b",
+          "2ff23ec1374d53f7b26318f7f87e50aec6287bd0c0c4e2f61b6e8994162de178",
+          "8dd852f2879d6ce2b1ecc9443c3ac4c678920e96a09515fc817b90cdd1f762e2"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 20
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "anchor_enter_time默认.08秒进入，hang区间循环、detach .12秒；非整段20帧匀速"
+      }
+    },
+    {
+      "key": "strike2",
+      "title": "回拨·斜击",
+      "frame_count": 8,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.125,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/strike2-body.png",
+        "atlas_size": [
+          1656,
+          249
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "d05800de78ae032c8acc77457be7b04fd327e6ca0bc401ff3adb3893d38ca8c7",
+          "bb5b77fe9569c531faab80f82fd25684bdfb89b1d9321af55b0ed789024ba32b",
+          "0a7ed863557a430afe55350d9ce22905f6b17af03c10e8878058f87f714e42c1",
+          "13bfdd4f1f47807a7aef4fa402c985916eb5c49db556e54f770106cd5288da03",
+          "dd90ed0cc9486523d4bb9190f107566bd4f3750e79ef99c89491a1173e155cee",
+          "f4eae68c0d1b100539c76e79865e0c5c0141a0d34f102ee009565c10528e4568",
+          "a80baf07330adcf6d790c684c8cf7c35e9c467c1e32ae87835ef73dae288a773",
+          "defeb0d01fb4430be6fa042b7f1ee0893a38812693e2c47f3ecae72485acbf71"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "优先重绘连续回拨序列；固定30-60ms前摇只配1-3帧，主要补命中之后的连贯挥弧与回收",
+        "reason": "event_phase .125 *8 =第1帧命中；前摇只有索引0，wb_backcut前摇.03秒，现有8姿态是离散跳转"
+      }
+    },
+    {
+      "key": "upper",
+      "title": "挑潮·上挑",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.18032786885245902,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/upper-body.png",
+        "atlas_size": [
+          1824,
+          464
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "469c2b725da343ece47471c6c6ae83d85fc7e38afceed6fcfee3f9c43c7363ea",
+          "28849faae52dcadec88c66ab936528c3b97ec1d42ad02c981982903eaa038df7",
+          "e195918d5c239b1d9de2349c59956acf267bf6875e76d8ef3a5346d3daa70b1f",
+          "9effa50e2632fcc29b74dbf7b1102698813227606d0cf3df82a2b4a688008eea",
+          "9b5168ace2e4d7946642d5a8b7737c210f03b6c06fb8702c22b0102d539c8919",
+          "1d2aa9cb3e578210a1b8b7f13a4160834a01d732b3ebb7b296677ea52d020580",
+          "b970a4ae41f75e217eb5b9eaf1bbce12ebd62ee244cf53e5cd8a7791488b7ced",
+          "086313d2e00598a7a2ffc50f34926e9fbc2d29c0d8958d106b4f0a076e2c8424",
+          "b814e7eefdbca3e9f5d12bd346f7c65732c583a16c07d1e89f335666db169fe4",
+          "def77926231143474e459faa0c8c53a2d08fa7a190f871488f67a3ba37e36022",
+          "47f111138b0a26db167cad63733ec59d066ac5758d3fc623abfe237d8b586f63",
+          "620944dbcc515bfe35e50b68123566ab8b62cc2d097271af1003e3dfb8dac199"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/upper-fx.png",
+        "atlas_size": [
+          2032,
+          96
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 6,
+        "unique_visible_frames": 6,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            2,
+            8,
+            9,
+            10,
+            11
+          ]
+        ],
+        "visible_sha256": [
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "29b62a3dfbf5636bdb2b0eaa3d461db77ce07d239e47712a989e4ff1bb94f645",
+          "55528bfffd36af2ab0b8a44164ac92c7fb1353480fc6965f69b766120d2b4a91",
+          "d1d6051f6eb55afd24d02c26618dbe3a54e00d4782c99a58b3975476038feba4",
+          "d1edb21d040b08146c3f14a23fd9b7399effa942e299fc994c3515cbe1b47486",
+          "85e0810c479e0a2784d0eac9f6b76eac4698f6b701482f9b35f44e4ba379438a",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280",
+          "b26be27ebdf6e3bb24e8032a62d6de7cee4368a639d4892f9c44d1c536b06280"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          2,
+          8,
+          9,
+          10,
+          11
+        ],
+        "unique_nonempty_visible_frames": 5
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "pogo",
+      "title": "点潮·下刺反弹",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.88,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/pogo-body.png",
+        "atlas_size": [
+          1969,
+          340
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "5957bdc1abf20d017ba9b563622e6a88b1f1a31f0cf75e8039eda345f5c128b0",
+          "17626d802e6d4de812c4c57526efdd748efa464e498be45b1fecdb4e32956223",
+          "e360ded5f0259704879413001b64a8662f2824adb1ebe625206b2fdf54a44951",
+          "1d7a1d266b514e3f9fd5c0d98df3564550d88b817ffe3479d53b1ece9bb4eb57",
+          "bb6c62d478bf5f1af00e6ac0b8e17411fc7e8c49d828294a6d8f3726206e08e3",
+          "f7ee5414c4da97b868f78c3bffb8c3fcadf6371541d41fc2173ee0fcb27a22ac",
+          "c5ed3a7ef31ad1e418c562df5dd044c76564a52ef985b3366c6cc2e3d619fa7d",
+          "9e1ee627ccf7048b75ebf83e417f837e79eaa28971a19cea1ea8c444e36d1956",
+          "071a4d1c8645fecfdacec4c01379b8d526d0ffb29c8bfe65b57202f427847f06",
+          "981655ce8d3c14153d6684b5eaeac2f57b93fbd1a1e2af6089aff0a8f56f5044",
+          "c78f344c70a44f635a1b8a28d9257d91c23e0b06986b640267fe191e0a61beac",
+          "6073a345aa5f9234a74686152e7603a9b56d32595f442670fcd86db5681c7616"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "orb",
+      "title": "叉鸣弹",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.7056737588652481,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/orb-body.png",
+        "atlas_size": [
+          1832,
+          302
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "1364e54b4903a9288fe7c08a91278482b1de7915f384aa1c64705c6caad58ccd",
+          "0ef2979f0c07abd9e6672d946be46343bec3438cbf3d92eda464e7c5d2ccf403",
+          "dccbc9787d3934ec4830a45ddf0ff79fc477481430d1c1da0055501dc40fa3dc",
+          "1ad7674497eb509dc2f5506c1af5e414b1f02a234e20eeb65461564b219ab8c8",
+          "9ee36fda25045085a28d392cc8a94d7b77a4b80dc7fc0a2eef592f801371ee57",
+          "7c0c20278ebaa11413ecd2929c18dab6532ac2666127adca51cec12a67a5802f",
+          "cef0a8fea5bfbea654c6912ecc732fb638f8572c0c8b925d47d57e7f2ca2a964",
+          "327f990eaa8161cf5efa9230a3eada85fbd7f79e5179e27a97b034ea3ff459d2",
+          "b3e0e6ca6826747e0244f655d2c03c31285118a17a44d6719258703596afb3c4",
+          "5b02db32b87ba6faa19eab4135747fffe54be1b3d586d9913a121b70cd178cc3",
+          "68cda26fb09c5a0385caa062231d4d004c2c18b4572af637e8117ccf05a2992a",
+          "b9e8b36e6e05657f48dc10a69be265870730b0add8c4542b582c719e0d0433d1",
+          "9b2938a2d5839f46f60799774ee281e4424b134b0e1f51596128584eb16068f8",
+          "7ad42712e0ddbe88dbacff198d674a58256e44a574914aeeac357adca83693ab",
+          "9e9c21f20713162242bf3dfe3960b6c56041ded864b05a32ac59336ec518dbe4",
+          "a6164ba2dbd5d287846c3ccff270456215bb382bf007f4310bcd60fb5e9a0de3"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "heavy",
+      "title": "重鸣·涨潮环",
+      "frame_count": 8,
+      "fps": 16,
+      "loop": false,
+      "event_phase": 0.5,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/heavy-body.png",
+        "atlas_size": [
+          1152,
+          182
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "ee7d9064627fc176a0de4da1fdf285fc71ead544bf2567142017299f787342de",
+          "7d52f6ed38e9c90c52e58c697c0bc1789bbc6ed383b1be70a4ab2dca3a334632",
+          "30d6ded4b198250e10778246fd2c6b41b520f4ba331217b5f76d827bb0bd9cb3",
+          "1bce162005d8593c68f782cec9d1b70d133d1077a5860a8b301d6a667ebea1f6",
+          "7365c51fdbbeb2b1dee62aeb757f45b9ef60d3adc46ac313b2579ad8fcc7d164",
+          "d7c4d4d9fd3f3b704f5fba92207ca94f89e43e75904d335915a6e151325caf92",
+          "f85b104ec2eca8ccddb589431dff63ecd3da701fd33047d692fafae7cb53e317",
+          "0a842dd3ac15df02c7d9063b5927a0141f83b3c353d78ba1703b38da873685ec"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/ground-ring-fx.png",
+        "atlas_size": [
+          1120,
+          224
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "ae90d8233b36509f5529fe340b38124759bd91869d26cfb0f409d537b372afc0",
+          "6a4556b21935ef68f516591de322752e9d829843f78b579775c6df93b8a286f4",
+          "9871b86646d8d31c58299fcd63e358e9096adbb750d2f641bd6f951dc0fb1c9a",
+          "d3f8d287869e2799d21a3f9b16bf0c012d2ff790ab3ae66973c83b3bde708949",
+          "20283c64f492361732dec8f0839d8ff58787023181c64c411c1b32cd1c15fb72",
+          "9a7679eef2b6a0f4e2eafa5c59448a20e360d6ce41982113ba619d38788d37ca",
+          "3fa13b283cd42678c973df0466a14bc7e6979ba3eaa248252c9dc98436e4c783",
+          "c3ec8c880ddfdba27e60ad7e17c64b7ab7a4dec551b3cba628c7b8adf66df27d"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "世界层按事件播放或未选择",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "本体8唯一；FX本体层排除，世界层heavy:release才从事件帧开始播放，无通用起手FX"
+      }
+    },
+    {
+      "key": "dive",
+      "title": "坠潮·沉钟",
+      "frame_count": 8,
+      "fps": 16,
+      "loop": false,
+      "event_phase": 0.5,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/dive-body.png",
+        "atlas_size": [
+          1128,
+          198
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "aa2e974cf293f818f92b4c7312ca209ed9cfa510a39d6836525cafd78e988ace",
+          "0b8788133960df4d77b34622722ef82786dfc6dc6365ae9a3c35b23c89abcefa",
+          "3eb95039bff7cb955d80540e46d3b8ab227a438bfc077fd42afbc268696a6b0b",
+          "0087d65cb8540958dfeea2d28bf22fb39e22e68e3219a4f8f5cbce097e25700e",
+          "a90599851a76d24699b2d4b0e69d6c78b1f8559f5427c8ac8f47d4fc5e9fffaf",
+          "c0286b26c0cd7e74cd58bce8c9670fc975ed9802413762e5b7d72064e35cc8e3",
+          "cc2a55cee9be918c7b5ac5b1295a6532e5619a84d136930a9a297dfff480066d",
+          "63ab9c03498da42d761c9139d9f809b822a8c38be47aa219c1133a2f0f7cdcaf"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/ground-ring-fx.png",
+        "atlas_size": [
+          1120,
+          224
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "ae90d8233b36509f5529fe340b38124759bd91869d26cfb0f409d537b372afc0",
+          "6a4556b21935ef68f516591de322752e9d829843f78b579775c6df93b8a286f4",
+          "9871b86646d8d31c58299fcd63e358e9096adbb750d2f641bd6f951dc0fb1c9a",
+          "d3f8d287869e2799d21a3f9b16bf0c012d2ff790ab3ae66973c83b3bde708949",
+          "20283c64f492361732dec8f0839d8ff58787023181c64c411c1b32cd1c15fb72",
+          "9a7679eef2b6a0f4e2eafa5c59448a20e360d6ce41982113ba619d38788d37ca",
+          "3fa13b283cd42678c973df0466a14bc7e6979ba3eaa248252c9dc98436e4c783",
+          "c3ec8c880ddfdba27e60ad7e17c64b7ab7a4dec551b3cba628c7b8adf66df27d"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "世界层按事件播放或未选择",
+        "new_art_status": "建议下落姿态短循环与起手FX；深钟复用基础本体，应先确认是否需要独立外观",
+        "reason": "起手.14秒映射到索引3，落地前保持索引3；落地后.24秒播放4..7，ground-ring仅落地生成；下落保持符合阶段但欠自身动作"
+      }
+    },
+    {
+      "key": "parry",
+      "title": "迎珠·偏转",
+      "frame_count": 6,
+      "fps": 16,
+      "loop": false,
+      "event_phase": 0.3333333333333333,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/parry-body.png",
+        "atlas_size": [
+          936,
+          170
+        ],
+        "frame_slots": 6,
+        "unique_rgba_frames": 6,
+        "unique_visible_frames": 6,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "8bd138452b165b910d88537bdba232231dcdd76d4ac8b2068bfd0e0fb8724706",
+          "90b54cd9d2a0d756445afc04954e26c034ff4d46c4ad79cf42050cd89a7510ed",
+          "33e9ef7060aec2183f289d0030913003485a9ac158f3e6421e3183ff3c81e8f7",
+          "d104f55c9348546c62caeef54e60314b1489a8c03479a43f618fdac7de67c96b",
+          "5af2010ec5c4b7dfd832c6e3d6d410a4f9238c4d25ab4d43900ec8accf0fd76c",
+          "a4b74ce9699377ea760aa5e6a6f6dc0ff89b00dcae616baf38204ee9a3c14c5e"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 6
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 101
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "建议连续抬叉起手2-3帧、持叉稳定微动小循环、收叉；持盾微动必须仅由呈现时钟推进",
+        "reason": "0..2在.02秒内到位，.02.. .55秒接触帧2保持；按住格挡会把state_time钳在.48秒，可无限保持。不能用新增几十帧改变有效防御窗。"
+      }
+    },
+    {
+      "key": "heal",
+      "title": "合灯调息",
+      "frame_count": 24,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/heal-body.png",
+        "atlas_size": [
+          1968,
+          348
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "c1b78900a3b590d8671249885b66556765909e206791c464a099285e8db072fa",
+          "4243bd987af1d9cd8f312ff229f8c6362283f12f5b4e0a0836a6594ef46b5827",
+          "e82ba64c36d320681c35bf5248ce572a410f98457ea509e7b76058e7ecc7b0c2",
+          "3601e72333ee731ae47a98e51bae5e81465a9667ddbbc966eb80600f72c201a1",
+          "b393d364b474a6cfc33a96a16e63f28c1ad08173c7f486167a6049728a84fd41",
+          "230aea5035e359e64afab00c03d0ed8c594373d326b3688765373ea3c3e25457",
+          "892ab06e56e57f778f3f495a0f7b0ea955c571e657916e346bef4a15aa1eb20f",
+          "3de333f1591e586f275750078b088e486a5375167aea1c35d6424cfb0271f711",
+          "478a3cbf590be7ace8503208731693dfa48d9c8a97549783a163564275103dad",
+          "4d438db0aa51ce34731d9b7e6cb34b0c371a4cec0accc4b956f7163c3217fc6b",
+          "f1493a50759a3e05f9a264b5991fce595af2dc5c67a39564705516a974a89d06",
+          "9165134c2e1cc725d702a8204b074138347f22c8f07d6a03f0d7bb06a03b80db",
+          "1eaef272a23a05a1232f5510189e95fe28272fb99b5681d5a333a1be00bbec19",
+          "0f0f40ec2bcec596942daf9f81e6bdf7a4cf22511c41707777032645c824123b",
+          "0bee2ef6a0129cef94578b206aa922c7a1ae7e27b64ef9c40f4ccf73d60cbb76",
+          "a4e93ed1ff954f93e496ee11998e72005c01cfc3c51defd7bf0b06914061ccaf",
+          "eb2c1684dfd09140687c76643a445508f2e311679fbb7df8a265ff52a615ff55",
+          "63bccaf220c86ab0f6321857aa0ad188701706b3553fe35ed75f98efceeed3b6",
+          "51be327cf5149642248cfec66fae88882332f6d0df49f8ba5e03eb0de15ab12f",
+          "134d6300358ebf0823ab492431e58d04e42296572aee94766d83a5a8d00c5cf4",
+          "f4dae6121b3a33b2c67663d692fbbc0b9c7b7ba2678e1cba8ef9bf919c5f8577",
+          "1ce8976fc29d26a49539cae75466f27af0f28500d0b0a1ab7642a1fdf96261f0",
+          "0c1ec56629d9d2fed5e45e24bc6641293c51d4910eb67d5e35b6d1d510b2bc60",
+          "b7a6b4084e5cdd41b83f5a7daefdead120547b85fb22a88b1436d97c04a63c11"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "scan",
+      "title": "照见·骨音探潮",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.4,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/scan-body.png",
+        "atlas_size": [
+          1969,
+          344
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "2a05ef315dd0a498701c5c518b3d56ade0739efb37b3a85003633664547cb0bb",
+          "690cb7b456287a55cd853fb3ae37ca9e74fe8244c332d1d39dceea0fe9c2ce73",
+          "66edad18bd8261f449b17b59a9d8b7de8419143be37b0e08fb559f6aaf0ab7ec",
+          "0b3b1225d30cb7e5fe816ac45377805f6c1b898d858c83a584eb2c4734f9a764",
+          "4c8850354f1c696f5ab1d093d701a8864d2f0e2f2a1d2a574967bc085f19f7fb",
+          "8a66eda3bda37fcd8c50c709cbc5c250df2c34134b45cf3222e976e5bb710e12",
+          "e971069b4dfda137824fc02dc11fc2a92901498ae1c02417e484caef20a4d845",
+          "310bf326ba5a33046c8df6eeab842f4dddd63029b36af1c52a56d0385851c7dd",
+          "a45e36fb20233d993a6e193111501ca609ea611512a1d0bed193331e269d8b24",
+          "8b04f8ac910e47c4d559a12d8a7cbbf1867c8a4b988c2306434fd301c2adce68",
+          "066bb3b0dc1b7bd3634ab8e2244b36253cfa8e57c8988c87437e1056aadef27b",
+          "fe83c74455f196b227be957c5308971db6ef566d8a3fc6c6abffec387108b845",
+          "37c5d0b4c7c3dd74bb8d3ee3678f93c5740b3122b489abd1b08d50d65570fccc",
+          "c7f7cee9bdcf92920cbf85de39fa7b8ade22b24aa53a27044daca38636496cb8",
+          "32f3f9221bfdab3dc98990938bbac7d9f9a0d10eeb659aed59a4d05156f03d1b",
+          "56121834e12b0f6ecdd37ff93b2958642138e87ecf9e1a1afad3d626443a146c"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/scan-fx.png",
+        "atlas_size": [
+          1808,
+          232
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            2,
+            14,
+            15
+          ]
+        ],
+        "visible_sha256": [
+          "5c9dc1efe6decfeb48504602a7003da2f0fbd8cc0183fc1963d9963742afc44c",
+          "5c9dc1efe6decfeb48504602a7003da2f0fbd8cc0183fc1963d9963742afc44c",
+          "5c9dc1efe6decfeb48504602a7003da2f0fbd8cc0183fc1963d9963742afc44c",
+          "c3f97f4d661872aff6f2053f17162e903ab344207708016bc280e830bb9bbdee",
+          "afb86be0ddb34778fb86b3b9b5a3e02d41b8b04c80ab09b2f39cadc554c34825",
+          "8dc51cd218a4d1b4aa5216e6eab278bf5308fea7b4927872fd56a21c0c54b19c",
+          "24371cb474b72fb51f98e8c5e1292786874ca2697be7d7387f55d0b891d3a9e0",
+          "4d6b1f0227dd3f8d14c14d0ff6fc3a9ac3ce924b148b99e938645c3f8f943a3c",
+          "78682bd743e1ef01734281e2a56bb4188832029b523598d838dd86b0499b2423",
+          "290ab986dacff99e8a95b95ac31db25951643b575dce4936e98b3fd1cc343f6f",
+          "1829dd6ead9098764443900de0fc7eafd97e3348035d16f59d7d0ffab2f973d1",
+          "7af7a1650557003a02a42ef3b7b6a4e901b2bea1d4d847c95f4f6b81dffa603e",
+          "6144be1174cd93039c6df8da49793be2c28d8708af320dc7100911e23eadb220",
+          "9c7545a8320e8efc715538d6fe496261de8003ae1ac8efb61183bcb549d61346",
+          "5c9dc1efe6decfeb48504602a7003da2f0fbd8cc0183fc1963d9963742afc44c",
+          "5c9dc1efe6decfeb48504602a7003da2f0fbd8cc0183fc1963d9963742afc44c"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          2,
+          14,
+          15
+        ],
+        "unique_nonempty_visible_frames": 11
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "世界层按事件播放或未选择",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "interact",
+      "title": "伸手交互",
+      "frame_count": 13,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.46153846153846156,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/interact-body.png",
+        "atlas_size": [
+          1980,
+          354
+        ],
+        "frame_slots": 13,
+        "unique_rgba_frames": 7,
+        "unique_visible_frames": 7,
+        "duplicate_visible_groups": [
+          [
+            0,
+            12
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "visible_sha256": [
+          "7c95767101b703c8ad9afa65500e1508fb2760f8407b083195e5883fd45fa898",
+          "c0031b41d927eccebf63eba8299a75685474e72c9f74e1f469e10930f4faf3df",
+          "bac6f9eb0903483447da9a856316782e9e3407a2bc580b7af54e874426634f1d",
+          "6c5e6f8c098bfe6e609a53a909949e0eb0cc2bcd0272ead65ae071935b4b94f1",
+          "9f0ed8dd148f9652e07d45a77ff6f5fe757ba0aa9963f7c9cfc55634582fe4e4",
+          "4606256bfe6a580f238b4834f2989d10a9a96bff2bd71d6dcaab37a5b43ebbc5",
+          "768aa1c6033bae6e0fedf34259a128ba99278b96510b453f24c2b80c376d78cc",
+          "4606256bfe6a580f238b4834f2989d10a9a96bff2bd71d6dcaab37a5b43ebbc5",
+          "9f0ed8dd148f9652e07d45a77ff6f5fe757ba0aa9963f7c9cfc55634582fe4e4",
+          "6c5e6f8c098bfe6e609a53a909949e0eb0cc2bcd0272ead65ae071935b4b94f1",
+          "bac6f9eb0903483447da9a856316782e9e3407a2bc580b7af54e874426634f1d",
+          "c0031b41d927eccebf63eba8299a75685474e72c9f74e1f469e10930f4faf3df",
+          "7c95767101b703c8ad9afa65500e1508fb2760f8407b083195e5883fd45fa898"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 7
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "13槽7唯一；legacy_trigger=state_duration且event_phase=6/13，动作结束前只到索引0..5，后6槽受结束映射限制，不先归因缺图"
+      }
+    },
+    {
+      "key": "defeat",
+      "title": "力竭归零",
+      "frame_count": 36,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/defeat-body.png",
+        "atlas_size": [
+          2040,
+          507
+        ],
+        "frame_slots": 36,
+        "unique_rgba_frames": 36,
+        "unique_visible_frames": 36,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "003df856448576a6f7ed0b5316863aa64083a3749013fd38326ff1cf3790efbc",
+          "f6444d59fdbd822bdbdbc2691054451754a68a4f66702497f625ce11cdc84b0e",
+          "185d240d216958bb2c29bccd5e73aea22b6c27179cc8c9a26e5251ed3de9e215",
+          "593686debd57d1e2041ccc50ccd23ef5ae4f5a906c106154c607b2018d8c655e",
+          "1d5bba51a262e43e1e70bf6e5c77bfe60bc221536b0dce5880009a83068dfc81",
+          "f95b440cec8a963fa9bc4b1dddbe7367e4202f1646d271db095ef6874e21e6bd",
+          "5a7378eb231b149d7e78b7e4cbcaed9e0c94ec5ff12792bde5b09bfe5ce8571c",
+          "4ff934437e7345f75345731c036d40eb13824644561825d2593072efc3271d21",
+          "b1a7fe2cda504997c70c656822daebf850a8504d75a071f4c64f751cb7f35549",
+          "0871e3bacfb882fee51feee90fe83ca22b9ec3ec46bbbf91b033413382c9de2c",
+          "155c80b1587f4f3b6cd1c7fcca05bba78158901a8fa173ef6bf145459713acb9",
+          "515f2c31a28d3bb87a3df2b285d0d97fe6bd6798cb90bb5982b190a09561c28a",
+          "ecbce0f1421bdb2cc7ee5f0402531dc87ecef24ebb9244cee6619ed4dc2bcb58",
+          "4481f7549cd908250a086ecc9cafe0880f6b9f30303000e40e776a91c50f6f49",
+          "7cce2ffd0940925f3924afbdf15f0e101647602acfa776c4c79c8a543ca2260f",
+          "bbd3e6c3b4a21710ed540c7778e586ccb53494ee584b3cbd2ae5677e0f8388f8",
+          "0e2ff7c02c2ad4bc192d07d2eea3b9c191e2aa226169a8ce782e127704201ac6",
+          "02c875878bc47a841b799540f96df1419c0f488ef877dbd81dfa0a255867dd2a",
+          "a1edfa02a0f06339de7006b5b6cc6adb36175e3b086d61a91d5dcf1341d4af1a",
+          "286098663342728c2779d8dd0785f02e1465dde898bff8b79c05a1d9fe5a0ee8",
+          "b54242da2867abb272a81bbeb1f508ac695812e1805af42c2c42b9e9b8a569d6",
+          "db0497932ada728713d878d3c4774134f27faa7e7d3af2ed2d9ad3a9de7ab91c",
+          "f1443aa2cf2fbb5f16d2d33c815e6249315b3561186e9a1adf8669c9b8e8a0bb",
+          "5069be88b80af0b81c4cbbccbf7a0b565b022b6096eea4b81eeed31c0696325d",
+          "35b3520deacae48176ba9b11f6fd7d5d9f504ded497998ae64a4ebd94b3c46bb",
+          "73e68cf872d2e4d33dcaada7f71a3d7b0b2e08e0846223b5a76f3426f0ddcd88",
+          "79425448eb05d324f82ee2d97fc7f85acd886c0780cd7d36a59e942349d4c7d8",
+          "5f795b9819ca7dbe816a2268f3dda4eb9cde992843889b1eeb8a375944d299fe",
+          "2d59481d8ff66f6d2a5759cc967db94bba21047acf423cb6788b3b053aa1d233",
+          "36c0b9616788ce9b12cf674ca8ef13c208e91b636a930496577e693a3f3f0bbf",
+          "861453a62d5da05b854fea1dee75489d2d043a812f98b2eecd356576bbf88759",
+          "32bb44a854dae9285bbeb4d67780abe625bcd59b958ca286656a582c620b9fff",
+          "ee5f43bf5ee29224ea79815d7e1ddd8c9652e48a946fb4698fd74e592f2618b2",
+          "983a88f9686a92bacb20645a3b9761c23e2614d387fdd089af8e054daab948e6",
+          "8aa94384d6d0fb4e6d28c576c96c75ee2ce23a8433a6ddf74a3a4e5264b0a612",
+          "12bc1c199048969a8d13f1d9ad09895b7818e13aea71abf6fdfc51a5883e2159"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 36
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "shadow_dash",
+      "title": "影潮穿行",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/dash-body.png",
+        "atlas_size": [
+          1880,
+          360
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "bfa0e6933ecf1ffd9accc4465cc69e28ed0d47a6c432da9f8b952f08ffcab623",
+          "b57d815a048f3bbc085c473c57909f580170e501388edbd25f45bcd9666cc57c",
+          "8a11688eb3b509ca20cbc558a627f540bc88f7a215dc2f5d0bf201808053580a",
+          "2f16d28fca1f849d655e91dba63e142995b3cd6fb36c8a20cd7e6bcdb3e36f4d",
+          "3279e7ce315b78f5262ceb0ecbd17ce66f1d32a910aa3ff65afdb57a4eba8735",
+          "b1f8bbb5e3fda2cd4803c2d5e41b69edb7bab7f81e88eb54263d98bef3f3c1e6",
+          "b192d16d2cd9b01ab3b72752497980dcee5e9b474e83982d0e49d0152b2fe817",
+          "92868a85f392afd98418f4d50626c9846d45a8363cf7e80b79983a5ab73a6933",
+          "689a5b28f6db390be7e0cf0f02d3f4e03e56cc6c711756a5dea4f36bd58c2241",
+          "0d1bc3fda899833a9268e85b2ac03351b557f668c4ba94589df9c8fdffdcf96b",
+          "7a7b0d57aef9ad69cb7db33219a476bc53ec976af2f5028ac8f2d7fc818ec0e3",
+          "cb5d3dd91d7b845f96e120172d197fb88b70f316eb9c43f86d8800de3e57b2bb"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "完全复用dash本体12帧；release=0，无可新增的伤害前摇时间"
+      }
+    },
+    {
+      "key": "great_slash",
+      "title": "蓄潮·重劈",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.5384615384615384,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/great_slash-body.png",
+        "atlas_size": [
+          1680,
+          892
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "55f37880926bd958dc21dcf0a5e88902f852d8a8c6c102c1de6b83b0c6a2e3b1",
+          "2e6952e4f0eb9a418e4157264e44a525c5d211035f8219d2f8c2cfb8e0cb24c8",
+          "5cb79e7a2ed96fb23b84ab49db538aea1f63b463d6269026f253678a95c37965",
+          "d2fa8f89bfa016b1572c144bf362157d24de744ac65806b9906d9cd69cf0ad92",
+          "a332d46fb5dffdfaa0cb69de94fdcd3af1e6f0e0d694036242b3809a7d2ef1b2",
+          "4a06c7daba74b55c0bfed4a72d1c360e70d9253988807a24ded412fc82eff414",
+          "de604a34ab31bbbfa745216dc20bf89c1e6bd2aaad5d125fd6d6f2c46e05e121",
+          "015a3db80506e94640aa65bc1096e235fa9f1cbd8962a751f89f976fbec535bf",
+          "0b733cee206b5080447b5aedf5a1b69819d142830c2fd20e301d7732a7204093",
+          "eb51378f332a7d490d8f85da9531c5b245535cd0ceb56b9034d3afd3dc4541b4",
+          "ee2ed9285a59bfc41389d08d5eb30964066a7063e147e15311643158d8cd1cc6",
+          "ab4f994246dbeba47c7812f712767b5adcc9ce497a80a1b1b70880eb392bf0c3",
+          "891e3a64e3765236a28c4ed7128e6d5e5310130feff1b741a8bf823c693a2166",
+          "4f432bc3ee3ebab09423ee2de5f5a76ddddf796fcfcccffb7fe78cc387ebaa3f",
+          "aa5c0645b15b4978b17ef1d6360e17de1bf6f94ef9add1e1ab209d1f78413814",
+          "42e78dbc1be0d25fb4259de5c5fded0de457924457c265989ee67ac3f405c676"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/great_slash-fx.png",
+        "atlas_size": [
+          1820,
+          1032
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "1bf49e7ba9a0bf2ab645f6b0a50321331a22eaec1baf34339202b5c628888532",
+          "089ddcf15aef58cb18ed0a826e42f15e1554bdc31fb58364d2cf15fac4d64be9",
+          "41723b7f26ffaf2c405748f88368552e0018857944819b0473d79b3de56f750a",
+          "3f994261da9a832bc3e98facb11b95aa336d64d994d6382b24463c35166a4fe0",
+          "00e40f8ed2eb90519d469fccc0f46c8aa279bbbf2c943e9b4a5e27b5bf9def39",
+          "c7c9e9bd237c937a00233b1e7d4a72fbef61020d10fda6766d0896e316fec98d",
+          "b9a5b1dba8223170434f9bdab65ac399beeea1810ca07404e442045b594e6fb3",
+          "142b5f8270683ff9b142c1da4e272ddd55cf3de43ab39d951fbdd6bdba8018b5",
+          "ca0072693ec9292ac8858cef8dca91066f502e8f7783088d62d01c9477cbeb33",
+          "aad153b4138160e17ef81ad51b2b3bd49c17042a877b1c7290bcfd1b3385d3d4",
+          "3c59f83ea62a463962867656ff27c59497cea1034a39f2f0f16a7ea85d382730",
+          "44e606e355f64c05858299f25666a324f18b088617cb6d48149333ed084f9268",
+          "ba931d4b2ce0d3792467e802ac09941d865f232e2303861f83d7ac94c6a4a781",
+          "217e7a3cc09828b990078d4e1f8a746ee1a82fa32f392e701499dabf6e4c3058",
+          "b52f4a4f9595db03c8f156a69dfdffb097922a097e851dd0f807d0330ddf116d",
+          "9aa82e5b4ef0a41ceda36584af535f76c9a9cec47ae39b13bd0494222d67a0e6"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "释放按真实release映射；未激活蓄力使用min(attack_hold*.2,.14)/.5，.7秒后停在固定前段帧，新增PNG不自动解决保持"
+      }
+    },
+    {
+      "key": "dash_slash",
+      "title": "奔潮·冲刺劈砍",
+      "frame_count": 12,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.48,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/dash_slash-body.png",
+        "atlas_size": [
+          1939,
+          350
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 12,
+        "unique_visible_frames": 12,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "81e7841ce4b47e48f7ae11cc1ceaa979f175fe9fd8a4f4fa4aaf33fb68dd6e3b",
+          "a611385c87e7f24693107b5c75886988d037b873d6c6ac79e683b6244781a95d",
+          "e824009947c2c0bcf6661a7aa4e4acde1f0a3e879f63a58c235fab5d558e17fc",
+          "1d6b0bb523027687c5fa0f1e61be461705ebaca4f857b7d8cbda926d396c40f9",
+          "0a2dde2c155cf78a00410778c65d9c32048398f12fa7d312fd120a1cda441699",
+          "7e7053a18da74faa86b19141332916dfaf767c17778d753451adaf6377197490",
+          "307ee1d7e918b932982248be3a0bfb7c6d1468f4979500c85b0fcacb2c4fd49e",
+          "b41a8e56b98dadd97f90b463d34441db7c22d01cbbdedfb56cbbf9a405ab84f2",
+          "04f46997bd894092638eaa454ecc035a155038768e32a0019dfbc897bce0c833",
+          "620dd7d878cfb89838e7a19e682f365b47330ea947f57f5f6019347d8278d02e",
+          "4a2de54e2b164bd239235c03048e30dee489055366adc84dc0e0bf097563a2b5",
+          "a9ed963ef0af4f2cd58a29be15389b5413be90aed83475fe5ce6531b1b65cd88"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 12
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/dash_slash-fx.png",
+        "atlas_size": [
+          1716,
+          654
+        ],
+        "frame_slots": 12,
+        "unique_rgba_frames": 9,
+        "unique_visible_frames": 9,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "visible_sha256": [
+          "334b360fe8cf4c3feb676dfe9154bf1c098532fba7d1a9f1d875d7abb5e470c2",
+          "334b360fe8cf4c3feb676dfe9154bf1c098532fba7d1a9f1d875d7abb5e470c2",
+          "334b360fe8cf4c3feb676dfe9154bf1c098532fba7d1a9f1d875d7abb5e470c2",
+          "334b360fe8cf4c3feb676dfe9154bf1c098532fba7d1a9f1d875d7abb5e470c2",
+          "6619228966813ae929688f9189336be1c669c19238d535c2043aaaf72170275d",
+          "7e061b4638e6dffbfe5a4cbcd6c7a75d77cd9193ed26b863a88c26d4773b241b",
+          "3023953ddd16c76b7b1e993e68bdbf680b055fe8851d1700df38a10c339f4486",
+          "128d9b20d37a1587fb77566c87b56ff0e1ef589d8d02158fa727d1ae414263ef",
+          "1c119aa0be8b690d6e1976d3f602321aa3c8f4496dcae056f0555f4ce015d28d",
+          "1dfdb6cfc9c548d2d6f5df6bcd6f556f7cd3d6cb46c8ee2c2a650da1ff6631fa",
+          "8af728b4ba906fad33b7b27cfcaf8c63760e66711cf07107b432a47a01f7e5e3",
+          "b899b7ea9893eb9914ecc6127fbd13c2e6a4d80bf1f4f31bbfc52a3e42d5d3cd"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "unique_nonempty_visible_frames": 8
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "cyclone",
+      "title": "旋潮·回旋斩",
+      "frame_count": 24,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/cyclone-body.png",
+        "atlas_size": [
+          1939,
+          724
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "36b10f31fbae163496fd7616e533d69ad0abcc6c6e629ba790a8f4d4964188c9",
+          "ef9df30ab7e42f9977c86afc13e97d7578735c896174fff0c6115af935587a09",
+          "dae7f17f91e459750fdc2e0afb7a625c8e6ffd5488ffa461b53b5de6ad8da45e",
+          "b728e92cc08bcbbbaa64adbe992c86dde19390d1f999b422d497068f2ca32b5a",
+          "16276e72409a3f60f7ef91ac890fa207dffdd93f495405bf9373e56719a964ff",
+          "25dd3c88a7071e570b58a692b1243da126b2070b1d3338705d1e76b1fe39b897",
+          "a916c5764592cc5342abd1eaf89b19943a50cd2db3eef47d1c45206fa04ab38b",
+          "38a5126be42e1ac7d2017282c489f695bd738817c66e78a0f616eed4d902b1c8",
+          "c7d79d66706d5a10b18cf1dee90e3d06734068d969362c151d8b06f630310caf",
+          "9501cbdc3931bae7a638807c700546867b079bf14881cf535db52d8af0a9e15d",
+          "020c8d5a8059fd019bc7d66eeb36e71eabf4df33de5437e6ccbea8397065d98e",
+          "157c69b9d84b78aa674e87d9caaa123840cf3978286e0268dd76245382b69196",
+          "daad0f8bd7512f37783a018fe6d6492a2a756f97982631d573bd0e624ca4d315",
+          "307633095a946fc6447fe808c25261f4105da9096516de740f255b51c5483c9a",
+          "41c728e7cbf2eeee2c8bf4735d316a6b799439920851b85029c738aca7ea4d2e",
+          "bc5ae92bcb539f4705f5b15dc7c997146773e921b7bc98cf5c17d3ec1b65c0b4",
+          "02d5c5d743b8cf7ccc516bca26029017f4c34c1f7a0b719f475b5252a8d6b02e",
+          "11440bef59e6335f01ad63768887241cc060f01fbaacc4ef73ddcb0599622c15",
+          "2362a1168d3e5daf0b7264e8fba3d0e0b3987e3c72de598a496d9fe23341e4e2",
+          "9bb56955eca79882c9a3e952aec1651a9cf81f2d0852f9a58e01fabb9e2a271c",
+          "ddc8b283e5b3f0f0da007fbb15a46f2245db1dfaca3518bb4fcc32bd4b7fe64e",
+          "4e61ef80abeb99ab382edd719cb57be0ddb757bd87e266f14715544a9da57a97",
+          "16be8ce0a0048781991422fb91ca7fc0e6fb5d36011fed001749d009aa193bcb",
+          "b7aece599238c31fcf412f1ff5e95687101c15274501090deb1059a1ca713d31"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/cyclone-fx.png",
+        "atlas_size": [
+          1796,
+          792
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "e2f197b01ba5cfa68248895cec891cc42330e2acdc00f61d56c7dce4afd7449c",
+          "4444dc67b99de4ca25055bc645af11e3ac5a99ed4f631bc04da010e60d4eba38",
+          "5b0c41a4cd5dec02b584c8d250761d2da3104ba7f3585c28734e210260056530",
+          "4d26ff7477d8ce6c40915ee281e0f8a7760b14da46ba514af3076e295f2fb76a",
+          "3006aa49df8e9bd0007494b9284093987bcf51069b5aee1165e30b149cb90c24",
+          "49033b4fa3a2b396e036d0caf2e6c5b2b06cb400948e1e42741ba4cae764c6ce",
+          "5a0ba787a661e146421becf53a419d00be725065acc2941cc7f38b0e095271d1",
+          "13a80ddd5918cc05b637a96d66f9a08f58fc8ad4d2468e1516d34b64f445c192",
+          "10ba2d96730f949742d35db7e03b71d07a145693718629f4cb86059aafdff93b",
+          "414506caac5c96f790ba5da8748c5ef426127ebeb8e367853818f63fab32a415",
+          "7cd207b4956460f46186b1b9e06506222bc047b24a94383f12bf4376636e17b3",
+          "b17095235fea981caaa4040cb0338f9988487598fee4bf9ca523458653657f74",
+          "4b4e905ace6e6ba6cec7537b886e4e9baf9624d90122177e100f56327af29f93",
+          "09212bd10e5381218aa815240806722235fdaf48ecb2c6b126aa30df70832147",
+          "f341430f231c908ce930533df77aa33e9f54886843d4a3b5a9888908d57063a6",
+          "97162df8f6981f3bf4f6f30d9ede83d2dc604e2a445e55463ea63dbd999b4753",
+          "1f8328a1511a0e6ac795d2d5862e23f6b5532f57411f27df2ff0b6b11c68f261",
+          "1c312c57e88a4eca87e15623e7a55a98cc07f9bf51956042902b06d8043d5cae",
+          "93faf057111e082ab874cf12a8a2992326707339971bef39a78697b7d82ad959",
+          "5e36dac64a559bf00f1bf58b1bcd5b7248f7f3912d720653d96093400afab90b",
+          "a4708f7366c504a405ff58d0d6ac129cdfdab72fda9248289bf430c73da1041f",
+          "403d2f8e60db60b0d93a6f67f1539134ee0839695f861aebd86af1b0c05fda00",
+          "73c4cd874372ab9ad20706a8f65d8900ee56eab2f92824319eeb27b5a2598c1b",
+          "51f950f1d51e5e20bdd5dc9a95c2203c839508618596966e1ea38f06be752f1e"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "释放按真实release映射；未激活蓄力使用min(attack_hold*.2,.14)/.5，.7秒后停在固定前段帧，新增PNG不自动解决保持"
+      }
+    },
+    {
+      "key": "crystal_dash",
+      "title": "凝流·蓄力长冲",
+      "frame_count": 24,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": {
+        "charge": [
+          0,
+          0.5833333333333334
+        ],
+        "flight": [
+          0.5833333333333334,
+          0.9583333333333334
+        ],
+        "exit": [
+          0.9583333333333334,
+          1
+        ]
+      },
+      "body": {
+        "texture": "game/art/tide-picker-action36/crystal_dash-body.png",
+        "atlas_size": [
+          1928,
+          468
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "5dad9b58a20652167ed35c365c5bbe55d84178f2d396f0c25c56d96934fef0d5",
+          "fa363bbaec2301aaa252e6893e579d33b50cd12e58fa8ed6727e659524378d2b",
+          "3dc8042fa665af938ad0e2e442bc41e44bd1c8ca9bd93b1666398c394406d33a",
+          "2e85493f633fadf95d1dcf5561d0aa4706904eaf9af94661b06c47ded9fee720",
+          "2cb1afcfe51dd9ae9605ca03c088b3dc4c128a72c164d46d4192983437c5c3b0",
+          "c373a0b1cf5e7197704a910235d388ca5159177b1800b4373baf6557a9d7e06d",
+          "aae3d6523c195afb7579d5977523ed581d0c525d2f70c80591d4686e66162c85",
+          "109bff7bc4544977b28e5c1aa3cfbbe25ae6afeb926357a2e316137a944e6fa7",
+          "ef72709dc7ab775dce757905c0c3534e279fa6b121a78f7eb86950d667368896",
+          "4032c0751d5a78bf798830f45e19d7d57eb6cdb691dc6b5d5e8026207f0927eb",
+          "1f54d57b2609d16a0caa14912a68826bb005092602c00d854e60533a2cdd7be3",
+          "9964e2a6ab6b46796bec96dbff6f8ba007b6b71e4000f246e063d54be0b4f8eb",
+          "018647a13fabdb654b24898fa60a9101cdca41074fa455543289385b45d97230",
+          "917c23f93958aea610419ff3924f50f9a194c3f1483a9a8d5a3db2fb18bfca3f",
+          "e638dfbd52d7383317bdbdc28c4795a90d1fa217b00e14c64a7574bd978baf51",
+          "e655b4fa9c1b0ed80351b155e46c09d487365084d0e88f4b030d12a9c50fbdc7",
+          "5434daefa7a69fa18e50b13c5d669c6dd28ee2ee955b30e559516ccae7308f1a",
+          "4258faedec52acea137e265fa5cd2ed1510ffaee0aca1bff764d29b1c866221a",
+          "d3a2f3545c048cfb289d119b9d7ccea066f4067f0d93c61baa0cd48d71d7c16f",
+          "2075b804a57f9d1992df1e8aefcf7c6eeffe9e56a4d574b671a2ead64c1ccb4f",
+          "e457df5a7ba1b470a205480ec83a2000ba426c87464d80e9d0524dd2a32062d4",
+          "653cdcf2105dc779e6f311ade53166aca6e881cc4b03a1c8f5b2bdd5de49ec93",
+          "9aa96cfb00fe0191edec40a7681055b379e2b05e6ac8fe29e09c05ba880b8f9e",
+          "3bf6b100d93774a78e02e3a859ea520428f24557b5f2767efe1d42ca5fb0e6d7"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "蓄力[0..13]、flight[14..22]、exit[23]，段尾排他；蓄满后保持13、1.5秒飞行仅9帧会长保持；需要的是分段循环而非无差别增帧"
+      }
+    },
+    {
+      "key": "up_spell",
+      "title": "潮声·上涌",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.19402985074626866,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/up_spell-body.png",
+        "atlas_size": [
+          1863,
+          430
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "1452afb0b2a51ef1e3c77a19003d52f7dff67540320bde4b3e40b3230a21d9e3",
+          "1dbea74dbc080dd6fb61443252cc83893e7e16e0992451e9410515bc97e7cb98",
+          "3137233d312848e830a331ffab0ce1e0adef3e3e83df9142356e028f6ea75ece",
+          "3308e6ef6d92008a8d71646e367748a7c50ce0a233f742c335f9b5742d416bdb",
+          "23501284a10c29a2e1396d40bdd72747203b04bd35f91ca8f538bd9eea3b6f07",
+          "a875cbf44a4bd754c82155274197ba74402290d07eb282e89f854b183da03755",
+          "c6543fdb00cb98c95396553a3cd325a85b419170221b951836c002a6722e99c9",
+          "1742cac79caac04c6004c567b051afef1c783180f4261b72268d36d6019f552b",
+          "82520abdc447111f49f24b25fbe4eb18f69fb1e8d7a1ca351d6e961a739fb08d",
+          "cbb32b50d6a600e86531827dd37abd25f1355a0d5060027bd24901989e13d3b8",
+          "a1c3f40237b0d07428baa66b3a6187879e14e873271a41e3ba241dd84d8664c3",
+          "9b73784047fd0162f1d25995b68ec5b39cb2d4578d3f0acf4e2154999e1e5b83",
+          "f369b3a6a7b9e43107b5e0ba36c73ae6c20224406b788765c43e74064e4d595f",
+          "4e2fc67eeb927e345274cb21306552b6167b4ce7a0104c29f7c6bc7856b30d5b",
+          "c26d7a3c3106c5b44d7bd05008ab0e5e54e0f8ff2187d221fff0f8d00264bcfb",
+          "aa2b11a216e487ed74704dd24f4b648c934a24f30f03b4ad73de9d09c39b4bdd"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/up_spell-fx.png",
+        "atlas_size": [
+          1820,
+          777
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 15,
+        "unique_visible_frames": 15,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1
+          ]
+        ],
+        "visible_sha256": [
+          "98e30004afbfc587f5cde3c349163971020b5ba844308eafe13680eaf2ed6b1f",
+          "98e30004afbfc587f5cde3c349163971020b5ba844308eafe13680eaf2ed6b1f",
+          "67639cc57a95c3ef1c6effc78c175bda3d90bfd64b155acdb46fc0c261aaf12d",
+          "911be41bda5c465530f49162cf9ccb868de723f3a30b661c0d756c31bf23e633",
+          "459fceb081f44b3d454262d9931de22f0258fd2725fe82b0e20c4bce9e32ea70",
+          "e86c75fa51f62c9ec064602eacd5ae42cfd3909d1ffbb8a5919673e2fd80b429",
+          "c6ba23a370ae18df3bc98f0fc245c4097ad51c19fac039c88a53ebdf1aede691",
+          "27e1d1805269ac03046c39925de10e6cb40745dd60a596f25f0b7dcecb20584e",
+          "b7f82150c97367e42d46896f00383157fa062bcd364406bae2cd150c119cc798",
+          "6aea4f45fc89cf69c1662cedf65ced9599053ed8343654e8f4a581d4de85f248",
+          "e952f22703183820b0f20b8f34beaf4887fd950c0ce5982568928259af8df19f",
+          "d495ab3ac3168a152e34df701ede9ea47a2f7686a9880eecacd3a480c0f4f783",
+          "d2c8e2842f054d96335b0e575c8bf98dc4c486605222eff05c6075eaa444e13f",
+          "23b2c03a06c813c10b55c0a25952ac6c588d50943186dbee9b0a7141bb1bb839",
+          "ab9cc3e97b606deb7ce8582444ba863422648f49edbfcc7b5ed6bb9a2bd6d923",
+          "22417e8a602dcfe9b6bab8f6ce439739a253617e113a1666fb571344c071b853"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1
+        ],
+        "unique_nonempty_visible_frames": 14
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "abyss_scream",
+      "title": "深潮·共鸣啸",
+      "frame_count": 20,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.19402985074626866,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/abyss_scream-body.png",
+        "atlas_size": [
+          1968,
+          390
+        ],
+        "frame_slots": 20,
+        "unique_rgba_frames": 7,
+        "unique_visible_frames": 7,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          [
+            15,
+            16,
+            17
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "visible_sha256": [
+          "fcb389834dbf08b25d43abc6749db13c0fb85d1c17e50f2a12b9ef1525a7b2a7",
+          "fcb389834dbf08b25d43abc6749db13c0fb85d1c17e50f2a12b9ef1525a7b2a7",
+          "34526becd205c4403aeadb168c0bdb33baae236c295d5606285761fe71c2a58d",
+          "59c8ff4aefd673ec5d854f718dc95e1858389f6487320c2e6aa1016b455ddda0",
+          "59c8ff4aefd673ec5d854f718dc95e1858389f6487320c2e6aa1016b455ddda0",
+          "59c8ff4aefd673ec5d854f718dc95e1858389f6487320c2e6aa1016b455ddda0",
+          "59c8ff4aefd673ec5d854f718dc95e1858389f6487320c2e6aa1016b455ddda0",
+          "c5f4240ffcb84ef81d60ebd08c3854122d1da57afe2cac8ba52fd6c92ba51476",
+          "c5f4240ffcb84ef81d60ebd08c3854122d1da57afe2cac8ba52fd6c92ba51476",
+          "c5f4240ffcb84ef81d60ebd08c3854122d1da57afe2cac8ba52fd6c92ba51476",
+          "3c64d71eee244a64bbd5cb3f04587fa4dffe15a6f5ec0ba4fd8d59a978acaefe",
+          "3c64d71eee244a64bbd5cb3f04587fa4dffe15a6f5ec0ba4fd8d59a978acaefe",
+          "3c64d71eee244a64bbd5cb3f04587fa4dffe15a6f5ec0ba4fd8d59a978acaefe",
+          "3c64d71eee244a64bbd5cb3f04587fa4dffe15a6f5ec0ba4fd8d59a978acaefe",
+          "3c64d71eee244a64bbd5cb3f04587fa4dffe15a6f5ec0ba4fd8d59a978acaefe",
+          "574f65936101dc086c425b4d5a25819ab6a1d63fb815d9fe3e7d04c426b706e5",
+          "574f65936101dc086c425b4d5a25819ab6a1d63fb815d9fe3e7d04c426b706e5",
+          "574f65936101dc086c425b4d5a25819ab6a1d63fb815d9fe3e7d04c426b706e5",
+          "7f4817ecc47d7465e782f9dfbaad5896361ac8f248aba6c9817dc5ff1f90dd1a",
+          "7f4817ecc47d7465e782f9dfbaad5896361ac8f248aba6c9817dc5ff1f90dd1a"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 7
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/abyss_scream-fx.png",
+        "atlas_size": [
+          1841,
+          762
+        ],
+        "frame_slots": 20,
+        "unique_rgba_frames": 18,
+        "unique_visible_frames": 18,
+        "duplicate_visible_groups": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "visible_sha256": [
+          "6c2729071142e82abf208b96ebf0bb74d7de2bb20c5192261b4d4ff14526bcc6",
+          "6c2729071142e82abf208b96ebf0bb74d7de2bb20c5192261b4d4ff14526bcc6",
+          "6c2729071142e82abf208b96ebf0bb74d7de2bb20c5192261b4d4ff14526bcc6",
+          "275c99b6fea95aadd90838e4d295e4ea9704d396fd511ddeac25debe97302741",
+          "d705e292fe865802419a7ad557f210eb415f852c7a8225fff5a05d2c5ec4ee21",
+          "2260ef2bc66a1fb7454d9d2f3ab0893da4cca21bffde9bbc26d40015624dc66e",
+          "2cffba973ab04270a18a27f787e4afaa7d0363d8e99da02fc2ec75457582009a",
+          "6fda74ba55ccf10b601b93da247aa52d1e867b5b89172baf95f89f3108598e8d",
+          "e8e03995d05e64eb1e13bea26f2d493a15e0ab5d5dbae525c245075139cfa15c",
+          "d396a45be554583f53305f4b64aaeb785f3f450e0e0757a54b8af03f96af2214",
+          "835160b4a6b4dea5e3350942bdb3e5adf8eada9c65d2973bc8785e3072682f03",
+          "739951fcde9856af3dad07ac77dbf5a409862e5fad735dc8791a8889304c8e53",
+          "4eedf5ad621c5c4a0d63e89282efc9feb849f6e973b86a4a882abfc8d6d5fad7",
+          "9e32f263df3ddf344f7f6dd518d753668363a943f3013dec54bea9223b20b826",
+          "09dcd1f7906c83744b559950c9641effc19c7ffa1f7148183755118bbd2cb5ea",
+          "7cdc1d2b412c9a7ca09c8b6dab9af95e5ef8ffa6df6c6dda74ec65b959e42eec",
+          "0a0382e589f9d680f7bb4f6444fa8efce8d8e68dffca7779622f8d652310c48d",
+          "75ef3c7ceff594a9335fbe93bcf4d9d41947879d3d50563b531d3f2582beb0b0",
+          "f6749f8e9787d9c83f6409bf5de7ececf0df8c498765203b84237672365d57ec",
+          "8b28662ec55ad38932aa6646d3c805445ae4c42d21ab16fd1b81d79df93d6485"
+        ],
+        "transparent_frame_indices": [
+          0,
+          1,
+          2
+        ],
+        "unique_nonempty_visible_frames": 17
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "本体层同索引播放",
+        "new_art_status": "优先补连续蓄气、上扬、啸出与回收本体；保留现有.16秒释放与3次伤害脉冲",
+        "reason": "20槽7唯一，本体存在重复姿态长保持；FX18种含1种透明，特效密度不能冒充本体动作"
+      }
+    },
+    {
+      "key": "shadow_orb",
+      "title": "深鸣·穿潮弹",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.7724358974358976,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/shadow_orb-body.png",
+        "atlas_size": [
+          1848,
+          336
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "9d25cb685370cb75cdc69febf4d48ab3ae5ec0c908560566d7a1d8110c367d4a",
+          "671fa52bc24a9cee55150fe6a40a9b3bcd6194b6e99954d21934827e81c28baf",
+          "9552d56d9961d30f6612d79f5e271ddbb97377827f94fa09ded654e945e33895",
+          "6254d741374eb241a30a6139b0f46be61fc67dc58c1b1ea5b22f74ef5e77ad51",
+          "37d95c27cbfb92944b99375bc18527021daa9cf4144bc9e6f9b56809dcf10542",
+          "dc79dca9e5afe0ca6189eebf1928c25c2033b593ce7a7f02179de48d42e9f3ee",
+          "6ef978c7d2aa5ff0568a811f8cee3bac8f2d5bb01453e67a14f21941844fd2c6",
+          "20b031b2a6b6337faeb294d6a7a6217f757be14de2198dee46dca778692efe17",
+          "1fc85d69a54eb85f996dbbc3f671579af109d557d6587c8efd9d74d1ef24cb07",
+          "13326c1c54e2da9991a77e627416936369b73a460e74c75ddab15b6b7b176739",
+          "c6854543bc23577594e6bd9786af9a091edef68f0d734d6f3da22ab7b281d6d2",
+          "a559c749e097ea433767050998e9aa3452c6c1571ece9de45e08010e101cc83a",
+          "617b361f5200c62f9a334cc92493d42456ca87d18e009e9aaff71e849a8bbecf",
+          "dc8e212c28f796f47b0477ce279482822d00f1c2ea9f44526657359998b5b787",
+          "54a184cd456e3ddba3de75c17db5ae4fcc8d68d3e06b364108ba1699bca09d8a",
+          "f6f0bef949d57958d0f26f3e80c1e504272066f211628732a474e3fb1cd65ea6"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "dark_dive",
+      "title": "坠潮·深钟",
+      "frame_count": 8,
+      "fps": 16,
+      "loop": false,
+      "event_phase": 0.5,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/dive-body.png",
+        "atlas_size": [
+          1128,
+          198
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "aa2e974cf293f818f92b4c7312ca209ed9cfa510a39d6836525cafd78e988ace",
+          "0b8788133960df4d77b34622722ef82786dfc6dc6365ae9a3c35b23c89abcefa",
+          "3eb95039bff7cb955d80540e46d3b8ab227a438bfc077fd42afbc268696a6b0b",
+          "0087d65cb8540958dfeea2d28bf22fb39e22e68e3219a4f8f5cbce097e25700e",
+          "a90599851a76d24699b2d4b0e69d6c78b1f8559f5427c8ac8f47d4fc5e9fffaf",
+          "c0286b26c0cd7e74cd58bce8c9670fc975ed9802413762e5b7d72064e35cc8e3",
+          "cc2a55cee9be918c7b5ac5b1295a6532e5619a84d136930a9a297dfff480066d",
+          "63ab9c03498da42d761c9139d9f809b822a8c38be47aa219c1133a2f0f7cdcaf"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": {
+        "texture": "game/art/tide-picker-action36/ground-ring-fx.png",
+        "atlas_size": [
+          1120,
+          224
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "ae90d8233b36509f5529fe340b38124759bd91869d26cfb0f409d537b372afc0",
+          "6a4556b21935ef68f516591de322752e9d829843f78b579775c6df93b8a286f4",
+          "9871b86646d8d31c58299fcd63e358e9096adbb750d2f641bd6f951dc0fb1c9a",
+          "d3f8d287869e2799d21a3f9b16bf0c012d2ff790ab3ae66973c83b3bde708949",
+          "20283c64f492361732dec8f0839d8ff58787023181c64c411c1b32cd1c15fb72",
+          "9a7679eef2b6a0f4e2eafa5c59448a20e360d6ce41982113ba619d38788d37ca",
+          "3fa13b283cd42678c973df0466a14bc7e6979ba3eaa248252c9dc98436e4c783",
+          "c3ec8c880ddfdba27e60ad7e17c64b7ab7a4dec551b3cba628c7b8adf66df27d"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "世界层按事件播放或未选择",
+        "new_art_status": "建议下落姿态短循环与起手FX；深钟复用基础本体，应先确认是否需要独立外观",
+        "reason": "起手.14秒映射到索引3，落地前保持索引3；落地后.24秒播放4..7，ground-ring仅落地生成；下落保持符合阶段但欠自身动作"
+      }
+    },
+    {
+      "key": "swim",
+      "title": "耐蚀浮游",
+      "frame_count": 24,
+      "fps": 12,
+      "loop": true,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/swim-body.png",
+        "atlas_size": [
+          1926,
+          462
+        ],
+        "frame_slots": 24,
+        "unique_rgba_frames": 24,
+        "unique_visible_frames": 24,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "c5af971d4f770f3125a3b686ee3a84c3dcfc805ecb940415f4d9a7ff4b975de7",
+          "4d68cfa9c8a431f3d5fd7284c0ca6320b3fc73c76b9c6b23d268b1ac01ccd04c",
+          "e3f8e4e5fbf16b9db0b4daba5d9b32600b31963ab5c76c123ae227729623e055",
+          "24ad0fc8e7a1b6a98537ca8b4acae99b69c3839c3fda8e92b057baac97189184",
+          "3ff9c21e12b699e54d665ffe30bc6e2ef78684ac2742d090f2927c30ecfa7ecc",
+          "3ed0f798f93507ca2c9861430c8d494f356ef97c3f993a202d94dc4d32aff02a",
+          "c166530d8e40cb728ad52001dd08c79f7e8ce99d4d3f919f6c3b3faec32a2008",
+          "f4f433a712e4a6b533ae971caa6d04d9108d0e54fa3c50d2c800c215af314726",
+          "5551e3f84502f18deca89a1e298909eb3d68ef17754ec8438e780efbff90d688",
+          "f642dc2a6397d7b6d1e83ab4f25d78a81b2f61ecdbefc98680dc199564e8d5fc",
+          "1f9b079002807849423bf49fdb55b112b51580daf193ef94998c1260af674be2",
+          "342b0d77aa74254355c3debc15f4a3df75ea4ca7722bc996974dbad2d2b1f535",
+          "53cafb55c31718ce7a79aa12b34bb2b78bf0cd57b1b76996145e423a70973f25",
+          "168a05895acc4f2ff10deb3e04c910cfeaf3d97b2210e9c24fdf92dd026cf69d",
+          "5c6c3ce454bd671cc20695db29c107a16417d96b2199117a76ab21ea31dc35d0",
+          "1217804bffbcf41e51fdf051ec935935f356d170db1ef7f8da6a893b87940dc6",
+          "54a3320e0f0f693ede55c3c7dcfcaf8ac7ffb05fa41d58cec1eabcfd1a77beab",
+          "f64b88a5903737ba12fe5c981a8ca82b0c03932891fb15cf0e05dddc6c9d6863",
+          "7e36e85202ad7ed5a856324deb1d392caf5fb195e7cfdbf0b54475ad960b7e50",
+          "3759172d8d6e36dcbf67c5aaba70f93f9e1923d2cbd99fb2626ce52ce26cdfad",
+          "2977c08c6ecc39a56266aacf923c1567a76cae1364327378a2f7049955be72ab",
+          "dd01ff46b8123d5ef89f9b920903481ee4da379a2441f400ec8bf9d8749caddd",
+          "ebbd1620c27496b9d5fe390b305f5572fceedd6508deb4da59f068adae88ee18",
+          "7f9ff178aff2eb9721a11223933986271422950bdabb63d7521f274b8fa48fd6"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 24
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格",
+        "reason": "按时间循环已有逐帧，不是技能前摇"
+      }
+    },
+    {
+      "key": "tram",
+      "title": "通行凭证·启门",
+      "frame_count": 16,
+      "fps": 24,
+      "loop": false,
+      "event_phase": 0.5384615384615384,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/tram-body.png",
+        "atlas_size": [
+          1936,
+          338
+        ],
+        "frame_slots": 16,
+        "unique_rgba_frames": 16,
+        "unique_visible_frames": 16,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "248d7fb9820cc63c8417b93132120a05b4b56c8d47a76abb94040149a5a92076",
+          "7e600e51890ff9bf3f030a915b7521cbdcab36259c5936a2c2194a4391e31357",
+          "dda4b810b250595ba2eefbc221a7558fb11a82dcec81c762c508418250ccdd7e",
+          "1b18ac837c6601149717e6a82c0860fa2d64162f49fe3811ca66d5097d50ad04",
+          "b9c126114b84ee3bd1a1076f5d8a0b6ed10939e68c81729c7e58c78d47543110",
+          "f1c2fc36ce8347e7ae4af72dd57be0765a4a077bf1e0cf04cd20b6221911497b",
+          "bc7dae12b63b902e50a63fe40552d5781adffe64b7998404153b176929e5dbd8",
+          "7c2b07b69f9b1e497c634c90237b48121d4ddf180ea3b0950bd1150a174b8750",
+          "2b2296dcd78fb809e7f1b1d150b36da643b4e49bef7cf2cbcf0d70679613fc60",
+          "c29febdcaadecd1b8bcc08f45248c3452c7a8d57fb5ca3518cc81a16c51b1197",
+          "cb883c4671252ef251ba6e8cb31e3367b6169e4c6ab586db2c9f88d0b3240888",
+          "0b7ead17c0fa79534195ad867f652f8573dbd511ada53e611ed0836e37c190c6",
+          "2d9f090e94cb79cff79157638812d69e7d07cbcf843517b2a4ee46e4d42a9c2b",
+          "ad921c96e4b197b40a45eaeea0ccf3b499979dd3602fa7f112bb5e81c68c9492",
+          "7f5884ab3e0b3de8906db307004ee59153f28ce7f62cad5b29c66d0b50361033",
+          "ce9400cf749e9722db2f287fcb03d46fcdd279c236645fcea0f5b354567bc93f"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 16
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "turn",
+      "title": "原地转向",
+      "frame_count": 8,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/turn-body.png",
+        "atlas_size": [
+          1168,
+          172
+        ],
+        "frame_slots": 8,
+        "unique_rgba_frames": 8,
+        "unique_visible_frames": 8,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "d59eacbfe4444720e7145f5f5f3e197f13c63d3f8c2b977a0aa9a5e6454cb147",
+          "1530e4f86573a83702c583e69e541ec1e9a451ad19224a76681e405e458a6520",
+          "b0bab46ab048a8a8e1dd0e4146432ae4ab8dfcfb57133b3fda9c63d5d9cbd47e",
+          "532d1413ad9d9d1970e3c0e204c5aa51207725e76fb6706e94e2b096a947f81b",
+          "ed97198089d0a16f7a0976e77c86cf5ec5367e833bf4b9f492c5e50a0c4310aa",
+          "f8cbf97248d07c82d7706271637f42c2631a24915dd6866498ac38e13a4d1e44",
+          "5f0ed27efb202caaa8bbd76ded70dd224c6d91208148bfe263e882422c4ae312",
+          "a812b82ec2542953ebaf577d63591ae370c52a87a17ba6352852bc55b0660edb"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 8
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    },
+    {
+      "key": "slit",
+      "title": "敛膜潜隙",
+      "frame_count": 18,
+      "fps": 24,
+      "loop": false,
+      "event_phase": null,
+      "phases": null,
+      "body": {
+        "texture": "game/art/tide-picker-action36/slit-body.png",
+        "atlas_size": [
+          1910,
+          344
+        ],
+        "frame_slots": 18,
+        "unique_rgba_frames": 18,
+        "unique_visible_frames": 18,
+        "duplicate_visible_groups": [],
+        "visible_sha256": [
+          "a605904ce9902dbe2e91b385e2cb818db47c30d484f0e8041576cf3e203ff92c",
+          "d3b7d20daf67ac7c77eb7df66cd809f381e2ffb51003d8eac0d3f50d2627fe38",
+          "038e495d5ff5f6ae611826b63a6bb93569679783b43842ac77c21a4215fc4fec",
+          "521f7156ad21ede11ac4e5845ce5c7b49dad5740eccc3a204e3e5628168ad913",
+          "db593c2eb84f74fe76d850ce765d2496d3205066aee7e01fda2bbf872ec4c345",
+          "19c81953541060665e257744d8e6992e28ccda9ccf5c3043929fa16b617ca610",
+          "5aa24bfd5b999d64f235750ff38a6872bfd30ff21f59c2c63c306a2dc34958f5",
+          "88090b2cf2bd233e072d98b72bb568005eb5ada712d353ceaa21b991d1317a12",
+          "5f18f43c1296c370cafbedc0273455384da36653163d50d1a2ec0a444b9343a1",
+          "fdf0b4230dd642624a3c60ac8059190c4c2fd4e349e647eb0383a404898077b5",
+          "e1133a7dfa59f5941c989b7ebde9f0b704e8f5595eb28ba3a7f9646097a4c83a",
+          "f07dd8d334d1096a235e77494722063c581189e17eef7878bcb525a9be35632f",
+          "f88897074ce3601af5e22b4a18c09cd6ff3f6908201d1a49db7e71f0855f1492",
+          "81d2a5aeb8c8b51e4120db89c5a3cb5e2a2100df2209194d0ad829543de85f48",
+          "2a19af6d41ecf3968294f15e6da1f8831afbd841cebc363f1b3bc3f8c8eb4fe1",
+          "af2c025d9aa38e08fa6cf3fd7fa6031c161bbba996c258a15491ac9c3c9f99f8",
+          "25d064c8c9d3386085f80607feae22c88c91a8c89d1e39bac97857bc4abc3cba",
+          "43ff678f8101f4f53031c976ad0aaf4758c1363dd8c500b5983c653eba81efa0"
+        ],
+        "transparent_frame_indices": [],
+        "unique_nonempty_visible_frames": 18
+      },
+      "fx": null,
+      "playback": {
+        "selection_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 158
+        },
+        "frame_source": {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 95
+        },
+        "fx_mode": "没有随动作独立FX图集",
+        "new_art_status": "先审播放编排；像素唯一不能证明动作连续合格"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "strike2",
+      "body_clip": "strike2",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 5
+      },
+      "duration_seconds": 0.32,
+      "release_seconds": 0.06,
+      "predicted_sampled_frames": [
+        "strike2:0",
+        "strike2:1",
+        "strike2:2",
+        "strike2:3",
+        "strike2:4",
+        "strike2:5",
+        "strike2:6",
+        "strike2:7"
+      ],
+      "predicted_prerelease_frames": [
+        "strike2:0"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.066667,
+      "sample_count": 20
+    },
+    {
+      "id": "upper",
+      "body_clip": "upper",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 6
+      },
+      "duration_seconds": 0.34,
+      "release_seconds": 0.06,
+      "predicted_sampled_frames": [
+        "upper:0",
+        "upper:1",
+        "upper:2",
+        "upper:3",
+        "upper:4",
+        "upper:5",
+        "upper:6",
+        "upper:7",
+        "upper:8",
+        "upper:9",
+        "upper:10",
+        "upper:11"
+      ],
+      "predicted_prerelease_frames": [
+        "upper:0",
+        "upper:1"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 21
+    },
+    {
+      "id": "shadow_dash",
+      "body_clip": "shadow_dash",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 7
+      },
+      "duration_seconds": 0.24,
+      "release_seconds": 0,
+      "predicted_sampled_frames": [
+        "shadow_dash:0",
+        "shadow_dash:1",
+        "shadow_dash:2",
+        "shadow_dash:3",
+        "shadow_dash:4",
+        "shadow_dash:5",
+        "shadow_dash:6",
+        "shadow_dash:7",
+        "shadow_dash:8",
+        "shadow_dash:9",
+        "shadow_dash:10",
+        "shadow_dash:11"
+      ],
+      "predicted_prerelease_frames": [],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 15
+    },
+    {
+      "id": "great_slash",
+      "body_clip": "great_slash",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 8
+      },
+      "duration_seconds": 0.5,
+      "release_seconds": 0.17,
+      "predicted_sampled_frames": [
+        "great_slash:0",
+        "great_slash:1",
+        "great_slash:2",
+        "great_slash:3",
+        "great_slash:4",
+        "great_slash:5",
+        "great_slash:6",
+        "great_slash:7",
+        "great_slash:8",
+        "great_slash:9",
+        "great_slash:10",
+        "great_slash:11",
+        "great_slash:12",
+        "great_slash:13",
+        "great_slash:14",
+        "great_slash:15"
+      ],
+      "predicted_prerelease_frames": [
+        "great_slash:0",
+        "great_slash:1",
+        "great_slash:2",
+        "great_slash:3",
+        "great_slash:4",
+        "great_slash:5",
+        "great_slash:6",
+        "great_slash:7",
+        "great_slash:8"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 30
+    },
+    {
+      "id": "dash_slash",
+      "body_clip": "dash_slash",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 9
+      },
+      "duration_seconds": 0.38,
+      "release_seconds": 0.16,
+      "predicted_sampled_frames": [
+        "dash_slash:0",
+        "dash_slash:1",
+        "dash_slash:2",
+        "dash_slash:3",
+        "dash_slash:4",
+        "dash_slash:5",
+        "dash_slash:6",
+        "dash_slash:7",
+        "dash_slash:8",
+        "dash_slash:9",
+        "dash_slash:10",
+        "dash_slash:11"
+      ],
+      "predicted_prerelease_frames": [
+        "dash_slash:0",
+        "dash_slash:1",
+        "dash_slash:2",
+        "dash_slash:3",
+        "dash_slash:4",
+        "dash_slash:5"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 23
+    },
+    {
+      "id": "cyclone",
+      "body_clip": "cyclone",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 10
+      },
+      "duration_seconds": 0.8,
+      "release_seconds": 0.12,
+      "predicted_sampled_frames": [
+        "cyclone:0",
+        "cyclone:1",
+        "cyclone:2",
+        "cyclone:3",
+        "cyclone:4",
+        "cyclone:5",
+        "cyclone:6",
+        "cyclone:7",
+        "cyclone:8",
+        "cyclone:9",
+        "cyclone:10",
+        "cyclone:11",
+        "cyclone:12",
+        "cyclone:13",
+        "cyclone:14",
+        "cyclone:15",
+        "cyclone:16",
+        "cyclone:17",
+        "cyclone:18",
+        "cyclone:19",
+        "cyclone:20",
+        "cyclone:21",
+        "cyclone:22",
+        "cyclone:23"
+      ],
+      "predicted_prerelease_frames": [
+        "cyclone:0",
+        "cyclone:1",
+        "cyclone:2",
+        "cyclone:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 48
+    },
+    {
+      "id": "crystal_dash",
+      "body_clip": "crystal_dash",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 11
+      },
+      "duration_seconds": 1.5,
+      "release_seconds": 0,
+      "predicted_sampled_frames": [
+        "crystal_dash:14",
+        "crystal_dash:15",
+        "crystal_dash:16",
+        "crystal_dash:17",
+        "crystal_dash:18",
+        "crystal_dash:19",
+        "crystal_dash:20",
+        "crystal_dash:21"
+      ],
+      "predicted_prerelease_frames": [],
+      "predicted_max_same_index_hold_seconds": 0.2,
+      "sample_count": 90
+    },
+    {
+      "id": "up_spell",
+      "body_clip": "up_spell",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 12
+      },
+      "duration_seconds": 0.52,
+      "release_seconds": 0.16,
+      "predicted_sampled_frames": [
+        "up_spell:0",
+        "up_spell:1",
+        "up_spell:2",
+        "up_spell:3",
+        "up_spell:4",
+        "up_spell:5",
+        "up_spell:6",
+        "up_spell:7",
+        "up_spell:8",
+        "up_spell:9",
+        "up_spell:10",
+        "up_spell:11",
+        "up_spell:12",
+        "up_spell:13",
+        "up_spell:14",
+        "up_spell:15"
+      ],
+      "predicted_prerelease_frames": [
+        "up_spell:0",
+        "up_spell:1",
+        "up_spell:2"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.066667,
+      "sample_count": 32
+    },
+    {
+      "id": "abyss_scream",
+      "body_clip": "abyss_scream",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 13
+      },
+      "duration_seconds": 0.66,
+      "release_seconds": 0.16,
+      "predicted_sampled_frames": [
+        "abyss_scream:0",
+        "abyss_scream:1",
+        "abyss_scream:2",
+        "abyss_scream:3",
+        "abyss_scream:4",
+        "abyss_scream:5",
+        "abyss_scream:6",
+        "abyss_scream:7",
+        "abyss_scream:8",
+        "abyss_scream:9",
+        "abyss_scream:10",
+        "abyss_scream:11",
+        "abyss_scream:12",
+        "abyss_scream:13",
+        "abyss_scream:14",
+        "abyss_scream:15",
+        "abyss_scream:16",
+        "abyss_scream:17",
+        "abyss_scream:18",
+        "abyss_scream:19"
+      ],
+      "predicted_prerelease_frames": [
+        "abyss_scream:0",
+        "abyss_scream:1",
+        "abyss_scream:2",
+        "abyss_scream:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 40
+    },
+    {
+      "id": "shadow_orb",
+      "body_clip": "shadow_orb",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 14
+      },
+      "duration_seconds": 0.42,
+      "release_seconds": 0.14,
+      "predicted_sampled_frames": [
+        "shadow_orb:0",
+        "shadow_orb:1",
+        "shadow_orb:2",
+        "shadow_orb:4",
+        "shadow_orb:5",
+        "shadow_orb:7",
+        "shadow_orb:8",
+        "shadow_orb:10",
+        "shadow_orb:11",
+        "shadow_orb:12",
+        "shadow_orb:13",
+        "shadow_orb:14",
+        "shadow_orb:15"
+      ],
+      "predicted_prerelease_frames": [
+        "shadow_orb:0",
+        "shadow_orb:1",
+        "shadow_orb:2",
+        "shadow_orb:4",
+        "shadow_orb:5",
+        "shadow_orb:7",
+        "shadow_orb:8",
+        "shadow_orb:10",
+        "shadow_orb:11"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.083333,
+      "sample_count": 26
+    },
+    {
+      "id": "dive",
+      "body_clip": "dive",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 15
+      },
+      "duration_seconds": 2,
+      "release_seconds": 0.14,
+      "predicted_sampled_frames": [
+        "dive:0",
+        "dive:1",
+        "dive:2",
+        "dive:3"
+      ],
+      "predicted_prerelease_frames": [
+        "dive:0",
+        "dive:1",
+        "dive:2"
+      ],
+      "predicted_max_same_index_hold_seconds": 1.85,
+      "sample_count": 120,
+      "model_limit": "仅模拟catalog 2秒空中阶段；实际落地将duration重置为落地时刻+.24，后半帧另走落地阶段"
+    },
+    {
+      "id": "dark_dive",
+      "body_clip": "dark_dive",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 16
+      },
+      "duration_seconds": 2,
+      "release_seconds": 0.14,
+      "predicted_sampled_frames": [
+        "dark_dive:0",
+        "dark_dive:1",
+        "dark_dive:2",
+        "dark_dive:3"
+      ],
+      "predicted_prerelease_frames": [
+        "dark_dive:0",
+        "dark_dive:1",
+        "dark_dive:2"
+      ],
+      "predicted_max_same_index_hold_seconds": 1.85,
+      "sample_count": 120,
+      "model_limit": "仅模拟catalog 2秒空中阶段；实际落地将duration重置为落地时刻+.24，后半帧另走落地阶段"
+    },
+    {
+      "id": "parry",
+      "body_clip": "parry",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 17
+      },
+      "duration_seconds": 0.7,
+      "release_seconds": 0.02,
+      "predicted_sampled_frames": [
+        "parry:0",
+        "parry:1",
+        "parry:2",
+        "parry:3",
+        "parry:4",
+        "parry:5"
+      ],
+      "predicted_prerelease_frames": [
+        "parry:0",
+        "parry:1"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.566667,
+      "sample_count": 42
+    },
+    {
+      "id": "scan",
+      "body_clip": "scan",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 18
+      },
+      "duration_seconds": 0.6,
+      "release_seconds": 0.22,
+      "predicted_sampled_frames": [
+        "scan:0",
+        "scan:1",
+        "scan:2",
+        "scan:3",
+        "scan:4",
+        "scan:5",
+        "scan:6",
+        "scan:7",
+        "scan:8",
+        "scan:9",
+        "scan:10",
+        "scan:11",
+        "scan:12",
+        "scan:13",
+        "scan:14",
+        "scan:15"
+      ],
+      "predicted_prerelease_frames": [
+        "scan:0",
+        "scan:1",
+        "scan:2",
+        "scan:3",
+        "scan:4",
+        "scan:5",
+        "scan:6"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 36
+    },
+    {
+      "id": "tram",
+      "body_clip": "tram",
+      "source": {
+        "file": "game/src/campaign/tide_skill_catalog.gd",
+        "line": 19
+      },
+      "duration_seconds": 0.5,
+      "release_seconds": 0.3,
+      "predicted_sampled_frames": [
+        "tram:0",
+        "tram:1",
+        "tram:2",
+        "tram:3",
+        "tram:4",
+        "tram:5",
+        "tram:6",
+        "tram:7",
+        "tram:8",
+        "tram:9",
+        "tram:10",
+        "tram:11",
+        "tram:12",
+        "tram:13",
+        "tram:14",
+        "tram:15"
+      ],
+      "predicted_prerelease_frames": [
+        "tram:0",
+        "tram:1",
+        "tram:2",
+        "tram:3",
+        "tram:4",
+        "tram:5",
+        "tram:6",
+        "tram:7",
+        "tram:8"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 30
+    },
+    {
+      "id": "strike_01",
+      "body_clip": "strike1",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.35,
+      "release_seconds": 0.05,
+      "predicted_sampled_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:3",
+        "strike1:4",
+        "strike1:5",
+        "strike1:6",
+        "strike1:7",
+        "strike1:8",
+        "strike1:9",
+        "strike1:10",
+        "strike1:11"
+      ],
+      "predicted_prerelease_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 21
+    },
+    {
+      "id": "A1_dash",
+      "body_clip": "dash",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.2,
+      "release_seconds": 0,
+      "predicted_sampled_frames": [
+        "dash:0",
+        "dash:1",
+        "dash:2",
+        "dash:3",
+        "dash:4",
+        "dash:5",
+        "dash:6",
+        "dash:7",
+        "dash:8",
+        "dash:9",
+        "dash:10",
+        "dash:11"
+      ],
+      "predicted_prerelease_frames": [],
+      "predicted_max_same_index_hold_seconds": 0.016667,
+      "sample_count": 12
+    },
+    {
+      "id": "A3_anchor",
+      "body_clip": "pogo",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.35,
+      "release_seconds": 0.05,
+      "predicted_sampled_frames": [
+        "pogo:0",
+        "pogo:3",
+        "pogo:7",
+        "pogo:10",
+        "pogo:11"
+      ],
+      "predicted_prerelease_frames": [
+        "pogo:0",
+        "pogo:3",
+        "pogo:7"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.2,
+      "sample_count": 21
+    },
+    {
+      "id": "A4_parry",
+      "body_clip": "orb",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.5,
+      "release_seconds": 0.16666666666666666,
+      "predicted_sampled_frames": [
+        "orb:0",
+        "orb:1",
+        "orb:2",
+        "orb:3",
+        "orb:4",
+        "orb:5",
+        "orb:6",
+        "orb:7",
+        "orb:9",
+        "orb:10",
+        "orb:11",
+        "orb:12",
+        "orb:13",
+        "orb:14",
+        "orb:15"
+      ],
+      "predicted_prerelease_frames": [
+        "orb:0",
+        "orb:1",
+        "orb:2",
+        "orb:3",
+        "orb:4",
+        "orb:5",
+        "orb:6",
+        "orb:7",
+        "orb:9",
+        "orb:10"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.066667,
+      "sample_count": 30
+    },
+    {
+      "id": "A5_slit",
+      "body_clip": "slit",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.3,
+      "release_seconds": 0,
+      "predicted_sampled_frames": [
+        "slit:0",
+        "slit:1",
+        "slit:2",
+        "slit:3",
+        "slit:4",
+        "slit:5",
+        "slit:6",
+        "slit:7",
+        "slit:8",
+        "slit:9",
+        "slit:10",
+        "slit:11",
+        "slit:12",
+        "slit:13",
+        "slit:14",
+        "slit:15",
+        "slit:16",
+        "slit:17"
+      ],
+      "predicted_prerelease_frames": [],
+      "predicted_max_same_index_hold_seconds": 0.016667,
+      "sample_count": 18
+    },
+    {
+      "id": "heavy",
+      "body_clip": "heavy",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.55,
+      "release_seconds": 0.25,
+      "predicted_sampled_frames": [
+        "heavy:0",
+        "heavy:1",
+        "heavy:2",
+        "heavy:3",
+        "heavy:4",
+        "heavy:5",
+        "heavy:6",
+        "heavy:7"
+      ],
+      "predicted_prerelease_frames": [
+        "heavy:0",
+        "heavy:1",
+        "heavy:2",
+        "heavy:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.083333,
+      "sample_count": 33
+    },
+    {
+      "id": "recover",
+      "body_clip": "heal",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.9,
+      "release_seconds": 0.9,
+      "predicted_sampled_frames": [
+        "heal:0",
+        "heal:1",
+        "heal:2",
+        "heal:3",
+        "heal:4",
+        "heal:5",
+        "heal:6",
+        "heal:7",
+        "heal:8",
+        "heal:9",
+        "heal:10",
+        "heal:11",
+        "heal:12",
+        "heal:13",
+        "heal:14",
+        "heal:15",
+        "heal:16",
+        "heal:17",
+        "heal:18",
+        "heal:19",
+        "heal:20",
+        "heal:21",
+        "heal:22",
+        "heal:23"
+      ],
+      "predicted_prerelease_frames": [
+        "heal:0",
+        "heal:1",
+        "heal:2",
+        "heal:3",
+        "heal:4",
+        "heal:5",
+        "heal:6",
+        "heal:7",
+        "heal:8",
+        "heal:9",
+        "heal:10",
+        "heal:11",
+        "heal:12",
+        "heal:13",
+        "heal:14",
+        "heal:15",
+        "heal:16",
+        "heal:17",
+        "heal:18",
+        "heal:19",
+        "heal:20",
+        "heal:21",
+        "heal:22",
+        "heal:23"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 54
+    },
+    {
+      "id": "interact",
+      "body_clip": "interact",
+      "source": {
+        "file": "game/src/campaign/tide_player.gd",
+        "line": 486
+      },
+      "duration_seconds": 0.5,
+      "release_seconds": 0.5,
+      "predicted_sampled_frames": [
+        "interact:0",
+        "interact:1",
+        "interact:2",
+        "interact:3",
+        "interact:4",
+        "interact:5"
+      ],
+      "predicted_prerelease_frames": [
+        "interact:0",
+        "interact:1",
+        "interact:2",
+        "interact:3",
+        "interact:4",
+        "interact:5"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.083333,
+      "sample_count": 30
+    },
+    {
+      "id": "wb_rise",
+      "body_clip": "upper",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 6
+      },
+      "duration_seconds": 0.36,
+      "release_seconds": 0.07,
+      "predicted_sampled_frames": [
+        "upper:0",
+        "upper:1",
+        "upper:2",
+        "upper:3",
+        "upper:4",
+        "upper:5",
+        "upper:6",
+        "upper:7",
+        "upper:8",
+        "upper:9",
+        "upper:10",
+        "upper:11"
+      ],
+      "predicted_prerelease_frames": [
+        "upper:0",
+        "upper:1",
+        "upper:2"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 22
+    },
+    {
+      "id": "wb_drive",
+      "body_clip": "strike1",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 7
+      },
+      "duration_seconds": 0.24,
+      "release_seconds": 0.06,
+      "predicted_sampled_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:2",
+        "strike1:3",
+        "strike1:5",
+        "strike1:6",
+        "strike1:7",
+        "strike1:8",
+        "strike1:9",
+        "strike1:10",
+        "strike1:11"
+      ],
+      "predicted_prerelease_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:2",
+        "strike1:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 15,
+      "model_limit": "第1段；第2段复用strike2，第3段复用dash_slash，每段.24秒释放.06秒"
+    },
+    {
+      "id": "wb_drive_step_2",
+      "body_clip": "strike2",
+      "source": {
+        "file": "game/src/combat/combat_visual.gd",
+        "line": 98
+      },
+      "duration_seconds": 0.24,
+      "release_seconds": 0.06,
+      "predicted_sampled_frames": [
+        "strike2:0",
+        "strike2:1",
+        "strike2:2",
+        "strike2:3",
+        "strike2:4",
+        "strike2:5",
+        "strike2:6",
+        "strike2:7"
+      ],
+      "predicted_prerelease_frames": [
+        "strike2:0"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.066667,
+      "sample_count": 15
+    },
+    {
+      "id": "wb_drive_step_3",
+      "body_clip": "dash_slash",
+      "source": {
+        "file": "game/src/combat/combat_visual.gd",
+        "line": 98
+      },
+      "duration_seconds": 0.24,
+      "release_seconds": 0.06,
+      "predicted_sampled_frames": [
+        "dash_slash:0",
+        "dash_slash:1",
+        "dash_slash:3",
+        "dash_slash:4",
+        "dash_slash:5",
+        "dash_slash:6",
+        "dash_slash:7",
+        "dash_slash:8",
+        "dash_slash:9",
+        "dash_slash:10",
+        "dash_slash:11"
+      ],
+      "predicted_prerelease_frames": [
+        "dash_slash:0",
+        "dash_slash:1",
+        "dash_slash:3",
+        "dash_slash:4"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 15
+    },
+    {
+      "id": "wb_draw",
+      "body_clip": "great_slash",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 8
+      },
+      "duration_seconds": 0.56,
+      "release_seconds": 0.22,
+      "predicted_sampled_frames": [
+        "great_slash:0",
+        "great_slash:1",
+        "great_slash:2",
+        "great_slash:3",
+        "great_slash:4",
+        "great_slash:5",
+        "great_slash:6",
+        "great_slash:7",
+        "great_slash:8",
+        "great_slash:9",
+        "great_slash:10",
+        "great_slash:11",
+        "great_slash:12",
+        "great_slash:13",
+        "great_slash:14",
+        "great_slash:15"
+      ],
+      "predicted_prerelease_frames": [
+        "great_slash:0",
+        "great_slash:1",
+        "great_slash:2",
+        "great_slash:3",
+        "great_slash:4",
+        "great_slash:5",
+        "great_slash:6",
+        "great_slash:7",
+        "great_slash:8"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 34
+    },
+    {
+      "id": "wb_charge",
+      "body_clip": "dash",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 9
+      },
+      "duration_seconds": 0.62,
+      "release_seconds": 0.18,
+      "predicted_sampled_frames": [
+        "dash:0",
+        "dash:1",
+        "dash:3",
+        "dash:5",
+        "dash:7",
+        "dash:9",
+        "dash:11",
+        "upper:0",
+        "upper:1",
+        "upper:2",
+        "upper:3",
+        "upper:4",
+        "upper:5",
+        "upper:6",
+        "upper:7",
+        "upper:8",
+        "upper:9",
+        "upper:10",
+        "upper:11"
+      ],
+      "predicted_prerelease_frames": [
+        "dash:0",
+        "dash:1",
+        "dash:3",
+        "dash:5",
+        "dash:7",
+        "dash:9",
+        "dash:11",
+        "upper:0",
+        "upper:1"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.05,
+      "sample_count": 38
+    },
+    {
+      "id": "wb_flurry",
+      "body_clip": "strike1",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 10
+      },
+      "duration_seconds": 0.94,
+      "release_seconds": 0.1,
+      "predicted_sampled_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:2",
+        "strike1:3",
+        "strike1:4",
+        "strike1:6",
+        "strike1:8",
+        "strike1:9",
+        "strike1:11",
+        "strike2:0",
+        "strike2:2",
+        "strike2:3",
+        "strike2:5",
+        "strike2:7",
+        "strike1:5",
+        "strike1:10",
+        "strike2:4",
+        "great_slash:1",
+        "great_slash:3",
+        "great_slash:5",
+        "great_slash:7",
+        "great_slash:8",
+        "great_slash:9",
+        "great_slash:10",
+        "great_slash:11",
+        "great_slash:12",
+        "great_slash:13",
+        "great_slash:14",
+        "great_slash:15"
+      ],
+      "predicted_prerelease_frames": [
+        "strike1:0",
+        "strike1:1",
+        "strike1:2",
+        "strike1:3"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.083333,
+      "sample_count": 57
+    },
+    {
+      "id": "wb_backcut",
+      "body_clip": "strike2",
+      "source": {
+        "file": "game/src/combat/combat_skills.gd",
+        "line": 11
+      },
+      "duration_seconds": 0.18,
+      "release_seconds": 0.03,
+      "predicted_sampled_frames": [
+        "strike2:0",
+        "strike2:1",
+        "strike2:2",
+        "strike2:3",
+        "strike2:4",
+        "strike2:5",
+        "strike2:6",
+        "strike2:7"
+      ],
+      "predicted_prerelease_frames": [
+        "strike2:0"
+      ],
+      "predicted_max_same_index_hold_seconds": 0.033333,
+      "sample_count": 11
+    }
+  ],
+  "constraints": {
+    "frozen": [
+      "60ms组合容差",
+      "200ms预输入",
+      "后跳输入优先级与位移",
+      "所有release/伤害/脉冲/持续时间/冷却",
+      "敌人AI"
+    ],
+    "new_frames": "新增绘制必须使用内置image_gen；每动作是一条时间连续序列，保持角色身份、持叉手、灯、红绳、统一画布和足底；不得以缩放/插值/crossfade充当新帧",
+    "generation_status": "审计阶段未生成、未接入新素材"
+  },
+  "findings": [
+    {
+      "id": "short_windows",
+      "severity": "presentation_limit",
+      "detail": "parry .02秒、wb_backcut .03秒、普通近战.05秒，60Hz只能容纳极少采样。不能承诺在固定判定前播放6-12个不同新姿态。",
+      "sources": [
+        {
+          "file": "game/src/combat/combat_guard_skills.gd",
+          "line": 24
+        },
+        {
+          "file": "game/src/combat/combat_skills.gd",
+          "line": 11
+        },
+        {
+          "file": "game/content/whalebelly/CampaignPlayer.tscn",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "id": "body_duplicates",
+      "severity": "new_art_candidate",
+      "detail": "abyss_scream20槽7唯一、interact13槽7唯一；原PNG重复，不是fps设置推断。"
+    },
+    {
+      "id": "missing_start_fx",
+      "severity": "presentation_gap",
+      "detail": "TideWorldEffects没有通用start处理，heavy/dive/scan仅release/land后播放；白盒未安装TideWorldEffects，仅继承共用本体FX和后跳残影。",
+      "sources": [
+        {
+          "file": "game/src/campaign/tide_world_effects.gd",
+          "line": 95
+        },
+        {
+          "file": "game/src/campaign/campaign_player.gd",
+          "line": 49
+        },
+        {
+          "file": "game/src/combat/combat_player.gd",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "id": "combo_reuse",
+      "severity": "new_art_candidate",
+      "detail": "wb_charge拼接dash+upper，wb_drive复用三动作，wb_flurry五段复用strike1/strike2/great_slash；需独立连续衔接图才能称完整新动作。",
+      "sources": [
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 89
+        },
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 91
+        },
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "id": "held_phase",
+      "severity": "playback_candidate",
+      "detail": "parry接触、dive空中、crystal满蓄力与great_slash/cyclone长按均有源码明确保持；先做呈现阶段循环，避免盲增槽位。",
+      "sources": [
+        {
+          "file": "game/src/combat/combat_visual.gd",
+          "line": 101
+        },
+        {
+          "file": "game/src/campaign/action_visual.gd",
+          "line": 118
+        },
+        {
+          "file": "game/src/campaign/tide_skill_input.gd",
+          "line": 50
+        }
+      ]
+    }
+  ],
+  "proposed_existing_frame_segments": [
+    {
+      "clip": "strike1",
+      "prepare": [
+        0,
+        1,
+        2
+      ],
+      "release": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "recover": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "status": "已看源图；未实现；需实际短窗验收"
+    },
+    {
+      "clip": "upper",
+      "prepare": [
+        0,
+        1
+      ],
+      "release": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "recover": [
+        11
+      ],
+      "status": "已看源图；前2帧接近，需要更明显蓄势时仍需新绘"
+    },
+    {
+      "clip": "heavy",
+      "prepare": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "release": [
+        4,
+        5
+      ],
+      "recover": [
+        6,
+        7
+      ],
+      "status": "已看源图；未实现"
+    },
+    {
+      "clip": "parry",
+      "prepare": [
+        0,
+        1
+      ],
+      "contact": [
+        2
+      ],
+      "recover": [
+        3,
+        4,
+        5
+      ],
+      "status": "保持20ms与原guard窗口；持盾微动需要真正新图"
+    },
+    {
+      "clip": "strike2",
+      "prepare": [
+        0
+      ],
+      "release": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "recover": [
+        5,
+        6,
+        7
+      ],
+      "status": "现有原图仅有1帧准备；需新绘连续回拨"
+    }
+  ],
+  "checks": {
+    "pixel_audit": "已执行36动作body/fx像素哈希与透明索引",
+    "playback_model": "已执行31个技能与分段的60Hz离线模型",
+    "visual_review": "仅所列母版与7套本体源图已看",
+    "godot": "未运行，由主Agent统一执行",
+    "new_art": "未生成，待明确动作授权"
+  },
+  "audit_status": "baseline_e8053a8b_before_implementation",
+  "implementation": {
+    "details": "player/README.md",
+    "new_actions": {
+      "strike2": 16,
+      "abyss_scream": 16,
+      "interact": 16,
+      "parry": 8,
+      "strike1": 16,
+      "upper": 16,
+      "heavy": 16,
+      "orb": 16,
+      "up_spell": 16,
+      "great_slash": 16,
+      "cyclone": 16,
+      "dive": 16
+    },
+    "unique_new_body_frames": 184,
+    "runtime_manifest": "assets/runtime/sprites/combat-animation-v2/player/animations.json",
+    "phase_profiles": "assets/runtime/sprites/combat-animation-v2/player/phase-profiles.json",
+    "ordinary_melee_startup_change": {
+      "old": 0.05,
+      "new": 0.1,
+      "files": [
+        "game/content/whalebelly/CampaignPlayer.tscn",
+        "game/src/campaign/campaign_profile.gd",
+        "game/tests/whitebox_combat/player.gd"
+      ]
+    },
+    "status": "candidate_pending_engine_and_user_art_review",
+    "engine_validation": "owned_by_root_not_executed_here",
+    "preview_failure": "CUA GetCursorPos access denied 0x80070005, visible and hidden attempts",
+    "explicit_body_aliases": {
+      "dark_dive": "dive"
+    },
+    "static_validation": "player/verification-core12.json"
+  }
+}

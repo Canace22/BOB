@@ -18,6 +18,7 @@ var guards: int = 0
 var backsteps: int = 0
 var damage_taken: int = 0
 var beats: Array[Dictionary] = []
+var characters: ChapterCharacterPresentation
 
 func _ready() -> void:
 	beats=host.loop_beats
@@ -30,6 +31,10 @@ func _ready() -> void:
 	host.player.died.connect(_failed)
 	host.dialogue.ended.connect(_dialogue_finished)
 	last_x=host.player.position.x
+	# 演员只读既有对白进度，避开玩家F点；不创建触发器或保存字段。
+	characters=ChapterCharacterPresentation.new()
+	characters.add_actor("mender","nest_mender",104)
+	host.scenery.get_node("World").add_child(characters)
 	for i: int in 2:
 		var enemy := WhaleChapterForager.new()
 		enemy.host=host
@@ -64,6 +69,8 @@ func _process(dt: float) -> void:
 	if host.dialogue.seen.get("loop.warning",false) and not host.dialogue.seen.get("loop.passage",false):
 		if not host.player_ui.busy: host.checkpoint={"room":0,"pos":[500,host.ground_y(500,580)]}
 	if get_tree().paused: return
+	var mender_x: float=1490 if host.dialogue.seen.get("loop.passage",false) else 500
+	characters.put("mender",Vector2(mender_x,host.ground_y(mender_x,650)))
 	elapsed=host.clock
 	var p: WhalebellyCampaignPlayer=host.player
 	if p.health<=0: return

@@ -10,13 +10,6 @@ const TUNING: Array[String] = [
 	"hit_recoil_speed", "hit_recoil_time", "hitstop_duration"]
 const ACTIONS: Array[String] = ["tp_left", "tp_right", "tp_up", "tp_down", "tp_jump", "tp_attack", "tp_heal"]
 
-class Target extends Node2D:
-	var hits: Array[int] = []
-	func _ready() -> void: add_to_group("tide_targets")
-	func hurt_rect() -> Rect2: return Rect2(global_position - Vector2(10,10), Vector2(20,20))
-	func can_receive_hit() -> bool: return true
-	func take_hit(amount: int) -> void: hits.append(amount)
-
 class CameraHost extends Node2D:
 	var player: Node2D
 	var zoomed: bool = true
@@ -127,36 +120,11 @@ func test_double_jump_hint_tracks_one_air_jump_per_landing() -> void:
 
 func test_swing_hits_fast_and_keeps_its_direction() -> void:
 	var p: TidePlayer = await tuned_player()
-	var victim := Target.new()
-	victim.position = p.position + Vector2(60,-30)
-	add(victim)
-	Input.action_press("tp_attack")
-	var frames: int = 0
-	for i: int in 12:
-		await physics_frames(1)
-		frames = i + 1
-		if not victim.hits.is_empty(): break
-	Input.action_release("tp_attack")
-	check(not victim.hits.is_empty() and frames <= 5, "swing lands within five frames, got %s" % frames)
-	Input.action_press("tp_left")
-	await physics_frames(4)
-	eq(p.facing, 1.0, "swing keeps the direction it started with")
-	check(p.velocity.x < -100.0, "movement stays free during a swing")
-	Input.action_release("tp_left")
-	p.start_recoil(-1.0)
-	await physics_frames(1)
-	eq(p.velocity.x, -p.hit_recoil_speed, "a landed hit pushes the attacker back")
+	await FeelMeleeStartupCases.swing_hits(self,p)
 
 func test_jump_is_free_right_after_the_hit() -> void:
 	var p: TidePlayer = await tuned_player()
-	Input.action_press("tp_attack")
-	await physics_frames(5)
-	Input.action_release("tp_attack")
-	Input.action_press("tp_jump")
-	await physics_frames(3)
-	Input.action_release("tp_jump")
-	check(p.velocity.y < -100.0 and not p.is_on_floor(), "jump is accepted during swing recovery")
-	eq(p.state, "strike_01", "the swing keeps playing through the jump")
+	await FeelMeleeStartupCases.jump_after_hit(self,p)
 
 func test_focus_heals_one_mask_per_charge_and_release_is_free() -> void:
 	var p: TidePlayer = await tuned_player()

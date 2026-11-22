@@ -146,9 +146,14 @@ func test_echo_animates_full_combo_on_real_origin_and_clears_on_end() -> void:
 		textures[view.action_echo.texture]=true
 		clips[view.body_key]=true
 		check(view.action_echo.global_position.is_equal_approx(e.global_position),"ghost shares actual attack and movement origin")
-		var bottoms: Array=lab.player.action_visual.foot_metadata.get(view.body_key,{}).get("bottom",[])
-		if e.is_on_floor() and not bottoms.is_empty():
-			eq(view.action_echo.offset.y,-float(bottoms[view.body_frame]),"grounded ghost reuses source foot metadata")
+		var spec: Dictionary=lab.player.action_visual.manifest[view.body_key]
+		if bool(spec.get("authored_pivot",false)):
+			eq(view.action_echo.offset,-Vector2(float(spec.body.pivot[0]),float(spec.body.pivot[1])),"new ghost consumes its authored pivot")
+		else:
+			var bottoms: Array=lab.player.action_visual.foot_metadata.get(view.body_key,{}).get("bottom",[])
+			if e.is_on_floor() and not bottoms.is_empty():
+				check(view.body_frame<bottoms.size(),"legacy ghost frame has matching foot metadata")
+				if view.body_frame<bottoms.size(): eq(view.action_echo.offset.y,-float(bottoms[view.body_frame]),"legacy ghost reuses original foot metadata")
 	check(textures.size()>5 and clips.size()>=3,"flurry plays changing body frames and multiple source actions")
 	e.finish()
 	await physics_frames(2)

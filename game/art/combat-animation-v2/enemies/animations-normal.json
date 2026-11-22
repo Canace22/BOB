@@ -1,0 +1,2619 @@
+{
+  "schema_version": 1,
+  "enemies": {
+    "forager": {
+      "clips": [
+        {
+          "action": "rush",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/forager-rush.png",
+          "reference_height": 139,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.833333
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        },
+        {
+          "action": "rush",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/forager-rush.png",
+          "reference_height": 139,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.75
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        },
+        {
+          "action": "rush",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/forager-rush.png",
+          "reference_height": 139,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.833333
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        },
+        {
+          "action": "double",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/forager-double.png",
+          "reference_height": 119,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.833333
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        },
+        {
+          "action": "double",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/forager-double.png",
+          "reference_height": 119,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.75
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        },
+        {
+          "action": "double",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/forager-double.png",
+          "reference_height": 119,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                237,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                238,
+                300
+              ],
+              "at": 0.833333
+            }
+          ],
+          "chapter_height": 163.18,
+          "chapter_ground_offset": 26.24
+        }
+      ],
+      "windups": [
+        {
+          "action": "rush",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.24,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        },
+        {
+          "action": "double",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.24,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mudback": {
+      "clips": [
+        {
+          "action": "ambush",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-ambush.png",
+          "reference_height": 163,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "ambush",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-ambush.png",
+          "reference_height": 163,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "ambush",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-ambush.png",
+          "reference_height": 163,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "press",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-press.png",
+          "reference_height": 176,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "press",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-press.png",
+          "reference_height": 176,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "press",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-press.png",
+          "reference_height": 176,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "flip",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-flip.png",
+          "reference_height": 156,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "flip",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-flip.png",
+          "reference_height": 156,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "flip",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/mudback-flip.png",
+          "reference_height": 156,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                206,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        }
+      ],
+      "windups": [
+        {
+          "action": "ambush",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        },
+        {
+          "action": "press",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        },
+        {
+          "action": "flip",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "shell_guard": {
+      "clips": [
+        {
+          "action": "poke",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-poke.png",
+          "reference_height": 208,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "poke",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-poke.png",
+          "reference_height": 208,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "poke",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-poke.png",
+          "reference_height": 208,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "shell_push",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-shell_push.png",
+          "reference_height": 178,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "shell_push",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-shell_push.png",
+          "reference_height": 178,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "shell_push",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-shell_push.png",
+          "reference_height": 178,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "realign",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-realign.png",
+          "reference_height": 182,
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                400,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                800,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                1200,
+                0,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                0,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                400,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        },
+        {
+          "action": "realign",
+          "state": "active",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-realign.png",
+          "reference_height": 182,
+          "frames": [
+            {
+              "rect": [
+                800,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                400,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.25
+            },
+            {
+              "rect": [
+                0,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                400,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "action": "realign",
+          "state": "recover",
+          "texture": "res://art/combat-animation-v2/enemies/shell_guard-realign.png",
+          "reference_height": 182,
+          "frames": [
+            {
+              "rect": [
+                800,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.0
+            },
+            {
+              "rect": [
+                1200,
+                800,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.166667
+            },
+            {
+              "rect": [
+                0,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.333333
+            },
+            {
+              "rect": [
+                400,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.5
+            },
+            {
+              "rect": [
+                800,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                243,
+                300
+              ],
+              "at": 0.666667
+            },
+            {
+              "rect": [
+                1200,
+                1200,
+                400,
+                400
+              ],
+              "pivot": [
+                244,
+                300
+              ],
+              "at": 0.833333
+            }
+          ]
+        }
+      ],
+      "windups": [
+        {
+          "action": "poke",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        },
+        {
+          "action": "shell_push",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        },
+        {
+          "action": "realign",
+          "state": "tell",
+          "texture": "res://art/combat-animation-v2/enemies/normal-windup-fx.png",
+          "reference_height": 512,
+          "anchor": [
+            0,
+            -5
+          ],
+          "scale": 0.33,
+          "frames": [
+            {
+              "at": 0.0,
+              "rect": [
+                0,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.166667,
+              "rect": [
+                512,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.333333,
+              "rect": [
+                1024,
+                0,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.5,
+              "rect": [
+                0,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.666667,
+              "rect": [
+                512,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            },
+            {
+              "at": 0.833333,
+              "rect": [
+                1024,
+                512,
+                512,
+                512
+              ],
+              "pivot": [
+                256.0,
+                378.88
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

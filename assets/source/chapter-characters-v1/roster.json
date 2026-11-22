@@ -1,0 +1,2133 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-assets-produced-readonly-integration-awaiting-engine-verification",
+  "date": "2026-11-22",
+  "scope": "12-chapter continuous narrative prototypes; preserve existing quest/trigger/dialogue/collision/map",
+  "counts": {
+    "newStaticCharacterDesignsProposed": 7,
+    "reusedRecurringNarrativeCombatIdentities": 4,
+    "existingPlayerIdentity": 1,
+    "existingHostileOnlyEnemyFamilies": 4,
+    "newImagesGenerated": 7,
+    "newRuntimeAssetsIntegrated": 0,
+    "generatedCleanupCandidates": 1,
+    "newRuntimeExports": 7,
+    "readOnlyActorBindingsImplemented": 7
+  },
+  "sourceFiles": [
+    "game/content/whalebelly/narrative/chapter_loop.tscn",
+    "game/src/narrative/chapter_one/foldwell.gd",
+    "game/src/prototypes/chapter_two/dialogue.gd",
+    "game/src/prototypes/chapter_three/dialogue.gd",
+    "game/content/prototypes/chapters/ch04.json",
+    "game/content/prototypes/chapters/ch05.json",
+    "game/content/prototypes/chapters/ch06.json",
+    "game/content/prototypes/chapters/ch07.json",
+    "game/content/prototypes/chapters/ch08.json",
+    "game/content/prototypes/chapters/ch09.json",
+    "game/content/prototypes/chapters/ch10.json",
+    "game/content/prototypes/chapters/ch11.json",
+    "game/content/prototypes/chapters/ch12.json"
+  ],
+  "identities": [
+    {
+      "id": "nest_mender",
+      "name": "补巢者",
+      "chapters": [
+        1,
+        3,
+        5,
+        8,
+        9,
+        12
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "低矮宽头的软体海生居民，三对可辨触肢；灰褐皮肤、短赭色工作围片，一侧抱弧形残巢片，另一侧握骨针与短绳。无主角面罩、观察镜、青披风或U形武器。"
+      },
+      "stateNeeds": "扶巢、递壳、补刻记号；本批先做完整静态基础形象，不能称缀巢动作动画。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 22
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 28
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 29
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 38
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 44
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 46
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 20
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 36
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 60
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 61
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 9
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 11
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 13
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 26
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 33
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 36
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 38
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 39
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 41
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 43
+        },
+        {
+          "file": "game/content/whalebelly/narrative/chapter_loop.tscn",
+          "line": 34
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 57
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 359
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/nest_mender.png"
+    },
+    {
+      "id": "fat_store_keeper",
+      "name": "脂库看守",
+      "chapters": [
+        4
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "窄高、壳脊后弯的海生居民；暗橄榄披片、骨白护肩，抱短水位刻尺和小供养板；双足或支撑触肢完整。与主角、拖高螺壳的守卫区分。"
+      },
+      "stateNeeds": "观察水位、保留供养牌；不是持武器的守卫。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 129
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 198
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 228
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 277
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 347
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 414
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 444
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/fat_store_keeper.png"
+    },
+    {
+      "id": "ring_keeper",
+      "name": "环居看守",
+      "chapters": [
+        5
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "横宽的矮甲壳居民，扇状低背、两只宽钳；钳中拿绳环和一片骨质缓流标牌，暗红褐与骨白，不背高螺壳。"
+      },
+      "stateNeeds": "缓流区管理；不凭职业增加新种族名或战斗能力。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 38
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 45
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/ring_keeper.png"
+    },
+    {
+      "id": "lung_keeper",
+      "name": "肺缘看守",
+      "chapters": [
+        6
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "细长触须、下缘有鳍状垂片的海生居民；罩低的小菌灯与三格壳片架构成身份标志，灰蓝衣片、微暖灯色；不戴主角圆观察镜。"
+      },
+      "stateNeeds": "巡视与对照样片；灯为持有道具，不新增玩家能力。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 157
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 218
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 258
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 324
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 404
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 426
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 450
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 474
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch06.json",
+          "line": 507
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/lung_keeper.png"
+    },
+    {
+      "id": "resident_settled",
+      "name": "住户群像·留居轮廓",
+      "chapters": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        12
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "圆扁身体、短触肢、背一片低平旧巢壁；浅灰贝色配褐布绳，持家用拴绳。完整独立单人图，不画住巢背景。"
+      },
+      "stateNeeds": "同一轮廓可作为不同地区未命名住户，不能据此断言同一个人；第5章留居者用此轮廓。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 325
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 38
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 45
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 26
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 42
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 6
+        },
+        {
+          "file": "game/src/prototypes/chapter_characters/presentation.gd",
+          "line": 54
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/resident_settled.png"
+    },
+    {
+      "id": "resident_migrant",
+      "name": "住户群像·迁居轮廓",
+      "chapters": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        12
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "偏高的海生软体居民，侧面有两条较长承托触肢；背小卷巢片，暗紫灰衣片与骨白短绳标志；不复制补巢者外观。"
+      },
+      "stateNeeds": "第5章迁居者与留居者同屏可区分；不把第4/9章泛称居民强行合并为个人身份。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 38
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch05.json",
+          "line": 46
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 50
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 52
+        },
+        {
+          "file": "game/src/prototypes/chapter_characters/presentation.gd",
+          "line": 68
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 20
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/resident_migrant.png"
+    },
+    {
+      "id": "resident_carrier",
+      "name": "住户群像·搬运轮廓",
+      "chapters": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        12
+      ],
+      "assetDecision": "new-transparent-static-candidate",
+      "appearance": {
+        "status": "proposed-not-world-canon",
+        "description": "低重心多足甲壳居民，左右承托肢张开，背低矮扁壳、捆扎短绳；墨蓝肢体、赭褐外壳，不用负壳守卫高螺壳与长针钳。"
+      },
+      "stateNeeds": "第9章搬运居民及第12章搬运者可用；静态托举姿态不冒充完整抬巢逐帧。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 28
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 49
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 166
+        }
+      ],
+      "asset": "assets/runtime/sprites/chapter-characters-v1/resident_carrier.png"
+    },
+    {
+      "id": "shell_guard",
+      "name": "负壳守卫",
+      "chapters": [
+        2,
+        4,
+        8,
+        9,
+        12
+      ],
+      "assetDecision": "reuse-existing-identity",
+      "asset": "game/art/enemy-lab-readability-v1/shell_guard.png",
+      "stateNeeds": "同一高象牙螺壳、深蓝身体与长针钳；第2章战败存活，之后拖/扶壳、持名壳、稳撑。第3章泛称守卫不擅自归为这一个体。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 277
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 347
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 414
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch04.json",
+          "line": 444
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch09.json",
+          "line": 73
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 166
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 270
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 10
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 12
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 14
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 16
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 18
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 22
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 29
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 36
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 47
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "id": "pump_warden",
+      "name": "泵庭执卫",
+      "chapters": [
+        7
+      ],
+      "assetDecision": "reuse-existing-identity",
+      "asset": "game/art/enemy-lab-warden-v1/pump_warden.png",
+      "stateNeeds": "第7章阻拦和撤离；非致死、无需击倒，战斗实例与停战身体由encounter拥有。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 216
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 250
+        }
+      ]
+    },
+    {
+      "id": "beam_guard",
+      "name": "封梁卫",
+      "chapters": [
+        8
+      ],
+      "assetDecision": "reuse-existing-identity",
+      "asset": "game/art/enemy-lab-beam-guard-v1/beam_guard.png",
+      "stateNeeds": "第8章战前交涉、战斗、战死；后续章仅刻名薄壳和记录，无活体再出场。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 20
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 30
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 31
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch08.json",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "id": "elder_guardian",
+      "name": "老守护者",
+      "chapters": [
+        2,
+        3,
+        7,
+        12
+      ],
+      "assetDecision": "reuse-existing-identity",
+      "asset": "game/art/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png",
+      "stateNeeds": "复用已修正待机与原elder图集；第2/3章救援，第7章修泵，第12章非致死战败、伤者稳台、扶撑、恢复。",
+      "source": [
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 102
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 132
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 164
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 309
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 111
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 166
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 244
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 270
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch12.json",
+          "line": 298
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 25
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 27
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 28
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 31
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 35
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 37
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 39
+        },
+        {
+          "file": "game/src/prototypes/chapter_two/dialogue.gd",
+          "line": 51
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 28
+        },
+        {
+          "file": "game/src/prototypes/chapter_three/dialogue.gd",
+          "line": 30
+        },
+        {
+          "file": "game/content/prototypes/chapters/ch07.json",
+          "line": 54
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_01_arrival",
+      "task": null,
+      "interactionAt": [
+        440,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 129
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_02_survey",
+      "task": "ch04_supply_rubbing",
+      "interactionAt": [
+        540,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 198
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_02_survey",
+      "task": "ch04_safe_flow",
+      "interactionAt": [
+        730,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 228
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch04_03_agreement",
+      "task": null,
+      "interactionAt": [
+        1770,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 277
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_03_agreement",
+      "task": null,
+      "interactionAt": [
+        1770,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 277
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "resident_settled",
+      "speaker": "住巢居民",
+      "stage": "ch04_04_limited_flow",
+      "task": "ch04_lift_homes",
+      "interactionAt": [
+        1840,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 325
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch04_04_limited_flow",
+      "task": "ch04_open_slit",
+      "interactionAt": [
+        2200,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 347
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_04_limited_flow",
+      "task": "ch04_open_slit",
+      "interactionAt": [
+        2200,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 347
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_06_keep_limit",
+      "task": "ch04_reduce_opening",
+      "interactionAt": [
+        3100,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 414
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch04_06_keep_limit",
+      "task": "ch04_reduce_opening",
+      "interactionAt": [
+        3100,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 414
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "fat_store_keeper",
+      "speaker": "脂库看守",
+      "stage": "ch04_06_keep_limit",
+      "task": "ch04_take_record",
+      "interactionAt": [
+        3310,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 444
+      }
+    },
+    {
+      "chapter": 4,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch04_06_keep_limit",
+      "task": "ch04_take_record",
+      "interactionAt": [
+        3310,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch04.json",
+        "line": 444
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_01_find_family",
+      "task": null,
+      "interactionAt": [
+        420,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 22
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_02_prepare_refuge",
+      "task": "ch05_inspect_attached",
+      "interactionAt": [
+        850,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 28
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_02_prepare_refuge",
+      "task": "ch05_move_residents",
+      "interactionAt": [
+        1200,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 29
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_04_after_battle",
+      "task": null,
+      "interactionAt": [
+        2700,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 38
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "ring_keeper",
+      "speaker": "环居看守",
+      "stage": "ch05_04_after_battle",
+      "task": null,
+      "interactionAt": [
+        2700,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 38
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "resident_settled",
+      "speaker": "留居居民",
+      "stage": "ch05_04_after_battle",
+      "task": null,
+      "interactionAt": [
+        2700,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 38
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "resident_migrant",
+      "speaker": "迁居居民",
+      "stage": "ch05_04_after_battle",
+      "task": null,
+      "interactionAt": [
+        2700,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 38
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_05_carry_base",
+      "task": "ch05_lift_whole_base",
+      "interactionAt": [
+        2780,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 44
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "resident_settled",
+      "speaker": "留居居民",
+      "stage": "ch05_05_carry_base",
+      "task": "ch05_keep_mooring",
+      "interactionAt": [
+        3120,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 45
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "ring_keeper",
+      "speaker": "环居看守",
+      "stage": "ch05_05_carry_base",
+      "task": "ch05_keep_mooring",
+      "interactionAt": [
+        3120,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 45
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch05_05_carry_base",
+      "task": "ch05_handover_base",
+      "interactionAt": [
+        3460,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 46
+      }
+    },
+    {
+      "chapter": 5,
+      "identity": "resident_migrant",
+      "speaker": "迁居居民",
+      "stage": "ch05_05_carry_base",
+      "task": "ch05_handover_base",
+      "interactionAt": [
+        3460,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch05.json",
+        "line": 46
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_01_patrol",
+      "task": null,
+      "interactionAt": [
+        430,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 157
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_02_outside",
+      "task": "ch06_sheltered_view",
+      "interactionAt": [
+        730,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 218
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_02_outside",
+      "task": "ch06_compare_marks",
+      "interactionAt": [
+        1790,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 258
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_03_place_samples",
+      "task": "ch06_place_shelter",
+      "interactionAt": [
+        2300,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 324
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_05_mark_limits",
+      "task": "ch06_compare_samples",
+      "interactionAt": [
+        2820,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 404
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_05_mark_limits",
+      "task": "ch06_protect_membrane_a",
+      "interactionAt": [
+        3050,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 426
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_05_mark_limits",
+      "task": "ch06_protect_membrane_b",
+      "interactionAt": [
+        3260,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 450
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_05_mark_limits",
+      "task": "ch06_clear_slow_inlet",
+      "interactionAt": [
+        3530,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 474
+      }
+    },
+    {
+      "chapter": 6,
+      "identity": "lung_keeper",
+      "speaker": "肺缘看守",
+      "stage": "ch06_06_echo",
+      "task": null,
+      "interactionAt": [
+        3740,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch06.json",
+        "line": 507
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch07_evidence",
+      "task": "ch07_compare_samples",
+      "interactionAt": [
+        970,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 102
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch07_evidence",
+      "task": "ch07_read_decline",
+      "interactionAt": [
+        1310,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 132
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch07_dispute",
+      "task": null,
+      "interactionAt": [
+        1510,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 164
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "pump_warden",
+      "speaker": "泵庭执卫",
+      "stage": "ch07_make_copy",
+      "task": "ch07_copy_records",
+      "interactionAt": [
+        1810,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 216
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "pump_warden",
+      "speaker": "泵庭执卫",
+      "stage": "ch07_blocked",
+      "task": null,
+      "interactionAt": [
+        2050,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 250
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch07_called_off",
+      "task": null,
+      "interactionAt": [
+        1660,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 309
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch08_arrival",
+      "task": null,
+      "interactionAt": [
+        440,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 20
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "beam_guard",
+      "speaker": "封梁卫",
+      "stage": "ch08_arrival",
+      "task": null,
+      "interactionAt": [
+        440,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 20
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "beam_guard",
+      "speaker": "封梁卫",
+      "stage": "ch08_check_support",
+      "task": "ch08_show_base",
+      "interactionAt": [
+        900,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 30
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "beam_guard",
+      "speaker": "封梁卫",
+      "stage": "ch08_check_support",
+      "task": "ch08_show_water",
+      "interactionAt": [
+        1240,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 31
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch08_refusal",
+      "task": null,
+      "interactionAt": [
+        1510,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 36
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "beam_guard",
+      "speaker": "封梁卫",
+      "stage": "ch08_refusal",
+      "task": null,
+      "interactionAt": [
+        1510,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 36
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch08_receive_nests",
+      "task": "ch08_bring_nests",
+      "interactionAt": [
+        3200,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 60
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "ch08_receive_nests",
+      "task": "ch08_note_name",
+      "interactionAt": [
+        2970,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 61
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "resident_carrier",
+      "speaker": "搬运居民",
+      "stage": "ch09_find_routes",
+      "task": "ch09_ask_carriers",
+      "interactionAt": [
+        900,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 28
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "resident_carrier",
+      "speaker": "搬运居民",
+      "stage": "ch09_check_outcomes",
+      "task": "ch09_stable_bed",
+      "interactionAt": [
+        2130,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 49
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "resident_migrant",
+      "speaker": "迁居居民",
+      "stage": "ch09_check_outcomes",
+      "task": "ch09_failed_nest",
+      "interactionAt": [
+        2570,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 50
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "resident_migrant",
+      "speaker": "迁居居民",
+      "stage": "ch09_check_outcomes",
+      "task": "ch09_move_inside",
+      "interactionAt": [
+        2950,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 52
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch09_receive_name_shell",
+      "task": null,
+      "interactionAt": [
+        3310,
+        520
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 73
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch12_return_name",
+      "task": null,
+      "interactionAt": [
+        600,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 111
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch12_dispute_patch",
+      "task": null,
+      "interactionAt": [
+        1130,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 166
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch12_dispute_patch",
+      "task": null,
+      "interactionAt": [
+        1130,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 166
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch12_rescue_and_brace",
+      "task": "ch12_move_elder_safe",
+      "interactionAt": [
+        2755,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 244
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "stage": "ch12_rescue_and_brace",
+      "task": "ch12_shift_narrow_cover",
+      "interactionAt": [
+        2880,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 270
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch12_rescue_and_brace",
+      "task": "ch12_shift_narrow_cover",
+      "interactionAt": [
+        2880,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 270
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "stage": "ch12_rescue_and_brace",
+      "task": "ch12_set_old_anchor",
+      "interactionAt": [
+        3020,
+        480
+      ],
+      "placement": "proposed: place beside this existing interaction point with visible separation from player; verify floor/occlusion before integration",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 298
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 10
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 12
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 14
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 16
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 18
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 22
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 25
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "resident_settled",
+      "speaker": "住户",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 26
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 27
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 28
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫（上层）",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 29
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 31
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 35
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 36
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 37
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 39
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "resident_settled",
+      "speaker": "住户",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 42
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "shell_guard",
+      "speaker": "负壳守卫",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 47
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_two/dialogue.gd",
+        "line": 51
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "resident_settled",
+      "speaker": "住户",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 6
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 9
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 11
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 13
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 26
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 28
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "elder_guardian",
+      "speaker": "老守护者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 30
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 33
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 36
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 38
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 39
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 41
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "binding": "read existing flow.stage/facts; see chapter-specific view placement plan",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_three/dialogue.gd",
+        "line": 43
+      }
+    },
+    {
+      "chapter": 1,
+      "identity": "nest_mender",
+      "speaker": "补巢者",
+      "stage": "loop.warning / loop.aftermath",
+      "interactionAt": [
+        [
+          440,
+          570
+        ],
+        [
+          1400,
+          648
+        ]
+      ],
+      "placement": "proposed beside existing FirstLamp/SafeLamp; first-chapter installation seam must be assigned separately",
+      "evidence": {
+        "file": "game/content/whalebelly/narrative/chapter_loop.tscn",
+        "line": 34
+      }
+    },
+    {
+      "chapter": 2,
+      "identity": "resident_settled",
+      "stage": "rescue/rescued/permitted/complete",
+      "interactionAt": [
+        2410,
+        637
+      ],
+      "notes": "三名住户原代理，沿现有rescue_time/departure_time读取位置；三种轮廓各一，不增加人数。",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_characters/presentation.gd",
+        "line": 54
+      }
+    },
+    {
+      "chapter": 3,
+      "identity": "resident_migrant",
+      "stage": "rescue and repair",
+      "interactionAt": [
+        767,
+        496
+      ],
+      "notes": "原三圆圈中一个必须由补巢者替换，余两名住户；不是再多加三人。",
+      "evidence": {
+        "file": "game/src/prototypes/chapter_characters/presentation.gd",
+        "line": 68
+      }
+    },
+    {
+      "chapter": 7,
+      "identity": "elder_guardian",
+      "stage": "whole chapter repair seam",
+      "interactionAt": [
+        1575,
+        520
+      ],
+      "notes": "修补接缝；读阶段显示，不新增修泵机制。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch07.json",
+        "line": 54
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "shell_guard",
+      "stage": "ch08_no_reply onwards",
+      "interactionAt": [
+        2370,
+        520
+      ],
+      "notes": "读观察时间：赶到、取名壳，后到索桩扶索；死亡身体仍由encounter拥有。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 48
+      }
+    },
+    {
+      "chapter": 8,
+      "identity": "resident_migrant",
+      "stage": "arrival / ch08_bring_nests",
+      "interactionAt": [
+        440,
+        520
+      ],
+      "notes": "两户滞留住巢需两种居民轮廓；读任务标记换至内侧骨台。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch08.json",
+        "line": 20
+      }
+    },
+    {
+      "chapter": 9,
+      "identity": "nest_mender",
+      "stage": "ch09_record_old_loss",
+      "interactionAt": [
+        2340,
+        520
+      ],
+      "notes": "无对白但caption明确继续缀巢，不漏掉该出场。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch09.json",
+        "line": 57
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "resident_carrier",
+      "stage": "ch12_dispute_patch -> inner safe platform",
+      "interactionAt": [
+        1130,
+        480
+      ],
+      "notes": "补片送达后让搬运者/居民退到内侧；没有新增护送玩法。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 166
+      }
+    },
+    {
+      "chapter": 12,
+      "identity": "nest_mender",
+      "stage": "ch12_recovery_life",
+      "interactionAt": [
+        3890,
+        480
+      ],
+      "notes": "caption明确出场；与恢复伤势的老守护者、负壳守卫及居民同段。",
+      "evidence": {
+        "file": "game/content/prototypes/chapters/ch12.json",
+        "line": 359
+      }
+    }
+  ],
+  "groupPolicy": "住户不是同一个命名角色。3套可辨轮廓按场景职能复用；跨地区不建立未经对白确认的个人连续性。不把余索/贝驮改名。",
+  "additionalReusable": [
+    {
+      "id": "player",
+      "asset": "assets/runtime/sprites/tide-picker/idle-right.png",
+      "owner": "player-animation-agent"
+    },
+    {
+      "id": "attached_larvae",
+      "asset": "assets/runtime/sprites/sea-larva/base.png",
+      "runtimeExisting": "game/art/world-kit/sea-larva-swim-v1.png",
+      "decision": "reference/reuse existing creature identity; attached state must not play free-swim motion or detach larvae"
+    },
+    {
+      "id": "generic_rescue_guards",
+      "chapter": 3,
+      "decision": "对白只称守卫，复用现有守卫轮廓作为无名群体；不声称就是负壳守卫本人，不新增命名角色。"
+    }
+  ],
+  "notReassigned": [
+    {
+      "id": "yusuo",
+      "asset": "assets/runtime/sprites/yusuo/base.png",
+      "reason": "已命名余索，铜橙长窗头盔、红索；看图确认独立透明人物，但不是补巢者。"
+    },
+    {
+      "id": "beituo",
+      "asset": "assets/runtime/sprites/beituo/base.png",
+      "reason": "已命名贝驮，背空壳和蓝条钳；看图确认独立透明人物，但不是负壳守卫。"
+    },
+    {
+      "id": "nursery-sac",
+      "asset": "assets/runtime/sprites/nursery-sac/base.png",
+      "reason": "已有膜囊生态身份，不代替智慧居民。"
+    }
+  ],
+  "excludedLabels": [
+    {
+      "label": "拾潮者",
+      "reason": "主角已有形象，由主角动作工作负责"
+    },
+    {
+      "label": "旁白",
+      "reason": "旁白、文字、记忆或鲸声，不凭发声标签新增站台人物"
+    },
+    {
+      "label": "叙述",
+      "reason": "旁白、文字、记忆或鲸声，不凭发声标签新增站台人物"
+    },
+    {
+      "label": "记录",
+      "reason": "旁白、文字、记忆或鲸声，不凭发声标签新增站台人物"
+    },
+    {
+      "label": "鲸的残留回声",
+      "reason": "旁白、文字、记忆或鲸声，不凭发声标签新增站台人物"
+    },
+    {
+      "label": "记忆片旁的刻字",
+      "reason": "旁白、文字、记忆或鲸声，不凭发声标签新增站台人物"
+    },
+    {
+      "label": "封城回声",
+      "reason": "第10章年轻守护者是既有老守护者的历史回声，不生成新活体NPC"
+    }
+  ],
+  "stateOwnership": {
+    "readOnly": [
+      "flow.stage()/index",
+      "flags",
+      "completed",
+      "chapter2/3 facts/rescue_time/departure_time",
+      "flow.observing/observation_time"
+    ],
+    "forbidden": [
+      "write quest flags",
+      "create triggers/dialogue",
+      "change collision/map",
+      "duplicate combat enemy or retired_body",
+      "new gameplay tick executor"
+    ],
+    "viewSeams": [
+      "game/src/prototypes/chapter_two/view.gd",
+      "game/src/prototypes/chapter_three/view.gd",
+      "game/src/prototypes/chapter_run/view.gd",
+      "game/src/narrative/chapter_one/loop.gd"
+    ],
+    "firstChapterSeam": "implemented authorized readonly loop.gd seam; only mender; no extra resident invented"
+  },
+  "verification": {
+    "executed": [
+      "all ch04-ch12 JSON parsed",
+      "all spoken identity labels mapped or explicitly excluded",
+      "caption-only nest_mender ch09/ch12 and shell_guard ch08 checked",
+      "existing yusuo/beituo/shell_guard/elder idle visually inspected",
+      "existing selected PNG alpha ranges read using Pillow",
+      "all 7 candidates visually inspected as generated",
+      "7 runtime PNGs exported preserving alpha; exact source crop and sha in assets.json",
+      "100px deep and light background composite inspected: 7 distinguishable silhouettes, no visible background haze",
+      "thin readonly integration installed in chapter1/2/3/run, engine checks owned by parent"
+    ],
+    "notExecuted": [
+      "image generation",
+      "Godot runtime/check/test",
+      "100px scene readability",
+      "transparent edge scene composition",
+      "keyboard route or save regression",
+      "parent-owned catalog/manifest merge and sync-art; newRuntimeAssetsIntegrated remains zero until parent verifies"
+    ]
+  }
+}

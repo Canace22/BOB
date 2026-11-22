@@ -4,6 +4,8 @@ extends Node2D
 var host: ChapterTwoWhitebox
 var elder: Sprite2D
 var elder_regions: Array = []
+var characters: ChapterCharacterPresentation
+var include_mender: bool=false
 const ELDER_SHEET: Texture2D = preload("res://art/enemy-lab-elder-v1/elder_guardian.png")
 const ELDER_IDLE: Texture2D = preload("res://art/enemy-lab-elder-idle-fix-v1/elder_idle_fixed.png")
 
@@ -18,10 +20,14 @@ func _ready() -> void:
 	elder.z_as_relative = false
 	elder.z_index = 3
 	add_child(elder)
+	characters=ChapterCharacterPresentation.new()
+	characters.install_residents(include_mender)
+	add_child(characters)
 
 func _process(_dt: float) -> void:
 	z_index=20 if host.using_reference() else -2
 	if not is_instance_valid(host.flow): return
+	characters.update_two(host)
 	var stage: String = host.flow.stage
 	elder.visible = stage in ["rescue","rescued","permitted","complete"]
 	var time: float = host.flow.rescue_time
@@ -109,15 +115,7 @@ func _draw_rescue() -> void:
 	draw_line(Vector2(2080,530),Vector2(2350,530+drop),Color("a18868"),9,true)
 	if stage=="rescue" and time>2:
 		draw_line(Vector2(2275,642),Vector2(2210,530+drop),WhaleUIStyle.AMBER,7,true)
-	text(Vector2(2330,695),"安全台 / 居民（代理）",15)
-	for i: int in 3:
-		var ratio: float = 1 if saved else (clampf((time-3-i*0.5)/2.2,0,1) if stage=="rescue" else 0)
-		var safe := Vector2(2410+i*35,637)
-		if stage in ["permitted","complete"]:
-			safe.x += minf(430,maxf(0,host.flow.departure_time-i*0.6)*55)
-		var at: Vector2 = Vector2(2160+i*35,490+drop).lerp(safe,ratio)
-		draw_circle(at,8,Color("dfcf9f"))
-		draw_line(at,at+Vector2(0,10),WhaleUIStyle.BONE,3,true)
+	text(Vector2(2330,695),"安全台 / 居民",15)
 	if not saved and stage!="rescue":
 		for i: int in 4:
 			var fall: float = fmod(host.elapsed*35+i*23,65)

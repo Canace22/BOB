@@ -18,6 +18,7 @@ var foot_us: int = 0
 var foot_reads: int = 0
 var warmup_us: int = 0
 var guard_ring: Sprite2D
+var startup_effects: TideStartupEffects
 const WARM_KEYS: Array[String] = ["idle","run","walk","jump","dash","strike1","strike2","upper","great_slash","dash_slash","parry","hurt","defeat","heavy","heal","orb","cyclone"]
 
 func setup(player: TidePlayer, height: float) -> void:
@@ -41,6 +42,9 @@ func setup(player: TidePlayer, height: float) -> void:
 	guard_ring.material = additive_material
 	actor.add_child(guard_ring)
 	guard_ring.hide()
+	startup_effects = TideStartupEffects.new()
+	actor.add_child(startup_effects)
+	startup_effects.setup(actor,phase_map.skill_families)
 	warmup_us = Time.get_ticks_usec()-started
 
 func load_clip(key: String) -> Dictionary:
@@ -67,6 +71,7 @@ func _physics_process(dt: float) -> void:
 	var started: int = Time.get_ticks_usec()
 	update(dt,travel)
 	_update_guard()
+	startup_effects.advance(dt)
 	update_us = Time.get_ticks_usec()-started
 
 func _update_guard() -> void:
@@ -132,6 +137,7 @@ func frame_fraction(key: String, spec: Dictionary, dt: float, travel: float) -> 
 func apply_layer(layer: Sprite2D, frames: Array[Texture2D], spec: Dictionary, index: int, height: float) -> void:
 	super.apply_layer(layer,frames,spec,index,height)
 	if layer != sprite or layer.texture == null or not actor.is_on_floor(): return
+	if bool(manifest.get(current_key,{}).get("authored_pivot",false)): return
 	if profile_skip_foot: return
 	# 脚底元数据从PNG离线生成；战斗中禁止get_image触发GPU同步回读。
 	var values: Array = foot_metadata.get(current_key,{}).get("bottom",[])

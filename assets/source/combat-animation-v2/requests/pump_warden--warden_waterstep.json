@@ -1,0 +1,29 @@
+{
+  "id": "pump_warden--warden_waterstep",
+  "profile": "pump_warden",
+  "action": "warden_waterstep",
+  "references": [
+    "assets/source/combat-animation-v2/references/pump_warden-idle.png",
+    "assets/source/combat-animation-v2/references/pump_warden_water-prepare.png"
+  ],
+  "prompt": "Create ONE production 2D game sprite ANIMATION ATLAS. Exactly 16 genuinely sequential frames in a precise 4-column by 4-row UNIFORM grid, read left-to-right then top-to-bottom. ONE complete creature in EVERY cell, fixed side view facing LEFT. A genuine transparent ALPHA background. Keep at least 12% blank padding inside every cell on ALL sides, including all weapon tips, feet, tails, coral and tentacles. Choose ONE global drawing scale that fits the LARGEST pose; never normalize each pose bbox, never crop body or weapon. Stable pelvis/stance root in each equal cell, with only the action's natural weight shift. Same camera, line weight, anatomy, costume and material volume in all 16 drawings. Match the reference's weathered marine bone/skin/cloth, dark-fairytale hand-painted rendering, restrained ivory/grey-teal palette and tiny amber accents. No labels, text, frames, grid lines, scenery, ground patch, baked shadow, detached projectile, glowing trails, aura or effects. Do NOT add limbs, swap weapon hand, change weapon type or repeat the same pose with only texture noise.\nIDENTITY: The lean amphibious water warden in both references: a hollow ivory bony tube-head with round mouth facing LEFT, grey-purple skin, muted teal shoulder armor/tunic, brown harness, two hands gripping the SAME straight bone spear, webbed feet, and a small cyan water pressure bladder tied at the REAR end of the spear on its RIGHT side. Keep the spear and bladder attached, not floating. Do not replace the spear with a fork.\nACTION: The character anticipates water escape and return stab: crouch while holding the spear close, turn the tube-head slightly down, tuck the elbows, coil legs into a low ready stance; stretch through a leftward sliding stab and then a stable forward extension; gather legs and recover. Preserve complete body, spear, feet, and cyan rear bladder in EVERY frame; do not dissolve the sprite.\nTIME ORDER: frames1–6 clearly reveal neutral→plant/load→joint bend→further body/weapon retraction→strong anticipation→maximally loaded ready pose. Frames7–10 release the described action with four clear intermediate moving poses; frames11–16 show followthrough→deceleration→partway recovery→weight returns→weapon/limbs reset→ready stance. Maintain continuous mechanical/anatomical attachments. We will separately map these phases onto a real game's existing preparation, contact and recovery windows, so NO hit flash or attack effect may be baked into the preparation body. Intended in-game body height about100px: prioritize clear silhouette and weapon grip over excessive tiny detail.",
+  "columns": 4,
+  "rows": 4,
+  "phases": {
+    "tell": [
+      0,
+      5
+    ],
+    "active": [
+      6,
+      9
+    ],
+    "recover": [
+      10,
+      15
+    ]
+  },
+  "status": "generated-candidate",
+  "generated_path": "C:\\Users\\ADMIN\\.codex\\generated_images\\01a1fd58-651b-7e40-a2ec-1dddb2a6b33b\\exec-82952f06-5ccd-4684-8389-46a6c6f47f1e.png",
+  "output": "assets/source/combat-animation-v2/masters/pump_warden--warden_waterstep.png"
+}

@@ -2818,3 +2818,68 @@ LFS检出使用本地缓存，运行依赖已加载并完成上述测试；5个�
 已打开第二章开场的新原生试玩，独立context-review-20261122后缀，由第二章可继续至十二章；PLAY_READY及GPU截图/无启动错误在dialogue-context-play日志和chapter-two/context-play-ready.png。未覆盖以前试玩或正式存档。此前本任务drama_play窗口已经关闭，不批量关闭其他Godot进程。本轮未提交推送。
 
 文档同步：最新逐句审校为主要依据；前轮章节文案修订说明标为历史方法并链接最新表；地图编排指南、第二/三章设计引用及连续白盒README指向新版。复用经验写入这些主要文档，未新建重复Skill。此前第一章专项退出音频资源未释放仍按前节待处理，本轮未改音频生命周期；没有以旧专项无错误替代当前证据。
+
+## 2026-11-22 · 战斗动作V2与章节人物接入
+
+本轮针对“出招不明显、前摇需要流畅动作帧与特效”，新增主角12套184身体绘制帧、八类敌人33套528身体帧、独立起手FX6帧及7张静态人物形象。深钟复用坠潮不重复计数。来源、精确请求、失败返修和确定性导出均在`assets/source/combat-animation-v2/`及`chapter-characters-v1/`；53项台账全部candidate，58份同步副本逐字节一致。新身体不以静图位移或形变冒充逐帧动画。
+
+共用TideVisualPhaseMap只读真实准备/释放/回收时钟；长蓄循环、晶长冲原分段、坠潮真正落地、持盾循环、独立FX帧数与幻影新pivot分别处理。普通近战50ms改100ms且总时长不变；格挡/dash/后跳不添加等待，60ms组合容错/200ms预输入及原AI、攻击压力、伤害/冷却/判定/位移保持。起手粒子有界池，受击/取消清除、hitstop暂停；只预热当前敌人所属图集。泵庭逐帧后囊锚点与红色不可格挡预警保留。人物只读章节与既有战斗身体所有权，不接管剧情/存档，不把静态演员平移称为搬运动画。
+
+1、必需check/test：`animation-v2-check-complete.log`为0 error(s)；`animation-v2-tests-complete.log`为479通过/1失败，0 SCRIPT ERROR/ERROR。7个新旧帧数/100ms时序回归已修；唯一上游R1-02 Surface1碰撞冻结顶点失败保留现场，没有放宽合同，仍由正式地图工作项处理。
+2、原生GPU：主角14组/0失败（`animation-v2-player-gpu-final.log`），敌人1402采样/0失败（`animation-v2-enemy-gpu-final.log`）。实际看过准备/释放/收招、八类特殊状态、复制幻影与后囊黄光；这些手动摆姿势截图不等同实战。FX隐藏对照证明实际像素贡献，非水系缺省弱点参数的QA空值读取已修，不伪造生产锚点。
+3、真实按键路线：第二章15/0、第三章16/0、第4–12章87/0、fixture_combat=false/21888物理帧，日志`animation-v2-chapter2-input.log`、`animation-v2-chapter3-input.log`、`animation-v2-chapters4-12-input.log`。第一章`animation-v2-forager-native-final.log`17项/0失败，实际I格挡、J反击、加成一次消耗；修正旧专项未计完美格挡伤害奖励的错误预期，不改生产收益。Dummy音频下该专项退出正常，AUDIO_SHUTDOWN已排空。
+4、真实按键GPU演示375帧：`animation-v2-live-input/trace.json`及`startup-real-input.gif`；另有`combat-animation-v2/player-before-after.gif`明确仅为身体夹具。第二至十二章原生画面缺图为空，第四章已拉开宽壳/住户间距。动态素材/人物美术、真人连招与可读性仍待用户体验。
+5、`combat-animation-v2/final-integrity.json`检查登记哈希与副本一致；最终git diff --check通过。更新批次主要README、根README、地图编排指南与资源台账，复用经验集中于批次说明，不新增重复Skill。保留其他工作项的地图与共享文档WIP；本轮未提交、推送或发布。
+
+试玩已打开本批独立统一敌人试验场（all_skill_practice=true、判定默认隐藏），启动记录`animation-v2-play.log`确认实际读取新strike1-body；F1切敌人、R重置，原正式存档不读写。首次启动WASAPI系统输出设备初始化失败并回落Dummy，已仅重启本批自建窗口并显式Dummy静音运行，最终启动错误日志为空；系统音频设备问题待处理，不能把静音启动称为音效验收。
+
+## 2026-11-22 · 敌人动作完整性补查与返修
+
+用户反馈并非所有敌人处理完整，重新区分“主要攻击有图”与“连续状态表现完成”。逐项核对八类敌人后确认：捕食者return与老守护者独立reground未补绘；大甲press和负壳shell_push的原准备轮廓变化偏弱。补绘4套64张新姿态，其中2套补缺、2套替换，不将旧替换候选再算作当前活动帧。新源、完整提示词、透明原件、回稳首稿间距返修及像素报告见`assets/source/combat-animation-v2/followup/README.md`。
+
+1、运行接入：followup分片按action/state/pulse精确替换原条目；回挂保留生产move_key并登记明确别名；回稳可发生在五种前置招式后，不能只检查撑跃。复制active/recover/幻影仍由原实现拥有。统一动作尺度，回稳以末帧站高配准，避免首帧蹲姿被放大。原有AI、控制/判定、位移、技能时长与压力配置未改，回稳在原位仍可能立即结束，不能为了播图增加锁定。
+2、四个真实状态用例：`enemy-animation-transitions-before.log`原先3项均失败，初版多Lab夹具还暴露InputMap恢复冲突，改为同一场地reset；`enemy-animation-transitions-final.log`4 passed/0 failed，覆盖真实喷水脱身后回挂、第三次前移贯刺后回稳、复制保护及强化前摇读取。没有用生产中不存在的hunter_escape招式ID冒充接入。
+3、全八类真实begin_attack/物理推进审计：`enemy-followup-flow.log`349阶段样本/0意外回退，保留位置、来源技能、受压刺激与格挡命中的隔离夹具，不能当自然AI通关。鳗dive/tunnel、水遁wash、复制active/recover明确列入旧专用呈现例外，不冒称新增身体逐帧。四处返修的实际原生出招复拍`enemy-followup-flow-visual.log`39样本/0失败，PNG与单独报告在`enemy-followup-flow-visual/`；实际看过完整身体、前摇差异、回挂高度与回稳接地。
+4、手动GPU夹具现在覆盖各捕食者return和各老守护者reground：`enemy-followup-gpu.log`1696样本/0失败，实际查看四种返修的准备/中间/收口及深浅底板。`enemy-followup-demo.gif`是明确的手动GPU慢放预览，不是实战录像。`enemy-followup-integrity.json`4张PNG/64唯一绘图、源像素一致、Alpha32无裁边且运行同步字节相同。素材仍candidate，审美与真人连续手感待验收。
+5、必需检查：`enemy-followup-check.log`及重新导入字体后的`enemy-followup-check-final.log`均check_project 0 errors。完整`enemy-followup-tests.log`482 passed/2 failed：一项为原R1-02 Surface1碰撞合同，另一项为新说明缺“针”字。已重建1503字/393124字节Regular字体，同步后首次专项读到旧导入缓存；源TTF已含字，重新import后`enemy-followup-font-final.log`1 passed/0 failed。未重跑整套并伪称新全量总数；其余完整回归和新增四项均通过，仍待处理的原地图失败未放宽合同。
+
+更新批次说明、资源台账、根README与本进度；复用经验为：真实状态推进先于手工姿态覆盖、进入/退出也要登记、继承前置move_key的特殊阶段必须核对实际调用、蹲姿不能当站高标尺。已有Skill涵盖这些原则，具体证据集中写入批次配方，不新建重复Skill。保留另一工作项的地图WIP。本轮不提交、推送或发布。重开本任务独立试验场，默认profile=1大甲、全技能练习、F1换敌人；继续使用先前环境限制下的Dummy静音，不读写正式存档。
+
+## 2026-11-22 · 敌人跨动作显示比例校准（封梁卫优先）
+
+用户反馈不同动作大小不一，并确认敌人最明显、封梁卫最明显。复现发现旧待机的作者标尺与新动作首帧整体高度并非同一单位，不能各自拿武器/姿态包围盒当同一身高。初步封梁卫壳盔匹配显示五套动作小约4%–9%；最终复核五套首帧均为相同中性站姿，武器不超出头顶或脚底，用统一的壳盔顶至落脚点站高对齐，整张图集仅一个固定比例。旧待机实体221像素/作者标尺200，在102世界像素profile下站高112.71；最终原生五套中性帧站高范围112.709995–112.710003。
+
+八类敌人35张在用身体图集均登记独立待机解剖单位，甲壳/伞膜/头颈/头壳逐项标框复核；登记、原图与基准SHA在`assets/source/combat-animation-v2/scale-registration.json`，方法/排除项在`scale-registration.md`，离线候选脚本`measure_scale.py`不写认可登记。register合并后按PNG应用固定reference_height，保存source_reference_height；任何源或待机SHA变化均要求重新复核。PNG与动作帧完全未改，没有运行期模板匹配、逐帧包围盒缩放或额外图像回读。第一章基于另一套旧图，新增chapter_reference_height保留原独立配准尺寸，避免套用试验场标尺。
+
+排除了一次误测：旧受击壳盔未旋转模板给出0.825倍，最初尝试整体放大，随后逐像素复核确认混入转头/俯身透视；最终撤销该尝试，legacy visual/adapter保持原比例，受击与走路均未改。排除探针留在excluded_legacy_probes，不能将17%误测写成已确认缩小问题或新增修复。
+
+1、`enemy-scale-before-test.log`复现跨动作标尺失败，固定比例/根与碰撞用例原本通过。最终`enemy-scale-final-test.log`三项通过：35源SHA/选定解剖单位、封梁卫整个动作固定比例与物理根/碰撞保持、旧受击不被透视误判缩放。
+2、最终封梁卫GPU `enemy-scale-gpu-final.log`206样本/0失败，实际查看前后中性站姿、准备与收招，实际sprite比例符合最终登记，`enemy-scale-metrics.json`记录原生站高范围与35源PNG不变。`beam-scale-before-after.jpg`为确定性站姿对照，不冒充实战录像；连续手感仍待用户体验。
+3、原生真实输入 `enemy-scale-beam-input.log`、`enemy-scale-beam-defense-input.log`均failures=0，含I格挡、J反击、S+L撤招、绕背、默认起点自然交战，均能真实击败Boss；最后五套站高数据细调后重跑上述比例专项/GPU，不伪称再次执行两条自然战斗路线。
+4、必需`enemy-scale-final-check.log`0 error(s)，完整`enemy-scale-final-tests.log`489 passed/1 failed，仅原有R1-02 Surface1碰撞合同。全量检查之后仅将封梁卫五个标尺从壳盔拟合细化为经复核的相同中性站高，最终专项3/0、GPU206/0；未重复全量并虚报新总数。第一章`enemy-scale-firstchapter.log`17项通过，实际格挡反击与独立入口尺寸兼容。字体仍1503字符/393124字节，未新增缺字。
+5、资源与物理边界：未新增绘图/帧数、未改技能时序/判定/伤害/AI/位移/输入、未改主角比例/正式地图/存档。原有R1-02失败和先前系统音频限制仍待处理；本轮试玩继续Dummy静音，不将其当音效验收。更新主要动作批次说明、根README及本进度；既有Sprite Skill已规定解剖标尺和姿态复核，具体探针/参数集中记入批次说明，不新建重复Skill。
+
+已重开本任务独立试玩，默认封梁卫且自动起手关闭：Enter单次起手，勾选自动起手连续观察，F1切其他敌人；`enemy-scale-play.log`确认运行press标尺160.180995，启动错误日志为空，实际看过窗口截图。没有提交、推送或发布。
+
+试玩模式纠正：用户反馈敌人不会动，确认为本任务launcher关闭auto_attack造成单次Enter模式；已恢复auto_attack=true并只重开本任务窗口。enemy-scale-play.log实际记录2.5秒内由x803.33追到629.997、state=guarding、attacks=1，启动错误日志为空。仅改忽略的QA launcher与本记录，游戏战斗实现未改，不重复运行全套回归。
+
+## 2026-11-22 · 人形慢蓄力快出手及老守护者落地接地修复
+
+三类人形15个动作/61条身体与准备FX片段重排已有帧：准备中段慢加载、末端短停，释放按实际阶段秒数快速到接触图，回收保留惯性。封梁卫格挡及时到位、水弹三次实际发射、老守护者复制幻影与撑跃腾空继续由原执行器拥有。不改AI阶段时长、频率、伤害、位移、判定、输入/格挡窗口或已确认整体比例。生产Visual传实际phase_duration，秒数采样不另开时钟。
+
+用户随后指出老守护者落地“蹲到地下”：真实撑跃复现，物理根接地正常，但源第11张脚底局部y=241、原按行中位根pivot.y=220，显示时低21源像素；第10张仍双脚悬空，被错误登记为settle。仅校正第11张静态pivot到241；settle保持真正落地11，active由11快速到压地12，recover13–15。PNG未改，35张已校准图集SHA保持、运行JSON与库副本字节一致。批次配方见assets/source/combat-animation-v2/humanoid-timing.md，提醒混合腾空/深蹲的行不能只用行中位脚底。
+
+1、专项先失败后修复：elder-ground-before-test.log为0通过/1失败（真实settle/active脚底越过地面）；elder-ground-after-test.log为6通过/0失败，包含真实物理撑跃各接地阶段脚底偏差<1.5世界像素、物理根接地、三个真人形命中事件与接触图对齐、水弹三发及格挡/复制保护。
+2、必需check为0 errors（elder-ground-check.log），完整test为495通过/1失败（elder-ground-tests.log），无SCRIPT ERROR/ERROR；唯一失败仍为原R1-02 Surface1冻结碰撞合同，未放宽或修改，留给现有地图工作项。
+3、原生GPU真实begin_attack+物理推进的elder-ground-gpu.log与elder-ground-{vault,settle,active,recover}.png记录四阶段，实际查看settle截图脚底贴线；不是按键实战通关。原人形GPU手动全帧夹具beam222、warden304、elder388样本均0失败，真实封梁I/J格挡反击及自然交战专项failures=0，证据分别在humanoid-timing-*-gpu.log和humanoid-timing-beam-input.log。humanoid-timing-real-speed.gif仅为GPU采样序列的1倍速展示，不冒充实战录像。
+4、本轮源码diff --check按Windows CRLF配置对相关文件通过；共享catalog/progress由其他工作项同时修改，未批量重写或清理。更新本进度与已有动作节奏配方，不新建重复Skill。无新增环境问题；延续已有Dummy静音限制，不称音效验收。不提交、推送或发布。
+
+## 2026-11-22 · 老守护者蓄力切入缩小复核
+
+用户指出蓄力时变小。已将实际旧待机22与五招tell首张中性站姿、回稳末帧按同脚线对拍，确认之前仅壳盔模板校准仍令横扫/撑跃/复制入口身体约小7%–10%；不能用压重心解释中性入口缩小。六套图集改按旧待机壳顶7至脚底199的192源像素跨度配准，排除更高叉尖；新动作中性跨度184/192/200/179/202、回稳203。固定reference_height=190*源中性跨度/192，各动作全段保持其一个固定比例，不按蹲姿或逐帧Alpha外框动态归一化。旧估值保存在superseded_hood_calibration，新标尺与选择写入scale-registration.json及主要说明；没有改变PNG、AI、碰撞、时钟、技能判定/伤害/位移，上一轮第11张脚底pivot修复保留。
+
+1、elder-neutral-before.log先复现4招中性入口偏差；elder-neutral-scale-final.log四项通过（新增五招中性身体<1%差、35图集固定标尺/SHA、封梁整套固定比例/物理根、旧受击保护）。六套中性身高均为136.4211世界像素，参数与旧待机一致；离线身体对照与测量在elder-neutral-before-after.jpg及elder-neutral-metrics.json，已实际查看，不称实战录像。
+2、必需elder-neutral-check.log为check_project 0 errors；完整elder-neutral-tests.log为496通过/1失败，无SCRIPT ERROR/ERROR。唯一失败仍原R1-02 Surface1冻结碰撞合同，未修改或放宽，继续留给现有地图工作项。
+3、原生GPU全帧elder-neutral-gpu.log为386采样/0失败，包含准备/释放/收招/回稳与撑跃接地，实际查看横扫入口及撑跃满蓄截图；比上轮388少两张为已修正的settle删除下降帧，不是漏采。手动摆姿势仍与真实战斗区分。
+4、原生真实键盘elder-neutral-input.log为ENEMY_LAB_ELDER failures=0：前后侧J、I格挡与连续架势消耗、跳过低扫、红光长刺撤离、撑跃与落地闪避、回稳打断、P暂停与R重置；默认起点自然交战hp=3/elder=0/serial=6/vault=2/denied=1/end=surrender，无生命或无敌注入。最后无迟到伤害。不是以手动摆姿势代替键盘交战。
+5、动作库与game副本JSON字节一致、全部35张PNG登记SHA未变；本轮相关源码/夹具diff --check按CRLF配置通过。更新比例主说明、动作批次README与本进度；未新增Skill，局部模板不足以证明全身尺度的经验已归入既有配方。保留其他任务现场，不提交、推送或发布。试玩仍用既有Dummy静音限制，不作音效验收。

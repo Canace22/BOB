@@ -16,7 +16,7 @@ func _ready() -> void:
 	melee_damage = 1
 	melee_reach = 125.0
 	melee_height = 125.0
-	melee_startup = 0.05
+	melee_startup = 0.10
 	melee_cancel_after = 0.0
 	hurt_stun = 0.25
 	hurt_invulnerability = 0.55
