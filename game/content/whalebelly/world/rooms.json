@@ -125,7 +125,80 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            2160,
+            1920
+          ],
+          "boss": false,
+          "name": "回折端足群",
+          "config": {
+            "kind": "swarm",
+            "hits": 2,
+            "count": 8,
+            "radius": 80,
+            "rest": 2.6,
+            "tell": 0.9,
+            "act": 1.2,
+            "lane": [
+              1600,
+              3200
+            ],
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/amphipod-swarm.png",
+                "scale": 0.7736
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-danger-line.png",
+                "scale": 1.0909
+              }
+            }
+          }
+        },
+        {
+          "type": "kit",
+          "pos": [
+            2800,
+            1920
+          ],
+          "boss": true,
+          "name": "回折肠守护体",
+          "config": {
+            "kind": "membrane",
+            "hits": 20,
+            "rest": 1.6,
+            "tell": 0.9,
+            "radius": 120,
+            "recover": 0.4,
+            "offset": [
+              320,
+              0
+            ],
+            "hurt": [
+              240,
+              320
+            ],
+            "engage": 2400,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/silent-membrane.png",
+                "scale": 0.6358
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-echo-open-ring.png",
+                "scale": 1.2488
+              },
+              "pulse": {
+                "path": "res://art/world-kit/fx-silence-ring.png",
+                "scale": 1.2766
+              }
+            }
+          }
+        }
+      ],
       "rings": [
         [
           2880,
@@ -150,7 +223,7 @@
         2080
       ],
       "hint": "胃枢 · 左上肺口通往肺心潮庭；右侧锚环上的强流门需要潮压，过门去断脊",
-      "about": "胃肠沉城枢纽 · 壳形营地可歇息。\n左下返回须门遗港，左上肺口去肺心潮庭，右上强流门通往断脊。",
+      "about": "胃肠沉城枢纽 · 壳形营地可歇息。左下返回须门遗港，左上肺口去肺心潮庭，右上强流门通往断脊。",
       "next": [
         {
           "to": "R2-01",
@@ -276,7 +349,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1640,
+            1296
+          ],
+          "boss": false,
+          "name": "肺膜鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [
         448,
@@ -998,7 +1116,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1680,
+            1240
+          ],
+          "boss": false,
+          "name": "泵庭鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [],
       "hint": "断脊入口 · 沿骨台向右",
@@ -1404,7 +1567,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1920,
+            1280
+          ],
+          "boss": false,
+          "name": "交通椎鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [],
       "camp": [
@@ -1536,7 +1744,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1600,
+            1280
+          ],
+          "boss": false,
+          "name": "耳区鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [],
       "hint": "耳海入口 · 三槽装置记着潮压、骨音与静默",
@@ -1641,7 +1894,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            1760,
+            1200
+          ],
+          "boss": false,
+          "name": "安全池鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [],
       "camp": [
@@ -1824,7 +2122,52 @@
         ]
       ],
       "holes": [],
-      "enemies": [],
+      "enemies": [
+        {
+          "type": "kit",
+          "pos": [
+            2000,
+            1200
+          ],
+          "boss": false,
+          "name": "尾闸鸣贝",
+          "config": {
+            "kind": "clam",
+            "hits": 3,
+            "rest": 2.4,
+            "tell": 0.9,
+            "shots": 1,
+            "speed": 336,
+            "mouth": [
+              -24,
+              -72
+            ],
+            "engage": 960,
+            "sprites": {
+              "body": {
+                "path": "res://art/world-kit/clam-spit-cycle-v1.png",
+                "scale": 0.5059,
+                "columns": 4,
+                "rows": 2,
+                "pivot": [
+                  192,
+                  393
+                ],
+                "fallback_path": "res://art/world-kit/resonant-clam.png",
+                "fallback_scale": 0.9766
+              },
+              "tell": {
+                "path": "res://art/world-kit/fx-pearl-rings.png",
+                "scale": 0.6531
+              },
+              "shot": {
+                "path": "res://art/world-kit/ringed-calcium-pearl.png",
+                "scale": 0.5555
+              }
+            }
+          }
+        }
+      ],
       "rings": [],
       "reward": [
         2720,

@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "design": "V4/V5",
+  "scope": "five anatomical regions, two priority spaces per region, ten priority spaces total",
+  "roomCountPolicy": "keep the formal 19 rooms; priority spaces do not add rooms",
+  "prioritySpaceCount": 10,
+  "allPrioritySpacesAreBossRooms": false,
+  "supportingRoomPolicy": "other formal rooms remain traversal, branch, return, maintenance or absorbed functional zones and reuse regional art kits",
+  "regions": [
+    {
+      "id": "R1",
+      "name": "口腔与咽部",
+      "boss": "R1-04 负壳蟹",
+      "anatomyRange": [
+        0,
+        27
+      ],
+      "keySpaces": [
+        {
+          "room": "R1-02",
+          "space": "须筛主路",
+          "role": "口腔核心、鲸须层、能力支路汇合"
+        },
+        {
+          "room": "R1-05",
+          "space": "流膜咽部",
+          "role": "咽后段、食管过渡、进入胃枢"
+        }
+      ],
+      "supportingRooms": [
+        "R1-01",
+        "R1-03",
+        "R1-04",
+        "R1-06",
+        "R1-07"
+      ],
+      "bossRoom": "R1-04"
+    },
+    {
+      "id": "R2",
+      "name": "胸腔肺心",
+      "boss": "血巢潮群",
+      "anatomyRange": [
+        27,
+        46
+      ],
+      "keySpaces": [
+        {
+          "room": "R2-01",
+          "space": "育床肺膜",
+          "role": "肺膜主路、育囊和恢复落台"
+        },
+        {
+          "room": "R2-04",
+          "space": "血巢心包",
+          "role": "心包断面、血巢群流和胸腔出口"
+        }
+      ],
+      "supportingRooms": [
+        "R2-03"
+      ],
+      "bossRoom": "R2-04"
+    },
+    {
+      "id": "R3",
+      "name": "胃肠腹腔",
+      "boss": "回折肠守护体",
+      "anatomyRange": [
+        45,
+        66
+      ],
+      "keySpaces": [
+        {
+          "room": "R3-01",
+          "space": "前胃胃枢",
+          "role": "胃枢、营地、主线汇合"
+        },
+        {
+          "room": "R3-01",
+          "space": "回折肠维护区",
+          "role": "在同一正式房间内承载肝缘、系膜和回折肠功能区"
+        }
+      ],
+      "supportingRooms": [],
+      "bossRoom": "R3-01"
+    },
+    {
+      "id": "R4",
+      "name": "椎旁骨穹",
+      "boss": "悬脊鸣贝",
+      "anatomyRange": [
+        28,
+        82
+      ],
+      "keySpaces": [
+        {
+          "room": "R4-01",
+          "space": "组合泵庭",
+          "role": "跨器官组合门、泵庭入口和证据台"
+        },
+        {
+          "room": "R4-05",
+          "space": "悬脊鸣贝",
+          "role": "骨穹主战台、回流路线和骨梁地标"
+        }
+      ],
+      "supportingRooms": [
+        "R4-03",
+        "R4-06"
+      ],
+      "bossRoom": "R4-05"
+    },
+    {
+      "id": "R5",
+      "name": "耳区与尾闸",
+      "boss": "缄声覆膜",
+      "anatomyRange": [
+        18,
+        100
+      ],
+      "keySpaces": [
+        {
+          "room": "R5-04",
+          "space": "缄声覆膜",
+          "role": "耳区核心、静默状态和回声触点"
+        },
+        {
+          "room": "R5-08",
+          "space": "归海释放槽",
+          "role": "尾根主闸、释放槽和最终回流出口"
+        }
+      ],
+      "supportingRooms": [
+        "R5-01",
+        "R5-02"
+      ],
+      "bossRoom": "R5-04"
+    }
+  ]
+}

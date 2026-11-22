@@ -87,6 +87,50 @@ func test_scene_asset_coordinate_contract_covers_all_formal_rooms() -> void:
 		check(entry.get("dynamic", []).size() > 0, "Dynamic/effect coverage is registered: " + room_id)
 	eq(seen.size(), 19, "Asset coordinate contract covers exactly the formal room set")
 
+func test_key_room_contract_keeps_two_priority_spaces_per_anatomical_region() -> void:
+	var contract: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/whalebelly/world/key_room_contract.json"))
+	eq(str(contract.get("roomCountPolicy", "")), "keep the formal 19 rooms; priority spaces do not add rooms", "Priority spaces do not change room count")
+	eq(int(contract.get("prioritySpaceCount", 0)), 10, "Five regions keep exactly ten priority spaces")
+	check(not contract.get("allPrioritySpacesAreBossRooms", true), "Only one room per region is a boss room")
+	eq(contract.get("regions", []).size(), 5, "The whale is organized into five anatomical regions")
+	var rooms := CampaignWorld.load_rooms(base_rooms())
+	var ids: Dictionary = {}
+	for room: Dictionary in rooms: ids[str(room.id)] = true
+	var classified: Dictionary = {}
+	for region: Dictionary in contract.get("regions", []):
+		eq(region.get("keySpaces", []).size(), 2, "Each anatomical region has two priority spaces: " + str(region.id))
+		for space: Dictionary in region.keySpaces:
+			var key_id := str(space.room)
+			check(ids.has(key_id), "Priority space stays inside the formal room set: " + key_id)
+			classified[key_id] = true
+		for supporting: Variant in region.get("supportingRooms", []):
+			var supporting_id := str(supporting)
+			check(ids.has(supporting_id), "Supporting room stays inside the formal room set: " + supporting_id)
+			classified[supporting_id] = true
+	eq(classified.size(), rooms.size(), "All 19 formal rooms are either priority or supporting spaces")
+	for region: Dictionary in contract.get("regions", []):
+		check(not str(region.get("boss", "")).is_empty(), "Each anatomical region has one V6 boss design: " + str(region.id))
+		check(ids.has(str(region.get("bossRoom", ""))), "Boss room stays inside the formal room set: " + str(region.id))
+
+func test_all_formal_rooms_have_enemy_presence() -> void:
+	var rooms := CampaignWorld.load_rooms(base_rooms())
+	eq(rooms.size(), 19, "Enemy presence check covers the formal nineteen-room map")
+	for room: Dictionary in rooms:
+		var enemies: Array = room.get("enemies", [])
+		check(not enemies.is_empty(), "Every formal room has an enemy or hostile ecology: " + str(room.id))
+		for enemy: Dictionary in enemies:
+			check(enemy.has("pos"), "Enemy has a room-local spawn position: " + str(room.id))
+			check(enemy.has("type") or enemy.has("config"), "Enemy has a runtime type/config: " + str(room.id))
+
+func test_each_anatomical_region_has_one_boss_presence() -> void:
+	var rooms := CampaignWorld.load_rooms(base_rooms())
+	var boss_by_region: Dictionary = {}
+	for room: Dictionary in rooms:
+		for enemy: Dictionary in room.get("enemies", []):
+			if enemy.get("boss", false): boss_by_region[CampaignWorld.region(str(room.id))] = true
+	for region: String in ["R1", "R2", "R3", "R4", "R5"]:
+		check(boss_by_region.has(region), "Every anatomical region has one boss presence: " + region)
+
 func test_unbuilt_targets_stay_closed_and_requirements_combine() -> void:
 	var host := make_host("R3-01")
 	eq(CampaignWorld.restriction(host, {"to":-2}), CampaignWorld.UNBUILT, "Unknown target stays closed")

@@ -87,9 +87,15 @@
       "id": "R5-08:tidal-pearl",
       "name": "藏珠贝匣",
       "prompt": "拾取归潮珠 · 护盾上限 +1",
-      "at": [29, 16],
+      "at": [
+        29,
+        16
+      ],
       "loot": "ringed-calcium-pearl",
-      "loot_offset": [0, -0.52],
+      "loot_offset": [
+        0,
+        -0.52
+      ],
       "loot_units": 0.6
     }
   ],
@@ -200,13 +206,58 @@
     {
       "art": "r5-tail-window-frame-v3",
       "at": [
-        20.0,
+        20,
         -0.4
       ],
       "units": 43.2,
       "max": 0,
       "z": -13,
       "opacity": 0.72
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "clam",
+      "name": "尾闸鸣贝",
+      "at": [
+        25,
+        15
+      ],
+      "hits": 3,
+      "rest": 2.4,
+      "tell": 0.9,
+      "shots": 1,
+      "speed": 4.2,
+      "mouth": [
+        -0.3,
+        -0.9
+      ],
+      "engage": 12,
+      "sprites": {
+        "body": {
+          "art": "clam-spit-cycle-v1",
+          "units": 2.15,
+          "max": 0,
+          "visible_width": 340,
+          "columns": 4,
+          "rows": 2,
+          "pivot": [
+            192,
+            393
+          ],
+          "fallback": "resonant-clam",
+          "fallback_max": 256
+        },
+        "tell": {
+          "art": "fx-pearl-rings",
+          "units": 1.6
+        },
+        "shot": {
+          "art": "ringed-calcium-pearl",
+          "units": 0.5
+        }
+      },
+      "boss": false
     }
   ]
 }

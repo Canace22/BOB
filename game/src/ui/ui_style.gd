@@ -7,6 +7,7 @@ const MUTED := Color("a8bdb7")
 const AMBER := Color("dfba77")
 const TEAL := Color("8fbfb6")
 const FONT: Font = preload("res://art/fonts/WhalefallUI.ttf")
+const GLASS_BUTTON_FRAME: Texture2D = preload("res://art/ui/button-frame-deep-sea-glass-v1.png")
 
 static func box(color: Color, border: Color = Color.TRANSPARENT) -> StyleBoxFlat:
 	var result := StyleBoxFlat.new()
@@ -48,17 +49,25 @@ static func theme(high_contrast: bool = false) -> Theme:
 	result.set_color("font_hover_color", "Button", AMBER)
 	result.set_color("font_focus_color", "Button", AMBER)
 	result.set_color("font_disabled_color", "Button", Color("819792"))
-	result.set_stylebox("normal", "Button", box(Color(0.04, 0.1, 0.12, 0.4)))
-	result.set_stylebox("hover", "Button", box(Color("1b3338"), TEAL))
-	result.set_stylebox("pressed", "Button", box(Color("29423f"), AMBER))
-	result.set_stylebox("focus", "Button", box(Color.TRANSPARENT, AMBER))
-	result.set_stylebox("disabled", "Button", box(Color(0.03, 0.08, 0.1, 0.7)))
-	if high_contrast: result.set_stylebox("normal", "Button", box(INK, TEAL))
-	for state: String in ["normal","hover","pressed","focus","disabled"]:
-		var style := result.get_stylebox(state,"Button") as StyleBoxFlat
-		style.set_corner_radius_all(7)
-		if state == "focus": style.border_width_left = 4
+	result.set_stylebox("normal", "Button", glass_button_style(Color(0.52, 0.78, 0.8, 0.82)))
+	result.set_stylebox("hover", "Button", glass_button_style(Color(0.82, 1.0, 1.0, 1.0)))
+	result.set_stylebox("pressed", "Button", glass_button_style(Color(0.55, 0.95, 1.0, 1.0)))
+	result.set_stylebox("focus", "Button", glass_button_style(Color(0.95, 1.0, 1.0, 1.0)))
+	result.set_stylebox("disabled", "Button", glass_button_style(Color(0.32, 0.48, 0.5, 0.42)))
+	if high_contrast: result.set_stylebox("normal", "Button", glass_button_style(Color(0.8, 1.0, 1.0, 0.95)))
 	return result
+
+static func glass_button_style(tint: Color) -> StyleBoxFlat:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.018, 0.12, 0.16, 0.62)
+	style.border_color = tint
+	style.set_border_width_all(1)
+	style.set_corner_radius_all(8)
+	style.content_margin_left = 22.0
+	style.content_margin_right = 22.0
+	style.content_margin_top = 8.0
+	style.content_margin_bottom = 8.0
+	return style
 
 static func label(text: String, font_size: int = 18, color: Color = BONE) -> Label:
 	var result := Label.new()

@@ -3,7 +3,6 @@ extends Node2D
 ## 连接段的实体门：条件和目标房就绪状态都满足后才开放。
 var stream: CampaignRoomStream
 var entries: Array[Dictionary] = []
-const DOOR := preload("res://art/doorways/tunnel.png")
 
 func _ready() -> void:
 	for link: Dictionary in stream.layout.get("links", []):
@@ -35,17 +34,8 @@ func _add(link: Dictionary, forward: bool) -> void:
 	shape.shape = rectangle
 	shape.position.y = 0 if vertical else -200
 	body.add_child(shape)
-	var art := Sprite2D.new()
-	art.texture = DOOR
-	art.scale = Vector2.ONE * 180.0 / DOOR.get_height()
-	art.position.y = -90
-	if vertical:
-		art.rotation = PI*0.5
-		art.position.y = 0
-	art.modulate = Color(0.55,0.7,0.75,0.9)
-	body.add_child(art)
 	add_child(body)
-	entries.append({"source":source,"target":target,"door":door,"body":body,"shape":shape,"art":art,"blocked":true})
+	entries.append({"source":source,"target":target,"door":door,"body":body,"shape":shape,"art":null,"blocked":true})
 
 func reason(source: int, target: int, door: Dictionary) -> String:
 	var host: Node2D = stream.host
@@ -85,4 +75,3 @@ func _process(_dt: float) -> void:
 		if blocked != bool(entry.blocked):
 			entry.blocked = blocked
 			entry.shape.set_deferred("disabled",not blocked)
-		entry.art.visible = blocked

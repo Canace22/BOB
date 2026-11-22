@@ -9,7 +9,7 @@
   ],
   "source": "assets/source/world-continuity-v1/inputs/房间布局.json#R3-01（V5.1 布局，单位 U）。2026-11-12 精简：去掉肠路、母蟹闩、胃顶三个门及浮游竖井，保留肺口、强流门和锚环；底床为失足回收面",
   "hint": "胃枢 · 左上肺口通往肺心潮庭；右侧锚环上的强流门需要潮压，过门去断脊",
-  "about": "胃肠沉城枢纽 · 壳形营地可歇息。\n左下返回须门遗港，左上肺口去肺心潮庭，右上强流门通往断脊。",
+  "about": "胃肠沉城枢纽 · 壳形营地可歇息。左下返回须门遗港，左上肺口去肺心潮庭，右上强流门通往断脊。",
   "next": [
     {
       "to": "R2-01",
@@ -385,7 +385,7 @@
     {
       "art": "r3-gastric-cavern-frame-v3",
       "at": [
-        24.0,
+        24,
         -0.4
       ],
       "units": 57.6,
@@ -396,7 +396,7 @@
     {
       "art": "habitat-fungus-bed",
       "at": [
-        7.0,
+        7,
         24.5
       ],
       "units": 1.05,
@@ -408,7 +408,7 @@
       "art": "habitat-fungus-bed",
       "at": [
         12.9,
-        23.0
+        23
       ],
       "units": 0.8,
       "max": 640,
@@ -430,7 +430,7 @@
       "art": "habitat-fungus-bed",
       "at": [
         26.4,
-        26.0
+        26
       ],
       "units": 0.85,
       "max": 640,
@@ -441,12 +441,81 @@
       "art": "habitat-fungus-bed",
       "at": [
         43.2,
-        17.0
+        17
       ],
       "units": 0.9,
       "max": 640,
       "z": -1,
       "opacity": 0.72
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "swarm",
+      "name": "回折端足群",
+      "at": [
+        27,
+        24
+      ],
+      "hits": 2,
+      "count": 8,
+      "radius": 1,
+      "rest": 2.6,
+      "tell": 0.9,
+      "act": 1.2,
+      "lane": [
+        20,
+        40
+      ],
+      "sprites": {
+        "body": {
+          "art": "amphipod-swarm",
+          "units": 2.2,
+          "max": 256
+        },
+        "tell": {
+          "art": "fx-danger-line",
+          "units": 3
+        }
+      }
+    },
+    {
+      "kind": "membrane",
+      "boss": true,
+      "name": "回折肠守护体",
+      "at": [
+        35,
+        24
+      ],
+      "hits": 20,
+      "rest": 1.6,
+      "tell": 0.9,
+      "radius": 1.5,
+      "recover": 0.4,
+      "offset": [
+        4,
+        0
+      ],
+      "hurt": [
+        3,
+        4
+      ],
+      "engage": 30,
+      "sprites": {
+        "body": {
+          "art": "silent-membrane",
+          "units": 8,
+          "max": 1024
+        },
+        "tell": {
+          "art": "fx-echo-open-ring",
+          "units": 3.2
+        },
+        "pulse": {
+          "art": "fx-silence-ring",
+          "units": 3
+        }
+      }
     }
   ]
 }
