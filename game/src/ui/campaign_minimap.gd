@@ -4,7 +4,7 @@ extends Control
 const CELLS: Dictionary = {
 	"R1": {"R1-01":Vector2(0,2),"R1-02":Vector2(1,2),"R1-03":Vector2(2,2),"R1-04":Vector2(3,2),"R1-05":Vector2(4,2),"R1-06":Vector2(1,0),"R1-07":Vector2(2,1),"R3-01":Vector2(5,2)},
 	"R2": {"R3-01":Vector2(0,1),"R2-01":Vector2(1,1),"R2-03":Vector2(2,1),"R2-04":Vector2(2,0)},
-	"R3": {"R1-05":Vector2(0,1),"R3-01":Vector2(1,1),"R2-01":Vector2(1,0),"R4-01":Vector2(2,1)},
+	"R3": {"R1-05":Vector2(0,1),"R3-01":Vector2(1,1),"R2-01":Vector2(1,0),"R4-01":Vector2(2,0)},
 	"R4": {"R3-01":Vector2(0,0),"R4-01":Vector2(1,0),"R4-03":Vector2(2,0),"R4-05":Vector2(3,0),"R4-06":Vector2(4,0),"R5-01":Vector2(5,0),"R5-08":Vector2(4,1)},
 	"R5": {"R4-06":Vector2(0,1),"R5-01":Vector2(1,1),"R5-02":Vector2(2,1),"R5-04":Vector2(3,1),"R5-08":Vector2(0,2)},
 }

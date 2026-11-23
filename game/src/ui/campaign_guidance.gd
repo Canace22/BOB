@@ -5,6 +5,21 @@ extends RefCounted
 static func route_kind(id: String) -> String:
 	return "可选支路" if id in ["R1-06", "R1-07"] else "主线"
 
+static func elevated_exit_hint(host: Node2D) -> Dictionary:
+	# 只提示真实高层出口：小地图相邻不代表脚下同层可直行，不在断岸伪造新路。
+	if not is_instance_valid(host.player): return {}
+	var width: float=float(host.room.get("size",[0,0])[0])
+	var feet: Vector2=host.player.position
+	if width<=0 or feet.x<width-280 or feet.x>width+80: return {}
+	for door: Dictionary in host.room.get("doors",[]):
+		var target: int=int(door.get("to",-1))
+		if target<0 or target>=host.rooms.size(): continue
+		var at:=Vector2(float(door.pos[0]),float(door.pos[1]))
+		if at.x<width-280 or feet.y<at.y+300: continue
+		var route: String="向左返回，沿锚环上行" if not host.room.get("rings",[]).is_empty() else "返回上层寻找出口"
+		return {"message":"下层断岸 · 出口在上层","detail":route+" · 前往"+str(host.rooms[target].name)}
+	return {}
+
 ## True once the first-region exit leads into a built room of the next region.
 static func onward(host: Node2D) -> bool:
 	return host.rooms.any(func(entry: Dictionary) -> bool: return str(entry.id) == "R3-01")

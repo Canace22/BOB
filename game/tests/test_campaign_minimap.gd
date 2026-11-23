@@ -48,3 +48,7 @@ func test_gate_and_boss_status_use_the_owning_room() -> void:
 	map.data.host.abilities.pressure = true
 	check(not map._blocked("R3-01",{"requires":["pressure"]}),"Granted mark opens passage")
 	release_map(map)
+
+func test_stomach_onward_connection_is_above_the_lower_shore() -> void:
+	var cells: Dictionary=WhaleCampaignMinimap.CELLS["R3"]
+	check(cells["R4-01"].x>cells["R3-01"].x and cells["R4-01"].y<cells["R3-01"].y,"Onward room is shown upper-right rather than along the lower shore")
