@@ -3055,3 +3055,27 @@ main-sync-check.log为check_project 0 error；main-sync-tests.log为507 passed/1
 仅重开本会话独立主线试玩，guard-identity-play.log确认READY，stderr为空；原存档和其他WIP保留，Dummy音频未作音效验收，未提交推送。旧Skill已有参考对齐和固定根流程，无需另建重复Skill；本轮新增经验记录在同批素材README。
 
 最终全量guard-identity-all-tests.log为512 passed/10 failed，与既有十项失败测试集合一致，没有新增失败。原生目标箭头专项9项通过；素材源/运行/正式图集SHA及16张独立帧均已核对，最终git diff --check通过。既有门图/音乐/敌人/后区目标/地图合同问题继续留待单独处理。
+
+## 2026-11-23 · 首页存档来源与护盾提示重叠修复
+
+首页仍以WhaleUISaveAccess读取实际有效V6档，不靠默认检查点假造Continue。空档不再创建灰色Continue按钮，只显示开始旅程；有档增加“此浏览器本地存储/本机用户目录”说明，桌面继续按钮tooltip显示真实路径。正式文件user://whalebelly/artmatch_save.json与迁移规则未改，真实档未删除。截图中的Web首次打开新版仍可能读同源浏览器既存档，不能据此断言是游戏内置档。
+
+护盾从无图标的独立文字改为青色guard位图+独立护盾行；状态面板按有无护盾扩展底边，临时通知读取底边并留25px基线间隔，调息/蓄力/浮膜提示随之顺排。当前右上任务不挪动，截图左上叠字实际是临时通知和护盾行冲突。更新docs/ui-system.md，不改main.gd/剧情、地图或其它会话WIP。
+
+验证：node tools/godot.mjs check为0error；title_shield_qa.gd用独立title-shield-isolated.json运行正式入口，空档首页90帧不写档、无Continue、真实Enter开始写入有效档、返回首页有Continue、护盾行扩展和位图图标共6项通过。已看01-clean-title/02-saved-title/03-shield-notice三张原生GPU截图，护盾和通知无重叠。夹具先收回自动开场对话再返回首页，避免把被模态阻止的open误判为产品失败。
+
+全量初跑509passed/8failed，其中字体检查发现新文案“浏”和源码注释“孤/峰”不在旧子集。使用已有build-ui-font.py重建1512字符Regular400字体，按既有manifest单独同步这件字体，未执行全量素材覆盖；源/运行SHA均为4b9de352c4504bca1bcc28962aed96fd6ae10f7caede5e4218aeaed80c650b89。随后UI专项6passed/0failed（含字体覆盖）。全量其它7个失败方法集中于门图、音乐、敌人存在、后区目标和冻结地图合同，并有旧门Nil脚本错误；未在本UI任务改动这些系统，也未声称全量通过。日志build/qa/title-shield-{check,tests,ui-tests,runtime}.log，截图在build/qa/title-shield/。git diff --check通过；未发布Web、未提交推送。
+
+## 2026-11-23 · 护盾移至生命下方并逐点显示
+
+按用户最新反馈，护盾紧贴生命下方，使用与生命相同的图标尺寸26×28、33px间距；剩余点亮、消耗变暗，取消护盾数字分数。无护盾上限时隐藏整行，蓄振/架势/反击提示仅在该行存在时下移30px，临时章节消息继续按状态区底边避让。复用既有guard位图，未新增资源或修改存档。docs/ui-system.md已更新现行规则。
+
+已执行check为0error；全量test为510passed/7failed，仍为门图/音乐/房间敌人/后区目标/冻结地图合同7项既有失败（旧门Nil错误亦留在日志），UI字体检查通过。独立存档原生夹具6项通过，并新增满盾、剩一盾、耗尽三种截图，已目视复核护盾位置、亮暗、数量和消息间距。证据build/qa/shield-pips-{check,tests,runtime}.log与build/qa/title-shield/03-shield-notice.png、04-shield-one-left.png、05-shield-empty.png。显示状态使用奖励/数量夹具，不宣称是真实受击获取路线；真实Enter开始旅程仍由同夹具实际按键完成。未发布Web、未提交推送。
+
+## 2026-11-23 · 首页与护盾UI同步主干验证
+
+将5d521a46的首页存档来源、空档按钮、护盾逐点显示、通知避让及专属夹具合入最新origin/Vesion/V1.0.1基点16c2b349。隔离工作树操作，原enemy-lab已修改35个文件逐个SHA保持不变，地图/环境/manifest及其他工作不带入本批。保留主干暂停透明度、过场和任务箭头改动；共享文档保留主干正文，只追加本UI记录。
+
+字体冲突按合并后的实际源码重新生成：Regular400、1504字符、393740字节，源/运行SHA均为6fb41dcb4c89ae3a24f94d30ecca3849de8a45941e31871371e3c84cdd2ec32b，subset.json与资源台账同步。本轮显示变化没有改变护盾抵伤/恢复机制。
+
+shield-main-check.log为check_project 0error；shield-main-tests.log为512passed/10failed，与主干原guard-identity-all-tests.log十个失败方法集合完全一致，new_failed_methods为空，未修或放宽既有地图/门图/音乐等问题。shield-main-runtime.log独立档原生专项6项通过，实际Enter新建后可返回首页续档，满盾/剩一盾/空盾三态截图已看。UI夹具显式结束主干新增过场后再返回首页，不改正式过场菜单锁。源分支护盾真实抵伤专项另为4passed/0failed。git diff --cached --check通过；本次只提交与推送源码，不发布Web。

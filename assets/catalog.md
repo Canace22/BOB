@@ -554,3 +554,7 @@ CampaignRoomEcology按19房配方提供固定根菌群、窄域逸泡、微粒�
 - 2026-11-23：[主角普攻前突与横劈](source/player-basic-slash-v3/README.md)，2段各16帧，已接入，待用户美术验收。
 
 - 普攻V3追加架叉格挡16帧与受力回弹；两段普攻新增发力停留，见同批制作README，待用户试玩确认。
+
+### 2026-11-23 · 首页与护盾UI字体补字
+
+复用action-hud-v1/icons.png的guard位图显示被动护盾，以青色区分架势，不新增图标素材。首页存档来源新增文字后按[原字体子集流程](source/noto-sans-sc/README.md)合入最新主干后重建Regular400字体至1504字符，源/运行副本SHA与尺寸见subset.json；只定向同步字体，manifest其它WIP保持。UI字体覆盖检查通过。

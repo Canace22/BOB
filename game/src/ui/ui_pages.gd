@@ -88,7 +88,9 @@ static func _title(ui: WhaleCampaignUI) -> void:
 	if can_continue:
 		var location: String = str(ui.host.rooms[int(save.checkpoint.room)].name)
 		column.add_child(WhaleUIStyle.label("已记录的检查点 · "+location,16,WhaleUIStyle.AMBER))
-	action(column,"Continue","继续旅途",func() -> void: ui.start_game(false),can_continue)
+		column.add_child(WhaleUIStyle.label("存档来源 · "+("此浏览器本地存储" if OS.has_feature("web") else "本机用户目录"),14,WhaleUIStyle.MUTED))
+		var resume: Button = action(column,"Continue","继续旅途",func() -> void: ui.start_game(false))
+		resume.tooltip_text = "此浏览器保存的旅途；刷新或更新游戏不会清除。" if OS.has_feature("web") else ProjectSettings.globalize_path(ui.host.save_path())
 	action(column,"NewGame","重新开始" if can_continue else "开始旅程",func() -> void: request_new_game(ui))
 	action(column,"Settings","设置",func() -> void: ui.open("settings"))
 	action(column,"Help","操作说明",func() -> void: ui.open("help"))
