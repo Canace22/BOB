@@ -149,6 +149,7 @@ func open_conversation(title: String, lines: PackedStringArray, id: String = "")
 	conversation_id = id
 	open("conversation")
 func open(page: String, push: bool = true) -> void:
+	if _cinematic_active(): return
 	if busy or (not host.dialogue.active.is_empty() and page != "dialogue"): return
 	if page == "camp" and page_id.is_empty(): focus_history["camp"] = "LeaveCamp"
 	if page_id.is_empty() and not pending_resume:
@@ -249,6 +250,9 @@ func _sync_title_background() -> void:
 	if is_instance_valid(title_background_fx): title_background_fx.visible = visible_title or visible_pause
 
 func _input(event: InputEvent) -> void:
+	if _cinematic_active():
+		host.story.cinematic.handle_input(event)
+		return
 	if host.continuity.travelling or host.continuity.transition.active: return
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if WhaleDialoguePanel.handle_key(self,event): return
@@ -311,3 +315,5 @@ func control_snapshot() -> Array[Dictionary]:
 		var rect: Rect2 = node.get_global_rect()
 		result.append({"name":str(node.name),"x":rect.position.x,"y":rect.position.y,"width":rect.size.x,"height":rect.size.y,"disabled":node.disabled if node is BaseButton else false})
 	return result
+func _cinematic_active() -> bool:
+	return is_instance_valid(host.get("story")) and is_instance_valid(host.story.cinematic) and host.story.cinematic.active

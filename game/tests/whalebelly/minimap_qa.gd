@@ -65,12 +65,12 @@ func run() -> void:
 		if host.room_index==1: break
 	key(KEY_D,false)
 	await tick(25)
-	check("Keyboard doorway updates current room",host.room_index==1 and ui.hud.route_hud.routes.size()==4)
-	if host.room_index!=1 or ui.hud.route_hud.routes.size()!=4:
+	check("Keyboard doorway updates current room",host.room_index==1 and ui.hud.route_hud.routes.size()==1)
+	if host.room_index!=1 or ui.hud.route_hud.routes.size()!=1:
 		print("Doorway fixture stopped: ",host.room.id," ",host.player.position," ",ui.page_id," ",host.streaming.snapshot())
 		await host.graceful_quit(1)
 		return
-	check("Junction shows its two upper branch exits",ui.hud.route_hud.routes[2].point.y<ui.hud.route_hud.routes[0].point.y and ui.hud.route_hud.routes[3].point.y<ui.hud.route_hud.routes[1].point.y)
+	check("Map data keeps branches while screen shows mission only",WhaleCampaignRouteHUD.destinations(host).size()==4 and ui.hud.route_hud.routes[0].main)
 	await shot("02-junction")
 	await tap(KEY_C)
 	check("C still opens full map",ui.page_id=="map" and not ui.hud.visible)

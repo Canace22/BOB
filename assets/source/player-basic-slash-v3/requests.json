@@ -1,0 +1,73 @@
+{
+  "method": "built-in image_gen",
+  "identity_reference": "references/old-strike1.png",
+  "scene_reference": "references/gameplay.png",
+  "selected": [
+    {
+      "action": "strike1",
+      "source": "masters/strike1.png",
+      "promptFile": "strike1-prompt.txt",
+      "selection": "First candidate reselected after user explicitly requested forward thrust; original poke rejection only applied to prior diagonal-cut brief."
+    },
+    {
+      "action": "strike2",
+      "source": "masters/strike2.png",
+      "promptFile": "horizontal-prompt.txt",
+      "generatedFile": "exec-9419bbb0-e97b-4e1a-868c-fbaad5125287.png"
+    },
+    {
+      "action": "parry",
+      "source": "masters/parry.png",
+      "promptFile": "guard-identity-prompt.txt",
+      "cleanupPromptFile": "guard-cleanup-prompt.txt",
+      "primaryIdentityReference": "references/canonical-idle.png",
+      "referenceDerivation": "Exact crop frame0 [0,0,158,174] from original tide-picker-action36/idle-body.png; 4x resize only for reference visibility.",
+      "reason": "User rejected bulky identity; restore slender original limbs, open U fork and triangular cape."
+    }
+  ],
+  "rejected": [
+    {
+      "source": "masters/strike1-diagonal-unused.png",
+      "reason": "Superseded by user requested forward thrust."
+    },
+    {
+      "source": "masters/strike2-rising-unused.png",
+      "reason": "Superseded by user requested horizontal cleave."
+    },
+    {
+      "source": "masters/parry-identity-rejected.png",
+      "reason": "User reports character identity mismatch; limbs, hands and fork silhouette differ from canonical idle."
+    }
+  ],
+  "revisionReason": "User requested forward thrust + horizontal cleave to match the actual frontal hit envelope. Earlier diagonal proposal not accepted.",
+  "previousSelected": [
+    {
+      "action": "strike1",
+      "source": "masters/strike1.png",
+      "prompt": "Redraw this 4x4 sprite atlas as a radically clearer DOWNWARD DIAGONAL CUT, not a thrust. Reference first image is old identity, second is rejected candidate. Keep same ivory one-lens mask, dark teal cape, amber waist lamp, red cord and short TWO-PRONGED bone tuning fork. Exactly sixteen frames, 4 equal columns x 4 equal rows, genuinely transparent. Fixed side-scrolling camera, always facing RIGHT. Same scale, head diameter and ground line each cell; constant neutral body height around 210px at 320px cells, sufficient padding. No ground shadows, numbers, labels, borders, beam, aura, sword replacement or new weapon. Never stretch a limb or weapon.\nAnimate a WHOLE-BODY DIAGONAL CLEAVE using hip-driven swordsmanship. The current atlas is rejected because frame6-7 is a straight-arm forward punch/poke. In the replacement, the weapon moves OVER the helmet from back/upper left to DOWN and FORWARD right, ending below waist height. The gripping arm remains BENT, not horizontal fully extended. Strong torso twist, planted rear foot and bent front knee carry force through; cloak lags then snaps. Fork prongs turn with the wrist, visibly point DOWN-RIGHT during impact, then DOWN during follow-through. Do NOT show the fork pointing horizontally right on impact. Do NOT extend a straight arm like a spear thrust.\n0 ready;1 bend knees;2 deep coil;3 fork behind shoulder;4 fork rises overhead with bent elbow;5 deepest loaded pose, fork above/back of helmet;6 explosive diagonal CUT to contact at forward RIGHT HIP height, fork prongs DOWN-RIGHT, chest rotates toward camera;7 downward follow-through, fork prongs DOWN by front knee;8 shoulder and waist over front boot, rear heel turns, fork finishing low-right;9 hold forceful low ending with cape whipping;10 bent arms draw fork across body;11 rise;12 unwind;13 settle;14 near ready;15 ready. Each is a different animation drawing. Match a skilled swordsman's weight and follow-through rather than a superhero punching. Cell order left-to-right top-to-bottom. Whole body and entire weapon stay inside each cell. Do not add effects or motion trails."
+    },
+    {
+      "action": "strike2",
+      "source": "masters/strike2.png",
+      "prompt": "Create the SECOND attack of a coherent 2-hit 2D sprite combo. Attached master is the NEW first downward-cut animation: preserve EXACT same helmet/head size, short teal cloak, waist amber lamp, red cord, amphibian boots, short two-pronged bone fork, painterly pixel density and lighting. Same right-facing side-scrolling 3/4 camera. Exactly SIXTEEN sequential frames in FOUR equal columns and FOUR equal rows, left-to-right then top-to-bottom; genuinely transparent background, no text/grid/shadows/scenery. Canvas preferably1280x1280, 320x320 cells. Same feet-ground y280 per cell, pelvis root x145, neutral hero height210px, complete weapon/feet with padding. Fixed drawing scale, no resizing head or weapon between frames.\nONE strong low-to-high REVERSE DIAGONAL CUT, a full-body rising return slash continuing a swordsman's grounded combo. Not a forward stab or arm-only poke. Right fork-gripping hand always holds the same short bone tuning fork; left/free hand counters rotation. No second sword, no blade redesign, no extra hands. Boots stay planted within the stance, torso/hips visibly rotate, cloak drags low and whips high after release.\nPOSES:0 compact ready stance;1 knees flex, fork drops by front thigh;2 deeper coiled stance, upper body twists toward camera, fork down by right knee;3 LOWEST loaded position with weapon at low-right and bent elbow;4 waist coils, helmet looks up-right, fork still low;5 final compressed low windup, weight on rear boot;6 fast powerful upward diagonal CUT, waist/shoulders drive and extend the front leg, bent gripping arm crosses chest, fork prongs angle UP-RIGHT near shoulder height;7 full high follow-through, fork above and ahead of helmet, NOT far away at straight-arm length;8 recoil above shoulder, free elbow counters, cape streams behind left;9 energy settles in strong high stance;10 gripping elbow folds, fork descends inward;11 torso unwinds;12 knees straighten;13 settle;14 almost neutral;15 same family neutral guard as first frame. Each cell a genuinely distinct chronological animation drawing. Never draw horizontal straight-arm poking. No luminous effects/trails; body-only production sheet. Match character identity of the reference, NOT any DNF costume. Adopt only decisive hips-driven action-game swordsmanship."
+    }
+  ],
+  "previousGuard": [
+    {
+      "action": "parry",
+      "source": "masters/parry.png",
+      "promptFile": "guard-prompt.txt",
+      "reason": "User requested a physical braced defense silhouette, not effect-only guard."
+    }
+  ],
+  "canonicalIdleSource": {
+    "file": "game/art/tide-picker-action36/idle-body.png",
+    "sha256": "399aeabb25b0e5bfb22f365d2ac0900a881e3082c6f4f51a454969e08baf732b",
+    "frame": [
+      0,
+      0,
+      158,
+      174
+    ]
+  }
+}

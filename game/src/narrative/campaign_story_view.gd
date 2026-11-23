@@ -34,6 +34,7 @@ func rebuild() -> void:
 		if identity=="beam_guard" and bool(story.facts.get("ch08_beam_guard_dead",false)): continue
 		var actor:=ChapterCharacterActor.new()
 		actor.configure(identity,float(spec.get("height",100)))
+		actor.set_meta("story_identity",identity)
 		actor.z_index=host.player.z_index
 		actor.position=host.point(spec.at)
 		host.actor_frame.add_child(actor)

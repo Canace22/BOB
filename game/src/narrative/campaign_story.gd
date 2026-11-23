@@ -7,6 +7,7 @@ var allow_in_tests: bool=false
 var catalog:=CampaignStoryCatalog.new()
 var encounter: CampaignStoryEncounter
 var view: CampaignStoryView
+var cinematic: CampaignCinematic
 var index: int=0
 var completed: Array[String]=[]
 var facts: Dictionary={}
@@ -37,19 +38,20 @@ func setup(value: WhalebellyMain) -> void:
 	view=CampaignStoryView.new()
 	view.story=self
 	add_child(view)
+	cinematic=CampaignCinematic.new()
+	add_child(cinematic)
+	cinematic.setup(self)
 	host.dialogue.committed.connect(_dialogue_committed)
 	configured=true
 	if not pending_restore.is_empty():
 		var saved: Dictionary=pending_restore
 		pending_restore={}
 		restore(saved)
-
 func running() -> bool:
 	return configured and enabled and (not host.qa or allow_in_tests) and not host.practice and not host.room_preview and host.capture_path.is_empty()
 
 func stage() -> Dictionary:
 	return catalog.stages[index] if index<catalog.stages.size() else {}
-
 func current_room() -> bool:
 	if stage().is_empty(): return false
 	var id: String=str(host.room.get("id",""))
@@ -61,10 +63,8 @@ func target() -> Dictionary:
 	for task: Dictionary in tasks:
 		if str(task.get("room_id",stage().get("room_id","")))==str(host.room.get("id","")): return task
 	return tasks[0] if not tasks.is_empty() else stage()
-
 func task_near(task: Dictionary) -> bool:
 	return str(task.get("room_id",stage().room_id))==str(host.room.id) and near(task.at,float(task.get("radius",110)))
-
 func near(point: Array, radius: float=125.0) -> bool:
 	if not is_instance_valid(host.player) or not host.player.is_on_floor(): return false
 	var delta: Vector2=host.player.position-host.point(point)
@@ -90,6 +90,7 @@ func enter_room() -> void:
 	view.rebuild()
 
 func leave_room() -> void:
+	if is_instance_valid(cinematic): cinematic.cancel()
 	if not is_instance_valid(encounter): return
 	if running() and is_instance_valid(host.music): host.music.set_story_encounter(false)
 	encounter.clear_room()
@@ -192,13 +193,19 @@ func interact() -> bool:
 		"observe":
 			if observing: complete()
 			else:
-				observing=true
-				observation_time=0
-				last_caption=-1
+				if not cinematic.play(str(s.id),complete):
+					observing=true
+					observation_time=0
+					last_caption=-1
 		"exit": complete()
 	return true
 
 func _speak(lines: Array) -> void:
+	var key: String=str(pending_task.get("id",stage().get("id","")))
+	if cinematic.play(key,_queue_speech.bind(lines.duplicate(true))): return
+	_queue_speech(lines)
+
+func _queue_speech(lines: Array) -> void:
 	if lines.is_empty():
 		if pending_task.is_empty(): complete()
 		else: finish_task()
@@ -232,7 +239,6 @@ func finish_task() -> void:
 func complete() -> void:
 	if stage().is_empty(): return
 	CampaignStoryProgress.complete(self)
-
 func to_save() -> Dictionary:
 	return {"version":1,"completed":completed.duplicate(),"facts":facts.duplicate(true)}
 
@@ -241,3 +247,4 @@ func restore(value: Dictionary) -> void:
 		pending_restore=value.duplicate(true)
 		return
 	CampaignStoryProgress.restore(self,value)
+	if is_instance_valid(cinematic): cinematic.session_seen.clear()

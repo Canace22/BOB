@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "revision": 97,
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-23",
   "project": "BOB",
   "atlas": {
     "ready": true,
@@ -38249,6 +38249,70 @@
       "frameCount": 16,
       "sha256": "a3db20d1768ff9da1638f768ff1bf22bd8fe3f5e425f0651e45689e6d24de2fc",
       "notes": "内置image_gen创作；生成原件、精确请求、裁片和固定根注册记录在同批源目录。独立绘图数与实际60Hz可见采样数分开；技术检查不等于用户美术认可。"
+    },
+    {
+      "id": "player-basic-slash-v3-strike1",
+      "name": "拾潮者 · 前突",
+      "kind": "character-animation",
+      "region": "主角",
+      "tags": [
+        "2D",
+        "真实绘制帧",
+        "候选"
+      ],
+      "status": "candidate",
+      "userArtApproval": false,
+      "target": "2d",
+      "file": "assets/runtime/sprites/player-basic-slash-v3/strike1-body.png",
+      "source": "assets/source/player-basic-slash-v3/README.md",
+      "runtimeFile": "game/art/player-basic-slash-v3/strike1-body.png",
+      "width": 1536,
+      "height": 1536,
+      "frameCount": 16,
+      "sha256": "d2e3d5b49c7fbf13397b1fd03601755e479dd3c1cebce8e698b865643da0255b",
+      "sourceSha256": "9528deb425fe9ab85f3fe54e7283f85930018fedcd028796f435e1dd1a173a82",
+      "notes": "32张绘制帧，固定尺度与脚底根点。已接入，待用户美术验收；技术证据见同批README。"
+    },
+    {
+      "id": "player-basic-slash-v3-strike2",
+      "name": "拾潮者 · 横劈",
+      "kind": "character-animation",
+      "region": "主角",
+      "tags": [
+        "2D",
+        "真实绘制帧",
+        "候选"
+      ],
+      "status": "candidate",
+      "userArtApproval": false,
+      "target": "2d",
+      "file": "assets/runtime/sprites/player-basic-slash-v3/strike2-body.png",
+      "source": "assets/source/player-basic-slash-v3/README.md",
+      "runtimeFile": "game/art/player-basic-slash-v3/strike2-body.png",
+      "width": 1536,
+      "height": 1536,
+      "frameCount": 16,
+      "sha256": "3bedf1b2b83440f954e786bc395d3a224906052d55fd315ccb99dfc456b992ca",
+      "sourceSha256": "025b9c3110f3e272c78345a0aeeb787bcac89e638b63c391fff2da7d9bf4d344",
+      "notes": "32张绘制帧，固定尺度与脚底根点。已接入，待用户美术验收；技术证据见同批README。"
+    },
+    {
+      "id": "player-basic-slash-v3-parry",
+      "name": "拾潮者 · 架叉格挡",
+      "kind": "character-animation",
+      "region": "主角",
+      "status": "candidate",
+      "userArtApproval": false,
+      "target": "2d",
+      "file": "assets/runtime/sprites/player-basic-slash-v3/parry-body.png",
+      "source": "assets/source/player-basic-slash-v3/README.md",
+      "runtimeFile": "game/art/player-basic-slash-v3/parry-body.png",
+      "width": 1536,
+      "height": 1536,
+      "frameCount": 16,
+      "sha256": "a3597e7ded3191957fc27b1ce28f8e5da785721edfb777cb9acf9eaff232925f",
+      "sourceSha256": "62f93085a497982342ee2985ecd39a2ec765eb06f3bd657a86d340ab49801507",
+      "notes": "以原待机逐帧为主参考，恢复细长四肢、开口双叉和三角披风。16张身体格挡帧；固定尺度。旧厚重候选被用户否决，当前待用户美术验收。"
     }
   ]
 }

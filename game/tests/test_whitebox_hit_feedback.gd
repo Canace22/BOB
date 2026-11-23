@@ -24,6 +24,7 @@ func test_real_hit_synchronizes_target_clock_and_marks_near_contact_edge() -> vo
 	check(arena.player.request_action("strike_01"),"real attack starts")
 	check(await wait_hit(arena),"actual damage produces feedback")
 	check(arena.player.hitstop > 0.0 and arena.enemy.feedback_stop > 0.0,"both sides freeze")
+	eq(arena.player.hitstop_duration,4.0/60.0,"first basic thrust has a distinct four-frame contact stop")
 	var enemy_time: float = arena.enemy.elapsed
 	var actor_time: float = arena.player.state_time
 	await physics_frames(1)

@@ -1,5 +1,22 @@
 extends TestSuite
 
+func test_only_objective_routes_reach_the_screen_hud() -> void:
+	var candidates: Array[Dictionary]=[
+		{"id":"back","main":false,"kind":"返回"},
+		{"id":"next","main":true,"kind":"前往"},
+		{"id":"branch","main":false,"kind":"可前往"}]
+	var visible: Array[Dictionary]=WhaleCampaignRouteHUD.objective_routes(candidates)
+	eq(visible.size(),1,"only the mission path remains when target is in another room")
+	eq(visible[0].id,"next","optional and return navigation is removed")
+	eq(candidates[1].kind,"前往","presentation cannot mutate map route data")
+	candidates.append({"id":"npc","main":true,"story_target":true})
+	candidates.append({"id":"clue","main":true,"story_target":true})
+	visible=WhaleCampaignRouteHUD.objective_routes(candidates)
+	eq(visible.size(),2,"multiple actual mission targets are preserved")
+	check(visible.all(func(route: Dictionary) -> bool: return route.get("story_target",false)),"local targets replace all exit arrows")
+	candidates=[{"id":"back","main":false}]
+	eq(WhaleCampaignRouteHUD.objective_routes(candidates).size(),0,"no objective means no arbitrary navigation arrow")
+
 func make_host(id: String) -> WhalebellyMain:
 	var host := WhalebellyMain.new()
 	host.rooms = CampaignWorld.load_rooms(JSON.parse_string(FileAccess.get_file_as_string("res://art/whalebelly/rooms.json")))

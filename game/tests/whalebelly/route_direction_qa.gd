@@ -44,32 +44,32 @@ func run() -> void:
 		if str(host.room.id)=="R1-02":
 			crossed = true
 			if view.source_id!="R1-02": continue
-			var back: Array[Dictionary] = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-01")
+			var back: Array[Dictionary] = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-03")
 			if back.is_empty(): continue
 			if not entry_checked:
 				check("D input crosses seamlessly from final platform into sieve",host.streaming.enabled)
-				check("left destination stays left immediately after seam ownership switch",back[0].side=="left" and Vector2(back[0].world_point).x<host.player.global_position.x)
+				check("mission destination stays right after seam ownership switch",back[0].side=="right" and Vector2(back[0].world_point).x>host.player.global_position.x)
 				await shot("route-direction-sieve-entry")
 				entry_checked = true
 			if host.player.position.x>180: break
 	press(KEY_D,false)
 	await tick(4)
 	check("continuous D input reached the reported room",crossed and entry_checked)
-	check("junction retains all four exits",view.markers.size()==4)
-	check("both upper branches keep an upward direction",view.markers.filter(func(marker: Dictionary) -> bool: return marker.id in ["R1-06","R1-07"] and Vector2(marker.direction).y<0).size()==2)
+	check("junction shows only mission arrow",view.markers.size()==1)
+	check("optional map arrows are absent",view.markers.all(func(marker: Dictionary) -> bool: return marker.id=="R1-03"))
 	# 只布置长文避让条件；出口/房间与主角位置仍取本次实际步行结果。
 	var prompt: WhaleInteractionPrompt = host.player_ui.hud.interaction_prompt
 	host.player_ui.hud.set_process(false)
 	prompt.present("牵引前方圆环 · 到环停挂 · 空格跃离", "G",false)
 	await tick(15)
-	var back: Array[Dictionary] = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-01")
-	check("prompt clearance never moves the return marker to right",not back.is_empty() and back[0].side=="left")
+	var back: Array[Dictionary] = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-03")
+	check("prompt clearance preserves mission direction",not back.is_empty() and back[0].side=="right")
 	await shot("route-direction-prompt")
 	host.player_ui.hud.set_process(true)
 	root.size = Vector2i(960,540)
 	await tick(8)
-	back = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-01")
-	check("small window preserves the real leftward return",not back.is_empty() and back[0].side=="left")
+	back = view.markers.filter(func(marker: Dictionary) -> bool: return marker.id=="R1-03")
+	check("small window preserves the mission direction",not back.is_empty() and back[0].side=="right")
 	await shot("route-direction-small-window")
 	root.size = Vector2i(1280,720)
 	press(KEY_A,true)

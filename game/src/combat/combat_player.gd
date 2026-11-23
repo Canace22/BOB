@@ -90,6 +90,12 @@ func _physics_process(dt: float) -> void:
 	velocity.x = -retreat_facing*420.0
 	velocity.y += gravity*dt
 	move_and_slide()
+	# 后跳独占运动也必须经过底界检测，否则离开平台后永远等不到落地退出。
+	if position.y > world_bounds.end.y+100:
+		retreating = false
+		_fall_out_of_world()
+		queue_redraw()
+		return
 	if retreat_time > 0.1 and is_on_floor():
 		retreating = false
 		retreat_cooldown = 0.12

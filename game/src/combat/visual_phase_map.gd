@@ -7,6 +7,7 @@ var profiles: Dictionary = {}
 var skill_families: Dictionary = {}
 var clock: float = 0.0
 var last_key: String = ""
+var guard_impact_age: float = -1.0
 
 func reset() -> void:
 	clock = 0.0
@@ -23,6 +24,13 @@ func load_manifest(base_root: String) -> Dictionary:
 	var config: Dictionary = read_json(ROOT+"phase-profiles.json")
 	profiles = config.get("profiles",{})
 	skill_families = config.get("skill_families",{})
+	# 普攻重绘独立覆盖两段；保留旧图集、其它技能及既有命中事件作为回退基线。
+	var basic: Dictionary=read_json("res://art/player-basic-slash-v3/animations.json")
+	for key: String in basic.get("actions",{}):
+		var spec: Dictionary=base.get(key,{}).duplicate(true)
+		spec.merge(basic.actions[key],true)
+		base[key]=spec
+	profiles.merge(basic.get("profiles",{}),true)
 	return base
 
 static func read_json(path: String) -> Dictionary:
@@ -43,7 +51,7 @@ func body_index(key: String, spec: Dictionary, fraction: float, actor: TidePlaye
 	return index_from_context(key,spec,fraction,{"clock":clock,"active":c.active,"visual_key":c.visual_key,
 		"elapsed":c.elapsed,"duration":c.duration,"release":float(c.data.get("release",0.0)),
 		"parry_end":float(c.data.get("parry_end",0.0)),"landed":c.landed,"landed_at":c.landed_at,
-		"long_hold":c.input.long_hold,"full_timeline":actor.state_duration>0.0})
+		"guard_impact_age":guard_impact_age,"long_hold":c.input.long_hold,"full_timeline":actor.state_duration>0.0})
 
 func index_from_context(key: String, spec: Dictionary, fraction: float, context: Dictionary) -> int:
 	## 主角与幻影共用的只读解析口；调用者提供自己的时钟，不能借此驱动另一执行器。
@@ -69,12 +77,19 @@ func index_from_context(key: String, spec: Dictionary, fraction: float, context:
 	if str(profile.get("mode","")) == "guard" and active_ and source_key == "parry":
 		var end: float = float(context.get("parry_end",0.0))
 		if time < release: return sequence_index(profile.prepare,time/maxf(release,0.001))
+		var impact_age: float=float(context.get("guard_impact_age",-1.0))
+		if time<=end and impact_age>=0.0 and impact_age<0.18 and profile.has("impact_marks"):
+			return marked_index(profile.impact_marks,impact_age/0.18)
 		if time <= end: return loop_index(profile.hold_loop,visual_clock,float(profile.get("loop_fps",8.0)))
 		return sequence_index(profile.recover,(time-end)/maxf(duration-end,0.001))
 	if not active_ and source_key == key and profile.has("charge_loop"):
 		# 只在输入层已经选择蓄力状态后播放，不预判60ms组合输入。
 		return loop_index(profile.charge_loop,visual_clock,float(profile.get("loop_fps",9.0)))
 	if profile.has("prepare") and profile.has("release"):
+		if profile.has("release_marks"):
+			var event: float=float(spec.get("event_phase",0.5))
+			if fraction<event: return marked_index(profile.prepare_marks,fraction/maxf(event,0.001))
+			return marked_index(profile.release_marks,(fraction-event)/maxf(1.0-event,0.001))
 		return phase_index(profile,fraction,float(spec.get("event_phase",0.5)))
 	return clampi(int(fraction*count),0,count-1)
 
@@ -86,6 +101,14 @@ static func phase_index(profile: Dictionary, fraction: float, event_phase: float
 static func sequence_index(frames: Array, progress: float) -> int:
 	if frames.is_empty(): return 0
 	return int(frames[clampi(int(clampf(progress,0.0,1.0)*frames.size()),0,frames.size()-1)])
+
+static func marked_index(marks: Array, progress: float) -> int:
+	# 绘制帧按用力阶段停留；只改变呈现，不延后命中、输入与取消窗口。
+	var index: int=int(marks[0][1])
+	for mark: Array in marks:
+		if progress<float(mark[0]): break
+		index=int(mark[1])
+	return index
 
 static func loop_index(frames: Array, time: float, fps: float) -> int:
 	if frames.is_empty(): return 0

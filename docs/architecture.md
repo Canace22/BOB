@@ -200,3 +200,5 @@ ElderEchoView补充action_echo实际身体层，原memory_pose只作蓄势提示
 ## 现有正式地图的十二章保底接入
 
 2026-11-22按用户新要求，默认19房主入口已接入`src/narrative/campaign_story*`与`content/narrative/campaign_story.json`。前述独立白盒继续保留，主线采用其已确认正文和事件次序，空间重新绑定到现有地图；不是用新地图替换旧地图。唯一进度所有者、房内/世界坐标、完整敌人、V6扩展、任务指引和验证边界统一见[保底接入说明](现有地图章节保底接入.md)。对话框复用原暂停控制并增加[位图头像](dialogue-portraits.md)。
+
+过场镜头与已有逐帧素材的播放、暂停所有权、跳过/取消与原章节提交口见[保底版过场](formal-cinematics.md)。`CampaignCinematic`唯一管理生命周期，`CampaignCinematicView`只呈现；任务与章节事实仍由`CampaignStory`提交。

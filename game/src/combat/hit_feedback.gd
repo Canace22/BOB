@@ -66,6 +66,8 @@ func _resolved(target: Node, rect: Rect2, key: String, direction: float) -> void
 		grade = 2 if c.pulse_index >= c.data.pulses.size()-1 else 0
 	if (target.get("data") is Dictionary and not bool(target.data.get("alive",true))) or target.get("health") == 0: grade = 2
 	var stop: float = [1.0/60.0,3.0/60.0,4.0/60.0][grade]
+	if key in ["strike1","strike2"]:
+		stop=maxf(stop,(4.0 if key=="strike1" else 5.0)/60.0)
 	var frame: int = Engine.get_physics_frames()
 	if frame != batch_frame:
 		batch_frame = frame

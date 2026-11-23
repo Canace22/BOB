@@ -96,9 +96,15 @@ func _physics_process(_dt: float) -> void:
 	var impacts: Dictionary={"strike1":4,"upper":4,"great_slash":8,"heavy":4,"up_spell":3,"dive":4,"dark_dive":4}
 	if mimic.last_release>=0.0 and enemy.timer-mimic.last_release<0.08:
 		index=int(impacts.get(clip,index))
+	# 新普攻的接触帧与弧光尺度和主角共用配置，避免复制时重新放大攻击观感。
+	var slash: Dictionary=spec.get("slash_fx",{})
+	if not slash.is_empty():
+		index=int(slash.contact_frame)+int(maxf(0.0,time-release)*float(slash.fps))
 	effect.visible=true
 	effect.material=additive if str(spec.get("fx_blend",""))=="additive" else null
 	_layer(effect,frames.fx,spec.fx,index,94.0/float(spec.reference_height),enemy.facing)
+	effect.rotation=float(slash.get("rotation",0.0))*enemy.facing
+	effect.scale*=float(slash.get("scale",1.0))
 	effect.modulate=Color(0.95,0.87,0.62,0.85)
 
 func _show_body(clip: String, frames: Dictionary, spec: Dictionary) -> void:

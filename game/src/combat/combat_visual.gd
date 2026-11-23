@@ -19,6 +19,7 @@ var foot_reads: int = 0
 var warmup_us: int = 0
 var guard_ring: Sprite2D
 var startup_effects: TideStartupEffects
+var guard_reaction_left: float = 0.0
 const WARM_KEYS: Array[String] = ["idle","run","walk","jump","dash","strike1","strike2","upper","great_slash","dash_slash","parry","hurt","defeat","heavy","heal","orb","cyclone"]
 
 func setup(player: TidePlayer, height: float) -> void:
@@ -45,7 +46,12 @@ func setup(player: TidePlayer, height: float) -> void:
 	startup_effects = TideStartupEffects.new()
 	actor.add_child(startup_effects)
 	startup_effects.setup(actor,phase_map.skill_families)
+	player.guard_success.connect(_guard_contact)
 	warmup_us = Time.get_ticks_usec()-started
+
+func _guard_contact(_perfect: bool) -> void:
+	# 成功事件只启动受力绘制帧，不改防御时钟、架势消耗或反击收益。
+	guard_reaction_left=0.18
 
 func load_clip(key: String) -> Dictionary:
 	if not pinned_clips.has(key): pinned_clips[key] = super.load_clip(key)
@@ -61,6 +67,8 @@ func _physics_process(dt: float) -> void:
 	# 后跳分支不经过主角色的动画更新，也在此统一保持朝向与等比尺寸。
 	actor.get_node("Visual").scale = Vector2(actor.visual_scale*actor.facing,actor.visual_scale)
 	var c: TideSkillController = actor.skill_controller
+	if not c.active or c.visual_key!="parry": guard_reaction_left=0.0
+	phase_map.guard_impact_age=0.18-guard_reaction_left if guard_reaction_left>0.0 else -1.0
 	if c.active and c.attack_id != last_attack_id:
 		current_key = ""
 		last_attack_id = c.attack_id
@@ -70,6 +78,7 @@ func _physics_process(dt: float) -> void:
 	foot_us = 0
 	var started: int = Time.get_ticks_usec()
 	update(dt,travel)
+	if actor.hitstop<=0.0: guard_reaction_left=maxf(0.0,guard_reaction_left-dt)
 	_update_guard()
 	startup_effects.advance(dt)
 	update_us = Time.get_ticks_usec()-started
@@ -84,7 +93,7 @@ func _update_guard() -> void:
 	if c.elapsed > end:
 		strength *= 1.0-clampf((c.elapsed-end)/maxf(c.duration-end,0.001),0.0,1.0)
 	guard_ring.position = Vector2(c.locked_facing*44.0,-58.0)
-	guard_ring.modulate = Color(1.0,0.90,0.60,strength) if c.parried else Color(0.65,0.95,1.0,strength*0.65)
+	guard_ring.modulate = Color(1.0,0.90,0.60,strength*0.28) if c.parried else Color(0.65,0.95,1.0,strength*0.12)
 	guard_ring.scale = Vector2.ONE*(0.36 if c.parried else 0.30)
 
 func choose_key(dt: float) -> String:
@@ -136,10 +145,16 @@ func frame_fraction(key: String, spec: Dictionary, dt: float, travel: float) -> 
 
 func apply_layer(layer: Sprite2D, frames: Array[Texture2D], spec: Dictionary, index: int, height: float) -> void:
 	var c: TideSkillController=actor.skill_controller
-	if layer==effect and c.active and c.visual_key=="strike1":
-		# 原弧光第4帧是接触峰值；独立从释放计时，避免整体进度映射在60Hz跳过峰值。
-		index=4+int(maxf(0.0,c.elapsed-float(c.data.release))*24.0)
+	var slash: Dictionary=manifest.get(current_key,{}).get("slash_fx",{})
+	if layer==effect:
+		layer.rotation=0.0
+		if c.active and not slash.is_empty():
+			# 沿真实释放时刻播放接触峰值，前突/横劈只调整已入库弧光尺度。
+			index=int(slash.contact_frame)+int(maxf(0.0,c.elapsed-float(c.data.release))*float(slash.fps))
 	super.apply_layer(layer,frames,spec,index,height)
+	if layer==effect and not slash.is_empty():
+		layer.rotation=float(slash.rotation)
+		layer.scale*=float(slash.scale)
 	if layer != sprite or layer.texture == null or not actor.is_on_floor(): return
 	if bool(manifest.get(current_key,{}).get("authored_pivot",false)): return
 	if profile_skip_foot: return

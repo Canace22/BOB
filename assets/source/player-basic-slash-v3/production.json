@@ -1,0 +1,1169 @@
+{
+  "method": "rounded equal 4x4 source cells, common 384px output, fixed scale1, fixed root_x156, reviewed per-row ground; no interpolation or per-frame resizing",
+  "actions": {
+    "parry": {
+      "source": "assets/source/player-basic-slash-v3/masters/parry.png",
+      "source_sha256": "62f93085a497982342ee2985ecd39a2ec765eb06f3bd657a86d340ab49801507",
+      "runtime": "assets/runtime/sprites/player-basic-slash-v3/parry-body.png",
+      "runtime_sha256": "a3597e7ded3191957fc27b1ce28f8e5da785721edfb777cb9acf9eaff232925f",
+      "size": [
+        1536,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "drawn_frames": 16,
+      "unique_visible_pixels": 16,
+      "reference_height": 250,
+      "frames": [
+        {
+          "frame": 0,
+          "source_rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "alpha32": [
+            65,
+            40,
+            255,
+            290
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 1,
+          "source_rect": [
+            314,
+            0,
+            627,
+            314
+          ],
+          "alpha32": [
+            60,
+            43,
+            255,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 2,
+          "source_rect": [
+            627,
+            0,
+            940,
+            314
+          ],
+          "alpha32": [
+            55,
+            46,
+            249,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 3,
+          "source_rect": [
+            940,
+            0,
+            1254,
+            314
+          ],
+          "alpha32": [
+            56,
+            56,
+            239,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 4,
+          "source_rect": [
+            0,
+            314,
+            314,
+            627
+          ],
+          "alpha32": [
+            60,
+            49,
+            243,
+            290
+          ],
+          "translation": [
+            36,
+            50
+          ],
+          "root": [
+            156,
+            290
+          ]
+        },
+        {
+          "frame": 5,
+          "source_rect": [
+            314,
+            314,
+            627,
+            627
+          ],
+          "alpha32": [
+            58,
+            50,
+            239,
+            289
+          ],
+          "translation": [
+            36,
+            50
+          ],
+          "root": [
+            156,
+            290
+          ]
+        },
+        {
+          "frame": 6,
+          "source_rect": [
+            627,
+            314,
+            940,
+            627
+          ],
+          "alpha32": [
+            60,
+            55,
+            240,
+            289
+          ],
+          "translation": [
+            36,
+            50
+          ],
+          "root": [
+            156,
+            290
+          ]
+        },
+        {
+          "frame": 7,
+          "source_rect": [
+            940,
+            314,
+            1254,
+            627
+          ],
+          "alpha32": [
+            56,
+            65,
+            237,
+            290
+          ],
+          "translation": [
+            36,
+            50
+          ],
+          "root": [
+            156,
+            290
+          ]
+        },
+        {
+          "frame": 8,
+          "source_rect": [
+            0,
+            627,
+            314,
+            940
+          ],
+          "alpha32": [
+            53,
+            68,
+            234,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 9,
+          "source_rect": [
+            314,
+            627,
+            627,
+            940
+          ],
+          "alpha32": [
+            49,
+            57,
+            232,
+            290
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 10,
+          "source_rect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "alpha32": [
+            57,
+            54,
+            238,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 11,
+          "source_rect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "alpha32": [
+            58,
+            51,
+            238,
+            290
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 12,
+          "source_rect": [
+            0,
+            940,
+            314,
+            1254
+          ],
+          "alpha32": [
+            61,
+            50,
+            238,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 13,
+          "source_rect": [
+            314,
+            940,
+            627,
+            1254
+          ],
+          "alpha32": [
+            61,
+            45,
+            244,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 14,
+          "source_rect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "alpha32": [
+            60,
+            42,
+            246,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        },
+        {
+          "frame": 15,
+          "source_rect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "alpha32": [
+            65,
+            41,
+            255,
+            291
+          ],
+          "translation": [
+            36,
+            49
+          ],
+          "root": [
+            156,
+            291
+          ]
+        }
+      ],
+      "review": "source poses reviewed, runtime/GIF acceptance pending"
+    },
+    "strike1": {
+      "source": "assets/source/player-basic-slash-v3/masters/strike1.png",
+      "source_sha256": "9528deb425fe9ab85f3fe54e7283f85930018fedcd028796f435e1dd1a173a82",
+      "runtime": "assets/runtime/sprites/player-basic-slash-v3/strike1-body.png",
+      "runtime_sha256": "d2e3d5b49c7fbf13397b1fd03601755e479dd3c1cebce8e698b865643da0255b",
+      "size": [
+        1536,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "drawn_frames": 16,
+      "unique_visible_pixels": 16,
+      "reference_height": 204,
+      "frames": [
+        {
+          "frame": 0,
+          "source_rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "alpha32": [
+            73,
+            76,
+            238,
+            280
+          ],
+          "translation": [
+            36,
+            60
+          ],
+          "root": [
+            156,
+            280
+          ]
+        },
+        {
+          "frame": 1,
+          "source_rect": [
+            314,
+            0,
+            627,
+            314
+          ],
+          "alpha32": [
+            61,
+            88,
+            235,
+            280
+          ],
+          "translation": [
+            36,
+            60
+          ],
+          "root": [
+            156,
+            280
+          ]
+        },
+        {
+          "frame": 2,
+          "source_rect": [
+            627,
+            0,
+            940,
+            314
+          ],
+          "alpha32": [
+            56,
+            102,
+            232,
+            279
+          ],
+          "translation": [
+            36,
+            60
+          ],
+          "root": [
+            156,
+            280
+          ]
+        },
+        {
+          "frame": 3,
+          "source_rect": [
+            940,
+            0,
+            1254,
+            314
+          ],
+          "alpha32": [
+            49,
+            106,
+            245,
+            279
+          ],
+          "translation": [
+            36,
+            60
+          ],
+          "root": [
+            156,
+            280
+          ]
+        },
+        {
+          "frame": 4,
+          "source_rect": [
+            0,
+            314,
+            314,
+            627
+          ],
+          "alpha32": [
+            48,
+            103,
+            249,
+            278
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 5,
+          "source_rect": [
+            314,
+            314,
+            627,
+            627
+          ],
+          "alpha32": [
+            46,
+            80,
+            232,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 6,
+          "source_rect": [
+            627,
+            314,
+            940,
+            627
+          ],
+          "alpha32": [
+            23,
+            94,
+            285,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 7,
+          "source_rect": [
+            940,
+            314,
+            1254,
+            627
+          ],
+          "alpha32": [
+            29,
+            97,
+            301,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 8,
+          "source_rect": [
+            0,
+            627,
+            314,
+            940
+          ],
+          "alpha32": [
+            36,
+            80,
+            290,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 9,
+          "source_rect": [
+            314,
+            627,
+            627,
+            940
+          ],
+          "alpha32": [
+            42,
+            81,
+            257,
+            280
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 10,
+          "source_rect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "alpha32": [
+            40,
+            80,
+            242,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 11,
+          "source_rect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "alpha32": [
+            49,
+            77,
+            221,
+            279
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "root": [
+            156,
+            279
+          ]
+        },
+        {
+          "frame": 12,
+          "source_rect": [
+            0,
+            940,
+            314,
+            1254
+          ],
+          "alpha32": [
+            56,
+            76,
+            223,
+            280
+          ],
+          "translation": [
+            36,
+            59
+          ],
+          "root": [
+            156,
+            281
+          ]
+        },
+        {
+          "frame": 13,
+          "source_rect": [
+            314,
+            940,
+            627,
+            1254
+          ],
+          "alpha32": [
+            62,
+            75,
+            217,
+            281
+          ],
+          "translation": [
+            36,
+            59
+          ],
+          "root": [
+            156,
+            281
+          ]
+        },
+        {
+          "frame": 14,
+          "source_rect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "alpha32": [
+            66,
+            73,
+            223,
+            280
+          ],
+          "translation": [
+            36,
+            59
+          ],
+          "root": [
+            156,
+            281
+          ]
+        },
+        {
+          "frame": 15,
+          "source_rect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "alpha32": [
+            69,
+            73,
+            230,
+            281
+          ],
+          "translation": [
+            36,
+            59
+          ],
+          "root": [
+            156,
+            281
+          ]
+        }
+      ],
+      "review": "source poses reviewed, runtime/GIF acceptance pending"
+    },
+    "strike2": {
+      "source": "assets/source/player-basic-slash-v3/masters/strike2.png",
+      "source_sha256": "025b9c3110f3e272c78345a0aeeb787bcac89e638b63c391fff2da7d9bf4d344",
+      "runtime": "assets/runtime/sprites/player-basic-slash-v3/strike2-body.png",
+      "runtime_sha256": "3bedf1b2b83440f954e786bc395d3a224906052d55fd315ccb99dfc456b992ca",
+      "size": [
+        1536,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "drawn_frames": 16,
+      "unique_visible_pixels": 16,
+      "reference_height": 207,
+      "frames": [
+        {
+          "frame": 0,
+          "source_rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "alpha32": [
+            67,
+            77,
+            236,
+            284
+          ],
+          "translation": [
+            36,
+            56
+          ],
+          "root": [
+            156,
+            284
+          ]
+        },
+        {
+          "frame": 1,
+          "source_rect": [
+            314,
+            0,
+            627,
+            314
+          ],
+          "alpha32": [
+            61,
+            82,
+            229,
+            284
+          ],
+          "translation": [
+            36,
+            56
+          ],
+          "root": [
+            156,
+            284
+          ]
+        },
+        {
+          "frame": 2,
+          "source_rect": [
+            627,
+            0,
+            940,
+            314
+          ],
+          "alpha32": [
+            47,
+            83,
+            246,
+            283
+          ],
+          "translation": [
+            36,
+            56
+          ],
+          "root": [
+            156,
+            284
+          ]
+        },
+        {
+          "frame": 3,
+          "source_rect": [
+            940,
+            0,
+            1254,
+            314
+          ],
+          "alpha32": [
+            32,
+            83,
+            262,
+            283
+          ],
+          "translation": [
+            36,
+            56
+          ],
+          "root": [
+            156,
+            284
+          ]
+        },
+        {
+          "frame": 4,
+          "source_rect": [
+            0,
+            314,
+            314,
+            627
+          ],
+          "alpha32": [
+            34,
+            84,
+            281,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 5,
+          "source_rect": [
+            314,
+            314,
+            627,
+            627
+          ],
+          "alpha32": [
+            35,
+            85,
+            276,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 6,
+          "source_rect": [
+            627,
+            314,
+            940,
+            627
+          ],
+          "alpha32": [
+            35,
+            82,
+            253,
+            282
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 7,
+          "source_rect": [
+            940,
+            314,
+            1254,
+            627
+          ],
+          "alpha32": [
+            25,
+            81,
+            289,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 8,
+          "source_rect": [
+            0,
+            627,
+            314,
+            940
+          ],
+          "alpha32": [
+            45,
+            78,
+            252,
+            282
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 9,
+          "source_rect": [
+            314,
+            627,
+            627,
+            940
+          ],
+          "alpha32": [
+            31,
+            77,
+            247,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 10,
+          "source_rect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "alpha32": [
+            38,
+            77,
+            249,
+            282
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 11,
+          "source_rect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "alpha32": [
+            41,
+            76,
+            247,
+            282
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 12,
+          "source_rect": [
+            0,
+            940,
+            314,
+            1254
+          ],
+          "alpha32": [
+            53,
+            77,
+            238,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 13,
+          "source_rect": [
+            314,
+            940,
+            627,
+            1254
+          ],
+          "alpha32": [
+            56,
+            77,
+            236,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 14,
+          "source_rect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "alpha32": [
+            59,
+            77,
+            236,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        },
+        {
+          "frame": 15,
+          "source_rect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "alpha32": [
+            64,
+            77,
+            237,
+            283
+          ],
+          "translation": [
+            36,
+            57
+          ],
+          "root": [
+            156,
+            283
+          ]
+        }
+      ],
+      "review": "source poses reviewed, runtime/GIF acceptance pending"
+    }
+  }
+}

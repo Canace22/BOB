@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "plans": {
+    "loop.arrival": {
+      "shots": [
+        {
+          "seconds": 1.6,
+          "focus": "player",
+          "text": "灯还亮着。拾潮者缓过一口气，重新握紧骨鸣器。",
+          "player_pose": "hurt",
+          "zoom": 1.2
+        },
+        {
+          "seconds": 1.8,
+          "focus": "player",
+          "text": "",
+          "player_pose": "interact",
+          "zoom": 1.2
+        },
+        {
+          "seconds": 1.6,
+          "focus": "nest_mender",
+          "text": "前方的补巢者停下手里的活，朝这边看过来。",
+          "zoom": 1.08
+        }
+      ]
+    },
+    "ch02_rescue": {
+      "shots": [
+        {
+          "seconds": 3,
+          "focus": "resident_settled",
+          "text": "岸边还在掉碎屑。住户先停下来，等前面的人站稳。",
+          "zoom": 1.18
+        },
+        {
+          "seconds": 3,
+          "focus": "resident_migrant",
+          "text": "守卫扶住旧撑。最后一名住户越过断口，接应的人把他拉上岸。",
+          "guard": "shell_guard",
+          "action": "shell_push",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 2,
+          "focus": "player",
+          "text": "住户都到了内侧。通路暂时稳住了。",
+          "player_pose": "interact"
+        }
+      ]
+    },
+    "ch03_flood": {
+      "shots": [
+        {
+          "seconds": 2.5,
+          "focus": [
+            3120,
+            2080
+          ],
+          "text": "旧瓣刚被撬开，槽口猛地涌进一股回水。",
+          "player_pose": "interact",
+          "effect": "flood",
+          "zoom": 1.1,
+          "prop": "valve"
+        },
+        {
+          "seconds": 3,
+          "focus": [
+            1550,
+            2080
+          ],
+          "text": "回水绕过挡水梗，冲进菌床。补巢者回身护住住户。",
+          "effect": "flood",
+          "prop": "fungus",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 3,
+          "focus": [
+            1480,
+            2080
+          ],
+          "text": "老守护者赶到槽边，压住旧瓣。水势终于慢下来。",
+          "guard": "elder_guardian",
+          "action": "elder_grip",
+          "effect": "settle",
+          "zoom": 1.16,
+          "prop": "valve"
+        },
+        {
+          "seconds": 2,
+          "focus": [
+            1550,
+            2080
+          ],
+          "text": "菌床上的细丝散开，巢片偏出了原来的位置。",
+          "prop": "fungus",
+          "effect": "settle"
+        }
+      ]
+    },
+    "ch04_05_tides": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "第一潮，水从旧壳控制的小缝流过。刻尺上的水位没有超过第一条线，避流架上的住巢没有浸水，窄口的碎屑开始减少。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "又经过几次潮汐，槽边刮痕上有稀疏的新菌丝附着；原来采集菌膜的大片沟底仍然空着。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "胃室传来回信：居民在高台新放下的小菌床，表层没有再被回水卷起。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "看守把供养牌放到空沟旁，核对采集刻线。槽边的新附着还很少，不能供整片聚落的居民采食。",
+          "zoom": 1.08
+        }
+      ]
+    },
+    "ch06_04_tides": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "低潮时，强流口的甲片周围水流很急，避流口的乙片处在支撑背面的缓水带，丙片留在不通外海的内水槽。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "涨潮后，外侧急流增强，支撑背面的水流仍然较缓。附近两片旧支膜随水压鼓起，封片还在挡着外海水。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "经过几次潮汐，拾潮者和看守沿固定壳片的短绳收回三片样本，把样本按甲、乙、丙的刻号放到比对架上。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "强流口的甲片没有附着物；避流口的乙片边缘长了菌丝，还附着透明小生物；内水槽的丙片覆着碎屑。",
+          "zoom": 1.08
+        }
+      ]
+    },
+    "ch08_no_reply": {
+      "shots": [
+        {
+          "seconds": 3,
+          "focus": "body",
+          "text": "拾潮者停下手，等封梁卫回应。",
+          "player_pose": "interact",
+          "zoom": 1.18
+        },
+        {
+          "seconds": 3,
+          "focus": "body",
+          "text": "封梁卫没有再动。",
+          "zoom": 1.28
+        },
+        {
+          "seconds": 3,
+          "focus": "shell_guard",
+          "text": "负壳守卫在他身边蹲下，收起了那枚刻过名字的背壳。",
+          "guard": "shell_guard",
+          "action": "shell_push",
+          "prop": "name_shell",
+          "zoom": 1.18
+        }
+      ]
+    },
+    "ch09_record_old_loss": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "补巢者的新居入口挂着从胃室捡回的旧壳。旧壳上原来记录居住潮汐的刻痕已经磨尽。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "旧壳旁的刻图画着胃室受损的浅槽，以及居民用触肢一起托住的住巢。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "拾潮者在刻图空处补下自己撬开胃室旧瓣、回水冲坏菌床的经过。补巢者继续缀巢壁，没有阻止拾潮者刻写。",
+          "zoom": 1.08
+        }
+      ]
+    },
+    "ch10_whale_memory": {
+      "shots": [
+        {
+          "seconds": 3.2,
+          "focus": "player",
+          "text": "拾潮者把骨鸣器贴上未刻写的骨面。回声中，菌灯照着的残壁逐渐退远。",
+          "player_pose": "interact",
+          "effect": "memory",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 3.2,
+          "focus": "player",
+          "text": "回声中的明亮海水从巨鲸身体下掠过，同伴的声音隔着长流传来。",
+          "player_pose": "interact",
+          "effect": "memory",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 3.2,
+          "focus": "player",
+          "text": "另一段回声里，贴在巨鲸身侧的温度渐渐离去，巨鲸仍在向前游动。",
+          "player_pose": "interact",
+          "effect": "memory",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 3.2,
+          "focus": "player",
+          "text": "回声淡去，菌灯重新照见拾潮者持着骨鸣器的手。拾潮者把掌心贴在骨面上，等最后一点震动过去。",
+          "player_pose": "interact",
+          "effect": "memory",
+          "zoom": 1.12
+        }
+      ]
+    },
+    "ch11_listen_pause": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "拾潮者再次贴住尾根触点。肺缘细震与泵庭重拍仍在传来，尾根震动先停顿，再传回压杂响。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "鲸歌中的闷响再次出现，时间恰与尾根的回压重合。",
+          "zoom": 1.08
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "骨鸣器叉柄传来的闷震渐渐散去。拾潮者在随身水路记录的回压位置旁，补记了这次停顿。",
+          "zoom": 1.08
+        }
+      ]
+    },
+    "ch12_limited_outflow": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": [
+            2450,
+            1280
+          ],
+          "text": "这一轮潮里，外排几次变强。老守护者要求暂停，拾潮者和负壳守卫把封护稳在原位。",
+          "zoom": 1.08,
+          "effect": "outflow"
+        },
+        {
+          "seconds": 2.8,
+          "focus": [
+            2450,
+            1280
+          ],
+          "text": "回压下降后，拾潮者和负壳守卫才继续挪动封护，老守护者扶着旧撑。",
+          "zoom": 1.08,
+          "effect": "outflow"
+        },
+        {
+          "seconds": 2.8,
+          "focus": [
+            2450,
+            1280
+          ],
+          "text": "浑水沿窄口外排。旧撑和退流槽仍然保留，通向未安顿住巢的支路没有打开，主闸开口也没有继续扩大。",
+          "zoom": 1.08,
+          "effect": "outflow"
+        }
+      ]
+    },
+    "ch12_recovery_life": {
+      "shots": [
+        {
+          "seconds": 2.8,
+          "focus": "nest_mender",
+          "text": "此后的许多潮汐里，拾潮者留在主闸腔。居民陆续送来消息：有巢基附稳了，也有通道仍须挡住。",
+          "zoom": 1.1,
+          "effect": ""
+        },
+        {
+          "seconds": 2.8,
+          "focus": "shell_guard",
+          "text": "负壳守卫带居民调整支撑。老守护者的伤口渐渐愈合，后来开始询问下一处迁居何时接应，手边的分流图反复改过。",
+          "zoom": 1.1,
+          "effect": ""
+        },
+        {
+          "seconds": 2.8,
+          "focus": "resident_settled",
+          "text": "补巢者把新菌床脱下的小壳放在灯旁，小壳上附满细丝。新居还挂着旧巢片，补巢者已经接着补刻磨掉的记号。",
+          "zoom": 1.1,
+          "effect": ""
+        },
+        {
+          "seconds": 2.8,
+          "focus": "elder_guardian",
+          "text": "主闸外的水流渐稳。拾潮者听见古鲸一声平缓的低鸣，此后许久再无回应。老守护者在教居民辨认新水线。",
+          "zoom": 1.1,
+          "effect": ""
+        },
+        {
+          "seconds": 2.8,
+          "focus": "player",
+          "text": "拾潮者翻开行记，记下主闸现在的开口和水线。菌灯照着新生触丝，细丝离开旧骨，伸向外流。",
+          "zoom": 1.1,
+          "effect": "memory"
+        }
+      ]
+    },
+    "ch12_move_elder_safe": {
+      "shots": [
+        {
+          "seconds": 2.3,
+          "focus": "body",
+          "text": "老守护者靠在台边，撑地的手还在发抖。",
+          "zoom": 1.18
+        },
+        {
+          "seconds": 2.6,
+          "focus": "shell_guard",
+          "text": "拾潮者收起骨鸣器，和负壳守卫一起接应他。",
+          "player_pose": "interact",
+          "guard": "shell_guard",
+          "action": "shell_push",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 2,
+          "focus": "elder_guardian",
+          "text": "先让他靠稳石台，再去处理闸口。",
+          "zoom": 1.12
+        }
+      ]
+    },
+    "ch12_shift_narrow_cover": {
+      "shots": [
+        {
+          "seconds": 2.4,
+          "focus": "player",
+          "text": "拾潮者抵住封护，沿着旧痕挪开一小段。",
+          "player_pose": "interact",
+          "effect": "outflow",
+          "zoom": 1.12
+        },
+        {
+          "seconds": 2.6,
+          "focus": [
+            2480,
+            1280
+          ],
+          "text": "旧撑向一边偏去。负壳守卫立即顶住它。",
+          "guard": "shell_guard",
+          "action": "shell_push",
+          "effect": "outflow",
+          "zoom": 1.1
+        }
+      ]
+    },
+    "ch12_set_old_anchor": {
+      "shots": [
+        {
+          "seconds": 2.5,
+          "focus": "player",
+          "text": "拾潮者按住旧锚。负壳守卫把长叉嵌进锚口。",
+          "player_pose": "interact",
+          "guard": "shell_guard",
+          "action": "shell_push",
+          "zoom": 1.18
+        },
+        {
+          "seconds": 2.8,
+          "focus": "elder_guardian",
+          "text": "老守护者撑住旧梁。闸门停止偏移。",
+          "guard": "elder_guardian",
+          "action": "elder_grip",
+          "zoom": 1.12
+        }
+      ]
+    }
+  }
+}

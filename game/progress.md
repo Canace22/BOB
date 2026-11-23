@@ -2983,3 +2983,75 @@ Boss房规则修订：V6重点房间不全部设为Boss房；每个R区域只保
 隔离检出默认留LFS指针，首次导入产生valid=false记录；从本地缓存还原game资源、定向下载主干新增的两张贴图，恢复受影响的原.import后重新导入。最终delivery-check.log为0 error；delivery-tests.log为502 passed/8 failed（源工作区含6项未提交新地图测试，所以总数不同）。原7项旧失败外，主干新跳台使旧七房surfaces冻结合同再多1项；字体缺字已修正。失败仍覆盖旧门图/音乐/敌人存在/后区目标/几何与房间奖励合同，保留原断言而不为合并放宽；旧门Nil脚本错误也仍需单独处理。
 
 原生delivery-native.log使用正式场景、真实J键六次连按，strike1/strike2稳定交替、收叉帧[14,15,14,15,14,15]，failures=0，stderr为空；夹具独立QA进度，不是整章真人通关或音频验收。上一轮的完整章节接口、九场实战输入和分腿通路证据仍按各自边界保留。未发布Web版。
+
+## 2026-11-23 · 现有地图保底版场景过场
+
+按用户“继续补齐”要求，在原19房/85阶段保底主线接入14段、46镜头的场景内过场：开场回稳、第二章接应、第三章开瓣/回水/菌床/压瓣、第八章封梁卫战后、四/六/九/十/十一章观察与记录、终章接应/移封护/旧锚/有限排水/恢复期。独立campaign_cinematics.json为过场编排源，不改已确认正文生成器、房间几何、碰撞或章节次序。普通交谈保持头像对白，镜头结束后才交回原complete/finish_task提交口，任务仍需各自独立F；已完成前缀旧档不回退，半段退出不提交，可重试。
+
+运行能力：CampaignCinematic统一持有暂停、游戏键释放门和清理；CampaignCinematicView只播放已有逐帧代理、膜瓣/水丝位图、镜头和字幕，不运行战斗技能或发伤害。主控ALWAYS会传给ActorFrame，初次GPU检查发现双主角，已显式保存并暂停ActorFrame、流式管理器/通路、原相机的process_mode，结束/取消统一恢复；原身体只在对应动作镜头隐藏。收招中进入触发区先排队等安全，不因safe_to_talk=false漏掉过场。相机从当前实际位置回程，跳过不跳到未到达的镜头终点。输入拦截只消费键事件，鼠标可到GUI跳过按钮；Esc/鼠标两次确认，F沿用结束观察，Tab按住暂停阅读，640×480字幕带自适应。
+
+创作/素材：复用原主角hurt/interact、守卫shell_push、老守护者elder_grip逐帧；NPC原位静态表演，未以静图滑动冒充行走/抱扶。膜瓣以固定根部有限旋转，水丝24个有界实例，菌床/名字壳为既有位图。没有新PNG或配音，搬运/安置用分镜衔接，不声称新增专属搬运逐帧。场景主源Skill本机未安装，本批采用仓库scene-environment-motion保留的production-contract/motion-recipes进行静动判断，证据与边界见docs/formal-cinematics.md，未修改跨项目个人Skill。源/运行字体按文本重建为1503字符/393436字节，SHA32db518bab1f201922237e79a1b8213671cce7d47c4b82448381bdc191bcd4ef；导出include补充narrative通配JSON，未导出或发布Web。
+
+验证（证据分开）：
+1、cinematic-regression-delivery.log最终7/0，含原提交一次、原生按键两次确认及松键门、取消/读档/重试、开场先演出后对白、终章跳过不越级开闸、窄窗口字幕与Tab时钟暂停、收招入场排队、真实鼠标双次按钮，均无新增SCRIPT ERROR。新增脚本UID齐全，git diff --check通过。
+2、cinematic-all-headless.log14段自然播放全部回调一次并恢复；cinematic-all-native-final.log原生14段46张镜头截图、failures=0，stderr为空，查看过开场、回水、封梁卫身体和终章老守护者等画面。修复膜瓣遮住主角后cinematic-flood-delivery.log单段4镜头重跑0失败。使用分段历史前缀/房间起点夹具，不是连续徒步通关；动作采样数>1只证明逐帧切换，不等于新增专属动作或用户审美验收。
+3、cinematic-opening-menu.log正常qa=false、独立夹具档，从真实Enter点击首页NewGame；自动触发loop.arrival过场、跳过后原头像对白出现，stderr为空。cinematic-flow-native.log完整接口到85/85、failures=[]，passed列表82为一次循环中任务/演出自动提交中间阶段的记录方式，不能宣称少了三章；战斗仍用伤害夹具、房间起点定位。该原生Dummy后端退出无资源ERROR。
+4、node tools/godot.mjs check在cinematic-delivery-check.log为0 error；完整test在cinematic-delivery-tests.log为508 passed/8 failed，仍是合并前的8项旧门图/音乐/敌人/目标/几何冻结合同，旧门Nil错误没有放宽。末尾新增真实鼠标回归与拦截修正由最终7项专项补验；未把全量写成全绿。headless全阶段夹具退出曾报告10个音频播放/资源引用；verbose定位为旧elvish-theme/first-light/water_bed音频，原生同路线复跑为空stderr，本轮不扩大修改音频清理，也不声称headless退出告警已修复。
+
+主要文档为docs/formal-cinematics.md；README、架构和保底接入说明链接到它，Godot Skill补记ALWAYS继承、取消所有权和真实鼠标经验。未提交推送，未修改此前背景统一接管机制。保留原正常/旧独立试玩档，新体验入口另用cinematics-play.json。
+
+## 2026-11-23 · 同步主干 edb89e11
+
+用户要求将主干最新内容同步到当前formal-story-delivery工作区。本轮fetch origin/Vesion/V1.0.1并从0f695950快进至edb89e11（fix R1-02 streaming platforms and enemy wake），无合并冲突；同步前把25个已修改/未跟踪过场文件备份到build/qa/pre-main-sync-cinematics.zip并记录SHA，快进后25项全部逐字节相同。包含须筛recipes/rooms/tscn、流式敌人唤醒可见性、地形块跨房复用刷新；本轮不提交或推送过场WIP。
+
+main-sync-check.log为check_project 0 error；main-sync-tests.log为507 passed/10 failed。除原8项之外，test_vent_route的旧预期缺少主干新StreamStep，test_xumen_checkpoint_lanes的旧安全跨度不包含R1-02/StreamStep；本轮没有移除新增台阶或放宽旧测试。过场专项无新增失败。main-sync-sifting-native.log以分腿起点夹具/真实Input走须筛UpperStand→上层主路，1腿0失败，原生Dummy后端stderr为空；不能据此宣称所有支路和十项失败已经解决。headless同路线虽通过，但退出音频资源引用告警仍出现，原生复跑无该告警。未改代码或资源；仅追加本同步记录，不产生新的Skill经验。
+
+
+## 2026-11-23 主角普攻重绘：前突接横劈
+
+用户要求普通攻击有力量感、参考剑魂，并在预览后明确采用「前突＋横劈」以匹配前方攻击区域。此前上下斜斩方案保留制作源但不再运行；第一段采用蹬地送肩前突，第二段采用转胯横向挥劈。两段各16张真实绘制帧，固定像素尺度和根点，未新增角色根位移。原地面站定、100/120ms命中、350/360ms动作时长、续击与防御取消规则保留。
+
+运行与创作：TideVisualPhaseMap覆盖新图集，主线和试验场共用；老守护者幻影读取同一身体、根点及弧光配置。弧光复用已有位图，不靠新增震屏制造力量感。登记catalog、manifest、JSON导出白名单与LFS；生成原件、淘汰方案、精确提示词、裁片和SHA保存在assets/source/player-basic-slash-v3。原件实际1254×1254，按四等分四舍五入裁片，导出1536×1536；没有按每帧包围盒独立缩放。
+
+本轮证据：slash-v3-final-check.log中check_project为0 error。slash-v3-final-basic.log：7 passed/0 failed；slash-v3-registration.log：13 passed/0 failed，固定根、真实导出SHA及后跳冻结帧通过；slash-v3-ghost.log：1 passed/0 failed，真实观招与复制保留原战斗时钟。slash-v3-final-native-right/left.log通过真实J键各6次交替出招，失败0，右向收势最大帧[15,15,14,15,14,15]，左向[14,15,14,15,14,15]。实际60Hz帧录制为basic-forward-cleave-native.gif，判定框仅QA显示，普通试玩不显示。源/运行/正式图集SHA一致，两段各16张独立帧，Alpha轮廓无裁切。
+
+已打开正常主入口独立试玩档cinematics-play.json，slash-v3-play.log确认READY，保留过场WIP和原存档。本机音频仍使用Dummy，本轮没有音效验收。技术验证不等于用户动作观感认可，待用户试玩；未提交、推送或发布。制作/复跑文档为assets/source/player-basic-slash-v3/README.md，并补记docs/action36-controls.md。既有Skill已覆盖此次制作方式，无需另建重复Skill。
+
+全量最终回归slash-v3-final-tests.log为507 passed/10 failed，与同步主干后的既有失败集合相同：门图、音乐、房间敌人、后区目标、StreamStep安全跨度及冻结地图/奖励合同。本次新图集导致的三项旧固定路径/根点断言已按新版真实资产更新并通过，没有放宽战斗或地图规则。待处理：上述十项既有回归及headless旧音频退出告警不在本次动作美术范围内。最终check_project 0 error，git diff --check通过。
+
+
+## 2026-11-23 后跳离台无限下坠修复
+
+用户截图为第一章外伤坡地图下方空域。隔离复现普通下落正常回收（void-probe.log），但真实起手后跳后越界会持续下坠，五帧y从5013升至5073而hp保持5（void-backstep-before.log）。根因：TideCombatPlayer后跳分支直接move_and_slide，只等落地退出，绕过TidePlayer的底界钩子。现于后跳移动后按相同world_bounds.end.y+100检测，退出retreating并调用原_fall_out_of_world；复用主线扣一格/last_safe回位和末格死亡，不改通道安全范围或伤害规则。
+
+回归先红后绿：test_backstep_void旧版1 passed/1 failed，修复后2 passed/0 failed，覆盖无敌中越界一次回位、后跳清除、保留角色/章节以及合法空中后跳不误伤。backstep-pit-native.log用真实Z键从第一房980,950平台后跳，自然离台后hp4、回到原台、floor=true、retreat=false、passed=true；截图backstep-pit-recovered.png。既有原生fall_recovery路线全通过（backstep-fall-route.log，FALL_RECOVERY_COMPLETE failed=0），含普通失足、记忆袋返程、合法下探、跨房回位、技能/无敌/护盾以及末格死亡菜单。backstep-void-check.log为check_project 0 error。
+
+文档补记docs/streaming-world.md，经验为独占运动分支必须执行原地图底界钩子；不新增重复Skill。重开正常主线独立试玩档，保留已有过场/普攻WIP，未提交推送。
+
+全量backstep-void-all-tests.log为509 passed/10 failed，失败测试集合与本次修复前的slash-v3-final-tests.log相同，新增两项均通过。既有十项门图/音乐/敌人/后区目标/地图合同失败继续留待处理，本轮未扩改。修复试玩backstep-void-play.log确认READY，stderr为空；git diff --check通过。
+
+
+## 2026-11-23 普攻发力停留与身体格挡
+
+用户反馈普攻过于匀速、格挡依赖特效。保留已确认的前突/横劈绘制帧，增加按时间标记选帧：蓄势末帧停留、快速到接触姿势、停留后再收势。动作总时长、真实命中和取消窗口不变；真实普攻命中双方停顿分别4/5个60Hz帧，群攻仍取最大值，连续技内击保留原轻反馈。
+
+创作：新增parry.png内置image_gen原件与guard-prompt.txt，16张身体帧，双手顶架、屈膝持守、受力压缩、撑回和收架。源1254×1254，以固定尺度/地面配准导出1536×1536，reference_height210，与普攻共用[192,340]根点；没有逐帧缩放。TideVisualPhaseMap在真实guard_success后仅驱动0.18秒受力呈现，持守循环与收架仍按真实防御状态读取。常驻光圈Alpha由0.65降至0.12、成功持守光降至0.28；真实成功接触提示保留。未改20ms生效、持续格挡消耗、完美窗或反击收益。台账和同步清单均补齐。
+
+验收：guard-weight-native.log真实I键按住/松开，明确正面伤害夹具（不是自然敌人AI攻击）得到damage_accepted=false、guard_count1、hp5，身体按3–6持守、7–11受力后撑回、12–15收架。guard-body-only-native.gif刻意移除常驻/成功光圈和文字，审视纯身体动作；basic-weight-native.gif是实际J键60Hz录制。weight-slash-native.log连续六段交替，max_frames=[14,15,14,15,14,15]、failures0。guard-weight-specific.log新时序/受力专项2 passed/0 failed；guard-weight-hit.log实际命中、双方冻结、群攻限额、连续技与清理6 passed/0 failed。最终check_project 0 error，git diff --check通过。
+
+全量guard-weight-all-tests.log为510 passed/11 failed：比既有10项多一项UI字体扫描，原因是扫描连代码注释中的“奏”字也纳入字体合同，并非运行显示新增文案；已将注释改为已有字集表达，不扩写字体资源，后续guard-weight-font.log专项通过。既有10项门图/音乐/敌人/后区目标/地图冻结合同仍待处理。主角和幻影动画复跑见guard-weight-animation.log。未声称重跑后的全量数字；技术检查不等于用户动作美术认可。
+
+已重开独立主线试玩，guard-weight-play.log确认READY，stderr为空，仍为Dummy音频不作音效验收。保留其他WIP和独立试玩档，未提交推送。更新同批素材README、docs/action36-controls.md与本进度；已有Skill已覆盖固定根、时序和事件驱动表现，无需另建重复Skill。
+
+
+## 2026-11-23 格挡原形象对齐与目标专用箭头
+
+用户否决上一版格挡的角色形象，并要求去掉地图导航箭头，只保留目标指引。创作回查实际在用idle-body.png frame0，以原像素裁片放大图为主参考，恢复细长四肢、小手、原三角披风、红绳和开口U形骨鸣器，保留架叉/受力/撑回的16张绘制帧。旧厚重版保留为parry-identity-rejected.png；新原件和去除头顶多余色块的中间件/提示词均入源目录。源高度250与原210有差别，已把reference_height改为250，固定整套像素尺度，未逐帧放大或缩小。guard-canonical-size-review.png以原待机和新格挡各帧同为94px参考高度复核比例；当前仍待用户美术验收。
+
+运行：WhaleCampaignRouteHUD保留完整destinations数据供原有逻辑查询，显示前用objective_routes筛选。本房真实任务点优先，可显示多个；没有本房任务点时只保留main所指的任务下一站，并标为目标方向；不显示其他出口、返回与可选支路箭头。小地图、C完整地图、门条件和路线发现状态均不变。更新对应旧HUD/小地图/方向验收要求，未为了测试删除地图或支路。docs/ui-system.md已同步当前显示规则。
+
+专项：objective-only-unit.log为6 passed/0 failed；objective-only-route-native.log通过真实D/A跨界、长交互提示与960宽小窗口，ROUTE_DIRECTION_QA failures=0。guard-identity-native.log真实I键持守/松手，正面伤害为明确接触夹具，guard_count1、hp5，按持守3–6→受力7–11→收架12–15实际播放，不能称作自然敌人AI验收。guard-identity-animation.log主角与幻影共用动画8 passed/0 failed。guard-identity-final-check.log为check_project 0 error。素材台账与哈希已同步，来源和固定根记录仍在同批README/production.json。
+
+仅重开本会话独立主线试玩，guard-identity-play.log确认READY，stderr为空；原存档和其他WIP保留，Dummy音频未作音效验收，未提交推送。旧Skill已有参考对齐和固定根流程，无需另建重复Skill；本轮新增经验记录在同批素材README。
+
+最终全量guard-identity-all-tests.log为512 passed/10 failed，与既有十项失败测试集合一致，没有新增失败。原生目标箭头专项9项通过；素材源/运行/正式图集SHA及16张独立帧均已核对，最终git diff --check通过。既有门图/音乐/敌人/后区目标/地图合同问题继续留待单独处理。

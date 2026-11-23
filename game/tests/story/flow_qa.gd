@@ -75,7 +75,13 @@ func run() -> void:
    await tap()
    if str(stage.kind)=='observe': await tick(int(float(stage.get('duration',5))*60)+8)
   await tick(25)
-  for step: int in 800:
+  for step: int in 1800:
+   if host.story.cinematic.active:
+    await tick(1)
+    continue
+   if not host.story.queued_lines.is_empty():
+    await tick(1)
+    continue
    if host.dialogue.active.is_empty(): break
    await tap()
   await tick(20)

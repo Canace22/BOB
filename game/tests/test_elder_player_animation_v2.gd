@@ -44,8 +44,8 @@ func test_actual_copy_uses_shared_new_body_phase_without_moving_combat_time() ->
 				var echo: EnemyLabElderEchoView=e.mimic.view
 				eq(echo.body_key,clip,"original source mapping preserved")
 				var texture: AtlasTexture=echo.action_echo.texture as AtlasTexture
-				check(texture!=null and texture.atlas.resource_path.contains("combat-animation-v2/player/"+clip+"-body.png"),"ghost consumes new shared texture "+clip)
-				eq(echo.action_echo.offset,Vector2(-128,-224),"authored pivot is not overwritten by old foot metadata")
+				check(texture!=null and texture.atlas.resource_path.contains(("player-basic-slash-v3/" if clip=="strike1" else "combat-animation-v2/player/")+clip+"-body.png"),"ghost consumes new shared texture "+clip)
+				eq(echo.action_echo.offset,Vector2(-192,-340) if clip=="strike1" else Vector2(-128,-224),"authored pivot is not overwritten by old foot metadata")
 				if e.timer<release:
 					saw_preparation=true
 					check(echo.body_frame<6 and not echo.effect.visible,"copy preparation has no cut body or attack FX")

@@ -133,7 +133,7 @@ func test_precomputed_feet_match_current_source_atlases() -> void:
 		var spec: Dictionary=view.manifest[key]
 		var body: Dictionary = spec.body
 		if bool(spec.get("authored_pivot",false)):
-			eq(body.pivot,[128.0,224.0],"authored atlas keeps common root pivot: "+key)
+			eq(body.pivot,[192.0,340.0] if key in ["strike1","strike2","parry"] else [128.0,224.0],"authored atlas keeps common root pivot: "+key)
 			eq(str(body.get("sha256","")),FileAccess.get_sha256(str(body.texture)),"authored atlas hash matches its own exported metadata: "+key)
 			eq(body.frames.size(),int(spec.frame_count),"authored atlas has complete frame rectangles: "+key)
 		else:
@@ -153,7 +153,7 @@ func test_real_combat_renderer_retains_authored_pivot_through_late_frames() -> v
 		await physics_frames(1)
 		var view: CombatWhiteboxActionVisual=p.action_visual
 		if view.current_key!="strike1": continue
-		eq(view.sprite.offset,Vector2(-128,-224),"production apply_layer bypasses obsolete twelve-slot feet")
+		eq(view.sprite.offset,Vector2(-192,-340),"production apply_layer bypasses obsolete twelve-slot feet")
 		if view.frame_index>=12: seen_late=true
 	check(seen_late,"production actually draws frames beyond the old twelve-slot table")
 

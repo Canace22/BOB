@@ -1,6 +1,6 @@
 class_name WhaleCampaignRouteHUD
 extends Control
-## 所有当前房间出口同时显示；稳定目标ID决定内容，真实门点决定方向。
+## 仅显示任务目标；跨房目标沿所需出口指引，不展示其他地图出口。
 var controller: WhaleCampaignUI
 var routes: Array[Dictionary] = []
 var markers: Array[Dictionary] = []
@@ -48,6 +48,19 @@ static func destinations(host: Node2D) -> Array[Dictionary]:
 			result.append({"target":host.room_index,"id":str(target.id),"name":label,"point":point,"main":true,"blocked":false,"detail":"","kind":"当前章节","story_target":true})
 	return result
 
+static func objective_routes(candidates: Array[Dictionary]) -> Array[Dictionary]:
+	var objectives: Array[Dictionary]=[]
+	for route: Dictionary in candidates:
+		if route.get("story_target",false): objectives.append(route)
+	if not objectives.is_empty(): return objectives
+	# 目标在别房时仅保留任务路径的下一站，地图缩略图仍保留原地图信息。
+	for route: Dictionary in candidates:
+		if not route.get("main",false): continue
+		var objective: Dictionary=route.duplicate()
+		objective.kind="目标方向"
+		objectives.append(objective)
+	return objectives
+
 static func route_world_point(host: Node2D, route: Dictionary) -> Vector2:
 	if route.get("story_target",false): return host.actor_frame.to_global(Vector2(route.point))
 	var stream := host.streaming as CampaignRoomStream
@@ -67,7 +80,7 @@ func _process(dt: float) -> void:
 	if refresh_left<=0 or source_id!=str(host.room.id):
 		refresh_left = 0.2
 		source_id = str(host.room.id)
-		routes = destinations(host)
+		routes = objective_routes(destinations(host))
 	markers.clear()
 	var viewport: Vector2 = get_viewport_rect().size
 	# 下缘留出技能/小地图，上缘留出任务/Boss；只在边缘显示，不在主角前方重复。

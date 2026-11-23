@@ -78,7 +78,7 @@ func test_guard_loop_has_four_real_frames_and_preserves_defense_clock() -> void:
 	for i: int in 40:
 		var frame: int = phases.body_index("parry",manifest.parry,0.25,player,1.0/60.0)
 		seen[frame] = true
-		check(frame >= 2 and frame <= 5,"held guard never lowers fork")
+		check(frame >= 3 and frame <= 6,"held guard never lowers fork")
 	eq(seen.size(),4,"four unique held guard frames play")
 	check(is_equal_approx(controller.elapsed,0.48),"held defense clock stays unchanged")
 	player.free()
