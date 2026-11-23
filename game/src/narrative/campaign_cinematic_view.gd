@@ -198,6 +198,15 @@ func begin_return() -> void:
 	shot_start=camera.global_position
 	from_zoom=camera.zoom
 
+func wait_for_release() -> void:
+	hint.text="松开移动或技能按键，继续游戏 · F / Enter"
+	skip_button.text="继续游戏"
+	skip_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+	skip_button.offset_left=-174
+	skip_button.offset_right=-24
+	skip_button.offset_top=-36
+	skip_button.offset_bottom=-6
+
 func return_camera(weight: float) -> void:
 	camera.global_position=shot_start.lerp(start_camera,smoothstep(0,1,weight))
 	camera.zoom=from_zoom.lerp(director.story.host.camera.zoom,smoothstep(0,1,weight))

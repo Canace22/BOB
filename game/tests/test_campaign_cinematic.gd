@@ -39,7 +39,8 @@ func after_each() -> void:
 	for host: WhalebellyMain in hosts:
 		if is_instance_valid(host): host.story.cinematic.cancel()
 	hosts.clear()
-	for key: int in [KEY_F,KEY_D,KEY_TAB,KEY_ESCAPE,KEY_ENTER]: key_event(key,false)
+	for key: int in [KEY_F,KEY_D,KEY_RIGHT,KEY_TAB,KEY_ESCAPE,KEY_ENTER]: key_event(key,false)
+	Input.action_release("tp_interact")
 	tree.paused=false
 	tree.root.size=old_size
 	await super.after_each()
@@ -103,6 +104,71 @@ func test_cancel_and_restore_do_not_complete_or_replay_finished_prefix() -> void
 	check(not host.story.cinematic.active and not tree.paused,"read restore cancels active shot")
 	eq(str(host.story.stage().id),"ch08_no_reply","restore never treats half-movie as completed")
 
+func test_orphaned_keyboard_action_does_not_trap_movie_end() -> void:
+	var host: WhalebellyMain=await fixture("ch03_flood")
+	host.story.interact()
+	# Simulate an action cache left pressed after the physical key is already up.
+	Input.action_press("tp_interact")
+	check(not Input.is_physical_key_pressed(KEY_F),"physical interaction key is released")
+	host.story.cinematic.skip()
+	await physics_frames(55)
+	check(not host.story.cinematic.active and not tree.paused,"orphaned action cannot keep the movie paused")
+	check(not Input.is_action_pressed("tp_interact"),"orphaned action is cleared before returning control")
+	eq(host.story.completed.count("ch03_flood"),1,"original observation commits once")
+
+func test_continue_key_recovers_lost_keyup_and_does_not_leak_movement() -> void:
+	var host: WhalebellyMain=await fixture("ch03_flood")
+	host.story.interact()
+	key_event(KEY_D,true)
+	var film: CampaignCinematic=host.story.cinematic
+	film.skip()
+	await physics_frames(55)
+	check(film.active and film.waiting_release,"missing keyup reproduces the final caption lock")
+	var at: Vector2=host.player.position
+	key_event(KEY_ENTER,true)
+	await physics_frames(5)
+	check(not film.active and not tree.paused and host.player.controls_enabled,"fresh Enter recovers the paused movie")
+	check(not Input.is_physical_key_pressed(KEY_D),"recovery releases the lost movement key")
+	check(absf(host.player.position.x-at.x)<1,"recovery does not replay movement")
+	eq(host.story.completed.count("ch03_flood"),1,"recovery completes the current observation once")
+
+func test_both_movement_bindings_must_release_before_auto_resume() -> void:
+	var host: WhalebellyMain=await fixture("ch03_flood")
+	host.story.interact()
+	key_event(KEY_D,true)
+	key_event(KEY_RIGHT,true)
+	host.story.cinematic.skip()
+	await physics_frames(55)
+	key_event(KEY_D,false)
+	await physics_frames(4)
+	check(host.story.cinematic.active,"held arrow still blocks automatic resume after D releases")
+	key_event(KEY_RIGHT,false)
+	await physics_frames(5)
+	check(not host.story.cinematic.active and not tree.paused,"releasing both bindings restores control")
+
+func test_mouse_continue_keeps_rescue_dialogue_and_next_task_uncommitted() -> void:
+	var host: WhalebellyMain=await fixture("ch12_rescue_and_brace")
+	host.story.pending_task=host.story.stage().tasks[0]
+	host.story._speak(host.story.pending_task.lines)
+	key_event(KEY_D,true)
+	var film: CampaignCinematic=host.story.cinematic
+	film.skip()
+	await physics_frames(55)
+	eq(film.view.skip_button.text,"继续游戏","final button provides a recovery action")
+	var at: Vector2=film.view.skip_button.get_global_rect().get_center()
+	for down: bool in [true,false]:
+		var event:=InputEventMouseButton.new()
+		event.position=at
+		event.global_position=at
+		event.button_index=MOUSE_BUTTON_LEFT
+		event.pressed=down
+		Input.parse_input_event(event)
+		await physics_frames(2)
+	check(not film.active and not tree.paused,"real mouse click recovers the movie")
+	check(not host.story.queued_lines.is_empty(),"rescue still requires its original dialogue")
+	check(not host.story.facts.get("ch12_move_elder_safe",false),"recovery does not commit unread rescue dialogue")
+	check(not host.story.facts.get("ch12_narrow_opening",false),"recovery never operates the next cover")
+
 func test_opening_defers_dialogue_and_task_skip_does_not_open_next_valve() -> void:
 	var host: WhalebellyMain=await fixture("loop.arrival")
 	host.story._speak(host.story.stage().lines)
@@ -140,6 +206,11 @@ func test_resize_and_reading_pause_keep_caption_and_clock_stable() -> void:
 	key_event(KEY_TAB,false)
 	await physics_frames(3)
 	check(film.clock>clock,"releasing Tab resumes shot")
+	key_event(KEY_D,true)
+	film.skip()
+	await physics_frames(55)
+	var button: Rect2=film.view.skip_button.get_global_rect()
+	check(tree.root.get_visible_rect().encloses(button) and button.position.y>tree.root.get_visible_rect().get_center().y,"narrow-window continue button stays visible below fullscreen tools")
 
 func test_busy_entry_queues_movie_and_room_leave_cancels_it() -> void:
 	var host: WhalebellyMain=await fixture("loop.arrival")

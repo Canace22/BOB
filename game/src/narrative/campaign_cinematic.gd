@@ -90,14 +90,15 @@ func _process(dt: float) -> void:
 		return
 	age+=dt
 	if waiting_release:
-		view.hint.text="松开移动或技能按键，继续游戏"
 		if not _held(): _finish()
 		return
 	if Input.is_key_pressed(KEY_TAB): return
 	if returning>=0:
 		returning=minf(1.0,returning+dt/0.65)
 		view.return_camera(returning)
-		if returning>=1: waiting_release=true
+		if returning>=1:
+			waiting_release=true
+			view.wait_for_release()
 		return
 	clock+=dt
 	var shot: Dictionary=shots[cursor]
@@ -116,14 +117,18 @@ func handle_input(event: InputEvent) -> void:
 	if not event is InputEventKey: return
 	if event is InputEventKey and event.pressed and not event.echo:
 		var code: int=event.physical_keycode if event.physical_keycode!=0 else event.keycode
-		if code==KEY_ESCAPE: request_skip()
+		if waiting_release and code in [KEY_F,KEY_ENTER]: continue_game()
+		elif code==KEY_ESCAPE: request_skip()
 		elif code==KEY_ENTER and skip_armed: skip()
 		elif code==KEY_F and age>0.35: skip()
 	# 过场期间输入不能落到暂停、存档、练习或旧房间快捷键。
 	get_viewport().set_input_as_handled()
 
 func request_skip() -> void:
-	if not active or waiting_release or returning>=0: return
+	if waiting_release:
+		continue_game()
+		return
+	if not active or returning>=0: return
 	if skip_armed: skip()
 	else:
 		skip_armed=true
@@ -140,8 +145,36 @@ func skip() -> void:
 func _held() -> bool:
 	for action: StringName in InputMap.get_actions():
 		if str(action).begins_with("tp_") or str(action).begins_with("wb_") or action in [&"left",&"right",&"jump",&"attack",&"interact",&"float",&"grapple"]:
-			if Input.is_action_pressed(action): return true
+			if _action_held(action): return true
 	return false
+
+func _action_held(action: StringName) -> bool:
+	var bindings: Array[InputEvent]=InputMap.action_get_events(action)
+	var keyboard_only: bool=not bindings.is_empty()
+	for event: InputEvent in bindings:
+		if event is InputEventKey:
+			if event.physical_keycode!=0:
+				if Input.is_physical_key_pressed(event.physical_keycode): return true
+			elif event.keycode!=0:
+				if Input.is_key_pressed(event.keycode): return true
+			else: keyboard_only=false
+		else: keyboard_only=false
+	# 键已松开但动作缓存残留时，修正缓存；非键盘输入保留原动作判定。
+	if not keyboard_only: return Input.is_action_pressed(action)
+	if Input.is_action_pressed(action): Input.action_release(action)
+	return false
+
+func continue_game() -> void:
+	if not active or not waiting_release: return
+	# 浏览器失焦可能丢失keyup；结束后的新确认只清理输入，不代做下一项交互。
+	for action: StringName in InputMap.get_actions():
+		for binding: InputEvent in InputMap.action_get_events(action):
+			if not binding is InputEventKey: continue
+			var release: InputEventKey=binding.duplicate()
+			release.pressed=false
+			Input.parse_input_event(release)
+		Input.action_release(action)
+	_finish()
 
 func _finish() -> void:
 	var done: Callable=callback

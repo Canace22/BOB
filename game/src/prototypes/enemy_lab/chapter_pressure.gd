@@ -1,14 +1,14 @@
 class_name ChapterCombatPressure
 extends RefCounted
-## 仅章节入口显式启用；试验场原参数、正式主线和玩家伤害均保持原值。
+## 章节入口与正式主线显式启用；原试验场与玩家伤害保持原值。
 const PROFILES: Dictionary={
-	"shell_guard":{"hp":30,"speed":155.0,"idle":0.20,"links":2},
-	"mudback":{"hp":28,"speed":160.0,"idle":0.24,"links":2},
-	"membrane_hunter":{"hp":24,"speed":165.0,"idle":0.42,"links":0},
-	"nest_eel":{"hp":44,"speed":135.0,"idle":0.20,"links":1},
-	"pump_warden":{"hp":42,"speed":190.0,"idle":0.22,"links":2},
-	"beam_guard":{"hp":48,"speed":185.0,"idle":0.22,"links":2},
-	"elder_guardian":{"hp":64,"speed":230.0,"idle":0.13,"links":1}
+	"shell_guard":{"hp":20,"speed":155.0,"idle":0.35,"links":1},
+	"mudback":{"hp":20,"speed":160.0,"idle":0.35,"links":1},
+	"membrane_hunter":{"hp":18,"speed":165.0,"idle":0.42,"links":0},
+	"nest_eel":{"hp":30,"speed":135.0,"idle":0.35,"links":1},
+	"pump_warden":{"hp":28,"speed":190.0,"idle":0.35,"links":1},
+	"beam_guard":{"hp":32,"speed":185.0,"idle":0.35,"links":1},
+	"elder_guardian":{"hp":42,"speed":230.0,"idle":0.30,"links":1}
 }
 const LINKS: Dictionary={
 	"poke":"shell_push", "shell_push":"realign",
@@ -50,7 +50,7 @@ func action(key: String) -> Dictionary:
 	if not enabled() or key=="elder_mimic": return result
 	result.tell=minf(float(result.tell),maxf(0.68 if bool(result.get("unblockable",false)) else 0.48,float(result.tell)*0.80))
 	result.lock=minf(float(result.get("lock",0.0)),float(result.tell)*0.70)
-	result.recover=maxf(0.70,float(result.recover)*0.90)
+	result.recover=maxf(1.05,float(result.recover))
 	if result.has("second"): result.second=maxf(0.30,float(result.second)*0.72)
 	return result
 
@@ -86,7 +86,7 @@ func entering(previous: String, next: String) -> void:
 		else:
 			queued=""
 			links=0
-			if previous=="active": enemy.spec.recover=maxf(0.70,terminal_recovery)
+			if previous=="active": enemy.spec.recover=maxf(1.05,terminal_recovery)
 		recovery_left=float(enemy.spec.get("recover",0.90))
 	if next=="ended": cancel("ended")
 
