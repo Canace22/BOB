@@ -78,6 +78,7 @@ func _update_prompt() -> void:
 	if prompt=="在营地歇息": prompt="歇息"
 	var prompt_key: String = "tp_interact"
 	var entrance: CampaignDoorway = controller.data.prompt_door()
+	var edge_hint: Dictionary=CampaignGuidance.elevated_exit_hint(controller.host) if prompt.is_empty() else {}
 	if prompt.is_empty() and p is WhalebellyCampaignPlayer and controller.host.has_ability("anchor"):
 		if p.grapple_target != Vector2.INF:
 			prompt = "接下一环 · 空格跃离" if p.grapple_hanging else "松开锚环"
@@ -89,6 +90,10 @@ func _update_prompt() -> void:
 		prompt_key = "float"
 	var blocked: bool = entrance != null and (not entrance.restriction().is_empty() or (entrance.kind == "exit" and controller.host.completed and int(entrance.data.get("to", -1)) < 0))
 	var detail: String = CampaignGuidance.requirement_hint(controller.host, entrance.data) if blocked else ""
+	if not edge_hint.is_empty() and prompt.is_empty():
+		prompt=str(edge_hint.message)
+		detail=str(edge_hint.detail)
+		prompt_key=""
 	var gates := controller.host.streaming.gates as CampaignStreamingGates
 	var barrier: Dictionary = gates.nearby_prompt() if is_instance_valid(gates) else {}
 	if not barrier.is_empty():
@@ -97,7 +102,7 @@ func _update_prompt() -> void:
 		blocked = true
 	interaction_prompt.reduce_motion = controller.preferences.reduce_motion
 	interaction_prompt.high_contrast = controller.preferences.contrast
-	interaction_prompt.present(prompt, "" if blocked else WhaleUIStyle.key(prompt_key), blocked, detail)
+	interaction_prompt.present(prompt, "" if blocked or prompt_key.is_empty() else WhaleUIStyle.key(prompt_key), blocked, detail)
 
 func _layout() -> void:
 	minimap.position = Vector2(18,size.y-154)

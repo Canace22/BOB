@@ -3079,3 +3079,17 @@ main-sync-check.log为check_project 0 error；main-sync-tests.log为507 passed/1
 字体冲突按合并后的实际源码重新生成：Regular400、1504字符、393740字节，源/运行SHA均为6fb41dcb4c89ae3a24f94d30ecca3849de8a45941e31871371e3c84cdd2ec32b，subset.json与资源台账同步。本轮显示变化没有改变护盾抵伤/恢复机制。
 
 shield-main-check.log为check_project 0error；shield-main-tests.log为512passed/10failed，与主干原guard-identity-all-tests.log十个失败方法集合完全一致，new_failed_methods为空，未修或放宽既有地图/门图/音乐等问题。shield-main-runtime.log独立档原生专项6项通过，实际Enter新建后可返回首页续档，满盾/剩一盾/空盾三态截图已看。UI夹具显式结束主干新增过场后再返回首页，不改正式过场菜单锁。源分支护盾真实抵伤专项另为4passed/0failed。git diff --cached --check通过；本次只提交与推送源码，不发布Web。
+
+## 2026-11-23 · 胃枢小地图误导与断岸提示
+
+用户截图胃枢下层右缘显示右侧有房但画面为空。独立QA复现本地脚点(3760,2080)，邻房缓存含R4-01，真实右出口是(3712,1360)，连接到本房坐标(4240,1360)，上下相差720px。上层可见完整连接，问题是小地图将R4-01放同排，被误读为下层向右直通；不是邻房加载失败。
+
+修正R3小地图格位为R4-01右上方；新增只读高出口提示，靠近右缘且低于真实出口时，优先保留真实交互/锚环提示，否则显示下层断岸与返回上层路线，无可执行按键。抵达上层或远离边缘不显示；未改碰撞/绘景/房间门条件/章节任务/跌落惩罚，未触碰world_terrain.gd既有WIP。更新docs/ui-system.md，无新素材或通用Skill经验。
+
+验证：check_project 0error；全量test 511passed/7failed，与本分支前次shield-pips相同的七个失败方法，无新增失败。新增小地图高差测试通过。stomach_exit_qa.gd原生4项通过：下层提示且无动作键、缩略连接上行、上层不显示断岸提示、真实D键125物理帧跨连接进入R4-01。授予潮压与上层起点为显式独立夹具，不是整章/锚环路线通关。已看下层修正截图及上层连接图，记录stomach-exit-{before,after,check,tests}.log与build/qa/stomach-exit/。未提交推送/未发布Web；保留其他会话与地图WIP。
+
+## 2026-11-23 · 胃枢断岸指引同步主干
+
+将43eced73合入主干基点99b00079，仅包含小地图R3页右上连接、真实高出口的断岸只读提示、专项及文档。最新暂停/目标指引/护盾布局保留，源工作区33个已改文件SHA完整保留，未带入地图制作现场。主干check_project 0error；全量test 513passed/10failed，与99b00079验证的十个既有失败方法集合一致，新增失败为空；stomach-main-runtime.log原生4项通过，真实D键跨右上连接进入R4-01。日志stomach-main-{check,tests,runtime}.log，失败对照stomach-main-comparison.json。
+
+用户追问截图顶部“回折肠守护体”：其来源是旧R3-01房间敌人配置，隔离QA关闭正式剧情后启用旧守关敌人，因此出现在本次提示取证图。正式story.running路径跳过旧敌人创建；该截图只验提示/连接，不代表正式章节Boss配置，本轮未新增或改动Boss。未发布Web。
