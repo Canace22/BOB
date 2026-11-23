@@ -21,7 +21,8 @@
 ## 控制与事实
 
 - 按住Tab暂时停住镜头和字幕，松开继续。F结束当前观看；Esc或鼠标按钮首次确认，第二次Esc/Enter/按钮才跳过。
-- 触发F的持有不会立即跳过，因为只接收后续新按下事件。结束后等待所有游戏键松开，避免移动、技能或交互漏到下一段。
+- 触发F的持有不会立即跳过，因为只接收后续新按下事件。结束后松开游戏键会自动继续；键盘动作同时核对实际绑定按键，清除键已松开但动作仍按下的残留状态。
+- 若结束后仍停在“松开移动或技能按键”，重新按F、Enter或点击“继续游戏”可清理输入并恢复。此入口只在镜头回程结束后可用，确认按键不会触发下一段的移动、技能或交互。
 - 开场跳过只进入原开场对白；终章救援任务的过场跳过后仍需结束该任务对白。下一项移封护/旧锚必须另按F，不由跳过完成。
 - 场景树暂停之外，显式保存ActorFrame、流式管理器/通路和原镜头的process_mode并暂设PAUSABLE。主控的ALWAYS不再使主角重开原身体，演出镜头/逐帧代理由唯一时钟更新。
 - 正常结束、取消、读档、换房和退出均经同一清理口恢复原可见性、控制、HUD、相机和暂停状态。演出代理没有碰撞和伤害，不运行技能执行器。
@@ -41,7 +42,9 @@
 
 ## 验证入口
 
-`node tools/godot.mjs check` / `node tools/godot.mjs test`为必需检查。`test_campaign_cinematic.gd`覆盖提交一次、确认跳过、松键门、读档取消/可重试、开场对白保留、危险任务不越级、原身体隐藏与窄窗口/Tab阅读。
+`node tools/godot.mjs check` / `node tools/godot.mjs test`为必需检查。`test_campaign_cinematic.gd`覆盖提交一次、确认跳过、松键门、动作缓存残留、丢失松键后的确认恢复、双方向键绑定、真实鼠标恢复与救援对白边界，以及读档取消/可重试、开场对白保留、原身体隐藏与窄窗口/Tab阅读。
+
+`node tools/godot.mjs run -- -s res://tests/story/cinematic_release_qa.gd --audio-driver Dummy --fixed-fps 60 --max-fps 60`在正式流式场景从隔离的第三章观察起点验证自然播完、故障注入、F/Enter/鼠标恢复及恢复后实际D移动，证据在本地`game/build/qa/cinematic-release/`。分段起点和故障注入不代表连续章节通关，也不等于复现了浏览器丢失事件的具体来源。
 
 `game/tests/story/cinematics_qa.gd`为分段起点夹具：从正式场景读取真实角色和身体，自然播放14段并截图；它不等于从头连续通关。可用 `node tools/godot.mjs run -- -s res://tests/story/cinematics_qa.gd -- --id=ch03_flood --stay`预览指定段并留在隔离体验场景，存档是`cinematics-preview.json`，不覆盖正常存档。
 

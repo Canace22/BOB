@@ -1,5 +1,21 @@
 # Godot 重构进度
 
+## 2026-11-23 · 修复回水过场结束后无法恢复操作
+
+用户在第三章“菌床上的细丝散开，巢片偏出了原来的位置”后停在松键提示，确认所有按键已松开仍不能移动。原结束流程只轮询动作缓存；残留按下状态会一直保留世界暂停和角色控制锁，结束阶段的跳过入口也不能继续。本轮以动作缓存残留和缺少 keyup 两类故障夹具重现该锁定，尚未在用户原浏览器中定位事件残留的具体来源。
+
+`CampaignCinematic`现在核对实际键盘绑定，清除键已松开而动作仍按下的缓存；真正持键仍等待释放。镜头回程结束后，新的F、Enter或鼠标“继续游戏”可清理输入并经原完成口交还控制。继续按钮位于右下角，避开截图中的右上全屏工具条；确认不重放移动或代做下一项交互，救援对白仍须读完后才提交任务。没有修改剧情正文、碰撞、能力或V6结构，也没有新增美术。
+
+本轮已执行的五组检查：
+
+1. **故障与任务边界**：改前专项8通过、3失败，分别暴露残留动作不恢复、新确认无效、鼠标无法继续；修复后`test_campaign_cinematic.gd`的11项全部通过。覆盖双方向键释放、正常持键等待、恢复不漏移动、救援原对白和下一项任务不提前提交；最终640×480按钮边界与Tab阅读专项另跑1项通过。
+2. **工程检查和整库回归**：根`node tools/godot.mjs check`为0 error；根`node tools/godot.mjs test`为**518 passed / 10 failed**、退出1。与本轮修改前同一HEAD的投稿检查记录514/10比较，133条失败断言在忽略资源实例号后完全相同，3条既有门图Nil访问脚本错误也保留；没有新增失败，不将整库报告为通过。
+3. **当前入口实机**：原生GPU`tests/story/cinematic_release_qa.gd`最终28项通过、0失败，日志无ERROR/SCRIPT ERROR。使用独立存档和正式流式世界，从第三章分段起点实际F进入，按原时长自然播完、结算观察一次，再按D移动；动作残留、丢失松键后的F/Enter确认、双Esc跳过后鼠标继续均恢复角色和原相机。已查看最后字幕、结束等待及恢复后的截图，最终按钮在下方。站位/历史进度和故障注入为显式夹具，不代表连续十二章通关或用户原Web环境已复验。
+4. **交付检查**：本轮修改的`git diff --check`及README/过场说明/Skill相对链接通过。新增QA脚本和UID入工作区，截图、日志、JSON仅在忽略目录保留；正式逻辑、视图和两份测试脚本均未超过250行。原生QA用Dummy音频，没有新增音频或听感结论。
+5. **说明与复用方法**：更新[玩家操作](README.md)、[过场控制与验证](../docs/formal-cinematics.md)及现有Godot开发Skill，记录动作缓存与实际绑定的区分、缺少keyup的结束恢复、窗口工具条避让及故障注入的证据边界。修复目前仅在当前工程；本轮没有重打投稿包、更新旧Web包、提交、推送或线上发布。
+
+最终证据在本机`game/build/qa/`：`cinematic-release-check-verified.log`、`cinematic-release-test-full.log`、`cinematic-release-green.log`、`cinematic-release-resize.log`、`cinematic-release-native-final.log`，以及`cinematic-release/report.json`、`comparison.json`与四组实机PNG。原有投稿材料工作项的修改保留。
+
 ## 2026-11-22 · 章节内容保底提交
 
 按用户要求将全章对白审校、白盒地编参照与章节Boss挑战调整作本地保底提交；包含新道具源/运行副本、LFS规则、字体、设计文档及专项测试。另一工作项的正式地图重构方案目录与进度段落保持未提交，不推送。验证沿用紧邻的整合后记录：check零错误、2–12章真实输入通过，整库457通过1项上游R1-02碰撞合同失败；保留问题现场，不修改正式场景或冻结期望。
@@ -3107,3 +3123,19 @@ shield-main-check.log为check_project 0error；shield-main-tests.log为512passed
 4. 9 首转码音乐完整解码通过；原生截图使用 Dummy 音频，未作人工听感验收。封面 SHA 与备份一致。`git diff --check` 通过。
 
 证据保存在本机 `build/submission-20261123/`：`delivery-proof.json`、`package-proof.json`、`compression.json`、`audio-proof.json`、`verify-final.log`、`capture.log`、`screenshots/evidence.json` 和 `browser-final/report.json`。本轮是投稿包与素材验收，未从新档连续通关十二章，也未重新执行全量工程测试；上节记录的 **514 passed / 10 failed** 仍是当前全量结果，不能把本轮发布检查通过解释为既有十项失败已修复。Godot 开发 Skill 已补充动态依赖、旧动作覆盖检查、导入缓存与音乐转码的发布验证方法。
+
+## 2026-11-23 · 投稿素材包按当前最新提交重打
+
+按“更新投稿素材包，注意打最新的”，重新导出当前 `Vesion/V1.0.1` 的 `c151038357f65f72d78e51b6e2117435fd19ea18`。核对时远端仍为 `99b00079`，本地提交更新。上一包虽然包含章节 Boss 调整，但隔离工程漏了已合入的首页存档来源、生命下方逐点护盾及对应字体；本轮重新同步全部当前脚本、场景数据、动态 JSON 和字体，打包前后核对 1322 项源文件 SHA-256。沿用上一包已验收的环境/音乐压缩设置，正式素材与导入设置不变，无新增美术创作。
+
+已替换[投稿目录](../发布素材/万象论剑投稿/)的试玩 ZIP 和五张实机 PNG，保留封面；补充[版本说明](../发布素材/万象论剑投稿/版本说明.txt)，投稿填写链接到该说明。最终 ZIP 根目录为九个原运行文件加 `build.json`，元数据记录源码提交、分支、构建时间和源清单哈希。旧投稿目录完整备份在本机 `game/build/submission-latest-20261123/previous-submission/`。
+
+本轮已执行：
+
+1. **包体与版本**：ZIP 为 **199,633,438 字节**，低于 200,000,000 字节上限，SHA-256 为 `b38bde20e21ca354601cadb1db06573c999785b165e77a0bc4c8dc7d500b7277`。全部 ZIP CRC、1854 项 PCK MD5、HTML 登记的 PCK/WASM 大小通过；175 项角色/敌人/地形导入与当前正式工程一致，字体导入也一致。新旧 PCK 资源路径完全相同，仅三份 UI 编译脚本和字体字节变化，确认最新改动实际进入最终包。
+2. **最终包资源与 UI**：从最终 ZIP 解压后，用 Godot 逐房加载 19 房，预载全部 15 个基础动作，核对守卫 20 血、老守护者 42 血，通过且无 ERROR/SCRIPT ERROR。最终包首页/护盾专项 6 项通过，覆盖无档首页不造档、开始/继续入口、真实 Enter 新建隔离存档、护盾行高度、位图图标，并检查护盾与章节通知的 GPU 画面。
+3. **真实浏览器输入**：Chrome 独立存储在子路径横屏 iframe 加载最终解压包，12 项通过，覆盖空档首页、新档、移动、跳跃、普攻、暂停开关、地图、刷新首页、继续存档及无浏览器错误。检查 1280×720 和 900×506 画面，续档首页可见“存档来源 · 此浏览器本地存储”。
+4. **投稿图与接入画面**：五张 1280×720 PNG 均从最终 PCK 的真实 GPU 画面重新截取并检查，包含外伤坡对白、须筛、负壳守卫格挡反击、心室观察台和鲸体全图；最新护盾 UI 可见。使用隔离历史进度和章节起点，守卫交锋为真实物理按键，未做后期拼图。封面与备份字节一致。截图/专项使用 Dummy 音频，本轮未重新做人工听感验收或连续十二章通关。
+5. **工程回归与交付检查**：根目录 `node tools/godot.mjs check` 为 0 error；`node tools/godot.mjs test` 为 **514 passed / 10 failed**、退出码 1。十个失败用例的 133 条断言与本机上一轮 `boss-3c-test-final.log` 完全一致，仍有门图 Nil 访问的三条 SCRIPT ERROR；失败范围沿用上节，不能称全量通过。导入生成的 110 项纯换行变化经规范化内容核对后恢复工作区换行。最终交付 ZIP 再次核对 SHA-256，`git diff --check` 与新增文档相对链接检查通过。
+
+本轮证据位于本机 `game/build/submission-latest-20261123/`，含 `source-proof.json`、`package-proof.json`、`pack-diff.json`、`baseline-comparison.json`、`delivery-proof.json`、`source-{check,test}.log`、`verify-final.log`、`title-shield.log`、`capture.log`、`screenshots/evidence.json` 和 `browser-final/report.json`。Godot 开发 Skill 补充更新投稿包时的源码同步与最终版本核对方法。仅更新本地材料，未提交、推送、线上发布或外部投稿。
