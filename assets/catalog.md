@@ -550,3 +550,7 @@ CampaignRoomEcology按19房配方提供固定根菌群、窄域逸泡、微粒�
 ## 紧凑动作 HUD V1（2026-11-21）
 
 [制作源与来源链](source/action-hud-v1/README.md)：24枚静态技能/状态图标、12枚连击字形；运行明暗、切页和连击缩放由正式UI状态驱动。运行验收见游戏进度。
+
+### 2026-11-23 · 首页与护盾UI字体补字
+
+复用action-hud-v1/icons.png的guard位图显示被动护盾，以青色区分架势，不新增图标素材。首页存档来源新增文字后按[原字体子集流程](source/noto-sans-sc/README.md)重建Regular400字体至1512字符，源/运行副本SHA与尺寸见subset.json；只定向同步字体，manifest其它WIP保持。UI字体覆盖检查通过。

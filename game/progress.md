@@ -2973,3 +2973,19 @@ Boss房规则修订：V6重点房间不全部设为Boss房；每个R区域只保
 4、正式主场景basic_attack_qa.gd从隔离QA起点使用真实InputEventKey连续J，左右各实际六次起手，均strike1/strike2交替、max_frames [14,15,14,15,14,15]，failures=0，stderr无错误。第一段在普通续击窗接下一段时保留到14/15的收叉姿势；未宣称逐帧所有索引均呈现。样例没有注入伤害，也不是完整章节通关；真人手感仍由用户体验。
 
 更新docs/action36-controls.md作为参数主说明，并在既有Godot Skill记录成功起手推进段数、源/运行family同步与分别验证Boss复现的方法。未提交推送，保留其他会话的正式地图WIP。
+
+## 2026-11-23 · 首页存档来源与护盾提示重叠修复
+
+首页仍以WhaleUISaveAccess读取实际有效V6档，不靠默认检查点假造Continue。空档不再创建灰色Continue按钮，只显示开始旅程；有档增加“此浏览器本地存储/本机用户目录”说明，桌面继续按钮tooltip显示真实路径。正式文件user://whalebelly/artmatch_save.json与迁移规则未改，真实档未删除。截图中的Web首次打开新版仍可能读同源浏览器既存档，不能据此断言是游戏内置档。
+
+护盾从无图标的独立文字改为青色guard位图+独立护盾行；状态面板按有无护盾扩展底边，临时通知读取底边并留25px基线间隔，调息/蓄力/浮膜提示随之顺排。当前右上任务不挪动，截图左上叠字实际是临时通知和护盾行冲突。更新docs/ui-system.md，不改main.gd/剧情、地图或其它会话WIP。
+
+验证：node tools/godot.mjs check为0error；title_shield_qa.gd用独立title-shield-isolated.json运行正式入口，空档首页90帧不写档、无Continue、真实Enter开始写入有效档、返回首页有Continue、护盾行扩展和位图图标共6项通过。已看01-clean-title/02-saved-title/03-shield-notice三张原生GPU截图，护盾和通知无重叠。夹具先收回自动开场对话再返回首页，避免把被模态阻止的open误判为产品失败。
+
+全量初跑509passed/8failed，其中字体检查发现新文案“浏”和源码注释“孤/峰”不在旧子集。使用已有build-ui-font.py重建1512字符Regular400字体，按既有manifest单独同步这件字体，未执行全量素材覆盖；源/运行SHA均为4b9de352c4504bca1bcc28962aed96fd6ae10f7caede5e4218aeaed80c650b89。随后UI专项6passed/0failed（含字体覆盖）。全量其它7个失败方法集中于门图、音乐、敌人存在、后区目标和冻结地图合同，并有旧门Nil脚本错误；未在本UI任务改动这些系统，也未声称全量通过。日志build/qa/title-shield-{check,tests,ui-tests,runtime}.log，截图在build/qa/title-shield/。git diff --check通过；未发布Web、未提交推送。
+
+## 2026-11-23 · 护盾移至生命下方并逐点显示
+
+按用户最新反馈，护盾紧贴生命下方，使用与生命相同的图标尺寸26×28、33px间距；剩余点亮、消耗变暗，取消护盾数字分数。无护盾上限时隐藏整行，蓄振/架势/反击提示仅在该行存在时下移30px，临时章节消息继续按状态区底边避让。复用既有guard位图，未新增资源或修改存档。docs/ui-system.md已更新现行规则。
+
+已执行check为0error；全量test为510passed/7failed，仍为门图/音乐/房间敌人/后区目标/冻结地图合同7项既有失败（旧门Nil错误亦留在日志），UI字体检查通过。独立存档原生夹具6项通过，并新增满盾、剩一盾、耗尽三种截图，已目视复核护盾位置、亮暗、数量和消息间距。证据build/qa/shield-pips-{check,tests,runtime}.log与build/qa/title-shield/03-shield-notice.png、04-shield-one-left.png、05-shield-empty.png。显示状态使用奖励/数量夹具，不宣称是真实受击获取路线；真实Enter开始旅程仍由同夹具实际按键完成。未发布Web、未提交推送。

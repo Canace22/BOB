@@ -120,7 +120,9 @@ func _draw() -> void:
 	if controller.page_id == "conversation": return
 	text(Vector2(30,size.y-169),str(controller.host.room.name),17,WhaleUIStyle.BONE)
 	if controller.host.practice: text(Vector2(30,172),"能力练习 · 不保存进度",13,WhaleUIStyle.AMBER)
-	if controller.notice_left>0: text(Vector2(30,150),controller.notice_text,15,WhaleUIStyle.AMBER)
+	# 临时消息读取状态区真实底边，避免获得护盾后与第三行挤在同一基线上。
+	var notice_y: float=maxf(150.0,vitals.position.y+vitals.content_bottom()+25.0)
+	if controller.notice_left>0: text(Vector2(30,notice_y),controller.notice_text,15,WhaleUIStyle.AMBER)
 	var boss: Dictionary = controller.data.boss()
 	if not boss.is_empty():
 		var width: float = minf(430,size.x*0.34)
@@ -132,8 +134,8 @@ func _draw() -> void:
 		draw_rect(Rect2(x-3,52,width+6,13),WhaleUIStyle.MUTED,false,1)
 		if prefs.numbers: text(Vector2(x+width+14,66),"%d/%d" % [maxi(0,int(boss.hp)),int(boss.max_hp)],15)
 	if p.state == "recover":
-		text(Vector2(30,166),"调息中 · 松开取消",14,WhaleUIStyle.AMBER)
+		text(Vector2(30,notice_y+23),"调息中 · 松开取消",14,WhaleUIStyle.AMBER)
 	elif p.skill_controller.input.attack_hold>=0.55 or p.skill_controller.input.long_hold>=0.6:
-		text(Vector2(30,166),"蓄力完成 · 松开释放",14,WhaleUIStyle.AMBER)
+		text(Vector2(30,notice_y+23),"蓄力完成 · 松开释放",14,WhaleUIStyle.AMBER)
 	if p is WhalebellyCampaignPlayer and p.floating:
-		text(Vector2(30,188),"浮膜余压 %.1f 秒" % p.float_left,14)
+		text(Vector2(30,notice_y+45),"浮膜余压 %.1f 秒" % p.float_left,14)
